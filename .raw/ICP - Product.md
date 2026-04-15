@@ -41,7 +41,7 @@ tags:
 | **Business Model** | **Trioangle's sales motion: B2B** — selling to founders and business owners who purchase scripts for commercial deployment. **Buyer's platform model: B2C / B2B2C** — buyers operate consumer-facing commission-based marketplaces (ride-hailing, delivery, rental, home services, eCommerce, education) where end users are consumers, not businesses |
 
 > [!NOTE] Product Verticals — Full Breakdown
-> Source: [[Trioangle - Product Verticals]]
+> Source: [[Trioangle-Product-Verticals]] (205 scripts across 8 verticals)
 >
 > | Vertical | Sub-Sectors | Example Clones | Inbound Priority |
 > |---|---|---|---|
@@ -120,7 +120,7 @@ tags:
 |---|---|
 | ✅ **Must-Have** | Clear digital business model; defined market or geography; budget matched to tier (see below) |
 | 👍 **Nice-to-Have** | Has local supply secured (drivers, providers, listings), basic marketing plan or audience |
-| ❌ **Disqualifying** | Needs fully proprietary custom architecture or unique business logic that clone scripts cannot support → route to [[ICP - Service]] (custom development); super-app / Gojek-tier ambition with sub-$5k budget (segment mismatch — re-qualify on budget or redirect to single-vertical or merge tier); dev agencies looking to resell at scale without a specific live client project; "just exploring" without a concrete business idea; wants source code only to resell to third parties; **wants the absolute cheapest option regardless of outcome risk** — buyers whose sole criterion is lowest upfront cost (not value, not support, not certainty of launch) will attempt an AI-assisted freelancer first, get burned, and return as Persona 2; do not discount to win these — let them take the freelancer route and re-engage when they come back |
+| ❌ **Disqualifying** | Needs fully proprietary custom architecture or unique business logic that clone scripts cannot support → route to [[Trioangle Service ICP]] (custom development); super-app / Gojek-tier ambition with sub-$5k budget (segment mismatch — re-qualify on budget or redirect to single-vertical or merge tier); dev agencies looking to resell at scale without a specific live client project; "just exploring" without a concrete business idea; wants source code only to resell to third parties; **wants the absolute cheapest option regardless of outcome risk** — buyers whose sole criterion is lowest upfront cost (not value, not support, not certainty of launch) will attempt an AI-assisted freelancer first, get burned, and return as Persona 2; do not discount to win these — let them take the freelancer route and re-engage when they come back |
 
 > [!NOTE] Product Tiers & Budget Guide
 >
@@ -145,7 +145,8 @@ tags:
 > | 1 service only | Single-Vertical Script |
 > | All services within Gojek native scope | Gojek-like Super-App — admin toggle, no dev work |
 > | Any service outside Gojek native scope | Developer Merge — dev team merges the required scripts; base product depends on which services are needed |
-> | Fully proprietary / unique business logic | [[ICP - Service]] — custom development from $10k |
+> | Fully proprietary / unique business logic | [[Trioangle Service ICP]] — custom development from $10k |
+| Merge quote exceeds $30k | [[Trioangle Service ICP]] — at this threshold the engagement is effectively custom development; transfer to Service team for scoping and delivery |
 >
 > **Key qualifying question:** *"Which specific services do you need — and do all of them fall within taxi, delivery, handyman, car wash, laundry, beauty, or grocery?"*
 > - Yes → Gojek-like Super-App, no merge needed
