@@ -26,6 +26,10 @@ tags:
 >
 > **Last reviewed:** 2026-04-05 — Full review pass. Changes: AI-assisted dev tools competitor row added to competitive table; AI coding tools objection added to Objection Handling; AI Search channel added to Channel Strategy table.
 
+> [!IMPORTANT] AI-Era Positioning Rule
+> **Never position on "we build faster with AI." Position on domain expertise, certainty of delivery, and risk reduction.**
+> Service buyers in 2026 have already seen too many AI demos that delivered nothing. They are not buying speed — they are buying a named team with 800+ domain-specific engagements who already know their vertical's edge cases (dispatch logic, multi-vendor commission flows, fleet route optimization, rental availability engines) and can ship without a learning curve. "Faster with AI" invites the question "then why are you expensive?" and loses. "We've already built your exact platform 100+ times" does not.
+
 ---
 
 ## 👤 Customer Profile
@@ -111,6 +115,33 @@ tags:
 
 ---
 
+## 🔍 Discovery Sprint — Pre-Sales Offer
+
+A paid, time-boxed engagement offered before any full project commitment. Converts uncertain prospects into committed clients by eliminating the two biggest pre-sales blockers: scope uncertainty and team trust.
+
+| Attribute | Details |
+|---|---|
+| **Name** | Paid Discovery Sprint |
+| **Duration** | 2 weeks |
+| **Price** | $1,500–$4,000 (scoped on project complexity; credited toward full engagement if the client proceeds) |
+| **Who it's for** | Persona 1 (Scaling CTO) — needs to verify team quality before committing; Persona 2 (Founder-CTO) — needs scope clarity before investor sign-off; any prospect with timeline uncertainty or "prove yourself first" posture |
+| **Not needed for** | Persona 4 (MENA Relationship Buyer) — trust is relationship-built, not sprint-built; Persona 3 (Enterprise) — goes through formal RFP process instead |
+
+**Deliverables:**
+- Entity-Relationship Diagram (ERD) and data model
+- System architecture diagram with tech stack recommendation
+- Wireframes or user flow diagrams (for Persona 2 / non-technical buyers)
+- Critical path and dependency map
+- Fixed-price delivery estimate with guaranteed milestone dates
+- Team introduction — buyer meets the actual engineers before signing
+
+**Why it works:**
+The sprint eliminates the buyer's two biggest fears simultaneously: "Are these engineers actually senior?" (answered by the code review and architecture session) and "Will this blow out in scope and budget?" (answered by the fixed-price estimate). A buyer who has already paid $2,000 and met the team closes at a dramatically higher rate than a cold proposal recipient.
+
+> **Sales line:** *"Before we quote the full project, let's do a 2-week paid Discovery Sprint. You'll meet the actual engineers, we'll scope everything rigorously, and you'll leave with a guaranteed delivery timeline. If you proceed, the sprint fee is credited. If you don't, you still have a full architecture spec you own."*
+
+---
+
 ## 😣 Pain Points
 
 ### Pain Point 1 — The "Scalability Tech Debt" Crisis
@@ -157,7 +188,7 @@ tags:
 
 ---
 
-### Pain Point 6 — The "We Know We Need AI, But Don't Know Where to Start" Gap
+### Pain Point 5 — The "We Know We Need AI, But Don't Know Where to Start" Gap
 **Severity:** 9/10 | **Frequency:** Every board meeting and investor update in 2025–2026 | **Category:** Strategic + Competitive
 
 - **Workaround:** Adding a "powered by AI" label to an existing feature; hiring a single data scientist who has no integration path to the product codebase; buying off-the-shelf AI SaaS tools that don't fit their specific workflow
@@ -168,7 +199,7 @@ tags:
 
 ---
 
-### Pain Point 5 — Missing Domain Expertise
+### Pain Point 6 — Missing Domain Expertise
 **Severity:** 7/10 | **Frequency:** During architecture design and vendor selection | **Category:** Functional + Strategic
 
 - **Workaround:** Hiring expensive specialized consultants for discovery; relying on the agency to "figure it out" (which they don't)
