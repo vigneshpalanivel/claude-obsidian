@@ -25,6 +25,14 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] reingest | Content Strategy - Product.md + Product Blog Article Templates.md (rev 2)
+- Sources: .raw/Content Strategy - Product.md, .raw/Product Blog Article Templates.md (propagation from ICP v3 gap-fix pass)
+- Pages updated: [[Content-Strategy-Product]], [[Product-Blog-Article-Templates]], [[Trioangle Content Strategy]]
+- Content Strategy additions: Persona 6 in Target Audience (<14 day cycle); AI-Era Positioning Rule callout under Mission; Pillar 3 rationale rewritten to reference PP5 7/10 + 4.0 App Store rating filter; Trioangle Founder Referral named in channel #7 + Priority Distribution Channels (dual reward, 90-day attribution, Small Business added as beneficiary); new Secondary Markets distribution playbook (6-row comparison); T14 gains 2 P6 AI-trigger variants; Quick Win #7 promotes T18 as canonical P6 unlock
+- Blog Templates additions: AI-Era Positioning Rule + Persona Abbreviations (P1–P6 with P6 technical-honesty warning) at intro; T14 gains 2 P6 AI-trigger variants + P6 CTA; T18 "Clone Script vs AI Builders" elevated to canonical P6 decision anchor with extended writer brief (acknowledge-then-document-gap); T11 P6 case study note; new Global Writer Briefs section (Secondary-Market Variants table, AI-Era Compliance Check, Referral Program References)
+- Concept update: [[Trioangle Content Strategy]] gains Global Writer Briefs section and Persona 6 Coverage Map table; T18 standout entry rewritten as canonical P6 anchor with technical-honesty rule
+- Decision: no new top-level template (T21+) added — P6 short cycle + narrow pain is served by T14 awareness + T18 decision variants; revisit only if P6 inbound justifies second decision-stage asset
+
 ## [2026-04-15] reingest | ICP - Product.md (v3 — gap fixes)
 - Source: .raw/ICP - Product.md (third pass — 6 gap fixes + 6 structural/consistency fixes from review)
 - Pages updated: [[Trioangle Product ICP]], [[ICP-Product-Trioangle]]

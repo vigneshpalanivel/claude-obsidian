@@ -13,6 +13,12 @@ key_claims:
   - "T20 is a per-vertical template producing 8 separate articles for the Diaspora persona (remote platform management)"
   - "8 lead magnets (L1-L8) including Due Diligence Checklist with Trioangle answers pre-filled as benchmark"
   - "L6 Market Sizing Worksheet pairs TAM/SAM/SOM data with investor-ready output chart for TOFU diaspora content"
+  - "Persona abbreviations block defines P1-P6 at the top with technical-honesty warning for P6 (reads source code — no hand-waving)"
+  - "AI-Era Positioning Rule callout enforced at template-intro level: never market 'faster with AI' — market certainty of outcome"
+  - "T14 gains 2 Persona 6 trigger variants: 'My AI-Built Prototype Won't Pass App Store Review' and 'My Lovable/Cursor App Breaks Above 20 Concurrent Users'"
+  - "T18 'Clone Script vs AI Builders' variant elevated to canonical Persona 6 decision-stage anchor with technical-honesty writer brief"
+  - "Global Writer Briefs section added: Secondary-Market Variants table, AI-Era Positioning Compliance Check, Referral Program References"
+ingest_rev: 2
 created: 2026-04-15
 updated: 2026-04-15
 tags:
@@ -147,6 +153,19 @@ Reusable content briefs for Trioangle's clone script blog. 20 templates (T1-T20)
 **L6 variants**: Priority combos: Ride-Hailing × West Africa, Southeast Asia, Middle East; Food Delivery × West Africa, South Asia, Middle East; Vacation Rental × Southeast Asia, Latin America, Middle East; Short Video × Southeast Asia, Middle East, West Africa.
 
 ---
+
+## Ingest Rev 2 Notes (2026-04-15)
+
+Propagation from [[Content-Strategy-Product]] rev 2 (which itself propagated from [[ICP-Product-Trioangle]] v3). Five template-layer additions:
+
+1. **Persona abbreviations block** — P1–P6 defined at intro; P6 flagged with technical-honesty warning (reads source code)
+2. **AI-Era Positioning Rule callout** — placed at top of templates file; applies to every brief
+3. **T14 expansion** — 2 new P6 trigger variants + P6 CTA variant "See the App Live in the Store Today"
+4. **T18 elevation** — "Clone Script vs AI Builders" variant is now the canonical P6 decision-stage anchor with extended writer brief (acknowledge what AI does well, document the production gap in concrete terms); P6 CTA "Your Prototype Is 80% of the Demo"
+5. **T11 P6 note** — Founder Case Study persona list extended; ex-P6 case studies are high-conversion
+6. **Global Writer Briefs section** — Secondary-Market Variants table (CTA, payment proof, language, trust signals, do-not-use), AI-Era Positioning Compliance Check (3-point), Referral Program References (enforces structured program wording)
+
+No new top-level template (T21+) added — P6 is served by T14 awareness + T18 decision variants.
 
 ## What This Contributes
 

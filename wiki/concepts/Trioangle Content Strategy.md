@@ -3,6 +3,7 @@ type: concept
 title: "Trioangle Content Strategy"
 created: 2026-04-15
 updated: 2026-04-15
+ingest_rev: 2
 tags:
   - concept
   - content-strategy
@@ -68,8 +69,8 @@ Two parallel content programs for [[Trioangle]]'s two business lines. Product (c
 20 templates (T1-T20) with a variable substitution system. Key variable rule: `[ORIGINAL]` (Uber, TikTok) in titles; `[BRAND]` (Gofer, PopTok) only in CTAs and post-purchase content.
 
 **Standout templates:**
-- **T18** — "Clone Script vs AI Builders (Cursor, Lovable): Why Prompting Isn't a Product" — answers the [[Vibe Coding]] objection and captures Persona 6 (AI Builder Who Hit the Wall) intent
-- **T14 Trigger variants** — captures buyers arriving via urgency events (competitor launched, regulatory window, manual ops breaking)
+- **T18** — "Clone Script vs AI Builders (Cursor, Lovable): Why Prompting Isn't a Product" — **canonical Persona 6 decision-stage anchor.** Writer brief enforces technical honesty (P6 reads source code) — acknowledge what AI does well, then document the production gap in concrete terms (App Store rejection, real-time dispatch failure at 20+ concurrent users, payment gateway edge cases). Answers the cross-persona AI objection.
+- **T14 Trigger variants** — captures buyers arriving via urgency events. Now includes **2 new Persona 6 AI-trigger variants**: "My AI-Built Prototype Won't Pass App Store Review" and "My Lovable/Cursor App Breaks Above 20 Concurrent Users." P6 CTA: "See the App Live in the Store Today — Skip the 4-Month AI Debug Loop."
 - **T20** — Per-vertical remote management articles (8 articles) — primary for P3 Diaspora persona
 
 ### 8 Lead Magnets
@@ -130,6 +131,35 @@ Both programs must address the AI tools objection. Key angles:
 **Service blog (V2 Pillar, #36 bridge article)**: AI tools help engineers write code faster — they don't provide domain expertise in ML/AI system design or vertical-specific edge cases. The value is in the integration layer, not the model.
 
 **Both programs share the same underlying argument**: [[Vibe Coding]] produces 25-35% of a live product. The remaining 75% (infrastructure, compliance, App Store, production ops, domain logic) is where Trioangle's track record lives.
+
+---
+
+## Global Writer Briefs (Product Templates)
+
+Enforced at the top of [[Product Blog Article Templates]] — apply to every brief, every template.
+
+**Secondary-Market Variants** — any article targeting SE Asia, Africa, LATAM, or India domestic must swap CTA (WhatsApp/LinkedIn, not form), payment proof (local gateways: Paystack, Flutterwave, Razorpay, PhonePe, MercadoPago, Xendit, GCash + cash on delivery demo), language (bilingual/RTL), and trust signals (local-region founder testimonials over Clutch/G2). Do NOT push review sites to secondary buyers.
+
+**AI-Era Positioning Compliance Check** — 3-point checklist every draft must pass: (1) no "faster with AI" claims in headline, subheadings, or CTA; (2) outcome-certainty framing (App Store approval, live dispatch, 800+ deployments) not execution speed; (3) if article mentions AI tools, it must acknowledge what they do well before documenting the gap.
+
+**Referral Program References** — when any article or CTA references customer referral, it must use the named **Trioangle Founder Referral** program with dual reward structure (3 months support extension OR 10% cash commission) and 90-day attribution window. No variant wording, no standalone "word-of-mouth" language.
+
+---
+
+## Persona 6 Coverage Map
+
+Added to Product program in rev 2. Short buying cycle (<14 days) and narrow pain (production wall) — served by variants, not a dedicated template family.
+
+| Stage | Asset | Entry Point |
+|---|---|---|
+| Awareness | T14 "AI prototype won't pass App Store review" | Organic search after rejection email |
+| Awareness | T14 "Lovable/Cursor app breaks above 20 concurrent users" | Organic search after first load spike |
+| Decision | T18 "Clone Script vs AI Builders" (canonical anchor) | Direct after T14 or peer referral |
+| Proof | T11 ex-P6 founder case studies | Linked from T18 |
+| CTA | "Your Prototype Is 80% of the Demo. Here's the Other 80%" | T18 decision |
+| CTA | "See the App Live in the Store Today — Skip the 4-Month AI Debug Loop" | T14 awareness |
+
+Technical honesty rule: P6 reads source code. No hand-waving claims, no marketing fluff. Every AI-gap claim must be concrete and reproducible.
 
 ---
 

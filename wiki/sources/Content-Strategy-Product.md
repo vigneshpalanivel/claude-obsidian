@@ -14,6 +14,14 @@ key_claims:
   - "Classifieds and E-Learning are deprioritized as BACKLOG"
   - "20 reusable article templates (T1-T20) + 8 lead magnets (L1-L8) documented in [[Product Blog Article Templates]]"
   - "[ORIGINAL] in titles/keywords; [BRAND] only in CTAs and post-purchase content; [COMPETITOR] only in T9 comparison articles"
+  - "Persona 6 (AI Builder Who Hit the Wall) added to Target Audience with <14 day decision cycle; mapped across Awareness/Consideration/Decision stages"
+  - "AI-Era Positioning Rule enforced at Mission level: never market 'faster with AI' — market certainty of outcome and risk reduction"
+  - "Pillar 3 rationale upgraded to reference PP5 7/10 severity: viral-moment collapse threatens App Store rating 4.0 filter threshold"
+  - "Trioangle Founder Referral referenced by name (90-day attribution, support extension OR 10% cash commission); Small Business added as referral beneficiary"
+  - "Secondary Markets distribution playbook defined: WhatsApp/diaspora groups, local gateways, local-region testimonials, no form-based CTAs"
+  - "T14 gains 2 Persona 6 trigger variants ('AI prototype won't pass App Store review', 'Lovable/Cursor app breaks above 20 concurrent users')"
+  - "Quick Win #7: T18 'Clone Script vs AI Builders' is the canonical Persona 6 decision-stage unlock"
+ingest_rev: 2
 created: 2026-04-15
 updated: 2026-04-15
 tags:
@@ -130,6 +138,19 @@ Goal: capture high-intent organic search traffic, build topical authority, and n
 > L3 (Due Diligence Checklist) is the highest-value asset for Persona 2 (Burned Builder). Trioangle's answers pre-filled as a reference benchmark means the checklist itself positions Trioangle favourably without selling.
 
 ---
+
+## Ingest Rev 2 Notes (2026-04-15)
+
+Propagation from [[ICP-Product-Trioangle]] v3 gap-fix pass. Six content-layer additions:
+
+1. **Persona 6 added** — Target Audience table gains a row for AI Builder Who Hit the Wall (<14 day decision); standalone Awareness/Consideration/Decision mapping section added
+2. **AI-Era Positioning Rule** — IMPORTANT callout placed directly under Mission Statement; enforced globally
+3. **Pillar 3 PP5 upgrade** — rationale rewritten to reference 7/10 severity and the 4.0 App Store rating filter threshold
+4. **Trioangle Founder Referral** — distribution channel #7 and Priority Distribution Channels referral row now reference the named program with dual reward structure; Small Business added as beneficiary
+5. **Secondary Markets playbook** — new distinct distribution section (6-row comparison) replacing the "also ship here" treatment
+6. **T14 Persona 6 variants** — two new AI-trigger awareness entries added to Pillar 1
+
+Downstream: [[Product-Blog-Article-Templates]] also re-ingested with P6 persona abbreviation block, T14/T18 variant expansion, and Global Writer Briefs section (secondary markets, AI-era compliance check, referral program wording).
 
 ## What This Contributes
 
