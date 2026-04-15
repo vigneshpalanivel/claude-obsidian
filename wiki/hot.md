@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-08T19:00:00
+updated: 2026-04-15T00:00:00
 tags:
   - meta
   - hot-cache
@@ -19,7 +19,42 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
-2026-04-08: v1.4.1 hotfix shipped, plugin confirmed installed and enabled
+2026-04-15: autoresearch on running a software dev company in the vibe coding / AI era. 9 pages created.
+
+## Key Recent Facts (Ingest: ICP - Product.md — Trioangle)
+- Trioangle: marketplace clone scripts, operating since 2015, 800+ platforms, 150+ countries. Product ($500–$25k) + Service ($10k+ custom) lines.
+- 6 buyer archetypes: Visionary Velocity, Burned Builder, Diaspora Entrepreneur, Small Business Digitalizer, Super-App Builder, AI Builder Who Hit the Wall
+- Persona 6 (AI Builder Who Hit the Wall) is a direct named consequence of the vibe coding wave — buyers who spent 4–8 weeks in Cursor/Lovable arrive needing production deployment, not more code
+- Persona 1 (Visionary Velocity) is most at risk of AI displacement — compete on certainty of outcome (live date, App Store approval record), not speed to demo
+- Product routing decision tree lives in [[Trioangle]] entity page
+- Disqualify: sub-$5k super-app ambition, "cheapest option" buyers, resellers without a live client project
+
+## Key Recent Facts (Autoresearch: Marketing + Sales for AI-Era Dev Company)
+- Core positioning rule: do NOT market "we write code faster with AI" — that commoditizes you. Market certainty of outcome and risk reduction.
+- ICP in 2026: companies that tried DIY/AI and hit the wall — regulated industries, post-PMF scaling, non-technical founders with budget
+- Handle the "why not just vibe-code it?" objection: code is only 25-35% of project scope; architecture, security, compliance, integration are the rest
+- Three objections to script: "we can build it ourselves," "AI should make this cheaper," "we have AI tools in-house"
+- Alignment mechanics: one shared ICP doc, objection-to-content pipeline (sales logs objections, marketing builds content), lead SLA (24h follow-up)
+- RevOps model: 57% of B2B companies building it; for small teams, one person can own it
+
+## Key Recent Facts (Autoresearch: AI-Era Dev Company)
+- Vibe coding (Karpathy, Feb 2025) is now passé. The current term is "agentic engineering" — orchestrating multi-step autonomous agent workflows
+- 90% of engineering teams use AI coding tools; Claude Code became #1 tool in 8 months
+- Smaller teams with better judgment out-deliver larger traditional coding teams
+- Hire for: product taste, architectural judgment, agent leverage, communication, ownership, learning velocity (NOT coding speed)
+- Price for: outcomes and value, not hours. Hybrid model (base retainer + variable) is the practical entry point
+- Quality crisis: AI code has 1.7x more bugs; 1 in 5 security breaches traces to AI-generated code. 2026 = year of quality, not speed
+- Only 20% of teams measure AI's impact — the measurement gap is a leadership failure, not a tool problem
+
+## Recent Changes
+- Created: [[Vibe Coding]], [[Agentic Engineering]], [[AI-Native Engineering Team]], [[Outcome-Based Pricing]]
+- Created sources: [[Karpathy-2025-Year-in-Review]], [[Jellyfish-2025-Engineering-Management]], [[LeadDev-5-Predictions-2026]], [[Augment-Code-AI-Native-Hiring]]
+- Created synthesis: [[Research: Running a Software Dev Company Post-Vibe-Coding]]
+- Updated: [[Andrej Karpathy]] (added vibe coding + agentic engineering contributions)
+
+## Active Threads
+- Research filed: AI-era software company operations
+- v1.5.0 backlog still open: /adopt command, vault graph analysis, semantic search, Marp output
 
 ## Plugin State
 - **Version**: 1.4.1 (installed, enabled, user scope)

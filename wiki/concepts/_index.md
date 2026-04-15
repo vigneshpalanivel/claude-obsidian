@@ -36,4 +36,14 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 
 ---
 
+## Software Development (AI Era)
+
+- [[Vibe Coding]] — Karpathy's original term; accept LLM output, iterate on vibes; now considered passé
+- [[Agentic Engineering]] — the mature successor; orchestrate autonomous multi-step agent workflows
+- [[AI-Native Engineering Team]] — org structure and hiring criteria for the agent leverage era
+- [[Outcome-Based Pricing]] — billing model for dev agencies when AI compresses delivery time
+- [[Marketing-Sales Alignment]] — shared definitions, KPIs, content loop, and RevOps for B2B dev companies
+
+---
+
 ## Add new concepts here as they are extracted from sources.

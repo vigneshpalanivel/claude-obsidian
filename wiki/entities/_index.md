@@ -30,7 +30,7 @@ All entity pages — people, organizations, products, and tools.
 
 ## Organizations
 
-<!-- Add organization pages here -->
+- [[Trioangle]] — marketplace clone script company; 800+ platforms, 150+ countries, since 2015
 
 ---
 

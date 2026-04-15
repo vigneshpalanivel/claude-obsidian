@@ -5,7 +5,7 @@ entity_type: person
 role: "AI researcher, educator, founder"
 first_mentioned: "[[LLM Wiki Pattern]]"
 created: 2026-04-07
-updated: 2026-04-07
+updated: 2026-04-15
 tags:
   - entity
   - person
@@ -14,8 +14,11 @@ status: mature
 related:
   - "[[LLM Wiki Pattern]]"
   - "[[Compounding Knowledge]]"
+  - "[[Vibe Coding]]"
+  - "[[Agentic Engineering]]"
   - "[[entities/_index]]"
 sources:
+  - "[[Karpathy-2025-Year-in-Review]]"
 ---
 
 # Andrej Karpathy
@@ -40,8 +43,20 @@ His framing: "The wiki is a persistent, compounding artifact. The cross-referenc
 
 ---
 
+## Additional Contributions
+
+Karpathy coined **[[Vibe Coding]]** (February 2025) — software development where developers describe programs in natural language and accept AI-generated code without deep review. Named Collins English Dictionary Word of the Year 2025.
+
+By late 2025 he had evolved the concept to **[[Agentic Engineering]]** — "you are not writing the code directly 99% of the time, you are orchestrating agents who do." The key architectural insight: running agents locally on the developer's machine outperforms cloud-deployed agents because of immediate access to machine state, context, and secrets. This is the foundation of Claude Code's local model.
+
+His prediction on the developer role bifurcation: LLM labs produce generally capable models; specialized applications will "organize, finetune and actually animate teams of them into deployed professionals in specific verticals." Source: [[Karpathy-2025-Year-in-Review]]
+
+---
+
 ## Connections
 
 - [[LLM Wiki Pattern]] — his core contribution to knowledge management
 - [[Compounding Knowledge]] — the central insight he articulated
-- claude-obsidian plugin — this repo is a production implementation of his pattern
+- [[Vibe Coding]] — coined February 2025; paradigm shift in developer practice
+- [[Agentic Engineering]] — the mature successor he introduced in late 2025
+- claude-obsidian plugin — production implementation of his wiki pattern

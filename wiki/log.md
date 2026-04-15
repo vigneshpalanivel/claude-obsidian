@@ -25,6 +25,26 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] ingest | ICP - Product.md
+- Source: .raw/ICP - Product.md (Trioangle internal, 2026)
+- Pages created: [[Trioangle]], [[Trioangle Buyer Personas]], [[ICP-Product]]
+- Updated: [[entities/_index]], [[sources/_index]], [[index]]
+- Key finding: Persona 6 (AI Builder Who Hit the Wall) is a named, revenue-generating buyer archetype — direct validation that vibe coding creates a real market for production-deployment services
+
+## [2026-04-15] autoresearch | Marketing and Sales for AI-Era Dev Company
+- Rounds: 2
+- Sources found: 4 (IBD Consulting, Improvado alignment guide, Martal 5 strategies, Sopro alignment stats)
+- Pages created: [[Marketing-Sales Alignment]], [[Research: Marketing and Sales for AI-Era Dev Company]]
+- Updated: [[index]], [[concepts/_index]]
+- Key finding: Do NOT position on "faster with AI" — position on certainty of outcome. Buyers in 2026 can vibe-code themselves; they're buying risk reduction and end-to-end accountability.
+
+## [2026-04-15] autoresearch | Running a Software Dev Company Post-Vibe-Coding
+- Rounds: 2
+- Sources found: 6 (Karpathy 2025, Jellyfish Eng Mgmt, LeadDev 5 Predictions, Augment Code Hiring, Harvard Gazette, Chargebee Pricing)
+- Pages created: [[Vibe Coding]], [[Agentic Engineering]], [[AI-Native Engineering Team]], [[Outcome-Based Pricing]], [[Karpathy-2025-Year-in-Review]], [[Jellyfish-2025-Engineering-Management]], [[LeadDev-5-Predictions-2026]], [[Augment-Code-AI-Native-Hiring]], [[Research: Running a Software Dev Company Post-Vibe-Coding]]
+- Updated: [[Andrej Karpathy]] (added vibe coding + agentic engineering), [[index]], [[concepts/_index]], [[sources/_index]]
+- Key finding: The competitive advantage in software dev has moved from headcount to leverage — smaller teams with AI orchestration skills out-deliver larger traditional teams; pricing must shift from hourly to outcome-based
+
 ## [2026-04-08] save | claude-obsidian v1.4 Release Session
 - Type: session
 - Location: wiki/meta/claude-obsidian-v1.4-release-session.md

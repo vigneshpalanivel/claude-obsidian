@@ -29,7 +29,11 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 
 ## Articles
 
-<!-- Add article source pages here -->
+- [[Karpathy-2025-Year-in-Review]] — Andrej Karpathy, Dec 2025 | vibe coding, agentic engineering, developer role transformation
+- [[Jellyfish-2025-Engineering-Management]] — Jellyfish, 2025 | 90% AI adoption, measurement gap, high-performer characteristics
+- [[LeadDev-5-Predictions-2026]] — LeadDev, late 2025 | 5 uncomfortable predictions for engineering leaders
+- [[Augment-Code-AI-Native-Hiring]] — Augment Code, 2025 | 6-capability framework for hiring AI-native engineers
+- [[ICP-Product]] — Trioangle internal, 2026 | ICP and 6 buyer personas for marketplace clone script product line
 
 ---
 
