@@ -80,16 +80,18 @@ The ideal customer profile for [[Trioangle]]'s **product line** — readymade cl
 
 ## 8 Product Verticals
 
-| Vertical | Example Clones (Trioangle Brand) |
-|---|---|
-| Delivery & Logistics | UberEats clone (GoferEats), grocery, pharmacy |
-| Travel & Hospitality | Airbnb clone (Makent), car rental, boat rental |
-| Commerce & Marketplaces | Amazon clone, classifieds (PassUp/OLX clone) |
-| On-Demand Home Services | TaskRabbit clone (GoferHandy) |
-| Ride-Hailing & Transport | Uber clone (Gofer), towing (GoferTow) |
-| Social & Entertainment | TikTok clone (PopTok), dating (Igniter) |
-| Education | Udemy clone (Udify) |
-| Multi-Service / Super App | Gojek clone (GoferJek) |
+Ordered by inbound priority. Build BOFU content for top verticals before TOFU.
+
+| Priority | Vertical | Example Clones (Trioangle Brand) | Inbound Signal |
+|---|---|---|---|
+| 1 | Ride-Hailing & Transport | Uber clone (Gofer), towing (GoferTow) | Highest search volume |
+| 1 | Delivery & Logistics | UberEats clone (GoferEats), grocery, pharmacy | Highest search volume |
+| 2 | Travel & Hospitality | Airbnb clone (Makent), car rental, boat rental | High volume |
+| 3 | Social & Entertainment | TikTok clone (PopTok), dating (Igniter) | **Active inbound NOW (PopTok) — build BOFU immediately** |
+| 4 | Multi-Service / Super App | Gojek clone (GoferJek) | Medium-high |
+| 4 | On-Demand Home Services | TaskRabbit clone (GoferHandy) | Medium-high |
+| 5 | Commerce & Marketplaces | Amazon clone, classifieds (PassUp/OLX clone) | Medium |
+| 6 | Education | Udemy clone (Udify) | Deprioritized |
 
 ---
 
@@ -170,6 +172,16 @@ Fully proprietary / unique business logic?
 **Upsell triggers:** Second vertical (Developer Merge), Super-App upgrade, custom feature requests, annual support renewal, referral conversion.
 
 > **AI era retention principle:** AI tools create dependency loops (buyer keeps prompting to fix issues). Trioangle must create a support relationship loop — buyers who know Trioangle will handle problems faster than any AI tool will stay, refer others, and expand.
+
+---
+
+## AI-Era Positioning Rule
+
+> **Never position on "we build faster with AI." Position on certainty of outcome and risk reduction.**
+
+Buyers in 2026 can vibe-code a prototype themselves. They are not buying speed — they are buying a guaranteed live business: App Store approval, production deployment, real-time dispatch under load, and a named team accountable when something breaks. This applies to all personas, all channels, and all content. Applies equally to Persona 1 (AI-era risk: Lovable/Bolt may narrow the production gap) and Persona 6 (already tried AI and failed).
+
+Source: [[Research: Marketing and Sales for AI-Era Dev Company]] | [[Marketing-Sales Alignment]]
 
 ---
 

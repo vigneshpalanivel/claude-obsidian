@@ -21,6 +21,10 @@ tags:
 >
 > Operating since **2015**, Trioangle has delivered **800+ platforms across 150+ countries** — giving every buyer the reassurance of a battle-tested product backed by a company that has seen it all.
 
+> [!IMPORTANT] AI-Era Positioning Rule
+> **Never position on "we build faster with AI." Position on certainty of outcome and risk reduction.**
+> Buyers in 2026 can vibe-code a prototype themselves. They are not buying speed — they are buying a guaranteed live business: App Store approval, production deployment, real-time dispatch under load, payment gateway in production, and a named team accountable when something breaks. This rule applies to all personas, all channels, and all content. "Faster with AI" invites the question "then why are you expensive?" — and loses. "Certainty of launch" does not.
+
 ---
 
 ## 👤 Customer Profile
@@ -39,16 +43,16 @@ tags:
 > [!NOTE] Product Verticals — Full Breakdown
 > Source: [[Trioangle - Product Verticals]]
 >
-> | Vertical | Sub-Sectors | Example Clones |
-> |---|---|---|
-> | **Delivery & Logistics** | Food delivery, grocery & convenience, pharmacy, alcohol, cannabis | UberEats, DoorDash, Instacart, Swiggy, Zomato, Drizly |
-> | **Travel & Hospitality** | Hotels & booking, vacation rental, car/boat/space rental, parking | Airbnb (Makent), Booking.com, Expedia, Turo, Peerspace |
-> | **Commerce & Marketplaces** | eCommerce, classifieds/C2C (PassUp), real estate | Amazon, eBay, Etsy, OLX (PassUp), Letgo, Zillow |
-> | **On-Demand Home Services** | Cleaning, plumbing, beauty, laundry, tutoring, car wash, babysitting | TaskRabbit (GoferHandy), UrbanClap, StyleSeat, Practo |
-> | **Ride-Hailing & Transport** | Ride-hailing (Gofer), towing, fleet management, logistics | Uber, Bolt, Lyft, Careem, Lalamove, Honk (GoferTow) |
-> | **Social & Entertainment** | Short video, live streaming, social media, dating & matchmaking (Igniter) | TikTok (PopTok), Instagram, Tinder (Igniter), Bumble |
-> | **Education** | E-learning, LMS, skill platforms | Udemy, Coursera, Unacademy, BYJU'S, LinkedIn Learning |
-> | **Multi-Service / Super App** | Gojek-style all-in-one platforms with built-in admin panel to enable/disable native on-demand services | GoferJek (Trioangle's Gojek clone), Gojek, Grab, Rappi |
+> | Vertical | Sub-Sectors | Example Clones | Inbound Priority |
+> |---|---|---|---|
+> | **Ride-Hailing & Transport** | Ride-hailing (Gofer), towing, fleet management, logistics | Uber, Bolt, Lyft, Careem, Lalamove, Honk (GoferTow) | 🔴 Highest volume — build full TOFU→BOFU funnel first |
+> | **Delivery & Logistics** | Food delivery, grocery & convenience, pharmacy, alcohol, cannabis | UberEats, DoorDash, Instacart, Swiggy, Zomato, Drizly | 🔴 Highest volume — build full TOFU→BOFU funnel first |
+> | **Travel & Hospitality** | Hotels & booking, vacation rental, car/boat/space rental, parking | Airbnb (Makent), Booking.com, Expedia, Turo, Peerspace | 🔴 High volume |
+> | **Social & Entertainment** | Short video, live streaming, social media, dating & matchmaking (Igniter) | TikTok (PopTok), Instagram, Tinder (Igniter), Bumble | 🟠 **Active inbound NOW (TikTok/PopTok) — build BOFU immediately; do not wait for TOFU** |
+> | **Multi-Service / Super App** | Gojek-style all-in-one platforms with built-in admin panel to enable/disable native on-demand services | GoferJek (Trioangle's Gojek clone), Gojek, Grab, Rappi | 🟠 Medium-high |
+> | **On-Demand Home Services** | Cleaning, plumbing, beauty, laundry, tutoring, car wash, babysitting | TaskRabbit (GoferHandy), UrbanClap, StyleSeat, Practo | 🟠 Medium-high |
+> | **Commerce & Marketplaces** | eCommerce, classifieds/C2C (PassUp), real estate | Amazon, eBay, Etsy, OLX (PassUp), Letgo, Zillow | 🟡 Medium |
+> | **Education** | E-learning, LMS, skill platforms | Udemy, Coursera, Unacademy, BYJU'S, LinkedIn Learning | 🟡 Deprioritized — build after core verticals saturated |
 
 > [!TIP] High-Value Segment
 > Gig Economy / Multi-Service Super-App buyers (Gojek model) are a distinct, higher-value segment within this ICP — larger budget ($8k–$25k), longer sales cycle (30–60 days), and enterprise-tier expectations. Gojek's admin panel natively covers taxi, delivery, grocery, car wash, laundry, beauty, handyman, and DeliveryAll — services outside this scope require a Developer Merge (additional fee). See Persona 5 — Super-App Ecosystem Builder and the Gojek Native Scope callout in Qualifying Criteria for full details.

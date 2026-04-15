@@ -12,6 +12,8 @@ key_claims:
   - "Persona 1 (Visionary Velocity) is most at risk of AI tool displacement — hedge with certainty-of-outcome positioning"
   - "800+ platforms deployed across 150+ countries since 2015"
   - "Product tiers: Single-Vertical Script ($500–$15k), Gojek-like Super-App ($8k–$25k), Developer Merge (script price + fee)"
+  - "Vertical inbound priority: Ride-Hailing + Food (highest), TikTok/PopTok (active inbound now — build BOFU immediately), Super App + Home Services, Commerce, Education (deprioritized)"
+  - "AI-era positioning rule: never position on faster with AI — position on certainty of outcome and risk reduction"
 created: 2026-04-15
 updated: 2026-04-15
 tags:
