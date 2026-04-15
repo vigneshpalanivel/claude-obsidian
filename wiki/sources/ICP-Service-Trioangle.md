@@ -14,6 +14,8 @@ key_claims:
   - "AI-Forward Platform Operator (Persona 5) is a 2026-emergent archetype: existing platform, needs AI features, not a rebuild"
   - "Qualification shortcut: <$10k disqualify; $10k-$40k = Founder-CTO motion; $40k+ = assess technical vs. relationship-led buyer"
   - "Validation status: historical service-line sales basis, no formal 2026 validation cycle completed"
+  - "AI-era positioning rule: never position on faster with AI — position on domain expertise, certainty of delivery, and risk reduction"
+  - "Discovery Sprint: $1,500-$4,000 paid 2-week pre-sales offer; credited toward full engagement; eliminates scope uncertainty and team trust blockers"
 created: 2026-04-15
 updated: 2026-04-15
 tags:
@@ -107,11 +109,11 @@ Pause signals (nurture, don't push): mid-fundraise, post-failed agency (lead wit
 | # | Pain Point | Severity | Persona |
 |---|---|---|---|
 | PP1 | Scalability tech debt crisis | 10/10 | Scaling CTO |
-| PP6 | "We know we need AI but don't know where to start" | 9/10 | AI-Forward Platform Operator |
 | PP2 | Ghosted agency trust deficit | 9/10 | All |
 | PP3 | IP ownership and vendor lock-in | 8/10 | Scaling CTO, Founder-CTO |
 | PP4 | Speed vs. quality trade-off | 8/10 | Scaling CTO |
-| PP5 | Missing domain expertise | 7/10 | All |
+| PP5 | "We know we need AI but don't know where to start" | 9/10 | AI-Forward Platform Operator |
+| PP6 | Missing domain expertise | 7/10 | All |
 
 ---
 

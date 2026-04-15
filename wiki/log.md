@@ -32,6 +32,13 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 - Key finding 1: 205 distinct product scripts across 8 verticals — distinct from 800+ deployments; full brand name map documented (Gofer, Makent, PassUp, PopTok, Igniter, GoferHandy, GoferJek, GoferTow, Udify)
 - Key finding 2: Watchit (YouTube/Vimeo clone) appears in this source but is NOT an active product — flagged in source page; never reference in any content
 
+## [2026-04-15] reingest | ICP - Service.md (updated)
+- Source: .raw/ICP - Service.md (updated by user — three additions)
+- Pages updated: [[Trioangle Service ICP]], [[ICP-Service-Trioangle]]
+- Addition 1: PP numbering fixed — PP6 (AI Knowledge Gap, 9/10) renumbered to PP5; PP5 (Domain Expertise, 7/10) renumbered to PP6; order now matches severity descending
+- Addition 2: AI-era positioning rule added — "Never position on faster with AI. Position on domain expertise, certainty of delivery, and risk reduction." Added to both raw file and concept page
+- Addition 3: Discovery Sprint defined as a named pre-sales offer — $1,500-$4,000, 2 weeks, credited toward full engagement; added to raw file and concept page with deliverables and sales line
+
 ## [2026-04-15] reingest | ICP - Product.md (updated)
 - Source: .raw/ICP - Product.md (updated by user — two additions)
 - Pages updated: [[Trioangle Product ICP]], [[ICP-Product-Trioangle]]
