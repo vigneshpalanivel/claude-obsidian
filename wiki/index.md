@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-15 | Total pages: 40 | Sources ingested: 7
+Last updated: 2026-04-15 | Total pages: 44 | Sources ingested: 9
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -41,6 +41,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Outcome-Based Pricing]] — billing model for dev agencies when AI compresses delivery time (status: developing)
 - [[Marketing-Sales Alignment]] — structural integration of marketing and sales around shared revenue goals (status: developing)
 - [[Trioangle Buyer Personas]] — 6 buyer archetypes for marketplace clone scripts; Persona 6 maps directly to Vibe Coding wave (status: current)
+- [[Trioangle Service ICP]] — 5 buyer personas for custom development and AI engineering; Persona 5 (AI-Forward Platform Operator) is a 2026 emergent archetype (status: current)
+- [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms); only path to Enterprise and MENA buyer segments (status: current)
 
 ---
 
@@ -65,6 +67,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[LeadDev-5-Predictions-2026]] — late 2025 | governance, security risks, junior hiring decline
 - [[Augment-Code-AI-Native-Hiring]] — 2025 | 6-capability framework for hiring AI-native engineers
 - [[ICP-Product]] — 2026-04-15 | Trioangle internal ICP | 3 wiki pages created (Trioangle entity, Trioangle Buyer Personas, source)
+- [[ICP-Service-Trioangle]] — 2026-04-15 | Trioangle custom dev + AI engineering ICP | 5 buyer personas; Persona 3 + 4 unreachable without channel partners
+- [[ICP-Channel-Partner-Trioangle]] — 2026-04-15 | Trioangle agency/consulting channel partner ICP | 3 partner personas; unlocks Enterprise and MENA buyer access
 
 ---
 

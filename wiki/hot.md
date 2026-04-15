@@ -21,6 +21,15 @@ Navigation: [[index]] | [[log]] | [[overview]]
 ## Last Updated
 2026-04-15: autoresearch on running a software dev company in the vibe coding / AI era. 9 pages created.
 
+## Key Recent Facts (Ingest: ICP - Channel Partner-T.md + ICP - Service.md — Trioangle)
+- Service ICP: 5 buyer personas for custom dev + AI engineering ($10k-$120k+). Personas 1+2+5 reachable directly; Persona 3 (Enterprise) and Persona 4 (MENA) require channel partner intermediaries.
+- AI-Forward Platform Operator (Service Persona 5, 2026): existing platform, needs AI features (dispatch, pricing, forecasting) - not a rebuild. Budget $15k-$60k. 4-8 week close.
+- Channel Partner ICP: 3 partner personas (Overflow Agency Lead, Consulting Upseller, Vertical Specialist). All share the same primary trust barrier: non-circumvention (NCNDA must be signed Day 1).
+- NCNDA framing note: "800+ projects delivered" can backfire with partners - they fear Trioangle will bypass them. Counter: Trioangle has no direct sales motion for these markets; partner model is permanent.
+- Discovery Sprint ($1,500-$4,000) available as paid pre-sales scoping tool for all partner types.
+- India-based agencies excluded from Channel Partner ICP: peer/competitor perception prevents sub-contractor trust.
+- Qualification shortcut (Service ICP): <$10k disqualify; $10k-$40k = Persona 2 motion; $40k+ = assess technical vs. relationship-led buyer.
+
 ## Key Recent Facts (Ingest: ICP - Product.md — Trioangle)
 - Trioangle: marketplace clone scripts, operating since 2015, 800+ platforms, 150+ countries. Product ($500–$25k) + Service ($10k+ custom) lines.
 - 6 buyer archetypes: Visionary Velocity, Burned Builder, Diaspora Entrepreneur, Small Business Digitalizer, Super-App Builder, AI Builder Who Hit the Wall

@@ -25,6 +25,13 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] ingest | ICP - Channel Partner-T.md + ICP - Service.md
+- Sources: .raw/ICP - Channel Partner-T.md and .raw/ICP - Service.md (Trioangle internal, 2026)
+- Pages created: [[ICP-Channel-Partner-Trioangle]], [[ICP-Service-Trioangle]], [[Trioangle Channel Partner Personas]], [[Trioangle Service ICP]]
+- Updated: [[sources/_index]], [[concepts/_index]], [[index]]
+- Key finding 1 (Channel Partner): Enterprise Buyer and MENA Relationship Buyer in the Service ICP are not reachable via direct outbound - channel partners are the only access path. This makes the partner program structurally necessary, not just a growth lever.
+- Key finding 2 (Service ICP): AI-Forward Platform Operator (Persona 5) is a 2026-emergent buyer archetype - existing platforms under competitive AI pressure, needs domain-specific AI features, not a rebuild. Distinct from all prior personas.
+
 ## [2026-04-15] ingest | ICP - Product.md
 - Source: .raw/ICP - Product.md (Trioangle internal, 2026)
 - Pages created: [[Trioangle]], [[Trioangle Buyer Personas]], [[ICP-Product]]
