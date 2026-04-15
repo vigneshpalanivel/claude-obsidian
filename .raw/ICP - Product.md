@@ -667,6 +667,23 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 | 5 — Super-App Builder | LinkedIn + Local Events + YouTube | Gojek-like Super-App demo (all native service verticals active), super-app case studies, multi-currency/language demo |
 | 6 — AI Builder Who Hit the Wall | Reddit (r/webdev, r/startups) + IndieHackers + AI Search + Stack Overflow | "Lovable vs. clone script" comparison content, production gap explainer ("why your AI app won't pass App Store review"), deployment process walkthrough, "I tried building with Cursor — here's what I switched to" case studies |
 
+### 🌍 Secondary Markets — Channel Mix & Trust Signals
+
+Priority markets (NA, UK, EU, UAE, KSA, Qatar) drive paid acquisition spend. Secondary markets (South/Southeast Asia, Africa, LATAM, India domestic) are a large share of deployment history but convert through a structurally different motion — paid search is wasteful and diaspora-reach channels outperform. Treat these as a distinct playbook, not a remainder bucket.
+
+| Attribute | Priority Markets | Secondary Markets (SE Asia, Africa, LATAM, India) |
+|---|---|---|
+| **Dominant channel** | Google Search (BOFU), YouTube, LinkedIn | WhatsApp/Telegram groups, Facebook Groups, local founder meetups, referral from live deployments |
+| **Paid vs. organic** | Paid-led; high CPC tolerance | Organic-led; paid burns budget on low-intent traffic |
+| **Discovery entry point** | AI Search + Google "Uber clone script price" | Diaspora group post, peer WhatsApp recommendation, local YouTube creator demo |
+| **Payment preference** | Card + wire | **Cash on delivery for end-user transactions** (must be demoed on consumer app); local gateway support critical — Paystack, Flutterwave (Africa), Razorpay, PhonePe (India), MercadoPago (LATAM), Xendit, GCash (SE Asia); **split payment and partial milestone billing** for the script purchase itself, often via Wise, local bank, or USDT |
+| **Language requirements** | English-only is acceptable for NA/UK/EU; Arabic for Middle East | Bilingual admin panel + RTL support where needed; **demo content in local language signals credibility** before price is ever discussed |
+| **Trust signals that work** | Clutch reviews, G2 ratings, case studies, live app store links | **Local founder testimonials in the buyer's exact region** (Nigerian founder testimonial lands in Lagos; Indian founder testimonial lands in Bangalore); WhatsApp-based sales contact rather than web form; visible price transparency; **same-timezone response window** |
+| **Sales motion** | Form-led → demo → proposal | Relationship-led → WhatsApp intro → demo → proposal; skip the web form entirely |
+| **Do NOT** | Over-index on WhatsApp — priority buyers find it unprofessional | Push Clutch/G2 as primary proof — secondary-market buyers weight peer referral 10x higher than review sites they do not use |
+
+**Strategic principle:** Secondary markets are where Trioangle's 150+ country deployment history is most defensible — no Western competitor has matching local payment gateway production credentials or local founder testimonials. Priority markets fund growth; secondary markets compound the moat. Budget allocation should reflect both.
+
 ### 📚 Content Consumed
 
 | Type | Sources |
