@@ -256,6 +256,26 @@ tags:
 
 ---
 
+## 🤝 Referral Program — Structured Definition
+
+Referral is one of the top 3 channels and a defining purchase path for the Burned Builder, Diaspora, and Small Business archetypes. It must be treated as a named, tracked program — not a vague "word of mouth" hope.
+
+| Attribute | Definition |
+|---|---|
+| **Program name** | Trioangle Founder Referral — a structured advocacy program for live, post-launch buyers |
+| **Eligibility** | Any buyer with a live deployment (app on store or web platform in production) and at least 30 days of operational use — ensures the referrer has real experience to share |
+| **Referrer reward** | 3 months of free support extension per converted referral *or* 10% cash commission on the referred buyer's initial purchase (referrer picks at activation) |
+| **Referee reward** | 5% discount on their selected script or merge package, stackable with active promotions up to a 15% cap |
+| **Attribution** | Unique referral code tied to referrer's account; tracked from first demo request through signed invoice; 60-day attribution window |
+| **Payout cadence** | Cash rewards paid within 14 days of referred buyer's final payment clearing; support extensions applied immediately on signed contract |
+| **Tracking** | Dedicated referral dashboard in the buyer's admin panel — live status (demo booked / in-discussion / closed-won / closed-lost), lifetime earnings, pending payouts |
+| **Activation trigger** | Introduced in the Early Traction stage (Day 30–90) post-purchase; re-activated in the Advocacy stage (Day 180+) with a case-study request |
+| **Ineligible** | Self-referrals, employees, agencies reselling Trioangle scripts (those route through the channel partner program, not this consumer referral program) |
+
+**Why this matters:** Diaspora and Small Business buyers convert at materially higher rates from peer referral than from any paid channel. A referral with no structured payout is a hope. A referral with a tracked dashboard, a clear payout, and a 60-day window is a repeatable acquisition engine. This program is the mechanism behind the Channel Strategy table's "Referral / Customer Advocacy" row — not a separate asset.
+
+---
+
 ## 👥 Buyer Personas
 
 > [!TIP] Framework Note
@@ -476,6 +496,8 @@ tags:
 **Role:** Technical Solopreneur / Developer-adjacent Founder | **Age:** 22–38 | **Stage:** Has a prototype, blocked at production
 **Products:** Any single-vertical script — they already know exactly which vertical they want; commonly ride-hailing, food delivery, or home services (mirroring what they attempted to build with AI tools)
 
+> **Origin:** Chose AI tools over an agency for three reasons — (1) priced out of $30k+ custom dev quotes, (2) distrust of agencies after seeing peers get burned, and (3) genuine belief in the "build anything with AI in a weekend" content wave from Pieter Levels, Theo, Fireship, and the vibe-coding creator circuit. They are *not* anti-agency by ideology — they defaulted to AI because it seemed like the rational 2025 path. This matters for sales: they respond to honesty about what AI *does* do well, not to agency-era pitches that dismiss AI outright.
+>
 > Started with a clear vision and a vibe coding session — Cursor, Lovable, or Replit gave them a working demo in days. For weeks it felt like the future: no agency, no freelancer, just prompts and progress. Then they hit the wall. The App Store rejected the build for missing compliance requirements. The real-time GPS tracking worked on localhost but failed with 20 concurrent users. The payment gateway sandbox behaved nothing like production. Push notifications never fired reliably. The admin panel looked right but had no actual dispatch logic. They've invested 4–8 weeks, have something that looks like a product, and are now confronted with the gap between a demo and a live business. They're not burned by a vendor — they're burned by the false promise of "you can build anything with AI." What they need is not more code — they need a production-ready, deployed, app-store-approved platform that actually works when real users show up.
 
 | Goals | Frustrations |
