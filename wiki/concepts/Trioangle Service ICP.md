@@ -29,6 +29,10 @@ sources:
 
 Five buyer personas for [[Trioangle]]'s custom development and AI engineering service line. These are **direct buyers** purchasing bespoke platform builds, architectural rebuilds, or AI feature integration. Each persona is defined by their relationship to technical complexity and the urgency behind their decision.
 
+> **AI-Era Positioning Rule:** Never position on "we build faster with AI." Position on domain expertise, certainty of delivery, and risk reduction. Service buyers in 2026 have already seen too many AI demos that delivered nothing. They are buying a named team with 800+ domain-specific engagements who already know their vertical's edge cases — and can ship without a learning curve. "Faster with AI" invites "then why are you expensive?" and loses. "We've already built your exact platform 100+ times" does not.
+
+Source: [[Research: Marketing and Sales for AI-Era Dev Company]] | [[Marketing-Sales Alignment]]
+
 ---
 
 ## Quick Reference
@@ -42,6 +46,23 @@ Five buyer personas for [[Trioangle]]'s custom development and AI engineering se
 | 5 | AI-Forward Platform Operator | CTO/CPO, existing platform | $15k-$60k | 4-8 weeks | Yes (LinkedIn, AI communities) |
 
 **Qualification shortcut**: <$10k = disqualify. $10k-$40k = Persona 2 motion (speed, trust, simplicity). $40k+ = assess technical vs. relationship-led buyer and apply the corresponding persona playbook.
+
+---
+
+## Discovery Sprint — Named Pre-Sales Offer
+
+A paid, 2-week engagement offered before any full project commitment. Eliminates the two biggest pre-sales blockers: scope uncertainty and team trust.
+
+| | |
+|---|---|
+| **Price** | $1,500–$4,000 (credited toward full engagement if client proceeds) |
+| **Duration** | 2 weeks |
+| **Use for** | Persona 1 (needs to verify team quality), Persona 2 (needs scope clarity before investor sign-off), any "prove yourself first" posture |
+| **Don't offer to** | Persona 4 (MENA — trust is relationship-built, not sprint-built), Persona 3 (Enterprise — goes through formal RFP instead) |
+
+**Deliverables:** ERD and data model, system architecture diagram, wireframes/user flows (for non-technical buyers), critical path map, fixed-price delivery estimate with guaranteed milestone dates, team introduction before signing.
+
+**Sales line:** *"Before we quote the full project, let's do a 2-week paid Discovery Sprint. You'll meet the actual engineers, we'll scope everything rigorously, and you'll leave with a guaranteed delivery timeline. If you proceed, the sprint fee is credited. If you don't, you still own the architecture spec."*
 
 ---
 
