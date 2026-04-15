@@ -26,7 +26,7 @@ tags:
 > [!WARNING] Validation Status — Assumption-Based (Not Yet Validated)
 > This ICP is built from first-principles reasoning and market observation, not confirmed customer interviews or closed-deal data. All firmographic ranges, pain point severities, and channel scores are **hypotheses** until validated. See the Validation Plan section at the bottom of this document for the research roadmap. Update this callout as interviews and deals are completed.
 >
-> **Last reviewed:** 2026-04-15 — Consistency pass. Changes: fixed broken InnBlockchain wikilink; resolved $10k budget floor vs. clone script conflict in Must-Have criteria; clarified P3 budget range does not silently exclude sub-$30k briefs; hoisted Discovery Sprint pricing ($1.5k–$4k) into Executive Summary. Prior review 2026-04-05 added AI-assisted dev tools coverage across competitor table, objection handling, content consumed, channel strategy, PP1 workaround, triggers, technographics, and outbound signals.
+> **Last reviewed:** 2026-04-15 — Two passes. **Pass 2 (cross-reference with [[ICP - Product]] and [[ICP - Service]]):** corrected MENA Relationship Buyer range from $30k–$80k to $30k–$120k+ in P2 (Budget Authority row + End clients line); softened Segment Access callout from "cannot reach" to "faster via partners" since Service ICP lists LinkedIn/Clutch as active direct channels; added AI-Forward Platform Operator (Service ICP Persona 5, $15k–$60k) to P3 end-clients routing; added P1-specific delivery-mode note clarifying Clone Script is primary for Overflow Agency end-client pool. **Pass 1:** fixed broken InnBlockchain wikilink; resolved $10k budget floor vs. clone script conflict in Must-Have criteria; clarified P3 accepts sub-$30k briefs; hoisted Discovery Sprint pricing ($1.5k–$4k) into Executive Summary. Prior review 2026-04-05 added AI-assisted dev tools coverage across competitor table, objection handling, content consumed, channel strategy, PP1 workaround, triggers, technographics, and outbound signals.
 
 ---
 
@@ -203,6 +203,9 @@ tags:
 > [!QUOTE] *"I don't want to be a dev shop. But I also don't want to keep saying no to clients."*
 
 **End clients served:** Primarily [[ICP - Product]] buyers — Visionary Velocity Founders, Diaspora Digital Entrepreneurs, and Small Business Digitalizers seeking on-demand, rental, classifieds, or social platforms ($500–$25k clone script range). For larger agency practices, also lower-tier [[ICP - Service]] buyers matching the Founder-CTO profile ($10k–$40k custom builds) when the agency has moved upmarket to serve funded startups.
+
+> [!TIP] Delivery-mode routing for P1 specifically
+> The ICP-level framing treats Custom Dev as primary and Clone Script as alternative, but **P1 Overflow Agency Leads are the exception**. Their end-client pool skews Product ICP (sub-$25k, standard vertical use cases), so for P1 partners, **🛒 Clone Script is the primary route** and ⚙️ Custom Dev is the upsell when a client outgrows the template. Route P1 briefs to the Product delivery line by default.
 
 ---
 
