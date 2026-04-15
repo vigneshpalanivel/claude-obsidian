@@ -14,6 +14,12 @@ key_claims:
   - "Product tiers: Single-Vertical Script ($500–$15k), Gojek-like Super-App ($8k–$25k), Developer Merge (script price + fee)"
   - "Vertical inbound priority: Ride-Hailing + Food (highest), TikTok/PopTok (active inbound now — build BOFU immediately), Super App + Home Services, Commerce, Education (deprioritized)"
   - "AI-era positioning rule: never position on faster with AI — position on certainty of outcome and risk reduction"
+  - "Trioangle Founder Referral: structured program with 90-day attribution, 3-month support extension OR 10% cash commission, tracked via admin-panel dashboard; eligibility requires live deployment + 30 days operational use"
+  - "Secondary markets (SE Asia, Africa, LATAM, India) require a distinct playbook — WhatsApp/diaspora-group led, cash-on-delivery + local gateways, local-region founder testimonials; paid search burns budget"
+  - "PP5 Scaling Uncertainty upgraded to 7/10 severity — threatens App Store rating (<4.0 filter threshold) and drives churn on first viral/peak moment"
+  - "Persona 1 AI-displacement re-evaluation triggers: (a) public release of one-click iOS submission by mainstream AI builder, (b) production-grade multi-role real-time dispatch with SLA, (c) Persona 6 inbound > Persona 1 inbound for 2 consecutive quarters (requires CRM persona-tagging)"
+  - "Persona 6 origin: chose AI tools over agency because priced out of $30k+ quotes, distrust after peer agency burns, and belief in the vibe-coding creator wave (Levels, Theo, Fireship) — not anti-agency by ideology"
+  - "Other Clone Vendors (Appdupe, V3Cube) carry 20–60 scripts each; Trioangle's 205-script catalog is 3–10x the nearest competitor's depth"
 created: 2026-04-15
 updated: 2026-04-15
 tags:

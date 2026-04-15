@@ -3,6 +3,7 @@ type: concept
 title: "Trioangle Product ICP"
 created: 2026-04-15
 updated: 2026-04-15
+ingest_rev: 3
 tags:
   - concept
   - icp
@@ -135,11 +136,51 @@ Fully proprietary / unique business logic?
 | PP2 | Trust Deficit from Past Failures | 8/10 | Pre-Purchase |
 | PP3 | Post-Purchase Technical Helplessness | 7/10 | Post-Purchase |
 | PP4 | Feature Customization Anxiety | 6/10 | Both |
-| PP5 | Scaling Uncertainty | 5/10 | Post-Purchase |
+| PP5 | Scaling Uncertainty | 7/10 | Post-Purchase |
 
 **PP1 detail:** AI tools have become the first workaround — buyers now pass through a two-stage pattern: (1) attempt with Cursor/Lovable, (2) hit the production wall (App Store rejection, GPS failure at scale, payment gateway complexity), then arrive at Trioangle. This is the Persona 6 creation mechanism.
 
 **PP2 detail:** The Burned Builder persona carries prior scars from vanishing freelancers, outdated scripts, or weeks of vibe coding that produced a demo but never a live app. Proof-first, never pitch-first.
+
+**PP5 detail (upgraded severity):** Not a mid-tier concern. Scaling failure hits on the exact moments that drive growth (weekend peaks, promotional launches, viral social posts) — first impression collapses, churned users don't return, and the App Store rating drops below the 4.0 threshold priority-market buyers filter on. The workaround is either over-provisioning (burning cash on idle capacity) or praying; neither is a plan. Emotional impact is chronic founder-conviction erosion — every traffic uptick feels like a threat instead of a win.
+
+---
+
+## Referral Program (Structured Definition)
+
+Referral is one of the top 3 channels and the primary purchase path for Burned Builder, Diaspora, and Small Business archetypes. Named program — **Trioangle Founder Referral** — not a vague word-of-mouth hope.
+
+| Attribute | Definition |
+|---|---|
+| **Eligibility** | Any buyer with a live deployment + 30 days of operational use |
+| **Referrer reward** | 3 months free support extension **OR** 10% cash commission on referred buyer's initial purchase (referrer picks at activation) |
+| **Referee reward** | 5% discount on selected script/merge, stackable with promotions up to 15% cap |
+| **Attribution window** | 90 days — covers the slowest documented decision cycle (Burned Builder / Small Business, 30–60 days) with margin |
+| **Attribution mechanism** | Unique referral code tied to referrer's account; tracked from first demo request to signed invoice |
+| **Payout cadence** | Cash within 14 days of final payment clearing; support extensions applied immediately on signed contract |
+| **Tracking** | Dedicated referral dashboard in the buyer's admin panel (live status, lifetime earnings, pending payouts) |
+| **Activation** | Introduced in Early Traction stage (Day 30–90); re-activated in Advocacy (Day 180+) alongside case-study request |
+| **Ineligible** | Self-referrals, employees, agencies reselling Trioangle scripts (those route through the channel partner program) |
+
+**Why it matters:** Diaspora and Small Business buyers convert from peer referral at materially higher rates than any paid channel. A structured payout + tracked dashboard + 90-day window turns word-of-mouth into a repeatable acquisition engine. This program is the mechanism behind the Channel Strategy "Referral / Customer Advocacy" row — not a separate asset.
+
+---
+
+## Secondary Markets — Distinct Playbook
+
+Priority markets (NA, UK, EU, UAE, KSA, Qatar) drive paid acquisition. Secondary markets (SE Asia, Africa, LATAM, India domestic) are most of Trioangle's deployment history but convert through a structurally different motion. Treat as a distinct playbook — not a remainder bucket.
+
+| Attribute | Priority Markets | Secondary Markets |
+|---|---|---|
+| **Dominant channel** | Google Search BOFU, YouTube, LinkedIn | WhatsApp/Telegram groups, Facebook diaspora groups, local meetups, referral from live deployments |
+| **Paid vs. organic** | Paid-led, high CPC tolerance | Organic-led; paid burns budget on low-intent traffic |
+| **Payment preference** | Card + wire | **Cash on delivery** for end-user flows (must be demoed); local gateways critical (Paystack, Flutterwave, Razorpay, PhonePe, MercadoPago, Xendit, GCash); **split/milestone billing** for the script purchase (Wise, local bank, USDT) |
+| **Language requirements** | English acceptable NA/UK/EU; Arabic for Middle East | Bilingual admin panel + RTL; **local-language demo content** signals credibility before price |
+| **Trust signals** | Clutch, G2, case studies, live app store links | **Local founder testimonials in buyer's exact region**; WhatsApp contact over web form; visible price transparency; **same-timezone response window** |
+| **Sales motion** | Form → demo → proposal | WhatsApp intro → demo → proposal; skip the web form entirely |
+| **Do NOT** | Over-index on WhatsApp (reads as unprofessional) | Push Clutch/G2 as primary proof (secondary buyers weight peer referral 10x higher than review sites they don't use) |
+
+**Strategic principle:** Secondary markets are where the 150+ country deployment history is most defensible — no Western competitor has matching local payment gateway production credentials or region-specific founder testimonials. Priority markets fund growth; secondary markets compound the moat.
 
 ---
 
@@ -180,6 +221,15 @@ Fully proprietary / unique business logic?
 > **Never position on "we build faster with AI." Position on certainty of outcome and risk reduction.**
 
 Buyers in 2026 can vibe-code a prototype themselves. They are not buying speed — they are buying a guaranteed live business: App Store approval, production deployment, real-time dispatch under load, and a named team accountable when something breaks. This applies to all personas, all channels, and all content. Applies equally to Persona 1 (AI-era risk: Lovable/Bolt may narrow the production gap) and Persona 6 (already tried AI and failed).
+
+### Persona 1 AI-Displacement Re-Evaluation Triggers
+
+Persona 1 is the most AI-exposed archetype. Revisit TAM, pricing, and positioning when **any** of these fire:
+
+1. **Public release of one-click iOS submission** by Lovable, Bolt, Cursor, or a mainstream peer with a documented approval track record (watch changelogs and launch posts — qualitative signal, not an industry stat)
+2. **Production-grade real-time multi-role dispatch** (customer/provider/admin) shipped by a mainstream AI builder with a documented SLA
+3. **Persona 6 inbound exceeds Persona 1 inbound for two consecutive quarters** — leading indicator that the market has shifted from "can't build it" to "built it, can't ship it"
+   - *Operational dependency:* requires inbound-by-persona tagging in CRM. If not currently tracked, stand up the tagging before this trigger can be monitored.
 
 Source: [[Research: Marketing and Sales for AI-Era Dev Company]] | [[Marketing-Sales Alignment]]
 

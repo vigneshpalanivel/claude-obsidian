@@ -146,7 +146,7 @@ tags:
 > | All services within Gojek native scope | Gojek-like Super-App — admin toggle, no dev work |
 > | Any service outside Gojek native scope | Developer Merge — dev team merges the required scripts; base product depends on which services are needed |
 > | Fully proprietary / unique business logic | [[Trioangle Service ICP]] — custom development from $10k |
-| Merge quote exceeds $30k | [[Trioangle Service ICP]] — at this threshold the engagement is effectively custom development; transfer to Service team for scoping and delivery |
+> | Merge quote exceeds $30k | [[Trioangle Service ICP]] — at this threshold the engagement is effectively custom development; transfer to Service team for scoping and delivery |
 >
 > **Key qualifying question:** *"Which specific services do you need — and do all of them fall within taxi, delivery, handyman, car wash, laundry, beauty, or grocery?"*
 > - Yes → Gojek-like Super-App, no merge needed
@@ -201,7 +201,7 @@ tags:
 ---
 
 ### Pain Point 5 — Scaling Uncertainty
-**Severity:** 5/10 | **Frequency:** Post-launch, as user base grows | **Category:** Financial + Process | **Stage:** Post-Purchase
+**Severity:** 7/10 | **Frequency:** Post-launch, as user base grows | **Category:** Financial + Process | **Stage:** Post-Purchase
 
 - **Workaround:** Over-provisioning servers "just in case" (burning cash on idle capacity), or under-provisioning and praying — either way, no load testing, no autoscaling rules, no observability. When traffic spikes, the buyer learns the hard way on their first peak hour.
 - **Cost of Inaction:** App downtime during the exact moments that drive growth (weekend peaks, promotional launches, viral social post). First impression collapses; churned users do not return; app store rating drops below the 4.0 threshold that priority-market buyers filter on.
@@ -239,7 +239,7 @@ tags:
 | **First Transaction** | Day 7–30 | Relieved but fragile — "is this thing working?" | Celebrate first order/booking via WhatsApp/email; share onboarding checklist for provider acquisition |
 | **Early Traction** | Day 30–90 | Cautiously optimistic — "can I grow this?" | Proactive check-in: offer performance review, suggest first customisation (local payment gateway, language pack); introduce referral program |
 | **Growth** | Day 90–180 | Confident — "what's next?" | Upsell trigger: if traction is real, introduce Developer Merge (adding a second vertical), or Super-App upgrade discussion |
-| **Advocacy** | Day 180+ | Proud founder | Testimonial request, case study feature, referral program activation ("refer a founder, get 3 months free support extension") |
+| **Advocacy** | Day 180+ | Proud founder | Testimonial request, case study feature, referral program activation (support extension or cash commission — see Referral Program section) |
 
 ### 💰 Post-Launch Revenue Opportunities
 
@@ -266,7 +266,7 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 | **Eligibility** | Any buyer with a live deployment (app on store or web platform in production) and at least 30 days of operational use — ensures the referrer has real experience to share |
 | **Referrer reward** | 3 months of free support extension per converted referral *or* 10% cash commission on the referred buyer's initial purchase (referrer picks at activation) |
 | **Referee reward** | 5% discount on their selected script or merge package, stackable with active promotions up to a 15% cap |
-| **Attribution** | Unique referral code tied to referrer's account; tracked from first demo request through signed invoice; 60-day attribution window |
+| **Attribution** | Unique referral code tied to referrer's account; tracked from first demo request through signed invoice; **90-day attribution window** — covers the slowest documented persona decision cycle (Burned Builder and Small Business, both 30–60 days) with margin for slippage |
 | **Payout cadence** | Cash rewards paid within 14 days of referred buyer's final payment clearing; support extensions applied immediately on signed contract |
 | **Tracking** | Dedicated referral dashboard in the buyer's admin panel — live status (demo booked / in-discussion / closed-won / closed-lost), lifetime earnings, pending payouts |
 | **Activation trigger** | Introduced in the Early Traction stage (Day 30–90) post-purchase; re-activated in the Advocacy stage (Day 180+) with a case-study request |
@@ -301,7 +301,7 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 > [!WARNING] AI-Era Risk — Most Exposed Persona
 > Persona 1 is the most vulnerable to AI tool displacement. As Lovable, Bolt, and similar tools improve deployment automation (App Store submission, one-click server config), the production gap that currently routes this persona to Trioangle will narrow. **Hedge strategy:** Compete on *certainty of outcome* — guaranteed live date, proven App Store approval record, 800+ deployments across their exact vertical. Speed to demo matters less than speed to *live*. Position the live demo call not as a feature review but as proof that this specific app already exists in production across 150+ countries. The buyer who can vibe code will still choose Trioangle if the certainty-of-launch gap remains wide enough.
 >
-> **Re-evaluation trigger:** Revisit Persona 1 TAM, pricing, and positioning when any of the following hit — (a) AI-generated native apps cross **40% first-submission App Store approval rate** (public benchmark data or internal win/loss tracking), (b) a mainstream AI builder ships **production-grade real-time multi-role dispatch** (customer/provider/admin) with a documented SLA, or (c) Persona 6 inbound volume exceeds Persona 1 inbound for **two consecutive quarters** — a leading signal that the production gap has collapsed and the market has shifted from "can't build it" to "built it, can't ship it."
+> **Re-evaluation trigger:** Revisit Persona 1 TAM, pricing, and positioning when any of the following hit — (a) **Lovable, Bolt, Cursor, or a mainstream peer publicly ships one-click iOS App Store submission** with a documented approval track record (measurable: watch their changelogs and launch posts; this is a qualitative signal, not an industry-wide stat), (b) a mainstream AI builder ships **production-grade real-time multi-role dispatch** (customer/provider/admin) with a documented SLA, or (c) Persona 6 inbound volume exceeds Persona 1 inbound for **two consecutive quarters** — a leading signal that the production gap has collapsed and the market has shifted from "can't build it" to "built it, can't ship it." *Operational dependency: trigger (c) requires inbound-by-persona tagging in CRM. If sales ops does not currently tag inbound leads by archetype, stand up that tagging before this trigger can fire — otherwise it is unmeasurable.*
 
 | Goals | Frustrations |
 |---|---|
@@ -654,7 +654,7 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 
 1. **Google Search** — Capture high-intent buyers searching for exact clone names ("UberEats clone script"). These are BOFU keywords with direct purchase intent. **Geo-target US, Canada, UK, EU, UAE, and Saudi Arabia first** — these markets have the highest purchasing power and the largest diaspora founder population. Expand to secondary markets once priority CPCs are optimised.
 2. **YouTube** — Visual demos are critical to overcome the "is this script a scam/buggy?" fear. Tutorial content like "How to start an on-demand delivery business" captures TOFU traffic and builds trust. Prioritise English-language content for NA/UK/EU; produce Arabic-subtitle versions for Middle East reach.
-3. **Referral / Customer Advocacy** — Burned Builder and Diaspora archetypes make purchase decisions based on peer recommendations, not ads. A structured referral program (e.g., "refer a founder, get 3 months free support") converts at far higher rates than cold traffic for these personas. Priority market buyers have wider networks and higher referral reach.
+3. **Referral / Customer Advocacy** — Burned Builder and Diaspora archetypes make purchase decisions based on peer recommendations, not ads. A structured referral program (support extension or cash commission — see the Referral Program section for full terms) converts at far higher rates than cold traffic for these personas. Priority market buyers have wider networks and higher referral reach.
 
 ### 🗺️ Persona → Channel Mapping
 

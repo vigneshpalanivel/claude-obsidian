@@ -25,6 +25,13 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] reingest | ICP - Product.md (v3 — gap fixes)
+- Source: .raw/ICP - Product.md (third pass — 6 gap fixes + 6 structural/consistency fixes from review)
+- Pages updated: [[Trioangle Product ICP]], [[ICP-Product-Trioangle]]
+- Gap fixes: (1) Persona 1 AI-displacement re-evaluation triggers with CRM-tagging dependency, (2) PP5 severity 5→7/10 + rewritten workaround/cost/emotion, (3) Trioangle Founder Referral — full structured program definition (eligibility, 90-day attribution, support-or-cash reward, tracking, activation), (4) Persona 6 origin paragraph (why they chose AI over agency — priced out + peer burns + creator-wave belief), (5) Other Clone Vendors row quantified (205 scripts vs competitor 20–60), (6) Secondary Markets distinct playbook (channel mix, payment, language, trust signals, sales motion)
+- Consistency fixes: blockquote prefix repair on Product→Service routing row; Post-Purchase Arc + Top 3 Channels updated to reference the new referral program structure
+- Key finding: referral program was referenced in 3 places but never defined — now a named, tracked program with a 90-day window tuned to the slowest documented persona decision cycle
+
 ## [2026-04-15] ingest | Trioangle - Product Verticals.md
 - Source: .raw/Trioangle - Product Verticals.md (Trioangle internal, sitemap analysis, 2026)
 - Pages created: [[Trioangle-Product-Verticals]]
