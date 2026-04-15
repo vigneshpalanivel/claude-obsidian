@@ -203,9 +203,9 @@ tags:
 ### Pain Point 5 — Scaling Uncertainty
 **Severity:** 5/10 | **Frequency:** Post-launch, as user base grows | **Category:** Financial + Process | **Stage:** Post-Purchase
 
-- **Workaround:** Ignoring the problem until the app crashes
-- **Cost of Inaction:** App downtime during peak demand → lost revenue and user trust
-- **Emotional Impact:** Anxiety about whether the "cheap" script can handle real volume
+- **Workaround:** Over-provisioning servers "just in case" (burning cash on idle capacity), or under-provisioning and praying — either way, no load testing, no autoscaling rules, no observability. When traffic spikes, the buyer learns the hard way on their first peak hour.
+- **Cost of Inaction:** App downtime during the exact moments that drive growth (weekend peaks, promotional launches, viral social post). First impression collapses; churned users do not return; app store rating drops below the 4.0 threshold that priority-market buyers filter on.
+- **Emotional Impact:** Chronic low-grade anxiety that erodes founder conviction — every uptick in traffic feels like a threat instead of a win. Buyers start second-guessing whether they bought the "wrong" script rather than whether they bought the wrong *plan*.
 
 > [!QUOTE] *"What happens when I go from 100 users to 10,000? Will this thing just crash?"*
 
@@ -280,6 +280,8 @@ tags:
 
 > [!WARNING] AI-Era Risk — Most Exposed Persona
 > Persona 1 is the most vulnerable to AI tool displacement. As Lovable, Bolt, and similar tools improve deployment automation (App Store submission, one-click server config), the production gap that currently routes this persona to Trioangle will narrow. **Hedge strategy:** Compete on *certainty of outcome* — guaranteed live date, proven App Store approval record, 800+ deployments across their exact vertical. Speed to demo matters less than speed to *live*. Position the live demo call not as a feature review but as proof that this specific app already exists in production across 150+ countries. The buyer who can vibe code will still choose Trioangle if the certainty-of-launch gap remains wide enough.
+>
+> **Re-evaluation trigger:** Revisit Persona 1 TAM, pricing, and positioning when any of the following hit — (a) AI-generated native apps cross **40% first-submission App Store approval rate** (public benchmark data or internal win/loss tracking), (b) a mainstream AI builder ships **production-grade real-time multi-role dispatch** (customer/provider/admin) with a documented SLA, or (c) Persona 6 inbound volume exceeds Persona 1 inbound for **two consecutive quarters** — a leading signal that the production gap has collapsed and the market has shifted from "can't build it" to "built it, can't ship it."
 
 | Goals | Frustrations |
 |---|---|
