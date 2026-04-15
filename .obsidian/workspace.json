@@ -11,10 +11,10 @@
             "id": "fbfb6a3c722e0ada",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -179,11 +179,12 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,7 +200,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5565f1231fe95c42",
+  "active": "fbfb6a3c722e0ada",
   "lastOpenFiles": [
     "wiki/concepts/Trioangle Service ICP.md",
     "wiki/concepts/Trioangle Channel Partner Personas.md",
