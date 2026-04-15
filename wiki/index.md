@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Wiki Index"
-updated: 2026-04-07
+updated: 2026-04-15
 tags:
   - meta
   - index
@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-15 | Total pages: 44 | Sources ingested: 9
+Last updated: 2026-04-15 | Total pages: 49 | Sources ingested: 12
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -43,6 +43,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle Buyer Personas]] — 6 buyer archetypes for marketplace clone scripts; Persona 6 maps directly to Vibe Coding wave (status: current)
 - [[Trioangle Service ICP]] — 5 buyer personas for custom development and AI engineering; Persona 5 (AI-Forward Platform Operator) is a 2026 emergent archetype (status: current)
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms); only path to Enterprise and MENA buyer segments (status: current)
+- [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos/5 pillars; service: 81 articles/6 verticals); persona-gated CTAs (status: current)
 
 ---
 
@@ -69,6 +70,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[ICP-Product]] — 2026-04-15 | Trioangle internal ICP | 3 wiki pages created (Trioangle entity, Trioangle Buyer Personas, source)
 - [[ICP-Service-Trioangle]] — 2026-04-15 | Trioangle custom dev + AI engineering ICP | 5 buyer personas; Persona 3 + 4 unreachable without channel partners
 - [[ICP-Channel-Partner-Trioangle]] — 2026-04-15 | Trioangle agency/consulting channel partner ICP | 3 partner personas; unlocks Enterprise and MENA buyer access
+- [[Content-Strategy-Product]] — 2026-04-15 | Trioangle product blog strategy | 10 silos, 5 pillars, 20 templates; TikTok clone has active inbound
+- [[Content-Strategy-Service]] — 2026-04-15 | Trioangle service blog strategy | 81 articles, 6 verticals; persona-gated CTAs; MENA never forms
+- [[Product-Blog-Article-Templates]] — 2026-04-15 | 20 article templates + 8 lead magnets for product line blog
 
 ---
 

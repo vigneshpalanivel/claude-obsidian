@@ -15,12 +15,21 @@ tags:
 status: current
 related:
   - "[[Trioangle Buyer Personas]]"
+  - "[[Trioangle Service ICP]]"
+  - "[[Trioangle Channel Partner Personas]]"
+  - "[[Trioangle Content Strategy]]"
   - "[[ICP-Product]]"
+  - "[[ICP-Service-Trioangle]]"
+  - "[[ICP-Channel-Partner-Trioangle]]"
   - "[[Vibe Coding]]"
   - "[[Outcome-Based Pricing]]"
   - "[[entities/_index]]"
 sources:
   - "[[ICP-Product]]"
+  - "[[ICP-Service-Trioangle]]"
+  - "[[ICP-Channel-Partner-Trioangle]]"
+  - "[[Content-Strategy-Product]]"
+  - "[[Content-Strategy-Service]]"
 ---
 
 # Trioangle
@@ -99,7 +108,12 @@ Fully proprietary / unique business logic?
 
 ## Connections
 
-- [[Trioangle Buyer Personas]] — 6 buyer archetypes with emotional drivers and sales approaches
-- [[ICP-Product]] — source document
+- [[Trioangle Buyer Personas]] — 6 product-line buyer archetypes (clone scripts)
+- [[Trioangle Service ICP]] — 5 service-line buyer personas (custom dev + AI engineering)
+- [[Trioangle Channel Partner Personas]] — 3 agency/consulting partner personas; only path to Enterprise and MENA buyers
+- [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos; service: 81 articles)
+- [[ICP-Product]] — product ICP source document
+- [[ICP-Service-Trioangle]] — service ICP source document
+- [[ICP-Channel-Partner-Trioangle]] — channel partner ICP source document
 - [[Vibe Coding]] — AI Builder Who Hit the Wall (Persona 6) is a direct product of this trend
 - [[Outcome-Based Pricing]] — Trioangle's implicit value proposition aligns with outcome pricing principles

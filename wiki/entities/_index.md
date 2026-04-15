@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Entities Index"
-updated: 2026-04-07
+updated: 2026-04-15
 tags:
   - meta
   - index
@@ -36,7 +36,12 @@ All entity pages — people, organizations, products, and tools.
 
 ## Products & Tools
 
-<!-- Add tool and product pages here -->
+- [[Ar9av-obsidian-wiki]] — multi-agent compatible LLM Wiki plugin; delta tracking manifest
+- [[Nexus-claudesidian-mcp]] — native Obsidian plugin + MCP bridge; workspace memory, task management
+- [[ballred-obsidian-claude-pkm]] — goal cascade PKM; auto-commit hooks, /adopt command
+- [[rvk7895-llm-knowledge-bases]] — 3-depth query system, Marp slides, parallel deep research
+- [[kepano-obsidian-skills]] — official skills from Obsidian creator; defuddle, obsidian-bases
+- [[Claudian-YishenTu]] — native Obsidian plugin embedding Claude Code; plan mode, @mention
 
 ---
 

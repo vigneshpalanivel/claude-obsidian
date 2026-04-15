@@ -21,6 +21,16 @@ Navigation: [[index]] | [[log]] | [[overview]]
 ## Last Updated
 2026-04-15: autoresearch on running a software dev company in the vibe coding / AI era. 9 pages created.
 
+## Key Recent Facts (Ingest: Content Strategy files — Trioangle)
+- Product blog: 10 silos, 5 pillars, 20 article templates (T1-T20) + 8 lead magnets. TikTok clone (PopTok) has active inbound NOW — build BOFU (demo, comparison, case study) before completing awareness funnel.
+- Service blog: 81 articles, 6 verticals, 3x/week cadence. CTA is strictly persona-gated. Highest-priority article: #14 CTO Checklist (score 9.5). Top quick win: #36 Build vs Buy 2026 (9.3) bridges BOTH ICPs.
+- MENA CTA rule (service blog, Cluster 6): NEVER form-based CTAs. Always LinkedIn DM or WhatsApp. No exceptions in any MENA article. Tone must be relationship-first, never transactional.
+- Article #79 (Salvage Failed Dev Partnership): Empathy-first CTA only — "free 45-min architecture review, no pitch." Never use discovery call CTA here.
+- WatchIt (YouTube-style long-video clone) is NOT an active product — never reference it anywhere. Short-video = PopTok only.
+- Budget overlap zone $30k-$40k: default to Founder-CTO motion (fit call) unless confirmed post-Series A context.
+- T18 template: "Clone Script vs AI Builders (Cursor, Lovable): Why Prompting Isn't a Product" — directly answers the vibe coding objection and captures Persona 6 intent.
+- Variable rule: [ORIGINAL] (Uber, TikTok) in article titles; [BRAND] (Gofer, PopTok) only in CTAs and post-purchase content.
+
 ## Key Recent Facts (Ingest: ICP - Channel Partner-T.md + ICP - Service.md — Trioangle)
 - Service ICP: 5 buyer personas for custom dev + AI engineering ($10k-$120k+). Personas 1+2+5 reachable directly; Persona 3 (Enterprise) and Persona 4 (MENA) require channel partner intermediaries.
 - AI-Forward Platform Operator (Service Persona 5, 2026): existing platform, needs AI features (dispatch, pricing, forecasting) - not a rebuild. Budget $15k-$60k. 4-8 week close.

@@ -25,6 +25,14 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] ingest | Content Strategy - Product.md + Content Strategy - Service.md + Product Blog Article Templates.md
+- Sources: .raw/Content Strategy - Product.md, .raw/Content Strategy - Service.md, .raw/Product Blog Article Templates.md (Trioangle internal, 2026)
+- Pages created: [[Content-Strategy-Product]], [[Content-Strategy-Service]], [[Product-Blog-Article-Templates]], [[Trioangle Content Strategy]]
+- Updated: [[sources/_index]], [[concepts/_index]], [[index]]
+- Key finding 1 (Product): TikTok clone (PopTok) has active inbound NOW — BOFU content must be built alongside TOFU to capture existing demand immediately. Don't wait for full awareness funnel.
+- Key finding 2 (Service): CTA is strictly persona-gated. MENA articles NEVER use form-based CTAs — always LinkedIn/WhatsApp, no exceptions. Budget overlap zone ($30k-$40k) defaults to Founder-CTO motion unless post-Series A context confirmed.
+- Key finding 3 (Templates): Article #36 (Build vs Buy 2026, score 9.3) is the one piece that bridges both ICPs — must coordinate across both content calendars. WatchIt (long-video clone) is NOT an active product; never reference it.
+
 ## [2026-04-15] ingest | ICP - Channel Partner-T.md + ICP - Service.md
 - Sources: .raw/ICP - Channel Partner-T.md and .raw/ICP - Service.md (Trioangle internal, 2026)
 - Pages created: [[ICP-Channel-Partner-Trioangle]], [[ICP-Service-Trioangle]], [[Trioangle Channel Partner Personas]], [[Trioangle Service ICP]]
