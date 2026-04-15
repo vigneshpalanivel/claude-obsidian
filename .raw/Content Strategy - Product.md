@@ -159,7 +159,7 @@ Content is organized into **10 content silos** across 9 product verticals. Verti
 ### Pillar 3: 📈 **Business Growth Playbook** (MOFU → BOFU)
 > *Proven strategies to grow your platform after launch*
 
-**Rationale**: Addresses **Pain Point #5 (Scaling Uncertainty)** and **Secondary Goals** (500+ downloads in 90 days, securing seed funding). Targets founders who have already purchased or are in late-stage consideration.
+**Rationale**: Addresses **Pain Point #5 (Scaling Uncertainty — upgraded to 7/10 severity in the ICP)** and **Secondary Goals** (500+ downloads in 90 days, securing seed funding). Targets founders who have already purchased or are in late-stage consideration. PP5 is no longer a mid-tier concern — scaling failure hits on the exact moments that drive growth (weekend peaks, promotional launches, viral social posts), churns users who never return, and drops the App Store rating below the 4.0 threshold priority-market buyers filter on. Pillar 3 content must give founders a concrete load-handling + observability story before they feel it.
 
 **Connection to Product**: Demonstrates that Trioangle's scripts support growth (load handling, feature expansion), reinforcing the value proposition.
 
@@ -573,6 +573,15 @@ One row per template. **Priority Verticals** = order to produce articles across 
 | Consideration | Multi-service feature demos, service-toggle walkthroughs, Gojek vs custom | **T4** (Super App), **T10** (Super App), **T7** (Super App) |
 | Decision | Live super-app demo with all verticals, Enterprise Plus case studies | **T11** (Super App) |
 
+### Persona 6: AI Builder Who Hit the Wall
+| Funnel Stage | Content They Need | Templates |
+|-------------|-------------------|-----------|
+| Awareness | Production-gap triggers — App Store rejection, GPS/dispatch failing under load, payment gateway production complexity; honest framing that respects what AI *does* do well (see Origin note in ICP: they chose AI over agencies because priced out + peer burns + creator-wave belief — not anti-agency by ideology) | **T14** (AI prototype won't pass App Store review; Lovable/Cursor breaks above 20 concurrent users), **T18** (Clone Script vs AI builders) |
+| Consideration | Production gap checklist (App Store compliance, real-time dispatch at scale, payment gateway production, support SLA), deployment walkthrough, side-by-side AI prototype vs Trioangle live-deployment comparison, side-by-side cost: 4–8 weeks of AI tool time vs Trioangle delivery | **T18** (Cursor/Lovable variant), **T10** (cost-to-production reframe), **T4** (Mobility, Food, Home Services — the verticals this persona most often attempted with AI) |
+| Decision | App store links of live Trioangle deployments in the exact vertical they were building, deployment process walkthrough, support SLA, 800+ launches proof, founder quotes from ex-Persona-6 buyers ("I spent 6 weeks with Lovable — here's what I switched to") | **T11** (Mobility, Food, Home Services), **T17**, **T15** (developer disappeared variant reframed for AI-tool-abandoned context) |
+
+**Primary channels:** Reddit (r/webdev, r/startups), IndieHackers, Stack Overflow, AI Search. Content must be technically honest — this persona reads source code and will detect any marketing handwaving. Do NOT dismiss AI tools; acknowledge what they do well (prototypes, UI generation) and focus on the *production gap* (compliance, load, payments, support).
+
 ---
 
 ## 8. Publishing Roadmap — 2-Writer Plan
@@ -591,7 +600,7 @@ One row per template. **Priority Verticals** = order to produce articles across 
 4. **Community Seeding** — Share on relevant Reddit threads (r/Startups, r/Entrepreneur), IndieHackers, Quora answers
 5. **Email Newsletter** — Weekly digest to subscriber list
 6. **WhatsApp/Telegram** — Share in founder community groups
-7. **Referral / Advocacy Loop** — After every case study or testimonial roundup, include a "Know a founder who needs this? Share this story" invite; email existing buyers monthly with "Refer a founder, get 3 months free support"
+7. **Referral / Advocacy Loop** — After every case study or testimonial roundup, include a "Know a founder who needs this? Share this story" invite. Email existing buyers (live deployment + 30 days operational use) monthly with the **Trioangle Founder Referral** offer: referrer picks 3 months free support extension OR 10% cash commission per converted referral; 90-day attribution window; referee gets 5% discount; tracked via the buyer's admin-panel referral dashboard. Program terms live in [[ICP - Product]] — content must not invent its own reward structure.
 
 ### Priority Distribution Channels
 | Channel | Content Type to Push | Persona Target |
@@ -604,9 +613,24 @@ One row per template. **Priority Verticals** = order to produce articles across 
 | Quora | FAQ-style answers linking to blog | All |
 | LinkedIn | Industry reports, thought leadership, enterprise case studies | Small Business Digitalizer, Super-App Builder |
 | WhatsApp/Telegram | Success stories, launch announcements | Diaspora Entrepreneur |
-| **Referral / Customer Advocacy** | Case studies with co-author invites, "refer a founder" offers in buyer emails, testimonial-led newsletters | **Burned Builder, Diaspora Entrepreneur** |
+| **Referral / Customer Advocacy** | Case studies with co-author invites, **Trioangle Founder Referral** program emails (support-extension or cash-commission reward — see [[ICP - Product]]), testimonial-led newsletters | **Burned Builder, Diaspora Entrepreneur, Small Business Digitalizer** |
 
-> [!IMPORTANT] This channel is rated ⭐⭐⭐⭐⭐ in the ICP (tied #1 with Google Search and YouTube). Burned Builder and Diaspora archetypes make purchase decisions based on peer recommendations — not ads. Do not treat this as optional.
+> [!IMPORTANT] This channel is rated ⭐⭐⭐⭐⭐ in the ICP (tied #1 with Google Search and YouTube). Burned Builder, Diaspora, and Small Business archetypes make purchase decisions based on peer recommendations — not ads. Do not treat this as optional. The referral program has a structured 90-day attribution window, a dual-reward mechanism, and a tracked admin-panel dashboard — content must reference the program by name and link to the ICP for terms.
+
+### Secondary Markets — Distinct Distribution Playbook
+
+Priority markets (NA, UK, EU, UAE, KSA, Qatar) get the full paid search + LinkedIn + YouTube stack documented above. **Secondary markets (SE Asia, Africa, LATAM, India) convert through a structurally different motion** and must not inherit the priority-market playbook. From [[ICP - Product]]:
+
+| Distribution lever | Secondary-market treatment |
+|---|---|
+| **Dominant channel** | WhatsApp/Telegram founder groups, Facebook diaspora groups, local meetups, referral from live deployments — paid search burns budget on low-intent traffic here |
+| **Payment framing in content** | Demo must show **cash on delivery** for end-user flows; list **local gateway support** explicitly (Paystack, Flutterwave, Razorpay, PhonePe, MercadoPago, Xendit, GCash); mention **split/milestone billing** options (Wise, local bank, USDT) for the script purchase itself |
+| **Language** | Bilingual content where demand is real; **local-language demo videos** signal credibility before price is ever discussed; RTL support called out for Middle East |
+| **Trust signals** | **Local founder testimonials in the buyer's exact region** (Nigerian testimonial lands in Lagos; Indian testimonial lands in Bangalore — region matching is the signal, not volume); WhatsApp contact in CTAs, not web forms; same-timezone response commitments |
+| **Sales motion** | CTAs route to WhatsApp intro → demo → proposal; skip the web form entirely |
+| **Do NOT** | Push Clutch/G2 as primary proof in secondary-market content — these buyers weight peer referral 10x higher than review sites they do not use |
+
+**Strategic principle:** Secondary markets are where Trioangle's 150+ country deployment history is most defensible. Content built for these markets compounds a moat no Western competitor can match — priority markets fund growth; secondary markets compound the moat. Budget editorial time accordingly.
 
 ### Lead Magnet Strategy
 
@@ -638,6 +662,7 @@ One row per template. **Priority Verticals** = order to produce articles across 
 | **Persona 3 — Diaspora** | Diaspora founder case studies, multi-currency/multi-language demo, support responsiveness proof | *"See How Founders in [Your Country] Launched Remotely → Book a Demo"* |
 | **Persona 4 — Small Business Digitalizer** | Admin panel walkthrough + ROI calculator showing ops cost reduction | *"Calculate Your ROI First → Then See the Admin Panel Live"* *(link to L2 — ROI Calculator)* |
 | **Persona 5 — Super-App Builder** | Full multi-service live demo (all verticals active), Enterprise Plus feature list, real super-app case studies | *"Request the Full Enterprise Demo — All 120+ Services Active"* |
+| **Persona 6 — AI Builder Who Hit the Wall** | App store links of live deployments in their exact vertical, deployment process walkthrough, App Store submission included in price, support SLA | *"See the App Live in the Store Today → Skip the 4-Month AI Debug Loop"* or *"Your Prototype Is 80% of the Demo. Here's the Other 80%."* |
 
 ---
 
@@ -734,3 +759,4 @@ URL pattern: `/blog/[slug]/` — each vertical hub = **T1** article; cluster art
 4. **Answer 20 Quora questions** about app development costs — Link back to your blog. Immediate traffic + SEO signals.
 5. **Publish T9 — "Trioangle vs Appdupe"** — The Burned Builder persona actively searches named competitor comparisons before buying. This is the highest-intent search Trioangle is currently missing entirely.
 6. **Deploy FAQ schema markup for AI Search** — Mark up your comparison and pricing pages specifically to answer queries like "cost to build Gojek clone" to secure AI citations in ChatGPT and Perplexity.
+7. **Publish T18 — "Clone Script vs AI Builders (Cursor, Lovable): Why Prompting Isn't a Product"** — Persona 6 (AI Builder Who Hit the Wall) is a fast-decision buyer (<14 days) with high inbound volume from Reddit/IndieHackers. This single piece unlocks the entire Persona 6 funnel and is the canonical AI-era-positioning anchor. Must be technically honest — acknowledge what Cursor/Lovable do well, then document the production gap (App Store compliance, real-time dispatch at scale, payment gateway production, support SLA).
