@@ -9,26 +9,27 @@
 
 | Element | Detail |
 |---------|--------|
-| **Goal** | Generate qualified inbound leads for $10k–$120k+ custom dev engagements |
-| **Primary Audience** | CTOs, VP Engineering, Technical Co-Founders, Heads of Digital, MENA CEOs/MDs |
+| **Goal** | Generate qualified inbound leads for $10k–$120k+ custom dev and AI engineering engagements |
+| **Primary Audience** | CTOs, VP Engineering, Technical Co-Founders, Heads of Digital, MENA CEOs/MDs, AI-forward platform operators |
 | **Content Mix** | 60% Searchable (SEO) · 25% Shareable (Thought Leadership) · 15% Both *("Both" articles are counted within the 60%/25% split — the 15% reflects the overlap subset, not an additional category)* |
 | **Publishing Cadence** | 3 posts/week (2 searchable + 1 shareable) |
-| **Buyer Personas Served** | Scaling CTO · Founder-CTO · Enterprise Digital Buyer · MENA Relationship Buyer |
+| **Buyer Personas Served** | Scaling CTO · Founder-CTO · Enterprise Digital Buyer · MENA Relationship Buyer · AI-Forward Platform Operator |
 
 ---
 
 ## Part 1: Content Verticals
 
-Six verticals aligned to ICP pain points, buying triggers, and buyer personas.
+Seven verticals aligned to ICP pain points, buying triggers, and buyer personas.
 
 | # | Vertical | ICP Alignment | Primary Persona |
 |---|----------|--------------|-----------------|
 | V1 | **Scalable Architecture & Tech Debt** | Pain Point 1 (Scalability Crisis) | Scaling CTO |
 | V2 | **Choosing & Managing a Dev Partner** | Pain Points 2 & 3 (Ghosted Agency + IP Anxiety) | All Personas |
-| V3 | **Building On-Demand & Marketplace Platforms** | Domain Expertise (Pain Point 5) | Scaling CTO + Founder-CTO |
+| V3 | **Building On-Demand & Marketplace Platforms** | Pain Point 6 (Missing Domain Expertise) | Scaling CTO + Founder-CTO |
 | V4 | **Startup Technical Leadership** | Pain Point 4 (Speed vs. Quality) + Triggers | Founder-CTO |
 | V5 | **Enterprise Digital Transformation** | Enterprise buyer needs + compliance | Enterprise Buyer |
 | V6 | **MENA Market & Regional Platform Leadership** | Persona 4 — relationship-first trust, Vision 2030 mandates, Gulf cultural context | MENA Relationship Buyer |
+| V7 | **Domain-Specific AI Engineering** | Pain Point 5 ("We know we need AI but don't know where to start") + AI-Era Positioning Rule | AI-Forward Platform Operator (Persona 5) |
 
 ---
 
@@ -285,6 +286,51 @@ Six verticals aligned to ICP pain points, buying triggers, and buyer personas.
 
 > [!NOTE] MENA CTA — relationship-first (Cluster 6.2)
 > All articles in this cluster must end with a soft, relationship-first CTA. **Do not use form-based CTAs.** Instead use: *"If you're evaluating partners in or for the Gulf market — reach out directly via LinkedIn or WhatsApp. We'll share named client references from your region, no pitch deck required."* Tone must be personal and direct. Never transactional.
+
+---
+
+### Pillar 7: Domain-Specific AI Engineering for Platform Businesses
+> **Vertical:** V7 — Domain-Specific AI Engineering
+> **Hub URL:** `/blog/ai-engineering-platform-businesses`
+> **Target Keyword:** "AI engineering for marketplace platforms"
+> **Persona:** AI-Forward Platform Operator (Persona 5)
+> **Type:** Both (Searchable + Shareable)
+
+> [!IMPORTANT] AI-Era Positioning Rule (Global to Pillar 7)
+> **Never position on "we build faster with AI." Position on domain expertise, certainty of delivery, and risk reduction.** Every Pillar 7 article must reinforce that Trioangle sells *domain-specific AI features shipped into production* — not AI consulting, not LLM demos, not "AI-assisted development speed." Reference: *ICP — Service, AI-Era Positioning Rule.*
+
+#### Cluster 7.1: AI Strategy for Platform Operators
+
+| # | Article Title | Target Keyword | Stage | Type | Priority |
+|---|--------------|----------------|-------|------|----------|
+| 82 | Which AI Features Actually Move Marketplace Metrics (And Which Are Hype) | AI features marketplace platform | Awareness | Shareable | 9.0 |
+| 83 | The AI Readiness Audit: How to Evaluate Your Platform's Highest-ROI AI Use Cases | AI readiness audit platform | Awareness | Both | 8.7 |
+| 84 | Why Generic AI Consultants Fail Platform Businesses — and What to Look For Instead | AI consultant vs AI engineering platform | Awareness | Shareable | 8.6 |
+
+#### Cluster 7.2: AI Feature Deep-Dives by Vertical
+
+| # | Article Title | Target Keyword | Stage | Type | Priority |
+|---|--------------|----------------|-------|------|----------|
+| 85 | AI-Powered Dynamic Pricing for Ride-Hailing: Architecture, Models, and Rollout Strategy | AI dynamic pricing ride-hailing | Consideration | Searchable | 9.1 |
+| 86 | Intelligent Dispatch: How AI Is Replacing Rule-Based Matching in On-Demand Platforms | AI dispatch optimization | Consideration | Searchable | 8.9 |
+| 87 | Marketplace Fraud Detection with AI: Patterns, Models, and Production Integration | AI marketplace fraud detection | Consideration | Searchable | 8.8 |
+| 88 | Demand Forecasting for Logistics and Delivery Platforms: From Historical Data to Live Models | AI demand forecasting logistics | Consideration | Searchable | 8.5 |
+| 89 | Conversational Booking Interfaces: When LLM-Powered Chat Beats Forms (And When It Doesn't) | AI conversational booking | Consideration | Both | 8.3 |
+
+#### Cluster 7.3: Production AI Integration & Risk
+
+| # | Article Title | Target Keyword | Stage | Type | Priority |
+|---|--------------|----------------|-------|------|----------|
+| 90 | How to Add AI Features to a Live Platform Without Breaking Stability | AI integration existing platform | Decision | Searchable | 8.8 |
+| 91 | AI Service Isolation: Architecture Patterns for Fallback-Safe Machine Learning in Production | AI fallback architecture production | Decision | Searchable | 8.2 |
+| 92 | GitHub Copilot vs. AI Feature Engineering: Why Your Internal Team Still Needs a Delivery Partner | Copilot vs AI engineering agency | Consideration | Shareable | 8.4 |
+
+> [!NOTE] Pillar 7 CTA — AI-Forward Platform Operator
+> All Pillar 7 articles must end with one of two CTAs depending on stage:
+> - **Awareness / early Consideration (#82, #83, #84, #92):** *"Book a free 1-hour AI Readiness Audit — we'll walk through your platform and identify the 2–3 AI features that would actually move your core metrics. No strategy deck, no pitch, just an engineering conversation."*
+> - **Late Consideration / Decision (#85–#91):** *"Scoping a specific AI feature build? Book a technical AI feature scoping call — we'll tell you honestly whether it's a build, a buy, or a bad idea. We've already shipped this in your vertical."*
+>
+> **Never use:** "Transform your business with AI," "AI strategy consultation," "Book a demo of our AI platform." These trigger the exact "AI vendor who oversells LLM demos" skepticism that Persona 5 is hardened against. Reference: *ICP — Service, Persona 5; AI-Era Positioning Rule.*
 
 ---
 

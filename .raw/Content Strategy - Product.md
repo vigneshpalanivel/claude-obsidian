@@ -29,11 +29,15 @@ Trioangle Technologies sells readymade clone scripts (Uber, Airbnb, UberEats, Go
 | **Diaspora Entrepreneur** | Lives abroad, builds for home country, 28-40 | Case studies, community recs | Moderate (20-40 days) |
 | **Small Business Digitalizer** | Existing offline business, 35-55, losing share | ROI calculators, admin walkthroughs | Slow (30-60 days) |
 | **Super-App Ecosystem Builder** | Validated one vertical, wants multi-service expansion, 28-45 | Live demos of all service verticals, admin panel walkthroughs | Slow (30-60 days) |
+| **AI Builder Who Hit the Wall** | Technical solopreneur 22-38, vibe-coded a prototype with Cursor/Lovable/Replit, blocked at production (App Store rejection, GPS/dispatch failing at scale, payment gateway production gap) | Production-gap explainers, deployment walkthroughs, side-by-side "AI prototype vs live business" comparisons, Reddit/IndieHackers/Stack Overflow threads | Fast (<14 days) — already deep in sunk cost |
 
 ### Content Mission Statement
 
 > [!NOTE] Mission
 > *Help non-technical founders launch profitable platform businesses in their local markets — faster, cheaper, and with less risk — by providing the most actionable, trustworthy, and comprehensive content in the clone script space.*
+
+> [!IMPORTANT] AI-Era Positioning Rule (from [[ICP - Product]])
+> **Never position on "we build faster with AI." Position on certainty of outcome and risk reduction.** Buyers in 2026 can vibe-code a prototype themselves — they are not buying speed, they are buying a guaranteed live business: App Store approval, production deployment, real-time dispatch under load, and a named team accountable when something breaks. Every content piece must reflect this — headlines, CTAs, comparison framings, and proof points. "Faster with AI" invites "then why are you expensive?" and loses. "Certainty of launch" does not.
 
 ---
 
@@ -128,6 +132,8 @@ Content is organized into **10 content silos** across 9 product verticals. Verti
 - **T14** — Trigger Moment Entry: ChatGPT Told You to Start a Marketplace App
 - **T14** — Trigger Moment Entry: When Manual Ops Break — Your Business Needs an App *(Persona 4 trigger)*
 - **T14** — Trigger Moment Entry: How to Build a Passive Income Business with a Commission-Based App *(ICP trigger: "runs itself while I sleep")*
+- **T14** — Trigger Moment Entry: My AI-Built Prototype Won't Pass App Store Review — What Now? *(Persona 6 — AI Builder Who Hit the Wall)*
+- **T14** — Trigger Moment Entry: My Lovable/Cursor App Breaks Above 20 Concurrent Users *(Persona 6 production-gap trigger)*
 
 ---
 
