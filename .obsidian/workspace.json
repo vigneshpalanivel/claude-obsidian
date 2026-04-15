@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0e30409204278478",
+        "id": "ce77491369d2b513",
         "type": "tabs",
         "children": [
           {
-            "id": "c69a013973fc1aaa",
+            "id": "fbfb6a3c722e0ada",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wiki/questions/Research: Running a Software Dev Company Post-Vibe-Coding.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Research: Running a Software Dev Company Post-Vibe-Coding"
+              "title": "New tab"
             }
           }
         ]
@@ -171,13 +167,23 @@
               "icon": "lucide-ghost",
               "title": "calendar"
             }
+          },
+          {
+            "id": "290f93287fec3eee",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,11 +194,14 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "5565f1231fe95c42",
   "lastOpenFiles": [
+    "wiki/questions/Research: Running a Software Dev Company Post-Vibe-Coding.md",
     "wiki/concepts/Trioangle Buyer Personas.md",
     "wiki/entities/Trioangle.md",
     "wiki/sources/ICP-Product.md",
@@ -242,7 +251,6 @@
     "_attachments/code-genesis.png",
     "wiki/concepts/Hot Cache.md",
     "wiki/concepts/Compounding Knowledge.md",
-    "wiki/entities/_index.md",
     "Banana Images.canvas",
     "Untitled 1.canvas",
     "Untitled.canvas",
