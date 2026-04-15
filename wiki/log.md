@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-08
+updated: 2026-04-16
 tags:
   - meta
   - log
@@ -22,6 +22,46 @@ Append-only. New entries go at the TOP. Never edit past entries.
 Entry format: `## [YYYY-MM-DD] operation | Title`
 
 Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
+
+---
+
+## [2026-04-15] reingest | InnBlockchain - ICP - FinTech.md (post-review fixes)
+- Source: `.raw/InnBlockchain - ICP - FinTech.md` (hash → 86340bd89c7b926c207ff9e9828b7255)
+- Pages updated: [[ICP-InnBlockchain-FinTech]], [[InnBlockchain FinTech ICP]], [[hot]]
+- Source edits applied (8 issues from review):
+  1. Segment reorder — WealthTech is now Segment 1 (Priority 1), ExchangeTech is Segment 2 (Priority 2). Physical document order now matches stated priority. All 8 cross-references updated (GTM header, Validation Plan, Activation Steps 2/4/5, strategic note).
+  2. API-first Tier 0 contradiction resolved — removed "[ASSUMPTION — formalize as Tier 0]" tag since lead scoring already treats it as Tier 0. Kept pointer to 2026-05-15 validation and downgrade path if data doesn't support ≥2× win-rate threshold.
+  3. Unused maturity tiers deleted — Early-adopter / Mainstream / Laggard row removed from firmographics table. Nothing downstream (scoring, playbook, activation) referenced it.
+  4. Age ranges removed from all 3 persona headers (Sam, Tom, Carol). Low-value, hiring-adjacent risk.
+  5. Segment 7 (Corporate Treasury & FX) marked Blocked on CFO persona definition in subtitle, not just buried note.
+  6. Anti-ICP block dedup'd — collapsed to edge-cases callout that references the Disqualifying row instead of restating it. Kept ExchangeTech and WalletTech edge-case clarifications.
+  7. Interview Q17 reframed — indirect budget question ("typical range you've seen work at companies your size") with explicit note that quantitative capture belongs in the survey. Most buyers won't share their own number on first call.
+  8. AI content tagged `[unvalidated — pending 2026-05-31]` at 3 load-bearing insertions: Pain Point 5 header, WealthTech AI convergence note, SEO AI+Blockchain cluster. Rollback path is mechanical if the 2026-05-31 inbound test fails.
+- Not fixed (needs human input): pricing/packaging section (no data), LTV/churn → repeat-engagement metric swap (judgment call on project-based model), Money20/20 date verification, optional routing-decision-tree canvas.
+- Key insight: The AI + blockchain thesis has heavy document surface area but no closed-deal validation. Explicit `[unvalidated]` tags make the rollback mechanical if the 2026-05-31 test fails, rather than requiring a hunt for affected sections.
+
+---
+
+## [2026-04-15] reingest | InnBlockchain - ICP - Crypto Native.md (post-review fixes)
+- Source: `.raw/InnBlockchain - ICP - Crypto Native.md` (hash → 7d1542eadee640b2b7d13221a6602e5f)
+- Pages updated: [[ICP-InnBlockchain-Crypto-Native]], [[InnBlockchain Crypto Native ICP]], [[hot]]
+- Source edits applied (7 issues from review):
+  1. Budget floor contradiction fixed — $2M+ reframed as DeFi-side readiness signal only; $20k+ confirmed as universal hard gate; Must-Have criteria now explicitly splits to $30k+ for Segment 1 (RWA) vs $20k+ for Segments 2–6 and 8–10.
+  2. Validation Plan date inconsistency — discovery calls pushed from 2026-04-30 to 2026-05-31 with explicit dependency on Activation Phase 1 (landing page + playbook due 2026-04-30). 48hr reactive outreach assumption split into its own Ongoing bullet.
+  3. Segment 10 (AI x Crypto) Watch vs overlay conflict — now labeled "split status": AI-coded contract audit overlay is Active immediately (no segment gate, layer onto any Segment 1–9 deal), standalone AI x crypto protocol outbound remains Watch/Future Quarter.
+  4. Segment 1 ACV floor mismatch — $20k+ Must-Have floor raised to $30k+ for RWA to align with $30k–$150k segment ACV target.
+  5. Segment priority clarity — callout added that Segment 1 (RWA) is the highest-priority outbound target this quarter; numeric order = GTM priority, not alphabetical.
+  6. Sasha counter-objection added to Objection Handling — *"How do I know your findings aren't AI-generated too?"* with response: AI used for triage/coverage only, every finding human-signed, offer live methodology walkthrough with lead auditor.
+  7. $10M Sasha threshold assumption — new Validation Plan item owned by Sales Lead, due 2026-07-31, validate across first 5 deals.
+- Key insight: The ICP was already strong; the biggest real risks were timing (discovery calls scheduled before the credibility materials existed) and a $20k/$30k floor mismatch that could qualify RWA deals below ACV target. Sasha AI-code counter-objection is the highest-leverage fix — without it, the AI-code audit pitch loses its most technically demanding evaluator in one exchange.
+
+---
+
+## [2026-04-16] reingest | InnBlockchain - ICP - Channel Partner-I.md (post-review fixes)
+- Source: `.raw/InnBlockchain - ICP - Channel Partner-I.md` (hash → 9668f949d06ad1e37033e6acf25bdd5d)
+- Pages updated: [[InnBlockchain Channel Partner ICP]] (Discovery Sprint price $1.5k-$4k → $2k-$5k with 1-2 week duration; audit firm objection clarified — CertiK/Hacken/Zellic as standard coordination partners vs. Trail of Bits/OpenZeppelin/Zellic as brand-name positioning), [[ICP-InnBlockchain-Channel-Partner]] (Discovery Sprint price + duration)
+- Source edits applied during review: (1) Qualifying Criteria table — stripped trailing empty column from header, separator, and 8 data rows; (2) audit firm objection (line 250) — clarified CertiK/Hacken/Zellic are standard coordination partners and cross-referenced the brand-name audit objection for Trail of Bits / OpenZeppelin cases; (3) P1 Budget Authority row — added parenthetical note that Crypto Products sub-threshold routing is P1/P3-only (P2 FinTech uses different path).
+- Key insight: Discovery Sprint pricing drifted upward vs. the previously ingested version — worth watching whether this was intentional repricing or a typo. Trioangle channel partner Discovery Sprint is still $1.5k-$4k (source: log entry 2026-04-15).
 
 ---
 

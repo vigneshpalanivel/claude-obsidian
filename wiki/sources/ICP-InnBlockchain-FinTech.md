@@ -19,6 +19,7 @@ key_claims:
   - "Procurement tier dictates pipeline timing: <$75k CEO/CTO discretionary (1-2wk), $75k+ CFO (+4-6wk), board visibility (custom)"
 created: 2026-04-15
 updated: 2026-04-15
+reingested: 2026-04-15
 tags:
   - source
   - icp
@@ -46,12 +47,14 @@ Internal ICP document for InnBlockchain's regulated FinTech segment. See [[InnBl
 
 ## Segments (Active Q2 2026)
 
-1. **ExchangeTech (Licensed)** — $20k–$250k · 30–60 days · CEX/DEX/DeFi all qualify if licensed and expanding
-2. **⭐ Asset Tokenization & WealthTech (PRIMARY)** — $20k–$250k · 60–90 days · RWA, STOs, MiCA+MiFID II intersection
+Re-ingested 2026-04-15: document order now matches priority. WealthTech is Segment 1, ExchangeTech is Segment 2.
+
+1. **⭐ Asset Tokenization & WealthTech (PRIMARY Priority 1)** — $20k–$250k · 60–90 days · RWA, STOs, MiCA+MiFID II intersection
+2. **ExchangeTech (Licensed — Priority 2)** — $20k–$250k · 30–60 days · CEX/DEX/DeFi all qualify if licensed and expanding
 3. **LendTech** — $20k–$200k · 45–75 days
 4. **WalletTech** — regulated e-money / payment wallets adding crypto features
 
-**Watch:** PayTech, RegTech, BankTech, InsurTech.
+**Watch:** PayTech (5), RegTech (6), BankTech Corporate Treasury (7 — **blocked on CFO persona**), InsurTech (8).
 
 ## Personas
 
@@ -65,5 +68,19 @@ Internal ICP document for InnBlockchain's regulated FinTech segment. See [[InnBl
 - **Carol can kill deals**. Provide a complete vendor risk pack Day 1: ownership structure, ISO 27001/SOC 2 status, data residency statement, jurisdiction compliance brief (MiCA ready now), sample audit report. Most approvals unblock within 1 week.
 - **AI + FinTech convergence** (WealthTech + LendTech) creates blockchain-alongside-AI positioning: immutable on-chain logs for EU AI Act audit trail requirements.
 - **Two patterns of compliance uncertainty buyers:** *Over-compensators* (excess legal overhead, delay) vs. *Paralyzed* (refuse to launch). Messaging differs.
-- **Technical maturity tiers:** Early Adopter → skip education, case-studies-first; Mainstream → PoC + peer refs; Laggard → 4-question fit assessment, long cycle.
 - **Routing rule:** any crypto-born startup = Crypto Native ICP regardless of license. Park (don't DQ) existing FinTechs without formal license application.
+- **AI + blockchain content is flagged `[unvalidated — pending 2026-05-31]`** at the load-bearing insertions (Pain Point 5, WealthTech AI convergence note, SEO AI+Blockchain cluster). Rollback is mechanical if the 2026-05-31 inbound test fails.
+
+## Re-ingest 2026-04-15 — Review-Driven Fixes
+
+Following review of the FinTech ICP source, 8 targeted fixes applied:
+1. **Segment reorder** — WealthTech is now Segment 1 (Priority 1), ExchangeTech is Segment 2 (Priority 2). Document order now matches stated priority; all 8 cross-references updated.
+2. **API-first contradiction resolved** — removed "ASSUMPTION" tag since lead scoring already treats it as Tier 0; kept validation pointer and downgrade path.
+3. **Unused maturity tiers deleted** — Early-adopter / Mainstream / Laggard row removed from firmographics (nothing downstream referenced it).
+4. **Age ranges removed** from Sam, Tom, and Carol persona headers (low value, potential hiring-adjacent risk).
+5. **Segment 7 marked Blocked** on CFO persona definition — visible in subtitle, not just buried note.
+6. **Anti-ICP dedup'd** — collapsed to edge-cases callout that references the Disqualifying row instead of restating it.
+7. **Interview Q17 reframed** as indirect budget question ("typical range you've seen work") — most buyers won't share their own number on first call. Quantitative capture moved to the survey.
+8. **AI content tagged unvalidated** at Pain Point 5, WealthTech AI convergence note, and SEO AI+Blockchain cluster.
+
+Not fixed (needs human input): pricing/packaging section, LTV/churn metric swap (project-based model doesn't fit subscription metrics), Money20/20 date verification, optional routing-decision-tree canvas.

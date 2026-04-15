@@ -59,7 +59,9 @@ tags:
 | ❌ **Disqualifying** | Unfunded founders with just an idea, zero budget (<$20k), B2C crypto retail apps, crypto-native exchanges and DeFi-native startups with no existing traditional FinTech business (route to [[ICP - Crypto Native]] Segment 1, regardless of licensing status — do not hard-DQ if they mention plans to apply for a license; park in pipeline and revisit when a formal application is confirmed), overly complex legacy mainframes, massive decision committees |
 
 > [!IMPORTANT] Anti-ICP & Red Flags
-> - **Hard disqualifiers:** Unfunded founders with just an idea, zero budget (<$20k), B2C crypto retail apps, crypto-native exchanges and DeFi-native startups with no existing traditional FinTech business (route to [[ICP - Crypto Native]] Segment 1, regardless of licensing status). **ExchangeTech qualification rule — architecture is irrelevant:** CEX, DEX, and DeFi all qualify equally if the company (a) holds or has formally filed for a financial services license, AND (b) is expanding an existing FinTech business into trading/exchange. Do not DQ a DEX or DeFi prospect on architecture alone — ask the license question first. **Crypto-native self-custody wallet and MPC wallet products** are Crypto Native ICP (Segment 3). WalletTech (Segment 4) covers existing regulated FinTech companies (e-money issuers, payment processors, licensed custodians) adding a crypto wallet feature — not crypto-native wallet startups, regardless of who their customers are. Gate is company origin, not customer type.
+> Hard and soft disqualifiers are listed in the Disqualifying row of the table above. Additional context and edge cases:
+> - **ExchangeTech qualification rule — architecture is irrelevant:** CEX, DEX, and DeFi all qualify equally if the company (a) holds or has formally filed for a financial services license, AND (b) is expanding an existing FinTech business into trading/exchange. Do not DQ a DEX or DeFi prospect on architecture alone — ask the license question first.
+> - **WalletTech gate is company origin, not customer type:** Crypto-native self-custody and MPC wallet startups are Crypto Native ICP (Segment 3) regardless of who their customers are. Segment 4 (WalletTech) covers existing regulated e-money/payment businesses adding a crypto wallet feature.
 > - **Soft disqualifiers:** Overly complex legacy mainframes, massive decision committees (slows sales cycle).
 > - **Time-wasters:** Concept-stage founders wanting free brainstorming, "blockchain tourists" without a business case.
 > - **Red flag quotes:** *"Can you build this for equity?"*, *"Can we build a bespoke Layer-1 for $5k?"*, *"Can you help run an ICO?"*
@@ -101,7 +103,7 @@ tags:
 - **WealthTech variant (primary segment):** For EU wealth platforms and asset managers building RWA tokenization or STO infrastructure, the compliance uncertainty centres on: whether the tokenized instrument qualifies as a financial instrument under MiFID II (triggering full regulatory requirements), CASP registration obligations under MiCA for trading/custody of crypto-assets, DLT Pilot Regime applicability for tokenized securities settlement, and whether the smart contract architecture will satisfy both MiCA and MiFID II regulatory review. This is often more complex than ExchangeTech compliance because it sits at the intersection of traditional securities law and crypto-asset regulation simultaneously. Adjust the discovery framing: *"How are you thinking about the MiFID II classification of your tokenized assets — and have you mapped your smart contract architecture to your MiCA CASP obligations?"*
 - **ExchangeTech / WalletTech variant:** For licensed exchanges (CEX/DEX/DeFi) and e-money wallet companies, the compliance uncertainty is more specific: travel rule obligations, CASP registration under MiCA, on-chain AML requirements, and the question of whether their smart contract architecture will satisfy a regulatory audit — not just whether blockchain is "allowed." Adjust the discovery framing: *"Walk me through how you're thinking about your MiCA / CASP obligations and how that intersects with your smart contract design."*
 
-**Pain Point 5 — AI Adoption Without Audit Infrastructure (WealthTech / LendTech / RegTech / BankTech)**
+**Pain Point 5 — AI Adoption Without Audit Infrastructure (WealthTech / LendTech / RegTech / BankTech)** *[unvalidated — pending 2026-05-31]*
 - **Severity:** 8/10 | **Frequency:** Accelerating — every new AI model deployment creates a new compliance gap
 - **Current workaround:** Logging AI decisions in centralised databases (not tamper-proof), relying on vendor-supplied explainability reports, or delaying AI deployment until compliance posture is clearer
 - **Cost of inaction:** EU AI Act non-compliance penalties for high-risk AI (credit scoring, fraud detection, KYC/AML) — plus reputational and regulatory risk if an AI decision is challenged and there is no immutable audit trail to defend it
@@ -227,7 +229,7 @@ tags:
 ---
 
 ### Segment 7 — 🏦 Corporate Treasury & FX (BankTech)
-*Watch — Future Quarter · Priority 7 · Est. ACV: $20k–$300k · Sales Cycle: 60–90 days · Primary Motion: Development (Private Chain)*
+*Blocked — CFO persona undefined · Watch — Future Quarter · Priority 7 · Est. ACV: $20k–$300k · Sales Cycle: 60–90 days · Primary Motion: Development (Private Chain)*
 
 - **Pain:** No real-time cash visibility; massive settlement risks across currencies.
 - **GTM:** Target CFOs with private blockchain solutions for instant FX settlement. Note: primary buyer here is CFO, not CTO — adjust messaging from technical to financial ROI.
@@ -338,7 +340,7 @@ Response: Offer a technical scoping call with a senior engineer, share a public 
 
 ### Persona 3 — "Compliance Carol" · Chief Compliance Officer / Head of Legal & Regulatory
 
-**Role:** CCO, Head of Compliance, VP Legal & Regulatory Affairs | **Company:** Mid-market FinTech, 50–300 employees | **Age:** 38–55
+**Role:** CCO, Head of Compliance, VP Legal & Regulatory Affairs | **Company:** Mid-market FinTech, 50–300 employees
 
 **Bio:** Carol is the internal gatekeeper who decides whether external blockchain vendors can be approved. She wasn't involved in the original decision to pursue blockchain — Sam brought her in late, and she's cautious. She doesn't evaluate technical quality; she evaluates risk exposure: regulatory liability, vendor compliance posture, data residency, and whether InnBlockchain's work will survive a regulator audit. She appears most often in EU WealthTech deals involving tokenized securities (MiCA / MiFID II obligations — primary segment), EU ExchangeTech deals (MiCA CASP compliance), BankTech deals, and any deal where a licensed entity is onboarding a new technology vendor.
 
@@ -385,7 +387,7 @@ Response: Provide a pre-built vendor risk pack: (1) company overview and ownersh
 | **Money20/20 Europe / Sibos (Europe editions)** | 4/5 | Speaking slots, networking, partnership meetings — EU primary events | Strategic Sam | Paid (event) |
 | **FinTech Connect London** | Watch | UK event — do not invest until UK re-activation gate (5 EU projects closed) | Strategic Sam | Paid (event) |
 | **ETHGlobal / Consensus / DevCon / EthCC** | 3/5 | Technical talks, hackathon sponsorship — note: use Crypto Native messaging here, not FinTech | Technical Tom | Paid (event) |
-| **SEO / Inbound (Blog)** | 5/5 | **WealthTech / RWA (primary — produce first):** "RWA tokenization for regulated wealth platforms," "asset tokenization MiCA MiFID II," "tokenized securities blockchain development," "STO platform engineering," "how to tokenize real estate under MiCA." **AI + Blockchain (high-growth search trend — produce second):** "AI audit trail blockchain FinTech," "EU AI Act compliance blockchain," "immutable audit log for AI credit decisions," "AI explainability blockchain," "blockchain for AI governance in banking." **ExchangeTech / broader FinTech (secondary):** "blockchain integration for FinTech," "smart contract audit for regulated exchange," "DEX compliance engineering," "MiCA CASP smart contract development," "smart contract audit for payments." 1 article/week minimum; WealthTech and AI+blockchain topics take priority in the publishing queue. | Strategic Sam + Technical Tom | Free (time) |
+| **SEO / Inbound (Blog)** | 5/5 | **WealthTech / RWA (primary — produce first):** "RWA tokenization for regulated wealth platforms," "asset tokenization MiCA MiFID II," "tokenized securities blockchain development," "STO platform engineering," "how to tokenize real estate under MiCA." **AI + Blockchain (high-growth search trend — produce second) *[unvalidated — pending 2026-05-31]*:** "AI audit trail blockchain FinTech," "EU AI Act compliance blockchain," "immutable audit log for AI credit decisions," "AI explainability blockchain," "blockchain for AI governance in banking." **ExchangeTech / broader FinTech (secondary):** "blockchain integration for FinTech," "smart contract audit for regulated exchange," "DEX compliance engineering," "MiCA CASP smart contract development," "smart contract audit for payments." 1 article/week minimum; WealthTech and AI+blockchain topics take priority in the publishing queue. | Strategic Sam + Technical Tom | Free (time) |
 | **Blockchain Slack/Discord communities** | 3/5 | Community presence, answering technical questions authentically | Technical Tom | Free |
 | **Cold email** | 2/5 | Low-volume, high-personalization only — not a primary channel | Strategic Sam | Low cost |
 | **Compliance content / vendor risk assets** | 3/5 | Jurisdiction compliance briefs (MiCA — EU, ready now; FCA / FinCEN / MAS — available when respective re-activation gates are met), vendor risk pack, audit report samples — not outbound content; deployed reactively when Carol surfaces in a deal or proactively as trust signals for compliance-sensitive Sams | Compliance Carol | Free (time to produce) |
@@ -463,7 +465,7 @@ Response: Provide a pre-built vendor risk pack: (1) company overview and ownersh
 14. Who else is involved in this kind of decision at your company — technical, commercial, compliance?
 15. What would make you move forward with a vendor quickly vs. slow-walking the evaluation?
 16. What would stop you from moving forward even if the technical fit was perfect?
-17. What budget range are you working with for this kind of engagement?
+17. For engagements like this one, what's a typical budget range you've seen work at companies your size? *(Indirect framing — most buyers won't share their own number on a first call; use the survey for quantitative budget data.)*
 
 **AI Adoption (ask if the company is in WealthTech, LendTech, RegTech, or BankTech)**
 18. Are you currently deploying AI for any credit scoring, fraud detection, KYC, or asset valuation use cases?

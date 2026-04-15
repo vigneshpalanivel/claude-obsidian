@@ -20,7 +20,7 @@ key_claims:
   - "MiCA enforcement deadlines (P2): non-negotiable urgency driver; monitor news, reference in outreach"
   - "Validation status: assumption-based, no confirmed partner interviews or closed deals"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-16
 tags:
   - source
   - icp
@@ -76,4 +76,4 @@ This ICP is the hub that routes end-clients across InnBlockchain's other three I
 
 ## Discovery Sprint
 
-$1,500–$4,000 paid pre-sales scoping for all partner types — mirrors Trioangle channel partner playbook.
+$2,000–$5,000 paid pre-sales scoping (1–2 weeks) for all partner types — mirrors Trioangle channel partner playbook.

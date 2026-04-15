@@ -2,7 +2,7 @@
 type: concept
 title: "InnBlockchain Channel Partner ICP"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-16
 tags:
   - concept
   - icp
@@ -96,10 +96,10 @@ If a partner brings a non-blockchain brief (web/mobile app, marketplace, on-dema
 
 ## Pre-Sales Tool
 
-**Discovery Sprint** ($1,500–$4,000) — paid pre-sales scoping available for all partner types. Mirrors the Trioangle channel partner playbook.
+**Discovery Sprint** ($2,000–$5,000, 1–2 weeks) — paid pre-sales scoping available for all partner types. Produces full requirements spec, architecture blueprint, smart contract scope, and fixed-price delivery estimate. Mirrors the Trioangle channel partner playbook.
 
 ## Objection Handling (Highlights)
 
-- *"How do I know your smart contracts are production-grade?"* → audit-readiness as baseline, coordinate with CertiK/Hacken/Zellic, show completed audit report from comparable protocol before commit.
+- *"How do I know your smart contracts are production-grade?"* → audit-readiness as baseline, coordinate with CertiK/Hacken/Zellic (standard coordination partners); for clients demanding top-tier brand-name audit (Trail of Bits, OpenZeppelin, Zellic), position as faster and complementary — pre-audit hardening partner, not a replacement for the named firm. Never disparage brand-name auditors.
 - *"How do we know you won't bypass us?"* → NCNDA Day 1, partner model is permanent.
 - *"My client's budget is only $8k-$15k"* → Crypto Products routing (crypto-native only; not P2 FinTech).

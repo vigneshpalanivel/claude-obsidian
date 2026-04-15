@@ -3,6 +3,7 @@ type: concept
 title: "InnBlockchain Crypto Native ICP"
 created: 2026-04-15
 updated: 2026-04-15
+reingested: 2026-04-15
 tags:
   - concept
   - icp
@@ -31,7 +32,7 @@ Two distinct motions: **Security Audit** (pre-mainnet review) and **Development/
 
 ## Firmographics
 
-- **Size / funding:** 5–100 employees, $2M+ raised (seed/Series A/token treasury). **RWA exception:** asset-rich but not VC-funded (real estate developers, fleet owners, commodity producers) qualify on confirmed asset + $20k+ build budget.
+- **Size / funding:** 5–100 employees. **DeFi/protocol (Segments 2–6):** $2M+ raised is a directional readiness signal, not a hard gate. **RWA exception (Segment 1):** asset-rich but not VC-funded (real estate developers, fleet owners, commodity producers) qualify on confirmed asset + build budget. **Hard gate (all segments):** confirmed build scope + budget floor (see below).
 - **Geography:** EU Continental only until the 5-project gate is met. Watch after gate: UK (distinct post-Brexit), MENA, US, SEA.
 - **Product stage:** Testnet live or past, preparing for mainnet. RWA exception: MVP with a confirmed asset to tokenize.
 - **Tech stack:** EVM (Solidity), Rust (Solana/CosmWasm), Move (Aptos/Sui), ZK (Circom/Noir), cross-chain (IBC, Wormhole).
@@ -57,7 +58,8 @@ Owns security mandate at larger protocols ($10M+ raised). Reads audit reports li
 
 - **Strongest signal (DeFi):** upcoming audit deadline or recent exploit in their ecosystem.
 - **Strongest signal (RWA):** first asset issuance or MiCA compliance deadline confirmed.
-- **Must-have:** technical founder/CTO with $20k+ budget or token treasury access; smart contract codebase exists; active launch timeline.
+- **Must-have:** technical founder/CTO (or RWA domain-expert founder with budget authority) with confirmed budget; smart contract codebase exists or confirmed asset to tokenize; active launch timeline.
+- **Budget floor (hard gate):** $20k+ for Segments 2–6 and 8–10; **$30k+ for Segment 1 (RWA)** to match segment ACV target.
 - **Budget type qualifier:** (1) founder-controlled wallet/multisig → 1–3 days; (2) DAO treasury vote → +2–4 weeks (pre-write the governance proposal); (3) token-denominated → confirm stablecoin liquidity, not just vested tokens.
 - **DQ:** pre-raise with no budget, whitepaper-only, ICO/token launch with no product, existing regulated FinTech (→ [[InnBlockchain FinTech ICP]]).
 
@@ -75,9 +77,12 @@ Owns security mandate at larger protocols ($10M+ raised). Reads audit reports li
 - **"We'll use Trail of Bits / OpenZeppelin / Zellic"** → reframe as complementary: top firms have 6–12 week queues; InnBlockchain can start next week, often used in parallel.
 - **"Treasury is in tokens, not USDC"** → scope down, don't discount. Ask about next unlock.
 - **"We used AI to write our contracts"** → acknowledge the tool; AI is consistently wrong about reentrancy, access control, integer math. Offer a focused AI-code review as entry.
+- **"How do I know your findings aren't AI-generated too?"** (Security Sasha counter on the AI-code audit pitch) → methodology transparency: AI is used for triage and coverage, never severity judgment or root-cause; every finding is human-signed. Offer a live methodology walkthrough with the lead auditor, no sales present.
 - **"We're not a tech company — how do we know what we need?"** (RWA) → lead with the asset, not technical depth. Translate.
 
 ## Target Segments (GTM Order)
+
+Numeric order = priority. **Segment 1 (RWA) is the highest-priority outbound target this quarter** — do not read "Segment 2" as second choice.
 
 1. **RWA Tokenization** ⭐ — $30k–$150k, 45–75 day cycle. Real estate, vehicles, commodities, art, private credit. Lead with exploit risk of real asset value on-chain.
 2. **DEX, On-Chain Trading & Crypto-Native Exchanges** — $50k–$200k, 30–60 day cycle. AMM, order books, oracles. Crypto-born CEX/DEX, licensed or not.
@@ -86,7 +91,7 @@ Owns security mandate at larger protocols ($10M+ raised). Reads audit reports li
 5. Token launch / IDO infrastructure
 6. NFT platforms
 
-Segments 7–10 are watch / future quarter.
+Segments 7–10 are watch / future quarter. **Exception:** Segment 10 (AI x Crypto) has a **split status** — the AI-coded contract audit overlay is Active immediately and can be layered onto any Segment 1–9 deal where the team used AI coding tools; only standalone AI x crypto protocol outbound remains Watch.
 
 ## Routing
 
@@ -96,4 +101,7 @@ Sub-$20k crypto-native budgets → [[InnBlockchain Crypto Products ICP]] (Trioan
 
 ## Validation Status
 
-Assumption-based. Validate $20k+ floor against first 10 closed deals per segment; track AI-code audit win rate; confirm RWA sub-segments (real estate, vehicle, commodity) need distinct outreach by 2026-09-30.
+Assumption-based. Validate budget floors ($20k/$30k) against first 10 closed deals per segment; track AI-code audit win rate; confirm RWA sub-segments (real estate, vehicle, commodity) need distinct outreach by 2026-09-30.
+
+- **Discovery calls (Sales, due 2026-05-31):** 3–5 RWA founders + 5–10 DEX/DeFi founders. Pushed from 2026-04-30 after review flagged dependency on Phase 1 foundation (landing page, playbook) completing first.
+- **Sasha $10M threshold (Sales Lead, due 2026-07-31):** validate that dedicated Security Lead appears at $10M+ raised across first 5 deals; adjust threshold if Sasha appears earlier or later.

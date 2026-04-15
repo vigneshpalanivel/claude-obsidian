@@ -3,6 +3,7 @@ type: concept
 title: "InnBlockchain FinTech ICP"
 created: 2026-04-15
 updated: 2026-04-15
+reingested: 2026-04-15
 tags:
   - concept
   - icp
@@ -33,7 +34,6 @@ Target **existing regulated FinTech companies** — not crypto-native startups �
 - **Business model:** Transaction-fee (direct margin recovery ROI) or SaaS/platform (product differentiation ROI).
 - **Tech stack:** Cloud-native, **API-first backend already in production** (strongest signal for fast deal velocity). Two sub-profiles: (a) SMB/Scaleup public-chain → 30–60 day cycle, lower ACV, founder-CTO buyer; (b) Enterprise private-chain (Hyperledger, Corda, Quorum) → 60–120 day cycle, higher ACV, procurement-heavy.
 - **Geography:** EU Continental only until 5-project gate. Watch post-gate: UK (FCA — distinct post-Brexit), MENA (ADGM/VARA/DFSA), US (FinCEN/SEC), SEA (MAS — validate ACV ≥ $20k first).
-- **Technical maturity:** Early adopter (fastest — skip education, lead with case studies), Mainstream (needs PoC + peer refs), Laggard (4-question fit assessment; longer cycle).
 
 ## Universal Root Pain (9/10)
 
@@ -63,16 +63,16 @@ Technical buyer. Needs to offload security liability + solve Web3 talent shortag
 2. **Intermediary fees eroding margins** (8/10) — PayTech/BankTech/WalletTech/ExchangeTech; 1–3% per cross-border transaction
 3. **Smart contract security risk — universal** (9/10)
 4. **Regulatory & compliance uncertainty** (8/10) — MiCA now dominant for EU; two buyer patterns, *over-compensators* and *paralyzed*
-5. **AI adoption without audit infrastructure** (8/10, rising) — EU AI Act high-risk AI needs tamper-proof logs; on-chain logging is blockchain-**alongside**-AI, not replacement
+5. **AI adoption without audit infrastructure** *[unvalidated — pending 2026-05-31]* (8/10, rising) — EU AI Act high-risk AI needs tamper-proof logs; on-chain logging is blockchain-**alongside**-AI, not replacement
 
 ## Target Segments & Go-To-Market
 
-Q2 2026 active focus ordered by priority:
+Q2 2026 active focus ordered by priority (document order now matches stated priority after 2026-04-15 re-ingest):
 
-### ⭐ Segment 2 — Asset Tokenization & WealthTech (PRIMARY Q2 2026)
-$20k–$250k ACV · 60–90 day cycle · Inbound content + development · Strategic Sam opens, Tom evaluates, Carol engages early for regulated instruments. RWA, STOs, tokenized securities. MiCA + MiFID II intersection. AI + tokenization is emerging search trend — content at this intersection outperforms 3 months of LinkedIn outbound.
+### ⭐ Segment 1 — Asset Tokenization & WealthTech (PRIMARY Q2 2026)
+$20k–$250k ACV · 60–90 day cycle · Inbound content + development · Strategic Sam opens, Tom evaluates, Carol engages early for regulated instruments. RWA, STOs, tokenized securities. MiCA + MiFID II intersection. AI + tokenization is emerging search trend *[unvalidated — pending 2026-05-31]* — content at this intersection outperforms 3 months of LinkedIn outbound.
 
-### Segment 1 — ExchangeTech (Licensed or License Applied)
+### Segment 2 — ExchangeTech (Licensed or License Applied)
 $20k–$250k · 30–60 day cycle · Development + audit · Technical Tom primary. CEX, DEX, or DeFi — **architecture is irrelevant**. Two gates: (a) holds or formally filed for a financial services license; (b) expanding an existing FinTech business into trading. MiCA CASP framing for EU.
 
 ### Segment 3 — LendTech ($20k–$200k, 45–75 day)
@@ -81,7 +81,7 @@ Traditional digital lenders with live loan books automating origination via smar
 ### Segment 4 — WalletTech ($20k–$150k)
 Existing regulated e-money/payment companies adding crypto wallet features. Not crypto-native wallets. Gate is company origin.
 
-**Watch segments:** PayTech, RegTech, BankTech, InsurTech.
+**Watch segments:** PayTech (Seg 5), RegTech (Seg 6), BankTech Corporate Treasury (Seg 7 — **blocked on CFO persona definition**), InsurTech (Seg 8).
 
 ## Objection Handling Highlights
 

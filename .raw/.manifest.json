@@ -17,8 +17,8 @@
       ]
     },
     ".raw/InnBlockchain - ICP - Channel Partner-I.md": {
-      "hash": "329d490699d7fd6334a79557fc59cd6e",
-      "ingested_at": "2026-04-15",
+      "hash": "9668f949d06ad1e37033e6acf25bdd5d",
+      "ingested_at": "2026-04-16",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-Channel-Partner.md",
         "wiki/concepts/InnBlockchain Channel Partner ICP.md",
@@ -31,14 +31,17 @@
       ]
     },
     ".raw/InnBlockchain - ICP - Crypto Native.md": {
-      "hash": "8dca890eba65b3ec0b0442a05d78c0e9",
+      "hash": "7d1542eadee640b2b7d13221a6602e5f",
       "ingested_at": "2026-04-15",
+      "reingested_at": "2026-04-15",
+      "reingest_reason": "review-driven fixes: budget floor split ($30k+ RWA vs $20k+ other segments; $2M+ reframed as DeFi signal only), validation discovery calls pushed to 2026-05-31 with Phase 1 dependency, Segment 10 split status (AI-code audit overlay Active, standalone Watch), Segment 1 ACV floor raised to $30k+, Segment priority callout (RWA #1), Sasha AI counter-objection row, $10M Sasha threshold validation owner",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-Crypto-Native.md",
         "wiki/concepts/InnBlockchain Crypto Native ICP.md"
       ],
       "pages_updated": [
-        "wiki/index.md",
+        "wiki/sources/ICP-InnBlockchain-Crypto-Native.md",
+        "wiki/concepts/InnBlockchain Crypto Native ICP.md",
         "wiki/hot.md",
         "wiki/log.md"
       ]
