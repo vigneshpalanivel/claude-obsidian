@@ -33,7 +33,7 @@ tags:
 
 | Attribute | Details |
 |---|---|
-| **Industry** | **8 verticals** — see [[Trioangle - Product Verticals]] for full breakdown |
+| **Industry** | **8 verticals** — see [[Trioangle-Product-Verticals]] for full breakdown (205 distinct scripts) |
 | **Size** | 1–5 employees (Solopreneur / Co-founders) |
 | **Revenue** | Pre-revenue or < $10k/mo |
 | **Growth Stage** | Pre-launch / Bootstrapped / Early Traction |
