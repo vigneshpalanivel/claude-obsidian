@@ -13,6 +13,12 @@ tags:
 > Reusable content briefs for all 10 verticals × recurring article types.
 > Fill in the `[VARIABLES]` below for any brand/vertical combination to produce a complete writer brief.
 
+> [!IMPORTANT] AI-Era Positioning Rule (from [[ICP - Product]] / [[Content Strategy - Product]])
+> **Never position on "we build faster with AI." Position on certainty of outcome and risk reduction.** Every template's headline, CTA, body, and proof points must reflect this. Buyers in 2026 can vibe-code a prototype themselves — they are not buying speed, they are buying a guaranteed live business (App Store approval, production deployment, real-time dispatch under load, named team accountable when something breaks). "Faster with AI" invites "then why are you expensive?" and loses. Writers must flag any draft headline or CTA that violates this rule before submitting.
+
+> [!NOTE] Persona Abbreviations
+> **P1** — Visionary Velocity Founder · **P2** — Burned Builder · **P3** — Diaspora Entrepreneur · **P4** — Small Business Digitalizer · **P5** — Super-App Ecosystem Builder · **P6** — **AI Builder Who Hit the Wall** (vibe-coded a prototype with Cursor/Lovable/Replit, blocked at production: App Store rejection, GPS/dispatch failing at scale, payment gateway production gap; fast <14-day decision; reads source code — writers must be technically honest and never dismiss AI tools outright). See [[Content Strategy - Product]] for full persona-to-content mapping.
+
 ---
 
 ## Variable Reference Table
@@ -44,6 +50,35 @@ Use this table to fill in placeholders for each vertical.
 
 > [!NOTE] [ORIGINAL] vs [BRAND] vs [COMPETITOR] in article titles
 > Use `[ORIGINAL]` in **article titles and primary keywords** — searchers look for "Uber clone script", not "Gofer clone script". Use `[BRAND]` only in **CTAs, post-purchase content (T12), and review articles (T17)**. Use `[COMPETITOR]` for actual Trioangle vendor rivals (Appdupe, V3Cube) — only in T9.
+
+---
+
+## Global Writer Briefs — Apply to All Templates
+
+### Secondary-Market Variants (SE Asia, Africa, LATAM, India)
+
+When a template is produced for a **secondary market** ([COUNTRY] = Nigeria, Kenya, India, Indonesia, Philippines, Brazil, Mexico, etc.), the default priority-market brief is **not** sufficient. From [[Content Strategy - Product]] / [[ICP - Product]]:
+
+| Element | Secondary-market treatment |
+|---|---|
+| **CTA** | Route to **WhatsApp intro** ("Chat with a founder on WhatsApp → See the app live"), not a web form. Priority-market forms underperform badly here. |
+| **Payment proof in body** | Must show **cash on delivery** for end-user flows in screenshots/demo clips; list local gateway support explicitly — Paystack/Flutterwave (Africa), Razorpay/PhonePe (India), MercadoPago (LATAM), Xendit/GCash (SE Asia). Mention split/milestone billing (Wise, local bank, USDT) for the script purchase itself. |
+| **Language** | Bilingual demo clips where demand is real; RTL support for Middle East; local-language body copy signals credibility before price is discussed. |
+| **Trust signals** | Lead with **local founder testimonials in the buyer's exact region** — Nigerian testimonial for Lagos content, Indian testimonial for Bangalore content. Region-matching is the signal, not volume. Same-timezone response commitment in CTA copy. |
+| **Do NOT use** | Clutch/G2 review badges as primary proof in secondary-market content — peer referral weights 10x higher than review sites these buyers don't use. Save Clutch/G2 for priority-market variants. |
+
+**Affects these templates most:** T1 (per-country), T11 (founder case studies), T3 (per-region reports), T20 (remote management). Writers producing a secondary-market variant of any template must swap the CTA block and trust-signal block before submitting.
+
+### AI-Era Positioning Compliance Check
+
+Before submitting any draft, writers must verify:
+1. No headline or CTA positions Trioangle on *speed-with-AI* ("faster with AI", "AI-powered delivery", "vibe-coding at scale") — violates the ICP positioning rule
+2. If the article mentions AI tools (Cursor, Lovable, Bolt, Replit, Claude), it must **acknowledge what they do well** before documenting the production gap — P6 detects dismissive framing immediately
+3. Every BOFU CTA routes to **live product proof** (app store link, deployment walkthrough, video demo) — not a feature list
+
+### Referral Program References
+
+Any template referencing Trioangle's referral incentive must use the structured **Trioangle Founder Referral** program wording (from [[ICP - Product]]): referrer picks 3 months free support extension OR 10% cash commission; 90-day attribution; 5% referee discount; tracked via admin-panel dashboard. Do NOT invent ad-hoc referral language in case studies, testimonial roundups, or post-purchase emails.
 
 ---
 
@@ -172,7 +207,7 @@ Use this table to fill in placeholders for each vertical.
 ### T11 — "[FOUNDER] Launched a [VERTICAL] Platform in [COUNTRY] in [NUMBER] Days: Case Study"
 
 **Pillar:** Customer Proof | **Stage:** BOFU | **Type:** Shareable
-**Word Count:** 1,000–1,500 | **Persona:** P1, P2, P3
+**Word Count:** 1,000–1,500 | **Persona:** P1, P2, P3, **P6** *(add ex-P6 case studies: "I spent 6 weeks with Lovable/Cursor — here's what I switched to")*
 **Primary Keyword:** `[vertical] app launch case study` / `[original] clone script review`
 
 **CTA:** *"Read 100+ verified reviews → Then Book Your Demo"*
@@ -223,9 +258,13 @@ Use this table to fill in placeholders for each vertical.
 - `how to start a marketplace app [YEAR]`
 - `regulatory gap [market] app opportunity`
 - `passive income marketplace app how to start` *(ICP trigger: "I want a business that runs itself — commissions collect while I sleep"; angle: commission-based apps as automated income, not startup hustle)*
+- `my ai-built prototype won't pass app store review` *(**P6 trigger** — Lovable/Cursor/Replit builds rejected for missing compliance; angle: the 20% of "production readiness" that AI tools skip. Technically honest — do not dismiss the AI prototype)*
+- `my lovable cursor app breaks above 20 concurrent users` *(**P6 trigger** — real-time GPS/dispatch/payment failures at scale; angle: why demo-on-localhost ≠ production-at-load and what the gap actually costs to close)*
 
 **CTA:** *"Book a Free Live Demo → See It Running in 10 Min"*
-**Internal Links:** → What Is an [ORIGINAL] Clone Script (T2) → Cost: Scratch vs Clone (T10) → [ORIGINAL] Clone Features & Cost (T4) → How to Start a [VERTICAL] Business (T1)
+> **P6 CTA variant** (use on both AI-prototype trigger articles): *"See the App Live in the Store Today → Skip the 4-Month AI Debug Loop"*
+
+**Internal Links:** → What Is an [ORIGINAL] Clone Script (T2) → Cost: Scratch vs Clone (T10) → [ORIGINAL] Clone Features & Cost (T4) → How to Start a [VERTICAL] Business (T1) → Clone Script vs AI Builders (T18 — AI variant, from P6 trigger articles)
 
 ---
 
@@ -273,15 +312,17 @@ Use this table to fill in placeholders for each vertical.
 ### T18 — Clone vs Alternative Build Method: "Clone Script vs [TOOL]: Which Is Right for On-Demand Apps?"
 
 **Pillar:** Technology Demystified | **Stage:** MOFU | **Type:** Searchable
-**Word Count:** 1,500–2,000 | **Persona:** P1, P2
+**Word Count:** 1,500–2,000 | **Persona:** P1, P2, **P6 (primary for AI variant)**
 **Primary Keyword:** `clone script vs [tool]` / `[tool] for on-demand app`
 
 **Variants (one article each):**
-- "Clone Script vs Bubble and Adalo: Which Is Better for On-Demand Apps?"
-- "Clone Script vs AI Builders (Cursor, Lovable): Why Prompting Isn't a Product"
+- "Clone Script vs Bubble and Adalo: Which Is Better for On-Demand Apps?" *(P1, P2)*
+- **"Clone Script vs AI Builders (Cursor, Lovable): Why Prompting Isn't a Product"** *(P6 primary — **canonical AI-era positioning anchor**; Quick Wins priority. Must be technically honest: acknowledge what Cursor/Lovable/Replit do well (prototypes, UI generation, iteration speed), then document the production gap in concrete terms — App Store compliance (multi-role marketplace review checklist), real-time dispatch at scale (tested load numbers, not "it worked on my machine"), payment gateway production (KYC, business verification, not sandbox), support SLA (no one to call when the App Store rejects at 11pm). Do NOT dismiss AI tools — P6 reads source code and will detect any marketing handwaving.)*
 
 **CTA:** *"Book a Free Live Demo → See It Running in 10 Min"*
-**Internal Links:** → What Is an [ORIGINAL] Clone Script (T2) → Cost: Scratch vs Clone (T10) → [ORIGINAL] Clone Features & Cost (T4) → Build vs Buy Worksheet (L5)
+> **P6 CTA variant** (use on AI Builders variant): *"Your Prototype Is 80% of the Demo. Here's the Other 80%. → Book a Deployment Call"*
+
+**Internal Links:** → What Is an [ORIGINAL] Clone Script (T2) → Cost: Scratch vs Clone (T10) → [ORIGINAL] Clone Features & Cost (T4) → Build vs Buy Worksheet (L5) → T14 AI-prototype triggers (App Store rejection, concurrent-user failure) → T11 Founder Case Study (ex-P6 buyer — "I spent 6 weeks with Lovable, here's what I switched to")
 
 ---
 
