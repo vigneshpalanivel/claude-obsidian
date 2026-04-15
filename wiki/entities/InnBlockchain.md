@@ -3,7 +3,7 @@ type: entity
 title: "InnBlockchain"
 entity_type: company
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-16
 tags:
   - entity
   - company
@@ -17,6 +17,7 @@ related:
   - "[[InnBlockchain FinTech ICP]]"
   - "[[InnBlockchain Channel Partner ICP]]"
   - "[[InnBlockchain Crypto Products ICP]]"
+  - "[[InnBlockchain Content Strategy]]"
 ---
 
 # InnBlockchain

@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Wiki Index"
-updated: 2026-04-15
+updated: 2026-04-16
 tags:
   - meta
   - index
@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-15 | Total pages: 61 | Sources ingested: 17
+Last updated: 2026-04-16 | Total pages: 68 | Sources ingested: 20
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -49,6 +49,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain FinTech ICP]] — existing regulated FinTech; WealthTech primary Q2 2026; Compliance Carol veto-holder; API-first is Tier 0 signal (status: current)
 - [[InnBlockchain Channel Partner ICP]] — 3 advisory personas; routing hub to 3 sister ICPs; NCNDA Day 1; assumption-based (status: current)
 - [[InnBlockchain Crypto Products ICP]] — Trioangle clone scripts $5k-$20k; 5 archetype-first personas; Burned Builder highest urgency (status: current)
+- [[InnBlockchain Content Strategy]] — umbrella for three parallel InnBlockchain content programs; routing gate = company origin not licensing (status: current)
+- [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
+- [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
+- [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
 
 ---
 
@@ -84,6 +88,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[ICP-InnBlockchain-FinTech]] — 2026-04-15 | InnBlockchain regulated FinTech ICP | WealthTech primary Q2 2026, Carol veto gate
 - [[ICP-InnBlockchain-Channel-Partner]] — 2026-04-15 | InnBlockchain advisory firm channel ICP | 3 personas, routing hub
 - [[ICP-InnBlockchain-Crypto-Products]] — 2026-04-15 | Trioangle-branded clone script line | 5 archetype-first personas
+- [[Content-Strategy-InnBlockchain-Crypto-Native]] — 2026-04-16 | 5 pillars × 10 verticals × 51 scored articles; Phase 1 RWA lock
+- [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first
+- [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
 
 ---
 

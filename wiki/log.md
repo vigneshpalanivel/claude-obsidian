@@ -25,6 +25,29 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-16] ingest | InnBlockchain Content Strategies (Crypto Native + Crypto Products + FinTech)
+- Sources:
+  - `.raw/InnBlockchain - Content Strategy - Crypto Native.md` (hash → 00cc87e6b15f6d1a3559a4b3c1f8376f)
+  - `.raw/InnBlockchain - Content Strategy - Crypto Products.md` (hash → 86fa8a149b2ea17921683a528d771c2b)
+  - `.raw/InnBlockchain - Content Strategy - FinTech.md` (hash → 71884caa609e8f7acd2d698bf8890186)
+- Summaries: [[Content-Strategy-InnBlockchain-Crypto-Native]], [[Content-Strategy-InnBlockchain-Crypto-Products]], [[Content-Strategy-InnBlockchain-FinTech]]
+- Pages created: [[InnBlockchain Content Strategy]] (umbrella), [[InnBlockchain Crypto Native Content Strategy]], [[InnBlockchain FinTech Content Strategy]], [[InnBlockchain Crypto Products Content Strategy]]
+- Pages updated: [[index]], [[hot]], [[InnBlockchain]]
+- Key insights:
+  - Three parallel content programs mapped 1:1 to InnBlockchain ICPs (Crypto Native, FinTech, Crypto Products). Channel Partner ICP has no dedicated content program.
+  - **Crypto Native**: 5 pillars (C1-C5) × 10 verticals (6 Active, 4 Watch) × 51 scored articles. Strict Phase 1 lock — 18 RWA + MiCA articles must publish fully before Phase 2 unlocks any of DEX/DeFi/Wallet/NFT/Token Launch content (~4-5 months concentrated on one vertical).
+  - **FinTech**: 4 pillars (T1-T4) × 8 use-case clusters × 40+ scored articles. Primary Q2 2026 = WealthTech ⭐ (RWA/STO). LinkedIn ABM is dominant channel. EU compliance content (MiCA/MiFID II/DORA/EU AI Act/DLT Pilot) publishes in Active phase regardless of cluster — never deferred to Watch RegTech.
+  - **Crypto Products**: 4 verticals (CEX/P2P/DEX/NFT) × 5 pillars × 40 scored articles × 5 personas. Security Hub (#1) publishes first as universal trust foundation; every subsequent article links back. First 12-post sequence locked.
+  - **Cross-ICP SEO differentiation protocol**: every overlapping topic (RWA, upgrade patterns, audit checklists, travel rule, account abstraction/passkeys, hiring) carries inline disambiguation on both sides. Crypto Native angle = smart contract implementation / exploit; FinTech angle = compliance auditability / regulatory liability.
+  - **Routing gate confirmed**: company origin, not licensing status. Embedded as explicit routing clause in every overlapping vertical (DEX, Lending, Wallets, RWA).
+  - **AI-code audit overlay** (V10 Crypto Native) activates immediately on any active segment deal — no gate, no segment dependency. This is the one exception to Phase 1 lock.
+  - **Persona 2 Diaspora Builder (Crypto Products)** is peer-driven: Facebook diaspora groups + WhatsApp communities are primary discovery channels, not search/Twitter.
+  - **AI Search (ChatGPT/Perplexity/Gemini) is the new TOFU** for priority market crypto buyers (US/UK/EU/ME) — they query AI before Google. Content must be citation-structured; tracking is manual monthly harness until third-party tools mature.
+  - **Compliance Carol** (FinTech CCO) addressed as veto-holder via content but not revenue-attributable — attribution methodology undefined.
+  - **Risk flagged**: no shared keyword/topic ledger between Crypto Native and FinTech strategies. Disambiguation is prose per-article, not a central registry. First publishing conflict is the risk surface.
+
+---
+
 ## [2026-04-15] reingest | InnBlockchain - ICP - FinTech.md (post-review fixes)
 - Source: `.raw/InnBlockchain - ICP - FinTech.md` (hash → 86340bd89c7b926c207ff9e9828b7255)
 - Pages updated: [[ICP-InnBlockchain-FinTech]], [[InnBlockchain FinTech ICP]], [[hot]]

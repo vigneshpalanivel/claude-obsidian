@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-15T00:00:00
+updated: 2026-04-16T00:00:00
 tags:
   - meta
   - hot-cache
@@ -19,6 +19,8 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-16: ingested all 3 InnBlockchain Content Strategy files (Crypto Native, Crypto Products, FinTech). 7 pages created: 3 source summaries ([[Content-Strategy-InnBlockchain-Crypto-Native]], [[Content-Strategy-InnBlockchain-Crypto-Products]], [[Content-Strategy-InnBlockchain-FinTech]]), 3 concept pages ([[InnBlockchain Crypto Native Content Strategy]], [[InnBlockchain FinTech Content Strategy]], [[InnBlockchain Crypto Products Content Strategy]]), and 1 umbrella concept ([[InnBlockchain Content Strategy]]). [[InnBlockchain]] entity + index + log updated. Channel Partner ICP has no dedicated content program (flagged as open question in umbrella).
+
 2026-04-15: re-ingested `InnBlockchain - ICP - FinTech.md` after review. 8 fixes to source: segment reorder (WealthTech now Seg 1, ExchangeTech Seg 2 — doc order matches priority), API-first contradiction resolved (Tier 0 tag formalized), unused maturity tiers deleted, age ranges removed from all 3 personas, Segment 7 marked Blocked on CFO persona definition, anti-ICP block dedup'd, interview Q17 reframed as indirect budget question, AI content tagged `[unvalidated — pending 2026-05-31]` at Pain Point 5 / WealthTech AI convergence / SEO AI+Blockchain cluster. Updated [[ICP-InnBlockchain-FinTech]] source and [[InnBlockchain FinTech ICP]] concept.
 
 2026-04-15: re-ingested `InnBlockchain - ICP - Crypto Native.md` after review. 7 targeted fixes to source: budget floor split ($30k+ RWA vs $20k+ other; $2M+ reframed as DeFi signal only), validation discovery calls pushed to 2026-05-31 with explicit Phase 1 dependency, Segment 10 split status (AI-code audit overlay Active immediately; standalone Watch), Segment 1 ACV floor raised to $30k+ to match target, Segment priority callout (RWA is #1 outbound — numeric order = priority), Sasha AI-code counter-objection row added, $10M Sasha threshold validation owned by Sales Lead due 2026-07-31. Updated [[ICP-InnBlockchain-Crypto-Native]] source + [[InnBlockchain Crypto Native ICP]] concept.
@@ -59,6 +61,36 @@ Navigation: [[index]] | [[log]] | [[overview]]
 - **EU AI Act + FinTech**: creates blockchain-alongside-AI opportunity (tamper-proof on-chain audit trail for high-risk AI: credit scoring, fraud detection, KYC). Not blockchain-instead-of-AI.
 - **India-based agencies excluded** from Channel Partner ICP — peer/competitor perception prevents trust (carried over from Trioangle pattern).
 - All 4 InnBlockchain ICPs are **assumption-based / validation-pending**. Ranges and severities are hypotheses.
+
+## Key Recent Facts (Ingest: InnBlockchain Content Strategies)
+- **Three parallel content programs** mapped 1:1 to [[InnBlockchain Crypto Native ICP]], [[InnBlockchain FinTech ICP]], [[InnBlockchain Crypto Products ICP]]. Channel Partner ICP has NO dedicated content strategy — partner recruitment messaging lives inside the other three programs.
+- **Crypto Native CS**: 5 pillars (C1 Smart Contract Security, C2 Protocol Architecture, C3 ZK/MPC, C4 Engineering Velocity, **C5 MiCA — cross-cutting**) × 10 verticals × 51 scored articles. **Phase 1 is strictly sequential**: 18 RWA + MiCA articles publish fully before Phase 2 unlocks any of V2/V3/V4/V5/V6 content — ~4-5 months locked on one vertical. Top-scored: RWA Hub 9.7, MiCA for RWA 9.6, MiCA for Technical Founders 9.5, RWA 101 plain-language 9.4.
+- **RWA Felix persona** is the one tone departure in Crypto Native CS: asset owner (real estate, commodities, vehicles, art), non-technical, cannot read Solidity. Content is plain-language, asset-first, compliance-aware — NOT exploit-thread. All other Crypto Native personas (Founding Felix, Product Paulo, Security Sasha) get deeply technical exploit depth.
+- **FinTech CS**: 4 pillars (T1-T4) × 8 use-case clusters × 40+ scored articles. Primary Q2 2026 = **WealthTech ⭐ (RWA/STO/tokenized securities)**. Top Active: Asset Tokenization Guide 9.3, RWA Hub 9.2, Regulated Exchange 9.1, RWA Tech Stack 9.0.
+- **FinTech channel priority is LinkedIn ABM → Partner/Referral → Events** (Money20/20 Europe, Sibos Europe). FinTech Connect London = Watch (UK gate not met). Every article repurposes as LinkedIn carousel (7-10 slides) with Sales Navigator EU geography targeting.
+- **EU compliance content (MiCA, MiFID II, DORA, EU AI Act, DLT Pilot Regime) publishes in Active phase regardless of cluster** — never deferred to Watch RegTech. It is EU compliance infrastructure, not RegTech-vertical content.
+- **ExchangeTech qualification (FinTech)**: architecture irrelevant. CEX, DEX, DeFi all qualify equally if (a) licensed or license filed AND (b) expanding existing FinTech business. Do NOT DQ DEX/DeFi on architecture alone.
+- **WalletTech (FinTech) is regulated e-money wallet operators ONLY**. Crypto-native self-custody wallet startups are hard DQ (route to Crypto Native).
+- **Crypto Products CS**: 4 verticals (CEX/P2P/DEX/NFT, mapped 1:1 to Trioangle clone script product lines) × 5 pillars × 40 articles. **Security Hub (#1 Are Crypto Clone Scripts Safe?) publishes first as universal trust foundation** — every subsequent article links back. First 12 posts locked. Top scored: Security Hub 9.2, Crypto Exchange in [Country] 9.0, Binance Clone Guide 8.9.
+- **Crypto Products priority markets**: North America, UK, EU, Middle East (high-intent, regulatory clarity). Secondary: SEA, Eastern Europe, LatAm, West Africa. Diaspora founders in NYC/London/Dubai/Toronto building for home markets = priority buyers.
+- **AI Search (ChatGPT/Perplexity/Gemini) is the new TOFU** for priority market crypto buyers — they query AI before Google. Content must be citation-structured (clear headings, direct answers, structured data). Citation tracking is manual monthly query harness until Semrush/BrightEdge AI visibility tools mature.
+- **Persona 2 Diaspora Fintech Builder** is peer-driven: Facebook diaspora groups + WhatsApp communities are primary discovery channels, NOT search or Twitter. Must seed content there alongside SEO.
+- **Persona 3 Web3 Protocol Architect** reads GitHub commits and verifies on-chain addresses. Technical precision required — vague marketing language destroys credibility instantly. Blog alone does NOT convert; sales must offer NDA code access + third-party audit report + on-chain TVL proof.
+- **Tone rule (Crypto Products)**: never write "easy" or "simple" about smart contract security. Every claim needs verifiable proof.
+- **Cross-ICP SEO differentiation protocol**: every topic that exists in both Crypto Native and FinTech strategies carries inline disambiguation on both sides. Overlapping topics + rules:
+  - RWA: Crypto Native = smart contract architecture, oracle design, ERC-3643, MiCA for platform builders. FinTech = liquidity, T+0, MiFID II classification, institutional investors.
+  - Upgrade patterns: Crypto Native = exploit vectors. FinTech = governance, auditability, regulatory liability.
+  - Audit checklists: Crypto Native = exploit-pattern testing. FinTech = compliance auditability, regulator sign-off.
+  - Travel rule: Crypto Native = DeFi protocol smart contract impl. FinTech = licensed CASP on-chain AML tooling.
+  - Account abstraction / passkeys / embedded wallets: Crypto Native = self-custody wallet primitives. FinTech = friction reduction for licensed wallet operators.
+  - Hiring: Crypto Native = reentrancy auditing, ZK circuits. FinTech = compliance-aware engineers, audit trails, KYC/AML.
+- **Routing gate (unchanged, now embedded in content strategies)**: company origin, not licensing. Every overlapping vertical (DEX, Lending, Wallets, RWA) carries explicit routing clauses. Licensed crypto-native DEX = Crypto Native. Licensed incumbent adding crypto = FinTech.
+- **AI-code audit overlay (V10 Crypto Native)** activates immediately on any active segment deal — no gate, no segment dependency. One exception to Phase 1 lock.
+- **Compliance Carol (FinTech CCO)** addressed via content but is a veto-holder not a buyer — attribution methodology for compliance content is undefined.
+- **Risk flagged**: no shared keyword/topic ledger between Crypto Native and FinTech strategies. Disambiguation is prose per-article, not a central registry. First cross-ICP publishing conflict is the risk surface.
+- **Competitive framing (FinTech)**: never name competitors. Angles: vs Accenture/Deloitte = speed + FinTech specialisation; vs Kaleido/SettleMint/Fireblocks = custom logic beats 80% platform; vs Trail of Bits/Zellic = FinTech compliance context; vs in-house = time-to-start + IP transfer.
+- **Crypto Products competitor benchmarks**: B2Broker, AlphaPoint, Shift Markets, Hayvn, Rain (MENA). Comparison content is a designated pillar, not an afterthought. Dedicated silo: `/blog/trioangle-vs-*/`.
+- **Budget floors**: Crypto Native $20k+ (non-RWA) / $30k+ (RWA). FinTech $25k+. Crypto Products $5k-$25k (clone script line).
 
 ## Previous
 
