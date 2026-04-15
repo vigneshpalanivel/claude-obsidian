@@ -42,7 +42,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ## [2026-04-15] ingest | ICP - Product.md
 - Source: .raw/ICP - Product.md (Trioangle internal, 2026)
-- Pages created: [[Trioangle]], [[Trioangle Buyer Personas]], [[ICP-Product]]
+- Pages created: [[Trioangle]], [[Trioangle Buyer Personas]], [[ICP-Product-Trioangle]]
 - Updated: [[entities/_index]], [[sources/_index]], [[index]]
 - Key finding: Persona 6 (AI Builder Who Hit the Wall) is a named, revenue-generating buyer archetype — direct validation that vibe coding creates a real market for production-deployment services
 

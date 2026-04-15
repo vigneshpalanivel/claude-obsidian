@@ -14,7 +14,7 @@ related:
   - "[[Trioangle]]"
   - "[[Trioangle Buyer Personas]]"
   - "[[Trioangle Service ICP]]"
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
   - "[[ICP-Service-Trioangle]]"
   - "[[Content-Strategy-Product]]"
   - "[[Content-Strategy-Service]]"
@@ -146,7 +146,7 @@ Both programs must address the AI tools objection. Key angles:
 - [[Trioangle]] — the company
 - [[Trioangle Buyer Personas]] — 6 product ICP personas driving the product content program
 - [[Trioangle Service ICP]] — 5 service ICP personas driving the service content program
-- [[ICP-Product]] — product ICP source
+- [[ICP-Product-Trioangle]] — product ICP source
 - [[ICP-Service-Trioangle]] — service ICP source
 - [[Vibe Coding]] — wave that created T18, AI objection handling, and Persona 6 buyer archetype
 - [[Marketing-Sales Alignment]] — content strategy is the content half of the alignment framework

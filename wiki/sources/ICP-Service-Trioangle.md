@@ -27,7 +27,7 @@ related:
   - "[[Trioangle]]"
   - "[[Trioangle Service ICP]]"
   - "[[ICP-Channel-Partner-Trioangle]]"
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
   - "[[Research: Marketing and Sales for AI-Era Dev Company]]"
   - "[[Vibe Coding]]"
   - "[[sources/_index]]"
@@ -41,9 +41,9 @@ related:
 
 ## What This Document Is
 
-Trioangle's Ideal Customer Profile for **custom development** (greenfield, platform rebuilds) and **AI engineering** (AI features added to existing platforms). Distinct from [[ICP-Product]] (clone scripts, $500-$25k) and [[ICP-Channel-Partner-Trioangle]] (agency intermediaries).
+Trioangle's Ideal Customer Profile for **custom development** (greenfield, platform rebuilds) and **AI engineering** (AI features added to existing platforms). Distinct from [[ICP-Product-Trioangle]] (clone scripts, $500-$25k) and [[ICP-Channel-Partner-Trioangle]] (agency intermediaries).
 
-**Routing rule**: If buyer needs a proven-model platform launched fast with standard features, route to [[ICP-Product]]. If they need proprietary architecture, unique business logic, or a rebuild, they belong here.
+**Routing rule**: If buyer needs a proven-model platform launched fast with standard features, route to [[ICP-Product-Trioangle]]. If they need proprietary architecture, unique business logic, or a rebuild, they belong here.
 
 ---
 

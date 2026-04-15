@@ -3,7 +3,7 @@ type: entity
 title: "Trioangle"
 entity_type: organization
 role: "Marketplace clone script company and custom development shop"
-first_mentioned: "[[ICP-Product]]"
+first_mentioned: "[[ICP-Product-Trioangle]]"
 created: 2026-04-15
 updated: 2026-04-15
 tags:
@@ -18,14 +18,14 @@ related:
   - "[[Trioangle Service ICP]]"
   - "[[Trioangle Channel Partner Personas]]"
   - "[[Trioangle Content Strategy]]"
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
   - "[[ICP-Service-Trioangle]]"
   - "[[ICP-Channel-Partner-Trioangle]]"
   - "[[Vibe Coding]]"
   - "[[Outcome-Based Pricing]]"
   - "[[entities/_index]]"
 sources:
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
   - "[[ICP-Service-Trioangle]]"
   - "[[ICP-Channel-Partner-Trioangle]]"
   - "[[Content-Strategy-Product]]"
@@ -112,7 +112,7 @@ Fully proprietary / unique business logic?
 - [[Trioangle Service ICP]] — 5 service-line buyer personas (custom dev + AI engineering)
 - [[Trioangle Channel Partner Personas]] — 3 agency/consulting partner personas; only path to Enterprise and MENA buyers
 - [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos; service: 81 articles)
-- [[ICP-Product]] — product ICP source document
+- [[ICP-Product-Trioangle]] — product ICP source document
 - [[ICP-Service-Trioangle]] — service ICP source document
 - [[ICP-Channel-Partner-Trioangle]] — channel partner ICP source document
 - [[Vibe Coding]] — AI Builder Who Hit the Wall (Persona 6) is a direct product of this trend

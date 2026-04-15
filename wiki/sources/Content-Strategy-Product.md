@@ -26,7 +26,7 @@ status: current
 related:
   - "[[Trioangle]]"
   - "[[Trioangle Buyer Personas]]"
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
   - "[[Product Blog Article Templates]]"
   - "[[Trioangle Content Strategy]]"
   - "[[sources/_index]]"

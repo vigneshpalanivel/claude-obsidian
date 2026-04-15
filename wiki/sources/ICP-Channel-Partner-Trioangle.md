@@ -28,7 +28,7 @@ related:
   - "[[Trioangle]]"
   - "[[Trioangle Channel Partner Personas]]"
   - "[[ICP-Service-Trioangle]]"
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
   - "[[Research: Marketing and Sales for AI-Era Dev Company]]"
   - "[[sources/_index]]"
 ---
@@ -41,7 +41,7 @@ related:
 
 ## What This Document Is
 
-Trioangle's Ideal Channel Partner profile. These are not end-buyers of software; they are **intermediaries** (agencies and consulting firms) who bring client briefs to Trioangle for sub-contracted delivery. Distinct from [[ICP-Service-Trioangle]] (direct buyers) and [[ICP-Product]] (clone script buyers).
+Trioangle's Ideal Channel Partner profile. These are not end-buyers of software; they are **intermediaries** (agencies and consulting firms) who bring client briefs to Trioangle for sub-contracted delivery. Distinct from [[ICP-Service-Trioangle]] (direct buyers) and [[ICP-Product-Trioangle]] (clone script buyers).
 
 ---
 

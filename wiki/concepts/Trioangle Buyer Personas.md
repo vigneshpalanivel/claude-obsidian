@@ -12,13 +12,13 @@ tags:
 status: current
 related:
   - "[[Trioangle]]"
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
   - "[[Vibe Coding]]"
   - "[[Marketing-Sales Alignment]]"
   - "[[Research: Marketing and Sales for AI-Era Dev Company]]"
   - "[[concepts/_index]]"
 sources:
-  - "[[ICP-Product]]"
+  - "[[ICP-Product-Trioangle]]"
 ---
 
 # Trioangle Buyer Personas
@@ -145,7 +145,7 @@ Persona 5 → Run full Gojek demo; qualify service scope first
 ## Connections
 
 - [[Trioangle]] — the company
-- [[ICP-Product]] — source document
+- [[ICP-Product-Trioangle]] — source document
 - [[Vibe Coding]] — Persona 6 is a direct downstream effect
 - [[Marketing-Sales Alignment]] — persona clarity is the foundation of marketing-sales alignment
 - [[Research: Marketing and Sales for AI-Era Dev Company]] — ICP framework applies here

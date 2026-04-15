@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-15 | Total pages: 49 | Sources ingested: 12
+Last updated: 2026-04-15 | Total pages: 51 | Sources ingested: 12
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -40,6 +40,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[AI-Native Engineering Team]] — org structure and hiring for the agent leverage era (status: developing)
 - [[Outcome-Based Pricing]] — billing model for dev agencies when AI compresses delivery time (status: developing)
 - [[Marketing-Sales Alignment]] — structural integration of marketing and sales around shared revenue goals (status: developing)
+- [[Trioangle Product ICP]] — customer profile, qualifying criteria, 5 pain points, goals, and post-purchase arc for clone script product line (status: current)
 - [[Trioangle Buyer Personas]] — 6 buyer archetypes for marketplace clone scripts; Persona 6 maps directly to Vibe Coding wave (status: current)
 - [[Trioangle Service ICP]] — 5 buyer personas for custom development and AI engineering; Persona 5 (AI-Forward Platform Operator) is a 2026 emergent archetype (status: current)
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms); only path to Enterprise and MENA buyer segments (status: current)
@@ -67,7 +68,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Jellyfish-2025-Engineering-Management]] — 2025 | 90% AI adoption, measurement gap, high-performer data
 - [[LeadDev-5-Predictions-2026]] — late 2025 | governance, security risks, junior hiring decline
 - [[Augment-Code-AI-Native-Hiring]] — 2025 | 6-capability framework for hiring AI-native engineers
-- [[ICP-Product]] — 2026-04-15 | Trioangle internal ICP | 3 wiki pages created (Trioangle entity, Trioangle Buyer Personas, source)
+- [[ICP-Product-Trioangle]] — 2026-04-15 | Trioangle internal ICP | 3 wiki pages created (Trioangle entity, Trioangle Buyer Personas, source)
 - [[ICP-Service-Trioangle]] — 2026-04-15 | Trioangle custom dev + AI engineering ICP | 5 buyer personas; Persona 3 + 4 unreachable without channel partners
 - [[ICP-Channel-Partner-Trioangle]] — 2026-04-15 | Trioangle agency/consulting channel partner ICP | 3 partner personas; unlocks Enterprise and MENA buyer access
 - [[Content-Strategy-Product]] — 2026-04-15 | Trioangle product blog strategy | 10 silos, 5 pillars, 20 templates; TikTok clone has active inbound

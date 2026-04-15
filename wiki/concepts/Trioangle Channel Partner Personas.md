@@ -58,7 +58,7 @@ Channel partners are the only path to two [[Trioangle Service ICP]] segments (Di
 **Key objection**: *"How do I know you won't go directly to my client and cut me out?"*
 > We sign a strict NCNDA on every partner deal. Your client relationship is yours - we operate as a named or unnamed sub-contractor, never the prime vendor to your client.
 
-**End clients served**: Primarily [[ICP-Product]] buyers (clone script range $500-$25k) and lower-tier [[Trioangle Service ICP]] Founder-CTO buyers ($10k-$40k custom builds).
+**End clients served**: Primarily [[ICP-Product-Trioangle]] buyers (clone script range $500-$25k) and lower-tier [[Trioangle Service ICP]] Founder-CTO buyers ($10k-$40k custom builds).
 
 ---
 

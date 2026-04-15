@@ -48,6 +48,7 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 
 ## Trioangle ICP & Personas
 
+- [[Trioangle Product ICP]] — customer profile, qualifying criteria, pain points, and goals for clone script product line
 - [[Trioangle Buyer Personas]] — 6 buyer archetypes for marketplace clone scripts; Persona 6 maps directly to Vibe Coding wave
 - [[Trioangle Service ICP]] — 5 buyer personas for custom development and AI engineering; Persona 5 (AI-Forward Platform Operator) is a 2026-emergent archetype
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms) who sub-contract to Trioangle; only path to Enterprise and MENA buyers

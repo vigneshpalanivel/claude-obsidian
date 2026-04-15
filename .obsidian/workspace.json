@@ -179,12 +179,11 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,6 +201,8 @@
   },
   "active": "fbfb6a3c722e0ada",
   "lastOpenFiles": [
+    "wiki/concepts/Trioangle Product ICP.md",
+    "wiki/sources/ICP-Product-Trioangle.md",
     "wiki/Wiki Map.md",
     "wiki/concepts/Trioangle Content Strategy.md",
     "wiki/sources/Product-Blog-Article-Templates.md",
@@ -234,8 +235,6 @@
     "wiki/meta/image-example-graph-view.png",
     "ATTRIBUTION.md.tmp.224546.1775561977773",
     "wiki/overview.md",
-    "Excalidraw/Drawing 2026-04-07 14.39.09.excalidraw.md",
-    "Excalidraw/Drawing 2026-04-07 14.39.10.excalidraw.md",
     "Untitled 2.canvas",
     "LICENSE",
     "LICENSE.tmp.224546.1775561946460",
