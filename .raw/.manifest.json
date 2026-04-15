@@ -1,5 +1,21 @@
 {
   "sources": {
+    ".raw/Trioangle - ICP - Channel Partner.md": {
+      "hash": "d54d34903ba88c8118c1bc096cc9792c",
+      "ingested_at": "2026-04-15",
+      "reingested_at": "2026-04-15",
+      "reingest_reason": "consistency review vs. Product + Service ICPs: MENA range corrected to $30k-$120k+, Segment Access softened from 'unreachable' to 'slow/trust-gated', AI-Forward Platform Operator (Service Persona 5) added to P3 routing, P1 Clone Script primary exception noted, budget floor split by delivery mode, InnBlockchain wikilink fixed, Discovery Sprint pricing hoisted into exec summary",
+      "pages_created": [
+        "wiki/sources/ICP-Channel-Partner-Trioangle.md",
+        "wiki/concepts/Trioangle Channel Partner Personas.md"
+      ],
+      "pages_updated": [
+        "wiki/sources/ICP-Channel-Partner-Trioangle.md",
+        "wiki/concepts/Trioangle Channel Partner Personas.md",
+        "wiki/hot.md",
+        "wiki/log.md"
+      ]
+    },
     ".raw/InnBlockchain - ICP - Channel Partner-I.md": {
       "hash": "329d490699d7fd6334a79557fc59cd6e",
       "ingested_at": "2026-04-15",
@@ -28,8 +44,10 @@
       ]
     },
     ".raw/InnBlockchain - ICP - Crypto Products.md": {
-      "hash": "016e509a957d790cc48cdbc8bf042c57",
+      "hash": "b1894c35b2dea81fd297f9f9270cc3f9",
       "ingested_at": "2026-04-15",
+      "reingested_at": "2026-04-15",
+      "reingest_reason": "review-driven fixes: group-company header, validation status, pricing anchors, tightened disqualifiers (prohibited jurisdictions, mixers, anon operators), expanded regulatory section (MiCA/FCA/MAS/VARA/UAE/US), Persona 3 budget reconciliation, defensible competitive math (replaced 95%/95%), graduation path section, Persona 4 platform-risk objection, NCNDA/800+ backfire callout",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-Crypto-Products.md",
         "wiki/concepts/InnBlockchain Crypto Products ICP.md"

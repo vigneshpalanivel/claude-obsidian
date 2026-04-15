@@ -19,7 +19,21 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-15: re-ingested `Trioangle - ICP - Channel Partner.md` after consistency review against Product + Service ICPs. 5 targeted fixes to source (MENA range, Segment Access softening, AI-Forward Operator added to P3, P1 delivery-mode exception, budget floor split by mode) plus prior pass (InnBlockchain wikilink, Discovery Sprint hoisted). Updated [[ICP-Channel-Partner-Trioangle]] source summary and [[Trioangle Channel Partner Personas]] concept page.
+
+2026-04-15: reingested `InnBlockchain - ICP - Crypto Products.md` after review. 10 targeted fixes applied to source + concept page (group-company header, validation status, pricing scope dial, prohibited-jurisdiction DQs, MiCA/FCA/MAS/VARA/US regulatory framing, Persona 3 budget reconciliation, defensible competitive math, graduation path section with 25% target, Persona 4 phishing/royalty-bypass objection, 800+ backfire warning for channel-partner deals).
+
 2026-04-15: ingested 4 InnBlockchain ICPs (Crypto Native, FinTech, Channel Partner, Crypto Products). 9 pages created (1 entity + 4 concept + 4 source).
+
+## Key Recent Facts (Re-ingest: Trioangle Channel Partner ICP — consistency fixes)
+- **MENA Relationship Buyer range corrected** in P2 end-client mapping: was $30k-$80k, now $30k-$120k+ (matches [[Trioangle Service ICP]] Persona 4 authoritative range). Prior Channel Partner doc understated the ceiling by $40k.
+- **Segment Access framing softened**: Enterprise + MENA buyers are NOT "unreachable" via direct outbound — Service ICP lists LinkedIn/Clutch/Gartner as active channels for both. Accurate framing is "technically reachable but slow and trust-gated; partners compress cycles from months to weeks."
+- **AI-Forward Platform Operator added to P3 routing**: Service ICP Persona 5 ($15k-$60k) — client who stalled on Cursor/Lovable and needs a domain specialist to take over. Previously missing from Channel Partner end-client mapping despite being the natural fit for P3 Vertical Specialist's domain-depth pitch.
+- **P1 delivery-mode exception recorded**: ICP-level framing is Custom Dev primary / Clone Script alternative, but P1 Overflow Agency is the exception — end clients skew Product ICP ($500-$25k), so Clone Script is the primary route for P1 partners. Custom Dev is the upsell when a client outgrows the template.
+- **Budget floor clarified**: Must-Have criteria previously said "$10k+ net dev cost" but conflicted with the $500-$25k clone script alternative. Now split: $10k+ for Custom Dev; $500+ for Clone Script **with a named live client brief** (bulk licensing still disqualifying).
+- **Discovery Sprint ($1.5k-$4k) hoisted into Executive Summary** — was buried in an objection footnote. Commercial offer, not a technical detail.
+- **InnBlockchain wikilink fixed**: `[[ICP - Channel Partner-I]]` was a dead link; now points at [[InnBlockchain Channel Partner ICP]].
+- **Unaddressed judgment calls** (not yet resolved): Burned Builder (Product Persona 2) and Super-App Ecosystem Builder (Product Persona 5) remain omitted from Channel Partner routing — may be deliberate (too small / too self-serve for partner motion) but not confirmed.
 
 ## Key Recent Facts (Ingest: InnBlockchain ICPs)
 - InnBlockchain is Trioangle's **sister/group company** for blockchain-native dev + smart contract security. Four ICPs: Crypto Native, FinTech, Channel Partner, Crypto Products.

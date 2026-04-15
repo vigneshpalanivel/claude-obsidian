@@ -25,6 +25,24 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] reingest | Trioangle - ICP - Channel Partner.md (consistency review vs. Product + Service ICPs)
+- Source: `.raw/Trioangle - ICP - Channel Partner.md` (hash → d54d34903ba88c8118c1bc096cc9792c)
+- Pages updated: [[ICP-Channel-Partner-Trioangle]] (key_claims, Delivery modes row, Qualifying budget row, Segment Access section, Validation Status), [[Trioangle Channel Partner Personas]] (intro Segment Access framing, P1 delivery-mode exception callout, P2 MENA range, P3 end-clients adds AI-Forward Platform Operator)
+- Source edits applied (Pass 2, cross-reference with [[Trioangle Product ICP]] and [[Trioangle Service ICP]]): (1) MENA Relationship Buyer corrected from $30k-$80k to $30k-$120k+ in P2 Budget Authority and End clients — matches Service ICP Persona 4; (2) Segment Access callout softened from "Cannot Reach Directly" to "Faster to Reach via Partners" — Service ICP lists LinkedIn/Clutch/Gartner as active direct channels for both Enterprise and MENA buyers, so "unreachable" was inaccurate; (3) AI-Forward Platform Operator (Service Persona 5, $15k-$60k) added to P3 Vertical Specialist end-clients — the Cursor/Lovable-wall narrative already in the doc makes this the natural routing match; (4) P1 delivery-mode exception added — ICP-level framing has Custom Dev primary / Clone Script alternative, but P1's end-client pool skews Product ICP so Clone Script is the primary route for P1 partners specifically.
+- Source edits applied (Pass 1, standalone fixes): (5) InnBlockchain wikilink `[[ICP - Channel Partner-I]]` corrected to `[[InnBlockchain Channel Partner ICP]]`; (6) budget floor split by delivery mode in Must-Have criteria ($10k+ Custom Dev / $500+ Clone Script with live client brief) — resolved conflict with clone-script alternative; (7) P3 Budget Authority clarified to accept sub-$30k briefs when vertical fit is strong; (8) Discovery Sprint pricing ($1.5k-$4k) hoisted into Executive Summary — was buried in objection footnote.
+- Unresolved (judgment calls): Burned Builder (Product Persona 2) and Super-App Ecosystem Builder (Product Persona 5) still omitted from Channel Partner routing — may be deliberate but not confirmed. Validation-status-vs-specificity tension, empty Research Log, and missing Trioangle-side channel economics flagged but not edited.
+- Key insight: the prior Channel Partner doc oversold the partner motion by claiming Enterprise and MENA buyers were "unreachable" via direct channels when the Service ICP itself lists those channels as active. The accurate and still-compelling framing is time-compression, not access-exclusivity.
+
+---
+
+## [2026-04-15] reingest | InnBlockchain - ICP - Crypto Products.md (review-driven fixes)
+- Source: `.raw/InnBlockchain - ICP - Crypto Products.md` (hash → b1894c35b2dea81fd297f9f9270cc3f9)
+- Pages updated: [[InnBlockchain Crypto Products ICP]] (new sections: Price Band Anchors, Regulatory Framing by Priority Market, Graduation Path, Competitive Math, 800+ Backfire Risk)
+- Source edits applied: (1) group-company brand/routing header, (2) partial-validation status callout, (3) scope-dial pricing anchors for $5–8k/$9–13k/$14–20k tiers, (4) tightened disqualifiers (prohibited jurisdictions, mixers, anonymous operators, ICO scaffolding, laundering patterns), (5) expanded regulatory section with MiCA/FCA/MAS/VARA/DIFC/ADGM/US by-jurisdiction framing, (6) Persona 3 (Web3 Protocol Architect) budget reconciled with explanation for $5–15k narrower band, (7) competitive table replaced "95%/95%" with defensible midpoint math (~96% cost / ~97% time, ~20× / ~40×), (8) new Graduation Path section with 5 re-engagement triggers + handoff protocol + 25% graduation target, (9) Persona 4 objection handling phishing/fake listings/royalty bypass with ERC-2981 + router allowlist + drainer blocklist response, (10) "800+ platforms" backfire warning on channel-partner deals.
+- Key insight: Crypto Products is not a terminal product line — it's a production-validation step in a 12-month conversion funnel toward InnBlockchain custom dev. Target 25% graduation rate; track the cohort.
+
+---
+
 ## [2026-04-15] ingest | InnBlockchain ICPs (4 files — Crypto Native, FinTech, Channel Partner, Crypto Products)
 - Sources: `.raw/InnBlockchain - ICP - Crypto Native.md`, `.raw/InnBlockchain - ICP - FinTech.md`, `.raw/InnBlockchain - ICP - Channel Partner-I.md`, `.raw/InnBlockchain - ICP - Crypto Products.md`
 - Summaries: [[ICP-InnBlockchain-Crypto-Native]], [[ICP-InnBlockchain-FinTech]], [[ICP-InnBlockchain-Channel-Partner]], [[ICP-InnBlockchain-Crypto-Products]]

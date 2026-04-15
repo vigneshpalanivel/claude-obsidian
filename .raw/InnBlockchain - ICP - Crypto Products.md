@@ -365,6 +365,9 @@ Target: **25% of clone script deals graduate to an InnBlockchain custom dev enga
 > **Objection:** *"My artists are not technical at all. Can they actually use this to mint and sell?"*
 > **Response:** The creator-facing interface mirrors OpenSea's UX — connect wallet, upload artwork, set royalty %, publish. No code required. Your admin panel controls everything else: featured listings, collection approvals, fee rates, and promotional banners.
 
+> **Objection:** *"I've seen every NFT marketplace in 2024 get hit with fake listings, wallet-drainer phishing links in mint pages, and royalty bypass via blur-style zero-fee routers. My community will never forgive me if that happens to them."*
+> **Response:** This is the most legitimate operational concern in NFT marketplaces today. Our script ships with: (1) **collection approval workflow** — nothing appears in your public feed until you approve it, preventing impersonation listings; (2) **on-chain royalty enforcement** via ERC-2981 + optional allowlist of trusted routers, so zero-fee marketplace routers cannot silently bypass your creators' royalties; (3) **wallet interaction warnings** on suspicious contracts detected via the client-side wallet drainer blocklist we maintain; (4) **rate-limited mint pages** to throttle automated drainer attacks; (5) **mod tooling** for takedown and user-reporting workflows. Defence against phishing and royalty bypass is an ongoing arms race — we ship the platform controls, your community moderation handles the social layer.
+
 > [!QUOTE] *"OpenSea takes 2.5% and my gaming community's assets get buried under 10,000 PFP projects. I want my own marketplace where my community is the whole point — and I keep the fees."*
 
 ---
@@ -471,6 +474,9 @@ Target: **25% of clone script deals graduate to an InnBlockchain custom dev enga
 > We've been operating since 2015, delivered 800+ platforms across 150+ countries, and maintain active support on every product we ship. You can verify live exchanges and DEXes built on our scripts — we'll share on-chain contract addresses. We also offer an NDA-protected code preview so you can evaluate before committing.
 
 **Evidence:** On-chain contract addresses of live deployments, company timeline, third-party review profiles, NDA-protected code preview offer.
+
+> [!WARNING] "800+ platforms" Can Backfire on Channel-Partner Deals
+> The "800+ platforms since 2015" proof point is the strongest trust builder with direct buyers — and simultaneously the **biggest risk on deals that originate through [[ICP - Channel Partner-I]]**. Advisory-firm partners hear "800+ deployments" and assume we have a direct-sales motion that will eventually bypass them (non-circumvention fear). On partner-originated deals, lead with this framing instead: *"InnBlockchain and Trioangle have no direct sales motion into your client's segment for custom builds — the partner model is permanent. The 800+ figure represents clone script deployments, not the custom engagements we only take through partners like you."* Pair this with an NCNDA signed Day 1, before any on-chain addresses or audit documentation are shared. See [[ICP - Channel Partner-I]] for the full partner objection playbook.
 
 ---
 

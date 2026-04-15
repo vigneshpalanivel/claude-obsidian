@@ -3,6 +3,7 @@ type: concept
 title: "Trioangle Channel Partner Personas"
 created: 2026-04-15
 updated: 2026-04-15
+last_reingested: 2026-04-15
 tags:
   - concept
   - buyer-persona
@@ -26,7 +27,7 @@ sources:
 
 Three intermediary archetypes for [[Trioangle]]'s channel partner program. These are **not** end-buyers of software; they are agencies and consulting firms who sub-contract development delivery to Trioangle. Each persona is defined by **what they are trying to expand** within their own business.
 
-Channel partners are the only path to two [[Trioangle Service ICP]] segments (Digital Transformation Enterprise Buyer and MENA Relationship Buyer) that are not reachable via Trioangle's direct outbound.
+Channel partners are the fastest path to two [[Trioangle Service ICP]] segments (Digital Transformation Enterprise Buyer and MENA Relationship Buyer). Both are technically reachable via direct outbound (LinkedIn, Clutch, VC referrals) but convert slowly and are trust-gated. Partner intermediaries compress the sales cycle from months to weeks.
 
 ---
 
@@ -60,6 +61,8 @@ Channel partners are the only path to two [[Trioangle Service ICP]] segments (Di
 
 **End clients served**: Primarily [[ICP-Product-Trioangle]] buyers (clone script range $500-$25k) and lower-tier [[Trioangle Service ICP]] Founder-CTO buyers ($10k-$40k custom builds).
 
+> **Delivery-mode routing exception**: The ICP-level framing treats Custom Dev as primary and Clone Script as alternative. P1 is the exception. Their end-client pool skews Product ICP (sub-$25k, standard vertical use cases), so for P1 partners, **Clone Script is the primary route** and Custom Dev is the upsell when a client outgrows the template. Route P1 briefs to the Product delivery line by default.
+
 ---
 
 ## Persona 2 - The "Consulting Upseller"
@@ -80,7 +83,7 @@ Channel partners are the only path to two [[Trioangle Service ICP]] segments (Di
 **Key objection**: *"How can I trust an outsourced team to meet the quality standards I've promised my client?"*
 > We build to your documentation standard and give your client-facing PM full sprint visibility via shared dashboards. Load testing and QA reports included as deliverables - ready for your client presentation.
 
-**End clients served**: Primarily mid-high [[Trioangle Service ICP]] personas - Scaling CTO ($30k-$80k), Digital Transformation Enterprise Buyer ($50k-$120k), MENA Relationship Buyer ($30k-$80k). This persona is the primary access path to the Enterprise Buyer segment.
+**End clients served**: Primarily mid-high [[Trioangle Service ICP]] personas - Scaling CTO ($30k-$80k), Digital Transformation Enterprise Buyer ($50k-$120k), MENA Relationship Buyer ($30k-$120k+). This persona is the primary access path to the Enterprise Buyer segment.
 
 > **Strategic note**: MENA-based consulting partners specifically unlock [[Trioangle Service ICP]] Persona 4 (MENA Relationship Buyer), who is not reachable through Trioangle's direct outbound channels.
 
@@ -104,7 +107,7 @@ Channel partners are the only path to two [[Trioangle Service ICP]] segments (Di
 **Key objection**: *"How do I know your team understands our industry well enough to build for it?"*
 > We've delivered 800+ projects across 150+ countries - logistics dispatch platforms, home services marketplaces, real estate portals, on-demand delivery apps - already live and running. We'll show you a live app in your exact vertical before the contract is signed.
 
-**End clients served**: Primarily [[Trioangle Service ICP]] Scaling CTO ($30k-$80k) and Digital Transformation Enterprise Buyer ($50k-$120k) within the consulting firm's specific industry vertical.
+**End clients served**: Primarily [[Trioangle Service ICP]] Scaling CTO ($30k-$80k), Digital Transformation Enterprise Buyer ($50k-$120k), and AI-Forward Platform Operator (Service ICP Persona 5, $15k-$60k) — the last being a client who prototyped with Cursor/Lovable/Copilot, hit the wall at vertical-specific logic (dispatch, commission flows, multi-tenant auth), and needs a domain specialist to take over. P3 also accepts lower-tier briefs ($10k-$30k) when vertical fit is strong.
 
 ---
 

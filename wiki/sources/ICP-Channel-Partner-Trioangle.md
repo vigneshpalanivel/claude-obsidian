@@ -9,12 +9,13 @@ confidence: high
 key_claims:
   - "Channel partner is a digital agency or consulting firm that sub-contracts app development to Trioangle"
   - "Three partner personas: Overflow Agency Lead, Consulting Upseller, Vertical Specialist"
-  - "Two delivery modes routed by brief: Custom Dev (primary, $10k-$120k+) or Clone Script (alternative, $500-$25k)"
+  - "ICP-level framing: Custom Dev primary ($10k+), Clone Script alternative ($500+ with live client brief). P1 Overflow Agency is the exception: Clone Script is primary for their end-client pool."
+  - "Budget floor is mode-dependent: $10k+ for Custom Dev; $500+ for Clone Script with a named live client brief"
   - "Non-circumvention (NCNDA) is the #1 trust objection - must be a signed contract, not a verbal promise"
-  - "Enterprise Buyer and MENA Relationship Buyer are not reachable via direct outbound - channel partners are the only access path"
+  - "Enterprise Buyer and MENA Relationship Buyer are technically reachable via direct outbound but convert slowly; channel partners compress sales cycles from months to weeks"
   - "India-based agencies excluded from this ICP - peer/competitor perception prevents sub-contractor trust"
   - "Discovery Sprint ($1,500-$4,000) available as paid pre-sales scoping tool"
-  - "Validation status: assumption-based - no confirmed interviews or closed partner deals as of 2026-04-05"
+  - "Validation status: assumption-based - no confirmed interviews or closed partner deals as of 2026-04-15"
 created: 2026-04-15
 updated: 2026-04-15
 tags:
@@ -53,8 +54,8 @@ Trioangle's Ideal Channel Partner profile. These are not end-buyers of software;
 | **Size** | 5-150 employees, $200k-$10M ARR; sweet spot: 10-50 employees |
 | **Geography** | Tier 1: US, Canada, UK, UAE. Tier 2: Germany, Netherlands, France, Australia, Singapore. India excluded. |
 | **Business model** | Retainer + Project. Bills end-clients $50-$200/hr or flat project fees. |
-| **Delivery modes** | Custom Dev primary ($10k-$120k+); Clone Script alternative ($500-$25k) |
-| **Qualifying budget** | Client project net dev cost $10k+ |
+| **Delivery modes** | ICP-level: Custom Dev primary ($10k-$120k+); Clone Script alternative ($500-$25k). **P1 Overflow Agency exception:** Clone Script is the primary route (end clients skew Product ICP). |
+| **Qualifying budget** | Custom Dev: $10k+ net dev cost. Clone Script: $500+ **with a named live client brief** (bulk licensing disqualifying). |
 
 ---
 
@@ -91,12 +92,12 @@ The primary trust barrier for all 3 personas. Response: NCNDA is a **signed cont
 
 ---
 
-## Segment Access - Clients Trioangle Cannot Reach Directly
+## Segment Access - Clients Faster to Reach via Partners
 
-Two [[ICP-Service-Trioangle]] buyer types are **not reachable** via Trioangle's direct outbound (LinkedIn ABM, Clutch, VC referrals):
+Two [[ICP-Service-Trioangle]] buyer types are **technically reachable** via Trioangle's direct outbound (LinkedIn ABM, Clutch, VC referrals are listed as active channels in the Service ICP), but conversion is slow and trust-gated. Channel partners compress the cycle from months to weeks:
 
-- **Digital Transformation Enterprise Buyer** (Persona 3 in Service ICP) - Uses formal RFP processes. Only accessible via management consulting firms with existing enterprise relationships.
-- **MENA Relationship Buyer** (Persona 4 in Service ICP) - Referral-only. UAE/KSA-based agency and consulting partners are the primary access channel.
+- **Digital Transformation Enterprise Buyer** (Persona 3 in Service ICP) - Engages direct vendors primarily through formal RFP processes initiated by management consulting and Gartner/analyst relationships. Direct Clutch/LinkedIn rarely clears the procurement bar on its own.
+- **MENA Relationship Buyer** (Persona 4 in Service ICP, budget $30k-$120k+) - Relationship-first. A warm introduction from a MENA-based consulting firm outweighs cold portfolio evidence by a wide margin.
 
 Prioritise partner outreach to: management consulting firms (Enterprise Buyer access) and UAE/KSA-based digital agencies (MENA Buyer access).
 
@@ -128,7 +129,7 @@ New threat (2026): AI coding tools (Cursor, Lovable) as agency-internal alternat
 
 ## Validation Status
 
-Assumption-based. No confirmed interviews or closed partner deals as of 2026-04-05.
+Assumption-based. No confirmed interviews or closed partner deals as of 2026-04-15 (source last reviewed 2026-04-15 for consistency fixes; pain point scores and budget ranges remain hypotheses).
 
 **Validation targets:**
 - 10+ agency/consulting firm interviews by 2026-06-30
