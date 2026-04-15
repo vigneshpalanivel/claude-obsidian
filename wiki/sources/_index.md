@@ -36,6 +36,9 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 - [[ICP-Product]] — Trioangle internal, 2026 | ICP and 6 buyer personas for marketplace clone script product line
 - [[ICP-Service-Trioangle]] — Trioangle internal, 2026 | ICP and 5 buyer personas for custom development and AI engineering service line
 - [[ICP-Channel-Partner-Trioangle]] — Trioangle internal, 2026 | ICP and 3 personas for agency/consulting channel partners; unlocks Enterprise and MENA buyer segments
+- [[Content-Strategy-Product]] — Trioangle internal, 2026 | 10-silo, 5-pillar product blog strategy; TikTok clone has active inbound now
+- [[Content-Strategy-Service]] — Trioangle internal, 2026 | 81-article service blog; persona-gated CTA rules; MENA = no forms ever
+- [[Product-Blog-Article-Templates]] — Trioangle internal, 2026 | 20 article templates + 8 lead magnets for product line blog
 
 ---
 
