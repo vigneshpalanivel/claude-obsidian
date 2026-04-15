@@ -25,6 +25,19 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] ingest | Trioangle - Product Verticals.md
+- Source: .raw/Trioangle - Product Verticals.md (Trioangle internal, sitemap analysis, 2026)
+- Pages created: [[Trioangle-Product-Verticals]]
+- Updated: [[sources/_index]], [[index]]
+- Key finding 1: 205 distinct product scripts across 8 verticals — distinct from 800+ deployments; full brand name map documented (Gofer, Makent, PassUp, PopTok, Igniter, GoferHandy, GoferJek, GoferTow, Udify)
+- Key finding 2: Watchit (YouTube/Vimeo clone) appears in this source but is NOT an active product — flagged in source page; never reference in any content
+
+## [2026-04-15] reingest | ICP - Product.md (updated)
+- Source: .raw/ICP - Product.md (updated by user — two additions)
+- Pages updated: [[Trioangle Product ICP]], [[ICP-Product-Trioangle]]
+- Addition 1: Vertical inbound priority column added to 8 Product Verticals table; rows reordered by inbound signal; PopTok (TikTok clone) flagged as active inbound — build BOFU immediately
+- Addition 2: AI-era positioning rule added — "Never position on faster with AI. Position on certainty of outcome and risk reduction." Added to Executive Summary in source and as standalone section in concept page
+
 ## [2026-04-15] ingest | Content Strategy - Product.md + Content Strategy - Service.md + Product Blog Article Templates.md
 - Sources: .raw/Content Strategy - Product.md, .raw/Content Strategy - Service.md, .raw/Product Blog Article Templates.md (Trioangle internal, 2026)
 - Pages created: [[Content-Strategy-Product]], [[Content-Strategy-Service]], [[Product-Blog-Article-Templates]], [[Trioangle Content Strategy]]

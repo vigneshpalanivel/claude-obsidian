@@ -33,6 +33,7 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 - [[Jellyfish-2025-Engineering-Management]] — Jellyfish, 2025 | 90% AI adoption, measurement gap, high-performer characteristics
 - [[LeadDev-5-Predictions-2026]] — LeadDev, late 2025 | 5 uncomfortable predictions for engineering leaders
 - [[Augment-Code-AI-Native-Hiring]] — Augment Code, 2025 | 6-capability framework for hiring AI-native engineers
+- [[Trioangle-Product-Verticals]] — Trioangle internal, 2026 | 205 product scripts across 8 verticals; full brand name map (Gofer, Makent, PassUp, PopTok, etc.); Watchit is NOT active
 - [[ICP-Product-Trioangle]] — Trioangle internal, 2026 | ICP and 6 buyer personas for marketplace clone script product line
 - [[ICP-Service-Trioangle]] — Trioangle internal, 2026 | ICP and 5 buyer personas for custom development and AI engineering service line
 - [[ICP-Channel-Partner-Trioangle]] — Trioangle internal, 2026 | ICP and 3 personas for agency/consulting channel partners; unlocks Enterprise and MENA buyer segments

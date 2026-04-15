@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-15 | Total pages: 51 | Sources ingested: 12
+Last updated: 2026-04-15 | Total pages: 52 | Sources ingested: 13
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -68,6 +68,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Jellyfish-2025-Engineering-Management]] — 2025 | 90% AI adoption, measurement gap, high-performer data
 - [[LeadDev-5-Predictions-2026]] — late 2025 | governance, security risks, junior hiring decline
 - [[Augment-Code-AI-Native-Hiring]] — 2025 | 6-capability framework for hiring AI-native engineers
+- [[Trioangle-Product-Verticals]] — 2026-04-15 | Trioangle internal | 205 product scripts across 8 verticals; brand name map; Watchit flag
 - [[ICP-Product-Trioangle]] — 2026-04-15 | Trioangle internal ICP | 3 wiki pages created (Trioangle entity, Trioangle Buyer Personas, source)
 - [[ICP-Service-Trioangle]] — 2026-04-15 | Trioangle custom dev + AI engineering ICP | 5 buyer personas; Persona 3 + 4 unreachable without channel partners
 - [[ICP-Channel-Partner-Trioangle]] — 2026-04-15 | Trioangle agency/consulting channel partner ICP | 3 partner personas; unlocks Enterprise and MENA buyer access
