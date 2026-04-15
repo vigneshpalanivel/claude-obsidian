@@ -62,14 +62,17 @@
       ]
     },
     ".raw/InnBlockchain - ICP - FinTech.md": {
-      "hash": "f7773cf2832b99b5996d21d180782db4",
+      "hash": "86340bd89c7b926c207ff9e9828b7255",
       "ingested_at": "2026-04-15",
+      "reingested_at": "2026-04-15",
+      "reingest_reason": "review-driven fixes: segment reorder (WealthTech now Seg 1 / ExchangeTech Seg 2 — doc order matches priority), API-first Tier 0 contradiction resolved, unused maturity tiers deleted, persona age ranges removed, Segment 7 blocked on CFO persona, anti-ICP dedup, interview Q17 reframed as indirect budget question, AI content tagged unvalidated pending 2026-05-31",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-FinTech.md",
         "wiki/concepts/InnBlockchain FinTech ICP.md"
       ],
       "pages_updated": [
-        "wiki/index.md",
+        "wiki/sources/ICP-InnBlockchain-FinTech.md",
+        "wiki/concepts/InnBlockchain FinTech ICP.md",
         "wiki/hot.md",
         "wiki/log.md"
       ]

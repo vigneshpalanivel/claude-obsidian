@@ -1,0 +1,131 @@
+---
+type: source
+title: "Content Strategy — InnBlockchain Crypto Native"
+source_type: internal-document
+author: "InnBlockchain Marketing"
+date_published: 2026
+url: ""
+confidence: high
+key_claims:
+  - "5 technology pillars (C1-C5): Smart Contract Security, Protocol Architecture, ZK/MPC/Advanced Crypto, Web3 Engineering Velocity, EU Regulatory Compliance & MiCA"
+  - "10 segment verticals (V1-V10); 6 Active: RWA (V1, highest priority), DEX (V2), DeFi Lending (V3), Wallets (V4), NFT (V5), Token Launch (V6); 4 Watch: DAO, L2, GameFi, AI x Crypto"
+  - "Phase 1 is strictly sequential: all 18 RWA + MiCA (C5) articles publish before any Phase 2 content begins. Depth over breadth."
+  - "4 personas: Founding Felix (DeFi CTO), RWA Felix (non-technical asset owner), Product Paulo (Head of Eng), Security Sasha (Protocol Security Lead at $10M+ raised)"
+  - "Content tone splits by persona: Felix/Paulo/Sasha = exploit-thread technical depth; RWA Felix = plain-language, asset-first, compliance-aware"
+  - "RWA hub content must be plain-language; RWA Felix cannot read Solidity and evaluates on explanation clarity + reference checks"
+  - "EU is the sole GTM geography until 5 projects close; MiCA is the #1 cross-cutting content theme for V1 and V6"
+  - "Budget floor $20k+ across all segments except RWA where floor is $30k+ (aligned with RWA Segment 1 ACV)"
+  - "AI-generated code audit (V10) activates immediately as overlay on any active segment deal — no gate required"
+  - "Cross-ICP routing clauses embedded in every vertical: DEX/DeFi/Wallet prospects routed to FinTech ICP only if existing regulated business expanding. Company origin is the gate, not licensing status."
+  - "SEO differentiation explicit on every cross-cutting topic (RWA, Travel Rule, upgrade patterns, audit checklists): Crypto Native = smart contract implementation/exploit; FinTech = compliance auditability/regulatory liability"
+  - "Watch segment activation gate: any two of {2+ inbound leads/90d, leadership ICP expansion, portfolio case study, competitive pressure}"
+  - "51 scored articles. Top 4 Phase 1: (1) RWA Tokenization Hub 9.7, (2) MiCA Compliance for RWA Platforms 9.6, (3) MiCA Explained for Technical Founders 9.5, (4) RWA Tokenization 101 plain-language 9.4"
+  - "Lead magnets: RWA Audit Checklist (score 9.2) + Smart Contract Exploit Prevention Checklist (score 8.6)"
+  - "Strongest buyer signal: testnet live + audit deadline (DeFi/protocol) OR confirmed real asset + live compliance deadline (RWA)"
+ingest_rev: 1
+created: 2026-04-16
+updated: 2026-04-16
+tags:
+  - source
+  - content-strategy
+  - innblockchain
+  - crypto-native
+  - seo
+  - blog
+status: current
+related:
+  - "[[InnBlockchain]]"
+  - "[[InnBlockchain Crypto Native ICP]]"
+  - "[[ICP-InnBlockchain-Crypto-Native]]"
+  - "[[InnBlockchain Content Strategy]]"
+  - "[[InnBlockchain Crypto Native Content Strategy]]"
+  - "[[sources/_index]]"
+---
+
+# Content Strategy — InnBlockchain Crypto Native
+
+Source: `.raw/InnBlockchain - Content Strategy - Crypto Native.md`
+
+## Summary
+
+The content strategy for InnBlockchain's Crypto Native ICP: a 2-tier architecture (5 protocol-agnostic technology pillars × 10 segment verticals) with strict Phase 1 sequencing that locks all content effort on RWA Tokenization + MiCA compliance before any other vertical unlocks. 51 scored articles, 4 personas, EU-only distribution until the 5-project gate clears.
+
+## Strategic Frame
+
+- **Primary goal**: inbound authority for EU-registered protocol teams and RWA founders past the idea stage — "we've seen this exploit, we know this architecture, we understand MiCA."
+- **Anti-ICP**: pre-raise whitepaper projects, "learn Solidity" audiences, retail speculation, ICO schemes without product, existing regulated FinTechs (route to [[Content Strategy - InnBlockchain FinTech]]).
+- **Routing gate vs. FinTech**: company origin, not licensing. A licensed crypto-native DEX still belongs here.
+
+## Technology Pillars (Tier 1)
+
+| # | Pillar | Audience Question |
+|---|--------|-------------------|
+| C1 | Smart Contract Security & Auditing | How do we know our contracts are safe before mainnet? |
+| C2 | Protocol Architecture & Design Patterns | What's the right architecture for our protocol type? |
+| C3 | ZK, MPC & Advanced Cryptography | When do we need ZK/MPC/TSS? |
+| C4 | Web3 Engineering Velocity | How do we ship faster without increasing exploit risk? |
+| C5 | EU Regulatory Compliance & MiCA | What does EU regulation mean for our smart contracts? |
+
+C5 is the #1 cross-cutting theme for RWA (V1) and Token Launch (V6). Every active segment should carry at least one C5 article.
+
+## Segment Verticals (Tier 2)
+
+> [!key-insight] RWA is the #1 priority and gates everything else
+> Phase 1 (18 articles across V1 + C5) must publish completely before any Phase 2 content begins. Rationale: concentrated authority in one vertical beats thin coverage across six.
+
+| # | Vertical | Status | Note |
+|---|----------|--------|------|
+| V1 | RWA Tokenization | Active ⭐ | Highest priority. Real estate, vehicles, commodities, art, private credit |
+| V2 | DEX & On-Chain Trading | Active | AMMs, order books, DEX aggregators |
+| V3 | DeFi Lending, Yield & Liquidity | Active | Lending markets, ERC-4626 vaults, liquidation engines |
+| V4 | Non-Custodial & MPC Wallets | Active | Self-custody, MPC, drainer prevention |
+| V5 | NFT Platforms & Marketplaces | Active | Minting, marketplaces, royalty enforcement, B2B NFTs |
+| V6 | Token Launch & IDO | Active | Launchpads, vesting, whitelist infra, MiCA whitepaper requirements |
+| V7 | DAO Infrastructure & Governance | Watch | Flash loan governance attacks, timelocks |
+| V8 | L2 & Chain Infrastructure | Watch (High Value) | Bridges, rollups, sequencer design |
+| V9 | Web3 Gaming & GameFi | Watch | In-game asset contracts, P2E tokenomics |
+| V10 | AI x Crypto / On-Chain AI Agents | Watch (Accelerating) | **AI-code audit overlay activates immediately on any active segment deal** |
+
+## Personas & Content Tone
+
+| Persona | Role | Content Requirement |
+|---------|------|---------------------|
+| 🧠 Founding Felix | DeFi/Protocol CTO | Deeply technical, security-first, exploit-thread depth |
+| 🏠 RWA Felix | Asset owner (real estate, commodities, art, vehicles) | **Plain-language, asset-first, compliance-aware. Cannot read Solidity.** |
+| ⚙️ Product Paulo | Head of Engineering | Velocity, architecture patterns, audit readiness |
+| 🔐 Security Sasha | Protocol Security Lead ($10M+ raised) | Rigorous methodology, named auditor credentials, public findings depth. Without her approval, deal doesn't close. |
+
+## Phase 1 Top 5 (Scored)
+
+| # | Title | Score |
+|---|-------|-------|
+| 1 | How to Tokenize Real-World Assets (Hub) | 9.7 |
+| 2 | MiCA Compliance for RWA Tokenization Platforms | 9.6 |
+| 3 | MiCA Explained for Technical Founders | 9.5 |
+| 4 | RWA Tokenization 101 (plain-language, LinkedIn) | 9.4 |
+| 5 | ERC-3643 vs ERC-1400 vs ERC-20 | 9.3 |
+
+Full scored list of 51 articles lives in the raw source.
+
+## SEO Differentiation (vs. FinTech ICP)
+
+Explicit disambiguation notes appear on every topic that exists in both strategies:
+
+- **RWA articles**: Crypto Native leads with smart contract architecture, oracle design, permissioned token standards (ERC-3643), MiCA obligations *for platform builders*. FinTech leads with liquidity, T+0 settlement, MiFID II classification, institutional investors.
+- **Upgrade patterns**: Crypto Native = exploit vectors (storage collisions, initializer reentrancy). FinTech = governance, auditability, regulatory liability.
+- **Audit checklists**: Crypto Native = exploit-pattern testing. FinTech = compliance auditability, regulator sign-off.
+- **Travel rule**: Crypto Native = DeFi protocol implementing on-chain. FinTech = licensed CASP on-chain AML tooling.
+- **Hiring**: Crypto Native = reentrancy auditing, ZK circuits. FinTech = compliance-aware engineers, audit trails, KYC/AML integration.
+
+## Open Questions
+
+- Phase 1 is 18 articles at ~1/week cadence → ~4-5 months locked on RWA before any DEX/DeFi/Wallet/NFT/Token Launch content ships. Opportunity cost not explicitly reconciled against competitor velocity.
+- V10 (AI x Crypto) activation path is ambiguous: the overlay ships immediately, but the standalone segment is Watch. Risk of content drift.
+- No keyword ownership ledger — content differentiation notes vs. FinTech are prose, not a shared targeting matrix. First cross-ICP publishing conflict is the risk surface.
+
+## See Also
+
+- Concept page: [[InnBlockchain Crypto Native Content Strategy]]
+- Umbrella: [[InnBlockchain Content Strategy]]
+- ICP: [[InnBlockchain Crypto Native ICP]]
+- Sister strategies: [[Content-Strategy-InnBlockchain-FinTech]], [[Content-Strategy-InnBlockchain-Crypto-Products]]
