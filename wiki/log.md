@@ -25,6 +25,13 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] ingest | BMAD Method Documentation (Full)
+- Source: `.raw/BMAD Method Documentation (Full).md` (hash → 4091f2571c34f93b1d9dccd3b29849dc)
+- Summary: [[BMAD-Method-Documentation]]
+- Pages created: [[BMAD Method]], [[BMad Four-Phase Workflow]], [[BMad Quick Dev]], [[BMad Project Context]], [[Adversarial Review]], [[Advanced Elicitation]], [[Working Backwards PRFAQ]]
+- Pages updated: [[index]], [[hot]], [[log]]
+- Key insight: BMad's phased-document-as-context pattern, adversarial-review-with-finding-floor, and intent-compression-before-autonomous-run are directly transferable to claude-obsidian's wiki-lint, autoresearch, and CLAUDE.md design.
+
 ## [2026-04-16] ingest | InnBlockchain Content Strategies (Crypto Native + Crypto Products + FinTech)
 - Sources:
   - `.raw/InnBlockchain - Content Strategy - Crypto Native.md` (hash → 00cc87e6b15f6d1a3559a4b3c1f8376f)

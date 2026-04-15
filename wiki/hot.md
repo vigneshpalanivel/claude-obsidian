@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Hot Cache"
-updated: 2026-04-16T00:00:00
+updated: 2026-04-15T00:00:00
 tags:
   - meta
   - hot-cache
@@ -19,6 +19,8 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-15: ingested `BMAD Method Documentation (Full).md` (v6 docs snapshot from docs.bmad-method.org/llms-full.txt). 8 pages created: source summary [[BMAD-Method-Documentation]], entity [[BMAD Method]], and 6 concept pages ([[BMad Four-Phase Workflow]], [[BMad Quick Dev]], [[BMad Project Context]], [[Adversarial Review]], [[Advanced Elicitation]], [[Working Backwards PRFAQ]]). Key patterns worth stealing for claude-obsidian: (a) project-context.md as a lean constitution loaded on every implementation workflow — maps onto vault CLAUDE.md, (b) adversarial review with mandatory finding floor + orthogonal edge-case hunter — directly applicable to `wiki-lint`, (c) intent-compression-then-autonomous-run pattern from Quick Dev — maps onto `/autoresearch` loop design, (d) named reasoning methods (pre-mortem, inversion) from Advanced Elicitation as alternatives to vague "try again" retries, (e) fresh-chat-per-workflow rule enforces "documents are the context, not chat scrollback." V6 sequencing change: epics/stories now created AFTER architecture (not before) because technical decisions shape work breakdown.
+
 2026-04-16: ingested all 3 InnBlockchain Content Strategy files (Crypto Native, Crypto Products, FinTech). 7 pages created: 3 source summaries ([[Content-Strategy-InnBlockchain-Crypto-Native]], [[Content-Strategy-InnBlockchain-Crypto-Products]], [[Content-Strategy-InnBlockchain-FinTech]]), 3 concept pages ([[InnBlockchain Crypto Native Content Strategy]], [[InnBlockchain FinTech Content Strategy]], [[InnBlockchain Crypto Products Content Strategy]]), and 1 umbrella concept ([[InnBlockchain Content Strategy]]). [[InnBlockchain]] entity + index + log updated. Channel Partner ICP has no dedicated content program (flagged as open question in umbrella).
 
 2026-04-15: re-ingested `InnBlockchain - ICP - FinTech.md` after review. 8 fixes to source: segment reorder (WealthTech now Seg 1, ExchangeTech Seg 2 — doc order matches priority), API-first contradiction resolved (Tier 0 tag formalized), unused maturity tiers deleted, age ranges removed from all 3 personas, Segment 7 marked Blocked on CFO persona definition, anti-ICP block dedup'd, interview Q17 reframed as indirect budget question, AI content tagged `[unvalidated — pending 2026-05-31]` at Pain Point 5 / WealthTech AI convergence / SEO AI+Blockchain cluster. Updated [[ICP-InnBlockchain-FinTech]] source and [[InnBlockchain FinTech ICP]] concept.

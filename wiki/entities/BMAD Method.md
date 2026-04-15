@@ -18,6 +18,7 @@ related:
   - "[[Agentic Engineering]]"
 sources:
   - "[[BMAD-Method-Documentation]]"
+  - "[[TEA-Documentation]]"
 ---
 
 # BMAD Method
@@ -41,7 +42,7 @@ The framework is tool-agnostic. It integrates with Claude Code, Cursor, Codex CL
 - **BMB** (`bmb`) — BMad Builder, meta-module for creating custom agents/workflows/modules
 - **CIS** — Creative Intelligence Suite (ideation agents)
 - **GDS** — Game Dev Studio (Unity, Unreal, Godot)
-- **TEA** — Test Architect (Murat agent, 9 enterprise test workflows)
+- **TEA** — [[Test Architect (TEA)]] (Murat agent, 9 workflows spanning Phase 3, Phase 4, and the Release Gate). Dedicated knowledge base of 42 fragments loaded via [[TEA Knowledge Base System]]. See [[TEA-Documentation]] for the full v2026-04-13 source dump.
 
 Community modules install via `--custom-source` from Git URLs or local paths.
 

@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 68 | Sources ingested: 20
+Last updated: 2026-04-15 | Total pages: 76 | Sources ingested: 21
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -53,6 +53,12 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
 - [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
+- [[BMad Four-Phase Workflow]] — BMad's context engineering backbone; Analysis → Planning → Solutioning → Implementation; fresh chat per workflow (status: current)
+- [[BMad Quick Dev]] — compress intent, freeze spec, run longer unsupervised; diagnose failure at the layer where it entered (status: current)
+- [[BMad Project Context]] — `project-context.md` as project constitution loaded by every implementation workflow; keep lean (status: current)
+- [[Adversarial Review]] — reviewer must find issues; zero findings triggers re-analyze; pair with edge-case hunter for orthogonal coverage (status: current)
+- [[Advanced Elicitation]] — named reasoning methods (pre-mortem, inversion, first principles) applied to LLM output for structured second pass (status: current)
+- [[Working Backwards PRFAQ]] — write the press release before the product; gauntlet for stress-testing concepts before PRD (status: current)
 
 ---
 
@@ -67,6 +73,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[rvk7895-llm-knowledge-bases]] — 3-depth query system, Marp slides, parallel deep research (status: current)
 - [[kepano-obsidian-skills]] — official skills from Obsidian creator; defuddle, obsidian-bases (status: current)
 - [[Claudian-YishenTu]] — native Obsidian plugin embedding Claude Code; plan mode, @mention (status: current)
+- [[BMAD Method]] — AI-driven dev framework; 4 phases, 3 tracks, agent personas with menu triggers; v6 (status: current)
 
 ---
 
@@ -91,6 +98,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Content-Strategy-InnBlockchain-Crypto-Native]] — 2026-04-16 | 5 pillars × 10 verticals × 51 scored articles; Phase 1 RWA lock
 - [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first
 - [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
+- [[BMAD-Method-Documentation]] — 2026-04-13 | full BMad v6 docs snapshot (llms-full.txt); 4 phases, agents, workflows, reviews
 
 ---
 

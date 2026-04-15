@@ -1,5 +1,24 @@
 {
   "sources": {
+    ".raw/BMAD Method Documentation (Full).md": {
+      "hash": "4091f2571c34f93b1d9dccd3b29849dc",
+      "ingested_at": "2026-04-15",
+      "pages_created": [
+        "wiki/sources/BMAD-Method-Documentation.md",
+        "wiki/entities/BMAD Method.md",
+        "wiki/concepts/BMad Four-Phase Workflow.md",
+        "wiki/concepts/BMad Quick Dev.md",
+        "wiki/concepts/BMad Project Context.md",
+        "wiki/concepts/Adversarial Review.md",
+        "wiki/concepts/Advanced Elicitation.md",
+        "wiki/concepts/Working Backwards PRFAQ.md"
+      ],
+      "pages_updated": [
+        "wiki/index.md",
+        "wiki/hot.md",
+        "wiki/log.md"
+      ]
+    },
     ".raw/Trioangle - ICP - Channel Partner.md": {
       "hash": "d54d34903ba88c8118c1bc096cc9792c",
       "ingested_at": "2026-04-15",
