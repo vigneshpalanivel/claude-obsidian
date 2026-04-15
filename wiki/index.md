@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-15 | Total pages: 52 | Sources ingested: 13
+Last updated: 2026-04-15 | Total pages: 61 | Sources ingested: 17
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -45,6 +45,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle Service ICP]] — 5 buyer personas for custom development and AI engineering; Persona 5 (AI-Forward Platform Operator) is a 2026 emergent archetype (status: current)
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms); only path to Enterprise and MENA buyer segments (status: current)
 - [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos/5 pillars; service: 81 articles/6 verticals); persona-gated CTAs (status: current)
+- [[InnBlockchain Crypto Native ICP]] — crypto-born founders/CTOs; RWA Segment 1; 6 active segments; $20k+ floor; AI-code audit emerging (status: current)
+- [[InnBlockchain FinTech ICP]] — existing regulated FinTech; WealthTech primary Q2 2026; Compliance Carol veto-holder; API-first is Tier 0 signal (status: current)
+- [[InnBlockchain Channel Partner ICP]] — 3 advisory personas; routing hub to 3 sister ICPs; NCNDA Day 1; assumption-based (status: current)
+- [[InnBlockchain Crypto Products ICP]] — Trioangle clone scripts $5k-$20k; 5 archetype-first personas; Burned Builder highest urgency (status: current)
 
 ---
 
@@ -52,6 +56,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 - [[Andrej Karpathy]] — AI researcher, creator of the LLM Wiki pattern, former Tesla AI director (status: developing)
 - [[Trioangle]] — marketplace clone script company; 800+ platforms, 150+ countries, since 2015 (status: current)
+- [[InnBlockchain]] — blockchain dev + smart contract security firm; sister/group co of Trioangle; 4 ICPs (status: current)
 - [[Ar9av-obsidian-wiki]] — multi-agent compatible LLM Wiki plugin; delta tracking manifest (status: current)
 - [[Nexus-claudesidian-mcp]] — native Obsidian plugin + MCP bridge; workspace memory, task management (status: current)
 - [[ballred-obsidian-claude-pkm]] — goal cascade PKM; auto-commit hooks, /adopt command (status: current)
@@ -75,6 +80,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Content-Strategy-Product]] — 2026-04-15 | Trioangle product blog strategy | 10 silos, 5 pillars, 20 templates; TikTok clone has active inbound
 - [[Content-Strategy-Service]] — 2026-04-15 | Trioangle service blog strategy | 81 articles, 6 verticals; persona-gated CTAs; MENA never forms
 - [[Product-Blog-Article-Templates]] — 2026-04-15 | 20 article templates + 8 lead magnets for product line blog
+- [[ICP-InnBlockchain-Crypto-Native]] — 2026-04-15 | InnBlockchain crypto-native ICP | 10 segments, RWA primary, EU-only gate
+- [[ICP-InnBlockchain-FinTech]] — 2026-04-15 | InnBlockchain regulated FinTech ICP | WealthTech primary Q2 2026, Carol veto gate
+- [[ICP-InnBlockchain-Channel-Partner]] — 2026-04-15 | InnBlockchain advisory firm channel ICP | 3 personas, routing hub
+- [[ICP-InnBlockchain-Crypto-Products]] — 2026-04-15 | Trioangle-branded clone script line | 5 archetype-first personas
 
 ---
 

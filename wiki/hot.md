@@ -19,7 +19,30 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
-2026-04-15: autoresearch on running a software dev company in the vibe coding / AI era. 9 pages created.
+2026-04-15: ingested 4 InnBlockchain ICPs (Crypto Native, FinTech, Channel Partner, Crypto Products). 9 pages created (1 entity + 4 concept + 4 source).
+
+## Key Recent Facts (Ingest: InnBlockchain ICPs)
+- InnBlockchain is Trioangle's **sister/group company** for blockchain-native dev + smart contract security. Four ICPs: Crypto Native, FinTech, Channel Partner, Crypto Products.
+- **Company origin is the ONLY routing gate** between Crypto Native and FinTech — not licensing status. Any crypto-born startup = Crypto Native (licensed or not). Existing regulated FinTech adding crypto = FinTech. Discovery question: *"Is your company a crypto-native startup, or an existing regulated financial services business adding a crypto product?"*
+- **EU Continental only until 5-project gate** applies to ALL four InnBlockchain ICPs. No outbound capacity on UK, US, MENA, SEA, Singapore until 5 EU deals close. MiCA is the dominant compliance framing.
+- **API-first backend live in production** is the Tier 0 velocity signal (FinTech + Channel Partner P2). Skip preliminary discovery if confirmed.
+- Crypto Native **Segment 1 is RWA Tokenization** (strategic prioritization) — real estate, vehicles, commodities, art, private credit. Stakes differ from DeFi: a minting bug misassigns real property title, not just drains a pool. $30k–$150k ACV.
+- FinTech **primary focus Q2 2026 is WealthTech** (RWA/STO) — $20k–$250k, 60–90 day. AI+tokenization emerging search trend; inbound content at intersection outperforms 3 months of LinkedIn outbound.
+- **Compliance Carol** (FinTech CCO) is a **regulatory veto-holder, not economic buyer**. Surface by call 1: *"Who handles vendor risk approval?"* Vendor risk pack Day 1 (ownership, ISO/SOC 2, data residency, MiCA brief, sample audit) unblocks most approvals within 1 week.
+- **ExchangeTech qualification: architecture irrelevant** — CEX, DEX, DeFi all qualify in FinTech ICP Segment 1 if (a) licensed or license filed AND (b) expanding existing FinTech business. Don't DQ DEX/DeFi on architecture alone.
+- **Two motions, never mix them in one outreach**: Security Audit (pre-mainnet review) vs. Development/Engineering (build/extend). Different buyers, ACVs, cycles.
+- **AI-generated smart contract risk** (Pain Point 5, rising) — Cursor/Copilot miss reentrancy edge cases, access control, integer arithmetic. Positioning: human audit layer for AI-generated code. Content hook: "what AI coding tools get wrong in Solidity."
+- **Channel Partner P3 (Crypto GTM Advisor)** motivator differs from P1/P2: **personal reputation protection on a single token launch**, not recurring implementation revenue. One vesting contract failure ends the career.
+- **NCNDA Day 1** is the #1 trust barrier for all 3 advisory personas. The "800+ projects delivered" proof can **backfire** — counter: *"InnBlockchain has no direct sales motion for these markets; partner model is permanent."*
+- **Budget Routing Rule**: sub-$20k crypto-native end-clients → [[InnBlockchain Crypto Products ICP]] (Trioangle clone scripts $5k–$20k, 5–15 days). **P2 FinTech exception**: clone scripts are crypto-native only, NOT for regulated FinTechs — scope smaller or park.
+- **Re-engagement path**: clone script → validation → custom build. Partners check in at 60/90 days; re-introduce InnBlockchain when client hits feature limits, closes funding, or needs regulatory licensing. Partner owns the whole journey.
+- **Burned Crypto Builder** (Crypto Products Persona 5) is **highest-urgency archetype** — second-attempt buyers with validated market + capital + forensic vendor evaluation. Close faster than first-timers. Framing: *"on-chain addresses to verify before you commit a dollar."*
+- **Exploit-reactive outreach trigger (P1/P3 channel)**: outreach within 48h of major DeFi exploits. Monitor Rekt News + DeFi Llama.
+- **EU AI Act + FinTech**: creates blockchain-alongside-AI opportunity (tamper-proof on-chain audit trail for high-risk AI: credit scoring, fraud detection, KYC). Not blockchain-instead-of-AI.
+- **India-based agencies excluded** from Channel Partner ICP — peer/competitor perception prevents trust (carried over from Trioangle pattern).
+- All 4 InnBlockchain ICPs are **assumption-based / validation-pending**. Ranges and severities are hypotheses.
+
+## Previous
 
 ## Key Recent Facts (Ingest: Content Strategy files — Trioangle)
 - Product blog: 10 silos, 5 pillars, 20 article templates (T1-T20) + 8 lead magnets. TikTok clone (PopTok) has active inbound NOW — build BOFU (demo, comparison, case study) before completing awareness funnel.

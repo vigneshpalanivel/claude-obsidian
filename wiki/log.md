@@ -25,6 +25,15 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-15] ingest | InnBlockchain ICPs (4 files — Crypto Native, FinTech, Channel Partner, Crypto Products)
+- Sources: `.raw/InnBlockchain - ICP - Crypto Native.md`, `.raw/InnBlockchain - ICP - FinTech.md`, `.raw/InnBlockchain - ICP - Channel Partner-I.md`, `.raw/InnBlockchain - ICP - Crypto Products.md`
+- Summaries: [[ICP-InnBlockchain-Crypto-Native]], [[ICP-InnBlockchain-FinTech]], [[ICP-InnBlockchain-Channel-Partner]], [[ICP-InnBlockchain-Crypto-Products]]
+- Pages created: [[InnBlockchain]] (entity), [[InnBlockchain Crypto Native ICP]], [[InnBlockchain FinTech ICP]], [[InnBlockchain Channel Partner ICP]], [[InnBlockchain Crypto Products ICP]] (concepts), plus 4 source summaries
+- Pages updated: [[index]], [[hot]]
+- Key insight: InnBlockchain is Trioangle's **sister/group company** for blockchain dev + smart contract security; routing between Crypto Native and FinTech is decided by **company origin, not license status**; Crypto Products clone scripts (operated under Trioangle brand) are the sub-$20k routing destination for crypto-native clients **but not for FinTech clients**; all 4 ICPs share a single EU Continental / 5-project geography gate.
+
+---
+
 ## [2026-04-15] reingest | Content Strategy - Product.md + Product Blog Article Templates.md (rev 2)
 - Sources: .raw/Content Strategy - Product.md, .raw/Product Blog Article Templates.md (propagation from ICP v3 gap-fix pass)
 - Pages updated: [[Content-Strategy-Product]], [[Product-Blog-Article-Templates]], [[Trioangle Content Strategy]]

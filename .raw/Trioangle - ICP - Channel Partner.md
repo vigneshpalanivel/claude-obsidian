@@ -20,11 +20,13 @@ tags:
 > **Pitch angle**: Trioangle is positioned as a **web and mobile app development partner** with 800+ projects delivered across 150+ countries. Agencies sub-contract client builds—end-to-end or specific phases (backend, mobile, QA)—and retain full ownership of the client relationship and billing.
 >
 > **Delivery modes:** Two service lines are available — Custom Dev as the primary routing, with Clone Scripts as an alternative for budget-constrained or standard-use-case briefs. **⚙️ Greenfield Custom Development (Service line, primary)** — bespoke platforms for funded startups and enterprises ($10k–$120k+; full IP ownership; dedicated team; 2–6 month build timeline). **🛒 Clone Scripts (Product line, alternative)** — pre-built, battle-tested apps for on-demand, mobility, rental, marketplace, classifieds, social, and e-learning verticals ($500–$25k; fast deployment; no custom architecture required). Agency partners route client briefs to either line based on budget, scope complexity, and whether the client will accept a proven template architecture.
+>
+> **Paid Discovery Sprint ($1.5k–$4k):** 1–2 week scoping engagement producing a requirements spec, architecture blueprint, and fixed-price delivery estimate. Used by agency partners to de-risk their client proposal before committing to a build. Cost can be passed through to the end client or absorbed in pre-sales.
 
 > [!WARNING] Validation Status — Assumption-Based (Not Yet Validated)
 > This ICP is built from first-principles reasoning and market observation, not confirmed customer interviews or closed-deal data. All firmographic ranges, pain point severities, and channel scores are **hypotheses** until validated. See the Validation Plan section at the bottom of this document for the research roadmap. Update this callout as interviews and deals are completed.
 >
-> **Last reviewed:** 2026-04-05 — Full review pass. Changes: AI-assisted dev tools competitor row added to competitive table; AI coding tools objection added to Objection Handling; AI Tools row added to Content Consumed; AI Search channel added to Channel Strategy table; PP1 workaround updated to include AI tooling as first-attempt workaround; AI failure added as situational trigger; Technographics Current Solution updated to include AI tools; AI tooling added as positive outbound signal.
+> **Last reviewed:** 2026-04-15 — Consistency pass. Changes: fixed broken InnBlockchain wikilink; resolved $10k budget floor vs. clone script conflict in Must-Have criteria; clarified P3 budget range does not silently exclude sub-$30k briefs; hoisted Discovery Sprint pricing ($1.5k–$4k) into Executive Summary. Prior review 2026-04-05 added AI-assisted dev tools coverage across competitor table, objection handling, content consumed, channel strategy, PP1 workaround, triggers, technographics, and outbound signals.
 
 ---
 
@@ -53,7 +55,7 @@ tags:
 
 | Type | Criteria |
 |---|---|
-| ✅ **Must-Have** | Actively receives or pitches client projects in verticals Trioangle covers (on-demand, marketplace, mobility, rentals, hospitality, e-learning, social/super app), comfortable with sub-contracting development delivery, willing to engage on a project or ongoing retainer basis, **client project budget of $10k+ net development cost** (typical deal range: $10k–$120k per engagement) |
+| ✅ **Must-Have** | Actively receives or pitches client projects in verticals Trioangle covers (on-demand, marketplace, mobility, rentals, hospitality, e-learning, social/super app), comfortable with sub-contracting development delivery, willing to engage on a project or ongoing retainer basis. **Budget floor depends on delivery mode:** ⚙️ Custom Dev — **$10k+ net development cost** (typical $10k–$120k); 🛒 Clone Script — **$500+ with a named live client brief** (typical $500–$25k). Bulk clone-script licensing without a live client is disqualifying. |
 | 👍 **Nice-to-Have** | Has an existing client pipeline with one or more active live opportunities, has previously worked with an offshore dev partner, willing to introduce Trioangle PM to the end-client for requirements discovery |
 | ❌ **Disqualifying** | Pure design-only or branding agencies with no app delivery ambitions, agencies with a full in-house engineering team (no outsourcing need), solo freelancers without an agency structure, agencies with no visible case studies or client work online (brand risk), agencies actively shrinking (recent layoffs, dormant LinkedIn, no recent posts), agencies seeking to bulk-license or resell clone scripts without a specific live client project for each deployment |
 | 🔍 **Positive Outbound Signals** | Agency posted a job for a tech lead or developer (capacity gap), posted a case study in a Trioangle-covered vertical, LinkedIn content referencing "we just won a project" or "looking for a dev partner", Clutch profile in relevant verticals but no engineering-focused reviews, founder comments in agency communities asking for dev sub-contractor recommendations, agency principal posting about AI dev tools (Cursor, Copilot) in the context of client work — signals in-house AI attempts that may be close to stalling |
@@ -221,7 +223,7 @@ tags:
 |---|---|
 | **Research Style** | Due-diligence heavy: multiple calls, RFP process, reference checks |
 | **Decision Speed** | Slow (4–8 weeks of evaluation before first engagement) |
-| **Budget Authority** | Sole authority within firm; client-side budget ranges widely $30k–$120k (Scaling CTO: $30k–$80k; MENA Buyer: $30k–$80k; Enterprise Buyer: $50k–$120k) |
+| **Budget Authority** | Sole authority within firm; client-side budget ranges widely $30k–$120k+ (Scaling CTO: $30k–$80k; MENA Buyer: $30k–$120k+; Enterprise Buyer: $50k–$120k) |
 
 **✅ Do say:** *"We offer a formal sub-contracting partnership with SLAs, documentation standards, and white-label options — compatible with your consultancy's quality requirements."*
 **❌ Don't say:** *"Just send us the brief and we'll figure it out."*
@@ -236,7 +238,7 @@ tags:
 
 > [!QUOTE] *"I'm tired of handing clients over to a dev firm after spending 3 months building the relationship."*
 
-**End clients served:** Primarily [[ICP - Service]] buyers at the strategy-to-build transition point — Scaling CTO (platform rebuild post-Series A, $30k–$80k), Digital Transformation Enterprise Buyer (large offline-to-digital initiative, $50k–$120k), and MENA Relationship Buyer (Vision 2030-aligned digital flagship, $30k–$80k). These buyers arrived via the consulting firm's existing trust relationship; Trioangle becomes the silent build arm after the strategy engagement. *For MENA-based consulting partners specifically: this persona unlocks [[ICP - Service]] Persona 4 (MENA Relationship Buyer), who is not reachable through Trioangle's direct outbound channels.*
+**End clients served:** Primarily [[ICP - Service]] buyers at the strategy-to-build transition point — Scaling CTO (platform rebuild post-Series A, $30k–$80k), Digital Transformation Enterprise Buyer (large offline-to-digital initiative, $50k–$120k), and MENA Relationship Buyer (Vision 2030-aligned digital flagship, $30k–$120k+). These buyers arrived via the consulting firm's existing trust relationship; Trioangle becomes the silent build arm after the strategy engagement. *For MENA-based consulting partners specifically: this persona unlocks [[ICP - Service]] Persona 4 (MENA Relationship Buyer), who is not reachable through Trioangle's direct outbound channels.*
 
 ---
 
@@ -257,7 +259,7 @@ tags:
 |---|---|
 | **Research Style** | Focused evaluation on vertical depth, delivery track record, communication structure |
 | **Decision Speed** | Moderate (2–4 weeks once a live client project triggers the need) |
-| **Budget Authority** | Full authority; client project budgets typically $30k–$120k (Scaling CTO: $30k–$80k; Enterprise Buyer: $50k–$120k) |
+| **Budget Authority** | Full authority; client project budgets typically $30k–$120k for custom builds (Scaling CTO: $30k–$80k; Enterprise Buyer: $50k–$120k). Lower-tier briefs ($10k–$30k) are accepted when the vertical fit is strong — P3 is not gated at $30k. |
 
 **✅ Do say:** *"We've delivered platforms in your exact vertical — logistics dispatch logic, property marketplace flows, real estate multi-listing architecture — already solved, not learned on your client's budget."*
 **❌ Don't say:** *"We build for any industry."*
@@ -272,17 +274,17 @@ tags:
 
 > [!QUOTE] *"My clients trust me because I know their industry cold. I need a dev partner who gets that too — not one I have to educate about what a multi-stop delivery run is."*
 
-**End clients served:** Primarily [[ICP - Service]] buyers in a specific industry vertical — Scaling CTO ($30k–$80k, platform rebuild post-funding) or Digital Transformation Enterprise Buyer ($50k–$120k, large offline-to-digital initiative). The consulting firm's vertical credibility creates the trust; Trioangle's 800+ domain-specific builds makes the implementation pitch credible without the firm hiring a specialist engineering team.
+**End clients served:** Primarily [[ICP - Service]] buyers in a specific industry vertical — Scaling CTO ($30k–$80k, platform rebuild post-funding), Digital Transformation Enterprise Buyer ($50k–$120k, large offline-to-digital initiative), and AI-Forward Platform Operator ([[ICP - Service]] Persona 5, $15k–$60k) — a client who prototyped with Cursor/Lovable/Copilot, hit the wall at vertical-specific logic (dispatch, commission flows, multi-tenant auth), and needs a domain specialist to take over. The consulting firm's vertical credibility creates the trust; Trioangle's 800+ domain-specific builds makes the implementation pitch credible without the firm hiring a specialist engineering team.
 
 ---
 
-> [!NOTE] Segment Access — Clients Trioangle Cannot Reach Directly
-> Two [[ICP - Service]] buyer types are not reachable through Trioangle's standard outbound channels (LinkedIn ABM, Clutch, VC referrals), but are regularly accessible through consulting firm intermediaries:
+> [!NOTE] Segment Access — Clients Faster to Reach via Partners
+> Two [[ICP - Service]] buyer types are technically reachable through Trioangle's standard outbound channels (LinkedIn ABM, Clutch, VC referrals are listed as active channels in the Service ICP), but the conversion path is slow, low-yield, and trust-gated. Partner intermediaries collapse the timeline dramatically:
 >
-> - **Digital Transformation Enterprise Buyer** ([[ICP - Service]] Persona 3) — Uses formal RFP processes and engages vendors only through management consulting networks and Gartner/analyst relationships. A consulting firm already trusted by this buyer is the fastest — often the only — path to the engagement.
-> - **MENA Relationship Buyer** ([[ICP - Service]] Persona 4) — Relationship-first, referral-only. A warm introduction from a MENA-based consulting firm outweighs all portfolio evidence. UAE/KSA-based agency and consulting partners are the primary access channel for this segment.
+> - **Digital Transformation Enterprise Buyer** ([[ICP - Service]] Persona 3) — Engages direct vendors primarily through formal RFP processes initiated by management consulting and Gartner/analyst relationships. Direct Clutch or LinkedIn outreach rarely clears the procurement bar on its own. A consulting firm already trusted by this buyer is the fastest path to the engagement.
+> - **MENA Relationship Buyer** ([[ICP - Service]] Persona 4) — Relationship-first. A warm introduction from a MENA-based consulting firm outweighs cold portfolio evidence by a wide margin. UAE/KSA-based agency and consulting partners are the highest-leverage access channel for this segment.
 >
-> **Prioritise partner outreach to:** management consulting firms serving large enterprises (→ Enterprise Buyer access) and UAE/KSA-based digital agencies and consulting firms (→ MENA Relationship Buyer access). These partnerships unlock revenue from segments that Trioangle's direct sales motion cannot penetrate.
+> **Prioritise partner outreach to:** management consulting firms serving large enterprises (→ Enterprise Buyer access) and UAE/KSA-based digital agencies and consulting firms (→ MENA Relationship Buyer access). These partnerships compress sales cycles from months to weeks in segments where Trioangle's direct sales motion converts slowly.
 
 ---
 
@@ -446,7 +448,7 @@ tags:
 ## 🏭 Industries to Pitch
 
 > [!NOTE] Blockchain / Web3 Client Briefs → Route to InnBlockchain
-> If an agency partner brings a client brief involving a **crypto exchange, DeFi protocol, NFT marketplace, Web3 wallet, token launch platform, or regulated FinTech blockchain integration**, this falls outside Trioangle's scope. Route to [[ICP - Channel Partner-I]] — the dedicated InnBlockchain channel partner ICP covering blockchain advisory and consulting firms.
+> If an agency partner brings a client brief involving a **crypto exchange, DeFi protocol, NFT marketplace, Web3 wallet, token launch platform, or regulated FinTech blockchain integration**, this falls outside Trioangle's scope. Route to [[InnBlockchain Channel Partner ICP]] — the dedicated InnBlockchain channel partner ICP covering blockchain advisory and consulting firms.
 
 > Cross-Reference: Product ICP & Greenfield ICP Verticals — **🛒 Clone Script** = Trioangle Product line (pre-built, $500–$25k, fast deployment). **⚙️ Custom Dev** = Trioangle Service line (bespoke, $10k–$120k+, dedicated team). **🔄 Both** = vertical served by either delivery mode depending on client budget and complexity.
 
