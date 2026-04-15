@@ -38,7 +38,7 @@ related:
 
 # Blog Article Templates — Trioangle Clone Script Blog
 
-**Source**: `.raw/Product Blog Article Templates.md` | Trioangle internal | 2026
+**Source**: `.raw/Trioangle - Product Blog Article Templates.md` | Trioangle internal | 2026
 
 ---
 

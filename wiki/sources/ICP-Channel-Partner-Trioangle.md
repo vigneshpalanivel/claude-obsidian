@@ -35,7 +35,7 @@ related:
 
 # ICP — Trioangle Agencies & Consulting Firms (Channel Partner)
 
-**Source**: `.raw/ICP - Channel Partner-T.md` | Trioangle internal | 2026 | Status: assumption-based, not yet validated
+**Source**: `.raw/Trioangle - ICP - Channel Partner.md` | Trioangle internal | 2026 | Status: assumption-based, not yet validated
 
 ---
 

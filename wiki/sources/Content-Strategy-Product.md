@@ -42,7 +42,7 @@ related:
 
 # Content Strategy — Trioangle Clone Script Blog
 
-**Source**: `.raw/Content Strategy - Product.md` | Trioangle internal | 2026 | Status: in-progress
+**Source**: `.raw/Trioangle - Content Strategy - Product.md` | Trioangle internal | 2026 | Status: in-progress
 
 ---
 

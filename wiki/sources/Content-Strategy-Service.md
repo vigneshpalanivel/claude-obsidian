@@ -35,7 +35,7 @@ related:
 
 # Content Strategy — Trioangle Greenfield Custom Development Blog
 
-**Source**: `.raw/Content Strategy - Service.md` | Trioangle internal | 2026 | Status: in-progress
+**Source**: `.raw/Trioangle - Content Strategy - Service.md` | Trioangle internal | 2026 | Status: in-progress
 
 ---
 

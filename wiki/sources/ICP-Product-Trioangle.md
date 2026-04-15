@@ -39,7 +39,7 @@ related:
 
 # ICP — Trioangle Launch-Ready Marketplace Platforms
 
-**Source**: `.raw/ICP - Product.md` | Trioangle internal | 2026 | Status in source: draft
+**Source**: `.raw/Trioangle - ICP - Product.md` | Trioangle internal | 2026 | Status in source: draft
 
 ---
 

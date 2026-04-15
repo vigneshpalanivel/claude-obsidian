@@ -37,7 +37,7 @@ related:
 
 # ICP — Trioangle Custom Development & AI Engineering
 
-**Source**: `.raw/ICP - Service.md` | Trioangle internal | 2026 | Status: historically grounded, 2026 formal validation pending
+**Source**: `.raw/Trioangle - ICP - Service.md` | Trioangle internal | 2026 | Status: historically grounded, 2026 formal validation pending
 
 ---
 
