@@ -546,63 +546,47 @@ Log results in a simple tracker (date / query / cited Y/N / position). Review mo
 
 ### Silo Structure
 
-- `/blog/how-to-start-crypto-exchange/` ← **Vertical Hub: CEX**
-	- `/blog/binance-clone-script-guide/`
-	- `/blog/coinbase-clone-script-guide/`
-	- `/blog/bybit-clone-script-guide/`
-	- `/blog/best-binance-clone-comparison/`
-	- `/blog/trioangle-vs-b2broker/`
-	- `/blog/trioangle-vs-alphapoint/`
-	- `/blog/trioangle-vs-hayvn-rain/`
-	- `/blog/trioangle-vs-shift-markets/` *(#40)*
-	- `/blog/cex-security-architecture/`
-	- `/blog/cex-vs-custom-development-cost/`
-	- `/blog/sec-fincen-us-crypto-exchange-guide/`
-	- `/blog/mica-crypto-exchange-guide/`
-	- `/blog/difc-adgm-crypto-exchange-licensing/`
-	- `/blog/fca-crypto-exchange-registration/`
-- `/blog/how-to-launch-p2p-crypto-exchange/` ← **Vertical Hub: P2P**
-	- `/blog/remitano-clone-script-guide/`
-	- `/blog/p2p-exchange-mobile-money-markets/`
-	- `/blog/p2p-crypto-exchange-mobile-money-integration/` *(#42 — M-Pesa/bKash/GCash/Flutterwave guide; Persona 2 MOFU)*
-	- `/blog/paxful-shutdown-p2p-gap/` *(#41 — Paxful-gap TOFU; time-sensitive)*
-	- `/blog/p2p-exchange-diaspora-remote-operations/` *(diaspora priority market MOFU — FCA/FinCEN + remote admin)*
-	- `/blog/p2p-exchange-diaspora-case-study/`
-	- `/blog/p2p-escrow-dispute-guide/`
-	- `/blog/p2p-exchange-vs-cex-which-to-build/` *(#27 — cross-vertical; lives here as P2P is the decision-point vertical for diaspora buyers)*
-- `/blog/how-to-build-dex-uniswap-clone/` ← **Vertical Hub: DEX/DeFi**
-	- `/blog/uniswap-clone-script-guide/`
-	- `/blog/forking-uniswap-vs-white-label-dex/`
-	- `/blog/multi-chain-dex-deployment/`
-	- `/blog/bootstrap-dex-liquidity/`
-	- `/blog/yield-farming-incentive-design/`
-	- `/blog/dex-case-study/`
-- `/blog/how-to-launch-nft-marketplace/` ← **Vertical Hub: NFT**
-	- `/blog/stop-paying-opensea-fees-launch-your-own-nft-marketplace/` *(CT1 — "stop paying OpenSea 2.5%" angle)*
-	- `/blog/opensea-clone-script-guide/`
-	- `/blog/nft-marketplace-clone-guide/`
-	- `/blog/nft-marketplace-royalty-setup/`
-	- `/blog/nft-smart-contract-standards-erc721-erc1155/`
-	- `/blog/recruit-nft-creators/`
-	- `/blog/how-to-launch-gamefi-nft-marketplace/`
-	- `/blog/gamefi-marketplace-opportunity/`
-	- `/blog/opensea-clone-demo/` *(#38 — live demo)*
-	- `/blog/gamefi-nft-marketplace-case-study/` *(#39)*
-- `/blog/are-crypto-clone-scripts-safe/` ← **Security Hub** *(links to all verticals)*
-	- `/blog/smart-contract-audit-guide/`
-	- `/blog/common-defi-exploits-prevention/`
-	- `/blog/verify-crypto-vendor-onchain/`
-	- `/blog/burned-crypto-builder-vendor-checklist/`
-	- `/blog/failed-crypto-exchange-restart/` *(#37 — Burned Builder TOFU)*
-	- `/blog/is-crypto-clone-script-right-for-you/` *(#36 — pre-qualification filter)*
-	- `/blog/when-crypto-exchange-outgrows-clone-script/` *(#43 — graduation path; distribute via CRM post-purchase email, not organic SEO)*
-- `/blog/kyc-aml-crypto-exchange/` ← **Compliance Hub**
-	- `/blog/mica-eu-crypto-exchange-compliance/`
-	- `/blog/difc-adgm-crypto-license-guide/`
-	- `/blog/fca-crypto-registration-uk/`
-	- `/blog/vasp-license-explained/`
-	- `/blog/crypto-exchange-compliance-by-country/`
-	- `/blog/geo-blocking-sanctions-compliance/`
+- `/blog/how-to-start-crypto-exchange/` ← **Vertical Hub: CEX** *(CT1)*
+	- `/blog/[original]-clone-script-guide/` *(CT6 — produce per ORIGINAL: Binance, Coinbase, Bybit)*
+	- `/blog/best-[original]-clone-scripts-compared/` *(CT7 — produce per ORIGINAL: Binance, Coinbase, Bybit)*
+	- `/blog/trioangle-vs-[wl-competitor]/` *(CT11 — produce per WL_COMPETITOR: B2Broker; AlphaPoint; Shift Markets; Hayvn-Rain)*
+	- `/blog/[vertical]-security-architecture/` *(CT8 — VERTICAL: CEX)*
+	- `/blog/clone-vs-custom-[vertical]-development-cost/` *(CT12 — VERTICAL: CEX)*
+	- `/blog/[framework]-cex-founders-compliance-guide/` *(CT9 — produce per FRAMEWORK: SEC/FinCEN; MiCA; DIFC/ADGM; FCA)*
+- `/blog/how-to-launch-p2p-crypto-exchange/` ← **Vertical Hub: P2P** *(CT1)*
+	- `/blog/[original]-clone-script-guide/` *(CT6 — produce per ORIGINAL: Remitano, Paxful, LocalBitcoins)*
+	- `/blog/p2p-[rail]-mobile-money-integration/` *(CT13 — produce per RAIL: M-Pesa; bKash; GCash; Flutterwave)*
+	- `/blog/what-happened-after-[trigger-event]/` *(CT5 — produce per TRIGGER_EVENT: Paxful Shutdown; time-sensitive)*
+	- `/blog/[vertical]-opportunity-in-[region]-market-report/` *(CT3 — produce per REGION: Africa; SE Asia; MENA)*
+	- `/blog/[framework]-p2p-founders-compliance-guide/` *(CT9 — produce per FRAMEWORK: FCA/FinCEN + remote admin; VASP)*
+	- `/blog/[vertical]-founder-case-study-launched-in-[number]-days/` *(CT14 — produce per scenario: diaspora P2P)*
+	- `/blog/[security-topic]-p2p-exchange-guide/` *(CT8 — produce per SECURITY_TOPIC: escrow disputes)*
+	- `/blog/p2p-exchange-vs-cex-which-[vertical]-should-you-build/` *(no CT — cross-vertical; lives under P2P as diaspora decision-point)*
+- `/blog/how-to-build-dex-uniswap-clone/` ← **Vertical Hub: DEX/DeFi** *(CT1)*
+	- `/blog/[original]-clone-script-guide/` *(CT6 — produce per ORIGINAL: Uniswap, PancakeSwap, dYdX, GMX)*
+	- `/blog/clone-vs-custom-[vertical]-development-cost/` *(CT12 — VERTICAL: DEX)*
+	- `/blog/[vertical]-[feature]-setup-guide/` *(CT17 — produce per FEATURE: multi-chain deployment)*
+	- `/blog/how-to-bootstrap-[vertical]-liquidity/` *(CT10 — VERTICAL: DEX)*
+	- `/blog/[vertical]-[incentive]-growth-playbook/` *(CT10 — produce per INCENTIVE: yield farming; token staking)*
+	- `/blog/[vertical]-founder-case-study-launched-in-[number]-days/` *(CT14 — produce per scenario: DEX/DeFi)*
+- `/blog/how-to-launch-nft-marketplace/` ← **Vertical Hub: NFT** *(CT1)*
+	- `/blog/stop-paying-[original]-fees-launch-your-own-[vertical]/` *(CT1 — ORIGINAL: OpenSea; angle: fee arbitrage for community monetizers)*
+	- `/blog/[original]-clone-script-guide/` *(CT6 — produce per ORIGINAL: OpenSea, Rarible)*
+	- `/blog/[vertical]-[feature]-setup-guide/` *(CT17 — produce per FEATURE: royalty setup; ERC-721/ERC-1155 smart contracts)*
+	- `/blog/how-to-bootstrap-[vertical]-[users]/` *(CT10 — produce per USERS: NFT creators; collectors)*
+	- `/blog/[vertical]-opportunity-in-[region]-market-report/` *(CT3 — produce per REGION: GameFi; Web3 gaming)*
+	- `/blog/[original]-clone-live-demo/` *(CT16 — ORIGINAL: OpenSea)*
+	- `/blog/[vertical]-founder-case-study-launched-in-[number]-days/` *(CT14 — produce per scenario: GameFi NFT marketplace)*
+- `/blog/are-crypto-clone-scripts-safe/` ← **Security Hub** *(CT20 — publish Month 1; links to all verticals)*
+	- `/blog/[security-topic]-[vertical]-guide/` *(CT8 — produce per SECURITY_TOPIC: smart contract audit; common DeFi exploits)*
+	- `/blog/how-to-verify-[vertical]-vendor-on-chain/` *(CL2 content upgrade — Vendor Due Diligence Checklist gate)*
+	- `/blog/burned-[vertical]-builder-vendor-evaluation-checklist/` *(CT15)*
+	- `/blog/what-to-do-after-failed-[vertical]-build/` *(CT4 — Burned Builder TOFU; publish Month 2)*
+	- `/blog/is-[vertical]-clone-script-right-for-you/` *(CT22 — pre-qualification filter)*
+	- `/blog/when-your-[vertical]-outgrows-the-clone-script/` *(CT19 — CRM only; not organic SEO)*
+- `/blog/kyc-aml-crypto-exchange/` ← **Compliance Hub** *(CT9)*
+	- `/blog/[framework]-[vertical]-founders-compliance-guide/` *(CT9 — produce per FRAMEWORK: MiCA/EU; DIFC/ADGM; FCA/UK; VASP; geo-blocking/sanctions)*
+	- `/blog/[vertical]-opportunity-in-[region]-market-report/` *(CT3 — country compliance angle; produce per REGION: EU; UAE; UK)*
 
 ---
 
