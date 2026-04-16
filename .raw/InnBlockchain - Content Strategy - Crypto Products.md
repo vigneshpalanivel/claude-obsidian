@@ -201,38 +201,25 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 ### Cluster Map: CEX Vertical × All Pillars
 
 **AWARENESS (TOFU)**
-- `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(angle: fee revenue gaps and underserved markets)*
-- `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(angle: why Binance doesn't serve every market — and what that means for founders)*
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] → gate with CL1
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(MiCA variant: EU)* → gate with CL1
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(DIFC/ADGM variant: Dubai)* → gate with CL1
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(US redirect variant — CTA must NOT invite US-only founders to book a demo; routes to UK/EU/UAE instead — see #34 scoring note)*
+- `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(produce per angle: fee revenue gaps; why Binance doesn't serve every market)*
+- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(produce per market: standard; MiCA/EU; DIFC/ADGM/Dubai; US redirect — CTA routes to UK/EU/UAE, not demo booking; see #34)* → gate with CL1
 - `[Tech]` **CT2** — What Is a [ORIGINAL] Clone Script? Complete Founder's Guide *(ORIGINAL = Binance)*
 
 **CONSIDERATION (MOFU)**
-- `[Tech]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(CEX edition — #4; MOFU, not TOFU; buyer is comparing options)* → gate with CL3
-- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Binance; must-have features focus)*
+- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Binance)*
+- `[Tech]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(produce per angle: conceptual comparison; direct price breakdown — custom $300k vs hosted platform $50k+/yr vs clone script $10k)* → gate with CL3
 - `[Security]` **CT8** — [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(SECURITY_TOPIC = CEX Security Architecture: Cold Storage, 2FA, Withdrawal Whitelists)*
-- `[Compliance]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = KYC/AML)* → gate with CL5
-- `[Compliance]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = MiCA; EU variant)* → gate with CL5
-- `[Compliance]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = DIFC/ADGM; UAE variant)* → gate with CL5
-- `[Compliance]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = FCA; UK variant)* → gate with CL5
+- `[Compliance]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(produce per framework: KYC/AML; MiCA/EU; DIFC/ADGM/UAE; FCA/UK — one article per framework)* → gate with CL5
 - `[Growth]` **CT10** — How to Get Your First [NUMBER] Traders on Your [VERTICAL]
 - `[Proof]` **CT7** — Best [ORIGINAL] Clone Scripts Compared *(ORIGINAL = Binance)* → exit-intent CL2
-- `[Proof]` **CT11** — Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = B2Broker; hosted platform variant)*
-- `[Proof]` **CT11** — Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = Shift Markets; hosted platform variant)*
-- `[Proof]` **CT11** — Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = AlphaPoint; own your exchange vs pay forever to rent it)* → exit-intent CL3
-- `[Proof]` **CT11** — Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = Hayvn and Rain; licensed operator variant in MENA — different angle; see CT11 template note)*
+- `[Proof]` **CT11** — Trioangle vs [WL_COMPETITOR] *(produce per competitor: B2Broker; Shift Markets; AlphaPoint — "own vs rent" framing; Hayvn and Rain — licensed operator/MENA variant, different angle; see CT11 template note)*
 
 **DECISION (BOFU)**
-- `[Proof]` **CT16** — Live Demo: [ORIGINAL] Clone *(ORIGINAL = Binance; full admin + trading walkthrough)* → offer CL4
+- `[Proof]` **CT16** — Live Demo: [ORIGINAL] Clone *(produce per angle: full admin + trading walkthrough; on-chain proof of live deployments)* → offer CL4
 - `[Proof]` **CT14** — Founder Case Study: Launched a Regional [VERTICAL] in [NUMBER] Days → exit-intent CL2
-- `[Proof]` **CT16** — Live Demo: On-Chain Proof — Live [VERTICAL] Deployments Built on Trioangle Scripts
-- `[Proof]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(custom development $300k vs hosted exchange platform $50k+/yr vs white-label clone script $10k)* → CL3
 
 **IMPLEMENTATION (Post-Purchase)**
-- `[Tech]` **CT17** — Post-Purchase Setup Guide *(FEATURE = Cold Storage and Hot Wallet Management)*
-- `[Compliance]` **CT17** — Post-Purchase Setup Guide *(FEATURE = KYC Tiers and AML Monitoring Configuration)*
+- `[Tech/Compliance]` **CT17** — Post-Purchase Setup Guide *(produce per feature: Cold Storage & Hot Wallet Management; KYC Tiers & AML Monitoring)*
 - `[Growth]` **CT18** — Post-Launch Growth Guide *(focus: market maker partnership for day-one liquidity)*
 - `[Graduation]` **CT19** — When Your [VERTICAL] Outgrows the Clone Script *(#43 — CRM email only; not organic SEO)*
 
@@ -242,28 +229,24 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 
 **AWARENESS (TOFU)**
 - `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(angle: why P2P exchanges win in unbanked markets)*
-- `[Industry]` **CT5** — What Happened After [TRIGGER_EVENT] *(TRIGGER_EVENT = Paxful Shut Down — and the P2P Gap It Left; #41 — time-decaying; schedule early)* *(high-intent Persona 2 trigger)*
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(mobile money markets focus)* → gate with CL1
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(diaspora communities angle)* → gate with CL1
+- `[Industry]` **CT5** — What Happened After [TRIGGER_EVENT] *(TRIGGER_EVENT = Paxful Shut Down; #41 — time-decaying, high-intent Persona 2 trigger — schedule early)*
+- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(produce per angle: mobile money markets; diaspora communities)* → gate with CL1
 - `[Tech]` **CT2** — What Is a [ORIGINAL] Clone Script? Complete Founder's Guide *(ORIGINAL = Remitano / Paxful)*
 
 **CONSIDERATION (MOFU)**
-- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Remitano; P2P escrow flow and buyer/seller protection focus)*
-- `[Tech]` **CT13** — P2P Mobile Money Integration: [RAIL] Guide *(RAIL = M-Pesa, bKash, GCash, Flutterwave; #42 — directly addresses documented Persona 2 objection; high conversion content)*
-- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Remitano; payment methods focus for [Africa/SE Asia/MENA]; secondary market focus)*
-- `[Tech]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = FCA/FinCEN; diaspora remote management + local payment rail integration angle; priority market Persona 2 focus)*
-- `[Compliance]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = KYC and dispute resolution for P2P)* → gate with CL5
+- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Remitano; produce per angle: P2P escrow and buyer/seller protection; payment methods for [Africa/SE Asia/MENA])*
+- `[Tech]` **CT13** — P2P Mobile Money Integration: [RAIL] Guide *(RAIL = M-Pesa, bKash, GCash, Flutterwave; #42 — directly addresses Persona 2 objection; high conversion content)*
+- `[Compliance]` **CT9** — [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(produce per angle: FCA/FinCEN diaspora remote management + local payment rail integration; KYC and dispute resolution)* → gate with CL5
 - `[Growth]` **CT10** — How to Seed Your First [NUMBER] Traders on Your [VERTICAL]
 - `[Proof]` **CT7** — Best [ORIGINAL] Clone Scripts Compared *(ORIGINAL = Remitano / Paxful)* → exit-intent CL2
+- `[Proof]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(P2P edition)* → gate with CL3
 
 **DECISION (BOFU)**
-- `[Proof]` **CT16** — Live Demo: [ORIGINAL] Clone *(ORIGINAL = P2P exchange with M-Pesa, bKash, and GCash integration)* → offer CL4
+- `[Proof]` **CT16** — Live Demo: [ORIGINAL] Clone *(ORIGINAL = P2P exchange; M-Pesa, bKash, GCash integration walkthrough)* → offer CL4
 - `[Proof]` **CT14** — Founder Case Study: Launched a [VERTICAL] in [NUMBER] Days *(diaspora founder builds P2P exchange for home market)*
-- `[Proof]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(P2P edition: custom P2P exchange vs Remitano clone script)* → gate with CL3
 
 **IMPLEMENTATION (Post-Purchase)**
-- `[Tech]` **CT17** — Post-Purchase Setup Guide *(FEATURE = Mobile Money Payment Rail Setup)*
-- `[Compliance]` **CT17** — Post-Purchase Setup Guide *(FEATURE = Fraud Prevention and Trade Limits)*
+- `[Tech/Compliance]` **CT17** — Post-Purchase Setup Guide *(produce per feature: Mobile Money Payment Rail Setup; Fraud Prevention and Trade Limits)*
 - `[Growth]` **CT18** — Post-Launch Growth Guide *(focus: building a trusted trader reputation system from scratch)*
 
 ---
@@ -274,30 +257,25 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 > Persona 3 (Web3 Protocol Architect) reads GitHub commits and verifies on-chain addresses. Content must be technically precise — vague marketing language destroys credibility instantly. Lead with audit documentation and on-chain proof.
 
 **AWARENESS (TOFU)**
-- `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(VERTICAL = DEX/DeFi; 2026: DEX volume, TVL trends, and market gaps)*
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(VERTICAL = DEX; angle: build without writing Solidity from scratch)* → gate with CL1
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(VERTICAL = DeFi protocol; AMM, yield farming, and governance focus)*
+- `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(VERTICAL = DEX/DeFi; 2026 DEX volume, TVL trends, market gaps)*
+- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(produce per angle: DEX without writing Solidity; DeFi protocol with AMM, yield farming, governance)* → gate with CL1
 - `[Tech]` **CT2** — What Is a [ORIGINAL] Clone Script? DEX Development Explained *(ORIGINAL = Uniswap)*
 
 **CONSIDERATION (MOFU)**
-- `[Tech]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(DEX edition: forking Uniswap vs white-label DEX script; #10 — MOFU; buyer is already researching options)* → gate with CL3
-- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Uniswap; AMM mechanics and how automated market makers work)*
-- `[Security]` **CT8** — [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(SECURITY_TOPIC = Smart Contract Audit; what it costs, how to verify, why it's non-negotiable)* → gate with CL6
-- `[Security]` **CT8** — [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(SECURITY_TOPIC = DeFi Exploits — the most common attacks and how audited contracts prevent them)*
-- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Uniswap; multi-chain deployment: Ethereum, BNB Chain, Polygon in one script)*
-- `[Growth]` **CT10** — How to Bootstrap Liquidity on Your [VERTICAL] *(yield farming incentive design that attracts and retains LPs)*
+- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Uniswap; produce per angle: AMM mechanics; multi-chain deployment — Ethereum, BNB Chain, Polygon)*
+- `[Tech]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(DEX edition: forking Uniswap vs white-label DEX script; #10 — MOFU; buyer already researching options)* → gate with CL3
+- `[Security]` **CT8** — [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(produce per topic: Smart Contract Audit — costs, verification, why non-negotiable; DeFi Exploits — most common attacks and how audited contracts prevent them)* → gate with CL6
+- `[Growth]` **CT10** — How to Bootstrap Liquidity on Your [VERTICAL] *(yield farming incentive design)*
 - `[Proof]` **CT7** — Best [ORIGINAL] Clone Scripts Compared *(ORIGINAL = Uniswap)* → exit-intent CL2
 
 **DECISION (BOFU)**
-- `[Proof]` **CT16** — Live Demo: [ORIGINAL] Clone *(ORIGINAL = DEX AMM with liquidity pools and yield farming)* → offer CL4
-- `[Proof]` **CT16** — On-Chain Proof: Live [VERTICAL] Deployments and TVL from Trioangle Scripts
+- `[Proof]` **CT16** — Live Demo: [ORIGINAL] Clone + On-Chain Proof of Live Deployments and TVL *(ORIGINAL = DEX AMM with liquidity pools and yield farming)* → offer CL4
 - `[Proof]` **CT14** — Founder Case Study: Launched an Audited [VERTICAL] in [NUMBER] Days
 - `[CTA/Sales Asset]` Smart contract audit documentation + NDA code access — offer on product/demo page, not a blog article; referenced in BOFU content as the conversion step for Persona 3
 
 **IMPLEMENTATION (Post-Purchase)**
 - `[Tech]` **CT17** — Post-Purchase Setup Guide *(FEATURE = Multi-Chain Deployment: Ethereum, BNB Chain, Polygon)*
-- `[Growth]` **CT18** — Post-Launch Growth Guide *(focus: bootstrapping TVL — LP incentive strategy for new DEX launches)*
-- `[Growth]` **CT18** — Post-Launch Growth Guide *(focus: adding a governance token and DAO structure to your protocol)*
+- `[Growth]` **CT18** — Post-Launch Growth Guide *(produce per focus: bootstrapping TVL with LP incentive strategy; adding a governance token and DAO structure)*
 
 ---
 
@@ -305,28 +283,24 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 
 **AWARENESS (TOFU)**
 - `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(angle: why niche platforms beat OpenSea for communities)*
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(VERTICAL = NFT Marketplace; creator community focus)* → gate with CL1
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(angle: stop sending OpenSea 2.5% and build your own marketplace)*
+- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(produce per angle: creator community focus; stop paying OpenSea 2.5% and build your own)* → gate with CL1
 - `[Tech]` **CT2** — What Is a [ORIGINAL] Clone Script? *(ORIGINAL = OpenSea)*
 
 **CONSIDERATION (MOFU)**
-- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = OpenSea; must-have features: mint, auction, royalties, collections)*
-- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = OpenSea; NFT smart contract standards: ERC-721 vs ERC-1155 — positioned for Persona 4 to brief their tech hire, not to learn Solidity)*
-- `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(VERTICAL = GameFi Marketplace; why gaming guilds need their own NFT infrastructure — moved from TOFU: GameFi is a niche sub-segment)*
-- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(VERTICAL = GameFi NFT Marketplace; for player communities — moved from TOFU)*
-- `[Growth]` **CT10** — How to Recruit Your First [NUMBER] [CREATORS] Before Your [VERTICAL] Launches *(NUMBER = 50; CREATORS = NFT creators)*
+- `[Tech]` **CT6** — [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = OpenSea; produce per angle: must-have features — mint, auction, royalties; NFT smart contract standards ERC-721 vs ERC-1155 for Persona 4 tech briefing)*
+- `[Industry]` **CT3** — [VERTICAL] Opportunity in [REGION]: Market Report *(VERTICAL = GameFi Marketplace; why gaming guilds need own NFT infrastructure — niche sub-segment, MOFU not TOFU)*
+- `[Launchpad]` **CT1** — How to Launch a [VERTICAL] in [COUNTRY] *(VERTICAL = GameFi NFT Marketplace; for player communities — niche sub-segment, MOFU not TOFU)*
+- `[Growth]` **CT10** — How to Recruit and Monetize on Your [VERTICAL] *(produce per angle: recruit first 50 NFT creators before launch; monetize with primary sales, royalties, listing fees)*
 - `[Proof]` **CT7** — Best [ORIGINAL] Clone Scripts Compared *(ORIGINAL = OpenSea)* → exit-intent CL2
-- `[Growth]` **CT10** — How to Monetize Your [VERTICAL] *(primary sales, royalties, listing fees)*
+- `[Proof]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(NFT Marketplace edition)* → gate with CL3
 
 **DECISION (BOFU)**
 - `[Proof]` **CT16** — Live Demo: [ORIGINAL] Clone *(ORIGINAL = OpenSea; minting, auction, and royalty walkthrough)* → offer CL4
 - `[Proof]` **CT14** — Founder Case Study: Launched a [VERTICAL] in [NUMBER] Days *(gaming community launches a branded NFT marketplace)*
-- `[Proof]` **CT12** — Clone vs Custom Development: Real Cost Breakdown *(NFT Marketplace edition)* → gate with CL3
 
 **IMPLEMENTATION (Post-Purchase)**
 - `[Tech]` **CT17** — Post-Purchase Setup Guide *(FEATURE = Royalty Splits and Creator Verification)*
-- `[Growth]` **CT18** — Post-Launch Growth Guide *(focus: launch marketing — building FOMO before day one)*
-- `[Growth]` **CT18** — Post-Launch Growth Guide *(focus: growing your first 1,000 active collectors)*
+- `[Growth]` **CT18** — Post-Launch Growth Guide *(produce per focus: launch marketing — building FOMO before day one; growing your first 1,000 active collectors)*
 
 ---
 
