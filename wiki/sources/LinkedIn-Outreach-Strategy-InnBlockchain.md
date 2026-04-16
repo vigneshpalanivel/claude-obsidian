@@ -23,7 +23,7 @@ key_claims:
   - "Exploit signal (DeFi) is highest urgency — reach similar protocols within 48 hours; funding signal 72 hours; job posting 48 hours"
   - "LinkedIn group strategy: establish 2-week presence before any DMs to group members"
   - "DQ signals: FinTech idea-stage no timeline, Crypto Native RWA no asset/no build budget, DeFi whitepaper-only no testnet, FinTech 'just exploring' no funding, Channel Partner P2 is Big4 or has own dev team"
-  - "Profile must be updated before running outreach — current headline ('CEO | Software Specialist') will kill conversion; see LinkedIn Profile Audit Vignesh"
+  - "Profile must be updated before running outreach — current headline ('CEO | Software Specialist') will kill conversion"
   - "Most deals close at T3-T5 — do not compress or skip steps; same-day pitch after connecting kills trust"
   - "Pipeline tracking in 'LinkedIn B2B Customer Outreach - InnBlockchain' (FinTech/Crypto Native) and 'LinkedIn Channel Partner Outreach - InnBlockchain'"
 ingest_rev: 1

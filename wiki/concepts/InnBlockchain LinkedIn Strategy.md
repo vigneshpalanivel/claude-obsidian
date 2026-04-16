@@ -165,7 +165,6 @@ Reply rate below 2% on any sequence = messaging problem, stop and diagnose befor
 
 ## Open Questions
 
-- LinkedIn Profile Audit (Vignesh) referenced throughout as prerequisite — not yet ingested into the wiki.
 - X/Telegram outreach strategy for DeFi/Protocol segments referenced as a separate document — not yet ingested.
 - P3 Channel Partner outreach KPIs are assumption-based; update after first 10+ sequences complete.
 - No defined threshold for "low enough engagement to delete and repost" — needs a specific rule (e.g., 0 reactions + 0 comments at 60 minutes).
