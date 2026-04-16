@@ -48,7 +48,7 @@ Trioangle sells white-label crypto clone scripts (CEX, P2P exchange, DEX/DeFi, N
 ### Content Mission Statement
 
 > [!NOTE] Mission
-> *Help crypto-native founders in North America, UK, EU, and the Middle East launch secure, revenue-generating exchange infrastructure for their region or community — faster and at a fraction of the cost of custom development or SaaS alternatives — by providing the most technically credible, security-forward content in the Web3 clone script space.*
+> *Help crypto-native founders in North America, UK, EU, and the Middle East launch secure, revenue-generating exchange infrastructure for their region or community — faster and at a fraction of the cost of custom development or hosted exchange platform alternatives — by providing the most technically credible, security-forward content in the Web3 clone script space.*
 
 > [!TIP] JTBD Content Frame
 > The ICP's core job-to-be-done: *"When I see a clear gap in my region's crypto infrastructure, I want to deploy a secure, feature-complete exchange instantly, so I can focus on community building and liquidity rather than smart contract architecture."*
@@ -174,7 +174,7 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 ### Pillar 5: ⭐ **Proof & On-Chain Credibility** (BOFU)
 > *Verifiable evidence that Trioangle's scripts work — told through on-chain proof, case studies, and comparisons*
 
-**Rationale**: In crypto, claims mean nothing — verifiable on-chain proof is everything. This pillar provides the conversion content for every persona, especially the Burned Crypto Builder. Priority market buyers (US/EU/Middle East) also benchmark Trioangle against SaaS alternatives (B2Broker, AlphaPoint, Shift Markets) — comparative content specifically for these buyer types is essential.
+**Rationale**: In crypto, claims mean nothing — verifiable on-chain proof is everything. This pillar provides the conversion content for every persona, especially the Burned Crypto Builder. Priority market buyers (US/EU/Middle East) benchmark Trioangle against hosted exchange platforms (B2Broker, AlphaPoint, Shift Markets) and licensed exchange operators (Hayvn, Rain in MENA) — two distinct comparison angles; see CT11 in the templates for the correct framing of each.
 
 **Connection to Product**: Every piece IS about the product — told through case studies, on-chain data, comparisons, and direct customer voice.
 
@@ -183,7 +183,7 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 - Trioangle vs forking Uniswap: Feature and security comparison
 - Trioangle vs B2Broker: White-label crypto exchange comparison
 - Trioangle vs AlphaPoint: Full-stack vs clone script — which is right for you?
-- Trioangle vs Hayvn/Rain: Enterprise SaaS vs clone script in MENA
+- Trioangle vs Hayvn and Rain: Building your own exchange vs using a licensed operator in MENA
 - Live CEX deployments running on Trioangle scripts: On-chain proof
 - Clone script vendor comparison: What to look for in a Web3 vendor
 - How the Burned Crypto Builder should evaluate any vendor (checklist)
@@ -195,44 +195,47 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 
 ## 4. Topic Clusters with Buyer Stage Mapping
 
+> [!INFO] Writer Brief Templates
+> Every topic in this section maps to a template in [[InnBlockchain - Crypto Products Blog Article Templates]]. Template IDs are noted inline as `(CT#)`. Lead magnets are noted as `(CL#)`. Before writing any article, pull the matching template — it contains the angle, structure, word count, CTA, and global writer rules (security claim compliance check, P3 sales handoff, AI Search structuring requirements).
+
 ### Cluster Map: CEX Vertical × All Pillars
 
 **AWARENESS (TOFU)**
-- `[Industry]` Crypto exchange market in [region]: Fee revenue opportunity and gaps
-- `[Industry]` Why Binance doesn't serve every market — and what that means for founders
-- `[Launchpad]` How to start a centralized crypto exchange in 2026
-- `[Launchpad]` How to launch a crypto exchange in [country]: Regulatory and tech guide
-- `[Launchpad]` How to launch a MiCA-compliant crypto exchange in the EU
-- `[Launchpad]` How to launch a crypto exchange in Dubai (DIFC/ADGM guide)
-- `[Launchpad]` Why launching a crypto exchange in the US is hard — and which markets to consider instead *(reframed from a how-to into an educational redirect; captures US founder search intent and routes qualified leads toward UK/EU/UAE; CTA should NOT invite US-only founders to book a demo — see scoring note on #34)*
-- `[Tech]` What is a Binance clone script? Complete founder's guide
+- `[Industry]` Crypto exchange market in [region]: Fee revenue opportunity and gaps (CT3)
+- `[Industry]` Why Binance doesn't serve every market — and what that means for founders (CT3)
+- `[Launchpad]` How to start a centralized crypto exchange in 2026 (CT1)
+- `[Launchpad]` How to launch a crypto exchange in [country]: Regulatory and tech guide (CT1) → gate with CL1
+- `[Launchpad]` How to launch a MiCA-compliant crypto exchange in the EU (CT1)
+- `[Launchpad]` How to launch a crypto exchange in Dubai (DIFC/ADGM guide) (CT1)
+- `[Launchpad]` Why launching a crypto exchange in the US is hard — and which markets to consider instead (CT1 — US redirect variant; CTA must NOT invite US-only founders to book a demo — see scoring note on #34)
+- `[Tech]` What is a Binance clone script? Complete founder's guide (CT2)
 
 **CONSIDERATION (MOFU)**
-- `[Tech]` CEX vs custom exchange development: The real cost breakdown (#4 — MOFU, not TOFU; buyer is comparing options, not discovering the category)
-- `[Tech]` Must-have features for a centralized crypto exchange
-- `[Security]` CEX security architecture: Cold storage, 2FA, and withdrawal whitelist guide
-- `[Compliance]` KYC/AML for crypto exchanges: What you need before launch
-- `[Compliance]` MiCA compliance for crypto exchanges: EU founder's checklist
-- `[Compliance]` DIFC/ADGM licensing for crypto exchanges: UAE founder's guide
-- `[Compliance]` FCA crypto exchange registration: UK founder's guide
-- `[Growth]` How to get your first 500 traders on your exchange
-- `[Proof]` Binance clone comparison: Top white-label CEX scripts reviewed
-- `[Proof]` Trioangle vs B2Broker: Which white-label exchange is right for you?
-- `[Proof]` Trioangle vs Shift Markets: Cost and feature comparison
-- `[Proof]` Trioangle vs AlphaPoint: SaaS vs Clone Script Comparison
-- `[Proof]` Trioangle vs Hayvn/Rain: Enterprise SaaS vs Clone Script in MENA
+- `[Tech]` CEX vs custom exchange development: The real cost breakdown (#4 — MOFU, not TOFU; buyer is comparing options) (CT12) → gate with CL3
+- `[Tech]` Must-have features for a centralized crypto exchange (CT6)
+- `[Security]` CEX security architecture: Cold storage, 2FA, and withdrawal whitelist guide (CT8)
+- `[Compliance]` KYC/AML for crypto exchanges: What you need before launch (CT9) → gate with CL5
+- `[Compliance]` MiCA compliance for crypto exchanges: EU founder's checklist (CT9) → gate with CL5
+- `[Compliance]` DIFC/ADGM licensing for crypto exchanges: UAE founder's guide (CT9) → gate with CL5
+- `[Compliance]` FCA crypto exchange registration: UK founder's guide (CT9) → gate with CL5
+- `[Growth]` How to get your first 500 traders on your exchange (CT10)
+- `[Proof]` Binance clone comparison: Top white-label CEX scripts reviewed (CT7) → exit-intent CL2
+- `[Proof]` Trioangle vs B2Broker: Clone script vs hosted exchange platform (CT11)
+- `[Proof]` Trioangle vs Shift Markets: Clone script vs hosted white-label CEX (CT11)
+- `[Proof]` Trioangle vs AlphaPoint: Own your exchange vs pay forever to rent it (CT11) → exit-intent CL3
+- `[Proof]` Trioangle vs Hayvn and Rain: Building your own exchange vs using a licensed operator in MENA (CT11 — different angle; see template note)
 
 **DECISION (BOFU)**
-- `[Proof]` Live demo: Our Binance clone in action (full admin + trading walkthrough)
-- `[Proof]` Case study: How [Founder] launched a regional exchange in 10 days
-- `[Proof]` On-chain proof: Live CEX deployments built on Trioangle scripts
-- `[Proof]` Cost breakdown: Custom exchange ($300k) vs SaaS ($50k/yr) vs white-label script ($10k)
+- `[Proof]` Live demo: Our Binance clone in action (full admin + trading walkthrough) (CT16) → offer CL4
+- `[Proof]` Case study: How [Founder] launched a regional exchange in 10 days (CT14) → exit-intent CL2
+- `[Proof]` On-chain proof: Live CEX deployments built on Trioangle scripts (CT16)
+- `[Proof]` Cost breakdown: Custom development ($300k) vs hosted exchange platform ($50k+/yr) vs white-label clone script ($10k) (CT12 / CL3)
 
 **IMPLEMENTATION (Post-Purchase)**
-- `[Tech]` Setting up cold storage and hot wallet management
-- `[Compliance]` Configuring KYC tiers and AML monitoring
-- `[Growth]` How to partner with a market maker for day-one liquidity
-- `[Graduation]` (#43) When your crypto exchange outgrows the clone script: 5 signs you need custom development *(distribute via post-purchase email sequence — Day 60 and Day 90 CRM triggers; not organic SEO)*
+- `[Tech]` Setting up cold storage and hot wallet management (CT17)
+- `[Compliance]` Configuring KYC tiers and AML monitoring (CT17)
+- `[Growth]` How to partner with a market maker for day-one liquidity (CT17)
+- `[Graduation]` (#43) When your crypto exchange outgrows the clone script: 5 signs you need custom development (CT19 — CRM email only; not organic SEO)
 
 ---
 
@@ -383,10 +386,10 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 | 29 | CEX Security Architecture: Cold Storage, 2FA, Withdrawal Whitelists Explained | CEX | Security | MOFU | Searchable | **6.9** |
 | 30 | How to Recruit 50 NFT Creators Before Your Marketplace Launches | NFT | Growth | MOFU | Searchable | **6.8** |
 | 31 | FCA Crypto Exchange Registration: UK Founder's Guide | CEX | Compliance | TOFU→MOFU | Searchable | **6.8** |
-| 32 | Trioangle vs AlphaPoint: SaaS vs Clone Script Comparison | CEX | Proof | MOFU | Searchable | **6.8** |
+| 32 | Trioangle vs AlphaPoint: Own Your Exchange vs Pay Forever to Rent It | CEX | Proof | MOFU | Searchable | **6.8** |
 | 33 | Multi-Chain DEX Deployment: Ethereum, BNB Chain, and Polygon Explained | DEX | Tech | Post-purchase | Both | **6.7** |
 | 34 | Why Launching a Crypto Exchange in the US Is Hard — and Which Markets to Consider Instead | CEX | Compliance | TOFU | Searchable | **6.6** |
-| 35 | Trioangle vs Hayvn/Rain: Enterprise SaaS vs Clone Script in MENA | CEX | Proof | MOFU | Searchable | **6.5** |
+| 35 | Trioangle vs Hayvn and Rain: Building Your Own Exchange vs Using a Licensed Operator in MENA | CEX | Proof | MOFU | Searchable | **6.5** |
 | 36 | Is a Crypto Clone Script Right for You? (Who It's For — and Who It Isn't) | Cross | Proof | TOFU | Both | **6.4** |
 | 40 | Trioangle vs Shift Markets: White-Label CEX Cost and Feature Comparison | CEX | Proof | MOFU | Searchable | **6.3** |
 | 41 | What Happened After Paxful Shut Down — and the P2P Gap It Left | P2P | Industry | TOFU | Both | **7.9** |

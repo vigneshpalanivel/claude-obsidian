@@ -1,7 +1,7 @@
 ---
 type: source
 title: "Trioangle Crypto Products Blog Article Templates"
-source_file: ".raw/Trioangle - Crypto Products Blog Article Templates.md"
+source_file: ".raw/InnBlockchain - Crypto Products Blog Article Templates.md"
 status: current
 created: 2026-04-16
 updated: 2026-04-16
@@ -71,7 +71,7 @@ Reusable content briefs for Trioangle's 4 crypto verticals (CEX, P2P, DEX/DeFi, 
 
 ## See Also
 
-- Source file: `.raw/Trioangle - Crypto Products Blog Article Templates.md`
+- Source file: `.raw/InnBlockchain - Crypto Products Blog Article Templates.md`
 - Content strategy: [[InnBlockchain Crypto Products Content Strategy]]
 - ICP: [[InnBlockchain Crypto Products ICP]]
 - Product equivalent: [[Product-Blog-Article-Templates]]
