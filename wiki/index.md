@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 88 | Sources ingested: 24
+Last updated: 2026-04-16 | Total pages: 100 | Sources ingested: 28
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -51,6 +51,11 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain Crypto Products ICP]] — Trioangle clone scripts $5k-$20k; 5 archetype-first personas; Burned Builder highest urgency (status: current)
 - [[InnBlockchain Content Strategy]] — umbrella for three parallel InnBlockchain content programs; routing gate = company origin not licensing (status: current)
 - [[Blockchain-Pharmaceutical-Supply-Chain]] — blockchain applied to pharma supply chain: anti-counterfeit, DSCSA compliance, cold chain, traceability; market CAGR 21% (status: current)
+- [[Blockchain-Fintech-Solutions]] — 7 core use cases (payments, tokenization, KYC, trade finance, etc.); platform comparison (Fabric/Corda/Besu); $8.35B market growing 44.4% CAGR (status: current)
+- [[Asset-Tokenization-RWA]] — $33.84B RWA market (2025); 800% growth since 2023; BlackRock, Franklin Templeton, JPMorgan; McKinsey $2T by 2030 (status: current)
+- [[Stablecoin-Cross-Border-Payments]] — stablecoin sandwich pattern; $305B supply; 0.5–2% vs 3–8% traditional; GENIUS Act 2025 (status: current)
+- [[Smart-Contracts-Finance]] — parametric insurance (Lemonade); DeFi lending (Aave/Compound); AI-adaptive contracts; oracle risk (status: current)
+- [[CBDC-Central-Bank-Digital-Currency]] — 137 countries exploring; e-CNY (2.25B wallets); e-rupee +334% YoY; US rejected CBDCs (Trump EO) (status: current)
 - [[Hyperledger-Fabric]] — dominant enterprise permissioned blockchain; execute-order-validate model; 2000+ TPS; channels, chaincode (Go/JS/Java), Raft consensus; Fabric-X targets 100k TPS for digital assets (status: current)
 - [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
@@ -83,6 +88,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[kepano-obsidian-skills]] — official skills from Obsidian creator; defuddle, obsidian-bases (status: current)
 - [[Claudian-YishenTu]] — native Obsidian plugin embedding Claude Code; plan mode, @mention (status: current)
 - [[BMAD Method]] — AI-driven dev framework; 4 phases, 3 tracks, agent personas with menu triggers; v6 (status: current)
+- [[JPMorgan-Kinexys]] — JPMorgan's bank-led blockchain unit; $2B+/day; JPM Coin; Kinexys Digital Payments; Canton Network integration (status: current)
+- [[Ripple]] — cross-border payments blockchain; XRP Ledger; RLUSD stablecoin; OCC bank charter Dec 2025; 7 acquisitions (status: current)
 
 ---
 
@@ -111,6 +118,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
 - [[BMAD-Method-Documentation]] — 2026-04-13 | full BMad v6 docs snapshot (llms-full.txt); 4 phases, agents, workflows, reviews
 - [[TEA-Documentation]] — 2026-04-13 | full Test Architect docs dump (16.5k lines); 9 workflows, risk scoring, fixture/network patterns, 42-fragment KB
+- [[Blockchain-Fintech-Industry-Overview-2026]] — 2026-04-16 | web research | market data, 7 use cases, institutional adoption
+- [[Blockchain-Cross-Border-Payments-2025]] — 2026-04-16 | web research | stablecoin payments, cost comparison, adoption leaders
+- [[DeFi-TradFi-Convergence-2025]] — 2026-04-16 | web research | GENIUS Act, hybrid models, AI-DeFi agents, DEX volume
+- [[Asset-Tokenization-RWA-2026]] — 2026-04-16 | web research | $33.84B market, BlackRock BUIDL, McKinsey/BIS projections
 
 ---
 
@@ -119,6 +130,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[How does the LLM Wiki pattern work]] — how the pattern works and why it outperforms RAG at human scale (status: developing)
 - [[Research: Running a Software Dev Company Post-Vibe-Coding]] — synthesis: team structure, hiring, process, pricing in AI era (status: developing)
 - [[Research: Marketing and Sales for AI-Era Dev Company]] — positioning, ICP, objection handling, alignment mechanics (status: developing)
+- [[Research: Blockchain Solutions in Fintech Industry]] — synthesis: 7 use cases, market data, entities, contradictions, open questions (status: developing)
 
 ---
 
