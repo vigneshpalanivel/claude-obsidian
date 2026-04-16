@@ -19,9 +19,26 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-16: autoresearch on "EU compliance for FinTech industry." 2 rounds, 9 searches + 2 page fetches. 10 pages created: 3 sources, 6 concepts, 1 synthesis. Key facts: 60+ EU regulations active by 2026; enforcement H1 2025 = $1.23B in fines (+417% YoY). Four hard deadlines: DORA (Jan 2025, already active), Instant Payments VoP + send (Oct 2025, already active), MiCA transition end (Jun 2026), EU AI Act high-risk systems (Aug 2026). AML package: AMLA operational July 2025; AMLR single rulebook July 2027. PSD3/PSR: provisional agreement Nov 2025; enters force Q1-Q2 2026 with 21-month transition. FiDA (open finance) and eIDAS 2.0 EUDI Wallet both targeting late 2026/2027. Critical compliance trap: DORA + AI Act have separate programs for the same AI system; GDPR vs. AMLA data-sharing tension unresolved.
+
+## Previous Last Updated
 2026-04-16: autoresearch on "blockchain solutions in fintech industry." 2 rounds, 8 searches + 3 page fetches. 12 pages created: 4 sources, 5 concepts, 2 entities, 1 synthesis. Key facts: fintech blockchain market $8.35B (2025) growing 44.4% CAGR to $157.77B by 2033. Top two production-grade use cases are (1) asset tokenization — RWA market $33.84B in 2025, 800% growth since 2023, McKinsey projects $2T by 2030 — and (2) stablecoin cross-border payments — $305B supply, 0.5-2% fees vs 3-8% traditional, stablecoin sandwich pattern. DeFi-TradFi convergence accelerated by US GENIUS Act (2025, first federal stablecoin framework). US explicitly rejected CBDCs (Trump EO); betting on regulated stablecoins instead. JPMorgan Kinexys ($2B+/day) is the benchmark institutional blockchain. Ripple received OCC bank charter (Dec 2025). Enterprise platforms: Hyperledger Fabric (~3,000 TPS, 55% of deployments) vs R3 Corda (financial services only, launching on Solana H1 2026). Wrong platform choice costs $500K-$2M to fix.
 
-## Key Recent Facts
+## Key Recent Facts (EU Compliance)
+- 60+ EU regulations active or entering force by 2026 across fintech
+- H1 2025 financial institution fines: $1.23B (+417% vs H1 2024)
+- **DORA**: In force Jan 17, 2025; 2% turnover penalty; 5 pillars; third-party vendor contracts are the biggest gap
+- **MiCA**: Fully applicable Jan 2025; transitional period ends Jun 2026; 65% of EU crypto firms compliant; €540M+ fines issued; 50+ licenses revoked
+- **EU AI Act**: Prohibited AI banned Feb 2025; high-risk enforcement (credit scoring, fraud, AML) August 2, 2026; fines up to €35M or 7% turnover
+- **IPR**: Sending + VoP mandatory from Oct 9, 2025; PSPs liable for fraud if VoP unavailable
+- **PSD3/PSR**: Provisional agreement Nov 2025; enters force Q1-Q2 2026; 21-month transition
+- **AMLA**: Commenced operations July 2025; AMLR rulebook July 2027; Travel Rule on all crypto transfers regardless of amount
+- **eIDAS 2.0**: EUDI Wallet mandatory by Dec 31, 2026; fintechs must accept as SCA
+- **FiDA**: Trilogue paused early 2026; likely applicable 2027 (open finance beyond payments)
+- **GDPR vs. AMLA**: Data minimization conflicts with AML data sharing — unresolved governance challenge
+- **AI Act + Blockchain**: High-risk AI audit trail requirement is a direct use case for blockchain immutable logging
+
+## Key Recent Facts (Blockchain Fintech)
 - Fintech blockchain market: $8.35B (2025) growing 44.4% CAGR
 - RWA tokenization: $33.84B (Oct 2025); 800% growth since 2023; McKinsey $2T by 2030; BIS 10% of global GDP by 2034
 - Stablecoins: $305B supply; $32T 2024 transaction volume; 0.5-2% fees vs 3-8% traditional banking; 3% of cross-border flows today, 20% projected by 2030
@@ -34,7 +51,13 @@ Navigation: [[index]] | [[log]] | [[overview]]
 - R3 Corda launching RWA yield vault on Solana H1 2026
 - 15% of AML/KYC procedures now blockchain-based; RegTech market >$22B
 
-## Recent Changes
+## Recent Changes (EU Compliance session)
+- Created: [[EU-Fintech-Compliance-Landscape]], [[MiCA-Regulation]], [[DORA-Regulation]], [[EU-AML-AMLA]], [[EU-AI-Act-Fintech]], [[PSD3-Open-Banking-EU]]
+- Created: [[EU-Fintech-Compliance-Overview-2026]], [[EU-MiCA-DORA-AML-2025]], [[EU-PSD3-IPR-FiDA-AIAct-2026]]
+- Created synthesis: [[Research: EU Compliance for FinTech Industry]]
+- Updated: [[index]] (total pages: 111), [[log]]
+
+## Recent Changes (Blockchain Fintech session)
 - Created: [[Blockchain-Fintech-Solutions]], [[Asset-Tokenization-RWA]], [[Stablecoin-Cross-Border-Payments]], [[Smart-Contracts-Finance]], [[CBDC-Central-Bank-Digital-Currency]]
 - Created: [[JPMorgan-Kinexys]], [[Ripple]]
 - Created: [[Blockchain-Fintech-Industry-Overview-2026]], [[Blockchain-Cross-Border-Payments-2025]], [[DeFi-TradFi-Convergence-2025]], [[Asset-Tokenization-RWA-2026]]

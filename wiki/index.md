@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 100 | Sources ingested: 28
+Last updated: 2026-04-16 | Total pages: 111 | Sources ingested: 31
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -56,6 +56,12 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Stablecoin-Cross-Border-Payments]] — stablecoin sandwich pattern; $305B supply; 0.5–2% vs 3–8% traditional; GENIUS Act 2025 (status: current)
 - [[Smart-Contracts-Finance]] — parametric insurance (Lemonade); DeFi lending (Aave/Compound); AI-adaptive contracts; oracle risk (status: current)
 - [[CBDC-Central-Bank-Digital-Currency]] — 137 countries exploring; e-CNY (2.25B wallets); e-rupee +334% YoY; US rejected CBDCs (Trump EO) (status: current)
+- [[EU-Fintech-Compliance-Landscape]] — 9 key EU fintech regulations (DORA, MiCA, AI Act, PSD3, IPR, AML, FiDA, eIDAS 2.0, CCD2); enforcement +417% YoY; dependency map (status: current)
+- [[MiCA-Regulation]] — EU crypto single market; June 2026 transition end; 65% compliance; €540M+ fines; covers CASPs not DeFi/security tokens (status: current)
+- [[DORA-Regulation]] — ICT resilience law; Jan 2025 active; 5 pillars; 2% turnover penalty; third-party vendor mapping hardest lift (status: current)
+- [[EU-AML-AMLA]] — 3-part AML package; AMLA Frankfurt July 2025; AMLR directly applicable July 2027; Travel Rule all crypto (status: current)
+- [[EU-AI-Act-Fintech]] — high-risk AI (credit scoring, fraud, AML) Aug 2026; €35M max fine; blockchain audit trail use case (status: current)
+- [[PSD3-Open-Banking-EU]] — PSD3/PSR Nov 2025 agreement; IPR sending + VoP Oct 2025 (active); FiDA open finance ~2027 (status: current)
 - [[Hyperledger-Fabric]] — dominant enterprise permissioned blockchain; execute-order-validate model; 2000+ TPS; channels, chaincode (Go/JS/Java), Raft consensus; Fabric-X targets 100k TPS for digital assets (status: current)
 - [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
@@ -122,6 +128,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Blockchain-Cross-Border-Payments-2025]] — 2026-04-16 | web research | stablecoin payments, cost comparison, adoption leaders
 - [[DeFi-TradFi-Convergence-2025]] — 2026-04-16 | web research | GENIUS Act, hybrid models, AI-DeFi agents, DEX volume
 - [[Asset-Tokenization-RWA-2026]] — 2026-04-16 | web research | $33.84B market, BlackRock BUIDL, McKinsey/BIS projections
+- [[EU-Fintech-Compliance-Overview-2026]] — 2026-04-16 | web research | 9 key EU regulations, enforcement climate, $1.23B fines H1 2025
+- [[EU-MiCA-DORA-AML-2025]] — 2026-04-16 | web research | DORA 5 pillars, MiCA timeline, AMLA 3-part package
+- [[EU-PSD3-IPR-FiDA-AIAct-2026]] — 2026-04-16 | web research | PSD3/PSR, IPR VoP Oct 2025, FiDA, AI Act, eIDAS 2.0
 
 ---
 
@@ -131,6 +140,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Research: Running a Software Dev Company Post-Vibe-Coding]] — synthesis: team structure, hiring, process, pricing in AI era (status: developing)
 - [[Research: Marketing and Sales for AI-Era Dev Company]] — positioning, ICP, objection handling, alignment mechanics (status: developing)
 - [[Research: Blockchain Solutions in Fintech Industry]] — synthesis: 7 use cases, market data, entities, contradictions, open questions (status: developing)
+- [[Research: EU Compliance for FinTech Industry]] — synthesis: 9 EU regulations, enforcement data, regulation interactions, open questions (status: developing)
 
 ---
 

@@ -19,6 +19,13 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-04-16] autoresearch | EU Compliance for FinTech Industry
+- Rounds: 2
+- Searches: 9 web searches + 2 page fetches
+- Pages created: [[EU-Fintech-Compliance-Landscape]], [[MiCA-Regulation]], [[DORA-Regulation]], [[EU-AML-AMLA]], [[EU-AI-Act-Fintech]], [[PSD3-Open-Banking-EU]], [[EU-Fintech-Compliance-Overview-2026]], [[EU-MiCA-DORA-AML-2025]], [[EU-PSD3-IPR-FiDA-AIAct-2026]], [[Research: EU Compliance for FinTech Industry]]
+- Synthesis: [[Research: EU Compliance for FinTech Industry]]
+- Key finding: 60+ EU regulations active by 2026; enforcement fines +417% YoY ($1.23B H1 2025); four hard deadlines now in force or imminent — DORA (Jan 2025), IPR/VoP (Oct 2025), MiCA transition (Jun 2026), AI Act high-risk (Aug 2026); blockchain provides direct compliance infrastructure for AI Act audit trail requirements
+
 ## [2026-04-16] autoresearch | Blockchain Solutions in Fintech Industry
 - Rounds: 2
 - Searches: 8 web searches + 3 page fetches
