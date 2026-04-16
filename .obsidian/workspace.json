@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/concepts/Trioangle Content Strategy.md",
+                "file": "wiki/meta/dashboard.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Trioangle Content Strategy"
+              "title": "dashboard"
             }
           },
           {
@@ -231,6 +231,9 @@
   },
   "active": "867e60ad71f96b3c",
   "lastOpenFiles": [
+    "wiki/meta/dashboard.base",
+    "wiki/meta/dashboard.md",
+    "wiki/concepts/Trioangle Content Strategy.md",
     "wiki/concepts/InnBlockchain LinkedIn Strategy.md",
     "wiki/sources/LinkedIn-Outreach-Strategy-InnBlockchain.md",
     "wiki/sources/LinkedIn-Marketing-Strategy-InnBlockchain.md",
@@ -254,9 +257,6 @@
     "wiki/concepts/Stablecoin-Cross-Border-Payments.md",
     "wiki/concepts/Asset-Tokenization-RWA.md",
     "wiki/concepts/Blockchain-Fintech-Solutions.md",
-    "wiki/sources/Asset-Tokenization-RWA-2026.md",
-    "wiki/sources/DeFi-TradFi-Convergence-2025.md",
-    "wiki/sources/Blockchain-Cross-Border-Payments-2025.md",
     "Clippings",
     "wiki/concepts/InnBlockchain Channel Partner ICP.md.tmp.88847.1776275602558",
     "wiki/Wiki Map.canvas",
