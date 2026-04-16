@@ -55,7 +55,7 @@ Content program for [[InnBlockchain FinTech ICP]] — technical and product lead
 - **ExchangeTech: architecture is irrelevant.** CEX/DEX/DeFi all qualify if licensed AND expanding an existing FinTech business. Don't DQ on architecture alone.
 - **WalletTech = regulated e-money wallet operators only.** Crypto-native self-custody startups are hard DQ (route to Crypto Native).
 - **Routing gate vs. Crypto Native**: company origin, not licensing. Discovery: *"Is your company an existing FinTech adding crypto, or a crypto-native startup?"*
-- **Budget floor**: $25k+
+- **Budget floor**: $20k+
 - **API-first backend live in production** = strongest buyer signal (Tier 0 velocity)
 - **EU only** until 5 projects close
 
@@ -78,23 +78,31 @@ Content program for [[InnBlockchain FinTech ICP]] — technical and product lead
 | 6 | STOs in 2026: MiCA Regulatory Landscape 🇪🇺 | 8.7 |
 | 26 | EU AI Act Audit Trail Requirements 🇪🇺 | 8.6 |
 | 7 | MiCA + MiFID II for Tokenized Assets 🇪🇺 | 8.6 |
+| T4 | The Cost of Hiring a Blockchain Team In-House: FinTech CTO Guide | 8.4 |
 
-Lead magnets: RWA Build vs Buy vs Partner Checklist (#9, 8.5) + FinTech Smart Contract Audit Checklist (#28, 8.0).
+Lead magnets: RWA Build vs Buy vs Partner Checklist (#9, 8.5) + FinTech Smart Contract Audit Checklist (#28, 8.0) + InnBlockchain Vendor Risk & Compliance Brief (Carol BOFU, gated — ownership structure, ISO/SOC 2, data residency, MiCA compliance summary, sample audit report).
 
 ## AI + Blockchain Content Angle
 
-High-growth search trend, tied to ICP Pain Point 5. Framing: **blockchain-alongside-AI**, not blockchain-instead-of-AI. Primary target: CTO caught between "ship the AI model" and "prove it's auditable" under EU AI Act. Produce after WealthTech/RWA content ships.
+High-growth search trend, tied to ICP Pain Point 5. Framing: **blockchain-alongside-AI**, not blockchain-instead-of-AI. Primary target: CTO caught between "ship the AI model" and "prove it's auditable" under EU AI Act.
+
+> [!warning] Validation gate
+> Pain Point 5 is unvalidated in the ICP (pending 2026-05-31). Publish this content only after (a) WealthTech/RWA hub ships and (b) ICP validation confirms buyer resonance. If validation fails, restructure scope before investing further.
 
 Articles: EU AI Act audit trail, immutable AI decision logs, AI credit decision auditability, AI + tokenization in WealthTech.
 
 ## Distribution
 
-Channel priority: **(1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech Events**.
+Channel priority: **(1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech Events → (4) Tom's Technical Channels**.
 
 - **LinkedIn ABM**: segment-specific follow-up assets (WealthTech CPO → RWA guide; ExchangeTech CTO → Exchange guide; WalletTech CTO → wallet guide)
 - **LinkedIn carousels**: every article repurposed as 7-10 slides; EU Sales Navigator targeting
 - **Events**: Money20/20 Europe, Sibos Europe editions — leave-behinds and speaking slots. FinTech Connect London is Watch (UK gate not met)
 - **Cold email**: low-volume, personalised, business-case framing for Strategic Sam
+- **Tom's technical channels** (CTO / VP Eng self-select layer):
+  - **GitHub**: publish open-source smart contract templates or audit tooling snippets; links back to full article
+  - **Hacker News**: technical posts (Show HN or Ask HN) on smart contract security and Web3 talent gap; no marketing tone
+  - **ETHGlobal / DevCon re-engage play**: identify Tom at events using Crypto Native framing → follow up post-event with FinTech framing (RWA, MiCA, regulated exchange). Cross-ICP handoff documented in [[InnBlockchain Crypto Native Content Strategy]]
 
 ## Competitive Framing (never name competitors)
 

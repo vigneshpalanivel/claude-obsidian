@@ -204,7 +204,7 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 - `[Launchpad]` How to launch a crypto exchange in [country]: Regulatory and tech guide
 - `[Launchpad]` How to launch a MiCA-compliant crypto exchange in the EU
 - `[Launchpad]` How to launch a crypto exchange in Dubai (DIFC/ADGM guide)
-- `[Launchpad]` How to start a crypto exchange in the US: SEC, FinCEN, and State Licensing
+- `[Launchpad]` Why launching a crypto exchange in the US is hard — and which markets to consider instead *(reframed from a how-to into an educational redirect; captures US founder search intent and routes qualified leads toward UK/EU/UAE; CTA should NOT invite US-only founders to book a demo — see scoring note on #34)*
 - `[Tech]` What is a Binance clone script? Complete founder's guide
 
 **CONSIDERATION (MOFU)**
@@ -232,6 +232,7 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 - `[Tech]` Setting up cold storage and hot wallet management
 - `[Compliance]` Configuring KYC tiers and AML monitoring
 - `[Growth]` How to partner with a market maker for day-one liquidity
+- `[Graduation]` (#43) When your crypto exchange outgrows the clone script: 5 signs you need custom development *(distribute via post-purchase email sequence — Day 60 and Day 90 CRM triggers; not organic SEO)*
 
 ---
 
@@ -239,13 +240,14 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 
 **AWARENESS (TOFU)**
 - `[Industry]` The unbanked crypto opportunity: Why P2P exchanges win in emerging markets
-- `[Industry]` What happened after Paxful shut down — and the gap it left
+- `[Industry]` (#41) What happened after Paxful shut down — and the gap it left *(high-intent Persona 2 trigger; time-decaying opportunity — schedule early)*
 - `[Launchpad]` How to launch a P2P crypto exchange for mobile money markets
 - `[Launchpad]` How to start a P2P exchange serving diaspora communities
 - `[Tech]` What is a P2P crypto exchange script? Remitano/Paxful clone guide
 
 **CONSIDERATION (MOFU)**
 - `[Tech]` How P2P escrow works: Protecting buyers and sellers on your platform
+- `[Tech]` (#42) P2P crypto exchange mobile money integration: M-Pesa, bKash, GCash, Flutterwave complete guide *(directly addresses documented Persona 2 objection; showcases hard-to-replicate differentiator; high conversion content)*
 - `[Tech]` Must-have payment methods for a P2P exchange in [Africa/SE Asia/MENA] *(secondary market focus)*
 - `[Tech]` Running a diaspora P2P exchange from the UK or US: remote admin, FCA/FinCEN considerations, and local payment rail integration *(priority market focus — Persona 2)*
 - `[Compliance]` KYC and dispute resolution for P2P exchanges
@@ -331,7 +333,7 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 > [!NOTE] These pieces serve all four verticals and sit under the Security Hub silo. They are not vertical-specific but underpin trust and conversion across the entire funnel.
 
 **TOFU**
-- `[Proof]` (#37) What to do after a failed crypto exchange build — a restart guide for founders who lost money to an agency or bad fork (primary audience: Burned Crypto Builder; secondary: any prospect who has researched custom dev and been burned)
+- `[Proof]` (#37) What to do after a failed crypto exchange build — a restart guide for founders who lost money to an agency or bad fork (primary audience: Burned Crypto Builder; secondary: any prospect who has researched custom dev and been burned). **Publish in Month 2 alongside #7 — Burned Builder needs a TOFU entry before they shortlist vendors.**
 - `[Proof]` (#36) Is a crypto clone script right for you? (Who it's for — and who it isn't) — pre-qualification filter; reduces disqualified leads reaching sales
 
 **MOFU**
@@ -383,16 +385,23 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 | 31 | FCA Crypto Exchange Registration: UK Founder's Guide | CEX | Compliance | TOFU→MOFU | Searchable | **6.8** |
 | 32 | Trioangle vs AlphaPoint: SaaS vs Clone Script Comparison | CEX | Proof | MOFU | Searchable | **6.8** |
 | 33 | Multi-Chain DEX Deployment: Ethereum, BNB Chain, and Polygon Explained | DEX | Tech | Post-purchase | Both | **6.7** |
-| 34 | How to Start a Crypto Exchange in the US: SEC, FinCEN, and State Licensing | CEX | Compliance | TOFU→MOFU | Searchable | **6.6** |
+| 34 | Why Launching a Crypto Exchange in the US Is Hard — and Which Markets to Consider Instead | CEX | Compliance | TOFU | Searchable | **6.6** |
 | 35 | Trioangle vs Hayvn/Rain: Enterprise SaaS vs Clone Script in MENA | CEX | Proof | MOFU | Searchable | **6.5** |
 | 36 | Is a Crypto Clone Script Right for You? (Who It's For — and Who It Isn't) | Cross | Proof | TOFU | Both | **6.4** |
 | 40 | Trioangle vs Shift Markets: White-Label CEX Cost and Feature Comparison | CEX | Proof | MOFU | Searchable | **6.3** |
+| 41 | What Happened After Paxful Shut Down — and the P2P Gap It Left | P2P | Industry | TOFU | Both | **7.9** |
+| 42 | P2P Crypto Exchange Mobile Money Integration: M-Pesa, bKash, GCash, Flutterwave Complete Guide | P2P | Tech/Proof | MOFU | Searchable | **8.1** |
+| 43 | When Your Crypto Exchange Outgrows the Clone Script: 5 Signs You Need Custom Development | Cross | Tech | Post-purchase | Both | **7.0** |
 
 > [!NOTE] Scoring notes
 > **#36 is under-scored relative to its sales function.** The ICP disqualifies resellers, source-code-resellers, and purely speculative builders — pre-qualifying content saves disproportionate sales time. Treat as a high-priority TOFU piece regardless of raw score.
-> **#37** — TOFU entry for the Burned Crypto Builder (longest cycle: 4–8 weeks). Catches this persona before they've shortlisted any vendor.
+> **#37** — TOFU entry for the Burned Crypto Builder (longest cycle: 4–8 weeks). Catches this persona before they've shortlisted any vendor. **Publish in Month 2 alongside #7** — not deferred to Month 3+.
 > **#38 and #39** — NFT vertical was missing BOFU scored topics. Persona 4's Decision stage content was previously pointing to MOFU/TOFU pieces.
 > **#40** — Trioangle vs Shift Markets was in the CEX MOFU cluster without a scored entry. Added at 6.3 — lower than other competitor comparisons (Shift Markets is less prominent than B2Broker/AlphaPoint in the priority market).
+> **#41** — Paxful-gap is a time-decaying trigger. Score elevated to 7.9 (equivalent to DEX liquidity guide) — the opportunity narrows as P2P alternatives establish themselves. Sequence in Month 2.
+> **#42** — Mobile money integration guide directly addresses documented Persona 2 objection ("My home country uses M-Pesa — does the P2P script support it?"). Scored 8.1 — equivalent to the NFT launchpad hub. Add to Month 2.
+> **#43** — Graduation path article. Serves existing customers approaching InnBlockchain custom dev graduation triggers (user-growth feature pressure, funding round, regulatory escalation). No search volume — distribute via email newsletter and post-purchase onboarding sequence. Scored at 7.0 for strategic value despite low organic potential.
+> **#34** — Reframed from a how-to guide to an educational redirect. The ICP explicitly flags US compliance as an unrealistic path for solo founders at $5k–$20k. Article captures US search intent and routes qualified leads to UK/EU/UAE markets. CTA must NOT direct US-only founders to book a demo.
 
 ---
 
@@ -507,6 +516,38 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 > [!NOTE] AI Search Priority
 > Per the ICP, priority market buyers (North America, UK, EU, Middle East) increasingly use AI tools (ChatGPT, Perplexity, Gemini) as their first research step — before Google. Content must be structured to be cited in AI responses: use clear headings, direct answers, structured data, and authoritative citations. This is the new top-of-funnel for high-value priority market buyers.
 
+### AI Search Article Brief Template
+
+Every article must apply the following structural requirements to earn AI citations. This is not optional formatting — it is the mechanism by which priority market buyers discover Trioangle before they reach Google.
+
+**1. Direct answer in the first 100 words.** The opening section must answer the article's core question plainly and completely. Do not bury the answer in background context. AI models cite the first citable sentence, not the conclusion.
+
+> Example: "Are crypto clone scripts safe?" — answer must be in paragraph 1: "Yes, if the vendor can provide a third-party smart contract audit report and on-chain addresses of live deployments. Here is how to verify both before paying."
+
+**2. Question-phrased H2 headers.** Frame at least 3 H2 headers as the exact question a founder would type into Perplexity or ChatGPT. AI models map user queries to headers when constructing answers.
+
+> Example H2s: "What is a Binance clone script?" / "How long does it take to launch a crypto exchange?" / "What does a smart contract audit cost?"
+
+**3. One citable claim per article.** Include at least one specific, verifiable statistic or data point that AI models can quote. Prefer on-chain data, deployment counts, or cost figures with sources.
+
+> Example: "Smart contract audits from reputable firms (Certik, Hacken, Trail of Bits) cost $30,000–$80,000 for a standard DEX protocol."
+
+**4. FAQ schema on every article.** Implement FAQ structured data (schema.org/FAQPage) for the Q&A sections. This is the primary mechanism for surfacing in AI-generated answers and Google featured snippets simultaneously.
+
+**5. Authoritative internal citations.** Each article should reference at least one external authority (audit firm, regulatory body, on-chain data source) and link to it. AI models weight content with credible external citations higher when constructing answers.
+
+**AI Search Citation Tracking (manual harness — monthly):**
+Run these fixed queries in Perplexity and note whether Trioangle content is cited (Y/N, position):
+- "best crypto exchange clone script"
+- "how to launch a DEX"
+- "binance clone script review"
+- "are crypto clone scripts safe"
+- "uniswap clone script"
+- "how to start a p2p crypto exchange"
+- "what happened after paxful shut down"
+
+Log results in a simple tracker (date / query / cited Y/N / position). Review monthly until third-party AI visibility tools mature.
+
 ---
 
 ## 9. Internal Linking Strategy
@@ -599,10 +640,12 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 
 ---
 
-## 11. Publishing Sequence — First 12 Posts
+## 11. Publishing Sequence — First 15 Posts
 
 > [!TIP] Sequencing logic
 > Lead with the Security Hub (#1) to establish trust before any vertical-specific content runs — every other article will link back to it. Then open all four verticals simultaneously with TOFU pieces. Layer in MOFU/BOFU only after vertical hubs exist to receive internal links.
+>
+> Three articles added vs. original 12: **#37** (Burned Builder TOFU — this persona has the highest close rate of any archetype and previously had no funnel entry for 3+ months), **#41** (Paxful-gap — time-decaying opportunity; schedule before the window closes), **#42** (mobile money guide — directly addresses the documented Persona 2 objection and showcases the hardest-to-replicate differentiator).
 
 | Month | # | Post | Rationale |
 |-------|---|------|-----------|
@@ -610,8 +653,11 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 | 1 | #2 | How to Start a Crypto Exchange in [Country] [2026] | Highest-traffic TOFU; CEX vertical hub |
 | 1 | #6 | P2P Crypto Exchange: How to Launch for Unbanked Markets | P2P vertical hub; captures Paxful-gap intent |
 | 1 | #5 | How to Build a DEX Like Uniswap (Without Writing Solidity) | DEX vertical hub; highest-value technical TOFU |
+| 2 | #37 | What to Do After a Failed Crypto Exchange Build (Restart Guide) | Burned Builder TOFU; highest-close-rate persona had no funnel entry — publish alongside #7 so TOFU and MOFU for this persona exist simultaneously |
+| 2 | #41 | What Happened After Paxful Shut Down — and the P2P Gap It Left | P2P TOFU; time-decaying trigger; captures warm Persona 2 search intent now before alternatives consolidate |
 | 2 | #7 | Smart Contract Audit: What It Costs, Who Does It, Why It's Non-Negotiable | Security MOFU; gates all BOFU conversion for Personas 3 and 5 |
 | 2 | #3 | Binance Clone Script: Complete Buyer's Guide [2026] | CEX MOFU→BOFU; highest commercial intent in the vertical |
+| 2 | #42 | P2P Crypto Exchange Mobile Money Integration: M-Pesa, bKash, GCash, Flutterwave Guide | P2P MOFU; addresses documented Persona 2 objection; publish with the P2P hub live to receive internal link |
 | 2 | #9 | KYC/AML for Crypto Exchanges: What You Actually Need to Launch | Cross-vertical MOFU; unblocks compliance-paralysed leads in all priority markets |
 | 2 | #11 | How to Launch an NFT Marketplace for Your Creator Community | NFT vertical hub; opens the fourth vertical |
 | 3 | #4 | CEX vs Custom Exchange Development: The Real Cost Breakdown | CEX MOFU; reframes the build-vs-buy decision; high share potential |
