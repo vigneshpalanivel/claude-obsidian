@@ -491,7 +491,7 @@ Writers must include this handoff note in every DEX/DeFi BOFU article: *"Before 
 
 **CTA:** *"Read 800+ verified deployments → Then Book Your Demo"*
 
-**Internal Links:** → [ORIGINAL] Clone Features & Cost (CT6) → Trioangle vs [SAAS_COMPETITOR] (CT11) → How a Burned Builder Should Evaluate Any Vendor (CT21) → Vendor Due Diligence Checklist (CL2)
+**Internal Links:** → [ORIGINAL] Clone Features & Cost (CT6) → Trioangle vs [WL_COMPETITOR] (CT11) → How a Burned Builder Should Evaluate Any Vendor (CT15) → Vendor Due Diligence Checklist (CL2)
 
 > [!NOTE] P5 case study note
 > If the founder is a P5 (Burned Builder), lead with the prior failure and make it the headline. "I paid $120k to a blockchain agency. Here's what I built for $12k instead." This is the most powerful conversion content for P5 — do not bury the backstory.
@@ -776,7 +776,7 @@ Writers must include this handoff note in every DEX/DeFi BOFU article: *"Before 
 | CT8 — Security Guide (× variants) | ✅ | — | ✅ | ✅ |
 | CT9 — [FRAMEWORK] Compliance Guide (× framework) | ✅ | ✅ | ✅ | — |
 | CT10 — Bootstrap Liquidity / Traders / Creators | ✅ | ✅ | ✅ | ✅ |
-| CT11 — Trioangle vs [SAAS_COMPETITOR] | ✅ (B2Broker, AlphaPoint, Shift, Hayvn/Rain) | — | — | — |
+| CT11 — Trioangle vs [WL_COMPETITOR] | ✅ (B2Broker, AlphaPoint, Shift, Hayvn/Rain) | — | — | — |
 | CT12 — Clone vs Custom Development | ✅ | ✅ | ✅ (fork variant) | ✅ |
 | CT13 — Mobile Money Integration | — | ✅ | — | — |
 | CT14 — Founder Case Study | ✅ | ✅ | ✅ | ✅ |
