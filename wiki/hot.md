@@ -19,6 +19,9 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-16: ingested InnBlockchain LinkedIn Marketing Strategy + LinkedIn Outreach Strategy. 3 pages created: 2 sources, 1 concept. Key facts: LinkedIn is InnBlockchain's primary B2B channel; flywheel is Optimised Profile → ICP-Aligned Content → Trigger-Based Outreach → Discovery Call. Two ICP streams run from same profile: FinTech (Sam/Tom) and Crypto Native (Felix/Sasha). RWA is Priority 1 across both. EU Continental Europe sole geography until 5-project gate. Creator Mode required before any outreach. 5-touchpoint sequence (T1-T5 over 21 days); most deals close at T3-T5. DeFi/Protocol requires a specific trigger for every T1 — no generic cold outreach. Daily cap: 15-20 personalised connection requests; 8-10 RWA + 3-5 DeFi/Protocol (trigger only). Newsletter: "Secure by Design" bi-weekly, target 500 subscribers in 90 days. External links go in first comment, not post body. Profile must be rebuilt before outreach — current headline kills conversion.
+
+## Previous Last Updated
 2026-04-16: ingested InnBlockchain Landing Pages Plan. Full site architecture for innblockchain.com. Key structure: shared Services (4 pages) and Technologies (7 pages) for both ICPs; split Industry hubs (/industries/fintech, /industries/web3-defi) and Solutions pages per ICP. Active Q2 2026: 4 FinTech solutions (tokenization, regulated-exchange, defi-lending, fintech-wallets) + 6 Crypto Native solutions (rwa-tokenization, dex-protocol, defi-protocol, mpc-wallets, nft-platform, token-launch). Three existing pages must be rebuilt as two ICP-split pages before old URL retirement (exchange, DeFi, wallets). Anti-cannibalization rule: services rank for "how" keywords, solutions rank for "who/what" keywords.
 
 ## Previous Last Updated

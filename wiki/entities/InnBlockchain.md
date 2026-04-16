@@ -3,7 +3,7 @@ type: entity
 title: "InnBlockchain"
 entity_type: company
 created: 2026-04-15
-updated: 2026-04-16
+updated: 2026-04-16T13:30:00
 tags:
   - entity
   - company
@@ -18,11 +18,14 @@ related:
   - "[[InnBlockchain Channel Partner ICP]]"
   - "[[InnBlockchain Crypto Products ICP]]"
   - "[[InnBlockchain Content Strategy]]"
+  - "[[InnBlockchain Landing Pages Plan]]"
 ---
 
 # InnBlockchain
 
 Blockchain-native development and smart contract security firm. **Sister company to [[Trioangle]]** — both are InnBlockchain group companies. InnBlockchain delivers on-chain products; Trioangle delivers marketplace and app platforms, plus the Crypto Products clone script line that is operated under the Trioangle brand.
+
+**External positioning (website):** "Dedicated Web3 division — Backed by Trioangle." Uses the 800+ traditional software deployments as enterprise credibility proof, not just the on-chain track record.
 
 ## Positioning
 
@@ -77,7 +80,7 @@ DEX & on-chain trading, DeFi protocols, RWA tokenization, Web3 wallets, NFT plat
 
 ## Vertical Scope — FinTech
 
-Active: ExchangeTech (licensed), WealthTech ⭐ (RWA/STO — primary Q2 2026 focus), LendTech, WalletTech. Watch: PayTech, RegTech, BankTech, InsurTech.
+Active Q2 2026 (by GTM priority): WealthTech ⭐ (Tokenization/RWA — Priority 1), ExchangeTech (Regulated Exchange — Priority 2), LendTech (DeFi & Digital Lending — Priority 3), WalletTech (Fintech Wallets — Priority 4). Watch: PayTech, RegTech, BankTech, InsurTech.
 
 ## Regulatory Frameworks Referenced
 

@@ -40,6 +40,8 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 - [[Content-Strategy-Product]] — Trioangle internal, 2026 | 10-silo, 5-pillar product blog strategy; TikTok clone has active inbound now
 - [[Content-Strategy-Service]] — Trioangle internal, 2026 | 81-article service blog; persona-gated CTA rules; MENA = no forms ever
 - [[Product-Blog-Article-Templates]] — Trioangle internal, 2026 | 20 article templates + 8 lead magnets for product line blog
+- [[LinkedIn-Marketing-Strategy-InnBlockchain]] — InnBlockchain internal, 2026-04-06 | platform setup, algorithm mechanics, content cadence, 5 authority clusters, newsletter "Secure by Design", analytics targets
+- [[LinkedIn-Outreach-Strategy-InnBlockchain]] — InnBlockchain internal, 2026-04-06 | 5 ICP tracks, 5-touchpoint sequences with templates, Sales Navigator filters, daily budgets, KPIs, DQ signals
 
 ---
 

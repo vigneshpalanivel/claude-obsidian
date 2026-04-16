@@ -1,0 +1,171 @@
+---
+type: concept
+title: "InnBlockchain LinkedIn Strategy"
+created: 2026-04-16
+updated: 2026-04-16
+tags:
+  - concept
+  - linkedin
+  - marketing
+  - sales
+  - innblockchain
+  - outreach
+  - authority-building
+status: current
+related:
+  - "[[InnBlockchain]]"
+  - "[[LinkedIn-Marketing-Strategy-InnBlockchain]]"
+  - "[[LinkedIn-Outreach-Strategy-InnBlockchain]]"
+  - "[[InnBlockchain FinTech ICP]]"
+  - "[[InnBlockchain Crypto Native ICP]]"
+  - "[[InnBlockchain Channel Partner ICP]]"
+  - "[[InnBlockchain FinTech Content Strategy]]"
+  - "[[InnBlockchain Crypto Native Content Strategy]]"
+---
+
+# InnBlockchain LinkedIn Strategy
+
+LinkedIn is InnBlockchain's **primary B2B channel** — combining organic authority-building with structured outbound outreach to drive EU qualified discovery calls.
+
+**The flywheel**: Optimised Profile → ICP-Aligned Content → Trigger-Based Outreach → Discovery Call
+
+Two ICP streams run simultaneously from the same profile:
+- **FinTech track**: Strategic Sam (CEO/CPO) + Technical Tom (CTO) at regulated EU FinTechs
+- **Crypto Native track**: Founding Felix + Security Sasha at EU DeFi/protocol + RWA founders
+
+---
+
+## Geography Gate
+
+**EU Continental Europe only** until 5 projects are closed. No outbound to UK, US, UAE, Singapore, MENA, or SEA for any ICP track (including Channel Partners). Each Watch geography requires a separate regulatory brief before activation: UK (FCA), UAE (ADGM/VARA/DFSA), Singapore (MAS), US (FinCEN/SEC).
+
+---
+
+## Platform Setup (Prerequisites)
+
+| Item | Requirement |
+|------|-------------|
+| Creator Mode | On (mandatory before any outreach) |
+| Profile Headline | Updated to lead with RWA — "CEO @ InnBlockchain, Blockchain Engineering for Regulated FinTech, RWA Tokenization · WealthTech · ExchangeTech, Web3 Security, MiCA Compliance" |
+| Banner | Updated — remove "Turn Your Business Ideas Into Reality" / "200+ Mentored" |
+| Featured Section | InnBlockchain service pages + 1 MiCA/RWA article |
+| About Section | ICP pain-point language (MiCA, smart contract security, Web3 talent gap) |
+| Skills | Smart Contract Security, Solidity, MiCA Compliance, RWA Tokenization, DeFi |
+| Showcase Pages | Smart Contract Security · FinTech Blockchain Engineering · RWA Tokenization |
+| Newsletter | "Secure by Design" — bi-weekly, 400-700 words, target 500 subscribers in 90 days |
+
+> Do not run outreach before profile is updated. The current headline ("CEO, Software Specialist") kills conversion.
+
+---
+
+## Content Engine
+
+### Cadence
+- **Vignesh (personal)**: 4-5x/week — 3x text posts, 1x carousel, 1x video or poll
+- **InnBlockchain (company page)**: 3x/week — 2x repurposed Vignesh posts + 1x company-specific
+- Alternate personal and company page posts on different days (not same day)
+
+### 5 Authority Topic Clusters (own these — 3 of every 5 posts must be in these)
+
+| Cluster | Primary ICP |
+|---------|------------|
+| MiCA compliance engineering | FinTech (Sam, Tom, Carol) |
+| RWA tokenization security | FinTech WealthTech + Crypto Native RWA Felix |
+| Smart contract audit readiness | Crypto Native (Felix, Sasha) |
+| AI-generated smart contract risk | Both ICPs |
+| Web3 talent gap solutions | Both ICPs |
+
+### Optimal Posting Times (EU / CET)
+Tuesday 08:00-09:30, Wednesday 09:00-10:30, Thursday 08:00-10:00, Monday 07:30-09:00. Avoid Friday.
+
+### Algorithm Rules
+- External links go in first **comment**, not post body
+- Reply to every comment within the first hour
+- Delete and repost if a post gets zero engagement in first hour (don't let it decay)
+- 3-5 hashtags max, placed at the bottom
+
+---
+
+## Outreach Engine
+
+### 5 ICP Tracks (priority order)
+
+| Priority | Track | Approach |
+|----------|-------|----------|
+| 1 | FinTech RWA/WealthTech | ABM sequences; asset-specific hooks |
+| 1 | Crypto Native RWA | ABM sequences; asset-first framing |
+| 2 | FinTech non-RWA (Exchange/Lend/Wallet) | ABM sequences; MiCA compliance framing |
+| 2 | Channel Partner P2 | Sub-contracting angle; silent delivery arm framing |
+| 2 | DeFi/Protocol Crypto Native | Trigger-based only — exploit, funding, audit, job posting |
+
+### 5-Touchpoint Sequence (all tracks)
+
+| Touchpoint | Day | Action |
+|-----------|-----|--------|
+| T1 | 0 | Connection request — personalised (300 char max) |
+| T2 | 1-2 after accept | Welcome — no pitch, open question |
+| T3 | 5-7 | Value asset — relevant content or insight |
+| T4 | 12-14 | Soft ask — context-referenced, propose short call |
+| T5 | 21 | Final nudge or park 60 days |
+
+Most deals close at T3-T5. Same-day pitch after connecting kills trust with every ICP.
+
+### Daily Budget
+- Total: 15-20 connection requests (personalised — never bulk)
+- Split: 8-10 RWA (FinTech + Crypto Native) + 3-5 DeFi/Protocol (trigger only) + 2-4 non-RWA/Channel Partner
+- Profile views: 80-100/day max
+
+### RWA Is Always Priority 1
+RWA leads (both FinTech WealthTech and Crypto Native PropTech/asset-backed) are first within every daily budget. Do not start ExchangeTech sequences until WealthTech/RWA pipeline has 10+ active leads. Do not run cold DeFi/Protocol volume — trigger required for every T1.
+
+---
+
+## Key Distinctions by ICP
+
+| FinTech RWA | Crypto Native RWA |
+|-------------|------------------|
+| Compliance-first framing (MiCA, MiFID II, licensing) | Ownership-risk-first framing (one flaw compromises property rights) |
+| Strategic Sam (CEO/CPO) is primary | RWA Felix (asset-backed founder) is primary |
+| Sales Navigator: Financial Services + 50-500 employees | Sales Navigator: Real Estate/Commodities + Founder/CTO |
+| Regulatory deadline is the trigger | First asset issuance date is the trigger |
+
+| DeFi/Protocol | Channel Partner P2 |
+|---------------|-------------------|
+| LinkedIn is secondary (X/Telegram first) | LinkedIn is primary channel |
+| Trigger required for every T1 — no generic cold | Sub-contracting business model is the pitch |
+| Exploit signal is highest urgency (48h response window) | Positive signal: advisory content with no implementation case studies |
+| Qualification: $2M+ raised or confirmed token launch budget | DQ: Big4 or advisory firm with own dev team |
+
+---
+
+## Disqualification Rules
+
+Stop and do not advance if:
+- FinTech: idea-stage, no funding, no timeline, "just exploring"
+- Crypto Native RWA: no underlying asset, no codebase, zero build budget
+- DeFi/Protocol: whitepaper-only, no testnet, no trigger identified
+- Channel Partner P2: Big4/large consultancy, or has own in-house dev team
+- Any track: prospect hiring multiple blockchain dev firms for competitive pitches
+
+---
+
+## KPI Targets
+
+| Metric | FinTech | CN RWA | DeFi/Protocol | CP P2 |
+|--------|---------|--------|---------------|-------|
+| Connection Accept | 30-45% | 25-40% | 20-35% | 35-50% |
+| T2 Reply Rate | ≥5% | 10-20% | 8-15% | ≥5% |
+| Discovery Calls/Week | 2-4 | 1-2 | 1-2 | 1-2 |
+| Profile Views/Week | 100-300 | — | — | — |
+| Post Engagement Rate | 2-5% | — | — | — |
+
+Reply rate below 2% on any sequence = messaging problem, stop and diagnose before continuing.
+
+---
+
+## Open Questions
+
+- LinkedIn Profile Audit (Vignesh) referenced throughout as prerequisite — not yet ingested into the wiki.
+- X/Telegram outreach strategy for DeFi/Protocol segments referenced as a separate document — not yet ingested.
+- P3 Channel Partner outreach KPIs are assumption-based; update after first 10+ sequences complete.
+- No defined threshold for "low enough engagement to delete and repost" — needs a specific rule (e.g., 0 reactions + 0 comments at 60 minutes).

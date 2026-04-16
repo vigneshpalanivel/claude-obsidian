@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 113 | Sources ingested: 32
+Last updated: 2026-04-16 | Total pages: 116 | Sources ingested: 34
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -67,6 +67,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
 - [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
+- [[InnBlockchain LinkedIn Strategy]] — LinkedIn as primary B2B channel; flywheel: profile → content → trigger-based outreach → discovery call; EU gate; RWA priority 1 across both ICPs (status: current)
 - [[BMad Four-Phase Workflow]] — BMad's context engineering backbone; Analysis → Planning → Solutioning → Implementation; fresh chat per workflow (status: current)
 - [[BMad Quick Dev]] — compress intent, freeze spec, run longer unsupervised; diagnose failure at the layer where it entered (status: current)
 - [[BMad Project Context]] — `project-context.md` as project constitution loaded by every implementation workflow; keep lean (status: current)
@@ -123,6 +124,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Content-Strategy-InnBlockchain-Crypto-Native]] — 2026-04-16 | 5 pillars × 10 verticals × 51 scored articles; Phase 1 RWA lock
 - [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first
 - [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
+- [[LinkedIn-Marketing-Strategy-InnBlockchain]] — 2026-04-16 | platform setup, algorithm mechanics, content cadence, authority clusters, newsletter "Secure by Design", analytics targets
+- [[LinkedIn-Outreach-Strategy-InnBlockchain]] — 2026-04-16 | 5 ICP tracks, 5-touchpoint sequences, Sales Navigator filters, daily budgets, KPIs, DQ signals
 - [[Landing-Pages-InnBlockchain]] — 2026-04-16 | internal | full innblockchain.com site architecture + page strategy; 1 concept page created
 - [[BMAD-Method-Documentation]] — 2026-04-13 | full BMad v6 docs snapshot (llms-full.txt); 4 phases, agents, workflows, reviews
 - [[TEA-Documentation]] — 2026-04-13 | full Test Architect docs dump (16.5k lines); 9 workflows, risk scoring, fixture/network patterns, 42-fragment KB
