@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-15 | Total pages: 76 | Sources ingested: 21
+Last updated: 2026-04-16 | Total pages: 84 | Sources ingested: 22
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -59,6 +59,13 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Adversarial Review]] — reviewer must find issues; zero findings triggers re-analyze; pair with edge-case hunter for orthogonal coverage (status: current)
 - [[Advanced Elicitation]] — named reasoning methods (pre-mortem, inversion, first principles) applied to LLM output for structured second pass (status: current)
 - [[Working Backwards PRFAQ]] — write the press release before the product; gauntlet for stress-testing concepts before PRD (status: current)
+- [[Test Architect (TEA)]] — BMad's testing module (Murat persona); 9 workflows spanning Phase 3, 4, Release Gate; three-part stack vs AI test slop (status: current)
+- [[TEA Workflows]] — 9-workflow command reference: framework, ci, test-design, atdd, automate, test-review, nfr-assess, trace, teach-me-testing (status: current)
+- [[TEA Engagement Models]] — 5 adoption paths: No TEA, Solo, Lite, Integrated Greenfield, Integrated Brownfield; Quick Flow skips TEA (status: current)
+- [[Risk-Based Testing]] — Probability × Impact = 1-9; P0-P3 with coverage targets 100/90/50/20%; Score 9 mandatory FAIL (status: current)
+- [[Fixture Architecture]] — pure function → fixture wrapper → mergeTests composition; framework-agnostic, unit-testable utilities (status: current)
+- [[Network-First Testing]] — intercept-before-navigate; wait for API response not timeout; eliminates race conditions (status: current)
+- [[TEA Knowledge Base System]] — tea-index.csv manifest, 42 fragments, selective loading per workflow; context engineering over prompt engineering (status: current)
 
 ---
 
@@ -99,6 +106,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first
 - [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
 - [[BMAD-Method-Documentation]] — 2026-04-13 | full BMad v6 docs snapshot (llms-full.txt); 4 phases, agents, workflows, reviews
+- [[TEA-Documentation]] — 2026-04-13 | full Test Architect docs dump (16.5k lines); 9 workflows, risk scoring, fixture/network patterns, 42-fragment KB
 
 ---
 

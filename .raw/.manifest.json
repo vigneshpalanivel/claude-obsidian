@@ -1,5 +1,25 @@
 {
   "sources": {
+    ".raw/Test Architect (TEA) Documentation (Full).md": {
+      "hash": "79eba2ed29dd26f68725581706c4b11a",
+      "ingested_at": "2026-04-16",
+      "pages_created": [
+        "wiki/sources/TEA-Documentation.md",
+        "wiki/concepts/Test Architect (TEA).md",
+        "wiki/concepts/TEA Workflows.md",
+        "wiki/concepts/TEA Engagement Models.md",
+        "wiki/concepts/Risk-Based Testing.md",
+        "wiki/concepts/Fixture Architecture.md",
+        "wiki/concepts/Network-First Testing.md",
+        "wiki/concepts/TEA Knowledge Base System.md"
+      ],
+      "pages_updated": [
+        "wiki/entities/BMAD Method.md",
+        "wiki/index.md",
+        "wiki/hot.md",
+        "wiki/log.md"
+      ]
+    },
     ".raw/BMAD Method Documentation (Full).md": {
       "hash": "4091f2571c34f93b1d9dccd3b29849dc",
       "ingested_at": "2026-04-15",

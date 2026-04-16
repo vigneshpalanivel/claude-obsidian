@@ -25,6 +25,14 @@ Parse recent entries: `grep "^## \[" wiki/log.md | head -10`
 
 ---
 
+## [2026-04-16] ingest | Test Architect (TEA) Documentation (Full)
+- Source: `.raw/Test Architect (TEA) Documentation (Full).md` (hash → 79eba2ed29dd26f68725581706c4b11a, 16512 lines)
+- Summary: [[TEA-Documentation]]
+- Pages created: [[TEA-Documentation]], [[Test Architect (TEA)]], [[TEA Workflows]], [[TEA Engagement Models]], [[Risk-Based Testing]], [[Fixture Architecture]], [[Network-First Testing]], [[TEA Knowledge Base System]]
+- Pages updated: [[BMAD Method]] (TEA module cross-reference + source link), [[index]], [[hot]]
+- Key insight: TEA codifies context engineering for testing. Load only the 42 knowledge-base fragments a workflow needs (not all of them), and the AI produces consistent test quality regardless of prompt. It is the same mechanism as the [[Hot Cache]] in this vault and [[LLM Wiki Pattern]] generally: relevant standards in context, irrelevant stuff out, output quality by construction.
+- Secondary: TEA is the only BMad agent that spans multiple phases (3, 4, Release Gate) and the only one with its own knowledge base. Quick Flow track intentionally excludes TEA.
+
 ## [2026-04-15] ingest | BMAD Method Documentation (Full)
 - Source: `.raw/BMAD Method Documentation (Full).md` (hash → 4091f2571c34f93b1d9dccd3b29849dc)
 - Summary: [[BMAD-Method-Documentation]]
