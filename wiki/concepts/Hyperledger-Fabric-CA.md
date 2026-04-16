@@ -199,20 +199,6 @@ When HSM is configured: the CA private key is generated inside the HSM and never
 
 HSM is mandatory for any Fabric deployment subject to FIPS 140-2 or similar cryptographic hardware requirements (common in pharma, finance, government).
 
-**AWS CloudHSM** is the recommended AWS-native path. It runs dedicated HSM hardware in your VPC and provides an official PKCS11 library. Requires one extra config param (`altid`) vs other HSM vendors:
-
-```yaml
-bccsp:
-  default: PKCS11
-  pkcs11:
-    lib: /opt/cloudhsm/lib/libcloudhsm_pkcs11.so
-    pin: "<CU_user>:<CU_password>"
-    label: "<token_label>"
-    altid: "<key_handle>"   # CloudHSM-specific requirement
-    hash: SHA2
-    security: 256
-```
-
 **HSM scope limitation:** HSM only protects ECert signing keys. **TLS private keys must remain file-based** -- Fabric does not support HSM storage for TLS keys regardless of HSM vendor.
 
 ---
