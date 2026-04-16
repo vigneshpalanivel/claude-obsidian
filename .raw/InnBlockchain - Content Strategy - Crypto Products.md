@@ -8,7 +8,7 @@ tags:
   - content
 ---
 
-# Trioangle Blog Content Strategy
+# InnBlockchain Blog Content Strategy
 ## Crypto & Web3 Clone Scripts — ICP-Driven Content Plan
 
 > [!INFO] Related Notes
@@ -145,7 +145,7 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 - MiCA explained for exchange founders: What you need to launch in the EU
 - DIFC and ADGM crypto exchange licensing: Dubai founder's guide
 - FCA crypto exchange registration: UK founder's guide
-- How to Start a Crypto Exchange in the US: SEC, FinCEN, and State Licensing
+- Why launching a crypto exchange in the US is hard — and which markets to consider instead *(redirect article; captures US search intent and routes to UK/EU/UAE; see #34 scoring note — do not frame as a how-to guide)*
 - Crypto exchange compliance by country: [Country] guide series
 - How to set up KYC tiers: Light, standard, and enhanced verification
 - Geo-blocking and sanctions compliance for crypto platforms
@@ -196,7 +196,7 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 ## 4. Topic Clusters with Buyer Stage Mapping
 
 > [!INFO] Writer Brief Templates
-> Every topic in this section maps to a template in [[InnBlockchain - Crypto Products Blog Article Templates]]. Template IDs are noted inline as `(CT#)`. Lead magnets are noted as `(CL#)`. Before writing any article, pull the matching template — it contains the angle, structure, word count, CTA, and global writer rules (security claim compliance check, P3 sales handoff, AI Search structuring requirements).
+> Every topic in this section maps to a template in [[InnBlockchain - Crypto Products Blog Article Templates]]. Template IDs are noted inline as **CT#** (bold). Lead magnets are noted as `CL#`. Before writing any article, pull the matching template — it contains the angle, structure, word count, CTA, and global writer rules (security claim compliance check, P3 sales handoff, AI Search structuring requirements).
 
 ### Cluster Map: CEX Vertical × All Pillars
 
@@ -309,11 +309,11 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 > [!NOTE] These pieces serve all four verticals and sit under the Security Hub silo. They are not vertical-specific but underpin trust and conversion across the entire funnel.
 
 **TOFU**
+- `[Security]` **CT20** — Are Crypto Clone Scripts Safe? *(#1 — Universal Trust Foundation; publish Month 1 before all vertical content; every subsequent article links here)* → gate with CL6
 - `[Proof]` **CT4** — What to Do After a Failed Crypto Exchange Build *(#37 — primary audience: Burned Crypto Builder; secondary: any prospect who researched custom dev and was burned)* **Publish in Month 2 alongside #7 — Burned Builder needs a TOFU entry before they shortlist vendors.**
 - `[Proof]` **CT22** — Is a Crypto Clone Script Right for You? *(#36 — pre-qualification filter; reduces disqualified leads reaching sales)*
 
 **MOFU**
-- `[Security]` **CT20** — Are Crypto Clone Scripts Safe? *(#1 — Universal Trust Foundation; link target for every subsequent article)* → gate with CL6
 - `[Security]` **CT8** — [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(SECURITY_TOPIC = Smart Contract Audit; #7 — what it costs, who does it, why it's non-negotiable)* → gate with CL6
 - `[Proof]` **CT15** — Burned Builder Vendor Evaluation Checklist *(#28 — how a Burned Crypto Builder should evaluate any vendor)* → offer CL2
 
@@ -336,9 +336,11 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 | 9 | KYC/AML for Crypto Exchanges: What You Actually Need to Launch | Cross | Compliance | MOFU | Searchable | **8.3** |
 | 10 | Forking Uniswap vs White-Label DEX Script: The Real Comparison | DEX | Tech/Proof | MOFU | Both | **8.2** |
 | 11 | How to Launch an NFT Marketplace for Your Creator Community | NFT | Launchpad | TOFU | Searchable | **8.1** |
+| 42 | P2P Crypto Exchange Mobile Money Integration: M-Pesa, bKash, GCash, Flutterwave Complete Guide | P2P | Tech/Proof | MOFU | Searchable | **8.1** |
 | 12 | Uniswap Clone Script: DEX Features, Cost, and How to Launch | DEX | Tech/Proof | MOFU | Searchable | **8.0** |
 | 13 | [Case Study] Diaspora Founder Builds P2P Exchange for Home Market | P2P | Proof | BOFU | Shareable | **8.0** |
 | 14 | How to Bootstrap Liquidity on a New DEX from Day One | DEX | Growth | Post-purchase | Both | **7.9** |
+| 41 | What Happened After Paxful Shut Down — and the P2P Gap It Left | P2P | Industry | TOFU | Both | **7.9** |
 | 15 | The Most Common DeFi Exploits — And How Audited Scripts Prevent Them | DEX | Security | MOFU | Both | **7.8** |
 | 16 | Remitano Clone Script: P2P Exchange for Mobile Money Markets | P2P | Tech/Proof | MOFU | Searchable | **7.8** |
 | 17 | OpenSea Clone: Stop Paying 2.5% and Launch Your Own NFT Marketplace | NFT | Tech/Proof | MOFU | Searchable | **7.7** |
@@ -356,6 +358,7 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 | 37 | What to Do After a Failed Crypto Exchange Build (Restart Guide) | Cross | Proof | TOFU | Both | **7.1** |
 | 28 | How a Burned Crypto Builder Should Evaluate Any Vendor (Checklist) | Cross | Proof | MOFU | Both | **7.0** |
 | 39 | [Case Study] Gaming Community Launches a Branded NFT Marketplace | NFT | Proof | BOFU | Shareable | **7.0** |
+| 43 | When Your Crypto Exchange Outgrows the Clone Script: 5 Signs You Need Custom Development | Cross | Tech | Post-purchase | Both | **7.0** |
 | 29 | CEX Security Architecture: Cold Storage, 2FA, Withdrawal Whitelists Explained | CEX | Security | MOFU | Searchable | **6.9** |
 | 30 | How to Recruit 50 NFT Creators Before Your Marketplace Launches | NFT | Growth | MOFU | Searchable | **6.8** |
 | 31 | FCA Crypto Exchange Registration: UK Founder's Guide | CEX | Compliance | TOFU→MOFU | Searchable | **6.8** |
@@ -365,9 +368,6 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 | 35 | Trioangle vs Hayvn and Rain: Building Your Own Exchange vs Using a Licensed Operator in MENA | CEX | Proof | MOFU | Searchable | **6.5** |
 | 36 | Is a Crypto Clone Script Right for You? (Who It's For — and Who It Isn't) | Cross | Proof | TOFU | Both | **6.4** |
 | 40 | Trioangle vs Shift Markets: White-Label CEX Cost and Feature Comparison | CEX | Proof | MOFU | Searchable | **6.3** |
-| 41 | What Happened After Paxful Shut Down — and the P2P Gap It Left | P2P | Industry | TOFU | Both | **7.9** |
-| 42 | P2P Crypto Exchange Mobile Money Integration: M-Pesa, bKash, GCash, Flutterwave Complete Guide | P2P | Tech/Proof | MOFU | Searchable | **8.1** |
-| 43 | When Your Crypto Exchange Outgrows the Clone Script: 5 Signs You Need Custom Development | Cross | Tech | Post-purchase | Both | **7.0** |
 
 > [!NOTE] Scoring notes
 > **#36 is under-scored relative to its sales function.** The ICP disqualifies resellers, source-code-resellers, and purely speculative builders — pre-qualifying content saves disproportionate sales time. Treat as a high-priority TOFU piece regardless of raw score.
@@ -410,7 +410,7 @@ Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20
 ### Persona 2: Diaspora Fintech Builder
 | Funnel Stage | Content They Need | Priority Topics |
 |-------------|-------------------|-----------------|
-| Awareness | Unbanked market opportunity, diaspora-to-home market guides | #6, #25 |
+| Awareness | Unbanked market opportunity, diaspora-to-home market guides, Paxful-gap trigger | #6, #25, #41 |
 | Consideration | Mobile money integration demo, P2P escrow flow, remote management | #16, #27 |
 | Decision | Diaspora founder case studies, M-Pesa/bKash integration proof | #13, #8 |
 | Post-Purchase | Remote admin guide, local payment rail setup, fraud prevention | P2P Implementation cluster (Section 4) |
@@ -578,6 +578,7 @@ Log results in a simple tracker (date / query / cited Y/N / position). Review mo
 	- `/blog/yield-farming-incentive-design/`
 	- `/blog/dex-case-study/`
 - `/blog/how-to-launch-nft-marketplace/` ← **Vertical Hub: NFT**
+	- `/blog/stop-paying-opensea-fees-launch-your-own-nft-marketplace/` *(CT1 — "stop paying OpenSea 2.5%" angle)*
 	- `/blog/opensea-clone-script-guide/`
 	- `/blog/nft-marketplace-clone-guide/`
 	- `/blog/nft-marketplace-royalty-setup/`
@@ -617,6 +618,9 @@ Log results in a simple tracker (date / query / cited Y/N / position). Review mo
 | Backlinks earned | 15 | 50 |
 | Posts published | 24 (6 months) | 48 (12 months) |
 | AI Search citations (Perplexity/ChatGPT) | 5 tracked queries | 20 tracked queries |
+
+> [!NOTE] Publishing cadence after Month 3
+> Section 11 maps the first 15 posts (Months 1–3). From Month 4 onward, maintain **~1.5 posts/week (6–7/month)** using this priority order: (1) remaining MOFU articles from the scored list not yet published, (2) CT9 compliance framework variants (MiCA, DIFC/ADGM, FCA — one per month), (3) CT11 competitor comparisons (one per month), (4) CT14 case studies as they become available. Defer CT17/CT18 post-purchase articles until vertical hubs have sufficient inbound traffic to justify them.
 
 > [!NOTE] AI Search citation tracking method
 > Perplexity and ChatGPT do not expose citation data via analytics. Track manually: run a fixed set of target queries monthly (e.g. "best crypto exchange clone script", "how to launch a DEX", "binance clone script review", "are crypto clone scripts safe", "uniswap clone script") in Perplexity and note whether Trioangle content is cited. Maintain a simple tracker (date / query / cited Y/N / position). This is manual but sufficient until third-party AI visibility tools mature. Semrush and BrightEdge have emerging AI visibility features — review quarterly.
