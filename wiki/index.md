@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 84 | Sources ingested: 22
+Last updated: 2026-04-16 | Total pages: 86 | Sources ingested: 23
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -50,6 +50,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain Channel Partner ICP]] — 3 advisory personas; routing hub to 3 sister ICPs; NCNDA Day 1; assumption-based (status: current)
 - [[InnBlockchain Crypto Products ICP]] — Trioangle clone scripts $5k-$20k; 5 archetype-first personas; Burned Builder highest urgency (status: current)
 - [[InnBlockchain Content Strategy]] — umbrella for three parallel InnBlockchain content programs; routing gate = company origin not licensing (status: current)
+- [[Blockchain-Pharmaceutical-Supply-Chain]] — blockchain applied to pharma supply chain: anti-counterfeit, DSCSA compliance, cold chain, traceability; market CAGR 21% (status: current)
 - [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
 - [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
@@ -86,6 +87,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 ## Sources
 
+- [[autoresearch-blockchain-pharma-supply-chain]] — 2026-04-16 | web research (4 searches) | 1 concept page created
 - [[claude-obsidian-ecosystem-research]] — 2026-04-08 | web research across 16+ repos | 8 wiki pages created
 - [[Karpathy-2025-Year-in-Review]] — Dec 2025 | vibe coding, agentic engineering, developer role bifurcation
 - [[Jellyfish-2025-Engineering-Management]] — 2025 | 90% AI adoption, measurement gap, high-performer data

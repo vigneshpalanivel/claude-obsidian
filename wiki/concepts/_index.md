@@ -56,4 +56,10 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 
 ---
 
+## Blockchain & Industry Applications
+
+- [[Blockchain-Pharmaceutical-Supply-Chain]] — blockchain for drug traceability, anti-counterfeit, DSCSA compliance, and cold chain; 16 weeks -> 2 seconds trace time; market CAGR 21%
+
+---
+
 ## Add new concepts here as they are extracted from sources.

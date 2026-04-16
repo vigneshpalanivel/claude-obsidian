@@ -43,6 +43,12 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 
 ---
 
+## Autoresearch
+
+- [[autoresearch-blockchain-pharma-supply-chain]] — 2026-04-16 | web research | blockchain in pharma supply chain; DSCSA, MediLedger, cold chain IoT + smart contracts; 1 concept page
+
+---
+
 ## Papers
 
 <!-- Add paper source pages here -->
