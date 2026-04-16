@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 111 | Sources ingested: 31
+Last updated: 2026-04-16 | Total pages: 113 | Sources ingested: 32
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -50,6 +50,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain Channel Partner ICP]] — 3 advisory personas; routing hub to 3 sister ICPs; NCNDA Day 1; assumption-based (status: current)
 - [[InnBlockchain Crypto Products ICP]] — Trioangle clone scripts $5k-$20k; 5 archetype-first personas; Burned Builder highest urgency (status: current)
 - [[InnBlockchain Content Strategy]] — umbrella for three parallel InnBlockchain content programs; routing gate = company origin not licensing (status: current)
+- [[InnBlockchain Landing Pages Plan]] — full site architecture for innblockchain.com; 7 tech pages, 4 service pages, 8 FinTech + 10 Web3 solutions; strict ICP URL separation (status: current)
 - [[Blockchain-Pharmaceutical-Supply-Chain]] — blockchain applied to pharma supply chain: anti-counterfeit, DSCSA compliance, cold chain, traceability; market CAGR 21% (status: current)
 - [[Blockchain-Fintech-Solutions]] — 7 core use cases (payments, tokenization, KYC, trade finance, etc.); platform comparison (Fabric/Corda/Besu); $8.35B market growing 44.4% CAGR (status: current)
 - [[Asset-Tokenization-RWA]] — $33.84B RWA market (2025); 800% growth since 2023; BlackRock, Franklin Templeton, JPMorgan; McKinsey $2T by 2030 (status: current)
@@ -122,6 +123,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Content-Strategy-InnBlockchain-Crypto-Native]] — 2026-04-16 | 5 pillars × 10 verticals × 51 scored articles; Phase 1 RWA lock
 - [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first
 - [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
+- [[Landing-Pages-InnBlockchain]] — 2026-04-16 | internal | full innblockchain.com site architecture + page strategy; 1 concept page created
 - [[BMAD-Method-Documentation]] — 2026-04-13 | full BMad v6 docs snapshot (llms-full.txt); 4 phases, agents, workflows, reviews
 - [[TEA-Documentation]] — 2026-04-13 | full Test Architect docs dump (16.5k lines); 9 workflows, risk scoring, fixture/network patterns, 42-fragment KB
 - [[Blockchain-Fintech-Industry-Overview-2026]] — 2026-04-16 | web research | market data, 7 use cases, institutional adoption

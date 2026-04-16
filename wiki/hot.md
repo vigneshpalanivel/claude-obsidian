@@ -19,6 +19,9 @@ related:
 Navigation: [[index]] | [[log]] | [[overview]]
 
 ## Last Updated
+2026-04-16: ingested InnBlockchain Landing Pages Plan. Full site architecture for innblockchain.com. Key structure: shared Services (4 pages) and Technologies (7 pages) for both ICPs; split Industry hubs (/industries/fintech, /industries/web3-defi) and Solutions pages per ICP. Active Q2 2026: 4 FinTech solutions (tokenization, regulated-exchange, defi-lending, fintech-wallets) + 6 Crypto Native solutions (rwa-tokenization, dex-protocol, defi-protocol, mpc-wallets, nft-platform, token-launch). Three existing pages must be rebuilt as two ICP-split pages before old URL retirement (exchange, DeFi, wallets). Anti-cannibalization rule: services rank for "how" keywords, solutions rank for "who/what" keywords.
+
+## Previous Last Updated
 2026-04-16: autoresearch on "EU compliance for FinTech industry." 2 rounds, 9 searches + 2 page fetches. 10 pages created: 3 sources, 6 concepts, 1 synthesis. Key facts: 60+ EU regulations active by 2026; enforcement H1 2025 = $1.23B in fines (+417% YoY). Four hard deadlines: DORA (Jan 2025, already active), Instant Payments VoP + send (Oct 2025, already active), MiCA transition end (Jun 2026), EU AI Act high-risk systems (Aug 2026). AML package: AMLA operational July 2025; AMLR single rulebook July 2027. PSD3/PSR: provisional agreement Nov 2025; enters force Q1-Q2 2026 with 21-month transition. FiDA (open finance) and eIDAS 2.0 EUDI Wallet both targeting late 2026/2027. Critical compliance trap: DORA + AI Act have separate programs for the same AI system; GDPR vs. AMLA data-sharing tension unresolved.
 
 ## Previous Last Updated

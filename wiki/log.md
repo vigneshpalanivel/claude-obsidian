@@ -19,6 +19,11 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-04-16] ingest | InnBlockchain Landing Pages Plan
+- Source: `.raw/InnBlockchain - Landing Pages Plan.md`
+- Pages created: [[InnBlockchain Landing Pages Plan]], [[Landing-Pages-InnBlockchain]]
+- Key facts: full innblockchain.com site architecture; 4 service pages + 7 tech pages (shared); 8 FinTech solutions + 10 Crypto Native solutions (split); 3 pages require ICP-split rebuilds before retirement; `/services/smart-contracts` is cross-funnel intersection requiring dual CTAs
+
 ## [2026-04-16] autoresearch | EU Compliance for FinTech Industry
 - Rounds: 2
 - Searches: 9 web searches + 2 page fetches
