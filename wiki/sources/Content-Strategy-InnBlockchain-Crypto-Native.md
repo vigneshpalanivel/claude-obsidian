@@ -117,6 +117,17 @@ Explicit disambiguation notes appear on every topic that exists in both strategi
 - **Travel rule**: Crypto Native = DeFi protocol implementing on-chain. FinTech = licensed CASP on-chain AML tooling.
 - **Hiring**: Crypto Native = reentrancy auditing, ZK circuits. FinTech = compliance-aware engineers, audit trails, KYC/AML integration.
 
+## Gaps Identified in ICP Cross-Review (2026-04-16)
+
+The following gaps were identified when the content strategy was reviewed against [[ICP-InnBlockchain-Crypto-Native]]. Each has been incorporated into [[InnBlockchain Crypto Native Content Strategy]].
+
+1. **Budget floor inconsistency (fixed in wiki):** The source document says "$20k+ across all segments" in the Executive Summary, but the ICP specifies $30k+ for RWA Segment 1. The wiki concept note reflects the correct split floor.
+2. **Security Sasha trust-building content missing:** No articles designed for Sasha's pre-call evaluation mode (methodology transparency, findings depth signal, Solodit/public report presence). Two new articles added to Phase 2 in wiki — see concept note.
+3. **Distribution channel tagging absent:** Only 1 Phase 1 article was labeled as LinkedIn-priority. The ICP specifies LinkedIn as the primary channel for RWA Felix (Segment 1). Distribution guidance added per phase in wiki concept note.
+4. **AI-coded contract audit content not in priority plan:** The overlay activates immediately per ICP, but Phase 2 contained no AI overlay article. One added — see concept note.
+5. **Paulo champion piece absent from priority plan:** "How We Cut Smart Contract Audit Prep Time from 6 Weeks to 2" exists in C4 list but not in the Phase 2 scored table. Added at score 8.8 — see concept note.
+6. **No ICP validation plan linkage:** Phase 1 content publishing depends on the landing page being live (ICP Activation item 1.1, due 2026-04-15). Dependency note added to concept note.
+
 ## Open Questions
 
 - Phase 1 is 18 articles at ~1/week cadence → ~4-5 months locked on RWA before any DEX/DeFi/Wallet/NFT/Token Launch content ships. Opportunity cost not explicitly reconciled against competitor velocity.

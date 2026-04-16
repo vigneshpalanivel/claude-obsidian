@@ -581,6 +581,8 @@ Log results in a simple tracker (date / query / cited Y/N / position). Review mo
 - `/blog/how-to-launch-p2p-crypto-exchange/` ← **Vertical Hub: P2P**
 	- `/blog/remitano-clone-script-guide/`
 	- `/blog/p2p-exchange-mobile-money-markets/`
+	- `/blog/p2p-crypto-exchange-mobile-money-integration/` *(#42 — M-Pesa/bKash/GCash/Flutterwave guide; Persona 2 MOFU)*
+	- `/blog/paxful-shutdown-p2p-gap/` *(#41 — Paxful-gap TOFU; time-sensitive)*
 	- `/blog/p2p-exchange-diaspora-remote-operations/` *(diaspora priority market MOFU — FCA/FinCEN + remote admin)*
 	- `/blog/p2p-exchange-diaspora-case-study/`
 	- `/blog/p2p-escrow-dispute-guide/`
@@ -609,6 +611,7 @@ Log results in a simple tracker (date / query / cited Y/N / position). Review mo
 	- `/blog/burned-crypto-builder-vendor-checklist/`
 	- `/blog/failed-crypto-exchange-restart/` *(#37 — Burned Builder TOFU)*
 	- `/blog/is-crypto-clone-script-right-for-you/` *(#36 — pre-qualification filter)*
+	- `/blog/when-crypto-exchange-outgrows-clone-script/` *(#43 — graduation path; distribute via CRM post-purchase email, not organic SEO)*
 - `/blog/kyc-aml-crypto-exchange/` ← **Compliance Hub**
 	- `/blog/mica-eu-crypto-exchange-compliance/`
 	- `/blog/difc-adgm-crypto-license-guide/`
