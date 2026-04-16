@@ -51,12 +51,12 @@ Use this table to fill placeholders for each vertical.
 - `[YEAR]` — current year, e.g. 2026
 - `[NUMBER]` — specific figure, e.g. 10, 100, 500
 - `[FOUNDER]` — real or anonymised customer name for case studies
-- `[SAAS_COMPETITOR]` — white-label SaaS rivals: B2Broker, AlphaPoint, Shift Markets, Hayvn, Rain *(used only in CT11)*
+- `[WL_COMPETITOR]` — hosted white-label exchange platform competitors: B2Broker, AlphaPoint, Shift Markets *(hosted tech vendors — ongoing fees, no source code ownership)*; Hayvn, Rain *(MENA-licensed exchange operators — different comparison angle, see CT11 note)* — used only in CT11
 - `[FRAMEWORK]` — regulatory regime: MiCA (EU), FCA (UK), DIFC/ADGM (UAE), MAS PSA (Singapore), SEC/FinCEN (US — see note on CT9)
 - `[RAIL]` — mobile money rail: M-Pesa, bKash, GCash, Flutterwave, Xendit *(P2P articles only)*
 
-> [!NOTE] `[ORIGINAL]` vs `[SAAS_COMPETITOR]` in article titles
-> Use `[ORIGINAL]` in article titles and primary keywords — searchers look for "Binance clone script", not "Trioangle CEX". Use `[SAAS_COMPETITOR]` only in CT11 comparison articles (B2Broker, AlphaPoint, Shift Markets, Hayvn, Rain). Do not use clone-vendor competitors (Appdupe, Blockchainx) as comparison subjects — the crypto ICP benchmarks against SaaS platforms, not other clone vendors.
+> [!NOTE] `[ORIGINAL]` vs `[WL_COMPETITOR]` in article titles
+> Use `[ORIGINAL]` in article titles and primary keywords — searchers look for "Binance clone script", not "Trioangle CEX". Use `[WL_COMPETITOR]` only in CT11 comparison articles (B2Broker, AlphaPoint, Shift Markets, Hayvn, Rain). Do not use clone-vendor competitors (Appdupe, Blockchainx) as comparison subjects — the crypto ICP benchmarks against hosted white-label exchange platforms and licensed exchange operators, not other clone vendors.
 
 ---
 
@@ -122,7 +122,7 @@ Writers must include this handoff note in every DEX/DeFi BOFU article: *"Before 
 1. The [COUNTRY] crypto gap — market data, who is underserved and why
 2. Regulatory requirements for [COUNTRY] — name the specific framework ([FRAMEWORK])
 3. Technical requirements — what you need to launch (infrastructure, KYC, payment rails)
-4. Build from scratch vs white-label vs SaaS — cost and timeline comparison (link CT12)
+4. Build from scratch vs white-label clone script vs hosted exchange platform — cost and timeline comparison (link CT12)
 5. Step-by-step launch path using a white-label script
 6. What a live [VERTICAL] looks like in [COUNTRY] — link to a regional case study (CT14)
 
@@ -371,31 +371,45 @@ Writers must include this handoff note in every DEX/DeFi BOFU article: *"Before 
 
 ---
 
-### CT11 — "Trioangle vs [SAAS_COMPETITOR]: [VERTICAL] Comparison"
+### CT11 — "Trioangle vs [WL_COMPETITOR]: Clone Script vs Hosted Exchange Platform"
 
 **Pillar:** Proof & On-Chain Credibility | **Stage:** MOFU | **Type:** Searchable
 **Word Count:** 1,800–2,500 | **Persona:** P1, P5
-**Primary Keyword:** `trioangle vs [saas_competitor]` / `[saas_competitor] alternative crypto exchange`
+**Primary Keyword:** `trioangle vs [wl_competitor]` / `[wl_competitor] alternative crypto exchange`
+
+> [!NOTE] Two competitor categories — two different comparison angles
+> **Hosted white-label platforms** (B2Broker, AlphaPoint, Shift Markets): these companies sell exchange technology in a hosted model — ongoing monthly/annual fees, no source code ownership, vendor controls the infrastructure. The comparison is: buy their hosted platform vs own your platform with Trioangle's clone script.
+>
+> **Licensed exchange operators** (Hayvn, Rain — MENA): these are not technology vendors. They ARE the exchange — licensed, regulated, and operating in DIFC/ADGM/Bahrain. The comparison is: use Hayvn/Rain as a user or sub-operator vs build and operate your own exchange with Trioangle. The article angle is different: "Hayvn/Rain serves institutional and retail traders — Trioangle lets you BE the exchange operator." Do not frame the Hayvn/Rain comparison as a technology purchase decision.
 
 **Variants (priority market competitors — produce in order):**
-- "Trioangle vs B2Broker: White-Label Crypto Exchange Comparison" | P1 | CEX | `trioangle vs b2broker`
-- "Trioangle vs AlphaPoint: SaaS vs Clone Script — Which Is Right for You?" | P1 | CEX | `trioangle vs alphapoint`
-- "Trioangle vs Hayvn/Rain: Enterprise SaaS vs Clone Script in MENA" | P1 | CEX/MENA | `crypto exchange script mena alternative`
-- "Trioangle vs Shift Markets: White-Label CEX Cost and Feature Comparison" | P1 | CEX
+- "Trioangle vs B2Broker: Clone Script vs Hosted Exchange Platform" | P1 | CEX | `trioangle vs b2broker`
+- "Trioangle vs AlphaPoint: Own Your Exchange vs Pay Forever to Rent It" | P1 | CEX | `trioangle vs alphapoint`
+- "Trioangle vs Shift Markets: Clone Script vs Hosted White-Label CEX" | P1 | CEX | `trioangle vs shift markets`
+- "Trioangle vs Hayvn and Rain: Building Your Own Exchange vs Using a Licensed Operator in MENA" | P1 | CEX/MENA | `crypto exchange script mena` *(different angle — see note above)*
 
-**Angle:** Priority market buyers (US/UK/EU/ME) benchmark against these SaaS platforms before buying. The comparison must be honest and specific — price, source code ownership, deployment model, compliance posture. The Trioangle advantage is: one-time purchase + full source code ownership vs $50k+/yr with no ownership.
+**Angle (hosted platform variants — B2Broker, AlphaPoint, Shift Markets):** Priority market buyers (US/UK/EU/ME) benchmark against these hosted exchange platforms before buying. The comparison must be honest and specific — pricing model, source code ownership, deployment control, compliance posture. The Trioangle advantage: one-time purchase + full source code ownership vs $50k–$150k setup + ongoing fees with no ownership and no ability to self-host.
 
-**Structure:**
-1. What [SAAS_COMPETITOR] is and who it's designed for — honest assessment
-2. Head-to-head comparison table — pricing, source code, deployment time, chain support, compliance modules, support SLA
-3. Where [SAAS_COMPETITOR] wins — be honest; this builds credibility
-4. Where Trioangle wins — cost, ownership, deployment speed, customisation depth
-5. Which is right for which buyer — enterprise institution vs crypto-native founder
-6. Total cost of ownership comparison — 3-year TCO for both models
+**Angle (Hayvn/Rain variant — MENA):** A MENA founder's decision is not "whose technology do I buy?" — it is "do I use a licensed exchange as my infrastructure, or do I build and operate my own?" Frame Hayvn/Rain as the right answer for retail users and institutional participants. Trioangle is the answer for founders who want to be the exchange operator and own the fee revenue.
+
+**Structure (hosted platform variants):**
+1. What [WL_COMPETITOR] is and who it's designed for — honest assessment
+2. Head-to-head comparison table — pricing model, source code ownership, deployment control, chain support, compliance modules, support SLA
+3. Where [WL_COMPETITOR] wins — be honest; this builds credibility
+4. Where Trioangle wins — full ownership, one-time cost, self-hosting, customisation depth
+5. Which is right for which buyer — large institution that wants managed infrastructure vs crypto-native founder who wants to own their platform
+6. Total cost of ownership comparison — 3-year TCO for both models (show the compounding fee cost)
+
+**Structure (Hayvn/Rain variant):**
+1. What Hayvn and Rain are — licensed exchange operators in DIFC/ADGM/Bahrain, not technology vendors
+2. Who uses them — retail and institutional traders in the Gulf, not founders building an exchange
+3. The fundamental difference — being a user of a licensed exchange vs being the exchange operator
+4. What building your own exchange in MENA requires — VARA/DIFC/ADGM licensing, technology stack
+5. Which path is right for which founder — regulated operator with institutional focus vs independent exchange builder
 
 **CTA:** *"See Trioangle's [VERTICAL] live and review pricing before deciding → Book a Demo"*
 
-**Internal Links:** → [ORIGINAL] Clone Features & Cost (CT6) → Build vs White-Label Cost Breakdown (CT12) → Are Crypto Clone Scripts Safe? (CT20)
+**Internal Links:** → [ORIGINAL] Clone Features & Cost (CT6) → Build vs Custom Dev Cost Breakdown (CT12) → Are Crypto Clone Scripts Safe? (CT20)
 
 ---
 
@@ -681,17 +695,18 @@ Writers must include this handoff note in every DEX/DeFi BOFU article: *"Before 
 
 ---
 
-### CL3 — "Build vs White-Label vs SaaS: Crypto Exchange Cost Comparison Worksheet"
+### CL3 — "Build vs White-Label Clone Script vs Hosted Exchange Platform: Cost Comparison Worksheet"
 
 **Pairs with:** CT12, CT11 | **Stage:** MOFU→BOFU | **Persona:** P1, P3
 **Format:** Google Sheet | **Capture:** Inline CTA on CT12 and CT11 pages
 
 **What it contains:**
 - Input: vertical, target chains, required features, compliance jurisdiction
-- Output: side-by-side cost breakdown for Custom Dev / White-Label Clone Script / White-Label SaaS (B2Broker/AlphaPoint model)
-- Hidden cost line-items: smart contract audit, ongoing SaaS fees, source code ownership value, update costs
-- 3-year total cost of ownership comparison
-- Timeline comparison column (days to launch)
+- Output: side-by-side cost breakdown for three models: Custom Development from scratch / White-Label Clone Script (Trioangle model) / Hosted Exchange Platform (B2Broker/AlphaPoint model — ongoing fees, no source code)
+- Hidden cost line-items: smart contract audit, hosted platform monthly fees (compounding over 3 years), source code ownership value, infrastructure and update costs
+- 3-year total cost of ownership comparison — the compounding fee model makes hosted platforms significantly more expensive at year 2–3
+- Timeline comparison column (days to launch per model)
+- Control and ownership column — what the founder actually owns and can modify in each model
 
 **CTA on asset:** *"Get an exact white-label quote for your vertical and chain → Book a Demo"*
 
@@ -790,7 +805,7 @@ Writers must include this handoff note in every DEX/DeFi BOFU article: *"Before 
 |---|---|---|---|
 | CL1 — [VERTICAL] Launch Checklist | CT1, CT6 | TOFU→MOFU | Yes — one per vertical |
 | CL2 — Vendor Due Diligence Checklist | CT4, CT7, CT15, CT20 | MOFU→BOFU | No — cross-vertical |
-| CL3 — Build vs White-Label vs SaaS Cost Worksheet | CT12, CT11 | MOFU→BOFU | No — cross-vertical |
+| CL3 — Build vs White-Label vs Hosted Platform Cost Worksheet | CT12, CT11 | MOFU→BOFU | No — cross-vertical |
 | CL4 — Smart Contract Audit Preparation Guide | CT8, CT20, CT12 (fork) | MOFU | No — cross-vertical |
 | CL5 — [FRAMEWORK] Compliance Checklist | CT9 | MOFU | Yes — one per regulatory framework |
 | CL6 — 90-Day Growth Roadmap | CT10, CT18 | Post-Purchase | Yes — vertical-specific tactics |
@@ -810,7 +825,7 @@ Writers must include this handoff note in every DEX/DeFi BOFU article: *"Before 
 | CT8 (Security Guide — per variant) | 1–2 | **5–6** |
 | CT9 (Compliance — per framework × applicable verticals) | 4–5 | **15–18** |
 | CT10 (Bootstrap Liquidity / Traders / Creators) | 1–2 | **6–8** |
-| CT11 (Trioangle vs SaaS — 4 competitors) | 4 (CEX only) | **4** |
+| CT11 (Trioangle vs Hosted Exchange Platform — 4 competitors) | 4 (CEX only) | **4** |
 | CT12 (Clone vs Custom — per vertical) | 1 | **4** |
 | CT13 (Mobile Money — P2P only) | 1 per rail | **3–4 (P2P only)** |
 | CT14 (Case Study — ongoing) | recurring | — |

@@ -43,7 +43,7 @@ Reusable content briefs for Trioangle's 4 crypto verticals (CEX, P2P, DEX/DeFi, 
 | CT8 | [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know | CEX, DEX, NFT | MOFU | P1, P3, P5 |
 | CT9 | [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide | CEX, P2P, DEX | MOFU | P1, P2 |
 | CT10 | How to Bootstrap Liquidity / Traders / Creators | All | MOFU | P1, P3, P4 |
-| CT11 | Trioangle vs [SAAS_COMPETITOR] | CEX | MOFU | P1, P5 |
+| CT11 | Trioangle vs [WL_COMPETITOR] (hosted platform or licensed operator) | CEX | MOFU | P1, P5 |
 | CT12 | Clone vs Custom Development: Real Cost Breakdown | All | MOFU | P1, P3, P5 |
 | CT13 | P2P Mobile Money Integration: [RAIL] Guide | P2P | MOFU | P2, P1 |
 | CT14 | Founder Case Study: Launched in [NUMBER] Days | All | BOFU | P1, P2, P5 |
@@ -65,7 +65,7 @@ Reusable content briefs for Trioangle's 4 crypto verticals (CEX, P2P, DEX/DeFi, 
 | Compliance pillar | Not a primary content pillar | Full pillar — MiCA, FCA, DIFC/ADGM, MAS each need dedicated articles |
 | P2P persona distribution | WhatsApp CTA for secondary markets | Facebook diaspora groups + WhatsApp for Persona 2 (peer-driven, not search) |
 | P3 content-to-sales handoff | No equivalent | Blog alone won't convert P3 — NDA code access + on-chain TVL proof required |
-| Competitor comparison type | Clone vendors (Appdupe, V3Cube) | SaaS platforms (B2Broker, AlphaPoint, Hayvn, Rain) — not other clone vendors |
+| Competitor comparison type | Clone vendors (Appdupe, V3Cube) | Hosted white-label exchange platforms (B2Broker, AlphaPoint, Shift Markets) + licensed exchange operators (Hayvn, Rain — different angle) — not other clone vendors |
 | US market | Standard country variant | Redirect article only — US compliance is unrealistic at $5k–$20k |
 | Lead magnets | Business Plan, ROI Calculator, etc. | Vendor Due Diligence Checklist + Smart Contract Audit Guide (unique to crypto) |
 
