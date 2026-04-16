@@ -39,8 +39,38 @@ The pharmaceutical supply chain has three structural failure modes that blockcha
 ### DSCSA (US)
 The Drug Supply Chain Security Act (enacted 2013, 10-year implementation) mandated unit-level electronic traceability for all prescription drugs across the US supply chain. Full enforcement active 2025. Blockchain is the leading technical architecture for compliance.
 
-### EU Falsified Medicines Directive
-Similar mandate in Europe requiring serialization and unit-level track-and-trace. Combined with MiCA and EU AI Act creating layered compliance requirements for any supply chain tech vendor.
+### EU Falsified Medicines Directive (FMD)
+Requires serialization and unit-level track-and-trace across the EU single market. All prescription medicines must carry a 2D barcode with unique identifier, expiry, batch number, and GTIN -- uploaded to the European Medicines Verification Organisation (EMVO) repository. Combined with MiCA and EU AI Act, creates layered compliance requirements for any supply chain tech vendor operating in Europe.
+
+### UK -- Post-Brexit Regulatory Landscape (2025)
+
+The UK's approach diverged significantly from the EU following Brexit, creating a distinct compliance environment:
+
+**MHRA (Medicines and Healthcare products Regulatory Agency)** is the UK equivalent of the FDA/EMA. It governs all medicines placed on the UK market and enforces supply chain integrity requirements.
+
+**Windsor Framework (January 1, 2025):** The most significant recent change. The EU FMD was disapplied UK-wide (both Great Britain and Northern Ireland) from January 1, 2025. The UK medicines verification repository -- previously connected to the EMVO European system -- was **disconnected in December 2024**. Key implications:
+- UK-manufactured medicines no longer need to upload serialization data to EMVO
+- EU FMD "safety features" (tamper-evident packaging + serialization) are no longer mandatory on the UK market
+- Serial numbers and 2D barcodes remain permitted on UK packaging but must NOT be registered with EMVO
+- All UK medicinal products must carry a **'UK Only' label** from January 1, 2025
+
+**Northern Ireland nuance:** Under the Windsor Framework, NI is treated the same as GB for medicines. Previously NI had to comply with EU FMD as part of the goods single market; that requirement is now removed.
+
+**Current UK gap:** The UK has not yet introduced a direct domestic replacement for the EU FMD verification system. This creates a window where the UK market has weaker mandatory serialization requirements than either the US (DSCSA) or the EU (FMD). Blockchain-based track-and-trace is acknowledged by MHRA as a relevant technology but adoption is described as "comparatively limited" relative to other jurisdictions.
+
+**MHRA enforcement reality:** Despite the regulatory gap, MHRA seized nearly £45M of illegal medicines in 2025 (up from £40M in 2024) -- indicating active enforcement via investigation and seizure rather than serialization mandates.
+
+**MHRA supply chain cyber security:** MHRA has added a supply chain cyber security program requiring current and former suppliers to complete a security profile via Risk Ledger (a supply chain risk management platform). This is distinct from serialization but relevant to any tech vendor operating in the MHRA supply chain.
+
+**Regulatory comparison table:**
+
+| Dimension | US (DSCSA) | EU (FMD) | UK (Post-Windsor) |
+|---|---|---|---|
+| Unit-level serialization | Mandatory (2025) | Mandatory | Not mandated (as of Jan 2025) |
+| Central verification repository | Yes (interoperable) | EMVO | Disconnected Dec 2024; no replacement yet |
+| Regulator | FDA | EMA / national agencies | MHRA |
+| Blockchain pilot activity | High (FDA/IBM/MediLedger) | High (PharmaLedger, EU consortia) | Low -- technology acknowledged, limited formal pilots |
+| Key 2025 change | Full DSCSA enforcement | Ongoing FMD enforcement | Windsor Framework disapplication of FMD |
 
 ### FDA Pilot Programs
 2019-2020 FDA pilot (with IBM, KPMG) demonstrated blockchain reduces drug trace time from 3 days to seconds. MediLedger consortium pilot showed a single permissioned network could handle required throughput while preserving data privacy via zero-knowledge proofs.

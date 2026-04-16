@@ -17,7 +17,7 @@ related:
 # Source: Autoresearch — Blockchain in Pharmaceutical Supply Chain
 
 **Date:** 2026-04-16
-**Method:** Web research (4 searches, synthesized)
+**Method:** Web research (7 searches, synthesized)
 **Pages created:** 1 concept ([[Blockchain-Pharmaceutical-Supply-Chain]])
 
 ---
@@ -35,6 +35,12 @@ related:
 - [Blockchain for Cold Chain Logistics Market Report 2033](https://www.markettrendsanalysis.com/product/blockchain-for-cold-chain-logistics-market/)
 - [Smart Contract-Enforced Temperature Escrow for Pharma — ChainsCore Labs](https://www.chainscorelabs.com/en/use-cases/pharma-supply-chain-and-anti-counterfeiting/cold-chain-integrity-assurance/smart-contract-enforced-temperature-escrow)
 - [Blockchain for Supply Chain — IBM](https://www.ibm.com/blockchain/resources/transparent-supply/pharma/)
+- [Counterfeit Pharmaceuticals UK — IBA](https://www.ibanet.org/counterfeit-pharmaceuticals-uk)
+- [Windsor Framework FMD Disapplication Q&A — GOV.UK](https://assets.publishing.service.gov.uk/media/67b72b2dae5d020b0914bc62/2025-02-21_Windsor_Framework_-_Disapplication_of_EU_Falsified_Medicines_Directive_Q_A.pdf)
+- [MHRA Seizes £45m Illegal Medicines 2025 — GOV.UK](https://www.gov.uk/government/news/mhra-seizes-illegal-medicines-worth-almost-45m-in-2025-disrupting-major-criminal-networks)
+- [MHRA 2025-26 Regulatory Overhaul — G&L Scientific](https://gandlscientific.com/knowledge-hub/mhras-2025-26-regulatory-overhaul)
+- [Windsor Framework Medicines Supply Chain — Inside EU Life Sciences](https://www.insideeulifesciences.com/2024/12/18/are-you-windsor-framework-ready-a-focus-on-pharmaceutical-supply-chains-and-promotional-material/)
+- [Strengthening Supply Chain Cyber Security at MHRA — GOV.UK](https://www.gov.uk/government/publications/strengthening-supply-chain-cyber-security-at-the-mhra)
 
 ---
 
