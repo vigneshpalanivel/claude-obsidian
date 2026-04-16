@@ -10,7 +10,7 @@ tags:
   - PKI
   - security
 status: current
-updated: 2026-04-16
+updated: 2026-04-16 (rev 2)
 related:
   - "[[Hyperledger-Fabric]]"
   - "[[Blockchain-Pharmaceutical-Supply-Chain]]"
@@ -276,6 +276,157 @@ The CA *issues* certificates. The MSP *uses* them to make authorization decision
 - When a transaction arrives signed by identity X, the peer checks: is X's cert signed by a CA whose root is in the channel MSP? If yes, X is a valid network participant
 
 A CA change (new root, revoked intermediate) requires updating the MSP configuration on all affected channels via a channel config update transaction.
+
+---
+
+## Application Layer Authentication (User Panel)
+
+Fabric CA has **no concept of login**. It issues certificates -- that is all. A web panel or application UI requires a separate authentication layer. The three layers never overlap:
+
+```
+┌─────────────────────────────────────┐
+│   Web Panel / Application UI        │  Your code: username + password login (JWT/sessions)
+├─────────────────────────────────────┤
+│   Application Backend / SDK         │  Wallet: loads enrolled cert+key for the session
+├─────────────────────────────────────┤
+│   Fabric CA  →  Fabric Network      │  Certificate issuance (one-time) + tx signing
+└─────────────────────────────────────┘
+```
+
+**Wallet** is the SDK concept bridging the app and Fabric. After panel login succeeds, the backend loads the user's enrolled identity (cert + private key) from the wallet and uses it to sign transactions:
+
+```js
+const wallet = await Wallets.newFileSystemWallet('./wallet');
+const identity = await wallet.get(username);
+const gateway = new Gateway();
+await gateway.connect(connectionProfile, { wallet, identity: username });
+```
+
+Fabric CA is called **once** at user provisioning time (enrollment), not on every login. Every subsequent login reuses the cert already stored in the wallet.
+
+---
+
+## Identity Patterns: Do All App Users Need a CA Identity?
+
+**No -- not necessarily.** Three patterns exist depending on audit and access control requirements:
+
+### Pattern 1 -- One Identity Per App User
+Every application user gets their own cert from Fabric CA.
+
+- Full on-chain auditability: ledger records exactly which user submitted each tx
+- Per-user revocation possible
+- Scales poorly for large user bases (wallet management per user, private key storage)
+- **Best for:** B2B consortia, regulated industries (pharma, trade finance) where per-participant audit is mandatory
+
+### Pattern 2 -- Single Shared Backend Identity (Most Common)
+One enrolled identity for the entire backend. All app users log in normally; the backend submits every tx under one Fabric identity.
+
+```
+Alice logs in → Backend (enrolled as "app-backend") → submits tx to Fabric
+Bob logs in   → Backend (enrolled as "app-backend") → submits tx to Fabric
+```
+
+- Unlimited app users, zero CA involvement per user
+- No per-user on-chain trace (ledger only shows "app-backend")
+- Simple wallet: one cert, one key
+- **Best for:** consumer-facing apps, internal tools
+
+### Pattern 3 -- One Identity Per Role (Hybrid)
+A small fixed set of Fabric identities, one per business role. App users are unlimited; the backend picks the matching role identity per request.
+
+```
+Fabric CA identities:   backend-buyer | backend-supplier | backend-auditor
+App DB users:           alice (buyer) → uses backend-buyer cert
+                        bob   (buyer) → uses backend-buyer cert
+                        carol (auditor) → uses backend-auditor cert
+```
+
+- Role-level chaincode ACL enforcement; user-level enforcement stays in app DB
+- **Best for:** enterprise panels with a defined set of roles
+
+### Decision Guide
+
+```
+Need to know on the ledger which specific person did each tx?
+  YES → Pattern 1 (one cert per user)
+  NO  → Need chaincode-level role enforcement?
+          YES → Pattern 3 (one cert per role)
+          NO  → Pattern 2 (single backend identity)
+```
+
+---
+
+## User Types and Roles in Fabric CA
+
+Fabric CA has **4 fixed NodeOU types** for all identities. All end users in your application are type `client`:
+
+```
+client    → application users submitting transactions  (all your app users)
+admin     → network/org administrators
+peer      → peer nodes
+orderer   → orderer nodes
+```
+
+**Multiple users under one type:** unlimited. Type is a protocol-level classification, not a business role.
+
+### Affiliations (Department Grouping)
+
+Affiliations add a hierarchical sub-org grouping on top of type:
+
+```
+org1
+ ├── org1.manufacturing
+ │     ├── alice  (type: client)
+ │     └── bob    (type: client)
+ └── org1.finance
+       └── carol  (type: client)
+```
+
+```bash
+fabric-ca-client register \
+  --id.name alice \
+  --id.type client \
+  --id.affiliation org1.manufacturing \
+  --id.secret alicepw
+```
+
+### Custom Attributes (Business Roles)
+
+For application-level roles (buyer, seller, auditor), use **custom attributes** embedded in the certificate:
+
+```bash
+fabric-ca-client register \
+  --id.name alice \
+  --id.type client \
+  --id.affiliation org1.manufacturing \
+  --id.attrs 'role=buyer,department=procurement' \
+  --id.secret alicepw
+```
+
+Chaincode reads the attribute per transaction:
+
+```go
+role, _, err := cid.GetAttributeValue(ctx.GetStub(), "role")
+if role != "buyer" {
+    return fmt.Errorf("only buyers can invoke this")
+}
+```
+
+### Full Identity Model
+
+```
+NodeOU type (client/admin/peer/orderer)   ← protocol layer
+        └── Affiliation (org1.finance)    ← department/group layer
+                └── Custom attrs          ← business role layer
+                    (role=auditor)
+```
+
+| Layer | Controls | Enforced by |
+|---|---|---|
+| NodeOU type | Can submit txs vs administer network | Fabric MSP / channel policy |
+| Affiliation | Sub-org grouping | Endorsement policy, chaincode |
+| Custom attribute | Business role logic | Chaincode only |
+| App DB | Panel login, UI permissions, session | Your backend |
 
 ---
 
