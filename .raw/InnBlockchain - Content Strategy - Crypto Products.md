@@ -323,51 +323,51 @@ Content is organized into **4 verticals** matching Trioangle's crypto product li
 
 Scoring: Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20%) + Resource Efficiency (10%)
 
-| # | Topic | Vertical | Pillar | Stage | Type | Score |
-|---|-------|----------|--------|-------|------|-------|
-| 1 | Are Crypto Clone Scripts Safe? Complete Smart Contract Security Guide | Cross | Security | TOFU→MOFU | Both | **9.2** |
-| 2 | How to Start a Crypto Exchange in [Country] [2026] | CEX | Launchpad | TOFU | Searchable | **9.0** |
-| 3 | Binance Clone Script: Complete Buyer's Guide [2026] | CEX | Proof | MOFU→BOFU | Searchable | **8.9** |
-| 4 | CEX vs Custom Exchange Development: The Real Cost Breakdown | CEX | Tech/Proof | MOFU | Both | **8.8** |
-| 5 | How to Build a DEX Like Uniswap (Without Writing Solidity from Scratch) | DEX | Launchpad | TOFU→MOFU | Searchable | **8.7** |
-| 6 | P2P Crypto Exchange: How to Launch for Unbanked Markets | P2P | Launchpad | TOFU | Searchable | **8.6** |
-| 7 | Smart Contract Audit: What It Costs, Who Does It, and Why It's Non-Negotiable | Cross | Security | MOFU | Both | **8.5** |
-| 8 | [Case Study] How a Founder Built a Regional P2P Exchange in 10 Days | P2P | Proof | BOFU | Shareable | **8.4** |
-| 9 | KYC/AML for Crypto Exchanges: What You Actually Need to Launch | Cross | Compliance | MOFU | Searchable | **8.3** |
-| 10 | Forking Uniswap vs White-Label DEX Script: The Real Comparison | DEX | Tech/Proof | MOFU | Both | **8.2** |
-| 11 | How to Launch an NFT Marketplace for Your Creator Community | NFT | Launchpad | TOFU | Searchable | **8.1** |
-| 42 | P2P Crypto Exchange Mobile Money Integration: M-Pesa, bKash, GCash, Flutterwave Complete Guide | P2P | Tech/Proof | MOFU | Searchable | **8.1** |
-| 12 | Uniswap Clone Script: DEX Features, Cost, and How to Launch | DEX | Tech/Proof | MOFU | Searchable | **8.0** |
-| 13 | [Case Study] Diaspora Founder Builds P2P Exchange for Home Market | P2P | Proof | BOFU | Shareable | **8.0** |
-| 14 | How to Bootstrap Liquidity on a New DEX from Day One | DEX | Growth | Post-purchase | Both | **7.9** |
-| 41 | What Happened After Paxful Shut Down — and the P2P Gap It Left | P2P | Industry | TOFU | Both | **7.9** |
-| 15 | The Most Common DeFi Exploits — And How Audited Scripts Prevent Them | DEX | Security | MOFU | Both | **7.8** |
-| 16 | Remitano Clone Script: P2P Exchange for Mobile Money Markets | P2P | Tech/Proof | MOFU | Searchable | **7.8** |
-| 17 | OpenSea Clone: Stop Paying 2.5% and Launch Your Own NFT Marketplace | NFT | Tech/Proof | MOFU | Searchable | **7.7** |
-| 18 | MiCA Explained for Crypto Exchange Founders: EU Compliance Guide | Cross | Compliance | MOFU | Searchable | **7.7** |
-| 19 | How to Launch a Crypto Exchange in Dubai (DIFC/ADGM Licensing Guide) | CEX | Compliance | TOFU→MOFU | Searchable | **7.6** |
-| 20 | Crypto Exchange Compliance Guide: VASP License, KYC, AML Explained | Cross | Compliance | MOFU | Searchable | **7.6** |
-| 21 | How to Get Your First 500 Active Traders on Your Crypto Exchange | Cross | Growth | Post-purchase | Both | **7.5** |
-| 22 | Best Binance Clone Scripts Compared: Features & Security [2026] | CEX | Proof | MOFU | Searchable | **7.5** |
-| 23 | Trioangle vs B2Broker: White-Label Crypto Exchange Comparison | CEX | Proof | MOFU | Searchable | **7.5** |
-| 24 | NFT Marketplace Clone: Features, Cost, and OpenSea Alternative Guide | NFT | Tech/Proof | MOFU | Searchable | **7.4** |
-| 25 | Crypto Exchange Market Opportunity in [Region]: 2026 Report | Cross | Industry | TOFU | Shareable | **7.3** |
-| 38 | [Live Demo] OpenSea Clone: Minting, Auction, and Royalty Walkthrough | NFT | Proof | BOFU | Shareable | **7.3** |
-| 26 | How to Design Yield Farming Incentives That Actually Bootstrap Liquidity | DEX | Growth | Post-purchase | Both | **7.2** |
-| 27 | P2P Exchange vs CEX: Which Crypto Platform Should You Build? | Cross | Tech | MOFU | Searchable | **7.1** |
-| 37 | What to Do After a Failed Crypto Exchange Build (Restart Guide) | Cross | Proof | TOFU | Both | **7.1** |
-| 28 | How a Burned Crypto Builder Should Evaluate Any Vendor (Checklist) | Cross | Proof | MOFU | Both | **7.0** |
-| 39 | [Case Study] Gaming Community Launches a Branded NFT Marketplace | NFT | Proof | BOFU | Shareable | **7.0** |
-| 43 | When Your Crypto Exchange Outgrows the Clone Script: 5 Signs You Need Custom Development | Cross | Tech | Post-purchase | Both | **7.0** |
-| 29 | CEX Security Architecture: Cold Storage, 2FA, Withdrawal Whitelists Explained | CEX | Security | MOFU | Searchable | **6.9** |
-| 30 | How to Recruit 50 NFT Creators Before Your Marketplace Launches | NFT | Growth | MOFU | Searchable | **6.8** |
-| 31 | FCA Crypto Exchange Registration: UK Founder's Guide | CEX | Compliance | TOFU→MOFU | Searchable | **6.8** |
-| 32 | Trioangle vs AlphaPoint: Own Your Exchange vs Pay Forever to Rent It | CEX | Proof | MOFU | Searchable | **6.8** |
-| 33 | Multi-Chain DEX Deployment: Ethereum, BNB Chain, and Polygon Explained | DEX | Tech | Post-purchase | Both | **6.7** |
-| 34 | Why Launching a Crypto Exchange in the US Is Hard — and Which Markets to Consider Instead | CEX | Compliance | TOFU | Searchable | **6.6** |
-| 35 | Trioangle vs Hayvn and Rain: Building Your Own Exchange vs Using a Licensed Operator in MENA | CEX | Proof | MOFU | Searchable | **6.5** |
-| 36 | Is a Crypto Clone Script Right for You? (Who It's For — and Who It Isn't) | Cross | Proof | TOFU | Both | **6.4** |
-| 40 | Trioangle vs Shift Markets: White-Label CEX Cost and Feature Comparison | CEX | Proof | MOFU | Searchable | **6.3** |
+| # | CT | Topic | Vertical | Pillar | Stage | Type | Score |
+|---|----|----|----------|--------|-------|------|-------|
+| 1 | CT20 | Are Crypto Clone Scripts Safe? | Cross | Security | TOFU→MOFU | Both | **9.2** |
+| 2 | CT1 | How to Launch a [VERTICAL] in [COUNTRY] [YEAR] | CEX | Launchpad | TOFU | Searchable | **9.0** |
+| 3 | CT6 | [ORIGINAL] Clone Script: Complete Buyer's Guide [YEAR] | CEX | Proof | MOFU→BOFU | Searchable | **8.9** |
+| 4 | CT12 | Clone vs Custom Development: Real Cost Breakdown | CEX | Tech/Proof | MOFU | Both | **8.8** |
+| 5 | CT1 | How to Launch a [VERTICAL] in [COUNTRY] *(DEX; build without writing Solidity)* | DEX | Launchpad | TOFU→MOFU | Searchable | **8.7** |
+| 6 | CT1 | How to Launch a [VERTICAL] in [COUNTRY] *(P2P; unbanked markets)* | P2P | Launchpad | TOFU | Searchable | **8.6** |
+| 7 | CT8 | [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(SECURITY_TOPIC = Smart Contract Audit)* | Cross | Security | MOFU | Both | **8.5** |
+| 8 | CT14 | Founder Case Study: Launched a [VERTICAL] in [NUMBER] Days *(regional P2P founder)* | P2P | Proof | BOFU | Shareable | **8.4** |
+| 9 | CT9 | [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = KYC/AML)* | Cross | Compliance | MOFU | Searchable | **8.3** |
+| 10 | CT12 | Clone vs Custom Development: Real Cost Breakdown *(DEX; forking vs white-label)* | DEX | Tech/Proof | MOFU | Both | **8.2** |
+| 11 | CT1 | How to Launch a [VERTICAL] in [COUNTRY] *(NFT Marketplace; creator community)* | NFT | Launchpad | TOFU | Searchable | **8.1** |
+| 42 | CT13 | P2P Mobile Money Integration: [RAIL] Guide *(RAIL = M-Pesa, bKash, GCash, Flutterwave)* | P2P | Tech/Proof | MOFU | Searchable | **8.1** |
+| 12 | CT6 | [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Uniswap)* | DEX | Tech/Proof | MOFU | Searchable | **8.0** |
+| 13 | CT14 | Founder Case Study: Launched a [VERTICAL] in [NUMBER] Days *(diaspora P2P founder)* | P2P | Proof | BOFU | Shareable | **8.0** |
+| 14 | CT10 | How to Bootstrap Liquidity on Your [VERTICAL] | DEX | Growth | Post-purchase | Both | **7.9** |
+| 41 | CT5 | What Happened After [TRIGGER_EVENT] *(TRIGGER_EVENT = Paxful Shut Down)* | P2P | Industry | TOFU | Both | **7.9** |
+| 15 | CT8 | [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(SECURITY_TOPIC = DeFi Exploits)* | DEX | Security | MOFU | Both | **7.8** |
+| 16 | CT6 | [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = Remitano; mobile money markets)* | P2P | Tech/Proof | MOFU | Searchable | **7.8** |
+| 17 | CT6 | [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = OpenSea; stop paying 2.5% angle)* | NFT | Tech/Proof | MOFU | Searchable | **7.7** |
+| 18 | CT9 | [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = MiCA; EU)* | Cross | Compliance | MOFU | Searchable | **7.7** |
+| 19 | CT9 | [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = DIFC/ADGM; Dubai)* | CEX | Compliance | TOFU→MOFU | Searchable | **7.6** |
+| 20 | CT9 | [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = VASP license, KYC/AML overview)* | Cross | Compliance | MOFU | Searchable | **7.6** |
+| 21 | CT10 | How to Get Your First [NUMBER] Active [USERS] on Your [VERTICAL] | Cross | Growth | Post-purchase | Both | **7.5** |
+| 22 | CT7 | Best [ORIGINAL] Clone Scripts Compared: Features & Security [YEAR] *(ORIGINAL = Binance)* | CEX | Proof | MOFU | Searchable | **7.5** |
+| 23 | CT11 | Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = B2Broker)* | CEX | Proof | MOFU | Searchable | **7.5** |
+| 24 | CT6 | [ORIGINAL] Clone: Features, Cost, How to Launch *(ORIGINAL = OpenSea; NFT alternative guide)* | NFT | Tech/Proof | MOFU | Searchable | **7.4** |
+| 25 | CT3 | [VERTICAL] Opportunity in [REGION]: Market Report [YEAR] | Cross | Industry | TOFU | Shareable | **7.3** |
+| 38 | CT16 | Live Demo: [ORIGINAL] Clone Walkthrough *(ORIGINAL = OpenSea; minting, auction, royalty)* | NFT | Proof | BOFU | Shareable | **7.3** |
+| 26 | CT18 | Post-Launch Growth Guide *(focus: yield farming incentive design)* | DEX | Growth | Post-purchase | Both | **7.2** |
+| 27 | — | P2P Exchange vs CEX: Which [VERTICAL] Should You Build? *(no CT; cross-vertical comparison)* | Cross | Tech | MOFU | Searchable | **7.1** |
+| 37 | CT4 | What to Do After a Failed Crypto Exchange Build | Cross | Proof | TOFU | Both | **7.1** |
+| 28 | CT15 | Burned Builder Vendor Evaluation Checklist | Cross | Proof | MOFU | Both | **7.0** |
+| 39 | CT14 | Founder Case Study: Launched a [VERTICAL] in [NUMBER] Days *(gaming community NFT marketplace)* | NFT | Proof | BOFU | Shareable | **7.0** |
+| 43 | CT19 | When Your [VERTICAL] Outgrows the Clone Script | Cross | Tech | Post-purchase | Both | **7.0** |
+| 29 | CT8 | [SECURITY_TOPIC]: What [VERTICAL] Operators Need to Know *(SECURITY_TOPIC = CEX Security Architecture)* | CEX | Security | MOFU | Searchable | **6.9** |
+| 30 | CT10 | How to Recruit Your First [NUMBER] [CREATORS] Before Your [VERTICAL] Launches | NFT | Growth | MOFU | Searchable | **6.8** |
+| 31 | CT9 | [FRAMEWORK] for [VERTICAL] Founders: Compliance Guide *(FRAMEWORK = FCA; UK)* | CEX | Compliance | TOFU→MOFU | Searchable | **6.8** |
+| 32 | CT11 | Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = AlphaPoint)* | CEX | Proof | MOFU | Searchable | **6.8** |
+| 33 | CT17 | Post-Purchase Setup Guide *(FEATURE = Multi-Chain Deployment)* | DEX | Tech | Post-purchase | Both | **6.7** |
+| 34 | CT1 | How to Launch a [VERTICAL] in [COUNTRY] *(US redirect variant; routes to UK/EU/UAE)* | CEX | Compliance | TOFU | Searchable | **6.6** |
+| 35 | CT11 | Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = Hayvn and Rain; licensed operator/MENA)* | CEX | Proof | MOFU | Searchable | **6.5** |
+| 36 | CT22 | Is a Crypto Clone Script Right for You? | Cross | Proof | TOFU | Both | **6.4** |
+| 40 | CT11 | Trioangle vs [WL_COMPETITOR] *(WL_COMPETITOR = Shift Markets)* | CEX | Proof | MOFU | Searchable | **6.3** |
 
 > [!NOTE] Scoring notes
 > **#36 is under-scored relative to its sales function.** The ICP disqualifies resellers, source-code-resellers, and purely speculative builders — pre-qualifying content saves disproportionate sales time. Treat as a high-priority TOFU piece regardless of raw score.
