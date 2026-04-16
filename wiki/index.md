@@ -23,7 +23,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 116 | Sources ingested: 34
+Last updated: 2026-04-16 | Total pages: 118 | Sources ingested: 35
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -64,6 +64,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[EU-AI-Act-Fintech]] — high-risk AI (credit scoring, fraud, AML) Aug 2026; €35M max fine; blockchain audit trail use case (status: current)
 - [[PSD3-Open-Banking-EU]] — PSD3/PSR Nov 2025 agreement; IPR sending + VoP Oct 2025 (active); FiDA open finance ~2027 (status: current)
 - [[Hyperledger-Fabric]] — dominant enterprise permissioned blockchain; execute-order-validate model; 2000+ TPS; channels, chaincode (Go/JS/Java), Raft consensus; Fabric-X targets 100k TPS for digital assets (status: current)
+- [[Hyperledger-Fabric-CA]] — Fabric Certificate Authority: root of org identity; Org CA + TLS CA per org; registration vs enrollment; NodeOUs; CRL revocation; HSM/LDAP integration (status: current)
 - [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
 - [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
@@ -103,6 +104,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 ## Sources
 
+- [[autoresearch-hyperledger-fabric-ca]] — 2026-04-16 | web research (5 searches) | 1 concept page created
 - [[autoresearch-hyperledger-fabric]] — 2026-04-16 | web research (5 searches) | 1 concept page created
 - [[autoresearch-blockchain-pharma-supply-chain]] — 2026-04-16 | web research (4 searches) | 1 concept page created
 - [[claude-obsidian-ecosystem-research]] — 2026-04-08 | web research across 16+ repos | 8 wiki pages created
