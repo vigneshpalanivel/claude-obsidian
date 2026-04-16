@@ -16,14 +16,16 @@ key_claims:
   - "WalletTech = regulated e-money wallet operators only. Crypto-native self-custody wallet startups are hard DQ (route to Crypto Native)."
   - "EU compliance content (MiCA, MiFID II, DORA, EU AI Act, DLT Pilot Regime) is Active-phase priority regardless of which cluster it lives in. Do NOT defer to Watch RegTech."
   - "API-first backend live in production = strongest buyer signal; T0 velocity signal"
-  - "Budget floor $25k+; content must not attract blockchain tourists or pre-product founders"
+  - "Budget floor $20k+; content must not attract blockchain tourists or pre-product founders"
   - "EU is sole outbound geography until 5 projects close; UK/MENA/US/SEA are Watch"
-  - "AI + Blockchain content is a high-growth search trend (Pain Point 5): EU AI Act audit trail, AI credit decisions, AI valuation in WealthTech. Framing is blockchain-ALONGSIDE-AI, not blockchain-instead-of-AI."
+  - "AI + Blockchain content is a high-growth search trend (Pain Point 5): EU AI Act audit trail, AI credit decisions, AI valuation in WealthTech. Framing is blockchain-ALONGSIDE-AI, not blockchain-instead-of-AI. VALIDATION GATE: publish only after WealthTech/RWA hub ships + ICP Pain Point 5 validated by 2026-05-31."
   - "Competitive content framing: vs. consultancies = speed (weeks not quarters); vs. BaaS = custom logic (platforms get 80%); vs. Web3 audit firms = compliance context; vs. in-house = time-to-start + IP transfer"
-  - "40+ scored articles; top Active: (1) Asset Tokenization Guide 9.3, (2) RWA Hub 9.2, (3) RWA Tech Stack 9.0, (17) Build a Regulated Exchange 9.1, (19) DeFi Lending Hub 8.8, (21) Stablecoin Settlement 8.4"
-  - "Distribution priority: (1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech events (Money20/20 Europe, Sibos Europe). FinTech Connect London = Watch (UK gate not met)"
+  - "40+ scored articles; top Active: (1) Asset Tokenization Guide 9.3, (2) RWA Hub 9.2, (3) RWA Tech Stack 9.0, (17) Build a Regulated Exchange 9.1, (19) DeFi Lending Hub 8.8, (21) Stablecoin Settlement 8.4, (T4) Cost of Hiring Blockchain Team In-House: FinTech CTO Guide 8.4"
+  - "3 lead magnets: RWA Build vs. Buy vs. Partner Checklist (8.5), Smart Contract Audit Checklist for FinTech (8.0), InnBlockchain Vendor Risk & Compliance Brief (Carol BOFU gated — ownership structure, ISO/SOC 2, data residency, MiCA compliance summary, sample audit report)"
+  - "Distribution priority: (1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech events (Money20/20 Europe, Sibos Europe) → (4) Tom's technical channels. FinTech Connect London = Watch (UK gate not met)"
+  - "Tom's technical channels: GitHub (open-source smart contract templates/audit tooling snippets), Hacker News (Show HN or Ask HN, no marketing tone), ETHGlobal/DevCon re-engage play (identify Tom with Crypto Native framing → follow up post-event with FinTech framing). Cross-ICP handoff documented in Crypto Native strategy."
   - "LinkedIn carousel repurposing of every published article, targeted at EU FinTech CTOs/CPOs via Sales Navigator geography filter"
-ingest_rev: 1
+ingest_rev: 2
 created: 2026-04-16
 updated: 2026-04-16
 tags:
@@ -112,14 +114,15 @@ T3 also hosts FinTech-specific security content (compliance auditability, regula
 | 7 | MiCA and MiFID II for Tokenized Assets 🇪🇺 | V1 RWA | 8.6 |
 | 21 | How to Add Stablecoin Settlement to FinTech Wallet | V1 WalletTech | 8.4 |
 
-Lead magnets: **RWA Build vs. Buy vs. Partner Checklist** (#9, score 8.5) + **Smart Contract Audit Checklist for FinTech** (#28, score 8.0, compliance framing).
+Lead magnets: **RWA Build vs. Buy vs. Partner Checklist** (#9, score 8.5) + **Smart Contract Audit Checklist for FinTech** (#28, score 8.0, compliance framing) + **InnBlockchain Vendor Risk & Compliance Brief** (Carol BOFU gated — ownership structure, ISO/SOC 2, data residency, MiCA compliance summary, sample audit report).
 
 ## Channel & Distribution
 
-- **Priority: (1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech events (Money20/20 Europe, Sibos Europe)**
+- **Priority: (1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech events (Money20/20 Europe, Sibos Europe) → (4) Tom's technical channels**
 - LinkedIn carousels repurpose every published article; target EU FinTech CTOs/CPOs via Sales Navigator geography filter
 - Segment-specific follow-up assets: WealthTech CPO → RWA/tokenization guide; ExchangeTech CTO → Exchange guide; WalletTech CTO → wallet guide
 - Cold email is low-volume, personalised, business-case framing (Strategic Sam)
+- **Tom's technical channels**: GitHub (open-source smart contract templates or audit tooling snippets), Hacker News (Show HN or Ask HN technical posts — no marketing tone), ETHGlobal/DevCon re-engage play (identify Tom with Crypto Native framing at events → follow up post-event with FinTech framing on RWA, MiCA, regulated exchange)
 
 ## Competitive Content Framing
 
@@ -145,6 +148,15 @@ Explicit disambiguation on every overlapping topic:
 - Watch segments (PayTech, BankTech, InsurTech, RegTech) are blocked on portfolio case studies and leadership expansion decisions — activation gate is "any two of four" but no tracked timeline.
 - Compliance Carol is described as a veto-holder without being a buyer — content targeting her is necessary but not revenue-attributable. Attribution methodology for compliance content not defined.
 - EU compliance content is Active-priority regardless of cluster, but there is no shared topic ledger with Crypto Native strategy. First cross-ICP MiCA publishing conflict is the risk surface.
+- AI + Blockchain content angle (Pain Point 5) is unvalidated in the ICP. Gate: validate by 2026-05-31. If signal doesn't hold, restructure scope before publishing this cluster.
+
+## Resolved (rev 2 — 2026-04-16)
+
+- Budget floor inconsistency: ICP said $20k+, source had $25k+. Aligned to $20k+ (ICP is source of truth).
+- Web3 talent gap (9/10 ICP pain, no content): added T4 article — *The Cost of Hiring a Blockchain Team In-House: FinTech CTO Guide* (score 8.4).
+- Compliance Carol had no dedicated asset: added Vendor Risk & Compliance Brief as gated BOFU lead magnet.
+- Tom's distribution channels (GitHub, Hacker News, ETHGlobal/DevCon) were absent: added as Channel 4 layer.
+- AI + Blockchain section treated unvalidated ICP pain as confirmed: validation gate added.
 
 ## See Also
 

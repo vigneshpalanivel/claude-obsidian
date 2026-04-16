@@ -103,12 +103,16 @@
     ".raw/InnBlockchain - Content Strategy - Crypto Native.md": {
       "hash": "00cc87e6b15f6d1a3559a4b3c1f8376f",
       "ingested_at": "2026-04-16",
+      "reingest_at": "2026-04-16",
+      "reingest_reason": "ICP cross-review corrections applied to wiki pages",
       "pages_created": [
         "wiki/sources/Content-Strategy-InnBlockchain-Crypto-Native.md",
         "wiki/concepts/InnBlockchain Crypto Native Content Strategy.md",
         "wiki/concepts/InnBlockchain Content Strategy.md"
       ],
       "pages_updated": [
+        "wiki/sources/Content-Strategy-InnBlockchain-Crypto-Native.md",
+        "wiki/concepts/InnBlockchain Crypto Native Content Strategy.md",
         "wiki/index.md",
         "wiki/hot.md",
         "wiki/log.md",
@@ -145,7 +149,7 @@
       "hash": "86340bd89c7b926c207ff9e9828b7255",
       "ingested_at": "2026-04-15",
       "reingested_at": "2026-04-15",
-      "reingest_reason": "review-driven fixes: segment reorder (WealthTech now Seg 1 / ExchangeTech Seg 2 — doc order matches priority), API-first Tier 0 contradiction resolved, unused maturity tiers deleted, persona age ranges removed, Segment 7 blocked on CFO persona, anti-ICP dedup, interview Q17 reframed as indirect budget question, AI content tagged unvalidated pending 2026-05-31",
+      "reingest_reason": "review-driven fixes: segment reorder (WealthTech now Seg 1 / ExchangeTech Seg 2 \u2014 doc order matches priority), API-first Tier 0 contradiction resolved, unused maturity tiers deleted, persona age ranges removed, Segment 7 blocked on CFO persona, anti-ICP dedup, interview Q17 reframed as indirect budget question, AI content tagged unvalidated pending 2026-05-31",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-FinTech.md",
         "wiki/concepts/InnBlockchain FinTech ICP.md"

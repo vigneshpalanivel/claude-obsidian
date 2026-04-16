@@ -19,6 +19,12 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-04-16] re-ingest | InnBlockchain Content Strategy — Crypto Native (ICP cross-review corrections)
+- Source: `.raw/InnBlockchain - Content Strategy - Crypto Native.md` (hash unchanged — source immutable)
+- Pages updated: [[Content-Strategy-InnBlockchain-Crypto-Native]], [[InnBlockchain Crypto Native Content Strategy]]
+- Corrections applied: budget floor split ($20k Seg 2-10 / $30k RWA Seg 1); Security Sasha trust-building content (2 new Phase 2 articles); per-article distribution channel tagging for Phase 1 (LinkedIn-first vs. SEO+X); AI-coded contract audit overlay added to Phase 2 (no gate); Paulo champion piece added to Phase 2 at score 8.8; Phase 1 publish gate dependency noted (blocks on landing page, ICP item 1.1)
+- Key insight: The original plan had no content targeting Security Sasha's pre-call evaluation mode — the primary gatekeeper at $10M+ protocol deals. Without Sasha-specific methodology content, those deals stall before they start.
+
 ## [2026-04-16] ingest | InnBlockchain Landing Pages Plan
 - Source: `.raw/InnBlockchain - Landing Pages Plan.md`
 - Pages created: [[InnBlockchain Landing Pages Plan]], [[Landing-Pages-InnBlockchain]]
