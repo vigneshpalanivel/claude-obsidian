@@ -46,6 +46,30 @@ Asset tokenization converts ownership rights in real-world assets into digital t
 
 **Financial instruments**: Trade finance documents; letters of credit; invoices; repo agreements
 
+## High-Demand Verticals
+
+### RWA Tokenization *(Crypto Native ICP)*
+
+| # | Vertical |
+|---|---|
+| 1 | Fractional Real Estate |
+| 2 | Private Credit |
+| 3 | Commodities (Gold, Silver, Agriculture) |
+| 4 | Art & Collectibles |
+| 5 | Vehicle Fleet |
+
+### FinTech Tokenization *(FinTech ICP)*
+
+| # | Vertical | Sub-Verticals |
+|---|---|---|
+| 1 | **RWA Tokenization** | Real Estate · Bonds · Trade Assets |
+| 2 | **STOs** | Security Token Offerings |
+| 3 | **Tokenized Securities** | Equities · Fixed Income |
+| 4 | **NFTs** | — |
+
+> [!note] ICP Routing
+> RWA Tokenization appears in both ICPs. Routing gate is company origin — asset owner building from scratch → Crypto Native; licensed firm tokenizing own product line → FinTech.
+
 ## Why It Matters
 
 1. **Liquidity unlocking**: Illiquid assets (real estate, private credit) become tradeable 24/7 on secondary markets

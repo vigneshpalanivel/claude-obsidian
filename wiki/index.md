@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Wiki Index"
-updated: 2026-04-16
+updated: 2026-04-23
 tags:
   - meta
   - index
@@ -19,11 +19,12 @@ related:
   - "[[Hot Cache]]"
   - "[[Compounding Knowledge]]"
   - "[[Andrej Karpathy]]"
+  - "[[AI Engineering]]"
 ---
 
 # Wiki Index
 
-Last updated: 2026-04-16 | Total pages: 118 | Sources ingested: 35
+Last updated: 2026-04-24 | Total pages: 171 | Sources ingested: 55
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -82,12 +83,35 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Fixture Architecture]] — pure function → fixture wrapper → mergeTests composition; framework-agnostic, unit-testable utilities (status: current)
 - [[Network-First Testing]] — intercept-before-navigate; wait for API response not timeout; eliminates race conditions (status: current)
 - [[TEA Knowledge Base System]] — tea-index.csv manifest, 42 fragments, selective loading per workflow; context engineering over prompt engineering (status: current)
+- [[AI Engineering]] — the 2026 discipline: turning foundation models into production systems; distinct from ML engineering and data science (status: current)
+- [[AI Application Stack]] — layered 2026 architecture: UX / orchestration / retrieval / inference / observability; LangGraph + pgvector defaults (status: current)
+- [[Retrieval-Augmented Generation (RAG)]] — grounding LLM outputs in trusted retrieved content; dominant production pattern; 2-3 week delivery cycle (status: current)
+- [[AI Agents]] — multi-step autonomous LLM systems; 57.3% production adoption; quality is #1 barrier; LangGraph is dominant framework (status: current)
+- [[AI Evals]] — systematic quality measurement; three grader types; pass@k vs pass^k; Anthropic's production playbook (status: current)
+- [[LLMOps and AI Observability]] — ops discipline for AI systems; 89% production adoption; prompts-as-code, cost controls, drift detection (status: current)
+- [[Machine Learning Engineering]] — the discipline of training, deploying, maintaining models; bifurcated post-LLM; GenAI specialization +40-60% pay (status: current)
+- [[MLOps]] — Continuous X (CI/CD/CT/CM); 85% of ML projects fail without it; prevents silent model decay (status: current)
+- [[Model Training Pipeline]] — end-to-end automated workflow: ingest → validate → feature → train → eval → register → deploy (status: current)
+- [[LoRA and QLoRA Fine-Tuning]] — parameter-efficient fine-tuning; 7B-8B tunable on consumer GPUs; 90-95% of full fine-tune quality (status: current)
+- [[Model Monitoring and Drift Detection]] — production practice tracking input/output/performance drift; prevents silent model decay (status: current)
+- [[Trioangle 2.0 AI Pivot Plan]] — SMB-focused 4-phase 18-month pivot; services + retainers + agency reseller channel + community tier + training business; no SaaS; Head of Delivery hired by M6; Q6 target ₹2-3.5Cr run-rate, team 15-18 (status: current)
+- [[AI Engineering Learning Roadmap]] — 7-phase self-study path, 7-12 months; Python → SWE → LLM → RAG → Agents → LLMOps → Advanced; accelerated paths for SWEs (status: current)
+- [[ML Engineering Learning Roadmap]] — 7-phase self-study path, 12 months; Python+math → ML algorithms → PyTorch → Deep Learning → Deployment → Projects; Phase 7 LLM fine-tuning is +40-60% premium (status: current)
+- [[AI Engineering Portfolio Projects]] — 15-project reference list mapped to skill level; rule: three deployed+documented projects beat fifteen notebooks (status: current)
+- [[Copy Trading]] — exchange feature mirroring lead-trader trades; structurally speculation not income; 70-85% of retail futures copy traders lose; incentive stack favors exchange + lead over copier (status: developing)
+- [[Indian IT AI Transformation Strategy]] — how TCS, Infosys, HCLTech, Cognizant, Accenture are pivoting post-vibe-coding; shared five-move playbook; headcount shrinking, revenue per employee rising (status: current)
+- [[AI Services Business Model]] — outcome-based vs T&M pricing; platform + services hybrid; retainer models; key metrics for AI boutiques (status: current)
 
 ---
 
 ## Entities
 
 - [[Andrej Karpathy]] — AI researcher, creator of the LLM Wiki pattern, former Tesla AI director (status: developing)
+- [[TCS]] — Tata Consultancy Services; $1.5B annualized AI revenue; declared aim: world's largest AI-led services company; -23,460 headcount FY26 (status: current)
+- [[Infosys]] — Infosys Topaz Fabric; 4,600+ AI projects; $300-400B TAM claim; 5.5% of quarterly revenue from AI; OpenAI collab 2026 (status: current)
+- [[HCL Tech]] — HCLTech AI Force + AI Foundry; Nuance acquisition (clinical NLP); full-stack GPU to consulting; OpenAI strategic partner 2025 (status: current)
+- [[Cognizant]] — workforce-first AI strategy; Skillspring + Synapse; 25K fresher hires planned 2026; context engineering over automation (status: current)
+- [[Accenture]] — $2.7B GenAI revenue LTM; 80K AI staff; Faculty $1B acquisition; "reinvention" framework; discontinued separate AI metrics (status: current)
 - [[Trioangle]] — marketplace clone script company; 800+ platforms, 150+ countries, since 2015 (status: current)
 - [[InnBlockchain]] — blockchain dev + smart contract security firm; sister/group co of Trioangle; 4 ICPs (status: current)
 - [[Ar9av-obsidian-wiki]] — multi-agent compatible LLM Wiki plugin; delta tracking manifest (status: current)
@@ -99,6 +123,11 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[BMAD Method]] — AI-driven dev framework; 4 phases, 3 tracks, agent personas with menu triggers; v6 (status: current)
 - [[JPMorgan-Kinexys]] — JPMorgan's bank-led blockchain unit; $2B+/day; JPM Coin; Kinexys Digital Payments; Canton Network integration (status: current)
 - [[Ripple]] — cross-border payments blockchain; XRP Ledger; RLUSD stablecoin; OCC bank charter Dec 2025; 7 acquisitions (status: current)
+- [[LangChain]] — dominant LLM orchestration framework + LangGraph (multi-agent) + LangSmith (observability); MIT-licensed (status: current)
+- [[LlamaIndex]] — data-centric RAG framework; strongest ingestion/retrieval; LlamaParse + LlamaCloud managed services (status: current)
+- [[PyTorch]] — dominant ML training framework (55%+ production share); PyTorch Foundation; FSDP, TorchCompile, ExecuTorch (status: current)
+- [[MLflow]] — dominant OSS MLOps platform; framework-agnostic; Databricks-backed; added LLM evals + tracing 2026 (status: current)
+- [[LangGraph]] — LangChain's primary agent framework (replaced native agents); graph-based state machine; 2026 industry default for multi-agent systems (status: current)
 
 ---
 
@@ -138,6 +167,27 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[EU-Fintech-Compliance-Overview-2026]] — 2026-04-16 | web research | 9 key EU regulations, enforcement climate, $1.23B fines H1 2025
 - [[EU-MiCA-DORA-AML-2025]] — 2026-04-16 | web research | DORA 5 pillars, MiCA timeline, AMLA 3-part package
 - [[EU-PSD3-IPR-FiDA-AIAct-2026]] — 2026-04-16 | web research | PSD3/PSR, IPR VoP Oct 2025, FiDA, AI Act, eIDAS 2.0
+- [[Scaler-AI-Engineering-Definition-2026]] — 2026-04-23 | web research | definition of AI engineering vs ML engineering vs data science
+- [[SecondTalent-Top-10-AI-Engineering-Skills-2026]] — 2026-04-23 | web research | 10 in-demand skills + US salary ranges; LLM fine-tuning highest-premium
+- [[Anthropic-Demystifying-AI-Agent-Evals]] — 2026-04-23 | primary source | three grader types, pass@k vs pass^k, practical eval playbook
+- [[Xenoss-LangChain-LangGraph-LlamaIndex-Comparison]] — 2026-04-23 | web research | framework comparison, when to use each, 2026 LangGraph shift
+- [[LangChain-State-of-Agent-Engineering-2026]] — 2026-04-23 | industry survey | 57.3% production adoption, top pain points, observability standard
+- [[TDS-Evolving-Role-ML-Engineer-2026]] — 2026-04-23 | practitioner view | MLE role shifted, not eliminated; LLMs automate boilerplate, not judgment
+- [[MLOps-Principles-ml-ops-org]] — 2026-04-23 | canonical reference | Continuous X, three-scope testing, MLOps stack components
+- [[Signify-ML-Engineer-Salary-Benchmarks-2026]] — 2026-04-23 | US salary data | $100K-$355K by level; GenAI +40-60% premium; demand 3.2:1
+- [[N1N-LoRA-QLoRA-Fine-Tuning-Guide-2026]] — 2026-04-23 | practical guide | hardware, tooling, hyperparameters, data quality rule
+- [[Azilen-MLOps-Best-Practices-2026]] — 2026-04-23 | industry view | 85% ML projects fail to reach production; 7 commonly missing practices
+- [[KDnuggets-AI-Engineer-Self-Study-Roadmap-2026]] — 2026-04-23 | self-study roadmap | 7 phases, 7-12 months, Python → LLMOps progression
+- [[Scaler-ML-Roadmap-2026]] — 2026-04-23 | self-study roadmap | 7 phases, 12 months, math foundations to capstone projects
+- [[TowardsAgenticAI-Agentic-Engineering-Roadmap-2026]] — 2026-04-23 | specialized agent path | 5 phases, CrewAI→LangGraph→AutoGen progression
+- [[AI-Engineer-Reading-List-2026]] — 2026-04-23 | book list | 10 essential books; Chip Huyen's AI Engineering is recommended first read
+- [[Crypto-Products-Blog-Article-Templates]] — Trioangle internal | InnBlockchain crypto products blog article templates
+- [[TCS-AI-Services-Growth-2026]] — 2026-04-24 | web research | $1.5B annualized AI revenue; 5,500+ projects; five strategic pillars; HyperVault data centers
+- [[Infosys-Topaz-AI-First-Framework-2026]] — 2026-04-24 | web research | Topaz Fabric composable stack; $300B TAM; 4,600 AI projects; OpenAI + AWS collab
+- [[HCLTech-AI-Advantages-2026]] — 2026-04-24 | web research | AI Force + AI Foundry; full-stack coverage; Nuance IP; OpenAI partner
+- [[Cognizant-Enterprise-AI-2026]] — 2026-04-24 | web research | New Work New World 2026 research; Skillspring platform; context engineering emphasis
+- [[Accenture-AI-Bold-Bets-2026]] — 2026-04-24 | web research | $2.7B LTM AI revenue; Faculty $1B acquisition; 550K reinventors; AI Refinery + GenWizard
+- [[Indian-IT-AI-Disruption-Structural-Shift-2026]] — 2026-04-24 | web research | macro threat analysis; 9-12% revenue at risk; 57,891 headcount shed; T&M to outcome shift; vibe coding threat
 
 ---
 
@@ -148,6 +198,11 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Research: Marketing and Sales for AI-Era Dev Company]] — positioning, ICP, objection handling, alignment mechanics (status: developing)
 - [[Research: Blockchain Solutions in Fintech Industry]] — synthesis: 7 use cases, market data, entities, contradictions, open questions (status: developing)
 - [[Research: EU Compliance for FinTech Industry]] — synthesis: 9 EU regulations, enforcement data, regulation interactions, open questions (status: developing)
+- [[Research: AI Engineering]] — synthesis: discipline definition, 2026 stack, production reality (57.3% adoption), compensation, framework landscape, Trioangle implications (status: developing)
+- [[Research: ML Engineering]] — synthesis: post-LLM bifurcation, 85% production-fail rate, MLOps principles, fine-tuning economics, PyTorch/MLflow stack, Trioangle hiring implications (status: developing)
+- [[Research: AI ML Engineering Roadmap]] — synthesis: two distinct learning paths (AI integration 7-12mo vs ML training 12mo), three-project portfolio rule, framework progression, Trioangle training curriculum (status: developing)
+- [[Can I earn monthly income from Binance copy trading my BTC]] — non-custodial BTC → Binance copy trading for monthly income; verdict: wrong tool, use stablecoin earn instead (status: developing)
+- [[Research: Indian IT Company AI Strategies]] — synthesis: TCS/Infosys/HCLTech/Cognizant/Accenture five-move playbook; headcount cuts; outcome pricing shift; SMB gap confirmed wide open (status: complete)
 
 ---
 

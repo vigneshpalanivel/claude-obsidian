@@ -53,7 +53,7 @@ The content strategy for InnBlockchain's Crypto Native ICP: a 2-tier architectur
 ## Strategic Frame
 
 - **Primary goal**: inbound authority for EU-registered protocol teams and RWA founders past the idea stage — "we've seen this exploit, we know this architecture, we understand MiCA."
-- **Anti-ICP**: pre-raise whitepaper projects, "learn Solidity" audiences, retail speculation, ICO schemes without product, existing regulated FinTechs (route to [[Content Strategy - InnBlockchain FinTech]]).
+- **Anti-ICP**: pre-raise whitepaper projects, "learn Solidity" audiences, retail speculation, ICO schemes without product, existing regulated FinTechs (route to [[Content-Strategy-InnBlockchain-FinTech]]).
 - **Routing gate vs. FinTech**: company origin, not licensing. A licensed crypto-native DEX still belongs here.
 
 ## Technology Pillars (Tier 1)

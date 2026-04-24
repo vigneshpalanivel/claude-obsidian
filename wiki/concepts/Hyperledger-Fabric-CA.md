@@ -10,7 +10,7 @@ tags:
   - PKI
   - security
 status: current
-updated: 2026-04-16 (rev 2)
+updated: 2026-04-16 (rev 5)
 related:
   - "[[Hyperledger-Fabric]]"
   - "[[Blockchain-Pharmaceutical-Supply-Chain]]"
@@ -115,17 +115,42 @@ The channel MSP (stored on the ledger, shared with all channel members) contains
 
 ## Attributes and Affiliations
 
-### Attributes
-Key-value pairs embedded in certificates. Used for fine-grained access control in chaincode:
+### System Attributes (hf.*)
+Reserved key-value pairs that control what an identity can do within Fabric CA itself:
 - `hf.Registrar.Roles` -- which identity types this identity can register
 - `hf.GenCRL` -- can generate Certificate Revocation Lists
 - `hf.Revoker` -- can revoke certificates
-- Custom attributes: any `key:value` pair, readable inside chaincode via `stub.GetCreator()` and cert parsing
 
-Example use in chaincode: only identities with `attr:department=manufacturing` may invoke a specific chaincode function.
+### Custom Attributes (Business Roles)
+Any `key:value` pair embedded in the certificate, readable inside chaincode. Used for application-level access control:
+
+```bash
+fabric-ca-client register \
+  --id.name alice \
+  --id.type client \
+  --id.affiliation org1.manufacturing \
+  --id.attrs 'role=buyer,department=procurement' \
+  --id.secret alicepw
+```
+
+```go
+role, _, err := cid.GetAttributeValue(ctx.GetStub(), "role")
+if role != "buyer" {
+    return fmt.Errorf("only buyers can invoke this")
+}
+```
 
 ### Affiliations
-Hierarchical grouping of identities within an organization (e.g., `org1.manufacturing`, `org1.finance`). Affiliations can be referenced in endorsement policies and chaincode-level ACLs. Useful for multi-department organizations where different business units operate on the same Fabric network.
+Hierarchical sub-org grouping within an organization. Can be referenced in endorsement policies and chaincode ACLs:
+
+```
+org1
+ ├── org1.manufacturing
+ │     ├── alice  (type: client)
+ │     └── bob    (type: client)
+ └── org1.finance
+       └── carol  (type: client)
+```
 
 ---
 
@@ -342,66 +367,12 @@ Need to know on the ledger which specific person did each tx?
 
 ---
 
-## User Types and Roles in Fabric CA
+## Identity Classification Layers
 
-Fabric CA has **4 fixed NodeOU types** for all identities. All end users in your application are type `client`:
-
-```
-client    → application users submitting transactions  (all your app users)
-admin     → network/org administrators
-peer      → peer nodes
-orderer   → orderer nodes
-```
-
-**Multiple users under one type:** unlimited. Type is a protocol-level classification, not a business role.
-
-### Affiliations (Department Grouping)
-
-Affiliations add a hierarchical sub-org grouping on top of type:
+All end users in your application are NodeOU type `client` (see Certificate Types for the full 4-type table). Multiple users per type: unlimited. The three layers stacked on top of NodeOU type:
 
 ```
-org1
- ├── org1.manufacturing
- │     ├── alice  (type: client)
- │     └── bob    (type: client)
- └── org1.finance
-       └── carol  (type: client)
-```
-
-```bash
-fabric-ca-client register \
-  --id.name alice \
-  --id.type client \
-  --id.affiliation org1.manufacturing \
-  --id.secret alicepw
-```
-
-### Custom Attributes (Business Roles)
-
-For application-level roles (buyer, seller, auditor), use **custom attributes** embedded in the certificate:
-
-```bash
-fabric-ca-client register \
-  --id.name alice \
-  --id.type client \
-  --id.affiliation org1.manufacturing \
-  --id.attrs 'role=buyer,department=procurement' \
-  --id.secret alicepw
-```
-
-Chaincode reads the attribute per transaction:
-
-```go
-role, _, err := cid.GetAttributeValue(ctx.GetStub(), "role")
-if role != "buyer" {
-    return fmt.Errorf("only buyers can invoke this")
-}
-```
-
-### Full Identity Model
-
-```
-NodeOU type (client/admin/peer/orderer)   ← protocol layer
+NodeOU type (client/admin/peer/orderer)   ← protocol layer (see Certificate Types)
         └── Affiliation (org1.finance)    ← department/group layer
                 └── Custom attrs          ← business role layer
                     (role=auditor)
@@ -413,6 +384,210 @@ NodeOU type (client/admin/peer/orderer)   ← protocol layer
 | Affiliation | Sub-org grouping | Endorsement policy, chaincode |
 | Custom attribute | Business role logic | Chaincode only |
 | App DB | Panel login, UI permissions, session | Your backend |
+
+---
+
+## Chain of Trust: How Root CA Creates Org CA and All Identities
+
+Root CA creates and signs the Org CA certificate (once, then goes offline). Org CA then signs every identity in the org. This is the full chain.
+
+### Step 1 -- Root CA Bootstraps Itself
+
+```
+Root CA starts for the first time
+  generates its own key pair
+  signs its own certificate (self-signed)
+
+  Result:
+    root_ca.key   ← private key generated
+    root-ca.pem   ← self-signed (no parent above it)
+```
+
+No one above Root CA. It is the top of the chain.
+
+### Step 2 -- Root CA Creates Org CA
+
+```
+Org CA server starts → sends CSR to Root CA
+Root CA signs CSR with root_ca.key
+
+  Result:
+    org-ca.pem    ← signed by Root CA
+                     "Root CA says: trust this Org CA"
+
+Root CA goes OFFLINE. Job done.
+```
+
+### Step 3 -- Org CA Creates All Org Identities
+
+```
+Peer enrolls    → CSR to Org CA → org_ca.key signs → peer.crt     (OU=peer)
+Orderer enrolls → CSR to Org CA → org_ca.key signs → orderer.crt  (OU=orderer)
+Admin enrolls   → CSR to Org CA → org_ca.key signs → admin.crt    (OU=admin)
+Client enrolls  → CSR to Org CA → org_ca.key signs → client.crt   (OU=client)
+```
+
+Same Org CA, same signing key -- NodeOU in the cert distinguishes the role.
+
+### How Trust Is Verified at Runtime
+
+Peers walk the certificate chain locally using certs already in their MSP folder -- no call to Root CA or Org CA at runtime. See [[#Relationship to MSP]] for the full verification mechanism.
+
+### Same Pattern for TLS (Parallel Chain)
+
+```
+TLS Root CA  →  TLS Org CA  →  Peer TLS cert
+                             →  Orderer TLS cert
+                             →  Client TLS cert
+```
+
+Completely separate chain from ECert chain. Same structure, different keys.
+
+### Full Two-Org Network Picture
+
+```
+Root CA (Org1)              Root CA (Org2)
+  │ signs                     │ signs
+  ▼                           ▼
+Org1 CA                     Org2 CA
+  ├── Peer1-Org1.crt          ├── Peer1-Org2.crt
+  ├── Orderer-Org1.crt        ├── Peer2-Org2.crt
+  ├── Admin-Org1.crt          ├── Admin-Org2.crt
+  └── Client-Org1.crt         └── Client-Org2.crt
+
+TLS Root CA (Org1)          TLS Root CA (Org2)
+  │ signs                     │ signs
+  ▼                           ▼
+TLS Org1 CA                 TLS Org2 CA
+  ├── Peer1-Org1-tls.crt      ├── Peer1-Org2-tls.crt
+  └── Orderer-tls.crt         └── Peer2-Org2-tls.crt
+```
+
+Each org manages its own chain independently. The channel MSP collects root certs from all orgs so every peer knows which CAs to trust across the network.
+
+---
+
+## Full Key Handling: CA Server, Fabric Server, Application Server
+
+### CA Server Keys
+
+```
+Root CA Server (OFFLINE after setup)
+  msp/keystore/root_ca.key       ← signs Org CA certificate (once)
+  ca-cert.pem                    ← self-signed root cert
+
+Org CA Server (ONLINE)
+  msp/keystore/org_ca.key        ← signs all ECerts (peers, orderers, admins, clients)
+  ca-cert.pem                    ← signed by root CA
+  fabric-ca.db                   ← registered identities, issued certs, affiliations
+
+TLS CA Server (ONLINE)
+  msp/keystore/tls_ca.key        ← signs all TLS certs
+  ca-cert.pem                    ← signed by TLS root CA
+  fabric-ca.db                   ← TLS identities, issued TLS certs
+```
+
+### Fabric Network Server Keys
+
+```
+Peer Node
+  msp/signcerts/peer.crt         ← ECert (public, from Org CA)
+  msp/keystore/peer.key          ← ECert key: signs endorsements
+  msp/cacerts/org-ca.crt         ← Org CA root (trust anchor)
+  msp/tlscacerts/tls-ca.crt      ← TLS CA root
+  tls/server.crt                 ← TLS cert (public, from TLS CA)
+  tls/server.key                 ← TLS key: secures peer↔peer, peer↔orderer
+
+Orderer Node
+  msp/signcerts/orderer.crt      ← ECert (public, from Org CA)
+  msp/keystore/orderer.key       ← ECert key: signs blocks
+  tls/server.crt                 ← TLS cert
+  tls/server.key                 ← TLS key: secures orderer connections
+```
+
+### Application Server Keys
+
+```
+Admin Identity (wallet)
+  certificate.pem                ← ECert (public, from Org CA)
+  privateKey.pem                 ← signs channel updates, chaincode installs
+
+Pattern 2 -- Single Backend Identity
+  wallet/backend/certificate.pem ← ECert
+  wallet/backend/privateKey.pem  ← signs ALL user transactions
+
+Pattern 1 -- One Per User
+  wallet/alice/privateKey.pem    ← signs alice's transactions only
+  wallet/bob/privateKey.pem      ← signs bob's transactions only
+  ... N keys for N users
+```
+
+### What Each Key Signs
+
+| Key | Signs | Verified by |
+|---|---|---|
+| root_ca.key | Org CA certificate | Anyone with root cert |
+| org_ca.key | ECerts (peer/orderer/admin/client) | MSP on every peer |
+| tls_ca.key | TLS certificates | TLS handshake |
+| peer.key (ECert) | Endorsements | Peers + MSP |
+| orderer.key (ECert) | Blocks | Peers receiving blocks |
+| peer/orderer.key (TLS) | TLS handshake | Connecting nodes |
+| admin.key | Channel config updates | Orderer + MSP |
+| backend.key | Transaction proposals | Endorsing peers |
+| alice.key (Pattern 1) | Transaction proposals | Endorsing peers |
+
+### Key Sensitivity Ranking
+
+```
+CRITICAL   root_ca.key, tls_root.key   compromise = rebuild entire org
+           org_ca.key, tls_ca.key      compromise = all issued certs untrusted
+HIGH       orderer.key (ECert)         compromise = attacker signs fake blocks
+           admin.key                   compromise = attacker controls channel
+MEDIUM     peer.key (ECert)            compromise = attacker endorses as that peer
+           peer.key (TLS)              compromise = MITM on that peer
+           backend.key                 compromise = attacker submits any tx
+LOW        alice.key                   compromise = attacker acts as alice only
+```
+
+### Where Each Key Should Live
+
+| Key | Dev | Production |
+|---|---|---|
+| root_ca.key | Disk | HSM → server OFF → locked away |
+| org_ca.key | Disk | HSM (mandatory for regulated) |
+| tls_ca.key | Disk | HSM |
+| peer.key (ECert) | Disk | HSM |
+| peer.key (TLS) | Disk | Disk only (HSM not supported for TLS) |
+| orderer.key (ECert) | Disk | HSM |
+| orderer.key (TLS) | Disk | Disk only (HSM not supported for TLS) |
+| admin.key | Disk | Vault or HSM |
+| backend.key | Disk | K8s Secret minimum; Vault preferred |
+| alice.key (Pattern 1) | Disk | Vault or HSM mandatory |
+
+### Key Lifecycle
+
+```
+BIRTH
+  CA keys    → generated inside CA server at first start (or in HSM)
+  Node keys  → generated by node during enrollment (or in HSM)
+  User keys  → generated by SDK during enrollment (or in HSM)
+
+IN USE
+  CA keys    → called every time a cert is signed (enrollment event)
+  Node keys  → called every transaction / block / TLS handshake
+  User keys  → called every transaction submission
+
+RENEWAL
+  CA certs   → every 10 years (re-enroll intermediate from root)
+  Node certs → every 1 year (fabric-ca-client reenroll)
+  User certs → every 1 year (fabric-ca-client reenroll)
+
+DEATH (revocation)
+  Admin revokes → CA marks revoked in DB
+  CRL generated → manually distributed to all peers (msp/crls/)
+  Peers reject  → any tx signed by revoked cert
+  (see Certificate Operations for TLS revocation limitations)
+```
 
 ---
 
