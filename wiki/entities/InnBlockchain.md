@@ -70,9 +70,11 @@ Crypto-native startup (licensed or not) → [[InnBlockchain Crypto Native ICP]].
 
 ## Geography — 5-Project EU Gate
 
-All four ICPs share a **primary: EU Continental** focus and a **5-project gate** before activating any other geography. Until 5 EU projects close, do not invest outbound in UK, UAE, US, Singapore, MENA, or SEA. MiCA (in force) is the dominant compliance framing for EU outbound.
+**Crypto Native, FinTech, and Channel Partner ICPs** share a **primary: EU Continental** focus and a **5-project gate** before activating any other geography. Until 5 EU projects close, do not invest outbound in UK, UAE, US, Singapore, MENA, or SEA. MiCA (in force) is the dominant compliance framing for EU outbound.
 
-Watch geographies (post-gate): UK (FCA — distinct post-Brexit), MENA (ADGM/VARA/DFSA), US (FinCEN/SEC), Singapore (MAS).
+**[[InnBlockchain Crypto Products ICP]] is exempt from the EU gate** — clone script buyers are accepted from any geography. No geo restriction applies to that ICP.
+
+Watch geographies (post-gate, for the other three ICPs): UK (FCA — distinct post-Brexit), MENA (ADGM/VARA/DFSA), US (FinCEN/SEC), Singapore (MAS).
 
 ## Vertical Scope — Crypto Native
 

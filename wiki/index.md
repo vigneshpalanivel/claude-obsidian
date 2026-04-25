@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-24 | Total pages: 171 | Sources ingested: 55
+Last updated: 2026-04-25 | Total pages: 180 | Sources ingested: 58
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -55,6 +55,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Blockchain-Pharmaceutical-Supply-Chain]] — blockchain applied to pharma supply chain: anti-counterfeit, DSCSA compliance, cold chain, traceability; market CAGR 21% (status: current)
 - [[Blockchain-Fintech-Solutions]] — 7 core use cases (payments, tokenization, KYC, trade finance, etc.); platform comparison (Fabric/Corda/Besu); $8.35B market growing 44.4% CAGR (status: current)
 - [[Asset-Tokenization-RWA]] — $33.84B RWA market (2025); 800% growth since 2023; BlackRock, Franklin Templeton, JPMorgan; McKinsey $2T by 2030 (status: current)
+- [[RWA-Tokenization-Technical]] — 7-step technical process (SPV → smart contract → oracle → custody); component table; problem/solution map; InnBlockchain scope (status: current)
+- [[ERC-1400]] — security token standard; 4 sub-standards (ERC-1594/1410/1643/1644); partitions, canTransfer(), document anchoring, forced transfers; $80K-$400K build (status: current)
+- [[ERC-3643]] — T-REX standard; ONCHAINID differentiator; modular compliance modules; EU/MiFID II/GDPR fit; $100K-$500K build (status: current)
+- [[Car-RWA-Tokenization]] — car fleet as RWA; SPV + on-chain binding; ERC-4626 Smart Treasury; 3-layer revenue verification (crypto/oracle/IoT); DAO governance; $120K-$250K build (status: current)
 - [[Stablecoin-Cross-Border-Payments]] — stablecoin sandwich pattern; $305B supply; 0.5–2% vs 3–8% traditional; GENIUS Act 2025 (status: current)
 - [[Smart-Contracts-Finance]] — parametric insurance (Lemonade); DeFi lending (Aave/Compound); AI-adaptive contracts; oracle risk (status: current)
 - [[CBDC-Central-Bank-Digital-Currency]] — 137 countries exploring; e-CNY (2.25B wallets); e-rupee +334% YoY; US rejected CBDCs (Trump EO) (status: current)
@@ -101,6 +105,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Copy Trading]] — exchange feature mirroring lead-trader trades; structurally speculation not income; 70-85% of retail futures copy traders lose; incentive stack favors exchange + lead over copier (status: developing)
 - [[Indian IT AI Transformation Strategy]] — how TCS, Infosys, HCLTech, Cognizant, Accenture are pivoting post-vibe-coding; shared five-move playbook; headcount shrinking, revenue per employee rising (status: current)
 - [[AI Services Business Model]] — outcome-based vs T&M pricing; platform + services hybrid; retainer models; key metrics for AI boutiques (status: current)
+- [[Trioangle Growth Plan]] — recurring revenue architecture; 4-tier retainer system (₹8K–1L); hosting margin play; 30-day sprint to ₹5L MRR; AMC failure analysis; project-to-retainer conversion (status: current)
+- [[Trioangle-Sales-Operations]] — CEO-level weak points (6), Ansoff growth framework, 90+ sales initiatives organized by function, 14 OKR KPIs; synthesizes culture/process/product gaps (status: current)
+- [[SEO-Recovery-Strategy-2025-26]] — GEO/AIO era playbook; info keywords → BoFU shift; E-E-A-T; AI crawler allowlist; CITE score framework (target 80); new metrics (AI citation rate, LLM referral traffic) (status: current)
 
 ---
 
@@ -188,6 +195,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Cognizant-Enterprise-AI-2026]] — 2026-04-24 | web research | New Work New World 2026 research; Skillspring platform; context engineering emphasis
 - [[Accenture-AI-Bold-Bets-2026]] — 2026-04-24 | web research | $2.7B LTM AI revenue; Faculty $1B acquisition; 550K reinventors; AI Refinery + GenWizard
 - [[Indian-IT-AI-Disruption-Structural-Shift-2026]] — 2026-04-24 | web research | macro threat analysis; 9-12% revenue at risk; 57,891 headcount shed; T&M to outcome shift; vibe coding threat
+- [[RWA-Tokenization-Explainers]] — 2026-04-25 | internal .raw/ docs | 4 files ingested; ERC-1400, ERC-3643, RWA process, Car RWA system design; 4 concept pages created
+- [[Trioangle-Sales-Internal-Docs]] — 2026-04-25 | internal .raw/ docs | 3 files ingested; weak points, initiatives, KPIs; 1 concept page created
+- [[seo-recovery-strategy-map]] — 2026-04-25 | internal SVG strategy map | GEO/AIO SEO recovery playbook; 1 concept page created
 
 ---
 
