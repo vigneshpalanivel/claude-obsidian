@@ -28,7 +28,12 @@ Target crypto-born companies and protocols that need to ship secure, audit-ready
 
 > For crypto-native companies and protocols who need to ship secure, audit-ready on-chain products — InnBlockchain provides embedded Web3 engineering and smart contract security that bigger audit firms are too slow and too generic to deliver.
 
-Two distinct motions: **Security Audit** (pre-mainnet review) and **Development/Engineering** (build or extend). Mixing both in one outreach creates confusion — lead with one.
+Three distinct motions:
+1. **Security Audit** — pre-mainnet review.
+2. **Development/Engineering** — custom build or extend.
+3. **White-Label Productized Platform** (cross-segment, SEO-driven inbound) — productized, screenshot-able build of an entire vertical app (RWA, DEX, DeFi lending, MPC wallet, NFT marketplace, IDO launchpad) including smart contracts AND full UI/UX. One-time productized delivery, buyer owns the codebase outright (not SaaS). $30k–$100k, 6–12 weeks. **Hard gate: ≥1 reference build per vertical (internal MVP or delivered client deployment) with shippable screenshots before publishing the landing page.** See [[#White-Label Productized Platform]] section below.
+
+Mixing motions in a single outreach creates confusion — lead with one.
 
 ## Firmographics
 
@@ -92,6 +97,35 @@ Numeric order = priority. **Segment 1 (RWA) is the highest-priority outbound tar
 6. NFT platforms
 
 Segments 7–10 are watch / future quarter. **Exception:** Segment 10 (AI x Crypto) has a **split status** — the AI-coded contract audit overlay is Active immediately and can be layered onto any Segment 1–9 deal where the team used AI coding tools; only standalone AI x crypto protocol outbound remains Watch.
+
+## White-Label Productized Platform (Motion 3 — cross-segment)
+
+SEO-driven inbound motion across all 6 active verticals (RWA, DEX, DeFi lending, MPC wallet, NFT, IDO/token launch). Buyers searching "white-label [vertical]" want a productized, screenshot-able platform — not custom Solidity hours. Top-ranking landing pages in every vertical lead with productized white-label; pure custom-services pages don't capture this search demand.
+
+**End-to-end delivery (no Trioangle dependency):** smart contracts + audit + full UI/UX layer + admin/dashboard/portal as one productized engagement.
+
+**Per-vertical bundle:**
+- **RWA (Seg 1):** ERC-3643/fractional contracts + oracle wiring; issuer dashboard, investor portal, KYC/AML flow, admin panel
+- **DEX (Seg 2):** AMM/order book/oracle contracts; trading UI, wallet connect, listing/admin console
+- **DeFi (Seg 3):** lending/yield/vault/liquidation contracts; lender + borrower dashboard, position manager
+- **Wallets (Seg 4):** MPC + multi-chain contracts; mobile + web wallet UI, send/receive/swap, transaction history
+- **NFT (Seg 5):** ERC-721/1155 + sale + royalty contracts; marketplace storefront, creator dashboard, mint UI
+- **Token Launch (Seg 6):** vesting + sale + whitelist + airdrop contracts; sale UI, whitelist management, vesting dashboard
+
+**ACV / Cycle:** $30k–$100k, 6–12 weeks. Sits between [[InnBlockchain Crypto Products ICP]] clone scripts ($5k–$20k) and Motion 2 custom build ($40k–$200k+). Custom build remains the upsell when template scope is exceeded.
+
+**Differentiator vs. SaaS (Tokeny, Securitize, OpenSea Pro, 0x SaaS, Fireblocks):** one-time productized delivery + full code ownership at exit (smart contracts AND UI codebase) vs. SaaS lock-in + recurring fees. *"They license you their platform. We hand you yours — code, contracts, UI — and walk away."*
+
+**Reference build prerequisite (HARD GATE):** do not publish a vertical's landing page until ≥1 reference build exists with shippable screenshots. Acceptable sources: (a) InnBlockchain-built internal MVP branded as a generic demo, or (b) a delivered client deployment with screenshot rights or anonymised UI. Mockups and AI-generated UI fail evaluator scrutiny.
+
+**Routing:**
+- Sub-$30k crypto-native productized inquiries → [[InnBlockchain Crypto Products ICP]] clone scripts
+- White-label inquiries above $30k for any of the 6 active verticals → this motion
+- Existing regulated FinTech asking for white-label → [[InnBlockchain FinTech ICP]] equivalent motion (compliance-grade documentation is the differentiator there)
+
+**SEO content priority:** one landing page per vertical with the buyer search term as primary keyword and real reference build screenshots above the fold; "white-label vs. SaaS" comparison content per vertical; "how [vertical] white-label works" explainer.
+
+**Validation:** identify 1–2 verticals with deployable reference builds within 60 days by 2026-06-30 (Marketing + Sales); track white-label inbound attribution separately; confirm conversion rate vs. outbound custom-build by 2026-09-30. EU 5-project geography gate still applies even for inbound.
 
 ## Routing
 

@@ -19,6 +19,30 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-04-28] reingest | InnBlockchain ICPs (Crypto Native + FinTech) — White-Label Productized Platform motion added
+- Sources: `.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md`, `.raw/InnBlockchain/ICP/InnBlockchain - ICP - FinTech.md`
+- Pages updated: [[InnBlockchain Crypto Native ICP]], [[InnBlockchain FinTech ICP]], [[ICP-InnBlockchain-Crypto-Native]], [[ICP-InnBlockchain-FinTech]]
+- Trigger: SEO analysis showed top-ranking RWA / DEX / wallet / NFT / IDO landing pages all lead with "white-label [vertical]" productized offerings + product screenshots. Pure custom-services pages don't capture this search demand. User explicitly requested adding white-label across all verticals in both ICPs.
+- Crypto Native additions:
+  1. Service Distinction expanded from two motions to three; Motion 3 = White-Label Productized Platform (cross-segment, SEO-driven).
+  2. New cross-segment section — per-vertical bundle table covering smart contract layer + productized UI layer + primary SEO search term per vertical for the 6 active segments (RWA / DEX / DeFi / wallet / NFT / IDO). $30k–$100k ACV, 6–12 week delivery.
+  3. Productized services framing — buyer owns smart contract code AND UI codebase outright at delivery; differentiator vs. Tokeny / Securitize / OpenSea Pro / 0x SaaS / Fireblocks (SaaS lock-in).
+  4. Reference build hard gate — do not publish a vertical's landing page without ≥1 reference build (internal MVP or delivered client deployment with screenshot rights). Mockups fail evaluator scrutiny.
+  5. Routing rules — sub-$30k crypto-native productized inquiries → [[InnBlockchain Crypto Products ICP]] clone scripts; regulated FinTech inquiries → FinTech ICP equivalent.
+  6. Motion 4 competitor table — SaaS platforms / low-end script vendors / generalist agencies / in-house assembly.
+  7. Validation plan — identify 1–2 deployable verticals by 2026-06-30; track white-label inbound attribution separately; confirm conversion vs custom-build outbound by 2026-09-30. EU 5-project geography gate still applies for inbound.
+- FinTech additions:
+  1. New cross-segment section — per-vertical bundle table for WealthTech / ExchangeTech / LendTech / WalletTech / PayTech / RegTech. $50k–$200k ACV, 8–14 week delivery (richer than Crypto Native white-label due to compliance integration).
+  2. Compliance differentiator — smart contracts ship pre-integrated with KYC / AML / jurisdiction filters / regulator reporting; vendor risk pack ships Day 1 (ISO/SOC 2, ownership disclosure, data residency, sample audit, regulator reference); audit reports structured for regulator + board consumption.
+  3. Reference build hard gate (stricter than Crypto Native) — landing page requires real screenshots AND downloadable Carol-grade compliance documentation. Mockups in regulated FinTech are harder to recover from than crypto-native because failure surfaces during formal vendor risk assessment.
+  4. Routing rules — crypto-native asking for white-label even if licensed → Crypto Native ICP; existing regulated FinTech asking for productized platform → this motion; sub-$50k FinTech → not white-label fit (scope smaller as feature build or park).
+  5. New competitor row — White-Label Tokenization / Custody SaaS (Securitize, Tokeny, Fireblocks, SettleMint, Kaleido, Hashflow, 0x SaaS) added to Competitive Positioning. Reframe one-liner: *"They license you their platform — you keep paying forever. We build yours, you own it, and we walk away."* Five-year TCO comparison usually closes.
+  6. Validation plan — identify 1–2 verticals with deployable reference builds + Carol-grade docs by 2026-06-30; EU 5-project geography gate AND licensed/applied-for-license routing rule both still apply for inbound.
+- Design choice (user instruction): InnBlockchain delivers end-to-end. No Trioangle bundle/co-sell framing — this is one InnBlockchain product, not a group offering. Reference builds can be internal MVPs or delivered client deployments.
+- Open question for next iteration: which 1–2 verticals are closest to a deployable reference build today? RWA Tokenization is the most likely candidate because it's already the highest-priority outbound segment in both ICPs.
+
+---
+
 ## [2026-04-24] autoresearch | New Strategies of Indian IT Companies (TCS, Infosys, HCLTech, Cognizant, Accenture) After AI Vibe Coding
 - Rounds: 3
 - Searches: 7 web searches + 5 page fetches

@@ -83,6 +83,33 @@ Existing regulated e-money/payment companies adding crypto wallet features. Not 
 
 **Watch segments:** PayTech (Seg 5), RegTech (Seg 6), BankTech Corporate Treasury (Seg 7 — **blocked on CFO persona definition**), InsurTech (Seg 8).
 
+## White-Label Productized Platform (Cross-Segment, SEO-Driven Inbound)
+
+SEO-driven inbound across all regulated FinTech verticals. Buyers searching "white-label tokenization platform for asset managers," "white-label MiCA-compliant CEX," "white-label crypto wallet for licensed e-money," "white-label digital lending platform with blockchain rails," "white-label crypto custody" want a productized, screenshot-able, **regulator-grade** platform — not consulting hours. End-to-end delivery: smart contracts + audit + compliance integration + full UI/UX layer + vendor risk pack ready for Carol Day 1.
+
+**Per-vertical bundle:**
+- **WealthTech / RWA (Seg 1):** STO contracts + MiCA/MiFID II compliance hooks + AI valuation hooks; issuer dashboard, investor portal, KYC/AML, regulator reporting view
+- **ExchangeTech (Seg 2):** matching engine / AMM contracts + travel rule + Chainalysis hooks + on-chain AML; trading UI, KYC flow, treasury / admin console, regulator reporting
+- **LendTech (Seg 3):** automated origination / underwriting / loan-book contracts + credit assessment hooks; lender + borrower dashboard, credit-decision flow, admin
+- **WalletTech (Seg 4):** custody + multi-chain + stablecoin settlement contracts + e-money license hooks; e-money wallet UI, send/receive/swap, KYC/AML flow
+- **PayTech (Seg 5 — Watch):** stablecoin rail contracts + on-chain settlement; payment UI, treasury console, FX dashboard
+- **RegTech / KYC (Seg 6 — Watch):** DID / on-chain credentials + automated MiCA/AML compliance; KYC dashboard, compliance reporting view, audit trail
+
+**Compliance differentiator (vs. Crypto Native white-label):** smart contracts ship pre-integrated with KYC/AML/jurisdiction filters/regulator reporting; vendor risk pack ships Day 1 (ISO/SOC 2, ownership disclosure, data residency, sample audit, regulator reference); audit reports structured for regulator + board consumption.
+
+**ACV / Cycle:** $50k–$200k, 8–14 weeks (richer than Crypto Native white-label due to compliance integration and Carol-grade documentation).
+
+**Differentiator vs. SaaS competitors (Securitize, Tokeny, Fireblocks, SettleMint, Kaleido):** one-time productized delivery + full code ownership at exit (smart contracts AND UI codebase) vs. SaaS lock-in + recurring fees. *"They license you their platform — you keep paying forever. We build yours, you own it, and we walk away."* Five-year TCO comparison usually closes the conversation.
+
+**Reference build prerequisite (HARD GATE):** do not publish a vertical's landing page until ≥1 reference build exists with shippable screenshots **AND** a compliance documentation pack ready to download. Acceptable sources: (a) InnBlockchain-built internal MVP branded as a generic compliance-grade demo, or (b) a delivered client deployment with screenshot rights or anonymised UI. Mockups fail Carol-grade scrutiny — and in regulated FinTech, that failure is harder to recover from than in crypto-native because it surfaces during formal vendor risk assessment.
+
+**Routing:**
+- Crypto-native startup asking for white-label, even if licensed → [[InnBlockchain Crypto Native ICP]] equivalent motion (compliance documentation is over-scoped for them)
+- Existing regulated FinTech asking for productized RWA / CEX / lending / wallet → this motion
+- Sub-$50k regulated FinTech inquiries → not white-label fit; scope smaller as single-feature custom build or park
+
+**Validation:** identify 1–2 verticals with deployable reference builds + Carol-grade documentation by 2026-06-30 (Marketing + Sales); track white-label inbound attribution separately; confirm conversion rate vs. outbound custom-build by 2026-09-30. EU 5-project geography gate AND licensed/license-applied routing rule both still apply for inbound.
+
 ## Objection Handling Highlights
 
 - **"Your rates are too high"** → anchor to 18-month internal hire + delay cost. PayTech: quantify 1.5% × annual transaction volume.

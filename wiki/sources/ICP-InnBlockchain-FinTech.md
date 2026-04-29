@@ -17,9 +17,11 @@ key_claims:
   - "WalletTech covers regulated e-money companies; crypto-native self-custody and MPC wallets are Crypto Native"
   - "AI adoption + EU AI Act creates blockchain-alongside-AI opportunity (tamper-proof audit trail for high-risk AI)"
   - "Procurement tier dictates pipeline timing: <$75k CEO/CTO discretionary (1-2wk), $75k+ CFO (+4-6wk), board visibility (custom)"
+  - "White-Label Productized Platform is a cross-segment SEO-driven inbound motion: $50k–$200k, 8–14 weeks, end-to-end (contracts + audit + compliance + UI/UX) with vendor risk pack ready Day 1. Differentiates from BaaS/SaaS (Fireblocks, SettleMint, Securitize, Tokeny) on code ownership at exit"
 created: 2026-04-15
 updated: 2026-04-15
 reingested: 2026-04-15
+reingest_reason: "added cross-segment White-Label Productized Platform SEO-driven inbound motion across all FinTech verticals (WealthTech RWA, ExchangeTech, LendTech, WalletTech, PayTech, RegTech) with per-vertical bundle, $50k–$200k ACV / 8–14 week cycle, regulator-grade compliance differentiator (KYC/AML/jurisdiction filters/regulator reporting pre-integrated, vendor risk pack Day 1), reference build hard gate (internal MVP or delivered client deployment), routing rules, white-label SaaS competitor row + reframe one-liner"
 tags:
   - source
   - icp

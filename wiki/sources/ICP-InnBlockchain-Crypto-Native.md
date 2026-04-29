@@ -13,14 +13,14 @@ key_claims:
   - "EU Continental only until 5-project gate met before any other geography activated"
   - "Budget floor: $20k+ hard gate for Segments 2-6 and 8-10; $30k+ for Segment 1 (RWA) to match segment ACV target. $2M+ raised is a DeFi-side signal only, not a universal gate"
   - "API-first backend live is the strongest predictor of fast velocity (mirrors FinTech Tier 0)"
-  - "Two distinct motions: Security Audit (pre-mainnet review) vs Development/Engineering (build from scratch); mixing in one outreach creates confusion"
+  - "Three distinct motions: (1) Security Audit (pre-mainnet review), (2) Development/Engineering (custom build), (3) White-Label Productized Platform (cross-segment, SEO-driven inbound — productized smart contracts + UI for RWA/DEX/DeFi/wallet/NFT/IDO; $30k–$100k, 6–12 weeks; buyer owns code outright). Mixing motions creates confusion — lead with one"
   - "AI-generated smart contract code risk is rising pain point 5 - Cursor/Copilot miss reentrancy, access control, integer math; positioning: human audit layer"
   - "Three personas: Founding Felix (CTO - DeFi vs RWA profile), Product Paulo (Head of Eng), Security Sasha (Security Lead at $10M+ raised)"
   - "Budget type qualifier matters: founder multisig (1-3 days) vs DAO vote (+2-4 weeks) vs token-denominated (confirm stablecoin liquidity)"
 created: 2026-04-15
 updated: 2026-04-15
 reingested: 2026-04-15
-reingest_reason: "review-driven fixes: budget floor split ($30k+ RWA vs $20k+ other segments), Segment 10 split status (AI-code audit overlay Active, standalone Watch), discovery-call validation pushed to 2026-05-31 with Phase 1 dependency, Segment 1 priority callout, Sasha AI counter-objection row, $10M Sasha threshold validation owner"
+reingest_reason: "review-driven fixes (round 1): budget floor split, Segment 10 split status, discovery-call validation pushed, Segment 1 priority callout, Sasha AI counter-objection, $10M Sasha threshold validation. Round 2: added Motion 3 White-Label Productized Platform as cross-segment SEO-driven inbound motion across all 6 active verticals (RWA/DEX/DeFi/wallet/NFT/IDO) with per-vertical bundle, $30k–$100k ACV / 6–12 week cycle, productized services framing (buyer owns contracts AND UI codebase outright; one-time delivery, not SaaS), reference build hard gate, routing rules (sub-$30k → Crypto Products clone scripts, regulated FinTech → FinTech ICP equivalent), Motion 4 white-label competitor table"
 tags:
   - source
   - icp
@@ -54,6 +54,7 @@ Internal ICP document for InnBlockchain's crypto-native segment. See [[InnBlockc
 - **Two motions, don't mix them** — Security Audit vs. Dev/Engineering have different buyers, ACVs, and cycles.
 - **AI-code audit is a content + sales motion opportunity** — "what AI coding tools get wrong in Solidity" is high-value, high-search content as adoption grows. Segment 10 has a **split status**: the AI-coded contract audit overlay is Active immediately (layer onto any Segment 1–9 deal), while standalone AI x crypto protocol outbound remains Watch.
 - **Security Sasha will counter the AI-code pitch** with "how do I know your findings aren't AI-generated?" — prepared response: methodology transparency, human sign-off on every finding, offer a live walkthrough with the lead auditor.
+- **White-Label Productized Platform (Motion 3, NEW)** — SEO-driven inbound motion across all 6 active verticals. Buyers searching "white-label DEX / RWA / wallet / NFT / IDO / DeFi" want productized, screenshot-able platforms. End-to-end delivery: contracts + audit + full UI/UX. $30k–$100k / 6–12 weeks. Buyer owns code outright; differentiates from SaaS (Tokeny/Securitize/Fireblocks/0x/OpenSea Pro). **Hard gate:** ≥1 reference build per vertical (internal MVP or delivered client) with shippable screenshots before publishing the landing page.
 - **Top-firm queue delay (Trail of Bits, OpenZeppelin, Zellic) is 6–12 weeks** — InnBlockchain's reframe is "we can start next week, many protocols use us in parallel."
 
 ## Segments (Active)

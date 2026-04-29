@@ -70,10 +70,10 @@
       ]
     },
     ".raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md": {
-      "hash": "7d1542eadee640b2b7d13221a6602e5f",
+      "hash": "632c69007637e2e2d76a1c4bc8dee403",
       "ingested_at": "2026-04-15",
-      "reingested_at": "2026-04-15",
-      "reingest_reason": "review-driven fixes: budget floor split ($30k+ RWA vs $20k+ other segments; $2M+ reframed as DeFi signal only), validation discovery calls pushed to 2026-05-31 with Phase 1 dependency, Segment 10 split status (AI-code audit overlay Active, standalone Watch), Segment 1 ACV floor raised to $30k+, Segment priority callout (RWA #1), Sasha AI counter-objection row, $10M Sasha threshold validation owner",
+      "reingested_at": "2026-04-28",
+      "reingest_reason": "added cross-segment Motion 3 White-Label Productized Platform (SEO-driven inbound across all 6 active verticals: RWA/DEX/DeFi/wallet/NFT/IDO). End-to-end delivery (smart contracts + audit + full UI/UX layer); buyer owns code outright (not SaaS). $30k–$100k ACV / 6–12 weeks. Per-vertical bundle table with primary SEO search terms. Hard gate: ≥1 reference build (internal MVP or delivered client deployment) per vertical. Routing: sub-$30k crypto-native → Crypto Products clone scripts; regulated FinTech → FinTech ICP equivalent. Motion 4 competitor table. Service Distinction expanded to three motions. Prior round 1 fixes preserved (budget floor split, Sasha AI counter-objection, Segment 1 priority callout, etc.).",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-Crypto-Native.md",
         "wiki/concepts/InnBlockchain Crypto Native ICP.md"
@@ -146,10 +146,10 @@
       ]
     },
     ".raw/InnBlockchain/ICP/InnBlockchain - ICP - FinTech.md": {
-      "hash": "86340bd89c7b926c207ff9e9828b7255",
+      "hash": "1115894b305aa1cdd4b805048deb0f25",
       "ingested_at": "2026-04-15",
-      "reingested_at": "2026-04-15",
-      "reingest_reason": "review-driven fixes: segment reorder (WealthTech now Seg 1 / ExchangeTech Seg 2 \u2014 doc order matches priority), API-first Tier 0 contradiction resolved, unused maturity tiers deleted, persona age ranges removed, Segment 7 blocked on CFO persona, anti-ICP dedup, interview Q17 reframed as indirect budget question, AI content tagged unvalidated pending 2026-05-31",
+      "reingested_at": "2026-04-28",
+      "reingest_reason": "added cross-segment White-Label Productized Platform (SEO-driven inbound across all FinTech verticals: WealthTech RWA/ExchangeTech/LendTech/WalletTech/PayTech/RegTech). End-to-end delivery with regulator-grade compliance integration (KYC/AML/jurisdiction filters/regulator reporting pre-integrated, vendor risk pack Day 1, audit reports structured for regulator+board). $50k\u2013$200k ACV / 8\u201314 weeks (richer than Crypto Native white-label). Per-vertical bundle table with primary SEO search terms. Hard gate (stricter): \u22651 reference build with shippable screenshots AND Carol-grade compliance documentation pack downloadable. Routing: crypto-native asking for white-label \u2192 Crypto Native ICP; regulated FinTech \u2192 this motion; sub-$50k \u2192 not white-label fit. New SaaS competitor row (Securitize/Tokeny/Fireblocks/SettleMint/Kaleido/Hashflow/0x SaaS) with code-ownership-at-exit reframe. Prior round 1 fixes preserved (segment reorder, API-first Tier 0, etc.).",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-FinTech.md",
         "wiki/concepts/InnBlockchain FinTech ICP.md"
@@ -158,7 +158,8 @@
         "wiki/sources/ICP-InnBlockchain-FinTech.md",
         "wiki/concepts/InnBlockchain FinTech ICP.md",
         "wiki/hot.md",
-        "wiki/log.md"
+        "wiki/log.md",
+        "wiki/index.md"
       ]
     }
   }
