@@ -40,10 +40,14 @@
       ]
     },
     ".raw/Trioangle/ICP/Trioangle - ICP - Channel Partner.md": {
-      "hash": "d54d34903ba88c8118c1bc096cc9792c",
+      "hash": "41a5096bb45b38f0e10c4309a09ef40f",
       "ingested_at": "2026-04-15",
-      "reingested_at": "2026-04-15",
-      "reingest_reason": "consistency review vs. Product + Service ICPs: MENA range corrected to $30k-$120k+, Segment Access softened from 'unreachable' to 'slow/trust-gated', AI-Forward Platform Operator (Service Persona 5) added to P3 routing, P1 Clone Script primary exception noted, budget floor split by delivery mode, InnBlockchain wikilink fixed, Discovery Sprint pricing hoisted into exec summary",
+      "reingested_at": "2026-04-30",
+      "reingest_history": [
+        {"date": "2026-04-15", "reason": "consistency review vs. Product + Service ICPs: MENA range corrected to $30k-$120k+, Segment Access softened from 'unreachable' to 'slow/trust-gated', AI-Forward Platform Operator (Service Persona 5) added to P3 routing, P1 Clone Script primary exception noted, budget floor split by delivery mode, InnBlockchain wikilink fixed, Discovery Sprint pricing hoisted into exec summary"},
+        {"date": "2026-04-30", "reason": "Pass 3 — alignment with Trioangle 2.0 AI Pivot Plan and Trioangle Growth Plan. (1) Three service lines (AI Engineering primary post-pivot, Custom Dev, Clone Script). (2) Two scoping sprints: AI Audit Sprint vs Discovery Sprint. (3) AI-Forward Platform Operator range corrected $15k-$60k to $15k-$120k+ in P3 and added to P2 routing. (4) AI Builders Who Hit the Wall (Product Persona 6) added to P1 routing. (5) Retainer language stripped — Trioangle is project/deliverable-based ONLY, signed-volume tiers replace retainer language. (6) 800+/150+ countries cumulative-since-2015 guard callout added (current active base ~30). (7) Must-Have budget criteria adds AI Engineering floor ($15k+/package). (8) Technical Scope Uncertainty objection split into AI Audit vs Discovery Sprint table. (9) Quick Reference table in personas concept page now shows dominant brief types per persona."}
+      ],
+      "reingest_reason": "Pass 3 — AI pivot alignment (see reingest_history)",
       "pages_created": [
         "wiki/sources/ICP-Channel-Partner-Trioangle.md",
         "wiki/concepts/Trioangle Channel Partner Personas.md"

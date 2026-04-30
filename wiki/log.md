@@ -19,6 +19,25 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-04-30] reingest | Trioangle - ICP - Channel Partner.md (Pass 3 — AI pivot alignment)
+- Source: `.raw/Trioangle/ICP/Trioangle - ICP - Channel Partner.md` (hash → 41a5096bb45b38f0e10c4309a09ef40f)
+- Pages updated: [[ICP-Channel-Partner-Trioangle]] (key_claims, Delivery modes row, Qualifying budget row, Pricing model row, Two Scoping Sprints section, 800+ Stat Guard section, Pricing Model section, Validation Status), [[Trioangle Channel Partner Personas]] (intro post-pivot framing, Quick Reference table with dominant brief types, P1 Persona 6 routing, P2 AI-Forward routing, P3 AI-Forward range corrected to $15k-$120k+, Margin Model project-based note, Two Scoping Sprints section, 800+ Stat Guard section)
+- Trigger: full review against [[Trioangle 2.0 AI Pivot Plan]] and [[Trioangle Growth Plan]] revealed Channel Partner doc was strategically stale — pre-pivot framing of Trioangle as generic web/mobile dev shop with no AI specialist positioning, despite Growth Plan calling AI specialist work "the wedge that doesn't commoditize against vibe-coding."
+- Source edits applied (9 substantive changes):
+  1. Executive Summary pitch angle changed from "web and mobile app development partner" to "web, mobile, and AI engineering partner"
+  2. Three service lines added: 🤖 AI Engineering ($15k-$120k+, recurring 2-4×/year), ⚙️ Custom Dev ($10k-$120k+), 🛒 Clone Script ($500-$25k)
+  3. Two scoping sprints split: AI Audit Sprint (entry for AI-feature briefs) vs. Discovery Sprint (entry for greenfield/clone). Both $1.5k-$4k
+  4. AI-Forward Platform Operator (Service Persona 5) corrected from $15k-$60k to $15k-$120k+ in P3, and added to P2 routing
+  5. AI Builders Who Hit the Wall (Product Persona 6) added to P1 end-clients as highest-fit AI add-on conversion
+  6. Retainer language stripped from Margin Model objection — replaced with signed-volume preferred-partner pricing tiers. Trioangle is project/deliverable-based ONLY, no retainers/AMC/subscriptions per [[Trioangle Growth Plan]]
+  7. "800+ projects / 150+ countries" guard callout added — cumulative-since-2015, NOT active customer base (~30 active April 2026)
+  8. Must-Have qualifying criteria updated with AI Engineering budget floor ($15k+ per package)
+  9. Technical Scope Uncertainty objection split into AI Audit Sprint vs. Discovery Sprint table with routing logic
+- Unresolved (judgment calls flagged for user): new P4 — AI/Data Consultancy archetype; recurring-revenue success metric rewrite (2-4 projects/year per end-client cadence); validation date refresh post-pivot
+- Key insight: pre-pivot, the partner program pitched volume of generic dev capacity. Post-pivot, the wedge is AI specialist work that vibe-coding tools can't commoditize. The partner program needed structural reframing, not just persona tweaks. Three service lines, two scoping sprints, no retainers.
+
+---
+
 ## [2026-04-28] reingest | InnBlockchain ICPs (Crypto Native + FinTech) — White-Label Productized Platform motion added
 - Sources: `.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md`, `.raw/InnBlockchain/ICP/InnBlockchain - ICP - FinTech.md`
 - Pages updated: [[InnBlockchain Crypto Native ICP]], [[InnBlockchain FinTech ICP]], [[ICP-InnBlockchain-Crypto-Native]], [[ICP-InnBlockchain-FinTech]]

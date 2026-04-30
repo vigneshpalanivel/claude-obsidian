@@ -106,6 +106,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Indian IT AI Transformation Strategy]] — how TCS, Infosys, HCLTech, Cognizant, Accenture are pivoting post-vibe-coding; shared five-move playbook; headcount shrinking, revenue per employee rising (status: current)
 - [[AI Services Business Model]] — outcome-based vs T&M pricing; platform + services hybrid; retainer models; key metrics for AI boutiques (status: current)
 - [[Trioangle Growth Plan]] — recurring revenue architecture; 4-tier retainer system (₹8K–1L); hosting margin play; 30-day sprint to ₹5L MRR; AMC failure analysis; project-to-retainer conversion (status: current)
+- [[Trioangle AI Delivery Kit]] — internal toolkit (Phase 2 deliverable of AI Pivot Plan); pre-configured RAG + agent templates + observability + integrations + handover scripts; cuts repeat-package delivery 2 weeks → 3–5 days (status: planned)
 - [[Trioangle-Sales-Operations]] — CEO-level weak points (6), Ansoff growth framework, 90+ sales initiatives organized by function, 14 OKR KPIs; synthesizes culture/process/product gaps (status: current)
 - [[SEO-Recovery-Strategy-2025-26]] — GEO/AIO era playbook; info keywords → BoFU shift; E-E-A-T; AI crawler allowlist; CITE score framework (target 80); new metrics (AI citation rate, LLM referral traffic) (status: current)
 

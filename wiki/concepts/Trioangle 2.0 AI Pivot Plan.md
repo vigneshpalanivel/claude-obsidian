@@ -2,7 +2,7 @@
 type: concept
 title: "Trioangle 2.0 AI Pivot Plan"
 created: 2026-04-23
-updated: 2026-04-26
+updated: 2026-04-28
 tags:
   - concept
   - trioangle
@@ -17,63 +17,70 @@ related:
   - "[[Trioangle Product ICP]]"
   - "[[Trioangle Service ICP]]"
   - "[[Trioangle Channel Partner Personas]]"
+  - "[[Trioangle AI Delivery Kit]]"
   - "[[AI Engineering Learning Roadmap]]"
-  - "[[Outcome-Based Pricing]]"
   - "[[Indian IT AI Transformation Strategy]]"
   - "[[AI Services Business Model]]"
 ---
 
 # Trioangle 2.0 AI Pivot Plan
 
-Reposition Trioangle from a clone-script + custom-dev shop into an AI-powered services + reseller company. 18 months. Four phases.
+Reposition Trioangle from a clone-script + custom-dev shop into an **AI services provider for SMBs**. 18 months. Four phases.
+
+All pricing in USD.
+
+This plan covers AI capability building, productization, and project delivery. **Compounding/growth mechanisms (recurring revenue, repeat business) live in [[Trioangle Growth Plan]]** and apply across both the AI track and existing custom-dev work.
 
 ---
 
-## Two Business Lines — Keep Both, Grow One
+## Business Lines — Current State
 
-| | **Enterprise Custom Dev** | **SMB AI Services (this plan)** |
+Trioangle has three documented tracks. As of 2026-04-28:
+
+| Track | Status | Current Source |
 |---|---|---|
-| **Buyer** | Funded startups, enterprises | SMBs, platform operators, SaaS founders |
-| **Budget** | $10k–$120k+ | $500–$18k |
-| **Sales** | LinkedIn ABM, Clutch, RFP | WhatsApp + LinkedIn (geo-split) |
-| **Geography** | NA, EU, UAE/MENA | English-speaking global SMB (NA, UK, EU, MENA, SEA) |
-| **Cycle** | 3–6 months, project | 1–4 weeks, productized |
-| **Compounding?** | Low — resets per project | High — Workflow Sub + Outcome Deals + resellers |
+| **Clone-script products** ([[Trioangle Product ICP]]) | **Active** — running pipeline | Google Search, YouTube, AI Search, referrals |
+| **SMB AI Services** (this plan) | **Building** — Phase 0 starting now | Product ICP buyers post-launch (AI add-on pitch at delivery) |
+| **Enterprise Custom Dev** ([[Trioangle Service ICP]]) | **Documented, not activated** — future plan | No active outbound; Service ICP activation is its own initiative |
 
-Enterprise track maintained as cash base + credibility ("800+ deployments earned" — only ~30 currently active; 800 is historical). SMB AI is the new growth engine because it can compound.
+Trioangle's 800+ historical deployments since 2015 are a credibility asset, not a current pipeline.
+
+**This plan builds the SMB AI track on top of the active Product ICP channel.** Service ICP activation (Persona 5 enterprise AI buyers, etc.) is a separate future initiative — when Service ICP goes live, AI deals routed through it will use the same pricing and delivery model below, but this plan does not depend on that activation.
+
+Compounding/growth mechanisms apply across all three tracks — see [[Trioangle Growth Plan]].
 
 ---
 
-## Why Pivot
+## Why Pivot — Counter-Initiative to a Slowing AI-Augmented Dev Market
+
+The AI-augmented software development wave (Cursor, Lovable, Bolt, GitHub Copilot) is plateauing in 2026:
+- Buyers who tried vibe-coding their products are hitting production walls
+- *"We build software faster with AI"* is no longer differentiation — it's commodity
+- The next wave is AI-powered services *delivered into* SMB businesses (chatbots, RAG, automation, agents) — not faster software dev
+- Indian IT majors (TCS, Infosys, HCLTech) are pivoting hard to AI services for exactly the same reason — see [[Indian IT AI Transformation Strategy]]
 
 If Trioangle does nothing, the base case:
 - Clone-script revenue declines 20–35% over 18 months as vibe coding matures
 - Custom-dev margins compress 15–25% as AI commoditizes the work
-- Junior hiring becomes net-negative ROI
-- AI-native competitors absorb the high-margin segments
+- AI-native services competitors absorb the SMB AI demand
 
-The pivot isn't optional. It's a question of whether it's ahead of or behind the revenue decline curve.
-
----
-
-## Target Buyers
-
-**Direct (SMB AI track — this plan):**
-- **A — Solo Platform Founder** — existing clone-script operator, $500–$3,500, WhatsApp + Clutch
-- **C — Small Business Automator** — sub-50-employee business with offline ops needing automation, $600–$3,500, LinkedIn + chambers
-- **D — Mid-Market SaaS Founder** — $60k–$600k ARR, 1–2 devs, no AI expertise, $3,500–$18,000, LinkedIn ABM
-
-**Channel multiplier:**
-- **B — Small Agency Owner (Reseller)** — 5–15 person agency reselling white-labeled AI; 1 reseller = 3–10 deals. The primary compounding mechanism replacing SaaS.
-
-**Enterprise (existing track, maintained):**
-- **Service ICP Persona 5 — AI-Forward Platform Operator** ($15k–$60k) — direct AI-services buyer; relevant for Phase 0 Layer 3 outbound. Personas 1–4 (Scaling CTO, Founder-CTO, Enterprise, MENA) continue on existing custom-dev sales motion. See [[Trioangle Service ICP]] for full definitions.
-
-Vertical/industry segmentation lives in [[Trioangle Product ICP]] and [[Trioangle Service ICP]]. AI services here are vertical-agnostic — the buyer's vertical determines case study, not whether they qualify.
+This plan is the **counter-initiative**: position Trioangle on the AI-services side of the wave before the AI-augmented dev market commoditizes further.
 
 ---
 
-## Pricing (Output-Based, Fixed Scope)
+## Where Buyers Come From
+
+This plan does not define buyers — buyer ICPs live elsewhere. AI services in this plan are sold to:
+
+- **Buyers in [[Trioangle Product ICP]]** — *active channel.* Clone-script buyers post-launch convert to AI add-on customers. **This is the only currently-running source for Phase 0.** Persona 6 (AI Builder Who Hit the Wall) is the highest-fit AI add-on buyer at point of sale.
+- **Buyers in [[Trioangle Service ICP]]** — *future channel, not yet activated.* When Service ICP outbound goes live, Persona 5 (AI-Forward Platform Operator, $15k–$120k+ — single AI feature through mid-market multi-feature programs) will be the direct enterprise AI buyer. This plan does not depend on Service ICP activation; AI deals from there are bonus when they happen.
+- **Channel partner referrals** — see [[Trioangle Channel Partner Personas]]; partner program is separate, but AI leads it routes in convert through the same model below.
+
+AI **packages** are horizontal (Customer Support Bot, RAG, Search Upgrade, Voice AI, Moderation work in any vertical), but Trioangle's **delivery edge is deep vertical knowledge across 8 verticals from 800+ deployments since 2015** (Ride-Hailing, Delivery, Travel, Social, Multi-Service / Super App, On-Demand Home Services, Commerce, Education — see [[Trioangle Product ICP]] for full vertical breakdown). Buyers in those verticals get AI features informed by domain edge cases (ride-hail dispatch, marketplace commission flows, multi-vendor delivery, super-app service routing, content moderation at scale, etc.) — not a generic implementation a horizontal AI agency would have to learn on the customer's dime. That depth is the moat against both MNC enterprise pricing and net-new SMB AI agencies with no domain track record.
+
+---
+
+## Pricing (One-Time, Outcome-Based)
 
 | Service | Price | Delivery |
 |---|---|---|
@@ -82,108 +89,81 @@ Vertical/industry segmentation lives in [[Trioangle Product ICP]] and [[Trioangl
 | WhatsApp AI Automation | $500–$1,500 | 1–2 weeks |
 | AI Content Moderation | $1,200–$3,500 | 2–3 weeks |
 | AI Search Upgrade | $1,200–$3,000 | 2 weeks |
-| **AI Scoping Call** (lead magnet) | **$60–$180** | 1–2 days |
 
-Stripe checkout for packages under $1,200. **No retainers, no fractional CTO, no on-prem fine-tuning, no SaaS** — clients in 2026 perceive retainers as insurance, not value. Recurring revenue must be tied to a shipped output or measurable outcome.
+Every deal is **one-time, outcome-based** — fixed scope, fixed price, fixed delivery date based on the client's specific AI requirement. The deliverable is the working AI outcome (the bot, the RAG system, the automation), not hours or availability.
 
----
+**What this plan does NOT use:**
+- ❌ Monthly subscription (Workflow Subscription, AI Operations Plan, etc.)
+- ❌ Metric-based pricing (per-ticket, per-lead, per-action, % revenue lift)
+- ❌ Retainers, fractional CTO, on-prem fine-tuning
+- ❌ Training / workshop business
+- ❌ SaaS product line
 
-## Compounding Revenue (No Retainers)
+These were considered and dropped. Subscription and metric-based recurring add operational complexity (delivery cadence discipline, attribution disputes, churn management) that an SMB-focused agency cannot resource without diluting delivery quality. Training requires a separate brand and curriculum motion. The one-time-deal model keeps focus.
 
-### 1. AI Workflow Subscription (Primary recurring)
-$600–$900/month for **one AI workflow shipped per month** (chatbot tune, automation, prompt refinement, model upgrade, new use case).
-
-- **Symmetric cancel terms:** customer can cancel anytime month-end with no penalty; if Trioangle misses a month, that month auto-credits
-- Sold at AI project go-live
-- Target: 20–30 customers by M18 = $12k–$26k/month recurring
-
-### 2. AI Outcome Deals (Premium)
-Variable pricing tied to a metric — best fit for top-trust 5–10 customers/year:
-- $0.20–$0.30 per support ticket auto-resolved
-- $0.60–$2 per qualified lead delivered to CRM
-- $0.03–$0.06 per AI moderation action
-- % of revenue lift from AI search/personalization (case-by-case)
-
-### 3. Agency Reseller Program
-15–25 agency partners by M18; 30–40% margin on packages, 20% on subscription.
-
-### 4. Training Business
-$300–$1,200/seat workshops. Per-seat, no recurring commitment.
-
-**Combined target: 30–40% of revenue by M18.**
+How this revenue compounds (repeat business, cross-sell) is the [[Trioangle Growth Plan]]'s job, not this plan's.
 
 ---
 
 ## The Four Phases
 
 ```
-Phase 0 — Foundation       (M1–3)    Stabilize cash; quick wins
-Phase 1 — Capability       (M4–6)    AI delivery pod; productize; reseller pilot
+Phase 0 — Foundation       (M1–3)    Stabilize cash; first AI deals
+Phase 1 — Capability       (M4–6)    AI delivery pod; 3 productized services
 Phase 2 — Specialization   (M7–10)   Productize deeper; rebrand; sales engine
-Phase 3 — Compound         (M11–14)  Workflow Sub + Outcome Deals + resellers
-Phase 4 — Market Position  (M15–18)  Market authority; training; IP
+Phase 3 — Scale            (M11–14)  Scale capability; broaden package range
+Phase 4 — Market Position  (M15–18)  Market authority; IP moat
 ```
 
 ---
 
 ## Phase 0 — Foundation (M1–3)
 
-**Objective:** Don't break cash flow. Plant AI seeds via existing customer base.
+**Objective:** Don't break cash flow. Close first AI deals. Build delivery muscle.
 
-**Three layered pipelines (~30 active operators, not 800):**
+**Two sources of Phase 0 revenue (Product ICP only — Service ICP not yet activated):**
 
-| Layer | Source | Conversion | Contribution |
-|---|---|---|---|
-| 1 | ~30 active operators → AI add-ons + Workflow Sub | 30–40% take $900–$2,500; 4–6 convert to subscription | **$7k–$14k one-off + $2.4k–$4.8k/mo** |
-| 2 | ~150 dormant operators → AI relaunch pitch | 1–2% (1–3 deals @ $1,800–$5,000) | **$2.5k–$10k one-off** |
-| 3 | New buyers via Product/Service ICP channels (P6, P5) | 3–5 deals @ $1,200–$5,000 | **$5k–$18k one-off** |
+| Source | Approach | Realistic deal size |
+|---|---|---|
+| 1 | New buyers via the active **Product ICP channel** — at clone-script handover, pitch a fitting AI package directly. Persona 6 (AI Builder Who Hit the Wall) is the highest-fit add-on buyer at point of sale. | 3–5 deals @ $1,200–$5,000 |
+| 2 | Existing-customer outreach for AI add-ons (where customer health permits — see [[Trioangle Growth Plan]] for active-base reality) | Small number of deals @ $900–$2,500 |
 
-**Combined target: $14k–$42k signed in 30–45 days + $2.4k–$4.8k/mo Workflow Sub base.**
+**Combined target: $14k–$42k signed in 30–45 days.**
 
-**Contingency on active-customer audit:**
-- ≥25 active: targets hold
-- 15–24 active: raise Layer 3 proportionally
-- <15 active: push subscription milestone to end of Phase 1
+If Service ICP activates during Phase 0 (out of this plan's scope), enterprise AI deals (Service ICP Persona 5, $15k–$120k+) become a bonus third source — not budgeted into the target above.
 
 **Phase 0 milestones:**
-- [ ] Runway calculated; ~30 active-operator audit complete
-- [ ] $14k–$42k signed; $2.4k–$4.8k/mo Workflow Sub base (4–6 customers)
+- [ ] Runway calculated
+- [ ] $14k–$42k signed across 5–8 AI deals
 - [ ] 2–3 AI champions in training (Phase 3 of [[AI Engineering Learning Roadmap]])
 - [ ] Anthropic + OpenAI startup programs applied (free, 1 hour, credibility logo)
-- [ ] AI Scoping Call live at $60–$180
-- [ ] Langfuse free tier set up
-- [ ] Baseline CAC recorded
+- [ ] AI add-on pitch built into the clone-script handover process (Product ICP)
 
 ---
 
 ## Phase 1 — Capability (M4–6)
 
-**Objective:** Build AI delivery pod; productize; launch Reseller pilot.
+**Objective:** Build AI delivery pod; productize the first three services.
 
 **Team pods:**
 - Legacy 50–60% (existing dev + AI-ready upselling)
 - AI Integration 30–40% (productized delivery)
 - AI R&D 5–10% (templates + reusable components)
 
-**Head of Delivery hire by M6 (non-negotiable)** — owns delivery quality, Workflow Sub cadence, escalations. Frees founder for sales/strategy.
+**Head of Delivery hire by M6 (non-negotiable)** — owns delivery quality, on-time rate, escalations. Frees founder for sales/strategy.
 
-**Three productized services live with Stripe checkout:** AI Customer Support Bot, RAG Knowledge Assistant, WhatsApp AI Automation. Every package eligible for Workflow Sub at go-live.
+**Three productized services live with fixed pricing on the website:** AI Customer Support Bot, RAG Knowledge Assistant, WhatsApp AI Automation.
 
-**Reseller pilot:** 5 agency partners; 30–40% margin on packages, 20% on subscription; co-branded case study after 3 deals.
-
-**Sales motion (geo-split):**
+**Sales motion (geo-split, Product ICP buyers only):**
 - Priority markets (NA/UK/EU/MENA): email + scheduled Zoom; WhatsApp only if customer initiates
 - Secondary markets: WhatsApp-first
-- LinkedIn ABM for B, D across both
+
+LinkedIn ABM for enterprise AI buyers (Service ICP Persona 5) is deferred until Service ICP outbound activates.
 
 **Phase 1 milestones:**
-- [ ] 3 productized services with checkout
-- [ ] 5 reseller agencies signed; 3–8 reseller deals closed
-- [ ] 15+ AI projects delivered or in-flight
-- [ ] Head of Delivery hired
-- [ ] 10+ Workflow Sub customers ($6k–$8.5k/mo recurring)
-- [ ] First 1–2 Outcome Deals signed
-- [ ] CAC: <$180 direct; <$60 reseller-generated
+- [ ] 3 productized services live with fixed pricing on website
+- [ ] 15+ AI deals delivered or in-flight
+- [ ] On-time delivery rate >85%
 
 ---
 
@@ -191,60 +171,44 @@ Phase 4 — Market Position  (M15–18)  Market authority; training; IP
 
 **Objective:** Productize deeper; full sales engine live.
 
-**Add capabilities:** AI agents (LangGraph), Voice AI (Vapi/Retell, $1,800–$6,000), AI moderation, AI search upgrade.
+**Add capabilities:** AI agents, Voice AI ($1,800–$6,000), AI moderation, AI search upgrade. Tooling and framework choices are documented in [[Trioangle AI Delivery Kit]] and [[AI Engineering Learning Roadmap]].
 
-**Trioangle AI Delivery Kit (M8–9):** internal toolkit after 10–15 projects — pre-configured RAG + agent templates + observability + integrations + handover scripts. Cuts repeat-package delivery from 2 weeks to 3–5 days. Throughput per engineer goes up; you bill IP, not hours.
+**Trioangle AI Delivery Kit (M8–9):** internal toolkit named and documented after 10–15 projects. Cuts repeat-package delivery from 2 weeks to 3–5 days. Full scope, components, maturity curve, and risks in [[Trioangle AI Delivery Kit]].
 
-**Brand shift:** *"Productized AI for SMB operators — fixed scope, fixed price, fixed delivery date."* Hero outcome-focused, fixed pricing visible, 5 case studies (selected from highest-traction shipped projects), Scoping Call as primary CTA.
+**Brand shift:** *"Productized AI for marketplace, on-demand, and platform operators — built by the team that's shipped 800+ platforms in your vertical since 2015."* Hero outcome-focused, fixed pricing visible, package-specific demo/contact as primary CTA. Vertical depth is the headline; AI is the offering.
 
 **Phase 2 milestones:**
 - [ ] Brand + sales engine live
-- [ ] 5 case studies published
+- [ ] 5 case studies published — one per high-traction vertical from Product ICP (e.g., ride-hail dispatch AI, marketplace fraud detection, on-demand booking assistant, food/grocery delivery search, multi-service / super-app AI moderation)
 - [ ] $72k–$120k AI run-rate
-- [ ] 10 reseller agencies; 20+ reseller deals
-- [ ] 25+ Workflow Sub customers ($18k–$24k/mo recurring)
-- [ ] 3–5 Outcome Deals signed
 - [ ] AI Delivery Kit v1 in use
+- [ ] Template-reuse rate >30% on repeat-package types
 
 ---
 
-## Phase 3 — Compound (M11–14)
+## Phase 3 — Scale (M11–14)
 
-**Objective:** Shift revenue to result-based mechanisms.
+**Objective:** Scale AI delivery capability; broaden package range; grow enterprise AI footprint.
 
-**Revenue mix shift:**
+**Capability expansion:**
+- 8–10 productized AI packages live (up from 3 in Phase 1)
+- Voice AI, AI moderation, AI search upgrade all in active delivery
+- AI Delivery Kit matures: template-reuse rate >50%
+- *If* Service ICP outbound has activated by Phase 3 (separate initiative), enterprise AI deals become a regular pipeline source. If not, this plan keeps scaling on the Product ICP channel + repeat business.
 
-| Source | M10 | M14 |
-|---|---|---|
-| Direct custom AI projects | 55% | 30% |
-| Direct productized packages | 25% | 25% |
-| Workflow Subscription | 12% | 22% |
-| Outcome Deals | 3% | 6% |
-| Reseller channel | 5% | 15% |
-| Training | 0% | 2% |
-
-**Workflow Sub discipline:** monthly delivery >95%; voluntary churn <8%/mo; M-o-M renewal >90%; expansion to Outcome Deals 15%+. Head of Delivery owns the calendar.
-
-**Per-outcome SMB tier launches** (replaces dropped community retainer): pay only when AI works. Target 20–30 customers by M14 = $3.6k–$6k/mo.
-
-**Reseller scale-up:** 10 → 20–25 partners; target 40–60% of new deals via resellers by M14.
-
-**Team M14:** 12–16 AI-focused (4–5 Integration Engineers, 1 Senior Agent Engineer, 1 MLOps, 1 AI QA, 1–2 Frontend, 1–2 Automation, Head of Delivery, Reseller PM, 2 Sales/Marketing) + 3–5 legacy phasing.
+**Team M14:** 12–16 AI-focused (4–5 Integration Engineers, 1 Senior Agent Engineer, 1 MLOps, 1 AI QA, 1–2 Frontend, 1–2 Automation, Head of Delivery, 2 Sales/Marketing) + 3–5 legacy phasing.
 
 **Phase 3 milestones:**
 - [ ] $120k–$180k annual run-rate
-- [ ] 40%+ result-based recurring revenue
-- [ ] 50+ Workflow Sub + 20+ per-outcome customers
-- [ ] 20+ reseller agencies
-- [ ] Monthly delivery >95%; renewal >90%
+- [ ] 8–10 productized packages live
+- [ ] Template-reuse rate >50%
+- [ ] (Conditional on Service ICP activation) 3–5 enterprise AI deals signed via Service ICP P5
 
 ---
 
 ## Phase 4 — Market Position (M15–18)
 
-**Objective:** Market authority; training launched; IP moat.
-
-**Training:** workshops $300–$900/seat; agency cert $1,200; corporate $1,200–$3,600/day. Target $24k–$48k/year.
+**Objective:** Market authority; IP moat.
 
 **IP moat:** open-source 1–2 small tools; gated playbook; public benchmark ("Trioangle AI Package vs DIY cost analysis"); template library; reference architectures.
 
@@ -252,10 +216,9 @@ Phase 4 — Market Position  (M15–18)  Market authority; training; IP
 
 **Phase 4 milestones:**
 - [ ] $240k–$420k annual run-rate
-- [ ] 80+ Workflow Sub + 40+ per-outcome customers
-- [ ] 25+ reseller agencies (40–60% of new deals)
-- [ ] Training revenue $24k–$48k/year
 - [ ] Template-reuse rate >60%
+- [ ] Public AI delivery benchmark published
+- [ ] 1–2 open-source tools released
 
 ---
 
@@ -270,19 +233,23 @@ Phase 4 — Market Position  (M15–18)  Market authority; training; IP
 | Q5 (M13–15) | $170k–$265k | 30% | 13–15 / 16–18 |
 | Q6 (M16–18) | $240k–$420k | <15% | 15–18 / 18–22 |
 
-Legacy = clone scripts + Enterprise Custom Dev (Service ICP, $10k–$120k international).
+Legacy = clone scripts (active Product ICP channel). Enterprise Custom Dev (Service ICP) is documented but not currently generating revenue; any deals from there during the plan period are upside.
 
 ---
 
 ## Success Metrics
 
-**Revenue:** Result-based recurring % (>30% by M14, >45% by M18); reseller-generated % (>15% by M14); gross margin per package trending up.
+**Pipeline:**
+- AI deals signed per quarter (trending up)
 
-**Customer:** Workflow Sub renewal >90% M-o-M; voluntary churn <8%; expansion to Outcome Deals 15%+; Outcome Deal attribution agreement >85%.
+**Delivery quality:**
+- On-time delivery >85%
+- Quality evaluation passes the agreed benchmark on every shipped project (technical thresholds defined in [[Trioangle AI Delivery Kit]])
+- Post-launch incident rate per project (trending down)
+- Template-reuse rate (>60% by M18)
+- NPS from past customers (>40)
 
-**Sales:** CAC <$180 direct, <$60 reseller; payback <6 months; LTV/CAC >3x; Scoping Call → paid >30%.
-
-**Delivery:** Monthly Workflow delivery >95%; eval score >0.85 RAGAS; on-time >85%; template-reuse >60% by M18.
+Growth metrics (repeat-customer rate, cross-sell, retention) are tracked in [[Trioangle Growth Plan]] across all of Trioangle's services, not just AI.
 
 ---
 
@@ -290,16 +257,13 @@ Legacy = clone scripts + Enterprise Custom Dev (Service ICP, $10k–$120k intern
 
 | Risk | Severity | Mitigation |
 |---|---|---|
-| Workflow Sub delivery slips below 95% | High | Dedicated delivery ops; backup engineer pool; auto-credit miss |
-| Outcome Deal attribution dispute | High | Metric + measurement agreed in writing pre-sign; Langfuse from day 1; quarterly reports |
-| Outcome Deal margin compression | High | Quarterly inference cost review; renegotiate annually; cap variable at 20% mix |
+| Project pipeline goes dry between deals (no recurring base in this plan) | High | Maintain 60-day rolling pipeline visibility; Growth Plan's recurring revenue mechanisms cushion across tracks |
 | Cash runs out before pivot pays off | High | Phase 0 quick wins; legacy pod protected |
 | Founder capacity bottleneck | High | Head of Delivery by M6 |
 | AI champions leave | High | Equity/profit-share for 2–3 key people |
-| CAC/LTV breaks | High | Weekly tracking; reseller as primary lever |
-| Quality incident on shipped AI | Medium | Day-1 observability + evals |
+| Quality incident on shipped AI | High | Day-1 observability + evals; Head of Delivery QA gate |
+| Missed deadline kills client trust | High | Buffer in package timelines; over-communicate when delays surface |
 | No-code competitors (Lovable/Bolt) eat SMB | Medium | Compete on delivery + support + domain |
-| Reseller program doesn't compound | Medium | Pilot validates; don't scale past 5 until proof |
 
 ---
 
@@ -307,24 +271,21 @@ Legacy = clone scripts + Enterprise Custom Dev (Service ICP, $10k–$120k intern
 
 1. Apply for Anthropic + OpenAI startup programs (1 hour, free, credibility logo)
 2. Calculate exact runway
-3. Audit active customers — confirm the ~30 by name
-4. Pick 2 AI champions; start [[AI Engineering Learning Roadmap]] Phase 3
-5. Draft 3 AI add-on pitches; send to 10 active customers by Friday
-6. Set up Langfuse + Stripe
+3. Pick 2 AI champions; start [[AI Engineering Learning Roadmap]] Phase 3
+4. Draft 3 AI add-on pitches (WhatsApp-friendly format)
+5. Add AI add-on pitch to the clone-script handover process (Product ICP channel — the only currently-active source)
 7. Open WhatsApp Business number for AI inquiries
 8. Draft Head of Delivery JD (M6 hire)
-9. Identify 10 agency prospects for reseller pilot (M5–6)
-10. Wire AI Scoping Call CTA into every clone-script sale + Service ICP P5 outbound
-11. Block weekly Friday review: AI pipeline + CAC + Workflow delivery rate
+9. Block weekly Friday review: AI pipeline + on-time delivery rate
 
 ---
 
 ## Connections
 
-- [[Trioangle Growth Plan]] — non-AI result-based revenue architecture
-- [[Trioangle Product ICP]] — clone-script pipeline; feeds AI Scoping Call CTAs
-- [[Trioangle Service ICP]] — Persona 5 (AI-Forward) is direct AI buyer
-- [[Trioangle Channel Partner Personas]] — Persona B reseller routing
-- [[Outcome-Based Pricing]] — framing for Outcome Deals
+- [[Trioangle Growth Plan]] — compounding/growth mechanisms (recurring revenue, repeat business, cross-sell) for both AI and non-AI work
+- [[Trioangle Product ICP]] — clone-script pipeline; AI add-on pitch happens at handover
+- [[Trioangle Service ICP]] — Persona 5 (AI-Forward) is the direct enterprise AI buyer once Service ICP activates (future initiative, not part of this plan)
+- [[Trioangle Channel Partner Personas]] — separate program; channel partners can route AI project leads in
+- [[Trioangle AI Delivery Kit]] — internal toolkit that compounds delivery throughput; built in Phase 2
 - [[AI Engineering Learning Roadmap]] — training curriculum
 - [[Indian IT AI Transformation Strategy]] — competitive context (TCS, Infosys, HCLTech)

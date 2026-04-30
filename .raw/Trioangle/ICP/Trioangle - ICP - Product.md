@@ -25,6 +25,24 @@ tags:
 > **Never position on "we build faster with AI." Position on certainty of outcome and risk reduction.**
 > Buyers in 2026 can vibe-code a prototype themselves. They are not buying speed — they are buying a guaranteed live business: App Store approval, production deployment, real-time dispatch under load, payment gateway in production, and a named team accountable when something breaks. This rule applies to all personas, all channels, and all content. "Faster with AI" invites the question "then why are you expensive?" — and loses. "Certainty of launch" does not.
 
+> [!IMPORTANT] Two-Track Architecture — This Is Track 1
+> Per [[Trioangle Growth Plan]], Trioangle operates a **Two-Track strategy**. This ICP defines **Track 1 — the Cash Engine**: clone scripts and super-apps sold to startup-shaped founders.
+>
+> The Track 1 buyer profile carries **~96% historical 5-year mortality** (structural to pre-revenue / 1–5-employee buyers — not a service quality issue, not fixable through pricing). That mortality is why **Track 1 is not the company's recurring base**. AI add-on attach (per [[Trioangle 2.0 AI Pivot Plan]]) and sporadic post-launch customization are *upside on Track 1*, not the recurring engine.
+>
+> **Recurring revenue lives on Track 2 — AI services for Service ICP existing-operators** (12+ months operational, revenue traction, established business). When a Track 1 buyer matures into that profile post-launch (most often Persona 4 Small Business Digitalizer or Persona 5 Super-App Builder), they graduate into a Track 2 candidate and the entry is an AI Audit Sprint. See [[Trioangle Growth Plan]] for the full architecture and Track 2 acquisition motion.
+>
+> **Why this matters here:** every claim, persona, channel, and post-purchase mechanism in this document operates inside Track 1's mortality reality. Where the doc references compounding, retention, or recurring revenue, it is talking about *capturing more value within a transactional cohort* — never about converting Track 1 into a recurring book. That conversion is structurally not possible on this ICP.
+
+> [!TIP] How to use the "800+ deployments" claim
+> "**800+ delivered since 2015 across 150+ countries**" is a **cumulative** number, not currently-live. It is the right framing for top-of-funnel credibility — exec summary, ads, positioning statement, AI-search FAQ pages — where buyers expect a multi-year track record stated cumulatively.
+>
+> For buyers who do diligence — especially **Persona 2 (Burned Builder)** and **Persona 3 (Diaspora Digital Entrepreneur)** — the cumulative number must be backed by a curated **by-region reference list** of currently-live deployments and named past founders willing to take peer calls. Persona 2 will DM past buyers on LinkedIn to verify; Persona 3 will explicitly ask to speak with a past buyer from their home region. Both will check. The reference list is the verifiable layer beneath the cumulative claim.
+>
+> **Operational requirement:** Maintain a quarterly-refreshed reference list segmented by **region** (NA, UK, EU, Middle East, SE Asia, Africa, LATAM, India) and **vertical**, with named past founders who have opted in to peer reference calls. Without this list, the 800+ number works for ads but breaks under buyer diligence — and the buyers most likely to check are the ones with the highest budget and longest LTV.
+>
+> **Underlying analysis:** The structural reason only ~30 of 800+ historical buyers are still operating businesses (96% 5-year cohort mortality, driven by the pre-revenue / 1–5-employee buyer profile rather than service quality) is documented in [[Trioangle Growth Plan]]. That document is the strategic source for this callout — refer to it when challenged internally on whether the cumulative number is "honest." It is honest as long as it is paired with the live reference list.
+
 ---
 
 ## 👤 Customer Profile
@@ -84,7 +102,7 @@ tags:
 | **Identity** | Varies by archetype — Persona 1: *"The Uber of my city"*; Persona 2: *"The founder who finally gets it done"*; Persona 3: *"Building something real back home"*; Persona 4: *"A business owner who stays ahead"*; Persona 5: *"The Gojek of my region"*; Persona 6: *"I built the demo in a weekend — I just need it to actually work"* |
 | **Aspirations** | Scalable platform, financial independence, local market dominance |
 | **Influences** | Uber/Airbnb founders, YouTube startup gurus, IndieHackers, local tech meetups; **AI/vibe coding era:** Pieter Levels, Theo (t3.gg), Fireship, and the "I built X with AI in a weekend" content wave driving Persona 6 into prototype-then-wall situations |
-| **Risk Tolerance** | Moderate — willing to invest $1k–$25k but highly ROI-conscious; a subset carries prior burn scars from freelancer or agency failures (see Persona 2 — Burned Builder), but this trait is not universal across all archetypes |
+| **Risk Tolerance** | Moderate — willing to invest $500–$25k but highly ROI-conscious; a subset carries prior burn scars from freelancer or agency failures (see Persona 2 — Burned Builder), but this trait is not universal across all archetypes |
 
 ### 📱 Behavioral Traits
 
@@ -94,7 +112,7 @@ tags:
 | **Content**           | YouTube demos, comparison blog posts, Reddit startup threads, Quora on dev costs; increasingly consuming **AI-generated answers** ("ChatGPT, what's the best clone script company?") and passive income / side-hustle content that positions marketplace apps as low-effort revenue streams |
 | **Purchase Behavior** | Research-heavy; 2–4 weeks (Persona 1) to 30–60 days (Personas 2, 4, 5) — converts fast once trust is established via live demo |
 | **Brand Loyalty**     | Switches easily pre-purchase; sticky post-purchase due to migration pain                 |
-| **Buying Triggers**   | Competitor launch, price gap discovery, receiving a live demo link, AI tool recommending a marketplace app as a passive income vehicle, passive income content that frames commission-based apps as "set and forget" businesses, tried AI-assisted development (Cursor, Lovable, Replit) and hit the production wall — App Store rejection, real-time feature failure at scale, payment gateway complexity — now seeking a proven deployed outcome instead of more code |
+| **Buying Triggers**   | • Competitor launches in the buyer's city or vertical<br>• Price-gap discovery (agency $50k+ quote vs. clone-script price)<br>• Receiving a live demo link from sales<br>• AI tool (ChatGPT, Perplexity) recommending a marketplace app as a passive-income vehicle<br>• Passive-income content framing commission-based apps as "set and forget" businesses<br>• Tried AI-assisted development (Cursor, Lovable, Replit) and hit the production wall — App Store rejection, real-time feature failure at scale, payment-gateway complexity — now seeking a proven deployed outcome instead of more code |
 
 ---
 
@@ -122,6 +140,18 @@ tags:
 | 👍 **Nice-to-Have** | Has local supply secured (drivers, providers, listings), basic marketing plan or audience |
 | ❌ **Disqualifying** | Needs fully proprietary custom architecture or unique business logic that clone scripts cannot support → route to [[Trioangle Service ICP]] (custom development); super-app / Gojek-tier ambition with sub-$5k budget (segment mismatch — re-qualify on budget or redirect to single-vertical or merge tier); dev agencies looking to resell at scale without a specific live client project; "just exploring" without a concrete business idea; wants source code only to resell to third parties; **wants the absolute cheapest option regardless of outcome risk** — buyers whose sole criterion is lowest upfront cost (not value, not support, not certainty of launch) will attempt an AI-assisted freelancer first, get burned, and return as Persona 2; do not discount to win these — let them take the freelancer route and re-engage when they come back |
 
+> [!IMPORTANT] Cheapest-Option Disqualification — How It's Enforced
+> The "wants the absolute cheapest option" disqualifier above is a strategic choice, not a guideline. It survives quota pressure only when operationalized with explicit authority, identification, and a measurement loop. Without these, it quietly erodes within one quarter.
+>
+> | Lever | Implementation |
+> |---|---|
+> | **Sales authority** | Account executives are explicitly empowered to walk away from price-only leads without manager escalation; **no commission penalty** for disqualifying these leads at first call. The policy is documented in the sales playbook and reviewed at onboarding |
+> | **Identification at first call** | Qualifying signal: buyer asks for a discount before requesting a demo, compares only on price across vendors with no question about support, deployment, or live track record, or names a sub-tier budget with no negotiation room. Tag in CRM as `disqualified_price_only` with the date and the specific signal observed |
+> | **Re-engagement tracking** | When a previously tagged `disqualified_price_only` lead returns within **12 months** as Persona 2 (Burned Builder), tag the return and capture the prior burn cause — freelancer / agency / AI tool / cheap script. This is the validation loop that proves (or disproves) the underlying assumption |
+> | **Policy review trigger** | Review the policy quarterly against the 12-month return rate. **Below ~15% return rate** → the assumption that they will burn and return is wrong; the policy is leaving revenue on the table and should be relaxed (consider a low-margin entry tier instead of disqualification). **Above ~30% return rate** → the policy is producing a high-quality re-engagement pipeline and should be reinforced. Between 15–30%, hold the policy and re-measure next quarter |
+>
+> The thresholds above are starting heuristics, not validated benchmarks — calibrate them against the first four quarters of data, then treat them as live. The point of the loop is that the policy becomes data-driven within a year rather than a permanent article of faith.
+
 > [!NOTE] Product Tiers & Budget Guide
 >
 > | Tier | Description | Budget Range | Best For |
@@ -146,7 +176,7 @@ tags:
 > | All services within Gojek native scope | Gojek-like Super-App — admin toggle, no dev work |
 > | Any service outside Gojek native scope | Developer Merge — dev team merges the required scripts; base product depends on which services are needed |
 > | Fully proprietary / unique business logic | [[Trioangle Service ICP]] — custom development from $10k |
-> | Merge quote exceeds $30k | [[Trioangle Service ICP]] — at this threshold the engagement is effectively custom development; transfer to Service team for scoping and delivery |
+> | Merge quote exceeds $30k | [[Trioangle Service ICP]] — at this threshold the engagement is effectively custom development. Scope on inbound only — **Service ICP outbound is not yet activated as of 2026-Q2** (see [[Trioangle 2.0 AI Pivot Plan]] for activation timing); an internal scoping function handles delivery |
 >
 > **Key qualifying question:** *"Which specific services do you need — and do all of them fall within taxi, delivery, handyman, car wash, laundry, beauty, or grocery?"*
 > - Yes → Gojek-like Super-App, no merge needed
@@ -155,6 +185,9 @@ tags:
 ---
 
 ## 😣 Pain Points
+
+> [!NOTE] Severity scoring methodology
+> Severity (1–10) and frequency labels are **directional weights, not measured scores**. Basis: aggregated qualitative signal from sales-team call notes, post-purchase support-ticket categories, and recurring inbound objection patterns observed since 2015. *Frequency* reflects how often the pain is voiced or acted on, not how often it occurs technically. Use these to prioritize messaging emphasis and proof-asset investment — not to claim quantitative research. Recalibrate annually against a fresh sales-call review and a sample of post-purchase support tickets.
 
 ### Pain Point 1 — The "Idea to Execution" Technical Chasm
 **Severity:** 9/10 | **Frequency:** Constant until solved | **Category:** Functional + Emotional | **Stage:** Pre-Purchase
@@ -201,7 +234,7 @@ tags:
 ---
 
 ### Pain Point 5 — Scaling Uncertainty
-**Severity:** 7/10 | **Frequency:** Post-launch, as user base grows | **Category:** Financial + Process | **Stage:** Post-Purchase
+**Severity:** 7/10 | **Frequency:** Pre-purchase concern; post-launch impact | **Category:** Financial + Process | **Stage:** Both
 
 - **Workaround:** Over-provisioning servers "just in case" (burning cash on idle capacity), or under-provisioning and praying — either way, no load testing, no autoscaling rules, no observability. When traffic spikes, the buyer learns the hard way on their first peak hour.
 - **Cost of Inaction:** App downtime during the exact moments that drive growth (weekend peaks, promotional launches, viral social post). First impression collapses; churned users do not return; app store rating drops below the 4.0 threshold that priority-market buyers filter on.
@@ -213,14 +246,16 @@ tags:
 
 ## 🎯 Goals
 
-| Priority | Goal | Metric | Timeframe |
-|---|---|---|---|
-| **Primary** | Launch to iOS/Android store | First paying transaction processed on live app | < 30 days |
-| **Secondary** | Validate business model | 20+ active service providers onboarded; 50+ real customer orders | 30–60 days |
-| **Secondary** | Prove unit economics | Commission revenue covering monthly hosting + support costs | 60–90 days |
-| **Secondary** | App growth | 500+ registered users; 4.0+ app store rating maintained | 90 days |
-| **Secondary** | Secure seed funding (Persona 1) | Investor deck backed by live MVP traction data | 60–90 days |
-| **Secondary** | Achieve script investment break-even | Platform commissions exceed total purchase + setup cost | 60–90 days |
+| Priority | Goal | Metric | Timeframe | Applies To |
+|---|---|---|---|---|
+| **Primary** | Launch to iOS/Android store | First paying transaction processed on live app | < 30 days | All personas |
+| **Secondary** | Validate business model | 20+ active service providers onboarded; 50+ real customer orders | 30–60 days | All personas |
+| **Secondary** | Prove unit economics | Commission revenue covering monthly hosting + support costs | 60–90 days | All personas |
+| **Secondary** | App growth | 500+ registered users; 4.0+ app store rating maintained | 90 days | All personas |
+| **Secondary** | Secure seed funding | Investor deck backed by live MVP traction data | 60–90 days | P1 (Visionary Velocity), P5 (Super-App Builder) — most likely to be raising |
+| **Secondary** | Achieve script investment break-even | Platform commissions exceed total purchase + setup cost | 60–90 days | All personas; weight highest for P4 (Small Business Digitalizer) — existing-business ROI lens |
+| **Secondary** | Migrate existing offline operations to app | 80%+ of existing customer/driver/provider base onboarded to app | 30–60 days | P4 (Small Business Digitalizer) only — they already have a book of business; not relevant for P1, P3, P6 |
+| **Secondary** | Activate multi-service breadth | 3+ service categories live in admin panel | 60–90 days | P5 (Super-App Builder) only |
 
 > **Dream Outcome:** A self-sustaining commission-based marketplace with 1,000+ active users, reliable provider supply, and dominant brand recognition in their local market — without building or maintaining infrastructure themselves.
 
@@ -235,21 +270,27 @@ tags:
 
 | Stage | Timeline | Buyer State | Trioangle Action |
 |---|---|---|---|
-| **Deployment** | Day 0–7 | Anxious — "will it actually go live?" | White-glove install, server setup, App Store submission; daily status updates |
+| **Deployment** | Day 0–7 | Anxious — "will it actually go live?" | White-glove install, server setup, App Store submission; daily status updates. **AI add-on pitch happens at handover** — fitting AI package surfaced based on the buyer's vertical and operational shape (see [[Trioangle 2.0 AI Pivot Plan]]) |
 | **First Transaction** | Day 7–30 | Relieved but fragile — "is this thing working?" | Celebrate first order/booking via WhatsApp/email; share onboarding checklist for provider acquisition |
-| **Early Traction** | Day 30–90 | Cautiously optimistic — "can I grow this?" | Proactive check-in: offer performance review, suggest first customisation (local payment gateway, language pack); introduce referral program |
-| **Growth** | Day 90–180 | Confident — "what's next?" | Upsell trigger: if traction is real, introduce Developer Merge (adding a second vertical), or Super-App upgrade discussion |
+| **Early Traction** | Day 30–90 | Cautiously optimistic — "can I grow this?" | Proactive check-in: offer performance review, suggest first customisation (local payment gateway, language pack); introduce referral program; if AI add-on not taken at handover, re-pitch a smaller package fit (chatbot, WhatsApp AI) |
+| **Growth** | Day 90–180 | Confident — "what's next?" | Upsell trigger: if traction is real, introduce Developer Merge (adding a second vertical), or Super-App upgrade discussion. **AI repeat-deal cadence (timed from first AI delivery, not clone-script launch):** Day 90 results check-in; Day 180 next-package pitch anchored on those results (e.g., chatbot delivered at Day 30 → Search Upgrade or RAG offered at Day 180). This captures the second AI deal that would otherwise be lost to buyer memory — upside on Track 1, not the company's recurring base (see [[Trioangle Growth Plan]] for Track 2) |
 | **Advocacy** | Day 180+ | Proud founder | Testimonial request, case study feature, referral program activation (support extension or cash commission — see Referral Program section) |
 
 ### 💰 Post-Launch Revenue Opportunities
 
 | Opportunity | Trigger | Product |
 |---|---|---|
+| **AI add-on at handover** | Every clone-script delivery — Persona 6 (AI Builder Who Hit the Wall) is the highest-fit buyer at this moment | One-time outcome-based AI package — Customer Support Bot ($900–$2,500), RAG Knowledge Assistant ($1,800–$5,000), WhatsApp AI Automation ($500–$1,500), Content Moderation ($1,200–$3,500), Search Upgrade ($1,200–$3,000). See [[Trioangle 2.0 AI Pivot Plan]] |
 | **Second vertical** | Buyer's platform gains traction; wants to expand | Developer Merge — add Airbnb/delivery/classifieds to existing app |
 | **Super-App upgrade** | Single-vertical buyer wants multi-service | Gojek-like Super-App tier or Developer Merge |
+| **Track 2 graduation** | Buyer hits the Track 2 filter post-launch — **12+ months operational, revenue traction, active roadmap, weak in-house AI capability**. Most likely candidates: Persona 4 (Small Business Digitalizer) and Persona 5 (Super-App Builder) — both have existing or growing operations that can sustain the cadence. Persona 1 and Persona 6 rarely qualify (startup-shaped); Persona 2 and Persona 3 only if they reach steady operational state | **AI Audit Sprint** ($1,500–$4,000 paid, 2 weeks, credited toward first project) — entry product for Track 2 acquisition, not a Track 1 sale. Hand off to the Track 2 motion per [[Trioangle Growth Plan]] |
 | **Customisation requests** | Feature gap discovered post-launch | Custom development at hourly/fixed rate |
+| **Repeat AI deal** | **Proactive cadence (timed from first AI delivery):** Day 90 results check-in (confirm outcomes hit, capture what's working); Day 180 next-package pitch anchored on those results (e.g., chatbot deployed at Day 30 → Search Upgrade or RAG offered at Day 180). Reactive intake works if the buyer initiates; the cadence captures the second deal that would otherwise be lost to buyer memory. **Upside on Track 1 — Track 2 (Service ICP existing-operators per [[Trioangle Growth Plan]]) is the company's recurring base** | Any package from the AI Pivot menu — fixed scope, fixed price, 1–4 week delivery |
 | **Annual support renewal** | 6-month support window expiring | Support plan extension |
 | **Referral conversion** | Buyer tells a founder friend | Referral program — tracked, incentivised |
+
+> [!IMPORTANT] AI Add-On Integration with Pivot Plan
+> The AI add-on pitch is **not a separate sales motion** — it's wired into the clone-script handover process per [[Trioangle 2.0 AI Pivot Plan]] Phase 0. Pricing is one-time, outcome-based; no monthly subscription, no metric-based billing, no training/workshop business (these were dropped in the AI Pivot Plan). Repeat business — a satisfied AI customer returning for the next AI requirement or a non-AI custom-dev project — is upside on the Track 1 cash engine, not the company's recurring base. The recurring base lives on Track 2 (Service ICP existing-operators) per [[Trioangle Growth Plan]].
 
 > [!TIP] AI Era Retention Principle
 > AI tools create dependency loops (the buyer keeps prompting to fix issues). Trioangle must create a **support relationship loop** — buyers who know Trioangle will handle problems faster than any AI tool will stay, refer others, and expand. The post-purchase experience is the moat.
@@ -315,7 +356,7 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 |---|---|
 | **Research Style** | Self-driven intensive comparisons — YouTube demo walkthroughs, side-by-side feature spreadsheets, Google searches for exact product names ("Uber clone script price", "best Airbnb clone 2025") |
 | **Decision Speed** | Fast (< 20 days) — urgency is a defining trait; a slow sales process loses this buyer to a faster-responding competitor |
-| **Budget Authority** | Sole decision maker; $1k–$8k range for single-vertical scripts |
+| **Budget Authority** | Sole decision maker; $500–$8k range for single-vertical scripts |
 
 **✅ Do say:** *"Launch your MVP in 2 weeks and save $50k"*
 **❌ Don't say:** *"We will architect a custom proprietary platform"*
@@ -343,6 +384,11 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 **Products:** Any single-vertical script — vendor trust is the buying lens, not product type; commonly ride-hailing, food delivery, or home services (whichever vertical they previously attempted and failed to launch)
 
 > Has already attempted to build their app and failed — through a vanishing freelancer, an over-charging agency, a cheap script that broke on launch, or increasingly in 2025: weeks of vibe coding with Cursor/Lovable that produced a demo but never a live app. Lost $5k–$20k (or months of their own time) on the first attempt. The wound is still fresh: they've watched competitors launch while they were stuck debugging, and they've explained the delay to investors, partners, and family more times than they want to remember. Now they return to the market smarter but scarred — exhaustively researching every vendor before engaging, running mental background checks on testimonials, and asking the hard questions upfront that they wish they'd asked before. The defining emotional state is not desperation but controlled determination: they will launch this time, and they will not be fooled again. What they need above everything else is not the best features — it's the most credible proof that this vendor delivers a live, working business, is still supporting customers, and will be here 6 months from now when they need help.
+
+> [!WARNING] AI-Era Risk — Persona Composition Shift
+> The Burned Builder archetype originally formed around freelancer/agency failures. As of 2025–2026, an increasing share of inbound Persona 2 leads carry an **AI-tool burn instead** — weeks of vibe coding that produced a demo but no live app. The persona is durable; the specific failure mode is migrating.
+>
+> **Re-evaluation trigger:** Revisit Persona 2's framing, objections, and proof points when (a) **AI-tool failure displaces freelancer/agency failure as the top reported burn cause** among Persona 2 inbound for **two consecutive quarters**, or (b) the typical Persona 2 returns to market with a working AI-generated codebase (rather than a vanished freelancer's incomplete code) — at this point Persona 2 and Persona 6 effectively converge and the personas may need to be merged or re-segmented around the post-burn emotional state rather than the cause of the burn. *Operational dependency: requires a "prior burn cause" tag on Persona 2 inbound — freelancer / agency / AI tool / cheap script / multiple. If sales does not currently capture this at first call, stand up the tag before this trigger can fire — otherwise the shift will happen invisibly.*
 
 | Goals | Frustrations |
 |---|---|
@@ -432,7 +478,7 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 |---|---|
 | **Research Style** | Offline-first and recommendation-driven — asks business peers at trade associations or local chambers of commerce; trusts a personal referral from someone in the same industry over any online review; may ask their accountant or IT person before engaging a vendor; rarely initiates research independently online |
 | **Decision Speed** | Slow (30–60 days) |
-| **Budget Authority** | Business owner; $1k–$6k — smaller than Persona 1 because they're adding technology to an existing business, not building from scratch; cautious about ROI and needs cost-to-revenue payback clearly demonstrated before committing |
+| **Budget Authority** | Business owner; $500–$6k — smaller than Persona 1 because they're adding technology to an existing business, not building from scratch; cautious about ROI and needs cost-to-revenue payback clearly demonstrated before committing |
 
 **✅ Do say:** *"Add an app to your existing business—customers book through the app, you manage from a simple dashboard"*
 **❌ Don't say:** *"Disrupt the market with a cutting-edge on-demand platform"*
@@ -496,9 +542,17 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 **Role:** Technical Solopreneur / Developer-adjacent Founder | **Age:** 22–38 | **Stage:** Has a prototype, blocked at production
 **Products:** Any single-vertical script — they already know exactly which vertical they want; commonly ride-hailing, food delivery, or home services (mirroring what they attempted to build with AI tools)
 
+> [!IMPORTANT] Highest-Fit AI Add-On Buyer
+> Persona 6 is the **highest-fit buyer for AI add-ons** at clone-script handover (per [[Trioangle 2.0 AI Pivot Plan]]). They are technically literate, AI-aware, and already convinced AI features matter to their product. Pitch a fitting AI package (Customer Support Bot, RAG Knowledge Assistant, Search Upgrade, etc.) at handover — conversion is materially higher here than for any other Product ICP persona.
+
 > **Origin:** Chose AI tools over an agency for three reasons — (1) priced out of $30k+ custom dev quotes, (2) distrust of agencies after seeing peers get burned, and (3) genuine belief in the "build anything with AI in a weekend" content wave from Pieter Levels, Theo, Fireship, and the vibe-coding creator circuit. They are *not* anti-agency by ideology — they defaulted to AI because it seemed like the rational 2025 path. This matters for sales: they respond to honesty about what AI *does* do well, not to agency-era pitches that dismiss AI outright.
 >
 > Started with a clear vision and a vibe coding session — Cursor, Lovable, or Replit gave them a working demo in days. For weeks it felt like the future: no agency, no freelancer, just prompts and progress. Then they hit the wall. The App Store rejected the build for missing compliance requirements. The real-time GPS tracking worked on localhost but failed with 20 concurrent users. The payment gateway sandbox behaved nothing like production. Push notifications never fired reliably. The admin panel looked right but had no actual dispatch logic. They've invested 4–8 weeks, have something that looks like a product, and are now confronted with the gap between a demo and a live business. They're not burned by a vendor — they're burned by the false promise of "you can build anything with AI." What they need is not more code — they need a production-ready, deployed, app-store-approved platform that actually works when real users show up.
+
+> [!WARNING] AI-Era Risk — Persona Sunset Trigger
+> Persona 6 exists *because* of the production gap between AI-generated prototypes and live apps. As that gap narrows, this persona's inbound volume will decline — and at some point the persona will sunset entirely. Plan the harvest while the gap is open.
+>
+> **Re-evaluation trigger:** Revisit Persona 6's TAM, pricing, and retire-or-redefine when any of the following hit — (a) **Lovable, Bolt, Cursor, or a mainstream peer publicly ships one-click iOS App Store submission** with a documented approval rate (this is the symmetric inverse of Persona 1's trigger — same signal, opposite implication: it kills Persona 6's reason to exist), (b) a mainstream AI builder ships **production-grade real-time multi-role dispatch** (customer/provider/admin) with a documented SLA, or (c) Persona 6 inbound volume **drops below 20% of total inbound for two consecutive quarters** after sustained growth — a leading signal that the production gap has closed and these buyers are now self-launching without intervention. *Operational dependency: same as Persona 1 — trigger (c) requires inbound-by-persona tagging in CRM. The persona should be reviewed sooner if signals (a) or (b) arrive, even before (c) fires.*
 
 | Goals | Frustrations |
 |---|---|
@@ -512,7 +566,7 @@ Referral is one of the top 3 channels and a defining purchase path for the Burne
 |---|---|
 | **Research Style** | Technical and comparison-driven — reviews source code samples, asks about tech stack and architecture, compares feature sets against what they already built; posts on Reddit asking *"is Trioangle worth it vs. finishing my own build?"*; evaluates deployment process and App Store submission support closely |
 | **Decision Speed** | Fast (< 14 days) — already deep in sunk cost, urgency is high; the moment they accept their prototype won't make it to production, they move quickly |
-| **Budget Authority** | Sole; $1k–$8k — similar to Persona 1 but more price-sensitive because they've already invested significant time in their own attempt |
+| **Budget Authority** | Sole; $500–$8k — similar to Persona 1 but more price-sensitive because they've already invested significant time in their own attempt |
 
 **✅ Do say:** *"Production-ready and App Store approved from day one — real GPS tracking, real payment flows, real support when it goes live"*
 **❌ Don't say:** *"You can always customise the code yourself"*
@@ -723,4 +777,7 @@ Priority markets (NA, UK, EU, UAE, KSA, Qatar) drive paid acquisition spend. Sec
 ### 📌 Positioning Statement
 
 > [!IMPORTANT]
-> *"For founders who need a live, revenue-generating marketplace business — not just code — Trioangle delivers launch-ready marketplace platforms: deployed, app-store-approved, and fully supported from day one. From a single on-demand vertical to a full multi-service super-app. Trusted by 800+ businesses across 150+ countries since 2015. Unlike cheap marketplaces that sell unsupported files, agencies that charge 10x more and take 10x longer, or AI tools that generate a prototype but cannot deploy it, support it, or keep it running when real users arrive."*
+> *"For founders who need a live, revenue-generating marketplace business — not just code — Trioangle delivers launch-ready marketplace platforms: deployed, app-store-approved, and fully supported from day one, across a single on-demand vertical or a full multi-service super-app. **AI tools deliver a prototype; Trioangle delivers the live business** — App Store approved, in production, and backed by a named team when something breaks. A depth of deployment history across 150+ countries since 2015 that no AI tool, cheap script marketplace, or agency-tier custom build can match."*
+
+> [!NOTE] Positioning Statement — Phase Note
+> The statement above is **current-era Track 1 positioning**. Per [[Trioangle 2.0 AI Pivot Plan]] Phase 2 (M7–10), the headline brand shifts to AI-services-led: *"Productized AI for marketplace, on-demand, and platform operators — built by the team that's shipped 800+ platforms in your vertical since 2015."* At that point this statement should be revisited — Track 1 keeps its own buyer-facing line, but the company's primary brand surface (homepage, hero, ads to non-clone-script audiences) shifts to the Phase 2 framing. Until Phase 2 lands, the current statement is the canonical Track 1 frame.
