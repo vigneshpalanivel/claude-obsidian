@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Wiki Index"
-updated: 2026-04-23
+updated: 2026-04-30
 tags:
   - meta
   - index
@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-25 | Total pages: 180 | Sources ingested: 58
+Last updated: 2026-04-30 | Total pages: 182 | Sources ingested: 59
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -41,9 +41,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[AI-Native Engineering Team]] — org structure and hiring for the agent leverage era (status: developing)
 - [[Outcome-Based Pricing]] — billing model for dev agencies when AI compresses delivery time (status: developing)
 - [[Marketing-Sales Alignment]] — structural integration of marketing and sales around shared revenue goals (status: developing)
-- [[Trioangle Product ICP]] — customer profile, qualifying criteria, 5 pain points, goals, and post-purchase arc for clone script product line (status: current)
+- [[Trioangle Product ICP]] — Track 1 (Cash Engine) ICP for clone scripts + super-apps; ~96% historical 5-year mortality structural to buyer profile; 6 archetypes with re-eval triggers (P1/P2/P6); 800+ verifiability split (cumulative vs live); cheapest-option enforcement loop; Track 2 graduation row (rev 4) (status: current)
 - [[Trioangle Buyer Personas]] — 6 buyer archetypes for marketplace clone scripts; Persona 6 maps directly to Vibe Coding wave (status: current)
-- [[Trioangle Service ICP]] — 5 buyer personas for custom development and AI engineering; Persona 5 (AI-Forward Platform Operator) is a 2026 emergent archetype (status: current)
+- [[Trioangle Service ICP]] — Track 2 of Growth Plan; 5 personas tiered by acquisition: P5 🎯 direct primary (recurring base), P3/P4 🤝 channel-only, P1/P2 🪶 opportunistic; AI Audit Sprint + AI Funnel disambiguation; existing-operator filter (12+ months) makes recurring thesis valid (rev 5) (status: current)
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms); only path to Enterprise and MENA buyer segments (status: current)
 - [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos/5 pillars; service: 81 articles/6 verticals); persona-gated CTAs (status: current)
 - [[InnBlockchain Crypto Native ICP]] — crypto-born founders/CTOs; RWA Segment 1; 6 active segments; $20k+ floor; AI-code audit emerging (status: current)
@@ -98,17 +98,18 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Model Training Pipeline]] — end-to-end automated workflow: ingest → validate → feature → train → eval → register → deploy (status: current)
 - [[LoRA and QLoRA Fine-Tuning]] — parameter-efficient fine-tuning; 7B-8B tunable on consumer GPUs; 90-95% of full fine-tune quality (status: current)
 - [[Model Monitoring and Drift Detection]] — production practice tracking input/output/performance drift; prevents silent model decay (status: current)
-- [[Trioangle 2.0 AI Pivot Plan]] — SMB-focused 4-phase 18-month pivot; services + retainers + agency reseller channel + community tier + training business; no SaaS; Head of Delivery hired by M6; Q6 target ₹2-3.5Cr run-rate, team 15-18 (status: current)
+- [[Trioangle 2.0 AI Pivot Plan]] — AI services provider for SMBs as counter-initiative to slowing AI-augmented dev market; 4-phase 18-month pivot; one-time outcome-based pricing only ($500–$5k SMB packages, $15k–$120k+ enterprise via Service ICP P5); no retainers/subscription/metric-based/training/SaaS; vertical-deep moat (8 verticals × 800+ deployments); compounding lives in [[Trioangle Growth Plan]]; toolkit in [[Trioangle AI Delivery Kit]]; Head of Delivery hired by M6; Q6 target $240k–$420k, team 15–18 (status: current)
 - [[AI Engineering Learning Roadmap]] — 7-phase self-study path, 7-12 months; Python → SWE → LLM → RAG → Agents → LLMOps → Advanced; accelerated paths for SWEs (status: current)
 - [[ML Engineering Learning Roadmap]] — 7-phase self-study path, 12 months; Python+math → ML algorithms → PyTorch → Deep Learning → Deployment → Projects; Phase 7 LLM fine-tuning is +40-60% premium (status: current)
 - [[AI Engineering Portfolio Projects]] — 15-project reference list mapped to skill level; rule: three deployed+documented projects beat fifteen notebooks (status: current)
 - [[Copy Trading]] — exchange feature mirroring lead-trader trades; structurally speculation not income; 70-85% of retail futures copy traders lose; incentive stack favors exchange + lead over copier (status: developing)
 - [[Indian IT AI Transformation Strategy]] — how TCS, Infosys, HCLTech, Cognizant, Accenture are pivoting post-vibe-coding; shared five-move playbook; headcount shrinking, revenue per employee rising (status: current)
 - [[AI Services Business Model]] — outcome-based vs T&M pricing; platform + services hybrid; retainer models; key metrics for AI boutiques (status: current)
-- [[Trioangle Growth Plan]] — recurring revenue architecture; 4-tier retainer system (₹8K–1L); hosting margin play; 30-day sprint to ₹5L MRR; AMC failure analysis; project-to-retainer conversion (status: current)
+- [[Trioangle Growth Plan]] — Two-Track strategy: Track 1 Product ICP (cash engine, transactional, ~96% mortality accepted) + Track 2 AI-Specialist Service ICP for existing operators (growth engine, 3–10× higher per-deal ASP $25–60k avg, 2–4 projects/client/yr cadence). Recurring is an ICP problem, not a pricing problem. AI Audit Sprint ($1.5–4k) is the wedge product. No retainers, no AMC, no subscription tiers — recurring compounds via project cadence. (status: current)
 - [[Trioangle AI Delivery Kit]] — internal toolkit (Phase 2 deliverable of AI Pivot Plan); pre-configured RAG + agent templates + observability + integrations + handover scripts; cuts repeat-package delivery 2 weeks → 3–5 days (status: planned)
 - [[Trioangle-Sales-Operations]] — CEO-level weak points (6), Ansoff growth framework, 90+ sales initiatives organized by function, 14 OKR KPIs; synthesizes culture/process/product gaps (status: current)
 - [[SEO-Recovery-Strategy-2025-26]] — GEO/AIO era playbook; info keywords → BoFU shift; E-E-A-T; AI crawler allowlist; CITE score framework (target 80); new metrics (AI citation rate, LLM referral traffic) (status: current)
+- [[SEO-AEO-GEO-Prompt-Library]] — 180-prompt master template (SEO 75 / AEO 40 / GEO 60 / Hybrid 5); reusable across all 10 Trioangle verticals via variable substitution; operationalises the GEO/AIO recovery strategy (status: current)
 
 ---
 
@@ -150,8 +151,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[LeadDev-5-Predictions-2026]] — late 2025 | governance, security risks, junior hiring decline
 - [[Augment-Code-AI-Native-Hiring]] — 2025 | 6-capability framework for hiring AI-native engineers
 - [[Trioangle-Product-Verticals]] — 2026-04-15 | Trioangle internal | 205 product scripts across 8 verticals; brand name map; Watchit flag
-- [[ICP-Product-Trioangle]] — 2026-04-15 | Trioangle internal ICP | 3 wiki pages created (Trioangle entity, Trioangle Buyer Personas, source)
-- [[ICP-Service-Trioangle]] — 2026-04-15 | Trioangle custom dev + AI engineering ICP | 5 buyer personas; Persona 3 + 4 unreachable without channel partners
+- [[ICP-Product-Trioangle]] — 2026-04-15 | Trioangle internal ICP | 3 wiki pages created (Trioangle entity, Trioangle Buyer Personas, source); **re-ingested 2026-04-30** (Pass 4 — Pivot/Growth alignment + 13 substantive changes)
+- [[ICP-Service-Trioangle]] — 2026-04-30 (rev 5) | Trioangle custom dev + AI engineering ICP | Track 2 of Growth Plan; 5 personas tiered by acquisition; AI Audit Sprint + AI Funnel; existing-operator filter; budgets reconciled across Growth Plan + AI Pivot Plan; P5-specific loss patterns + Channel 4 outbound
 - [[ICP-Channel-Partner-Trioangle]] — 2026-04-15 | Trioangle agency/consulting channel partner ICP | 3 partner personas; unlocks Enterprise and MENA buyer access
 - [[Content-Strategy-Product]] — 2026-04-15 | Trioangle product blog strategy | 10 silos, 5 pillars, 20 templates; TikTok clone has active inbound
 - [[Content-Strategy-Service]] — 2026-04-15 | Trioangle service blog strategy | 81 articles, 6 verticals; persona-gated CTAs; MENA never forms
@@ -199,6 +200,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[RWA-Tokenization-Explainers]] — 2026-04-25 | internal .raw/ docs | 4 files ingested; ERC-1400, ERC-3643, RWA process, Car RWA system design; 4 concept pages created
 - [[Trioangle-Sales-Internal-Docs]] — 2026-04-25 | internal .raw/ docs | 3 files ingested; weak points, initiatives, KPIs; 1 concept page created
 - [[seo-recovery-strategy-map]] — 2026-04-25 | internal SVG strategy map | GEO/AIO SEO recovery playbook; 1 concept page created
+- [[Trioangle-SEO-AEO-GEO-Prompts-Template]] — 2026-04-30 | Trioangle internal | 180-prompt master template (SEO/AEO/GEO/Hybrid) for clone script verticals; 1 concept page created
 
 ---
 

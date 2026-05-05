@@ -140,5 +140,5 @@ Use this section to park ideas for later review.
 
 ## Related
 
-- [[Trioangle Growth Plan]] — MRR architecture for existing business
+- [[Trioangle Growth Plan]] — Two-Track strategy (Product ICP cash engine + AI-specialist Service ICP for existing operators)
 - [[Trioangle 2.0 AI Pivot Plan]] — AI-specific pivot strategy

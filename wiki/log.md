@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-16
+updated: 2026-04-30
 tags:
   - meta
   - log
@@ -18,6 +18,115 @@ related:
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
+
+## [2026-04-30] reingest | Trioangle - ICP - Service.md (Pass 5 — full Pivot/Growth alignment)
+- Source: `.raw/Trioangle/ICP/Trioangle - ICP - Service.md` (hash → 3247ab2ac3f5b891140b0108dfc59e87)
+- Pages updated: [[Trioangle Service ICP]] (full rewrite, rev 5), [[ICP-Service-Trioangle]] (key_claims expanded from 9 → 18, related extended to Growth Plan + AI Pivot Plan, all 5 persona budgets/timelines updated, new sections: Persona Tiering, Existing-Operator Filter, Two Pre-Sales Products, AI Funnel disambiguation, Pain → Persona Matrix, Loss Reasons, Volume Targets, AI delivery count caveat)
+- Trigger: full review of source against [[Trioangle 2.0 AI Pivot Plan]] and [[Trioangle Growth Plan]] surfaced 14 cross-document gaps. User selected 10 to fix (1, 3, 6, 8, 9, 10, 11, 12, 13, 14); skipped 4 (activation banner, P3+P4 channel-only enforcement, Track 1/2 framing, vertical count 8 vs 9 reconciliation).
+- Source edits applied (10 substantive changes):
+  1. **Persona Tiering callout** added near Buyer Personas section: P5 🎯 direct primary, P3+P4 🤝 channel-partner only, P1+P2 🪶 opportunistic only — annotated that P1/P2 playbooks are reference for inbound conversion, not outbound activation
+  2. **Existing-Operator Filter** added to ✅ Must-Have qualifying criteria (12+ months operational OR established offline business with revenue traction) plus 4 nice-to-haves and 3 disqualifiers from Growth Plan Track 2 thesis
+  3. **P5 budget reconciled** $15k–$60k → $15k–$120k+ across all three docs (Service ICP + Growth Plan + AI Pivot Plan); P5 decision speed split 2-4 weeks <$25k / 4-6 weeks >$25k; P4 stretched to $30k–$120k+; budget table updated
+  4. **AI Audit Sprint** named canonically (was "AI Discovery Sprint" / "AI Scope Variant"); replaced inline references in Loss Reasons table and Channel 4 sales line
+  5. **AI Funnel disambiguation** added — free 1-hour AI Readiness Call (TOFU qualification) vs paid AI Audit Sprint ($1.5–4k pre-engagement entry); standard funnel: Readiness Call → Audit Sprint → signed AI feature build
+  6. **Repeat-Buy Cadence + Account Cadence** rows added to P3, P4, P5 personas. P3: 1-2 large/yr + quarterly executive readout. P4: 2-3/yr + relationship-led informal cadence (WhatsApp). P5: 2-4 AI features/yr + quarterly AI roadmap review ("what's working, what's next, what's blocking")
+  7. **Current vs future AI buyer flow** flagged in P5 Commercial Model callout: P5 is *future* direct buyer; *currently active* AI revenue flows from Product ICP Persona 6 add-ons at clone-script handover per AI Pivot Plan Phase 0
+  8. **Track 2 Volume Targets callout** added under Budget & Persona Tiering — Y1/Y2/Y3+ active-client and revenue figures from Growth Plan Revenue Math
+  9. **800+ stat caveat** now points to Growth Plan for active-base reality and reference-pool guidance (per user note: this lives in Growth Plan, not Service ICP — single cross-ref instead of repeating)
+- Cross-document edits also applied to [[Trioangle Growth Plan]] (P5 budget $15-120k+ in 3 places) and [[Trioangle 2.0 AI Pivot Plan]] (P5 budget $15k-$120k+ in 2 places — Where Buyers Come From + Phase 0 conditional source)
+- Deferred (user skipped): activation status banner; full P3+P4 channel-partner-only outbound rebuild; Track 1/2 framing intro paragraph; vertical-count reconciliation (Service ICP says 9, AI Pivot Plan says 8)
+- Key insight: the Service ICP was reading as a live outbound playbook; cross-referenced against the strategic plans that direct investment, it's actually Track 2 reference material that defers to Growth Plan for activation timing, volume targets, and customer-base reality. The 10 fixes propagate that posture into the doc itself, so a sales reader can't accidentally build outbound motions for P1/P2 or treat 800+ as a live reference pool.
+
+---
+
+## [2026-04-30] reingest | Trioangle Growth Plan (full thesis pivot — Two-Track Strategy)
+- Page: [[Trioangle Growth Plan]] (complete rewrite)
+- Trigger: extended in-session restructuring driven by user re-strategizing — moved from "recurring revenue is a pricing problem (4-tier retainer stack)" to "recurring revenue is an ICP problem (Track 1 cash engine + Track 2 AI-specialist Service ICP for existing operators)". Hosting + Ops dropped entirely. ICP cross-references rebuilt against [[Trioangle Product ICP]] and [[Trioangle Service ICP]].
+- Old thesis (replaced): 3-Tier Result-Based Recurring Delivery (Tier 1 Hosting + Ops ₹8–12K, Tier 2 Monthly Feature Drop ₹40K, Tier 3 Sprint-as-a-Service ₹90K) + Hosting Margin Play + Project-to-Recurring-Delivery Conversion + Re-Pitch for AMC Rejectors + 30-Day Sprint to ₹3L. Tried to convert Product ICP startup buyers into subscription customers — fails structurally because of 96% mortality, not pricing.
+- New thesis: **Two-Track Strategy** — Track 1 Product ICP (cash engine, transactional, 96% mortality accepted, AI add-on pitch at handover); Track 2 AI-Specialist Service ICP for existing operators (growth engine, higher-ASP + recurring through project cadence). Recurring shape is **continuous project flow** (2–4 projects/client/yr at $25–60k avg), not subscriptions/retainers.
+- Key concepts introduced:
+  1. **Recurring is an ICP problem, not a pricing problem** — the ICP shift simultaneously fixes mortality drag AND raises per-deal ASP 3–10×
+  2. **Existing-operator filter** (4 conditions: revenue traction + active competitive pressure + weak in-house capability + growth ambition) — Service ICP P5 direct, P3/P4 channel-partner; deprioritize P1/P2 (still startup-shaped)
+  3. **AI specialist positioning as the wedge** — general dev service is commodity in 2026; AI engineering still requires real domain expertise; AI specialist earns the relationship, full-service capability expands it
+  4. **AI Audit Sprint** ($1.5–4k, 2-week paid engagement, credited toward first project) — same shape as Service ICP Discovery Sprint, named for AI focus; outputs prioritized AI roadmap with fixed-price quotes for top 2–3 features; the roadmap *is* the project queue
+  5. **Five drivers of recurring demand from existing operators** — production reality, competitive pressure, expansion, ops friction, AI roadmap depth
+  6. **Two-axis advantage** — Track 2 wins on (a) higher per-deal ASP AND (b) recurring through cadence; either alone justifies the track, together they make Track 2 the company's primary revenue line by Year 2
+- Cross-document propagation:
+  - [[index]] line 108 — full entry rewrite
+  - [[hot]] — new "Last Updated" entry as session 5
+  - [[Trioangle-Sales-Operations]] — "(MRR architecture)" reference language updated to Two-Track framing
+  - [[Business Idea Generator]] — "MRR architecture for existing business" reference updated to Two-Track framing
+- Already-aligned pages (no changes needed):
+  - [[Trioangle 2.0 AI Pivot Plan]] — references Growth Plan as compounding/growth mechanisms owner; accurate
+  - [[Trioangle Service ICP]] — already framed as "Track 2 in the two-track Growth Plan model" (updated 2026-04-30)
+  - [[Trioangle Product ICP]] — already framed as Track 1 (Pass 4 on 2026-04-30)
+  - [[Trioangle Channel Partner Personas]] — Pass 3 on 2026-04-30 referenced Two-Track architecture
+- Year 2 anchor: 8–12 active Track 2 clients × 3–4 projects/yr × $35k avg = $840k–$1.7M annual; Year 3+ ₹1–2 cr/month effective monthly
+- What was dropped from old plan (intentionally not preserved): TCS/Infosys/Accenture retainer pivot framing (was load-bearing in retainer-rejection thesis; new thesis doesn't need the analogy); 2-of-3 still-operating verification check (callable technique but not in this doc); explicit "every recurring rupee gated on shipped output" line (spirit kept in Defining Shipped + summary)
+
+## [2026-04-30] reingest | Trioangle 2.0 AI Pivot Plan (full evolution since initial draft)
+- Page: `wiki/concepts/Trioangle 2.0 AI Pivot Plan.md` (wiki concept; not a `.raw/` source)
+- Pages updated: [[Trioangle 2.0 AI Pivot Plan]] (full restructure across multiple sessions), [[index]] (entry rewritten), [[log]] (this entry)
+- Companion pages created during evolution: [[Trioangle Growth Plan]], [[Trioangle AI Delivery Kit]]
+- Trigger: iterative founder review across 30+ revision cycles. Plan evolved from a generic SMB-AI-agency pivot doc into a focused AI-services-only strategic plan with explicit boundaries against companion docs.
+- Substantive changes (chronological summary):
+  1. **Two Business Lines table** — clean separation between Enterprise Custom Dev (Service ICP, future activation) and SMB AI Services (this plan, building); historical 800+ deployments framed as credibility, not pipeline
+  2. **"Why Pivot" reframed** as counter-initiative to slowing AI-augmented dev market (Cursor/Lovable/Bolt plateauing; "build software faster with AI" no longer differentiates) — explicitly NOT framed as a fix for the 30-active-customer problem (that's Growth Plan's job)
+  3. **Pricing model shift to one-time outcome-based ONLY**: dropped Workflow Subscription, Outcome Deals (metric-based), retainers, fractional CTO, training/workshop business, SaaS, Stripe self-serve checkout, AI Scoping Call lead magnet
+  4. **Currency** ₹ → USD throughout; pricing table now $500–$5,000 SMB packages
+  5. **Geography** India-first → English-speaking global SMB (NA, UK, EU, MENA, SEA)
+  6. **Channel Partner program** — full program section replaced with one-line routing note + link to [[Trioangle Channel Partner Personas]]; Trioangle clarified as principal/provider, not the channel partner
+  7. **Persona definitions removed** (A, B, C, D, E) — buyer ICPs route through [[Trioangle Product ICP]] and [[Trioangle Service ICP]] instead of being redefined here; Persona 6 (AI Builder Who Hit the Wall) flagged as highest-fit AI add-on buyer
+  8. **Compounding mechanism (Repeat Business) extracted** to [[Trioangle Growth Plan]] — applies across AI + non-AI tracks, not specific to AI Pivot
+  9. **Trioangle AI Delivery Kit extracted** to standalone page with vertical-tuned templates table (Ride-Hailing, Delivery, Travel, Social, Multi-Service, Home Services, Commerce, Education) — 8 verticals × ~100 deployments each is the moat documented from existing delivery muscle
+  10. **Vertical positioning corrected** — was framed "vertical-agnostic" (incorrect); flipped to vertical-deep across 8 verticals from 800+ deployments since 2015. Phase 2 brand shift now: *"Productized AI for marketplace, on-demand, and platform operators — built by the team that's shipped 800+ platforms in your vertical since 2015."*
+  11. **Service ICP framing updated**: documented but not yet operationalized; AI deals from Service ICP P5 are bonus when outbound activates, not budgeted into this plan
+  12. **CAC/LTV metrics removed** — these belong in sales-ops doc, not this strategic plan; pipeline + delivery quality only here
+  13. **Technical tooling** (Langfuse, LangGraph, Vapi/Retell, RAGAS) softened/moved to [[Trioangle AI Delivery Kit]] and [[AI Engineering Learning Roadmap]] — the strategic plan stays strategic
+  14. **Phase 3 renamed** "Compound" → "Scale" (compounding moved to Growth Plan); now focuses on broader package range, AI Delivery Kit maturity, enterprise AI footprint
+  15. **Phase 2 milestones** — case-study target now specifies one per high-traction vertical (ride-hail dispatch AI, marketplace fraud detection, on-demand booking assistant, food/grocery delivery search, multi-service AI moderation)
+  16. **Risk Register reordered** — pipeline-dryness, missed-deadline, quality-incident promoted to top; removed dropped-mechanism risks (community tier, Workflow Sub delivery, Outcome Deal disputes, repeat-business rate)
+- Cross-document boundaries enforced: [[Trioangle Growth Plan]] owns recurring revenue + repeat business + customer LTV across all tracks; [[Trioangle AI Delivery Kit]] owns the internal toolkit + vertical-tuned templates + technical tooling; [[Trioangle Product ICP]] / [[Trioangle Service ICP]] own buyer definitions; [[Trioangle Channel Partner Personas]] owns the partner program; this plan owns AI capability building, productization, project delivery, phasing, and the moat narrative
+
+## [2026-04-30] reingest | Trioangle - ICP - Product.md (Pass 4 — Pivot/Growth alignment + smaller fixes)
+- Source: `.raw/Trioangle/ICP/Trioangle - ICP - Product.md` (hash → 49a33ebcc94df0cf94944dbfbc1d6771)
+- Pages updated: [[Trioangle Product ICP]] (full rewrite, rev 4), [[ICP-Product-Trioangle]] (key_claims expanded, reingest summary callout, persona budget table updated to $500 floors), [[Trioangle Buyer Personas]] (rev 2: P1/P4/P6 budget floors → $500, P2 composition-shift trigger added, P6 origin section + sunset trigger added, related links extended to Pivot/Growth Plans)
+- Trigger: source ICP underwent two iterative review passes against [[Trioangle 2.0 AI Pivot Plan]] and [[Trioangle Growth Plan]]. First pass surfaced 5 standalone issues (800+ verifiability, AI add-on timing, P2/P6 re-eval triggers, cheapest-option enforcement, $500 floor); second pass surfaced 7 cross-document conflicts and gaps (Two-Track architecture invisible, "compounding engine" overstatement, mortality math not linked, Track 2 graduation path undocumented, Service ICP outbound state, Phase 2 brand shift not noted, AI add-on pitch timing reverted to handover for Pivot Plan alignment).
+- Source edits applied (13 substantive changes):
+  1. **Two-Track Architecture callout** added at top — explicitly frames this ICP as Track 1 (Cash Engine); ~96% historical 5-year mortality structural to buyer profile (not service quality, not fixable via pricing); recurring base lives on Track 2 (Service ICP existing-operators) per Growth Plan
+  2. **800+ deployments verifiability TIP** — cumulative-since-2015 vs currently-live distinction; quarterly-refreshed by-region/vertical reference list as operational requirement; wikilinks Growth Plan for the ~30 active / 96% mortality math
+  3. **Persona 2 re-evaluation trigger** added (composition shift) — when AI-tool burn displaces freelancer/agency burn as top reported burn cause for 2 consecutive quarters, P2 and P6 may converge
+  4. **Persona 6 re-evaluation trigger** added (sunset) — symmetric inverse of P1's; retire-or-redefine when one-click iOS submission ships, production dispatch SLA ships, or P6 inbound <20% for 2 consecutive quarters
+  5. **Cheapest-Option Disqualification operationalized** — sales authority without commission penalty, CRM tag `disqualified_price_only` at first call, 12-month return tracking as P2, quarterly review against ~15%/~30% return-rate thresholds (heuristics, calibrate against first 4 quarters)
+  6. **Persona budget floors aligned to $500** — P1 $1k–$8k → $500–$8k, P4 $1k–$6k → $500–$6k, P6 $1k–$8k → $500–$8k; Risk Tolerance band $1k–$25k → $500–$25k
+  7. **Pain Point severity methodology** footnote — directional weights from sales call notes + post-purchase support tickets + recurring objection patterns; recalibrate annually
+  8. **Pain Point 5 stage** Pre-Purchase → Both (pre-purchase concern; post-launch impact)
+  9. **Buying Triggers** broken from run-on bullet to 6-item list with `<br>` rendering
+  10. **Goals table persona-tagged** with Applies To column; added P4-only existing-ops migration goal, P5-only multi-service breadth goal
+  11. **AI add-on pitch timing held at handover** (Day 0–7 canonical, aligned with Pivot Plan); Day 30–90 = fallback re-pitch. **Repeat AI deal cadence** Day 90 / Day 180 timed from first AI delivery — both upside on Track 1, not company recurring base
+  12. **Track 2 graduation row** added to Post-Launch Revenue table — P4/P5 most likely candidates, AI Audit Sprint $1.5–4k entry product per Growth Plan; P1/P6 rarely qualify (startup-shaped)
+  13. **Service ICP routing note** — outbound not yet activated as of 2026-Q2 (per Pivot Plan); inbound scoping only. **Positioning statement compressed** to lead with AI contrast ("AI tools deliver a prototype; Trioangle delivers the live business"); Phase 2 brand-shift footnote points to AI-services-led brand at Pivot Plan M7–10
+- Cross-document consistency verified: AI add-on at handover (matches Pivot Plan lines 128/140/197/276/286 and Growth Plan line 51); AI package pricing identical across docs; "Persona 6 = highest-fit AI add-on buyer at point of sale" stated identically across all three; Service ICP $30k merge threshold compatible with Service ICP $10k floor; channel partner referral kept separate from Founder Referral per Growth Plan instruction
+- Manifest entry created (was missing from prior ingest); marked rev 4
+
+---
+
+## [2026-04-30] ingest | Trioangle/SEO/SEO_AEO_GEO_Prompts_Template.md
+- Source: `.raw/Trioangle/SEO/SEO_AEO_GEO_Prompts_Template.md`
+- Pages created: [[Trioangle-SEO-AEO-GEO-Prompts-Template]] (source), [[SEO-AEO-GEO-Prompt-Library]] (concept)
+- Trigger: new file dropped into `.raw/Trioangle/SEO/`. 180-prompt master template covering SEO (75) + AEO (40) + GEO (60) + Hybrid (5). Reusable across all 10 Trioangle clone script verticals via variable substitution ([Product Name], [Script Type], [market leader], [Persona N], [Feature N]).
+- Key facts captured:
+  - Three engine classes: SEO (Google/Bing rankings), AEO (featured snippets + voice), GEO (ChatGPT/Gemini/Claude/Perplexity/Bing Copilot citation)
+  - SEO sub-buckets are intent-based (informational → transactional progression maps to TOFU → BOFU funnel); AEO sub-buckets are format-based (definition vs how-to vs comparison vs voice); GEO sub-buckets are use-case-based (overview, authority, scenario, deep-dive, trend, conversion)
+  - GEO Authority sub-bucket (126-135) carries highest commercial-leverage — directly shapes AI recommendations to in-market buyers; uniquely populated by Trioangle's "800+ deployments / 150+ countries" trust statements
+  - Format rules: SEO = blog/H1-H2/meta; AEO = 40-60 word direct answer + FAQPage JSON-LD; GEO = 1,500-3,000 word authority article + Org/Product/FAQ schema published on high-authority domains
+  - Hybrid prompts (176-180) target all three engines simultaneously — anchor pillar pages
+  - Sequencing rule from priority matrix: Hybrid first → AEO definitions → BoFU SEO → long-tail
+  - Multiplier effect: one template × 10 verticals × 180 prompts = ~1,800 prompt-targeted assets reusing one schema
+- Cross-links: [[SEO-Recovery-Strategy-2025-26]] (strategic parent), [[Trioangle Content Strategy]] (5-pillar editorial framework), [[Product-Blog-Article-Templates]] (T1-T20 article briefs — sister execution layer), [[Trioangle Buyer Personas]] (P1-P6 persona slot for placeholder substitution), [[Trioangle Product ICP]] (product/feature variables), [[Trioangle]] (entity/trust statements)
+- Strategic role: bridges between strategy and writing — strategy says "shift to GEO/AIO/BoFU"; this library enumerates exactly which 180 prompts to attack; templates then turn each prompt into an article brief.
+
+---
 
 ## [2026-04-30] reingest | Trioangle - ICP - Channel Partner.md (Pass 3 — AI pivot alignment)
 - Source: `.raw/Trioangle/ICP/Trioangle - ICP - Channel Partner.md` (hash → 41a5096bb45b38f0e10c4309a09ef40f)

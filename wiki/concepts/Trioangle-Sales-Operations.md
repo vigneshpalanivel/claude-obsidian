@@ -242,4 +242,4 @@ The weak points and initiatives together show a company making a transition from
 - **The initiatives list** skews heavily toward process and tooling — which is correct when the primary weakness is execution discipline, not strategy.
 - **The KPIs** focus on conversion ratios and engagement rates — the right metrics for a mid-funnel bottleneck problem.
 
-For the broader strategic picture, see [[Trioangle Growth Plan]] (MRR architecture) and [[Trioangle 2.0 AI Pivot Plan]] (AI services pivot).
+For the broader strategic picture, see [[Trioangle Growth Plan]] (Two-Track strategy: Product ICP cash engine + AI-specialist Service ICP recurring engine) and [[Trioangle 2.0 AI Pivot Plan]] (AI services pivot).

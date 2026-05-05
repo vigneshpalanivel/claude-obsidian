@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Sources Index"
-updated: 2026-04-15
+updated: 2026-04-30
 tags:
   - meta
   - index
@@ -42,6 +42,7 @@ All source pages — summaries of ingested documents, transcripts, articles, and
 - [[Product-Blog-Article-Templates]] — Trioangle internal, 2026 | 20 article templates + 8 lead magnets for product line blog
 - [[LinkedIn-Marketing-Strategy-InnBlockchain]] — InnBlockchain internal, 2026-04-06 | platform setup, algorithm mechanics, content cadence, 5 authority clusters, newsletter "Secure by Design", analytics targets
 - [[LinkedIn-Outreach-Strategy-InnBlockchain]] — InnBlockchain internal, 2026-04-06 | 5 ICP tracks, 5-touchpoint sequences with templates, Sales Navigator filters, daily budgets, KPIs, DQ signals
+- [[Trioangle-SEO-AEO-GEO-Prompts-Template]] — Trioangle internal, 2026 | 180-prompt master template (SEO 75 / AEO 40 / GEO 60 / Hybrid 5) for clone script verticals; variable-driven; pairs with Product-Blog-Article-Templates
 
 ---
 

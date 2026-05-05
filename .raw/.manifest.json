@@ -39,15 +39,50 @@
         "wiki/log.md"
       ]
     },
+    ".raw/Trioangle/ICP/Trioangle - ICP - Product.md": {
+      "hash": "49a33ebcc94df0cf94944dbfbc1d6771",
+      "ingested_at": "2026-04-15",
+      "reingested_at": "2026-04-30",
+      "reingest_history": [
+        {
+          "date": "2026-04-15",
+          "reason": "Initial ingest \u2014 6 buyer archetypes, 3 product tiers, 8 verticals, AI-Era Positioning Rule, Persona 1 displacement re-eval triggers, Founder Referral structured program, Secondary Markets distinct playbook"
+        },
+        {
+          "date": "2026-04-30",
+          "reason": "Pass 4 \u2014 alignment with [[Trioangle 2.0 AI Pivot Plan]] and [[Trioangle Growth Plan]] + smaller fixes. (1) Two-Track Architecture callout added at top \u2014 this ICP defines Track 1 (Cash Engine); ~96% historical 5-year mortality structural to buyer profile; recurring base lives on Track 2 (Service ICP existing-operators). (2) 800+ verifiability TIP added \u2014 cumulative-since-2015 vs currently-live; quarterly-refreshed by-region/vertical reference list operational requirement; wikilinks Growth Plan for mortality math. (3) Persona re-eval triggers expanded to P2 (composition shift as AI-tool burn replaces freelancer burn) and P6 (sunset trigger as production gap narrows; symmetric inverse of P1). (4) Cheapest-Option Disqualification operationalized \u2014 sales authority without commission penalty, CRM tag at first call, 12-month return tracking, quarterly review against ~15%/~30% thresholds. (5) Persona budget floors aligned to $500: P1 $500\u2013$8k, P4 $500\u2013$6k, P6 $500\u2013$8k; Risk Tolerance $500\u2013$25k. (6) Pain Point severity methodology footnote added \u2014 directional weights from sales call notes + support tickets; recalibrate annually. (7) Pain Point 5 stage Pre-Purchase \u2192 Both. (8) Buying Triggers run-on bullet \u2192 6-item list with `<br>` rendering. (9) Goals table now persona-tagged with Applies To column; added P4-only existing-ops migration goal and P5-only multi-service breadth goal. (10) AI add-on pitch held at handover (Day 0\u20137) \u2014 canonical, aligned with Pivot Plan; Day 30\u201390 is fallback re-pitch. Repeat AI deals: Day 90 / Day 180 cadence timed from first AI delivery \u2014 both upside on Track 1, not company recurring base. (11) Track 2 graduation row added to Post-Launch Revenue table \u2014 P4/P5 most likely candidates; AI Audit Sprint $1.5\u20134k entry. (12) Service ICP routing note \u2014 outbound not yet activated as of 2026-Q2. (13) Positioning statement compressed to lead with AI contrast (\"AI tools deliver a prototype; Trioangle delivers the live business\"); Phase 2 brand-shift footnote added."
+        }
+      ],
+      "reingest_reason": "Pass 4 \u2014 Pivot/Growth alignment + smaller fixes (see reingest_history)",
+      "pages_created": [
+        "wiki/sources/ICP-Product-Trioangle.md",
+        "wiki/concepts/Trioangle Product ICP.md",
+        "wiki/concepts/Trioangle Buyer Personas.md"
+      ],
+      "pages_updated": [
+        "wiki/sources/ICP-Product-Trioangle.md",
+        "wiki/concepts/Trioangle Product ICP.md",
+        "wiki/concepts/Trioangle Buyer Personas.md",
+        "wiki/index.md",
+        "wiki/hot.md",
+        "wiki/log.md"
+      ]
+    },
     ".raw/Trioangle/ICP/Trioangle - ICP - Channel Partner.md": {
       "hash": "41a5096bb45b38f0e10c4309a09ef40f",
       "ingested_at": "2026-04-15",
       "reingested_at": "2026-04-30",
       "reingest_history": [
-        {"date": "2026-04-15", "reason": "consistency review vs. Product + Service ICPs: MENA range corrected to $30k-$120k+, Segment Access softened from 'unreachable' to 'slow/trust-gated', AI-Forward Platform Operator (Service Persona 5) added to P3 routing, P1 Clone Script primary exception noted, budget floor split by delivery mode, InnBlockchain wikilink fixed, Discovery Sprint pricing hoisted into exec summary"},
-        {"date": "2026-04-30", "reason": "Pass 3 — alignment with Trioangle 2.0 AI Pivot Plan and Trioangle Growth Plan. (1) Three service lines (AI Engineering primary post-pivot, Custom Dev, Clone Script). (2) Two scoping sprints: AI Audit Sprint vs Discovery Sprint. (3) AI-Forward Platform Operator range corrected $15k-$60k to $15k-$120k+ in P3 and added to P2 routing. (4) AI Builders Who Hit the Wall (Product Persona 6) added to P1 routing. (5) Retainer language stripped — Trioangle is project/deliverable-based ONLY, signed-volume tiers replace retainer language. (6) 800+/150+ countries cumulative-since-2015 guard callout added (current active base ~30). (7) Must-Have budget criteria adds AI Engineering floor ($15k+/package). (8) Technical Scope Uncertainty objection split into AI Audit vs Discovery Sprint table. (9) Quick Reference table in personas concept page now shows dominant brief types per persona."}
+        {
+          "date": "2026-04-15",
+          "reason": "consistency review vs. Product + Service ICPs: MENA range corrected to $30k-$120k+, Segment Access softened from 'unreachable' to 'slow/trust-gated', AI-Forward Platform Operator (Service Persona 5) added to P3 routing, P1 Clone Script primary exception noted, budget floor split by delivery mode, InnBlockchain wikilink fixed, Discovery Sprint pricing hoisted into exec summary"
+        },
+        {
+          "date": "2026-04-30",
+          "reason": "Pass 3 \u2014 alignment with Trioangle 2.0 AI Pivot Plan and Trioangle Growth Plan. (1) Three service lines (AI Engineering primary post-pivot, Custom Dev, Clone Script). (2) Two scoping sprints: AI Audit Sprint vs Discovery Sprint. (3) AI-Forward Platform Operator range corrected $15k-$60k to $15k-$120k+ in P3 and added to P2 routing. (4) AI Builders Who Hit the Wall (Product Persona 6) added to P1 routing. (5) Retainer language stripped \u2014 Trioangle is project/deliverable-based ONLY, signed-volume tiers replace retainer language. (6) 800+/150+ countries cumulative-since-2015 guard callout added (current active base ~30). (7) Must-Have budget criteria adds AI Engineering floor ($15k+/package). (8) Technical Scope Uncertainty objection split into AI Audit vs Discovery Sprint table. (9) Quick Reference table in personas concept page now shows dominant brief types per persona."
+        }
       ],
-      "reingest_reason": "Pass 3 — AI pivot alignment (see reingest_history)",
+      "reingest_reason": "Pass 3 \u2014 AI pivot alignment (see reingest_history)",
       "pages_created": [
         "wiki/sources/ICP-Channel-Partner-Trioangle.md",
         "wiki/concepts/Trioangle Channel Partner Personas.md"
@@ -77,7 +112,7 @@
       "hash": "632c69007637e2e2d76a1c4bc8dee403",
       "ingested_at": "2026-04-15",
       "reingested_at": "2026-04-28",
-      "reingest_reason": "added cross-segment Motion 3 White-Label Productized Platform (SEO-driven inbound across all 6 active verticals: RWA/DEX/DeFi/wallet/NFT/IDO). End-to-end delivery (smart contracts + audit + full UI/UX layer); buyer owns code outright (not SaaS). $30k–$100k ACV / 6–12 weeks. Per-vertical bundle table with primary SEO search terms. Hard gate: ≥1 reference build (internal MVP or delivered client deployment) per vertical. Routing: sub-$30k crypto-native → Crypto Products clone scripts; regulated FinTech → FinTech ICP equivalent. Motion 4 competitor table. Service Distinction expanded to three motions. Prior round 1 fixes preserved (budget floor split, Sasha AI counter-objection, Segment 1 priority callout, etc.).",
+      "reingest_reason": "added cross-segment Motion 3 White-Label Productized Platform (SEO-driven inbound across all 6 active verticals: RWA/DEX/DeFi/wallet/NFT/IDO). End-to-end delivery (smart contracts + audit + full UI/UX layer); buyer owns code outright (not SaaS). $30k\u2013$100k ACV / 6\u201312 weeks. Per-vertical bundle table with primary SEO search terms. Hard gate: \u22651 reference build (internal MVP or delivered client deployment) per vertical. Routing: sub-$30k crypto-native \u2192 Crypto Products clone scripts; regulated FinTech \u2192 FinTech ICP equivalent. Motion 4 competitor table. Service Distinction expanded to three motions. Prior round 1 fixes preserved (budget floor split, Sasha AI counter-objection, Segment 1 priority callout, etc.).",
       "pages_created": [
         "wiki/sources/ICP-InnBlockchain-Crypto-Native.md",
         "wiki/concepts/InnBlockchain Crypto Native ICP.md"
@@ -164,6 +199,18 @@
         "wiki/hot.md",
         "wiki/log.md",
         "wiki/index.md"
+      ]
+    },
+    ".raw/Trioangle/ICP/Trioangle - ICP - Service.md": {
+      "hash": "3247ab2ac3f5b891140b0108dfc59e87",
+      "ingested_at": "2026-04-30",
+      "rev": 5,
+      "pages_created": [],
+      "pages_updated": [
+        "wiki/concepts/Trioangle Service ICP.md",
+        "wiki/sources/ICP-Service-Trioangle.md",
+        "wiki/log.md",
+        "wiki/hot.md"
       ]
     }
   }

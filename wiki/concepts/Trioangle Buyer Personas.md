@@ -2,7 +2,8 @@
 type: concept
 title: "Trioangle Buyer Personas"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-04-30
+ingest_rev: 2
 tags:
   - concept
   - buyer-persona
@@ -31,12 +32,12 @@ Six buyer archetypes for [[Trioangle]]'s product line (clone scripts and super-a
 
 | # | Archetype | Core Emotion | Speed | Budget | Key Proof |
 |---|---|---|---|---|---|
-| 1 | Visionary Velocity Founder | First-mover urgency | Fast (<20 days) | $1k–$8k | Live demo, app store links |
+| 1 | Visionary Velocity Founder | First-mover urgency | Fast (<20 days) | $500–$8k | Live demo, app store links |
 | 2 | Burned Builder Comeback | Controlled determination | Slow (30–60 days) | $3k–$12k | Testimonials, refund policy, live chat |
 | 3 | Diaspora Digital Entrepreneur | Community pride + opportunity | Moderate (20–40 days) | $5k–$15k | Diaspora case studies, multilingual demo |
-| 4 | Small Business Digitalizer | Survival (not disruption) | Slow (30–60 days) | $1k–$6k | Admin panel walkthrough, ROI calculator |
+| 4 | Small Business Digitalizer | Survival (not disruption) | Slow (30–60 days) | $500–$6k | Admin panel walkthrough, ROI calculator |
 | 5 | Super-App Ecosystem Builder | Regional dominance | Slow (30–60 days) | $8k–$25k | Full Gojek demo, multi-service proof |
-| 6 | AI Builder Who Hit the Wall | Sunk-cost urgency | Fast (<14 days) | $1k–$8k | App store approvals, deployment SLA |
+| 6 | AI Builder Who Hit the Wall | Sunk-cost urgency | Fast (<14 days) | $500–$8k | App store approvals, deployment SLA |
 
 ---
 
@@ -69,6 +70,8 @@ Six buyer archetypes for [[Trioangle]]'s product line (clone scripts and super-a
 
 **Key objection**: *"I've been burned before. How is this different?"*
 > Operating since 2015, 800+ live businesses across 150+ countries. Free installation, app store submission, 6-month support. Here are real apps in the stores — call those founders directly.
+
+**AI-era re-evaluation trigger (composition shift):** Persona 2 originally formed around freelancer/agency burns. As of 2025–2026, an increasing share carry an AI-tool burn instead. Revisit framing/objections/proof when (a) AI-tool failure displaces freelancer/agency failure as the top reported burn cause for two consecutive quarters, or (b) typical Persona 2 returns with a working AI-generated codebase rather than a vanished freelancer's incomplete code — at which point Persona 2 and Persona 6 effectively converge. *Operational dependency: requires a "prior burn cause" tag on Persona 2 inbound (freelancer / agency / AI tool / cheap script / multiple).*
 
 ---
 
@@ -116,6 +119,8 @@ Six buyer archetypes for [[Trioangle]]'s product line (clone scripts and super-a
 
 **Who**: Technical Solopreneur / Developer-adjacent Founder, 22–38. Started with Cursor, Lovable, or Replit and built a working demo in days. Then hit the wall: App Store rejection, GPS tracking failure at scale, payment gateway complexity, broken dispatch logic. Has invested 4–8 weeks and has something that looks like a product but can't go live.
 
+**Origin (why they chose AI over an agency):** three reasons in combination — (1) priced out of $30k+ custom-dev quotes, (2) distrust of agencies after seeing peers get burned, and (3) genuine belief in the "build anything with AI in a weekend" content wave (Pieter Levels, Theo Browne, Fireship, the vibe-coding creator circuit). **They are not anti-agency by ideology** — they defaulted to AI because it seemed like the rational 2025 path. Sales should respond to honesty about what AI *does* do well, not to agency-era pitches that dismiss AI outright.
+
 **Emotional driver**: Sunk-cost urgency. Already invested time and possibly money. The moment they accept their prototype won't make production, they move fast.
 
 **Do say**: *"Production-ready and App Store approved from day one — real GPS tracking, real payment flows, real support when it goes live"*
@@ -123,6 +128,10 @@ Six buyer archetypes for [[Trioangle]]'s product line (clone scripts and super-a
 
 **Key objection**: *"My prototype is 80% done. Why throw it away?"*
 > Your prototype is 80% of a demo — not 80% of a live business. The remaining 20% is App Store compliance, production server architecture, real-time dispatch under load, payment gateway production setup. That 20% will take 3–6 more months with AI tools — and you'll maintain it alone with no SLA. Our platform has crossed that finish line 800+ times.
+
+**Highest-fit AI add-on buyer:** Per [[Trioangle 2.0 AI Pivot Plan]], Persona 6 converts on AI add-on pitch at clone-script handover at materially higher rates than any other Product ICP persona — they are technically literate, AI-aware, and already convinced AI features matter to their product.
+
+**AI-era re-evaluation trigger (sunset):** Persona 6 exists *because* of the production gap; as the gap narrows, this persona will sunset entirely. Plan the harvest while the gap is open. Retire-or-redefine when (a) Lovable/Bolt/Cursor publicly ships one-click iOS App Store submission with documented approval rate (symmetric inverse of Persona 1's trigger — same signal, opposite implication), (b) a mainstream AI builder ships production-grade real-time multi-role dispatch with documented SLA, or (c) Persona 6 inbound drops below 20% of total inbound for two consecutive quarters after sustained growth. *Operational dependency: same as Persona 1 — requires CRM persona-tagging on inbound for trigger (c) to be measurable.*
 
 **Cross-link**: This archetype is the most direct product of the [[Vibe Coding]] wave. Directly validates findings in [[Research: Running a Software Dev Company Post-Vibe-Coding]] — code generation is 25-35% of a live product; the rest (infrastructure, compliance, App Store, production ops) is where the real work lives.
 
@@ -145,7 +154,10 @@ Persona 5 → Run full Gojek demo; qualify service scope first
 ## Connections
 
 - [[Trioangle]] — the company
+- [[Trioangle Product ICP]] — structural ICP these personas map to
 - [[ICP-Product-Trioangle]] — source document
+- [[Trioangle 2.0 AI Pivot Plan]] — Persona 6 is highest-fit AI add-on buyer at handover
+- [[Trioangle Growth Plan]] — Persona 4 and Persona 5 are most likely Track 2 graduation candidates post-launch
 - [[Vibe Coding]] — Persona 6 is a direct downstream effect
 - [[Marketing-Sales Alignment]] — persona clarity is the foundation of marketing-sales alignment
 - [[Research: Marketing and Sales for AI-Era Dev Company]] — ICP framework applies here
