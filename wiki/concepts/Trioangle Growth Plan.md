@@ -54,8 +54,8 @@ Continue the active Product ICP motion exactly as defined in [[Trioangle Product
 
 ### Track 2 — AI Services for Existing Operators (Growth Engine)
 
-> [!IMPORTANT] Status — Documented, Outbound Not Yet Activated
-> As of 2026-Q2, Track 2 is fully documented but **not yet generating direct outbound revenue**. Activation gate: Phase 0/1 of [[Trioangle 2.0 AI Pivot Plan]] must stabilize first — delivery muscle proven, productized AI services live, first 5–8 AI deals shipped through the Track 1 add-on flow. Until then: inbound-only conversion. Currently active AI demand is captured through Persona 6 (AI Builder Who Hit the Wall) add-ons at clone-script handover, not through P5 outbound. **Year 1 of the Revenue Math below starts at activation, not at calendar M0.**
+> [!IMPORTANT] Status — Phase 0 Outbound Active
+> As of 2026-Q2, Track 2 P5 outbound is active — this is Phase 0 of [[Trioangle 2.0 AI Pivot Plan]]. Service ICP P5 direct outreach is the **primary** AI revenue channel. Product ICP Persona 6 add-ons at clone-script handover are **opportunistic only** — taken when interest appears, not pitched proactively. Delivery muscle and case studies build through Phase 0/1 P5 deals. **Year 1 of the Revenue Math below starts at Phase 1 completion** — when productized services are live, 5–8 AI deals are shipped, and the AI Delivery Kit exists.
 
 **Positioning: Trioangle as AI specialist for SMB platform operators.** Lead with AI engineering capability; expand into ongoing customization and platform work once the relationship is established.
 
@@ -224,6 +224,7 @@ The two paid sprints are **parallel products for different scopes** — Discover
 
 **Channels:**
 - **Persona 5 (direct primary)** — see [[Trioangle Service ICP]] Channel 4 (AI Engineering Outbound) for triggers (competitor AI announcement, ML/AI engineer job posting, investor deck mentions AI roadmap, public underperformance signal), 3-step engineering-language sequence, and banned-language list. Plus: AI engineering communities, AI conference presence, vertical-specific content (case studies in target verticals).
+- **Historical Trioangle clients (Phase 0 source)** — platforms Trioangle delivered that are now operational (12+ months live, revenue traction). These prospects already trust Trioangle; the pitch is a natural next engagement. Outreach via direct contact, not cold sequence. Target: 1–2 AI deals @ $5k–$25k in Phase 0.
 - **Persona 3 (channel only)** — management consulting firms with existing enterprise relationships (per [[Trioangle Channel Partner Personas]] P2 Consulting Upseller / P3 Vertical Specialist). Direct outbound is structurally inefficient; procurement and trust dynamics block cold motion.
 - **Persona 4 (channel only)** — MENA-based consulting firms and agency partners; warm introduction via existing UAE/KSA network. Cold outbound disqualifies the relationship; WhatsApp is the primary comms channel once introduced (not email, not forms).
 
