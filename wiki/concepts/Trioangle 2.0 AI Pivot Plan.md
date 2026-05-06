@@ -196,6 +196,8 @@ LinkedIn ABM for enterprise AI buyers (Service ICP Persona 5) is deferred until 
 - AI Delivery Kit matures: template-reuse rate >50%
 - *If* Service ICP outbound has activated by Phase 3 (separate initiative), enterprise AI deals become a regular pipeline source. If not, this plan keeps scaling on the Product ICP channel + repeat business.
 
+Service ICP outbound activation (per [[Trioangle Growth Plan]] Track 2) is the Phase 3 milestone that unlocks the higher-ASP recurring pipeline. This plan builds the AI delivery capability that Track 2 sells into — Phase 3 is when these two plans converge.
+
 **Team M14:** 12–16 AI-focused (4–5 Integration Engineers, 1 Senior Agent Engineer, 1 MLOps, 1 AI QA, 1–2 Frontend, 1–2 Automation, Head of Delivery, 2 Sales/Marketing) + 3–5 legacy phasing.
 
 **Phase 3 milestones:**
@@ -233,7 +235,7 @@ LinkedIn ABM for enterprise AI buyers (Service ICP Persona 5) is deferred until 
 | Q5 (M13–15) | $170k–$265k | 30% | 13–15 / 16–18 |
 | Q6 (M16–18) | $240k–$420k | <15% | 15–18 / 18–22 |
 
-Legacy = clone scripts (active Product ICP channel). Enterprise Custom Dev (Service ICP) is documented but not currently generating revenue; any deals from there during the plan period are upside.
+Legacy = clone scripts (active Product ICP channel). Enterprise Custom Dev (Service ICP) is documented but not currently generating revenue; any deals from there during the plan period are upside. **Note:** The Q6 upper range ($420k) assumes Service ICP outbound is activating in Phase 3 (M11) per [[Trioangle Growth Plan]] Track 2 — without Service ICP deals, the SMB-only ceiling from Product ICP add-ons is lower.
 
 ---
 

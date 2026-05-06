@@ -54,9 +54,12 @@ Continue the active Product ICP motion exactly as defined in [[Trioangle Product
 
 ### Track 2 — AI Services for Existing Operators (Growth Engine)
 
+> [!IMPORTANT] Status — Documented, Outbound Not Yet Activated
+> As of 2026-Q2, Track 2 is fully documented but **not yet generating direct outbound revenue**. Activation gate: Phase 0/1 of [[Trioangle 2.0 AI Pivot Plan]] must stabilize first — delivery muscle proven, productized AI services live, first 5–8 AI deals shipped through the Track 1 add-on flow. Until then: inbound-only conversion. Currently active AI demand is captured through Persona 6 (AI Builder Who Hit the Wall) add-ons at clone-script handover, not through P5 outbound. **Year 1 of the Revenue Math below starts at activation, not at calendar M0.**
+
 **Positioning: Trioangle as AI specialist for SMB platform operators.** Lead with AI engineering capability; expand into ongoing customization and platform work once the relationship is established.
 
-Track 2 is the growth engine on two axes simultaneously: **(a) higher per-deal ASP** vs Product ICP, and **(b) recurring revenue** through project cadence. Either alone would justify the track; together they make Track 2 the company's primary revenue line by Year 2.
+Track 2 is the growth engine on two axes simultaneously: **(a) higher per-deal ASP** vs Product ICP, and **(b) recurring revenue** through project cadence. Either alone would justify the track; together they make Track 2 the company's primary revenue line by Year 2 *post-activation*.
 
 **Target personas (Service ICP, existing-operator subset):**
 
@@ -104,23 +107,54 @@ Without all four, you're back to transactional behavior with bigger logos. The S
 
 ---
 
+## Land with AI, Expand with Full-Service Development
+
+The AI specialist positioning is the **entry wedge**, not the full revenue picture. The actual Track 2 sales motion is:
+
+1. **Land with AI** — the first project is always an AI feature (dynamic pricing, intelligent dispatch, RAG knowledge assistant, voice agent, AI moderation, etc.). AI is what differentiates Trioangle from the commodity dev-shop pitch and opens the door.
+2. **Impress with delivery** — fixed scope, fixed price, fixed delivery date, A/B-tested business-metric lift, day-1 observability. The bar set on the first AI project is what earns the second engagement.
+3. **Expand to full-service** — once trust is established, the same account commissions web and mobile app development, platform refactors, new vertical extensions, payment-gateway integrations, scaling work. Trioangle's traditional core capability monetizes *here*, not in the entry pitch.
+
+**Why this motion works:**
+
+- **AI is non-commodity in 2026; traditional dev is.** "We've built AI features in your vertical" differentiates. "We build mobile apps" doesn't. Lead with what's hard to replicate.
+- **Existing operators always need both.** A platform operator running ride-hail or marketplace needs ongoing mobile, web, and platform work continuously — not just AI. After trust is built, that work flows naturally to the AI partner who already understands the codebase.
+- **Trioangle's 800+ platforms since 2015 is real delivery muscle** — it just doesn't sell well as the *opening* pitch. It sells well as the *capability that lets the AI partnership expand* once the relationship is established.
+- **One account contact, one delivery brand** — the client doesn't switch vendors when their need shifts from "next AI feature" to "iOS app refresh."
+
+**Implication for the recurring shape:** the project cadence below mixes AI features and non-AI development — not all AI, all the time. The aggregate book is **AI-led, full-service-deep**.
+
+**Implication for delivery:** the AI Engineering pod (per [[Trioangle 2.0 AI Pivot Plan]]) handles the entry and AI follow-ons. Web/mobile/customization expansion runs on Trioangle's existing dev capacity through the same account — no separate sales motion, no vendor handoff.
+
+---
+
 ## The Recurring Shape: Continuous Project Flow
 
-Recurring revenue here doesn't come from a subscription. It comes from **project cadence** within a stable existing-operator base.
+Recurring revenue here doesn't come from a subscription. It comes from **project cadence** within a stable existing-operator base. **Cadence shape varies by persona** — the recurring book is the aggregate, not a uniform pattern:
+
+| Persona | Repeat-buy cadence | Per-deal range | Annual revenue per active client | Pattern |
+|---|---|---|---|---|
+| **P5 — AI-Forward Platform Operator** | 2–4 AI feature projects/yr | $15k–$120k+ | $30k–$240k+ | The AI roadmap delivered in the Audit Sprint *is* the project queue |
+| **P4 — MENA Relationship** | 2–3 projects/yr | $30k–$120k+ | $60k–$360k+ | Often spans sister businesses in the same family-group |
+| **P3 — Enterprise** | 1–2 large projects/yr | $50k–$120k | $50k–$240k | Phase 1 flagship → Phase 2 industry extension → Phase 3 compliance/scaling |
+
+P5 drives the highest cadence (the project queue is pre-committed via the AI roadmap). P4 drives breadth (the relationship spans sister businesses across one family group). P3 drives depth (one large multi-phase program per year, reduced procurement friction once approved).
+
+**The P5 loop (most reliable cadence):**
 
 ```
-Land first AI project       (AI feature, $5k–$120k+ via Pivot Plan packages or Persona 5 deal)
+Land first AI project       (AI feature, $5k–$120k+ — the entry wedge)
    ↓
 Quarter +1: next AI feature  (per the AI roadmap delivered in the Audit Sprint)
    ↓
-Quarter +2: customization    (new vertical, new region, payment gateway, scaling work)
+Quarter +2: web/mobile dev   (mobile app feature, web platform extension, new vertical,
+                             new region, payment gateway, scaling work — full-service expand)
    ↓
-Quarter +3: next AI feature  (loop continues — operator's roadmap never finishes)
+Quarter +3: next AI feature  (AI track and full-service track interleave — operator's
+                             roadmap is continuous on both axes)
 ```
 
-**Average target:** 2–4 projects per existing-operator client per year, $25–50k average project size.
-
-The recurring book is the *aggregate* of these project flows across the active Service ICP base. Individual projects are still one-time outcome-based deals — fixed scope, fixed price, fixed delivery date — exactly as defined in [[Trioangle 2.0 AI Pivot Plan]]. The compounding comes from **client cadence**, not from a per-month invoice.
+The recurring book is the *aggregate* of these project flows across the active Service ICP mix. Individual projects are still one-time outcome-based deals — fixed scope, fixed price, fixed delivery date — exactly as defined in [[Trioangle 2.0 AI Pivot Plan]]. The compounding comes from **client cadence**, not from a per-month invoice.
 
 ## Customer Mortality — Two Different Profiles
 
@@ -152,9 +186,11 @@ Track 2's per-deal ASP alone is 3–10× higher than Track 1. The recurring laye
 
 ### Track 2 — Service ICP Existing-Operator Flow
 
-| Year | Active clients | Projects / client / yr | Avg project size | Annual revenue | Effective monthly |
+> **Year 1 starts at Track 2 outbound activation** (after Pivot Plan Phase 0/1 stable), **not at calendar M0**. While outbound is dormant, AI revenue flows through the Track 1 Persona 6 add-on path — those deals are tracked under [[Trioangle 2.0 AI Pivot Plan]], not in this Track 2 anchor. *Projects/client/yr* and *Avg project size* below are blended averages across the P3/P4/P5 mix per "The Recurring Shape" — P5 weights to the cadence end, P3 to the project-size end.
+
+| Year | Active clients | Projects / client / yr (blended) | Avg project size (blended) | Annual revenue | Effective monthly |
 |---|---|---|---|---|---|
-| Year 1 | 4–6 | 2–3 | $25k | $200k–$450k | ₹14L–32L equivalent |
+| Year 1 (post-activation) | 4–6 | 2–3 | $25k | $200k–$450k | ₹14L–32L equivalent |
 | Year 2 | 8–12 | 3–4 | $35k | $840k–$1.7M | ₹58L–₹1.2 cr equivalent |
 | Year 3+ | 12–18 | 3–4 | $40k | $1.4M–$2.9M | ₹1–2 cr/month equivalent |
 
@@ -174,17 +210,22 @@ Track 1 funds the business and the brand; Track 2 builds the recurring book. By 
 
 ### Track 2 — Service ICP Existing-Operator Acquisition
 
-**Entry product: AI Audit Sprint** ($1,500–$4,000, paid, 2 weeks, credited toward first project)
-- Audits the operator's existing platform — codebase, data flow, observability, cost structure
-- Identifies highest-ROI AI integrations for their vertical (dynamic pricing, intelligent dispatch, demand forecasting, AI search upgrade, voice agent, AI moderation, RAG knowledge assistant)
-- Delivers prioritized AI roadmap with fixed-price quotes for the top 2–3 features
-- Removes the two biggest pre-sales blockers: "where do we even start with AI" and "is this team real"
-- Same shape as the [[Trioangle Service ICP]] Discovery Sprint, focused on AI
+**Entry funnel — one free TOFU qualifier plus two paid pre-sales sprints:**
+
+| Stage | Product | Format | Price | Use For |
+|---|---|---|---|---|
+| TOFU qualification | **AI Readiness Call** | 1-hour live call | Free | Identify 2–3 highest-ROI AI use cases; qualify prospect; surface whether a paid sprint is the next step (P5 entry) |
+| Pre-engagement (P5) | **AI Audit Sprint** | 2-week paid engagement | $1.5–4k (credited toward first project) | Data audit · ranked AI feature shortlist · reference architecture (service isolation, fallback, rollout) · build-vs-buy-vs-SaaS recommendation · fixed-price quote for top feature · AI engineer team intro |
+| Pre-engagement (P1, P2) | **Discovery Sprint** | 2-week paid engagement | $1.5–4k (credited toward first project) | ERD + data model · system architecture · wireframes (P2) · critical path map · fixed-price delivery estimate · team intro |
+
+The two paid sprints are **parallel products for different scopes** — Discovery Sprint for custom-dev/rebuild work (P1/P2 opportunistic), AI Audit Sprint for AI feature work (P5 primary). Same price, same duration, different deliverable set. **Don't offer either** to P3 (formal RFP instead) or P4 (trust is relationship-built, not sprint-built).
+
+**Standard P5 funnel:** Free AI Readiness Call → (if qualified) AI Audit Sprint → (if proceed) signed AI feature build with sprint fee credited toward the first project.
 
 **Channels:**
-- **Persona 5** — direct outbound: LinkedIn ABM (target CTOs/CPOs at platforms 12+ months operational), AI engineering communities, AI conference presence, content (case studies in target verticals)
-- **Persona 3** — channel partners only: management consulting firms with existing enterprise relationships (per [[Trioangle Channel Partner Personas]])
-- **Persona 4** — channel partners only: MENA-based consulting firms and agency partners; warm introduction via existing UAE/KSA network
+- **Persona 5 (direct primary)** — see [[Trioangle Service ICP]] Channel 4 (AI Engineering Outbound) for triggers (competitor AI announcement, ML/AI engineer job posting, investor deck mentions AI roadmap, public underperformance signal), 3-step engineering-language sequence, and banned-language list. Plus: AI engineering communities, AI conference presence, vertical-specific content (case studies in target verticals).
+- **Persona 3 (channel only)** — management consulting firms with existing enterprise relationships (per [[Trioangle Channel Partner Personas]] P2 Consulting Upseller / P3 Vertical Specialist). Direct outbound is structurally inefficient; procurement and trust dynamics block cold motion.
+- **Persona 4 (channel only)** — MENA-based consulting firms and agency partners; warm introduction via existing UAE/KSA network. Cold outbound disqualifies the relationship; WhatsApp is the primary comms channel once introduced (not email, not forms).
 
 **Disqualifying signals at sale:**
 - Pre-launch / pre-revenue (route to Product ICP track or decline)
