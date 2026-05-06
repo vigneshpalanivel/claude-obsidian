@@ -2,7 +2,7 @@
 type: concept
 title: "Trioangle 2.0 AI Pivot Plan"
 created: 2026-04-23
-updated: 2026-04-28
+updated: 2026-05-06
 tags:
   - concept
   - trioangle
@@ -40,12 +40,12 @@ Trioangle has three documented tracks. As of 2026-04-28:
 | Track | Status | Current Source |
 |---|---|---|
 | **Clone-script products** ([[Trioangle Product ICP]]) | **Active** — running pipeline | Google Search, YouTube, AI Search, referrals |
-| **SMB AI Services** (this plan) | **Building** — Phase 0 starting now | Product ICP buyers post-launch (AI add-on pitch at delivery) |
-| **Enterprise Custom Dev** ([[Trioangle Service ICP]]) | **Documented, not activated** — future plan | No active outbound; Service ICP activation is its own initiative |
+| **SMB AI Services** (this plan) | **Building** — Phase 0 starting now | Service ICP P5 outbound (primary); historical Trioangle clients (secondary) |
+| **Enterprise Custom Dev** ([[Trioangle Service ICP]]) | **Activating** — Phase 0 outbound starting now | LinkedIn + AI Engineering Communities; Persona 5 (AI-Forward Platform Operator) is the primary Phase 0 AI buyer |
 
 Trioangle's 800+ historical deployments since 2015 are a credibility asset, not a current pipeline.
 
-**This plan builds the SMB AI track on top of the active Product ICP channel.** Service ICP activation (Persona 5 enterprise AI buyers, etc.) is a separate future initiative — when Service ICP goes live, AI deals routed through it will use the same pricing and delivery model below, but this plan does not depend on that activation.
+**This plan builds AI capability through real Service ICP P5 projects from Phase 0.** Product ICP add-on opportunities are taken when they appear but are not the primary channel — Product ICP buyers (pre-traction founders post-launch) have shown interest but don't convert; their AI budget unlocks after the business proves itself, not at launch. Capability develops faster through real P5 operator problems than through pre-built internal templates.
 
 Compounding/growth mechanisms apply across all three tracks — see [[Trioangle Growth Plan]].
 
@@ -72,8 +72,8 @@ This plan is the **counter-initiative**: position Trioangle on the AI-services s
 
 This plan does not define buyers — buyer ICPs live elsewhere. AI services in this plan are sold to:
 
-- **Buyers in [[Trioangle Product ICP]]** — *active channel.* Clone-script buyers post-launch convert to AI add-on customers. **This is the only currently-running source for Phase 0.** Persona 6 (AI Builder Who Hit the Wall) is the highest-fit AI add-on buyer at point of sale.
-- **Buyers in [[Trioangle Service ICP]]** — *future channel, not yet activated.* When Service ICP outbound goes live, Persona 5 (AI-Forward Platform Operator, $15k–$120k+ — single AI feature through mid-market multi-feature programs) will be the direct enterprise AI buyer. This plan does not depend on Service ICP activation; AI deals from there are bonus when they happen.
+- **Buyers in [[Trioangle Service ICP]]** — *primary channel, activating Phase 0.* Persona 5 (AI-Forward Platform Operator, $15k–$120k+) is the direct AI buyer and Phase 0 outbound target. These are established platform operators (ride-hail, logistics, marketplace, home services) with live users, real data, and board pressure to add AI — the right buyer profile to build capability against.
+- **Buyers in [[Trioangle Product ICP]]** — *opportunistic only.* Clone-script buyers post-launch are served if they express AI interest, but not actively pitched. They are pre-traction founders whose AI budget unlocks after the business proves itself — proactive pitching here has shown interest but no conversion. Take deals if they arrive; do not build a sales motion around them.
 - **Channel partner referrals** — see [[Trioangle Channel Partner Personas]]; partner program is separate, but AI leads it routes in convert through the same model below.
 
 AI **packages** are horizontal (Customer Support Bot, RAG, Search Upgrade, Voice AI, Moderation work in any vertical), but Trioangle's **delivery edge is deep vertical knowledge across 8 verticals from 800+ deployments since 2015** (Ride-Hailing, Delivery, Travel, Social, Multi-Service / Super App, On-Demand Home Services, Commerce, Education — see [[Trioangle Product ICP]] for full vertical breakdown). Buyers in those verticals get AI features informed by domain edge cases (ride-hail dispatch, marketplace commission flows, multi-vendor delivery, super-app service routing, content moderation at scale, etc.) — not a generic implementation a horizontal AI agency would have to learn on the customer's dime. That depth is the moat against both MNC enterprise pricing and net-new SMB AI agencies with no domain track record.
@@ -121,23 +121,24 @@ Phase 4 — Market Position  (M15–18)  Market authority; IP moat
 
 **Objective:** Don't break cash flow. Close first AI deals. Build delivery muscle.
 
-**Two sources of Phase 0 revenue (Product ICP only — Service ICP not yet activated):**
+**Three sources of Phase 0 revenue:**
 
 | Source | Approach | Realistic deal size |
 |---|---|---|
-| 1 | New buyers via the active **Product ICP channel** — at clone-script handover, pitch a fitting AI package directly. Persona 6 (AI Builder Who Hit the Wall) is the highest-fit add-on buyer at point of sale. | 3–5 deals @ $1,200–$5,000 |
-| 2 | Existing-customer outreach for AI add-ons (where customer health permits — see [[Trioangle Growth Plan]] for active-base reality) | Small number of deals @ $900–$2,500 |
+| 1 | **Service ICP P5 outbound** — LinkedIn + AI Engineering Communities targeting established platform operators showing AI-gap signals: competitor ships AI feature, ML Engineer job posting, investor deck mentions AI roadmap. Lead with free AI Readiness Call (1 hour, no deck) → paid AI Audit Sprint ($1,500–$4,000, credited toward build) → full AI feature build. | 1–2 deals @ $15k–$60k |
+| 2 | **Historical Trioangle clients** (platforms delivered and now operational) — outreach to past clients whose platforms have scaled to a point where AI features make sense. These prospects already trust Trioangle; the pitch is a natural next engagement. | 1–2 deals @ $5k–$25k |
+| 3 | **Product ICP opportunistic** — if a clone-script buyer expresses AI interest at handover or post-launch, take the deal. Do not pitch proactively; convert when interest appears. | Occasional @ $900–$5,000 |
 
-**Combined target: $14k–$42k signed in 30–45 days.**
-
-If Service ICP activates during Phase 0 (out of this plan's scope), enterprise AI deals (Service ICP Persona 5, $15k–$120k+) become a bonus third source — not budgeted into the target above.
+**Phase 0 target: 1–2 signed AI deals in 45–60 days.**
 
 **Phase 0 milestones:**
 - [ ] Runway calculated
-- [ ] $14k–$42k signed across 5–8 AI deals
+- [ ] 10–15 Service ICP P5 targets identified (platform operators in high-traction verticals showing AI-gap signals)
+- [ ] LinkedIn + AI Engineering Communities outbound sequence started
+- [ ] AI Readiness Call script prepared (1-hour, engineering-language, no slides)
+- [ ] 1–2 AI deals signed (P5 outbound or historical client outreach)
 - [ ] 2–3 AI champions in training (Phase 3 of [[AI Engineering Learning Roadmap]])
 - [ ] Anthropic + OpenAI startup programs applied (free, 1 hour, credibility logo)
-- [ ] AI add-on pitch built into the clone-script handover process (Product ICP)
 
 ---
 
@@ -154,11 +155,9 @@ If Service ICP activates during Phase 0 (out of this plan's scope), enterprise A
 
 **Three productized services live with fixed pricing on the website:** AI Customer Support Bot, RAG Knowledge Assistant, WhatsApp AI Automation.
 
-**Sales motion (geo-split, Product ICP buyers only):**
-- Priority markets (NA/UK/EU/MENA): email + scheduled Zoom; WhatsApp only if customer initiates
-- Secondary markets: WhatsApp-first
-
-LinkedIn ABM for enterprise AI buyers (Service ICP Persona 5) is deferred until Service ICP outbound activates.
+**Sales motion (geo-split):**
+- Priority markets (NA/UK/EU/MENA): LinkedIn ABM + email outbound to P5 operators; scheduled Zoom; WhatsApp only if customer initiates
+- Secondary markets: WhatsApp-first for inbound; LinkedIn for outbound
 
 **Phase 1 milestones:**
 - [ ] 3 productized services live with fixed pricing on website
@@ -194,9 +193,8 @@ LinkedIn ABM for enterprise AI buyers (Service ICP Persona 5) is deferred until 
 - 8–10 productized AI packages live (up from 3 in Phase 1)
 - Voice AI, AI moderation, AI search upgrade all in active delivery
 - AI Delivery Kit matures: template-reuse rate >50%
-- *If* Service ICP outbound has activated by Phase 3 (separate initiative), enterprise AI deals become a regular pipeline source. If not, this plan keeps scaling on the Product ICP channel + repeat business.
-
-Service ICP outbound activation (per [[Trioangle Growth Plan]] Track 2) is the Phase 3 milestone that unlocks the higher-ASP recurring pipeline. This plan builds the AI delivery capability that Track 2 sells into — Phase 3 is when these two plans converge.
+- Service ICP P5 pipeline (started in Phase 0) is now a mature source — deal size and cadence scale up as case studies and the AI Delivery Kit compound delivery throughput.
+- Product ICP add-ons remain opportunistic; no outbound motion targeting them.
 
 **Team M14:** 12–16 AI-focused (4–5 Integration Engineers, 1 Senior Agent Engineer, 1 MLOps, 1 AI QA, 1–2 Frontend, 1–2 Automation, Head of Delivery, 2 Sales/Marketing) + 3–5 legacy phasing.
 
@@ -204,7 +202,7 @@ Service ICP outbound activation (per [[Trioangle Growth Plan]] Track 2) is the P
 - [ ] $120k–$180k annual run-rate
 - [ ] 8–10 productized packages live
 - [ ] Template-reuse rate >50%
-- [ ] (Conditional on Service ICP activation) 3–5 enterprise AI deals signed via Service ICP P5
+- [ ] 5–8 Service ICP P5 deals delivered or in-flight (P5 pipeline started Phase 0, now maturing)
 
 ---
 
@@ -235,7 +233,7 @@ Service ICP outbound activation (per [[Trioangle Growth Plan]] Track 2) is the P
 | Q5 (M13–15) | $170k–$265k | 30% | 13–15 / 16–18 |
 | Q6 (M16–18) | $240k–$420k | <15% | 15–18 / 18–22 |
 
-Legacy = clone scripts (active Product ICP channel). Enterprise Custom Dev (Service ICP) is documented but not currently generating revenue; any deals from there during the plan period are upside. **Note:** The Q6 upper range ($420k) assumes Service ICP outbound is activating in Phase 3 (M11) per [[Trioangle Growth Plan]] Track 2 — without Service ICP deals, the SMB-only ceiling from Product ICP add-ons is lower.
+Legacy = clone scripts (active Product ICP channel). SMB AI Revenue column reflects Service ICP P5 outbound as the primary AI channel from Phase 0, compounding through delivered case studies and the AI Delivery Kit. Product ICP add-ons are included only when they convert inbound — no outbound motion targeting them.
 
 ---
 
@@ -271,22 +269,24 @@ Growth metrics (repeat-customer rate, cross-sell, retention) are tracked in [[Tr
 
 ## What to Do This Week
 
-1. Apply for Anthropic + OpenAI startup programs (1 hour, free, credibility logo)
-2. Calculate exact runway
-3. Pick 2 AI champions; start [[AI Engineering Learning Roadmap]] Phase 3
-4. Draft 3 AI add-on pitches (WhatsApp-friendly format)
-5. Add AI add-on pitch to the clone-script handover process (Product ICP channel — the only currently-active source)
-7. Open WhatsApp Business number for AI inquiries
-8. Draft Head of Delivery JD (M6 hire)
-9. Block weekly Friday review: AI pipeline + on-time delivery rate
+1. Calculate exact runway
+2. Identify 10–15 target platform operators (ride-hail, logistics, marketplace, home services) showing AI-gap signals on LinkedIn
+3. Prepare AI Readiness Call script (1-hour, engineering-language, no slides, no pitch deck)
+4. Start LinkedIn outbound sequence to P5 targets — engineering-language hooks, not sales tone
+5. Reach out to 3–5 historical Trioangle clients whose platforms have scaled — offer AI Readiness Call
+6. Pick 2 AI champions; start [[AI Engineering Learning Roadmap]] Phase 3
+7. Apply for Anthropic + OpenAI startup programs (1 hour, free, credibility logo)
+8. Open WhatsApp Business number for AI inquiries
+9. Draft Head of Delivery JD (M6 hire)
+10. Block weekly Friday review: AI pipeline + on-time delivery rate
 
 ---
 
 ## Connections
 
 - [[Trioangle Growth Plan]] — compounding/growth mechanisms (recurring revenue, repeat business, cross-sell) for both AI and non-AI work
-- [[Trioangle Product ICP]] — clone-script pipeline; AI add-on pitch happens at handover
-- [[Trioangle Service ICP]] — Persona 5 (AI-Forward) is the direct enterprise AI buyer once Service ICP activates (future initiative, not part of this plan)
+- [[Trioangle Service ICP]] — Persona 5 (AI-Forward Platform Operator) is the primary Phase 0 AI buyer; Service ICP outbound is the core sales motion for this plan
+- [[Trioangle Product ICP]] — clone-script pipeline; AI add-ons taken opportunistically if buyers express interest, not pitched proactively
 - [[Trioangle Channel Partner Personas]] — separate program; channel partners can route AI project leads in
 - [[Trioangle AI Delivery Kit]] — internal toolkit that compounds delivery throughput; built in Phase 2
 - [[AI Engineering Learning Roadmap]] — training curriculum
