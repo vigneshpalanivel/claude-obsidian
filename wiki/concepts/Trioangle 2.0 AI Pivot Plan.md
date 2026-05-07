@@ -40,7 +40,7 @@ Trioangle has three documented tracks. As of 2026-04-28:
 | Track | Status | Current Source |
 |---|---|---|
 | **Clone-script products** ([[Trioangle Product ICP]]) | **Active** — running pipeline | Google Search, YouTube, AI Search, referrals |
-| **SMB AI Services** (this plan) | **Building** — Phase 0 starting now | Service ICP P5 outbound (primary); historical Trioangle clients (secondary) |
+| **SMB AI Services** (this plan) | **Building** — Phase 0 starting now | Service ICP P5 outbound (primary) |
 | **Enterprise Custom Dev** ([[Trioangle Service ICP]]) | **Activating** — Phase 0 outbound starting now | LinkedIn + AI Engineering Communities; Persona 5 (AI-Forward Platform Operator) is the primary Phase 0 AI buyer |
 
 Trioangle's 800+ historical deployments since 2015 are a credibility asset, not a current pipeline.
@@ -121,13 +121,15 @@ Phase 4 — Market Position  (M15–18)  Market authority; IP moat
 
 **Objective:** Don't break cash flow. Close first AI deals. Build delivery muscle.
 
-**Three sources of Phase 0 revenue:**
+**Two sources of Phase 0 revenue:**
 
 | Source | Approach | Realistic deal size |
 |---|---|---|
 | 1 | **Service ICP P5 outbound** — LinkedIn + AI Engineering Communities targeting established platform operators showing AI-gap signals: competitor ships AI feature, ML Engineer job posting, investor deck mentions AI roadmap. Lead with free AI Readiness Call (1 hour, no deck) → paid AI Audit Sprint ($1,500–$4,000, credited toward build) → full AI feature build. | 1–2 deals @ $15k–$60k |
-| 2 | **Historical Trioangle clients** (platforms delivered and now operational) — outreach to past clients whose platforms have scaled to a point where AI features make sense. These prospects already trust Trioangle; the pitch is a natural next engagement. | 1–2 deals @ $5k–$25k |
-| 3 | **Product ICP opportunistic** — if a clone-script buyer expresses AI interest at handover or post-launch, take the deal. Do not pitch proactively; convert when interest appears. | Occasional @ $900–$5,000 |
+| 2 | **Product ICP opportunistic** — if a clone-script buyer expresses AI interest at handover or post-launch, take the deal. Do not pitch proactively; convert when interest appears. | Occasional @ $900–$5,000 |
+
+> [!warning] Historical Trioangle clients are not a Phase 0 source
+> Past clients from the 800+ historical deployments have already been approached for AI/upsell and **show interest but don't convert** (confirmed 2026-05-07). Even surviving operators are capacity-constrained and lack active competitive-pressure roadmaps — they behave transactionally. Take a deal if a historical client reaches out unprompted; do not build outreach around them.
 
 **Phase 0 target: 1–2 signed AI deals in 45–60 days.**
 
@@ -136,7 +138,7 @@ Phase 4 — Market Position  (M15–18)  Market authority; IP moat
 - [ ] 10–15 Service ICP P5 targets identified (platform operators in high-traction verticals showing AI-gap signals)
 - [ ] LinkedIn + AI Engineering Communities outbound sequence started
 - [ ] AI Readiness Call script prepared (1-hour, engineering-language, no slides)
-- [ ] 1–2 AI deals signed (P5 outbound or historical client outreach)
+- [ ] 1–2 AI deals signed via P5 outbound
 - [ ] 2–3 AI champions in training (Phase 3 of [[AI Engineering Learning Roadmap]])
 - [ ] Anthropic + OpenAI startup programs applied (free, 1 hour, credibility logo)
 
@@ -273,12 +275,11 @@ Growth metrics (repeat-customer rate, cross-sell, retention) are tracked in [[Tr
 2. Identify 10–15 target platform operators (ride-hail, logistics, marketplace, home services) showing AI-gap signals on LinkedIn
 3. Prepare AI Readiness Call script (1-hour, engineering-language, no slides, no pitch deck)
 4. Start LinkedIn outbound sequence to P5 targets — engineering-language hooks, not sales tone
-5. Reach out to 3–5 historical Trioangle clients whose platforms have scaled — offer AI Readiness Call
-6. Pick 2 AI champions; start [[AI Engineering Learning Roadmap]] Phase 3
-7. Apply for Anthropic + OpenAI startup programs (1 hour, free, credibility logo)
-8. Open WhatsApp Business number for AI inquiries
-9. Draft Head of Delivery JD (M6 hire)
-10. Block weekly Friday review: AI pipeline + on-time delivery rate
+5. Pick 2 AI champions; start [[AI Engineering Learning Roadmap]] Phase 3
+6. Apply for Anthropic + OpenAI startup programs (1 hour, free, credibility logo)
+7. Open WhatsApp Business number for AI inquiries
+8. Draft Head of Delivery JD (M6 hire)
+9. Block weekly Friday review: AI pipeline + on-time delivery rate
 
 ---
 

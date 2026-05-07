@@ -224,9 +224,11 @@ The two paid sprints are **parallel products for different scopes** — Discover
 
 **Channels:**
 - **Persona 5 (direct primary)** — see [[Trioangle Service ICP]] Channel 4 (AI Engineering Outbound) for triggers (competitor AI announcement, ML/AI engineer job posting, investor deck mentions AI roadmap, public underperformance signal), 3-step engineering-language sequence, and banned-language list. Plus: AI engineering communities, AI conference presence, vertical-specific content (case studies in target verticals).
-- **Historical Trioangle clients (Phase 0 source)** — platforms Trioangle delivered that are now operational (12+ months live, revenue traction). These prospects already trust Trioangle; the pitch is a natural next engagement. Outreach via direct contact, not cold sequence. Target: 1–2 AI deals @ $5k–$25k in Phase 0.
 - **Persona 3 (channel only)** — management consulting firms with existing enterprise relationships (per [[Trioangle Channel Partner Personas]] P2 Consulting Upseller / P3 Vertical Specialist). Direct outbound is structurally inefficient; procurement and trust dynamics block cold motion.
 - **Persona 4 (channel only)** — MENA-based consulting firms and agency partners; warm introduction via existing UAE/KSA network. Cold outbound disqualifies the relationship; WhatsApp is the primary comms channel once introduced (not email, not forms).
+
+> [!warning] Historical Trioangle Clients Are Not a Channel
+> Past clients from the 800+ historical deployments have already been approached for AI/upsell and **show interest but don't convert** (confirmed 2026-05-07). Pattern matches Product ICP: even surviving operators are capacity-constrained, lack active competitive-pressure roadmaps, and behave transactionally. Take a deal if a historical client reaches out unprompted; do not build outbound around them. The 800-figure is credibility positioning, not pipeline.
 
 **Disqualifying signals at sale:**
 - Pre-launch / pre-revenue (route to Product ICP track or decline)
