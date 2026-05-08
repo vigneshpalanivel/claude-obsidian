@@ -19,6 +19,15 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-05-07] autoresearch | US Reg S
+- Rounds: 2 | Searches: 8 | Authoritative fetches: 3
+- Pages created: [[Regulation-S]], [[Rule-144A]], [[Fourscore-Regulation-S-Guide]], [[Cleary-Reg-S-Selling-Transfer-Restrictions]], [[Cornell-LII-Rule-902-Definitions]], [[Pillsbury-Restricted-Securities-Reg-S]], [[Morrison-Foerster-Reg-S-FAQs]], [[SEC-Problematic-Practices-Reg-S-1995]], [[Cleary-2026-Digital-Assets-Update]]
+- Synthesis: [[Research: US Reg S]]
+- Key finding: Reg S is a binary safe harbor — two core conditions (offshore transaction + no directed selling efforts in U.S.) plus three categories (Cat 1/2/3) sorted by SUSMI and issuer reporting status. The trap for U.S. domestic issuers is Rule 905: equity placed offshore stays "restricted" under Rule 144 (1-year hold for non-reporting), so offshore resales don't wash off the U.S. resale restriction.
+- Open question flagged: Trioangle / India-context applicability — Reg S is irrelevant unless the raise touches U.S. investors or a U.S. issuance vehicle. SEBI rules govern pure India-side raises. Worth confirming the actual fundraising structure if this leads to a real deal.
+
+---
+
 ## [2026-04-30] reingest | Trioangle - ICP - Service.md (Pass 5 — full Pivot/Growth alignment)
 - Source: `.raw/Trioangle/ICP/Trioangle - ICP - Service.md` (hash → 3247ab2ac3f5b891140b0108dfc59e87)
 - Pages updated: [[Trioangle Service ICP]] (full rewrite, rev 5), [[ICP-Service-Trioangle]] (key_claims expanded from 9 → 18, related extended to Growth Plan + AI Pivot Plan, all 5 persona budgets/timelines updated, new sections: Persona Tiering, Existing-Operator Filter, Two Pre-Sales Products, AI Funnel disambiguation, Pain → Persona Matrix, Loss Reasons, Volume Targets, AI delivery count caveat)

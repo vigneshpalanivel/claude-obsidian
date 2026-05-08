@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Wiki Index"
-updated: 2026-04-30
+updated: 2026-05-07
 tags:
   - meta
   - index
@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-04-30 | Total pages: 182 | Sources ingested: 59
+Last updated: 2026-05-07 | Total pages: 191 | Sources ingested: 60
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -110,6 +110,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle-Sales-Operations]] — CEO-level weak points (6), Ansoff growth framework, 90+ sales initiatives organized by function, 14 OKR KPIs; synthesizes culture/process/product gaps (status: current)
 - [[SEO-Recovery-Strategy-2025-26]] — GEO/AIO era playbook; info keywords → BoFU shift; E-E-A-T; AI crawler allowlist; CITE score framework (target 80); new metrics (AI citation rate, LLM referral traffic) (status: current)
 - [[SEO-AEO-GEO-Prompt-Library]] — 180-prompt master template (SEO 75 / AEO 40 / GEO 60 / Hybrid 5); reusable across all 10 Trioangle verticals via variable substitution; operationalises the GEO/AIO recovery strategy (status: current)
+- [[Regulation-S]] — SEC safe harbor for offshore offerings of securities under Securities Act §5; two core conditions (offshore transaction + no directed selling efforts in U.S.); three categories sorted by SUSMI; Rule 905 keeps U.S. domestic equity restricted under Rule 144 even after offshore resale (status: current)
+- [[Rule-144A]] — SEC safe harbor for resales of restricted securities to QIBs (≥$100M discretionary AUM); routinely paired with Reg S in global bond/convertible offerings >$100M deal size (status: current)
 
 ---
 
@@ -201,6 +203,13 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle-Sales-Internal-Docs]] — 2026-04-25 | internal .raw/ docs | 3 files ingested; weak points, initiatives, KPIs; 1 concept page created
 - [[seo-recovery-strategy-map]] — 2026-04-25 | internal SVG strategy map | GEO/AIO SEO recovery playbook; 1 concept page created
 - [[Trioangle-SEO-AEO-GEO-Prompts-Template]] — 2026-04-30 | Trioangle internal | 180-prompt master template (SEO/AEO/GEO/Hybrid) for clone script verticals; 1 concept page created
+- [[Fourscore-Regulation-S-Guide]] — 2026-05-07 | autoresearch | practitioner primer on Reg S two-condition framework
+- [[Cleary-Reg-S-Selling-Transfer-Restrictions]] — 2026-05-07 | autoresearch | Cleary Gottlieb practitioner guide; Cat 1/2/3 framework, directed selling efforts examples, 144A integration
+- [[Cornell-LII-Rule-902-Definitions]] — 2026-05-07 | autoresearch | primary regulatory text (17 CFR § 230.902); 8-category U.S. person def, offshore transaction test, SUSMI thresholds
+- [[Pillsbury-Restricted-Securities-Reg-S]] — 2026-05-07 | autoresearch | Rule 905 wash-off block; U.S. domestic equity stays Rule 144 restricted offshore
+- [[Morrison-Foerster-Reg-S-FAQs]] — 2026-05-07 | autoresearch | Mofo FAQ-style primer; common pitfalls and Reg D integration
+- [[SEC-Problematic-Practices-Reg-S-1995]] — 2026-05-07 | SEC Release 33-7190 | foundational anti-abuse doctrine; drove 1998 amendments
+- [[Cleary-2026-Digital-Assets-Update]] — 2026-05-07 | Cleary Gottlieb | 2025 SEC posture shift under Atkins, GENIUS Act, Reg D + Reg S as token offering standard
 
 ---
 
@@ -216,6 +225,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Research: AI ML Engineering Roadmap]] — synthesis: two distinct learning paths (AI integration 7-12mo vs ML training 12mo), three-project portfolio rule, framework progression, Trioangle training curriculum (status: developing)
 - [[Can I earn monthly income from Binance copy trading my BTC]] — non-custodial BTC → Binance copy trading for monthly income; verdict: wrong tool, use stablecoin earn instead (status: developing)
 - [[Research: Indian IT Company AI Strategies]] — synthesis: TCS/Infosys/HCLTech/Cognizant/Accenture five-move playbook; headcount cuts; outcome pricing shift; SMB gap confirmed wide open (status: complete)
+- [[Research: US Reg S]] — synthesis: SEC Regulation S safe harbor for offshore offerings; two core conditions, three categories, Rule 905 wash-off block; 144A and Reg D + Reg S combined structures; 2025 climate shift (status: developing)
 
 ---
 
