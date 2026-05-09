@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/admin/.claude/**)",
+      "Bash(grep -iE \"claude|gemini|agents|cursor|\\\\.md$\")",
+      "Read(//Users/admin/.gemini/**)",
+      "Bash(gh auth *)",
+      "Bash(ssh -T git@github-vigneshpalanivel)",
+      "Bash(ssh -T git@github.com)",
+      "Read(//Users/admin/Projects/**)",
+      "Read(//Users/admin/Projects/Personal/**)",
+      "Read(//Users/admin/**)",
+      "Bash(ssh-add -l)",
+      "Bash(ssh -T git@github-innblockchain)"
+    ],
+    "additionalDirectories": [
+      "/Users/admin/.claude",
+      "/Users/admin/.gemini",
+      "/Users/admin/.ssh"
+    ]
+  }
+}
