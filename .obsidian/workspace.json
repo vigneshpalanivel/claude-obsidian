@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3746e38f157edcda",
+        "id": "886985b67d005a78",
         "type": "tabs",
         "children": [
           {
-            "id": "c22abe33fb0ba2c3",
+            "id": "3ba3f5de0388669a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -200,8 +200,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c22abe33fb0ba2c3",
+  "active": "3ba3f5de0388669a",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "wiki/concepts/Trioangle Service ICP.md",
+    "wiki/sources/ICP-Service-Trioangle.md",
     "wiki/concepts/AI Engineering Learning Roadmap.md",
     "wiki/concepts/Advanced Elicitation.md",
     "Trioangle 2.0 Plan.md",
@@ -229,9 +232,6 @@
     "wiki/concepts/EU-Fintech-Compliance-Landscape.md",
     "wiki/sources/EU-PSD3-IPR-FiDA-AIAct-2026.md",
     "wiki/sources/EU-MiCA-DORA-AML-2025.md",
-    "wiki/sources/EU-Fintech-Compliance-Overview-2026.md",
-    "wiki/questions/Research: Blockchain Solutions in Fintech Industry.md",
-    "wiki/entities/Ripple.md",
     "Clippings",
     "wiki/concepts/InnBlockchain Channel Partner ICP.md.tmp.88847.1776275602558",
     "wiki/Wiki Map.canvas",
@@ -254,7 +254,6 @@
     "_attachments/code-genesis.png",
     "Banana Images.canvas",
     "Untitled 1.canvas",
-    "Untitled.canvas",
     "projects/visual-vault/design-ideas.canvas"
   ]
 }
