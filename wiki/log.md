@@ -19,6 +19,25 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-05-09] ingest | Trioangle - Sales Playbook - Service.md
+- Source: `.raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md` (hash → c8ea174c1bb833e053c15b80facfe7ad)
+- Pages created: [[Sales-Playbook-Service-Trioangle]] (source), [[Trioangle Service Sales Playbook]] (concept)
+- Pages updated: [[Trioangle Service ICP]] (strategy/operating-layer cross-link added), [[Trioangle-Sales-Operations]] (scope-warning callout — Initiatives + KPIs sections are Product-ICP-only, Service-ICP operating layer now lives in new playbook), [[Trioangle-Sales-Internal-Docs]] (file-level scope flagged), [[Trioangle]] entity (playbook added to sources), [[index]] (page count 191→193, source count 60→61), [[hot]], [[log]]
+- Trigger: 2026-05-09 session — user authored the Sales Playbook for Service ICP, then explicitly marked the legacy `Trioangle Sales Initiatives List.md` and `Trioangle Sales KPIs List.md` as Product-ICP-only via `scope: product-icp-only` frontmatter + warning banners. Service-ICP-specific operating-layer docs were missing — the playbook closes that gap.
+- Key insight: The Service ICP doc is the **strategy layer** (862 lines: personas, pains, channels, objections, loss reasons, competitive positioning) and answers *who/why*. The Sales Playbook is the **operating layer** and answers *what reps do Tuesday morning* (7-stage pipeline with kill criteria, lead scoring rubric, $10k/$15k pricing floors, discount approval matrix, sprint-gated proposals, Service-calibrated KPI ranges, handoff checklists). They're deliberately separated so the two never drift into duplicate sources of truth.
+- Why a Service-specific playbook was needed: Trioangle's pre-existing Sales Initiatives + Sales KPIs lists are Product-ICP-scoped (clone-script motion — $999 entry, volume-driven, fast cycles). Importing them into Service-ICP context produces wrong floors ($999 vs $10k–$15k), wrong cycle expectations (days vs months), wrong KPI bands (call-volume vs deal-economics). Both files were formally tagged Product-ICP-only on 2026-05-09 in the same session, with H1 headers updated to "...— Product ICP" and warning banners added.
+- Non-obvious operating decisions captured in the playbook:
+  - **No proposal without a sprint** (default rule). Exceptions: P4 MENA (relationship gates trust) and P3 on formal RFP. Targets the "Ghosted after proposal" loss reason.
+  - **30-day stage stagnation = not a real opportunity.** Force movement or close-lost; no zombie deals in pipeline.
+  - **Existing-Operator Filter is non-negotiable** even with a high score (+15 if passing, hard disqualify if failing). Keeps Track 2 recurring thesis structurally valid.
+  - **Output/deliverable-based pricing only** — no retainers, no hourly, no per-engineer billing. Reps quoting any of those are out of bounds.
+  - **Always-in-scope structural guarantees** (Day-1 GitHub, IP transfer, 48-hour SLA with 5% credit, pre-contract engineer intro, paid sprint with escape hatch) are NEVER unbundled for discount.
+  - **Account expansion targets the ~30 active accounts, not the 800 historical** — "we worked with you 5 years ago" plays explicitly forbidden.
+  - **Closed-lost post-mortem mandatory for >$25k deals** — 15-min call within 14 days, structured loss reason captured, lead-scoring rubric updated if missing signal revealed.
+- Open calibration items flagged in the playbook itself: lead-scoring weights (judgment, not data), KPI ranges (industry-typical, not Trioangle-specific), pricing floors (AI $15k may be conservative), discovery question banks (opinionated, not battle-tested), per-rep monthly deal target (placeholder pending Service-ICP Initiatives doc).
+
+---
+
 ## [2026-05-07] autoresearch | US Reg S
 - Rounds: 2 | Searches: 8 | Authoritative fetches: 3
 - Pages created: [[Regulation-S]], [[Rule-144A]], [[Fourscore-Regulation-S-Guide]], [[Cleary-Reg-S-Selling-Transfer-Restrictions]], [[Cornell-LII-Rule-902-Definitions]], [[Pillsbury-Restricted-Securities-Reg-S]], [[Morrison-Foerster-Reg-S-FAQs]], [[SEC-Problematic-Practices-Reg-S-1995]], [[Cleary-2026-Digital-Assets-Update]]

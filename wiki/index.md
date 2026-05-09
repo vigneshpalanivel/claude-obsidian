@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-07 | Total pages: 191 | Sources ingested: 60
+Last updated: 2026-05-09 | Total pages: 193 | Sources ingested: 61
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -44,6 +44,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle Product ICP]] — Track 1 (Cash Engine) ICP for clone scripts + super-apps; ~96% historical 5-year mortality structural to buyer profile; 6 archetypes with re-eval triggers (P1/P2/P6); 800+ verifiability split (cumulative vs live); cheapest-option enforcement loop; Track 2 graduation row (rev 4) (status: current)
 - [[Trioangle Buyer Personas]] — 6 buyer archetypes for marketplace clone scripts; Persona 6 maps directly to Vibe Coding wave (status: current)
 - [[Trioangle Service ICP]] — Track 2 of Growth Plan; 5 personas tiered by acquisition: P5 🎯 direct primary (recurring base), P3/P4 🤝 channel-only, P1/P2 🪶 opportunistic; AI Audit Sprint + AI Funnel disambiguation; existing-operator filter (12+ months) makes recurring thesis valid (rev 5) (status: current)
+- [[Trioangle Service Sales Playbook]] — operating layer for Service ICP (companion to strategy concept); 7-stage pipeline with kill criteria, lead scoring rubric, $10k/$15k pricing floors, discount approval matrix, Service-calibrated KPI ranges, no-proposal-without-sprint default; deliberately separated from ICP to avoid two sources of truth; Service-ICP-specific Initiatives/KPIs docs still pending (status: current)
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms); only path to Enterprise and MENA buyer segments (status: current)
 - [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos/5 pillars; service: 81 articles/6 verticals); persona-gated CTAs (status: current)
 - [[InnBlockchain Crypto Native ICP]] — crypto-born founders/CTOs; RWA Segment 1; 6 active segments; $20k+ floor; AI-code audit emerging (status: current)
@@ -210,6 +211,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Morrison-Foerster-Reg-S-FAQs]] — 2026-05-07 | autoresearch | Mofo FAQ-style primer; common pitfalls and Reg D integration
 - [[SEC-Problematic-Practices-Reg-S-1995]] — 2026-05-07 | SEC Release 33-7190 | foundational anti-abuse doctrine; drove 1998 amendments
 - [[Cleary-2026-Digital-Assets-Update]] — 2026-05-07 | Cleary Gottlieb | 2025 SEC posture shift under Atkins, GENIUS Act, Reg D + Reg S as token offering standard
+- [[Sales-Playbook-Service-Trioangle]] — 2026-05-09 | Trioangle internal | Service-ICP operating playbook (pipeline, scoring, pricing, KPI ranges, handoff); 1 concept page created; explicitly NOT a duplicate of Service ICP — fills the operating gap left by Product-ICP-scoped legacy initiatives/KPIs
 
 ---
 

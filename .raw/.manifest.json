@@ -212,6 +212,24 @@
         "wiki/log.md",
         "wiki/hot.md"
       ]
+    },
+    ".raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md": {
+      "hash": "c8ea174c1bb833e053c15b80facfe7ad",
+      "ingested_at": "2026-05-09",
+      "ingest_reason": "Service-ICP operating playbook authored in this session — companion to Service ICP strategy doc. Created because legacy Trioangle Sales Initiatives + KPIs lists are Product-ICP-scoped (formally tagged scope: product-icp-only on 2026-05-09) and don't apply to Service-ICP economics ($10k–$120k+, 45–180 day cycles, sprint-gated proposals).",
+      "pages_created": [
+        "wiki/sources/Sales-Playbook-Service-Trioangle.md",
+        "wiki/concepts/Trioangle Service Sales Playbook.md"
+      ],
+      "pages_updated": [
+        "wiki/concepts/Trioangle Service ICP.md",
+        "wiki/concepts/Trioangle-Sales-Operations.md",
+        "wiki/sources/Trioangle-Sales-Internal-Docs.md",
+        "wiki/entities/Trioangle.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ]
     }
   }
 }

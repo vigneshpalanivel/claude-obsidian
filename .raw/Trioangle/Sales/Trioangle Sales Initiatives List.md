@@ -3,8 +3,24 @@ company:
   - trioangle
 department:
   - sales
+icp:
+  - product
+scope: product-icp-only
+status: legacy
+tags:
+  - product-icp
 ---
-# Sales Initiatives List
+
+> [!WARNING] Scope — Product ICP only · Do not use for Service ICP
+> This list was built for the **Product ICP** sales motion (clone scripts — low-cost, volume-driven, fast cycles). It does **NOT** apply to the Service ICP (high-touch AI/dev engagements, $10k–$120k+, 45–180 day cycles, sprint-gated proposals).
+>
+> A Service-ICP-specific initiatives list is pending. Until it exists, do not cite, copy, or import items from this document into any Service ICP material — including [[Trioangle - Sales Playbook - Service]].
+>
+> If a line below happens to be universally true (e.g., "DocSend-track shared materials"), that's coincidence — verify against the Service ICP context before reusing.
+>
+> **Last marked Product-ICP-only:** 2026-05-09 by Vignesh.
+
+# Sales Initiatives List — Product ICP
 
 - New EoD format
 - Team restructured into leads to opportunity and opportunity to sale

@@ -11,7 +11,9 @@
       "Read(//Users/admin/Projects/Personal/**)",
       "Read(//Users/admin/**)",
       "Bash(ssh-add -l)",
-      "Bash(ssh -T git@github-innblockchain)"
+      "Bash(ssh -T git@github-innblockchain)",
+      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md\")",
+      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/admin/Projects/Personal/claude-obsidian/.raw/.manifest.json'\\)\\)\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
