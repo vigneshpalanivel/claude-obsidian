@@ -16,6 +16,7 @@ status: current
 related:
   - "[[Trioangle Buyer Personas]]"
   - "[[Trioangle Service ICP]]"
+  - "[[Trioangle Service Sales Playbook]]"
   - "[[Trioangle Channel Partner Personas]]"
   - "[[Trioangle Content Strategy]]"
   - "[[ICP-Product-Trioangle]]"
@@ -30,6 +31,7 @@ sources:
   - "[[ICP-Channel-Partner-Trioangle]]"
   - "[[Content-Strategy-Product]]"
   - "[[Content-Strategy-Service]]"
+  - "[[Sales-Playbook-Service-Trioangle]]"
 ---
 
 # Trioangle

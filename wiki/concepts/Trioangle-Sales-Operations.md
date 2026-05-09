@@ -19,11 +19,21 @@ related:
   - "[[Trioangle Content Strategy]]"
   - "[[Trioangle Service ICP]]"
   - "[[Trioangle Product ICP]]"
+  - "[[Trioangle Service Sales Playbook]]"
 ---
 
 # Trioangle Sales Operations
 
 CEO-level assessment of weak points, growth levers, active sales initiatives, and OKR KPIs. Source: internal planning documents.
+
+> [!WARNING] Scope Update — 2026-05-09 — Initiatives + KPIs Below Are Product-ICP-Only
+> The "Sales Initiatives" and "Sales KPIs for OKR" sections below were extracted from `Trioangle Sales Initiatives List.md` and `Trioangle Sales KPIs List.md`. On 2026-05-09 the user formally marked both source files **Product-ICP-only** (`scope: product-icp-only`) — they describe the clone-script motion ($999 entry, volume-driven, fast cycles) and **do not apply to Service-ICP sales** ($10k–$120k+, 45–180 day cycles, sprint-gated).
+>
+> **For Service-ICP operating mechanics — pipeline stages, scoring, pricing floors, discount matrix, Service-calibrated KPI ranges, handoff checklist — use [[Trioangle Service Sales Playbook]], not this page.**
+>
+> Service-ICP-specific Initiatives and KPI source docs are pending. When created, this page should be split into a Product-ICP-scoped operations doc and a Service-ICP-scoped operations doc, OR the legacy sections below restricted to "Product ICP only" framing.
+>
+> The Weak Points, Growth Levers, and Ansoff Framework sections at the top of this page are *company-level* and remain valid across both ICPs.
 
 ---
 

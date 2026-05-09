@@ -15,12 +15,15 @@ status: ingested
 **Date ingested:** 2026-04-25
 **Source type:** Internal planning documents (.raw/)
 **Files ingested:**
-- `Trioangle Weak & Growth Points.md`
-- `Trioangle Sales Initiatives List.md`
-- `Trioangle Sales KPIs List.md`
+- `Trioangle Weak & Growth Points.md` — company-level (applies across ICPs)
+- `Trioangle Sales Initiatives List.md` — **Product-ICP only** (formally marked `scope: product-icp-only` on 2026-05-09)
+- `Trioangle Sales KPIs List.md` — **Product-ICP only** (formally marked `scope: product-icp-only` on 2026-05-09)
 
 **Pages created:** 1 concept page
-- [[Trioangle-Sales-Operations]]
+- [[Trioangle-Sales-Operations]] — scope warning added 2026-05-09; Service-ICP operating mechanics now live in [[Trioangle Service Sales Playbook]]
+
+> [!WARNING] Scope Update — 2026-05-09
+> The Initiatives + KPIs files above describe the **Product-ICP** sales motion (clone scripts — $999 entry, volume-driven, fast cycles). They do **NOT** apply to Service-ICP sales. Service-ICP operating mechanics now live in [[Sales-Playbook-Service-Trioangle]] (source) and [[Trioangle Service Sales Playbook]] (concept). Service-ICP-specific Initiatives + KPI source docs are pending.
 
 ## Key Facts Extracted
 

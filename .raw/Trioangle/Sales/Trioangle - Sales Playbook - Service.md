@@ -11,8 +11,6 @@ tags:
   - icp
 related:
   - "[[Trioangle - ICP - Service]]"
-  - "[[Trioangle Sales Initiatives List]]"
-  - "[[Trioangle Sales KPIs List]]"
   - "[[Trioangle Growth Plan]]"
   - "[[Trioangle 2.0 AI Pivot Plan]]"
 ---
@@ -60,11 +58,11 @@ related:
 | **16:00 – 17:00** | Proposal/SoW work. Day's CRM hygiene cleanup. EoD update. | EoD posted in agreed format; CRM clean |
 
 > [!TIP] Calls are the leading indicator
-> Call count and demo count are the cleanest leading indicators of pipeline. If both are flat for two weeks, expect closed-won to flatten ~6 weeks later. Per [[Trioangle Sales KPIs List]] — *Calls ratio / Demo call ratio* is one of the named OKR metrics.
+> Call count and demo count are the cleanest leading indicators of pipeline. If both are flat for two weeks, expect closed-won to flatten ~6 weeks later.
 
 ### Weekly rhythm
 
-- **Mon 09:30** — Pipeline review with sales manager (per-rep). Order: *Results → Pipeline → Activity*. Per [[Trioangle Sales Initiatives List]].
+- **Mon 09:30** — Pipeline review with sales manager (per-rep). Order: *Results → Pipeline → Activity*.
 - **Tue 16:00** — Competitor analysis update (15 min — what changed in competitor demos / pricing / positioning).
 - **Wed 09:30** — Daily lead discussion → flag stuck deals to peers for second opinion.
 - **Thu 16:00** — LMS training (45 min — domain or product deep-dive).
@@ -72,7 +70,7 @@ related:
 
 ### Monthly rhythm
 
-- One **5k+ deliverable-based deal** target per rep — per [[Trioangle Sales Initiatives List]].
+- At least one closed-won deliverable-based engagement per rep (Service ICP floor is $10k; AI feature build floor is $15k — see §9). Monthly volume targets to be calibrated against [[Trioangle Growth Plan]] Year 1–3 ramp.
 - Portfolio refresh check (any new vertical demo, case study, or load-test report from delivery team that the rep should know about).
 - Closed-lost review: pick 2 deals lost in last 30 days, schedule 15-min post-mortem call with the buyer.
 
@@ -99,6 +97,23 @@ Each stage has a **definition** (what's true here), **exit criteria** (what must
 
 > [!WARNING] Stage hygiene
 > A stage that doesn't move in **30 days** is not a real opportunity. Force movement (set a dated next step with the prospect) or close-lost. Keeping stale deals open inflates pipeline and corrupts forecasting.
+
+### 3.1 Direct P3/P4 inbound — handle, don't reject
+
+[[Trioangle - ICP - Service]] flags P3 (Enterprise) and P4 (MENA) as channel-partner-only by default. But direct inbound from these personas does happen — Clutch.co, conferences, referrals. Don't reject; route correctly.
+
+**Direct P3 inbound (Clutch / conference / referral):**
+1. Qualify on the Existing-Operator Filter and budget (§4 lead scoring).
+2. Route through any channel partner with even a peripheral relationship to the prospect — revenue-share preserves the channel program and warm trust accelerates the close.
+3. If no partner relationship exists AND deal is >$80k → take direct with formal proposal + RFP-style response. Use the engagement to seed a partner relationship for future P3 deals.
+4. If no partner AND <$80k → take the deal but don't invest in repeated outbound to similar profiles. Single deals here aren't worth building a direct-P3 motion around.
+
+**Direct P4 inbound:** trust isn't built on the first call.
+1. Spend the first 1–2 conversations purely in relationship-building mode — no pricing, no scope, no proposal.
+2. If a shared connection emerges in their network during early conversations, retroactively introduce the partner to formalize the relationship.
+3. Direct closure of P4 without any partner or shared-connection bridge is rare and high-risk. Be willing to walk if no relationship anchor surfaces by call 3.
+
+CRM note these as `direct-channel-bypass` for tracking; >5 of these per quarter is a signal the channel partner program needs strengthening.
 
 ---
 
@@ -267,7 +282,7 @@ Subject: *[Their company] + [trigger] — one note*
 ### 7.1 Pre-demo prep (mandatory — 24 hours before)
 
 - [ ] Demo seed data populated for *their vertical* — not the default seed.
-- [ ] Demo run on a device matching the buyer's likely device (per [[Trioangle Sales Initiatives List]] — *"Daily product demo checking in similar devices like client and mobile devices OS version"*).
+- [ ] Demo run on a device matching the buyer's likely device — same OS version, browser, and screen class. A demo that breaks live on a P1/P5 buyer's device is a closed-lost in waiting.
 - [ ] Latest performance / load test report ready to share if asked.
 - [ ] Vertical-specific case study URL handy.
 - [ ] Discovery call notes re-read; the demo is *answering their pain*, not showcasing features.
@@ -297,6 +312,17 @@ The ICP §🔍 Pre-Sales Sprints describes *what* the sprints are. This section 
 ### 8.1 Default = AI Audit Sprint
 
 Per [[Trioangle - ICP - Service]] §AI-First service line priority: **AI Audit Sprint is the default entry product.** Discovery Sprint is the secondary fallback for explicit non-AI rebuild briefs.
+
+### 8.1a AI Funnel — two distinct products (don't confuse them)
+
+| Product | Stage | Format | Price | Purpose |
+|---|---|---|---|---|
+| **AI Readiness Call** | TOFU · qualification | 1-hour live call | Free | Identify 2–3 highest-ROI AI use cases at conversation level. No deliverable; goal is to qualify, build trust, surface whether a paid AI Audit Sprint is the next step. Used in objection handling (§19) and Channel 4 Step 3 (§5.1). |
+| **AI Audit Sprint** | Pre-engagement · formal entry | 2-week paid | $1,500–$4,000 (credited toward first project) | Full data audit, feature shortlist, reference architecture, build-vs-buy recommendations, fixed-price quote. Converts qualified P5 prospects into signed AI feature builds. |
+
+**Standard funnel:** Free AI Readiness Call → AI Audit Sprint → signed AI feature build (sprint fee credited).
+
+**Floor rule:** Pick the right step for the prospect's stage; never offer both in the same conversation. Cold prospects → free call; warm content-engaged prospects → Audit Sprint pitch directly.
 
 ### 8.2 The sprint sales line — memorize this
 
@@ -526,6 +552,26 @@ Wake up dormant closed-lost when:
 
 Same no-follow-up rule as cold email §5.5. If they reply, restart at Discovery (§6).
 
+### 13.4 Counter-plays per loss-reason pattern
+
+[[Trioangle - ICP - Service]] §💔 Loss Reasons lists the 12 patterns + early-warning signals (strategic). Below is the operational counter-play — what a rep does *during* a deal showing the early-warning signal, before it converts to closed-lost.
+
+| Loss Pattern (per ICP) | Counter-play (during deal) |
+|---|---|
+| Lost to AI coding tools / "we'll build with Copilot" | Reframe: Copilot accelerates typing, not architecture or domain knowledge — offer free AI Readiness Call (§19.4 AI Coding Tools objection). |
+| Lost to hyperscaler's pre-built AI service (P5) | In AI Audit Sprint, honestly recommend SaaS where it fits — disqualify out of wrong-fit deals. Win right-fit ones (custom integration, vertical tuning, data ownership) by being the partner who already said "don't build this yourself" once. |
+| Disqualified by data thinness (P5) | During data audit (Sprint week 1), if <3 months clean events or no labels: tell them they need 6 months of instrumentation; offer paid data-instrumentation engagement as a bridge. Most say no — the few who say yes are excellent long-term clients. |
+| Stalled on AI fallback/safety concerns (P5) | Lead with service-isolation + automatic-fallback pattern in the *first* technical call, before the prospect raises it. Use §19.4 AI Stability objection handler. |
+| Lost on AI compliance / regulatory exposure (P3 esp.) | Bring AI compliance documentation into the AI Audit Sprint by default — model cards, EU AI Act risk classification, data-residency stance, human-in-loop docs, audit-trail logging. Pre-empt rather than scramble. (See §19.4 AI Compliance.) |
+| Undercut by nearshore/offshore on price (dev-only) | Reframe to AI scope where domain depth matters and price competition is weaker — pivot to AI Audit Sprint offer; disqualify pure price shoppers on dev-only scope (don't enter the dev margin-compression race). See §10.1 first row. |
+| Pivot to in-house hiring | Position as interim team that trains future hires; offer hybrid model. Escalate to Sales Manager for any deal over $50k where this signal fires. |
+| Deal stalls indefinitely (no decision) | Force a decision point with a dated AI Audit Sprint slot (primary) or Discovery Sprint (only if scope is explicitly non-AI). Walk away if no movement in 30 days (§3 stage hygiene). |
+| Ghosted after proposal | Never send a proposal without a paid sprint preceding it (§3 IMPORTANT callout). If already ghosted, single follow-up with no-follow-up promise (§5.5 template), then move to 90-day passive nurture. |
+| Failed code review / technical diligence | Pre-curate vertical-specific code sample library (§16); only send the strongest matching example. If silence after technical deep-dive call, request specific feedback rather than re-pitching. |
+| Lost to large consultancy (Accenture/Infy) | Don't compete on brand — compete on senior-engineer access and 3× faster delivery; bring a named enterprise reference. See §19.5 Vendor Comparison. |
+| Lost to boutique/premium agency (Thoughtbot, Fueled) | Qualify out early — we are not a design studio; offer to partner, not compete. |
+| Cultural / timezone mismatch (non-MENA buyers) | Assign timezone-matched PM from day one; over-index on proactive updates. |
+
 ---
 
 ## 14. 🧹 CRM Hygiene & Forecast Discipline
@@ -569,8 +615,8 @@ The ratio of these — and how it changes week-to-week — is what the sales man
 
 ## 15. 📊 KPIs & Cadence
 
-> [!NOTE] These operationalize [[Trioangle Sales KPIs List]]
-> The KPI list there names the metrics; this section gives target ranges and review cadences.
+> [!WARNING] Service-ICP-specific KPIs — do not import Product-ICP metrics
+> The metrics and ranges below are calibrated for the Service motion (high-touch, $10k–$120k+ engagements, 45–180 day cycles, sprint-gated proposals). They are **not** the same as Product-ICP sales KPIs (low-cost clone-script motion, fast cycles, volume-driven). Don't blend the two when reporting.
 
 ### 15.1 Leading indicators (weekly)
 
@@ -625,7 +671,7 @@ What every rep needs at hand. Track the status of each.
 | Competitor SWOT / demo notes | Sales | |
 
 > [!IMPORTANT] Tracking
-> Per [[Trioangle Sales Initiatives List]] — *"All sales related materials tracking using DocSend and Workflow videos."* Every asset shared with a prospect should be DocSend-tracked. Engagement on the document is a leading signal for forecasting.
+> Every asset shared with a prospect should be DocSend-tracked (or equivalent). Engagement on the document — pages viewed, time spent, re-opens — is a leading signal for forecasting and tells you who else inside the buyer's organization saw it.
 
 ---
 
@@ -653,7 +699,133 @@ Month 2:
 
 ---
 
-## 18. 🔧 Maintenance
+## 19. 🛡️ Objection Response Library
+
+> [!NOTE] Where this lives
+> [[Trioangle - ICP - Service]] §🛡️ Objection Handling lists *which* objections exist for this ICP and *what they tell you about buyer psychology* (strategic). This section gives the *response copy* a rep delivers in the room (operational). The ICP's response paragraphs were moved here in the 2026 split — if a section here ever conflicts with the ICP, the ICP wins on objection identification, this playbook wins on response wording.
+
+### 19.1 Trust / quality / team
+
+**🔒 Code Quality / Trust**
+*Objection:* *"How do I know your code is high quality and not just put together by juniors?"*
+> Strict QA pipelines (unit, integration, E2E), mandatory peer code reviews, full GitHub repo access from Day 1. We operate as team augmentation — attending your daily standups, not disappearing into a black box.
+
+**Evidence:** `[✅]` GitHub contribution history screenshots · `[✅]` Sample code coverage reports · `[🔧]` Anonymized code review samples · `[✅]` Sample architecture review documents
+
+---
+
+**👥 Team Seniority**
+*Objection:* *"Are these senior engineers or are you going to put a junior on my project?"*
+> Every project is staffed with at least one dedicated senior architect (8+ years experience) who does code review on every PR. We'll introduce you to the specific team before you sign — no bait-and-switch.
+
+**Evidence:** `[✅]` Team bio library (LinkedIn profiles) · `[🔧]` Architect CV samples · `[✅]` "Meet the Team" pre-contract call offer
+
+---
+
+**📡 Communication / Abandonment Risk**
+*Objection:* *"We had a terrible experience with an agency that went quiet 3 months in."*
+> Dedicated PM for your timezone provides daily Slack updates, weekly sprint demos via Zoom, and a shared project dashboard. If we go silent for 48 hours without warning, you get a 5% contract credit. That's how confident we are.
+
+**Evidence:** `[✅]` Sample Slack communication logs (anonymized) · `[✅]` Sprint review deck template · `[✅]` Named client reference for communication reliability
+
+### 19.2 Legal / commercial
+
+**📄 IP Ownership**
+*Objection:* *"Do we own the code at the end of this?"*
+> 100%. For all custom development engagements — whether new builds or platform rebuilds — IP is entirely transferred to your company upon final payment. Written explicitly into the contract. You own the repo, the server infrastructure, and all documentation.
+
+**Evidence:** `[✅]` Standard Contract IP Transfer clause · `[✅]` Escrow agreement template · `[✅]` Repo organization transfer protocol document
+
+---
+
+**💸 Budget / ROI**
+*Objection:* *"$40,000 is a lot of money. How do we justify this?"*
+> Rebuilding on a broken architecture at scale costs more in server bills, emergency patches, and engineer turnover than the project itself. Our clients typically recover the investment in 6–9 months through reduced downtime costs, faster feature velocity, and lower server costs. We can build you an ROI model.
+
+**Evidence:** `[🔧]` Infrastructure cost ROI calculator · `[✅]` Case study: pre-rebuild vs post-rebuild AWS spend · `[🔧]` Feature velocity improvement data (before/after)
+
+---
+
+**🪪 Authority / Approval**
+*Objection:* *"This looks good but I need CEO / CFO / board sign-off — what do I bring them?"*
+> We help you build the business case. Standard package: (a) one-page ROI vs in-house cost ($X agency fee vs $Y annual cost of equivalent FTEs over the same delivery window); (b) named client reference list willing to take a 20-minute call with your decision-maker; (c) the AI Audit Sprint deliverable as the artifact your board can review (data audit + feature shortlist + reference architecture); (d) structural-guarantee summary (Day-1 GitHub access, IP transfer, 48-hour SLA credit) — the de-risking your procurement and legal teams need to sign. We've sat in those board meetings before; we know what gets approved and what stalls.
+
+**Evidence:** `[🔧]` ROI calculator template (agency vs in-house) · `[✅]` Reference call introductions · `[✅]` Sample structural-guarantee summary one-pager · `[🔧]` Board-deck template adapted from past approved engagements
+
+---
+
+**🛋️ Inertia / Status Quo**
+*Objection:* *"Our current solution works. Why change?"*
+> The honest framing: it works *today*. The hidden costs of staying are usually three things — feature velocity slowing as your engineers absorb more maintenance load (your roadmap drifts); AI competitive gap widening as vertical competitors ship dispatch / pricing / fraud / matching while you don't (unit economics divergence); platform scaling cliff that's invisible until it isn't (the dispatch latency or payment race-condition that cost a competitor 4 hours of revenue last quarter). We're not here to tell you to rip and replace; we're here to do an AI Audit Sprint that names which of those three is closest, with a fixed-price quote for the one feature that addresses it. If we tell you to wait six months, that's the answer. The status quo is rarely the cheapest option once you measure it.
+
+**Evidence:** `[🔧]` "Hidden Costs of Status Quo" diagnostic checklist · `[✅]` Feature velocity decline pattern data (anonymized) · `[✅]` Vertical competitor AI feature shipping timeline · `[🔧]` Sample 6-month "wait" recommendation
+
+### 19.3 Technical risk
+
+**⚠️ Technical Risk**
+*Objection:* *"What happens if the architecture you design doesn't work at our scale?"*
+> Load testing benchmarks built into every project. Before launch, we simulate 3× your projected peak load and document the results. If performance doesn't meet the agreed SLA, we fix it at no additional cost.
+
+**Evidence:** `[🔧]` Load testing report template · `[✅]` Performance SLA contract clause · `[✅]` Live performance dashboard sample (Grafana/Datadog)
+
+---
+
+**⏰ Timeline**
+*Objection:* *"We need this in 8 weeks. Is that realistic?"*
+> The honest answer: it depends on scope. Let's do a 2-week paid sprint first to scope rigorously, identify the critical path, and give you a guaranteed delivery timeline:
+> - **AI Audit Sprint** ($1.5–4k, credited) — for AI feature scope. Deliverables: data audit, AI feature shortlist, reference architecture, build-vs-buy recommendations, fixed-price quote with A/B test framework.
+> - **Discovery Sprint** ($1.5–4k, credited) — for platform rebuild / custom-dev scope without an AI angle. Deliverables: ERD, system architecture, wireframes, critical path, fixed-price quote with milestone dates.
+>
+> No surprises either way.
+
+**Evidence:** `[✅]` AI Audit Sprint deliverable samples · `[✅]` Discovery Sprint deliverable samples (ERD, wireframes) · `[✅]` Sprint plan template · `[✅]` Fixed-price estimate example
+
+### 19.4 AI-specific objections
+
+**🤖 AI Coding Tools**
+*Objection:* *"Can't our internal engineers just use GitHub Copilot / ChatGPT to build AI features themselves?"*
+> AI coding tools help engineers write code faster — they don't give your engineers domain expertise in ML/AI system design, RAG pipelines, or production LLM integration. More importantly, they don't know your vertical. We've already built AI features inside ride-hailing dispatch systems, marketplace fraud detection, and logistics demand forecasting — your engineers would spend 6+ months learning what we already know. Use Copilot for productivity; use us for domain-specific AI delivery.
+
+**Evidence:** `[🔧]` AI feature case study (ride-hailing or logistics) · `[🔧]` AI Engineering capability overview (RAG, LLM integration, ML pipelines, agents) · `[🔧]` Free AI Readiness Call → paid AI Audit Sprint funnel (see §8 + ICP AI Funnel)
+
+---
+
+**🧪 AI Stability**
+*Objection:* *"We're worried AI features will make our platform unstable or unpredictable."*
+> Legitimate concern. AI features run as isolated services with fallback logic to rule-based defaults. If the model underperforms below a defined threshold, the system reverts automatically. We build AI as an enhancement layer, not a dependency. Your platform stays reliable; the AI improves it incrementally.
+
+**Evidence:** `[🔧]` Architecture diagram showing AI service isolation pattern · `[✅]` Fallback logic design doc · `[🔧]` Model performance monitoring dashboard sample
+
+---
+
+**🧪 AI Quality**
+*Objection:* *"How do I know your AI features actually work? AI is non-deterministic — what's your equivalent of test coverage?"*
+> Three layers. (1) Feature-specific evaluation harness — dispatch optimization → latency distributions + match-quality A/B; fraud → precision/recall on held-out validation; RAG → retrieval@k against curated query sets. (2) A/B testing in production against a rule-based baseline before full rollout — shadow → canary → percentage rollout with named success metrics. (3) Ongoing observability with drift detection and automatic revert if model performance degrades below a contracted threshold. Your engineers see all three in production from Day 1. AI quality is verifiable, not faith-based.
+
+**Evidence:** `[🔧]` Sample evaluation harness (dispatch / pricing / fraud) · `[🔧]` A/B test framework template · `[🔧]` Drift detection + auto-revert architecture · `[✅]` Day-1 observability dashboard (Grafana + LangSmith / Arize)
+
+---
+
+**🛡️ AI Compliance & Regulatory**
+*Objection (P3 esp.):* *"What about EU AI Act, HIPAA + AI, sector-specific AI regulations? Our legal team will block this."*
+> Legitimate procurement gate. We bring AI compliance documentation into every AI Audit Sprint by default — not as an afterthought. Standard deliverables: model cards (training data, intended use, known limitations, bias evaluation); EU AI Act risk classification (most platform AI features land in *limited* or *minimal risk* — we document the assessment); data-residency stance (inference geo-locked where required, EU data staying in EU regions); human-in-loop documentation for any decision-impacting feature; audit-trail logging for AI decisions (who, when, which model version). For sector-specific rules (HIPAA + AI, financial AI, automotive ADAS), we document the requirement and the architecture that satisfies it. Not compliance theater — the documentation procurement legal needs to sign off.
+
+**Evidence:** `[🔧]` Model card template · `[🔧]` EU AI Act risk classification framework · `[🔧]` Sector-specific compliance docs (HIPAA + AI; PCI-DSS + AI for financial fraud) · `[🔧]` AI decision audit-trail architecture
+
+### 19.5 Competitive
+
+**⚔️ Vendor Comparison**
+*Objection:* *"We're also talking to [competitor agency]. Why should we choose you?"*
+> Ask them how many platforms in your exact vertical they've shipped in the last 12 months. We've delivered 800+ platforms (cumulative since 2015 across 150+ countries) spanning 9 verticals — that domain knowledge is the moat, and what makes our AI integration credible in *your* vertical. The edge cases — dispatching logic, route optimization, multi-vendor commission flows, real-time tracking, availability engines, multi-tenant architecture — are already in our muscle memory. They'll be learning on your dime; we'll be applying the AI on top of patterns we already understand.
+
+**Evidence:** `[✅]` Vertical-specific portfolio (10+ engagements per vertical) · `[✅]` Domain expertise checklist · `[✅]` 800+ platform delivery track record since 2015 (cumulative — distinct from AI delivery count, see ICP Positioning caveat)
+
+> [!IMPORTANT] 800+ stat — sales-floor disambiguation rule
+> "800+" counts cumulative *platform* deliveries since 2015, not AI features. The AI delivery count is much smaller and growing. Anchor positioning on **vertical depth**, not AI delivery volume. Avoid "we've built AI features in 800+ platforms" — conflates the two and misrepresents the AI track record.
+
+---
+
+## 20. 🔧 Maintenance
 
 | Trigger | Update needed |
 |---|---|
@@ -664,4 +836,4 @@ Month 2:
 | New AI feature shipped to a client | §16 case study list · ICP P5 proof |
 | Quarterly OKR review | §15 KPI ranges |
 
-**Last updated:** 2026-05-09 — initial creation, derived from [[Trioangle - ICP - Service]] (2026-04-05 review pass).
+**Last updated:** 2026-05-09 — Sales/strategy split. ICP retains strategic content (personas, pains, qualifying criteria, channel mapping ratings, loss patterns + early-warnings, objection topics, competitive positioning, validation plan). This Playbook now owns all execution: full Channel Execution Sequences (§5), Direct P3/P4 inbound workflow (§3.1), AI Funnel disambiguation (§8.1a), Pre-Sales Sprint sales lines (§8.2), per-loss-reason counter-plays (§13.4), and the comprehensive Objection Response Library (§19) covering all 14 objections. Originally derived from [[Trioangle - ICP - Service]] (2026-04-05 review pass); now operates alongside it as the operational counterpart.

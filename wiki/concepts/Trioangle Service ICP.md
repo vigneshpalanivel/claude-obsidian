@@ -15,6 +15,7 @@ tags:
 status: current
 related:
   - "[[Trioangle]]"
+  - "[[Trioangle Service Sales Playbook]]"
   - "[[Trioangle Growth Plan]]"
   - "[[Trioangle 2.0 AI Pivot Plan]]"
   - "[[ICP-Service-Trioangle]]"
@@ -35,6 +36,9 @@ Five buyer personas for [[Trioangle]]'s custom development and AI engineering se
 
 > [!IMPORTANT] Status — Track 2 Documented, Outbound Not Yet Activated
 > Service ICP is documented but **not currently generating direct outbound revenue** as of 2026-Q2. Track 2 outbound activates once Phase 0/1 of [[Trioangle 2.0 AI Pivot Plan]] is stable. Until then: inbound conversion only, AI add-on flow runs through the Product ICP handover process. See [[Trioangle Growth Plan]] for activation sequencing.
+
+> [!NOTE] Operating Layer
+> This page is the **strategy layer** — who/why/what-they-buy. The **operating layer** (what reps do day-to-day: pipeline stages, scripts, scoring, pricing floors, discount matrix, KPI ranges, handoff checklist) lives in [[Trioangle Service Sales Playbook]] and the source [[Sales-Playbook-Service-Trioangle]]. The two are deliberately separated so they don't drift into duplicate sources of truth.
 
 > [!IMPORTANT] Two Non-Negotiable Positioning Rules
 > **AI-Era Positioning Rule** — Never position on "we build faster with AI." Position on domain expertise, certainty of delivery, and risk reduction. Service buyers in 2026 have already seen too many AI demos that delivered nothing. They are buying a named team with 800+ domain-specific engagements who already know their vertical's edge cases — and can ship without a learning curve.
@@ -324,6 +328,7 @@ Map 10–15 target VCs at Seed/Series A. Build relationship with portfolio suppo
 ## Connections
 
 - [[Trioangle]] — the company
+- [[Trioangle Service Sales Playbook]] — operating layer for this ICP (pipeline stages, scripts, scoring, pricing floors, KPI ranges)
 - [[Trioangle Growth Plan]] — Track 2 thesis, recurring-revenue mechanics, volume targets
 - [[Trioangle 2.0 AI Pivot Plan]] — the AI capability build that P5 sells into
 - [[ICP-Service-Trioangle]] — source document
