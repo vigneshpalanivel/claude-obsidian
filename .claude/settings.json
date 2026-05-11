@@ -13,12 +13,19 @@
       "Bash(ssh-add -l)",
       "Bash(ssh -T git@github-innblockchain)",
       "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md\")",
-      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/admin/Projects/Personal/claude-obsidian/.raw/.manifest.json'\\)\\)\")"
+      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/admin/Projects/Personal/claude-obsidian/.raw/.manifest.json'\\)\\)\")",
+      "Bash(defuddle parse *)",
+      "Bash(npx -y defuddle-cli parse https://www.innblockchain.com/ --md)",
+      "Bash(curl -sL \"https://www.innblockchain.com/sitemap.xml\")",
+      "Bash(curl -sL \"https://www.innblockchain.com/robots.txt\")",
+      "Bash(npx -y defuddle-cli parse https://www.innblockchain.com/sto-development --md)",
+      "Bash(npx -y defuddle-cli parse https://www.innblockchain.com/smart-contract-development --md)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
       "/Users/admin/.gemini",
-      "/Users/admin/.ssh"
+      "/Users/admin/.ssh",
+      "/Users/admin/.agents/skills/linkedin-profile-optimizer"
     ]
   }
 }

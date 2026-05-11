@@ -22,7 +22,18 @@ related:
 
 Content program for [[InnBlockchain Crypto Native ICP]] — protocol founders, asset owners, and Web3 CTOs building on-chain products. 2-tier architecture: 5 protocol-agnostic technology pillars × 10 segment verticals × 51 scored articles. Strict Phase 1 sequencing locks everything on RWA + MiCA before any other vertical ships content.
 
-## Architecture
+> [!warning] Cross-Channel Destination Dependency (Added 2026-05-11)
+> Content funnels articles → solution landing pages per [[InnBlockchain Landing Pages Plan]]. As of 2026-05-11, **zero ICP-aligned landing pages are live** — `/solutions/rwa-tokenization`, `/solutions/dex-protocol`, `/solutions/defi-protocol`, `/solutions/mpc-wallets`, `/solutions/nft-platform`, `/solutions/token-launch`, `/services/smart-contracts`, and `/industries/web3-defi/` all return 404.
+>
+> **Publishing constraint:** Do not publish a vertical's articles until the corresponding solution landing page is live. The strategy's existing Phase 1 lock on RWA + MiCA is **insufficient on its own** if `/solutions/rwa-tokenization` is not live — RWA articles published without a destination page burn the click-through.
+>
+> **Phased ship order** (matches outreach plan):
+> 1. **V1 RWA Tokenization articles** → publish only after `/solutions/rwa-tokenization` is live
+> 2. **V2 DEX / on-chain trading articles** → after `/solutions/dex-protocol`
+> 3. **V3 DeFi protocol articles** → after `/solutions/defi-protocol` AND `/services/smart-contracts`
+> 4. **V4-V6 remaining active verticals** → after corresponding pages
+>
+> Cross-references in published articles point to other already-published articles only — no internal links to unbuilt landing pages. Pillar C5 (EU Regulatory Compliance & MiCA) articles also need `/mica-compliance` or equivalent destination before publishing.
 
 **Tier 1 — Technology Pillars (C1-C5)**: protocol-agnostic, reused across every segment.
 

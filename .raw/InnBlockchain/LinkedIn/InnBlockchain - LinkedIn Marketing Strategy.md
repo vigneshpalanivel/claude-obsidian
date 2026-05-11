@@ -31,6 +31,19 @@ Two ICP categories are served simultaneously from the same profile and company p
 > [!warning] Geography Gate
 > EU Continental Europe is the **sole** active outbound geography for FinTech and Crypto Native until **5 projects are closed**. Do not run LinkedIn ABM sequences targeting UK, US, MENA, or SEA until that gate is met.
 
+> [!warning] Cross-Channel Destination Dependency (Added 2026-05-11)
+> Multiple CTAs in this strategy route to innblockchain.com pages that do not yet exist (verified via sitemap.xml on 2026-05-11):
+> - **Company Page "Contact us" CTA** → "InnBlockchain.com discovery call booking page" — booking page does not exist
+> - **LinkedIn Articles** → "cross-link to InnBlockchain.com" — most ICP-aligned destinations (`/solutions/rwa-tokenization`, `/services/smart-contracts`, `/industries/fintech/`) do not exist
+> - **Showcase Pages** (Smart Contract Security, FinTech Blockchain Engineering, RWA Tokenization) reference InnBlockchain.com sub-pages that do not exist
+>
+> Until the corresponding pages ship per [[InnBlockchain Landing Pages Plan]]:
+> - Route all CTAs and cross-links to **innblockchain.com/solutions/rwa-tokenization** (Phase 1) — single coherent destination
+> - Do not build Showcase Pages that reference non-existent landing pages
+> - Do not publish LinkedIn Articles with internal links to 404 destinations
+>
+> Phased activation matches the outreach plan — see Cross-Channel Destination Dependency in `InnBlockchain - LinkedIn Outreach Strategy.md` and Pre-Publish Hard Gate in `LinkedIn Profile Vignesh Content.md`.
+
 ---
 
 ## 🔧 2. Platform Setup & Configuration

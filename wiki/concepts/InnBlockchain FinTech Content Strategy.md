@@ -23,6 +23,19 @@ related:
 
 Content program for [[InnBlockchain FinTech ICP]] — technical and product leaders at existing regulated FinTech companies adding blockchain rails. 4 technology pillars × 8 use-case clusters × 40+ scored articles. Primary Q2 2026 focus: WealthTech (RWA/STO/tokenized securities).
 
+> [!warning] Cross-Channel Destination Dependency (Added 2026-05-11)
+> Content funnels articles → solution landing pages per [[InnBlockchain Landing Pages Plan]]. As of 2026-05-11, **zero ICP-aligned landing pages are live** — `/solutions/tokenization`, `/solutions/regulated-exchange`, `/solutions/defi-lending`, `/solutions/fintech-wallets`, `/industries/fintech/`, and `/services/smart-contracts` all return 404.
+>
+> **Publishing constraint:** Do not publish a cluster's articles until the corresponding solution landing page is live. Article CTAs that point to 404 destinations either burn the inbound conversion (no destination) or burn credibility (404). Worse than not publishing.
+>
+> **Phased ship order** (matches outreach plan):
+> 1. **WealthTech / RWA cluster articles** → publish only after `/solutions/tokenization` is live
+> 2. **ExchangeTech cluster** → after `/solutions/regulated-exchange`
+> 3. **LendTech cluster** → after `/solutions/defi-lending`
+> 4. **WalletTech cluster** → after `/solutions/fintech-wallets`
+>
+> Cross-references in published articles point to other already-published articles only — no internal links to unbuilt landing pages.
+
 ## Architecture
 
 **Tier 1 — Technology Pillars (T1-T4)**, industry-agnostic.

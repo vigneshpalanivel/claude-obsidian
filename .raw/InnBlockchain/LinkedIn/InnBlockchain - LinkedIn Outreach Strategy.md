@@ -15,6 +15,17 @@ tags:
 > [!important] LinkedIn Reach Is ICP-Dependent
 > LinkedIn is the **primary outbound channel** for FinTech buyers, RWA founders, Channel Partner P2, and — with trigger-based personalisation — DeFi/protocol crypto-native founders. All five ICP tracks are covered in this strategy. X/Telegram outreach for DeFi/protocol is handled in a separate document.
 
+> [!warning] Cross-Channel Destination Dependency (Added 2026-05-11)
+> Outbound scope must be gated on innblockchain.com landing page availability. As of 2026-05-11, zero ICP-aligned landing pages per the [[InnBlockchain Landing Pages Plan]] are live (`/industries/`, `/solutions/`, `/services/smart-contracts` all return 404). Prospects who Google InnBlockchain or click through from Vignesh's profile land on a generic dev-shop homepage that contradicts the LinkedIn positioning — credibility hit compounds especially during Compliance Carol and Security Sasha diligence.
+>
+> **Phased activation tied to landing page ship dates:**
+> - **Phase 1** (`/solutions/rwa-tokenization` live): RWA outreach only — FinTech WealthTech RWA + Crypto Native asset-backed Felix
+> - **Phase 2** (`/solutions/regulated-exchange` live): + FinTech ExchangeTech
+> - **Phase 3** (`/services/smart-contracts` live): + Crypto Native DeFi/Protocol (trigger-based only)
+> - **Phase 4** (remaining Solutions pages live): + LendTech, WalletTech, Channel Partner full activation
+>
+> Until Phase 1 unblocks, **no LinkedIn DM sequences run.** Profile may be published earlier as ambient/inbound surface. Full constraint and Pre-Publish Hard Gate in `LinkedIn Profile Vignesh Content.md`.
+
 ---
 
 ## 📋 1. Executive Summary (Outreach Focus)
