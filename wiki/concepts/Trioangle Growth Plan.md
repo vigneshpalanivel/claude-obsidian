@@ -134,11 +134,13 @@ Recurring revenue here doesn't come from a subscription. It comes from **project
 
 | Persona | Repeat-buy cadence | Per-deal range | Annual revenue per active client | Pattern |
 |---|---|---|---|---|
-| **P5 — AI-Forward Platform Operator** | 2–4 AI feature projects/yr | $15k–$120k+ | $30k–$240k+ | The AI roadmap delivered in the Audit Sprint *is* the project queue |
-| **P4 — MENA Relationship** | 2–3 projects/yr | $30k–$120k+ | $60k–$360k+ | Often spans sister businesses in the same family-group |
-| **P3 — Enterprise** | 1–2 large projects/yr | $50k–$120k | $50k–$240k | Phase 1 flagship → Phase 2 industry extension → Phase 3 compliance/scaling |
+| **P5 — AI-Forward Platform Operator** | 2–4 total projects/yr (1–3 AI features + 1–2 non-AI) | $15k–$120k+ | $30k–$240k+ | AI roadmap from the Audit Sprint drives years 1–2; plateaus by year 3 as backlog runs down |
+| **P4 — MENA Relationship** | 2–3 total projects/yr (typically 1 AI + 1–2 platform/flagship) | $30k–$120k+ | $60k–$360k+ | Often spans sister businesses in the same family-group |
+| **P3 — Enterprise** | 1–2 large projects/yr (either flagship platform or discrete AI initiative — not both bundled) | $50k–$120k | $50k–$240k | Phase 1 flagship → Phase 2 industry extension → Phase 3 compliance/scaling |
 
 P5 drives the highest cadence (the project queue is pre-committed via the AI roadmap). P4 drives breadth (the relationship spans sister businesses across one family group). P3 drives depth (one large multi-phase program per year, reduced procurement friction once approved).
+
+> **Revenue-mix realism:** Across all three personas the recurring book is roughly **40–60% AI / 40–60% non-AI** by revenue, not the "AI-primary" framing implied by the strategic positioning. AI is the wedge that lands the relationship and lifts ASP — it's not the majority of dollars billed once the relationship is steady. Plan delivery capacity accordingly: AI engineering capacity needs to scale, but so does platform-extension capacity (geo, vertical, compliance, scaling work).
 
 **The P5 loop (most reliable cadence):**
 

@@ -514,9 +514,13 @@ When does this happen? **At Stage 7 (Closed-Won) — first invoice paid, kickoff
 - Production AI feature has crossed its A/B-test threshold (P5) → "what's next on the shortlist?"
 - Buyer's quarterly board update mentions a new initiative our scope can deliver
 - Vertical competitor ships a feature the buyer doesn't yet have (the reverse of our outbound trigger)
-- New geography / vertical / business unit announced
+- New geography / vertical / business unit announced — often a non-AI platform-extension project
 - A technical leader the buyer trusts joins or leaves
 - 6 months post-launch with stable metrics (the trust window has opened)
+- AI feature roadmap from the Audit Sprint is running down (year 2+) → pivot expansion conversations toward platform extensions and operational projects, not more AI
+
+> [!NOTE] Expansion revenue mix — AI is the wedge, not the whole book
+> Per [[Trioangle - ICP - Service]] Repeat-Buy Cadence rows: expect 1–3 AI feature projects + 1–2 non-AI projects per active client per year (= 2–4 total). Don't force-fit every expansion conversation into an AI lens. After the AI Audit Sprint backlog runs down (typically end of year 2), most expansion revenue comes from platform extensions: new geography, new vertical, scaling work, compliance, integrations. AEs should be comfortable scoping non-AI work into the recurring engagement — that's not "downselling," it's the realistic shape of the recurring book per [[Trioangle Growth Plan]].
 
 ### 12.3 What not to do
 
@@ -643,7 +647,7 @@ The ratio of these — and how it changes week-to-week — is what the sales man
 
 - Win rate by persona
 - Win rate by source channel (CAC, ACV)
-- Closed-won by service line (AI vs Dev) — **target ≥60% AI by end of FY26 per [[Trioangle 2.0 AI Pivot Plan]]**
+- Closed-won by service line (AI vs Dev) — **realistic target ≥50% AI by end of FY26** for *new logos* (AI is the wedge that lands the relationship). For the *recurring book* including expansion revenue from existing accounts, expect ~40–60% AI / 40–60% non-AI per [[Trioangle Growth Plan]] Repeat-Buy Cadence — that's the realistic mix once accounts are in steady state, not a failure mode. Track new-logo and expansion AI shares separately.
 - Active accounts at end of quarter (target growth from ~30 baseline per [[Trioangle Growth Plan]])
 - Repeat-buy rate within 12 months of first close (P5 target 70%; P3/P4 target 50%; P1/P2 not tracked — opportunistic only)
 

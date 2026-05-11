@@ -20,7 +20,7 @@ tags:
 > [!NOTE] Executive Summary
 > Trioangle's Ideal Customer Profile centers on **Established Platform Operators and Enterprises** with proven revenue and a working product, who need to **embed AI capabilities into their existing platform** — and, secondarily, who need a bespoke architectural rebuild, vertical/geography expansion, or other custom web/mobile development work on top of an already-operating business. These buyers run revenue-generating businesses (not freshly-funded pre-traction startups), have a proven business model, durable revenue, and strong domain knowledge, but lack the in-house ML/AI capability to ship production AI features and need an external engineering partner with deep vertical expertise.
 >
-> **🥇 Primary service line — AI Engineering for existing platforms.** Domain-specific AI implementation (intelligent dispatch, dynamic pricing, demand forecasting, conversational booking, fraud detection, AI moderation) embedded into the operator's already-running production platform. Not generic AI consulting; not AI strategy decks. AI features delivered by engineers who already know the domain edge cases intimately. Project sizes $15k–$120k+, with 2–4 follow-on AI feature projects per year per active client.
+> **🥇 Primary service line — AI Engineering for existing platforms.** Domain-specific AI implementation (intelligent dispatch, dynamic pricing, demand forecasting, conversational booking, fraud detection, AI moderation) embedded into the operator's already-running production platform. Not generic AI consulting; not AI strategy decks. AI features delivered by engineers who already know the domain edge cases intimately. Project sizes $15k–$120k+, with 1–3 follow-on AI feature projects per year per active client (alongside 1–2 non-AI platform projects — see Repeat-Buy Cadence rows).
 >
 > **🥈 Secondary service line — Web & Mobile Application Development.** Platform rebuilds, architectural modernization, multi-region/multi-vertical expansion, mobile-app modernization. Still offered to established operators when the brief explicitly requires it, but **not the lead pitch** — dev work is heavily commoditized in 2026 and competing on dev-only is margin-compression. Surfaces naturally after an AI engagement establishes the relationship. Project sizes $10k–$120k+.
 >
@@ -73,7 +73,7 @@ tags:
 
 | Attribute | Details |
 |---|---|
-| **Industry** | **9 verticals** — see [[Trioangle - Product Verticals]] for full breakdown: Delivery & Logistics, Ride-Hailing & Transport, Logistics & Fleet Management, Travel & Hospitality, Commerce & Marketplaces, On-Demand Home Services, Social & Entertainment, Education & E-Learning, and Multi-Service / Super Apps |
+| **Industry** | **9 verticals** — Delivery & Logistics, Ride-Hailing & Transport, Logistics & Fleet Management, Travel & Hospitality, Commerce & Marketplaces, On-Demand Home Services, Social & Entertainment, Education & E-Learning, and Multi-Service / Super Apps |
 | **Size** | 10–500+ employees (established mid-market platform operators to enterprises) |
 | **Revenue** | $1M+ ARR with 12+ months of operational history. **Freshly-funded pre-traction companies are out of scope** — funding alone does not qualify; revenue traction does. |
 | **Growth Stage** | Established operating businesses with proven revenue (Series B+ scale or profitable mid-market), enterprise-grade businesses investing in digital infrastructure, or family-group/enterprise-backed operators. **Not Seed-stage startups, not pre-launch operators.** |
@@ -120,7 +120,7 @@ tags:
 | **Platforms** | LinkedIn, HackerNews, CTO Slack communities, GitHub, Clutch.co/G2 reviews |
 | **Content** | Technical architecture case studies, engineering blog posts, podcast interviews with CTOs, whitepaper comparisons of frameworks |
 | **Purchase Behavior** | Varies by persona: Formal procurement (RFP → technical review → proposal → board approval, 2–4 months) for Personas 1 & 3; relationship-driven, informal, 3–6 week close for Persona 2; referral-gated, relationship-first for Persona 4 (MENA) |
-| **Brand Loyalty** | Extremely sticky once trust is built — typical cadence is 2–4 AI feature projects per year per active client (the AI roadmap delivered in the AI Audit Sprint *is* the project queue), plus occasional platform-extension work. Active clients provide referrals and write case study testimonials. |
+| **Brand Loyalty** | Extremely sticky once trust is built — typical cadence is 2–4 *total* projects per year per active client (mix is roughly 1–2 AI features + 1–2 platform extensions / geo or vertical expansion / performance / compliance work). The AI roadmap delivered in the AI Audit Sprint seeds the AI half; the platform-side half emerges from operational reality. Active clients provide referrals and write case study testimonials. |
 | **Buying Triggers** | Platform outage · failed tech DD (acquisition / late-stage funding / compliance) · new country/vertical expansion · compliance audit failure · key engineering lead departure · AI feature gap vs vertical competitors |
 
 ---
@@ -310,7 +310,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 | 🥇 **Primary (AI)** | Ship domain-specific AI features that move a named business metric in their vertical | A/B test lift % vs rule-based baseline (e.g., +15% driver revenue, +8% match quality, −30% fraud losses) | 4–12 weeks per feature | All personas (P5 lead) |
 | 🥇 **Primary (AI)** | Build a board-defensible AI roadmap with honest build-vs-buy-vs-SaaS recommendations | AI Audit Sprint deliverable accepted; first feature shipped within 90 days of audit | 90 days | All personas (P3, P4 board-facing) |
 | 🥇 **Primary (AI)** | Maintain platform stability while adding AI capabilities — AI as enhancement layer, not dependency | Zero AI-induced incidents in core platform; isolated AI service uptime ≥99.5%; automatic fallback to rule-based defaults when model underperforms | Ongoing | All personas (P1, P5 most acute) |
-| 🥇 **Primary (AI)** | Establish ongoing AI partnership with quarterly roadmap cadence (vs one-shot AI feature delivery) | 2–4 AI feature projects/year per active client; quarterly AI roadmap review held | Ongoing | P3, P4, P5 lead · P1, P2 emergent |
+| 🥇 **Primary (AI)** | Establish ongoing AI partnership with quarterly roadmap cadence (vs one-shot AI feature delivery) | 1–3 AI feature projects/year + 1–2 non-AI projects per active client (= 2–4 total); quarterly AI roadmap review held | Ongoing | P3, P4, P5 lead · P1, P2 emergent |
 | 🥈 **Secondary (Dev)** | Build a robust, scalable, secure architecture for an existing operating platform | 99.9% uptime, <200ms API response at P99 | 3–6 months | P1, P2, P3 |
 | 🥈 **Secondary (Dev)** | Augment internal team with fast, reliable senior external talent | Sprint velocity, features shipped per sprint | Ongoing | P1, P2 |
 | 🥈 **Secondary (Dev)** | Pass compliance audits (including AI compliance — EU AI Act, sector regulations) | SOC2 Type II / PCI-DSS / HIPAA certification; AI model documentation per regulatory requirement | 6–12 months | P1, P3 |
@@ -365,7 +365,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 **Key Benefit:** Domain expertise and predictable engineering execution — you aren't their training ground.
 **Proof Needed:** Architecture diagrams of past similar builds, anonymized code samples, security certifications, named client references willing to take a call. **For AI scope**: production AI feature case studies in their vertical with A/B-test metric outcomes (e.g., dispatch latency reduction, demand forecast MAPE, fraud precision/recall).
 
-**Repeat-Buy Cadence:** 2–3 projects/year. Typical sequence: platform rebuild/scaling (Y1 H1) → AI feature retrofit (Y1 H2) → next AI feature + platform extension (Y2). Architecture rebuild seeds the AI roadmap because clean event data is a precondition for AI features.
+**Repeat-Buy Cadence:** 2–3 total projects/year (typically 1 AI feature + 1–2 non-AI: scaling work, geo expansion, compliance, performance). Typical sequence: platform rebuild/scaling (Y1 H1) → AI feature retrofit (Y1 H2) → next AI feature or platform extension (Y2). Architecture rebuild seeds the AI roadmap because clean event data is a precondition for AI features.
 
 **Account Cadence:** Quarterly architecture review; AI roadmap review surfaces from Q2 onward once platform stability is restored. See [[Trioangle Growth Plan]] Repeat Business Mechanics.
 
@@ -403,7 +403,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 **Key Benefit:** End-to-end product partnership — they get a team that translates their vision into code without needing a CTO counterpart.
 **Proof Needed:** Founder testimonials, live product demos of similar apps, transparent pricing and milestone schedules, proactive communication examples (Slack updates, sprint decks). **For AI scope**: business-outcome AI case studies framed in language a non-technical founder can absorb — "we cut their support tickets by 40%" not "we deployed a RAG pipeline with 0.85 retrieval@5."
 
-**Repeat-Buy Cadence:** 2–3 projects/year. Typical sequence: platform rebuild (entry deal) → AI feature retrofit (chatbot, AI search, AI matching) → operational expansion (new geo / vertical) → next AI feature. Rebuild is the entry; AI features are the recurring engine.
+**Repeat-Buy Cadence:** 2–3 total projects/year (typically 1 AI feature + 1–2 non-AI: rebuild, operational expansion, integrations). Typical sequence: platform rebuild (entry deal) → AI feature retrofit (chatbot, AI search, AI matching) → operational expansion (new geo / vertical) → next AI feature. Rebuild is the entry; AI features and platform extensions are the recurring engine in roughly equal measure.
 
 **Account Cadence:** Bi-weekly product/business reviews during active engagement; monthly thereafter; quarterly AI roadmap review from Y1 H2 once the rebuild is stable.
 
@@ -441,7 +441,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 **Key Benefit:** Proven delivery track record + domain expertise in their specific vertical (logistics & fleet, hospitality & rentals, home services, commerce & marketplaces).
 **Proof Needed:** Enterprise client case studies, named references, security certifications, formal proposal document with SLAs, team bios with LinkedIn profiles.
 
-**Repeat-Buy Cadence:** 1–2 large projects/year (vs 2–4 for P5). Phase 1 flagship build → Phase 2 industry extension → Phase 3 compliance/scaling/new geography. Formal procurement each phase, reduced friction once vendor is approved.
+**Repeat-Buy Cadence:** 1–2 large projects/year (vs 2–4 for P5). Each project tends to be either a flagship platform build/extension or a discrete AI initiative — not both bundled. Typical sequence: Phase 1 flagship build (often non-AI digital transformation) → Phase 2 AI feature initiative bolted on → Phase 3 compliance / scaling / new geography. Formal procurement each phase, reduced friction once vendor is approved.
 
 **Account Cadence:** Quarterly executive readout — outcome metrics vs board KPIs, change-management progress, compliance status. Documented (vs P5's informal review). Next phase emerges from the readout.
 
@@ -479,7 +479,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 **Key Benefit:** A partner who understands the MENA market dynamic — where your reputation is on the line personally, not just commercially.
 **Proof Needed:** Named references from UAE/KSA clients (even brief LinkedIn endorsements carry weight), Arabic-language capability or a bilingual project liaison, in-person or high-touch video introduction before any proposal.
 
-**Repeat-Buy Cadence:** 2–3 projects/year, often through the same family-group across sister businesses. The relationship is the unit of cadence, not the project — once trust is built, the next project is assumed unless something breaks it.
+**Repeat-Buy Cadence:** 2–3 total projects/year, often through the same family-group across sister businesses (typically 1 AI feature + 1–2 platform / flagship / expansion projects — Vision 2030 AI mandates surface AI work but the bulk is still digital platform delivery). The relationship is the unit of cadence, not the project — once trust is built, the next project is assumed unless something breaks it.
 
 **Account Cadence:** Informal, relationship-led — WhatsApp check-ins monthly, in-person quarterly when geography permits, no formal review deck. Next project surfaces in conversation.
 
@@ -516,7 +516,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 **Key Benefit:** Domain-specific AI implementation — we know ride-hailing dispatching edge cases, marketplace fraud patterns, and logistics demand curves before the first call. Zero learning curve on the domain.
 **Proof Needed:** A concrete AI case study in their vertical (e.g., "We built a dynamic surge pricing engine for a ride-hailing client that increased driver revenue by 18%") — metric-backed, specific, real. No vague "AI transformation" language.
 
-**Repeat-Buy Cadence:** 2–4 AI feature projects/year — the AI roadmap delivered in the AI Audit Sprint *is* the project queue. First project lands; next 2–3 features already prioritized and waiting. Per [[Trioangle Growth Plan]], P5 is the **primary recurring-revenue base** for Track 2.
+**Repeat-Buy Cadence:** 2–4 *total* projects/year per active client. Mix is roughly 1–3 AI feature builds + 1–2 non-AI projects (platform extension, geo/vertical expansion, performance, compliance). Years 1–2 skew heavier on AI as the Audit Sprint roadmap rolls out; year 3+ plateaus to a more balanced AI/non-AI mix as the AI feature backlog runs down. Per [[Trioangle Growth Plan]], P5 is the **primary recurring-revenue base** for Track 2.
 
 **Account Cadence:** Quarterly AI roadmap review — *"what's working, what's next, what's blocking"* — no pitch deck. Next project surfaces in conversation. Every project handover ends with "here's what we'd build next based on what we learned." Single account contact across AI and non-AI work.
 

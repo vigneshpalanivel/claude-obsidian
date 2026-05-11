@@ -237,6 +237,9 @@ Phase 4 — Market Position  (M15–18)  Market authority; IP moat
 
 Legacy = clone scripts (active Product ICP channel). SMB AI Revenue column reflects Service ICP P5 outbound as the primary AI channel from Phase 0, compounding through delivered case studies and the AI Delivery Kit. Product ICP add-ons are included only when they convert inbound — no outbound motion targeting them.
 
+> [!IMPORTANT] Revenue-mix realism — AI is the wedge, not the bulk
+> Per [[Trioangle Growth Plan]] (Repeat-Buy Cadence table), Track 2's recurring revenue is roughly **40–60% AI / 40–60% non-AI** once a client is in steady state — not AI-dominant. The AI Audit Sprint typically yields 2–3 AI features that ship over 12–18 months; after year 2, AI demand plateaus and platform-extension work (geo, vertical, scaling, compliance) makes up the rest of the recurring book. The SMB AI Revenue column above is the *AI portion* only — full Track 2 revenue per client is roughly 1.5–2× this figure once non-AI follow-on work is counted. **AI is the wedge that lands the relationship and lifts ASP; it's not the majority of dollars billed once the relationship is steady.** Plan delivery capacity for both AI engineering AND platform extension; underbuilding the latter is the failure mode for an "AI-primary" agency that doesn't account for the realistic mix.
+
 ---
 
 ## Success Metrics
