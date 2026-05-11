@@ -175,50 +175,18 @@ tags:
 
 ## 🔍 Pre-Sales Sprints — AI Audit Sprint (Primary) + Discovery Sprint (Secondary)
 
-Both are paid, 2-week, $1,500–$4,000 engagements credited toward the full engagement. They differ in scope. **Default: lead with AI Audit Sprint** unless prospect arrives with a clear non-AI rebuild brief — then Discovery Sprint with AI Audit follow-on planned.
+Two paid 2-week pre-sales products structurally de-risk the buyer relationship before any full project commitment. Their *existence* and *who they serve* is strategic and lives here; full deliverable lists, sales-line copy, pricing tiers, swap rules, and the AI Funnel disambiguation live in [[Trioangle - Sales Playbook - Service]] §8.
 
-### 🥇 AI Audit Sprint — Primary Entry Product (P5 + AI-curious P3/P4)
+| Product | Strategic purpose | Primary for | Not for |
+|---|---|---|---|
+| 🥇 **AI Audit Sprint** (default) | Demonstrates domain knowledge before scope commitment; surfaces 2–3 AI features with build-vs-buy recommendations; converts AI-curious prospects into signed AI feature builds. | **P5** (default entry); also offerable to **P3** (inside RFP) and **P4** (as relationship-demonstration deliverable) | None — offerable to all five personas in different formats |
+| 🥈 **Discovery Sprint** (fallback) | Eliminates "are these engineers senior?" and "will scope blow out?" simultaneously; pre-engagement scoping for non-AI rebuild work. | **P1** and **P2** arriving with an explicit platform rebuild brief, not yet ready for AI scope | **P5** (enters via AI Audit), **P3** (RFP process), **P4** (trust is relationship-built) |
 
-| Attribute | Details |
-|---|---|
-| **Duration · Price** | 2 weeks · $1,500–$4,000 (scoped on platform complexity; credited toward full engagement) |
-| **Primary for** | P5 (default entry); also offerable to P1, P2 when they engage with the AI angle. **For P3 and P4** — offer inside their channel format: P3 runs it as part of RFP discovery (or standalone enterprise audit); P4 positions it as a relationship-demonstration deliverable, not a sprint the buyer signs cold. (AI Audit Sprint is offerable to P3/P4; Discovery Sprint is not.) |
-| **Swap to Discovery Sprint (P1/P2 only)** | When the prospect arrives with a platform rebuild brief and isn't ready for AI scope. Sign Discovery Sprint as the immediate paid engagement; **always name AI Audit Sprint as the follow-on**. Never sign Discovery Sprint with no AI follow-on path stated. |
-| **When AI work is impossible** | Data readiness too weak (<3 months clean event history, no labels) → recommend paid data-instrumentation engagement as bridge; AI Audit Sprint becomes feasible after instrumentation. |
+**Default rule:** Lead with AI Audit Sprint unless prospect arrives with a clear non-AI rebuild brief. When Discovery Sprint is signed (P1/P2 rebuild path), **always name AI Audit Sprint as the planned follow-on** so the deal trajectory is rebuild → AI features, not rebuild → done.
 
-**AI Audit Sprint deliverables:**
-- **Data audit** — what's in the prospect's data tables (events, transactions, user behavior); is it sufficient signal to train; what's missing.
-- **AI feature shortlist** — 2–3 highest-ROI use cases for their platform and vertical, ranked by expected business metric lift vs implementation cost; honest "do not build" recommendations included.
-- **Reference architecture** — service-isolation pattern, fallback to rule-based defaults, drift detection, rollout strategy (shadow → canary → full).
-- **Build vs buy vs SaaS per feature** — sprint identifies which AI features are worth building vs which should use AWS Personalize / Pinecone / OpenAI / vertical SaaS.
-- **Fixed-price delivery estimate** with named milestones, A/B test framework, and success-metric definition for the top-priority feature.
-- **Engineering team introduction** — buyer meets the AI engineers who would deliver, not a sales engineer.
+**When AI work is impossible** (data readiness too weak — <3 months clean event history, no labels): recommend a paid data-instrumentation engagement as bridge; AI Audit Sprint becomes feasible after instrumentation.
 
-**Why this works:** Eliminates the "AI vendor learning the domain on our dime" objection (the audit *demonstrates* domain knowledge in week 1) and the "what should we even build?" paralysis (the shortlist forces a prioritized roadmap). Paid-audit buyers close at far higher rates than cold-deck recipients.
-
-> **Sales line copy:** [[Trioangle - Sales Playbook - Service]] §8.2.
-
-### 🥈 Discovery Sprint — Secondary Entry Product (Custom Dev / Rebuild Scope)
-
-Used when the inbound brief is explicitly a platform rebuild, vertical/geography expansion, or custom web/mobile build with no AI angle.
-
-| Attribute | Details |
-|---|---|
-| **Duration · Price** | 2 weeks · $1,500–$4,000 (credited toward full engagement) |
-| **Use for** | P1 (Scaling CTO) and P2 (Non-Technical Founder-Operator) arriving with a platform rebuild brief, not yet ready to engage with AI scope. Sign Discovery Sprint as the immediate paid engagement; **always state AI Audit Sprint as the planned follow-on** so the deal trajectory is rebuild → AI features, not rebuild → done. |
-| **Not for** | P5 (enters via AI Audit Sprint), P3 (RFP process is the access format), P4 (trust is relationship-built, not sprint-built). |
-
-**Deliverables:** ERD and data model · system architecture + tech stack recommendation · wireframes / user flows (P2 / non-technical) · critical path and dependency map · fixed-price delivery estimate with guaranteed milestones · team introduction before signing.
-
-**Why it works:** Eliminates the two biggest pre-sales fears at once — "are these engineers senior?" (code review + architecture session) and "will scope/budget blow out?" (fixed-price estimate). A buyer who has paid $2,000 and met the team closes at a dramatically higher rate than a cold-proposal recipient.
-
-> **Sales line copy:** [[Trioangle - Sales Playbook - Service]] §8.2.
-
-### AI Funnel — Two Distinct Products (Disambiguation)
-
-The Service ICP exposes **two AI-related entry offerings** — a free 1-hour AI Readiness Call (top of funnel, qualification) and the paid AI Audit Sprint (pre-engagement, formal entry). They sit at different funnel stages and should not be offered in the same conversation. Full disambiguation table, funnel-stage rules, and floor rules live in [[Trioangle - Sales Playbook - Service]] §8.1a *AI Funnel*.
-
----
+**AI Funnel — free Readiness Call vs paid Audit Sprint:** These are *two different products* (free 1-hour qualification call vs paid 2-week pre-engagement). Full disambiguation table and funnel-stage rules live in [[Trioangle - Sales Playbook - Service]] §8.1a.
 
 ## 😣 Pain Points
 
@@ -289,7 +257,7 @@ Lead discovery calls with the pain that resonates per persona — not a generic 
 | Pain | P1 Scaling CTO | P2 Founder-Operator | P3 Enterprise | P4 MENA | P5 AI-Forward |
 |---|---|---|---|---|---|
 | 1. Scalability Tech Debt | 🔴 Primary | 🟡 Secondary | 🟡 Secondary | ⚪ Low | ⚪ Low |
-| 2. Ghosted Agency Trust Deficit | 🔴 Primary | 🔴 Primary | 🟡 Secondary | 🔴 Primary | 🟡 Secondary |
+| 2. Ghosted Agency Trust Deficit | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | 🔴 Primary | 🟡 Secondary |
 | 3. IP Ownership / Lock-In | 🔴 Primary | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | 🟡 Secondary |
 | 4. Speed vs. Quality Trade-Off | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | ⚪ Low | ⚪ Low |
 | 5. "AI but where to start" Gap | 🟡 Secondary | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | 🔴 Primary |
@@ -346,8 +314,8 @@ In Service Line Priority order — AI goals first (primary across all five perso
 
 | Goals | Frustrations |
 |---|---|
-| Seamless, scalable architecture | Agencies that promise features without proving architectural depth |
-| Predictable, agile sprint delivery | Vendors that disappear mid-project or miss sprints silently |
+| Seamless, scalable architecture | Architectural shortcuts that look fine until the platform hits 10× load |
+| Predictable, agile sprint delivery | Agencies that promise features without proving architectural depth |
 | Full IP ownership and readable, documented code | Black-box development and vendor lock-in |
 | Passing security compliance audits | Junior developers being passed off as senior architects |
 

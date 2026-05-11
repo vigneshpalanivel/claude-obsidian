@@ -307,7 +307,29 @@ Track which option they pick — it's a strong signal for forecasting.
 
 ## 8. 🏃 Pre-Sales Sprint Mechanics
 
-The ICP §🔍 Pre-Sales Sprints describes *what* the sprints are. This section describes *how to sell them*.
+The ICP §🔍 Pre-Sales Sprints describes *which* sprints exist and *who they're for* (strategic). This section describes *what's in the deliverable*, *how to scope and price them*, and *how to sell them* (operational).
+
+### 8.0 Sprint deliverables (what the buyer actually receives)
+
+**AI Audit Sprint deliverables** (2 weeks, $1,500–$4,000, credited toward full engagement):
+- **Data audit** — what's in the prospect's data tables (events, transactions, user behavior); is it sufficient signal to train; what's missing.
+- **AI feature shortlist** — 2–3 highest-ROI use cases for their platform and vertical, ranked by expected business metric lift vs implementation cost; honest "do not build" recommendations included.
+- **Reference architecture** — service-isolation pattern, fallback to rule-based defaults, drift detection, rollout strategy (shadow → canary → full).
+- **Build vs buy vs SaaS per feature** — sprint identifies which AI features are worth building vs which should use AWS Personalize / Pinecone / OpenAI / vertical SaaS.
+- **Fixed-price delivery estimate** with named milestones, A/B test framework, and success-metric definition for the top-priority feature.
+- **Engineering team introduction** — buyer meets the AI engineers who would deliver, not a sales engineer.
+
+**Why this works:** Eliminates the "AI vendor learning the domain on our dime" objection (the audit *demonstrates* domain knowledge in week 1) and the "what should we even build?" paralysis (the shortlist forces a prioritized roadmap). Paid-audit buyers close at far higher rates than cold-deck recipients.
+
+**Discovery Sprint deliverables** (2 weeks, $1,500–$4,000, credited):
+- ERD and data model
+- System architecture diagram + tech stack recommendation
+- Wireframes / user flows (for P2 / non-technical buyers)
+- Critical path and dependency map
+- Fixed-price delivery estimate with guaranteed milestone dates
+- Team introduction — buyer meets the actual engineers before signing
+
+**Why it works:** Eliminates the two biggest pre-sales fears at once — "are these engineers senior?" (code review + architecture session) and "will scope/budget blow out?" (fixed-price estimate). A buyer who has paid $2,000 and met the team closes at a dramatically higher rate than a cold-proposal recipient.
 
 ### 8.1 Default = AI Audit Sprint
 
