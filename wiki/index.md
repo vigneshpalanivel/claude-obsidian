@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-09 | Total pages: 193 | Sources ingested: 61
+Last updated: 2026-05-11 | Total pages: 194 | Sources ingested: 61
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -75,6 +75,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
 - [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
 - [[InnBlockchain LinkedIn Strategy]] — LinkedIn as primary B2B channel; flywheel: profile → content → trigger-based outreach → discovery call; EU gate; RWA priority 1 across both ICPs (status: current)
+- [[InnBlockchain Vignesh LinkedIn Profile]] — ICP-aligned rewrite of Vignesh's personal profile; headline/about/banner/skills; reframes speed objection; surfaces RWA Felix + Compliance Carol (status: current)
 - [[BMad Four-Phase Workflow]] — BMad's context engineering backbone; Analysis → Planning → Solutioning → Implementation; fresh chat per workflow (status: current)
 - [[BMad Quick Dev]] — compress intent, freeze spec, run longer unsupervised; diagnose failure at the layer where it entered (status: current)
 - [[BMad Project Context]] — `project-context.md` as project constitution loaded by every implementation workflow; keep lean (status: current)
