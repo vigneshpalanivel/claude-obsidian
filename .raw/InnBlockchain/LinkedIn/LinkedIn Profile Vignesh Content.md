@@ -50,9 +50,9 @@ Recent work:
 
 **Two regulatory cycles in, the lesson is the same:** companies that treat compliance as an engineering priority — not a legal review at the end — never have to pause operations or rebuild from scratch when frameworks catch up. MiCA formalized what I already believed. The UK, MENA, and Asia are following. Compliance-ready infrastructure is no longer optional; we've built it that way from the start.
 
-**How we're different from SaaS platforms (Tokeny, Securitize, Fireblocks, Kaleido):** productized one-time delivery, full code ownership at exit — smart contracts AND UI codebase. No license fees. No platform lock-in. You own what we build.
+**Our model vs. SaaS tokenization and custody platforms:** one-time productized delivery. You own the smart contracts and the UI codebase at exit. No license fees. No platform lock-in.
 
-**How we're different from top audit firms (Trail of Bits, OpenZeppelin, Zellic):** their queues run 8-12 weeks. We can start next week. I don't take shortcuts — when deadlines are tight, we move because the methodology is rigorous, not because we cut corners. Many teams use us in parallel with top-firm reviews.
+**Our model vs. top-tier audit firms:** their queues run 8-12 weeks. We can start next week. I don't take shortcuts — when deadlines are tight, we move because the methodology is rigorous, not because we cut corners. Many teams use us in parallel with their top-firm review.
 
 Everything we build is **legally defensible, technically sound, and compliance-ready** — structured to protect your operations, satisfy regulators, and hold its value through every stage of growth. Technically, legally, and operationally yours from the moment we hand it over.
 
@@ -155,34 +155,32 @@ InnBlockchain · Full-time
 
 ## Pre-Publish Hard Gate
 
-Do not publish until ALL of the following exist as deliverable assets ready to send within 24 hours of any inquiry:
+Only assets that the published profile **promises** or **implies**. Breaking these promises is a credibility incident the first time a prospect tests them. Outreach-readiness assets (Featured PDFs, full recommendation pipeline, content cadence) are scoped to the outreach plan — see `InnBlockchain - LinkedIn Outreach Strategy.md`.
 
-**Vendor/Compliance Assets (for Compliance Carol):**
+**Vendor/Compliance Assets (promised in About — "available on request"):**
 - [ ] Vendor risk pack (ownership structure, ISO/SOC 2 status, data residency)
 - [ ] Sample audit report (anonymised, regulator-grade)
 - [ ] MiCA compliance brief
 
-**Featured Section Assets (for inbound conversion):**
-- [ ] MiCA Readiness Checklist for FinTech CTOs (PDF)
-- [ ] Pre-Mainnet Smart Contract Self-Scan (PDF or Notion)
-- [ ] RWA Tokenization Risk Checklist for Asset-Backed Founders (PDF)
-- [ ] 1 anchor article published on InnBlockchain.com (RWA-focused recommended)
-
-**Profile Reference Anchors (for credibility):**
+**Profile Reference Anchors (in About — placeholders cannot remain visible):**
 - [ ] At least 2 of the 3 `[INSERT REFERENCE]` placeholders in About filled with anonymised but specific client references
 - [ ] If no client references can be cited yet, replace the Recent Work block with a single "Currently engaged with EU WealthTech and RWA founders in [vertical]" line — better silence than a blank placeholder
 
-**Cross-Channel Destination (for click-through coherence):**
+**Cross-Channel Destination (About CTA link cannot 404):**
 - [ ] `innblockchain.com/solutions/rwa-tokenization` page is built and live — currently 404. About CTA link points here. See [[InnBlockchain Landing Pages Plan]] for full site IA.
 - [ ] Landing page hero and About hero match each other (RWA + MiCA + asset-backed founders language)
-- [ ] Landing page hosts the Featured assets referenced in profile (vendor risk pack, sample audit, MiCA brief downloadable)
-- [ ] If RWA landing page is the only ICP-aligned page live at launch, restrict initial LinkedIn outreach to RWA prospects only (see Outreach Sequencing below)
+- [ ] Landing page hosts the Vendor/Compliance assets above as downloadable
+
+**Minimum Social Proof (profile with zero recommendations reads as new/thin):**
+- [ ] 2-3 recommendations published before profile goes live (full 5-8 target tracked in outreach plan)
+
+**Experience & Claims (profile copy must be supported):**
+- [ ] InnBlockchain CEO Experience entry populated with start year, location, and filled placeholders
+- [ ] "7+ years building blockchain infrastructure" claim verified against existing LinkedIn Experience — revise if prior roles are general software engineering rather than blockchain-specific (Sasha-grade evaluator verifies in 30 seconds)
+- [ ] "15 protocols audited, zero critical findings" verified or revised to "10+" / "12+" if not exact
 
 ---
 
-## Verify Before Going Live
+## Editorial Decisions Still Open
 
-- Confirm "15 protocols audited, zero critical findings on production deployments" is current as of publish date. If 15 is not exact, use "10+" or "12+" rather than a precise unverifiable number.
-- Decide whether to specify "two regulatory cycles" (e.g., 2018 ICO wave + 2023 MiCA passage) or keep as authority signal. Recommend specifying after first 5 discovery calls.
-- Confirm comparison with Trail of Bits / OpenZeppelin / Zellic by name is acceptable risk. Naming competitors is sharper but invites response. Alternative: "Top-tier audit firms run 8-12 week queues."
-- **Confirm "7+ years building blockchain infrastructure" claim is supported by existing LinkedIn Experience entries.** If prior roles (pre-InnBlockchain) on LinkedIn are general software engineering rather than blockchain-specific, revise the About claim to e.g. "X+ years blockchain engineering, N+ years software engineering" — preserves credibility without false precision. A Sasha-grade evaluator can verify this in 30 seconds.
+- Decide whether to specify "two regulatory cycles" (e.g., 2018 ICO wave + 2023 MiCA passage) or keep as authority signal. Recommend specifying after first 5 discovery calls — vague version is currently working as a credibility hook.

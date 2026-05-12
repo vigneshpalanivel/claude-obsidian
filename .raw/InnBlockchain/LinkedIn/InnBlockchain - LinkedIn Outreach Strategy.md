@@ -26,6 +26,39 @@ tags:
 >
 > Until Phase 1 unblocks, **no LinkedIn DM sequences run.** Profile may be published earlier as ambient/inbound surface. Full constraint and Pre-Publish Hard Gate in `LinkedIn Profile Vignesh Content.md`.
 
+> [!important] Outreach Readiness Gate (Added 2026-05-12)
+> The profile can be published as soon as the **Pre-Publish Hard Gate** in `LinkedIn Profile Vignesh Content.md` is cleared (assets the profile explicitly promises). **DM sequences require additional assets** beyond the profile-publish set — assets that don't appear on the profile but materially affect conversion once outreach traffic starts engaging.
+>
+> **Outreach-Gate assets (must exist before first DM sequence runs):**
+>
+> **Inbound Conversion Assets** (Featured Section on the profile — empty Featured is a quality gap, not a credibility incident, so it doesn't block publish — but it kills outreach-driven conversion):
+> - [ ] MiCA Readiness Checklist for FinTech CTOs (PDF, gated download on RWA landing page)
+> - [ ] Pre-Mainnet Smart Contract Self-Scan (PDF or Notion doc)
+> - [ ] RWA Tokenization Risk Checklist for Asset-Backed Founders (PDF, non-technical language)
+> - [ ] 1 anchor article published on InnBlockchain.com (RWA-focused recommended) — pinned to Featured
+>
+> **Social Proof Threshold** (Sasha-grade diligence happens within the first 48 hours of outreach engagement; 2-3 recommendations gets the profile live but doesn't pass diligence):
+> - [ ] 5+ total recommendations published across 3 of 5 categories (FinTech client, Crypto-native client, Security peer, Regulator-adjacent, Engineering hire)
+> - [ ] 8+ recommendations for Sasha-grade pass rate — see `Recommendation Request Templates.md` for sequencing
+>
+> **Content Cadence** (outreach without active content engagement converts poorly — connection-accept lands on a profile, prospect checks recent activity, sees a dormant feed, downgrades the engagement):
+> - [ ] 4-6 weeks of feed posts already published before first DM sequence — 4-5x per week per [[InnBlockchain LinkedIn Strategy]]
+> - [ ] Newsletter "Secure by Design" launched OR explicitly deferred with a documented activation date
+>
+> **Platform Setup** (per `InnBlockchain - LinkedIn Marketing Strategy.md`):
+> - [ ] Creator Mode enabled
+> - [ ] Custom URL claimed and clean
+> - [ ] Sales Navigator subscription active with saved searches per track
+> - [ ] Outreach tooling (Expandi.io / Lemlist or equivalent) configured with personalisation variables
+> - [ ] CRM/pipeline tracker live for T1-T5 sequence state per prospect
+>
+> **Operational Readiness** (capacity to actually run the daily budget defined in this strategy):
+> - [ ] Owner identified for daily 15-20 personalised connection requests
+> - [ ] Owner identified for ≤1-hour comment-reply window on feed engagement
+> - [ ] Vignesh's time budgeted for discovery calls expected from converted sequences (2-4/week per KPI table)
+>
+> **Why split the gates this way:** Profile-publish promises must be honoured Day 1 — any prospect reading the published profile creates a possibility of testing those promises (vendor risk pack request, link click, claim verification). Outreach-gate assets are conversion infrastructure — their absence doesn't actively mislead anyone reading the profile passively, but it kills the funnel once outreach traffic starts landing.
+
 ---
 
 ## 📋 1. Executive Summary (Outreach Focus)
