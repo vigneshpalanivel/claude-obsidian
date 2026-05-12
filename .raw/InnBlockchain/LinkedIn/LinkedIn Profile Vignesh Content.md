@@ -24,7 +24,7 @@ Built for founders who can't afford to get this wrong.
 
 RWA tokenization, MiCA compliance, and smart contract audits — for EU-regulated FinTechs and asset-backed founders who can't afford a compliance incident or a protocol exploit.
 
-After seven years building blockchain infrastructure for regulated FinTechs and crypto-native protocols across two regulatory cycles, one thing is clear: the standard you hold in the build is the reputation you carry in the market.
+After 7+ years building blockchain infrastructure for regulated FinTechs and crypto-native protocols across two regulatory cycles, one thing is clear: the standard you hold in the build is the reputation you carry in the market.
 
 I've seen what happens when that trust is misplaced.
 → Compliance incidents that pause operations.
@@ -41,7 +41,7 @@ I founded InnBlockchain to make sure that doesn't happen to the companies we bui
 
 → **Crypto-native founders and protocol teams** in RWA, DEX/DeFi, on-chain trading, and wallet infrastructure who need to ship audit-ready products fast — without waiting months for a top-firm audit queue or hiring senior Solidity/Rust talent they can't yet find.
 
-**What we've shipped:** blockchain infrastructure and smart-contract security for FinTechs and Web3 protocols across asset tokenization, regulated exchange platforms, DeFi lending, and on-chain payments. 15 protocols audited. Zero critical findings on production deployments.
+**What we've shipped:** blockchain infrastructure and smart-contract security for FinTechs and Web3 protocols across asset tokenization, regulated exchange platforms, DeFi lending, and on-chain payments. 10+ protocols audited. Zero critical findings on production deployments.
 
 Recent work:
 → [INSERT REFERENCE 1 — e.g., "Tokenization infrastructure for an EU-regulated real-estate fund under MiFID II, managing €X AUM"]
@@ -69,7 +69,7 @@ Start at InnBlockchain.com → https://www.innblockchain.com/solutions/rwa-token
 Per [[InnBlockchain LinkedIn Strategy]], the Featured section is what converts a profile view into a download → email → discovery call. Three assets, one per ICP path:
 
 1. **MiCA Readiness Checklist for FinTech CTOs** — PDF. 6-10 pages. Use as gated download on InnBlockchain.com. Title-tested for Strategic Sam + Technical Tom search intent.
-2. **Pre-Mainnet Smart Contract Self-Scan** — PDF or Notion doc. Top 15 mistakes Cursor/AI-generated contracts make. Title-tested for Founding Felix + Security Sasha.
+2. **Pre-Mainnet Smart Contract Self-Scan** — PDF or Notion doc. Top 10 mistakes Cursor/AI-generated contracts make. Title-tested for Founding Felix + Security Sasha.
 3. **RWA Tokenization Risk Checklist for Asset-Backed Founders** — PDF. Written in non-technical language. 5-7 pages. Title-tested for RWA Felix (real-estate, fleet, commodity, private-credit issuers).
 
 Plus 1 anchor article from the [[InnBlockchain FinTech Content Strategy]] / [[InnBlockchain Crypto Native Content Strategy]] backlog — recommend an RWA tokenization article since RWA is Priority 1 across both ICPs.
@@ -93,7 +93,7 @@ InnBlockchain · Full-time
 >
 > **What we ship:**
 >
-> • Smart-contract audits with [10+ / 15+] protocols reviewed and a zero-critical-finding record on production deployments — typically delivered in [X] weeks vs. 8-12 week top-firm queues
+> • Smart-contract audits with 10+ protocols reviewed and a zero-critical-finding record on production deployments — typically delivered in [X] weeks vs. 8-12 week top-firm queues
 >
 > • RWA tokenization infrastructure for real-estate, private-credit, commodity, and fleet issuers — smart contracts + KYC/AML + regulator-reporting integration shipped as one productized engagement
 >
@@ -177,7 +177,7 @@ Only assets that the published profile **promises** or **implies**. Breaking the
 **Experience & Claims (profile copy must be supported):**
 - [ ] InnBlockchain CEO Experience entry populated with start year, location, and filled placeholders
 - [ ] "7+ years building blockchain infrastructure" claim verified against existing LinkedIn Experience — revise if prior roles are general software engineering rather than blockchain-specific (Sasha-grade evaluator verifies in 30 seconds)
-- [ ] "15 protocols audited, zero critical findings" verified or revised to "10+" / "12+" if not exact
+- [ ] "10+ protocols audited, zero critical findings" verified
 
 ---
 

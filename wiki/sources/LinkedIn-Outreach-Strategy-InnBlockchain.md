@@ -26,9 +26,12 @@ key_claims:
   - "Profile must be updated before running outreach — current headline ('CEO | Software Specialist') will kill conversion"
   - "Most deals close at T3-T5 — do not compress or skip steps; same-day pitch after connecting kills trust"
   - "Pipeline tracking in 'LinkedIn B2B Customer Outreach - InnBlockchain' (FinTech/Crypto Native) and 'LinkedIn Channel Partner Outreach - InnBlockchain'"
-ingest_rev: 1
+  - "Cross-Channel Destination Dependency (Added 2026-05-11 rev 2): Outbound scope is gated on innblockchain.com landing page availability. As of 2026-05-12 zero ICP-aligned landing pages live (verified via sitemap.xml — `/industries/`, `/solutions/`, `/services/smart-contracts` all 404). Phased activation: Phase 1 RWA-only after `/solutions/rwa-tokenization` ships; Phase 2 + ExchangeTech after `/solutions/regulated-exchange`; Phase 3 + DeFi/Protocol after `/services/smart-contracts`; Phase 4 + WalletTech/LendTech/Channel Partner full activation. Until Phase 1 unblocks, no DM sequences run — profile may publish earlier as ambient surface."
+  - "Outreach Readiness Gate (Added 2026-05-12 rev 2): Profile publish and outreach launch are separate gates. Profile-publish promises must be honoured Day 1 (vendor risk pack, sample audit, MiCA brief, filled references, RWA landing page, 2-3 recommendations, Experience entry, claims verified). Outreach launch requires additional assets: 3 Featured PDFs (MiCA Readiness Checklist, Pre-Mainnet Self-Scan, RWA Risk Checklist), 5-8 published recommendations, 4-6 weeks of feed posts pre-published, Sales Navigator + outreach tooling configured, daily-budget owner identified."
+ingest_rev: 2
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-12
+reingested: 2026-05-12
 tags:
   - source
   - linkedin

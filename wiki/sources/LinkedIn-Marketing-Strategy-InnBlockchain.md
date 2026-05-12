@@ -24,9 +24,11 @@ key_claims:
   - "Social proof: 5+ recommendations on Vignesh's profile minimum; 2 FinTech clients + 2 Crypto Native clients; ask immediately after project delivery"
   - "Weekly analytics targets: Profile views 100-300/week; Post impressions 500-5,000+; Engagement rate 2-5%; Follower growth +50-100/month"
   - "Tools: LinkedIn Analytics (native), Shield Analytics, LinkedIn Sales Navigator, Zoho CRM"
-ingest_rev: 1
+  - "Cross-Channel Destination Dependency (Added 2026-05-12 rev 2): Multiple CTAs route to innblockchain.com pages that do not yet exist per sitemap.xml — Company Page Contact CTA points to a non-existent discovery call booking page; LinkedIn Articles cross-link to InnBlockchain.com without ICP-aligned destinations; Showcase Pages reference sub-pages that 404. Until landing pages ship per [[InnBlockchain Landing Pages Plan]], all CTAs and cross-links route to /solutions/rwa-tokenization (Phase 1). Do not build Showcase Pages or publish Articles with internal links to 404 destinations."
+ingest_rev: 2
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-12
+reingested: 2026-05-12
 tags:
   - source
   - linkedin

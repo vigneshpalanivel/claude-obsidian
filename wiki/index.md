@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-11 | Total pages: 194 | Sources ingested: 61
+Last updated: 2026-05-12 | Total pages: 197 | Sources ingested: 63
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -75,7 +75,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
 - [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
 - [[InnBlockchain LinkedIn Strategy]] — LinkedIn as primary B2B channel; flywheel: profile → content → trigger-based outreach → discovery call; EU gate; RWA priority 1 across both ICPs (status: current)
-- [[InnBlockchain Vignesh LinkedIn Profile]] — ICP-aligned rewrite of Vignesh's personal profile; headline/about/banner/skills; reframes speed objection; surfaces RWA Felix + Compliance Carol (status: current)
+- [[InnBlockchain Vignesh LinkedIn Profile]] — ICP-aligned rewrite of Vignesh's personal profile; headline/about/banner/skills; reframes speed objection; surfaces RWA Felix + Compliance Carol; cross-channel phased on landing page availability; split publish/outreach gates (status: current)
+- [[InnBlockchain LinkedIn Recommendation Strategy]] — 5 recommender categories mapped to ICP personas; volume targets (2-3 pre-publish, 5-8 outreach); 6-week operational schedule (status: current)
 - [[BMad Four-Phase Workflow]] — BMad's context engineering backbone; Analysis → Planning → Solutioning → Implementation; fresh chat per workflow (status: current)
 - [[BMad Quick Dev]] — compress intent, freeze spec, run longer unsupervised; diagnose failure at the layer where it entered (status: current)
 - [[BMad Project Context]] — `project-context.md` as project constitution loaded by every implementation workflow; keep lean (status: current)
@@ -168,8 +169,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Content-Strategy-InnBlockchain-Crypto-Native]] — 2026-04-16 | 5 pillars × 10 verticals × 51 scored articles; Phase 1 RWA lock
 - [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first
 - [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
-- [[LinkedIn-Marketing-Strategy-InnBlockchain]] — 2026-04-16 | platform setup, algorithm mechanics, content cadence, authority clusters, newsletter "Secure by Design", analytics targets
-- [[LinkedIn-Outreach-Strategy-InnBlockchain]] — 2026-04-16 | 5 ICP tracks, 5-touchpoint sequences, Sales Navigator filters, daily budgets, KPIs, DQ signals
+- [[LinkedIn-Marketing-Strategy-InnBlockchain]] — 2026-04-16 (rev 2: 2026-05-12) | platform setup, algorithm mechanics, content cadence, authority clusters, newsletter, analytics targets; cross-channel CTA dependency added
+- [[LinkedIn-Outreach-Strategy-InnBlockchain]] — 2026-04-16 (rev 2: 2026-05-12) | 5 ICP tracks, 5-touchpoint sequences, Sales Nav filters, daily budgets, KPIs, DQ signals; cross-channel phasing + Outreach Readiness Gate added
+- [[LinkedIn-Profile-Content-Vignesh-InnBlockchain]] — 2026-05-12 | final ICP-aligned profile copy; RWA-first headline, anonymised competitor framing, split publish/outreach gates, About CTA routes to /solutions/rwa-tokenization
+- [[Recommendation-Request-Templates-InnBlockchain]] — 2026-05-12 | 5 category-specific request templates with ICP-aligned talking points + "what good looks like" samples; 6-week sequence; 5-8 recommendation target
 - [[Landing-Pages-InnBlockchain]] — 2026-04-16 | internal | full innblockchain.com site architecture + page strategy; 1 concept page created
 - [[BMAD-Method-Documentation]] — 2026-04-13 | full BMad v6 docs snapshot (llms-full.txt); 4 phases, agents, workflows, reviews
 - [[TEA-Documentation]] — 2026-04-13 | full Test Architect docs dump (16.5k lines); 9 workflows, risk scoring, fixture/network patterns, 42-fragment KB

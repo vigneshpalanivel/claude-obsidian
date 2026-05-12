@@ -163,6 +163,30 @@ Reply rate below 2% on any sequence = messaging problem, stop and diagnose befor
 
 ---
 
+## Cross-Channel Destination Dependency (Added 2026-05-12)
+
+The flywheel (Profile → Content → Outreach → Discovery Call) assumes prospects who engage will encounter coherent InnBlockchain positioning across channels. As of 2026-05-12, **zero ICP-aligned landing pages per [[InnBlockchain Landing Pages Plan]] are live** — verified via sitemap.xml (`/industries/`, `/solutions/`, `/services/smart-contracts` all 404).
+
+The dependency cascades across every layer of the strategy:
+
+- **Profile** ([[InnBlockchain Vignesh LinkedIn Profile]]) — About CTA cannot link to a 404; pre-publish hard gate now includes `/solutions/rwa-tokenization` live
+- **Outreach** ([[LinkedIn-Outreach-Strategy-InnBlockchain]]) — phased activation: Phase 1 RWA-only after `/solutions/rwa-tokenization` ships; Phase 2 + ExchangeTech; Phase 3 + DeFi/Protocol; Phase 4 + remaining
+- **Marketing** ([[LinkedIn-Marketing-Strategy-InnBlockchain]]) — Company Page CTAs, LinkedIn Article cross-links, Showcase Pages all currently route to non-existent destinations
+- **Content** ([[InnBlockchain FinTech Content Strategy]], [[InnBlockchain Crypto Native Content Strategy]]) — vertical clusters publish only after corresponding solution pages live
+
+## Two Publish Gates (Added 2026-05-12)
+
+Profile publish and outreach launch are separate readiness events:
+
+- **Pre-Publish Hard Gate** — assets the published profile **promises or implies** (vendor risk pack, sample audit, MiCA brief, filled references, RWA landing page live, 2-3 recommendations, Experience entry, claims verified). Tracked in [[InnBlockchain Vignesh LinkedIn Profile]].
+- **Outreach Readiness Gate** — additional assets that don't appear on the profile but materially affect conversion once outreach traffic starts (Featured PDFs, 5-8 recommendations, 4-6 weeks of feed posts, Sales Nav setup, daily-budget owner). Tracked in [[LinkedIn-Outreach-Strategy-InnBlockchain]].
+
+Splitting these allows profile publish ~3-4 weeks earlier than a single combined gate.
+
+## Recommendations
+
+Operational templates and sequencing for collecting 5-8 ICP-aligned recommendations: [[InnBlockchain LinkedIn Recommendation Strategy]] + [[Recommendation-Request-Templates-InnBlockchain]].
+
 ## Open Questions
 
 - X/Telegram outreach strategy for DeFi/Protocol segments referenced as a separate document — not yet ingested.

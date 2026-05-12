@@ -230,6 +230,60 @@
         "wiki/log.md",
         "wiki/hot.md"
       ]
+    },
+    ".raw/InnBlockchain/LinkedIn/InnBlockchain - LinkedIn Marketing Strategy.md": {
+      "hash": "66d2a951ef9e4cc8215c509c9789200b",
+      "ingested_at": "2026-05-12",
+      "ingest_reason": "Re-ingest after 2026-05-12 rev 2 updates — Cross-Channel Destination Dependency callout added (Company Page CTA, LinkedIn Article cross-links, Showcase Pages all reference innblockchain.com pages that don't exist per sitemap.xml; route to /solutions/rwa-tokenization until landing pages ship per InnBlockchain Landing Pages Plan).",
+      "pages_created": [],
+      "pages_updated": [
+        "wiki/sources/LinkedIn-Marketing-Strategy-InnBlockchain.md",
+        "wiki/concepts/InnBlockchain LinkedIn Strategy.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ]
+    },
+    ".raw/InnBlockchain/LinkedIn/InnBlockchain - LinkedIn Outreach Strategy.md": {
+      "hash": "f8d8b232cc7bba9c3f684bedc783535f",
+      "ingested_at": "2026-05-12",
+      "ingest_reason": "Re-ingest after 2026-05-11 + 2026-05-12 rev 2 updates — Cross-Channel Destination Dependency added (phased outbound activation tied to landing page ship dates) and Outreach Readiness Gate added (separates DM-launch readiness from profile-publish readiness; covers Featured PDFs, 5-8 recommendations, 4-6 weeks of feed posts, Sales Nav setup, daily-budget owner).",
+      "pages_created": [],
+      "pages_updated": [
+        "wiki/sources/LinkedIn-Outreach-Strategy-InnBlockchain.md",
+        "wiki/concepts/InnBlockchain LinkedIn Strategy.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ]
+    },
+    ".raw/InnBlockchain/LinkedIn/LinkedIn Profile Vignesh Content.md": {
+      "hash": "19b38ca268b1b505507c26916aa921a8",
+      "ingested_at": "2026-05-12",
+      "ingest_reason": "New ingest — final ICP-aligned LinkedIn profile copy authored 2026-05-11/12 across multiple sessions. RWA-first headline v2 (203 chars), search-optimised About hook in first 212 chars, three-founder structure with RWA Felix elevated, anonymised competitor framing (decision 2026-05-12), About CTA routes to /solutions/rwa-tokenization, Pre-Publish Hard Gate refactored to only assets the profile promises (Outreach Readiness Gate moved to outreach strategy doc).",
+      "pages_created": [
+        "wiki/sources/LinkedIn-Profile-Content-Vignesh-InnBlockchain.md"
+      ],
+      "pages_updated": [
+        "wiki/concepts/InnBlockchain Vignesh LinkedIn Profile.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ]
+    },
+    ".raw/InnBlockchain/LinkedIn/Recommendation Request Templates.md": {
+      "hash": "292270e8a0ba1fd9094c625f0be50a65",
+      "ingested_at": "2026-05-12",
+      "ingest_reason": "New ingest — operational outreach copy for collecting LinkedIn recommendations. 5 recommender categories mapped to ICP personas (Prior FinTech client → Sam/Tom/Carol; Prior Crypto-Native client → Felix/Sasha; Security peer → Sasha; Regulator-adjacent → Carol; Engineering hire → Tom). Each category has template + ICP-aligned talking-point bullets + 'what good looks like' sample. 6-week operational schedule. Pre-publish minimum 2-3, Outreach minimum 5, Sasha-grade 7-8.",
+      "pages_created": [
+        "wiki/sources/Recommendation-Request-Templates-InnBlockchain.md",
+        "wiki/concepts/InnBlockchain LinkedIn Recommendation Strategy.md"
+      ],
+      "pages_updated": [
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ]
     }
   }
 }
