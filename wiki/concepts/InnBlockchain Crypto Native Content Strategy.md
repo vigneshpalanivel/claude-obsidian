@@ -22,6 +22,9 @@ related:
 
 Content program for [[InnBlockchain Crypto Native ICP]] — protocol founders, asset owners, and Web3 CTOs building on-chain products. 2-tier architecture: 5 protocol-agnostic technology pillars × 10 segment verticals × 51 scored articles. Strict Phase 1 sequencing locks everything on RWA + MiCA before any other vertical ships content.
 
+> [!key-insight] Three sales motions, three content tracks
+> The ICP defines **three** sales motions, not two. The original content strategy assumed two (Audit + Dev/Engineering) — both outbound-led. The third motion, **White-Label Productized Platform**, is SEO-driven inbound across the 6 active verticals and has its own ACV band ($30k–$100k), buyer-intent keywords ("white-label RWA tokenization platform," "white-label DEX," etc.), distinct SaaS competitors (Tokeny, Securitize, OpenSea Pro, Fireblocks, 0x SaaS), and a Hard Gate on reference builds before any landing page can publish. Content for this motion does NOT inherit the Phase 1 RWA lock — it activates per vertical based on reference build availability. See [[#White-Label Productized Platform Motion (Motion 3 — SEO Inbound)]] below.
+
 > [!warning] Cross-Channel Destination Dependency (Added 2026-05-11)
 > Content funnels articles → solution landing pages per [[InnBlockchain Landing Pages Plan]]. As of 2026-05-11, **zero ICP-aligned landing pages are live** — `/solutions/rwa-tokenization`, `/solutions/dex-protocol`, `/solutions/defi-protocol`, `/solutions/mpc-wallets`, `/solutions/nft-platform`, `/solutions/token-launch`, `/services/smart-contracts`, and `/industries/web3-defi/` all return 404.
 >
@@ -34,6 +37,8 @@ Content program for [[InnBlockchain Crypto Native ICP]] — protocol founders, a
 > 4. **V4-V6 remaining active verticals** → after corresponding pages
 >
 > Cross-references in published articles point to other already-published articles only — no internal links to unbuilt landing pages. Pillar C5 (EU Regulatory Compliance & MiCA) articles also need `/mica-compliance` or equivalent destination before publishing.
+>
+> **Reference Build Hard Gate (added 2026-05-13, applies to Motion 3 white-label content only):** A vertical's white-label landing page and supporting WL articles must NOT publish until ≥1 shippable reference build exists for that vertical with real screenshots (internal MVP branded as generic demo OR client deployment with screenshot rights / anonymised UI). Mockups, lorem-ipsum dashboards, and AI-generated UI fail evaluator scrutiny within minutes and burn the SEO investment. This gate is parallel to the landing-page-live gate above — both must clear before a WL article publishes. Exception: WL-TCO comparison content (category analysis, no product screenshots) is exempt from the reference build gate but still requires the destination page to be live.
 
 **Tier 1 — Technology Pillars (C1-C5)**: protocol-agnostic, reused across every segment.
 
@@ -178,6 +183,95 @@ The source document has no content designed for Sasha's pre-call evaluation mode
 | Phase 2 (after #36) | **What to Look for in a Smart Contract Audit Report: A Technical Evaluation Guide** *(Sasha trust-building #2. Positions InnBlockchain's findings depth, named auditor credentials, and public report quality as the evaluation standard. Readers use this to benchmark any audit firm — including InnBlockchain. Primary CTA: download a full sample audit report. Offer a live methodology walkthrough with the lead auditor as the secondary CTA — no sales in the room.)* | C1 | Decision | Security Sasha | **8.0** |
 
 **Solodit distribution note:** Both Sasha articles should link to InnBlockchain's Solodit profile. Sasha goes to Solodit before any call — public findings presence is a prerequisite for these articles to convert. If InnBlockchain is not yet listed on Solodit, that is a blocker to address before publishing.
+
+---
+
+## White-Label Productized Platform Motion (Motion 3 — SEO Inbound)
+
+> [!IMPORTANT] Largest gap in the original content strategy
+> The source content strategy document was written before the ICP defined Motion 3 (White-Label Productized Platform) and contains zero coverage of this motion. The buyer-intent search terms below ("white-label RWA tokenization platform," "white-label DEX," etc.) have no targeting content in the original 51-article plan. SEO competitors capture this demand with productized landing pages that show real screenshots; pure custom-services content does not rank for these queries. Adding this section is the single highest-leverage correction to the strategy — bigger than all 6 prior corrections combined.
+
+### Motion Frame
+
+Motion 3 is **SEO-driven inbound** across the 6 active verticals (RWA, DEX, DeFi Lending, MPC Wallet, NFT, IDO/Token Launch). Buyer profile: technical founder or operator searching specifically for a productized, screenshot-able platform — not custom Solidity hours. They evaluate landing pages on visual product surface area first, depth second. Top-ranking competitors lead with dashboard screenshots, portals, and admin panels. **Match the bar or do not enter the category.**
+
+End-to-end delivery: smart contracts + audit + full UI/UX layer (issuer dashboard, investor portal, mobile/web wallet, marketplace storefront, sale UI, etc.) as a one-time productized engagement. Buyer owns smart contract code AND UI codebase outright at delivery. **This is the explicit differentiator vs. Tokeny / Securitize / OpenSea Pro / 0x SaaS / Fireblocks** — those are vendor-locked SaaS with recurring fees.
+
+| Field | Value |
+|-------|-------|
+| ACV | $30k–$100k (sits between Crypto Products clone scripts at $5k–$20k and Motion 2 custom build at $40k–$200k+) |
+| Delivery cycle | 6–12 weeks fixed scope |
+| Primary persona | Founding Felix (technical buyer) + RWA Felix (asset-owner buyer, RWA vertical only) |
+| Discovery channel | SEO landing page → discovery call (NOT outbound) |
+| Phase 1 lock | Does NOT apply — WL content activates per vertical based on reference build availability |
+| Geography gate | EU 5-project gate still applies to inbound, per ICP validation note |
+
+### Routing for White-Label Inquiries
+
+- Sub-$30k crypto-native white-label inquiries → [[InnBlockchain Crypto Products ICP]] clone scripts (5–15 day delivery; don't scope WL below $30k)
+- Above $30k WL inquiry for any of the 6 active verticals → this motion
+- Existing regulated FinTech asking for white-label → [[InnBlockchain FinTech ICP]] equivalent motion (compliance-grade documentation is the differentiator there, not exploit-proof contracts alone)
+
+### Hard Gate: Reference Build Per Vertical
+
+> [!warning] No reference build, no landing page, no SEO content
+> Do not publish a vertical's white-label landing page or WL article until ≥1 reference build exists for that vertical with shippable screenshots. Two acceptable sources: (a) an InnBlockchain-built internal MVP branded as a generic demo, or (b) a delivered client deployment with explicit screenshot rights or anonymised UI showing structure without client branding. Mockups, lorem-ipsum dashboards, and AI-generated UI screenshots fail technical evaluator scrutiny within minutes and damage trust in the offering. Competitor pages show real product surface area; matching that bar is the entry ticket.
+
+### WL Article Backlog (6 verticals + 1 cross-cutting)
+
+Each vertical gets one productized landing page + supporting WL article. The TCO comparison article (WL-TCO) is cross-cutting category analysis and is exempt from the reference build gate.
+
+| ID | Title | Vertical | Buyer Stage | Persona | Gate | Score |
+|----|-------|----------|-------------|---------|------|-------|
+| WL1 | **White-Label RWA Tokenization Platform: Architecture, UI, and MiCA-Compliant Stack** *(targets "white-label RWA tokenization platform" — primary keyword. Lead with issuer dashboard, investor portal, KYC/AML flow, admin panel screenshots. ERC-3643 + oracle wiring as the contract spine. Cross-link to V1 hub + C5 MiCA content.)* | RWA (V1) | Decision | Founding Felix + RWA Felix | Reference build required | **9.0** |
+| WL2 | **White-Label DEX & Crypto Exchange Platform: From AMM to Admin Console** *(targets "white-label DEX," "white-label crypto exchange script." Lead with trading UI, wallet connect, listing/admin console screenshots. Audited AMM + order book + oracle integration.)* | DEX (V2) | Decision | Founding Felix | Reference build required | **8.6** |
+| WL3 | **White-Label DeFi Lending Platform: Lending Engine, Liquidations, and Borrower UI** *(targets "white-label DeFi lending platform," "white-label yield protocol." Lead with lender + borrower dashboard, position manager, admin screenshots. Audited liquidation + vault contracts.)* | DeFi Lending (V3) | Decision | Founding Felix | Reference build required | **8.4** |
+| WL4 | **White-Label MPC Wallet: Key Management, Multi-Chain Integration, and Mobile UI** *(targets "white-label crypto wallet," "white-label MPC wallet." Lead with mobile + web wallet UI, send/receive/swap, transaction history screenshots. MPC key management + multi-chain integration contracts.)* | MPC Wallet (V4) | Decision | Founding Felix + Product Paulo | Reference build required | **8.5** |
+| WL5 | **White-Label NFT Marketplace Platform: Mint, Trade, and Creator Tools** *(targets "white-label NFT marketplace." Lead with marketplace storefront, creator dashboard, mint UI screenshots. Audited ERC-721/1155 + sale + royalty contracts.)* | NFT (V5) | Decision | Founding Felix | Reference build required | **8.3** |
+| WL6 | **White-Label IDO Launchpad Platform: Sale UI, Vesting, and Whitelist Management** *(targets "white-label IDO launchpad," "white-label token launch platform." Lead with sale UI, whitelist management, vesting dashboard screenshots. Audited vesting + sale + whitelist + airdrop contracts.)* | Token Launch (V6) | Decision | Founding Felix | Reference build required | **8.4** |
+| WL-TCO | **Own vs. License: The 5-Year TCO of Productized Crypto Platforms vs. SaaS Vendors** *(Cross-vertical category analysis — exempt from reference build gate because no product screenshots required. Wedges on the unspoken calculation every Tokeny/Securitize evaluator is doing: 5-year SaaS spend vs. one-time productized cost + ownership. Frames the comparison before SaaS reps anchor it. Distinct from per-vertical "WL vs SaaS" articles which require screenshots.)* | Cross-vertical | Decision | Founding Felix + Product Paulo + CFO | **No reference build required** (category analysis, exempt from gate) | **9.1** |
+
+### Why WL-TCO Is the Phase 0 Piece
+
+The TCO comparison is the **only WL article that can publish without a reference build**, and it has the highest score in the WL set (9.1). It's the entry-point article that frames the entire white-label motion conceptually before any per-vertical screenshots exist. Publish this first. It also serves as the bridge from the 51 outbound-focused articles to the WL inbound funnel — outbound prospects often surface SaaS competitors in discovery; WL-TCO is the asset Sales hands them.
+
+### Motion 4 Competitive Positioning Content
+
+The ICP's Motion 4 competitive frame names four competitor classes for white-label deals:
+
+1. **SaaS / Platform Tokenization Vendors** (Tokeny, Securitize, Polymath, RealT, 0x SaaS, Fireblocks, OpenSea Pro) — own vs. license framing
+2. **White-Label Script Vendors at $1k–$10k** — clone-script competitors (route their inquiries to Crypto Products ICP)
+3. **Custom Dev Agencies Quoting White-Label** — productized scope + fixed timeline vs. open-ended estimate
+4. **In-House MVP Build** — buyer assembling template + contractor + designer themselves
+
+Each WL article should embed the "SaaS-incumbent reframe" — *"They license you their platform. We hand you yours — code, contracts, UI — and walk away."* — in the conclusion. The reframe is the highest-converting positioning per ICP Motion 4 rules. Reference build screenshots in the article body are the primary competitive artefact; the SaaS reframe is the closing argument.
+
+### Distribution & SEO Notes for WL Content
+
+- **Primary distribution channel:** Organic search (Google + AI search engines like Perplexity/ChatGPT). NOT LinkedIn, NOT Crypto Twitter. WL buyers search with intent; they don't follow content.
+- **Article structure:** Reference build screenshots above the fold → bundled offering description → SaaS comparison → architecture explainer → CTA to discovery call. This sequence matches buyer evaluation order (visual product surface first, depth second).
+- **No motion mixing in CTA:** WL articles end with "Book a white-label scoping call" — NOT "request an audit." Mixing motions in a single CTA per ICP creates buyer confusion.
+
+### Validation Plan (per ICP, ported here)
+
+- **[By 2026-06-30 · Owner: Marketing + Sales]** Identify which 1–2 verticals can produce a reference build within 60 days — either via internal MVP or a friendly first client willing to grant screenshot rights. Publish white-label landing pages and WL articles for those verticals only. Defer the rest until reference builds exist.
+- **[By 2026-09-30 · Owner: Marketing]** Track WL inbound attribution separately from custom-build outbound. Confirm whether SEO-driven WL inbound converts at similar or higher rate than outbound custom-build pipeline.
+- **[Ongoing · Owner: Sales]** EU 5-project geography gate still applies even for WL inbound. Do not relax the gate on inbound traffic.
+
+---
+
+## Sales Motion Tagging Across All Articles (Cross-Cutting Rule)
+
+The ICP has three motions; CTAs must not mix them in a single article. Adding this rule for the entire content plan, not just WL:
+
+| Tag | When to use | Sample CTA |
+|-----|------------|------------|
+| `[Audit]` | Articles about existing-code security review (most C1 content, audit checklists, post-mortems, methodology) | "Request a pre-audit review" |
+| `[Dev]` | Articles about building protocol from scratch or extending existing (most V1–V6 architecture content, C2, C3, C4) | "Scope a custom build" |
+| `[White-Label]` | Articles in the WL backlog above | "Book a white-label scoping call" |
+| `[Audit + Dev]` | Cross-motion articles (rare — only when the buyer genuinely needs both, e.g., post-mortem articles where deal could go either way) | Split CTA block or qualify in-article |
+
+Action: tag every article in the 51-article plan + 7 WL articles before publishing schedule is set. Without this tagging, articles burn through traffic without a clean conversion path.
 
 ---
 

@@ -35,6 +35,8 @@ Content program for [[InnBlockchain FinTech ICP]] — technical and product lead
 > 4. **WalletTech cluster** → after `/solutions/fintech-wallets`
 >
 > Cross-references in published articles point to other already-published articles only — no internal links to unbuilt landing pages.
+>
+> **Reference Build Hard Gate (White-Label motion only):** white-label vertical articles add a second prerequisite on top of the landing-page gate — ≥1 reference build with (a) shippable screenshots AND (b) downloadable compliance documentation pack. Mockups fail Carol-grade scrutiny. The TCO comparison article (WL6) is exempt — it's a category analysis, not a product page.
 
 ## Architecture
 
@@ -71,12 +73,16 @@ Content program for [[InnBlockchain FinTech ICP]] — technical and product lead
 - **Budget floor**: $20k+
 - **API-first backend live in production** = strongest buyer signal (Tier 0 velocity)
 - **EU only** until 5 projects close
+- **CFO procurement gate at $75k+**: Cluster 1, 2, and most of Cluster 3 ACVs cross this threshold. Adds 4–6 week procurement cycle. Pair article CTAs with a downloadable board ROI memo when ACV likely > $75k. *(CFO is not a defined persona in the ICP — flagged as open item.)*
+- **MiCA content addresses two buyer patterns** (per ICP Pain Point 4): *over-compensators* (gold-plating beyond requirements) need "you're already over-built" framing; *paralyzed* (won't ship until 100% certain) need "MiCA-ready today, here's proof." Split CTAs within the same article or produce two variants. Don't flatten both into one neutral voice.
+- **Park-status nurture** (ICP rule): existing FinTechs without a filed license application are "Park, not DQ." Maintain a nurture article — *"Preparing for MiCA License Application: Roadmap for Existing FinTechs"* — to keep them warm until they qualify.
 
 ## Personas
 
 - **Technical Tom** (CTO / VP Eng) — technically credible content, solve talent shortage, offload security liability
 - **Strategic Sam** (CEO / CPO) — ROI, speed-to-market, compliance risk
-- **Compliance Carol** (CCO / Head of Compliance) — **regulatory veto-holder, not buyer**. Content must demonstrate regulatory defensibility. Surface by call 1. Most active in EU WealthTech, ExchangeTech, BankTech.
+- **Compliance Carol** (CCO / Head of Compliance) — **regulatory veto-holder, not buyer**. Content must demonstrate regulatory defensibility. ICP says surface her by call 1 — meaning she should already be reading content, not just opening gated assets. Coverage required at all three funnel stages: **TOFU/MOFU** (awareness article on what CCOs should demand in a vendor risk pack — *score 8.4*), **BOFU** (gated Vendor Risk & Compliance Brief). Most active in EU WealthTech, ExchangeTech, BankTech.
+- **CFO** *(undefined persona — open item)*: enters at $75k+ procurement gate. ICP does not list CFO as a defined persona; BankTech Watch is explicitly blocked on CFO definition. Content gap: no CFO-targeted ROI memo. Workaround for now — Strategic Sam content with board-ROI framing for $75k+ deals.
 
 ## Top Scored Articles
 
@@ -85,15 +91,20 @@ Content program for [[InnBlockchain FinTech ICP]] — technical and product lead
 | 1 | What Is Asset Tokenization? Guide for FinTech Founders | 9.3 |
 | 2 | RWA Tokenization Platform Hub | 9.2 |
 | 17 | How to Build a Regulated Exchange | 9.1 |
+| WL6 | Five-Year TCO: White-Label SaaS vs. Owned Code Comparison | 9.1 |
 | 3 | The Tech Stack Behind an RWA Tokenization Platform | 9.0 |
 | 18 | CEX Architecture Deep Dive | 8.9 |
 | 19 | Blockchain for Digital Lending Hub | 8.8 |
 | 6 | STOs in 2026: MiCA Regulatory Landscape 🇪🇺 | 8.7 |
 | 26 | EU AI Act Audit Trail Requirements 🇪🇺 | 8.6 |
 | 7 | MiCA + MiFID II for Tokenized Assets 🇪🇺 | 8.6 |
+| P1 | Preparing for MiCA License Application: Roadmap for Existing FinTechs 🇪🇺 | 8.5 |
 | T4 | The Cost of Hiring a Blockchain Team In-House: FinTech CTO Guide | 8.4 |
+| C1 | What FinTech CCOs Should Demand in a Blockchain Vendor Risk Pack | 8.4 |
 
-Lead magnets: RWA Build vs Buy vs Partner Checklist (#9, 8.5) + FinTech Smart Contract Audit Checklist (#28, 8.0) + InnBlockchain Vendor Risk & Compliance Brief (Carol BOFU, gated — ownership structure, ISO/SOC 2, data residency, MiCA compliance summary, sample audit report).
+White-label vertical articles (WL1–WL5) listed separately in the [White-Label Productized Platform Motion](#white-label-productized-platform-motion) section — gated on reference build availability.
+
+Lead magnets: RWA Build vs Buy vs Partner Checklist (#9, 8.5) + FinTech Smart Contract Audit Checklist (#28, 8.0) + InnBlockchain Vendor Risk & Compliance Brief (Carol BOFU, gated — ownership structure, ISO/SOC 2, data residency, MiCA compliance summary, sample audit report) + **White-Label Reference Build Pack** (BOFU gated, per-vertical — reference build screenshots + compliance documentation pack; required for white-label SEO motion conversion).
 
 ## AI + Blockchain Content Angle
 
@@ -103,6 +114,43 @@ High-growth search trend, tied to ICP Pain Point 5. Framing: **blockchain-alongs
 > Pain Point 5 is unvalidated in the ICP (pending 2026-05-31). Publish this content only after (a) WealthTech/RWA hub ships and (b) ICP validation confirms buyer resonance. If validation fails, restructure scope before investing further.
 
 Articles: EU AI Act audit trail, immutable AI decision logs, AI credit decision auditability, AI + tokenization in WealthTech.
+
+## White-Label Productized Platform Motion
+
+**Separate GTM motion** from custom-build outbound. Per ICP, this is **SEO-driven inbound** across all regulated FinTech verticals. ACV $50k–$200k, 8–14 weeks. Buyers self-select via productized-intent search — content must be productized solution pages, not educational guides.
+
+**Wedge is ownership, not speed.** For white-label buyers the close tactic is the five-year TCO comparison: *"They license you their platform — you keep paying forever. We build yours, you own it, and we walk away."* This is distinct from the custom-build wedge (weeks-not-quarters) in the [Competitive Framing](#competitive-framing-never-name-competitors) section.
+
+**SEO buyer intent (target search terms, per ICP):**
+
+| Vertical | Target Search Term |
+|---|---|
+| WealthTech | "white-label tokenization platform for asset managers" |
+| ExchangeTech | "white-label MiCA-compliant CEX" |
+| WalletTech | "white-label crypto wallet for licensed e-money" |
+| LendTech | "white-label digital lending platform with blockchain rails" |
+| Cross-vertical | "white-label crypto custody" |
+
+**White-label article roster:**
+
+| # | Title | Vertical | Score | Gate |
+|---|-------|---------|-------|------|
+| WL1 | White-Label MiCA-Compliant Tokenization Platform: Build vs. Buy vs. License | WealthTech | 9.0 | Reference build required |
+| WL2 | White-Label MiCA-Compliant CEX: Custom Code vs. Productized SaaS | ExchangeTech | 9.0 | Reference build required |
+| WL3 | White-Label Crypto Wallet for Licensed E-Money: Architecture & Compliance | WalletTech | 8.8 | Reference build required |
+| WL4 | White-Label Digital Lending Platform with Blockchain Rails | LendTech | 8.7 | Reference build required |
+| WL5 | White-Label Crypto Custody for Regulated FinTech | Cross-vertical | 8.6 | Reference build required |
+| WL6 | Five-Year TCO: White-Label SaaS vs. Owned Code Comparison | Cross-vertical | 9.1 | None — category analysis, ship anytime |
+
+**Compliance differentiator vs. Crypto Native white-label:** smart contracts ship pre-integrated with KYC/AML/jurisdiction filters/regulator reporting; vendor risk pack ships Day 1; audit reports structured for regulator + board consumption.
+
+**Routing (matches ICP):**
+- Crypto-native startup asking for white-label, even if licensed → route to Crypto Native equivalent motion (compliance documentation is over-scoped for them)
+- Existing regulated FinTech asking for productized RWA / CEX / lending / wallet → this motion
+- Sub-$50k regulated FinTech inquiries → not white-label fit; scope smaller as single-feature custom build or park
+
+> [!warning] Validation gate (per ICP)
+> Identify 1–2 verticals with deployable reference builds + Carol-grade documentation by **2026-06-30**. Track white-label inbound attribution separately from custom-build outbound. Confirm conversion rate vs. outbound custom-build by **2026-09-30**. EU 5-project geography gate AND licensed/license-applied routing rule both still apply.
 
 ## Distribution
 
@@ -119,10 +167,18 @@ Channel priority: **(1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech Ev
 
 ## Competitive Framing (never name competitors)
 
+Two competitive frames run in parallel — pick by motion, don't mix.
+
+**Custom-build wedge (LinkedIn ABM outbound motion):**
 - **vs. Consultancies** (Accenture, Deloitte DLT): weeks not quarters + FinTech specialisation
 - **vs. BaaS platforms** (Kaleido, SettleMint, Fireblocks): custom business logic, "platforms get 80%"
 - **vs. Web3 audit firms** (Trail of Bits, Zellic): FinTech compliance context
 - **vs. In-house hiring**: time-to-start + IP transfer at close
+
+**White-label wedge (SEO inbound motion):**
+- **vs. Productized SaaS** (Securitize, Tokeny): you license vs. you own — five-year TCO closes it. *"They license you their platform — you keep paying forever. We build yours, you own it, and we walk away."*
+- **vs. BaaS for productized buyers** (Fireblocks, SettleMint): same ownership wedge; full code transfer (smart contracts AND UI) vs. ongoing SaaS lock-in
+- **vs. Crypto Native white-label**: regulator-grade compliance integration shipped Day 1 (vendor risk pack, ISO/SOC 2, data residency, sample audit) — over-scoped for crypto-native, decisive for regulated FinTech
 
 ## See Also
 

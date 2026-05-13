@@ -21,11 +21,19 @@ key_claims:
   - "AI + Blockchain content is a high-growth search trend (Pain Point 5): EU AI Act audit trail, AI credit decisions, AI valuation in WealthTech. Framing is blockchain-ALONGSIDE-AI, not blockchain-instead-of-AI. VALIDATION GATE: publish only after WealthTech/RWA hub ships + ICP Pain Point 5 validated by 2026-05-31."
   - "Competitive content framing: vs. consultancies = speed (weeks not quarters); vs. BaaS = custom logic (platforms get 80%); vs. Web3 audit firms = compliance context; vs. in-house = time-to-start + IP transfer"
   - "40+ scored articles; top Active: (1) Asset Tokenization Guide 9.3, (2) RWA Hub 9.2, (3) RWA Tech Stack 9.0, (17) Build a Regulated Exchange 9.1, (19) DeFi Lending Hub 8.8, (21) Stablecoin Settlement 8.4, (T4) Cost of Hiring Blockchain Team In-House: FinTech CTO Guide 8.4"
-  - "3 lead magnets: RWA Build vs. Buy vs. Partner Checklist (8.5), Smart Contract Audit Checklist for FinTech (8.0), InnBlockchain Vendor Risk & Compliance Brief (Carol BOFU gated — ownership structure, ISO/SOC 2, data residency, MiCA compliance summary, sample audit report)"
+  - "4 lead magnets: RWA Build vs. Buy vs. Partner Checklist (8.5), Smart Contract Audit Checklist for FinTech (8.0), InnBlockchain Vendor Risk & Compliance Brief (Carol BOFU gated — ownership structure, ISO/SOC 2, data residency, MiCA compliance summary, sample audit report), White-Label Reference Build Pack (per-vertical BOFU gated — reference build screenshots + compliance documentation pack)"
+  - "White-Label Productized Platform motion (rev 3): separate SEO-driven inbound GTM motion from custom-build outbound. ACV $50k-$200k, 8-14 weeks. Target search terms per vertical: 'white-label tokenization platform for asset managers' (WealthTech), 'white-label MiCA-compliant CEX' (ExchangeTech), 'white-label crypto wallet for licensed e-money' (WalletTech), 'white-label digital lending platform with blockchain rails' (LendTech), 'white-label crypto custody' (cross-vertical). 6 white-label articles (WL1-WL6) gated on reference build availability except WL6 TCO comparison (9.1, category analysis)."
+  - "White-label wedge is OWNERSHIP, not weeks-not-quarters. Closing tactic: five-year TCO comparison — 'They license you their platform, you keep paying forever. We build yours, you own it, and we walk away.' Distinct from custom-build wedge."
+  - "Reference Build Hard Gate: do NOT publish a vertical's white-label landing page or SEO article until reference build exists with shippable screenshots AND downloadable compliance documentation pack. WL6 TCO article exempt. Validation: 1-2 verticals with deployable reference builds by 2026-06-30; attribution + conversion vs. outbound custom-build by 2026-09-30."
+  - "Two competitive frames run in parallel by motion: custom-build (vs. Consultancies/BaaS/Audit firms/In-house hiring) and white-label (vs. Productized SaaS Securitize/Tokeny, vs. BaaS for productized buyers, vs. Crypto Native white-label). Never mix frames in the same article."
+  - "CFO procurement gate at $75k+ (Clusters 1/2/most of 3 ACVs cross this). 4-6 week procurement delay. CFO is NOT a defined persona in ICP (BankTech Watch blocked on this). Content workaround: Strategic Sam content with board-ROI framing."
+  - "MiCA content addresses two buyer patterns (ICP Pain Point 4): over-compensators (gold-plating) need 'you're already over-built' framing; paralyzed need 'MiCA-ready today, here's proof.' Split CTAs within same article or produce two variants."
+  - "Park-status nurture: existing FinTechs without filed license application are Park (not DQ). Nurture article: 'Preparing for MiCA License Application: Roadmap for Existing FinTechs' (P1, score 8.5)."
+  - "Carol coverage at all 3 funnel stages: TOFU/MOFU awareness article 'What FinTech CCOs Should Demand in a Blockchain Vendor Risk Pack' (C1, score 8.4), BOFU gated Vendor Risk & Compliance Brief. ICP says surface Carol by call 1 — gated-only is too late."
   - "Distribution priority: (1) LinkedIn ABM → (2) Partner/Referral → (3) FinTech events (Money20/20 Europe, Sibos Europe) → (4) Tom's technical channels. FinTech Connect London = Watch (UK gate not met)"
   - "Tom's technical channels: GitHub (open-source smart contract templates/audit tooling snippets), Hacker News (Show HN or Ask HN, no marketing tone), ETHGlobal/DevCon re-engage play (identify Tom with Crypto Native framing → follow up post-event with FinTech framing). Cross-ICP handoff documented in Crypto Native strategy."
   - "LinkedIn carousel repurposing of every published article, targeted at EU FinTech CTOs/CPOs via Sales Navigator geography filter"
-ingest_rev: 2
+ingest_rev: 3
 created: 2026-04-16
 updated: 2026-04-16
 tags:
@@ -157,6 +165,14 @@ Explicit disambiguation on every overlapping topic:
 - Compliance Carol had no dedicated asset: added Vendor Risk & Compliance Brief as gated BOFU lead magnet.
 - Tom's distribution channels (GitHub, Hacker News, ETHGlobal/DevCon) were absent: added as Channel 4 layer.
 - AI + Blockchain section treated unvalidated ICP pain as confirmed: validation gate added.
+
+## Resolved (rev 3 — 2026-04-16)
+
+- **White-Label Productized Platform motion absent (critical).** ICP defines it as SEO-driven inbound with $50k-$200k ACV band, named search terms, named SaaS competitors (Securitize, Tokeny), five-year TCO closing tactic, and Reference Build Hard Gate. Content Strategy mentioned none of it. Added: dedicated section, 6 articles (WL1-WL6), white-label competitive frame, reference build gate, white-label Carol asset.
+- **CFO procurement gate at $75k+ unaddressed.** Most Active cluster ACVs cross threshold. Added Key Rule acknowledging gate; CFO flagged as open persona definition gap; Strategic Sam board-ROI framing as workaround.
+- **Two regulatory buyer patterns flattened.** ICP Pain Point 4 names over-compensators and paralyzed. Added Key Rule requiring split CTAs or article variants for MiCA content.
+- **Park-status nurture absent.** ICP says park, don't DQ unlicensed FinTechs. Added P1 article: *Preparing for MiCA License Application: Roadmap for Existing FinTechs* (score 8.5).
+- **Carol BOFU-only.** Vendor Risk Brief (rev 2) was gated BOFU; ICP says surface Carol by call 1. Added C1 awareness article: *What FinTech CCOs Should Demand in a Blockchain Vendor Risk Pack* (score 8.4) for TOFU/MOFU funnel coverage.
 
 ## See Also
 

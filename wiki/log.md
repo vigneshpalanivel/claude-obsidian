@@ -271,6 +271,54 @@ Append-only. New entries go at the TOP. Never edit past entries.
 - Synthesis: [[Research: AI Engineering]]
 - Key finding: AI Engineering has stabilized in 2026 as a distinct discipline from ML engineering (ship features with existing models vs. train models); 57.3% of orgs have agents in production (67% of large enterprises); quality is the #1 barrier (33%), not cost; average comp $206K US with 43% AI-skill premium; LangGraph has replaced LangChain's native agents as the 2026 default; customer service (26.5%) + workflow automation (18%) lead production use cases — both direct fits for Trioangle pivot.
 
+## [2026-05-13] SOURCE EDIT (user-authorised) | Cross-CS Reconciliation | InnBlockchain Content Strategy — Crypto Native rev 5 + FinTech rev 4
+- Files: `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Native.md` + `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - FinTech.md`
+- Hash before: CN=`eb5c720cde70ecb64b0d237af700cc76`, FT=(prior to today)
+- Hash after: CN=`5deb0f3dfa3f9806473cd6200b621508` (851 lines), FT=`bc38086b1d74ecf22998b9579c2e7a6c` (786 lines)
+- Conflicts found on cross-CS review (FinTech CS x Crypto Native CS):
+  1. **WL ID collision** — both strategies used `WL1`–`WL6` for different articles (e.g., WL3 = WalletTech in FT, DeFi Lending in CN). Marketing/Sales referencing "WL3" cross-team would have meant different things. **Fix:** WL ID scope-clarification callout added at the top of each strategy's WL article roster, mandating `FT-WL1`/`CN-WL1` prefix discipline for cross-team references (CMS tags, sales handoff docs, marketing automation).
+  2. **TCO article SEO cannibalization** — both strategies had a 5-year TCO comparison article at score 9.1 targeting the same query intent. Google would have ranked one and split traffic. **Fix:** FinTech TCO retitled to "Five-Year TCO for Regulated FinTech: ... Including Compliance Integration, Vendor Risk, and Regulator Reporting Costs" (claims regulated-context terms). Crypto Native TCO retitled to add "(Crypto-Native, No Regulator Overhead)" subtitle and claims crypto-native terms. SEO disambiguation note added to each pointing to the other.
+  3. **Sub-$50k regulated FinTech WL routing gap** — FinTech said sub-$50k WL = "not white-label fit"; Crypto Native routed regulated FinTech WL → FinTech. So a $40k regulated FinTech WL inquiry had no home. **Fix:** Three valid paths now documented in FinTech (scope down to custom-build $20k-$50k / park as nurture / route to Crypto Products if willing to forgo compliance). Crypto Native explicitly forbids downgrading regulated FinTech buyers into its lighter motion.
+- Misalignments addressed:
+  4. **Sales Motion Tagging asymmetry** — Crypto Native required per-article motion tags (`[Audit]`/`[Dev]`/`[White-Label]`/`[Audit + Dev]`); FinTech did not. **Fix:** Equivalent Sales Motion Tagging section added to FinTech with tags `[Custom-Build]`/`[White-Label]`/`[Carol]`/`[Cross-Motion]` and explicit motion-wedge separation rule (custom-build articles never include "own vs license"; WL articles never include "weeks-not-quarters").
+  5. **Crypto Native missing reciprocal differentiator** — FinTech had explicit "Compliance Differentiator vs. Crypto Native White-Label" section but Crypto Native had no reciprocal "Speed Differentiator vs. FinTech White-Label" section. Crypto-native buyers reading both might wonder if they're getting unwanted compliance overhead. **Fix:** Speed Differentiator section added to Crypto Native with a delivery cycle / ACV / scope / wedge comparison table and a content positioning rule ("if a crypto-native prospect asks about compliance integration, escalate to FinTech ICP qualification — they may actually be a regulated FinTech").
+- Verified as acceptable / by-design (no fix needed): 18 overlapping article topics all have proper inline cross-ref disambiguation; persona names don't collide (Tom/Sam/Carol vs Felix/Paulo/Sasha); landing page routing distinct (`/solutions/tokenization` vs `/solutions/rwa-tokenization` etc.); different number of tech pillars (T1-T4 vs C1-C5) — independent strategies covering different territory; different sequencing models (per-cluster ship gate vs Phase 1 lock) — different buyer dynamics justify; asymmetric gatekeeper coverage (Carol 3-stage vs Sasha 1-stage at $10M+ only).
+- Manifest updated for both files.
+
+## [2026-05-13] SOURCE EDIT (user-authorised) | InnBlockchain Content Strategy — Crypto Native rev 4 (internal-consistency audit)
+- File: `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Native.md`
+- Hash before: `81449d576cc5acf2f0fae30f35accbf5` → Hash after: `eb5c720cde70ecb64b0d237af700cc76`
+- Final line count: 833 (was 795 after rev 3, 677 original)
+- Internal-consistency corrections found on full-file review of rev 3 (duplications and misalignments):
+  1. **V1 RWA budget floor** still said "$20k+" in the Tier 2 V1 section — contradicted the executive summary which already had the $30k+ split. Fixed.
+  2. **Topic Cluster Map** was missing Motion 3. Added a parallel Motion 3 block to the ASCII map with WL1-WL6 + WL-TCO and reference-build gate flags.
+  3. **Keyword Targets section** had Phase 1 + Phase 2 keyword blocks but zero white-label keywords despite Motion 3 having its own explicit buyer-intent keyword list inline. Added a Motion 3 keyword block split into primary buyer-intent (gated per vertical), cross-vertical WL-TCO keywords (no gate), and adjacent/supporting Awareness terms.
+  4. **Article count math wrong** in Sales Motion Tagging — said "51 outbound + 7 WL = 58 total" but didn't count the 6 unnumbered "—" Phase 2 entries (case study, Paulo playbook, AI overlay, Foundry, 2 Sasha). Corrected to "51 numbered + 6 unnumbered + 7 WL = 64 total" in both the callout and the Action line.
+  5. **"How to Add a New Segment Vertical"** procedure had 5 steps that pre-dated Motion 3 — didn't mention WL slot evaluation when activating a Watch segment. Added step 6 (Motion 3 fit evaluation) and step 7 (sales-motion tag application).
+  6. **Phase 3 #50 vs Phase 2 AI overlay title overlap** — both started with "AI-Generated Smart Contracts: What Cursor and Copilot Get Wrong" framing despite inline note saying they're distinct. Retitled #50 to "Securing On-Chain AI Agent Protocols: Smart Contract Design for Autonomous Agents that Sign Transactions" to make the V10-standalone angle clear vs the cross-segment overlay.
+  7. **WL distribution channel conflict** — Motion 3 frame said "NOT LinkedIn, NOT Crypto Twitter" but WL1 targets RWA Felix who lives on LinkedIn. Added exception: WL1 may use LinkedIn as secondary amplification (not primary funnel); WL2-WL6 stay SEO-only.
+- Manifest updated. Wiki concept + source notes unchanged (rev 3 wiki content remains accurate).
+
+## [2026-05-13] SOURCE EDIT (user-authorised) | InnBlockchain Content Strategy — Crypto Native rev 3 applied directly
+- File: `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Native.md` (user explicitly authorised modification, overriding default .raw immutability rule)
+- Hash before: `00cc87e6b15f6d1a3559a4b3c1f8376f` → Hash after: `81449d576cc5acf2f0fae30f35accbf5`
+- Edits applied (all 7 corrections from round 1 + round 2 reviews):
+  1. Budget floor split — "$20k+ for Segments 2-10; $30k+ for RWA Tokenization (Segment 1)"
+  2. Three-Motion frame added (Audit, Dev/Engineering, White-Label Productized Platform) as IMPORTANT callout in executive summary
+  3. Publish Gate warning callout added (landing page live + reference build for Motion 3)
+  4. **Motion 3 — White-Label Productized Platform** section added as a new top-level section between Tier 2 verticals and Priority Content Plan (motion frame, bundling table per vertical, routing rules, 7 WL articles WL1-WL6 + WL-TCO at score 9.1, competitive positioning table, validation deadlines)
+  5. Phase 1 distribution channel guide added (LinkedIn-first vs SEO+X tagging per article)
+  6. Phase 2 amendments inserted: Paulo champion piece (8.8), AI-coded contract audit overlay (8.7, no Phase 1 gate), two Sasha trust-building articles (8.3 + 8.0) at the relevant positions in the table
+  7. Sales Motion Tagging rule section added before Topic Cluster Map (mandatory tagging of all 58 articles with [Audit] / [Dev] / [White-Label] / [Audit + Dev])
+- Manifest updated to record the new hash, modification date, and user-authorised reason
+
+## [2026-05-13] revision | InnBlockchain Content Strategy — Crypto Native (Motion 3 white-label gap closed, rev 3)
+- Source: `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Native.md` (immutable; corrections live in wiki concept + source notes)
+- Pages updated: [[Content-Strategy-InnBlockchain-Crypto-Native]] (rev 3 — second gaps round added), [[InnBlockchain Crypto Native Content Strategy]] (White-Label Productized Platform Motion section added, three-motion frame in opening, Reference Build Hard Gate added to dependency callout, sales motion tagging rule added)
+- Why: User flagged that prior reviews missed the white-label motion. Root cause: I read only the first 100 lines of the ICP and missed the dedicated "White-Label Productized Platform — Cross-Segment Motion (Motion 3)" section (lines 175-220) and the Motion 4 competitive positioning. Same pattern as the FinTech CS gap closed earlier today (2026-05-13).
+- WL articles added: WL1 RWA (9.0), WL2 DEX (8.6), WL3 DeFi Lending (8.4), WL4 MPC Wallet (8.5), WL5 NFT (8.3), WL6 IDO Launch (8.4), WL-TCO Own vs License 5-year (9.1, exempt from reference build gate)
+- Key insight: White-label is the SEO-driven inbound motion across all 6 active verticals — a third sales motion, not a variant. The Phase 1 RWA lock does NOT apply to WL content. The Reference Build Hard Gate is a publishing prerequisite distinct from the landing-page-live gate; both must clear before WL articles publish.
+
 ## [2026-04-16] re-ingest | InnBlockchain Content Strategy — Crypto Native (ICP cross-review corrections)
 - Source: `.raw/InnBlockchain - Content Strategy - Crypto Native.md` (hash unchanged — source immutable)
 - Pages updated: [[Content-Strategy-InnBlockchain-Crypto-Native]], [[InnBlockchain Crypto Native Content Strategy]]

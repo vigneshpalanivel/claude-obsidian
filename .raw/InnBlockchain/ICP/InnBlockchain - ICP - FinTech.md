@@ -249,8 +249,8 @@ tags:
 
 ## 🏗️ White-Label Productized Platform — Cross-Segment Motion (SEO-Driven Inbound)
 
-> [!IMPORTANT] SEO-driven inbound across every regulated FinTech vertical
-> Buyers searching *"white-label tokenization platform for asset managers," "white-label MiCA-compliant CEX," "white-label crypto wallet for licensed e-money," "white-label digital lending platform with blockchain rails," "white-label crypto custody"* want a productized, screenshot-able, **regulator-grade** platform — not consulting hours. Top-ranking landing pages in every FinTech vertical lead with productized white-label offerings; pure custom-services pages don't capture this search demand. InnBlockchain ships this motion end-to-end: smart contracts + audit + compliance integration + full UI/UX layer, delivered as a one-time productized engagement with a vendor risk pack ready for Carol Day 1.
+> [!IMPORTANT] SEO-driven inbound — unified WL motion across both ICPs (Crypto Native + FinTech)
+> Buyers searching *"white-label tokenization platform for asset managers," "white-label MiCA-compliant CEX," "white-label crypto wallet for licensed e-money," "white-label digital lending platform with blockchain rails"* want a productized, screenshot-able platform — not consulting hours. Top-ranking landing pages in every vertical lead with white-label productized offerings. **As of 2026-05-13, WL is unified across both ICPs at $20k+ flat floor.** InnBlockchain ships this motion end-to-end: smart contracts + audit + full UI/UX layer + light compliance hooks at the SC layer (KYC/AML, jurisdiction filters), delivered as a one-time productized engagement. **Enterprise compliance integration (vendor risk pack, ISO/SOC 2 prep, regulator-grade audit reporting, bespoke jurisdiction documentation) is NOT part of WL** — those buyers route to custom-build (Motion 2) at $50k+.
 
 **What's bundled per vertical (smart contract / compliance + productized UI):**
 
@@ -263,34 +263,43 @@ tags:
 | PayTech (Seg 5 — Watch) | Audited stablecoin rail contracts + on-chain settlement logic | Payment UI, treasury console, FX dashboard | "white-label stablecoin remittance platform," "white-label cross-border payment rails" |
 | RegTech / KYC (Seg 6 — Watch) | Audited DID / on-chain credentials contracts + automated MiCA/AML compliance | KYC dashboard, compliance reporting view, audit trail | "white-label DID/KYC blockchain platform," "white-label on-chain compliance" |
 
-**Compliance differentiator (this is what separates FinTech white-label from Crypto Native white-label):**
-- The smart contract layer ships **pre-integrated with compliance hooks** — KYC, AML/transaction monitoring, jurisdiction filters, regulator reporting, MiCA/FCA/MAS-specific framing.
-- **Vendor risk pack ships Day 1** — ISO/SOC 2 certifications, ownership disclosure, data residency documentation, sample audit report, regulator reference. Built for Carol's approval workflow before she asks.
-- **Audit reports are structured for regulator and board consumption**, not just developer review — this is the difference between a Web3-style audit and a FinTech-grade audit.
+**What's bundled in unified WL (both ICPs):**
+- Smart contracts + UI + audit + light compliance hooks at the smart contract layer (KYC/AML, jurisdiction filters)
+- NO ISO 27001 / SOC 2 certification prep
+- NO bespoke vendor risk pack
+- NO regulator-grade audit reporting (audits are developer-grade at this tier, not regulator-grade)
+- NO per-jurisdiction compliance documentation
+
+**Enterprise compliance integration is custom-build, not WL:**
+Buyers needing Carol-grade documentation (full vendor risk pack, ISO/SOC 2, regulator-defensible audit format, multi-jurisdictional compliance briefs) route to custom-build (Motion 2) at $50k+. At $20k+ WL pricing, enterprise compliance integration is unprofitable to deliver and would shortchange the documentation Carol needs.
 
 **Commercial framing:**
 - *Productized services, not SaaS.* The buyer owns the smart contract code AND the UI codebase outright at delivery. InnBlockchain does not host or maintain ongoingly. Differentiates from Fireblocks / SettleMint / Kaleido (BaaS) and Securitize / Tokeny (tokenization SaaS) — those are vendor-locked platforms with ongoing fees and capped customization.
-- *Custom build remains the upsell.* When the regulated structure or jurisdictional compliance exceeds template scope (multi-jurisdictional license, novel asset class, bespoke risk model), the engagement upgrades to full custom Development at higher ACV.
+- *Price positioning:* $20k+ undercuts Antier-class competitors at ~$30k. Differentiation: audited contracts (vs. their template scripts), real reference build screenshots (vs. their stock demos), named auditors (vs. their unverifiable "audit-ready" claims).
+- *Custom build remains the upsell.* When the regulated structure or jurisdictional compliance exceeds the light-hooks scope (vendor risk pack, ISO/SOC 2 prep, multi-jurisdictional license, novel asset class, bespoke risk model), the engagement upgrades to full custom Development at $50k+ ACV.
 
 **Estimated ACV / Cycle:**
-- $50k–$200k typical (richer than Crypto Native white-label because of compliance integration, vendor-risk-grade documentation, and regulator-ready audit format)
-- 8–14 weeks delivery (vs. 6–12 weeks Crypto Native white-label, longer due to compliance integration and Carol-grade docs)
+- **$20k+ flat floor** (unified across both ICPs). Most deals close $20k–$40k depending on vertical complexity.
+- 6–10 weeks delivery
+- WL motion is identical for crypto-native and FinTech buyers at this tier.
 
 **Routing rules:**
-- *Crypto-native startup asking for white-label, even if licensed* → [[InnBlockchain Crypto Native ICP]] equivalent motion. Differentiator: licensed-FinTech-grade compliance documentation is not the buyer's primary need, so this motion is over-scoped for them.
-- *Existing regulated FinTech asking for productized RWA / CEX / lending / wallet platform* → this motion.
-- *Sub-$50k regulated FinTech inquiries* → typically not white-label fit; either scope smaller as a single-feature custom build or park until the prospect's project budget grows.
+- *Crypto-native startup asking for white-label* → this same WL motion at $20k+ (no separate Track A WL anymore).
+- *Existing regulated FinTech asking for productized RWA / CEX / lending / wallet platform* → this same WL motion at $20k+.
+- *Buyer asks for vendor risk pack / ISO 27001 prep / regulator reporting / bespoke compliance docs* → **Custom-build (Motion 2) at $50k+**, NOT WL. Includes any FinTech CCO who flags Carol-grade documentation as a hard requirement.
+- *Sub-$20k productized inquiries* → [[InnBlockchain Crypto Products ICP]] (clone scripts, $5k–$20k, 5–15 days).
 
 **Reference build prerequisite (HARD GATE):**
-> [!warning] Do not publish a white-label landing page for a FinTech vertical until ≥1 reference build exists for that vertical with shippable screenshots **AND** a compliance documentation pack ready to download. Two acceptable reference sources: **(a) an InnBlockchain-built internal MVP** (built specifically as a reference, branded as a generic compliance-grade demo product) or **(b) a delivered client deployment** (with explicit written permission to use screenshots, or anonymised UI showing structure without client branding). Mockups and template screenshots fail Carol-grade scrutiny within minutes — and in regulated FinTech, that failure is harder to recover from than in crypto-native because it surfaces during the formal vendor risk assessment.
+> [!warning] Do not publish a white-label landing page for any vertical until ≥1 reference build exists for that vertical with shippable screenshots. Two acceptable reference sources: **(a) an InnBlockchain-built internal MVP** (built specifically as a reference, branded as a generic demo product) or **(b) a delivered client deployment** (with explicit written permission to use screenshots, or anonymised UI showing structure without client branding). Mockups and template screenshots fail evaluator scrutiny within minutes. **Compliance documentation pack is NO LONGER part of the WL gate** — that's a custom-build artifact now and lives on custom-build landing pages, not WL ones.
 
 **SEO content priority (Marketing, ongoing):**
-1. One landing page per vertical, with the buyer search term as primary keyword and **real reference build screenshots + compliance documentation downloadable** above the fold.
-2. "White-label [vertical] vs. SaaS BaaS platform" comparison content per vertical — own vs. rent positioning, with explicit "code ownership at exit" messaging that resonates with FinTech procurement.
-3. "How [vertical] white-label works for licensed [WealthTech/CEX/lender/e-money/etc]" — regulator-aware explainer that converts the SEO buyer into a discovery call by demonstrating compliance depth.
+1. One landing page per vertical, with the buyer search term as primary keyword and **real reference build screenshots** above the fold.
+2. "White-label [vertical] vs. SaaS BaaS platform" comparison content per vertical — own vs. rent positioning, with explicit "code ownership at exit" messaging.
+3. "How [vertical] white-label works" — transparent explainer that converts the SEO buyer into a discovery call by demonstrating product surface depth.
 
 **Validation plan addition:**
-- **[By 2026-06-30 · Owner: Marketing + Sales]** Identify which 1–2 FinTech verticals can produce a reference build within 60 days — either via internal MVP or a friendly first client willing to grant screenshot rights. Publish white-label landing pages for those verticals only. **Carol-grade documentation must accompany every landing page** (vendor risk pack downloadable, sample audit report linked, certifications visible). Track inbound attribution separately from custom-build outbound. Confirm by 2026-09-30 whether SEO-driven white-label inbound converts at similar or higher rate than outbound custom-build pipeline. *[ASSUMPTION — white-label SEO inbound still respects the EU 5-project geography gate and the licensed/applied-for-license routing rule; do not relax either gate even for inbound.]*
+- **[By 2026-06-30 · Owner: Marketing + Sales]** Identify which 1–2 verticals can produce a reference build within 60 days — either via internal MVP or a friendly first client willing to grant screenshot rights. Publish white-label landing pages for those verticals only. Track inbound attribution separately from custom-build outbound. Confirm by 2026-09-30 whether SEO-driven white-label inbound at $20k+ converts at acceptable margin (target: ≥40% gross margin per WL engagement; at the floor, this requires tight scope discipline). *[ASSUMPTION — white-label SEO inbound still respects the EU 5-project geography gate; do not relax for inbound.]*
+- **[Ongoing · Owner: Sales Lead]** Track WL → custom-build upsell rate. Compliance-integration inquiries from regulated FinTech buyers should convert to custom-build (Motion 2) at $50k+ at ≥30% rate. If lower, the routing message in the WL article isn't surfacing the upsell path clearly.
 
 ---
 

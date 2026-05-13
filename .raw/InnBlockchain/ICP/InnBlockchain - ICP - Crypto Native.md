@@ -50,7 +50,7 @@ tags:
 
 | Type | Criteria |
 |---|---|
-| ✅ **Must-Have** | Speaking to technical founder/CTO or Head of Eng (or RWA domain-expert founder with budget authority) with confirmed budget; smart contract codebase exists or confirmed asset to tokenize; active launch or growth timeline creating real urgency. **Budget floor:** $20k+ for Segments 2–6 and 8–10; **$30k+ for Segment 1 (RWA)** to match segment ACV target. *[ASSUMPTION — validate against first 10 closed deals per segment; adjust floor if >30% of qualified deals raise a budget objection]* |
+| ✅ **Must-Have** | Speaking to technical founder/CTO or Head of Eng (or RWA domain-expert founder with budget authority) with confirmed budget; smart contract codebase exists or confirmed asset to tokenize; active launch or growth timeline creating real urgency. **Budget floor:** $20k+ unified across all segments (1–10). *[ASSUMPTION — validate against first 10 closed deals per segment; adjust floor if >30% of qualified deals raise a budget objection]* |
 | 💰 **Budget Type Qualifier** | Confirm how budget is controlled: (1) **Founder-controlled wallet/multisig** → fast approval, 1–3 days; (2) **DAO treasury vote** → requires governance proposal, 2–4 week delay — adjust pipeline timing accordingly; (3) **Token-denominated** → confirm they have stablecoin liquidity or USDC equivalent, not just vested tokens |
 | 🔑 **Strongest Signal** | **DeFi/protocol (Segments 2–6):** Upcoming audit deadline or recent exploit in their ecosystem — creates immediate urgency; confirm timeline in first call. **RWA (Segment 1):** Upcoming first asset issuance, platform launch date, or regulatory compliance deadline (MiCA) — confirms a live asset ready to tokenize and real urgency driving the build |
 | 👍 **Tier 1 Signals (prioritize if 3+ present)** | (1) Technical founder/CTO confirmed in room; (2) $20k+ budget or funded treasury (all segments); (3) **DeFi/protocol:** Testnet live — mainnet is next; **RWA:** confirmed real asset to tokenize with defined launch or issuance timeline; (4) **DeFi/protocol:** Live trigger — audit deadline, fundraise, or competitor exploit; **RWA:** first asset issuance date or regulatory compliance deadline confirmed |
@@ -200,13 +200,14 @@ tags:
 - *AI-code audit overlay still applies* — if the buyer wants the white-label platform but uses AI to extend it, layer Segment 10's AI-code audit motion on top.
 
 **Estimated ACV / Cycle:**
-- $30k–$100k typical (sits between [[InnBlockchain Crypto Products ICP]] clone scripts at $5k–$20k and Motion 2 custom build at $40k–$200k+)
-- 6–12 weeks delivery (vs. 30–75 days for custom)
+- **$20k+ flat floor** (unified WL pricing across both ICPs; undercuts Antier-class competitors at ~$30k). Most deals close $20k–$40k depending on vertical complexity.
+- 6–10 weeks delivery (vs. 30–75 days for custom build)
+- WL bundle: smart contracts + UI + audit + light compliance hooks at SC layer. **Compliance integration (vendor risk pack, ISO/SOC 2 prep, regulator-grade audit reporting) is NOT in WL scope** — those are custom-build (Motion 2) artifacts at $50k+.
 
 **Routing rules:**
-- *Sub-$30k crypto-native productized inquiries* → [[InnBlockchain Crypto Products ICP]] (clone scripts, $5k–$20k, 5–15 days). Don't try to scope white-label below $30k — clone scripts already serve that buyer with shorter delivery.
-- *White-label inquiries above $30k for any of the 6 active verticals* → this motion.
-- *Existing regulated FinTech asking for white-label* → [[InnBlockchain FinTech ICP]] equivalent motion (compliance documentation and regulator-grade architecture is the differentiator there, not just exploit-proof contracts).
+- *Sub-$20k productized inquiries* → [[InnBlockchain Crypto Products ICP]] (clone scripts, $5k–$20k, 5–15 days). Don't scope WL below $20k — clone scripts already serve that buyer with shorter delivery.
+- *$20k+ productized inquiries, any vertical, any ICP* → this motion. WL is now unified across crypto-native and regulated-FinTech buyers; same product, same price.
+- *Buyer asks for vendor risk pack / ISO 27001 prep / regulator reporting / bespoke compliance docs* → Custom-build (Motion 2) at $50k+, NOT WL. Includes existing regulated FinTechs whose Carol-grade documentation needs exceed WL scope.
 
 **Reference build prerequisite (HARD GATE):**
 > [!warning] Do not publish a white-label landing page for a vertical until ≥1 reference build exists for that vertical with shippable screenshots. Two acceptable sources: **(a) an InnBlockchain-built internal MVP** (built specifically as a reference for the landing page, branded as a generic demo product) or **(b) a delivered client deployment** (with explicit written permission to use screenshots, or anonymised UI showing structure without client branding). Mockups, lorem-ipsum dashboards, and AI-generated UI screenshots fail technical evaluator scrutiny within minutes and damage trust in the offering. The competitor pages buyers compare against show real product surface area.
@@ -233,7 +234,7 @@ tags:
 - **Pain:** Tokenizing real-world assets — real estate, vehicles, commodities, art, private credit, and beyond — requires smart contract infrastructure that is simultaneously legally binding, oracle-dependent, and exploit-proof. The token represents real off-chain ownership; one smart contract flaw, oracle manipulation, or minting error means real asset ownership rights are compromised — not just on-chain liquidity. Founders in this space are rarely Web3-native and almost never have in-house smart contract security expertise.
 - **Scope note:** Covers any crypto-native startup building RWA tokenization infrastructure — real estate fractionalization platforms, vehicle tokenization, commodity-backed tokens, art with on-chain title transfer, private credit protocols, and any platform creating on-chain representation of physical or legal asset ownership. Asset type is irrelevant — the gate is company origin. Route to [[ICP - FinTech]] only if the prospect is an **existing regulated financial institution** (bank, licensed asset manager, or securities firm) tokenizing their own regulated product line. A car owner building a vehicle tokenization platform, a real estate developer building fractional property investment, or a commodity producer building on-chain trade finance — all belong here.
 - **GTM:** Target founders and asset owners building tokenization platforms across all verticals. Lead with the exploit risk of real asset value being on-chain — the stakes are higher than DeFi liquidity. Messaging: *"Real asset ownership on-chain demands smart contracts that are bulletproof — a minting bug or oracle exploit doesn't drain a pool, it transfers someone's property."* Trigger: upcoming token launch, first asset issuance, or platform launch with real asset backing.
-- **Validation Success Criteria:** 2+ closed deals from RWA tokenization platforms at $30k+ ACV; confirm by 2026-09-30 whether real estate, vehicle, and commodity buyers have distinct enough needs to warrant separate outreach sequences.
+- **Validation Success Criteria:** 2+ closed deals from RWA tokenization platforms at $20k+ ACV; confirm by 2026-09-30 whether real estate, vehicle, and commodity buyers have distinct enough needs to warrant separate outreach sequences.
 
 ---
 
@@ -634,7 +635,7 @@ Response: Offer a technical discussion directly between Sasha and InnBlockchain'
 - [ ] **RWA channel mix confirmed (Segment 1)** — LinkedIn outreach reply rates to EU PropTech, real estate, and commodity founders tracked separately; confirm LinkedIn + Telegram as the primary channels for RWA outreach
 - [ ] **Exploit-reactive outreach converts** — at least 1 deal sourced from exploit monitoring within the first 90 active days
 - [ ] **ICP customers have higher close rates than non-ICP** — tracked separately in CRM
-- [ ] **Segment 1 (RWA) ACV targets confirmed** — 2+ closed deals at $30k+ ACV from RWA tokenization platforms within the first two active quarters
+- [ ] **Segment 1 (RWA) ACV targets confirmed** — 2+ closed deals at $20k+ ACV from RWA tokenization platforms within the first two active quarters
 - [ ] **Segment 2–3 ACV targets confirmed** — 3+ closed deals at $50k+ ACV from DEX/DeFi within the first two active quarters
 - [ ] **Segment 5–6 ACV targets confirmed** — 2+ closed deals at $20k+ ACV from NFT platforms (Segment 5) and 2+ closed deals at $20k+ ACV from token launch protocols (Segment 6) within the first two active quarters
 - [ ] **Segment 4 (MPC Wallets) buyer profile validated** — distinct from DeFi protocol buyers confirmed or refuted by 2026-06-30

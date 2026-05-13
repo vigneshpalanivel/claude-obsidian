@@ -7,9 +7,10 @@ date_published: 2026
 url: ""
 confidence: high
 key_claims:
+  - "Source doc covers only 2 of the 3 ICP sales motions (Audit + Dev/Engineering). Motion 3 (White-Label Productized Platform — SEO inbound, $30k-$100k, 6-12 weeks) is entirely absent and has been added in the wiki concept note as 6 WL articles + 1 cross-cutting TCO piece gated on Reference Build Hard Gate."
   - "5 technology pillars (C1-C5): Smart Contract Security, Protocol Architecture, ZK/MPC/Advanced Crypto, Web3 Engineering Velocity, EU Regulatory Compliance & MiCA"
   - "10 segment verticals (V1-V10); 6 Active: RWA (V1, highest priority), DEX (V2), DeFi Lending (V3), Wallets (V4), NFT (V5), Token Launch (V6); 4 Watch: DAO, L2, GameFi, AI x Crypto"
-  - "Phase 1 is strictly sequential: all 18 RWA + MiCA (C5) articles publish before any Phase 2 content begins. Depth over breadth."
+  - "Phase 1 is strictly sequential for outbound-motion content: all 18 RWA + MiCA (C5) articles publish before any Phase 2 content begins. Phase 1 lock does NOT apply to Motion 3 white-label content — WL activates per vertical based on reference build availability."
   - "4 personas: Founding Felix (DeFi CTO), RWA Felix (non-technical asset owner), Product Paulo (Head of Eng), Security Sasha (Protocol Security Lead at $10M+ raised)"
   - "Content tone splits by persona: Felix/Paulo/Sasha = exploit-thread technical depth; RWA Felix = plain-language, asset-first, compliance-aware"
   - "RWA hub content must be plain-language; RWA Felix cannot read Solidity and evaluates on explanation clarity + reference checks"
@@ -117,7 +118,9 @@ Explicit disambiguation notes appear on every topic that exists in both strategi
 - **Travel rule**: Crypto Native = DeFi protocol implementing on-chain. FinTech = licensed CASP on-chain AML tooling.
 - **Hiring**: Crypto Native = reentrancy auditing, ZK circuits. FinTech = compliance-aware engineers, audit trails, KYC/AML integration.
 
-## Gaps Identified in ICP Cross-Review (2026-04-16)
+## Gaps Identified in ICP Cross-Review
+
+### Round 1 (2026-04-16) — outbound-motion gaps
 
 The following gaps were identified when the content strategy was reviewed against [[ICP-InnBlockchain-Crypto-Native]]. Each has been incorporated into [[InnBlockchain Crypto Native Content Strategy]].
 
@@ -127,6 +130,13 @@ The following gaps were identified when the content strategy was reviewed agains
 4. **AI-coded contract audit content not in priority plan:** The overlay activates immediately per ICP, but Phase 2 contained no AI overlay article. One added — see concept note.
 5. **Paulo champion piece absent from priority plan:** "How We Cut Smart Contract Audit Prep Time from 6 Weeks to 2" exists in C4 list but not in the Phase 2 scored table. Added at score 8.8 — see concept note.
 6. **No ICP validation plan linkage:** Phase 1 content publishing depends on the landing page being live (ICP Activation item 1.1, due 2026-04-15). Dependency note added to concept note.
+
+### Round 2 (2026-05-13) — Motion 3 gap
+
+> [!key-insight] Bigger than all 6 Round 1 fixes combined
+> The ICP defines **three** sales motions, not two. The source content strategy was written when the ICP had only Audit + Dev/Engineering motions. Motion 3 (White-Label Productized Platform) was added to the ICP later (visible in the wiki ICP concept since 2026-05-12) and is completely absent from the content strategy's 51-article plan.
+
+7. **White-Label Productized Platform motion absent (Motion 3):** The ICP defines a third sales motion — SEO-driven inbound for productized white-label platforms (RWA tokenization, DEX, DeFi lending, MPC wallet, NFT marketplace, IDO launchpad). ACV $30k–$100k, 6–12 week delivery, distinct SaaS competitors (Tokeny, Securitize, OpenSea Pro, Fireblocks, 0x SaaS), explicit buyer-intent search terms ("white-label RWA tokenization platform," etc.). Content strategy had zero articles targeting these keywords. Reference Build Hard Gate applies — landing pages cannot publish until ≥1 reference build per vertical exists with shippable screenshots. Wiki now has a dedicated White-Label Productized Platform Motion section with 6 vertical-specific WL articles (WL1–WL6) gated on reference build + 1 cross-vertical TCO comparison article (WL-TCO, score 9.1) exempt from the gate. Sales-motion tagging rule added for the entire content plan (every article must carry `[Audit]`, `[Dev]`, `[White-Label]`, or `[Audit + Dev]`).
 
 ## Open Questions
 

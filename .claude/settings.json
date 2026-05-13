@@ -19,7 +19,18 @@
       "Bash(curl -sL \"https://www.innblockchain.com/sitemap.xml\")",
       "Bash(curl -sL \"https://www.innblockchain.com/robots.txt\")",
       "Bash(npx -y defuddle-cli parse https://www.innblockchain.com/sto-development --md)",
-      "Bash(npx -y defuddle-cli parse https://www.innblockchain.com/smart-contract-development --md)"
+      "Bash(npx -y defuddle-cli parse https://www.innblockchain.com/smart-contract-development --md)",
+      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Native.md\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md\")",
+      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Native.md\")",
+      "Bash(python3 -c ' *)",
+      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - FinTech.md\")",
+      "Bash(grep -n '^`what is asset tokenization fintech`' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md\")",
+      "Bash(grep -n '^`tokenization platform for wealthtech`' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md\")",
+      "Bash(awk -F'|' '{gsub\\(/^ +| +$/, \"\", $2\\); gsub\\(/^ +| +$/, \"\", $3\\); print $3 \" :: \" $2}')",
+      "Bash(grep -n '\\\\$30k' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md\")",
+      "Bash(grep -n 'white-label\\\\|White-Label\\\\|\\\\$30k.*\\\\$100k\\\\|\\\\$50k.*\\\\$200k\\\\|productized' '/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md')",
+      "Bash(grep -nE '\\\\$20k\\\\+|\\\\$30k flat|\\\\$30k–\\\\$|\\\\$50k–\\\\$200k' '/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md')",
+      "Bash(grep -n '\\\\$30k+' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
