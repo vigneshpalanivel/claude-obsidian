@@ -19,6 +19,14 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## 2026-05-14 | autoresearch | Content Marketing End-to-End Tasks
+- Rounds: 2
+- Searches: 7
+- Sources fetched: 4
+- Pages created: [[Research: Content Marketing End-to-End Tasks]], [[Content Marketing Workflow]], [[Content Repurposing Workflow]], [[Content Distribution]], [[Hyvor-End-to-End-Content-Marketing-2025]], [[Spinutech-End-to-End-Content-Production]], [[Reliablesoft-Content-Marketing-Checklist]], [[Slickplan-Content-Workflow-9-Steps]]
+- Synthesis: [[Research: Content Marketing End-to-End Tasks]]
+- Key finding: Content marketing has 8 distinct phases with Phase 0 (workflow infrastructure setup) being the most-skipped and the root cause of most execution failures.
+
 ## 2026-05-14 | autoresearch | DLT Pilot Regime
 - Rounds: 2 | Searches: 9 | Fetches: 4 | Pages created: 5 (1 rewrite + 4 new)
 - Synthesis: [[Research: DLT Pilot Regime]]

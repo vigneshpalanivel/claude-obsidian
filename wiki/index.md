@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-14 | Total pages: 208 | Sources ingested: 65
+Last updated: 2026-05-14 | Total pages: 216 | Sources ingested: 69
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -41,6 +41,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[AI-Native Engineering Team]] — org structure and hiring for the agent leverage era (status: developing)
 - [[Outcome-Based Pricing]] — billing model for dev agencies when AI compresses delivery time (status: developing)
 - [[Marketing-Sales Alignment]] — structural integration of marketing and sales around shared revenue goals (status: developing)
+- [[Content Marketing Workflow]] — task-based vs. status-based workflow; roles, non-negotiables, workflow setup before production (status: current)
+- [[Content Repurposing Workflow]] — one-to-one / one-to-many / atomization approaches; 7-step workflow; plan derivatives during creation (status: current)
+- [[Content Distribution]] — owned/earned/paid channel types; distribution tasks; redistribution cadence 14/30/90/120 days; distribution vs repurposing distinction (status: current)
 - [[Trioangle Product ICP]] — Track 1 (Cash Engine) ICP for clone scripts + super-apps; ~96% historical 5-year mortality structural to buyer profile; 6 archetypes with re-eval triggers (P1/P2/P6); 800+ verifiability split (cumulative vs live); cheapest-option enforcement loop; Track 2 graduation row (rev 4) (status: current)
 - [[Trioangle Buyer Personas]] — 6 buyer archetypes for marketplace clone scripts; Persona 6 maps directly to Vibe Coding wave (status: current)
 - [[Trioangle Service ICP]] — Track 2 of Growth Plan; 5 personas tiered by acquisition: P5 🎯 direct primary (recurring base), P3/P4 🤝 channel-only, P1/P2 🪶 opportunistic; AI Audit Sprint + AI Funnel disambiguation; existing-operator filter (12+ months) makes recurring thesis valid (rev 5) (status: current)
