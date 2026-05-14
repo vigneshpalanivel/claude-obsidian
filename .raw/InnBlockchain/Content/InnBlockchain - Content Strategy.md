@@ -85,41 +85,18 @@ tags:
 
 ---
 
-## 🧭 Anti-ICP & Routing
+## 🧭 Track Tag Reference
 
-> The routing decision is the spine of this strategy. Get it right at the discovery call; reinforce it via article track tag.
+> Track tags (`[CN]` / `[FT]` / `[Both]`) determine which ICP each article serves and which CTA it carries. Tag every article before scheduling. Full routing logic and anti-ICP definitions live in [[ICP - Crypto Native]] and [[ICP - FinTech]] — this section is a writer-facing summary only.
 
-### Universal Hard Disqualifiers (Both Tracks)
-- Pre-revenue, idea-stage with no underlying product
-- Zero budget / "build for equity / tokens"
-- Concept-stage founders seeking free architecture advice with no timeline
-- B2C speculative trading, meme-coin, pure pfp NFT audiences
+**The one routing question:** *"Is your company a crypto-native startup, or an existing regulated financial services business adding a crypto product?"*
+- Crypto-native startup (licensed or not) → `[CN]` — Track A
+- Existing regulated FinTech expanding into crypto → `[FT]` — Track B
+- Genuinely serves both with no track-specific intent → `[Both]` (rare — most articles are single-track)
 
-### The Routing Question
-**"Is your company a crypto-native startup, or are you an existing regulated financial services business adding a crypto product?"**
+**Hard disqualifiers for both tracks:** pre-revenue idea-stage with no product, zero budget, B2C speculative/meme-coin audiences.
 
-- **Crypto-native startup** (licensed or not) → **Track A** ([[ICP - Crypto Native]])
-- **Existing regulated FinTech expanding into crypto** → **Track B** ([[ICP - FinTech]])
-- **Park (not DQ):** Existing FinTech without a filed license application → maintain Park-status nurture (see B-RegTech P1 article)
-
-**Company origin is the gate, not licensing status.** A crypto-born startup that later obtains a license stays in Track A.
-
-### Track A — Crypto-Native Anti-ICP
-- ❌ Traditional regulated FinTech (banks, neobanks, existing licensed exchanges, payment processors, e-money institutions) → route to Track B
-- ❌ Whitepaper-only projects with no technical progress
-- ❌ ICO/token launch schemes with no underlying product
-- ❌ "Learn to code Solidity" audiences (attracts junior devs, not protocol buyers)
-
-### Track B — Regulated FinTech Anti-ICP
-- ❌ **Crypto-native startups** — any company born as crypto-native belongs in Track A regardless of licensing status
-- ❌ Crypto-native self-custody and MPC wallet startups
-- ❌ Unfunded, pre-product founders
-- ❌ "Blockchain tourist" content with no build intent
-
-### Good-Signal Triggers
-- ✅ **Track A (DeFi/protocol):** Testnet live, mainnet next, audit deadline creating urgency
-- ✅ **Track A (RWA):** Confirmed real asset ready to tokenize + MiCA or local compliance deadline
-- ✅ **Track B:** API-first backend already live and ready to integrate a new ledger (Tier 0 signal)
+**Company origin is the gate, not licensing status.** A crypto-born startup that later obtains a license stays `[CN]`.
 
 ---
 
@@ -724,14 +701,13 @@ Target: WealthTech, LendTech, RegTech, BankTech companies deploying AI for credi
 >
 > **Important consequence:** the FT WL article copy can NO LONGER lead with "regulator-grade compliance integration shipped Day 1" — that's not what's being sold at $20k+. FT buyers who need enterprise compliance documentation are routed UP to custom-build, not retained on WL.
 
-### Routing for White-Label Inquiries
+### In-Article Routing Rules (Writer Reference)
 
-| Inquiry | Route to |
-|---|---|
-| <$20k productized inquiry, any ICP | [[Content Strategy - Crypto Products]] (clone scripts $5k–$20k, 5–15 day delivery) |
-| $20k+ productized inquiry, any ICP, any vertical | **WL motion** (WL1–WL6) at $20k+ |
-| Buyer asks for vendor risk pack / ISO 27001 prep / regulator reporting / bespoke compliance docs | **Custom-build (Motion 2)** at $50k+ — NOT WL. WL doesn't include enterprise compliance integration at this price point. |
-| Buyer needs custom logic beyond template (bespoke matching engine, novel asset class, custom collateral model) | Custom-build (Motion 2) at $40k–$200k+ |
+> Full sales routing logic lives in [[ICP - Crypto Native]] and [[ICP - FinTech]]. The rules below are writer-facing only — they determine what CTA and upsell signal to embed in each WL article.
+
+- **If the article mentions compliance integration** (vendor risk pack, ISO/SOC 2, regulator-grade audit reporting): frame it as the custom-build upsell at $50k+, not a WL feature. Never present enterprise compliance docs as something WL delivers.
+- **If the article attracts sub-$20k readers** (clone-script searchers): include a one-line pointer to [[InnBlockchain Crypto Products ICP]] — do not position WL as a budget option below $20k.
+- **CTA in every WL article:** "Book a white-label scoping call" — one CTA, no track split.
 
 ### Per-Vertical Bundles (Unified)
 
@@ -1082,7 +1058,7 @@ InnBlockchain attends events spanning both tracks. Keep messaging separate:
 - **Wedge cannibalisation rule:**
   - Custom-build articles must NEVER include "own vs license" framing (that's WL motion's wedge)
   - WL articles must NEVER include "weeks-not-quarters" speed framing (that's custom-build's wedge)
-- **Mixing routes by article:** Track A WL articles must NOT include compliance integration as a feature; Track B WL articles MUST.
+- **Mixing routes by article:** WL articles (WL1–WL6 + WL-TCO) must NOT include enterprise compliance integration as a feature — that's custom-build (Motion 2) scope at $50k+. Route any buyer who asks for vendor risk pack / ISO/SOC 2 prep / regulator-grade audit reporting up to custom-build. There is no Track A vs. Track B split for WL articles — all 7 are tagged `[Both]` and serve the same unified $20k+ product.
 
 ---
 

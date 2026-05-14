@@ -30,7 +30,8 @@
       "Bash(grep -n '\\\\$30k' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md\")",
       "Bash(grep -n 'white-label\\\\|White-Label\\\\|\\\\$30k.*\\\\$100k\\\\|\\\\$50k.*\\\\$200k\\\\|productized' '/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md')",
       "Bash(grep -nE '\\\\$20k\\\\+|\\\\$30k flat|\\\\$30k–\\\\$|\\\\$50k–\\\\$200k' '/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md')",
-      "Bash(grep -n '\\\\$30k+' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md\")"
+      "Bash(grep -n '\\\\$30k+' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md\")",
+      "Bash(grep -n \"clone script\\\\|Crypto Products ICP\\\\|sub-\\\\$20k\\\\|below \\\\$20k\\\\|scoping call\\\\|vendor risk\\\\|ISO.*SOC\\\\|regulator.*audit\\\\|custom.build.*50k\\\\|50k.*custom\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - Crypto Native.md\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/ICP/InnBlockchain - ICP - FinTech.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
