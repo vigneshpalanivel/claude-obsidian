@@ -4,12 +4,13 @@ company:
 department:
   - marketing
 priority: highest
-rev: 3
-last_revised: 2026-05-13
+rev: 4
+last_revised: 2026-05-14
 revision_notes: |
   rev 1 (2026-05-13): merged from `Content Strategy - Crypto Native.md` (rev 3) and `Content Strategy - FinTech.md` (rev 3). Two parallel content strategies consolidated into one source-of-truth, with track-level tagging (`[CN]` / `[FT]` / `[Both]`) replacing the cross-doc routing boilerplate. ICP docs remain split per ICP - Crypto Native / ICP - FinTech; this strategy serves both via article-level track metadata.
   rev 2 (2026-05-13): cannibalization-fix pass. Retagged 7 awareness-stage articles to `[Both]` (exploit explainers + MiCA Explained + asset tokenization intro). Merged 2 article pairs into shared `[Both]` articles (Embedded Wallets, Passkey Auth). Killed 1 (STOs vs ICOs, redundant). Renamed 6 Track B articles to escape Track A SERP claims (B1 hub, B1 real estate, P1 audit checklist, P1 audit process, P1 upgradeability, B4 MPC PSP). Rewrote Track B keyword tables (Awareness, Consideration, Decision, Implementation) to remove generic terms claimed by Track A and substitute regulated-FinTech-specific long-tail variants. Annotated 3 watch-candidate articles. Net: ~9 article reduction, ~0 unresolved cross-track keyword collisions.
   rev 3 (2026-05-13): white-label unified across both ICPs. Old CN-WL (6 articles, $30k–$100k) + FT-WL (6 articles, $50k–$200k) collapsed to 7 unified articles (WL1–WL6 + WL-TCO) at **$20k+ flat floor** (undercuts Antier-class competitors at ~$30k). WL bundle no longer includes enterprise compliance integration — that's now custom-build (Motion 2) at $50k+. FT-LM-Carol Vendor Risk Pack repositioned as custom-build asset. Track-Level Differentiator table removed. Reference-build gate unified (screenshots only; compliance pack moved to custom-build). Track A floor for RWA Tokenization (Segment 1) lowered to $20k+ for consistency with other Track A segments. Net: 13 WL articles → 7 (~46% reduction); one product, one price, one CTA across both ICPs.
+  rev 4 (2026-05-14): priority plan restructured for publish-order clarity. A1 and B1 article lists reorganised from topic groups into explicit TOFU / MOFU (Technical Architecture, Compliance Depth, Asset Classes) / BOFU / Post-Launch sections. Priority Content Plan steps relabelled to match. WL articles dissolved from separate section and integrated into plan: WL-0 in Phase 0 (ships first, no gate); WL-1 at Phase 1 BOFU #22; WL-2 through WL-6 appended to Phase 2 (#52–#56). Reference build gate cleared 2026-05-14 — all WL-1 through WL-6 unblocked. WL IDs normalised to WL-0 through WL-6 (was WL1–WL6 + WL-TCO). Phase 1 count corrected to 22 articles. EU compliance article coverage added across A1, B1 (DLT Pilot Regime, AML/AMLA, DORA, MiFID II, EU AI Act).
 tags:
   - content
 ---
@@ -80,7 +81,7 @@ tags:
 
 > [!WARNING] Publish Gates (Apply to Both Tracks)
 > - **Landing-page gate (outbound articles):** Do not publish a cluster's articles until the corresponding solution landing page is live on innblockchain.com. As of 2026-05-11, the following pages return 404: `/solutions/rwa-tokenization`, `/solutions/dex-protocol`, `/solutions/defi-protocol`, `/solutions/mpc-wallets`, `/solutions/nft-platform`, `/solutions/token-launch`, `/solutions/tokenization`, `/solutions/regulated-exchange`, `/solutions/defi-lending`, `/solutions/fintech-wallets`, `/industries/fintech/`, `/industries/web3-defi/`, `/services/smart-contracts`. Phase 1 content gated on the destination page shipping.
-> - **Reference-build gate (Motion 3 white-label only):** Do not publish a vertical's WL landing page or WL article until ≥1 reference build exists for that vertical with shippable screenshots. For Track B, also requires a downloadable compliance documentation pack. WL-TCO comparison content is exempt (category analysis, no product screenshots).
+> - **Reference-build gate (Motion 3 white-label only):** Do not publish a vertical's WL landing page or WL article until ≥1 reference build exists for that vertical with shippable screenshots. For Track B, also requires a downloadable compliance documentation pack. WL-0 comparison content is exempt (category analysis, no product screenshots).
 > - **Validation gate (AI + Blockchain content, Track B):** ICP FinTech Pain Point 5 flagged unvalidated, pending 2026-05-31. AI+Blockchain cluster ships only after (a) WealthTech/RWA hub publishes and (b) validation confirms buyer resonance.
 
 ---
@@ -310,15 +311,15 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 - Art and Collectibles Tokenization: How On-Chain Title Transfer Works and Where It Can Fail
 
 **BOFU — Decision:**
-- Custom Build vs. Securitize / Tokeny / Polymath: When You Need Your Own RWA Smart Contract Infrastructure *(comparison/decision article — routes to WL1 for middle-ground buyers)*
+- Custom Build vs. Securitize / Tokeny / Polymath: When You Need Your Own RWA Smart Contract Infrastructure *(comparison/decision article — routes to WL-1 for middle-ground buyers)*
 - Smart Contract Audit Checklist for RWA Tokenization Platforms: What Auditors Flag Before Investor Onboarding 🎯 *(lead magnet — read when buyer is close to committing)*
 - 🎬 [CASE STUDY] How We Tokenized [Asset Class] for [Client]: From First Smart Contract to Investor-Ready Platform *(hard gate: requires delivered client deployment or friendly first client with screenshot/story rights. RWA Felix evaluates InnBlockchain on reference checks — primary Decision-stage conversion asset for A1)*
 
 **Post-Launch:**
 - Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiCA-Compliant Post-Launch *(converts one-time build clients to ongoing retainer)*
 
-> [!INFO] White-Label routing (A1 → WL1)
-> Buyers who want a productized build between full-custom and SaaS should be routed to **WL1: White-Label RWA Tokenization Platform** (see Cross-Segment White-Label section). Embed a routing line in "Custom Build vs. Securitize / Tokeny / Polymath" article: *"If you want code ownership without a full custom build timeline — there's a third option."* CTA: book a white-label scoping call. Gate: reference build required before WL1 publishes.
+> [!INFO] White-Label routing (A1 → WL-1)
+> Buyers who want a productized build between full-custom and SaaS should be routed to **WL-1: White-Label RWA Tokenization Platform** (see Cross-Segment White-Label section). Embed a routing line in "Custom Build vs. Securitize / Tokeny / Polymath" article: *"If you want code ownership without a full custom build timeline — there's a third option."* CTA: book a white-label scoping call. Gate: reference build is available (✅ Cleared 2026-05-14) — WL-1 ready to publish.
 
 ---
 
@@ -561,33 +562,45 @@ Key articles:
 > Split CTAs in same article (two paths) OR produce two variants. Do NOT flatten both into one neutral voice.
 
 #### Articles
-- *(Awareness piece merged: see "What Is Asset Tokenization? A Plain-English Guide" in A1 articles — same shared `[Both]` article serves WealthTech awareness queries)*
-- Utility NFTs in FinTech: How Non-Fungible Tokens Map to Real-World Assets *(watch-candidate — NFT-for-RWA framing is duplicative of RWA cluster core message; ERC-3643 has largely replaced ad-hoc NFT patterns; consider folding into hub or killing)*
-- Tokenizing Invoices and Receivables: How It Works and Who It's For
-- Real Estate Tokenization for Licensed Asset Managers: MiFID II Classification and Compliant Issuance *(renamed to escape "how to tokenize real estate" SERP — that keyword is claimed by Track A A1 #10)*
-- *(KILLED: "Security Token Offerings (STOs) vs. ICOs" — redundant with the STOs-under-MiCA article below; ICOs are a deprecated 2017–2018 concept)*
+
+**TOFU — Awareness:**
+- *(Awareness piece merged: see "What Is Asset Tokenization? A Plain-English Guide" in A1 articles — shared `[Both]` article serves WealthTech awareness queries)*
+- Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs *(trending — entry point for Sam; institutional proof that the category is real)*
+- T+0 Settlement on Blockchain: How Real-Time Clearing Is Replacing T+2 *(trending — liquidity/efficiency hook that resonates before buyers understand the tech)*
+- Utility NFTs in FinTech: How Non-Fungible Tokens Map to Real-World Assets *(watch-candidate — NFT-for-RWA framing is duplicative of RWA cluster core message; ERC-3643 has largely replaced ad-hoc NFT patterns; consider folding into hub or killing at 90-day review)*
+
+**MOFU — Platform Architecture:**
 - The Tech Stack Behind an RWA Tokenization Platform
 - Tokenization and Liquidity: How Fractional Ownership Unlocks Capital for WealthTechs
-- MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺
-- *(MiCA vs. MiFID II classification boundary: see "MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset" in A1 EU Compliance — same shared `[Both]` article; split CTA footer serves both tracks)*
 - Blockchain for Treasury Tokenization: Turning Corporate Assets Into Liquid Instruments
-- Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs *(trending)*
-- T+0 Settlement on Blockchain: How Real-Time Clearing Is Replacing T+2 *(trending)*
-- Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(trending — watch-candidate, news-cycle dependent; kill if no inbound in 90 days)*
-- STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA *(trending)* 🇪🇺
-- MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺
-- ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 *(new — A1 has ERC-3643 comparison framed for crypto-native builders; this is the B1 version for licensed issuers: Tom and Carol care about MiFID II instrument compliance and regulatory defensibility, not protocol architecture trade-offs)*
-- DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺
-- DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 *(new — different from generic "DORA for FinTechs using blockchain vendors" in P5; covers oracle providers as critical ICT third-parties, DLT settlement infrastructure resilience testing, incident reporting obligations specific to tokenized securities platforms)*
-- AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 *(new — Travel Rule article in P5 covers licensed exchanges B2; this covers WealthTech asset managers onboarding institutional investors onto tokenized securities platforms — different AML surface area)*
-- What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 *(new — Carol at a WealthTech firm has a completely different approval checklist than a generic FinTech Carol; no existing P1 Carol article covers MiFID II classification review, DLT Pilot regime authorization timeline, or DORA resilience testing for settlement infrastructure. Carol gates every B1 deal — this is the highest-priority addition to B1)*
-- *(EU AI Act for AI valuation / pricing: see "EU AI Act for Tokenized Asset Platforms" in A1 EU Compliance — same shared `[Both]` article; split CTA footer serves both tracks)*
-- 🎬 [CASE STUDY] WealthTech / RWA Platform Build *(anchored here from Priority Content Plan — hard gate: requires delivered client deployment. Primary Decision-stage proof asset for Tom and Sam)*
-- RWA Tokenization: Build vs. Buy vs. Partner — Decision Framework for WealthTech Leaders 🎯 *(lead magnet)*
-- Expanding Your RWA Platform to New Markets: Regulatory and Technical Readiness *(post-launch)*
+- Tokenizing Invoices and Receivables: How It Works and Who It's For
 
-> [!INFO] White-Label routing (B1 → WL1)
-> Licensed WealthTech buyers who want code ownership without a full custom build should be routed to **WL1: White-Label RWA Tokenization Platform** (see Cross-Segment White-Label section). Embed a routing line in "RWA Tokenization: Build vs. Buy vs. Partner" lead magnet: *"White-label is the fourth option — productized delivery at $20k+, code owned outright."* Note: WL1 does not include enterprise compliance integration (vendor risk pack, ISO/SOC 2 prep, regulator reporting) — buyers who need that are custom-build at $50k+.
+**MOFU — Asset Classes:**
+- Real Estate Tokenization for Licensed Asset Managers: MiFID II Classification and Compliant Issuance *(renamed to escape "how to tokenize real estate" SERP — that keyword is claimed by Track A A1 #10)*
+- STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA *(trending)* 🇪🇺
+- *(KILLED: "Security Token Offerings (STOs) vs. ICOs" — redundant with STOs-under-MiCA above; ICOs are a deprecated 2017–2018 concept)*
+- Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(trending — watch-candidate, news-cycle dependent; kill if no inbound in 90 days)*
+
+**MOFU — Compliance Depth:**
+- MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺
+- *(MiCA vs. MiFID II classification boundary: see "MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset" in A1 TOFU — shared `[Both]` article; split CTA footer serves both tracks)*
+- MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺
+- ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 *(A1 has ERC-3643 framed for crypto-native builders; this version is for licensed issuers — Tom and Carol care about MiFID II defensibility, not protocol architecture trade-offs)*
+- DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺
+- DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 *(oracle providers as critical ICT third-parties, DLT settlement resilience testing, incident reporting for tokenized securities — different surface area from generic P5 DORA article)*
+- AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 *(WealthTech-specific AML surface: institutional investor onboarding onto tokenized securities platforms — different from P5 Travel Rule article which covers licensed exchanges B2)*
+- *(EU AI Act for AI valuation / pricing: see "EU AI Act for Tokenized Asset Platforms" in A1 MOFU Compliance Depth — shared `[Both]` article; split CTA footer serves both tracks)*
+
+**BOFU — Decision:**
+- What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 *(Carol gates every B1 deal — this is the unlock article. Covers MiFID II classification review, DLT Pilot authorization timeline, DORA resilience testing for settlement infra — none of this is in the generic P1 Carol article)*
+- RWA Tokenization: Build vs. Buy vs. Partner — Decision Framework for WealthTech Leaders 🎯 *(lead magnet — routes WL-1 buyers to white-label option)*
+- 🎬 [CASE STUDY] WealthTech / RWA Platform Build *(hard gate: requires delivered client deployment. Primary Decision-stage proof asset for Tom and Sam)*
+
+**Post-Launch:**
+- Expanding Your RWA Platform to New Markets: Regulatory and Technical Readiness
+
+> [!INFO] White-Label routing (B1 → WL-1)
+> Licensed WealthTech buyers who want code ownership without a full custom build should be routed to **WL-1: White-Label RWA Tokenization Platform** (see Cross-Segment White-Label section). Embed a routing line in "RWA Tokenization: Build vs. Buy vs. Partner" lead magnet: *"White-label is the fourth option — productized delivery at $20k+, code owned outright."* Note: WL-1 does not include enterprise compliance integration (vendor risk pack, ISO/SOC 2 prep, regulator reporting) — buyers who need that are custom-build at $50k+.
 
 ---
 
@@ -748,7 +761,7 @@ Target: WealthTech, LendTech, RegTech, BankTech companies deploying AI for credi
 - **Cycle: 6–10 weeks** unified.
 - **Bundle: smart contracts + UI + audit only.** Light compliance hooks at the smart contract layer (KYC/AML, jurisdiction filters) are included. **NOT included:** ISO 27001 / SOC 2 prep, bespoke vendor risk pack, regulator-grade audit reporting, per-jurisdiction compliance documentation. Buyers needing enterprise compliance integration → custom-build at $50k+.
 - **Closing reframe:** *"They license you their platform — you keep paying forever. We build yours, you own it, and we walk away."*
-- **Discovery channel:** SEO landing page → discovery call (organic search + AI search engines). For WL1 (RWA white-label) only, LinkedIn is a secondary amplification channel because RWA Felix lives on LinkedIn.
+- **Discovery channel:** SEO landing page → discovery call (organic search + AI search engines). For WL-1 (RWA white-label) only, LinkedIn is a secondary amplification channel because RWA Felix lives on LinkedIn.
 
 > [!IMPORTANT] One product across both ICPs
 > WL is now a single offering at a single price band. There is no Track A WL vs Track B WL distinction. A crypto-native protocol founder and a licensed WealthTech CTO buy from the same $20k+ product line. The article copy serves both audiences in one piece. The split CTA footer disappears — there's only one CTA (book a discovery call).
@@ -767,38 +780,38 @@ Target: WealthTech, LendTech, RegTech, BankTech companies deploying AI for credi
 
 | ID | Vertical | Smart Contract Layer | UI Layer | Primary SEO Keywords |
 |---|---|---|---|---|
-| WL1 | RWA Tokenization (A1 + B1) | Audited ERC-3643 / fractional / asset-class contracts + oracle wiring + KYC/AML hooks | Issuer dashboard, investor portal, KYC/AML flow, admin panel | `white-label RWA tokenization platform`, `white-label STO platform`, `white-label tokenization platform` |
-| WL2 | DEX / On-Chain Trading (A2 + B2) | Audited AMM / order book / liquidity pool / oracle integration + travel rule hooks | Trading UI, wallet connect, listing/admin console | `white-label DEX`, `white-label crypto exchange script`, `white-label crypto exchange platform` |
-| WL3 | DeFi & Digital Lending (A3 + B3) | Audited lending / yield / vault / liquidation contracts + credit assessment hooks | Lender + borrower dashboard, position manager, admin | `white-label DeFi lending platform`, `white-label digital lending platform`, `white-label yield protocol` |
-| WL4 | Crypto Wallet (A4 + B4) | Audited MPC key management + multi-chain integration + stablecoin settlement contracts | Mobile + web wallet UI, send/receive/swap, transaction history | `white-label crypto wallet`, `white-label MPC wallet`, `white-label stablecoin wallet` |
-| WL5 | NFT Platform (A5) | Audited ERC-721/1155 + sale + royalty contracts | Marketplace storefront, creator dashboard, mint UI | `white-label NFT marketplace` |
-| WL6 | Token Launch / IDO (A6) | Audited vesting + sale + whitelist + airdrop contracts | Sale UI, whitelist management, vesting dashboard | `white-label IDO launchpad`, `white-label token launch platform` |
-| **WL-TCO** | Cross-vertical (category analysis) | — | — | `white-label vs saas tokenization`, `crypto platform total cost of ownership`, `own vs license crypto platform`, `productized blockchain platform tco` |
+| WL-1 | RWA Tokenization (A1 + B1) | Audited ERC-3643 / fractional / asset-class contracts + oracle wiring + KYC/AML hooks | Issuer dashboard, investor portal, KYC/AML flow, admin panel | `white-label RWA tokenization platform`, `white-label STO platform`, `white-label tokenization platform` |
+| WL-2 | DEX / On-Chain Trading (A2 + B2) | Audited AMM / order book / liquidity pool / oracle integration + travel rule hooks | Trading UI, wallet connect, listing/admin console | `white-label DEX`, `white-label crypto exchange script`, `white-label crypto exchange platform` |
+| WL-3 | DeFi & Digital Lending (A3 + B3) | Audited lending / yield / vault / liquidation contracts + credit assessment hooks | Lender + borrower dashboard, position manager, admin | `white-label DeFi lending platform`, `white-label digital lending platform`, `white-label yield protocol` |
+| WL-4 | Crypto Wallet (A4 + B4) | Audited MPC key management + multi-chain integration + stablecoin settlement contracts | Mobile + web wallet UI, send/receive/swap, transaction history | `white-label crypto wallet`, `white-label MPC wallet`, `white-label stablecoin wallet` |
+| WL-5 | NFT Platform (A5) | Audited ERC-721/1155 + sale + royalty contracts | Marketplace storefront, creator dashboard, mint UI | `white-label NFT marketplace` |
+| WL-6 | Token Launch / IDO (A6) | Audited vesting + sale + whitelist + airdrop contracts | Sale UI, whitelist management, vesting dashboard | `white-label IDO launchpad`, `white-label token launch platform` |
+| **WL-0** | Cross-vertical (category analysis) | — | — | `white-label vs saas tokenization`, `crypto platform total cost of ownership`, `own vs license crypto platform`, `productized blockchain platform tco` |
 
 > [!INFO] Vertical consolidations
-> - Old CN-WL1 + FT-WL1 (RWA) → merged into **WL1**
-> - Old CN-WL2 + FT-WL2 (DEX/CEX) → merged into **WL2**
-> - Old CN-WL3 + FT-WL4 (lending) → merged into **WL3**
-> - Old CN-WL4 + FT-WL3 (wallet) → merged into **WL4**
-> - Old CN-WL5 (NFT) → kept as **WL5** (no FT equivalent existed)
-> - Old CN-WL6 (IDO) → kept as **WL6** (no FT equivalent existed)
-> - Old FT-WL5 (cross-vertical custody) → folded into **WL4** as a custody feature section
-> - Old CN-WL-TCO + FT-WL6 → merged into **WL-TCO** (presents both TCO models — with and without regulator overhead — as a tier comparison)
+> - Old CN-WL1 + FT-WL1 (RWA) → merged into **WL-1**
+> - Old CN-WL2 + FT-WL2 (DEX/CEX) → merged into **WL-2**
+> - Old CN-WL3 + FT-WL4 (lending) → merged into **WL-3**
+> - Old CN-WL4 + FT-WL3 (wallet) → merged into **WL-4**
+> - Old CN-WL5 (NFT) → kept as **WL-5** (no FT equivalent existed)
+> - Old CN-WL6 (IDO) → kept as **WL-6** (no FT equivalent existed)
+> - Old FT-WL5 (cross-vertical custody) → folded into **WL-4** as a custody feature section
+> - Old CN-WL-TCO + FT-WL6 → merged into **WL-0** (presents both TCO models — with and without regulator overhead — as a tier comparison)
 
 ### WL Article Roster (Unified, 7 articles)
 
-| ID | Title | Track | Vertical | Gate | Score |
-|---|---|---|---|---|---|
-| **WL-TCO** | Own vs. License: The 5-Year TCO of Productized Crypto Platforms vs. SaaS Vendors | Both | Cross-vertical | None (category analysis) | **9.1** |
-| WL1 | White-Label RWA Tokenization Platform: Audited Smart Contracts, Issuer Dashboard, and Investor Portal | Both | RWA (A1 + B1) | Reference build required | **9.0** |
-| WL2 | White-Label DEX & Crypto Exchange Platform: From AMM to Admin Console | Both | DEX (A2 + B2) | Reference build required | **8.8** |
-| WL3 | White-Label DeFi & Digital Lending Platform: Lending Engine, Liquidations, and Borrower UI | Both | Lending (A3 + B3) | Reference build required | **8.5** |
-| WL4 | White-Label Crypto Wallet: MPC Key Management, Multi-Chain Integration, and Mobile UI | Both | Wallet (A4 + B4) | Reference build required | **8.5** |
-| WL5 | White-Label NFT Marketplace Platform: Mint, Trade, and Creator Tools | Both | NFT (A5) | Reference build required | **8.3** |
-| WL6 | White-Label IDO Launchpad Platform: Sale UI, Vesting, and Whitelist Management | Both | Token Launch (A6) | Reference build required | **8.4** |
+| ID | Title | Track | Vertical | Stage | Gate | Score |
+|---|---|---|---|---|---|---|
+| **WL-0** | Own vs. License: The 5-Year TCO of Productized Crypto Platforms vs. SaaS Vendors | Both | Cross-vertical | Awareness + Consideration | None (category analysis) | **9.1** |
+| WL-1 | White-Label RWA Tokenization Platform: Audited Smart Contracts, Issuer Dashboard, and Investor Portal | Both | RWA (A1 + B1) | Decision | ✅ Cleared (2026-05-14) | **9.0** |
+| WL-2 | White-Label DEX & Crypto Exchange Platform: From AMM to Admin Console | Both | DEX (A2 + B2) | Decision | ✅ Cleared (2026-05-14) | **8.8** |
+| WL-3 | White-Label DeFi & Digital Lending Platform: Lending Engine, Liquidations, and Borrower UI | Both | Lending (A3 + B3) | Decision | ✅ Cleared (2026-05-14) | **8.5** |
+| WL-4 | White-Label Crypto Wallet: MPC Key Management, Multi-Chain Integration, and Mobile UI | Both | Wallet (A4 + B4) | Decision | ✅ Cleared (2026-05-14) | **8.5** |
+| WL-6 | White-Label IDO Launchpad Platform: Sale UI, Vesting, and Whitelist Management | Both | Token Launch (A6) | Decision | ✅ Cleared (2026-05-14) | **8.4** |
+| WL-5 | White-Label NFT Marketplace Platform: Mint, Trade, and Creator Tools | Both | NFT (A5) | Decision | ✅ Cleared (2026-05-14) | **8.3** |
 
-> [!TIP] WL-TCO ships first (Phase 0)
-> WL-TCO is exempt from the reference-build gate (category analysis, no product screenshots). It frames the entire motion conceptually: ownership vs. license, with both regulated and non-regulated TCO calculations side-by-side. Publish first as the entry-point content that converts SEO traffic across all verticals.
+> [!TIP] WL-0 ships first (Phase 0)
+> WL-0 is exempt from the reference-build gate (category analysis, no product screenshots). It frames the entire motion conceptually: ownership vs. license, with both regulated and non-regulated TCO calculations side-by-side. Publish first as the entry-point content that converts SEO traffic across all verticals.
 
 > [!WARNING] Reference Build Hard Gate (unchanged structurally)
 > Do not publish a vertical's WL landing page or article until ≥1 reference build exists with shippable screenshots. Acceptable sources: (a) InnBlockchain-built internal MVP branded as generic demo, or (b) delivered client deployment with screenshot rights or anonymised UI. **Mockups, lorem-ipsum dashboards, AI-generated UI screenshots fail evaluator scrutiny within minutes.** Compliance documentation pack is NO LONGER part of the WL gate — it's a custom-build artifact now.
@@ -819,7 +832,7 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 **Buyers asking about compliance integration:** This is the routing signal to escalate to custom-build qualification. Do NOT bolt compliance integration onto WL at $20k+ — that's how margin gets crushed and Carol-grade documentation gets shortchanged. Custom-build at $50k+ is the right home for buyers who need enterprise compliance documentation.
 
 ### WL Validation Plan
-- **[By 2026-06-30 · Owner: Marketing + Sales]** Identify 1–2 verticals that can produce a reference build within 60 days (internal MVP or friendly first client with screenshot rights). Publish WL landing pages and articles for those verticals only.
+- **[✅ Done — 2026-05-14]** Reference build available. WL-1 through WL-6 unblocked. All WL articles active in Priority Content Plan (WL-0 = Phase 0; WL-1 = #22 in Phase 1; WL-2 through WL-6 = #52–#56 in Phase 2). Publish WL landing pages and articles now.
 - **[By 2026-09-30 · Owner: Marketing]** Track WL inbound attribution separately from custom-build outbound. Confirm SEO-driven WL inbound at $20k+ converts at acceptable margin given delivery cost (target: ≥40% gross margin per WL engagement; at $20k floor, this requires tight scope discipline — flag any WL deal scoped at the $20k floor that exceeds 6 weeks of effort).
 - **[Ongoing · Owner: Sales]** EU 5-project geography gate applies even for WL inbound — do not relax.
 - **[Ongoing · Owner: Sales Lead]** Track WL → custom-build upsell rate. Compliance-integration inquiries should convert to custom-build at $50k+ at ≥30% rate; if lower, the routing message in the WL article isn't surfacing the upsell path clearly.
@@ -830,56 +843,70 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 
 > Scored on Customer Impact (40%) · Content-Market Fit (30%) · Search Potential (20%) · Resources (10%). ICP segment priority weighted into Customer Impact.
 
+### Phase 0 — Ship First (No Gate)
+
+> WL-0 has no reference-build gate — it is a category-level TCO analysis that ships before everything else. Publish concurrently with or before Phase 1 Step 1. Serves both tracks from one article.
+
+| # | Title | Track | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| WL-0 | Own vs. License: The 5-Year TCO of Productized Crypto Platforms vs. SaaS Vendors | Both | Awareness + Consideration | RWA Felix + WealthTech CEO/CPO + Technical Founder | **9.1** |
+
 ### Track A — Phase 1: RWA + EU Compliance *(Complete First — Do Not Start Phase 2)*
 
 > RWA is the highest GTM priority. EU compliance (MiCA) is the first cross-cutting theme within Phase 1. Concentrated authority before spreading attention to other verticals.
 
 > [!TIP] Distribution Channel Tagging Within Phase 1
-> - **[LinkedIn + SEO]** — Plain-language, asset-first articles for RWA Felix (non-technical asset owners). Distribute as LinkedIn articles into EU PropTech, RWA Summit, real estate investment, commodity trade finance communities. Articles: #4, #8, #9, #10, #11, #12, #13, #14, #15.
+> - **[LinkedIn + SEO]** — Plain-language, asset-first articles for RWA Felix (non-technical asset owners). Distribute as LinkedIn articles into EU PropTech, RWA Summit, real estate investment, commodity trade finance communities. All TOFU articles (#1–5); Legal-Technical Interface (#10); all Asset-Class Deep Dives (#15–19); Custom Build vs. Securitize (#20); Audit Checklist (#21); WL-1 White-Label RWA (#22).
 > - **[SEO + X]** — Technical articles for Founding Felix (DeFi/Protocol CTO), Product Paulo, Security Sasha. Default for all other Phase 1 articles.
 
-**Step 1 — Foundation**
+**Step 1 — TOFU (Foundation & Awareness)**
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 1 | How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and MiCA Compliance *(hub)* | A1 | Awareness + Consideration | RWA Felix / Technical Founder | **9.7** |
-| 2 | MiCA Compliance for RWA Tokenization Platforms: What EU Smart Contract Requirements Mean for Your Build | A1 + P5 | Awareness + Consideration | RWA Felix | **9.6** |
-| 3 | MiCA Explained: What the EU's Crypto Framework Means for Your Business `[Both]` *(retagged from CN; serves both tracks at awareness)* | P5 | Awareness | Technical Founder + WealthTech CEO/CTO | **9.5** |
-| 4 | What Is Asset Tokenization? A Plain-English Guide `[Both]` *(merged from CN "RWA Tokenization 101" + FT "What Is Asset Tokenization? Plain-English Guide for FinTech Founders"; split CTA footer)* | A1 + B1 | Awareness | RWA Felix + WealthTech CEO/CPO | **9.4** |
+| 1 | What Is Asset Tokenization? A Plain-English Guide `[Both]` *(merged from CN/FT awareness — split CTA footer; distributed via LinkedIn for RWA Felix + WealthTech Sam)* | A1 + B1 | Awareness | RWA Felix + WealthTech CEO/CPO | **9.4** |
+| 2 | How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and MiCA Compliance *(hub)* | A1 | Awareness + Consideration | RWA Felix / Technical Founder | **9.7** |
+| 3 | MiCA Explained: What the EU's Crypto Framework Means for Your Business `[Both]` *(serves both tracks at awareness)* | P5 | Awareness | Technical Founder + WealthTech CEO/CTO | **9.5** |
+| 4 | MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 | A1 TOFU | Awareness + Consideration | RWA Felix + WealthTech CTO | **9.1** |
+| 5 | [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention | A1 TOFU | Awareness | RWA Felix / Technical Founder | **8.8** |
 
-**Step 2 — Technical Architecture**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 5 | ERC-3643 vs. ERC-1400 vs. ERC-20: Choosing the Right Token Standard for Your RWA Platform | A1 | Consideration | RWA Felix / Technical Founder | **9.3** |
-| 6 | Oracle Design for Real-World Assets: How to Bring Off-Chain Valuations On-Chain Without Manipulation Risk | A1 | Consideration | Technical Founder / RWA Felix | **9.2** |
-| 7 | Investor Whitelisting On-Chain: How to Build KYC-Compliant Token Access Without Centralisation | A1 + P5 | Consideration + Decision | RWA Felix / Technical Founder | **9.1** |
-| 8 | The Legal-Technical Interface in RWA Tokenization: What Smart Contracts Can and Cannot Enforce | A1 | Consideration | RWA Felix | **9.0** |
-| 9 | Custom Build vs. Securitize / Tokeny / Polymath: When You Need Your Own RWA Smart Contract Infrastructure | A1 | Decision | RWA Felix / Technical Founder | **8.9** |
-
-**Step 3 — Asset-Class Deep Dives**
+**Step 2 — MOFU (Technical Architecture)**
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 10 | Fractional Real Estate Tokenization: Smart Contract Architecture for Property Fractionalization and Compliant Issuance | A1 | Consideration | RWA Felix (real estate) | **9.0** |
-| 11 | Vehicle Fleet Tokenization: Smart Contract Architecture for Asset Fractionalization and Fractional Ownership | A1 | Consideration | RWA Felix (vehicles) | **8.7** |
-| 12 | Commodity Tokenization: On-Chain Representation of Gold, Oil, and Agricultural Assets | A1 | Consideration | RWA Felix (commodities) | **8.7** |
-| 13 | Private Credit On-Chain: How RWA Lending Protocols Tokenize Off-Chain Debt and Enforce Repayment | A1 | Consideration | Technical Founder / RWA Felix | **8.6** |
-| 14 | Art and Collectibles Tokenization: How On-Chain Title Transfer Works and Where It Can Fail | A1 | Consideration | RWA Felix (art/collectibles) | **8.5** |
+| 6 | MiCA Compliance for RWA Tokenization Platforms: What EU Smart Contract Requirements Mean for Your Build | A1 + P5 | Consideration | RWA Felix | **9.6** |
+| 7 | ERC-3643 vs. ERC-1400 vs. ERC-20: Choosing the Right Token Standard for Your RWA Platform | A1 | Consideration | RWA Felix / Technical Founder | **9.3** |
+| 8 | Oracle Design for Real-World Assets: How to Bring Off-Chain Valuations On-Chain Without Manipulation Risk | A1 | Consideration | Technical Founder / RWA Felix | **9.2** |
+| 9 | Investor Whitelisting On-Chain: How to Build KYC-Compliant Token Access Without Centralisation | A1 + P5 | Consideration + Decision | RWA Felix / Technical Founder | **9.1** |
+| 10 | The Legal-Technical Interface in RWA Tokenization: What Smart Contracts Can and Cannot Enforce | A1 | Consideration | RWA Felix | **9.0** |
 
-**Step 4 — Security, Audit & Compliance**
+**Step 3 — MOFU (Compliance Depth)**
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 15 | Smart Contract Audit Checklist for RWA Tokenization Platforms: What Auditors Flag Before Investor Onboarding 🎯 | A1 + P1 | Decision | RWA Felix / Technical Founder | **9.2** |
-| 16 | MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce | P5 | Decision | Technical Founder | **9.0** |
-| 17 | [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention | A1 | Awareness + Consideration | RWA Felix / Technical Founder | **8.8** |
-| 18 | MiCA Compliance Checklist for Crypto-Native Startups: What to Address Before Your Token Issuance | P5 | Decision | Technical Founder | **8.7** |
-| 19 | MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 | A1 EU Compliance | Awareness + Consideration | RWA Felix + WealthTech CTO | **9.1** |
-| 20 | AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, and Cross-Border Asset Due Diligence 🇪🇺 | A1 EU Compliance | Consideration | RWA Felix | **8.9** |
-| 21 | EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI `[Both]` 🇪🇺 | A1 EU Compliance | Consideration | RWA Felix / Technical Founder | **8.8** |
+| 11 | MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce | P5 | Consideration | Technical Founder | **9.0** |
+| 12 | AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, and Cross-Border Asset Due Diligence 🇪🇺 | A1 | Consideration | RWA Felix | **8.9** |
+| 13 | EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI `[Both]` 🇪🇺 | A1 | Consideration | RWA Felix / Technical Founder | **8.8** |
+| 14 | MiCA Compliance Checklist for Crypto-Native Startups: What to Address Before Your Token Issuance | P5 | Decision | Technical Founder | **8.7** |
 
-**Step 5 — Decision & Post-Launch** *(gate-dependent — publish after Step 4 complete and reference build available)*
+**Step 4 — MOFU (Asset-Class Deep Dives)**
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| 15 | Fractional Real Estate Tokenization: Smart Contract Architecture for Property Fractionalization and Compliant Issuance | A1 | Consideration | RWA Felix (real estate) | **9.0** |
+| 16 | Vehicle Fleet Tokenization: Smart Contract Architecture for Asset Fractionalization and Fractional Ownership | A1 | Consideration | RWA Felix (vehicles) | **8.7** |
+| 17 | Commodity Tokenization: On-Chain Representation of Gold, Oil, and Agricultural Assets | A1 | Consideration | RWA Felix (commodities) | **8.7** |
+| 18 | Private Credit On-Chain: How RWA Lending Protocols Tokenize Off-Chain Debt and Enforce Repayment | A1 | Consideration | Technical Founder / RWA Felix | **8.6** |
+| 19 | Art and Collectibles Tokenization: How On-Chain Title Transfer Works and Where It Can Fail | A1 | Consideration | RWA Felix (art/collectibles) | **8.5** |
+
+**Step 5 — BOFU (Decision)**
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| 20 | Custom Build vs. Securitize / Tokeny / Polymath: When You Need Your Own RWA Smart Contract Infrastructure | A1 | Decision | RWA Felix / Technical Founder | **8.9** |
+| 21 | Smart Contract Audit Checklist for RWA Tokenization Platforms: What Auditors Flag Before Investor Onboarding 🎯 | A1 + P1 | Decision | RWA Felix / Technical Founder | **9.2** |
+| 22 | WL-1: White-Label RWA Tokenization Platform: Audited Smart Contracts, Issuer Dashboard, and Investor Portal | WL (A1 + B1) | Decision | RWA Felix + WealthTech CEO/CPO | **9.0** |
+
+**Step 6 — BOFU (Decision, gated) + Post-Launch** *(gate-dependent — publish after Step 5 complete and reference build available)*
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
@@ -888,121 +915,115 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 
 ### Track A — Phase 2: Other Active Verticals *(Start After Phase 1 Complete)*
 
-> Two exceptions to the Phase 1 lock: (1) AI-coded contract audit overlay article — activates immediately on any active segment deal; (2) Motion 3 White-Label articles (WL1–WL6 + WL-TCO) — separate motion, separate publish gates.
+> One exception to the Phase 1 lock: AI-coded contract audit overlay article — activates immediately on any active segment deal regardless of phase. WL-0 already shipped in Phase 0; WL-1 is in Phase 1 BOFU (#22); WL-2 through WL-6 are appended to Phase 2 (#52–#56).
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 19 | [POST-MORTEM Series] How [DeFi Exploit] Happened — Root Cause and Prevention | A3 | Awareness + Consideration | CTO / Head of Eng | **9.5** |
-| 20 | How to Build a Secure DEX: From AMM Design to Audit-Ready Deployment | A2 | Consideration + Decision | Technical Founder / CTO | **9.3** |
-| 21 | How to Prepare Your Protocol for a Smart Contract Audit: 30-Day Pre-Audit Checklist | P1 | Decision | CTO / Head of Eng | **9.2** |
-| — | 🎬 [CASE STUDY] Audit-Ready in 30 Days: How [Protocol] Secured Mainnet | P1 | Decision | CTO / Head of Eng | **9.1** |
+| 23 | [POST-MORTEM Series] How [DeFi Exploit] Happened — Root Cause and Prevention | A3 | Awareness + Consideration | CTO / Head of Eng | **9.5** || 24 | How to Build a Secure DEX: From AMM Design to Audit-Ready Deployment | A2 | Consideration + Decision | Technical Founder / CTO | **9.3** || 25 | How to Prepare Your Protocol for a Smart Contract Audit: 30-Day Pre-Audit Checklist | P1 | Decision | CTO / Head of Eng | **9.2** || — | 🎬 [CASE STUDY] Audit-Ready in 30 Days: How [Protocol] Secured Mainnet | P1 | Decision | CTO / Head of Eng | **9.1** |
 | — | 💼 How We Cut Smart Contract Audit Prep Time from 6 Weeks to 2: A Protocol Team's Playbook *(Paulo → Felix champion piece)* | P4 | Decision | Product Paulo → Founding Felix | **8.8** |
 | — | 🤖 Why Your AI-Written Smart Contracts Need a Human Audit: What Cursor, Copilot, and ChatGPT Miss in Solidity *(cross-segment overlay — no Phase 1 gate)* | P1 + A10 overlay | Awareness | Technical Founder / CTO (all segments) | **8.7** |
-| 22 | Reentrancy Attacks in Lending Protocols: Why They Still Happen and How to Stop Them | A3 | Awareness + Consideration | Technical Founder | **9.0** |
-| 23 | Flash Loan Attack Prevention: How DEXes and Lending Protocols Get Drained | A2 + A3 | Consideration | CTO | **8.9** |
-| 24 | IDO Launchpad Architecture: How Token Sale Platforms Get Exploited — and How to Prevent It | A6 | Awareness + Consideration | Technical Founder / CTO | **8.9** |
-| 25 | Building a Secure DeFi Lending Protocol: Architecture, Liquidations, and Audit Readiness | A3 | Consideration + Decision | Technical Founder / CTO | **8.8** |
-| 26 | How to Build a Secure NFT Platform: From Minting Contracts to Marketplace Architecture | A5 | Consideration + Decision | Technical Founder / CTO | **8.8** |
-| 27 | MPC vs. Multisig vs. Smart Contract Wallets: Architecture Comparison for Builders | A4 | Consideration | CTO / Head of Eng | **8.7** |
-| 28 | Smart Contract Exploit Prevention Checklist: 20 Vulnerabilities to Fix Before Your Audit 🎯 | P1 | Decision | CTO / VP Eng | **8.6** |
-| 29 | Token Vesting Contracts: On-Chain Cliff, Linear, and Milestone Schedules Explained | A6 | Consideration | CTO / Head of Eng | **8.6** |
-| 30 | NFT Minting Contract Security: What Auditors Flag Before a Launch Goes Live | A5 | Decision | CTO / Head of Eng | **8.5** |
-| — | Foundry vs. Hardhat vs. Anchor: Choosing the Right Testing Framework for Your Stack | P4 | Consideration | Head of Eng | **8.5** |
-| 31 | AMM Design Patterns Compared: Constant Product (Uniswap v2) vs. Concentrated Liquidity (v3) vs. Curve-Style | A2 | Consideration | Technical Founder | **8.5** |
-| 32 | Price Oracle Security: How Oracle Manipulation Exploits Work | A2 + A3 | Awareness + Consideration | CTO | **8.4** |
-| 33 | Smart Contract Audit Checklist for Token Sales: What to Fix Before You Go Live | A6 | Decision | CTO / VP Eng | **8.4** |
-| 34 | Fair Launch vs. VC Launch: The Post-Pump.fun Tokenomics Debate | A6 | Awareness | Technical Founder | **8.3** |
-| 35 | Building a Production-Ready Non-Custodial Wallet: MPC, Key Management, and Security | A4 | Consideration + Decision | CTO | **8.3** |
-| 36 | How to Choose a Smart Contract Audit Firm: 8 Questions to Ask Before Signing | P1 | Decision | Technical Founder / CTO | **8.2** |
-| — | 🔑 How InnBlockchain Categorizes Smart Contract Findings: Our Severity Framework Explained *(Sasha trust-building)* | P1 | Decision | Security Sasha | **8.3** |
+| 26 | Reentrancy Attacks in Lending Protocols: Why They Still Happen and How to Stop Them | A3 | Awareness + Consideration | Technical Founder | **9.0** || 27 | Flash Loan Attack Prevention: How DEXes and Lending Protocols Get Drained | A2 + A3 | Consideration | CTO | **8.9** || 28 | IDO Launchpad Architecture: How Token Sale Platforms Get Exploited — and How to Prevent It | A6 | Awareness + Consideration | Technical Founder / CTO | **8.9** || 29 | Building a Secure DeFi Lending Protocol: Architecture, Liquidations, and Audit Readiness | A3 | Consideration + Decision | Technical Founder / CTO | **8.8** || 30 | How to Build a Secure NFT Platform: From Minting Contracts to Marketplace Architecture | A5 | Consideration + Decision | Technical Founder / CTO | **8.8** || 31 | MPC vs. Multisig vs. Smart Contract Wallets: Architecture Comparison for Builders | A4 | Consideration | CTO / Head of Eng | **8.7** || 32 | Smart Contract Exploit Prevention Checklist: 20 Vulnerabilities to Fix Before Your Audit 🎯 | P1 | Decision | CTO / VP Eng | **8.6** || 33 | Token Vesting Contracts: On-Chain Cliff, Linear, and Milestone Schedules Explained | A6 | Consideration | CTO / Head of Eng | **8.6** || 34 | NFT Minting Contract Security: What Auditors Flag Before a Launch Goes Live | A5 | Decision | CTO / Head of Eng | **8.5** || — | Foundry vs. Hardhat vs. Anchor: Choosing the Right Testing Framework for Your Stack | P4 | Consideration | Head of Eng | **8.5** |
+| 35 | AMM Design Patterns Compared: Constant Product (Uniswap v2) vs. Concentrated Liquidity (v3) vs. Curve-Style | A2 | Consideration | Technical Founder | **8.5** || 36 | Price Oracle Security: How Oracle Manipulation Exploits Work | A2 + A3 | Awareness + Consideration | CTO | **8.4** || 37 | Smart Contract Audit Checklist for Token Sales: What to Fix Before You Go Live | A6 | Decision | CTO / VP Eng | **8.4** || 38 | Fair Launch vs. VC Launch: The Post-Pump.fun Tokenomics Debate | A6 | Awareness | Technical Founder | **8.3** || 39 | Building a Production-Ready Non-Custodial Wallet: MPC, Key Management, and Security | A4 | Consideration + Decision | CTO | **8.3** || 40 | How to Choose a Smart Contract Audit Firm: 8 Questions to Ask Before Signing | P1 | Decision | Technical Founder / CTO | **8.2** || — | 🔑 How InnBlockchain Categorizes Smart Contract Findings: Our Severity Framework Explained *(Sasha trust-building)* | P1 | Decision | Security Sasha | **8.3** |
 | — | 🔑 What to Look for in a Smart Contract Audit Report: A Technical Evaluation Guide *(Sasha trust-building)* | P1 | Decision | Security Sasha | **8.0** |
-| 37 | The Web3 Talent Shortage: How to Hire Senior Solidity and Rust Engineers for Protocol Teams in 2026 | P4 | Awareness | Technical Founder | **8.0** |
-| 38 | DORA for Protocol Builders: What On-Chain Systems Must Implement to Meet EU Operational Resilience Requirements | P5 | Consideration | Technical Founder / CTO | **8.0** |
-| 39 | ERC-721 vs. ERC-1155 vs. ERC-404: Choosing the Right NFT Standard | A5 | Consideration | Technical Founder | **7.9** |
-| 40 | Yield Vault Security: How ERC-4626 Vaults Get Exploited | A3 | Consideration | Head of Eng | **7.9** |
-| 41 | Travel Rule Compliance for DeFi Protocols: Technical Smart Contract Implementation for EU-Registered On-Chain Systems | P5 | Consideration | Technical Founder / CTO | **7.9** |
-| 42 | ZK Proofs for Protocol Builders: When You Need Them and When You Don't | P3 | Awareness | Technical Founder | **7.8** |
-| 43 | KYC/AML On-Chain: How EU Crypto Companies Build Compliant Smart Contract Access Infrastructure | P5 | Consideration | Technical Founder / RWA Felix | **7.8** |
-| 44 | Uniswap v4 Hooks: What They Are and How to Build Custom Pool Logic | A2 | Consideration | Head of Eng | **7.7** |
-| 45 | Invariant Testing with Foundry: How to Find Bugs Before Auditors Do | P2 | Consideration | Head of Eng | **7.7** |
-| 46 | EU Stablecoin Regulation Under MiCA: What Protocol Builders and DeFi Teams Need to Know | P5 | Awareness + Consideration | Technical Founder | **7.7** |
-| 47 | Airdrop Contract Security: How Sybil Attacks Drain Claim Contracts | A6 | Consideration | CTO | **7.6** |
+| 41 | The Web3 Talent Shortage: How to Hire Senior Solidity and Rust Engineers for Protocol Teams in 2026 | P4 | Awareness | Technical Founder | **8.0** || 42 | DORA for Protocol Builders: What On-Chain Systems Must Implement to Meet EU Operational Resilience Requirements | P5 | Consideration | Technical Founder / CTO | **8.0** || 43 | ERC-721 vs. ERC-1155 vs. ERC-404: Choosing the Right NFT Standard | A5 | Consideration | Technical Founder | **7.9** || 44 | Yield Vault Security: How ERC-4626 Vaults Get Exploited | A3 | Consideration | Head of Eng | **7.9** || 45 | Travel Rule Compliance for DeFi Protocols: Technical Smart Contract Implementation for EU-Registered On-Chain Systems | P5 | Consideration | Technical Founder / CTO | **7.9** || 46 | ZK Proofs for Protocol Builders: When You Need Them and When You Don't | P3 | Awareness | Technical Founder | **7.8** || 47 | KYC/AML On-Chain: How EU Crypto Companies Build Compliant Smart Contract Access Infrastructure | P5 | Consideration | Technical Founder / RWA Felix | **7.8** || 48 | Uniswap v4 Hooks: What They Are and How to Build Custom Pool Logic | A2 | Consideration | Head of Eng | **7.7** || 49 | Invariant Testing with Foundry: How to Find Bugs Before Auditors Do | P2 | Consideration | Head of Eng | **7.7** || 50 | EU Stablecoin Regulation Under MiCA: What Protocol Builders and DeFi Teams Need to Know | P5 | Awareness + Consideration | Technical Founder | **7.7** || 51 | Airdrop Contract Security: How Sybil Attacks Drain Claim Contracts | A6 | Consideration | CTO | **7.6** |
+
+| 52 | WL-2: White-Label DEX & Crypto Exchange Platform: From AMM to Admin Console | WL (A2 + B2) | Decision | Technical Founder / CTO | **8.8** |
+| 53 | WL-3: White-Label DeFi & Digital Lending Platform: Lending Engine, Liquidations, and Borrower UI | WL (A3 + B3) | Decision | CTO | **8.5** |
+| 54 | WL-4: White-Label Crypto Wallet: MPC Key Management, Multi-Chain Integration, and Mobile UI | WL (A4 + B4) | Decision | CTO | **8.5** |
+| 55 | WL-6: White-Label IDO Launchpad Platform: Sale UI, Vesting, and Whitelist Management | WL (A6) | Decision | Technical Founder / CTO | **8.4** |
+| 56 | WL-5: White-Label NFT Marketplace Platform: Mint, Trade, and Creator Tools | WL (A5) | Decision | Technical Founder / CTO | **8.3** |
 
 ### Track A — Phase 3: Watch Segments *(Activate Per Trigger Criteria)*
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 48 | Cross-Chain Bridge Security: Why Bridges Are the Highest-Value Exploit Target | A8 | Awareness | Technical Founder | **7.5** |
-| 49 | Flash Loan Governance Attacks: How Attackers Buy Votes and Drain DAO Treasuries | A7 | Awareness | Technical Founder | **7.3** |
-| 50 | Securing On-Chain AI Agent Protocols: Smart Contract Design for Autonomous Agents that Sign Transactions | A10 | Awareness | Technical Founder / CTO | **7.2** |
-| 51 | In-Game Asset Contracts: How Web3 Game Economies Get Exploited | A9 | Awareness | Technical Founder | **7.0** |
-
+| 57 | Cross-Chain Bridge Security: Why Bridges Are the Highest-Value Exploit Target | A8 | Awareness | Technical Founder | **7.5** || 58 | Flash Loan Governance Attacks: How Attackers Buy Votes and Drain DAO Treasuries | A7 | Awareness | Technical Founder | **7.3** || 59 | Securing On-Chain AI Agent Protocols: Smart Contract Design for Autonomous Agents that Sign Transactions | A10 | Awareness | Technical Founder / CTO | **7.2** || 60 | In-Game Asset Contracts: How Web3 Game Economies Get Exploited | A9 | Awareness | Technical Founder | **7.0** |
 ### Track B — Active Segments
 
 **B1 WealthTech / RWA Tokenization** ⭐ *Primary Focus Q2 2026*
 
+> [!NOTE] Publish sequence: Hub first (#1) to anchor the cluster, then TOFU awareness, then MOFU in three blocks, then BOFU. Numbers = publish order. `—` = no separate publish needed (either shared from A1, killed, or hard-gated). **Carol (#18) gates every WealthTech deal — if a live prospect is in pipeline and close to procurement, publish Carol immediately without waiting for the full MOFU sequence.**
+
+**TOFU — Awareness**
+
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| — | What Is Asset Tokenization? A Plain-English Guide `[Both]` *(merged — distributed cross-track from Track A Phase 1)* | A1 + B1 | Awareness | RWA Felix + WealthTech CEO/CPO | **9.4** |
-| 1 | RWA Tokenization for Licensed Asset Managers: A Build Decision Guide for WealthTech CTOs *(B1 hub — renamed to escape "rwa tokenization platform" generic SERP)* | B1 (Hub) | Consideration + Decision | CEO / CPO | **9.2** |
-| 2 | The Tech Stack Behind an RWA Tokenization Platform | B1 | Consideration | CTO | **9.0** |
-| 3 | Real Estate Tokenization for Licensed Asset Managers: MiFID II Classification and Compliant Issuance *(renamed to escape "how to tokenize real estate" SERP — claimed by Track A A1 #10)* | B1 | Consideration | CEO / CPO | **8.9** |
-| — | Security Token Offerings (STOs) vs. ICOs: What FinTech SMBs Need to Know **KILLED** — redundant with STOs Under MiCA below; ICOs are deprecated | — | — | — | — |
-| 4 | STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.7** |
-| 5 | MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.6** |
-| 6 | MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.5** |
-| 7 | RWA Tokenization: Build vs. Buy vs. Partner 🎯 *(Lead Magnet)* | B1 | Decision | CEO / CPO | **8.5** |
-| 8 | Tokenization and Liquidity: How Fractional Ownership Unlocks Capital for WealthTechs | B1 | Awareness + Consideration | CEO / CPO | **8.4** |
-| 9 | Utility NFTs in FinTech: How NFTs Map to Real-World Assets *(watch-candidate — NFT-for-RWA framing duplicates RWA cluster core message; ERC-3643 has largely replaced ad-hoc NFT patterns. Consider folding into hub or killing.)* | B1 | Awareness + Consideration | CEO / CPO | **8.4** |
-| 10 | T+0 Settlement on Blockchain: How Real-Time Clearing Is Replacing T+2 | B1 | Awareness + Consideration | CEO / CFO | **8.3** |
-| 11 | Tokenizing Invoices and Receivables: How It Works and Who It's For | B1 | Consideration | CEO / CFO | **8.3** |
-| 12 | Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs | B1 | Awareness + Consideration | CEO / CPO | **8.3** |
-| — | 🎬 [CASE STUDY] WealthTech / RWA Platform Build | B1 | Decision | CEO / CPO | **8.3** |
-| 13 | DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.2** |
-| 14 | What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 | B1 | Decision | CCO (Carol) | **9.0** *(Carol gates every B1 deal — highest-priority new addition)* |
-| 15 | ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 | B1 | Consideration | CTO / CCO | **8.8** |
-| 16 | DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.6** |
-| 17 | AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 | B1 | Consideration | CTO / CCO | **8.5** |
-| — | *(EU AI Act for tokenized asset platforms: `[Both]` article — see A1 Phase 1 #21; split CTA footer serves B1 buyers)* | A1 + B1 | Consideration | CTO | **8.8** |
-| — | Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(watch-candidate — news-cycle dependent (BUIDL/Ondo hype); kill if no inbound in 90 days)* | B1 | Awareness + Consideration | CEO / CFO | **8.1** |
+| — | What Is Asset Tokenization? A Plain-English Guide `[Both]` *(published as A1 Step 1 #1 — no separate B1 publish)* | A1 + B1 | Awareness | RWA Felix + WealthTech CEO/CPO | **9.4** |
+| 1 | RWA Tokenization for Licensed Asset Managers: A Build Decision Guide for WealthTech CTOs *(B1 hub — publishes first; renamed to escape "rwa tokenization platform" SERP claimed by A1)* | B1 Hub | Consideration + Decision | CEO / CPO | **9.2** |
+| 2 | Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs | B1 | Awareness | CEO / CPO | **8.3** |
+| 3 | T+0 Settlement on Blockchain: How Real-Time Clearing Is Replacing T+2 | B1 | Awareness | CEO / CFO | **8.3** |
+| 4 | Utility NFTs in FinTech: How NFTs Map to Real-World Assets *(watch-candidate — NFT-for-RWA framing duplicates RWA cluster core message; ERC-3643 has largely replaced ad-hoc NFT patterns; kill if no inbound in 90 days)* | B1 | Awareness | CEO / CPO | **8.4** |
+
+**MOFU — Platform Architecture**
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| 5 | The Tech Stack Behind an RWA Tokenization Platform | B1 | Consideration | CTO | **9.0** |
+| 6 | Tokenization and Liquidity: How Fractional Ownership Unlocks Capital for WealthTechs | B1 | Consideration | CEO / CPO | **8.4** |
+| 7 | Blockchain for Treasury Tokenization: Turning Corporate Assets Into Liquid Instruments | B1 | Consideration | CEO / CFO | **8.3** |
+| 8 | Tokenizing Invoices and Receivables: How It Works and Who It's For | B1 | Consideration | CEO / CFO | **8.3** |
+
+**MOFU — Asset Classes**
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| 9 | Real Estate Tokenization for Licensed Asset Managers: MiFID II Classification and Compliant Issuance *(renamed to escape "how to tokenize real estate" SERP — claimed by A1 #15)* | B1 | Consideration | CEO / CPO | **8.9** |
+| 10 | STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.7** |
+| — | *(KILLED: "Security Token Offerings (STOs) vs. ICOs" — redundant with #10; ICOs are deprecated)* | — | — | — | — |
+| 11 | Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(watch-candidate, news-cycle dependent; kill if no inbound in 90 days)* | B1 | Consideration | CEO / CFO | **8.1** |
+
+**MOFU — Compliance Depth**
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| 12 | ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 | B1 | Consideration | CTO / CCO | **8.8** |
+| 13 | MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.6** |
+| 14 | DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.6** |
+| 15 | AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 | B1 | Consideration | CTO / CCO | **8.5** |
+| 16 | MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.5** |
+| 17 | DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.2** |
+| — | *(EU AI Act for tokenized asset platforms: `[Both]` article — published as A1 Step 3 #13; split CTA footer serves B1 buyers)* | A1 + B1 | Consideration | CTO | **8.8** |
+| — | *(MiCA vs. MiFID II classification boundary: `[Both]` article — published as A1 Step 1 #4; split CTA footer serves B1 buyers)* | A1 + B1 | Awareness + Consideration | RWA Felix + WealthTech CTO | **9.1** |
+
+**BOFU — Decision**
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| 18 | What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 | B1 | Decision | CCO (Carol) | **9.0** *(Carol gates every B1 deal — publish independently if live deal in pipeline)* |
+| 19 | RWA Tokenization: Build vs. Buy vs. Partner — Decision Framework for WealthTech Leaders 🎯 *(Lead Magnet — routes WL-1 buyers to white-label option)* | B1 | Decision | CEO / CPO | **8.5** |
+| — | 🎬 [CASE STUDY] WealthTech / RWA Platform Build *(hard gate: delivered client deployment required. Primary Decision-stage proof asset for Tom and Sam)* | B1 | Decision | CEO / CPO | **8.3** |
+
+**Post-Launch**
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| — | Expanding Your RWA Platform to New Markets: Regulatory and Technical Readiness *(publish after first client goes live)* | B1 | Post-Launch | CEO / CTO | — |
 
 **B2 Exchange & Trading Infrastructure**
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 15 | How to Build a Regulated Exchange (CEX/DEX/DeFi): The Complete Engineering Guide | B2 | Consideration + Decision | CTO | **9.1** |
-| — | 🎬 [CASE STUDY] Exchange Build: From Whitepaper to Live Trading | B2 | Decision | CTO | **8.9** |
-| 16 | CEX/Exchange Architecture Deep Dive: Matching Engine, Wallet Custody, Fiat On-Ramp | B2 | Consideration | CTO | **8.9** |
-
+| 20 | How to Build a Regulated Exchange (CEX/DEX/DeFi): The Complete Engineering Guide | B2 | Consideration + Decision | CTO | **9.1** || — | 🎬 [CASE STUDY] Exchange Build: From Whitepaper to Live Trading | B2 | Decision | CTO | **8.9** |
+| 21 | CEX/Exchange Architecture Deep Dive: Matching Engine, Wallet Custody, Fiat On-Ramp | B2 | Consideration | CTO | **8.9** |
 **B3 DeFi & Digital Lending / LendTech**
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 17 | Blockchain for Digital Lending: Hub Guide | B3 | Consideration + Decision | CEO / Head of Credit | **8.8** |
-| 18 | Smart Contracts for Loan Origination | B3 | Consideration + Decision | Head of Credit | **8.7** |
-| — | 🎬 [CASE STUDY] DeFi Lending Platform: Before/After Blockchain Integration | B3 | Decision | CEO / CTO | **8.6** |
+| 22 | Blockchain for Digital Lending: Hub Guide | B3 | Consideration + Decision | CEO / Head of Credit | **8.8** || 23 | Smart Contracts for Loan Origination | B3 | Consideration + Decision | Head of Credit | **8.7** || — | 🎬 [CASE STUDY] DeFi Lending Platform: Before/After Blockchain Integration | B3 | Decision | CEO / CTO | **8.6** |
 
 **B4 Digital Wallets & E-Money / WalletTech**
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 19 | How to Add Stablecoin Settlement to Your FinTech Wallet: Architecture & Compliance Guide | B4 | Consideration | CTO | **8.4** |
-| 20 | MiCA and PSD2 Compliance for EU E-Money Wallets Adding Crypto Features 🇪🇺 | B4 | Consideration + Decision | CTO / CCO | **8.3** |
-| — | Embedded Wallets Compared: Privy, Dynamic, Web3Auth — Architecture for Web3 Builders and Licensed FinTech Operators `[Both]` *(merged — distributed cross-track)* | A4 + B4 | Awareness + Consideration | CTO (CN + FT) | **8.3** |
-| 21 | Account Abstraction for FinTech: What ERC-4337 Means for Your Wallet User Onboarding | B4 | Consideration | CTO | **8.2** |
-| — | Passkey Authentication for Crypto Wallets: Replacing Seed Phrases in Self-Custody and Licensed E-Money `[Both]` *(merged — distributed cross-track)* | A4 + B4 | Awareness | CTO (CN + FT) | **8.2** |
+| 24 | How to Add Stablecoin Settlement to Your FinTech Wallet: Architecture & Compliance Guide | B4 | Consideration | CTO | **8.4** || 25 | MiCA and PSD2 Compliance for EU E-Money Wallets Adding Crypto Features 🇪🇺 | B4 | Consideration + Decision | CTO / CCO | **8.3** || — | Embedded Wallets Compared: Privy, Dynamic, Web3Auth — Architecture for Web3 Builders and Licensed FinTech Operators `[Both]` *(merged — distributed cross-track)* | A4 + B4 | Awareness + Consideration | CTO (CN + FT) | **8.3** |
+| 26 | Account Abstraction for FinTech: What ERC-4337 Means for Your Wallet User Onboarding | B4 | Consideration | CTO | **8.2** || — | Passkey Authentication for Crypto Wallets: Replacing Seed Phrases in Self-Custody and Licensed E-Money `[Both]` *(merged — distributed cross-track)* | A4 + B4 | Awareness | CTO (CN + FT) | **8.2** |
 
 **Track B Cross-Pillar (Security + AI+Blockchain + Carol + Park-Status)**
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 22 | EU AI Act Audit Trail Requirements: Why Centralised Logs Aren't Enough 🇪🇺 ⏳ *(blocked on Pain Point 5 validation by 2026-05-31)* | AI + Blockchain | Awareness + Consideration | CTO | **8.6** |
-| 23 | Smart Contract Failures That Broke FinTech Companies: Regulatory Blowback, Enterprise Liability, and the Compliance Failures Behind Each | P1 (FinTech framing) | Awareness + Consideration | CTO | **8.1** |
-| — | Hyperledger Fabric vs. Corda vs. Quorum: Which Enterprise Chain Fits Your Stack? | P6 | Consideration | CTO / VP Eng | **8.0** |
-| 24 | Compliance Audit Defensibility Pack for Regulated FinTech: What Regulators Look For 🎯 *(Lead Magnet — renamed to escape "audit checklist" SERP claimed by CN)* | P1 (FinTech framing) | Decision | CTO / VP Eng | **8.0** |
-| 25 | MiCA Compliance for FinTech Builders: CASP Registration, MiFID II Crossover, and What Your Regulated Business Must Do Before Launch 🇪🇺 | B6 RegTech / EU | Consideration + Decision | CEO / CCO | **8.2** |
-| 26 | DORA for FinTechs Using Blockchain Vendors: ICT Third-Party Risk, Contractual Obligations, and Audit Rights 🇪🇺 | B6 RegTech / EU | Decision | CEO / CTO / CCO | **8.0** |
-| T4-N | The Cost of Hiring a Blockchain Team In-House: FinTech CTO Guide | P4 | Awareness + Consideration | CTO | **8.4** |
+| 27 | EU AI Act Audit Trail Requirements: Why Centralised Logs Aren't Enough 🇪🇺 ⏳ *(blocked on Pain Point 5 validation by 2026-05-31)* | AI + Blockchain | Awareness + Consideration | CTO | **8.6** || 28 | Smart Contract Failures That Broke FinTech Companies: Regulatory Blowback, Enterprise Liability, and the Compliance Failures Behind Each | P1 (FinTech framing) | Awareness + Consideration | CTO | **8.1** || — | Hyperledger Fabric vs. Corda vs. Quorum: Which Enterprise Chain Fits Your Stack? | P6 | Consideration | CTO / VP Eng | **8.0** |
+| 29 | Compliance Audit Defensibility Pack for Regulated FinTech: What Regulators Look For 🎯 *(Lead Magnet — renamed to escape "audit checklist" SERP claimed by CN)* | P1 (FinTech framing) | Decision | CTO / VP Eng | **8.0** || 30 | MiCA Compliance for FinTech Builders: CASP Registration, MiFID II Crossover, and What Your Regulated Business Must Do Before Launch 🇪🇺 | B6 RegTech / EU | Consideration + Decision | CEO / CCO | **8.2** || 31 | DORA for FinTechs Using Blockchain Vendors: ICT Third-Party Risk, Contractual Obligations, and Audit Rights 🇪🇺 | B6 RegTech / EU | Decision | CEO / CTO / CCO | **8.0** || T4-N | The Cost of Hiring a Blockchain Team In-House: FinTech CTO Guide | P4 | Awareness + Consideration | CTO | **8.4** |
 | C1 | What FinTech CCOs Should Demand in a Blockchain Vendor Risk Pack | P1 (Carol TOFU/MOFU) | Awareness + Consideration | CCO | **8.4** |
 | P1-N | Preparing for MiCA License Application: Roadmap for Existing FinTechs 🇪🇺 | B6 RegTech (Park-status nurture) | Awareness + Consideration | CEO / CCO | **8.5** |
 
@@ -1015,33 +1036,24 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 | FT-LM-RWA | RWA Build vs. Buy vs. Partner Checklist | FT | CEO / CPO | Custom-build outbound conversion |
 | FT-LM-Audit | Compliance Audit Defensibility Pack for Regulated FinTech | FT | CTO / Compliance | Custom-build outbound conversion *(renamed)* |
 | FT-LM-Carol | InnBlockchain Vendor Risk Pack | FT | CCO | Surface Carol by call 1 on **custom-build deals** ($50k+ with compliance integration). No longer a WL asset — WL doesn't include enterprise compliance integration at $20k+. |
-| WL-LM-Ref | White-Label Reference Build Pack *(per-vertical)* | Both ICPs | CTO (white-label buyers) | WL motion conversion. One pack per WL vertical (WL1–WL6) with shippable screenshots. No compliance pack at this tier — that's a custom-build artifact. |
+| WL-LM-Ref | White-Label Reference Build Pack *(per-vertical)* | Both ICPs | CTO (white-label buyers) | WL motion conversion. One pack per WL vertical (WL-1 through WL-6) with shippable screenshots. No compliance pack at this tier — that's a custom-build artifact. |
 
 ### Track B — Watch Segments
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 27 | Cross-Border Remittance on Blockchain vs. SWIFT | B5 | Awareness | CEO / CFO | **7.9** |
-| 28 | How to Hire Compliance-Aware Blockchain Engineers for Regulated FinTech Products | P4 | Awareness | CTO | **7.8** |
-| 29 | How Blockchain Makes KYC Reusable | B6 | Consideration | CTO / Compliance | **7.7** |
-| 30 | The True Cost of SWIFT vs. Blockchain Remittance: Margin Analysis | B5 | Consideration | CEO / CFO | **7.6** |
-| — | 🎬 [CASE STUDY] Blockchain Remittance: Before/After Client Results | B5 | Decision | CEO / CFO | **7.5** |
-| 31 | On-Chain Credit Scoring: Can Blockchain Solve the Thin-File Problem? | B3 | Awareness | Head of Credit | **7.5** |
-| 32 | Blockchain ROI for Corporate Treasury: The CFO's Case for Real-Time Settlement and Cash Visibility | B7 | Consideration | CFO | **7.4** |
-| 33 | Parametric Insurance: How Smart Contracts Automate Claims | B8 | Consideration | CEO / Ops | **7.3** |
-| 34 | How Blockchain + AI Detects Financial Fraud | B8 | Consideration | CTO / Ops | **7.2** |
-| 35 | GDPR and Blockchain: Solving the Immutability vs. Right-to-Forget Conflict | P6 | Consideration | CTO / Compliance | **7.1** |
-| 36 | 7 Questions to Ask a Blockchain Dev Partner Before Signing | P7 | Decision | CTO + CEO | **7.0** |
-
+| 32 | Cross-Border Remittance on Blockchain vs. SWIFT | B5 | Awareness | CEO / CFO | **7.9** || 33 | How to Hire Compliance-Aware Blockchain Engineers for Regulated FinTech Products | P4 | Awareness | CTO | **7.8** || 34 | How Blockchain Makes KYC Reusable | B6 | Consideration | CTO / Compliance | **7.7** || 35 | The True Cost of SWIFT vs. Blockchain Remittance: Margin Analysis | B5 | Consideration | CEO / CFO | **7.6** || — | 🎬 [CASE STUDY] Blockchain Remittance: Before/After Client Results | B5 | Decision | CEO / CFO | **7.5** |
+| 36 | On-Chain Credit Scoring: Can Blockchain Solve the Thin-File Problem? | B3 | Awareness | Head of Credit | **7.5** || 37 | Blockchain ROI for Corporate Treasury: The CFO's Case for Real-Time Settlement and Cash Visibility | B7 | Consideration | CFO | **7.4** || 38 | Parametric Insurance: How Smart Contracts Automate Claims | B8 | Consideration | CEO / Ops | **7.3** || 39 | How Blockchain + AI Detects Financial Fraud | B8 | Consideration | CTO / Ops | **7.2** || 40 | GDPR and Blockchain: Solving the Immutability vs. Right-to-Forget Conflict | P6 | Consideration | CTO / Compliance | **7.1** || 41 | 7 Questions to Ask a Blockchain Dev Partner Before Signing | P7 | Decision | CTO + CEO | **7.0** |
 ---
 
 ## 📅 Publishing Cadence & Gates
 
 ### Track A
-- **Phase 1 (RWA + EU compliance, 18 articles)** → publish first; do not start Phase 2 until complete. Gated on `/solutions/rwa-tokenization` going live.
-- **Phase 2 (other active verticals)** → starts only after Phase 1 ships. Two exceptions: (a) AI overlay article, (b) Motion 3 WL articles.
-- **Phase 3 (Watch segments)** → activate per trigger criteria.
-- **Cadence:** 1 article/week minimum on Phase 1; can parallelize Phase 1 + WL after Phase 1 hub ships.
+- **Phase 1 (RWA + EU compliance, 22 numbered articles incl. WL-1 at #22)** → publish first; do not start Phase 2 until complete. Gated on `/solutions/rwa-tokenization` going live.
+- **Phase 2 (other active verticals, #23–#56)** → starts only after Phase 1 ships. One exception: AI overlay article ships immediately on any active segment deal regardless of phase. WL-2 through WL-6 are appended to Phase 2 (#52–#56) — not exceptions.
+- **Phase 3 (Watch segments, #57–#60)** → activate per trigger criteria.
+- **Phase 0 (WL-0 TCO):** ships before or concurrently with Phase 1 Step 1 — no gate.
+- **Cadence:** 1 article/week minimum on Phase 1.
 
 ### Track B
 - **Per-cluster ship sequence (gated on landing pages):**
@@ -1052,9 +1064,6 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 - Watch clusters (B5–B8) activate when activation criteria are met (any two of four).
 - **Cadence:** 1 article/week. WealthTech and AI+blockchain take priority in publishing queue.
 
-### White-Label Motion *(Concurrent with both tracks' outbound)*
-- **WL-TCO — ship first.** Category analysis, exempt from reference-build gate. Presents both regulated and non-regulated TCO calculations.
-- **WL1–WL6 — ship per-vertical** after reference build exists for that vertical (screenshots required; compliance pack not required since WL is no longer the compliance-integrated tier).
 
 ### Cross-Track Special Cases
 - **AI + Blockchain content (Track B):** ⏳ Blocked on ICP Pain Point 5 validation due 2026-05-31. Publish only after (a) WealthTech/RWA hub ships AND (b) validation confirms buyer resonance.
@@ -1075,11 +1084,11 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 |---|---|---|
 | Hub guides, exploit post-mortems, technical deep dives | Crypto Twitter/X threads + SEO blog | Founding Felix discovery |
 | Audit methodology, severity framework, sample reports | Solodit + GitHub + audit-firm directories | Security Sasha trust-building at $10M+ protocols |
-| Plain-language RWA explainers (Phase 1 articles #4, #8, #9, #10–14) | LinkedIn (EU PropTech, RWA Summit, real estate investment communities) | RWA Felix discovery — non-technical asset owners |
+| Plain-language RWA explainers (Phase 1 TOFU #1–5; Legal-Technical Interface #10; Asset-Class Deep Dives #15–19; Custom Build vs. Securitize #20; Audit Checklist #21; WL-1 #22) | LinkedIn (EU PropTech, RWA Summit, real estate investment communities) | RWA Felix discovery — non-technical asset owners |
 | Technical writeups | Hacker News (Show HN / Ask HN), Telegram dev groups, ETHGlobal/DevCon speaking | Founding Felix engagement |
 | Open-source templates + audit tooling snippets | GitHub repos (no marketing tone in README) | Tom (Track B re-engagement) + Felix |
 | Cross-ICP re-engage | ETHGlobal / DevCon → identify Tom with Crypto Native framing → follow up post-event with FinTech framing | Tom in Track B sourced via Track A events |
-| White-label SEO articles (WL1–WL6 + WL-TCO) | Google organic + AI search engines | Productized buyer self-selects — same articles serve both ICPs since WL is now a unified offering at $20k+ |
+| White-label SEO articles (WL-0 + WL-1 through WL-6) | Google organic + AI search engines | Productized buyer self-selects — same articles serve both ICPs since WL is now a unified offering at $20k+ |
 
 ### Track B — Regulated FinTech Distribution
 
@@ -1111,13 +1120,13 @@ InnBlockchain attends events spanning both tracks. Keep messaging separate:
 > [!IMPORTANT] No motion mixing in a single article's CTA
 > Per ICP, mixing motions creates buyer confusion. A Security Audit article ending with "let's build your protocol" sends the reader to a motion they're not asking for. Tag every article before scheduling.
 >
-> **Total scope:** ~51 Track A numbered articles + 6 unnumbered Track A Phase 2 additions + 36 Track B numbered articles + 7 unified WL articles + lead magnets. Apply tags before the publishing schedule is set.
+> **Total scope:** ~60 Track A numbered articles (incl. WL-1 at #22 + WL-2–WL-6 at #52–#56) + 6 unnumbered Track A Phase 2 additions + 41 Track B numbered articles + WL-0 (Phase 0) + lead magnets. Apply tags before the publishing schedule is set.
 
 | Tag | When to Apply | CTA Template |
 |---|---|---|
 | `[Audit]` | Articles about reviewing existing smart contract code — most P1 content, audit checklists, post-mortems, methodology, severity framework | *"Request a pre-audit review"* (Track A) / *"Request a regulator-grade audit review"* (Track B) |
 | `[Dev]` | Articles about building protocol/contracts from scratch or extending — most A1–A6 / B1–B4 architecture content, P2, P3, P4 | *"Scope a custom build"* (Track A — multisig/stablecoin-friendly) / *"Book a discovery call"* (Track B — invoice + procurement) |
-| `[White-Label]` | All WL1–WL6 + WL-TCO articles (unified across both ICPs) | *"Book a white-label scoping call"* — one CTA, same for both ICPs |
+| `[White-Label]` | All WL-1 through WL-6 + WL-0 articles (unified across both ICPs) | *"Book a white-label scoping call"* — one CTA, same for both ICPs |
 | `[Audit + Dev]` | Cross-motion articles where buyer genuinely needs both (post-mortems where prospect could go either way; protocol audit prep that often upgrades to dev) | Split CTA block or qualify in-article |
 | `[Carol]` *(Track B only)* | Carol-specific awareness/lead magnet content (C1 article + Vendor Risk Pack) | *"Download the Vendor Risk Pack"* |
 | `[Cross-Motion]` | Rare. Only when an article genuinely serves both motions equally (e.g., hub MiCA explainer not pre-committing custom or productized). Must include both CTAs in split block or qualify in-article. | Split CTA: *"Custom build → Book a call"* OR *"Productized platform → Book a WL scoping call"* |
@@ -1127,7 +1136,7 @@ InnBlockchain attends events spanning both tracks. Keep messaging separate:
 - **Wedge cannibalisation rule:**
   - Custom-build articles must NEVER include "own vs license" framing (that's WL motion's wedge)
   - WL articles must NEVER include "weeks-not-quarters" speed framing (that's custom-build's wedge)
-- **Mixing routes by article:** WL articles (WL1–WL6 + WL-TCO) must NOT include enterprise compliance integration as a feature — that's custom-build (Motion 2) scope at $50k+. Route any buyer who asks for vendor risk pack / ISO/SOC 2 prep / regulator-grade audit reporting up to custom-build. There is no Track A vs. Track B split for WL articles — all 7 are tagged `[Both]` and serve the same unified $20k+ product.
+- **Mixing routes by article:** WL articles (WL-0 + WL-1 through WL-6) must NOT include enterprise compliance integration as a feature — that's custom-build (Motion 2) scope at $50k+. Route any buyer who asks for vendor risk pack / ISO/SOC 2 prep / regulator-grade audit reporting up to custom-build. There is no Track A vs. Track B split for WL articles — all 7 are tagged `[Both]` and serve the same unified $20k+ product.
 
 ---
 
@@ -1182,13 +1191,13 @@ PARALLEL MOTION — WHITE-LABEL PRODUCTIZED PLATFORM (CROSS-SEGMENT, SEO-DRIVEN 
 │   Upsell path: compliance-integration inquiries → custom-build (Motion 2) at $50k+
 │
 └── Unified WL Roster (7 articles serving both ICPs)
-    ├── WL-TCO: Own vs. License — 5-Year TCO (Phase 0, no gate, ships first)
-    ├── WL1: White-Label RWA Tokenization (A1 + B1)
-    ├── WL2: White-Label DEX & Crypto Exchange (A2 + B2)
-    ├── WL3: White-Label DeFi & Digital Lending (A3 + B3)
-    ├── WL4: White-Label Crypto Wallet — MPC + Multi-Chain (A4 + B4)
-    ├── WL5: White-Label NFT Marketplace (A5)
-    └── WL6: White-Label IDO Launchpad (A6)
+    ├── WL-0: Own vs. License — 5-Year TCO (Phase 0, no gate, ships first)
+    ├── WL-1: White-Label RWA Tokenization (A1 + B1) — Phase 1 #22
+    ├── WL-2: White-Label DEX & Crypto Exchange (A2 + B2) — Phase 2 #52
+    ├── WL-3: White-Label DeFi & Digital Lending (A3 + B3) — Phase 2 #53
+    ├── WL-4: White-Label Crypto Wallet — MPC + Multi-Chain (A4 + B4) — Phase 2 #54
+    ├── WL-6: White-Label IDO Launchpad (A6) — Phase 2 #55
+    └── WL-5: White-Label NFT Marketplace (A5) — Phase 2 #56
 
 NOTES:
 - Smart Contracts & Web3 Security is NOT a standalone vertical — handled by P1 pillar.
@@ -1219,15 +1228,15 @@ NOTES:
 
 > Per-vertical keyword sets are claimed by single merged articles. Old CN-WL and FT-WL keyword splits are consolidated — one article ranks for both the generic crypto-native and the regulated-FinTech-specific long-tails because there's one product, one price, one article.
 
-**Per-vertical (gated on reference build):**
-- **WL1 RWA:** `white-label rwa tokenization platform` · `white-label tokenization platform` · `white-label STO platform` · `white-label tokenization platform for asset managers` · `white-label rwa platform`
-- **WL2 DEX/Exchange:** `white-label dex` · `white-label crypto exchange script` · `white-label crypto exchange platform` · `white-label MiCA-compliant CEX`
-- **WL3 DeFi/Digital Lending:** `white-label defi lending platform` · `white-label yield protocol` · `white-label digital lending platform` · `white-label digital lending platform with blockchain rails`
-- **WL4 Crypto Wallet:** `white-label crypto wallet` · `white-label mpc wallet` · `white-label stablecoin wallet` · `white-label crypto wallet for licensed e-money`
-- **WL5 NFT Marketplace:** `white-label nft marketplace`
-- **WL6 IDO/Token Launch:** `white-label ido launchpad` · `white-label token launch platform`
+**Per-vertical (reference build ✅ Cleared 2026-05-14):**
+- **WL-1 RWA:** `white-label rwa tokenization platform` · `white-label tokenization platform` · `white-label STO platform` · `white-label tokenization platform for asset managers` · `white-label rwa platform`
+- **WL-2 DEX/Exchange:** `white-label dex` · `white-label crypto exchange script` · `white-label crypto exchange platform` · `white-label MiCA-compliant CEX`
+- **WL-3 DeFi/Digital Lending:** `white-label defi lending platform` · `white-label yield protocol` · `white-label digital lending platform` · `white-label digital lending platform with blockchain rails`
+- **WL-4 Crypto Wallet:** `white-label crypto wallet` · `white-label mpc wallet` · `white-label stablecoin wallet` · `white-label crypto wallet for licensed e-money`
+- **WL-5 NFT Marketplace:** `white-label nft marketplace`
+- **WL-6 IDO/Token Launch:** `white-label ido launchpad` · `white-label token launch platform`
 
-**Cross-vertical (WL-TCO, no gate — ships first):**
+**Cross-vertical (WL-0, no gate — ships first):**
 `white-label vs saas tokenization` · `tokenization platform comparison` · `tokeny vs custom build` · `securitize vs custom build` · `crypto platform total cost of ownership` · `own vs license crypto platform` · `productized crypto platform` · `productized blockchain platform tco` · `white-label blockchain platform total cost of ownership`
 
 ### Track B — Awareness
@@ -1275,7 +1284,7 @@ When activating a Watch segment or adding a new one:
 4. **Map use cases** to existing pillars (P1–P7) — don't create new pillars unless a genuinely new capability is in play (rare).
 5. **Add vertical-specific keywords** to the keyword section under the right track.
 6. **Add articles** to the Priority Content Plan with scores; respect cluster ship sequence.
-7. **Evaluate WL motion fit:** does this vertical have a productized white-label opportunity? If yes, add a `WL{n}` slot. WL slot is gated on a reference build (screenshots only). WL is a unified offering across both ICPs at $20k+ — no separate Track A/Track B WL slots.
+7. **Evaluate WL motion fit:** does this vertical have a productized white-label opportunity? If yes, add a `WL-{n}` slot. WL slot is gated on a reference build (screenshots only). WL is a unified offering across both ICPs at $20k+ — no separate Track A/Track B WL slots.
 8. **Apply sales motion tags** to every new article (`[Audit]` / `[Dev]` / `[White-Label]` / `[Carol]` for Track B Carol content).
 9. **Apply track tag** (`[CN]` / `[FT]` / rarely `[Both]`) — single-track is the default.
 
