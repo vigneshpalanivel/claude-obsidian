@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-14 | Total pages: 216 | Sources ingested: 69
+Last updated: 2026-05-14 | Total pages: 217 | Sources ingested: 69
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -85,6 +85,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain LinkedIn Recommendation Strategy]] — 5 recommender categories mapped to ICP personas; volume targets (2-3 pre-publish, 5-8 outreach); 6-week operational schedule (status: current)
 - [[BMad Four-Phase Workflow]] — BMad's context engineering backbone; Analysis → Planning → Solutioning → Implementation; fresh chat per workflow (status: current)
 - [[BMad Quick Dev]] — compress intent, freeze spec, run longer unsupervised; diagnose failure at the layer where it entered (status: current)
+- [[BMAD Track Selection Guide]] — 5-question decision test for Quick-Dev vs Full Method; two-track reference with examples, escape hatch, and risk table (status: current)
 - [[BMad Project Context]] — `project-context.md` as project constitution loaded by every implementation workflow; keep lean (status: current)
 - [[Adversarial Review]] — reviewer must find issues; zero findings triggers re-analyze; pair with edge-case hunter for orthogonal coverage (status: current)
 - [[Advanced Elicitation]] — named reasoning methods (pre-mortem, inversion, first principles) applied to LLM output for structured second pass (status: current)
