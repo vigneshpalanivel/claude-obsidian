@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-12 | Total pages: 197 | Sources ingested: 63
+Last updated: 2026-05-14 | Total pages: 208 | Sources ingested: 65
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -63,7 +63,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Stablecoin-Cross-Border-Payments]] — stablecoin sandwich pattern; $305B supply; 0.5–2% vs 3–8% traditional; GENIUS Act 2025 (status: current)
 - [[Smart-Contracts-Finance]] — parametric insurance (Lemonade); DeFi lending (Aave/Compound); AI-adaptive contracts; oracle risk (status: current)
 - [[CBDC-Central-Bank-Digital-Currency]] — 137 countries exploring; e-CNY (2.25B wallets); e-rupee +334% YoY; US rejected CBDCs (Trump EO) (status: current)
-- [[EU-Fintech-Compliance-Landscape]] — 9 key EU fintech regulations (DORA, MiCA, AI Act, PSD3, IPR, AML, FiDA, eIDAS 2.0, CCD2); enforcement +417% YoY; dependency map (status: current)
+- [[MiFID-II]] — primary EU investment services framework (effective Jan 2018); financial instruments definition; 8 core obligations; token classification cascade test (ESMA May 2025); €44.5M fines 2024; DLT Pilot Regime entry; ERC-3643 alignment (status: current)
+- [[MiFID-III]] — 2024 revision (Directive 2024/790); PFOF ban June 2026; consolidated tape; expanded reporting April 2026; active monitoring from Sep 2025 (status: current)
+- [[DLT-Pilot-Regime]] — EU sandbox for tokenized securities (live March 2023); 4 platforms authorized (Clearstream/21X/360X/LISE); €100B cap proposed; EC April 2026 package proposing permanent; ECB Trigger Solution for central bank money settlement (status: current)
+- [[EU-Fintech-Compliance-Landscape]] — 10 key EU fintech regulations (MiFID II/III, DORA, MiCA, AI Act, PSD3, IPR, AML, FiDA, eIDAS 2.0, CCD2); enforcement +417% YoY; dependency map (status: current)
 - [[MiCA-Regulation]] — EU crypto single market; June 2026 transition end; 65% compliance; €540M+ fines; covers CASPs not DeFi/security tokens (status: current)
 - [[DORA-Regulation]] — ICT resilience law; Jan 2025 active; 5 pillars; 2% turnover penalty; third-party vendor mapping hardest lift (status: current)
 - [[EU-AML-AMLA]] — 3-part AML package; AMLA Frankfurt July 2025; AMLR directly applicable July 2027; Travel Rule all crypto (status: current)
@@ -120,6 +123,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 ## Entities
 
+- [[ESMA]] — European Securities and Markets Authority; EU securities regulator Paris; binding crypto classification guidelines May 2025; DLT Pilot oversight; MiFID II/MiCA supervisory convergence (status: current)
+- [[21X-AG]] — first EU DLT TSS license (BaFin Dec 2024); opened Sept 2025; €500M debt issue; Stellar + USDC atomic settlement; benchmark for DLT TSS applicants (status: current)
+- [[LISE]] — Lightning Stock Exchange; France DLT TSS (AMF Oct 2025); Europe's first tokenized stock exchange; first tokenized IPO ST GROUP April 2026; SME focus (status: current)
 - [[Andrej Karpathy]] — AI researcher, creator of the LLM Wiki pattern, former Tesla AI director (status: developing)
 - [[TCS]] — Tata Consultancy Services; $1.5B annualized AI revenue; declared aim: world's largest AI-led services company; -23,460 headcount FY26 (status: current)
 - [[Infosys]] — Infosys Topaz Fabric; 4,600+ AI projects; $300-400B TAM claim; 5.5% of quarterly revenue from AI; OpenAI collab 2026 (status: current)
@@ -147,6 +153,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 ## Sources
 
+- [[autoresearch-dlt-pilot-regime]] — 2026-05-14 | web research (9 searches, 4 fetches) | 1 concept rewrite + 2 entities + 1 synthesis pages created
+- [[autoresearch-mifid-ii]] — 2026-05-14 | web research (9 searches, 4 fetches) | 3 concept + 1 entity + 1 synthesis pages created
 - [[autoresearch-hyperledger-fabric-ca]] — 2026-04-16 | web research (5 searches) | 1 concept page created
 - [[autoresearch-hyperledger-fabric]] — 2026-04-16 | web research (5 searches) | 1 concept page created
 - [[autoresearch-blockchain-pharma-supply-chain]] — 2026-04-16 | web research (4 searches) | 1 concept page created
@@ -231,6 +239,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Research: AI ML Engineering Roadmap]] — synthesis: two distinct learning paths (AI integration 7-12mo vs ML training 12mo), three-project portfolio rule, framework progression, Trioangle training curriculum (status: developing)
 - [[Can I earn monthly income from Binance copy trading my BTC]] — non-custodial BTC → Binance copy trading for monthly income; verdict: wrong tool, use stablecoin earn instead (status: developing)
 - [[Research: Indian IT Company AI Strategies]] — synthesis: TCS/Infosys/HCLTech/Cognizant/Accenture five-move playbook; headcount cuts; outcome pricing shift; SMB gap confirmed wide open (status: complete)
+- [[Research: DLT Pilot Regime]] — synthesis: 4 authorized platforms; ESMA barriers + permanence recommendation; EC April 2026 upgrade; ECB wholesale CBDC settlement; InnBlockchain service opportunities (status: developing)
+- [[Research: MiFID II]] — synthesis: primary EU investment services framework; token classification cascade; MiFID III 2026 changes; DLT Pilot Regime; enforcement data; InnBlockchain implications (status: developing)
 - [[Research: US Reg S]] — synthesis: SEC Regulation S safe harbor for offshore offerings; two core conditions, three categories, Rule 905 wash-off block; 144A and Reg D + Reg S combined structures; 2025 climate shift (status: developing)
 
 ---

@@ -10,11 +10,15 @@ tags:
   - regulation
 status: current
 related:
+  - "[[MiFID-II]]"
+  - "[[MiFID-III]]"
   - "[[MiCA-Regulation]]"
   - "[[DORA-Regulation]]"
   - "[[EU-AML-AMLA]]"
   - "[[EU-AI-Act-Fintech]]"
   - "[[PSD3-Open-Banking-EU]]"
+  - "[[DLT-Pilot-Regime]]"
+  - "[[ESMA]]"
   - "[[InnBlockchain FinTech ICP]]"
   - "[[InnBlockchain Crypto Native ICP]]"
   - "[[Blockchain-Fintech-Solutions]]"
@@ -28,6 +32,7 @@ The EU is the world's most active jurisdiction for fintech regulation. By 2026, 
 
 | Regulation | Focus | Key Deadline | Penalty |
 |-----------|-------|-------------|---------|
+| **MiFID II/III** | Investment services + markets | Sep 2025 transposition / Apr 2026 go-live | €44.5M EU fines in 2024 |
 | **DORA** | ICT resilience | Jan 2025 (in force) | 2% annual turnover |
 | **MiCA** | Crypto-asset services | Jun 2026 (transition end) | License revocation + fines |
 | **EU AI Act** | High-risk AI systems | Aug 2, 2026 | €35M / 7% turnover |
@@ -82,4 +87,4 @@ EU compliance is a direct revenue driver for InnBlockchain:
 - **Crypto Native ICP**: MiCA is the dominant compliance framing for all EU crypto-native clients; Phase 1 content lock is RWA + MiCA
 - **AI+Blockchain opportunity**: EU AI Act mandates on-chain audit trails for high-risk AI decisions (credit scoring, fraud) — this is a direct use case for blockchain-based compliance infrastructure
 
-See: [[MiCA-Regulation]] | [[DORA-Regulation]] | [[EU-AML-AMLA]] | [[EU-AI-Act-Fintech]] | [[PSD3-Open-Banking-EU]]
+See: [[MiFID-II]] | [[MiFID-III]] | [[MiCA-Regulation]] | [[DORA-Regulation]] | [[EU-AML-AMLA]] | [[EU-AI-Act-Fintech]] | [[PSD3-Open-Banking-EU]] | [[DLT-Pilot-Regime]]

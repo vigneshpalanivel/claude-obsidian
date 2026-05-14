@@ -19,6 +19,23 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## 2026-05-14 | autoresearch | DLT Pilot Regime
+- Rounds: 2 | Searches: 9 | Fetches: 4 | Pages created: 5 (1 rewrite + 4 new)
+- Synthesis: [[Research: DLT Pilot Regime]]
+- Concept rewrite: [[DLT-Pilot-Regime]] (substantially expanded from stub)
+- Entities: [[21X-AG]], [[LISE]]
+- Sources: [[autoresearch-dlt-pilot-regime]]
+- Key finding: 4 authorized platforms now live (Clearstream, 21X, 360X, LISE); EU Commission April 2026 package proposes permanent status + €100B cap + all MiFID II securities eligible; ECB Bundesbank Trigger Solution operational for central bank money settlement on DLT platforms; LISE executed first tokenized IPO in EU history (ST GROUP, April 9, 2026); 10 applications in pipeline including Securitize (Spain).
+
+## 2026-05-14 | autoresearch | MiFID II
+- Rounds: 2 | Searches: 9 | Fetches: 4 | Pages created: 6
+- Synthesis: [[Research: MiFID II]]
+- Concepts: [[MiFID-II]], [[MiFID-III]], [[DLT-Pilot-Regime]]
+- Entities: [[ESMA]]
+- Sources: [[autoresearch-mifid-ii]]
+- Updated: [[EU-Fintech-Compliance-Landscape]] (added MiFID II/III row + links), [[ERC-3643]] (added MiFID-II cross-link)
+- Key finding: MiFID II and MiCA are mutually exclusive regimes — security tokens fall under MiFID II (not MiCA); ESMA May 2025 guidelines make this binding across all EU jurisdictions; DLT Pilot Regime has 3 live platforms (Clearstream, 21X, 360X) with cap raised to €100B; MiFID III PFOF ban + consolidated tape go live June 2026.
+
 ## [2026-05-12] ingest (batch) | InnBlockchain LinkedIn files — 2 re-ingest + 2 new
 - Sources:
   - `.raw/InnBlockchain/LinkedIn/InnBlockchain - LinkedIn Marketing Strategy.md` (RE-INGEST, hash → 66d2a951ef9e4cc8215c509c9789200b)
