@@ -189,6 +189,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **Hub (Track A):** `EU Crypto Regulation for Protocol Builders: MiCA, DORA, and What They Mean for Your Smart Contracts`
 **Hub (Track B):** `EU Crypto Regulation for FinTech: MiCA CASP, MiFID II, DORA, EU AI Act`
 *▶ Landing Pages:* `/services/blockchain-consulting` · `/solutions/rwa-tokenization` · `/solutions/tokenization`
+*▶ Canonical compliance reference:* [[EU-Fintech-Compliance-Landscape]] — segment-by-segment obligation map for both ICPs. Writers must consult this before drafting any P5 article.
 
 > **Priority note:** EU is the primary GTM geography. P5 articles are Active phase regardless of which vertical they live under — do NOT defer to Watch RegTech.
 
@@ -205,6 +206,8 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 | KYC/AML On-Chain: How EU Crypto Companies Build Compliant Smart Contract Access Infrastructure | CN | — |
 | MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce | CN | — |
 | MiCA vs. Other Global Frameworks: What EU-Based Protocols Must Know Before Expanding Beyond the EU | CN | — |
+| MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset | Both | RWA classification boundary — `[Both]` split CTA; lives in A1 EU Compliance section, referenced in B1 |
+| EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI | Both | AI-powered RWA valuation / oracle = potential high-risk AI; `[Both]` split CTA; lives in A1 EU Compliance section, referenced in B1 |
 | MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺 | FT | Regulatory obligations for existing financial businesses tokenizing assets |
 | MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺 | FT | — |
 | DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺 | FT | — |
@@ -267,40 +270,55 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 | GTM Status | Use Case | Pillars |
 |---|---|---|
 | 🟢 Active | EU/MiCA Compliance for RWA Platforms | P5 |
+| 🟢 Active | MiCA vs. MiFID II Classification for Tokenized Assets | P5 |
+| 🟢 Active | AML / Investor Onboarding Compliance (RWA-specific) | P5 |
 | 🟢 Active | Real Estate Tokenization Architecture | P1, P2, P5 |
 | 🟢 Active | Permissioned Token Standards (ERC-3643, ERC-1400) | P1, P2, P5 |
 | 🟢 Active | Oracle Design for Real-World Assets | P1, P2 |
 | 🟢 Active | Investor Whitelisting & On-Chain KYC | P1, P2, P5 |
 | 🟢 Active | Asset-Class Deep Dives | P1, P2, P5 |
 | 🟢 Active | RWA Security & Audit Readiness | P1 |
+| 🟢 Active | EU AI Act for AI-Powered Valuation & Oracles | P5 |
 | ⚪ Watch | Secondary Market Trading for RWA Tokens | P1, P2, P5 |
 | ⚪ Watch | Cross-Asset Tokenization Infrastructure | P1, P2 |
 
 #### Articles
 
-**Foundation (publish first):**
-- How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and MiCA Compliance *(hub)*
-- MiCA Compliance for RWA Tokenization Platforms: What EU Smart Contract Requirements Mean for Your Build
+**TOFU — Awareness:**
 - What Is Asset Tokenization? A Plain-English Guide `[Both]` *(merged from CN/FT awareness — split CTA footer; distributed via LinkedIn for RWA Felix + WealthTech Sam, plus SEO)*
+- How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and MiCA Compliance *(hub)*
+- MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 *(#1 classification question for any RWA founder. Split CTA footer. Canonical reference: [[EU-Fintech-Compliance-Landscape]]. **Scope boundary vs. B1 "MiFID II Instrument Classification" article:** this article answers "which regime applies and why" at awareness level — threshold test, asset-type logic, consequences of each path. The B1 article covers MiFID II mechanics for firms who have already determined MiFID II applies. Do NOT overlap.)*
+- [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention *(risk-hook awareness piece; surfaces the oracle integrity problem before architecture articles)*
 
-**Technical Architecture:**
+**MOFU — Technical Architecture:**
 - ERC-3643 vs. ERC-1400 vs. ERC-20: Choosing the Right Token Standard for Your RWA Platform
 - Oracle Design for Real-World Assets: How to Bring Off-Chain Valuations On-Chain Without Manipulation Risk
 - Investor Whitelisting On-Chain: How to Build KYC-Compliant Token Access Without Centralisation
 - The Legal-Technical Interface in RWA Tokenization: What Smart Contracts Can and Cannot Enforce
-- Custom Build vs. Securitize / Tokeny / Polymath: When You Need Your Own RWA Smart Contract Infrastructure
+- MiCA Compliance for RWA Tokenization Platforms: What EU Smart Contract Requirements Mean for Your Build *(compliance depth — reader needs architecture context before this lands; not a Foundation article)*
 
-**Asset-Class Deep Dives:**
+**MOFU — Compliance Depth:**
+- MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce *(compliance mechanics — pairs with MiCA Compliance above; not a Security & Audit article)*
+- AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, and Cross-Border Asset Due Diligence 🇪🇺 *(CN-specific: Art Market Participant status for tokenized art, accredited investor verification, cross-border checks — not covered by generic P5 KYC/AML article)*
+- EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI `[Both]` 🇪🇺 *(AI-powered valuation / commodity pricing / risk scoring = potential high-risk AI; immutable audit trail required. Split CTA footer)*
+
+**MOFU — Asset-Class Deep Dives:**
 - Fractional Real Estate Tokenization: Smart Contract Architecture for Property Fractionalization and Compliant Issuance
 - Vehicle Fleet Tokenization: Smart Contract Architecture for Asset Fractionalization and Fractional Ownership
 - Commodity Tokenization: On-Chain Representation of Gold, Oil, and Agricultural Assets
 - Private Credit On-Chain: How RWA Lending Protocols Tokenize Off-Chain Debt and Enforce Repayment
 - Art and Collectibles Tokenization: How On-Chain Title Transfer Works and Where It Can Fail
 
-**Security & Audit:**
-- Smart Contract Audit Checklist for RWA Tokenization Platforms: What Auditors Flag Before Investor Onboarding 🎯 *(lead magnet)*
-- [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention
-- MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce
+**BOFU — Decision:**
+- Custom Build vs. Securitize / Tokeny / Polymath: When You Need Your Own RWA Smart Contract Infrastructure *(comparison/decision article — routes to WL1 for middle-ground buyers)*
+- Smart Contract Audit Checklist for RWA Tokenization Platforms: What Auditors Flag Before Investor Onboarding 🎯 *(lead magnet — read when buyer is close to committing)*
+- 🎬 [CASE STUDY] How We Tokenized [Asset Class] for [Client]: From First Smart Contract to Investor-Ready Platform *(hard gate: requires delivered client deployment or friendly first client with screenshot/story rights. RWA Felix evaluates InnBlockchain on reference checks — primary Decision-stage conversion asset for A1)*
+
+**Post-Launch:**
+- Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiCA-Compliant Post-Launch *(converts one-time build clients to ongoing retainer)*
+
+> [!INFO] White-Label routing (A1 → WL1)
+> Buyers who want a productized build between full-custom and SaaS should be routed to **WL1: White-Label RWA Tokenization Platform** (see Cross-Segment White-Label section). Embed a routing line in "Custom Build vs. Securitize / Tokeny / Polymath" article: *"If you want code ownership without a full custom build timeline — there's a third option."* CTA: book a white-label scoping call. Gate: reference build required before WL1 publishes.
 
 ---
 
@@ -311,6 +329,8 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **Hub:** `How to Build a Secure DEX: From AMM Design to Audit-Ready Deployment`
 *▶ Landing Page:* `/solutions/dex-protocol`
 
+> **EU compliance hooks (Seg 2):** MiCA CASP registration is mandatory for EU-facing trading/custody of crypto-assets. AML/AMLA Travel Rule applies to transfers ≥€1,000. DORA applies if classified as critical ICT third-party. Travel Rule article is in P5 — cross-link from relevant A2 articles.
+
 #### Use-Case Clusters
 
 | GTM Status | Use Case | Pillars |
@@ -319,6 +339,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 | 🟢 Active | Price Oracle Security | P1 |
 | 🟢 Active | Liquidity Pool Exploit Prevention | P1, P2 |
 | 🟢 Active | DEX Audit Preparation | P1 |
+| 🟢 Active | MiCA CASP Compliance for On-Chain DEXes | P5 |
 | ⚪ Watch | Cross-Chain DEX & Aggregators | P1, P3 |
 
 #### Articles
@@ -330,6 +351,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 - MEV (Maximal Extractable Value): What It Is and How It Affects Your DEX Design
 - Building a DEX on Solana vs. EVM: Smart Contract Architecture Differences
 - [POST-MORTEM] How [Notable DEX Exploit] Happened — Root Cause and Prevention
+- MiCA CASP Obligations for Crypto-Native DEXes: What EU-Registered On-Chain Exchanges Must Implement 🇪🇺 *(P5 cross-reference — cross-link from hub)*
 - Uniswap v4 Hooks: What They Are and How to Build Custom Pool Logic *(trending)*
 - Intent-Based DEX Architecture: How CoW Protocol and 1inch Fusion Work *(trending)*
 - Building a DEX on Solana: Raydium CLMM vs. Orca Whirlpool Architecture Compared *(trending — trend-dependent, ecosystem-specific; kill if no inbound in 90 days)*
@@ -343,6 +365,8 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **Hub:** `Building a Secure DeFi Lending Protocol: Architecture, Liquidations, and Audit Readiness`
 *▶ Landing Page:* `/solutions/defi-protocol`
 
+> **EU compliance hooks (Seg 3):** MiCA CASP applies if lending/yield products constitute crypto-asset services for EU users. AML/AMLA Travel Rule applies. EU AI Act high-risk AI category applies if AI is used for credit/risk scoring — immutable audit trail required. This AI Act angle is a content gap: no P5 article covers it for DeFi-native protocols specifically (P5 AI Act articles are Track B only). Add A3-specific article.
+
 #### Use-Case Clusters
 
 | GTM Status | Use Case | Pillars |
@@ -351,6 +375,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 | 🟢 Active | Liquidation Engine Design | P2 |
 | 🟢 Active | Yield Vault Architecture | P1, P2 |
 | 🟢 Active | DeFi Audit Preparation | P1 |
+| 🟢 Active | EU AI Act Compliance for AI-Powered DeFi | P5 |
 | ⚪ Watch | Undercollateralized & RWA Lending | P1, P3 |
 
 #### Articles
@@ -361,6 +386,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 - Price Oracle Manipulation in Lending: How Attackers Borrow Against Inflated Collateral
 - How to Prepare Your DeFi Protocol for a Security Audit: 30-Day Pre-Audit Checklist
 - Overcollateralized vs. Undercollateralized DeFi Lending: Technical Design Considerations
+- EU AI Act for DeFi Protocols: When Your On-Chain Risk Scoring Model Becomes a High-Risk AI System 🇪🇺 *(new — no P5 equivalent; A3-specific)*
 - [POST-MORTEM] How [Notable Lending Exploit] Drained $XM — Root Cause and Lessons
 - Liquid Staking Derivatives in DeFi: How LST/LRT Protocols Introduce New Risk Vectors *(trending)*
 - RWA Collateral in DeFi Lending: How On-Chain Protocols Add Real-World Asset Support to Their Markets *(trending)*
@@ -405,6 +431,8 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **Hub:** `How to Build a Secure NFT Platform: From Minting Contracts to Marketplace Architecture`
 *▶ Landing Page:* `/solutions/nft-platform`
 
+> **EU compliance hooks (Seg 5):** MiCA explicitly exempts unique NFTs but ESMA is actively probing fractionalized NFTs and collections with fungible economics — compliance posture is live and evolving, not settled. AML/AMLA applies for high-value NFT transfers and platforms that may qualify as Art Market Participants. This is a content gap and a trust-building angle for EU-based NFT founders: no article currently addresses MiCA NFT classification risk specifically.
+
 #### Use-Case Clusters
 
 | GTM Status | Use Case | Pillars |
@@ -422,6 +450,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 - NFT Marketplace Smart Contract Audit Checklist: Signature Replay, Reentrancy, and Access Control
 - Royalty Enforcement in 2026: On-Chain Solutions After EIP-2981
 - Dynamic NFTs (dNFTs): How to Build NFTs That Change State On-Chain
+- Are Your NFTs Crypto-Assets Under MiCA? EU Compliance Risk for NFT Collections and Fractionalized Tokens 🇪🇺 *(new — MiCA grey zone; no P5 equivalent covers NFT-specific classification risk)*
 - Compressed NFTs on Solana: Mint a Million NFTs for Pennies — Architecture and Tradeoffs *(trending)*
 - ERC-404 Semi-Fungible Tokens: Architecture, Use Cases, and Security Risks *(trending)*
 - B2B NFTs: How Ticketing, Loyalty Programs, and RWA Certificates Use NFT Infrastructure *(trending)*
@@ -478,11 +507,15 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 
 #### A8 — L2 & Chain Infrastructure *(Watch — High Value, Long Cycle)*
 *▶ Landing Page:* `/solutions/l2-bridge`
+
+> **EU compliance hooks (Seg 8):** DORA applies to L2 and bridge infrastructure classified as critical ICT third-party providers. MiCA CASP applies if bridge or settlement services are exposed to EU users. Add DORA article to this cluster on activation.
+
 - Cross-chain bridge security: why bridges are the highest-value exploit target
 - ZK rollup vs. optimistic rollup: security assumptions and auditing differences
 - Sequencer design and censorship resistance
 - ZK circuit auditing: what's fundamentally different from a Solidity audit
 - Bridge contract architecture and multi-sig custody of bridged assets
+- DORA for L2 and Bridge Infrastructure: ICT Resilience Obligations for EU-Exposed Chain Operators 🇪🇺 *(add on segment activation)*
 
 #### A9 — Web3 Gaming & GameFi *(Watch)*
 *▶ Landing Page:* `/solutions/web3-gaming`
@@ -536,15 +569,25 @@ Key articles:
 - The Tech Stack Behind an RWA Tokenization Platform
 - Tokenization and Liquidity: How Fractional Ownership Unlocks Capital for WealthTechs
 - MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺
+- *(MiCA vs. MiFID II classification boundary: see "MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset" in A1 EU Compliance — same shared `[Both]` article; split CTA footer serves both tracks)*
 - Blockchain for Treasury Tokenization: Turning Corporate Assets Into Liquid Instruments
 - Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs *(trending)*
 - T+0 Settlement on Blockchain: How Real-Time Clearing Is Replacing T+2 *(trending)*
 - Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(trending — watch-candidate, news-cycle dependent; kill if no inbound in 90 days)*
 - STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA *(trending)* 🇪🇺
 - MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺
+- ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 *(new — A1 has ERC-3643 comparison framed for crypto-native builders; this is the B1 version for licensed issuers: Tom and Carol care about MiFID II instrument compliance and regulatory defensibility, not protocol architecture trade-offs)*
 - DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺
+- DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 *(new — different from generic "DORA for FinTechs using blockchain vendors" in P5; covers oracle providers as critical ICT third-parties, DLT settlement infrastructure resilience testing, incident reporting obligations specific to tokenized securities platforms)*
+- AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 *(new — Travel Rule article in P5 covers licensed exchanges B2; this covers WealthTech asset managers onboarding institutional investors onto tokenized securities platforms — different AML surface area)*
+- What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 *(new — Carol at a WealthTech firm has a completely different approval checklist than a generic FinTech Carol; no existing P1 Carol article covers MiFID II classification review, DLT Pilot regime authorization timeline, or DORA resilience testing for settlement infrastructure. Carol gates every B1 deal — this is the highest-priority addition to B1)*
+- *(EU AI Act for AI valuation / pricing: see "EU AI Act for Tokenized Asset Platforms" in A1 EU Compliance — same shared `[Both]` article; split CTA footer serves both tracks)*
+- 🎬 [CASE STUDY] WealthTech / RWA Platform Build *(anchored here from Priority Content Plan — hard gate: requires delivered client deployment. Primary Decision-stage proof asset for Tom and Sam)*
 - RWA Tokenization: Build vs. Buy vs. Partner — Decision Framework for WealthTech Leaders 🎯 *(lead magnet)*
 - Expanding Your RWA Platform to New Markets: Regulatory and Technical Readiness *(post-launch)*
+
+> [!INFO] White-Label routing (B1 → WL1)
+> Licensed WealthTech buyers who want code ownership without a full custom build should be routed to **WL1: White-Label RWA Tokenization Platform** (see Cross-Segment White-Label section). Embed a routing line in "RWA Tokenization: Build vs. Buy vs. Partner" lead magnet: *"White-label is the fourth option — productized delivery at $20k+, code owned outright."* Note: WL1 does not include enterprise compliance integration (vendor risk pack, ISO/SOC 2 prep, regulator reporting) — buyers who need that are custom-build at $50k+.
 
 ---
 
@@ -579,6 +622,8 @@ Key articles:
 **Hub:** `Blockchain for Digital Lending: Automating Credit from Origination to Repayment`
 *▶ Landing Page:* `/solutions/defi-lending`
 
+> **EU compliance hooks (LendTech):** CCD2 (Consumer Credit Directive 2) in force Nov 20, 2026 — hard deadline for BNPL and consumer lenders. EU AI Act high-risk AI applies to credit scoring and fraud detection models (immutable audit trail required). AML/AMLA. Both CCD2 and the EU AI Act credit-scoring angle are content gaps — no P5 or AI+Blockchain cluster article covers them from a LendTech perspective. AI+Blockchain cluster is validation-gated until 2026-05-31; CCD2 article has no gate.
+
 #### Articles
 - Smart Contracts for Loan Origination: Automating Credit Agreements End-to-End
 - Blockchain Lending: How DeFi Credit Protocols Work for SMB Lenders
@@ -586,6 +631,8 @@ Key articles:
 - Collateralized vs. Uncollateralized DeFi Loans: What LendTechs Need to Know
 - How to Reduce Loan Default Risk with On-Chain Payment Automation
 - BNPL on Blockchain: Building a Compliant Buy-Now-Pay-Later Protocol
+- CCD2 Compliance for BNPL and Consumer Lenders: What the EU Consumer Credit Directive 2 Requires Before Nov 2026 🇪🇺 *(new — hard regulatory deadline; no P5 equivalent)*
+- EU AI Act for Credit Scoring: Why Your AI Lending Model Needs a Tamper-Proof Audit Trail 🇪🇺 *(new — LendTech-specific AI Act angle; publish after 2026-05-31 AI+Blockchain cluster validation)*
 - Case Study Format: Lending Platform Before/After Blockchain Integration
 - Institutional DeFi in 2026: How Banks Are Using Permissioned Lending Protocols *(trending)*
 - RWA-Backed DeFi Loans: How Traditional Lenders Integrate RWA Collateral Into an Existing Loan Book *(trending)*
@@ -601,12 +648,15 @@ Key articles:
 **Hub:** `Adding Blockchain Rails to Your FinTech Wallet: Stablecoin Settlement, DeFi Yield & Multi-Chain`
 *▶ Landing Page:* `/solutions/fintech-wallets`
 
+> **EU compliance hooks (WalletTech):** PSD3/PSR (payment services authorization), MiCA (if crypto wallet feature added), eIDAS 2.0 (digital identity for wallet authentication — mandatory wallet availability by Dec 31, 2026), AML/AMLA Travel Rule. eIDAS 2.0 is a hard deadline and a content gap — no article currently covers it for wallet operators.
+
 #### Articles
 - How to Add Stablecoin Settlement to Your FinTech Wallet: Architecture & Compliance Guide
 - Multi-Chain Asset Support for Regulated Wallets: What E-Money Institutions Need to Know
 - DeFi Yield Integration for Licensed FinTech Wallets: How to Access On-Chain Returns Compliantly
 - Custodial vs. Non-Custodial Architecture for Regulated E-Money Wallets
 - MiCA and PSD2 Compliance for EU E-Money Wallets Adding Crypto Features: What Licence Holders Must Know 🇪🇺
+- eIDAS 2.0 for FinTech Wallets: What Digital Identity Wallet Obligations Mean for E-Money and Payment Apps Before Dec 2026 🇪🇺 *(new — hard deadline; no P5 equivalent)*
 - MPC for Payment Service Providers: Replacing Seed Phrase Custody Under PSD2 and MiCA *(renamed to escape "MPC wallet" generic SERP; narrower long-tail target)*
 - *(Embedded Wallets merged: see "Embedded Wallets Compared: Privy, Dynamic, Web3Auth..." in A4 articles — same shared `[Both]` article)*
 - *(Passkey merged: see "Passkey Authentication for Crypto Wallets..." in A4 articles — same shared `[Both]` article)*
@@ -635,11 +685,15 @@ Target: WealthTech, LendTech, RegTech, BankTech companies deploying AI for credi
 
 #### B5 — Cross-Border Remittance & Payments (PayTech) *(Watch)*
 *▶ Landing Page:* `/solutions/remittance`. **No portfolio yet — activation gated on Active clusters producing pipeline.**
+
+> **EU compliance hooks (PayTech):** IPR (Instant Payments Regulation) — mandatory euro credit transfers and Verification of Payee (VoP) from Oct 2025 (already in force). PSD3/PSR. AML/AMLA. IPR is an immediate compliance pressure for any EU PayTech and a strong content hook. Add IPR article on segment activation.
+
 - Cross-Border Remittance on Blockchain vs. SWIFT: Speed, Cost & Compliance Compared
 - Stablecoins for Remittance: USDC vs. USDT vs. Local CBDCs — Which Rail Wins?
 - How to Build a Blockchain Remittance Corridor: Technical Architecture
 - Eliminating Correspondent Banking: A Step-by-Step Guide for PayTechs
 - Regulatory Compliance for Cross-Border Blockchain Payments (FATF Travel Rule)
+- EU Instant Payments Regulation (IPR): What PayTechs Must Build for Mandatory Euro Credit Transfers 🇪🇺 *(new — IPR already in force Oct 2025; add on segment activation)*
 - The True Cost of SWIFT vs. Blockchain Remittance: A Margin Analysis for PayTechs
 - On-Chain FX Settlement: How Atomic Swaps Are Replacing Nostro/Vostro Accounts *(trending)*
 
@@ -821,6 +875,16 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 | 16 | MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce | P5 | Decision | Technical Founder | **9.0** |
 | 17 | [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention | A1 | Awareness + Consideration | RWA Felix / Technical Founder | **8.8** |
 | 18 | MiCA Compliance Checklist for Crypto-Native Startups: What to Address Before Your Token Issuance | P5 | Decision | Technical Founder | **8.7** |
+| 19 | MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 | A1 EU Compliance | Awareness + Consideration | RWA Felix + WealthTech CTO | **9.1** |
+| 20 | AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, and Cross-Border Asset Due Diligence 🇪🇺 | A1 EU Compliance | Consideration | RWA Felix | **8.9** |
+| 21 | EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI `[Both]` 🇪🇺 | A1 EU Compliance | Consideration | RWA Felix / Technical Founder | **8.8** |
+
+**Step 5 — Decision & Post-Launch** *(gate-dependent — publish after Step 4 complete and reference build available)*
+
+| # | Title | Cluster | Stage | Persona | Score |
+|---|---|---|---|---|---|
+| — | 🎬 [CASE STUDY] How We Tokenized [Asset Class] for [Client]: From First Smart Contract to Investor-Ready Platform | A1 | Decision | RWA Felix | **9.0** *(hard gate: delivered client deployment required)* |
+| — | Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiCA-Compliant Post-Launch | A1 | Post-Launch | RWA Felix / Technical Founder | **8.3** |
 
 ### Track A — Phase 2: Other Active Verticals *(Start After Phase 1 Complete)*
 
@@ -895,7 +959,12 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 | 12 | Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs | B1 | Awareness + Consideration | CEO / CPO | **8.3** |
 | — | 🎬 [CASE STUDY] WealthTech / RWA Platform Build | B1 | Decision | CEO / CPO | **8.3** |
 | 13 | DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.2** |
-| 14 | Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(watch-candidate — news-cycle dependent (BUIDL/Ondo hype); kill if no inbound in 90 days)* | B1 | Awareness + Consideration | CEO / CFO | **8.1** |
+| 14 | What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 | B1 | Decision | CCO (Carol) | **9.0** *(Carol gates every B1 deal — highest-priority new addition)* |
+| 15 | ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 | B1 | Consideration | CTO / CCO | **8.8** |
+| 16 | DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.6** |
+| 17 | AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 | B1 | Consideration | CTO / CCO | **8.5** |
+| — | *(EU AI Act for tokenized asset platforms: `[Both]` article — see A1 Phase 1 #21; split CTA footer serves B1 buyers)* | A1 + B1 | Consideration | CTO | **8.8** |
+| — | Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(watch-candidate — news-cycle dependent (BUIDL/Ondo hype); kill if no inbound in 90 days)* | B1 | Awareness + Consideration | CEO / CFO | **8.1** |
 
 **B2 Exchange & Trading Infrastructure**
 

@@ -2,7 +2,7 @@
 type: concept
 title: "EU Fintech Compliance Landscape"
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-14
 tags:
   - EU
   - fintech
@@ -80,11 +80,63 @@ Regulations overlap and create compliance tension points:
 
 4. **PSD3 / FiDA overlap**: PSD3 covers payment data sharing; FiDA covers broader financial data. Both mandate standardized APIs. There is intentional design overlap; operational conflict possible.
 
+## Compliance by ICP Segment
+
+### Crypto Native ICP
+
+| Segment | EU Compliance Obligations |
+|---|---|
+| **Seg 1 — RWA Tokenization** | **MiCA** (CASP registration for custody/trading of crypto-assets) · **MiFID II** (if instrument qualifies as a financial instrument — equity/debt token) · **DLT Pilot Regime** (if building DLT MTF/SS/TSS for tokenized securities settlement) · **AML/AMLA** (Travel Rule for asset transfers) · **GDPR** · **EU AI Act** (if AI used for asset valuation or oracle inputs) |
+| **Seg 2 — DEX & On-Chain Trading** | **MiCA** (CASP registration mandatory for EU-facing trading/custody) · **AML/AMLA** (Travel Rule ≥€1,000) · **DORA** (if classified as critical ICT third-party) · **GDPR** |
+| **Seg 3 — DeFi Lending & Yield** | **MiCA** (CASP if lending/yield products constitute crypto-asset services) · **AML/AMLA** · **EU AI Act** (if AI used for credit/risk scoring — high-risk AI category) · **GDPR** |
+| **Seg 4 — Non-Custodial & MPC Wallets** | **MiCA** (CASP if custody services offered; non-custodial under active scrutiny) · **AML/AMLA** (Travel Rule) · **GDPR** |
+| **Seg 5 — NFT Platforms** | **MiCA** (unique NFTs exempt; fractionalized/fungible NFTs may qualify as crypto-assets — grey zone, monitor ESMA guidance) · **AML/AMLA** (high-value NFT transfers; Art Market Participant obligations) · **GDPR** |
+| **Seg 6 — Token Launch / IDO** | **MiCA** (White Paper obligation for public crypto-asset offerings; prospectus-equivalent liability) · **AML/AMLA** · **GDPR** |
+| **Seg 7 — DAO Infrastructure** | **MiCA** (governance tokens may qualify as crypto-assets) · **AML/AMLA** · **GDPR** |
+| **Seg 8 — L2 & Chain Infrastructure** | **DORA** (critical ICT infrastructure) · **MiCA** (CASP if bridge/settlement services exposed to EU users) · **AML/AMLA** · **GDPR** |
+| **Seg 9 — Web3 Gaming / GameFi** | **MiCA** (in-game tokens with tradeable value) · **GDPR** · **EU AI Act** (if AI mechanics influence in-game purchases) |
+| **Seg 10 — AI × Crypto** | **EU AI Act** (on-chain AI agents making autonomous financial decisions = high-risk AI; immutable audit trail required) · **MiCA** (if agent executes crypto-asset services) · **AML/AMLA** · **DORA** · **GDPR** |
+
+> [!NOTE] NFT Grey Zone
+> MiCA explicitly excludes unique NFTs but ESMA is actively probing fractionalized NFTs and collections with fungible economics. Compliance posture for Seg 5 clients must be treated as live and evolving, not settled.
+
+### FinTech ICP
+
+| Segment | EU Compliance Obligations |
+|---|---|
+| **WealthTech (RWA / STO / Tokenized Securities)** | **MiFID II / III** (financial instrument classification; investment services authorization) · **MiCA** (CASP if crypto-asset element present) · **DLT Pilot Regime** (if building DLT MTF/SS/TSS) · **DORA** · **AML/AMLA** · **GDPR** · **EU AI Act** (if AI used in portfolio or risk management) |
+| **ExchangeTech (licensed CEX/DEX/DeFi FinTech)** | **MiCA** (CASP registration + Travel Rule) · **MiFID II** (if trading financial instruments) · **DORA** · **AML/AMLA** (Travel Rule mandatory) · **GDPR** |
+| **LendTech (Digital Lending / BNPL / Credit)** | **CCD2** (Consumer Credit Directive 2; in force Nov 2026) · **AML/AMLA** · **EU AI Act** (credit scoring = high-risk AI — immutable audit trail required) · **GDPR** |
+| **WalletTech (regulated e-money / payment wallets)** | **PSD3 / PSR** (payment services authorization) · **MiCA** (if crypto wallet feature added) · **eIDAS 2.0** (digital identity for wallet authentication) · **AML/AMLA** (Travel Rule) · **GDPR** |
+| **PayTech (Payments / Remittance)** | **PSD3 / PSR** · **IPR** (Instant Payments Regulation — mandatory euro credit transfers from Oct 2025) · **AML/AMLA** · **GDPR** |
+| **RegTech (KYC/AML tooling)** | **AML/AMLA** (primary obligation) · **EU AI Act** (KYC/fraud detection AI = high-risk) · **GDPR** |
+| **BankTech (Neo-banks / Core Banking)** | **DORA** · **PSD3 / PSR** · **AML/AMLA** · **MiCA** (if crypto product added) · **GDPR** |
+| **InsurTech** | **DORA** · **EU AI Act** (underwriting AI = high-risk) · **GDPR** |
+
+### Quick Reference: Regulation × ICP Coverage
+
+| Regulation | Crypto Native ICP | FinTech ICP |
+|---|---|---|
+| **MiCA** | All segments (primary) | ExchangeTech, WealthTech, WalletTech, BankTech |
+| **MiFID II / III** | Seg 1 RWA only (if financial instrument) | WealthTech, ExchangeTech (primary) |
+| **DLT Pilot Regime** | Seg 1 RWA (if building tokenized securities infra) | WealthTech (primary — DLT MTF/SS/TSS) |
+| **AML / AMLA** | All segments | All segments |
+| **DORA** | Seg 8 L2, Seg 10 AI×Crypto | BankTech, InsurTech, WealthTech, ExchangeTech |
+| **EU AI Act** | Seg 3 DeFi Lending, Seg 10 AI×Crypto | LendTech, RegTech, InsurTech, BankTech |
+| **PSD3 / PSR** | — | PayTech, WalletTech, BankTech |
+| **IPR** | — | PayTech (mandatory) |
+| **CCD2** | — | LendTech |
+| **eIDAS 2.0** | — | WalletTech, BankTech |
+| **GDPR** | All segments | All segments |
+
+> [!TIP] DLT Pilot Regime Sales Hook
+> The 10 pending DLT Pilot applications (including Securitize, Spain) are warm prospects — firms that have decided to pursue DLT Pilot status but haven't built the infrastructure. Highest-intent leads for InnBlockchain's dev/audit motion across both ICPs.
+
 ## InnBlockchain Relevance
 
 EU compliance is a direct revenue driver for InnBlockchain:
 - **FinTech ICP**: Compliance Carol (CCO) is the regulatory veto-holder; vendor risk pack must cover MiCA compliance context, ISO/SOC 2, data residency, and DORA third-party clauses
-- **Crypto Native ICP**: MiCA is the dominant compliance framing for all EU crypto-native clients; Phase 1 content lock is RWA + MiCA
-- **AI+Blockchain opportunity**: EU AI Act mandates on-chain audit trails for high-risk AI decisions (credit scoring, fraud) — this is a direct use case for blockchain-based compliance infrastructure
+- **Crypto Native ICP**: MiCA is the dominant compliance framing for all EU crypto-native clients; DLT Pilot Regime is the highest-intent hook for Seg 1 RWA
+- **AI+Blockchain opportunity**: EU AI Act mandates on-chain audit trails for high-risk AI decisions (credit scoring, fraud) — direct use case for blockchain-based compliance infrastructure across LendTech, RegTech, and Seg 10 AI×Crypto
 
 See: [[MiFID-II]] | [[MiFID-III]] | [[MiCA-Regulation]] | [[DORA-Regulation]] | [[EU-AML-AMLA]] | [[EU-AI-Act-Fintech]] | [[PSD3-Open-Banking-EU]] | [[DLT-Pilot-Regime]]

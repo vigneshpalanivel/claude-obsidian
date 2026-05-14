@@ -40,7 +40,11 @@
       "WebFetch(domain:ledgerinsights.com)",
       "WebFetch(domain:21x.eu)",
       "WebFetch(domain:www.amf-france.org)",
-      "WebFetch(domain:www.goodwinlaw.com)"
+      "WebFetch(domain:www.goodwinlaw.com)",
+      "Bash(pandoc --version)",
+      "Bash(brew list *)",
+      "Bash(python3 -c \"import markdown2, weasyprint\")",
+      "Bash(npm list *)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
