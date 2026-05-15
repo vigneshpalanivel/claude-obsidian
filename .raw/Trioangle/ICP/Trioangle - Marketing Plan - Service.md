@@ -43,7 +43,7 @@ related:
 > - Every piece of content links primarily to the AI Audit Sprint CTA; Discovery Sprint CTA is the secondary surface, used only on custom-dev pillar pages.
 > - Every marketing KPI rolls up AI-sourced pipeline first; custom-dev pipeline is reported separately and is not a primary objective.
 >
-> **The reason for the asymmetry:** custom dev is commoditized in 2026 (vibe-coding tools, nearshore agencies, AI coding assistants). Domain-specific AI engineering applied to verticals Trioangle has already shipped 800+ platforms in is the only software-services wedge where the 2015–2026 delivery history compounds into a durable moat. Marketing budget that doesn't sit on that wedge is leaking margin.
+> **The reason for the asymmetry:** custom dev is commoditized in 2026 (vibe-coding tools, nearshore agencies, AI coding assistants). Domain-specific AI engineering applied to verticals Trioangle has already shipped platforms in since 2015 is the only software-services wedge where the delivery history compounds into a durable moat. Marketing budget that doesn't sit on that wedge is leaking margin.
 
 > [!IMPORTANT] Persona Tiering — Direct vs Channel-Partner vs Inbound-Only
 > Per [[Trioangle - ICP - Service]] §Persona Tiering and [[Trioangle Growth Plan]] Track 2 activation, the five Service personas are NOT pursued equally by marketing:
@@ -86,7 +86,10 @@ Make **Persona 5 inbound + qualified channel-partner referrals** the cheapest, f
 
 ### Master narrative — the one sentence
 
-> *"For established platform operators who need to embed AI features into the platform they've already built — Trioangle ships domain-specific AI engineering, not AI strategy decks: dispatch optimization, dynamic pricing, demand forecasting, fraud detection, conversational booking — in verticals we've already delivered 800+ platforms in since 2015."*
+> *"For established platform operators who need to embed AI features into the platform they've already built — Trioangle ships domain-specific AI engineering, not AI strategy decks: dispatch optimization, dynamic pricing, demand forecasting, fraud detection, conversational booking — in verticals we've already delivered platforms across ride-hailing, logistics, marketplace, home services, and adjacent categories since 2015."*
+
+> [!WARNING] 800+ Stat — Pre-Publish Gate (applies to all marketing artifacts)
+> The "800+ platforms since 2015" figure is self-reported and pending internal audit (see [[Trioangle - Content Strategy - Service]] §Part 10 Objection Handler — Vendor Comparison). Until the audit is complete and the figure is verified against delivery records: **do not use "800+" as an exact count in any external-facing artifact** — ad copy, landing pages, outbound sequences, sales decks, or conference talk slides. Use instead: *"platforms delivered across ride-hailing, logistics, marketplace, home services, and adjacent verticals since 2015 — ask us for domain-specific reference counts in your exact vertical."* Once audit is confirmed, update this master narrative and PM1 with the verified figure and remove this gate. Audit owner: [assign internally].
 
 This sentence is the source of truth for every other piece of copy. Persona-specific variants compress, expand, and reweight it — they do not invent new claims.
 
@@ -94,7 +97,7 @@ This sentence is the source of truth for every other piece of copy. Persona-spec
 
 | # | Pillar | When to lead with this |
 |---|---|---|
-| **PM1** | **Domain knowledge applied to the AI integration layer.** 800+ platform deliveries since 2015 = edge cases known on day one. | Default opener for P5; outbound subject lines, paid headlines, conference sessions. |
+| **PM1** | **Domain knowledge applied to the AI integration layer.** Platform deliveries across ride-hailing, logistics, marketplace, home services, and adjacent verticals since 2015 = edge cases known on day one. *(Use unquantified framing until the internal 800+ delivery audit is confirmed — see 800+ Pre-Publish Gate above.)* | Default opener for P5; outbound subject lines, paid headlines, conference sessions. |
 | **PM2** | **AI as enhancement, not dependency.** Service-isolation pattern, automatic fallback to rule-based defaults, A/B-tested rollout. The platform stays reliable; AI improves it incrementally. | Pre-empts the "AI will destabilize my platform" objection. Used on technical landing pages, architecture posts, AI Audit Sprint deliverable docs. |
 | **PM3** | **Honest build vs buy vs SaaS recommendations.** We will tell you not to build something, paid. The audit deliverable disqualifies wrong-fit AI work as a feature. | Anchor for the AI Audit Sprint pre-engagement product. Differentiator vs "AI everywhere" generic agencies. |
 | **PM4** | **Output-based, not retainer-based.** $15k–$120k+ per AI feature, fixed-price delivery, no monthly retainer locks. Recurring revenue comes from feature cadence, not subscription. | Pre-empts the "are you trying to lock us in?" objection from technical buyers and procurement. Reinforced in pricing pages, RFP responses. |
@@ -112,6 +115,7 @@ These phrases are forbidden in any external Service ICP marketing artifact — t
 - "We pride ourselves on transparent communication" / "high-quality code" / "senior engineers" (every losing vendor said the same — replace with the structural guarantee)
 - "Powered by AI" decoration on existing features
 - "We've built AI features in 800+ platforms" (conflates platform delivery count with AI delivery count — see [[Trioangle - ICP - Service]] §Proof-Point Caveat)
+- Any exact "800+" count until the internal delivery audit is confirmed — see 800+ Pre-Publish Gate in §Positioning above
 - "Scrappy startup team that moves fast" (loses P3 enterprise; channel partners reject it)
 
 ### Disqualification copy (used on landing pages and ads)
@@ -178,10 +182,10 @@ These are **starting-assumption benchmarks**, not validated numbers. Re-set afte
 
 | Sub-motion | Tactic | Asset | Owner |
 |---|---|---|---|
-| **Inbound — AI Search & SEO** | Pillar 7 articles + AEO/GEO snippet engineering — see [[Trioangle - Content Strategy - Service]] Pillar 7 + [[Product_Landing_Page_AEO_GEO_Prompts]] for the technique pattern | Pillar 7 cluster (currently 5 sub-clusters); AI Audit Sprint landing page; vertical-specific AI feature deep-dives (one per of the 9 verticals) | Content + SEO |
+| **Inbound — AI Search & SEO** | Pillar 7 articles + AEO/GEO snippet engineering — see [[Trioangle - Content Strategy - Service]] Pillar 7 + [[Service_Landing_Page_AEO_GEO_Prompts]] for the technique pattern | Pillar 7 cluster (currently 5 sub-clusters); AI Audit Sprint landing page; vertical-specific AI feature deep-dives (one per of the 9 verticals) | Content + SEO |
 | **Inbound — Newsletter** | Bi-weekly engineering-language newsletter to a P5-only list (CTOs/CPOs at $1M+ ARR platform operators); content = AI feature deep-dives + honest "don't build this" posts | List-build via lead-magnet downloads + community presence; gated content = "AI Audit Sprint sample deliverable" | Marketing Lead |
 | **Inbound — Community presence** | Substantive contribution in Latent Space Discord, AI Engineer World's Fair Discord, CTO Craft Slack AI threads, r/MachineLearning vertical-specific posts (with extreme caution re self-promotion rules) | Engineering team's named LinkedIn + Twitter/X profiles publishing AI feature post-mortems | Marketing + named engineers |
-| **Outbound — Channel 4 ABM** | Trigger-based outbound per [[Trioangle - ICP - Service]] Channel 4 sequence — competitor-AI-launch trigger, ML/AI Engineer job-post trigger, investor-deck AI mention trigger, public AI underperformance signal | Trigger detection ops (Apollo + Crystal Knows + manual LinkedIn monitoring); 3-step outbound sequence; Free AI Readiness Call CTA | SDR + Marketing Ops |
+| **Outbound — Channel 4 ABM** | Trigger-based outbound per [[Trioangle - ICP - Service]] Channel 4 sequence — competitor-AI-launch trigger, ML/AI Engineer job-post trigger, investor-deck AI mention trigger, public AI underperformance signal | Trigger detection ops: **LinkedIn Sales Navigator** (ML/AI Engineer job alerts by account list) · **Google Alerts + Mention** (competitor AI feature announcements, prospect brand + "AI") · **AppFollow / Sensor Tower** (app-store underperformance signals) · **Crunchbase Pro** (Series C+ funding alerts for trigger articles #39/#40/#43); Apollo for sequence execution; 3-step outbound sequence; Free AI Readiness Call CTA. See [[Trioangle - Content Strategy - Service]] §Part 7 Channel 4 Trigger Detection Tooling for full table. | SDR + Marketing Ops |
 | **Events** | AI Engineer World's Fair (sponsorship + speaking slot if possible); MaaS Alliance / CSCMP / Marketplace Risk vertical conferences; selective Latent Space meetups in SF/NYC | Conference talk = AI feature post-mortem (NOT a capabilities pitch); 1-page take-away handout; post-conference outbound list | Marketing Lead + named engineering speaker |
 
 **Why this mix:** P5 researches via LLM-search and engineering communities before procurement. Inbound capture via search/community is *cheaper and higher-converting* than cold ABM for this persona. Outbound exists to surface trigger-driven opportunities that would otherwise slip past the inbound net.
@@ -255,9 +259,13 @@ Marketing inherits the editorial plan in [[Trioangle - Content Strategy - Servic
 
 | Asset Type | Cadence | Owner | Word Count | Distribution |
 |---|---|---|---|---|
-| Pillar 7 deep-dive (AI feature in a vertical) | Weekly (Tue) | Senior engineer + content writer | 3,000–4,500 | Blog → newsletter → LinkedIn → community → AI search |
-| Pillar 1–4 long-form (custom-dev pillars) | Weekly (Thu) | Content writer | 2,200–3,500 | Blog → newsletter → SEO long-tail |
-| Weekly engineering insight (LinkedIn long-form by founder or named engineer) | 2x/week | Vignesh + named engineer | 600–1,200 | LinkedIn primary, repurposed to blog roundup monthly |
+| 🥇 Pillar 7 deep-dive (AI feature in a vertical) | Weekly — **Tuesday** | Senior engineer + content writer | **3,000–4,500** (technical depth required for P5 credibility) | Blog → bi-weekly P5 newsletter → LinkedIn carousel → AI engineering community → AI search snippet |
+| Pillar 1–4 long-form (custom-dev pillars) | Weekly — **Thursday** | Content writer | **2,200–3,500** | Blog → newsletter → SEO long-tail |
+| Shareable / thought-leadership post (Pillar 2, 4, 7) | Weekly — **Friday** | Content writer + engineer sign-off | **1,200–2,000** | LinkedIn primary → blog → newsletter |
+| LinkedIn long-form (founder or named engineer) | 2×/week (Mon + Wed) | Vignesh + named engineer | 600–1,200 | LinkedIn primary; repurposed to blog roundup monthly |
+
+> [!NOTE] Publishing Cadence — 3 Posts/Week
+> The full editorial calendar in [[Trioangle - Content Strategy - Service]] operates at **3 published posts per week**: Tuesday (Pillar 7 or primary-motion SEO), Thursday (Pillar 1–4 SEO long-tail), Friday (shareable / thought-leadership). This cadence produces 12 articles/month and 36 articles in the first 90 days per the Part 5 roadmap. Do not confuse LinkedIn posts (2×/week) with blog publish slots (3×/week) — they are separate outputs. Missed blog publish slots are not recovered by LinkedIn posts.
 | Vertical-specific AI feature one-pager | After every shipped AI feature | Engineering + Marketing | 1 page | Sales enablement, RFP packets, Sprint deliverable |
 | Case study (full long-form) | After every closed-won AI feature delivery | Marketing + Customer | 1,500–2,500 | Blog, AI Audit Sprint landing, Channel 4 outbound, Clutch review attachment |
 | Newsletter (P5-only) | Bi-weekly | Marketing Lead | 500–800 | Email |
@@ -268,7 +276,7 @@ Marketing inherits the editorial plan in [[Trioangle - Content Strategy - Servic
 Every Pillar 7 article must produce within 14 days of publish:
 1. **LinkedIn carousel** (8–12 slides; engineering-language, no marketing fluff)
 2. **Newsletter feature** (with founder commentary)
-3. **AI search snippet engineering** (5–10 likely query variations addressed in the article body — see [[Product_Landing_Page_AEO_GEO_Prompts]] approach for pattern)
+3. **AI search snippet engineering** (5–10 likely query variations addressed in the article body — see [[Service_Landing_Page_AEO_GEO_Prompts]] approach for pattern)
 4. **Outbound talking-track** (1-paragraph Channel 4 Step 2 message variant referencing the article)
 5. **Founder LinkedIn post** (commentary on the why-this-matters angle)
 
@@ -278,7 +286,7 @@ A Pillar 7 article publishes only if:
 - ✅ One of the named AI engineers contributed at least 30% of the technical content
 - ✅ Includes at least one architecture diagram (service-isolation pattern, fallback design, or model rollout flow)
 - ✅ References a specific vertical (not generic "AI for B2B SaaS" framing)
-- ✅ Cites the 800+ stat correctly per the Proof-Point Caveat (domain knowledge, not AI delivery count)
+- ✅ Uses the unquantified delivery-history framing per the 800+ Pre-Publish Gate: *"platforms delivered across ride-hailing, logistics, marketplace, home services, and adjacent verticals since 2015"* — never an exact count until the internal audit is confirmed
 - ✅ Ends with the AI Readiness Call OR AI Audit Sprint CTA — never a generic "contact us"
 - ✅ Disqualification banner present where audience could plausibly include pre-traction startups
 - ✅ AEO/GEO snippet structure verified (FAQ-style headers, direct answers in opening sentences of each section)
@@ -317,8 +325,8 @@ Lean stack — buy only the tools that demonstrably feed the AI primary motion. 
 |---|---|---|---|
 | **CRM** | HubSpot Sales (or existing CRM) | Lead capture, deal pipeline, attribution | Single source of truth for pipeline by source |
 | **CMS** | WordPress / Webflow / existing | Blog + landing pages | Pick whichever is current; do not migrate as part of this plan |
-| **SEO + AEO/GEO** | Ahrefs (SEO); manual AEO/GEO snippet engineering per [[Product_Landing_Page_AEO_GEO_Prompts]] approach; Profound or Otterly (LLM-search rank tracking, evaluate Q3 2026) | Search rank + LLM citation tracking | LLM-rank tracking tools are early; budget cautious experiment |
-| **ABM signal** | Apollo + Crystal Knows + manual LinkedIn monitoring (low-budget signal stack); RB2B / Clearbit Reveal (when budget permits) for de-anonymized inbound | Trigger detection for Channel 4 outbound | Build trigger ops as a Q3 priority |
+| **SEO + AEO/GEO** | Ahrefs (SEO); manual AEO/GEO snippet engineering per [[Service_Landing_Page_AEO_GEO_Prompts]] approach; Profound or Otterly (LLM-search rank tracking, evaluate Q3 2026) | Search rank + LLM citation tracking | LLM-rank tracking tools are early; budget cautious experiment |
+| **ABM signal** | LinkedIn Sales Navigator (job-post trigger alerts by account list) · Google Alerts / Mention (competitor AI feature + brand signals) · AppFollow / Sensor Tower (app-store performance monitoring) · Crunchbase Pro (late-stage funding alerts) · Apollo (sequence execution); RB2B / Clearbit Reveal (when budget permits) for de-anonymized inbound | Trigger detection for Channel 4 outbound — see [[Trioangle - Content Strategy - Service]] §Part 7 Channel 4 Trigger Detection Tooling for the full stack | Build trigger ops as a Q3 priority; must be live before SDR onboards |
 | **Email** | Customer.io OR ConvertKit (newsletter) + HubSpot Sequences (1:1 sales follow-ups) | Newsletter + nurture + outbound | Don't mix — newsletter list separate from sales sequences |
 | **Marketing analytics** | Plausible (privacy-respecting, lightweight) OR GA4 + HubSpot reporting | Funnel + attribution | Avoid Adobe/large suites — wrong scale |
 | **Review platforms** | Clutch.co paid profile + G2 free tier (upgrade post-50-reviews) | Inbound trust + RFP shortlists | Per [[Trioangle - ICP - Service]] Channel 2 |
@@ -411,7 +419,7 @@ Marketing reports against **Track 2 cadence outcomes**, not vanity metrics. Per 
 | **AI Audit Sprint bookings sourced by marketing** | 12 across the year | CRM source attribution |
 | **AI Readiness Calls sourced by marketing** | 30 across the year | CRM source attribution |
 | **Channel partner agreements signed (P3 / P4)** | 2–4 by end of Q4 2026 | Sales pipeline |
-| **Pillar 7 published articles (cumulative)** | 35–45 by end of Q4 2026 | Editorial CMS |
+| **Pillar 7 published articles (cumulative)** | **26 by end of Q4 2026** (current inventory ceiling per [[Trioangle - Content Strategy - Service]] Clusters 7.1–7.5; articles #82–#92, #102–#116). Commission a Pillar 7 expansion batch of 9–12 articles in Q3 2026 only if Channel 4 outbound reply rate validates content ROI — do not pre-commission speculatively. | Editorial CMS |
 | **Named AI feature case studies published** | 6–10 by end of Q4 2026 | Editorial CMS |
 | **Clutch verified reviews** | 30+ verified by end of Q4 2026 (50+ stretch) | Clutch dashboard |
 
@@ -459,7 +467,7 @@ Marketing reports against **Track 2 cadence outcomes**, not vanity metrics. Per 
 - 🛠 Begin Proof Production Pipeline — first 2 AI feature case studies in production
 - 🛠 AI Audit Sprint landing page live with sample deliverable download
 - 🛠 AI Readiness Call booking page live with qualification form
-- 🛠 Pillar 7 article cadence active (target: 4 articles by end of Q2)
+- 🛠 Pillar 7 article cadence active — **target: 6 Pillar 7 + 6 Pillar 1–4 articles by end of Q2** (Month 1 of the [[Trioangle - Content Strategy - Service]] 90-day roadmap). ⚠️ Gate: Consideration-stage Pillar 7 articles (#85, #86, #87, #92, #102–#108) are blocked until at least one AI feature case study is in the Proof Production Pipeline with a real A/B-tested outcome metric. Awareness-only Pillar 7 articles (#82, #83, #84, #111) can publish before proof metrics are instrumented.
 - 🛠 Founder LinkedIn cadence stabilized (2 posts/week)
 
 ### Q3 2026 (July → September)
@@ -559,7 +567,7 @@ This plan inherits and depends on:
 - **[[Trioangle 2.0 AI Pivot Plan]]** — productized AI service shape, pricing model context, Phase 0/1 sequence (which gates P5 outbound activation per Service ICP).
 - **[[Trioangle - ICP - Channel Partner]]** — partner ICP; defines who the channel-partner enablement assets target.
 - **[[Trioangle - Product Verticals]]** — the 9 verticals; basis for vertical-specific Pillar 7 deep-dives, one-pagers, and case-study tagging.
-- **[[Product_Landing_Page_AEO_GEO_Prompts]]** — AI search snippet engineering technique pattern; transferable to Pillar 7 + Service landing pages.
+- **[[Service_Landing_Page_AEO_GEO_Prompts]]** — AI search snippet engineering technique pattern; transferable to Pillar 7 + Service landing pages.
 
 This plan does NOT replicate any of the above. Where this plan and any of those documents conflict, **the dependency document wins** — escalate to founder for resolution rather than silently diverging.
 
