@@ -3,7 +3,8 @@ type: concept
 title: "Trioangle Landing Page Plan"
 status: current
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-15
+source: ".raw/Trioangle/Trioangle Landing Page Plan.md"
 tags:
   - concept
   - trioangle
@@ -37,7 +38,7 @@ Positioning anchor: *"Built by the team that's shipped 800+ platforms in your ve
 
 ```
 trioangle.com/
-├── /ai/                            — AI Services Hub (broad AI service terms, links to all service pages)
+├── /ai-engineering/                — AI Engineering Hub (broad AI engineering terms, links to all service pages)
 │   ├── rag-knowledge-assistant         — RAG Knowledge Assistant
 │   ├── ai-customer-support-bot         — AI Customer Support Bot
 │   ├── whatsapp-ai-automation          — WhatsApp AI Automation
@@ -57,7 +58,7 @@ trioangle.com/
     └── education                   — EdTech Platforms (AI primary · app development · white-label solutions)
 ```
 
-**Why this split:** `/ai/[service]` pages are organized by AI service type (RAG, agents, voice, etc.) and target buyers who already know what service they need. `/industries/` pages are organized by vertical and serve all buyer entry points — AI features for established operators (primary pitch), custom app development for platform builders, and white-label solutions for fast-launch buyers. AI is the primary CTA on every industry page; dev and product keywords broaden the top of funnel and feed into the appropriate downstream pipeline.
+**Why this split:** `/ai-engineering/[service]` pages are organized by AI service type (RAG, agents, voice, etc.) and target buyers who already know what service they need. `/industries/` pages are organized by vertical and serve all buyer entry points — AI features for established operators (primary pitch), custom app development for platform builders, and white-label solutions for fast-launch buyers. AI is the primary CTA on every industry page; dev and product keywords broaden the top of funnel and feed into the appropriate downstream pipeline.
 
 **Build priority: Vertical pages first → AI service pages → Hub last.**
 Vertical pages rank across the widest keyword surface (AI + dev + product) and funnel into all three pipelines.
@@ -126,7 +127,7 @@ Vertical pages rank across the widest keyword surface (AI + dev + product) and f
 
 ---
 
-### Priority 5 — /ai/rag-knowledge-assistant
+### Priority 5 — /ai-engineering/rag-knowledge-assistant
 
 **Headline:** *RAG knowledge assistants that actually know your platform's data — not generic chatbots*
 **CTA:** Get a fixed-price RAG quote
@@ -140,7 +141,7 @@ Vertical pages rank across the widest keyword surface (AI + dev + product) and f
 
 ---
 
-### Priority 6 — /ai/ai-customer-support-bot
+### Priority 6 — /ai-engineering/ai-customer-support-bot
 
 **Headline:** *AI customer support bots that resolve tickets without human handoff — trained on your platform's actual data*
 **CTA:** Get a fixed-price quote
@@ -154,7 +155,7 @@ Vertical pages rank across the widest keyword surface (AI + dev + product) and f
 
 ---
 
-### Priority 7 — /ai/ai-agents-automation
+### Priority 7 — /ai-engineering/ai-agents-automation
 
 **Headline:** *AI agents that do the work — not just answer questions. Booking, dispatch, support, and ops workflows automated end-to-end.*
 **CTA:** Get a fixed-price quote
@@ -183,21 +184,21 @@ Vertical pages rank across the widest keyword surface (AI + dev + product) and f
 
 ---
 
-### Priority 9 — /ai/ (Hub)
+### Priority 9 — /ai-engineering/ (Hub)
 
-**Headline:** *Productized AI for marketplace, on-demand, and platform operators — built by the team that's shipped 800+ platforms in your vertical since 2015*
+**Headline:** *Productized AI engineering for marketplace, on-demand, and platform operators — built by the team that's shipped 800+ platforms in your vertical since 2015*
 **CTA:** Free AI Readiness Call (1-hour, no pitch deck)
 
 | Type | Keywords |
 |---|---|
-| Primary | `AI integration services` |
-| Secondary | `AI feature development` · `AI engineering services` · `custom AI development` · `AI development agency` |
+| Primary | `AI engineering services` |
+| Secondary | `AI feature development` · `AI integration services` · `custom AI development` · `AI development agency` |
 | Long-tail | `hire AI development team` · `outsource AI development` · `AI feature development agency` · `productized AI services` · `domain-specific AI development` · `AI integration for SaaS platforms` · `AI engineering for platform operators` · `LLM-powered application development` · `agentic AI development` · `production AI deployment` |
 | Buyer-intent | `AI development company for platform businesses` · `embed AI into existing platform` · `add AI features to existing app` |
 
 ---
 
-### Priority 10 — /ai/whatsapp-ai-automation
+### Priority 10 — /ai-engineering/whatsapp-ai-automation
 
 **Headline:** *WhatsApp AI that handles bookings, support, and order updates — without a human in the loop*
 **CTA:** Get a fixed-price quote
@@ -211,7 +212,7 @@ Vertical pages rank across the widest keyword surface (AI + dev + product) and f
 
 ---
 
-### Priority 11 — /ai/ai-content-moderation
+### Priority 11 — /ai-engineering/ai-content-moderation
 
 **Headline:** *AI content moderation that scales with your platform — without false positives tanking your GMV*
 **CTA:** Get a fixed-price quote
@@ -225,7 +226,7 @@ Vertical pages rank across the widest keyword surface (AI + dev + product) and f
 
 ---
 
-### Priority 12 — /ai/ai-search-upgrade
+### Priority 12 — /ai-engineering/ai-search-upgrade
 
 **Headline:** *Semantic search that understands what your users actually mean — not just what they typed*
 **CTA:** Get a fixed-price quote
@@ -239,7 +240,7 @@ Vertical pages rank across the widest keyword surface (AI + dev + product) and f
 
 ---
 
-### Priority 13 — /ai/voice-ai-development
+### Priority 13 — /ai-engineering/voice-ai-development
 
 **Headline:** *Voice AI that handles calls, bookings, and support — integrated into your existing platform, not bolted on*
 **CTA:** Get a fixed-price quote
