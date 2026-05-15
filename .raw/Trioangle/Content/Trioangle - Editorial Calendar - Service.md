@@ -2,7 +2,7 @@
 
 > Extracted from [[Trioangle - Content Strategy - Service]] Part 5. Read the content strategy for article briefs, keyword strategy, persona mapping, CTA rules, and cross-linking architecture.
 >
-> **Cadence:** 3 posts/week (Mon · Wed · Fri). 🥇 = Pillar 7 AI Engineering (primary motion). 🤝 = Channel-partner enablement (Enterprise P3 or MENA P4 — 1/month).
+> **Cadence:** 2 posts/week (Mon · Thu). 🥇 = Pillar 7 AI Engineering (primary motion). 🤝 = Channel-partner enablement (Enterprise P3 or MENA P4 — 1/month). *Reduced from 3/week — all 26 Pillar 7 articles preserved; lower-priority Pillar 1/3 architecture articles deferred to Month 7+.*
 >
 > **Scheduling rule:** Add 0.5 to all Pillar 7 scores when comparing against non-Pillar-7 articles. See Part 2b of the content strategy.
 
@@ -50,22 +50,20 @@
 | Week | Day | Title | Cluster | Persona | Stage |
 |------|-----|-------|---------|---------|-------|
 | W1 | Mon | 🥇 Which AI Features Actually Move Marketplace Metrics (And Which Are Hype) (#82) | 7.1 | AI-Forward (P5) | Awareness |
-| W1 | Wed | The CTO's Checklist: 15 Questions to Ask Before Hiring a Dev/AI Partner (#14) | 2.1 | All | Consideration |
-| W1 | Fri | The $60K Lesson: When Your Dev Agency Ghosts You (#21) | 2.2 | All | Awareness |
+| W1 | Thu | The CTO's Checklist: 15 Questions to Ask Before Hiring a Dev/AI Partner (#14) | 2.1 | All | Consideration |
 | W2 | Mon | 🥇 Why Generic AI Consultants Fail Platform Businesses — and What to Look For Instead (#84) | 7.1 | AI-Forward (P5) | Awareness |
-| W2 | Wed | 🥇 The AI Readiness Audit: How to Evaluate Your Platform's Highest-ROI AI Use Cases (#83) | 7.1 | AI-Forward (P5) | Awareness |
-| W2 | Fri | The Real Cost of Cheap MVP Development: A Financial Breakdown for Established Operators (#2) | 1.1 | CTO | Awareness |
+| W2 | Thu | 🥇 The AI Readiness Audit: How to Evaluate Your Platform's Highest-ROI AI Use Cases (#83) | 7.1 | AI-Forward (P5) | Awareness |
 | W3 | Mon | 🥇 AI-Powered Dynamic Pricing for Ride-Hailing: Architecture, Models, and Rollout Strategy (#85) | 7.2 | AI-Forward (P5) | Consideration |
-| W3 | Wed | IP Ownership in Outsourced Development: What Founder-Operators Must Know (#19) | 2.2 | CTO+Founder-Operator | Awareness |
-| W3 | Fri | 🥇 GitHub Copilot vs. AI Feature Engineering: Why Your Internal Team Still Needs a Delivery Partner (#92) | 7.3 | AI-Forward (P5) | Consideration |
-| W4 | Mon | 🥇 Why Your Data Probably Isn't AI-Ready Yet — and What to Fix Before Building Anything (#111) | 7.4 | AI-Forward (P5) | Awareness |
-| W4 | Wed | Custom Development vs. White-Label Platforms: Which Is Right for Your Business? (#15) | 2.1 | All | Consideration |
-| W4 | Fri | How to Identify Technical Debt Before It Kills Your Established Platform (#1) | 1.1 | CTO | Awareness |
+| W3 | Thu | The $60K Lesson: When Your Dev Agency Ghosts You (#21) | 2.2 | All | Awareness |
+| W4 | Mon | 🥇 GitHub Copilot vs. AI Feature Engineering: Why Your Internal Team Still Needs a Delivery Partner (#92) | 7.3 | AI-Forward (P5) | Consideration |
+| W4 | Thu | 🥇 Why Your Data Probably Isn't AI-Ready Yet — and What to Fix Before Building Anything (#111) | 7.4 | AI-Forward (P5) | Awareness |
+
+> *Deferred to Month 7+: #2 (Real Cost Cheap MVP), #19 (IP Ownership), #15 (Custom Dev vs White Label), #1 (Tech Debt) — lower-priority Pillar 1/2 articles; all Pillar 7 articles preserved.*
 
 **Month 1 Deliverables:**
-- [ ] 12 blog posts published — **6 are Pillar 7 (50% of Month 1 inventory)**, reflecting Service Line Priority
+- [ ] 8 blog posts published — **6 are Pillar 7 (75% of Month 1 inventory)**, reflecting Service Line Priority
 - [ ] Pillar 7 hub page live (`/blog/ai-engineering-platform-businesses`) with all 6 published Pillar 7 articles cross-linked
-- [ ] Pillar 2 hub page live (trust + vendor selection)
+- [ ] Pillar 2 hub page live (trust + vendor selection) — anchored by #14 and #21
 - [ ] Lead magnets: **AI Readiness Self-Assessment (vertical-specific PDF, 9 versions)** + Architecture Audit Checklist + Non-Technical Founder-Operator's Hiring Guide
 - [ ] CTA blocks deployed: free **AI Readiness Call** booking page live; paid **AI Audit Sprint** booking page live (with $1,500–$4,000 fee structure and credited-toward-delivery language)
 - [ ] Internal linking structure established between published posts
@@ -79,20 +77,18 @@
 | Week | Day | Title | Cluster | Persona | Stage |
 |------|-----|-------|---------|---------|-------|
 | W5 | Mon | 🥇 Intelligent Dispatch: How AI Is Replacing Rule-Based Matching in On-Demand Platforms (#86) | 7.2 | AI-Forward (P5) | Consideration |
-| W5 | Wed | 🥇 AWS Personalize vs. Custom AI Engineering: When the SaaS Wins, When It Doesn't (#109) | 7.4 | AI-Forward (P5) | Consideration |
-| W5 | Fri | How to Build a Ride-Hailing Platform: Architecture Guide (#26) | 3.1 | CTO+Founder-Operator | Awareness |
+| W5 | Thu | 🥇 AWS Personalize vs. Custom AI Engineering: When the SaaS Wins, When It Doesn't (#109) | 7.4 | AI-Forward (P5) | Consideration |
 | W6 | Mon | 🥇 Marketplace Fraud Detection with AI: Patterns, Models, and Production Integration (#87) | 7.2 | AI-Forward (P5) | Consideration |
-| W6 | Wed | 🥇 Pinecone + OpenAI vs. a Domain AI Partner: Build-vs-Buy for Marketplace Operators (#110) | 7.4 | AI-Forward (P5) | Consideration |
-| W6 | Fri | How We Rebuilt a Crashing Platform to Handle 100K Users (#5) | 1.1 | CTO | Decision |
+| W6 | Thu | 🥇 Pinecone + OpenAI vs. a Domain AI Partner: Build-vs-Buy for Marketplace Operators (#110) | 7.4 | AI-Forward (P5) | Consideration |
 | W7 | Mon | 🥇 Demand Forecasting for Logistics and Delivery Platforms (#88) | 7.2 | AI-Forward (P5) | Consideration |
-| W7 | Wed | 🥇 AI for E-Commerce Marketplaces: Search Ranking, Recommendation, Multi-Seller Trust Scoring (#107) | 7.2 | AI-Forward (P5) | Consideration |
-| W7 | Fri | The True Cost of Building a Custom On-Demand Platform for Established Operators (#38) | 3.3 | CTO+Founder-Operator | Decision |
+| W7 | Thu | 🥇 AI for E-Commerce Marketplaces: Search Ranking, Recommendation, Multi-Seller Trust Scoring (#107) | 7.2 | AI-Forward (P5) | Consideration |
 | W8 | Mon | 🥇 How to Add AI Features to a Live Platform Without Breaking Stability (#90) | 7.3 | AI-Forward (P5) | Decision |
-| W8 | Wed | Multi-Tenant Architecture for Marketplace Platforms at Production Scale (#6) | 1.2 | CTO | Awareness |
-| W8 | Fri | 🤝 Why Large Consulting Firm Digital Transformations Fail (#51) — *channel-partner enablement, monthly cadence* | 5.1 | Channel partners → Enterprise (P3) | Awareness |
+| W8 | Thu | How We Rebuilt a Crashing Platform to Handle 100K Users (#5) | 1.1 | CTO | Decision |
+
+> *Deferred to Month 7+: #26 (Ride-Hailing Architecture), #38 (True Cost Custom Dev), #6 (Multi-Tenant Architecture). Channel-partner article #51 moved to Month 4.*
 
 **Month 2 Deliverables:**
-- [ ] 12 more blog posts (24 total) — **7 are Pillar 7 (58% of Month 2 inventory)**
+- [ ] 8 more blog posts (16 total) — **7 are Pillar 7 (88% of Month 2 inventory)**
 - [ ] All 9 ICP verticals partially covered in Pillar 7 by end of Month 2: ride-hailing (#85, #86), marketplace (#87, #107), logistics (#88) live; remaining vertical AI articles (#102, #103, #104, #105, #106, #108) publish Month 3
 - [ ] 2 build-vs-buy/loss-reason articles live (#109 AWS Personalize, #110 Pinecone+OpenAI) — directly address the ICP's Loss Reasons table
 - [ ] 1 case study published (#5 — food delivery platform rebuild, Scaling CTO persona). Enterprise case study is a standalone production piece outside the SEO plan — coordinate separately with the delivery team using the editorial quality standard in [[Trioangle - Content Strategy - Service]] Part 10.
@@ -109,26 +105,24 @@
 | Week | Day | Title | Cluster | Persona | Stage |
 |------|-----|-------|---------|---------|-------|
 | W9 | Mon | 🥇 AI for Rental Marketplaces: Availability Prediction, Dynamic Pricing, Smart Recommendations (#102) | 7.2 | AI-Forward (P5) | Consideration |
-| W9 | Wed | 🥇 AI Service Isolation: Architecture Patterns for Fallback-Safe Machine Learning in Production (#91) | 7.3 | AI-Forward (P5) | Decision |
-| W9 | Fri | What to Expect in a Discovery Sprint / AI Audit Sprint (#23) | 2.3 | All | Decision |
+| W9 | Thu | 🥇 AI Service Isolation: Architecture Patterns for Fallback-Safe Machine Learning in Production (#91) | 7.3 | AI-Forward (P5) | Decision |
 | W10 | Mon | 🥇 AI for On-Demand Home Services: Intelligent Provider Matching and Demand Prediction (#103) | 7.2 | AI-Forward (P5) | Consideration |
-| W10 | Wed | 🥇 GCP Vertex AI vs. Custom Models for Vertical Platforms: Where Generic AI SaaS Falls Short (#112) | 7.4 | AI-Forward (P5) | Consideration |
-| W10 | Fri | Building a Multi-Vendor Food Delivery App for an Established Operator (#27) | 3.1 | CTO+Founder-Operator | Awareness |
+| W10 | Thu | 🥇 GCP Vertex AI vs. Custom Models for Vertical Platforms: Where Generic AI SaaS Falls Short (#112) | 7.4 | AI-Forward (P5) | Consideration |
 | W11 | Mon | 🥇 AI for Super Apps: Cross-Service Intelligence and Unified User Intent Models (#108) | 7.2 | AI-Forward (P5) | Consideration |
-| W11 | Wed | 🥇 Conversational Booking Interfaces: When LLM-Powered Chat Beats Forms (#89) | 7.2 | AI-Forward (P5) | Consideration |
-| W11 | Fri | Contracts, Escrow, and GitHub Access (#22) | 2.2 | All | Decision |
+| W11 | Thu | 🥇 Conversational Booking Interfaces: When LLM-Powered Chat Beats Forms (#89) | 7.2 | AI-Forward (P5) | Consideration |
 | W12 | Mon | 🥇 AI for Classifieds Platforms: Smart Moderation, Listing-Quality Scoring (#104) | 7.2 | AI-Forward (P5) | Consideration |
-| W12 | Wed | 🥇 The AI Engineering Stack for Established Platform Operators: Architecture Reference Guide (#113) | 7.5 | AI-Forward (P5) | Awareness |
-| W12 | Fri | 🤝 Building Platforms for the MENA Market (#68) — *channel-partner enablement, monthly cadence* | 6.1 | Channel partners → MENA (P4) | Awareness |
+| W12 | Thu | 🥇 The AI Engineering Stack for Established Platform Operators: Architecture Reference Guide (#113) | 7.5 | AI-Forward (P5) | Awareness |
+
+> *Deferred to Month 5: #23 (Discovery Sprint), #22 (Contracts/Escrow), #68 (MENA channel partner). Deferred to Month 7+: #27 (Food Delivery App). All 21 core Pillar 7 articles (#82–#92, #102–#113) fully published by end of Month 3.*
 
 > [!NOTE] Decision-Stage Coverage Check — End of Month 3
-> By end of Month 3, decision-stage content live: #23 (Discovery Sprint expectations), #22 (Contracts & Escrow), #5 (case study — 100K user rebuild), #90 (adding AI to a live platform without breaking stability). That is ~4 of ~36 published articles (~11%). This is intentional — topical authority at awareness scale must precede decision-stage trust. **Monitor Month 2 pillar hub click-through rates** (time-on-page + internal link clicks from hub to spoke) as the leading indicator that Awareness articles are converting readers down the funnel. If hub engagement is below target by end of Month 2, add one additional decision-stage article in Month 3 before proceeding with the Month 4 plan.
+> By end of Month 3, decision-stage content live: #5 (case study — 100K user rebuild), #90 (adding AI to a live platform without breaking stability), #91 (AI service isolation). That is ~3 of ~24 published articles (~13%). #23 (Discovery Sprint) and #22 (Contracts/Escrow) are now in Month 5 — monitor whether the decision-stage gap creates friction before then. **Monitor Month 2 pillar hub click-through rates** (time-on-page + internal link clicks from hub to spoke). If hub engagement is below target by end of Month 2, pull #23 forward to Month 3 by replacing the lowest-scoring Month 3 article.
 
 **Month 3 Deliverables:**
-- [ ] 12 more blog posts (36 total) — **8 are Pillar 7 (67% of Month 3 inventory)**
+- [ ] 8 more blog posts (24 total) — **8 are Pillar 7 (100% of Month 3 inventory) — all 21 core Pillar 7 articles fully shipped**
 - [ ] **7 of 9 ICP verticals covered in Pillar 7** by end of Month 3: ride-hailing (#85, #86), delivery/logistics (#88), marketplace/e-commerce (#87, #107), home services (#103), super apps (#108), classifieds (#104), rental/travel partial (#102). Remaining: dating (#105) and edtech (#106) publish Month 4; social & entertainment (#117) and travel & hospitality full (#118) publish Month 7+ once AI production cases are confirmed.
 - [ ] All Pillar 7 build-vs-buy/loss-reason articles live (#109, #110, #111, #112) — full coverage of ICP Loss Reasons table
-- [ ] Pillar 5 first channel-partner enablement article (#51) live; Pillar 6 first MENA enablement article (#68) live
+- [ ] Pillar 5 channel-partner enablement article (#51) deferred to Month 4; Pillar 6 MENA article (#68) deferred to Month 5
 - [ ] All decision-stage AI content published with two-step CTAs (Free Readiness Call → Paid Audit Sprint)
 - [ ] Retargeting pixel audiences built from Pillar 7 hub visitors (the primary conversion segment)
 - [ ] Vertical-specific keyword targeting live for all 9 ICP verticals
@@ -142,24 +136,22 @@
 | Week | Day | Title | Cluster | Persona | Stage |
 |------|-----|-------|---------|---------|-------|
 | W13 | Mon | Platform Post-Mortem: How We Diagnosed and Fixed a Mission-Critical Outage in 72 Hours (#75) | 1.1 | CTO | Awareness |
-| W13 | Wed | 🥇 AI for Dating Apps: Beyond Rule-Based Matching — Embedding-Based Compatibility Models (#105) | 7.2 | AI-Forward (P5) | Consideration |
-| W13 | Fri | How to Protect Yourself from Vendor Lock-In: An Engineering Leader's Guide (#20) | 2.2 | CTO+Founder-Operator | Awareness |
+| W13 | Thu | 🥇 AI for Dating Apps: Beyond Rule-Based Matching — Embedding-Based Compatibility Models (#105) | 7.2 | AI-Forward (P5) | Consideration |
 | W14 | Mon | When to Hire Your First Senior CTO/VP Engineering for an Established Platform (#77 ‡) | 4.2 | Founder-Operator | Awareness |
-| W14 | Wed | Boutique Agency vs. Large Consultancy vs. Freelancers: A Real-World Comparison (#16) | 2.1 | All | Consideration |
-| W14 | Fri | A Vertical Competitor Just Shipped AI: How to Compress Your Engineering Roadmap (#80 ‡) | 4.1 | CTO+Founder-Operator | Awareness |
-| W15 | Mon | 🥇 AI for EdTech Platforms: Personalized Learning Paths and Engagement Prediction (#106) | 7.2 | AI-Forward (P5) | Consideration |
-| W15 | Wed | Scaling Your Platform to a New Country: Architecture for Multi-Region Launches (#76) | 3.2 | CTO | Awareness |
-| W15 | Fri | How to Evaluate Code Quality When You're Not Technical (#17) | 2.1 | All | Consideration |
-| W16 | Mon | 7 Warning Signs Your Established Platform Won't Survive Its Next Traffic Spike (#3) | 1.1 | CTO | Awareness |
-| W16 | Wed | How to Salvage a Failed Dev Partnership: A Playbook for Paused or Stalled Engagements (#79) | 2.3 | All | Awareness |
-| W16 | Fri | 🤝 Boutique Agency vs. Accenture: Real Cost Comparison for Enterprise Projects (#59) — *channel-partner enablement* | 5.3 | Channel partners → Enterprise (P3) | Consideration |
+| W14 | Thu | 🥇 AI for EdTech Platforms: Personalized Learning Paths and Engagement Prediction (#106) | 7.2 | AI-Forward (P5) | Consideration |
+| W15 | Mon | How to Protect Yourself from Vendor Lock-In: An Engineering Leader's Guide (#20) | 2.2 | CTO+Founder-Operator | Awareness |
+| W15 | Thu | A Vertical Competitor Just Shipped AI: How to Compress Your Engineering Roadmap (#80 ‡) | 4.1 | CTO+Founder-Operator | Awareness |
+| W16 | Mon | 🤝 Why Large Consulting Firm Digital Transformations Fail (#51) — *channel-partner enablement, deferred from Month 2* | 5.1 | Channel partners → Enterprise (P3) | Awareness |
+| W16 | Thu | Boutique Agency vs. Large Consultancy vs. Freelancers: A Real-World Comparison (#16) | 2.1 | All | Consideration |
+
+> *Deferred to Month 7+: #76 (Scaling to New Country), #17 (Evaluate Code Quality), #3 (7 Warning Signs), #79 (Salvage Failed Partnership). Channel-partner article #59 moved to Month 6.*
 
 **Month 4 Deliverables:**
-- [ ] 12 more blog posts (48 total) — **2 Pillar 7 vertical AI articles** published (#105 dating → social & entertainment partial, #106 edtech → education ✅)
+- [ ] 8 more blog posts (32 total) — **2 Pillar 7 vertical AI articles** published (#105 dating → social & entertainment partial, #106 edtech → education ✅)
 - [ ] Platform post-mortem live (#75) — highest Scaling CTO credibility signal
 - [ ] 8 of 9 ICP verticals partially or fully covered in Pillar 7 by end of Month 4. Social & entertainment partial (dating only — full coverage via #117 in Month 7+); travel & hospitality partial (rental only — full coverage via #118 in Month 7+)
-- [ ] All Pillar 2 vendor-trust articles published (#16, #17, #20 join #14, #15, #21, #22 from prior months)
-- [ ] Pillar 5 channel-partner enablement at 2 articles live (#51, #59); Pillar 6 at 1 article (#68)
+- [ ] Core Pillar 2 vendor-trust articles published: #16, #20 (joining #14, #21 from Month 1); #22 and additional trust articles in Month 5
+- [ ] Pillar 5 channel-partner enablement at 1 article live (#51); #59 in Month 6. Pillar 6 MENA enablement (#68) in Month 5.
 
 ---
 
@@ -170,24 +162,22 @@
 | Week | Day | Title | Cluster | Persona | Stage |
 |------|-----|-------|---------|---------|-------|
 | W17 | Mon | Security Audit Failed? How to Fix Critical Vulnerabilities on an Established Platform (#50) | 4.3 | Scaling CTO | Awareness |
-| W17 | Wed | Why Domain Expertise Matters More Than Generic Coding Skill (#18) | 2.1 | All | Awareness |
-| W17 | Fri | Grocery & Pharmacy Delivery Platform Architecture: Slot Scheduling, Cold-Chain Logic, and Age Verification (#63) | 3.1 | CTO+Founder-Operator | Awareness |
-| W18 | Mon | How to Evaluate a Tech Partner Without a Formal RFP: A MENA Founder's Playbook (#72) | 6.2 | MENA | Consideration |
-| W18 | Wed | Rental Marketplace Architecture: Handling Availability, Pricing, and Multi-Location Inventory (#28) | 3.1 | CTO+Founder-Operator | Awareness |
-| W18 | Fri | Building Digital Logistics Platforms: Route Optimization, Fleet Tracking, and Real-Time Dispatch (#54) | 5.2 | Enterprise | Awareness |
-| W19 | Mon | UAE Vision 2030 Digital Mandates: What Platform Founders Need to Build Right Now (#69) | 6.1 | MENA | Awareness |
-| W19 | Wed | Classifieds Platform Architecture: Search, Moderation, and Trust & Safety (#74) | 3.1 | CTO+Founder-Operator | Awareness |
-| W19 | Fri | AWS vs. GCP vs. Azure for On-Demand Platforms: Architecture Decision Guide (#11) | 1.3 | CTO | Consideration |
-| W20 | Mon | 🥇 Post-Launch AI Ops: Monitoring Model Drift in a Live Production Platform (#114) | 7.3 | AI-Forward (P5) | Implementation |
-| W20 | Wed | 🥇 A/B Testing AI Features Against Rule-Based Baselines: A Production Methodology (#115) | 7.3 | AI-Forward (P5) | Implementation |
-| W20 | Fri | 🥇 When to Retrain: Domain-Specific AI Model Refresh Cadence for Marketplace Platforms (#116) | 7.3 | AI-Forward (P5) | Implementation |
+| W17 | Thu | What to Expect in a Discovery Sprint / AI Audit Sprint (#23) — *deferred from Month 3* | 2.3 | All | Decision |
+| W18 | Mon | 🥇 Post-Launch AI Ops: Monitoring Model Drift in a Live Production Platform (#114) | 7.3 | AI-Forward (P5) | Implementation |
+| W18 | Thu | 🥇 A/B Testing AI Features Against Rule-Based Baselines: A Production Methodology (#115) | 7.3 | AI-Forward (P5) | Implementation |
+| W19 | Mon | 🥇 When to Retrain: Domain-Specific AI Model Refresh Cadence for Marketplace Platforms (#116) | 7.3 | AI-Forward (P5) | Implementation |
+| W19 | Thu | 🤝 Building Platforms for the MENA Market (#68) — *channel-partner enablement, deferred from Month 3* | 6.1 | Channel partners → MENA (P4) | Awareness |
+| W20 | Mon | UAE Vision 2030 Digital Mandates: What Platform Founders Need to Build Right Now (#69) | 6.1 | MENA | Awareness |
+| W20 | Thu | Contracts, Escrow, and GitHub Access (#22) — *deferred from Month 3* | 2.2 | All | Decision |
+
+> *Deferred to Month 7+: #18 (Domain Expertise), #63 (Grocery/Pharmacy Architecture), #72 (MENA RFP Playbook), #28 (Rental Marketplace Architecture), #54 (Digital Logistics Platforms), #74 (Classifieds Architecture), #11 (AWS vs GCP vs Azure).*
 
 **Month 5 Deliverables:**
-- [ ] 12 more blog posts (60 total) — **includes #114, #115, #116 (P5 implementation articles, promoted from Month 7+)**
+- [ ] 8 more blog posts (40 total) — **includes #114, #115, #116 (P5 implementation articles, promoted from Month 7+)**
 - [ ] P5 implementation content live: post-launch AI ops (#114), A/B testing methodology (#115), model retraining cadence (#116) — closes the retention gap for Audit Sprint clients exiting first AI delivery
-- [ ] 7 of 9 ICP verticals covered in published content by end of Month 5 (Delivery/Food, Ride-Hailing, Logistics/Fleet, Travel/Hospitality, Commerce/Classifieds, Home Services, Super Apps); Social & Entertainment (#65 dating, #66 short video) completes in Month 6; EdTech (#67) scheduled Month 7+
-- [ ] Compliance track begun — SOC 2 (#48) + Security Audit (#50); PCI-DSS (#49) in Month 6
-- [ ] MENA sequence at 4 of 6 articles live (#68 from Month 2; #69, #72 this month; #70, #71 in Month 6; #73 in Month 7+)
+- [ ] Decision-stage content catches up: #23 (Discovery Sprint) and #22 (Contracts/Escrow) both live by end of Month 5
+- [ ] Compliance track: Security Audit (#50) live this month; PCI-DSS (#49) in Month 6
+- [ ] MENA sequence at 3 of 6 articles live (#68, #69 this month; #70, #71 in Month 6; #72, #73 in Month 7+)
 - [ ] Second AI Audit Sprint upsell CTA live (article #116 — "model refresh engagement" framing) targeting first cohort of clients 3+ months post-initial-build
 
 ---
@@ -198,32 +188,30 @@
 
 | Week | Day | Title | Cluster | Persona | Stage |
 |------|-----|-------|---------|---------|-------|
-| W21 | Mon | Building a TMS & Supply Chain Platform: Order Management, Carrier Integration, and Warehouse Logic (#62) | 3.1 | Scaling CTO + Enterprise | Awareness |
-| W21 | Wed | PropTech Platform Development: Multi-Listing, Virtual Tours, and Transaction Management (#57) | 5.2 | Enterprise | Awareness |
-| W21 | Fri | Why Western Agencies Fail in the Gulf — and What to Look for in a Regional Tech Partner (#70) | 6.1 | MENA | Awareness |
-| W22 | Mon | Database Optimization for High-Volume On-Demand Platforms (#8) | 1.2 | CTO | Consideration |
-| W22 | Wed | Payment Gateway Integration Strategy for Marketplace Platforms (#34) | 3.2 | CTO | Consideration |
-| W22 | Fri | Short Video Platform Architecture: Feed Ranking, Streaming, and Moderation at Scale (#66) | 3.1 | CTO+Founder-Operator | Awareness |
-| W23 | Mon | CI/CD Pipeline Setup for Marketplace Platforms: From Zero to Production (#13) | 1.3 | CTO | Implementation |
-| W23 | Wed | PCI-DSS for Marketplace Payments: What Your Engineering Team Needs to Know (#49) | 4.3 | Scaling CTO | Awareness |
-| W23 | Fri | Hospitality Tech: Building Custom Booking and Operations Platforms (#56) | 5.2 | Enterprise | Awareness |
-| W24 | Mon | Dating App Architecture: Matching Algorithms, Safety & Moderation, and Subscription Monetization (#65) | 3.1 | CTO+Founder-Operator | Awareness |
-| W24 | Wed | Arabic Localization for Platforms: RTL Support, Multi-Currency, and Cultural UX Considerations (#71) | 6.1 | MENA | Consideration |
-| W24 | Fri | Senior Engineers vs. Junior Engineers: How to Staff Your Established-Operator Platform Team (#78) | 4.2 | CTO+Founder-Operator | Consideration |
+| W21 | Mon | Why Western Agencies Fail in the Gulf — and What to Look for in a Regional Tech Partner (#70) | 6.1 | MENA | Awareness |
+| W21 | Thu | Dating App Architecture: Matching Algorithms, Safety & Moderation, and Subscription Monetization (#65) | 3.1 | CTO+Founder-Operator | Awareness |
+| W22 | Mon | Short Video Platform Architecture: Feed Ranking, Streaming, and Moderation at Scale (#66) | 3.1 | CTO+Founder-Operator | Awareness |
+| W22 | Thu | PCI-DSS for Marketplace Payments: What Your Engineering Team Needs to Know (#49) | 4.3 | Scaling CTO | Awareness |
+| W23 | Mon | Arabic Localization for Platforms: RTL Support, Multi-Currency, and Cultural UX Considerations (#71) | 6.1 | MENA | Consideration |
+| W23 | Thu | 🤝 Boutique Agency vs. Accenture: Real Cost Comparison for Enterprise Projects (#59) — *channel-partner enablement, deferred from Month 4* | 5.3 | Channel partners → Enterprise (P3) | Consideration |
+| W24 | Mon | Senior Engineers vs. Junior Engineers: How to Staff Your Established-Operator Platform Team (#78) | 4.2 | CTO+Founder-Operator | Consideration |
+| W24 | Thu | Payment Gateway Integration Strategy for Marketplace Platforms (#34) | 3.2 | CTO | Consideration |
+
+> *Deferred to Month 7+: #62 (TMS & Supply Chain), #57 (PropTech), #8 (Database Optimization), #13 (CI/CD Pipeline), #56 (Hospitality Tech).*
 
 **Month 6 Deliverables:**
-- [ ] 12 more blog posts (72 total)
+- [ ] 8 more blog posts (48 total over 6 months)
 - [ ] 8 of 9 ICP verticals covered: Social & Entertainment completes with #65 (dating) and #66 (short video); EdTech (#67) scheduled Month 7+
-- [ ] All Enterprise industry articles published — Cluster 5.2 complete (#51, #52, #53, #54, #56, #57, #58, #59, #60; healthcare #55 removed — not a Trioangle core vertical)
-- [ ] Full compliance track live: SOC 2 (#48), PCI-DSS (#49), Security Audit (#50)
-- [ ] MENA Pillar 6 at 5 of 6 articles published: #68–#72 live; #73 (Dubai vs. Singapore vs. London) scheduled Month 7+
-- [ ] All Pillar 1 tech depth and Cluster 3.2 core components live
+- [ ] Compliance track: PCI-DSS (#49) live; Security Audit (#50) from Month 5. SOC 2 (#48) deferred to Month 7+
+- [ ] MENA Pillar 6 at 4 of 6 articles published: #68–#71 live; #72, #73 in Month 7+
+- [ ] Pillar 5 channel-partner enablement at 2 articles: #51 (Month 4) and #59 (this month)
+- [ ] Social & Entertainment vertical completed; Pillar 3 Social (#65, #66) live
 
 ---
 
 ## Month 7+: Ongoing, Refreshes & Long-Tail
 
-With Pillar 7 fully published in Months 1–5 (the primary motion is shipped — including Implementation-stage content #114–#116 in Month 5 W20), Month 7+ focuses on:
+With Pillar 7 fully published in Months 1–5 (the primary motion is shipped — including Implementation-stage content #114–#116 in Month 5 W18–W19), Month 7+ focuses on:
 
 1. **Custom-dev SEO long-tail** — Pillar 1 cloud/infra, Cluster 2.3 working-together how-tos, Cluster 3.2 push notifications, Cluster 5.2 PropTech, Cluster 6.2 MENA Dubai vs Singapore.
 2. **Refreshes of Months 1–3 hero articles** as new AI delivery proof points emerge from delivered work.
@@ -247,6 +235,31 @@ Publish at 1–2/week alongside reactive pieces.
 | 35 | Push Notification Architecture for On-Demand Apps: Delivery Guarantees at Scale | 3.2 | 7.5 | Cluster 3.2 core components; sequences after primary platform architecture articles in M5–M6 |
 | 60 | Change Management for New Digital Platforms: Getting Your Team to Actually Use It | 5.3 | 7.5 | Enterprise channel-partner enablement only; no direct outbound conversion role |
 | 25 | How to Be a Great Product Owner When Working with an Agency | 2.3 | 7.3 | Cluster 2.3 post-engagement — lowest immediate funnel urgency |
+| **— Deferred at 2x/week cadence —** | | | | |
+| 2 | The Real Cost of Cheap MVP Development: A Financial Breakdown for Established Operators | 1.1 | 8.8 | Deferred from M1 — capacity; Pillar 7 priority filled M1 slots |
+| 19 | IP Ownership in Outsourced Development: What Founder-Operators Must Know | 2.2 | 8.5 | Deferred from M1 — capacity; core IP trust covered by #14, #21 in M1 |
+| 15 | Custom Development vs. White-Label Platforms: Which Is Right for Your Business? | 2.1 | 8.2 | Deferred from M1 — capacity |
+| 1 | How to Identify Technical Debt Before It Kills Your Established Platform | 1.1 | 9.2 | Deferred from M1 — capacity; high score but Pillar 1 tech depth secondary to Pillar 7 in M1 |
+| 26 | How to Build a Ride-Hailing Platform: Architecture Guide | 3.1 | 8.0 | Deferred from M2 — capacity |
+| 38 | The True Cost of Building a Custom On-Demand Platform for Established Operators | 3.3 | 7.9 | Deferred from M2 — capacity |
+| 6 | Multi-Tenant Architecture for Marketplace Platforms at Production Scale | 1.2 | 8.1 | Deferred from M2 — capacity |
+| 27 | Building a Multi-Vendor Food Delivery App for an Established Operator | 3.1 | 7.8 | Deferred from M3 — capacity |
+| 76 | Scaling Your Platform to a New Country: Architecture for Multi-Region Launches | 3.2 | 7.9 | Deferred from M4 — capacity |
+| 17 | How to Evaluate Code Quality When You're Not Technical | 2.1 | 8.0 | Deferred from M4 — capacity; Pillar 2 trust covered by #14, #16, #20, #21 |
+| 3 | 7 Warning Signs Your Established Platform Won't Survive Its Next Traffic Spike | 1.1 | 8.5 | Deferred from M4 — capacity; high score, prioritize in Month 7 |
+| 79 | How to Salvage a Failed Dev Partnership: A Playbook for Paused or Stalled Engagements | 2.3 | 7.8 | Deferred from M4 — capacity |
+| 18 | Why Domain Expertise Matters More Than Generic Coding Skill | 2.1 | 7.9 | Deferred from M5 — capacity |
+| 63 | Grocery & Pharmacy Delivery Platform Architecture | 3.1 | 7.6 | Deferred from M5 — capacity |
+| 72 | How to Evaluate a Tech Partner Without a Formal RFP: A MENA Founder's Playbook | 6.2 | 7.7 | Deferred from M5 — capacity; MENA sequence continues in M7+ |
+| 28 | Rental Marketplace Architecture: Handling Availability, Pricing, and Multi-Location Inventory | 3.1 | 7.8 | Deferred from M5 — capacity |
+| 54 | Building Digital Logistics Platforms: Route Optimization, Fleet Tracking, and Real-Time Dispatch | 5.2 | 7.6 | Deferred from M5 — capacity |
+| 74 | Classifieds Platform Architecture: Search, Moderation, and Trust & Safety | 3.1 | 7.7 | Deferred from M5 — capacity |
+| 11 | AWS vs. GCP vs. Azure for On-Demand Platforms: Architecture Decision Guide | 1.3 | 7.9 | Deferred from M5 — capacity; infrastructure decision guide, lower urgency than Pillar 7 |
+| 62 | Building a TMS & Supply Chain Platform: Order Management, Carrier Integration, and Warehouse Logic | 3.1 | 7.5 | Deferred from M6 — capacity |
+| 57 | PropTech Platform Development: Multi-Listing, Virtual Tours, and Transaction Management | 5.2 | 7.6 | Deferred from M6 — capacity |
+| 8 | Database Optimization for High-Volume On-Demand Platforms | 1.2 | 7.8 | Deferred from M6 — capacity |
+| 13 | CI/CD Pipeline Setup for Marketplace Platforms: From Zero to Production | 1.3 | 7.7 | Deferred from M6 — capacity |
+| 56 | Hospitality Tech: Building Custom Booking and Operations Platforms | 5.2 | 7.5 | Deferred from M6 — capacity |
 
 > [!NOTE] #114–#116 Now in Month 5
 > Articles #114 (Post-Launch AI Ops), #115 (A/B Testing AI Features), and #116 (Model Retraining Cadence) were originally listed here as Month 7+ candidates. They are now scheduled in **Month 5 Week 20** per the P5 retention-gap acceleration — do not duplicate them in Month 7+.

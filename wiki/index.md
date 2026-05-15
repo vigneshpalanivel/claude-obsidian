@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-14 | Total pages: 217 | Sources ingested: 69
+Last updated: 2026-05-15 | Total pages: 219 | Sources ingested: 70
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -50,6 +50,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle Service Sales Playbook]] — operating layer for Service ICP (companion to strategy concept); 7-stage pipeline with kill criteria, lead scoring rubric, $10k/$15k pricing floors, discount approval matrix, Service-calibrated KPI ranges, no-proposal-without-sprint default; deliberately separated from ICP to avoid two sources of truth; Service-ICP-specific Initiatives/KPIs docs still pending (status: current)
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms); only path to Enterprise and MENA buyer segments (status: current)
 - [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos/5 pillars; service: 81 articles/6 verticals); persona-gated CTAs (status: current)
+- [[Trioangle Service Editorial Calendar]] — 48-article 6-month publishing schedule at 2x/week (Mon + Thu); all 26 Pillar 7 articles in Months 1-5; trigger-based Channel 4 outbound; distribution plan + metrics dashboard (status: current)
 - [[InnBlockchain Crypto Native ICP]] — crypto-born founders/CTOs; RWA Segment 1; 6 active segments; $20k+ floor; AI-code audit emerging (status: current)
 - [[InnBlockchain FinTech ICP]] — existing regulated FinTech; WealthTech primary Q2 2026; Compliance Carol veto-holder; API-first is Tier 0 signal (status: current)
 - [[InnBlockchain Channel Partner ICP]] — 3 advisory personas; routing hub to 3 sister ICPs; NCNDA Day 1; assumption-based (status: current)
@@ -228,6 +229,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[SEC-Problematic-Practices-Reg-S-1995]] — 2026-05-07 | SEC Release 33-7190 | foundational anti-abuse doctrine; drove 1998 amendments
 - [[Cleary-2026-Digital-Assets-Update]] — 2026-05-07 | Cleary Gottlieb | 2025 SEC posture shift under Atkins, GENIUS Act, Reg D + Reg S as token offering standard
 - [[Sales-Playbook-Service-Trioangle]] — 2026-05-09 | Trioangle internal | Service-ICP operating playbook (pipeline, scoring, pricing, KPI ranges, handoff); 1 concept page created; explicitly NOT a duplicate of Service ICP — fills the operating gap left by Product-ICP-scoped legacy initiatives/KPIs
+- [[Editorial-Calendar-Service-Trioangle]] — 2026-05-15 | Trioangle internal | 48-article 6-month publishing schedule; cadence changed 3x→2x/week; capacity gate, distribution plan, metrics dashboard added; 1 concept page created
 
 ---
 

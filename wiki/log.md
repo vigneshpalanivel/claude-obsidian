@@ -19,6 +19,12 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## 2026-05-15 | ingest | Trioangle Editorial Calendar — Service
+- Source: `.raw/Trioangle/Content/Trioangle - Editorial Calendar - Service.md`
+- Pages created: [[Trioangle Service Editorial Calendar]] (concept), [[Editorial-Calendar-Service-Trioangle]] (source)
+- Pages updated: [[index]] (pages 217→219, sources 69→70), [[hot]], [[log]]
+- Key finding: Calendar restructured from 3x/week (72 articles/6 months) to 2x/week (48 articles/6 months). All 26 Pillar 7 AI engineering articles preserved in Months 1-5. 24 lower-priority Pillar 1/3 architecture articles moved to Month 7+ queue. Operational additions: capacity gate (pre-launch checklist + fallback trigger), distribution plan (per-article LinkedIn/Channel4/newsletter matrix), metrics dashboard (weekly targets + monthly review checklist + quarterly pivot go/no-go questions).
+
 ## 2026-05-14 | autoresearch | Content Marketing End-to-End Tasks
 - Rounds: 2
 - Searches: 7
