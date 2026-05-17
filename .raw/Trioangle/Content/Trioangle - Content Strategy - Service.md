@@ -147,21 +147,23 @@ Seven verticals aligned to ICP pain points, buying triggers, and buyer personas.
 
 #### Cluster 3.1: Platform Architecture by Vertical
 
-| # | Article Title | Target Keyword | Stage | Type | Priority |
-|---|--------------|----------------|-------|------|----------|
-| 26 | How to Build a Ride-Hailing Platform: Architecture, Features, and Pitfalls | build ride-hailing platform | Awareness | Searchable | 9.0 |
-| 27 | Building a Multi-Vendor Food Delivery App: Technical Architecture Guide | build food delivery app architecture | Awareness | Searchable | 8.8 |
-| 28 | Rental Marketplace Architecture: Handling Availability, Pricing, and Multi-Location Inventory | rental marketplace architecture | Awareness | Searchable | 8.2 |
-| 29 | Super App Development: Combining Rides, Deliveries, and Payments in One Platform | super app development guide | Awareness | Both | 8.5 |
-| 30 | On-Demand Home Services Platform Architecture: Booking, Dispatch, and Provider Management | on-demand home services platform | Awareness | Searchable | 8.1 |
-| 61 | Fleet Management Platform Architecture: Real-Time Tracking, Route Optimization, and Driver Management | fleet management platform development | Awareness | Searchable | 8.4 |
-| 62 | Building a TMS & Supply Chain Platform: Order Management, Carrier Integration, and Warehouse Logic | TMS supply chain platform development | Awareness | Searchable | 8.0 |
-| 63 | Grocery & Pharmacy Delivery Platform Architecture: Slot Scheduling, Cold-Chain Logic, and Age Verification | grocery delivery app development | Awareness | Searchable | 8.3 |
-| 64 | E-Commerce Marketplace Development: Multi-Seller Inventory, Search, and Seller Onboarding Architecture | e-commerce marketplace development | Awareness | Searchable | 8.6 |
-| 65 | Dating App Architecture: Matching Algorithms, Safety & Moderation, and Subscription Monetization | dating app development architecture | Awareness | Searchable | 7.8 |
-| 66 | Short Video Platform Architecture: Feed Ranking, Streaming, and Moderation at Scale | short video platform architecture guide | Awareness | Searchable | 7.9 |
-| 67 | EdTech Platform Architecture: Live Classes, Course Marketplaces, and Learner Progress at Scale | edtech platform development guide | Awareness | Searchable | 7.7 |
-| 74 | Classifieds Platform Architecture: Search, Moderation, and Trust & Safety | classified ads platform development | Awareness | Searchable | 8.2 |
+Each article surfaces its matching [[Trioangle Landing Page Plan|industry LP]] in a bottom "Related Services" box — **not** as a primary CTA. Architecture articles attract pre-traction builders alongside qualified Existing-Operator readers; the contextual placement surfaces the LP to qualified readers without over-pitching the early-funnel ones. See Part 6 Rule 10 for the intent-split rule.
+
+| # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (Related Services box) |
+|---|--------------|----------------|-------|------|----------|--------------------------------------|
+| 26 | How to Build a Ride-Hailing Platform: Architecture, Features, and Pitfalls | build ride-hailing platform | Awareness | Searchable | 9.0 | `/industries/ride-hailing` |
+| 27 | Building a Multi-Vendor Food Delivery App: Technical Architecture Guide | build food delivery app architecture | Awareness | Searchable | 8.8 | `/industries/delivery` |
+| 28 | Rental Marketplace Architecture: Handling Availability, Pricing, and Multi-Location Inventory | rental marketplace architecture | Awareness | Searchable | 8.2 | `/industries/travel` |
+| 29 | Super App Development: Combining Rides, Deliveries, and Payments in One Platform | super app development guide | Awareness | Both | 8.5 | `/industries/super-app` |
+| 30 | On-Demand Home Services Platform Architecture: Booking, Dispatch, and Provider Management | on-demand home services platform | Awareness | Searchable | 8.1 | `/industries/home-services` |
+| 61 | Fleet Management Platform Architecture: Real-Time Tracking, Route Optimization, and Driver Management | fleet management platform development | Awareness | Searchable | 8.4 | `/industries/delivery` |
+| 62 | Building a TMS & Supply Chain Platform: Order Management, Carrier Integration, and Warehouse Logic | TMS supply chain platform development | Awareness | Searchable | 8.0 | `/industries/delivery` |
+| 63 | Grocery & Pharmacy Delivery Platform Architecture: Slot Scheduling, Cold-Chain Logic, and Age Verification | grocery delivery app development | Awareness | Searchable | 8.3 | `/industries/delivery` |
+| 64 | E-Commerce Marketplace Development: Multi-Seller Inventory, Search, and Seller Onboarding Architecture | e-commerce marketplace development | Awareness | Searchable | 8.6 | `/industries/ecommerce` · `/industries/marketplace` |
+| 65 | Dating App Architecture: Matching Algorithms, Safety & Moderation, and Subscription Monetization | dating app development architecture | Awareness | Searchable | 7.8 | `/industries/social-media` |
+| 66 | Short Video Platform Architecture: Feed Ranking, Streaming, and Moderation at Scale | short video platform architecture guide | Awareness | Searchable | 7.9 | `/industries/social-media` |
+| 67 | EdTech Platform Architecture: Live Classes, Course Marketplaces, and Learner Progress at Scale | edtech platform development guide | Awareness | Searchable | 7.7 | `/industries/education` |
+| 74 | Classifieds Platform Architecture: Search, Moderation, and Trust & Safety | classified ads platform development | Awareness | Searchable | 8.2 | `/industries/marketplace` |
 
 > [!NOTE] Persona restriction — Article #62 (TMS & Supply Chain Platform)
 > Primary persona is **Scaling CTO + Enterprise Buyer**, not Seed-stage Founder-CTOs. Brief accordingly and use the Scaling CTO CTA (Technical Architecture Review), not discovery call.
@@ -358,60 +360,76 @@ Seven verticals aligned to ICP pain points, buying triggers, and buyer personas.
 
 #### Cluster 7.1: AI Strategy for Platform Operators
 
-| # | Article Title | Target Keyword | Stage | Type | Priority |
-|---|--------------|----------------|-------|------|----------|
-| 82 | Which AI Features Actually Move Marketplace Metrics (And Which Are Hype) | AI features marketplace platform | Awareness | Shareable | 9.0 |
-| 83 | The AI Readiness Audit: How to Evaluate Your Platform's Highest-ROI AI Use Cases | AI readiness audit platform | Awareness | Both | 8.7 |
-| 84 | Why Generic AI Consultants Fail Platform Businesses — and What to Look For Instead | AI consultant vs AI engineering platform | Awareness | Shareable | 8.6 |
+| # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) |
+|---|--------------|----------------|-------|------|----------|--------------------------|
+| 82 | Which AI Features Actually Move Marketplace Metrics (And Which Are Hype) | AI features marketplace platform | Awareness | Shareable | 9.0 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] |
+| 83 | How to Audit Your Platform's AI Readiness Before Hiring Anyone: A Self-Assessment Framework | platform AI readiness self-assessment | Awareness | Both | 8.7 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] |
+| 84 | Why Generic AI Consultants Fail Platform Businesses — and What to Look For Instead | AI consultant vs AI engineering platform | Awareness | Shareable | 8.6 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] |
 
 #### Cluster 7.2: AI Feature Deep-Dives by Vertical (All 9 Verticals)
 
-To match the ICP's "domain-specific AI applied to 9 verticals" moat, Cluster 7.2 covers every vertical Trioangle has shipped. Each article cross-links to its base-platform architecture article in Cluster 3.1 (see Part 6 Rule 9).
+To match the ICP's "domain-specific AI applied to 9 verticals" moat, Cluster 7.2 covers every vertical Trioangle has shipped. Each article cross-links to its base-platform architecture article in Cluster 3.1 (see Part 6 Rule 9), and to the matching [[Trioangle Landing Page Plan|industry / AI-service LP]] as the primary CTA.
 
-| # | Article Title | Target Keyword | Stage | Type | Priority |
-|---|--------------|----------------|-------|------|----------|
-| 85 | AI-Powered Dynamic Pricing for Ride-Hailing: Architecture, Models, and Rollout Strategy | AI dynamic pricing ride-hailing | Consideration | Searchable | 9.1 |
-| 86 | Intelligent Dispatch: How AI Is Replacing Rule-Based Matching in On-Demand Platforms | AI dispatch optimization | Consideration | Searchable | 8.9 |
-| 87 | Marketplace Fraud Detection with AI: Patterns, Models, and Production Integration | AI marketplace fraud detection | Consideration | Searchable | 8.8 |
-| 88 | Demand Forecasting for Logistics and Delivery Platforms: From Historical Data to Live Models | AI demand forecasting logistics | Consideration | Searchable | 8.5 |
-| 89 | Conversational Booking Interfaces: When LLM-Powered Chat Beats Forms (And When It Doesn't) | AI conversational booking | Consideration | Both | 8.3 |
-| 102 | AI for Rental Marketplaces: Availability Prediction, Dynamic Pricing, and Smart Recommendations | AI rental marketplace platform | Consideration | Searchable | 8.6 |
-| 103 | AI for On-Demand Home Services: Intelligent Provider Matching and Demand Prediction | AI home services matching | Consideration | Searchable | 8.4 |
-| 104 | AI for Classifieds Platforms: Smart Moderation, Listing-Quality Scoring, and Trust Signals | AI classifieds moderation | Consideration | Searchable | 8.2 |
-| 105 | AI for Dating Apps: Beyond Rule-Based Matching — Embedding-Based Compatibility Models | AI dating matching algorithm | Consideration | Searchable | 8.0 |
-| 106 | AI for EdTech Platforms: Personalized Learning Paths and Engagement Prediction | AI edtech personalization | Consideration | Searchable | 7.9 |
-| 107 | AI for E-Commerce Marketplaces: Search Ranking, Recommendation, and Multi-Seller Trust Scoring | AI ecommerce marketplace | Consideration | Searchable | 8.7 |
-| 108 | AI for Super Apps: Cross-Service Intelligence and Unified User Intent Models | AI super app cross-service | Consideration | Searchable | 8.3 |
-| 117 | AI for Short Video and Social Apps: Feed Ranking, Content Moderation, and Creator Recommendations | AI feed ranking short video platform | Awareness | Searchable | 8.2 |
-| 118 | AI for Online Booking and OTA Platforms: Demand Forecasting, Dynamic Pricing, and Booking Assistants | AI demand forecasting booking platform | Awareness | Searchable | 8.1 |
+| # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) |
+|---|--------------|----------------|-------|------|----------|--------------------------|
+| 85 | AI-Powered Dynamic Pricing for Ride-Hailing: Architecture, Models, and Rollout Strategy | AI dynamic pricing ride-hailing | Consideration | Searchable | 9.1 | `/industries/ride-hailing` |
+| 86 | Intelligent Dispatch: How AI Is Replacing Rule-Based Matching in On-Demand Platforms | AI dispatch optimization | Consideration | Searchable | 8.9 | `/industries/ride-hailing` · `/industries/delivery` |
+| 87 | Marketplace Fraud Detection with AI: Patterns, Models, and Production Integration | AI marketplace fraud detection | Consideration | Searchable | 8.8 | `/industries/marketplace` (+ `/ai-engineering/ai-content-moderation` secondary) |
+| 88 | Demand Forecasting for Logistics and Delivery Platforms: From Historical Data to Live Models | AI demand forecasting logistics | Consideration | Searchable | 8.5 | `/industries/delivery` |
+| 89 | Conversational Booking Interfaces: When LLM-Powered Chat Beats Forms (And When It Doesn't) | AI conversational booking | Consideration | Both | 8.3 | `/industries/home-services` · `/industries/travel` (+ `/ai-engineering/ai-customer-support-bot`, `/ai-engineering/whatsapp-ai-automation`, `/ai-engineering/voice-ai-development` secondary) |
+| 102 | AI for Rental Marketplaces: Availability Prediction, Dynamic Pricing, and Smart Recommendations | AI rental marketplace platform | Consideration | Searchable | 8.6 | `/industries/travel` · `/industries/marketplace` |
+| 103 | AI for On-Demand Home Services: Intelligent Provider Matching and Demand Prediction | AI home services matching | Consideration | Searchable | 8.4 | `/industries/home-services` |
+| 104 | AI for Classifieds Platforms: Smart Moderation, Listing-Quality Scoring, and Trust Signals | AI classifieds moderation | Consideration | Searchable | 8.2 | `/industries/marketplace` (+ `/ai-engineering/ai-content-moderation`, `/ai-engineering/ai-search-upgrade` secondary) |
+| 105 | AI for Dating Apps: Beyond Rule-Based Matching — Embedding-Based Compatibility Models | AI dating matching algorithm | Consideration | Searchable | 8.0 | `/industries/social-media` |
+| 106 | AI for EdTech Platforms: Personalized Learning Paths and Engagement Prediction | AI edtech personalization | Consideration | Searchable | 7.9 | `/industries/education` |
+| 107 | AI for E-Commerce Marketplaces: Search Ranking, Recommendation, and Multi-Seller Trust Scoring | AI ecommerce marketplace | Consideration | Searchable | 8.7 | `/industries/ecommerce` (+ `/ai-engineering/ai-search-upgrade` secondary) |
+| 108 | AI for Super Apps: Cross-Service Intelligence and Unified User Intent Models | AI super app cross-service | Consideration | Searchable | 8.3 | `/industries/super-app` (+ `/ai-engineering/ai-agents-automation` secondary) |
+| 117 | AI for Short Video and Social Apps: Feed Ranking, Content Moderation, and Creator Recommendations | AI feed ranking short video platform | Awareness | Searchable | 8.2 | `/industries/social-media` (+ `/ai-engineering/ai-content-moderation` secondary) |
+| 118 | AI for Online Booking and OTA Platforms: Demand Forecasting, Dynamic Pricing, and Booking Assistants | AI demand forecasting booking platform | Awareness | Searchable | 8.1 | `/industries/travel` |
 
 > [!NOTE] #117 and #118 — Awareness Stage Until Production Cases Confirmed
 > Per [[Trioangle Landing Page Plan]] Priority 15–17 caveat, social/entertainment and travel/hospitality are platform-delivery verticals where AI feature production cases are in early development. Articles #117 and #118 must **lead with platform delivery depth** ("engineers who've shipped 20+ social platforms") — not AI outcome metrics (lift %, precision/recall). Do not apply the A/B-test framing requirement to these articles until at least one production AI case exists per vertical. Upgrade to Consideration stage and add specific metrics when cases are confirmed. CTA for both: free AI Readiness Call only (not AI Audit Sprint) until proof exists.
 
 #### Cluster 7.3: Production AI Integration & Risk
 
-| # | Article Title | Target Keyword | Stage | Type | Priority |
-|---|--------------|----------------|-------|------|----------|
-| 90 | How to Add AI Features to a Live Platform Without Breaking Stability | AI integration existing platform | Decision | Searchable | 8.8 |
-| 91 | AI Service Isolation: Architecture Patterns for Fallback-Safe Machine Learning in Production | AI fallback architecture production | Decision | Searchable | 8.2 |
-| 92 | GitHub Copilot vs. AI Feature Engineering: Why Your Internal Team Still Needs a Delivery Partner | Copilot vs AI engineering agency | Consideration | Shareable | 8.4 |
+> [!IMPORTANT] Articles #90 and #91 are the canonical long-form sources for service-isolation/integration content
+> Both articles overlap with AI Service AEO/GEO Prompts 5, 8, and 13 (zero-downtime deployment, end-to-end integration, tech-stack compatibility). To prevent duplication:
+> - **Article #90** is canonical for *"How do we add AI to a live platform without breaking it?"* — the operator-anxiety framing. LP AEO Prompt 5 (40–60w FAQ) summarizes the answer and links to Article #90 for depth.
+> - **Article #91** is canonical for the *service-isolation architecture pattern* itself — the technical reference. LP AEO Prompt 5 + Industry AEO Prompt 34 reference this article for the architecture detail; the LP doesn't re-argue the pattern.
+> - **Cross-link rule:** Every `/ai-engineering/[service]` LP "Tech Depth" section must link to Article #91 (or #90 for operator-anxiety framing). Every Industry `/industries/[vertical]` page Tech Depth section must link to Article #91 when service-isolation is mentioned.
+> - **LP copy length cap:** LP AEO Prompt 5 stays ≤60 words. The full architecture explanation lives in Article #91 only.
+
+| # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) | Canonical for |
+|---|--------------|----------------|-------|------|----------|--------------------------|---------------|
+| 90 | How to Add AI Features to a Live Platform Without Breaking Stability | AI integration existing platform | Decision | Searchable | 8.8 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] (every `/ai-engineering/[service]` LP also reverse-links here) | **Canonical long-form** for live-platform AI integration anxiety; LP AEO Prompt 5 links here |
+| 91 | AI Service Isolation: Architecture Patterns for Fallback-Safe Machine Learning in Production | AI fallback architecture production | Decision | Searchable | 8.2 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] (every `/ai-engineering/[service]` LP Tech-Depth section reverse-links here) | **Canonical long-form** for service-isolation architecture pattern; LP AEO Prompts 5, 13 + Industry Prompt 34 link here |
+| 92 | GitHub Copilot vs. AI Feature Engineering: Why Your Internal Team Still Needs a Delivery Partner | Copilot vs AI engineering agency | Consideration | Shareable | 8.4 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] | **Canonical long-form** for Copilot/coding-tools comparison; Industry AEO Prompt 14 links here |
 
 #### Cluster 7.4: Build vs Buy vs SaaS — Loss-Reason Counter Content
 
 Maps directly to the ICP's [[ICP - Service]] Loss Reasons table. Each article exists to disqualify wrong-fit prospects honestly while winning right-fit prospects from the same SaaS-vs-custom debate.
 
-| # | Article Title | Target Keyword | Stage | Type | Priority |
-|---|--------------|----------------|-------|------|----------|
-| 109 | AWS Personalize vs. Custom AI Engineering: When the SaaS Wins, When It Doesn't | AWS Personalize vs custom AI | Consideration | Both | 9.0 |
-| 110 | Pinecone + OpenAI vs. a Domain AI Partner: Build-vs-Buy for Marketplace Operators | Pinecone OpenAI vs domain AI partner | Consideration | Both | 8.9 |
-| 111 | Why Your Data Probably Isn't AI-Ready Yet — and What to Fix Before Building Anything | data readiness for AI platform | Awareness | Searchable | 8.8 |
-| 112 | GCP Vertex AI vs. Custom Models for Vertical Platforms: Where Generic AI SaaS Falls Short | Vertex AI vs custom models platform | Consideration | Searchable | 8.5 |
+> [!IMPORTANT] Cluster 7.4 cross-link discipline — avoid `/ai-engineering/[service]` LP duplication
+> Each Cluster 7.4 article competes for the same "[SaaS] vs custom AI" search intent as the `/ai-engineering/[service]` LP comparison blocks (AI Service AEO/GEO Prompts 1, 6, H7). To prevent SEO cannibalization, every Cluster 7.4 article MUST:
+> 1. **Cross-link down to the relevant `/ai-engineering/[service]` LP** in the article body and in the BoFU CTA. Article #109 (AWS Personalize) → `/ai-engineering/ai-search-upgrade` and `/ai-engineering/ai-content-moderation`; #110 (Pinecone + OpenAI) → `/ai-engineering/rag-knowledge-assistant` and `/ai-engineering/ai-search-upgrade`; #112 (Vertex AI) → `/ai-engineering/ai-search-upgrade`; #111 (data readiness) → `/ai-engineering/` hub.
+> 2. **Reference the canonical comparison framing** — don't re-argue "SaaS vs custom" from scratch. State the framing in one paragraph, then go deep on the *specific* SaaS-vs-custom dimension this article owns (data ownership, domain fit, integration cost, etc.). The LP carries the FAQ-format comparison; the article carries the long-form depth.
+> 3. **End with the AI Audit Sprint CTA** that routes to the booking funnel — not the `/ai-engineering/[service]` LP CTA. The article converts on-topic browsers into Sprint bookings; the LP converts on-topic searchers into Sprint bookings. Don't overlap CTAs.
 
-#### Cluster 7.5: AI Hub Content (Cross-Pillar Authority)
+| # | Article Title | Target Keyword | Stage | Type | Priority | Cross-link LPs |
+|---|--------------|----------------|-------|------|----------|----------------|
+| 109 | AWS Personalize vs. Custom AI Engineering: When the SaaS Wins, When It Doesn't | AWS Personalize vs custom AI | Consideration | Both | 9.0 | `/ai-engineering/ai-search-upgrade`, `/ai-engineering/ai-content-moderation` |
+| 110 | Pinecone + OpenAI vs. a Domain AI Partner: Build-vs-Buy for Marketplace Operators | Pinecone OpenAI vs domain AI partner | Consideration | Both | 8.9 | `/ai-engineering/rag-knowledge-assistant`, `/ai-engineering/ai-search-upgrade` |
+| 111 | Why Your Data Probably Isn't AI-Ready Yet — and What to Fix Before Building Anything | data readiness for AI platform | Awareness | Searchable | 8.8 | `/ai-engineering/` hub |
+| 112 | GCP Vertex AI vs. Custom Models for Vertical Platforms: Where Generic AI SaaS Falls Short | Vertex AI vs custom models platform | Consideration | Searchable | 8.5 | `/ai-engineering/ai-search-upgrade` |
 
-| # | Article Title | Target Keyword | Stage | Type | Priority |
-|---|--------------|----------------|-------|------|----------|
-| 113 | The AI Engineering Stack for Established Platform Operators: Architecture Reference Guide | AI engineering stack platform | Awareness | Searchable | 8.4 |
+#### Cluster 7.5: AI Architecture Deep-Dive (Tech-Depth Authority)
+
+> [!IMPORTANT] Scope clarification — does NOT duplicate the `/ai-engineering/` hub
+> Article #113 was previously framed as an "AI Engineering Stack overview" — which directly duplicated the `/ai-engineering/` hub landing page intent. Reframed to a **technical deep-dive on Trioangle's specific stack choices** (pgvector, LangGraph, service isolation patterns) and *why* each was picked. The `/ai-engineering/` hub LP enumerates the 7 productized services; Article #113 explains the architecture *under* those services. Different intent, no SEO cannibalization.
+
+| # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) |
+|---|--------------|----------------|-------|------|----------|--------------------------|
+| 113 | Inside Our AI Engineering Stack: pgvector, LangGraph, Service Isolation, and Why We Picked Each | AI engineering architecture choices | Consideration | Searchable | 8.4 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] (+ `/ai-engineering/rag-knowledge-assistant`, `/ai-engineering/ai-agents-automation` secondary — the two services where pgvector + LangGraph show up most directly) |
 
 > [!NOTE] Pillar 7 CTA — Two-Step Funnel (Free Call → Paid Sprint)
 > Per [[ICP - Service]] AI Funnel disambiguation, Pillar 7 uses a two-step CTA funnel:
@@ -532,7 +550,7 @@ Sorted by score. Schedule ahead of equivalently-scored non-Pillar-7 articles per
 | 102 | AI for Rental Marketplaces: Availability Prediction, Dynamic Pricing, and Smart Recommendations | 7.2 | AI-Forward | Consideration | Searchable | 8.6 |
 | 112 | GCP Vertex AI vs. Custom Models for Vertical Platforms: Where Generic AI SaaS Falls Short | 7.4 | AI-Forward | Consideration | Searchable | 8.5 |
 | 103 | AI for On-Demand Home Services: Intelligent Provider Matching and Demand Prediction | 7.2 | AI-Forward | Consideration | Searchable | 8.4 |
-| 113 | The AI Engineering Stack for Established Platform Operators: Architecture Reference Guide | 7.5 | AI-Forward | Awareness | Searchable | 8.4 |
+| 113 | Inside Our AI Engineering Stack: pgvector, LangGraph, Service Isolation, and Why We Picked Each | 7.5 | AI-Forward | Consideration | Searchable | 8.4 |
 | 108 | AI for Super Apps: Cross-Service Intelligence and Unified User Intent Models | 7.2 | AI-Forward | Consideration | Searchable | 8.3 |
 | 104 | AI for Classifieds Platforms: Smart Moderation, Listing-Quality Scoring, and Trust Signals | 7.2 | AI-Forward | Consideration | Searchable | 8.2 |
 | 105 | AI for Dating Apps: Beyond Rule-Based Matching — Embedding-Based Compatibility Models | 7.2 | AI-Forward | Consideration | Searchable | 8.0 |
@@ -695,9 +713,9 @@ Maps each ICP persona to the articles most relevant at each funnel stage. Use th
 
 | Funnel Stage | Articles |
 |-------------|----------|
-| **Awareness** | #82 (AI features that move marketplace metrics), #83 (AI Readiness Audit), #84 (why generic AI consultants fail platforms), #92 (Copilot vs AI feature engineering), #111 (data readiness for AI), #117 (AI for social & entertainment — awareness only until production cases confirmed), #118 (AI for travel & hospitality — awareness only until production cases confirmed) |
+| **Awareness** | #82 (AI features that move marketplace metrics), #83 (platform AI readiness self-assessment), #84 (why generic AI consultants fail platforms), #92 (Copilot vs AI feature engineering), #111 (data readiness for AI), #117 (AI for social & entertainment — awareness only until production cases confirmed), #118 (AI for travel & hospitality — awareness only until production cases confirmed) |
 | **Consideration (vertical AI deep-dives)** | #85 (AI dynamic pricing for ride-hailing), #86 (intelligent dispatch), #87 (marketplace fraud detection), #88 (demand forecasting for logistics), #89 (conversational booking interfaces), #102 (AI for rental marketplaces), #103 (AI for home services), #104 (AI for classifieds), #105 (AI for dating), #106 (AI for edtech), #107 (AI for e-commerce marketplaces), #108 (AI for super apps) |
-| **Consideration (build-vs-buy-vs-SaaS)** | #109 (AWS Personalize vs custom AI), #110 (Pinecone+OpenAI vs domain partner), #112 (Vertex AI vs custom models), #113 (AI engineering stack hub) |
+| **Consideration (build-vs-buy-vs-SaaS)** | #109 (AWS Personalize vs custom AI), #110 (Pinecone+OpenAI vs domain partner), #112 (Vertex AI vs custom models), #113 (AI engineering stack architecture choices) |
 | **Decision** | #90 (adding AI to a live platform without breaking it), #91 (AI service isolation / fallback architecture) |
 | **Implementation** | #114 (Post-Launch AI Ops: Monitoring Model Drift), #115 (A/B Testing AI Features Against Rule-Based Baselines), #116 (When to Retrain: Model Refresh Cadence). All three scheduled Month 5 W20. CTA: paid AI Audit Sprint framed as "AI feature health check" or "model refresh engagement" — these articles drive the second AI project in the 2–4/year repeat-buy cadence. |
 
@@ -758,7 +776,7 @@ Keyword strategy for the Pillar 7 articles targeting P5 (AI-Forward Platform Ope
 | Keyword | Volume Est. | Difficulty | Cluster | Article |
 |---------|------------|------------|---------|---------|
 | which AI features improve marketplace platform metrics | Low | Low | 7.1 | #82 |
-| AI readiness audit platform | Low | Low | 7.1 | #83 |
+| platform AI readiness self-assessment | Low | Low | 7.1 | #83 |
 | AI consultant vs AI engineering platform | Low | Low | 7.1 | #84 |
 | how AI dynamic pricing works ride-hailing platforms | Low | Medium | 7.2 | #85 |
 | intelligent dispatch AI architecture on-demand platforms | Low | Medium | 7.2 | #86 |
@@ -779,7 +797,7 @@ Keyword strategy for the Pillar 7 articles targeting P5 (AI-Forward Platform Ope
 | Pinecone OpenAI vs domain AI partner | Low | Low | 7.4 | #110 |
 | data readiness for AI platform | Low | Low | 7.4 | #111 |
 | Vertex AI vs custom models platform | Low | Low | 7.4 | #112 |
-| AI engineering stack platform | Low | Low | 7.5 | #113 |
+| AI engineering architecture choices | Low | Low | 7.5 | #113 |
 | AI model drift monitoring production platform | Low | Low | 7.3 | #114 |
 | A/B testing AI features production | Low | Low | 7.3 | #115 |
 | AI model retraining cadence marketplace | Low | Low | 7.3 | #116 |
@@ -927,7 +945,7 @@ graph TD
     C75 -.->|"cross-link"| C71
 
     LP_IND["Landing Pages: /industries/[9 verticals]"]
-    LP_AI["Landing Pages: /ai/ hub + 7 service pages"]
+    LP_AI["Landing Pages: /ai-engineering/ hub + 7 service pages"]
 
     C72 -.->|"CTA link"| LP_IND
     C31 -.->|"contextual"| LP_IND
@@ -964,7 +982,7 @@ graph TD
     | #86 (Intelligent Dispatch) | `/industries/ride-hailing` · `/industries/delivery` | "See our AI dispatch work for ride-hailing and delivery platforms →" |
     | #87 (Marketplace Fraud Detection) | `/industries/marketplace` | "See how we build AI fraud detection for marketplace platforms →" |
     | #88 (Demand Forecasting, Logistics) | `/industries/delivery` | "See our AI demand forecasting work for delivery platforms →" |
-    | #89 (Conversational Booking Interfaces) | `/industries/home-services` · `/industries/travel` | "See our conversational booking AI work →" |
+    | #89 (Conversational Booking Interfaces) | `/industries/home-services` · `/industries/travel` (+ secondary: `/ai-engineering/voice-ai-development` when the article's voice-bot section is the entry point) | "See our conversational booking AI work →" |
     | #102 (AI for Rental Marketplaces) | `/industries/travel` · `/industries/marketplace` | "See how we build AI for rental marketplace platforms →" |
     | #103 (AI for Home Services) | `/industries/home-services` | "See our AI work for on-demand home services platforms →" |
     | #104 (AI for Classifieds) | `/industries/marketplace` | "See how we build AI for classifieds platforms →" |
@@ -993,19 +1011,20 @@ graph TD
     | #67 (EdTech Platform Architecture) | `/industries/education` |
     | #74 (Classifieds Platform Architecture) | `/industries/marketplace` |
 
-    **Cluster 7.1, 7.4, 7.5 → /ai/ hub (CTA zone):** #82, #83, #84 (AI Strategy); #109, #110, #111, #112, #113 (Build vs Buy + Stack Hub) → `/ai/` hub. These articles address the "should I build AI at all / who should I use" question; the hub page is the natural next step.
+    **Cluster 7.1, 7.3, 7.4, 7.5 → /ai-engineering/ hub (CTA zone):** #82, #83, #84 (AI Strategy); #90, #91, #92 (Production AI Integration & Risk); #109, #110, #111, #112, #113 (Build vs Buy + Stack Hub); #114, #115, #116 (Post-Launch AI Ops — Implementation) → `/ai-engineering/` hub. These articles address the "should I build AI at all / who should I use / how do I keep it running" question; the hub page is the natural next step. Note: #90 and #91 are also reverse-linked from every `/ai-engineering/[service]` LP Tech-Depth section per Cluster 7.3 cross-link rule.
 
-    **Secondary links to specific /ai/[service] pages (CTA zone, secondary only — do not use instead of the /industries/ or /ai/ primary link):**
+    **Secondary links to specific /ai-engineering/[service] pages (CTA zone, secondary only — do not use instead of the /industries/ or /ai-engineering/ primary link):**
 
     | Content Focus | Service Page |
     |---|---|
-    | Content moderation (featured in #87, #104, #117) | `/ai/ai-content-moderation` |
-    | Search ranking (featured in #104, #107) | `/ai/ai-search-upgrade` |
-    | Conversational / booking interfaces (#89) | `/ai/ai-customer-support-bot` · `/ai/whatsapp-ai-automation` |
-    | Agent / workflow automation (#89, #108) | `/ai/ai-agents-automation` |
-    | RAG / knowledge retrieval (#110, #113) | `/ai/rag-knowledge-assistant` |
+    | Content moderation (featured in #87, #104, #117) | `/ai-engineering/ai-content-moderation` |
+    | Search ranking (featured in #104, #107) | `/ai-engineering/ai-search-upgrade` |
+    | Conversational / booking interfaces (#89) | `/ai-engineering/ai-customer-support-bot` · `/ai-engineering/whatsapp-ai-automation` |
+    | Voice AI / phone-bot booking (#89 when voice-bot section is entry point) | `/ai-engineering/voice-ai-development` |
+    | Agent / workflow automation (#89, #108) | `/ai-engineering/ai-agents-automation` |
+    | RAG / knowledge retrieval (#110, #113) | `/ai-engineering/rag-knowledge-assistant` |
 
-    **Reverse direction — Landing pages → Blog:** Each `/industries/[vertical]` page includes a "Technical deep-dives" section at the bottom linking to (a) the matching Cluster 3.1 architecture article and (b) the matching Cluster 7.2 AI feature article for that vertical. Each `/ai/[service]` page links to the most relevant Cluster 7.4 or 7.5 article. These reverse links push topical authority signals back to the blog and give researching buyers a path to the educational content before they're ready to book.
+    **Reverse direction — Landing pages → Blog:** Each `/industries/[vertical]` page includes a "Technical deep-dives" section at the bottom linking to (a) the matching Cluster 3.1 architecture article and (b) the matching Cluster 7.2 AI feature article for that vertical. Each `/ai-engineering/[service]` page links to the most relevant Cluster 7.4 or 7.5 article. These reverse links push topical authority signals back to the blog and give researching buyers a path to the educational content before they're ready to book.
 
     | Landing Page | Blog → Architecture | Blog → AI Feature |
     |---|---|---|
@@ -1018,12 +1037,14 @@ graph TD
     | `/industries/travel` | #28 (Rental Marketplace Architecture) | #89 (Conversational Booking), #102 (AI Rental), #118 (AI Booking/OTA) |
     | `/industries/social-media` | #65 (Dating App), #66 (Short Video) | #105 (AI Dating), #117 (AI Short Video/Social) |
     | `/industries/education` | #67 (EdTech Architecture) | #106 (AI EdTech) |
-    | `/ai/` hub | — | #82, #83, #84 (AI Strategy), #113 (AI Stack) |
-    | `/ai/ai-content-moderation` | — | #87, #104, #117 |
-    | `/ai/ai-search-upgrade` | — | #104, #107 |
-    | `/ai/rag-knowledge-assistant` | — | #110, #113 |
-    | `/ai/ai-agents-automation` | — | #89, #108 |
-    | `/ai/ai-customer-support-bot` | — | #89 |
+    | `/ai-engineering/` hub | — | #82, #83, #84 (AI Strategy); #92 (Copilot vs AI Engineering); #109, #110, #111, #112 (Build-vs-Buy); #114, #115, #116 (Post-Launch AI Ops — Implementation). **NOT #113** — #113 is architecture deep-dive linked from individual service LPs, not from hub. #90 and #91 reverse-link from every `/ai-engineering/[service]` LP Tech-Depth section, not from hub directly. |
+    | `/ai-engineering/ai-content-moderation` | — | #87, #104, #117 |
+    | `/ai-engineering/ai-search-upgrade` | — | #104, #107 |
+    | `/ai-engineering/rag-knowledge-assistant` | — | #110, #113 |
+    | `/ai-engineering/ai-agents-automation` | — | #89, #108, #113 |
+    | `/ai-engineering/ai-customer-support-bot` | — | #89 |
+    | `/ai-engineering/whatsapp-ai-automation` | — | #89 |
+    | `/ai-engineering/voice-ai-development` | — | #89 (when voice-bot section is the entry point) |
 
 ---
 
