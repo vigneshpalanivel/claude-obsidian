@@ -19,6 +19,12 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## 2026-05-16 | re-ingest | Trioangle Landing Page Plan
+- Source: `.raw/Trioangle/Trioangle Landing Page Plan.md` (hash `7d6d41519ebb2881e942b5308f490520`)
+- Summary: [[Trioangle Landing Page Plan]] (concept)
+- Pages updated: [[Trioangle Landing Page Plan]], [[hot]], [[log]]
+- Key finding: Landing page plan restructured against Service ICP P5 in three passes — (1) competitor-validated slug rename + new `/industries/super-app/` page, (2) multi-service keyword rows (AI primary + Dev & Product) with all brand references stripped, (3) three-CTA routing per industry page with operator qualification filter, trigger subheads, P3/P4 inbound routing, and Travel/Social/Education aspirational-keyword gating. AI service pages (Priorities 5/6/7/10–13) now route through AI Audit Sprint funnel instead of skipping to "Get a fixed-price quote." Hub headline corrected from "800+ platforms in your vertical" → "800+ platforms across 9 verticals" (vertical-agnostic page). Document is now ICP-aligned at the strategy layer — copywriting pass on actual page builds is the next step.
+
 ## 2026-05-15 | ingest | Trioangle Editorial Calendar — Service
 - Source: `.raw/Trioangle/Content/Trioangle - Editorial Calendar - Service.md`
 - Pages created: [[Trioangle Service Editorial Calendar]] (concept), [[Editorial-Calendar-Service-Trioangle]] (source)
