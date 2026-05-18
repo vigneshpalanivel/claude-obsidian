@@ -7,7 +7,7 @@
 | **URL Pattern** | `trioangle.com/ai-engineering/[service-slug]` |
 | **Hub Page** | `trioangle.com/ai-engineering/` — AI Engineering Hub (Priority 9 in Landing Page Plan) |
 | **Service Pages** | 7 pages — one 13-prompt template, substitute per-service variables |
-| **Total Prompt Entries** | 23 (13 service template + 10 hub-specific) |
+| **Total Prompt Entries** | 26 (13 service template + 13 hub-specific, including 3 vendor-comparison prompts H11–H13 per ICP §Competitive Set) |
 | **Build Order** | P5 RAG → P6 Support Bot → P7 AI Agents → P9 Hub → P10 WhatsApp → P11 Moderation → P12 Search → P13 Voice |
 | **Service Page CTA** | 🥇 Primary: *Book a Free AI Readiness Call* → AI Audit Sprint ($1.5k–$4k) → fixed-price [Service] build · 🥈 Secondary: *Request a scoping call* (defined-scope buyers who can skip the audit) |
 | **Hub Page CTA** | Free AI Readiness Call (1-hour, no pitch deck) → AI Audit Sprint |
@@ -108,8 +108,8 @@
 | `[Service]` | RAG knowledge assistant |
 | `[Service-Slug]` | `rag-knowledge-assistant` |
 | `[Service-Headline]` | *RAG knowledge assistants that actually know your platform's data — not generic chatbots* |
-| `[Alt-Service]` | Pinecone Assistant · AWS Bedrock Knowledge Bases · generic LlamaIndex/LangChain RAG without domain tuning · vector-DB-only setups (Pinecone / Weaviate / Qdrant + manual integration) |
-| `[Key-Tech]` | LlamaIndex · pgvector · BM25 hybrid search · reranking · embedding pipeline |
+| `[Alt-Service]` | **SaaS / managed:** Pinecone Assistant · AWS Bedrock Knowledge Bases · ChatGPT Enterprise / OpenAI Enterprise (the "we tried ChatGPT" baseline per ICP) · vertical RAG SaaS · **DIY:** generic LlamaIndex/LangChain RAG without domain tuning · vector-DB-only setups (Pinecone / Weaviate / Qdrant + manual integration) |
+| `[Key-Tech]` | LlamaIndex · pgvector · BM25 hybrid search · reranking · embedding pipeline · LLM observability (LangSmith / Arize / Helicone) |
 | `[Platform-Pain]` | generic RAG hallucinating answers outside platform-specific knowledge; retrieval failing on platform vocabulary (commission terms, dispatch states, listing taxonomies); confidently wrong answers eroding user trust |
 | `[Outcome-Signal]` | answer accuracy on platform-specific queries · retrieval precision/recall on platform vocabulary · hallucination rate · downstream business-translation (support tickets deflected from agents · session length / retention lift from accurate self-serve answers · time-to-resolution on platform-specific user questions — pick the metric the operator already tracks) |
 
@@ -120,8 +120,8 @@
 | `[Service]` | AI customer support bot |
 | `[Service-Slug]` | `ai-customer-support-bot` |
 | `[Service-Headline]` | *AI customer support bots that resolve tickets without human handoff — trained on your platform's actual data* |
-| `[Alt-Service]` | Intercom Fin · Zendesk AI · Freshdesk Freddy |
-| `[Key-Tech]` | RAG pipeline · live handoff logic · multilingual NLP · ticket routing and escalation |
+| `[Alt-Service]` | Intercom Fin · Zendesk AI · Freshdesk Freddy · Ada · Drift · Forethought · Cognigy (chat side) |
+| `[Key-Tech]` | RAG pipeline · live handoff logic · multilingual NLP · ticket routing and escalation · LLM observability (LangSmith / Arize / Helicone) |
 | `[Platform-Pain]` | support ticket volume outpacing human team at scale; inconsistent answers across agents; slow first-response time |
 | `[Outcome-Signal]` | ticket deflection rate · first-response time · CSAT score |
 
@@ -132,7 +132,7 @@
 | `[Service]` | AI agents and workflow automation |
 | `[Service-Slug]` | `ai-agents-automation` |
 | `[Service-Headline]` | *AI agents that do the work — not just answer questions. Booking, dispatch, support, and ops workflows automated end-to-end.* |
-| `[Alt-Service]` | Zapier · Make · no-code automation tools |
+| `[Alt-Service]` | **AI agent frameworks (DIY):** LangChain agents · CrewAI · AutoGen · LangGraph self-build · **Enterprise AI agent SaaS:** Microsoft Copilot Studio / Power Automate AI · Salesforce AgentForce · **Low-code workflow + AI nodes:** n8n with AI nodes · Zapier AI · Make (these are integration tools, not true agentic systems — sometimes adequate for simple flows) |
 | `[Key-Tech]` | LangGraph · ReAct agents · MCP · tool use · human-in-the-loop checkpoints |
 | `[Platform-Pain]` | multi-step operational workflows (dispatch, booking, reconciliation) that require judgment beyond simple rule-based routing |
 | `[Outcome-Signal]` | operational steps automated without human · decision accuracy · human intervention rate |
@@ -144,7 +144,7 @@
 | `[Service]` | WhatsApp AI automation |
 | `[Service-Slug]` | `whatsapp-ai-automation` |
 | `[Service-Headline]` | *WhatsApp AI that handles bookings, support, and order updates — without a human in the loop* |
-| `[Alt-Service]` | Twilio basic bot · manual WhatsApp ops team · generic WhatsApp Business API integration |
+| `[Alt-Service]` | **WhatsApp-AI specialists (MENA / SEA / LatAm focus):** Wati · AiSensy · Gupshup · Yellow.ai · Haptik · **Generic / DIY:** Twilio basic bot · manual WhatsApp ops team · generic WhatsApp Business API integration without domain tuning |
 | `[Key-Tech]` | WhatsApp Business API · WhatsApp Flows · multi-language NLP · session management |
 | `[Platform-Pain]` | manual ops team handling bookings, order updates, and support over WhatsApp — not scalable past a certain volume |
 | `[Outcome-Signal]` | messages handled without human agent · booking confirmation rate · average response time |
@@ -156,7 +156,7 @@
 | `[Service]` | AI content moderation |
 | `[Service-Slug]` | `ai-content-moderation` |
 | `[Service-Headline]` | *AI content moderation that scales with your platform — without false positives tanking your GMV* |
-| `[Alt-Service]` | Amazon Rekognition · Google Vision AI · Perspective API |
+| `[Alt-Service]` | **Moderation specialists:** Hive Moderation · Sightengine · ActiveFence · Two Hat / Microsoft Community Sift · **Generic cloud APIs:** Amazon Rekognition · Google Vision AI · Perspective API (text-toxicity baseline) |
 | `[Key-Tech]` | image moderation classifier · text toxicity detection · domain-specific false positive tuning · human review escalation |
 | `[Platform-Pain]` | false positives removing valid listings / content and killing GMV; human moderation team not scaling with platform UGC growth |
 | `[Outcome-Signal]` | false positive rate · recall (miss rate on actual violations) · moderation throughput |
@@ -168,7 +168,7 @@
 | `[Service]` | AI semantic search |
 | `[Service-Slug]` | `ai-search-upgrade` |
 | `[Service-Headline]` | *Semantic search that understands what your users actually mean — not just what they typed* |
-| `[Alt-Service]` | Algolia · Elasticsearch keyword search · Typesense |
+| `[Alt-Service]` | **Keyword-search incumbents:** Algolia · Elasticsearch · Typesense · **Recommendation / personalization SaaS:** AWS Personalize · GCP Vertex AI Recommendations · **Vector-search-as-a-service:** Weaviate Cloud · Pinecone · Vespa · Marqo |
 | `[Key-Tech]` | pgvector · BM25 hybrid search · embedding pipeline · reranking · query intent understanding |
 | `[Platform-Pain]` | keyword search failing on intent-based queries; high zero-results rate; low search-to-conversion rate |
 | `[Outcome-Signal]` | search conversion rate · zero-results rate · click-through rate on top results |
@@ -180,7 +180,7 @@
 | `[Service]` | voice AI |
 | `[Service-Slug]` | `voice-ai-development` |
 | `[Service-Headline]` | *Voice AI that handles calls, bookings, and support — integrated into your existing platform, not bolted on* |
-| `[Alt-Service]` | legacy IVR systems · Twilio basic voice flow · Dialogflow |
+| `[Alt-Service]` | **Voice-AI specialists:** Bland.ai · PolyAI · Cognigy Voice · Synthflow · Cresta · **Legacy / generic:** legacy IVR systems · Twilio basic voice flow · Dialogflow |
 | `[Key-Tech]` | Vapi · Retell AI · real-time voice pipeline · tool use · human fallback routing |
 | `[Platform-Pain]` | phone support overload, IVR dead-ends, missed calls, manual booking ops over the phone |
 | `[Outcome-Signal]` | calls resolved without human agent · bookings completed via voice · average handle time |
@@ -240,9 +240,9 @@
 
 ---
 
-# 📄 HUB PAGE PROMPTS — `trioangle.com/ai-engineering/` (H1–H10)
+# 📄 HUB PAGE PROMPTS — `trioangle.com/ai-engineering/` (H1–H13)
 
-*Hub page targets buyers who know they need AI features but haven't selected a specific service. AEO snippets + GEO blocks. Word budget: ~2,000–3,000 words.*
+*Hub page targets buyers who know they need AI features but haven't selected a specific service. AEO snippets + GEO blocks. Word budget: ~2,500–3,600 words (expanded from initial 2,000–3,000 to absorb the three vendor-comparison prompts H11–H13, which the Service ICP requires the hub to address head-on).*
 
 ---
 
@@ -267,6 +267,18 @@
 **H7.** Build vs buy vs SaaS for AI features: how does an established platform operator decide? — 🟡 **Hub S1** *| Comparison block | P5 | Hook: SaaS wins when domain fit is adequate and customization is low; custom AI feature wins when the platform's business logic is specific enough that generic SaaS produces the failure mode the operator is trying to solve; the AI Readiness Call surfaces this decision in 1 hour before any build commitment — "use [SaaS]" is a valid and common output of that call*
 
 **H8.** What structural guarantees should an AI feature engineering partner provide in writing — before any engagement begins? — 🟡 **Hub S1** *| Guarantee block | P1·P2 (trust) | Hook: the floor — Day-1 GitHub access (client owns the AI service repo from commit one), IP transfer clause (model artifacts + data pipeline + inference code at delivery), 48-hour comm SLA with 5% contract credit per breach, pre-contract engineer introduction (meet the engineers before signing), fixed-price acceptance condition (the AI feature must demonstrably improve the named metric before sign-off); verbal trust promises are noise — every agency that burned a past buyer made the same ones*
+
+---
+
+## 🟠 Hub S1.5 — Vendor Comparison (H11–H13)
+
+*Direct competitor-class comparisons. Required because per the Service ICP §Competitive Set, the mid-market AI engineering peer set is "the most acute competitive risk to the AI-first positioning." These three prompts close that gap.*
+
+**H11.** Trioangle vs another mid-market AI engineering shop (Markovate, InData Labs, Eleks, Distillery, AltexSoft, Apexon, Mantra Labs, Folio3, Maruti Techlabs): what's the difference for an established platform operator? — 🟠 **Hub S1.5** *| Comparison block + FAQ | P5·P1 | Hook: most mid-market AI shops are AI-native (2–3 years in market, no platform-delivery history); they ship AI features into systems they didn't build and don't deeply understand. Trioangle's wedge is the 800+ platform-delivery library across 9 verticals since 2015 — we ship AI features into platforms we've already built or understand at the edge-case level (dispatch logic, commission flows, marketplace fraud patterns, listing taxonomies). AI-native peers have to learn the vertical on your dime over months 1–3; we don't. If the buyer needs pure-AI capability with no vertical specificity, AI-native shops compete fairly; for vertical-specific AI on established platforms, the platform-delivery moat is the differentiator.*
+
+**H12.** Why hire an AI engineering team when I can just use AI coding agents (Lovable, Bolt.new, v0, Cursor, Replit Agent, Claude Code, GitHub Copilot, Devin) to ship features myself? — 🟠 **Hub S1.5** *| Comparison block + FAQ | P5 | Hook: AI coding agents accelerate code generation; they do not deliver production-integrated AI features. Generated code still needs integration into the platform's data layer, service-isolation patterns, observability, A/B test framework, fallback paths, and operational support — that's the actual AI engineering work, not the code. Use AI coding agents as productivity assist for your in-house engineers; use Trioangle when you need a working AI feature shipped end-to-end into an established platform without your team learning ML and production-AI deployment on the company's dime. Custom AI build vs AI coding agent isn't an either/or — most clients use both, in different roles.*
+
+**H13.** Trioangle vs an Indian IT major's AI service line (TCS AI.Cloud, Infosys Topaz, HCLTech AI Force, Wipro AI360, Tech Mahindra): when does each fit? — 🟠 **Hub S1.5** *| Comparison block + FAQ | P5·P1 | Hook: IT majors win on brand trust, enterprise procurement-fit, OpenAI/Anthropic partnerships, and SLAs that procurement requires — and lock $300k+ minimums, 18+ month timelines, junior delivery teams behind senior partners. Trioangle wins on senior-engineers-on-every-PR, 4–12 week feature timelines, fixed-price per feature, and up to 70% lower cost — but does not match an IT major on procurement / brand / multi-region compliance footprint. Honest verdict: if the buyer's procurement requires Tier-1 vendor with $1B+ revenue, use an IT major; for everything else, mid-market AI engineering ships faster at meaningfully lower cost.*
 
 ---
 
@@ -336,7 +348,7 @@
 
 ---
 
-## Hub Page (`trioangle.com/ai-engineering/`) — ~2,000–3,000 words
+## Hub Page (`trioangle.com/ai-engineering/`) — ~2,500–3,600 words
 
 ```
 ┌────────────────────────────────────────────────────────────┐
@@ -352,8 +364,10 @@
 │  One card per service page with: service name, primary     │
 │  pain solved, outcome signal, CTA → /ai-engineering/[slug] │
 ├────────────────────────────────────────────────────────────┤
-│  AEO FAQ BLOCK (~500w)                                     │
-│  Prompts H1,H2,H3,H4,H5,H8,H10 (FAQPage JSON-LD)           │
+│  AEO FAQ BLOCK (~650w)                                     │
+│  Prompts H1, H2, H3, H4, H5, H8, H10, H11, H12, H13        │
+│  (FAQPage JSON-LD — 10 entries; H11–H13 compressed to      │
+│   40–60w each, full versions live in COMPARISON BLOCK)     │
 ├────────────────────────────────────────────────────────────┤
 │  WHERE TO START (~200w)                                    │
 │  Prompt H3 → vertical-to-service mapping (compact: 7 lines │
@@ -368,9 +382,13 @@
 │  optional Audit Sprint ($1.5k–$4k, 2 weeks) → fixed-price  │
 │  build (4–10 weeks); visual timeline with named milestones │
 ├────────────────────────────────────────────────────────────┤
-│  COMPARISON BLOCK (~400w, two sub-tables)                  │
-│  Prompt H6 (~200w): domain-specific vs generic AI agency   │
-│  Prompt H7 (~200w): build vs buy vs SaaS for AI features   │
+│  COMPARISON BLOCK (~800w, five sub-tables)                 │
+│  Prompt H6 (~150w): domain-specific vs generic AI agency   │
+│  Prompt H7 (~150w): build vs buy vs SaaS for AI features   │
+│  Prompt H11 (~200w): vs mid-market AI peer shops           │
+│   (Markovate, InData Labs, Eleks…) — most acute risk       │
+│  Prompt H12 (~150w): vs AI coding agents (Lovable, Cursor) │
+│  Prompt H13 (~150w): vs Indian IT majors (TCS, Infosys)    │
 ├────────────────────────────────────────────────────────────┤
 │  WHY NOW (~400w)                                           │
 │  Prompt H9 → AI-era platform economics                     │
@@ -379,13 +397,15 @@
 │  Prompt H10 → 8-question checklist near CTA                │
 │  CTA: "Book a Free AI Readiness Call"                      │
 └────────────────────────────────────────────────────────────┘
-  Block-sum: ~3,000w  ·  Target: 2,000–3,000w  ·  At ceiling — no headroom
+  Block-sum: ~3,550w  ·  Target: 2,500–3,600w  ·  Headroom: ~50w
+  (HERO 400 + GRID 400 + FAQ 650 + WHERE 200 + WHY-T 300 + HOW 200
+   + COMPARE 800 + WHY-NOW 400 + BOFU 200 = 3,550)
 ```
 
 **Schema stack — Hub:**
 - `Organization` (Trioangle) — sitewide
 - `Service` (broad: *"AI Engineering for Platform Operators"* — aligns with the Landing Page Plan's primary keyword `AI engineering services`)
-- `FAQPage` (7 prompts from H1–H10)
+- `FAQPage` (10 prompts: H1, H2, H3, H4, H5, H8, H10, H11, H12, H13)
 - `BreadcrumbList` (Home > AI Engineering)
 
 ### Internal Links (required on hub page)
@@ -484,6 +504,12 @@ Before publishing the `/ai-engineering/` hub page, verify each gate below. Group
 **Vertical-to-service mapping:**
 - [ ] **Vertical-to-service mapping (H3) names only the 7 productized services** — features that live on industry pages (AI dispatch optimization, AI fraud detection, AI feed ranking) explicitly link out to `/industries/[vertical]` rather than promising a service page that doesn't exist
 
+**Vendor comparison (H11–H13 — closes the #1 ICP competitive risk):**
+- [ ] **H11 present** — Trioangle vs mid-market AI peer shops (Markovate, InData Labs, Eleks, Distillery, AltexSoft, Apexon, Mantra Labs, Folio3, Maruti Techlabs). Per ICP §Competitive Set, this is "the most acute competitive risk to the AI-first positioning"; without H11 the hub leaves the buyer no answer to "why you instead of an AI-native shop with sharper AI marketing?"
+- [ ] **H12 present** — Trioangle vs AI coding agents (Lovable, Bolt.new, Cursor, Devin, Claude Code, v0, Replit Agent). Frame as productivity-assist for in-house teams, not a vendor substitute
+- [ ] **H13 present** — Trioangle vs Indian IT majors' AI service lines (TCS AI.Cloud, Infosys Topaz, HCLTech AI Force, Wipro AI360, Tech Mahindra). Honest fit-verdict: IT majors win on procurement / brand / multi-region SLA; Trioangle wins on senior-engineers-on-PR, 4–12 week timelines, fixed-price, up to 70% lower cost
+- [ ] **All three comparison hooks include an honest "use [competitor] when" path** — recommending a competitor when it fits is a structural differentiator, not a loss
+
 **Trust & copy discipline:**
 - [ ] **No clone language** — pre-launch hand-off (if disclaimed) uses "white-label / ready-to-launch / productized"
 - [ ] **No retainer language** — fixed-price + Audit Sprint framing throughout
@@ -496,11 +522,11 @@ Before publishing the `/ai-engineering/` hub page, verify each gate below. Group
 **SEO / schema:**
 - [ ] **Schema `Service.name` = "AI Engineering for Platform Operators"** — broad-scoped, aligned with the primary keyword `AI engineering services`; do NOT use the service-page "[Service] for Platform Operators" framing
 - [ ] **BreadcrumbList terminates at "AI Engineering"** — `Home > AI Engineering`; no `> [Service]` third level
-- [ ] **FAQPage JSON-LD carries 7 prompts** — H1, H2, H3, H4, H5, H8, H10 (H6, H7, H9 have dedicated body sections, not FAQ)
+- [ ] **FAQPage JSON-LD carries 10 prompts** — H1, H2, H3, H4, H5, H8, H10 + H11, H12, H13 (vendor-comparison prompts, compressed to 40–60w; full versions in COMPARISON BLOCK). H6, H7, H9 have dedicated body sections, not FAQ
 
 ---
 
-**Total Prompt Entries:** 23 (13 service template + 10 hub-specific)
+**Total Prompt Entries:** 26 (13 service template + 13 hub-specific — H1–H10 plus H11–H13 vendor-comparison prompts)
 **Pages Generated:** 8 (1 hub + 7 service pages) via variable substitution
 **Build Order:** RAG (P5) → Support Bot (P6) → AI Agents (P7) → Hub (P9) → WhatsApp (P10) → Moderation (P11) → Search (P12) → Voice (P13)
 **Source Landing Page Plan:** [[Trioangle Landing Page Plan]] | **Source ICP:** [[Trioangle - ICP - Service]] | **Marketing Plan:** [[Trioangle - Marketing Plan - Service]] | **Track:** Track 2 ([[Trioangle Growth Plan]])

@@ -6,14 +6,14 @@
 |-------|-------|
 | **URL Pattern** | `trioangle.com/industries/[vertical-slug]` |
 | **Pages Covered** | 9 verticals — one prompt set, substitute per-vertical variables |
-| **Total Prompts** | 49 per page · LP only (36 AI-track + 11 Custom Dev + 2 White-Label routing) |
-| **Priority Split** | 🔴 S0 ship-first (10 AI + 4 CD) · 🟡 S1 week 1 (10 AI + 3 CD) · 🟢 S2 week 2 (16 AI + 4 CD + 2 WL) |
+| **Total Prompts** | 51 per page · LP only (38 AI-track + 11 Custom Dev + 2 White-Label routing) |
+| **Priority Split** | 🔴 S0 ship-first (10 AI + 4 CD) · 🟡 S1 week 1 (10 AI + 3 CD) · 🟢 S2 week 2 (18 AI + 4 CD + 2 WL) |
 | **Word Budget** | ~3,500–5,500 words per industry page (expanded for three-CTA coverage with full CD funnel) |
 | **Relationship** | These pages sit under `trioangle.com/industries` (parent) and are internally linked from Pillar 7 blog articles for their vertical |
 | **Track** | Track 2 — AI-First Service Engine ([[Trioangle Growth Plan]]) |
 
 > [!NOTE] How to Use
-> Substitute the per-vertical variables from the table below into every prompt. The result is a complete AEO/GEO prompt set for that industry's landing page. Same 49 prompts (36 AI + 11 Custom Dev + 2 White-Label) generate all 9 pages — only the substitution changes.
+> Substitute the per-vertical variables from the table below into every prompt. The result is a complete AEO/GEO prompt set for that industry's landing page. Same 51 prompts (38 AI + 11 Custom Dev + 2 White-Label) generate all 9 pages — only the substitution changes.
 >
 > **AI Services hub** (`/ai-engineering/`) handles the generic AI service story. **Industry pages** handle vertical-specific buyer language — the exact search terms a ride-hailing CTO or marketplace operator uses, not the generic "AI for platforms" framing.
 >
@@ -28,12 +28,43 @@
 >
 > Always include the `(trust)` annotation when the prompt is in a trust block; omit otherwise.
 
+> [!WARNING] Validation Status — Unvalidated Hypotheses
+> **These 51 prompts have not been fully validated against real search data.** They were inferred from [[Trioangle - ICP - Service]] pain points + [[Trioangle Landing Page Plan]] keyword strategy + assumptions about how technical buyers research. Treat as **hypotheses worth testing**, not verified buyer questions. *(2026-05-18 update: a competitor-LP audit + Google PAA scan + Reddit/HN buyer-question harvest was run for the ride-hailing vertical only — partial validation evidence is in the per-prompt analysis log; the other 8 verticals remain fully unvalidated.)*
+>
+> **What's grounded:** ICP pain points (sales-floor observation, still flagged Validation Status — Assumption-Based per ICP §Validation Status); LP-Plan keyword tables (assertions, not Ahrefs/SEMrush-validated); buyer triggers (sales observation).
+>
+> **What's inferred (no evidence):** how buyers phrase their questions; whether ChatGPT/Perplexity/Gemini surface citations from query shapes like these; priority structure timing (S0/S1/S2 = day 1/week 1/week 2 matches buyer journey); pricing/metric numbers buyers compare against; that the 9-vertical split matches how buyers self-segment.
+>
+> **Validation gates (none cleared):**
+> 1. **AI search engine test** — run all 51 prompts (substituted for the target vertical) through ChatGPT, Perplexity, Gemini; note which produce useful citations vs generic content. ~2-hour test per vertical.
+> 2. **SEO keyword data** — pull Ahrefs/SEMrush on LP-Plan Primary keywords. If `AI for ride-hailing platforms` has <50 monthly searches, the AEO file is optimizing for traffic that doesn't exist.
+> 3. **Customer interviews** — ICP §Research Templates has the script (10–15 interviews); first batch pending.
+> 4. **CRM-sourced query data** — instrument AI Readiness Call booking form with *"How did you find us?"* and *"What were you searching for?"*; closed-won attribution accumulates over 90 days.
+> 5. **Closed-lost interviews** — ICP recommends revisiting 10 closed-lost deals; not done.
+>
+> The structural decisions (3-CTA architecture, exclusion list for limited-AI verticals, persona routing) are defensible because they derive from ICP and LP-Plan. The specific question phrasings are not. Until validation runs, this file is well-structured speculation — executable, but unproven.
+
 ---
 
 ## 🛡️ POSITIONING RULES (Apply to Every Prompt Below)
 
 > [!IMPORTANT] Search-Side Language — Vertical-Specific
 > On industry pages, buyers are already in their vertical — they search for *"AI dispatch for ride-hailing"*, *"fraud detection for marketplace"*, *"intelligent matching for home services platform"*. Prompts must use the vertical's own vocabulary, not generic "AI engineering" language. This is what differentiates industry pages from the parent page in AI-engine citations.
+
+> [!IMPORTANT] Register Match — Practitioner Vernacular, Not Marketing Abstractions
+> Per ride-hailing buyer-question validation (2026-05-18 research), **real operators ask questions in concrete vernacular**, not the marketing-team register the AEO file defaults to. When buyers type a question into ChatGPT/Perplexity, they use practitioner language; if our content uses abstract marketing language, AEO retrieval under-fires. Body copy must shift register:
+>
+> | Marketing-team term (AVOID in body copy) | Practitioner term (USE instead, or pair both) |
+> |---|---|
+> | *intelligent dispatch optimization* | *smart matching / AI matching / trip matching* |
+> | *intelligent matching* | *matching algorithm / matching drivers and riders* |
+> | *surge pricing engine* | *surge pricing logic / dynamic pricing* |
+> | *AI fraud detection* | *catching fake listings / blocking fraud at checkout* |
+> | *demand forecasting* | *predicting demand / forecasting peaks* (this term is rare in buyer-side posts — pair with concrete outcome) |
+> | *driver supply volatility* | *ghost drivers / accept-then-cancel / drivers logging off* |
+> | *conversational booking assistant* | *AI that takes bookings / chat-based booking* |
+>
+> **Where to keep the marketing-team term**: H1 / Primary keyword (these are SEO-optimized terms competitors also use). **Where to swap to practitioner term**: hero subhead, FAQ answers, pain descriptions, trigger subheads. Both can coexist — `[AI-Feature-1]` substitution can carry the marketing label while body copy paraphrases in practitioner terms.
 
 > [!IMPORTANT] Delivery Count — Platform vs AI Disambiguation
 > Use specific platform delivery counts as endorsed by [[Trioangle Landing Page Plan]] Proof-Point Discipline: *"800+ platforms since 2015"* for cumulative credibility, *"100+ ride-hailing platforms"*, *"40+ travel platforms"*, *"20+ social/video platforms"*, *"10+ EdTech platforms"* for vertical-specific credibility. These establish domain depth. **Never conflate platform delivery count with AI feature delivery count** — AI Engineering launched 2026; AI delivery count is separate, smaller, and tracked independently. Avoid: *"we've built AI features in 800+ platforms"* — that conflation misrepresents the AI track record. Frame the bridge honestly: domain expertise from platform delivery → applied to AI feature work.
@@ -112,7 +143,7 @@
 
 - 🔴 **S0** — Ship-first. Hero + vertical-specific FAQ anchors + authority synthesis. **(14 prompts: 10 AI + 4 CD)**
 - 🟡 **S1** — Week 1. Vertical-specific comparison table + scenario blocks + tech-depth. **(13 prompts: 10 AI + 3 CD)**
-- 🟢 **S2** — Week 2. FAQ rotation + how-to + voice rotation + why-now + BoFU + diligence + compliance. **(22 prompts: 16 AI + 4 CD + 2 WL)**
+- 🟢 **S2** — Week 2. FAQ rotation + how-to + voice rotation + why-now + BoFU + diligence + compliance + validation-derived. **(24 prompts: 18 AI + 4 CD + 2 WL)**
 
 > [!TIP] Reading format
 > `**N.** Question — 🔴 **S0** *| persona (P1/P2/P5) | placement | hook*`
@@ -384,7 +415,7 @@
 
 ---
 
-# 📄 INDUSTRY LP PROMPTS — AI TRACK (1–36) + CUSTOM DEV (CD1–CD11) + WHITE-LABEL (WL1–WL2)
+# 📄 INDUSTRY LP PROMPTS — AI TRACK (1–38) + CUSTOM DEV (CD1–CD11) + WHITE-LABEL (WL1–WL2)
 
 *All prompts live on `trioangle.com/industries/[Vertical-Slug]`. AEO snippets: 40–60 words inside `FAQPage` JSON-LD. GEO blocks: 150–600-word compressed sections. Total page word budget: ~3,500–5,500 words (expanded for full three-CTA coverage).*
 
@@ -403,9 +434,9 @@
 
 **2.** How does an AI engineering partner add [AI-Feature-1] to an existing [Platform-Type] without disrupting live [Provider] operations or [User] experience? — 🔴 **S0** *| P5·P1 | Hero FAQ | Hook: service-isolation pattern — [AI-Feature-1] runs as a standalone microservice alongside the existing [Platform-Type]; automatic fallback to rule-based logic when model confidence drops; [Provider] and [User] see no interruption; rollback takes < 1 minute*
 
-**3.** How long does it take to get [AI-Feature-1] live in a production [Vertical] platform — from first conversation to real [Provider] and [User] impact? — 🔴 **S0** *| P5·P1·P2 | Hero FAQ | Hook: free AI Readiness Call (1 hr) → AI Audit Sprint (2 weeks, credited) → [AI-Feature-1] build (4–8 weeks per LP-Plan) → production live with A/B test running; typical 6–10 weeks from signed Sprint to live feature for data-ready platforms; longer if data instrumentation is needed; the AI Audit Sprint confirms readiness before any build commitment*
+**3.** How long does it take to get [AI-Feature-1] live in a production [Vertical] platform — from first conversation to real [Provider] and [User] impact? — 🔴 **S0** *| P5·P1·P2 | Hero FAQ | Hook: free AI Readiness Call (1 hr) → AI Audit Sprint (2 weeks, credited) → [AI-Feature-1] build (4–8 weeks per LP-Plan) → production live with A/B test running; typical 6–10 weeks from signed Sprint for data-ready platforms; longer if data instrumentation is needed. **What 4 weeks vs 8 weeks means:** 4-week builds = scoped single-feature integration (one [AI-Feature-1] flow, one rollout target, existing data pipeline) — not full multi-market production. 6–8 weeks = production-grade rollout with A/B infrastructure, monitoring, multi-market rollout, fallback architecture. **For full multi-market production deployment of a complex AI feature, plan for 8–12 weeks of build time.** The AI Audit Sprint scopes which timeline applies before any build commitment.*
 
-**4.** What does it cost to add [AI-Feature-1] to an established [Platform-Type] — and what's actually included? — 🔴 **S0** *| All personas | FAQ + pricing block | Hook: AI Audit Sprint $1,500–$4,000 (credited toward build); Discovery Sprint $2,000–$4,000 (for non-AI platform rebuild scoping, AI Audit named as Phase 2); [AI-Feature-1] fixed-price build $15k–$120k depending on scope; no monthly retainer, no hourly billing; cost includes data readiness assessment, model build, service isolation, A/B infrastructure, monitoring setup, and post-delivery support window*
+**4.** What does it cost to add [AI-Feature-1] to an established [Platform-Type] — and what's actually included? — 🔴 **S0** *| All personas | FAQ + pricing block | Hook: AI Audit Sprint $1,500–$4,000 (credited toward build); Discovery Sprint $2,000–$4,000 (for non-AI platform rebuild scoping, AI Audit named as Phase 2). **[AI-Feature-1] fixed-price build, scope-tiered:** $15k–$30k = focused single-feature integration (one [AI-Feature-1] flow, existing data pipeline, one rollout target — what a P2 founder-operator typically buys); $30k–$60k = production-grade [AI-Feature-1] with A/B infrastructure, monitoring, and fallback architecture (P5 standard build); $60k–$120k+ = multi-feature program or multi-market rollout with model retraining cadence (P5 mature buyer). No monthly retainer, no hourly billing. **Every tier includes**: data readiness assessment, model build, service isolation, A/B infrastructure, monitoring setup, post-delivery support window. Tier selection is the AI Audit Sprint deliverable, not a guess.*
 
 **5.** Does an AI engineering partner need to already understand [Vertical] domain logic before starting — dispatch rules, [Provider] commission tiers, [User] flow constraints — or do they learn it on the project? — 🔴 **S0** *| P1·P5 | FAQ | Hook: domain knowledge of [Domain-Edge-Cases] must exist on Day 1 — not learned on your engagement; a generic AI agency learning [Vertical] edge cases on your project costs 3 months of runway before writing a useful model; domain-specialist teams know the failure modes of [AI-Feature-1] in [Vertical] from prior platform engagements*
 
@@ -433,7 +464,7 @@
 
 **11.** [AI-Feature-1] built by a domain-specific [Vertical] AI engineering partner vs an off-the-shelf SaaS — which fits an established [Platform-Type] better in 2026? — 🟡 **S1** *| P5 | Comparison block | Hook: SaaS works when [Vertical] domain fit is adequate and customization needs are low; custom build wins when your [Domain-Edge-Cases] are beyond what a generic SaaS handles — and when you've already tried SaaS and it failed; AI Audit Sprint diagnoses which path is right before any build commitment*
 
-**12.** External [Vertical] AI engineering team vs hiring an in-house ML engineer for a [Platform-Type] with $1M+ ARR — which path gets [AI-Feature-1] live faster with lower total cost? — 🟡 **S1** *| P1·P5 | Comparison block | Hook: in-house ML = 4–9 month hiring + onboarding + no [Vertical] domain knowledge + full-salary ongoing; external = AI Audit Sprint (2 weeks, credited) → [AI-Feature-1] build (4–8 weeks per LP-Plan) → live and A/B-tested; total 6–10 weeks from signed Sprint; external wins until [Vertical] AI feature volume exceeds 4–5 features per year*
+**12.** Should we hire AI talent or outsource AI work for our [Platform-Type] — when does each path fit? — 🟡 **S1** *| P1·P5 | Comparison block | Hook: this isn't binary — most $1M+ ARR [Vertical] operators land on a hybrid path. **Outsource fits** when (a) [AI-Feature-1] is your first AI feature and you don't yet know which features matter most, (b) you're shipping 1–3 AI features per year, (c) you need [Vertical] domain depth on Day 1 vs spending 4–9 months hiring and onboarding ML talent. **Hire fits** when you've shipped 4+ AI features and need permanent ownership of model maintenance, ongoing retraining, and continuous experimentation; or when data/privacy constraints prevent external access. **Hybrid is what most operators run**: external [Vertical] specialist team for the first 2–3 AI features (Day 1 domain depth, fixed-price acceptance gate), parallel in-house ML hiring as the AI roadmap matures, internal team gradually owns post-deployment + new features. AI Readiness Call maps this honestly.*
 
 **13.** Generic AI agency vs a [Vertical]-specialist AI engineering partner: what's the difference in time-to-live-feature for [AI-Feature-1] on a [Platform-Type]? — 🟡 **S1** *| P1·P5 | Comparison block | Hook: generic agency spends months 1–3 learning [Vertical] business rules ([Domain-Edge-Cases]) before writing a useful model; domain-specialist enters with that knowledge and goes straight to data readiness assessment and feature scoping in week 1; at $10k/month burn, that 3-month gap costs $30k before a line of production code is written*
 
@@ -457,7 +488,7 @@
 
 ---
 
-## 🟢 S2 — Week 2 (21–36)
+## 🟢 S2 — Week 2 (21–38)
 
 *Expanded FAQ rotation + how-to + voice search + why-now + BoFU.*
 
@@ -500,6 +531,14 @@
 **35.** How is the 2026 AI wave changing [Vertical] platform unit economics — and what is the concrete business cost of being the last operator in your market without [AI-Feature-1]? — 🟢 **S2** *| "Why Now" block + BoFU diligence (compressed ~400w near CTA) | P5·P1 | Hook: [Vertical] competitors shipping [AI-Feature-1] now are compounding a data advantage — every week of [AI-Feature-1] production data makes the model better; the operator who ships first in their geography builds a [Outcome-Metric-1] moat that pricing alone can't close; 8-question due-diligence checklist near CTA (vertical AI case study in my market? pre-contract engineer intro? escape hatch? IP transfer? data NDA? honest build/buy/SaaS verdict? rule-based fallback? fixed-price with acceptance condition?); anchor with Trioangle's pre-filled answers as the benchmark*
 
 **36.** What AI compliance and regulatory exposure does my [Platform-Type] face — EU AI Act, sector AI rules (HIPAA + AI, financial AI), data residency for AI inference — and how does the engagement structure handle it? — 🟢 **S2** *| P1·P3 (compliance trigger) — Loss Reason: "Lost on AI compliance / regulatory exposure" per ICP §Loss Reasons | Compliance FAQ + sidebar callout | Hook: AI compliance is the 2026 procurement gate — EU AI Act risk tier classification (high-risk vs limited-risk vs minimal-risk for [AI-Feature-1] on a [Vertical] platform), sector rules (HIPAA + AI for healthcare adjacencies, financial AI for marketplace payment fraud detection, GDPR/CCPA for [User] data in inference), data residency requirements (where the inference runs, where the training data lives); engagement deliverables include: AI model documentation per regulatory requirement, inference data flow diagram, training data lineage, risk-tier classification, audit trail for model decisions; the AI Audit Sprint week-1 deliverable includes a compliance scoping verdict — what regulations apply to [AI-Feature-1] on a [Vertical] platform and what documentation is required pre-launch.*
+
+### Validation-Derived Prompts (37–38)
+
+*Added 2026-05-18 per competitor-LP audit + public-buyer-question harvest. Each has either 3+ competitor coverage (validated demand) or unowned-territory + real buyer-language evidence. (Two earlier validation-derived candidates were dropped 2026-05-18 as duplicates: a data-readiness FAQ duplicating Prompt 20's tech-depth coverage, and a post-launch-support FAQ duplicating Prompt 32's voice-search-rotation coverage.)*
+
+**37.** Will [AI-Feature-1] actually reduce the specific [Vertical] failure modes my team sees every day — [Domain-Edge-Cases] — and what's the measurable improvement? — 🟢 **S2** *| P5·P1·P2 (pain-language buyer trigger) — Vernacular-pain framing per buyer-language validation | FAQ + scenario callout | Hook: [AI-Feature-1] targets the specific [Vertical] failure modes that show up in your daily ops — not generic "AI improvements." Concrete examples by [Vertical]: ride-hailing: [Domain-Edge-Cases] (e.g., reducing accept-then-cancel rates, fixing surge-zone conflicts, eliminating ghost-driver patterns); marketplace: catching fraud rings before they hit GMV, blocking duplicate listings, fixing seller cold-start; home services: same-day availability gaps, scheduling conflicts, geo-radius mismatches. The AI Audit Sprint week-1 deliverable maps **which of your specific operator-side pain patterns** [AI-Feature-1] can target measurably; pains that aren't model-addressable (e.g., regulatory compliance, brand trust) get an honest "this isn't an AI problem" verdict instead of a forced fit. A/B-tested before-and-after measurement on the named pain pattern is the engagement's acceptance gate.*
+
+**38.** How do I evaluate an AI engineering vendor's claims when I don't have an in-house ML engineer to verify them? — 🟢 **S2** *| P1·P2 (non-technical-buyer trigger) — Unowned competitor territory + real ICP pain (per ICP §Pain Point 6 "Missing Domain Expertise") | Due-diligence sidebar + FAQ | Hook: the "I'm not an ML engineer, how do I tell if this team is real" question is what blocks P2 (Non-Technical Founder-Operator) and many P1s. Five no-ML-required diligence checks: (1) **Ask for a [Vertical]-specific production case study** with the named [Outcome-Metric-1] improvement and the A/B methodology disclosed — if methodology is hand-waved, walk away; (2) **Request a pre-contract engineer introduction** (not the sales rep) — meet whoever will actually build the model; (3) **Ask "what's the rule-based fallback?"** — if there isn't one, the AI claim is over-confident and unsafe to deploy; (4) **Check IP and Day-1 GitHub access** — if the vendor won't give you the model artifacts and training pipeline at delivery, you'll be locked in regardless of AI quality; (5) **Read the acceptance condition in the contract** — if "[Outcome-Metric-1] must demonstrate statistically significant lift vs rule-based baseline" isn't written, the vendor is selling you delivery, not outcome. The AI Audit Sprint is the lowest-risk evaluation path — 2 weeks, credited, escape hatch, you see how they actually think before any build commitment.*
 
 ---
 
@@ -578,8 +617,10 @@ trioangle.com/industries/[Vertical-Slug]
 │   → see our white-label products instead."            │
 ├───────────────────────────────────────────────────────┤
 │  AEO FAQ ANCHORS (~400w)                              │
-│  Rotate 8–10 AEO prompts from: 1,2,3,4,5,6,7,8        │
-│  + 23,24,25,26,32,33,34 (40–50w each, FAQPage schema) │
+│  Rotate 8–10 AEO prompts (40–50w each) from candidate │
+│  pool: 1,2,3,4,5,6,7,8 (S0) + 23,24,25,26,32,33,34    │
+│  (S2 rotation) + 36,37,38 (S2 validation-derived)     │
+│  — FAQPage JSON-LD schema                             │
 ├───────────────────────────────────────────────────────┤
 │  COMPARISON TABLE (~200w)                             │
 │  Prompts 11, 12, 13, 14 → single comparison block     │
@@ -595,11 +636,12 @@ trioangle.com/industries/[Vertical-Slug]
 │  🥇 REPEAT AI CTA: "Already have a working platform?  │
 │   Explore AI features" → AI Readiness Call            │
 ├───────────────────────────────────────────────────────┤
-│  CUSTOM DEV BLOCK (~1,200w) — 🥈 SECONDARY CTA        │
+│  CUSTOM DEV BLOCK (~1,300w) — 🥈 SECONDARY CTA        │
 │  Section: "Building or rebuilding from scratch?"      │
 │  CD Hero FAQ: CD1, CD2, CD3, CD4 (~500w)              │
 │  CD Comparison: CD5, CD6, CD7 (~400w)                 │
-│  CD Diligence/Process: CD8, CD9, CD10 (~300w)         │
+│  CD Diligence/Process: CD8, CD9, CD10, CD11 (~400w)   │
+│    — CD11 = scale-then-AI sequence (Pain 1+4 bridge)  │
 │  🥈 CTA: Book a Discovery Sprint ($2k–$4k)            │
 ├───────────────────────────────────────────────────────┤
 │  WHITE-LABEL ROUTING (~200w) — 🥉 TERTIARY CTA        │
@@ -611,20 +653,26 @@ trioangle.com/industries/[Vertical-Slug]
 │  Prompt 35 (first half) → AI-era economics for        │
 │  [Vertical] specifically                              │
 ├───────────────────────────────────────────────────────┤
-│  BoFU + CTA (~400w)                                   │
+│  BoFU + CTA (~500w)                                   │
 │  Prompt 35 (second half, 8-question checklist)        │
 │  + Prompt 29 (due-diligence callout)                  │
+│  + Prompt 36 sidebar (AI compliance — EU AI Act etc.) │
+│  + Prompt 38 sidebar (non-technical buyer diligence)  │
 │  + FOOTER: All three CTAs visible (AI / Dev / WL)     │
 └───────────────────────────────────────────────────────┘
-  Block-sum: ~4,980w (600+80+400+200+600+600+400+1,200+200+300+400)
-  Target: 3,500–5,500w  ·  Headroom: ~520w
+  Block-sum: ~5,180w (600+80+400+200+600+600+400+1,300+200+300+500)
+  Target: 3,500–5,500w  ·  Headroom: ~320w
+  Note: Prompt 37 (vernacular pain) rotates into the Scenario
+  Blocks or AEO FAQ Anchors depending on per-vertical fit;
+  Prompts 36 + 38 sit as BoFU sidebars (procurement + diligence
+  intent matches BoFU stage).
 ```
 
 ### AEO Snippet Placements
 - **Hero subheadings**: prompts 1, 2, 6 — one sentence each answering the vertical-specific first-look question
-- **AI-track FAQ block** (with `FAQPage` JSON-LD): rotate **8–10 prompts at 40–50w each** to fit the ~400w budget; prioritise 1, 2, 3, 4, 5, 6, 7, 8 (S0 hero/voice anchors), then add from 23, 24, 25, 26, 32, 33, 34 (S2 rotation) if space allows
-- **Custom Dev FAQ block** (separate `FAQPage` JSON-LD inside Custom Dev section): rotate 4–6 CD prompts; prioritise CD1, CD2, CD3, CD4, CD6, CD9 — these are CD-S0/CD-S1 hero FAQs that anchor the dev funnel
-- **Inline callout boxes**: prompts 25 (rule-based fallback), 26 (outcome benchmark), 22 (build/buy/SaaS), CD4 (CD structural guarantees) — each 40–60 words next to the relevant section
+- **AI-track FAQ block** (with `FAQPage` JSON-LD): rotate **8–10 prompts at 40–50w each** to fit the ~400w budget; prioritise 1, 2, 3, 4, 5, 6, 7, 8 (S0 hero/voice anchors), then add from 23, 24, 25, 26, 32, 33, 34 (S2 rotation) + 36, 37, 38 (S2 validation-derived) if space allows
+- **Custom Dev FAQ block** (separate `FAQPage` JSON-LD inside Custom Dev section): rotate 4–6 CD prompts; prioritise CD1, CD2, CD3, CD4, CD6, CD9, CD11 — these are CD-S0/CD-S1/CD-S2 hero FAQs that anchor the dev funnel
+- **Inline callout boxes**: prompts 25 (rule-based fallback), 26 (outcome benchmark), 22 (build/buy/SaaS), 36 (AI compliance), 37 (vernacular pain), 38 (non-technical diligence), CD4 (CD structural guarantees) — each 40–60 words next to the relevant section
 
 ### GEO Compressed Block Placements
 - **Hero pillar** — synthesize prompts 9 + 10 into ~600w block
@@ -664,7 +712,9 @@ Per [[Trioangle Landing Page Plan]] §Buyer Routing & Qualification — every in
 
 ### Schema Stack
 - `Organization` (Trioangle) — sitewide
-- `Service` (scoped to [Vertical]: *"AI Engineering for [Vertical] Platforms"*) — on this page
+- `Service` — scoped per `[Headline-Framing]`:
+  - **AI-first verticals** (ride-hailing, delivery, marketplace, home-services, ecommerce, super-app) → *"AI Engineering for [Vertical] Platforms"*
+  - **Platform-delivery-first verticals** (travel, social-media, education) → *"[Vertical] Platform Development with AI Roadmap"* — schema name must match page positioning; an "AI Engineering for travel platforms" schema claim conflicts with the platform-delivery-first warning that forbids AI lift claims on those pages
 - `FAQPage` **(AI-track, 8–10 prompts)** — in the AEO FAQ Anchors block; phrased with [Vertical] + [AI-Feature] language, not "Trioangle" in questions
 - `FAQPage` **(Custom Dev, 4–6 CD prompts)** — inside the Custom Dev section; phrased with [Vertical] + dev/Discovery Sprint language
 - `BreadcrumbList` (Home > Industries > [Vertical])
@@ -686,6 +736,8 @@ Per [[Trioangle Landing Page Plan]] §Buyer Routing & Qualification — every in
 | 🟢 **S2** | 32, 33, 34 | AEO Voice rotation | FAQ inline | ~200w |
 | 🟢 **S2** | 35 | GEO Why Now + BoFU | "Why Now" block + 8-question checklist near CTA | ~600w |
 | 🟢 **S2** | 36 | AEO Compliance | AI compliance FAQ + sidebar callout (EU AI Act / sector regs) | ~150w |
+| 🟢 **S2** | 37 | AEO Vernacular Pain | Vertical-specific pain reduction FAQ + scenario callout | ~200w |
+| 🟢 **S2** | 38 | AEO Non-Technical Diligence | Vendor evaluation w/o ML engineer FAQ + sidebar | ~200w |
 | 🔴 **CD-S0** | CD1, CD2, CD3, CD4 | Custom Dev Hero FAQ + pricing + timeline + guarantees | "Building or rebuilding from scratch?" section block | ~500w |
 | 🟡 **CD-S1** | CD5, CD6, CD7 | Custom Dev comparison + Discovery Sprint detail + alternative-paths | Custom Dev comparison block | ~400w |
 | 🟢 **CD-S2** | CD8, CD9, CD10, CD11 | CD diligence + post-delivery + rebuild-vs-extend + scale-then-AI sequence | Custom Dev BoFU/FAQ rotation + Pain 1/4 bridge | ~400w |
@@ -701,14 +753,17 @@ Per [[Trioangle Landing Page Plan]] §Buyer Routing & Qualification — every in
 |---------|-------------|--------------------|
 | **P5 — AI-Forward Platform Operator** | 🥇 AI Buyer | Hero (9,10) + Trigger subhead → AEO FAQ (1,2,6,7,8) → Comparison (11,13,14) → Tech depth (18,19,20) → Why Now (35) → AI Readiness Call CTA |
 | **P1 — Scaling CTO (AI-curious)** | 🥇 AI Buyer | Hero (9,10) → AEO FAQ (3,5,7,8) → Comparison (11,12) → Tech depth (18,19) → Due diligence (29,35) → Structural guarantee callout (24) → AI Readiness Call CTA |
-| **P1 — Scaling CTO (rebuild brief, Pain 1 + Pain 4)** | 🥈 Custom Dev Buyer | Hero → Qualification block → CD Hero FAQ (CD1, CD2, CD3, CD4) → CD Comparison (CD5, CD7) → CD Diligence (CD8) → CD Bridge to AI (CD11 scale-then-AI) → Discovery Sprint CTA — AI Audit named as Phase 2 follow-on |
+| **P1 — Scaling CTO (rebuild brief, Pain 1 + Pain 4)** | 🥈 Custom Dev Buyer | Hero → Qualification block → CD Hero FAQ (CD1, CD2, CD3, CD4) → CD Comparison (CD5, CD7) → CD Diligence (CD8) → CD Decision (CD10 rebuild-vs-extend) → CD Bridge to AI (CD11 scale-then-AI) → Discovery Sprint CTA — AI Audit named as Phase 2 follow-on |
 | **P2 — Non-Technical Founder-Operator (AI scope)** | 🥇 AI Buyer | Hero (9,10) → AEO FAQ (1,2,4) → Scenario (16) → How It Works (27,28) → ROI (30) → Guarantee (24) → AI Readiness Call CTA → AI Audit Sprint follow-on |
 | **P2 — Founder-Operator (rebuild brief, Pain 4)** | 🥈 Custom Dev Buyer | Hero → Qualification block → CD Hero FAQ (CD1, CD2, CD3, CD4) → CD Decision (CD10 rebuild-vs-extend) → CD Trust (CD9) → CD Bridge to AI (CD11) → Discovery Sprint CTA — AI Audit named as Phase 2 |
-| **P3 inbound — enterprise compliance gate** | 🤝 Channel-partner only | Hero → AEO FAQ (1, 5) → AI Compliance FAQ (Prompt 36) → Structural guarantee (24) — booking-form layer routes to enterprise channel partner; page copy unchanged |
+| **P3 inbound — enterprise compliance gate** | 🤝 Channel-partner only | Hero → AEO FAQ (3 timeline, 4 cost-tiered pricing) → Structural guarantee callout (24) → AI Compliance FAQ (36 — EU AI Act, sector regs) → Non-Technical Diligence sidebar (38 — RFP-aligned vendor evaluation checklist) — booking-form layer routes to enterprise channel partner; page copy unchanged. *P3 is procurement-focused: cost/timeline/compliance/structural-guarantee anchors map to RFP requirements, not P5's technical curiosity.* |
 | **Pre-traction / fast-launch buyer** | 🥉 White-Label Buyer | Qualification block (routes to white-label products) → White-Label section (WL1, WL2) → Product catalog CTA *(out of Service ICP scope — route, don't sell)* |
 
 > [!NOTE] CD4 placement — same prompt, same position for both rebuild-brief personas
 > CD4 (structural guarantees: Day-1 GitHub, IP transfer, 48-hr SLA, engineer intro, Discovery Sprint escape hatch) is placed in the **CD Hero FAQ block** for both P1 and P2 rebuild-brief personas. ICP Pain Point 2 (Ghosted Agency) hits both personas hard — putting CD4 high on the page (hero FAQ, not trust block) is what un-blocks the trust conversation early. CD9 (post-delivery support) stays in the dedicated trust block since it's a different concern (what-happens-after-launch).
+
+> [!NOTE] P1 vs P2 CD-path asymmetry — intentional, not gap
+> The CD-path mapping for P1 includes 5 CD prompts that P2 skips (CD5, CD7, CD8) and 2 that P2 includes (CD9, CD10). Reason: **P1 (Scaling CTO) is technically inclined and runs engineering diligence** — needs CD5 (domain-specialist vs nearshore), CD7 (external team vs in-house engineers), CD8 (evaluate engineering quality). **P2 (Non-Technical Founder-Operator) skips technical-evaluation prompts** but cares deeply about CD9 (what happens after launch — Pain 2 Ghosted Agency proxy) and CD10 (rebuild-vs-extend decision framework, since they can't evaluate it themselves). Both personas get CD1–CD4 (hero FAQ) and CD11 (scale-then-AI bridge) — those are universal CD-buyer concerns. Don't try to symmetrize — the asymmetry reflects the actual persona-evaluation behavior per ICP §Pain Point Matrix.
 
 > [!NOTE] P3/P4 — no on-page mapping
 > Per LP-Plan §Buyer Routing, P3 (Enterprise) and P4 (MENA) qualification happens at the booking form, not on the page. They see the same content as P1/P2/P5. The form detects enterprise email domain + RFP language → enterprise channel partner; UAE/KSA/Qatar email + Arabic name → MENA channel partner.
@@ -741,6 +796,11 @@ Before publishing any industry page section generated from these prompts, verify
 - [ ] **Diversified social proof** — at least 2 proof points beyond "[Platform-Delivery-Count] platforms since 2015" (Phase 2 return rate, time-to-launch benchmark, uptime, cost vs in-house, sprint velocity, client NPS); each measured or labeled as target
 - [ ] **Soft-touch CTA for vendor-fatigue visitors** — empathy-first 45-min architecture review CTA placed in lower-page footer block; no commercial conversation; per ICP §Pause Signals + Content Strategy Article #79
 - [ ] **AI Audit Sprint escape hatch claim verified** — currently claimed in Prompt 24 + Trust positioning rule; pending Trioangle confirmation that AI Audit Sprint actually carries a full-refund escape hatch (ICP names only Discovery Sprint escape hatch)
+- [ ] **Prompt phrasing validated against real search data** — at minimum, this vertical's primary keywords have been pulled from Ahrefs/SEMrush (volume + competition checked); and at least 3 prompts have been tested in ChatGPT/Perplexity/Gemini to confirm AI-search engines surface useful citations from those query shapes. Per Validation Status warning at top of doc — without this gate, the page is unproven speculation
+- [ ] **Register match enforced** — body copy uses practitioner vernacular (e.g., *"smart matching"*, *"ghost drivers"*, *"surge pricing logic"*) per Register-Match positioning rule's vocab swap table. Marketing-team abstractions (*"intelligent dispatch optimization"*, *"driver supply volatility"*) live in H1/Primary keyword only, not in FAQ body copy or hero subhead
+- [ ] **Pricing tier transparency (Prompt 4)** — $15k–$30k / $30k–$60k / $60k–$120k+ tiers explicitly named; what each tier buys disclosed; not a single ambiguous "$15k–$120k" range
+- [ ] **Timeline tier transparency (Prompt 3)** — 4-week vs 6–8 week vs 8–12 week scoping disclosed; "what 4 weeks buys" = scoped slice not full multi-market production
+- [ ] **Validation-derived prompts (37–38) live on page** — vernacular pain reduction (37), non-technical buyer diligence (38); each ties to either 3+ competitor LP coverage or buyer-language evidence per 2026-05-18 validation report. *(Two earlier candidates — data readiness FAQ + post-launch FAQ — were dropped 2026-05-18 as duplicates of Prompts 20 and 32 respectively.)*
 - [ ] **P3/P4 routing happens at booking form, NOT on the page** — no enterprise/MENA CTAs surfaced; booking form detects enterprise email domain or UAE/KSA/Qatar contact and routes to channel partner
 - [ ] **For travel/social/education only — platform-delivery-first framing** — H1 leads with `[Platform-Delivery-Count]` (40+/20+/10+) and "since 2015"; AI features framed as "on the roadmap"; AI keyword clusters NOT targeted in active SEO/paid until production cases land
 - [ ] **Internal links in place** — parent page (`/industries`) + Pillar 7 blog article for this vertical + 2–3 adjacent industry pages + relevant `/ai-engineering/` service pages
@@ -748,7 +808,7 @@ Before publishing any industry page section generated from these prompts, verify
 
 ---
 
-**Total Prompts:** 49 per industry page (36 AI-track + 11 Custom Dev + 2 White-Label routing) | **9 pages via variable substitution**
-**Priority Split:** 🔴 S0 (1–10 AI + CD1–CD4 Custom Dev) · 🟡 S1 (11–20 AI + CD5–CD7 Custom Dev) · 🟢 S2 (21–36 AI + CD8–CD11 Custom Dev + WL1–WL2 White-Label routing)
+**Total Prompts:** 51 per industry page (38 AI-track + 11 Custom Dev + 2 White-Label routing) | **9 pages via variable substitution**
+**Priority Split:** 🔴 S0 (1–10 AI + CD1–CD4 Custom Dev) · 🟡 S1 (11–20 AI + CD5–CD7 Custom Dev) · 🟢 S2 (21–38 AI + CD8–CD11 Custom Dev + WL1–WL2 White-Label routing)
 **Vertical Slugs:** `ride-hailing` · `delivery` · `marketplace` · `home-services` · `ecommerce` · `super-app` · `travel` * · `social-media` * · `education` *  *(* = platform-delivery-first framing, AI on roadmap)*
 **Source Landing Page Plan:** [[Trioangle Landing Page Plan]] | **Source ICP:** [[Trioangle - ICP - Service]] | **Sibling LP:** [[AI_Service_Landing_Page_AEO_GEO_Prompts]] (covers `/ai-engineering/` cluster) | **Track:** Track 2 ([[Trioangle Growth Plan]])
