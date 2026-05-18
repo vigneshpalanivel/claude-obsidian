@@ -34,12 +34,68 @@
 ---
 
 > [!WARNING] Capacity & Quality Gate — Confirm Before Launch
-> 3 posts/week = ~36 articles in the first 90 days. Before executing Month 1, confirm:
+> 2 posts/week = ~16 articles in the first 60 days. Before executing Month 1, confirm:
 > - **Who writes each article type?** Pillar 7 AI engineering deep-dives (7.2, 7.3, 7.4 clusters) require technical accuracy review; assign a named owner before queuing W1.
 > - **Target length?** 1,500–2,500 words for Awareness/Consideration; 2,500–4,000 for technical Pillar 7 deep-dives. Calibrate throughput expectations accordingly.
 > - **Edit/review cycle?** A Pillar 7 article on AI dispatch architecture that ships with technical errors undermines the topical authority it's meant to build. Minimum: one domain-knowledgeable review pass before publish.
-> - **Cadence reduction trigger?** If writing throughput drops below 2 publish-ready articles/week for two consecutive weeks, drop to 2x/week cadence (Mon + Thu) and preserve quality over schedule. A 2x cadence still delivers 52 articles/6 months — sufficient for topical authority.
+> - **Cadence reduction trigger?** If writing throughput drops below 2 publish-ready articles/week for two consecutive weeks, drop to Mon-only (1x/week) temporarily and restore quality before resuming.
 > - **Month 4 quality checkpoint:** Review article quality signal (average time-on-page, search rank velocity for Pillar 7 hub) before committing Months 5–6 at full cadence.
+
+---
+
+## Editorial Discipline & CTA Reference
+
+> [!IMPORTANT] Mandatory Pre-Publish Gates — Every Article
+> These three rules from [[Trioangle - Content Strategy - Service]] apply to **every article** in this calendar. Briefs that violate any of these fail QA and do not ship.
+>
+> **1. Existing-Operator Filter (target reader, not the article topic).** Every article must implicitly target a reader running a platform with **$1M+ ARR and 12+ months of operational history** — or an established offline business with proven revenue. If the framing assumes "you just raised a Seed round" or "you're building an MVP," the angle is out of scope. Reframe or reroute to Product ICP. Reference: *ICP — Service, Qualifying Criteria.*
+>
+> **2. AI-Era Positioning Rule (Pillar 7 + any AI mention).** Never position on "we build faster with AI." Position on **domain expertise, certainty of delivery, and risk reduction.** Trioangle sells *domain-specific AI features shipped into production* — not AI consulting, not LLM demos, not "AI-assisted development speed." Banned headline phrases: "faster with AI," "AI-powered development," "build apps in days with AI." Reference: *ICP — Service, AI-Era Positioning Rule.*
+>
+> **3. ⚠️ 800+ Pre-Publish Gate (mandatory until internal audit confirmed).** The "800+ platforms since 2015" stat counts **platform deliveries, not AI feature deliveries**, AND is pending internal audit. Until audited:
+> - **Do not use any exact count** in any article. Use the unquantified framing: *"Domain knowledge from platform engagements across ride-hailing, logistics, marketplace, home services, and adjacent verticals since 2015 — applied to the AI integration layer."*
+> - **Never write "we've built AI features in 800+ platforms"** — this conflates platform delivery count with AI delivery count and misrepresents the AI track record.
+> - In Pillar 7 articles specifically, AI-specific delivery metrics must be sourced from the actual AI delivery count, tracked separately.
+
+> [!IMPORTANT] Content Type Mix Targets (Reference)
+> Per content strategy: **60% Searchable (SEO) · 25% Shareable (Thought Leadership) · 15% Both.** "Both" articles count within the 60%/25% split — the 15% reflects the overlap subset, not an additional category. Track type distribution monthly. If a month skews >80% Searchable or >40% Shareable, rebalance the next month's queue.
+
+### CTA Discipline by Article — Mandatory
+
+Every article in this calendar maps to one of the CTA patterns below. **No CTA freelancing** — the CTA is set by article ID, not writer judgment.
+
+| Article(s) | Mandatory CTA | Rationale |
+|------------|---------------|-----------|
+| 🥇 **#82, #83, #84, #92, #111** (Pillar 7 Awareness) | **Free AI Readiness Call** (1hr, no slides) | Readers still qualifying themselves — friction = drop-off |
+| 🥇 **#85–#91, #102–#108, #109, #110, #112** (Pillar 7 Consideration/Decision) | **Paid AI Audit Sprint** ($1,500–$4,000, credited toward delivery) | Reader self-qualified by reading vertical-specific content; routing through free call adds unnecessary friction |
+| 🥇 **#117, #118** (Pillar 7 Social/Travel — Awareness) | **Free AI Readiness Call ONLY** | No production AI delivery case yet; AI Audit Sprint CTA blocked until ≥1 vertical-specific AI case confirmed |
+| 🥇 **#114** (Post-Launch AI Ops) | **Paid AI Audit Sprint** framed as **"AI feature health check"** (1-week retrospective audit, scoped separately from initial Sprint) | Reader is existing client 3+ months post-AI-feature-ship — engagement type must match post-launch context |
+| 🥇 **#115** (A/B Testing AI Features) | **AI Readiness Call** framed as **"experiment design review"**, with referral to #114 as companion | Same |
+| 🥇 **#116** (Model Retraining Cadence) | **Paid AI Audit Sprint** framed as **"model refresh engagement"** (scoped for clients 3+ months post-initial-build) | Canonical upsell content for the second AI project in the 2–4/year repeat-buy cadence |
+| **#23** (Discovery Sprint Expectations) | **Paid Discovery Sprint** booking | Decision-stage; reader is already evaluating |
+| **#22** (Contracts/Escrow) | **Paid Discovery Sprint** OR direct contact-sales link | Decision-stage; high commercial intent |
+| **#5** (100K user rebuild case study) | **Technical Architecture Review** (Scaling CTO) | Decision-stage; technical credibility piece |
+| **#75** (Platform Post-Mortem) | **Technical Architecture Review** (Scaling CTO) | Highest CTO credibility signal |
+| **#16, #20** (Pillar 2 trust) | **Discovery Sprint** OR qualification fit call (depending on context) | Standard Pillar 2 trust funnel |
+| **#14, #21** (Pillar 2 anchor) | **Free 20-min fit call** | High-volume Awareness/Consideration — qualify gently |
+| **#77** ‡ (When to Hire CTO/VP Eng) | **Qualification-first fit call** — *"no commitment, no pitch; we work exclusively with $1M+ ARR, 12+ months operational platforms"* | Cluster 4.2 founder-operator article — attracts cross-spectrum readers; qualify to avoid pre-revenue solo founders |
+| **#80** ‡ (Competitor Shipped AI) | **Free AI Readiness Call** (urgency context, lead with speed-to-clarity) | Competitive urgency trigger; reader is reactive, needs immediate clarity |
+| 🤝 **#51, #59** (Pillar 5 Channel-Partner) | **Dual CTA:** (a) Partner CTA — *"Apply to our delivery-partner program"*; (b) Buyer CTA (soft) — *"Request a partner-routed engagement"* | Per ICP Persona 3 = channel-partner only; never direct buyer pitch |
+| **#68, #69, #70, #71** (Pillar 6 MENA) | **Relationship-first LinkedIn/WhatsApp** — *"connect with us on LinkedIn or reach out directly"* | Per ICP Persona 4 = referral-gated; **NEVER form-based CTAs**, no "book a call," no pricing tables |
+| **#49, #50** (Cluster 4.3 Compliance) | **Technical Architecture Review** (Scaling CTO **ONLY** — never founder-operator framing) | Per ICP, compliance buyers are Scaling CTO with engineering ownership; founder-operator framing here misroutes the reader |
+| **#65, #66, #78, #34** (Cluster 3.1/3.2 secondary) | **Related Services box** (LP cross-link) — *not* primary CTA | Architecture articles attract pre-traction builders alongside qualified Existing-Operator readers; contextual LP placement filters without over-pitching |
+
+### Cross-Linking Discipline — Mandatory
+
+Every Pillar 7 article must link to at least 2 of the following:
+1. The Pillar 7 hub page (`/blog/ai-engineering-platform-businesses`).
+2. The matching `/industries/[vertical]` landing page (CTA zone).
+3. A relevant `/ai-engineering/[service]` landing page (CTA zone).
+4. The canonical architecture reference: **#91 (AI Service Isolation)** for technical depth; **#90 (Adding AI to Live Platform)** for operator-anxiety framing.
+
+Every Cluster 3.1 architecture article must include a "Related Services" box linking to its matching `/industries/[vertical]` landing page — placed at the **bottom** of the article, not as the primary CTA. The primary CTA pattern is set by the article's CTA discipline row above.
+
+Every Pillar 2 trust article must cross-link to ≥1 other Pillar 2 article in the same cluster (vendor selection ↔ risk mitigation ↔ working together).
 
 ---
 
