@@ -214,7 +214,7 @@ Subject: *[Their company] + [trigger] — one note*
 > [!TIP] Lead with the persona's *primary* pain, not the full list
 > Pain → Persona matrix in [[Trioangle - ICP - Service]] tells you which 1–2 pains to anchor on. P1 — scalability + IP + domain. P2 — communication trust + speed/quality + domain. P3 — IP + domain + scalability. P4 — communication trust + IP. P5 — AI-where-to-start + domain.
 
-**P1 Scaling CTO — questions:**
+**P1 Tara — Scaling CTO — questions:**
 1. What's the failure mode you're trying to engineer out — is this a scale ceiling, a refactor backlog, or a compliance gate?
 2. How many concurrent users does the current architecture handle before P99 latency degrades?
 3. Walk me through your CI/CD and test coverage today.
@@ -223,7 +223,7 @@ Subject: *[Their company] + [trigger] — one note*
 6. If we sat in a code review of your worst service, what would I find?
 7. Have you tried other agencies on this? What broke?
 
-**P2 Founder-Operator — questions:**
+**P2 Felix — Founder-Operator — questions:**
 1. What's the business doing today — revenue, customers, growth — and what's the platform blocking?
 2. Who built the current platform? Are they still around?
 3. What's your relationship with technology — comfortable making decisions, or do you need a translator?
@@ -231,22 +231,24 @@ Subject: *[Their company] + [trigger] — one note*
 5. Where did the last vendor relationship break down — and what would have made it work?
 6. Who signs the cheque, and what do they need to see to say yes?
 
-**P3 Enterprise — questions:**
+**P3 Diana — Enterprise — questions (dev-first; AI is Phase 2):**
 1. Where does this engagement sit in your digital transformation roadmap — flagship, follow-on, or rescue?
-2. Who's your incumbent vendor today? Why are you looking outside them?
-3. What does your procurement timeline look like — are we in formal RFP territory?
-4. Which compliance frameworks does this platform need to live inside — SOC2, HIPAA, PCI-DSS, FedRAMP?
-5. Who are the 3 stakeholders we need to make happy, ranked by veto power?
-6. What does success look like for *you personally* in 12 months — not just the project?
+2. Is this Phase 1 (the platform itself doesn't exist yet) or Phase 2 (platform's live, adding AI on top)? *Most P3 = Phase 1.*
+3. Your board mandate says "digital transformation with AI" — is the AI feature work expected at launch, or post-launch once event data accumulates?
+4. Who's your incumbent vendor today (often Accenture/Infy/in-house IT)? Why are you looking outside them?
+5. What does your procurement timeline look like — are we in formal RFP territory?
+6. Which compliance frameworks does this platform need to live inside — SOC2, HIPAA, PCI-DSS, FedRAMP, EU AI Act?
+7. Who are the 3 stakeholders we need to make happy, ranked by veto power?
+8. What does success look like for *you personally* in 12 months — not just the project?
 
-**P4 MENA Relationship Buyer — questions (relationship-first; technical comes later):**
+**P4 Rashid — MENA Relationship Buyer — questions (relationship-first; technical comes later):**
 1. Tell me about the business — who are the founders, the family, the history?
 2. What does this project mean inside the group — flagship, sister-business, expansion?
 3. Who in your network has worked with us or with comparable partners? Whose opinion do you trust on vendor selection?
 4. What's the cultural / language fit you need — Arabic-language capability, on-the-ground meetings, WhatsApp comms?
 5. (Only after rapport is built) — what does the platform need to do, and by when?
 
-**P5 AI-Forward Operator — questions (engineering-language, no slide deck):**
+**P5 Aisha — AI-Forward Operator — questions (engineering-language, no slide deck):**
 1. What's the metric you want AI to move — and what's the rule-based baseline today?
 2. What event data do you have? How clean is it? How much history?
 3. Who internally would integrate the AI service — and what's their bandwidth this quarter?
@@ -286,6 +288,7 @@ Subject: *[Their company] + [trigger] — one note*
 - [ ] Latest performance / load test report ready to share if asked.
 - [ ] Vertical-specific case study URL handy.
 - [ ] Discovery call notes re-read; the demo is *answering their pain*, not showcasing features.
+- [ ] **Vertical AI footprint honesty check** (per [[Trioangle - ICP - Service]] §Quick Ref): AI engineering has shipped production cases in **5 of 9 verticals** — Ride-Hailing, Logistics & Fleet, Marketplace / Commerce, Home Services, Delivery. **Travel, Social/Entertainment, Education** are platform-delivery verticals where AI feature work is in *early development*. If the buyer's vertical is Travel/Social/Education and they ask for AI case studies, say **"early development"** explicitly and offer the closest analogous vertical case study with the disclaimer. Do **not** present an out-of-vertical AI case as if it's a direct match — it breaks trust the moment they probe.
 
 ### 7.2 Demo flow — by persona
 
@@ -293,7 +296,7 @@ Subject: *[Their company] + [trigger] — one note*
 
 **P2 (non-technical founder):** End-user app flow → admin panel → reporting/dashboards → "here's what your week running this would look like" walkthrough → references.
 
-**P3 (enterprise):** SoW deliverables → compliance / SLA / security exhibits → reference org chart → enterprise reference call offered.
+**P3 Diana (enterprise) — dev-first:** SoW deliverables for the *platform build* (not AI features) → compliance / SLA / security exhibits → reference org chart → enterprise reference call offered. **Do not lead with AI demos for P3.** AI is Phase 2 — discuss "AI-ready architecture" if asked, but the Phase 1 demo is the digital platform.
 
 **P4 (MENA):** Skip product demo on first meeting. Build relationship, share case studies, propose in-person or high-touch video introduction with a senior engineer. Demo comes after trust.
 
@@ -331,9 +334,17 @@ The ICP §🔍 Pre-Sales Sprints describes *which* sprints exist and *who they'r
 
 **Why it works:** Eliminates the two biggest pre-sales fears at once — "are these engineers senior?" (code review + architecture session) and "will scope/budget blow out?" (fixed-price estimate). A buyer who has paid $2,000 and met the team closes at a dramatically higher rate than a cold-proposal recipient.
 
-### 8.1 Default = AI Audit Sprint
+### 8.1 Default = AI Audit Sprint — *with P3 exception*
 
 Per [[Trioangle - ICP - Service]] §AI-First service line priority: **AI Audit Sprint is the default entry product.** Discovery Sprint is the secondary fallback for explicit non-AI rebuild briefs.
+
+> [!IMPORTANT] P3 (Diana, Enterprise) — Dev-first exception
+> Per ICP rev 2026-05-18: **P3 is dev-first, not AI-first.** P3 buyers do not yet have a digital platform — the brief is *build the platform*, with AI as a Phase 2 layered on after the platform has been live 6–12 months and accumulated clean event data.
+>
+> - **Phase 1 (P3 entry) = Discovery Sprint**, scoping the digital platform build (vertical-specific architecture, compliance, SLAs).
+> - **Phase 2 (P3 post-launch, 6–12 months in) = AI Audit Sprint**, once the platform has clean event data to train on.
+>
+> Even when a P3 board mandate reads *"digital transformation with AI"*, the AI feature work has to wait for the platform to exist. Position Phase 1 as *"AI-ready architecture"* — not *"AI delivered."* Misordering this kills credibility because the buyer's own engineers know data takes time to accumulate.
 
 ### 8.1a AI Funnel — two distinct products (don't confuse them)
 
@@ -381,6 +392,10 @@ Within 48 hours of sprint deliverable acceptance:
 - [ ] A/B test framework + success metric definition (AI) or load-test SLA (dev)
 - [ ] Engineering team named on the SoW
 - [ ] Sprint fee credited line-item visible
+- [ ] **Phase 2 path named explicitly in SoW or kickoff doc** — *required for P1/P2 Discovery Sprints*; recommended for P3 Diana (Phase 2 AI Audit once platform is 6–12 months live). Why: per §13.4, "Discovery Sprint signed without AI follow-on path" is a named recurring-revenue leak. Writing the next-step on paper at exit, even without commitment, makes the post-launch expansion call warm instead of cold.
+  - For **P1/P2 Discovery Sprint**: name **AI Audit Sprint** as Phase 2.
+  - For **P3 Discovery Sprint**: name **AI Audit Sprint as Phase 2 (post-launch)** with a 6–12 month delay tied to event-data accumulation.
+  - For **P5 AI Audit Sprint**: name the next 2 features from the prioritized shortlist as Phase 2 / Phase 3.
 
 If the prospect doesn't proceed within 14 days post-sprint, run the loss recovery flow (§13).
 
@@ -398,7 +413,7 @@ If the prospect doesn't proceed within 14 days post-sprint, run the loss recover
 | Single AI feature build | **$15,000** | Below this, we lose money on senior-engineer staffing |
 | AI multi-feature program | $40,000 | Tied to AI roadmap from the Audit Sprint |
 | Web/mobile rebuild — established operator (P1/P2) | **$10,000** | Hard floor; below this disqualify |
-| Enterprise digital transformation (P3) | $50,000 | Lower than this, the procurement overhead eats margin |
+| Enterprise digital transformation (P3 *Diana* — **dev-first**) | **$80,000** | Per [[Trioangle - ICP - Service]] P3 budget band $80k–$300k. Lower than this, procurement overhead eats margin. P3 is a *platform build* (Phase 1); AI Audit Sprint is Phase 2 post-launch, not the entry product. |
 | MENA flagship (P4) | $30,000 | Often stretches to $80k–$120k+ |
 | AI Audit Sprint | $1,500 | Below this, sprint is loss-leader theater |
 | Discovery Sprint | $1,500 | Same |
@@ -461,6 +476,7 @@ These are the structural guarantees from [[Trioangle - ICP - Service]] §Trust &
 | "Drop the 48-hour SLA credit clause." | "It's a structural guarantee — non-negotiable. The reason it's in writing is that every losing vendor before us said 'we communicate well' and didn't. The credit is how we make that promise enforceable." | Insists on removing structural guarantees. Walk — they're optimizing for the wrong things. |
 | "Can you assign your best engineer full-time exclusively?" | "On a fixed-price deliverable engagement we staff for the deliverable. Full exclusive allocation moves us into a different commercial model that we don't sell." | Hard insistence on per-engineer billing. Walk — it's the wrong product fit. |
 | "We want to own the engineers' Slack / direct hire option." | "After the engagement closes, of course — we'll introduce you to anyone you want to keep. During the engagement, the team is ours so we can guarantee the deliverable. After, you have first right of conversation; we don't block." | Demanding direct hire pre-engagement. Walk. |
+| "We're also evaluating [Markovate / InData Labs / DataRoot Labs / Eleks / Distillery / AltexSoft / similar AI-native shop]." | "Fair — they're AI-first from Day 1 and that shows in the demo polish. The question is whether they understand your *vertical*. We've shipped 800+ platforms in [their vertical] since 2015 — when the AI integration hits the edge cases (dispatch under surge / multi-vendor commission / availability conflicts / your specific data shape), domain depth decides whether the feature ships or stalls. We're bringing an engineer who's already solved your exact integration in [vertical] to call 2. Compare us on that, not the marketing site." | Buyer's evaluation criteria heavily weighted to AI-capability over domain-depth AND the data scientist (not the platform owner) drives selection. If domain depth doesn't matter to them, you're not going to win — disengage and route to a smaller scope (AI Readiness Call only). |
 
 ### 10.2 Multi-project commitment leverage
 
@@ -584,6 +600,8 @@ Same no-follow-up rule as cold email §5.5. If they reply, restart at Discovery 
 
 | Loss Pattern (per ICP) | Counter-play (during deal) |
 |---|---|
+| **Lost to AI-native mid-market shop** (most acute AI threat, 2026) — Markovate, InData Labs, DataRoot Labs, Eleks, Distillery, AltexSoft, Apexon, Cogniteq, Mantra Labs, Folio3, A3Logics, Maruti Techlabs, AI Superior, etc. | These competitors win on AI-first framing, sharper AI marketing, and faster AI hiring — they have no platform-delivery moat. **Counter: lead with 9-vertical platform-delivery depth (800+ engagements since 2015) in *every* AI deal.** They ship features into systems they don't deeply understand; we ship into platforms we've already built or deeply know. If the prospect names one specifically in discovery, immediately bring a *vertical-matched* AI case study to call 2 — the AI demo polish gap closes when domain depth is the topic. Early-warning: prospect emphasizes AI-capability over domain-depth in evaluation criteria; the data scientist drives selection over the platform owner. |
+| **Discovery Sprint signed without AI follow-on path** (recurring-revenue leak) | When P1/P2 buyer signs a Discovery Sprint for rebuild scope, the deal converts to one-shot dev work if AI Audit Sprint isn't named as the planned Phase 2. **Counter: every Discovery Sprint SoW for P1/P2 names AI Audit Sprint as the Phase 2 entry** (no commitment, but the path is on paper). Kickoff doc carries the Phase-2 line. Account-expansion conversation post-launch is *warm*, not cold. See §8.5 Sprint exit checklist. |
 | Lost to AI coding tools / "we'll build with Copilot" | Reframe: Copilot accelerates typing, not architecture or domain knowledge — offer free AI Readiness Call (§19.4 AI Coding Tools objection). |
 | Lost to hyperscaler's pre-built AI service (P5) | In AI Audit Sprint, honestly recommend SaaS where it fits — disqualify out of wrong-fit deals. Win right-fit ones (custom integration, vertical tuning, data ownership) by being the partner who already said "don't build this yourself" once. |
 | Disqualified by data thinness (P5) | During data audit (Sprint week 1), if <3 months clean events or no labels: tell them they need 6 months of instrumentation; offer paid data-instrumentation engagement as a bridge. Most say no — the few who say yes are excellent long-term clients. |
@@ -691,7 +709,8 @@ What every rep needs at hand. Track the status of each.
 | Sprint kickoff deck (lightweight — engineer-led) | Pre-sales | |
 | Engineering team bios (LinkedIn linked) | Talent | |
 | Reference list with named clients willing to take a call | AE + AM | |
-| AI feature case studies per vertical (P5 critical) | Marketing | |
+| AI feature case studies — **5 shipped-AI verticals** (Ride-Hailing · Logistics & Fleet · Marketplace/Commerce · Home Services · Delivery) | Marketing | P5 critical · primary AI demo material |
+| AI feature case studies — **3 early-development verticals** (Travel · Social/Entertainment · Education) | Marketing | Disclose "early development" honestly per §7.1 — do not present as direct match |
 | AI Audit Sprint deliverable template | Pre-sales | |
 | Demo seed data per vertical | Delivery | |
 | Competitor SWOT / demo notes | Sales | |
@@ -714,6 +733,8 @@ Week 2:
 - [ ] Pass internal demo certification (web + Android + iOS, on a buyer-spec'd device)
 - [ ] Memorize the AI Audit Sprint sales line (§8.2) verbatim
 - [ ] Memorize the Trust & IP positioning rule (§Top-of-doc) verbatim
+- [ ] Memorize the 5 persona names + service-line fit: **Tara** (P1 Scaling CTO, opportunistic) · **Felix** (P2 Founder-Operator, opportunistic) · **Diana** (P3 Enterprise, channel-only, **dev-first/AI Phase 2**) · **Rashid** (P4 MENA, channel-only, relationship-first) · **Aisha** (P5 AI-Forward, direct primary, AI-first)
+- [ ] Memorize the P3 Diana exception: Discovery Sprint first; AI Audit Sprint is Phase 2 post-launch (§8.1)
 
 Week 3–4:
 - [ ] First independent discovery → sprint → proposal cycle, with manager review at each stage
@@ -862,4 +883,16 @@ Month 2:
 | New AI feature shipped to a client | §16 case study list · ICP P5 proof |
 | Quarterly OKR review | §15 KPI ranges |
 
-**Last updated:** 2026-05-09 — Sales/strategy split. ICP retains strategic content (personas, pains, qualifying criteria, channel mapping ratings, loss patterns + early-warnings, objection topics, competitive positioning, validation plan). This Playbook now owns all execution: full Channel Execution Sequences (§5), Direct P3/P4 inbound workflow (§3.1), AI Funnel disambiguation (§8.1a), Pre-Sales Sprint sales lines (§8.2), per-loss-reason counter-plays (§13.4), and the comprehensive Objection Response Library (§19) covering all 14 objections. Originally derived from [[Trioangle - ICP - Service]] (2026-04-05 review pass); now operates alongside it as the operational counterpart.
+**Last updated:** 2026-05-18 — ICP drift sync against [[Trioangle - ICP - Service]] (rev edited 2026-05-18). Six changes propagated from ICP into Playbook:
+1. **§9.1** — P3 floor $50k → **$80k** (matches ICP P3 band $80k–$300k); annotated as dev-first.
+2. **§8.1** — Added **P3 Diana exception**: Discovery Sprint is P3 entry product (Phase 1 = platform build); AI Audit Sprint is Phase 2 post-launch (6–12 months in, after event-data accumulates). The AI-first default still applies to all *other* personas.
+3. **§6.2 P3 question bank** — Added Phase-1-vs-Phase-2 question and board-mandate timing question.
+4. **§7.2 P3 demo flow** — Made dev-first explicit; "do not lead with AI demos for P3."
+5. **§13.4** — Added two new loss-reason counter-plays: (a) "Lost to AI-native mid-market shop" — flagged in ICP as **most acute AI threat 2026** (Markovate, InData Labs, DataRoot Labs, Eleks, Distillery, AltexSoft, Apexon, Cogniteq, Mantra Labs, Folio3, A3Logics, Maruti Techlabs, AI Superior); counter-play: lead with 9-vertical platform-delivery depth in every AI deal. (b) "Discovery Sprint signed without AI follow-on path" — recurring-revenue leak; counter: every Discovery Sprint SoW for P1/P2 names AI Audit Sprint as Phase 2.
+6. **§10.1** — Added negotiation counter for "we're also evaluating [AI-native shop]" with vertical-depth reframe.
+7. **§8.5** — Sprint exit checklist now requires Phase-2 path on paper (mandatory P1/P2 Discovery Sprint; recommended P3 Discovery Sprint; mandatory P5 AI Audit Sprint).
+8. **§7.1** — Added **vertical AI footprint honesty check**: 5 of 9 verticals have shipped AI cases (Ride-Hailing, Logistics & Fleet, Marketplace/Commerce, Home Services, Delivery); Travel, Social/Entertainment, Education are early development — disclose explicitly.
+9. **§16** — Materials library split AI case studies into shipped-5 vs early-development-3 buckets.
+10. **§6.2 + §17** — Persona names propagated: Tara (P1) · Felix (P2) · Diana (P3) · Rashid (P4) · Aisha (P5); P3 dev-first exception added to onboarding checklist.
+
+**2026-05-09** — Sales/strategy split. ICP retains strategic content (personas, pains, qualifying criteria, channel mapping ratings, loss patterns + early-warnings, objection topics, competitive positioning, validation plan). This Playbook now owns all execution: full Channel Execution Sequences (§5), Direct P3/P4 inbound workflow (§3.1), AI Funnel disambiguation (§8.1a), Pre-Sales Sprint sales lines (§8.2), per-loss-reason counter-plays (§13.4), and the comprehensive Objection Response Library (§19) covering all 14 objections. Originally derived from [[Trioangle - ICP - Service]] (2026-04-05 review pass); now operates alongside it as the operational counterpart.
