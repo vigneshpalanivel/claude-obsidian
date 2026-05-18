@@ -20,7 +20,7 @@ tags:
 > [!NOTE] Executive Summary
 > Trioangle's Ideal Customer Profile centers on **Established Platform Operators and Enterprises** with proven revenue and a working product, who need to **embed AI capabilities into their existing platform** — and, secondarily, who need a bespoke architectural rebuild, vertical/geography expansion, or other custom web/mobile development work on top of an already-operating business. These buyers run revenue-generating businesses (not freshly-funded pre-traction startups), have a proven business model, durable revenue, and strong domain knowledge, but lack the in-house ML/AI capability to ship production AI features and need an external engineering partner with deep vertical expertise.
 >
-> **🥇 Primary service line — AI Engineering for existing platforms.** Domain-specific AI implementation (intelligent dispatch, dynamic pricing, demand forecasting, conversational booking, fraud detection, AI moderation) embedded into the operator's already-running production platform. Not generic AI consulting; not AI strategy decks. AI features delivered by engineers who already know the domain edge cases intimately. Project sizes $15k–$120k+, with 1–3 follow-on AI feature projects per year per active client (alongside 1–2 non-AI platform projects — see Repeat-Buy Cadence rows).
+> **🥇 Primary service line — AI Engineering for existing platforms.** Domain-specific AI implementation (intelligent dispatch, dynamic pricing, demand forecasting, conversational booking, fraud detection, AI moderation) embedded into the operator's already-running production platform. Not generic AI consulting; not AI strategy decks. AI features delivered by engineers who already know the domain edge cases intimately. Project sizes $15k–$120k+. Repeat-buy cadence: **2–4 total projects/yr per active client (mix of 1–3 AI features + 1–2 non-AI platform work)** — see Repeat-Buy Cadence rows for persona-level breakdown.
 >
 > **🥈 Secondary service line — Web & Mobile Application Development.** Platform rebuilds, architectural modernization, multi-region/multi-vertical expansion, mobile-app modernization. Still offered to established operators when the brief explicitly requires it, but **not the lead pitch** — dev work is heavily commoditized in 2026 and competing on dev-only is margin-compression. Surfaces naturally after an AI engagement establishes the relationship. Project sizes $10k–$120k+.
 >
@@ -43,6 +43,9 @@ tags:
 > - **✅ Do say:** *"You own the repo from Day 1. If we go silent for 48 hours, you get a 5% contract credit. Meet the actual engineers before you sign."*
 > - **❌ Don't say:** *"We pride ourselves on transparent communication and high-quality code."*
 
+> [!IMPORTANT] 800+ stat — global disambiguation rule (applies everywhere)
+> Anywhere this doc references "800+ platforms," the figure is **cumulative platform deliveries since 2015 — not AI features**. AI delivery count is a separate, much smaller, growing number that should be tracked independently. Anchor sales positioning on **vertical depth across 9 verticals**, not AI delivery volume. Avoid copy that conflates the two (e.g., "we've built AI features in 800+ platforms"). Full caveat in §⚔️ Competitive Positioning → Primary Positioning Statement.
+
 > [!IMPORTANT] Service Line Priority — AI First, Web/Mobile Dev Second
 > Per the Executive Summary, this ICP has two service lines weighted unequally — AI Engineering is the lead motion; Web/Mobile Dev is secondary.
 >
@@ -55,13 +58,13 @@ tags:
 
 ## 📋 Quick Reference
 
-| # | Persona (Nickname) | Tier | Budget | Decision | Entry Sprint | Lead Pain |
-|---|---|---|---|---|---|---|
-| 1 | Scaling CTO (*Tara*) | 🎯 Direct secondary | $30k–$80k | 2–4 months | Discovery → AI Audit follow-on | Scalability + AI gap |
-| 2 | Non-Technical Founder-Operator (*Felix*) | 🎯 Direct secondary | $10k–$40k | 3–6 weeks | Discovery → AI Audit follow-on | Speed/Quality + AI gap |
-| 3 | Digital Transformation Enterprise Buyer (*Diana*) | 🤝 Channel only | $50k–$120k | 3–6 months | AI Audit (inside RFP) | Domain expertise + AI gap |
-| 4 | MENA Relationship Buyer (*Rashid*) | 🤝 Channel only | $30k–$120k+ | 1–3 months relationship + 1–2 weeks close | AI Audit (relationship-led) | Ghosted Agency + Vision 2030 AI |
-| 5 | AI-Forward Platform Operator (*Aisha*) | 🎯 Direct primary | $15k–$120k+ | 2–4 weeks (<$25k) · 4–6 weeks (>$25k) | AI Audit Sprint (default) | AI Gap + Domain expertise |
+| # | Persona (Nickname) | Tier | Service-line | Budget | Decision | Entry Sprint | Lead Pain |
+|---|---|---|---|---|---|---|---|
+| 1 | Scaling CTO (*Tara*) | 🎯 Direct secondary | AI-first (mixed) | $30k–$80k | 2–4 months | Discovery → AI Audit follow-on | Scalability + Domain expertise |
+| 2 | Non-Technical Founder-Operator (*Felix*) | 🎯 Direct secondary | AI-first (mixed) | $10k–$40k | 3–6 weeks | Discovery → AI Audit follow-on | Speed/Quality + Ghosted Agency |
+| 3 | Digital Transformation Enterprise Buyer (*Diana*) | 🤝 Channel only | **Dev-first** (AI is Phase 2) | $80k–$300k | 3–6 months | **Discovery Sprint** (AI Audit in Phase 2 post-platform-launch) | Domain expertise + IP Ownership |
+| 4 | MENA Relationship Buyer (*Rashid*) | 🤝 Channel only | AI-aware (mixed) | $30k–$120k+ | 1–3 months relationship + 1–2 weeks close | AI Audit (relationship-led) | Ghosted Agency + Domain expertise |
+| 5 | AI-Forward Platform Operator (*Aisha*) | 🎯 Direct primary | AI-first | $15k–$120k+ | 2–4 weeks (<$25k) · 4–6 weeks (>$25k) | AI Audit Sprint (default) | AI Gap + Domain expertise |
 
 > **Vertical AI footprint** — All 5 personas span 9 platform-delivery verticals (Delivery, Ride-Hailing, Logistics & Fleet, Travel, Marketplaces, Home Services, Social, Education, Super Apps). **AI engineering currently has shipped production cases in 5 verticals** (ride-hailing, logistics & fleet, marketplace/commerce, home services, delivery). Travel, social/entertainment, and education are platform-delivery verticals where AI feature work is in early development — be honest about case-study availability when a buyer asks.
 
@@ -77,7 +80,7 @@ tags:
 | **Size** | 10–500+ employees (established mid-market platform operators to enterprises) |
 | **Revenue** | $1M+ ARR with 12+ months of operational history. **Freshly-funded pre-traction companies are out of scope** — funding alone does not qualify; revenue traction does. |
 | **Growth Stage** | Established operating businesses with proven revenue (Series B+ scale or profitable mid-market), enterprise-grade businesses investing in digital infrastructure, or family-group/enterprise-backed operators. **Not Seed-stage startups, not pre-launch operators.** |
-| **Geography** | **Primary:** North America, Western Europe (excl. UK), Australia, UAE/Saudi Arabia (MENA). **Secondary:** UK (vendor density, not buyer-fit), Singapore (deep operator base — Grab, Carousell, Sea — but smaller market, more direct competitors). |
+| **Geography** | **Primary:** North America, Western Europe (excl. UK), Australia, UAE/Saudi Arabia (MENA). **Secondary:** UK (vendor density, not buyer-fit), Singapore (smaller absolute market, more direct competitors). **Note on Singapore for P5 specifically:** secondary-status applies to P3 procurement and dev-side competition; P5 reach via AI Search and AI Engineering Communities is unaffected — Grab/Carousell/Sea are platform-shaped P5 candidates. Don't deprioritize Singapore for P5 outbound. |
 | **Business Model** | B2B/B2C High-Volume Platforms, Commission-Based Platforms, Enterprise Internal Tools |
 
 ### 💻 Technographics
@@ -179,8 +182,8 @@ Two paid 2-week pre-sales products structurally de-risk the buyer relationship b
 
 | Product | Strategic purpose | Primary for | Not for |
 |---|---|---|---|
-| 🥇 **AI Audit Sprint** (default) | Demonstrates domain knowledge before scope commitment; surfaces 2–3 AI features with build-vs-buy recommendations; converts AI-curious prospects into signed AI feature builds. | **P5** (default entry); also offerable to **P3** (inside RFP) and **P4** (as relationship-demonstration deliverable) | None — offerable to all five personas in different formats |
-| 🥈 **Discovery Sprint** (fallback) | Eliminates "are these engineers senior?" and "will scope blow out?" simultaneously; pre-engagement scoping for non-AI rebuild work. | **P1** and **P2** arriving with an explicit platform rebuild brief, not yet ready for AI scope | **P5** (enters via AI Audit), **P3** (RFP process), **P4** (trust is relationship-built) |
+| 🥇 **AI Audit Sprint** | Demonstrates domain knowledge before scope commitment; surfaces 2–3 AI features with build-vs-buy recommendations; converts AI-curious prospects into signed AI feature builds. | **P5** (default entry); also offerable to **P4** (as relationship-demonstration deliverable) and **P3 in Phase 2** (after digital platform is live and data has accumulated, typically 6–12 months post-Phase-1-launch) | P3 in Phase 1 (no platform exists yet — there's no data to audit) |
+| 🥈 **Discovery Sprint** | Eliminates "are these engineers senior?" and "will scope blow out?" simultaneously; pre-engagement scoping for platform-build / rebuild work. | **P1** and **P2** arriving with a rebuild brief; **P3 in Phase 1** (net-new digital platform build — Discovery Sprint inside or alongside RFP) | **P5** (enters via AI Audit), **P4** (trust is relationship-built, not sprint-built) |
 
 **Default rule:** Lead with AI Audit Sprint unless prospect arrives with a clear non-AI rebuild brief. When Discovery Sprint is signed (P1/P2 rebuild path), **always name AI Audit Sprint as the planned follow-on** so the deal trajectory is rebuild → AI features, not rebuild → done.
 
@@ -201,7 +204,7 @@ Two paid 2-week pre-sales products structurally de-risk the buyer relationship b
 ---
 
 ### Pain Point 2 — The "Ghosted Agency" Trust Deficit
-**Severity:** 9/10 · **Frequency:** Constant background anxiety · **Category:** Social + Emotional + Process
+**Severity:** 8/10 (for personas where 🔴 Primary — P2, P4; lower elsewhere) · **Frequency:** Constant background anxiety · **Category:** Social + Emotional + Process
 - **Workaround:** Daily updates, over-managing developers, extensive contracts with penalty clauses
 - **Cost of inaction:** Months on a failed agency relationship → delayed roadmap → competitor gains market share
 - **Emotional impact:** Deep skepticism of outsourced dev; reluctance to cede control; requires extreme trust-building
@@ -221,7 +224,7 @@ Two paid 2-week pre-sales products structurally de-risk the buyer relationship b
 ---
 
 ### Pain Point 4 — Speed vs. Quality Trade-Off
-**Severity:** 8/10 · **Frequency:** Constant during sprint planning · **Category:** Functional + Strategic
+**Severity:** 7/10 (acute for P2 where 🔴 Primary; 🟡 elsewhere) · **Frequency:** Constant during sprint planning · **Category:** Functional + Strategic
 - **Workaround:** Cutting QA to hit investor-promised deadlines; shipping known bugs
 - **Cost of inaction:** Accumulating tech debt makes future features exponentially more expensive
 - **Emotional impact:** Guilt over broken features; conflict between CEO timelines and engineering quality bar
@@ -256,16 +259,16 @@ Lead discovery calls with the pain that resonates per persona — not a generic 
 
 | Pain | P1 Scaling CTO | P2 Founder-Operator | P3 Enterprise | P4 MENA | P5 AI-Forward |
 |---|---|---|---|---|---|
-| 1. Scalability Tech Debt | 🔴 Primary | 🟡 Secondary | 🟡 Secondary | ⚪ Low | ⚪ Low |
+| 1. Scalability Tech Debt | 🔴 Primary | 🟡 Secondary | ⚪ Low | ⚪ Low | ⚪ Low |
 | 2. Ghosted Agency Trust Deficit | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | 🔴 Primary | 🟡 Secondary |
 | 3. IP Ownership / Lock-In | 🔴 Primary | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | 🟡 Secondary |
 | 4. Speed vs. Quality Trade-Off | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | ⚪ Low | ⚪ Low |
-| 5. "AI but where to start" Gap | 🟡 Secondary | 🟡 Secondary | 🔴 Primary | 🟡 Secondary | 🔴 Primary |
+| 5. "AI but where to start" Gap | 🟡 Secondary | 🟡 Secondary | 🟡 Secondary (Phase 2) | 🟡 Secondary | 🔴 Primary |
 | 6. Missing Domain Expertise | 🔴 Primary | 🔴 Primary | 🔴 Primary | 🟡 Secondary | 🔴 Primary |
 
 🔴 Primary = lead with this in discovery · 🟡 Secondary = reinforce · ⚪ Low = don't anchor on this
 
-> **P3 note:** P3 typically has *no* digital product yet (offline business being disrupted) — Pain 1 (Scalability of *existing platform*) doesn't apply in its standard form. Underlying pain is "we need a digital product, period" → Pain 6 + Pain 5 paired primaries. Pitch leads with those, not scalability.
+> **P3 note (dev-first service-line):** P3 has *no* digital product yet (offline business being disrupted) — Pain 1 (Scalability of *existing platform*) doesn't apply, so ⚪ Low. Pain 5 (AI Gap) is a *Phase 2* concern after the platform exists, so 🟡 Secondary (not Primary). P3's lead pains are **Pain 6 (Domain Expertise) + Pain 3 (IP Ownership)** paired — the Big-4 consultancies they've been burned by delivered PowerPoint without code ownership and without vertical depth. Pitch leads there. AI emerges naturally in Phase 2.
 
 ---
 
@@ -275,11 +278,11 @@ In Service Line Priority order — AI goals first (primary across all five perso
 
 | Priority | Goal | Metric | Timeframe | Persona Anchor |
 |---|---|---|---|---|
-| 🥇 **Primary (AI)** | Ship domain-specific AI features that move a named business metric in their vertical | A/B test lift % vs rule-based baseline (e.g., +15% driver revenue, +8% match quality, −30% fraud losses) | 4–12 weeks per feature | All personas (P5 lead) |
-| 🥇 **Primary (AI)** | Build a board-defensible AI roadmap with honest build-vs-buy-vs-SaaS recommendations | AI Audit Sprint deliverable accepted; first feature shipped within 90 days of audit | 90 days | All personas (P3, P4 board-facing) |
-| 🥇 **Primary (AI)** | Maintain platform stability while adding AI capabilities — AI as enhancement layer, not dependency | Zero AI-induced incidents in core platform; isolated AI service uptime ≥99.5%; automatic fallback to rule-based defaults when model underperforms | Ongoing | All personas (P1, P5 most acute) |
-| 🥇 **Primary (AI)** | Establish ongoing AI partnership with quarterly roadmap cadence (vs one-shot AI feature delivery) | 1–3 AI feature projects/year + 1–2 non-AI projects per active client (= 2–4 total); quarterly AI roadmap review held | Ongoing | P3, P4, P5 lead · P1, P2 emergent |
-| 🥈 **Secondary (Dev)** | Build a robust, scalable, secure architecture for an existing operating platform | 99.9% uptime, <200ms API response at P99 | 3–6 months | P1, P2, P3 |
+| 🥇 **Primary (AI)** | Ship domain-specific AI features that move a named business metric in their vertical | A/B test lift % vs rule-based baseline (e.g., +15% driver revenue, +8% match quality, −30% fraud losses) | 4–12 weeks per feature | P1, P2, P4, P5 (lead P5); **P3 only in Phase 2** after digital platform is live and operational |
+| 🥇 **Primary (AI)** | Build a board-defensible AI roadmap with honest build-vs-buy-vs-SaaS recommendations | AI Audit Sprint deliverable accepted; first feature shipped within 90 days of audit | 90 days | P4, P5 lead; P3 in Phase 2 (after platform exists) |
+| 🥇 **Primary (AI)** | Maintain platform stability while adding AI capabilities — AI as enhancement layer, not dependency | Zero AI-induced incidents in core platform; isolated AI service uptime ≥99.5%; automatic fallback to rule-based defaults when model underperforms | Ongoing | P1, P5 most acute; P3 in Phase 2 |
+| 🥇 **Primary (AI)** | Establish ongoing AI partnership with quarterly roadmap cadence (vs one-shot AI feature delivery) | 1–3 AI feature projects/year + 1–2 non-AI projects per active client (= 2–4 total); quarterly AI roadmap review held | Ongoing | P4, P5 lead · P1, P2 emergent · P3 in Phase 2 |
+| 🥈 **Secondary (Dev)** / **Primary for P3** | Build a robust, scalable, secure architecture for an existing operating platform — or, for P3, **build the digital platform that doesn't yet exist** | 99.9% uptime, <200ms API response at P99; for P3 net-new platform: launch on time, under board-promised budget | 3–6 months (P1/P2 rebuild) · 6–12 months (P3 net-new platform) | P1, P2 (rebuild); **P3 (net-new digital platform — lead motion)** |
 | 🥈 **Secondary (Dev)** | Augment internal team with fast, reliable senior external talent | Sprint velocity, features shipped per sprint | Ongoing | P1, P2 |
 | 🥈 **Secondary (Dev)** | Pass compliance audits (including AI compliance — EU AI Act, sector regulations) | SOC2 Type II / PCI-DSS / HIPAA certification; AI model documentation per regulatory requirement | 6–12 months | P1, P3 |
 | 🥈 **Secondary (Dev)** | Reduce monthly cloud and AI inference costs | % reduction in monthly AWS/GCP spend; AI inference cost per request | 3–6 months | P1, P3, P5 |
@@ -297,11 +300,11 @@ In Service Line Priority order — AI goals first (primary across all five perso
 ## 👥 Buyer Personas
 
 > [!IMPORTANT] Persona Tiering — Track 2 Activation
-> **All five personas are AI buyers.** Tiering is by **acquisition strategy** (direct vs channel) and **conversion priority** (which persona pays back outbound investment fastest), not by service-line fit.
+> Tiering is by **acquisition strategy** (direct vs channel), **conversion priority** (which persona pays back outbound investment fastest), and **service-line fit** (AI-first vs dev-first).
 >
-> - **🎯 Direct primary — P5 (AI-Forward Platform Operator)**: Active outbound priority. Highest-fit AI buyer signal, clearest pain match (Pain 5), fastest decision speed (2–4 weeks self-approved). Recurring-revenue base built here. Entry product: AI Audit Sprint.
-> - **🎯 Direct secondary — P1 (Scaling CTO) + P2 (Non-Technical Founder-Operator)**: Established operating businesses with AI pressure but they don't yet self-identify as AI buyers — entry conversation often starts with platform pain, AI scoping surfaces in the second meeting. Pursue via inbound + targeted outbound when triggers fire (engineering job postings, expansion announcements, key engineering departures, public outage). Entry product: AI Audit Sprint preferred; Discovery Sprint fallback for non-AI rebuild briefs.
-> - **🤝 Channel-partner only — P3 (Enterprise) + P4 (MENA)**: Both buy AI services. Access constraint is *procurement/relationship dynamics*, not service-line fit — P3 requires consulting firms with enterprise trust; P4 requires MENA-based agency or family-network introductions. No direct outbound until channel partner program is live (see [[Trioangle Channel Partner Personas]]).
+> - **🎯 Direct primary — P5 (AI-Forward Platform Operator)**: AI-first. Active outbound priority. Highest-fit AI buyer signal, clearest pain match (Pain 5), fastest decision speed (2–4 weeks self-approved). Recurring-revenue base built here. Entry product: AI Audit Sprint.
+> - **🎯 Direct secondary — P1 (Scaling CTO) + P2 (Non-Technical Founder-Operator)**: AI-first (mixed). Established operating businesses with AI pressure but they don't yet self-identify as AI buyers — entry conversation often starts with platform pain, AI scoping surfaces in the second meeting. Pursue via inbound + targeted outbound when triggers fire. Entry product: AI Audit Sprint preferred; Discovery Sprint fallback for non-AI rebuild briefs with AI Audit follow-on planned.
+> - **🤝 Channel-partner only — P3 (Enterprise) + P4 (MENA)**: Access constraint is *procurement/relationship dynamics* — P3 requires consulting firms with enterprise trust; P4 requires MENA-based agency or family-network introductions. **Service-line fit differs:** P3 is **dev-first** (build the digital platform that doesn't exist yet, AI in Phase 2 once the platform is live); P4 is **AI-aware mixed** (Vision 2030 AI mandate creates demand, but the bulk of P4 revenue is still platform / flagship / expansion work). No direct outbound until channel partner program is live (see [[Trioangle Channel Partner Personas]]).
 >
 >   **For direct P3 / P4 inbound** (Clutch / conference / referral): handle, don't reject. Operational workflow (qualification, partner-routing rules, direct-take thresholds, P4 relationship-building protocol) lives in [[Trioangle - Sales Playbook - Service]] §3.1 *Direct P3/P4 inbound*.
 
@@ -382,12 +385,12 @@ In Service Line Priority order — AI goals first (primary across all five perso
 
 ---
 
-### Persona 3 — 🏛️ The "Digital Transformation Enterprise Buyer" (*Diana*)
-**Role:** Head of Digital / VP of Product / CIO | **Age:** 38–55 | **Company:** Established offline business (50–500 employees)
+### Persona 3 — 🏛️ The "Digital Transformation Enterprise Buyer" (*Diana*) — **Dev-first**
+**Role:** Head of Digital / VP of Product / CIO | **Age:** 38–55 | **Company:** Established offline business (50–500 employees) in an industry that overlaps Trioangle's 9 verticals — **logistics & fleet, hospitality, on-demand home services, commerce/marketplace**. *(Industries outside the 9-vertical library — pure real-estate, pure healthcare, etc. — should be assessed case-by-case; our domain-depth moat doesn't apply there.)*
 
-> Runs a large, operationally successful offline business (logistics company, real estate group, healthcare provider, hospitality chain) being disrupted by digital-native competitors. Has internal IT but no product development capability. Has gone through multiple failed "digital transformation" initiatives led by big consulting firms that charged $500k and delivered a PowerPoint.
+> Runs a large, operationally successful offline business being disrupted by digital-native competitors (Flexport in logistics, Airbnb in hospitality, etc.). Has internal IT but no product development capability. Has gone through multiple failed "digital transformation" initiatives led by big consulting firms that charged $500k+ and delivered a PowerPoint.
 
-> **AI angle (primary pitch):** Board mandate now reads "digital transformation *with AI*" — C-suite has heard the AI narrative from McKinsey/BCG and competitors and wants a credible AI roadmap as part of the transformation. Procurement requires channel-partner introduction. Lead the channel conversation with: *"We deliver the AI features your board is asking for, integrated into platform modernization, with the SLAs procurement requires."* AI Audit Sprint runs concurrent with or just after RFP discovery.
+> **Service-line angle — DEV-FIRST, AI in Phase 2:** P3 has no digital product yet — the brief is *build the platform*, not *embed AI into existing*. **Phase 1 = digital transformation (platform build with vertical-specific architecture);** Phase 2 = AI features layered on once the platform has been operational long enough (typically 6–12 months) to generate the data AI needs. Board mandate often reads "digital transformation *with AI*" but the AI feature work has to wait for the platform to exist and accumulate clean event data. Lead the channel-partner conversation with: *"We deliver the digital platform your board demanded — with the SLAs, documentation, and security certifications enterprise procurement requires — and the architecture is AI-ready, so when you're 6–12 months in and have clean event data, we add the AI layer on top."* **Entry product: Discovery Sprint** (inside or alongside RFP). AI Audit Sprint is the Phase 2 entry product, not the first one.
 
 | Goals | Frustrations |
 |---|---|
@@ -401,20 +404,20 @@ In Service Line Priority order — AI goals first (primary across all five perso
 |---|---|
 | **Research Style** | Formal RFP process, multi-vendor comparison, legal/procurement involvement |
 | **Decision Speed** | Very slow (3–6 months) |
-| **Budget Authority** | Approved budget $50k–$120k, requires CFO/board sign-off |
+| **Budget Authority** | Approved budget **$80k–$300k** (reflects enterprise procurement reality — buyers used to $500k+ Big-4 engagements scrutinize quotes that look suspiciously cheap), requires CFO/board sign-off |
 
 **✅ Do say:** *"We combine the speed of a startup engineering team with the enterprise-grade delivery standards your compliance team requires: SLAs, documentation, security certifications."*
 **❌ Don't say:** *"We're a scrappy startup team that moves fast."*
 
-**Key Benefit:** Proven delivery track record + domain expertise in their specific vertical (logistics & fleet, hospitality & rentals, home services, commerce & marketplaces).
+**Key Benefit:** Proven delivery track record + vertical depth in their specific domain — logistics & fleet, hospitality, home services, commerce/marketplace. (Industries outside the 9-vertical library do not get the same depth claim.)
 **Proof Needed:** Enterprise client case studies, named references, security certifications, formal proposal document with SLAs, team bios with LinkedIn profiles.
 
-**Repeat-Buy Cadence:** 1–2 large projects/year (vs 2–4 for P5). Each project tends to be either a flagship platform build/extension or a discrete AI initiative — not both bundled. Typical sequence: Phase 1 flagship build (often non-AI digital transformation) → Phase 2 AI feature initiative bolted on → Phase 3 compliance / scaling / new geography. Formal procurement each phase, reduced friction once vendor is approved.
+**Repeat-Buy Cadence:** 1–2 large projects/year (vs 2–4 for P5). **Typical 3-phase sequence: Phase 1 platform build (digital transformation, Year 1) → Phase 2 AI feature initiative once platform is live and data has accumulated (Year 2) → Phase 3 compliance/scaling/new geography (Year 2–3).** Formal procurement each phase, reduced friction once vendor is approved.
 
 **Account Cadence:** Quarterly executive readout — outcome metrics vs board KPIs, change-management progress, compliance status. Documented (vs P5's informal review). Next phase emerges from the readout.
 
 > **Objection:** *"How do you compare to Accenture/Infosys?"*
-> **Response:** We cost up to 80% less because you're paying for senior engineers, not partner billing rates. Our average time-to-launch is 16 weeks vs. 18–24 months for large consultancies.
+> **Response:** We cost up to 80% less because you're paying for senior engineers, not partner billing rates. Our average time-to-launch is 16 weeks vs. 18–24 months for large consultancies. And we ship code, not PowerPoint — the board sees a live platform at the end of Phase 1, not a 200-slide strategy deck.
 
 > [!QUOTE] *"I've sat through the Accenture pitch decks. I need someone who will actually build the thing."*
 
@@ -500,17 +503,19 @@ In Service Line Priority order — AI goals first (primary across all five perso
 
 ---
 
-## 💰 Budget & Persona Tiering
+## 💰 Project Types, Qualification & Volume Targets
 
-| Persona | Typical Budget | Project Type | Decision Timeline |
-|---|---|---|---|
-| Scaling CTO (Persona 1) | $30k–$80k | Platform rebuild, scale architecture | 2–4 months |
-| Non-Technical Founder-Operator (Persona 2) | $10k–$40k | Platform rebuild or extension for established business | 3–6 weeks |
-| Enterprise Buyer (Persona 3) | $50k–$120k | Full digital transformation program | 3–6 months |
-| MENA Relationship Buyer (Persona 4) | $30k–$120k+ | Digital flagship, marketplace launch | 1–3 months relationship + 1–2 weeks to close |
-| AI-Forward Platform Operator (Persona 5) | $15k–$120k+ | AI feature build (single feature → multi-feature mid-market programs) | 2–4 weeks (<$25k) · 4–6 weeks (>$25k) |
+Per-persona budget and decision timeline are in Quick Reference (top of doc). This section adds **Project Type** by persona and the qualification + volume rules.
 
-> **Qualification shortcut:** If budget is <$10k → disqualify. $10k–$40k → route to Persona 2 motion (speed, trust, simplicity). $40k+ → assess whether it's a technical or relationship-led buyer and apply the corresponding persona playbook.
+| Persona | Typical Project Type |
+|---|---|
+| Scaling CTO (P1) | Platform rebuild, scale architecture (AI feature retrofit as follow-on) |
+| Non-Technical Founder-Operator (P2) | Platform rebuild or extension for established business (AI feature retrofit as follow-on) |
+| Enterprise Buyer (P3) — **dev-first** | Phase 1: digital platform build (net-new). Phase 2 (post-launch): AI feature initiative. Phase 3: compliance/scaling/new geography |
+| MENA Relationship Buyer (P4) | Digital flagship / marketplace launch + AI feature work across sister businesses |
+| AI-Forward Platform Operator (P5) | AI feature build (single feature → multi-feature mid-market programs) on running platform |
+
+> **Qualification shortcut:** If budget is <$10k → disqualify. $10k–$40k → route to P2 motion (speed, trust, simplicity). $40k–$80k → P1 or P5 motion (technical-led). $80k+ → P3 (formal RFP) or P4 (relationship-led MENA) — apply corresponding persona playbook.
 
 > [!NOTE] Track 2 Volume Targets
 > Per-deal budgets describe *what* each persona buys; volume describes *how many* — see [[Trioangle Growth Plan]] Revenue Math.
@@ -559,6 +564,7 @@ Strategic loss-pattern catalog (root cause + early-warning signal). Operational 
 | Loss Reason | Frequency (est.) | Root Cause | Early Warning Signal |
 |---|---|---|---|
 | **Lost to AI coding tools / "we'll build with Copilot"** | Growing (2026) | Buyer's engineers convinced Copilot replaces external delivery | "We're trying it internally first" posture |
+| **Lost to AI-native mid-market shop** | Growing (2026, most acute AI threat) | Buyer ranks AI demo quality + AI marketing polish over vertical platform-delivery depth; AI-native peer (Markovate, InData Labs, DataRoot Labs, Eleks, Distillery, AltexSoft, etc.) wins on AI-first framing | Prospect names a specific AI-native mid-market shop in discovery; evaluation criteria heavily weighted to AI capability over domain depth; their data scientist or AI lead drives the selection over the platform owner |
 | **Lost to a hyperscaler's pre-built AI service (P5)** | Growing (2026) | Buyer chose AWS Personalize, GCP Vertex AI Recommendations, Pinecone + OpenAI, or a vertical AI SaaS | "We're trying [SaaS X] first"; data scientist on staff prefers managed services |
 | **Disqualified by data thinness (P5)** | Medium | Data too sparse / dirty / short-history to train a useful model; no patience for 6-month instrumentation | Sprint data audit finds <3 months of clean events or no target labels |
 | **Stalled on AI fallback/safety concerns (P5)** | Medium | Buyer worried AI will destabilize the live platform; concern not addressed early | "How do we know it won't break things?" repeated without a satisfying answer |
@@ -567,6 +573,7 @@ Strategic loss-pattern catalog (root cause + early-warning signal). Operational 
 | **Pivot to in-house hiring** | Medium-High | Buyer's board/investor pushes "own the IP, own the team" narrative | New senior engineering job postings appear during the sales cycle |
 | **Deal stalls indefinitely (no decision)** | High | Internal misalignment between CEO (wants speed) and CTO (wants certainty); no true decision owner | >3 weeks between responses; meetings cancelled without rescheduling |
 | **Ghosted after proposal** | High | Proposal sent cold without a trust-building step | No reply within 7 days after proposal send |
+| **Discovery Sprint signed without AI follow-on path** (recurring-revenue leak) | Medium | P1/P2 sign Discovery Sprint for rebuild work, AE doesn't name AI Audit Sprint as the planned next phase — deal converts from recurring AI-feature buyer into one-shot rebuild buyer | Discovery Sprint SoW or kickoff doc has no Phase-2 AI roadmap line; account-expansion conversation post-launch is cold |
 | **Failed the code review / technical diligence** | Medium | P1 (Scaling CTO) scrutinized sample code and found it below bar | Silence after the technical deep-dive call |
 | **Lost to a large consultancy (Accenture/Infy)** | Low-Medium | Enterprise procurement requires "safe choice" brand | Procurement/legal enters the call early; RFP language mirrors Big-4 templates |
 | **Lost to a boutique/premium agency (Thoughtbot, Fueled)** | Low | Buyer values UX/brand polish over domain depth | Strong emphasis on "design-led" and "brand storytelling" in first call |
@@ -660,14 +667,12 @@ This section catalogs *which* objections occur in this ICP and *what they tell y
 | Clutch.co / G2 (Channel 2) | ⭐⭐⭐⭐⭐ | B2B verified client reviews, portfolio case studies (all personas, P3 inbound primary) | Free/Paid |
 | Established Operator Networks (Channel 3) | ⭐⭐⭐⭐⭐ | Industry associations, vertical operator forums, MENA accelerators (Hub71/DIFC/Flat6Labs/STV), late-stage VC growth-fund portfolio referrals — **not** Seed/Series A VC portfolios | Relationship |
 | AI Engineering Outbound (Channel 4) | ⭐⭐⭐⭐⭐ | Trigger-based engineering-language outbound for P5: competitor AI moves, ML/AI Engineer job postings, public AI underperformance signals → free AI Readiness Call → paid AI Audit Sprint | Paid |
-| AI Search (ChatGPT, Perplexity, Gemini) | ⭐⭐⭐⭐ | SEO-optimized content targeting "AI for ride-hailing", "AI dispatch optimization", "AI marketplace fraud detection" — optimized for AI search summaries (P5 primary inbound) | Free/Time |
-| SEO (Technical Content) | ⭐⭐⭐⭐ | Deep-dive technical architecture case studies, engineering blog posts | Free/Time |
+| AI Search + SEO (combined) | ⭐⭐⭐⭐ | Long-form technical content optimized for both LLM search summaries (ChatGPT, Perplexity, Gemini) and traditional SEO. Target queries: "AI for ride-hailing", "AI dispatch optimization", vertical-architecture deep-dives. P5 primary inbound. | Free/Time |
 | Industry Events & Conferences | ⭐⭐⭐⭐ | Sponsoring vertical-specific operator conferences (logistics tech, proptech, foodtech, AI Engineer World's Fair) | Paid |
-| AI Engineering Communities | ⭐⭐⭐ | Outreach in Latent Space Discord, AI Engineer World's Fair, AI-focused LinkedIn groups — position as domain-specific AI implementers, not generalists | Free/Paid |
+| AI Engineering Communities + Reddit (combined) | ⭐⭐⭐ | Substantive participation in Latent Space Discord, AI Engineer World's Fair, AI-focused LinkedIn groups, r/MachineLearning, r/ExperiencedDevs, r/startups. Long-form technical answers where prospects ask dispatch/pricing/AI integration questions. Never self-promote; reputation builds slowly. | Free/Paid |
 | Case Study Content (YouTube/Blog) | ⭐⭐⭐ | "How we shipped AI dispatch optimization for [X] vertical with 18% revenue lift" — vertical-AI case studies, not platform-rebuild stories | Free/Time |
 | Cold Email (Apollo/ZoomInfo) | ⭐⭐⭐ | Targeted outreach to established operators with public AI feature / platform-rebuild / expansion signals | Paid |
 | Twitter/X | ⭐⭐⭐ | Founder/CTO presence on tech Twitter. Engage with prospect posts on AI architecture, vertical-platform scaling. Substantive replies > self-promotion. P5 + P1 reachable. | Free |
-| Reddit | ⭐⭐ | r/MachineLearning, r/ExperiencedDevs, r/startups — long-form technical answers in threads where prospects are asking dispatch/pricing/AI integration questions. Never self-promote; reputation builds slowly. | Free |
 | Podcasts (sponsorship + guest) | ⭐⭐⭐ | Guest appearances on CTO Craft Podcast, Software Engineering Daily, Lenny's; sponsorship of vertical-specific podcasts (logistics, marketplace, mobility). Highest-leverage when paired with case-study content release. | Paid |
 | Newsletter Sponsorships | ⭐⭐⭐ | Pragmatic Engineer (Gergely Orosz), TLDR Tech, ByteByteGo — established platform-CTO audience. Sponsorship copy must lead with vertical AI cases, not "agency for hire." | Paid |
 
@@ -691,9 +696,9 @@ Per-persona ranking — single Top-3 conflates very different buying motions.
 3. **LinkedIn (relationship-first, secondary)** — visibility only; never DM cold; comment substantively on prospects' posts.
 
 **P5 (AI-Forward):**
-1. **AI Search (ChatGPT, Perplexity, Gemini)** — P5 researches via LLM search before Google. Vertical-specific AI feature deep-dives optimized for AI summaries are the primary inbound capture.
+1. **AI Search + SEO (combined)** — P5 researches via LLM search before Google; vertical-specific AI feature deep-dives optimized for both AI summaries and traditional SEO are the primary inbound capture.
 2. **Channel 4 — AI Engineering Outbound** — trigger-based engineering-language outbound (see Channel Execution Sequences). Self-approved budget under $25k closes fastest here.
-3. **AI Engineering Communities** — Latent Space Discord, AI Engineer World's Fair, AI-focused LinkedIn groups, r/MachineLearning. Substantive participation; never push product.
+3. **AI Engineering Communities + Reddit** — Latent Space Discord, AI Engineer World's Fair, AI-focused LinkedIn groups, r/MachineLearning. Substantive participation; never push product.
 
 ### 📚 Content Consumed
 
