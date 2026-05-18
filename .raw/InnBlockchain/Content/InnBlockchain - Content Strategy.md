@@ -4,13 +4,14 @@ company:
 department:
   - marketing
 priority: highest
-rev: 4
-last_revised: 2026-05-14
+rev: 5
+last_revised: 2026-05-18
 revision_notes: |
   rev 1 (2026-05-13): merged from `Content Strategy - Crypto Native.md` (rev 3) and `Content Strategy - FinTech.md` (rev 3). Two parallel content strategies consolidated into one source-of-truth, with track-level tagging (`[CN]` / `[FT]` / `[Both]`) replacing the cross-doc routing boilerplate. ICP docs remain split per ICP - Crypto Native / ICP - FinTech; this strategy serves both via article-level track metadata.
   rev 2 (2026-05-13): cannibalization-fix pass. Retagged 7 awareness-stage articles to `[Both]` (exploit explainers + MiCA Explained + asset tokenization intro). Merged 2 article pairs into shared `[Both]` articles (Embedded Wallets, Passkey Auth). Killed 1 (STOs vs ICOs, redundant). Renamed 6 Track B articles to escape Track A SERP claims (B1 hub, B1 real estate, P1 audit checklist, P1 audit process, P1 upgradeability, B4 MPC PSP). Rewrote Track B keyword tables (Awareness, Consideration, Decision, Implementation) to remove generic terms claimed by Track A and substitute regulated-FinTech-specific long-tail variants. Annotated 3 watch-candidate articles. Net: ~9 article reduction, ~0 unresolved cross-track keyword collisions.
   rev 3 (2026-05-13): white-label unified across both ICPs. Old CN-WL (6 articles, $30k–$100k) + FT-WL (6 articles, $50k–$200k) collapsed to 7 unified articles (WL1–WL6 + WL-TCO) at **$20k+ flat floor** (undercuts Antier-class competitors at ~$30k). WL bundle no longer includes enterprise compliance integration — that's now custom-build (Motion 2) at $50k+. FT-LM-Carol Vendor Risk Pack repositioned as custom-build asset. Track-Level Differentiator table removed. Reference-build gate unified (screenshots only; compliance pack moved to custom-build). Track A floor for RWA Tokenization (Segment 1) lowered to $20k+ for consistency with other Track A segments. Net: 13 WL articles → 7 (~46% reduction); one product, one price, one CTA across both ICPs.
   rev 4 (2026-05-14): priority plan restructured for publish-order clarity. A1 and B1 article lists reorganised from topic groups into explicit TOFU / MOFU (Technical Architecture, Compliance Depth, Asset Classes) / BOFU / Post-Launch sections. Priority Content Plan steps relabelled to match. WL articles dissolved from separate section and integrated into plan: WL-0 in Phase 0 (ships first, no gate); WL-1 at Phase 1 BOFU #22; WL-2 through WL-6 appended to Phase 2 (#52–#56). Reference build gate cleared 2026-05-14 — all WL-1 through WL-6 unblocked. WL IDs normalised to WL-0 through WL-6 (was WL1–WL6 + WL-TCO). Phase 1 count corrected to 22 articles. EU compliance article coverage added across A1, B1 (DLT Pilot Regime, AML/AMLA, DORA, MiFID II, EU AI Act).
+  rev 5 (2026-05-18): publish schedule extracted to `InnBlockchain - Editorial Calendar.md` (rev 2). Removed duplicated tables from this doc: Phase 0 single-article schedule; Track A Phase 1 numbered tables (Steps 1–6, 22 articles); Track B B1 WealthTech numbered tables (TOFU/MOFU/BOFU/Post-Launch, 19 articles); early-ship cross-pillar entries (C1, T4-N, P1-N). Replaced each with a pointer to Editorial Calendar plus retained gate-dependent and watch-candidate metadata. Trimmed Publishing Cadence section — removed week-by-week cadence claims, kept only phase ordering rules and per-cluster LP gates. Track A Phase 2, Phase 3, Track B B2/B3/B4, AI+Blockchain validation-gated cluster, Lead Magnets, and Watch Segments retained in full (not in calendar scope). This doc is now the article inventory + scoring + sales motion tagging + distribution principles + cross-track routing rules; calendar is the date schedule.
 tags:
   - content
 ---
@@ -843,75 +844,18 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 
 > Scored on Customer Impact (40%) · Content-Market Fit (30%) · Search Potential (20%) · Resources (10%). ICP segment priority weighted into Customer Impact.
 
-### Phase 0 — Ship First (No Gate)
+### Phase 0 + Track A Phase 1 → see Editorial Calendar
 
-> WL-0 has no reference-build gate — it is a category-level TCO analysis that ships before everything else. Publish concurrently with or before Phase 1 Step 1. Serves both tracks from one article.
-
-| # | Title | Track | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| WL-0 | Own vs. License: The 5-Year TCO of Productized Crypto Platforms vs. SaaS Vendors | Both | Awareness + Consideration | RWA Felix + WealthTech CEO/CPO + Technical Founder | **9.1** |
-
-### Track A — Phase 1: RWA + EU Compliance *(Complete First — Do Not Start Phase 2)*
-
-> RWA is the highest GTM priority. EU compliance (MiCA) is the first cross-cutting theme within Phase 1. Concentrated authority before spreading attention to other verticals.
-
-> [!TIP] Distribution Channel Tagging Within Phase 1
-> - **[LinkedIn + SEO]** — Plain-language, asset-first articles for RWA Felix (non-technical asset owners). Distribute as LinkedIn articles into EU PropTech, RWA Summit, real estate investment, commodity trade finance communities. All TOFU articles (#1–5); Legal-Technical Interface (#10); all Asset-Class Deep Dives (#15–19); Custom Build vs. Securitize (#20); Audit Checklist (#21); WL-1 White-Label RWA (#22).
-> - **[SEO + X]** — Technical articles for Founding Felix (DeFi/Protocol CTO), Product Paulo, Security Sasha. Default for all other Phase 1 articles.
-
-**Step 1 — TOFU (Foundation & Awareness)**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 1 | What Is Asset Tokenization? A Plain-English Guide `[Both]` *(merged from CN/FT awareness — split CTA footer; distributed via LinkedIn for RWA Felix + WealthTech Sam)* | A1 + B1 | Awareness | RWA Felix + WealthTech CEO/CPO | **9.4** |
-| 2 | How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and MiCA Compliance *(hub)* | A1 | Awareness + Consideration | RWA Felix / Technical Founder | **9.7** |
-| 3 | MiCA Explained: What the EU's Crypto Framework Means for Your Business `[Both]` *(serves both tracks at awareness)* | P5 | Awareness | Technical Founder + WealthTech CEO/CTO | **9.5** |
-| 4 | MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 | A1 TOFU | Awareness + Consideration | RWA Felix + WealthTech CTO | **9.1** |
-| 5 | [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention | A1 TOFU | Awareness | RWA Felix / Technical Founder | **8.8** |
-
-**Step 2 — MOFU (Technical Architecture)**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 6 | MiCA Compliance for RWA Tokenization Platforms: What EU Smart Contract Requirements Mean for Your Build | A1 + P5 | Consideration | RWA Felix | **9.6** |
-| 7 | ERC-3643 vs. ERC-1400 vs. ERC-20: Choosing the Right Token Standard for Your RWA Platform | A1 | Consideration | RWA Felix / Technical Founder | **9.3** |
-| 8 | Oracle Design for Real-World Assets: How to Bring Off-Chain Valuations On-Chain Without Manipulation Risk | A1 | Consideration | Technical Founder / RWA Felix | **9.2** |
-| 9 | Investor Whitelisting On-Chain: How to Build KYC-Compliant Token Access Without Centralisation | A1 + P5 | Consideration + Decision | RWA Felix / Technical Founder | **9.1** |
-| 10 | The Legal-Technical Interface in RWA Tokenization: What Smart Contracts Can and Cannot Enforce | A1 | Consideration | RWA Felix | **9.0** |
-
-**Step 3 — MOFU (Compliance Depth)**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 11 | MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce | P5 | Consideration | Technical Founder | **9.0** |
-| 12 | AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, and Cross-Border Asset Due Diligence 🇪🇺 | A1 | Consideration | RWA Felix | **8.9** |
-| 13 | EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI `[Both]` 🇪🇺 | A1 | Consideration | RWA Felix / Technical Founder | **8.8** |
-| 14 | MiCA Compliance Checklist for Crypto-Native Startups: What to Address Before Your Token Issuance | P5 | Decision | Technical Founder | **8.7** |
-
-**Step 4 — MOFU (Asset-Class Deep Dives)**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 15 | Fractional Real Estate Tokenization: Smart Contract Architecture for Property Fractionalization and Compliant Issuance | A1 | Consideration | RWA Felix (real estate) | **9.0** |
-| 16 | Vehicle Fleet Tokenization: Smart Contract Architecture for Asset Fractionalization and Fractional Ownership | A1 | Consideration | RWA Felix (vehicles) | **8.7** |
-| 17 | Commodity Tokenization: On-Chain Representation of Gold, Oil, and Agricultural Assets | A1 | Consideration | RWA Felix (commodities) | **8.7** |
-| 18 | Private Credit On-Chain: How RWA Lending Protocols Tokenize Off-Chain Debt and Enforce Repayment | A1 | Consideration | Technical Founder / RWA Felix | **8.6** |
-| 19 | Art and Collectibles Tokenization: How On-Chain Title Transfer Works and Where It Can Fail | A1 | Consideration | RWA Felix (art/collectibles) | **8.5** |
-
-**Step 5 — BOFU (Decision)**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 20 | Custom Build vs. Securitize / Tokeny / Polymath: When You Need Your Own RWA Smart Contract Infrastructure | A1 | Decision | RWA Felix / Technical Founder | **8.9** |
-| 21 | Smart Contract Audit Checklist for RWA Tokenization Platforms: What Auditors Flag Before Investor Onboarding 🎯 | A1 + P1 | Decision | RWA Felix / Technical Founder | **9.2** |
-| 22 | WL-1: White-Label RWA Tokenization Platform: Audited Smart Contracts, Issuer Dashboard, and Investor Portal | WL (A1 + B1) | Decision | RWA Felix + WealthTech CEO/CPO | **9.0** |
-
-**Step 6 — BOFU (Decision, gated) + Post-Launch** *(gate-dependent — publish after Step 5 complete and reference build available)*
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| — | 🎬 [CASE STUDY] How We Tokenized [Asset Class] for [Client]: From First Smart Contract to Investor-Ready Platform | A1 | Decision | RWA Felix | **9.0** *(hard gate: delivered client deployment required)* |
-| — | Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiCA-Compliant Post-Launch | A1 | Post-Launch | RWA Felix / Technical Founder | **8.3** |
+> [!IMPORTANT] Date-locked schedule moved
+> Phase 0 (WL-0) and the full 22-article Track A Phase 1 publish schedule — TOFU/MOFU/BOFU sequencing, `[LinkedIn + SEO]` / `[SEO + X]` distribution tagging, and LP-gate dependencies — now live in [[InnBlockchain - Editorial Calendar]] (rev 2, 2026-05-18). 2/wk cadence locked. Phase 1 closes Week 21 (Oct 6, 2026).
+>
+> **Distribution principle (writer reference, retained here):**
+> - `[LinkedIn + SEO]` — Plain-language, asset-first articles for RWA Felix (non-technical asset owners). Distribute into EU PropTech / RWA Summit / real estate investment / commodity trade finance communities. Applies to: all Phase 1 TOFU (#1–5); Legal-Technical Interface (#10); all Asset-Class Deep Dives (#15–19); Custom Build vs. Securitize (#20); Audit Checklist (#21); WL-1 (#22).
+> - `[SEO + X]` — Technical articles for Founding Felix (DeFi/Protocol CTO), Product Paulo, Security Sasha. Default for all other Phase 1 articles.
+>
+> **Gate-dependent Track A Phase 1 pieces** (publish out-of-sequence when gate clears, not date-locked in calendar):
+> - 🎬 [CASE STUDY] *How We Tokenized [Asset Class] for [Client]: From First Smart Contract to Investor-Ready Platform* — A1, Decision, RWA Felix, **9.0** (hard gate: delivered client deployment with screenshot rights)
+> - *Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiCA-Compliant Post-Launch* — A1, Post-Launch, RWA Felix / Technical Founder, **8.3**
 
 ### Track A — Phase 2: Other Active Verticals *(Start After Phase 1 Complete)*
 
@@ -940,64 +884,28 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 | 57 | Cross-Chain Bridge Security: Why Bridges Are the Highest-Value Exploit Target | A8 | Awareness | Technical Founder | **7.5** || 58 | Flash Loan Governance Attacks: How Attackers Buy Votes and Drain DAO Treasuries | A7 | Awareness | Technical Founder | **7.3** || 59 | Securing On-Chain AI Agent Protocols: Smart Contract Design for Autonomous Agents that Sign Transactions | A10 | Awareness | Technical Founder / CTO | **7.2** || 60 | In-Game Asset Contracts: How Web3 Game Economies Get Exploited | A9 | Awareness | Technical Founder | **7.0** |
 ### Track B — Active Segments
 
-**B1 WealthTech / RWA Tokenization** ⭐ *Primary Focus Q2 2026*
+**B1 WealthTech / RWA Tokenization** ⭐ *Primary Focus Q2 2026* → see Editorial Calendar
 
-> [!NOTE] Publish sequence: Hub first (#1) to anchor the cluster, then TOFU awareness, then MOFU in three blocks, then BOFU. Numbers = publish order. `—` = no separate publish needed (either shared from A1, killed, or hard-gated). **Carol (#18) gates every WealthTech deal — if a live prospect is in pipeline and close to procurement, publish Carol immediately without waiting for the full MOFU sequence.**
-
-**TOFU — Awareness**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| — | What Is Asset Tokenization? A Plain-English Guide `[Both]` *(published as A1 Step 1 #1 — no separate B1 publish)* | A1 + B1 | Awareness | RWA Felix + WealthTech CEO/CPO | **9.4** |
-| 1 | RWA Tokenization for Licensed Asset Managers: A Build Decision Guide for WealthTech CTOs *(B1 hub — publishes first; renamed to escape "rwa tokenization platform" SERP claimed by A1)* | B1 Hub | Consideration + Decision | CEO / CPO | **9.2** |
-| 2 | Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs | B1 | Awareness | CEO / CPO | **8.3** |
-| 3 | T+0 Settlement on Blockchain: How Real-Time Clearing Is Replacing T+2 | B1 | Awareness | CEO / CFO | **8.3** |
-| 4 | Utility NFTs in FinTech: How NFTs Map to Real-World Assets *(watch-candidate — NFT-for-RWA framing duplicates RWA cluster core message; ERC-3643 has largely replaced ad-hoc NFT patterns; kill if no inbound in 90 days)* | B1 | Awareness | CEO / CPO | **8.4** |
-
-**MOFU — Platform Architecture**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 5 | The Tech Stack Behind an RWA Tokenization Platform | B1 | Consideration | CTO | **9.0** |
-| 6 | Tokenization and Liquidity: How Fractional Ownership Unlocks Capital for WealthTechs | B1 | Consideration | CEO / CPO | **8.4** |
-| 7 | Blockchain for Treasury Tokenization: Turning Corporate Assets Into Liquid Instruments | B1 | Consideration | CEO / CFO | **8.3** |
-| 8 | Tokenizing Invoices and Receivables: How It Works and Who It's For | B1 | Consideration | CEO / CFO | **8.3** |
-
-**MOFU — Asset Classes**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 9 | Real Estate Tokenization for Licensed Asset Managers: MiFID II Classification and Compliant Issuance *(renamed to escape "how to tokenize real estate" SERP — claimed by A1 #15)* | B1 | Consideration | CEO / CPO | **8.9** |
-| 10 | STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.7** |
-| — | *(KILLED: "Security Token Offerings (STOs) vs. ICOs" — redundant with #10; ICOs are deprecated)* | — | — | — | — |
-| 11 | Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(watch-candidate, news-cycle dependent; kill if no inbound in 90 days)* | B1 | Consideration | CEO / CFO | **8.1** |
-
-**MOFU — Compliance Depth**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 12 | ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 | B1 | Consideration | CTO / CCO | **8.8** |
-| 13 | MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.6** |
-| 14 | DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.6** |
-| 15 | AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 | B1 | Consideration | CTO / CCO | **8.5** |
-| 16 | MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺 | B1 | Consideration + Decision | CEO / CCO | **8.5** |
-| 17 | DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺 | B1 | Consideration + Decision | CTO / CCO | **8.2** |
-| — | *(EU AI Act for tokenized asset platforms: `[Both]` article — published as A1 Step 3 #13; split CTA footer serves B1 buyers)* | A1 + B1 | Consideration | CTO | **8.8** |
-| — | *(MiCA vs. MiFID II classification boundary: `[Both]` article — published as A1 Step 1 #4; split CTA footer serves B1 buyers)* | A1 + B1 | Awareness + Consideration | RWA Felix + WealthTech CTO | **9.1** |
-
-**BOFU — Decision**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| 18 | What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 | B1 | Decision | CCO (Carol) | **9.0** *(Carol gates every B1 deal — publish independently if live deal in pipeline)* |
-| 19 | RWA Tokenization: Build vs. Buy vs. Partner — Decision Framework for WealthTech Leaders 🎯 *(Lead Magnet — routes WL-1 buyers to white-label option)* | B1 | Decision | CEO / CPO | **8.5** |
-| — | 🎬 [CASE STUDY] WealthTech / RWA Platform Build *(hard gate: delivered client deployment required. Primary Decision-stage proof asset for Tom and Sam)* | B1 | Decision | CEO / CPO | **8.3** |
-
-**Post-Launch**
-
-| # | Title | Cluster | Stage | Persona | Score |
-|---|---|---|---|---|---|
-| — | Expanding Your RWA Platform to New Markets: Regulatory and Technical Readiness *(publish after first client goes live)* | B1 | Post-Launch | CEO / CTO | — |
+> [!IMPORTANT] Date-locked schedule moved
+> Track B B1 publish sequence (17 of 19 articles, plus B1 hub + Carol BOFU + Lead Magnet) now lives in [[InnBlockchain - Editorial Calendar]] — interleaved with Track A Phase 1 on Thursday slots, closing Week 22 (Oct 15, 2026). Articles formerly numbered B1-#1 through B1-#19 retain their IDs as references.
+>
+> **Cluster anchoring rule (writer reference, retained here):** Hub (B1-#1) anchors first, then TOFU → MOFU (Platform → Asset Classes → Compliance) → BOFU. Carol (B1-#18) gates every WealthTech deal — publish out-of-sequence if a live prospect is in procurement.
+>
+> **Cross-track shares (Track A `[Both]` articles serving B1 buyers via split CTA footer):**
+> - *What Is Asset Tokenization? A Plain-English Guide* — published as A1 TOFU
+> - *MiCA Explained* — published as P5 TOFU
+> - *MiCA or MiFID II?* — published as A1 TOFU
+> - *EU AI Act for Tokenized Asset Platforms* — published as A1 Compliance Depth
+>
+> **Watch-candidates deferred to overflow queue** (publish reactively, kill at 90-day review):
+> - B1-#4 *Utility NFTs in FinTech: How NFTs Map to Real-World Assets* — B1, Awareness, CEO/CPO, **8.4** *(NFT-for-RWA framing duplicates RWA cluster core message; ERC-3643 has largely replaced ad-hoc NFT patterns)*
+> - B1-#11 *Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know* — B1, Consideration, CEO/CFO, **8.1** *(news-cycle dependent)*
+>
+> **Killed:** *Security Token Offerings (STOs) vs. ICOs* — redundant with B1-#10 STOs Under MiCA; ICOs are a deprecated 2017–2018 concept.
+>
+> **Gate-dependent B1 pieces** (publish when gate clears):
+> - 🎬 [CASE STUDY] *WealthTech / RWA Platform Build* — Decision, CEO/CPO, **8.3** (hard gate: delivered client deployment with screenshot rights)
+> - *Expanding Your RWA Platform to New Markets: Regulatory and Technical Readiness* — Post-Launch, CEO/CTO (gate: first B1 client goes live)
 
 **B2 Exchange & Trading Infrastructure**
 
@@ -1020,12 +928,17 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 
 **Track B Cross-Pillar (Security + AI+Blockchain + Carol + Park-Status)**
 
+> [!INFO] Early-ship cross-pillar trio moved to Editorial Calendar
+> **C1** *(Carol Vendor Risk Pack, 8.4)*, **T4-N** *(Tom Hiring Cost, 8.4)*, **P1-N** *(MiCA License Application, 8.5)* are date-locked in [[InnBlockchain - Editorial Calendar]] at W4 / W6 / W7 respectively — they ship inside Phase 1, not after B1 close. Strategy doc retains them as reference IDs only; do not also schedule them here.
+
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 27 | EU AI Act Audit Trail Requirements: Why Centralised Logs Aren't Enough 🇪🇺 ⏳ *(blocked on Pain Point 5 validation by 2026-05-31)* | AI + Blockchain | Awareness + Consideration | CTO | **8.6** || 28 | Smart Contract Failures That Broke FinTech Companies: Regulatory Blowback, Enterprise Liability, and the Compliance Failures Behind Each | P1 (FinTech framing) | Awareness + Consideration | CTO | **8.1** || — | Hyperledger Fabric vs. Corda vs. Quorum: Which Enterprise Chain Fits Your Stack? | P6 | Consideration | CTO / VP Eng | **8.0** |
-| 29 | Compliance Audit Defensibility Pack for Regulated FinTech: What Regulators Look For 🎯 *(Lead Magnet — renamed to escape "audit checklist" SERP claimed by CN)* | P1 (FinTech framing) | Decision | CTO / VP Eng | **8.0** || 30 | MiCA Compliance for FinTech Builders: CASP Registration, MiFID II Crossover, and What Your Regulated Business Must Do Before Launch 🇪🇺 | B6 RegTech / EU | Consideration + Decision | CEO / CCO | **8.2** || 31 | DORA for FinTechs Using Blockchain Vendors: ICT Third-Party Risk, Contractual Obligations, and Audit Rights 🇪🇺 | B6 RegTech / EU | Decision | CEO / CTO / CCO | **8.0** || T4-N | The Cost of Hiring a Blockchain Team In-House: FinTech CTO Guide | P4 | Awareness + Consideration | CTO | **8.4** |
-| C1 | What FinTech CCOs Should Demand in a Blockchain Vendor Risk Pack | P1 (Carol TOFU/MOFU) | Awareness + Consideration | CCO | **8.4** |
-| P1-N | Preparing for MiCA License Application: Roadmap for Existing FinTechs 🇪🇺 | B6 RegTech (Park-status nurture) | Awareness + Consideration | CEO / CCO | **8.5** |
+| 27 | EU AI Act Audit Trail Requirements: Why Centralised Logs Aren't Enough 🇪🇺 ⏳ *(blocked on Pain Point 5 validation by 2026-05-31)* | AI + Blockchain | Awareness + Consideration | CTO | **8.6** |
+| 28 | Smart Contract Failures That Broke FinTech Companies: Regulatory Blowback, Enterprise Liability, and the Compliance Failures Behind Each | P1 (FinTech framing) | Awareness + Consideration | CTO | **8.1** |
+| — | Hyperledger Fabric vs. Corda vs. Quorum: Which Enterprise Chain Fits Your Stack? | P6 | Consideration | CTO / VP Eng | **8.0** |
+| 29 | Compliance Audit Defensibility Pack for Regulated FinTech: What Regulators Look For 🎯 *(Lead Magnet — renamed to escape "audit checklist" SERP claimed by CN)* | P1 (FinTech framing) | Decision | CTO / VP Eng | **8.0** |
+| 30 | MiCA Compliance for FinTech Builders: CASP Registration, MiFID II Crossover, and What Your Regulated Business Must Do Before Launch 🇪🇺 | B6 RegTech / EU | Consideration + Decision | CEO / CCO | **8.2** |
+| 31 | DORA for FinTechs Using Blockchain Vendors: ICT Third-Party Risk, Contractual Obligations, and Audit Rights 🇪🇺 | B6 RegTech / EU | Decision | CEO / CTO / CCO | **8.0** |
 
 ### Lead Magnets (Gated BOFU Assets — Both Tracks)
 
@@ -1048,29 +961,29 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 
 ## 📅 Publishing Cadence & Gates
 
-### Track A
-- **Phase 1 (RWA + EU compliance, 22 numbered articles incl. WL-1 at #22)** → publish first; do not start Phase 2 until complete. Gated on `/solutions/rwa-tokenization` going live.
+> Active week-by-week schedule lives in [[InnBlockchain - Editorial Calendar]]. This section holds the **strategic gates and ordering principles only** — what must publish before what, and what activates what.
+
+### Track A — Phase Ordering Rules
+- **Phase 0 (WL-0 TCO):** ships before or concurrently with Phase 1 Step 1 — no gate.
+- **Phase 1 (RWA + EU compliance, 22 articles incl. WL-1 at #22)** → publish first; do NOT start Phase 2 until complete. Gated on `/solutions/rwa-tokenization` going live.
 - **Phase 2 (other active verticals, #23–#56)** → starts only after Phase 1 ships. One exception: AI overlay article ships immediately on any active segment deal regardless of phase. WL-2 through WL-6 are appended to Phase 2 (#52–#56) — not exceptions.
 - **Phase 3 (Watch segments, #57–#60)** → activate per trigger criteria.
-- **Phase 0 (WL-0 TCO):** ships before or concurrently with Phase 1 Step 1 — no gate.
-- **Cadence:** 1 article/week minimum on Phase 1.
 
-### Track B
-- **Per-cluster ship sequence (gated on landing pages):**
-  1. WealthTech / RWA cluster → after `/solutions/tokenization` live
-  2. ExchangeTech → after `/solutions/regulated-exchange`
-  3. LendTech → after `/solutions/defi-lending`
-  4. WalletTech → after `/solutions/fintech-wallets`
-- Watch clusters (B5–B8) activate when activation criteria are met (any two of four).
-- **Cadence:** 1 article/week. WealthTech and AI+blockchain take priority in publishing queue.
+### Track B — Per-Cluster Ship Gates
+Each cluster activates after its destination landing page goes live:
+1. WealthTech / RWA (B1) → after `/solutions/tokenization` live
+2. ExchangeTech (B2) → after `/solutions/regulated-exchange`
+3. LendTech (B3) → after `/solutions/defi-lending`
+4. WalletTech (B4) → after `/solutions/fintech-wallets`
 
+Watch clusters (B5–B8) activate when activation criteria are met (any two of four).
 
 ### Cross-Track Special Cases
 - **AI + Blockchain content (Track B):** ⏳ Blocked on ICP Pain Point 5 validation due 2026-05-31. Publish only after (a) WealthTech/RWA hub ships AND (b) validation confirms buyer resonance.
 - **EU compliance content (MiCA, MiFID II, DORA, DLT Pilot Regime, EU AI Act):** Active phase regardless of which cluster they sit in. Do NOT defer to Watch RegTech.
-- **C1 Carol awareness article (Track B):** ship early — Carol must be surfaced by call 1.
-- **P1-N Park-status nurture article (Track B):** ship early to warm unlicensed FinTechs.
-- **T4-N Web3 talent gap (Track B):** evergreen TOFU for Tom. Ship early — no dependencies.
+- **C1 Carol awareness article:** ship early — Carol must be surfaced by call 1. (Date-locked in Editorial Calendar.)
+- **P1-N Park-status nurture article:** ship early to warm unlicensed FinTechs. (Date-locked in Editorial Calendar.)
+- **T4-N Web3 talent gap:** evergreen TOFU for Tom. Ship early. (Date-locked in Editorial Calendar.)
 
 ---
 
