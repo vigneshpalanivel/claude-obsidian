@@ -6,6 +6,8 @@ Final ICP-aligned profile copy. Rationale and edit history: [[InnBlockchain Vign
 
 ## Headline
 
+> **LinkedIn limit:** 220 chars max. Current: 186 chars (verified 2026-05-12).
+
 CEO @ InnBlockchain | Real-World Asset Tokenization · WealthTech · ExchangeTech | Smart Contract Security & MiCA Compliance | Blockchain Engineering for EU Regulated FinTech | 7+ Years
 
 ---
@@ -22,43 +24,38 @@ Built for founders who can't afford to get this wrong.
 
 ## About
 
+> **LinkedIn limits:** 2,600 chars max · 300-500 words target. Current draft: ~2,400 chars / ~336 words (verified 2026-05-12).
+
 RWA tokenization, MiCA compliance, and smart contract audits — for EU-regulated FinTechs and asset-backed founders who can't afford a compliance incident or a protocol exploit.
 
-After 7+ years building blockchain infrastructure for regulated FinTechs and crypto-native protocols across two regulatory cycles, one thing is clear: the standard you hold in the build is the reputation you carry in the market.
+After 7+ years building blockchain infrastructure for regulated FinTechs and crypto-native protocols, one thing is clear: the standard you hold in the build is the reputation you carry in the market.
 
-I've seen what happens when that trust is misplaced.
-→ Compliance incidents that pause operations.
-→ Protocol exploits that drain treasuries overnight.
-→ Launches that never recover.
+I've seen what happens when that trust is misplaced — compliance incidents that pause operations, protocol exploits that drain treasuries, launches that never recover.
 
-I founded InnBlockchain to make sure that doesn't happen to the companies we build with.
+We work with three kinds of founders across EU and MiCA-jurisdiction markets:
 
-**We work with three kinds of founders, primarily across EU and MiCA-jurisdiction markets:**
+→ **Asset-backed founders** — real-estate developers, fleet owners, commodity producers, private-credit issuers — putting their first real-world asset on-chain. One smart-contract flaw doesn't just lose liquidity; it compromises legal ownership.
 
-→ **Asset-backed founders** — real-estate developers, fleet owners, commodity producers, private-credit issuers — putting their first real-world asset on-chain. One smart-contract flaw here doesn't just lose liquidity; it compromises legal ownership. We bridge the asset, the engineering, and the regulator into one shippable product.
+→ **Regulated FinTech leaders** in WealthTech, ExchangeTech, LendTech, and WalletTech adding tokenization or digital-asset rails to an already-licensed product — without compliance or security risk.
 
-→ **Regulated FinTech leaders** in WealthTech, ExchangeTech, LendTech, and WalletTech adding tokenization, on-chain settlement, or digital-asset rails to an already-licensed product — without creating compliance or security risk.
+→ **Crypto-native founders and protocols** in RWA, DEX/DeFi, and wallet infrastructure shipping audit-ready products without waiting on top-firm audit queues.
 
-→ **Crypto-native founders and protocol teams** in RWA, DEX/DeFi, on-chain trading, and wallet infrastructure who need to ship audit-ready products fast — without waiting months for a top-firm audit queue or hiring senior Solidity/Rust talent they can't yet find.
-
-**What we've shipped:** blockchain infrastructure and smart-contract security for FinTechs and Web3 protocols across asset tokenization, regulated exchange platforms, DeFi lending, and on-chain payments. 10+ protocols audited. Zero critical findings on production deployments.
+**15+ protocols audited. Zero critical findings on production deployments.** Across asset tokenization, regulated exchanges, DeFi lending, and on-chain payments.
 
 Recent work:
-→ [INSERT REFERENCE 1 — e.g., "Tokenization infrastructure for an EU-regulated real-estate fund under MiFID II, managing €X AUM"]
-→ [INSERT REFERENCE 2 — e.g., "Smart-contract audit for a Top-10 EU AMM ahead of mainnet"]
-→ [INSERT REFERENCE 3 — e.g., "MiCA-aligned tokenization platform for a licensed e-money institution"]
+→ [INSERT REFERENCE 1]
+→ [INSERT REFERENCE 2]
+→ [INSERT REFERENCE 3]
 
-**Two regulatory cycles in, the lesson is the same:** companies that treat compliance as an engineering priority — not a legal review at the end — never have to pause operations or rebuild from scratch when frameworks catch up. MiCA formalized what I already believed. The UK, MENA, and Asia are following. Compliance-ready infrastructure is no longer optional; we've built it that way from the start.
+Two regulatory cycles in, the lesson is the same: treat compliance as an engineering priority, not a legal review at the end. MiCA formalized what I already believed.
 
-**Our model vs. SaaS tokenization and custody platforms:** one-time productized delivery. You own the smart contracts and the UI codebase at exit. No license fees. No platform lock-in.
+**vs. SaaS tokenization and custody platforms:** one-time productized delivery. You own the smart contracts and UI codebase at exit. No license fees. No platform lock-in.
 
-**Our model vs. top-tier audit firms:** their queues run 8-12 weeks. We can start next week. I don't take shortcuts — when deadlines are tight, we move because the methodology is rigorous, not because we cut corners. Many teams use us in parallel with their top-firm review.
+**vs. top-tier audit firms:** their queues run 8-12 weeks. We can start next week. I don't take shortcuts — when deadlines are tight, we move because the methodology is rigorous, not because we cut corners.
 
-Everything we build is **legally defensible, technically sound, and compliance-ready** — structured to protect your operations, satisfy regulators, and hold its value through every stage of growth. Technically, legally, and operationally yours from the moment we hand it over.
+**Vendor risk pack, sample audit reports, and MiCA compliance brief available on request.**
 
-**Vendor risk pack, sample audit reports, and MiCA compliance brief available on request** — your compliance team can review before the first call.
-
-If you're an **asset-backed founder** putting your first deal on-chain, a **FinTech CEO, CPO, or CTO** moving on tokenization or on-chain rails, or a **protocol founder** preparing for your next launch — let's build it right.
+If you're an **asset-backed founder** putting your first deal on-chain, a **FinTech CEO/CPO/CTO** moving on tokenization, or a **protocol founder** preparing for your next launch — let's build it right.
 
 Start at InnBlockchain.com → https://www.innblockchain.com/solutions/rwa-tokenization
 
@@ -93,7 +90,7 @@ InnBlockchain · Full-time
 >
 > **What we ship:**
 >
-> • Smart-contract audits with 10+ protocols reviewed and a zero-critical-finding record on production deployments — typically delivered in [X] weeks vs. 8-12 week top-firm queues
+> • Smart-contract audits with 15+ protocols reviewed and a zero-critical-finding record on production deployments — typically delivered in [X]+ weeks vs. 8-12 week top-firm queues
 >
 > • RWA tokenization infrastructure for real-estate, private-credit, commodity, and fleet issuers — smart contracts + KYC/AML + regulator-reporting integration shipped as one productized engagement
 >
@@ -177,7 +174,7 @@ Only assets that the published profile **promises** or **implies**. Breaking the
 **Experience & Claims (profile copy must be supported):**
 - [ ] InnBlockchain CEO Experience entry populated with start year, location, and filled placeholders
 - [ ] "7+ years building blockchain infrastructure" claim verified against existing LinkedIn Experience — revise if prior roles are general software engineering rather than blockchain-specific (Sasha-grade evaluator verifies in 30 seconds)
-- [ ] "10+ protocols audited, zero critical findings" verified
+- [ ] "15+ protocols audited, zero critical findings" verified
 
 ---
 
