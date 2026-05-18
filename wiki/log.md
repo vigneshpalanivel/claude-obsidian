@@ -19,6 +19,13 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## 2026-05-18 | ingest | InnBlockchain Content AEO GEO Prompts
+- Source: `.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md` (hash `c3dffd0b1d3944f110df30b81b6f4402`)
+- Summary: [[InnBlockchain-Content-AEO-GEO-Prompts]]
+- Pages created: [[InnBlockchain Content AEO GEO Prompts]] (concept), [[InnBlockchain-Content-AEO-GEO-Prompts]] (source)
+- Pages updated: [[index]], [[hot]], [[log]]
+- Key insight: Execution-layer companion to [[InnBlockchain Content Strategy]]. 270 conversational prompts mapped 1:1 to 53+ Phase 1 articles — strategy says *what*, editorial calendar says *when*, this says *what literal questions each article must answer in the first 150 words.* Structurally different from Trioangle's [[SEO-AEO-GEO-Prompt-Library]] (template × 10 verticals = 1,800 instances) — InnBlockchain's is article-by-article, single conversational-query framing, mandatory track/stage/persona/motion metadata per block. Rev-3 dedup pass removed 11 cross-article overlaps that would have created internal AEO competition; each affected block now carries `*(Scope: ...)*` ownership-boundary line. Phase 1 scope only (May–Oct 2026); Phase 2 prompts deferred until Q4 2026 when Phase 2 calendar is cut.
+
 ## 2026-05-16 | re-ingest | Trioangle Landing Page Plan
 - Source: `.raw/Trioangle/Trioangle Landing Page Plan.md` (hash `7d6d41519ebb2881e942b5308f490520`)
 - Summary: [[Trioangle Landing Page Plan]] (concept)
