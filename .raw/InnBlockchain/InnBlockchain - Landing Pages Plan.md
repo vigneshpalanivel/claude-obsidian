@@ -72,9 +72,12 @@ innblockchain.com/
 
 ---
 
-## 🏛️ Two-Audience Architecture
+## 🏛️ Two-Audience Architecture *(current active execution)*
 
-InnBlockchain serves two fundamentally different ICPs. They share the same technology capabilities but need completely separate messaging, solutions pages, and content funnels.
+> [!NOTE] Scope of this section
+> InnBlockchain's brand is positioned as an **industry-agnostic blockchain solutions provider** (see Home page description below). The two-audience architecture documented here describes the **current active execution** — FinTech and Web3 & DeFi are the only two industries with shipped LPs and dedicated solution pages as of 2026-05-18. When additional industries activate (Supply Chain and Healthcare confirmed in the pipeline; see § Future Expansion Architecture), each gets its own industry hub with its own audience definition and ICP doc. The separation rules below apply to the FT-vs-CN boundary today; analogous separation rules will apply to each new industry as it activates.
+
+InnBlockchain currently serves two fundamentally different ICPs in active execution. They share the same technology capabilities but need completely separate messaging, solutions pages, and content funnels.
 
 | Dimension | FinTech ICP | Web3 & DeFi (Crypto Native) ICP |
 |---|---|---|
@@ -98,17 +101,21 @@ To avoid SEO keyword cannibalization and duplicated content, the site structure 
 - **Services pages** rank for "how" keywords (`smart contract audit company`, `private blockchain development`).
 - **Solutions pages** rank for "who/what" keywords (`crypto exchange development company`, `defi protocol security`).
 
-Within Solutions, the two ICPs are separated by their industry hub:
-- `/industries/fintech/` → FinTech solutions
-- `/industries/web3-defi/` → Web3 & DeFi solutions
+Within Solutions, each ICP / industry gets its own hub:
+- `/industries/fintech/` → FinTech solutions *(active)*
+- `/industries/web3-defi/` → Web3 & DeFi solutions *(active)*
+- `/industries/supply-chain/` → Supply Chain solutions *(planned — see § Future Expansion Architecture)*
+- `/industries/healthcare/` → Healthcare solutions *(planned — see § Future Expansion Architecture)*
+
+The Home page (`/`) routes the buyer to the relevant industry hub. As new industries activate, each gets a routing tile on Home and its own hub URL — no restructuring of core or services pages required.
 
 ---
 
 ## 🏗️ 1. Core Pages
 
-- **Home** (`/`): Two clear audience paths in the hero — *"Building a FinTech product?"* → FinTech path / *"Building a Web3 protocol?"* → Web3 & DeFi path. Primary SEO: `blockchain development company`.
-- **About Us** (`/about`): Positioned as a dedicated Web3 division **"Backed by Trioangle."** Highlight 800+ traditional software deployments for financial stability and enterprise-grade execution credibility over fly-by-night crypto teams.
-- **Case Studies / Work** (`/work`): Filterable by **Industry** (FinTech / Web3 & DeFi) and **Tech Stack**. Essential trust-builder for both CTO buyer types.
+- **Home** (`/`): Positioned as an **industry-agnostic blockchain solutions provider** — currently delivering for FinTech and Web3 & DeFi, with planned expansion to Supply Chain, Healthcare, and other verticals as they activate. Hero presents industry routing tiles (today: FinTech path / Web3 & DeFi path; tomorrow: additional industries) rather than a fixed two-path binary. **SEO targeting:** brand-intent (`innblockchain`, `innblockchain.com`) + multi-industry routing queries (e.g., `blockchain development company multiple industries`). **Do NOT target broad category queries** like *"best blockchain development company"* — those are owned by Big-SI listicles (IBM / Wipro / Accenture / TCS / Infosys) and unwinnable at the Home LP level; let `/industries/*` pages do industry-specific category work.
+- **About Us** (`/about`): Positioned as a **standalone blockchain engineering firm** — no parent-brand references. Credibility anchored on InnBlockchain-native proof: founding year, mainnet deployments shipped under the InnBlockchain brand, team size and senior-engineer count, audit-partner track record, and financial-stability signal. *(Trioangle parent reference removed per standalone-brand positioning; proof numbers pending from Marketing — see [[InnBlockchain - Landing Pages AEO GEO Prompts]] Open Item #8.)*
+- **Case Studies / Work** (`/work`): Filterable by **Industry** and **Tech Stack**. Industry filter must be extensible — currently FinTech / Web3 & DeFi; add Supply Chain / Healthcare / new verticals as case studies are delivered. Essential trust-builder across all buyer types.
 
 ---
 
@@ -295,12 +302,23 @@ Two separate content funnels — one per ICP. Both follow the same 3-step flow.
 
 ## 🚀 5. Future Expansion Architecture
 
-### New Industry Verticals (Supply Chain, Healthcare)
-Because Services (the technology) are decoupled from Solutions (the industry), adding new industries requires zero restructuring of core pages:
-1. **Services pages** remain untouched.
-2. **New industry hub** added: e.g., `/industries/supply-chain`
-3. **New solution sub-pages** added: e.g., `/solutions/supply-chain-traceability`
-4. **New content hubs** built to feed those solutions pages.
+### New Industry Verticals — Supply Chain, Healthcare *(confirmed pipeline)* + others
+Because Services (the technology) are decoupled from Solutions (the industry), adding new industries requires zero restructuring of core or services pages — but each new industry needs its own ICP, content funnel, and AEO/GEO prompt set built out before it can convert traffic.
+
+**Activation gate per industry** (all three required before LP build-out begins):
+1. Leadership commits to GTM investment for the vertical.
+2. ≥1 case study or signed deal in the vertical (or a credible pilot path).
+3. ICP doc created for the new industry following the FinTech / Crypto Native pattern.
+
+**Build-out checklist once activation gate is met:**
+1. **Services pages** remain untouched (shared across industries).
+2. **New industry hub** created: e.g., `/industries/supply-chain`, `/industries/healthcare`.
+3. **New solution sub-pages** added under that hub: e.g., `/solutions/supply-chain-traceability`, `/solutions/healthcare-records`.
+4. **New content hub** built in the content strategy (analogous to FinTech V1 / Crypto Native V1–V10 hubs) to feed the solution pages.
+5. **AEO/GEO prompt block** added to [[InnBlockchain - Landing Pages AEO GEO Prompts]] following the existing industry-hub template (4–6 prompts, scope note, persona, motion).
+6. **Home routing tile** added so `/` surfaces the new industry as a routing option.
+7. **`/work` filter** extended to include the new industry as a case-study filter.
+8. **Persona-aligned vocabulary** in the AEO doc Drafting Principle #10 updated with the new industry's track tag (e.g., `[SC]` for Supply Chain, `[HC]` for Healthcare) and persona vocabulary.
 
 ### Activating FinTech Watch Segments
 As FinTech Priorities 5–8 enter active GTM focus (Remittance, RegTech, Treasury, InsurTech):
