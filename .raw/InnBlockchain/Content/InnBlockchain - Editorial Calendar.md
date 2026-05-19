@@ -4,12 +4,14 @@ company:
 department:
   - marketing
 priority: highest
-rev: 2
-last_revised: 2026-05-18
+rev: 3
+last_revised: 2026-05-19
 revision_notes: |
   rev 1 (2026-05-18): initial editorial calendar derived from `InnBlockchain - Content Strategy.md` rev 4. Locked Phase 1 close at 2/wk cadence (May 18 → Oct 18, 2026).
 
   rev 2 (2026-05-18): seven cross-strategy gaps fixed. (1) Added three Track B Cross-Pillar early-ship articles per strategy doc lines 1071–1073: C1 Carol Vendor Risk Pack (W4), T4-N Tom Hiring Cost (W6), P1-N MiCA License Application (W7). (2) Resolved B1-#4 Utility NFTs omission — explicitly deferred to overflow queue with watch-candidate flag. (3) Added 📎 LinkedIn-first distribution tags to #1, #2, #3, #4, #5, #18, #20, #21, #22 per strategy doc line 859. Reframed 📎 as "LinkedIn + SEO" (additive, not LinkedIn-only). (4) Added Reference Build Hard Gate (cleared 2026-05-14) to gate sequence table. (5) Added B1 Post-Launch piece "Expanding Your RWA Platform to New Markets" to gate-dependent section. (6) Removed fabricated newsletter recommendation (not in strategy doc). (7) Added explicit note acknowledging Track A Phase 1 publish sequence deviates from strategy doc's TOFU-first ordering due to LP gate timing. Phase 1 close shifted from Week 19 (Sep 22) to Week 21 (Oct 6) — 2-week slip absorbs C1/T4-N/P1-N insertions and [Both] article migration to Tuesday slots. B1-#11 US Treasuries also deferred to overflow (watch-candidate). Track A Phase 2 starter reduced from 3 articles to 1 (W22 only).
+
+  rev 3 (2026-05-19): Article title sync with Content Strategy rev 6 (MiCA-as-RWA-cover misframe correction). Renamed in-place: W2 #6 ("MiCA Compliance for RWA Tokenization Platforms" → "MiFID II + DLT Pilot Regime Compliance..."); W9 #11 ("MiCA Whitepaper Requirements for Token Issuance" → "Prospectus Regulation vs. MiCA Whitepaper for Token Issuance..."); W12 B1-#10 ("STOs ... Under MiCA" → "STOs ... Under MiFID II, Prospectus Regulation, and DLT Pilot Regime"); W14 B1-#13 ("MiCA and MiFID II for Tokenized Assets" → "MiFID II + DLT Pilot Regime for Tokenized Assets (and Where MiCA Actually Fits)"). W14 #14 "MiCA Compliance Checklist for Crypto-Native Startups" annotated to clarify scope (Seg 2–10 only, NOT RWA). Publish dates unchanged.
 tags:
   - content
   - editorial-calendar
@@ -80,7 +82,7 @@ tags:
 | Wk | Date | Tue | Thu |
 |---|---|---|---|
 | **1** | May 18–24 | **WL-0** *Own vs. License: 5-Year TCO of Productized Crypto Platforms vs. SaaS Vendors* (9.1) | 📎 **#2** *How to Tokenize Real-World Assets — A1 Hub* (9.7) |
-| **2** | May 25–31 | #6 *MiCA Compliance for RWA Tokenization Platforms* (9.6) | #7 *ERC-3643 vs. ERC-1400 vs. ERC-20* (9.3) |
+| **2** | May 25–31 | #6 *MiFID II + DLT Pilot Regime Compliance for RWA Tokenization Platforms* (9.6) *(renamed rev 6 from "MiCA Compliance for RWA Tokenization Platforms")* | #7 *ERC-3643 vs. ERC-1400 vs. ERC-20* (9.3) |
 | **3** | Jun 1–7 | 📎 #1 *What Is Asset Tokenization? A Plain-English Guide* `[Both]` (9.4) | **B1-#1** *RWA Tokenization for Licensed Asset Managers — B1 Hub* (9.2) |
 
 ### Phase 1 MOFU — Architecture + Compliance Depth
@@ -92,17 +94,17 @@ tags:
 | **6** | Jun 22–28 | #8 *Oracle Design for Real-World Assets* (9.2) | ⏫ **T4-N** *The Cost of Hiring a Blockchain Team In-House: FinTech CTO Guide* (8.4) |
 | **7** | Jun 29–Jul 5 | #9 *Investor Whitelisting On-Chain: Building KYC-Compliant Token Access Without Centralisation* (9.1) | ⏫ **P1-N** *Preparing for MiCA License Application: Roadmap for Existing FinTechs* 🇪🇺 (8.5) |
 | **8** | Jul 6–12 | 📎 #10 *The Legal-Technical Interface in RWA Tokenization* (9.0) | B1-#9 *Real Estate Tokenization for Licensed Asset Managers: MiFID II Classification* 🇪🇺 (8.9) |
-| **9** | Jul 13–19 | #11 *MiCA Whitepaper Requirements for Token Issuance* (9.0) | B1-#2 *Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs* (8.3) |
+| **9** | Jul 13–19 | #11 *Prospectus Regulation vs. MiCA Whitepaper for Token Issuance: Which Document Your RWA Platform Actually Needs* (9.0) *(renamed rev 6 — most RWA platforms need Prospectus / MiFID II, not a MiCA white paper)* | B1-#2 *Institutional RWA Tokenization: What BlackRock's BUIDL Fund Means for FinTechs* (8.3) |
 | **10** | Jul 20–26 | #13 *EU AI Act for Tokenized Asset Platforms* `[Both]` 🇪🇺 (8.8) | B1-#3 *T+0 Settlement on Blockchain: How Real-Time Clearing Is Replacing T+2* (8.3) |
 | **11** | Jul 27–Aug 2 | 📎 #5 *[POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention* (8.8) | B1-#6 *Tokenization and Liquidity: How Fractional Ownership Unlocks Capital for WealthTechs* (8.4) |
-| **12** | Aug 3–9 | #12 *AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, Cross-Border* 🇪🇺 (8.9) | B1-#10 *STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA* 🇪🇺 (8.7) |
+| **12** | Aug 3–9 | #12 *AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, Cross-Border* 🇪🇺 (8.9) | B1-#10 *STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiFID II, Prospectus Regulation, and DLT Pilot Regime* 🇪🇺 (8.7) *(renamed rev 6 from "Under MiCA" — STOs are MiFID II financial instruments, not MiCA crypto-assets)* |
 
 ### Phase 1 MOFU — Asset Class Deep Dives
 
 | Wk | Date | Tue | Thu |
 |---|---|---|---|
 | **13** | Aug 10–16 | 📎 #15 *Fractional Real Estate Tokenization: Smart Contract Architecture for Property Fractionalization* (9.0) | B1-#12 *ERC-3643 for Licensed Asset Managers: Permissioned Token Standards & MiFID II* 🇪🇺 (8.8) |
-| **14** | Aug 17–23 | #14 *MiCA Compliance Checklist for Crypto-Native Startups* (8.7) | B1-#13 *MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right* 🇪🇺 (8.6) |
+| **14** | Aug 17–23 | #14 *MiCA Compliance Checklist for Crypto-Native Startups* (8.7) *(scope: Seg 2–10 token launches, DeFi, exchanges — NOT RWA which is MiFID II)* | B1-#13 *MiFID II + DLT Pilot Regime for Tokenized Assets: What EU WealthTechs Must Get Right (and Where MiCA Actually Fits)* 🇪🇺 (8.6) *(renamed rev 6 from "MiCA and MiFID II for Tokenized Assets" — original ordering misframed MiCA as primary)* |
 | **15** | Aug 24–30 | 📎 #16 *Vehicle Fleet Tokenization: Smart Contract Architecture for Asset Fractionalization* (8.7) | B1-#14 *DORA for Tokenized Securities Infrastructure: ICT Resilience for WealthTechs on DLT* 🇪🇺 (8.6) |
 | **16** | Aug 31–Sep 6 | 📎 #17 *Commodity Tokenization: On-Chain Representation of Gold, Oil, and Agricultural Assets* (8.7) | B1-#15 *AML / AMLA for Institutional RWA Investor Onboarding* 🇪🇺 (8.5) |
 | **17** | Sep 7–13 | 📎 #18 *Private Credit On-Chain: Tokenized Off-Chain Debt and Repayment Enforcement* (8.6) | B1-#7 *Blockchain for Treasury Tokenization: Turning Corporate Assets Into Liquid Instruments* (8.3) |

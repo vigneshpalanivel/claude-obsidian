@@ -3,7 +3,7 @@ title: "DLT Pilot Regime: EU Sandbox for Tokenized Securities Markets"
 type: concept
 status: current
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-05-19
 tags:
   - DLT
   - tokenization
@@ -211,11 +211,14 @@ The EC's April 2026 package accepted ESMA's core recommendations with modificati
 |-----------|--------|-----------|
 | DLT Pilot Regime | Financial instruments on DLT | Subset of MiFID II — tokenized bonds/shares stay under MiFID II |
 | MiFID II | All financial instruments | Primary framework; DLT Pilot carves out specific exemptions |
-| MiCA | Crypto-assets (NOT financial instruments) | Mutually exclusive with MiFID II/DLT Pilot |
+| MiCA | Crypto-assets (NOT financial instruments) | Mutually exclusive with MiFID II/DLT Pilot (Article 2(4) MiCA) |
 
 - A tokenized bond on a DLT MTF is still a MiFID II financial instrument — it's NOT a crypto-asset under MiCA
 - No decentralization exemption: the Pilot requires an identifiable operator with a license
 - CASPs entering the Pilot Regime (EC April 2026 proposal) must still treat instruments as MiFID II securities, not crypto-assets
+
+> [!tip] Sales positioning: DLT Pilot beats MiCA for Seg 1 RWA
+> For any RWA tokenization prospect issuing ownership tokens, the DLT Pilot Regime is the correct conversational hook — not MiCA. It's the regime that explicitly enables on-chain trading + settlement of tokenized securities, the area where prospects feel the regulatory friction. MiCA framing routes them to the wrong regulator (their own NCA's MiCA team rather than the securities/markets team) and the wrong document (white paper rather than prospectus), which a Compliance Carol-equivalent will catch immediately.
 
 ---
 

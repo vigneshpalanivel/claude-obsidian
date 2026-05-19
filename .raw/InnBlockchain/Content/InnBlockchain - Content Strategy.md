@@ -4,14 +4,15 @@ company:
 department:
   - marketing
 priority: highest
-rev: 5
-last_revised: 2026-05-18
+rev: 6
+last_revised: 2026-05-19
 revision_notes: |
   rev 1 (2026-05-13): merged from `Content Strategy - Crypto Native.md` (rev 3) and `Content Strategy - FinTech.md` (rev 3). Two parallel content strategies consolidated into one source-of-truth, with track-level tagging (`[CN]` / `[FT]` / `[Both]`) replacing the cross-doc routing boilerplate. ICP docs remain split per ICP - Crypto Native / ICP - FinTech; this strategy serves both via article-level track metadata.
   rev 2 (2026-05-13): cannibalization-fix pass. Retagged 7 awareness-stage articles to `[Both]` (exploit explainers + MiCA Explained + asset tokenization intro). Merged 2 article pairs into shared `[Both]` articles (Embedded Wallets, Passkey Auth). Killed 1 (STOs vs ICOs, redundant). Renamed 6 Track B articles to escape Track A SERP claims (B1 hub, B1 real estate, P1 audit checklist, P1 audit process, P1 upgradeability, B4 MPC PSP). Rewrote Track B keyword tables (Awareness, Consideration, Decision, Implementation) to remove generic terms claimed by Track A and substitute regulated-FinTech-specific long-tail variants. Annotated 3 watch-candidate articles. Net: ~9 article reduction, ~0 unresolved cross-track keyword collisions.
   rev 3 (2026-05-13): white-label unified across both ICPs. Old CN-WL (6 articles, $30k–$100k) + FT-WL (6 articles, $50k–$200k) collapsed to 7 unified articles (WL1–WL6 + WL-TCO) at **$20k+ flat floor** (undercuts Antier-class competitors at ~$30k). WL bundle no longer includes enterprise compliance integration — that's now custom-build (Motion 2) at $50k+. FT-LM-Carol Vendor Risk Pack repositioned as custom-build asset. Track-Level Differentiator table removed. Reference-build gate unified (screenshots only; compliance pack moved to custom-build). Track A floor for RWA Tokenization (Segment 1) lowered to $20k+ for consistency with other Track A segments. Net: 13 WL articles → 7 (~46% reduction); one product, one price, one CTA across both ICPs.
   rev 4 (2026-05-14): priority plan restructured for publish-order clarity. A1 and B1 article lists reorganised from topic groups into explicit TOFU / MOFU (Technical Architecture, Compliance Depth, Asset Classes) / BOFU / Post-Launch sections. Priority Content Plan steps relabelled to match. WL articles dissolved from separate section and integrated into plan: WL-0 in Phase 0 (ships first, no gate); WL-1 at Phase 1 BOFU #22; WL-2 through WL-6 appended to Phase 2 (#52–#56). Reference build gate cleared 2026-05-14 — all WL-1 through WL-6 unblocked. WL IDs normalised to WL-0 through WL-6 (was WL1–WL6 + WL-TCO). Phase 1 count corrected to 22 articles. EU compliance article coverage added across A1, B1 (DLT Pilot Regime, AML/AMLA, DORA, MiFID II, EU AI Act).
   rev 5 (2026-05-18): publish schedule extracted to `InnBlockchain - Editorial Calendar.md` (rev 2). Removed duplicated tables from this doc: Phase 0 single-article schedule; Track A Phase 1 numbered tables (Steps 1–6, 22 articles); Track B B1 WealthTech numbered tables (TOFU/MOFU/BOFU/Post-Launch, 19 articles); early-ship cross-pillar entries (C1, T4-N, P1-N). Replaced each with a pointer to Editorial Calendar plus retained gate-dependent and watch-candidate metadata. Trimmed Publishing Cadence section — removed week-by-week cadence claims, kept only phase ordering rules and per-cluster LP gates. Track A Phase 2, Phase 3, Track B B2/B3/B4, AI+Blockchain validation-gated cluster, Lead Magnets, and Watch Segments retained in full (not in calendar scope). This doc is now the article inventory + scoring + sales motion tagging + distribution principles + cross-track routing rules; calendar is the date schedule.
+  rev 6 (2026-05-19): MiCA-as-RWA-cover misframe correction across A1 (Track A RWA Tokenization) and B1 (Track B WealthTech). Added top-of-A1 warning callout: EU regime for RWA ownership tokens is MiFID II + Prospectus + DLT Pilot Regime (NOT MiCA — Art. 2(4) exclusion). Renamed 6 article titles to lead with MiFID II / DLT Pilot framing: A1 hub, "MiCA Compliance for RWA Tokenization Platforms" → "MiFID II + DLT Pilot Regime Compliance...", "MiCA Whitepaper Requirements" → "Prospectus Regulation vs. MiCA Whitepaper for Token Issuance", "Staying MiCA-Compliant Post-Launch" → "Staying MiFID II + DLT Pilot Compliant Post-Launch", "STOs Under MiCA" → "STOs Under MiFID II + Prospectus + DLT Pilot Regime", "MiCA and MiFID II for Tokenized Assets" → "MiFID II + DLT Pilot Regime for Tokenized Assets (and Where MiCA Actually Fits)". Updated B1 hub description, B1 audience-qualifier callout, and "MiCA Content — Two Buyer Patterns" callout (now per-segment regime framing: Seg 1 = MiFID II + DLT Pilot; Seg 2 = MiCA CASP; Seg 3 = CCD2; Seg 4 = PSD3). A1 topic table and P5 table entries updated. The "MiCA or MiFID II?" boundary-clarifier article retained — annotated to specify that for RWA ownership tokens the article must conclude MiFID II + DLT Pilot. Killed-article cross-references updated.
 tags:
   - content
 ---
@@ -68,7 +69,7 @@ tags:
 > - **When Smart Contracts Go Wrong: Lessons from Real Failures** *(pre-existing `[Both]`)*
 
 > [!INFO] Killed and renamed articles (cannibalization-fix pass, 2026-05-13)
-> **Killed (1):** "Security Token Offerings (STOs) vs. ICOs: What FinTech SMBs Need to Know" (FT B1 #5) — redundant with #6 STOs Under MiCA which covers everything plus the regulatory layer; ICOs are a deprecated 2017–2018 concept.
+> **Killed (1):** "Security Token Offerings (STOs) vs. ICOs: What FinTech SMBs Need to Know" (FT B1 #5) — redundant with #6 STOs Under MiFID II + Prospectus + DLT Pilot Regime which covers everything plus the regulatory layer; ICOs are a deprecated 2017–2018 concept.
 >
 > **Track B renames to escape Track A's SERPs:**
 > - FT B1 hub: "RWA Tokenization Platform: Full Hub Guide" → **"RWA Tokenization for Licensed Asset Managers: A Build Decision Guide for WealthTech CTOs"**
@@ -206,14 +207,14 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 | Travel Rule Compliance for DeFi Protocols: Technical Smart Contract Implementation for EU-Registered On-Chain Systems | CN | DeFi protocol implementing travel rule at SC layer |
 | Travel Rule Compliance for Licensed Exchanges (CEX and DEX): What You Must Build | FT | MiCA CASP + FATF — on-chain AML tooling for licensed CASP |
 | KYC/AML On-Chain: How EU Crypto Companies Build Compliant Smart Contract Access Infrastructure | CN | — |
-| MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce | CN | — |
+| Prospectus Regulation vs. MiCA Whitepaper for Token Issuance: Which Document Your Platform Actually Needs (RWA = Prospectus / MiFID II; non-financial-instrument tokens = MiCA white paper) and What Smart Contracts Must Enforce | CN | — |
 | MiCA vs. Other Global Frameworks: What EU-Based Protocols Must Know Before Expanding Beyond the EU | CN | — |
-| MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset | Both | RWA classification boundary — `[Both]` split CTA; lives in A1 EU Compliance section, referenced in B1 |
+| MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset | Both | RWA classification boundary — `[Both]` split CTA; lives in A1 EU Compliance section, referenced in B1. **Article must conclude that for ownership-token RWA the answer is MiFID II + DLT Pilot Regime; MiCA only applies to ARTs or service-level CASP.** |
 | EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI | Both | AI-powered RWA valuation / oracle = potential high-risk AI; `[Both]` split CTA; lives in A1 EU Compliance section, referenced in B1 |
-| MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺 | FT | Regulatory obligations for existing financial businesses tokenizing assets |
+| MiFID II + DLT Pilot Regime for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch (and Where MiCA Actually Fits) 🇪🇺 | FT | Regulatory obligations for existing financial businesses tokenizing assets — MiFID II + Prospectus + DLT Pilot are primary; MiCA only as service-level CASP or for ART tokens |
 | MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺 | FT | — |
 | DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺 | FT | — |
-| STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA 🇪🇺 | FT | — |
+| STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiFID II, Prospectus Regulation, and DLT Pilot Regime 🇪🇺 | FT | STOs are MiFID II financial instruments, not MiCA crypto-assets (Art. 2(4) exclusion) |
 | MiCA CASP Compliance for Licensed Exchanges: What Your Smart Contract Architecture Must Satisfy 🇪🇺 | FT | Applies equally to CEX, DEX, DeFi-adjacent licensed products |
 | MiCA and PSD2 Compliance for EU E-Money Wallets Adding Crypto Features: What Licence Holders Must Know 🇪🇺 | FT | BaFin/DNB/CBI/Banque de France licence holders |
 | **Preparing for MiCA License Application: Roadmap for Existing FinTechs** 🇪🇺 | FT (Park-status nurture) | Keeps unlicensed-but-considering FinTechs warm; 12-month roadmap |
@@ -259,20 +260,23 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 
 ### A1 — RWA Tokenization *(Active — Highest Priority)*
 
-**Target:** Asset owners and crypto-native founders building tokenization platforms — real estate, vehicles, commodities, art, private credit. Distinct persona (RWA Felix: non-technical asset owner who cannot read Solidity). Primary geography: EU (MiCA-compliant tokenization). **$20k+** custom-build floor. Routing exception: licensed asset managers / securities firms tokenizing their own product line → Track B B1 (WealthTech).
+**Target:** Asset owners and crypto-native founders building tokenization platforms — real estate, vehicles, commodities, art, private credit. Distinct persona (RWA Felix: non-technical asset owner who cannot read Solidity). Primary geography: EU. **$20k+** custom-build floor. Routing exception: licensed asset managers / securities firms tokenizing their own product line → Track B B1 (WealthTech).
 
-**Hub:** `How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and MiCA Compliance`
+> [!WARNING] EU regime for RWA = MiFID II, NOT MiCA
+> Article titles, hub framings, and SEO keywords in this cluster must lead with **MiFID II + Prospectus Regulation + DLT Pilot Regime** for EU RWA. MiCA Art. 2(4) explicitly excludes financial instruments — a token conferring ownership or a claim on the issuer / underlying asset is a MiFID II transferable security regardless of whether yield is distributed. MiCA only applies if the token is structured as an Asset-Referenced Token (value-referencing stablecoin, no ownership — rare in RWA) or if the platform also runs CASP services on separately-classified non-MiFID crypto-assets. **Do NOT publish articles titled "Tokenize Real Estate Under MiCA" or "MiCA Compliance for RWA Platforms" — they are factually wrong and route prospects to the wrong NCA team, wrong offering document (white paper vs prospectus), and wrong infrastructure carve-out (CASP vs DLT Pilot).** The boundary-clarifier article "MiCA or MiFID II?" stays — it's the right awareness-level piece.
+
+**Hub:** `How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and EU MiFID II + DLT Pilot Regime Compliance`
 *▶ Landing Page:* `/solutions/rwa-tokenization`
 
 > [!IMPORTANT] Content approach for RWA Felix
-> Plain-language, asset-first, and compliance-aware — NOT exploit-thread technical depth. Lead with the asset type and the ownership risk, not the smart contract internals. EU compliance (MiCA) is the primary hook.
+> Plain-language, asset-first, and compliance-aware — NOT exploit-thread technical depth. Lead with the asset type and the ownership risk, not the smart contract internals. EU compliance (**MiFID II + Prospectus + DLT Pilot Regime** — NOT MiCA) is the primary hook.
 
 #### Use-Case Clusters
 
 | GTM Status | Use Case | Pillars |
 |---|---|---|
-| 🟢 Active | EU/MiCA Compliance for RWA Platforms | P5 |
-| 🟢 Active | MiCA vs. MiFID II Classification for Tokenized Assets | P5 |
+| 🟢 Active | EU Compliance for RWA Platforms: MiFID II + Prospectus + DLT Pilot Regime (primary) | P5 |
+| 🟢 Active | MiFID II vs. MiCA Classification for Tokenized Assets (boundary clarifier) | P5 |
 | 🟢 Active | AML / Investor Onboarding Compliance (RWA-specific) | P5 |
 | 🟢 Active | Real Estate Tokenization Architecture | P1, P2, P5 |
 | 🟢 Active | Permissioned Token Standards (ERC-3643, ERC-1400) | P1, P2, P5 |
@@ -288,7 +292,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 
 **TOFU — Awareness:**
 - What Is Asset Tokenization? A Plain-English Guide `[Both]` *(merged from CN/FT awareness — split CTA footer; distributed via LinkedIn for RWA Felix + WealthTech Sam, plus SEO)*
-- How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and MiCA Compliance *(hub)*
+- How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and EU MiFID II + DLT Pilot Regime Compliance *(hub — primary regime is MiFID II, not MiCA; see warning callout at top of A1)*
 - MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 *(#1 classification question for any RWA founder. Split CTA footer. Canonical reference: [[EU-Fintech-Compliance-Landscape]]. **Scope boundary vs. B1 "MiFID II Instrument Classification" article:** this article answers "which regime applies and why" at awareness level — threshold test, asset-type logic, consequences of each path. The B1 article covers MiFID II mechanics for firms who have already determined MiFID II applies. Do NOT overlap.)*
 - [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention *(risk-hook awareness piece; surfaces the oracle integrity problem before architecture articles)*
 
@@ -297,10 +301,10 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 - Oracle Design for Real-World Assets: How to Bring Off-Chain Valuations On-Chain Without Manipulation Risk
 - Investor Whitelisting On-Chain: How to Build KYC-Compliant Token Access Without Centralisation
 - The Legal-Technical Interface in RWA Tokenization: What Smart Contracts Can and Cannot Enforce
-- MiCA Compliance for RWA Tokenization Platforms: What EU Smart Contract Requirements Mean for Your Build *(compliance depth — reader needs architecture context before this lands; not a Foundation article)*
+- MiFID II + DLT Pilot Regime Compliance for RWA Tokenization Platforms: What EU Smart Contract Requirements Mean for Your Build *(compliance depth — reader needs architecture context before this lands; not a Foundation article. **Renamed from "MiCA Compliance for RWA Tokenization Platforms" — that was factually wrong; RWA ownership tokens fall under MiFID II per Art. 2(4) exclusion.**)*
 
 **MOFU — Compliance Depth:**
-- MiCA Whitepaper Requirements for Token Issuance: What Your Documentation Must Cover and What Smart Contracts Must Enforce *(compliance mechanics — pairs with MiCA Compliance above; not a Security & Audit article)*
+- Prospectus Regulation vs. MiCA Whitepaper for Token Issuance: Which Document Your RWA Platform Actually Needs, and What Smart Contracts Must Enforce *(compliance mechanics — pairs with MiFID II + DLT Pilot Compliance article above. **Renamed from "MiCA Whitepaper Requirements" — most RWA platforms need a Prospectus or Prospectus exemption under MiFID II, not a MiCA white paper; the article should make the choice explicit by token classification.**)*
 - AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, and Cross-Border Asset Due Diligence 🇪🇺 *(CN-specific: Art Market Participant status for tokenized art, accredited investor verification, cross-border checks — not covered by generic P5 KYC/AML article)*
 - EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI `[Both]` 🇪🇺 *(AI-powered valuation / commodity pricing / risk scoring = potential high-risk AI; immutable audit trail required. Split CTA footer)*
 
@@ -317,7 +321,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 - 🎬 [CASE STUDY] How We Tokenized [Asset Class] for [Client]: From First Smart Contract to Investor-Ready Platform *(hard gate: requires delivered client deployment or friendly first client with screenshot/story rights. RWA Felix evaluates InnBlockchain on reference checks — primary Decision-stage conversion asset for A1)*
 
 **Post-Launch:**
-- Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiCA-Compliant Post-Launch *(converts one-time build clients to ongoing retainer)*
+- Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiFID II + DLT Pilot Compliant Post-Launch *(converts one-time build clients to ongoing retainer. **Renamed from "Staying MiCA-Compliant" — MiCA is not the governing regime for RWA ownership tokens.**)*
 
 > [!INFO] White-Label routing (A1 → WL-1)
 > Buyers who want a productized build between full-custom and SaaS should be routed to **WL-1: White-Label RWA Tokenization Platform** (see Cross-Segment White-Label section). Embed a routing line in "Custom Build vs. Securitize / Tokeny / Polymath" article: *"If you want code ownership without a full custom build timeline — there's a third option."* CTA: book a white-label scoping call. Gate: reference build is available (✅ Cleared 2026-05-14) — WL-1 ready to publish.
@@ -548,18 +552,24 @@ Key articles:
 
 ### B1 — Tokenization, NFTs & RWA (WealthTech) *(Active — Primary Focus Q2 2026)*
 
-**Target:** Mid-market WealthTech / licensed asset managers / securities firms building tokenized products under MiFID II × MiCA. ACV $20k–$250k, 60–90 day cycle. Primary persona: Strategic Sam (opens, product-roadmap-driven); Tom evaluates architecture; Carol gates for tokenized-securities deals.
+**Target:** Mid-market WealthTech / licensed asset managers / securities firms building tokenized products under **MiFID II + Prospectus Regulation + DLT Pilot Regime** (primary regime; MiCA only as service-level CASP or for ART-structured tokens — RWA ownership tokens are excluded from MiCA by Art. 2(4)). ACV $20k–$250k, 60–90 day cycle. Primary persona: Strategic Sam (opens, product-roadmap-driven); Tom evaluates architecture; Carol gates for tokenized-securities deals.
 
 **Hub:** `RWA Tokenization for Licensed Asset Managers: A Build Decision Guide for WealthTech CTOs` *(renamed to escape the "rwa tokenization platform" generic SERP — that keyword is claimed by Track A A1 hub)*
 *▶ Landing Page:* `/solutions/tokenization`
 
 > [!TIP] Audience qualifier vs. Track A A1
-> Track B B1 is for existing licensed financial services businesses (asset managers, securities firms) tokenizing their own regulated product line under MiFID II / MiCA / DLT Pilot Regime. Track A A1 is for asset owners and crypto-native founders building tokenization *platforms* from scratch. SEO differentiation: B1 leads with liquidity, T+0 settlement, MiFID II classification, institutional investor onboarding. A1 leads with smart contract architecture, oracle design, permissioned token standards.
+> Track B B1 is for existing licensed financial services businesses (asset managers, securities firms) tokenizing their own regulated product line under **MiFID II + Prospectus + DLT Pilot Regime** (MiCA only for ART or service-level CASP — RWA ownership tokens are excluded from MiCA per Art. 2(4)). Track A A1 is for asset owners and crypto-native founders building tokenization *platforms* from scratch. SEO differentiation: B1 leads with liquidity, T+0 settlement, MiFID II classification, institutional investor onboarding. A1 leads with smart contract architecture, oracle design, permissioned token standards.
 
-> [!INFO] MiCA Content — Two Buyer Patterns
-> Per ICP Pain Point 4, EU regulatory uncertainty creates two distinct patterns:
-> - **Over-compensators:** gold-plating beyond MiCA — *"You're already over-built — here's what actually counts."*
-> - **Paralyzed:** won't ship until 100% certainty — *"MiCA-ready today, here's proof — and what's still pending."*
+> [!INFO] EU Compliance Content — Two Buyer Patterns
+> Per ICP Pain Point 4, EU regulatory uncertainty creates two distinct patterns. Use the correct regime per segment when framing the patterns:
+> - **Over-compensators:** gold-plating beyond what the actual regime requires — *"You're already over-built — here's what actually counts."*
+> - **Paralyzed:** won't ship until 100% certainty — *"Compliant today, here's proof — and what's still pending."*
+> **Regime framing per segment** (do not default to MiCA):
+> - Seg 1 RWA / WealthTech — MiFID II + Prospectus + DLT Pilot Regime (NOT MiCA)
+> - Seg 2 ExchangeTech (CEX/DEX/DeFi) — MiCA CASP
+> - Seg 3 LendTech — CCD2 + EU AI Act
+> - Seg 4 WalletTech — PSD3/PSR + eIDAS 2.0 (+ MiCA if crypto wallet feature)
+>
 > Split CTAs in same article (two paths) OR produce two variants. Do NOT flatten both into one neutral voice.
 
 #### Articles
@@ -578,12 +588,12 @@ Key articles:
 
 **MOFU — Asset Classes:**
 - Real Estate Tokenization for Licensed Asset Managers: MiFID II Classification and Compliant Issuance *(renamed to escape "how to tokenize real estate" SERP — that keyword is claimed by Track A A1 #10)*
-- STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiCA *(trending)* 🇪🇺
-- *(KILLED: "Security Token Offerings (STOs) vs. ICOs" — redundant with STOs-under-MiCA above; ICOs are a deprecated 2017–2018 concept)*
+- STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiFID II, Prospectus Regulation, and DLT Pilot Regime *(trending. **Renamed from "Under MiCA" — STOs are MiFID II financial instruments, not MiCA crypto-assets per Art. 2(4); article must lead with MiFID II classification, not MiCA.**)* 🇪🇺
+- *(KILLED: "Security Token Offerings (STOs) vs. ICOs" — redundant with STOs-MiFID-II-Prospectus-DLT-Pilot article above; ICOs are a deprecated 2017–2018 concept)*
 - Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know *(trending — watch-candidate, news-cycle dependent; kill if no inbound in 90 days)*
 
 **MOFU — Compliance Depth:**
-- MiCA and MiFID II for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch 🇪🇺
+- MiFID II + DLT Pilot Regime for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch (and Where MiCA Actually Fits) 🇪🇺 *(article must lead with MiFID II as the primary regime for RWA ownership tokens; explain MiCA only as a service-level CASP layer or for ART-structured tokens. **Renamed from "MiCA and MiFID II for Tokenized Assets" — the original ordering misframed MiCA as primary.**)*
 - *(MiCA vs. MiFID II classification boundary: see "MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset" in A1 TOFU — shared `[Both]` article; split CTA footer serves both tracks)*
 - MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺
 - ERC-3643 for Licensed Asset Managers: How Permissioned Token Standards Satisfy MiFID II Compliance and Investor Whitelisting Requirements 🇪🇺 *(A1 has ERC-3643 framed for crypto-native builders; this version is for licensed issuers — Tom and Carol care about MiFID II defensibility, not protocol architecture trade-offs)*
@@ -855,7 +865,7 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 >
 > **Gate-dependent Track A Phase 1 pieces** (publish out-of-sequence when gate clears, not date-locked in calendar):
 > - 🎬 [CASE STUDY] *How We Tokenized [Asset Class] for [Client]: From First Smart Contract to Investor-Ready Platform* — A1, Decision, RWA Felix, **9.0** (hard gate: delivered client deployment with screenshot rights)
-> - *Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiCA-Compliant Post-Launch* — A1, Post-Launch, RWA Felix / Technical Founder, **8.3**
+> - *Hardening a Live RWA Tokenization Platform: Adding New Asset Classes, Updating Oracles, and Staying MiFID II + DLT Pilot Compliant Post-Launch* — A1, Post-Launch, RWA Felix / Technical Founder, **8.3**
 
 ### Track A — Phase 2: Other Active Verticals *(Start After Phase 1 Complete)*
 
@@ -901,7 +911,7 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 > - B1-#4 *Utility NFTs in FinTech: How NFTs Map to Real-World Assets* — B1, Awareness, CEO/CPO, **8.4** *(NFT-for-RWA framing duplicates RWA cluster core message; ERC-3643 has largely replaced ad-hoc NFT patterns)*
 > - B1-#11 *Tokenized US Treasuries as DeFi Collateral: What FinTechs Need to Know* — B1, Consideration, CEO/CFO, **8.1** *(news-cycle dependent)*
 >
-> **Killed:** *Security Token Offerings (STOs) vs. ICOs* — redundant with B1-#10 STOs Under MiCA; ICOs are a deprecated 2017–2018 concept.
+> **Killed:** *Security Token Offerings (STOs) vs. ICOs* — redundant with B1-#10 STOs Under MiFID II + Prospectus + DLT Pilot Regime; ICOs are a deprecated 2017–2018 concept.
 >
 > **Gate-dependent B1 pieces** (publish when gate clears):
 > - 🎬 [CASE STUDY] *WealthTech / RWA Platform Build* — Decision, CEO/CPO, **8.3** (hard gate: delivered client deployment with screenshot rights)

@@ -70,7 +70,7 @@ Technical buyer. Needs to offload security liability + solve Web3 talent shortag
 Q2 2026 active focus ordered by priority (document order now matches stated priority after 2026-04-15 re-ingest):
 
 ### ⭐ Segment 1 — Asset Tokenization & WealthTech (PRIMARY Q2 2026)
-$20k–$250k ACV · 60–90 day cycle · Inbound content + development · Strategic Sam opens, Tom evaluates, Carol engages early for regulated instruments. RWA, STOs, tokenized securities. MiCA + MiFID II intersection. AI + tokenization is emerging search trend *[unvalidated — pending 2026-05-31]* — content at this intersection outperforms 3 months of LinkedIn outbound.
+$20k–$250k ACV · 60–90 day cycle · Inbound content + development · Strategic Sam opens, Tom evaluates, Carol engages early for regulated instruments. RWA, STOs, tokenized securities. **Primary regime: MiFID II + Prospectus Regulation + DLT Pilot Regime** (ownership tokens are transferable securities — MiCA Art. 2(4) excludes them). MiCA only enters as a service-level CASP license if the firm also runs custody/exchange on non-MiFID crypto-assets, or for ART-structured tokens. AI + tokenization is emerging search trend *[unvalidated — pending 2026-05-31]* — content at this intersection outperforms 3 months of LinkedIn outbound.
 
 ### Segment 2 — ExchangeTech (Licensed or License Applied)
 $20k–$250k · 30–60 day cycle · Development + audit · Technical Tom primary. CEX, DEX, or DeFi — **architecture is irrelevant**. Two gates: (a) holds or formally filed for a financial services license; (b) expanding an existing FinTech business into trading. MiCA CASP framing for EU.
@@ -88,7 +88,7 @@ Existing regulated e-money/payment companies adding crypto wallet features. Not 
 SEO-driven inbound across all regulated FinTech verticals. Buyers searching "white-label tokenization platform for asset managers," "white-label MiCA-compliant CEX," "white-label crypto wallet for licensed e-money," "white-label digital lending platform with blockchain rails," "white-label crypto custody" want a productized, screenshot-able, **regulator-grade** platform — not consulting hours. End-to-end delivery: smart contracts + audit + compliance integration + full UI/UX layer + vendor risk pack ready for Carol Day 1.
 
 **Per-vertical bundle:**
-- **WealthTech / RWA (Seg 1):** STO contracts + MiCA/MiFID II compliance hooks + AI valuation hooks; issuer dashboard, investor portal, KYC/AML, regulator reporting view
+- **WealthTech / RWA (Seg 1):** ERC-1400/3643 STO contracts + MiFID II / Prospectus / DLT Pilot compliance hooks + AI valuation hooks; issuer dashboard, investor portal, KYC/AML, regulator reporting view (NCA + ESMA-shaped reports, not MiCA white paper)
 - **ExchangeTech (Seg 2):** matching engine / AMM contracts + travel rule + Chainalysis hooks + on-chain AML; trading UI, KYC flow, treasury / admin console, regulator reporting
 - **LendTech (Seg 3):** automated origination / underwriting / loan-book contracts + credit assessment hooks; lender + borrower dashboard, credit-decision flow, admin
 - **WalletTech (Seg 4):** custody + multi-chain + stablecoin settlement contracts + e-money license hooks; e-money wallet UI, send/receive/swap, KYC/AML flow
@@ -113,14 +113,25 @@ SEO-driven inbound across all regulated FinTech verticals. Buyers searching "whi
 ## Objection Handling Highlights
 
 - **"Your rates are too high"** → anchor to 18-month internal hire + delay cost. PayTech: quantify 1.5% × annual transaction volume.
-- **"Our compliance team won't approve"** (Sam) → provide jurisdiction compliance brief (MiCA ready now), join call with compliance lead.
+- **"Our compliance team won't approve"** (Sam) → provide jurisdiction compliance brief (per segment: MiCA for Seg 2 ExchangeTech, MiFID II + DLT Pilot for Seg 1 RWA, PSD3 for Seg 4/5 — do not default to MiCA across all segments), join call with compliance lead.
 - **"We need a formal vendor risk assessment"** (Carol) → don't shortcut. Send vendor risk pack immediately (ownership structure, ISO/SOC 2, data residency, compliance brief, sample audit report). Most approvals unblock within 1 week when pack is complete.
 - **"Is blockchain actually the right solution?"** → run 4-question fit assessment live. If <2 yeses, say so honestly — credibility closes more deals than enthusiasm.
 - **"AI vendor's logging already covers EU AI Act"** → most centralised logs are editable. Reframe: on-chain layer is tamper-proof evidence for regulator challenge.
 
 ## Regulatory Frameworks
 
-MiCA (EU — primary), MiFID II (tokenized securities), DLT Pilot Regime, DORA, EU AI Act (high-risk AI audit trail). Watch-geography: FCA, FinCEN/SEC, MAS, ADGM/VARA/DFSA.
+**Per-segment EU primary regime** (do not default to MiCA across all segments):
+
+| Segment | Primary | Secondary |
+|---|---|---|
+| Seg 1 RWA / WealthTech | MiFID II + Prospectus + **DLT Pilot Regime** | MiCA only if ART or CASP services on non-MiFID assets · DORA · EU AI Act (if AI valuation) |
+| Seg 2 ExchangeTech | **MiCA CASP** | MiFID II if trading MiFID-classified tokens · DORA · AML/AMLA Travel Rule |
+| Seg 3 LendTech | **CCD2** · EU AI Act (credit scoring = high-risk) | AML/AMLA |
+| Seg 4 WalletTech | **PSD3 / PSR** · eIDAS 2.0 | MiCA if crypto wallet feature · AML/AMLA |
+| Seg 5 PayTech | **PSD3 / PSR** · IPR | AML/AMLA |
+| Seg 6 RegTech | EU AI Act (KYC AI = high-risk) | AML/AMLA |
+
+Watch-geography: FCA, FinCEN/SEC, MAS, ADGM/VARA/DFSA. Cross-cutting: GDPR + DORA apply to all.
 
 ## Routing
 

@@ -51,7 +51,7 @@ Mixing motions in a single outreach creates confusion — lead with one.
 ## Personas
 
 ### Founding Felix — Technical Founder / CTO
-Two profiles. **DeFi/protocol Felix** builds the core protocol, fears exploit wiping the treasury, found at ETHGlobal / DevCon / crypto Twitter. Win = clean audit, zero critical vulns, mainnet on schedule. **RWA Felix** (Segment 1) is a domain expert (real estate, fleet, commodity) — not necessarily technical, found at PropTech/RWA Summit/MiCA forums. Win = first asset tokenized and legally enforceable.
+Two profiles. **DeFi/protocol Felix** builds the core protocol, fears exploit wiping the treasury, found at ETHGlobal / DevCon / crypto Twitter. Win = clean audit, zero critical vulns, mainnet on schedule. **RWA Felix** (Segment 1) is a domain expert (real estate, fleet, commodity) — not necessarily technical, found at PropTech / RWA Summit / DLT Pilot Regime / Security Token Summit forums (not MiCA forums — MiCA is the wrong regulator for ownership-token RWA). Win = first asset tokenized and legally enforceable.
 
 ### Product Paulo — Product Lead / Head of Engineering
 Owns the roadmap. Ship faster than competitors without stretching the team. Win = feature velocity maintained, no security regressions, team not burned out.
@@ -62,7 +62,7 @@ Owns security mandate at larger protocols ($10M+ raised). Reads audit reports li
 ## Qualifying Criteria
 
 - **Strongest signal (DeFi):** upcoming audit deadline or recent exploit in their ecosystem.
-- **Strongest signal (RWA):** first asset issuance or MiCA compliance deadline confirmed.
+- **Strongest signal (RWA):** first asset issuance scheduled, or active engagement with NCA on MiFID II authorization / DLT Pilot Regime application (NOT MiCA — RWA ownership tokens are MiFID instruments, not crypto-assets under MiCA Art. 2(4)).
 - **Must-have:** technical founder/CTO (or RWA domain-expert founder with budget authority) with confirmed budget; smart contract codebase exists or confirmed asset to tokenize; active launch timeline.
 - **Budget floor (hard gate):** $20k+ for Segments 2–6 and 8–10; **$30k+ for Segment 1 (RWA)** to match segment ACV target.
 - **Budget type qualifier:** (1) founder-controlled wallet/multisig → 1–3 days; (2) DAO treasury vote → +2–4 weeks (pre-write the governance proposal); (3) token-denominated → confirm stablecoin liquidity, not just vested tokens.

@@ -259,6 +259,20 @@ All three share a common KYC Registry and connect to an Oracle for off-chain rev
 
 ---
 
+## Regulatory Classification
+
+The Car Token (ERC-1400 / ERC-3643 representing SPV equity + revenue rights) is a security token by design — confers ownership, profit share, voting. Jurisdiction mapping:
+
+| Jurisdiction | Regime | Key obligations |
+|---|---|---|
+| **EU** | **MiFID II + Prospectus Regulation** (token = transferable security; **not** MiCA — Art. 2(4) excludes financial instruments). Secondary trading on a regulated DLT platform = **DLT Pilot Regime** (DLT MTF / TSS). Issuer authorization or partnership with a licensed investment firm required. | Prospectus or exemption (≤€8M private placement, qualified-investor-only, etc.); MiFID-compliant investor categorization; transaction reporting; DLT Pilot operator for secondary venue |
+| **US** | Reg D 506(c) (accredited only) or Reg A+ (retail with SEC qualification); secondary on an ATS or licensed exchange. Token is a security under Howey by design. | Investor accreditation verification; SEC filings; transfer restrictions per Reg D |
+| **MENA (ADGM / DFSA / VARA)** | Investment Token regime (security token) under FSRA / DFSA / VARA Virtual Asset framework — varies by emirate | Issuer authorization; investor categorization; custody under licensed VASP |
+
+The "30% per-investor cap" and "12-month lock-up" defaults in this design align with EU MiFID retail-protection conventions and US Reg D resale restrictions respectively — both should be set per-jurisdiction during deployment, not hardcoded as global defaults.
+
+---
+
 ## Risk Factors and Mitigations
 
 | Risk | Mitigation |

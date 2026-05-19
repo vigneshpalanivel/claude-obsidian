@@ -46,11 +46,11 @@ Two ICP streams run simultaneously from the same profile:
 | Item | Requirement |
 |------|-------------|
 | Creator Mode | On (mandatory before any outreach) |
-| Profile Headline | Updated to lead with RWA — "CEO @ InnBlockchain, Blockchain Engineering for Regulated FinTech, RWA Tokenization · WealthTech · ExchangeTech, Web3 Security, MiCA Compliance" |
-| Banner | Updated — remove "Turn Your Business Ideas Into Reality" / "200+ Mentored" |
-| Featured Section | InnBlockchain service pages + 1 MiCA/RWA article |
-| About Section | ICP pain-point language (MiCA, smart contract security, Web3 talent gap) |
-| Skills | Smart Contract Security, Solidity, MiCA Compliance, RWA Tokenization, DeFi |
+| Profile Headline | "CEO @ InnBlockchain \| RWA Tokenization (MiFID II + DLT Pilot) · WealthTech · ExchangeTech (MiCA CASP) \| Smart Contract Security \| Blockchain Engineering for EU Regulated FinTech \| 7+ Years" *(rev 2026-05-19 — regime split per segment; original paired MiCA with RWA which is a Carol-credibility risk under Art. 2(4))* |
+| Banner | Updated — remove "Turn Your Business Ideas Into Reality" / "200+ Mentored". Hero line: "RWA Tokenization (MiFID II + DLT Pilot) · MiCA-Compliant Exchange & Wallet Infrastructure · Audit-Ready by Design" |
+| Featured Section | InnBlockchain service pages + 1 RWA / MiFID II + DLT Pilot article (NOT a MiCA/RWA article — wrong regime pairing) + 1 MiCA CASP article for ExchangeTech segment |
+| About Section | ICP pain-point language — **per-segment regime**: MiFID II + DLT Pilot for RWA / WealthTech; MiCA for ExchangeTech; PSD3 for WalletTech; CCD2 for LendTech. Plus: smart contract security, Web3 talent gap |
+| Skills | Smart Contract Security, RWA Tokenization, **MiFID II Compliance, DLT Pilot Regime**, Solidity, MiCA Compliance (active for ExchangeTech / WalletTech), DeFi |
 | Showcase Pages | Smart Contract Security · FinTech Blockchain Engineering · RWA Tokenization |
 | Newsletter | "Secure by Design" — bi-weekly, 400-700 words, target 500 subscribers in 90 days |
 
@@ -69,8 +69,9 @@ Two ICP streams run simultaneously from the same profile:
 
 | Cluster | Primary ICP |
 |---------|------------|
-| MiCA compliance engineering | FinTech (Sam, Tom, Carol) |
-| RWA tokenization security | FinTech WealthTech + Crypto Native RWA Felix |
+| MiCA CASP compliance engineering (ExchangeTech, WalletTech) | FinTech Seg 2/4 (Sam, Tom, Carol) — NOT for RWA |
+| MiFID II + DLT Pilot Regime tokenization engineering | FinTech WealthTech (Seg 1) + Crypto Native RWA Felix |
+| RWA tokenization security | FinTech WealthTech + Crypto Native RWA Felix (frame under MiFID II + DLT Pilot, NOT MiCA) |
 | Smart contract audit readiness | Crypto Native (Felix, Sasha) |
 | AI-generated smart contract risk | Both ICPs |
 | Web3 talent gap solutions | Both ICPs |
@@ -94,7 +95,7 @@ Tuesday 08:00-09:30, Wednesday 09:00-10:30, Thursday 08:00-10:00, Monday 07:30-0
 |----------|-------|----------|
 | 1 | FinTech RWA/WealthTech | ABM sequences; asset-specific hooks |
 | 1 | Crypto Native RWA | ABM sequences; asset-first framing |
-| 2 | FinTech non-RWA (Exchange/Lend/Wallet) | ABM sequences; MiCA compliance framing |
+| 2 | FinTech non-RWA (Exchange/Lend/Wallet) | ABM sequences; per-segment framing — MiCA CASP for Exchange + Wallet; CCD2 + EU AI Act for Lend |
 | 2 | Channel Partner P2 | Sub-contracting angle; silent delivery arm framing |
 | 2 | DeFi/Protocol Crypto Native | Trigger-based only — exploit, funding, audit, job posting |
 
@@ -124,7 +125,7 @@ RWA leads (both FinTech WealthTech and Crypto Native PropTech/asset-backed) are 
 
 | FinTech RWA | Crypto Native RWA |
 |-------------|------------------|
-| Compliance-first framing (MiCA, MiFID II, licensing) | Ownership-risk-first framing (one flaw compromises property rights) |
+| Compliance-first framing (**MiFID II + Prospectus Regulation + DLT Pilot Regime** — NOT MiCA; ownership tokens are excluded from MiCA per Art. 2(4)) | Ownership-risk-first framing (one flaw compromises property rights) |
 | Strategic Sam (CEO/CPO) is primary | RWA Felix (asset-backed founder) is primary |
 | Sales Navigator: Financial Services + 50-500 employees | Sales Navigator: Real Estate/Commodities + Founder/CTO |
 | Regulatory deadline is the trigger | First asset issuance date is the trigger |
@@ -178,7 +179,7 @@ The dependency cascades across every layer of the strategy:
 
 Profile publish and outreach launch are separate readiness events:
 
-- **Pre-Publish Hard Gate** — assets the published profile **promises or implies** (vendor risk pack, sample audit, MiCA brief, filled references, RWA landing page live, 2-3 recommendations, Experience entry, claims verified). Tracked in [[InnBlockchain Vignesh LinkedIn Profile]].
+- **Pre-Publish Hard Gate** — assets the published profile **promises or implies** (vendor risk pack, sample audit, **per-segment compliance briefs** — MiFID II + DLT Pilot for RWA, MiCA for ExchangeTech/WalletTech, PSD3 for WalletTech, CCD2 for LendTech; filled references, RWA landing page live, 2-3 recommendations, Experience entry, claims verified). Tracked in [[InnBlockchain Vignesh LinkedIn Profile]].
 - **Outreach Readiness Gate** — additional assets that don't appear on the profile but materially affect conversion once outreach traffic starts (Featured PDFs, 5-8 recommendations, 4-6 weeks of feed posts, Sales Nav setup, daily-budget owner). Tracked in [[LinkedIn-Outreach-Strategy-InnBlockchain]].
 
 Splitting these allows profile publish ~3-4 weeks earlier than a single combined gate.

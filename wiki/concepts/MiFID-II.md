@@ -3,7 +3,7 @@ title: "MiFID II: Markets in Financial Instruments Directive II"
 type: concept
 status: current
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-05-19
 tags:
   - MiFID-II
   - EU
@@ -128,6 +128,9 @@ ESMA published binding guidelines effective **May 18, 2025** (published March 19
 | NFTs (standard) | Neither (case-by-case if investment structure) |
 
 **MiFID II investment firms** already licensed can notify their NCA (40-day notice) to provide equivalent crypto-asset services without separate MiCA authorization.
+
+> [!warning] "Yield = security, no yield = MiCA" is a common misframe
+> The classification trigger is **structural** (transferability + claim on issuer or underlying asset), not economic. A non-yielding fractional ownership token (e.g., real estate fraction with no rental distribution, pure capital-appreciation token) is still a MiFID II transferable security. Yield-distribution is irrelevant — it influences product design, not classification. This is where US Howey-style intuition misleads in the EU context.
 
 ---
 

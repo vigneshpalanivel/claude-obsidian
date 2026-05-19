@@ -73,7 +73,7 @@ Vignesh
 
 **What good looks like (sample they might write):**
 
-> We engaged InnBlockchain to ship the smart-contract layer for our tokenization product under MiCA. Vignesh's team integrated cleanly with our compliance and engineering processes, delivered the vendor-risk pack on Day 1 (which our CCO approved without revisions), and hit our launch date with zero critical findings on the audit. Different operating standard from most blockchain agencies we've evaluated.
+> We engaged InnBlockchain to ship the smart-contract layer for our tokenization product under **MiFID II + DLT Pilot Regime** (with MiCA CASP framing on the secondary-trading side). Vignesh's team integrated cleanly with our compliance and engineering processes, delivered the vendor-risk pack on Day 1 (which our CCO approved without revisions), and hit our launch date with zero critical findings on the audit. Different operating standard from most blockchain agencies we've evaluated — they correctly identified the regime stack upfront without us having to correct it. *(Note for selection: prior version of this sample said "under MiCA" — that's the wrong regime for RWA / tokenized securities and would be a credibility error for the recommender to publish. Updated 2026-05-19.)*
 
 ---
 
@@ -181,7 +181,7 @@ Vignesh
 
 **What good looks like:**
 
-> I've worked alongside InnBlockchain on two MiCA-regulated client engagements. They treat compliance as an engineering deliverable, not a post-build checkbox — which is rare. The regulatory documentation they produce (vendor risk pack, sample audit reports, jurisdiction briefs) holds up to formal compliance review without rework.
+> I've worked alongside InnBlockchain on two EU-regulated client engagements — one under MiFID II + DLT Pilot Regime (tokenized securities), one under MiCA CASP (licensed exchange). They treat compliance as an engineering deliverable, not a post-build checkbox — which is rare. The regulatory documentation they produce (vendor risk pack, sample audit reports, per-segment jurisdiction briefs) holds up to formal compliance review without rework. Notable: they correctly identified the regime split between the two clients upfront — most blockchain agencies default to MiCA framing for everything.
 
 **Caveat:** This is the hardest category to land. Compliance professionals have institutional and personal-liability reasons to avoid public endorsements. Realistic fallback: **a written reference letter or testimonial quote for your website** — doesn't carry their LinkedIn association but still gives you a name and firm to cite in pitches.
 

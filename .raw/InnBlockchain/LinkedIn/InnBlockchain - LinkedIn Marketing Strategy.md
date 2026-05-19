@@ -79,7 +79,7 @@ Understanding the algorithm determines when and how to post.
 2. **Comments over reactions** — a comment carries 3–5× more weight than a like. Write posts that invite a short, easy response.
 3. **Dwell time** — how long viewers spend reading. Long-form carousels and multi-paragraph text posts outperform short posts.
 4. **Connection proximity** — 1st-degree connections see posts first, then 2nd-degree. Building a 1st-degree network of target ICPs directly amplifies organic reach.
-5. **Relevance signals** — LinkedIn matches post content to viewer interests based on their activity and job function. Use ICP-specific keywords (MiCA, RWA, Solidity, smart contract audit) in every post — they act as targeting.
+5. **Relevance signals** — LinkedIn matches post content to viewer interests based on their activity and job function. Use ICP-specific keywords in every post — they act as targeting. **Per-segment keyword regime:** RWA / WealthTech posts = MiFID II, DLT Pilot Regime, Prospectus, STO, tokenized securities, RWA (NOT MiCA — wrong regime); ExchangeTech posts = MiCA CASP, CEX/DEX; WalletTech posts = PSD3, eIDAS, MiCA; LendTech = CCD2, EU AI Act; cross-cutting = Solidity, smart contract audit, Web3 security.
 
 ### 3.1.1 What the Algorithm Penalises
 
@@ -130,7 +130,7 @@ Post personal (Vignesh) and company page on alternating days — not the same da
 LinkedIn truncates after ~210 characters — the first 2 lines decide whether anyone clicks "see more." Use one of these patterns:
 
 - **Counterintuitive claim:** *"Most crypto exchanges get hacked not because of blockchain — it's poor API key management."*
-- **Specific number:** *"3 smart contract patterns EU WealthTech platforms get wrong before a MiCA audit."*
+- **Specific number:** *"3 smart contract patterns EU WealthTech platforms get wrong before a MiFID II + DLT Pilot Regime audit."* *(for RWA / tokenized securities posts — MiCA framing would be wrong for the WealthTech RWA audience)* OR *"3 smart contract patterns EU exchanges get wrong before a MiCA CASP audit."* *(for ExchangeTech posts)*
 - **Fear consequence:** *"One oracle exploit on an RWA platform doesn't drain a pool — it transfers someone's property."*
 - **Challenge a common belief:** *"Passing a Slither audit doesn't mean your contracts are safe. Here's what it misses."*
 
@@ -152,7 +152,7 @@ LinkedIn truncates after ~210 characters — the first 2 lines decide whether an
 
 Use 3–5 hashtags per post. Rotate between:
 - **Broad reach:** `#blockchain` `#Web3` `#DeFi` `#FinTech`
-- **ICP-specific:** `#MiCA` `#RWATokenization` `#SmartContractSecurity` `#WealthTech`
+- **ICP-specific:** `#RWATokenization` `#MiFIDII` `#DLTPilotRegime` `#SmartContractSecurity` `#WealthTech` `#MiCA` *(MiCA tag still useful for ExchangeTech / WalletTech reach — but do NOT pair `#MiCA` with `#RWATokenization` in the same post; it signals regime confusion to compliance-savvy readers)*
 - **Platform discovery:** `#LinkedInFinTech` `#BlockchainSecurity`
 
 Do not use hashtags in the body of the post — group them at the bottom, after the CTA.
@@ -181,8 +181,9 @@ LinkedIn's algorithm categorises creators by topic. Posting consistently on the 
 
 | Topic Cluster | Primary ICP | Target Association |
 | :--- | :--- | :--- |
-| MiCA compliance engineering | FinTech (Sam, Tom, Carol) | *"Vignesh is the person to talk to about MiCA + blockchain"* |
-| RWA tokenization security | FinTech WealthTech + CN RWA Felix | *"InnBlockchain builds RWA platforms that survive regulatory review"* |
+| MiCA CASP compliance engineering (ExchangeTech, WalletTech, DeFi) | FinTech (Sam, Tom, Carol) for Seg 2/4 | *"Vignesh is the person to talk to about MiCA CASP + blockchain — for licensed exchanges and crypto wallets"* (NOT for RWA — wrong regime) |
+| MiFID II + DLT Pilot Regime tokenization engineering | FinTech WealthTech + CN RWA Felix (Seg 1) | *"Vignesh is the person to talk to about RWA tokenization that survives a MiFID II / Prospectus / DLT Pilot review — not just MiCA-checkbox vendors"* |
+| RWA tokenization security | FinTech WealthTech + CN RWA Felix | *"InnBlockchain builds RWA platforms that survive MiFID II + DLT Pilot regulatory review"* |
 | Smart contract audit readiness | Crypto Native (Felix, Sasha) | *"They know how to get a protocol audit-ready fast"* |
 | AI-generated smart contract risk | Both ICPs | *"They flagged this problem before anyone else did"* |
 | Web3 talent gap solutions | Both ICPs (Sam, Paulo) | *"They solve the engineering capacity problem without the hiring risk"* |
@@ -199,7 +200,7 @@ A LinkedIn Newsletter sends a direct notification to every subscriber when a new
 - **Suggested name:** *"Secure by Design"* — blockchain engineering and Web3 security for FinTech and protocol teams
 - **Cadence:** Bi-weekly (every 2 weeks) — consistency matters more than frequency
 - **Format:** 400–700 words. One topic per issue. End with a question or a CTA to reply.
-- **Topic rotation:** Alternate between FinTech angle (MiCA, RWA, compliance) and Crypto Native angle (audit readiness, protocol security, AI-generated code risk)
+- **Topic rotation:** Alternate between FinTech angle (RWA = MiFID II + DLT Pilot; ExchangeTech = MiCA CASP; WalletTech = PSD3 + MiCA; LendTech = CCD2 + AI Act) and Crypto Native angle (audit readiness, protocol security, AI-generated code risk). Do NOT pair RWA with MiCA in the same post — regime mismatch.
 - **Growth tactic:** Promote each new issue as a LinkedIn post on publish day — post engagement feeds newsletter discovery
 
 > [!tip] Why Newsletter Over Articles
@@ -215,9 +216,9 @@ Leaving substantive comments on high-reach posts exposes Vignesh's profile to th
 
 | Account Type | Examples | Why |
 | :--- | :--- | :--- |
-| FinTech thought leaders | Finextra editors, Money20/20 speakers, MiCA regulatory commentators | Their audience is Strategic Sam and Technical Tom |
+| FinTech thought leaders | Finextra editors, Money20/20 speakers, MiCA regulatory commentators, **MiFID II + DLT Pilot Regime tokenization commentators** (BaFin / AMF / ESMA voices on tokenized securities) | Their audience is Strategic Sam and Technical Tom |
 | Web3 / DeFi ecosystem voices | Protocol founders, DeFi researchers, Web3 VCs | Their audience is Founding Felix and Security Sasha |
-| EU blockchain regulatory voices | MiCA implementation commentators, ESMA/EBA discussions | High relevance to both ICPs |
+| EU blockchain regulatory voices | MiCA implementation commentators (Seg 2/4), **MiFID II + DLT Pilot Regime tokenization commentators (Seg 1 RWA)**, ESMA/EBA discussions | High relevance — segment-tag per audience |
 
 **Comment quality rules:**
 - Add a specific point, counterargument, or data point — not "great post" or agreement-only responses
@@ -236,7 +237,7 @@ Authority is validated by what others say about you — not what you say about y
 **Recommendations:**
 - Target: 5 minimum on Vignesh's profile — at least 2 from FinTech clients, 2 from Crypto Native clients
 - Ask immediately after a successful project delivery — not cold, not months later
-- Give a specific prompt: *"Could you mention the MiCA compliance side / the audit outcome / the on-time delivery?"*
+- Give a specific prompt scoped to the engagement's actual regime — for a tokenized-securities / RWA build: *"Could you mention the MiFID II + DLT Pilot Regime engineering side / the audit outcome / the on-time delivery?"* For a licensed CEX/DEX/CASP build: *"Could you mention the MiCA CASP compliance side / the audit outcome / the on-time delivery?"* Match the prompt to what they actually engaged you for — asking a tokenized-securities client to mention "MiCA compliance" exposes a regime confusion they'll judge.
 - Full guidance: [[LinkedIn Profile Audit Vignesh]]
 
 **Being cited and reshared:**

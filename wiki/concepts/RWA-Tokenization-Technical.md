@@ -125,4 +125,7 @@ A full RWA tokenization platform build covers:
 4. **Platform dashboards** — Admin panel for SPV management; investor portal for buying/selling
 5. **Wallet and custody integration** — Connecting enterprise custody solutions
 
+> [!note] EU jurisdiction
+> Tokens minted via this process (ERC-1400 / ERC-3643 representing SPV ownership + yield rights) are **MiFID II transferable securities**, not MiCA crypto-assets. Issuance requires a Prospectus (or Prospectus Regulation exemption). Secondary trading + settlement infrastructure runs under the **DLT Pilot Regime** (DLT MTF / SS / TSS), not MiCA CASP. See [[MiFID-II]], [[DLT-Pilot-Regime]], [[EU-Fintech-Compliance-Landscape]].
+
 For a use-case-specific design, see [[Car-RWA-Tokenization]] — full system design including profit sharing, DAO governance, and IoT revenue verification.

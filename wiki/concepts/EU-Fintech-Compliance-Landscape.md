@@ -2,7 +2,7 @@
 type: concept
 title: "EU Fintech Compliance Landscape"
 created: 2026-04-16
-updated: 2026-05-14
+updated: 2026-05-19
 tags:
   - EU
   - fintech
@@ -86,7 +86,7 @@ Regulations overlap and create compliance tension points:
 
 | Segment | EU Compliance Obligations |
 |---|---|
-| **Seg 1 — RWA Tokenization** | **MiCA** (CASP registration for custody/trading of crypto-assets) · **MiFID II** (if instrument qualifies as a financial instrument — equity/debt token) · **DLT Pilot Regime** (if building DLT MTF/SS/TSS for tokenized securities settlement) · **AML/AMLA** (Travel Rule for asset transfers) · **GDPR** · **EU AI Act** (if AI used for asset valuation or oracle inputs) |
+| **Seg 1 — RWA Tokenization** | **MiFID II + Prospectus Regulation** (primary — any token conferring ownership / claim on issuer or underlying asset is a transferable security regardless of yield; MiCA Art. 2(4) carve-out applies) · **DLT Pilot Regime** (DLT MTF / SS / TSS for tokenized securities trading + settlement — the real on-chain infra path, not MiCA) · **MiCA** (only if token is an **Asset-Referenced Token** — references value without conferring ownership — *or* if the firm also provides CASP services for non-MiFID crypto-assets; CASP licensing is service-level and independent of token classification) · **DORA** (ICT resilience for the platform) · **AML/AMLA** (Travel Rule) · **GDPR** · **EU AI Act** (if AI used for asset valuation or oracle inputs) |
 | **Seg 2 — DEX & On-Chain Trading** | **MiCA** (CASP registration mandatory for EU-facing trading/custody) · **AML/AMLA** (Travel Rule ≥€1,000) · **DORA** (if classified as critical ICT third-party) · **GDPR** |
 | **Seg 3 — DeFi Lending & Yield** | **MiCA** (CASP if lending/yield products constitute crypto-asset services) · **AML/AMLA** · **EU AI Act** (if AI used for credit/risk scoring — high-risk AI category) · **GDPR** |
 | **Seg 4 — Non-Custodial & MPC Wallets** | **MiCA** (CASP if custody services offered; non-custodial under active scrutiny) · **AML/AMLA** (Travel Rule) · **GDPR** |
@@ -99,6 +99,14 @@ Regulations overlap and create compliance tension points:
 
 > [!NOTE] NFT Grey Zone
 > MiCA explicitly excludes unique NFTs but ESMA is actively probing fractionalized NFTs and collections with fungible economics. Compliance posture for Seg 5 clients must be treated as live and evolving, not settled.
+
+> [!WARNING] RWA ≠ MiCA — Common Misframe
+> MiCA does not "cover" RWA tokenization by default. Token classification is mutually exclusive between MiFID II and MiCA (Article 2(4)):
+> - **Ownership-conferring token** (fractional real estate, tokenized bond/equity, revenue claim) → **MiFID II financial instrument**, regardless of whether yield is distributed. Path: Prospectus Regulation + DLT Pilot Regime + DORA.
+> - **Value-referencing token without ownership** (basket-pegged, asset-backed stable value) → **MiCA Asset-Referenced Token (ART)**. Different category, narrow use case.
+> - **CASP authorization under MiCA** is a *service-level* license (custody, trading, exchange) and can still apply to a firm whose primary token is MiFID-classified — but only if that firm also services non-MiFID crypto-assets.
+>
+> Selling MiCA-as-RWA-cover to a Seg 1 prospect is a credibility risk: wrong regulator pathway (ESMA national CAs vs MiCA framework), wrong offering document (prospectus vs white paper), wrong infrastructure carve-out (DLT Pilot Regime vs CASP).
 
 ### FinTech ICP
 
@@ -117,9 +125,9 @@ Regulations overlap and create compliance tension points:
 
 | Regulation | Crypto Native ICP | FinTech ICP |
 |---|---|---|
-| **MiCA** | All segments (primary) | ExchangeTech, WealthTech, WalletTech, BankTech |
-| **MiFID II / III** | Seg 1 RWA only (if financial instrument) | WealthTech, ExchangeTech (primary) |
-| **DLT Pilot Regime** | Seg 1 RWA (if building tokenized securities infra) | WealthTech (primary — DLT MTF/SS/TSS) |
+| **MiCA** | Seg 2-10 primary; Seg 1 only if ART or CASP services on non-MiFID assets | ExchangeTech, WalletTech, BankTech (WealthTech only if non-MiFID crypto-asset side) |
+| **MiFID II / III** | Seg 1 RWA primary (ownership tokens are securities by default) | WealthTech (primary), ExchangeTech |
+| **DLT Pilot Regime** | Seg 1 RWA (DLT MTF / SS / TSS — the real on-chain securities infra path) | WealthTech (primary — DLT MTF/SS/TSS) |
 | **AML / AMLA** | All segments | All segments |
 | **DORA** | Seg 8 L2, Seg 10 AI×Crypto | BankTech, InsurTech, WealthTech, ExchangeTech |
 | **EU AI Act** | Seg 3 DeFi Lending, Seg 10 AI×Crypto | LendTech, RegTech, InsurTech, BankTech |
@@ -136,7 +144,7 @@ Regulations overlap and create compliance tension points:
 
 EU compliance is a direct revenue driver for InnBlockchain:
 - **FinTech ICP**: Compliance Carol (CCO) is the regulatory veto-holder; vendor risk pack must cover MiCA compliance context, ISO/SOC 2, data residency, and DORA third-party clauses
-- **Crypto Native ICP**: MiCA is the dominant compliance framing for all EU crypto-native clients; DLT Pilot Regime is the highest-intent hook for Seg 1 RWA
+- **Crypto Native ICP**: MiCA is the dominant framing for Seg 2-10; **Seg 1 RWA is MiFID-primary, not MiCA** — DLT Pilot Regime is both the correct infra path and the highest-intent sales hook (10 pending applications including Securitize / Spain)
 - **AI+Blockchain opportunity**: EU AI Act mandates on-chain audit trails for high-risk AI decisions (credit scoring, fraud) — direct use case for blockchain-based compliance infrastructure across LendTech, RegTech, and Seg 10 AI×Crypto
 
 See: [[MiFID-II]] | [[MiFID-III]] | [[MiCA-Regulation]] | [[DORA-Regulation]] | [[EU-AML-AMLA]] | [[EU-AI-Act-Fintech]] | [[PSD3-Open-Banking-EU]] | [[DLT-Pilot-Regime]]

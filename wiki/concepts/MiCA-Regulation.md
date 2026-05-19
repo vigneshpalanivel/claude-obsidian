@@ -2,7 +2,7 @@
 type: concept
 title: "MiCA — Markets in Crypto-Assets Regulation"
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-19
 tags:
   - MiCA
   - EU
@@ -38,10 +38,15 @@ MiCA is the EU's unified regulatory framework for crypto-asset service providers
 - Crypto transfer services
 - Advisory firms on crypto-assets
 
-**Not covered by MiCA:**
+**Not covered by MiCA (Article 2(4) exclusion):**
+- **Tokenized securities / RWA ownership tokens** (tokenized bonds, equities, fractional real estate, revenue-claim tokens) — these are MiFID II financial instruments. Classification is structural (transferability + claim on issuer/asset), **not** economic — distributing yield is not the trigger; conferring a security-like claim is. Trading/settlement infra path: **DLT Pilot Regime**, not MiCA.
 - Fully decentralized DeFi protocols (no identifiable issuer or service provider)
-- NFTs (generally, unless they qualify as financial instruments)
-- Security tokens / tokenized securities (covered by MiFID II + DLT Pilot Regime)
+- NFTs (generally, unless they qualify as financial instruments or fractionalized into fungible economic interests)
+- Pure payment instruments under PSD2/PSD3
+- Deposits, insurance contracts, pension products (covered by their own regimes)
+
+> [!warning] RWA ≠ MiCA
+> MiCA's "Asset-Referenced Token" (ART) sounds like it covers RWA tokenization. It does not. ARTs *reference* the value of underlying assets (basket-pegged stablecoins). A token that confers **ownership** of an asset — even without yield distribution — is a transferable security under MiFID II and is excluded from MiCA by Article 2(4). The two regimes are mutually exclusive at the token level.
 
 ## Implementation Timeline
 
@@ -90,8 +95,9 @@ MiCA is the EU's unified regulatory framework for crypto-asset service providers
 
 ## Impact on InnBlockchain Clients
 
-- **Crypto Native ICP (Seg 1 — RWA)**: MiCA doesn't directly cover tokenized securities (that's MiFID II + DLT Pilot), but MiCA compliance is a prerequisite for any crypto platform touching fiat off-ramps or stablecoin products
-- **FinTech ICP (Seg 1 — ExchangeTech)**: Licensed CEX/DEX operators must obtain MiCA CASP authorization by June 2026 — creates urgent need for compliant smart contract architecture
-- Content positioning: "MiCA for Technical Founders" is the highest-scored InnBlockchain Crypto Native content article (9.6)
+- **Crypto Native ICP (Seg 1 — RWA)**: MiCA is **not** the primary regime — tokenized securities sit under MiFID II + Prospectus Regulation + DLT Pilot Regime. MiCA only enters if (a) the firm also runs CASP-licensed services (custody/exchange) on non-MiFID crypto-assets on the side, or (b) the token is structured as an Asset-Referenced Token rather than an ownership token. Selling "MiCA covers your RWA" to a Seg 1 prospect is wrong-regulator framing.
+- **Crypto Native ICP (Seg 2–10)**: MiCA is the dominant framing — CASP authorization, white paper, Travel Rule, reserve requirements
+- **FinTech ICP (Seg 1 — ExchangeTech)**: Licensed CEX/DEX operators must obtain MiCA CASP authorization by June 2026 — creates urgent need for compliant smart contract architecture. Note that if the venue also trades MiFID-classified tokens, MiFID II authorization is independently required.
+- Content positioning: "MiCA for Technical Founders" is the highest-scored InnBlockchain Crypto Native content article (9.6) — but it should explicitly disclaim the RWA scope so Seg 1 readers aren't misrouted
 
 > [!gap] ESMA technical standards for several MiCA provisions were still being finalized as of late 2025. Some operational details may shift before the June 2026 deadline.

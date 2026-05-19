@@ -32,7 +32,8 @@ tags:
 > **Outreach-Gate assets (must exist before first DM sequence runs):**
 >
 > **Inbound Conversion Assets** (Featured Section on the profile — empty Featured is a quality gap, not a credibility incident, so it doesn't block publish — but it kills outreach-driven conversion):
-> - [ ] MiCA Readiness Checklist for FinTech CTOs (PDF, gated download on RWA landing page)
+> - [ ] **RWA Tokenization Compliance Checklist (MiFID II + Prospectus + DLT Pilot Regime)** for asset-backed founders (PDF, gated download on `/solutions/rwa-tokenization` landing page) — **NOT a generic "MiCA Readiness Checklist"** on that page; MiCA is the wrong regime for RWA ownership tokens and putting a MiCA-named asset on the RWA LP will immediately disqualify InnBlockchain with any compliance-savvy prospect
+> - [ ] MiCA Readiness Checklist for FinTech CTOs (PDF, gated download on `/solutions/regulated-exchange` and `/solutions/fintech-wallets` landing pages — **NOT the RWA landing page**; scope is Seg 2 ExchangeTech / Seg 4 WalletTech / Seg 3 LendTech where MiCA actually applies)
 > - [ ] Pre-Mainnet Smart Contract Self-Scan (PDF or Notion doc)
 > - [ ] RWA Tokenization Risk Checklist for Asset-Backed Founders (PDF, non-technical language)
 > - [ ] 1 anchor article published on InnBlockchain.com (RWA-focused recommended) — pinned to Featured
@@ -111,12 +112,13 @@ PayTech, RegTech, BankTech, InsurTech
 - Industry: Financial Services
 - Company size: 50–500 employees
 - Geography: EU (Germany, Netherlands, France, Ireland, Nordics, Baltics)
-- Keywords: `"RWA" OR "RWA tokenization" OR "tokenized securities" OR WealthTech OR MiCA OR "crypto exchange" OR "DeFi lending" OR "blockchain"`
+- Keywords: `"RWA" OR "RWA tokenization" OR "tokenized securities" OR WealthTech OR "MiFID II" OR "DLT Pilot Regime" OR "STO" OR "Prospectus" OR MiCA OR "crypto exchange" OR "DeFi lending" OR "blockchain"` *(MiFID II / DLT Pilot keywords surface the Seg 1 RWA-savvy buyer who has correctly identified their regime; MiCA keyword retained for Seg 2 ExchangeTech surface)*
 
 **Buying Triggers (use as personalization hooks — RWA first):**
 - 🥇 Post or announcement about tokenizing real assets, STOs, or tokenized securities
 - 🥇 Upcoming platform launch with a tokenized asset (real estate, private credit, commodities)
-- 🥇 MiCA compliance deadline or licensing push for a tokenization product
+- 🥇 **MiFID II authorization filing / Prospectus filing / DLT Pilot Regime application** announcement for a tokenization product *(NOT "MiCA deadline" — RWA ownership tokens are MiFID II financial instruments under Art. 2(4))*
+- 🥈 MiCA compliance deadline for a Seg 2 ExchangeTech / Seg 4 WalletTech / Seg 3 LendTech product *(MiCA is the correct regime for these segments, NOT for Seg 1 RWA)*
 - Job posting for "Blockchain Developer", "Solidity Engineer", or "Smart Contract Engineer"
 - New funding round announced — need to build fast
 - Competitor acquired a blockchain engineering firm
@@ -142,7 +144,7 @@ PayTech, RegTech, BankTech, InsurTech
 | :--- | :--- | :--- |
 | Real estate developers / PropTech founders tokenizing assets | EU (primary) | "One minting bug or oracle exploit doesn't drain a pool — it transfers someone's property" |
 | Vehicle fleet owners, commodity producers putting assets on-chain | EU (primary) | "We have the asset but no blockchain engineering expertise — one flaw compromises real ownership rights" |
-| Asset-backed founders building tokenization platforms | EU (primary) | "We need a smart contract build budget of $20k+ and a security-first partner who understands MiCA" |
+| Asset-backed founders building tokenization platforms | EU (primary) | "We need a smart contract build budget of $20k+ and a security-first partner who understands MiFID II classification and DLT Pilot Regime application — and who won't waste time pitching us MiCA framing for tokens that are securities" |
 
 **Qualification Minimum:** Confirmed asset to tokenize + smart contract build budget of $20k+. May not be VC-funded — qualify on asset value and platform budget, not fundraise amount. DQ: idea-stage with no underlying asset, no codebase, no build budget.
 
@@ -150,13 +152,14 @@ PayTech, RegTech, BankTech, InsurTech
 - Title: `Founder OR CEO OR CTO OR "Managing Director" OR "Head of Tokenization" OR "Head of Digital Assets"`
 - Industry: Real Estate / Commodities / Financial Services
 - Geography: EU Continental Europe
-- Keywords: `"RWA tokenization" OR "real estate tokenization" OR "asset tokenization" OR "MiCA" OR "tokenized assets" OR "property on-chain"`
-- Groups: EU PropTech tokenization groups, real estate investment communities, commodity trade finance circles, MiCA regulatory discussion groups
+- Keywords: `"RWA tokenization" OR "real estate tokenization" OR "asset tokenization" OR "tokenized securities" OR "MiFID II" OR "DLT Pilot Regime" OR "Prospectus" OR "STO" OR "tokenized assets" OR "property on-chain"` *(MiCA keyword REMOVED from RWA-specific search — RWA ownership tokens are MiFID II financial instruments; MiCA keyword would surface buyers misframed on regime and also produce false-positive matches with Seg 2 ExchangeTech)*
+- Groups: EU PropTech tokenization groups, real estate investment communities, commodity trade finance circles, **DLT Pilot Regime / Security Token / MiFID II tokenization discussion groups** *(NOT generic MiCA forums — wrong regulator for RWA)*
 
 **Buying Triggers — RWA:**
 - Upcoming first asset issuance or token launch date
 - Platform launch date with real asset backing
-- MiCA or local asset tokenization compliance deadline
+- **MiFID II authorization filing / Prospectus filing / DLT Pilot Regime application** deadline *(NOT "MiCA deadline" — RWA ownership tokens are MiFID II financial instruments under Art. 2(4))*
+- Local asset tokenization compliance deadline (Germany eWpG, French DLT bond law, Luxembourg DLT framework, etc.)
 - Posts about tokenizing real estate, vehicles, commodities, or private credit
 
 ---
@@ -252,17 +255,17 @@ PayTech, RegTech, BankTech, InsurTech
 
 ### FinTech — Primary LinkedIn Search Methods
 
-1. **Sales Navigator ABM:** Title (CTO/CEO/CPO) + Industry (Financial Services) + Location (EU: Germany, Netherlands, France, Ireland, Nordics, Baltics) + Keywords (RWA/WealthTech/tokenization/MiCA/blockchain/exchange). Run vertical-by-vertical: **WealthTech/RWA → ExchangeTech → LendTech → WalletTech** (RWA is first — do not start ExchangeTech sequences until WealthTech/RWA pipeline has 10+ active leads).
-2. **LinkedIn Groups:** FinTech Founders EU, Finextra community, blockchain-in-finance groups, MiCA regulatory discussion groups.
+1. **Sales Navigator ABM:** Title (CTO/CEO/CPO) + Industry (Financial Services) + Location (EU: Germany, Netherlands, France, Ireland, Nordics, Baltics) + Keywords (RWA/WealthTech/tokenization/MiFID II/DLT Pilot/STO/MiCA/blockchain/exchange). Run vertical-by-vertical: **WealthTech/RWA → ExchangeTech → LendTech → WalletTech** (RWA is first — do not start ExchangeTech sequences until WealthTech/RWA pipeline has 10+ active leads). **Per-vertical keyword regime:** WealthTech/RWA = MiFID II + DLT Pilot keywords (NOT MiCA); ExchangeTech = MiCA + CASP keywords; WalletTech = PSD3 + MiCA keywords; LendTech = CCD2 + EU AI Act keywords.
+2. **LinkedIn Groups:** FinTech Founders EU, Finextra community, blockchain-in-finance groups, MiCA regulatory discussion groups *(for Seg 2 ExchangeTech / Seg 4 WalletTech; for Seg 1 RWA use DLT Pilot Regime / Security Token / MiFID II groups instead)*.
 3. **Job Postings:** Companies posting "Blockchain Developer", "Solidity Engineer", or "Smart Contract Developer" are active build signals — reach out to the CTO within 48 hours.
-4. **Content Engagement:** Engage on posts about MiCA compliance, blockchain infrastructure, or RWA tokenization before connecting.
+4. **Content Engagement:** Engage on posts about MiCA compliance *(for ExchangeTech / WalletTech prospects)*, MiFID II + DLT Pilot Regime + Prospectus Regulation *(for RWA / WealthTech prospects)*, blockchain infrastructure, or RWA tokenization before connecting.
 5. **Events:** Attendees and speakers at Money20/20 Europe (Amsterdam), FinTech Connect — EU only until gate met.
 
 ### RWA Crypto Native — LinkedIn Search Methods
 
-1. **LinkedIn Groups:** EU PropTech tokenization groups, real estate investment communities, EU commodity and trade finance circles, MiCA regulatory discussion forums. **Establish presence for at least 2 weeks before direct outreach** — engage with posts, comment meaningfully, do not DM cold from a group you joined yesterday.
+1. **LinkedIn Groups:** EU PropTech tokenization groups, real estate investment communities, EU commodity and trade finance circles, **DLT Pilot Regime / Security Token / MiFID II tokenization regulatory groups** *(NOT generic MiCA forums for RWA — MiCA is the wrong regulator for ownership-token RWA per Art. 2(4))*. **Establish presence for at least 2 weeks before direct outreach** — engage with posts, comment meaningfully, do not DM cold from a group you joined yesterday.
 2. **Sales Navigator:** Title (Founder/CEO/CTO) + Industry (Real Estate/Commodities) + Location (EU) + Keywords ("asset tokenization" OR "RWA" OR "property on-chain").
-3. **Events:** RWA Summit community, EU regulatory forums on MiCA and asset tokenization law.
+3. **Events:** RWA Summit community, EU Security Token Summit, DLT Pilot Regime / MiFID II tokenization regulatory forums, and local asset tokenization law forums (German eWpG, French DLT bond law, Luxembourg DLT framework).
 
 ### DeFi/Protocol Crypto Native — LinkedIn Search Methods
 
@@ -289,8 +292,8 @@ PayTech, RegTech, BankTech, InsurTech
 ## 🧲 4. Lead Generation Strategies (ICP-Specific)
 
 ### FinTech
-1. **🥇 RWA / Tokenization Trigger Outreach:** When a EU WealthTech or asset manager announces tokenization, STOs, or RWA platform plans — connect within 72 hours with an asset-specific, MiCA-aligned angle. This is the highest-priority lead type.
-2. **🥇 Content → Inbound (RWA-first):** Publish RWA tokenization and MiCA compliance engineering content first; gate a guide for lead capture; follow up with engaged leads. (See [[Content Strategy - FinTech]])
+1. **🥇 RWA / Tokenization Trigger Outreach:** When a EU WealthTech or asset manager announces tokenization, STOs, or RWA platform plans — connect within 72 hours with an asset-specific, **MiFID II + Prospectus + DLT Pilot Regime-aligned** angle *(NOT MiCA — that's the wrong regime for ownership-token RWA per Art. 2(4))*. This is the highest-priority lead type. For Seg 2 ExchangeTech / Seg 4 WalletTech triggers, MiCA-aligned framing is correct.
+2. **🥇 Content → Inbound (RWA-first):** Publish RWA tokenization (MiFID II + DLT Pilot framing) and MiCA-CASP / ExchangeTech compliance engineering content first; gate a guide for lead capture; follow up with engaged leads. (See [[Content Strategy - FinTech]])
 3. **MiCA Trigger Outreach:** When a EU FinTech announces a broader MiCA compliance push, connect with a specific MiCA engineering angle within 72 hours.
 4. **Job Posting Signal:** Connect with the CTO when they post for "Blockchain Developer" — frame as the faster, lower-risk alternative.
 5. **Comment to Connect:** Engage meaningfully on Strategic Sam's or Technical Tom's posts about blockchain infrastructure before sending a connection request.
@@ -298,7 +301,7 @@ PayTech, RegTech, BankTech, InsurTech
 
 ### RWA Crypto Native
 1. **Asset-First Outreach:** Open with the asset type, not blockchain language. "I noticed you're building a tokenization platform for [real estate / commodities]…"
-2. **MiCA Compliance Hook:** Lead with MiCA or local asset tokenization regulation as the framing — RWA founders are highly regulation-aware.
+2. **MiFID II + DLT Pilot Compliance Hook (for RWA):** Lead with **MiFID II classification + Prospectus Regulation + DLT Pilot Regime** as the framing — RWA founders who have done their homework already know MiCA is the wrong regime and will judge you for pitching it. Local asset tokenization law (German eWpG, French DLT bond law, Luxembourg DLT framework) is a strong secondary framing. **MiCA framing is the right hook for Seg 2 ExchangeTech / Seg 4 WalletTech / Seg 3 LendTech — not Seg 1 RWA.**
 3. **Community Presence → DM:** Join EU PropTech tokenization and trade finance LinkedIn groups. Engage for 2 weeks minimum before direct outreach (see Section 3 and Section 9).
 
 ### DeFi/Protocol Crypto Native
@@ -345,16 +348,16 @@ PayTech, RegTech, BankTech, InsurTech
 *"Hi [First Name], noticed [Company]'s work on [tokenized securities / STO / RWA platform]. At InnBlockchain we build the smart contract infrastructure for EU WealthTech teams — the part where a flaw doesn't just affect liquidity, it affects ownership rights and licensing. Would love to connect."*
 
 **T1 — Connection Request (Technical Tom, RWA/WealthTech):**
-*"Hi [First Name], saw [Company] is building [tokenization platform / smart contract infrastructure for assets]. I run InnBlockchain — we embed with WealthTech engineering teams on MiCA-aligned smart contract security. Always good to connect with CTOs working in this space."*
+*"Hi [First Name], saw [Company] is building [tokenization platform / smart contract infrastructure for assets]. I run InnBlockchain — we embed with WealthTech engineering teams on **MiFID II + DLT Pilot Regime** smart contract security for tokenized securities (MiCA-aligned framing on the exchange / CASP side). Always good to connect with CTOs working in this space."*
 
 **T2 — Welcome / No Pitch:**
-*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain. We specialise in blockchain engineering for EU regulated FinTech — a lot of our work right now is RWA tokenization and MiCA-compliant smart contract builds. What's the current focus on the blockchain side at [Company]?"*
+*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain. We specialise in blockchain engineering for EU regulated FinTech — a lot of our work right now is **RWA tokenization under MiFID II + DLT Pilot Regime** and MiCA-compliant CASP infrastructure for licensed exchanges and wallets. What's the current focus on the blockchain side at [Company]?"*
 
 **T3 — Value Asset (Content Share):**
 *"Hi [First Name], I published a short piece on the 3 smart contract patterns EU WealthTech platforms get wrong before a MiCA audit — thought it might be useful given what you're building at [Company]. Happy to share if relevant."*
 
 **T4 — Soft Ask:**
-*"Hi [First Name], given [Company]'s focus on [tokenization / RWA / WealthTech infrastructure], I think there's a genuine overlap with what we do at InnBlockchain — particularly on the security and MiCA compliance engineering side. Would a 20-min call make sense to see if there's a fit?"*
+*"Hi [First Name], given [Company]'s focus on [tokenization / RWA / WealthTech infrastructure], I think there's a genuine overlap with what we do at InnBlockchain — particularly on the security and **MiFID II + DLT Pilot Regime** compliance engineering side. Would a 20-min call make sense to see if there's a fit?"*
 
 ---
 
@@ -386,13 +389,13 @@ PayTech, RegTech, BankTech, InsurTech
 *"Hi [First Name], came across your work on [real estate tokenization / commodity on-chain / RWA platform] at [Company]. At InnBlockchain we build and audit smart contract infrastructure for asset tokenization — where a flaw doesn't just drain a pool, it compromises ownership rights. Would love to connect."*
 
 **T2 — Welcome / MiCA Angle:**
-*"Hi [First Name], thanks for connecting! Quick question — are you already working through MiCA compliance for the tokenization side, or is that still being scoped? We've been supporting EU asset tokenization builds with MiCA-aligned smart contract architecture and happy to share what we've seen."*
+*"Hi [First Name], thanks for connecting! Quick question — are you already working through **MiFID II classification and DLT Pilot Regime scoping** for the tokenization side, or is that still being scoped? We've been supporting EU asset tokenization builds with MiFID II + Prospectus + DLT Pilot-aligned smart contract architecture and happy to share what we've seen."*
 
 **T3 — Value Asset:**
 *"Hi [First Name], put together a short guide on the smart contract security checks every RWA tokenization platform should run before first asset issuance — happy to share if you're at that stage with [Company]."*
 
 **T4 — Soft Ask:**
-*"Hi [First Name], given the stage [Company] seems to be at with the [asset type] tokenization — would a 20-min call make sense? Specifically to walk through the security and MiCA engineering side before your first issuance. No commitment, just useful context."*
+*"Hi [First Name], given the stage [Company] seems to be at with the [asset type] tokenization — would a 20-min call make sense? Specifically to walk through the security and **MiFID II + DLT Pilot Regime** engineering side before your first issuance. No commitment, just useful context."*
 
 ---
 
@@ -494,7 +497,7 @@ Stay within safe limits to protect your account.
 | **Monday** | Identify 8–10 EU RWA leads (FinTech WealthTech/STO + Crypto Native PropTech/asset-backed); check tokenization announcements; apply DQ filter | Monitor for DeFi exploit news (Rekt News, DeFi Llama), funding announcements, job postings, audit posts — identify 3–5 triggered DeFi/Protocol prospects | Identify 3–5 ExchangeTech/LendTech + 2–3 Channel Partner P2 targets |
 | **Tuesday** | Send 8–10 personalised RWA connection requests (asset-specific hook) | Send 3–5 trigger-based DeFi/Protocol requests (exploit / funding / audit hook — each one unique) | Send 2–4 non-RWA FinTech or Channel Partner P2 requests — **total cap: 15–20/day** |
 | **Wednesday** | Send T2 welcome to RWA connections from Mon–Tue; engage in EU PropTech + WealthTech groups | Send T2 welcome to DeFi/Protocol connections from Mon–Tue (security-first open question) | Send T2 to non-RWA FinTech + Channel Partner connections; T3/T4 follow-ups |
-| **Thursday** | Publish RWA/tokenization content; engage in MiCA regulatory discussion groups; send T3 value asset to RWA connections from prior week | Send T3 value asset (security vulnerability breakdown) to DeFi/Protocol connections from prior week; monitor for new exploit signals | Engage in FinTech Founders groups; monitor ExchangeTech/LendTech signals; send T3 to non-RWA |
+| **Thursday** | Publish RWA/tokenization content; engage in **DLT Pilot Regime / MiFID II / Security Token** discussion groups (NOT MiCA groups for RWA — wrong regulator); send T3 value asset to RWA connections from prior week | Send T3 value asset (security vulnerability breakdown) to DeFi/Protocol connections from prior week; monitor for new exploit signals | Engage in FinTech Founders groups + MiCA regulatory groups (correct for Seg 2 ExchangeTech); monitor ExchangeTech/LendTech signals; send T3 to non-RWA |
 | **Friday** | Send T4 soft-ask to qualified RWA leads (10–14 days old, positive signal); book discovery calls | Send T4 soft-ask to qualified DeFi/Protocol leads (pre-audit architecture review offer); book discovery calls | Review all segment reply rates; T5 nudge or park stale leads; update pipeline tracker |
 
 **Pipeline tracking:** Log all accepted connections + replies to [[LinkedIn B2B Customer Outreach - InnBlockchain]]. Update status (Connected / Replied / Qualified / Call Booked / Closed / Parked) after each touchpoint.
@@ -559,11 +562,11 @@ Stay within safe limits to protect your account.
 Your LinkedIn profile is the landing page every prospect visits after accepting your connection. See [[LinkedIn Profile Audit Vignesh]] for the full audit.
 
 **Minimum required before running outreach:**
-- [ ] Headline updated to lead with RWA: *"CEO @ InnBlockchain | Blockchain Engineering for Regulated FinTech | RWA Tokenization · WealthTech · ExchangeTech | Web3 Security | MiCA Compliance"* (RWA leads — aligns with priority ICP across both FinTech and Crypto Native)
+- [ ] Headline updated to lead with RWA: *"CEO @ InnBlockchain | RWA Tokenization (MiFID II + DLT Pilot) · WealthTech · ExchangeTech (MiCA CASP) | Smart Contract Security | Blockchain Engineering for EU Regulated FinTech | 7+ Years"* (RWA leads with MiFID II + DLT Pilot — correct regime; ExchangeTech gets MiCA CASP framing; aligns with priority ICP across both FinTech and Crypto Native. **Old version used MiCA for RWA — credibility risk with Compliance Carol; corrected rev 2026-05-19.**)
 - [ ] About section rewritten with ICP pain-point language (MiCA, smart contract security, Web3 talent gap)
 - [ ] Banner updated — InnBlockchain branded, remove "Turn Your Business Ideas Into Reality" / "200+ Mentored"
-- [ ] Featured section added — InnBlockchain service pages + 1 MiCA/RWA article
-- [ ] ICP-aligned skills added (Smart Contract Security, Solidity, MiCA Compliance, RWA Tokenization, DeFi)
+- [ ] Featured section added — InnBlockchain service pages + 1 RWA tokenization article (framed under MiFID II + DLT Pilot Regime, not MiCA) + 1 MiCA CASP article for ExchangeTech segment
+- [ ] ICP-aligned skills added: Smart Contract Security, Solidity, **RWA Tokenization, MiFID II Compliance, DLT Pilot Regime**, MiCA Compliance, DeFi *(MiFID II / DLT Pilot pinned ahead of MiCA — correct regime for top-priority RWA segment; MiCA retained for ExchangeTech / WalletTech surface)*
 
 > [!danger] Do Not Run Outreach Before Profile Is Updated
 > A prospect who accepts your connection and visits a profile with the current headline ("CEO | Software Specialist") will not book a call. The profile rebuild is a prerequisite, not a parallel task.

@@ -2,7 +2,7 @@
 type: concept
 title: "Asset Tokenization and Real-World Assets (RWA)"
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-19
 tags:
   - tokenization
   - RWA
@@ -96,6 +96,20 @@ Ethereum dominates RWA tokenization. Solana, Stellar, Avalanche growing for inst
 
 ## Regulatory Environment
 
-MiCA (EU) and emerging US digital asset frameworks are clarifying treatment of tokenized securities. Regulatory clarity is the primary growth catalyst — more rules attract more institutions, which create more liquidity, which draws more regulation (positive feedback loop).
+Regulatory clarity is the primary growth catalyst — more rules attract more institutions, which create more liquidity, which draws more regulation (positive feedback loop). But the EU regime is **not** "MiCA covers tokenized securities." It's the opposite:
+
+**EU jurisdiction stack for RWA tokenization:**
+
+| Token type | Primary regime | Why |
+|---|---|---|
+| Ownership token (real estate fraction, tokenized bond/equity, revenue claim) | **MiFID II + Prospectus Regulation** | Transferable security — MiCA Art. 2(4) excludes financial instruments; yield-distribution is irrelevant to the classification |
+| On-chain trading / settlement of those tokens | **DLT Pilot Regime** (DLT MTF / SS / TSS) | Targeted MiFID II + CSDR carve-outs for DLT-native infrastructure |
+| Asset-Referenced Token (value-referencing stablecoin, no ownership) | **MiCA Title III** (ART) | Narrow MiCA category — references basket value without conferring a claim on issuer/asset |
+| CASP services (custody, exchange, advisory) on non-MiFID crypto-assets | **MiCA Title V** (CASP) | Service-level license; can co-exist with MiFID at the firm level |
+
+**US side**: post the SEC's 2025 reversal of SAB 121 + the GENIUS Act stablecoin framework, the US is moving toward securities-style treatment of yield-bearing tokenized Treasurys (BUIDL, Franklin) and stablecoin-specific federal regime for non-yield tokens. Howey applies to investment-contract framings; banking law applies to deposit-token framings.
+
+> [!warning] "MiCA covers RWA" — Common Misframe
+> Telling an EU RWA prospect that MiCA is their compliance path is a credibility-killer. Real RWA tokenization (ownership) sits under MiFID II + Prospectus + DLT Pilot Regime, supervised by ESMA-coordinated national CAs (BaFin, AMF, CSSF) — not the MiCA framework. MiCA only enters if the token is an Asset-Referenced Token (rare for RWA), or if the platform also provides CASP services on separately-classified crypto-assets.
 
 > [!gap] Legal treatment of tokenized private credit defaults across jurisdictions remains unresolved. Which court has jurisdiction when ownership is on-chain and parties are cross-border?

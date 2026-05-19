@@ -40,23 +40,25 @@ Original draft had five structural ICP issues:
 4. **Compliance Carol got nothing** — no vendor-risk-pack, ISO/SOC 2, or regulator-grade language.
 5. **Agency-tone "helping... build" phrasing** — Vignesh sells infrastructure to 50-500-employee regulated FinTechs and $2M+ funded protocols; they don't buy from "helpers."
 
-## Final Headline (203 chars, fits 220 limit)
+## Final Headline (209 chars, fits 220 limit — updated 2026-05-19)
 
-> CEO @ InnBlockchain | Real-World Asset Tokenization · WealthTech · ExchangeTech | Smart Contract Security & MiCA Compliance | Blockchain Engineering for EU Regulated FinTech | 7+ Years
+> CEO @ InnBlockchain | RWA Tokenization (MiFID II + DLT Pilot) · WealthTech · ExchangeTech (MiCA CASP) | Smart Contract Security | Blockchain Engineering for EU Regulated FinTech | 7+ Years
 
-Leads RWA. Adds WealthTech + ExchangeTech as explicit search keywords. EU anchor. Real-World Asset spelled out (RWA Felix's literal search term — ~10x higher search volume than "WealthTech" on LinkedIn).
+Leads RWA. **Regime correctly tagged per segment** — MiFID II + DLT Pilot Regime for RWA (correct under MiCA Art. 2(4) exclusion of financial instruments); MiCA CASP for ExchangeTech (where MiCA actually applies). Original headline paired "MiCA Compliance" with "RWA Tokenization" — credibility risk with Compliance Carol on Seg 1 deals. Adds WealthTech + ExchangeTech as explicit search keywords. EU anchor. Real-World Asset spelled out (RWA Felix's literal search term — ~10x higher search volume than "WealthTech" on LinkedIn).
 
-## Final Banner (3 lines)
+## Final Banner (3 lines — updated 2026-05-19)
 
 > Blockchain Engineering & Smart Contract Security for EU-Regulated FinTech and Crypto-Native Founders
 >
-> Real-World Asset Tokenization · MiCA Compliance · Audit-Ready by Design
+> RWA Tokenization (MiFID II + DLT Pilot) · MiCA-Compliant Exchange & Wallet Infrastructure · Audit-Ready by Design
 >
 > Built for founders who can't afford to get this wrong.
 
-## Final About — Opening Hook (212 chars, fits preview window)
+## Final About — Opening Hook (updated 2026-05-19)
 
-> RWA tokenization, MiCA compliance, and smart contract audits — for EU-regulated FinTechs and asset-backed founders who can't afford a compliance incident or a protocol exploit.
+> RWA tokenization under MiFID II + DLT Pilot Regime, MiCA-compliant exchange and wallet infrastructure, and smart contract audits — for EU-regulated FinTechs and asset-backed founders who can't afford a compliance incident or a protocol exploit.
+
+**Why the regime split**: Original hook said "RWA tokenization, MiCA compliance" — that pairing is the misframe. MiCA Art. 2(4) explicitly excludes financial instruments; RWA ownership tokens are MiFID II transferable securities. Putting MiCA next to RWA in the hook would have lost Compliance Carol on call one.
 
 Selected from three variants (search-optimised, outcome-action, personal-voice). Search-optimised wins because exact phrases match top ICP search terms and LinkedIn search algorithm rewards exact-phrase match over paraphrases. The belief statement opens paragraph 2.
 
@@ -70,16 +72,16 @@ Selected from three variants (search-optimised, outcome-action, personal-voice).
 | Three founder paths | Asset-backed founders FIRST (RWA Felix elevated), then Regulated FinTech leaders, then Crypto-native founders/protocols |
 | Recent work | 3 `[INSERT REFERENCE]` placeholders (filled or fallback line at publish) |
 | Competitor differentiation | **Anonymised (decision 2026-05-12):** "Our model vs. SaaS tokenization and custody platforms" + "Our model vs. top-tier audit firms" — Tokeny/Securitize/Fireblocks/Kaleido and Trail of Bits/OpenZeppelin/Zellic names removed |
-| Compliance signal | "Vendor risk pack, sample audit reports, and MiCA compliance brief available on request" |
+| Compliance signal | "Vendor risk pack, sample audit reports, and **per-segment compliance briefs** available on request — MiFID II + DLT Pilot Regime for RWA / WealthTech (Seg 1), MiCA CASP for ExchangeTech (Seg 2), PSD3 + MiCA for WalletTech (Seg 4), CCD2 + EU AI Act for LendTech (Seg 3). Original wording — single 'MiCA compliance brief available on request' — was a Seg 1 RWA credibility risk; corrected 2026-05-19. |
 | CTA link | `innblockchain.com/solutions/rwa-tokenization` — NOT bare domain (cross-channel dependency) |
 
-## Skills Top 3 (LinkedIn Search Weighting)
+## Skills Top 3 (LinkedIn Search Weighting — updated 2026-05-19)
 
 1. RWA Tokenization
 2. Smart Contract Security
-3. MiCA Compliance
+3. **MiFID II Compliance** *(replaces MiCA in top-3 slot — primary regime for RWA / tokenized securities; pairing MiCA with RWA is a Compliance Carol disqualifier)*
 
-Plus 27 supporting skills ordered for downstream search relevance — Real-World Assets, Smart Contract Audit, Solidity, DeFi Protocol Engineering, Regulated FinTech, WealthTech, ExchangeTech, STO, KYC/AML Compliance, EVM, Rust, ZK proofs, etc.
+Plus 28 supporting skills ordered for downstream search relevance — **MiCA Compliance (still active; correct regime for ExchangeTech / WalletTech / DeFi), DLT Pilot Regime, Prospectus Regulation**, Real-World Assets, Smart Contract Audit, Solidity, DeFi Protocol Engineering, Regulated FinTech, WealthTech, ExchangeTech, STO, KYC/AML Compliance, EVM, Rust, ZK proofs, etc.
 
 ## Cross-Channel Dependency
 
@@ -100,7 +102,7 @@ About CTA link routes to `/solutions/rwa-tokenization` regardless of phase. Abou
 
 **Pre-Publish Hard Gate** — assets the published profile **promises or implies**. Breaking these promises is a credibility incident the first time a prospect tests them:
 
-- Vendor risk pack + sample audit + MiCA brief (About promises them "available on request")
+- Vendor risk pack + sample audit + **per-segment compliance briefs** (MiFID II + DLT Pilot for RWA / WealthTech; MiCA for ExchangeTech / WalletTech crypto features; PSD3 for WalletTech; CCD2 for LendTech) — About promises them "available on request"
 - 2 of 3 client references filled OR fallback line ("placeholders cannot remain visible")
 - `/solutions/rwa-tokenization` live and aligned with About hero (About CTA cannot 404)
 - 2-3 recommendations published (profile with zero reads as new/thin)
@@ -110,7 +112,7 @@ About CTA link routes to `/solutions/rwa-tokenization` regardless of phase. Abou
 
 **Outreach Readiness Gate** — additional assets needed before DM sequences begin. Tracked in [[LinkedIn-Outreach-Strategy-InnBlockchain]], not here:
 
-- 3 Featured Section PDFs (MiCA Readiness Checklist, Pre-Mainnet Self-Scan, RWA Tokenization Risk Checklist)
+- 3 Featured Section PDFs — MiCA Readiness Checklist (**scope: Seg 2 ExchangeTech / Seg 4 WalletTech / Seg 3 LendTech ONLY — gated on `/solutions/regulated-exchange` and `/solutions/fintech-wallets` LPs, NOT the RWA LP**); Pre-Mainnet Self-Scan; **RWA Tokenization Compliance Checklist under MiFID II + Prospectus + DLT Pilot Regime** (renamed 2026-05-19 from "RWA Tokenization Risk Checklist" to make the regime explicit; gated on `/solutions/rwa-tokenization` LP)
 - 5-8 published recommendations (Sasha-grade diligence threshold)
 - 4-6 weeks of feed posts pre-published
 - Sales Navigator + outreach tooling configured
