@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-04-30
+updated: 2026-05-20
 tags:
   - meta
   - log
@@ -18,6 +18,32 @@ related:
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
+
+## 2026-05-20 | register | EU Compliance Landscape .raw artifact (NOT an ingest)
+- Artifact: `.raw/InnBlockchain/EU Compliance/EU-Compliance-Landscape.md` (hash `ee74609dffc730e4c3d518af763555ee`)
+- Origin: copied from wiki concept [[EU-Fintech-Compliance-Landscape]] in same session, frontmatter stripped, H1 renamed "EU Fintech Compliance Landscape" → "EU Compliance Landscape"
+- Pages updated: [[EU-Fintech-Compliance-Landscape]] (frontmatter `internal_artifacts` block added — body content unchanged), [[hot]], [[log]]
+- Pages created: **none** — wiki concept is canonical; no new content to ingest
+- Direction flag: wiki → .raw (reversed from normal source → wiki flow). Do NOT re-ingest this artifact in the future — it would create circular logic.
+- Sync obligation: if either file's body changes, propagate to the other. Registration in frontmatter makes the relationship visible.
+- Pattern reuse: second use of the `internal_artifacts` / `internal_sources` frontmatter convention; first was mica-checklist mapping in [[EU-MiCA-DORA-AML-2025]].
+
+## 2026-05-20 | split | MiCA Practitioner Detail extracted to standalone page
+- Pages created: [[MiCA-NCA-Authorization-Mechanics]] (new concept — article-by-article NCA filing detail; CASP capital classes, ART/EMT formulas, white paper + iXBRL, Article 74 wind-down, Article 70(3) client fiat, Article 66↔DORA, application timeline, dossier contents, fit-and-proper, InnBlockchain service-mapping table)
+- Pages updated: [[MiCA-Regulation]] (Practitioner Detail section removed; replaced with callout pointer; `related:` updated), [[index]] (new entry added; pages 219→220), [[hot]], [[log]]
+- Trigger: User reversed the "no separate files" instruction for the practitioner layer specifically after seeing the merged result.
+- Why this is the right call: the strategic page reads cleaner; the practitioner page is now linkable as a standalone deliverable to MiCA-bound prospects without dragging RWA-boundary positioning; the service-mapping table at the bottom of the practitioner page reads as a service catalogue — deliberate, but doesn't belong on the strategic page.
+- Cross-links: bidirectional `related:` entries + inline pointers in both bodies.
+- Source attribution unchanged — [[EU-MiCA-DORA-AML-2025]] Addendum still tracks the checklist hash `79a90bdf14e17887faa9dcb048c5b7f4` and the three tensions (post-auth DORA enforcement gap, iXBRL date pending ESMA RTS confirmation, ESMA Level 2/3 still in flux).
+
+## 2026-05-20 | ingest | InnBlockchain MiCA Readiness Checklist (merged into existing MiCA pages)
+- Source: `.raw/InnBlockchain/EU Compliance/mica-checklist.md` (hash `79a90bdf14e17887faa9dcb048c5b7f4`)
+- Type: internal practitioner artifact — 12-section pre-NCA-application readiness assessment, scorecard format
+- Pages created: **none** (per user instruction — "no need to create separate files")
+- Pages updated: [[MiCA-Regulation]] (substantial expansion — Practitioner Detail section added with article-level NCA mechanics, capital tiers, white paper rules, wind-down plan, application workflow), [[EU-MiCA-DORA-AML-2025]] (frontmatter `internal_sources` entry + Addendum section noting integration and tensions), [[hot]], [[log]]
+- Key insight: The existing MiCA concept was strategic-only (positioning, RWA boundary, enforcement, ICP routing). The checklist contributes the missing operational layer — Article-by-Article detail a specialist EU crypto-reg lawyer walks a founder through at first intake. Both layers now coexist in one page with a labelled "Practitioner Detail" section. New material: CASP capital classes (€50k / €125k / €150k), ART formula (€350k or 2% reserves or 25% overheads, +20–40% stress buffer), EMT credit-institution / EMI prerequisite, white paper exemption thresholds (<150 persons/MS, <€1M/12mo), iXBRL mandate from 23 Dec 2025, Article 74 wind-down plan as distinct dossier item, Article 70(3) end-of-day client fiat placement, Article 66 ↔ DORA cross-reference clarified as one process, significance thresholds (Articles 43–44), 6–12 month realistic application timeline, 14-day retail withdrawal right.
+- Tensions flagged: (a) checklist's Article 66/DORA framing covers MiCA authorization but not post-authorization DORA enforcement; (b) transitional deadline 1 July 2026 (checklist, sourced from Articles 143–149) vs earlier "June 2026" web research — checklist authoritative; (c) iXBRL date 23 Dec 2025 newer than earlier research, confirm against ESMA RTS publication if used client-facing.
+- Strategic implication: The Practitioner Detail is effectively a service catalogue — every Article reference is a contract function or audit item InnBlockchain can deliver. Most relevant to Crypto Native Seg 2–10 (CASP path) and FinTech Seg 1 ExchangeTech (CASP-MiFID II split). Crypto Native Seg 1 (RWA) routing unchanged: MiCA is NOT the primary regime for tokenized securities.
 
 ## 2026-05-18 | ingest | InnBlockchain Content AEO GEO Prompts
 - Source: `.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md` (hash `c3dffd0b1d3944f110df30b81b6f4402`)

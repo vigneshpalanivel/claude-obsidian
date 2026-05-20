@@ -1,38 +1,4 @@
----
-type: concept
-title: "EU Fintech Compliance Landscape"
-created: 2026-04-16
-updated: 2026-05-20
-tags:
-  - EU
-  - fintech
-  - compliance
-  - regulation
-status: current
-related:
-  - "[[MiFID-II]]"
-  - "[[MiFID-III]]"
-  - "[[MiCA-Regulation]]"
-  - "[[MiCA-NCA-Authorization-Mechanics]]"
-  - "[[DORA-Regulation]]"
-  - "[[EU-AML-AMLA]]"
-  - "[[EU-AI-Act-Fintech]]"
-  - "[[PSD3-Open-Banking-EU]]"
-  - "[[DLT-Pilot-Regime]]"
-  - "[[ESMA]]"
-  - "[[Asset-Tokenization-RWA]]"
-  - "[[InnBlockchain FinTech ICP]]"
-  - "[[InnBlockchain Crypto Native ICP]]"
-  - "[[Blockchain-Fintech-Solutions]]"
-internal_artifacts:
-  - path: ".raw/InnBlockchain/EU Compliance/EU-Compliance-Landscape.md"
-    hash: "ee74609dffc730e4c3d518af763555ee"
-    registered: 2026-05-20
-    derived_from: this wiki concept
-    purpose: "Standalone InnBlockchain-branded client-shareable artifact (frontmatter stripped, H1 shortened to 'EU Compliance Landscape'); body content tracks this wiki concept as canonical — keep them in sync if either changes"
----
-
-# EU Fintech Compliance Landscape
+# EU Compliance Landscape
 
 The EU is the world's most active jurisdiction for fintech regulation. By 2026, over 60 new or revised directives and regulations are in force. For any fintech operating in the EU or serving EU customers, compliance is not optional — it is the cost of market access.
 
