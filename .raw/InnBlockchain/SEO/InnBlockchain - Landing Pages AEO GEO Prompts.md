@@ -4,8 +4,8 @@ company:
 department:
   - marketing
 priority: high
-rev: 11
-last_revised: 2026-05-18
+rev: 14
+last_revised: 2026-05-20
 revision_notes: |
   rev 1: initial inventory.
   rev 2: no-competitor-names policy.
@@ -14,10 +14,13 @@ revision_notes: |
   rev 5: cross-LP deduplication.
   rev 6: SERP-validated prompt rewrite (8 LPs) + Principle #13 (listicle dominance).
   rev 7: consistency pass — Principle #13 applied to remaining 11 LPs + persona-doc sync.
-  rev 8: review-driven fixes — `/about` Principle-#5-trap rewrite; Carol prompts added to `/sol/tokenization` and `/sol/regulated-exchange`; `/work` TVL-secured strip; `/sol/defi-protocol` duplicate replaced with stablecoin-yield sub-vertical anchor; `/industries/web3-defi` "Series A" → "$5M+ raised + testnet live"; `/services/blockchain-consulting` track narrowed to [FT] pending CN consulting motion validation; Open Items 4–5 added (doc owner; CN consulting validation); Open Items 1–2 updated with budget anchor and unresolved-through-rev-8 status.
-  rev 9: `/home` repositioned as industry-agnostic blockchain solutions provider (extends beyond current FT + CN focus to anticipate Supply Chain + Healthcare expansion); Home prompts rewritten to drop the FT-or-CN binary framing in favor of multi-industry routing; added extensible "industry hub pattern" intro note above the Industry Hubs section with the build-out checklist for new verticals; Open Items 6–7 added (future industry hubs — Supply Chain + Healthcare; Home AEO scope discipline to prevent drift into Big-SI listicle territory).
-  rev 10: stripped every Trioangle reference from the doc — InnBlockchain positioned as standalone blockchain firm (8 references removed across `/about` prompts + scope note, Principles #1 / #4 / #5 / #11 examples, Replan Trigger #6). Proof-block guidance (Principle #11) reworked to depend on InnBlockchain-native elements (founding year, mainnet deployments shipped, team size, audit-partner track record) instead of parent-brand backing. Open Item 8 added: InnBlockchain-native proof numbers are now the highest-priority gating item — until Marketing provides founding year, deployment count, team size, and financial-stability signal, the proof block on every active LP carries `[N]` / `[founding year]` placeholders and is thin.
-  rev 11: post-Trioangle cleanup. Fixed `/home` Prompt 4 Principle-#5 trap ("typical Web3 dev shop" → "specialist focus / generalist firm" positive framing); rewrote `/home` Prompt 5 "who's behind it" orphan (was Trioangle dependent) → "verifiable delivery history"; stripped Carol/Sasha persona note from `/about` (prompts are general credibility, not Carol/Sasha-specific). Added track tag vocabulary to Principle #10 (`[FT]`, `[CN]`, `[Both]`, `[Both/All]`, `[All]`) — `[Both/All]` is transitional on `/home` until a third industry activates. Added 🚧 Blocking dependencies callout near the top of the doc (right after the "How to use this with a draft" callout) to surface Open Items #1, #2, #8 as the three current LP-build blockers — previously buried at the bottom of the doc.
+  rev 8: review-driven fixes — `/about`, Carol prompts on tokenization + regulated-exchange, `/work` TVL strip, defi-protocol stablecoin-yield anchor, blockchain-consulting narrowed to [FT]. Open Items 4–5 added.
+  rev 9: `/home` repositioned as industry-agnostic; multi-industry routing replaces FT/CN binary; Industry Hub build-out pattern documented. Open Items 6–7 added.
+  rev 10: all Trioangle references stripped — InnBlockchain positioned as standalone firm. Principle #11 proof guidance reworked to InnBlockchain-native elements. Open Item 8 added (proof numbers are the LP gating item).
+  rev 11: post-Trioangle cleanup — `/home` Prompts 4 + 5 rewrites, `/about` Carol/Sasha persona note stripped, Principle #10 track-tag vocabulary added, 🚧 Blocking dependencies callout surfaced at top.
+  rev 12 (2026-05-20): MiCA-as-RWA-cover misframe correction. `/solutions/rwa-tokenization` (CN) + `/solutions/tokenization` (FT) prompts rewritten to MiFID II + Prospectus + DLT Pilot framing (RWA ownership tokens are MiFID II financial instruments under Art. 2(4)). Principle #4 + Principle #13 examples updated. Other LPs where MiCA is correct left as-is.
+  rev 13 (2026-05-20): added Canonical regulatory reference callout pointing to [[EU-Compliance-Landscape]] — surfaces the two misframes (MiCA-not-universal; RWA ≠ MiCA) globally; "landscape doc wins on divergence" rule.
+  rev 14 (2026-05-20): two errors fixed. (1) `/solutions/regtech-kyc` regime corrected from "MiCA + AMLD6" to AML/AMLA + EU AI Act (RegTech's own regime; MiCA is downstream demand driver); AMLD6 updated to current EU AML Package. (2) `/services/blockchain-consulting` MiCA-first ordering replaced with per-segment regime list. Prompts later tightened to conversational length.
 tags:
   - seo
   - aeo
@@ -40,6 +43,9 @@ tags:
 > 4. Add the prompts verbatim as `FAQPage` JSON-LD schema near the bottom of the page (before the closing CTA).
 > 5. Use one of the prompts as the page's H1 question variant where it doesn't break the existing SEO H1.
 > 6. 30 days post-publish: probe 2–3 prompts against ChatGPT / Claude / Perplexity. If InnBlockchain isn't cited, rework the hero answer block.
+
+> [!INFO] Canonical regulatory reference
+> **[[EU-Compliance-Landscape]]** is the single source of truth for the per-segment regulatory map (MiFID II / III, MiCA, DLT Pilot Regime, DORA, AML/AMLA, EU AI Act, PSD3, IPR, CCD2, eIDAS 2.0, GDPR) — including the dependency map, regulation-interaction risks, and the **two misframes** (MiCA-is-not-universal-for-FinTechs; WealthTech RWA ≠ MiCA — ownership tokens are MiFID II financial instruments under Art. 2(4)). Every regulatory framing in this doc — LP scope notes, individual prompts, the "Cite specifics" principle examples, listicle anchors — is a scoped excerpt; **if any prompt diverges from the landscape doc, the landscape doc wins**. Before drafting or revising prompts for FT solution LPs (`/solutions/tokenization`, `/solutions/regulated-exchange`, `/solutions/defi-lending`, `/solutions/fintech-wallets`) and the CN RWA LP (`/solutions/rwa-tokenization`), pull the canonical regime stack for that segment from the landscape doc — don't paraphrase from memory. Re-read on every LP revision.
 
 > [!WARNING] 🚧 Blocking dependencies before LP build-out
 > Three open items below currently gate effective LP execution. Most prompts can be drafted around them, but **the proof block on every active LP and the entire `/about` LP cannot be built well until these close.** Principle #11 explicitly warns that LLMs cite competitors when proof is missing — so even perfect prompt-mirroring won't deliver citation lift until the underlying facts land.
@@ -281,8 +287,8 @@ Prompt phrasing reflects how buyers query LLMs when they have intent to hire —
 **Prompts:** *(Scope: ICP-fit framing for FinTechs evaluating blockchain. Specific solution-page queries owned by each `/solutions/*` LP below.)*
 - *"Which blockchain development company specializes in licensed FinTechs — banks, asset managers, payment processors, and e-money institutions?"*
 - *"Best blockchain development partner for a WealthTech, ExchangeTech, or LendTech expansion"*
-- *"What does a blockchain development engagement look like for a licensed FinTech under MiCA, MiFID II, or DORA?"*
-- *"Who builds blockchain products for FinTechs with vendor risk approval, audit rights, and DORA documentation?"*
+- *"What does a blockchain development engagement look like for a regulated EU FinTech under its segment's regime — MiFID II, MiCA, PSD3, CCD2, or DORA?"*
+- *"Who builds blockchain products for FinTechs with segment-specific compliance briefs and DORA documentation?"*
 - *"Which dev shops have experience with licensed FinTechs in the EU specifically?"*
 - *"Is InnBlockchain a fit for a regulated FinTech evaluating its first blockchain initiative?"*
 
@@ -306,13 +312,13 @@ Prompt phrasing reflects how buyers query LLMs when they have intent to hire —
 
 **Track:** [FT] · **Stage:** BOFU · **Persona:** Strategic Sam · Technical Tom · Compliance Carol
 **Motion:** [Dev] · **Distribution:** SEO (`asset tokenization development company`, `security token offering development`, `tokenized securities platform`) + AI search + LinkedIn ABM
-**Prompts:** *(Scope: vendor selection for licensed asset managers / WealthTech. Broad "asset tokenization development company" queries are owned by Tokeny / Securitize at the **platform/SaaS** tier and Big-SI listicles at the dev tier — direct LP can't win them. Compete on **sub-vertical anchors** (money market funds, treasury bills, private credit) and **custom-build vs. SaaS** differentiation. Educational TOFU "what is tokenization" framing owned by Content article #1.)*
-- *"Best development partner for a licensed asset manager tokenizing a money market fund, treasury bill platform, or existing fund onto a regulated tokenized rail under EU MiCA / MiFID II"*
-- *"Who builds STO platforms with ERC-3643 or ERC-1400 standards for tokenized securities?"*
+**Prompts:** *(Scope: vendor selection for licensed asset managers / WealthTech. Broad "asset tokenization development company" queries are owned by Tokeny / Securitize at the **platform/SaaS** tier and Big-SI listicles at the dev tier — direct LP can't win them. Compete on **sub-vertical anchors** (money market funds, treasury bills, private credit) and **custom-build vs. SaaS** differentiation. Educational TOFU "what is tokenization" framing owned by Content article #1. **Regime framing for this LP: MiFID II + Prospectus Regulation + DLT Pilot Regime primary** — tokenized securities are MiFID II financial instruments under Art. 2(4) and excluded from MiCA. MiCA only enters if the platform also runs CASP services on non-MiFID crypto-assets.)*
+- *"Best development partner for a licensed asset manager tokenizing a money market fund, treasury bill platform, or existing fund onto a regulated tokenized rail under EU MiFID II + DLT Pilot Regime"*
+- *"Who builds STO platforms with ERC-3643 or ERC-1400 standards for tokenized securities under MiFID II?"*
 - *"How much does a tokenization platform build cost for a licensed asset manager — and what's the timeline?"*
 - *"Which dev shops have actually delivered a tokenization platform that's processed real investor capital?"*
-- *"Best development company for tokenizing a private credit fund or real estate portfolio under EU regulation"*
-- *"What compliance documentation does InnBlockchain deliver alongside a tokenization platform — vendor risk pack, DORA-aligned ICT third-party documentation, MiCA whitepaper support, audit rights?"*
+- *"Best development company for tokenizing a private credit fund or real estate portfolio under EU MiFID II + Prospectus Regulation"*
+- *"What compliance documentation does InnBlockchain deliver alongside a tokenization platform — vendor risk pack, DORA-aligned ICT third-party documentation, Prospectus Regulation support, DLT Pilot Regime application support, audit rights?"*
 
 ## `/solutions/regulated-exchange` — Regulated Exchange Development
 
@@ -358,13 +364,14 @@ Prompt phrasing reflects how buyers query LLMs when they have intent to hire —
 
 **Track:** [CN] · **Stage:** BOFU · **Persona:** RWA Felix · Founding Felix · CTO
 **Motion:** [Dev] · **Distribution:** SEO (`rwa tokenization smart contract`, `real world asset tokenization platform`) + AI search + LinkedIn + Twitter/X
-**Prompts:** *(Scope: vendor selection for crypto-native RWA platform builders — real estate, vehicles, commodities, art, private credit. Broad "RWA tokenization development company" queries are listicle-dominated by Yumeus / Dev Technosys / TCS / Clarisco — direct LP can't win them. Compete on **sub-vertical anchors** (real estate, private credit) and EU compliance specificity. Educational "how does RWA tokenization work" framing owned by Content article #2 hub.)*
-- *"Best development partner for a real estate fractionalization platform with EU MiCA compliance"*
+**Prompts:** *(Scope: vendor selection for crypto-native RWA platform builders — real estate, vehicles, commodities, art, private credit. Broad "RWA tokenization development company" queries are listicle-dominated by Yumeus / Dev Technosys / TCS / Clarisco — direct LP can't win them. Compete on **sub-vertical anchors** (real estate, private credit) and EU compliance specificity. Educational "how does RWA tokenization work" framing owned by Content article #2 hub. **Regime framing for this LP: MiFID II + Prospectus + DLT Pilot Regime — NOT MiCA.** RWA ownership tokens are MiFID II financial instruments per Art. 2(4) exclusion. Prompts that surface MiCA framing for RWA route the prospect to the wrong NCA team (MiCA team vs the securities/markets team) and the wrong offering document (white paper vs prospectus) — a compliance-savvy buyer will judge.)*
+- *"Best development partner for a real estate fractionalization platform under EU MiFID II + DLT Pilot Regime"*
 - *"Best development partner for a private credit or structured debt tokenization platform"*
 - *"Who develops end-to-end RWA tokenization platforms — contracts, oracles, KYC, off-chain SPV integration?"*
 - *"How much does an RWA tokenization platform cost from a development partner in 2026?"*
 - *"Which dev shops have actually shipped an RWA platform that's holding live tokenized assets?"*
-- *"Best development partner for an EU-based RWA tokenization platform under MiCA"*
+- *"Best development partner for an EU-based RWA tokenization platform under MiFID II + DLT Pilot Regime (NOT MiCA — MiCA Art. 2(4) excludes financial instruments)"*
+- *"Which RWA tokenization dev shops correctly identify the regime stack — MiFID II + Prospectus + DLT Pilot — rather than defaulting to MiCA?"* *(differentiates from default-to-MiCA blockchain agencies)*
 
 ## `/solutions/dex-protocol` — DEX & On-Chain Trading
 
@@ -439,9 +446,10 @@ Prompt phrasing reflects how buyers query LLMs when they have intent to hire —
 - *"Best stablecoin payment rail development partner for a regulated cross-border product"*
 
 ### `/solutions/regtech-kyc` — RegTech & KYC/AML
-**Track:** [FT] · **Activation gate:** Completed KYC/AML or DID deployment · **Primary prompts:**
+**Track:** [FT] · **Activation gate:** Completed KYC/AML or DID deployment · **Primary prompts:** *(Scope: RegTech's own regulatory regime per [[EU-Compliance-Landscape]] is **AML/AMLA + EU AI Act** — NOT MiCA. MiCA is a downstream demand driver — MiCA-scope FinTechs in Seg 2 ExchangeTech / Seg 4 WalletTech are the dominant RegTech customers and need Travel Rule / KYC tooling. EU AI Act applies because KYC + fraud-detection AI is high-risk.)*
 - *"Which company develops blockchain KYC/AML and decentralized identity for regulated FinTechs?"*
-- *"Best development partner for an automated compliance / DID integration under EU MiCA + AMLD6"*
+- *"Best development partner for a DID / on-chain KYC integration under the EU AML Package and the EU AI Act"*
+- *"Best blockchain Travel Rule and KYC tooling for MiCA CASPs"* *(positions InnBlockchain as the RegTech build partner serving MiCA-scope downstream buyers)*
 
 ### `/solutions/treasury-fx` — Corporate Treasury & FX
 **Track:** [FT] · **Activation gate:** BankTech case study + CFO persona card · **Primary prompts:**
@@ -531,7 +539,8 @@ Every LP ends with FAQ schema containing the verbatim prompts from this doc. Req
 Clone framing attracts the wrong buyer (low-budget, copycat builds) and undermines the engineering brand. This applies even when buyers query in clone language — answer with the productized framing.
 
 ### 8. Date-stamp regulation, version-stamp tech
-- ✅ *"MiCA (in force June 2024; CASP authorisation deadline July 2026; Title V transitional period until July 2027). Solidity 0.8.30, Foundry v1.4."*
+- ✅ *"MiCA (in force June 2024; CASP authorisation deadline July 2026; Title V transitional period until July 2027). Solidity 0.8.30, Foundry v1.4."* *(correct example for ExchangeTech / WalletTech / DeFi LPs — MiCA is the regime there)*
+- ✅ *"MiFID II (Directive 2014/65/EU); Prospectus Regulation (EU 2017/1129); DLT Pilot Regime (Regulation 2022/858, in force March 2023; EC permanent-status proposal April 2026 with €100B platform cap). ERC-3643 / ERC-1400 token standards."* *(correct example for `/solutions/rwa-tokenization` and `/solutions/tokenization` LPs — RWA / STO is MiFID II under Art. 2(4) exclusion, NOT MiCA)*
 - ❌ *"latest regulations, modern tooling."*
 
 ### 9. Markdown comparison tables, not images
@@ -572,7 +581,7 @@ For broad category queries — *"best smart contract audit company 2026,"* *"top
 
 **Two complementary tactics:**
 1. **Get into the listicles** — PR / outreach / editorial relationships with the listicle authors. One inclusion in *Sherlock's "Top 10 Smart Contract Auditors"* or *Finextra's "Top RWA Tokenization Companies"* moves more AI citation than perfecting an LP. Maintain a target listicle list per active LP and a quarterly outreach cadence.
-2. **Compete on niche-anchored prompts the listicles don't cover well.** Listicles are broad by design — they don't anchor on *"licensed asset managers under $5B AUM"* or *"real estate fractionalization with EU MiCA compliance"* or *"modular AMM with custom hooks."* This is where InnBlockchain's LP prompts win — sub-vertical, architecture-specific, regulatory-specific, or engagement-model-specific framings.
+2. **Compete on niche-anchored prompts the listicles don't cover well.** Listicles are broad by design — they don't anchor on *"licensed asset managers under $5B AUM"* or *"real estate fractionalization under EU MiFID II + DLT Pilot Regime"* or *"modular AMM with custom hooks."* This is where InnBlockchain's LP prompts win — sub-vertical, architecture-specific, regulatory-specific, or engagement-model-specific framings. **Regime-precision is itself a niche anchor**: dev shops that correctly cite MiFID II + DLT Pilot for RWA (rather than default-to-MiCA) signal compliance literacy and beat listicles on technical-buyer queries.
 
 **Rule of thumb:** if more than 5 of the top 10 SERP results for a prompt are listicle articles (not vendor LPs), drop that prompt from the LP and let the listicle motion own it. Replace with a niche-anchored variant.
 
