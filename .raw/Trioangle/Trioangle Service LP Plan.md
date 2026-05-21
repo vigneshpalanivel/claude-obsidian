@@ -1,26 +1,5 @@
----
-type: concept
-title: "Trioangle Landing Page Plan"
-status: current
-created: 2026-05-06
-updated: 2026-05-21
-source: ".raw/Trioangle/Trioangle Landing Page Plan.md"
-tags:
-  - concept
-  - trioangle
-  - marketing
-  - seo
-  - landing-pages
-  - ai-pivot
-related:
-  - "[[Trioangle 2.0 AI Pivot Plan]]"
-  - "[[Trioangle Service ICP]]"
-  - "[[Trioangle Growth Plan]]"
-  - "[[Trioangle AI Delivery Kit]]"
-  - "[[Trioangle Content Strategy]]"
----
 
-# Trioangle Landing Page Plan
+# Trioangle Service LP Plan
 
 Site architecture and SEO keyword strategy for Trioangle's AI services landing pages. Targets **Service ICP Persona 5** — established platform operators in Trioangle's core verticals who need AI features embedded into their existing platform.
 
@@ -233,7 +212,7 @@ The page copy stays unchanged. The qualification happens in the booking form and
 | Dev & Product | `home services app development` · `home services app development company` · `handyman app development` · `service marketplace app development` · `white-label home services platform` · `cleaning app development` · `beauty services app development` · `salon app development` · `appliance repair app development` |
 
 > [!NOTE] Cross-link to umbrella
-> Broad on-demand keywords (`AI for on-demand apps`, `on-demand app development`) live on [`/industries/on-demand`](#priority-2--industrieson-demand) (Priority 2). The umbrella page internally funnels to this page for home-services-specific intent.
+> Broad on-demand keywords (`AI for on-demand apps`, `on-demand app development`) live on `/industries/on-demand` (Priority 2). The umbrella page internally funnels to this page for home-services-specific intent.
 
 ---
 
@@ -307,7 +286,7 @@ The page copy stays unchanged. The qualification happens in the booking form and
 | Dev & Product | `ecommerce app development` · `ecommerce app development company` · `multi-vendor ecommerce development` · `online shopping app development` · `ecommerce website development company` · `white-label ecommerce platform` · `B2B ecommerce development` · `ecommerce software development` · `custom ecommerce development` |
 
 > [!NOTE] Scope boundary with marketplace
-> Generic multi-vendor terms (`multi-vendor app development`, `white-label multi-vendor store`) live on [`/industries/marketplace`](#priority-4--industriesmarketplace) (Priority 4) — multi-vendor IS the marketplace business model. Ecommerce keeps `multi-vendor ecommerce development` (retail store with multiple vendors, single-brand-ish), marketplace owns Etsy/eBay/Amazon Marketplace-style multi-vendor.
+> Generic multi-vendor terms (`multi-vendor app development`, `white-label multi-vendor store`) live on `/industries/marketplace` (Priority 4) — multi-vendor IS the marketplace business model. Ecommerce keeps `multi-vendor ecommerce development` (retail store with multiple vendors, single-brand-ish), marketplace owns Etsy/eBay/Amazon Marketplace-style multi-vendor.
 
 
 ### AI Service Pages (cross-vertical productized services)
