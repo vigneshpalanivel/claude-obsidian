@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-05-20
+updated: 2026-05-21
 tags:
   - meta
   - log
@@ -18,6 +18,28 @@ related:
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
+
+## 2026-05-21 | re-ingest | InnBlockchain Content AEO GEO Prompts (rev 5 + TFR patch)
+- Source: `.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md` (hash `30a031c4814a5f2e8bc75b7ef184ee7b`, was `c3dffd0b1d3944f110df30b81b6f4402`)
+- Summary: [[InnBlockchain-Content-AEO-GEO-Prompts]] (rewritten)
+- Pages updated: [[InnBlockchain Content AEO GEO Prompts]] (concept rewritten), [[InnBlockchain-Content-AEO-GEO-Prompts]] (source rewritten), [[hot]], [[log]]
+- Also rev-bumped: [[InnBlockchain - Editorial Calendar]] to rev 9 (two stale P1-N references in distribution + metrics tables — surfaced during AEO review, fixed in same session)
+- Key insight: Two substantive layers landed since the rev 3 initial ingest. **Rev 4 (MiCA misframe correction):** 5 article titles renamed in-place to lead with MiFID II + Prospectus Regulation + DLT Pilot Regime — the regimes that actually apply to RWA ownership tokens per MiCA Article 2(4) exclusion. Original titles framed MiCA as the cover regime, which would have sent ChatGPT/Claude/Perplexity to the wrong regulatory stack. **Rev 5 (structural sync with Content Strategy rev 16 + Editorial Calendar rev 9):** 3 articles removed from Phase 1 (#3 MiCA Explained, #14 MiCA Checklist CN, P1-N MiCA License — all wrong-segment); 2 articles added from Phase 2 P5 Rebalancing queue (P5-DORA-X cross-cutting CCO DORA overview at W7 Thu, P5-eIDAS-X broadened cross-cutting EUDI Wallet `[Both]` at W13 Tue serving B4/B5/B7 wallet auth + A1/B1 RWA investor KYC ahead of Dec 31 2026 deadline); 16 Track A Tuesday articles cascaded forward by one week; Track A Phase 1 close moves from W21 to W20. **TFR patch:** B1-#15 travel-rule prompt rewritten from FATF framing to TFR (Regulation (EU) 2023/1113) per Content Strategy rev 9 naming-precision rule. Scope clarifier added to B1-#14 (P5-DORA-X cross-cutting vs B1-#14 DLT-securities-specific) — now 9 explicit ownership-boundary lines across the file. **Single-source-of-truth challenge** surfaced as new "Open Question 5": three docs across 16/9/5 revisions need periodic re-sync passes — rev 5 caught 16-week numbering drift after just two strategy revs had landed.
+
+## 2026-05-21 | ingest | InnBlockchain Editorial Calendar (rev 8) → new wiki concept
+- Source: `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md` (rev 8, 2026-05-21). 8 revisions since 2026-05-18; tracks Phase 1 article schedule (May 18 → Oct 15, 2026) + 4 cross-pillar early-ship articles + Gate Sequence + Phase 1 Segment-Scope Guard + deferral history.
+- Pages created: [[InnBlockchain Editorial Calendar]] — new wiki concept doc. No pre-existing wiki concept doc existed for the InnBlockchain calendar (only Trioangle Service Editorial Calendar existed). Created as navigable summary, not full source duplicate: schedule snapshot table, Phase 1 structure diagram, cross-pillar early-ship list, gate sequence, segment-scope guard rule, deferred articles list, watch-candidates / gate-dependent list, Phase 1 close timing, calendar-side rev history.
+- Pages updated: none (no related concept docs needed refresh; [[InnBlockchain Content Strategy]] already references the editorial calendar by wikilink).
+- Cross-references resolve: strategy doc + ICP docs + Landing Pages Plan + EU-Fintech-Compliance-Landscape all linkable from new concept.
+- Pattern note: same wiki-as-summary, not-as-duplicate approach used for the InnBlockchain Content Strategy ingestion. Calendar canonical lives in `.raw`; this concept doc is the navigable wiki surface.
+
+## 2026-05-21 | reingest | InnBlockchain Content Strategy (rev 14) → wiki concept overview refresh
+- Source: `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md` (rev 14, 2026-05-21). 14 revisions since 2026-04-16; full audit trail of MiCA-as-RWA misframe correction (rev 6) + Phase 2 P5 Inventory Rebalancing (rev 9) + DORA-X promotion (rev 11) + eIDAS-X promotion (rev 12) + 7 cross-doc review passes.
+- Pages updated: [[InnBlockchain Content Strategy]] (full rewrite of umbrella overview — pre-merge "3 parallel strategies" framing replaced with post-merge "1 unified strategy via track tagging + Crypto Products separate" reality; canonical regulatory reference callout added; full rev history captured).
+- Pages superseded (replaced with redirect stubs, not deprecated-with-content): [[InnBlockchain Crypto Native Content Strategy]] + [[InnBlockchain FinTech Content Strategy]] — both reduced to 5-line redirect stubs pointing to [[InnBlockchain Content Strategy]]. **Initial approach (deprecation-with-banner preserving original body) reversed** because user flagged that two stale concept files still constitute content duplication regardless of banner. Stubs absorb inbound wikilinks (10+ across hot/index/SEO Recovery/EU-AML-AMLA/LinkedIn Profile/Landing Pages Plan/LinkedIn Strategy + wiki/sources + .raw); inbound links can be updated lazily as docs are next edited. Audit trail for the rev 6 misframe correction lives in the `.raw` doc's revision history (single source of truth) — wiki snapshots not needed for audit.
+- Wiki sources not refreshed: `wiki/sources/Content-Strategy-InnBlockchain-Crypto-Native.md` + `wiki/sources/Content-Strategy-InnBlockchain-FinTech.md` are pre-merge source copies; would refresh on next batch ingest of all `.raw` source copies (not in scope here).
+- Related .raw docs already canonical (not touched this session): Editorial Calendar (rev 7), FinTech ICP, Crypto Native ICP, LP AEO/GEO Prompts, EU Compliance Landscape — all reference [[EU-Compliance-Landscape]] / [[EU-Fintech-Compliance-Landscape]] consistently.
+- Pattern: deprecation-with-banner (not deletion) preserves audit trail of pre-correction framing — useful when diffing how the misframe was caught and corrected over 7 review passes.
 
 ## 2026-05-20 | register | EU Compliance Landscape .raw artifact (NOT an ingest)
 - Artifact: `.raw/InnBlockchain/EU Compliance/EU-Compliance-Landscape.md` (hash `ee74609dffc730e4c3d518af763555ee`)

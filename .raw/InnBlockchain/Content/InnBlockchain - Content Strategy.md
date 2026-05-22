@@ -4,15 +4,25 @@ company:
 department:
   - marketing
 priority: highest
-rev: 6
-last_revised: 2026-05-19
+rev: 16
+last_revised: 2026-05-21
 revision_notes: |
-  rev 1 (2026-05-13): merged from `Content Strategy - Crypto Native.md` (rev 3) and `Content Strategy - FinTech.md` (rev 3). Two parallel content strategies consolidated into one source-of-truth, with track-level tagging (`[CN]` / `[FT]` / `[Both]`) replacing the cross-doc routing boilerplate. ICP docs remain split per ICP - Crypto Native / ICP - FinTech; this strategy serves both via article-level track metadata.
-  rev 2 (2026-05-13): cannibalization-fix pass. Retagged 7 awareness-stage articles to `[Both]` (exploit explainers + MiCA Explained + asset tokenization intro). Merged 2 article pairs into shared `[Both]` articles (Embedded Wallets, Passkey Auth). Killed 1 (STOs vs ICOs, redundant). Renamed 6 Track B articles to escape Track A SERP claims (B1 hub, B1 real estate, P1 audit checklist, P1 audit process, P1 upgradeability, B4 MPC PSP). Rewrote Track B keyword tables (Awareness, Consideration, Decision, Implementation) to remove generic terms claimed by Track A and substitute regulated-FinTech-specific long-tail variants. Annotated 3 watch-candidate articles. Net: ~9 article reduction, ~0 unresolved cross-track keyword collisions.
-  rev 3 (2026-05-13): white-label unified across both ICPs. Old CN-WL (6 articles, $30k–$100k) + FT-WL (6 articles, $50k–$200k) collapsed to 7 unified articles (WL1–WL6 + WL-TCO) at **$20k+ flat floor** (undercuts Antier-class competitors at ~$30k). WL bundle no longer includes enterprise compliance integration — that's now custom-build (Motion 2) at $50k+. FT-LM-Carol Vendor Risk Pack repositioned as custom-build asset. Track-Level Differentiator table removed. Reference-build gate unified (screenshots only; compliance pack moved to custom-build). Track A floor for RWA Tokenization (Segment 1) lowered to $20k+ for consistency with other Track A segments. Net: 13 WL articles → 7 (~46% reduction); one product, one price, one CTA across both ICPs.
-  rev 4 (2026-05-14): priority plan restructured for publish-order clarity. A1 and B1 article lists reorganised from topic groups into explicit TOFU / MOFU (Technical Architecture, Compliance Depth, Asset Classes) / BOFU / Post-Launch sections. Priority Content Plan steps relabelled to match. WL articles dissolved from separate section and integrated into plan: WL-0 in Phase 0 (ships first, no gate); WL-1 at Phase 1 BOFU #22; WL-2 through WL-6 appended to Phase 2 (#52–#56). Reference build gate cleared 2026-05-14 — all WL-1 through WL-6 unblocked. WL IDs normalised to WL-0 through WL-6 (was WL1–WL6 + WL-TCO). Phase 1 count corrected to 22 articles. EU compliance article coverage added across A1, B1 (DLT Pilot Regime, AML/AMLA, DORA, MiFID II, EU AI Act).
-  rev 5 (2026-05-18): publish schedule extracted to `InnBlockchain - Editorial Calendar.md` (rev 2). Removed duplicated tables from this doc: Phase 0 single-article schedule; Track A Phase 1 numbered tables (Steps 1–6, 22 articles); Track B B1 WealthTech numbered tables (TOFU/MOFU/BOFU/Post-Launch, 19 articles); early-ship cross-pillar entries (C1, T4-N, P1-N). Replaced each with a pointer to Editorial Calendar plus retained gate-dependent and watch-candidate metadata. Trimmed Publishing Cadence section — removed week-by-week cadence claims, kept only phase ordering rules and per-cluster LP gates. Track A Phase 2, Phase 3, Track B B2/B3/B4, AI+Blockchain validation-gated cluster, Lead Magnets, and Watch Segments retained in full (not in calendar scope). This doc is now the article inventory + scoring + sales motion tagging + distribution principles + cross-track routing rules; calendar is the date schedule.
-  rev 6 (2026-05-19): MiCA-as-RWA-cover misframe correction across A1 (Track A RWA Tokenization) and B1 (Track B WealthTech). Added top-of-A1 warning callout: EU regime for RWA ownership tokens is MiFID II + Prospectus + DLT Pilot Regime (NOT MiCA — Art. 2(4) exclusion). Renamed 6 article titles to lead with MiFID II / DLT Pilot framing: A1 hub, "MiCA Compliance for RWA Tokenization Platforms" → "MiFID II + DLT Pilot Regime Compliance...", "MiCA Whitepaper Requirements" → "Prospectus Regulation vs. MiCA Whitepaper for Token Issuance", "Staying MiCA-Compliant Post-Launch" → "Staying MiFID II + DLT Pilot Compliant Post-Launch", "STOs Under MiCA" → "STOs Under MiFID II + Prospectus + DLT Pilot Regime", "MiCA and MiFID II for Tokenized Assets" → "MiFID II + DLT Pilot Regime for Tokenized Assets (and Where MiCA Actually Fits)". Updated B1 hub description, B1 audience-qualifier callout, and "MiCA Content — Two Buyer Patterns" callout (now per-segment regime framing: Seg 1 = MiFID II + DLT Pilot; Seg 2 = MiCA CASP; Seg 3 = CCD2; Seg 4 = PSD3). A1 topic table and P5 table entries updated. The "MiCA or MiFID II?" boundary-clarifier article retained — annotated to specify that for RWA ownership tokens the article must conclude MiFID II + DLT Pilot. Killed-article cross-references updated.
+  rev 1 (2026-05-13): merged from `Content Strategy - Crypto Native.md` + `Content Strategy - FinTech.md` (both rev 3) into one source-of-truth with `[CN]` / `[FT]` / `[Both]` track tagging.
+  rev 2 (2026-05-13): cannibalization-fix — 7 awareness articles retagged `[Both]`, 2 pairs merged, 1 killed (STOs vs ICOs), 6 Track B articles renamed to escape Track A SERP, Track B keyword tables rewritten. ~9 article reduction.
+  rev 3 (2026-05-13): white-label unified across both ICPs — 13 WL articles → 7 (WL-0 through WL-6) at $20k+ flat floor. Enterprise compliance integration moved to custom-build at $50k+.
+  rev 4 (2026-05-14): priority plan restructured into TOFU / MOFU / BOFU / Post-Launch. WL-0 in Phase 0, WL-1 at Phase 1 BOFU #22, WL-2–6 in Phase 2. EU compliance article coverage added across A1 + B1.
+  rev 5 (2026-05-18): publish schedule extracted to `InnBlockchain - Editorial Calendar.md`. This doc is now article inventory + scoring + sales motion tagging + distribution + routing rules; calendar owns dates.
+  rev 6 (2026-05-19): MiCA-as-RWA-cover misframe correction. Added A1 warning callout (RWA = MiFID II + Prospectus + DLT Pilot per Art. 2(4), NOT MiCA). Renamed 6 article titles to lead with MiFID II / DLT Pilot. Rewrote B1 hub, audience qualifier, and "MiCA Content — Two Buyer Patterns" callout to per-segment regime framing.
+  rev 7 (2026-05-20): second-pass audit — added P5 scope guards to 3 MiCA articles (#3 *MiCA Explained* CTA fixed; *EU Stablecoin Regulation* scoped to EMT/ART; *MiCA vs Other Global Frameworks* scoped to Seg 2–10). Deferred #14 *MiCA Compliance Checklist for CN Startups* from Phase 1 W14 to Phase 2.
+  rev 8 (2026-05-20): added Canonical regulatory reference callout pointing to [[EU-Compliance-Landscape]] — same pattern as ICP + LP AEO/GEO docs. Renamed wikilinks `[[EU-Fintech-Compliance-Landscape]]` → `[[EU-Compliance-Landscape]]` (canonical name dropped "Fintech" — doc now spans both ICPs).
+  rev 9 (2026-05-20): post-canonical audit — fixed 4 errors + 2 gaps. (1) A2 DEX Travel Rule threshold corrected (€1,000 is unhosted-wallet only, not CASP-to-CASP). (2) B6 RegTech regime mix-up fixed in 2 places — own regime is AML/AMLA + EU AI Act (not MiCA + DORA). (3) P5 Travel Rule article framing corrected from "FATF" to TFR (Regulation (EU) 2023/1113). (4) FT keyword ordering "asset tokenization MiCA MiFID II" → MiFID II + Prospectus + DLT Pilot. (5) PSD2 → PSD2/PSD3 in 5 article-title references for forward-looking framing. (6) B4 WalletTech compliance hooks expanded to include DORA + reorder primary regimes. (7) P5 cluster diagram scope expanded from 5 to 11 regulations (full canonical map). Plus added Phase 2 P5 Inventory Rebalancing callout (DORA cross-cutting article queued for early Phase 2; CCD2/IPR/eIDAS/PSD3/AMLA articles activation-gated).
+  rev 10 (2026-05-21): 4th-pass audit — fixed systemic pattern + polish. (1) Three more FATF→TFR renames in article titles (B2 KYC/AML Integration, B5 Cross-Border Payments, B6 AML on Blockchain) — same naming-precision rule as rev 9 line 213. (2) DORA gap pattern in segment hooks: added DORA to A3 DeFi Lending, A5 NFT, B3 LendTech (conditional), B5 PayTech; created compliance hooks callout for A6 Token Launch (was missing) with DORA + AML/AMLA + eIDAS. (3) Two segments had no compliance hooks at all: added full hooks callouts for B7 BankTech Treasury (DORA + PSD3 + AML/AMLA + MiFID II if investment services) and B8 InsurTech (DORA + EU AI Act + AML/AMLA scoped to life/financial). (4) A5 NFT hooks expanded with €10k AMP threshold + EU AI Act. (5) Track B P5 Hub title re-ordered to lead with MiFID II + DLT Pilot (Q2 2026 primary segment) instead of MiCA-first; also expanded to include PSD3 + CCD2 + DORA cross-cutting. Track A P5 Hub title got a scope note clarifying Seg 2–10 audience. Plus promoted DORA cross-cutting article from Phase 2 queue into Phase 1 W7 (matched in Editorial Calendar rev 6); added GDPR cross-cutting article + FiDA deferred entry to Phase 2 Rebalancing callout.
+  rev 11 (2026-05-21): 5th-pass audit — fixed 2 inconsistencies introduced by rev 10 DORA promotion. (1) Track B Cross-Pillar early-ship callout (line 975) still listed P1-N as date-locked at W7 — stale since P1-N was removed in Calendar rev 5 and W7 reassigned to P5-DORA-X in rev 6. Rewrote callout to list the current trio (C1 / T4-N / P5-DORA-X) and note P1-N's deferral. (2) P5 article inventory table was missing P5-DORA-X — article scheduled in calendar but not listed in the article roster that drives writer briefs. Added inventory row with full description + scope of the cross-cutting CCO-facing overview. After this rev, calendar + strategy doc + Phase 2 callout are fully consistent on P5-DORA-X.
+  rev 12 (2026-05-21): closed RWA Phase 1 eIDAS gap. Existing B4 article *"eIDAS 2.0 for FinTech Wallets"* broadened to `[Both]` cross-cutting *"eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms: Becoming a Relying Party Before the Dec 31, 2026 Deadline"* — now serves wallet-authentication (B4 WalletTech / B5 PayTech / B7 BankTech) AND RWA investor-KYC (A1 + B1) in one article. Moved to A1 MOFU Compliance Depth section with cross-references in B1 + B4. Promoted from Phase 2 P5 Rebalancing queue into Phase 1 W13 Tuesday (Editorial Calendar rev 7), filling the OPEN slot left by #14 MiCA Checklist deferral. Phase 2 callout eIDAS row updated to ✅ promoted. Pattern used: same `[Both]` shared-article approach as "EU AI Act for Tokenized Asset Platforms" — one article, two audiences, split CTA footer. Closes the RWA Phase 1 eIDAS gap identified in the 6th-pass audit.
+  rev 13 (2026-05-21): 6th-pass cleanup — fixed 3 small consequences of rev 12 not fully coordinating with rev 10. (1) B4 WalletTech hook claim "no article currently covers it for wallet operators" was stale post-rev-12; replaced with pointer to the broadened `[Both]` article. (2) B7 BankTech hook (added rev 10) was missing eIDAS 2.0 — added with cross-reference to A1 article. (3) B8 InsurTech hook (added rev 10) was missing eIDAS 2.0 — added with cross-reference to A1 article. Also added the same cross-reference to B3 LendTech hook for writer-discoverability. All five segments that touch eIDAS (B3 borrower KYC, B4 wallet auth, B5 sender/receiver KYC, B7 account-opening KYC, B8 policyholder KYC + A1/B1 investor KYC) now point to one shared article.
+  rev 14 (2026-05-21): 7th-pass cross-doc audit — fixed 2 sync consequences of rev 12 (same kind rev 11 caught for DORA-X, but for eIDAS-X this time). (1) Cross-Pillar early-ship callout (line 981) said "three cross-pillar articles" but rev 12 added a fourth (P5-eIDAS-X at W13). Updated to four articles with W13 narrative. (2) P5 article inventory table was missing P5-eIDAS-X — article scheduled in calendar + present in A1 cluster but not in P5 roster that drives writer briefs. Added inventory row matching the `[Both]` pattern used for EU AI Act + DORA-X (cluster-primary, P5-cross-listed). After this rev, Strategy doc + Editorial Calendar are fully consistent on both P5-DORA-X and P5-eIDAS-X across all surfaces.
+  rev 15 (2026-05-21): removed false "Active phase" date commitments that the calendar doesn't honor. Three B6 articles were tagged "EU priority — Active phase" or "Park-status nurture — Active phase" implying Phase 1 scheduling, but Phase 1 calendar has no slot for them (42 slots filled by 21 Track A + 17 B1 + 4 cross-pillar). Cleaned: (1) #30 *MiCA Compliance for FinTech Builders* — removed "(EU priority — Active phase)" tag. (2) #31 *DORA for FinTechs Using Blockchain Vendors* — removed same tag (distinct from P5-DORA-X at W7). (3) *Preparing for MiCA License Application* — removed "(Park-status nurture — Active phase)" tag, was already deferred from Phase 1 in Calendar rev 5. (4) B6 cluster callout reworded from "ship during Active phase" to "not Watch-gated; schedule per Editorial Calendar." (5) Track B diagram (B6 row) reworded same way. Strategy now stays at article-inventory layer; calendar owns scheduling per the rev 5 separation-of-concerns rule. Strategy `Active phase` rules at lines 208 + 1034 retained — those are Watch-gating rules ("don't Watch-defer just because RegTech is Watch"), not per-article date commitments.
+  rev 16 (2026-05-21): layer-clean pass — stripped 9 calendar-scheduling references that had bled into the strategy doc as breadcrumbs from rev 10-12 promotions. Removed: (1) Cross-Pillar early-ship callout's W4/W6/W7/W13 slot assignments + rev-history reassignment narrative ("W7 was reassigned to P5-DORA-X in Calendar rev 6 because... W13 was reassigned from #14 in Calendar rev 7 because..."). (2) Phase 1 close date ("Week 21 — Oct 6, 2026"). (3) Track B B1 close date ("Week 22 — Oct 15, 2026"). (4) P5-DORA-X + P5-eIDAS-X inventory row week/rev references. (5) Phase 2 Rebalancing DORA promotion row's "W7 Thursday + rev 6" detail. (6) Rule-of-thumb post-promotion "W7 Thursday" reference. (7) #14 deferral annotation "(was W14 Track A)". (8) Stale calendar rev reference "(rev 2, 2026-05-18)" in Phase 1 callout. Article IDs (C1, T4-N, P5-DORA-X, P5-eIDAS-X, B1-#X) kept as reference; week numbers + rev numbers + reassignment history removed. Strategy now references the calendar by wikilink for scheduling, doesn't duplicate slot detail. The only external date the strategy still references is the **Dec 31, 2026 EUDI Wallet deadline** in the eIDAS-X row — that's a regulatory deadline (external commitment), not a calendar slot.
 tags:
   - content
 ---
@@ -26,6 +36,9 @@ tags:
 > - **Track B — Regulated FinTech** → [[ICP - FinTech]]. Channels: LinkedIn ABM/Money20/20/Finextra. Sam+Tom+Carol committee. 60–90 day cycle (+2–8 weeks Carol). CFO procurement at $75k+.
 >
 > Every article carries three pieces of metadata: **Track tag**, **Destination landing page**, **Sales motion CTA**. Mixing tracks or motions in one article's CTA is the most common failure mode — see Sales Motion Tagging at the bottom.
+
+> [!INFO] Canonical regulatory reference
+> **[[EU-Compliance-Landscape]]** is the single source of truth for the per-segment regulatory map (MiFID II / III, MiCA, DLT Pilot Regime, DORA, AML/AMLA, EU AI Act, PSD3, IPR, CCD2, eIDAS 2.0, GDPR) — including dependency map, regulation-interaction risks, and the **two misframes** (MiCA-is-not-universal-for-FinTechs; WealthTech RWA ≠ MiCA — ownership tokens are MiFID II financial instruments under Art. 2(4)). All regulatory framings in this doc — A1 RWA warning callout, B1 audience qualifier, "MiCA Content — Two Buyer Patterns" callout, P5 article scope guards, per-segment article titles, Phase 1 Segment-Scope Guard — are scoped excerpts; **if any article framing diverges from the landscape doc, the landscape doc wins**. Writers must consult before drafting any P5 EU-compliance article or any article with regime framing in its title (e.g., "STOs Under MiFID II + Prospectus + DLT Pilot," "Prospectus vs MiCA Whitepaper," "MiCA or MiFID II?"). Re-read on every cluster cut.
 
 ---
 
@@ -77,7 +90,7 @@ tags:
 > - FT P1: "Smart Contract Audit Checklist for FinTech" → **"Compliance Audit Defensibility Pack for Regulated FinTech: What Regulators Look For"**
 > - FT P1: "Smart Contract Audit Process for Regulated FinTech" → **"Regulatory Sign-Off Process for Smart Contract Audits: How Compliance Officers Approve a Vendor"**
 > - FT P1: "Upgradeability Patterns for Smart Contracts: Proxy Patterns and Their Risks" → **"Smart Contract Upgrade Governance for Regulated FinTech: Liability, Regulator Approval, and Audit Trail"**
-> - FT B4: "MPC Wallet Infrastructure for Payment Service Providers" → **"MPC for Payment Service Providers: Replacing Seed Phrase Custody Under PSD2 and MiCA"**
+> - FT B4: "MPC Wallet Infrastructure for Payment Service Providers" → **"MPC for Payment Service Providers: Replacing Seed Phrase Custody Under PSD2/PSD3 and MiCA"**
 >
 > **Watch-candidate annotations:** FT B1 #11 (Utility NFTs in FinTech), FT B1 #16 (Tokenized US Treasuries), CN A2 trending (Solana Raydium vs. Orca). Kill if no inbound in 90 days.
 
@@ -189,34 +202,54 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 
 ### P5 — EU Regulatory Compliance *(Both tracks — different framing per track)*
 
-**Hub (Track A):** `EU Crypto Regulation for Protocol Builders: MiCA, DORA, and What They Mean for Your Smart Contracts`
-**Hub (Track B):** `EU Crypto Regulation for FinTech: MiCA CASP, MiFID II, DORA, EU AI Act`
+**Hub (Track A):** `EU Crypto Regulation for Protocol Builders: MiCA, DORA, Travel Rule (TFR), and What They Mean for Your Smart Contracts` *(scope: Seg 2–10 — DeFi, DEX, wallets, NFT, token launch, governance, infrastructure; Seg 1 RWA Track A buyers route to the A1 hub which carries MiFID II + Prospectus + DLT Pilot framing)*
+**Hub (Track B):** `EU FinTech Regulation Map: MiFID II + DLT Pilot (WealthTech), MiCA CASP (ExchangeTech / WalletTech-crypto), PSD3 + eIDAS (PayTech / WalletTech), CCD2 + EU AI Act (LendTech), DORA (Cross-Cutting)` *(re-ordered rev 10 to lead with the Q2 2026 primary segment's regime — WealthTech under MiFID II — and to surface the per-segment regime map for all Active + Watch FT segments rather than the prior MiCA-first ordering)*
 *▶ Landing Pages:* `/services/blockchain-consulting` · `/solutions/rwa-tokenization` · `/solutions/tokenization`
-*▶ Canonical compliance reference:* [[EU-Fintech-Compliance-Landscape]] — segment-by-segment obligation map for both ICPs. Writers must consult this before drafting any P5 article.
+*▶ Canonical compliance reference:* [[EU-Compliance-Landscape]] — segment-by-segment obligation map for both ICPs. Writers must consult this before drafting any P5 article.
 
 > **Priority note:** EU is the primary GTM geography. P5 articles are Active phase regardless of which vertical they live under — do NOT defer to Watch RegTech.
 
+> [!INFO] Phase 2 P5 Inventory Rebalancing (added rev 9 / 2026-05-20)
+> Current P5 article inventory is **MiCA-skewed** — ~9 MiCA-named articles vs few-or-none for several regulations that have real segment coverage. This is partly structural (MiCA covers more segments) and partly residual from the misframe-correction passes (every "NOT MiCA" still counts as a MiCA mention). The article-count footprint will skew published content the same way unless rebalanced. **Phase 2 article queue to close the gaps:**
+>
+> | Regulation | Current P5 articles | Phase 2 add | Activation trigger | Priority |
+> |---|---|---|---|---|
+| **DORA** | 2 (CN + FT) | ✅ **PROMOTED INTO PHASE 1**: *"DORA for All EU Licensed Financial Entities..."* (P5-DORA-X) is scheduled in [[InnBlockchain - Editorial Calendar]]. No longer in Phase 2 queue. | n/a — already promoted | ✅ completed |
+> | **CCD2** | 0 | 1 article: *"CCD2 for Digital Lenders: Conduct Rules, BNPL Obligations, and Smart Contract Implications"* | Seg 3 LendTech activation | 🟡 medium — defer to Phase 2 |
+> | **IPR (Instant Payments Regulation)** | 0 | 1 article: *"IPR Compliance for EU PSPs: Mandatory Euro Credit Transfers and Verification of Payee (VoP)"* | Seg 5 PayTech activation | 🟡 medium — defer to Phase 2 |
+> | **eIDAS 2.0 / EUDI Wallet** | 1 broadened `[Both]` article | **✅ PROMOTED INTO PHASE 1** *(rev 12, 2026-05-21)*: existing B4 article *"eIDAS 2.0 for FinTech Wallets"* broadened to `[Both]` cross-cutting *"eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms: Becoming a Relying Party Before the Dec 31, 2026 Deadline"* — now serves B4 + B5 + B7 wallet authentication + A1 + B1 RWA investor KYC in one article. Lives in A1 MOFU Compliance Depth section. | n/a — already promoted | ✅ completed |
+> | **PSD3 / PSR** | 1 (paired with MiCA for wallets) | 1 standalone: *"PSD3 / PSR for Payment FinTechs: What Changes from PSD2 and How to Prepare"* | Seg 4/5 activation | 🟡 medium — defer to Phase 2 |
+> | **AML/AMLA Package** | 2 Travel Rule articles + 1 generic | 1 dedicated: *"The EU AML Package (AMLD 2024/1640 + AMLR 2024/1624 + AMLA Regulation): What FinTechs Must Do Before July 2027"* | Cross-cutting; AMLA Frankfurt already operational | 🟡 medium — schedule for Phase 2 if inbound from AMLA-prep firms |
+> | **GDPR** | 1 (B6 RegTech article on immutability vs right-to-forget) | 1 cross-cutting: *"GDPR for Blockchain-Touching FinTechs: Personal Data on Chain, the Right to Erasure, and Vendor Obligations"* | Universal — applies to all 18 segments. Currently 1 article = topic depth, not regulatory deep-dive | 🟡 medium — add to queue alongside AMLA Package; FT vendor risk packs reference GDPR in every deal |
+> | **FiDA** | 0 | — *(no article queued; FiDA trilogue paused per landscape, application ~2027; defer until trilogue resumes)* | FiDA trilogue resumption | ⚪ deferred — out of Phase 2 scope |
+>
+> **Rule of thumb on rebalancing:** add an article only when the corresponding segment activates OR when inbound surfaces the regulation as a primary buyer concern. Do NOT pre-build all six articles ahead of demand — the writing budget is the constraint. **DORA cross-cutting article is no longer in this queue — promoted to Phase 1 (P5-DORA-X; see [[InnBlockchain - Editorial Calendar]]).** The next-priority queued article is **GDPR cross-cutting** — FT vendor risk packs reference GDPR universally; the current B6 article is scoped to one specific issue (immutability vs erasure), not the full regulatory map. Pull GDPR into Phase 1 if a Carol surfaces in an Active deal asking for a comprehensive GDPR vendor brief.
+>
+> **Note on FiDA:** the canonical [[EU-Compliance-Landscape]] tracks FiDA as conditional (financial data holders, ~2027, trilogue paused). No FiDA article is queued because the trilogue is on hold; revisit when trilogue resumes. This is the only EU compliance regime in the canonical map that has zero article coverage and zero queued — flagged here so it doesn't drift out of sight.
+
 | Article | Track | Framing |
 |---|---|---|
-| MiCA Explained: What the EU's Crypto Framework Means for Your Business | Both | Awareness-level explainer — retagged from CN-only. Split CTA footer (Track A: scope an RWA build / Track B: download Vendor Risk Pack) |
+| MiCA Explained: What the EU's Crypto Framework Means for Your Business | Both | Awareness-level explainer. **Scope guard**: article must lead with "MiCA covers crypto-assets that are NOT financial instruments (Art. 2(4)) — if you're tokenizing real assets / securities, MiCA likely does NOT apply to you; read 'MiCA or MiFID II?' next." Split CTA footer: **Track A:** *Read "MiCA or MiFID II?" to confirm your regime* (NOT "scope an RWA build" — that CTA implied MiCA was the relevant regime for RWA, the exact misframe); **Track B:** download Vendor Risk Pack |
 | MiCA Compliance for FinTech Builders: CASP Registration, MiFID II Crossover, and What Your Regulated Business Must Do Before Launch | FT | Existing-business obligations — CASP registration, MiFID II crossover |
-| MiCA Compliance Checklist for Crypto-Native Startups: What to Address Before Your Token Issuance | CN | — |
-| EU Stablecoin Regulation Under MiCA: What Protocol Builders and DeFi Teams Need to Know | CN | — |
+| MiCA Compliance Checklist for Crypto-Native Startups: What to Address Before Your Token Issuance | CN | **Scope guard: Seg 2–10 ONLY** (DeFi, DEX, wallets, NFT, token launch, governance — segments where MiCA actually applies). Article must open with: "If you're tokenizing real-world assets (real estate, bonds, equities, private credit), this article is the wrong regime — see 'MiCA or MiFID II?' instead." **Deferred from Phase 1 to Phase 2** — conflicts with RWA Phase 1 focus (audience is MiCA-scope Seg 2–10, not Seg 1 RWA). |
+| EU Stablecoin Regulation Under MiCA: What Protocol Builders and DeFi Teams Need to Know | CN | **Scope: stablecoin issuers (EMTs / ARTs under MiCA Titles III + IV) and DeFi protocols holding stablecoins.** Not relevant to RWA tokenization platforms (those tokenize real assets, not value-references). |
 | DORA for Protocol Builders: What On-Chain Systems Must Implement to Meet EU Operational Resilience Requirements | CN | What the protocol itself must build (incident response, failover, auditability at SC layer) |
 | DORA for FinTechs Using Blockchain Vendors: ICT Third-Party Risk, Contractual Obligations, and Audit Rights | FT | What a FinTech must demand from blockchain vendors |
+| **DORA for All EU Licensed Financial Entities: ICT Resilience for Banks, Insurers, Investment Firms, PIs, EMIs, and CASPs** *(P5-DORA-X — scheduled in [[InnBlockchain - Editorial Calendar]])* | Both | Cross-cutting CCO-facing overview — covers DORA Article 2 scope, ICT third-party risk, threat-led pen testing, 2% turnover penalty, incident reporting timelines; serves every Active Track B deal (BankTech, ExchangeTech, WealthTech, WalletTech, PayTech, LendTech-if-licensed, InsurTech) plus CN CASP segments. Complements the two segment-specific DORA articles above (CN protocol-builder + FT vendor-side); this third article is the comprehensive regulatory overview that vendor risk packs reference. |
 | Travel Rule Compliance for DeFi Protocols: Technical Smart Contract Implementation for EU-Registered On-Chain Systems | CN | DeFi protocol implementing travel rule at SC layer |
-| Travel Rule Compliance for Licensed Exchanges (CEX and DEX): What You Must Build | FT | MiCA CASP + FATF — on-chain AML tooling for licensed CASP |
+| Travel Rule Compliance for Licensed Exchanges (CEX and DEX): What You Must Build | FT | MiCA CASP + **TFR (Regulation (EU) 2023/1113** — the EU implementation of FATF Recommendation 16; cite the EU regulation, not FATF, for EU-targeted FinTech content) — on-chain AML tooling for licensed CASP. **No threshold for CASP-to-CASP transfers**; €1,000 applies only to unhosted-wallet ownership verification |
 | KYC/AML On-Chain: How EU Crypto Companies Build Compliant Smart Contract Access Infrastructure | CN | — |
 | Prospectus Regulation vs. MiCA Whitepaper for Token Issuance: Which Document Your Platform Actually Needs (RWA = Prospectus / MiFID II; non-financial-instrument tokens = MiCA white paper) and What Smart Contracts Must Enforce | CN | — |
-| MiCA vs. Other Global Frameworks: What EU-Based Protocols Must Know Before Expanding Beyond the EU | CN | — |
+| MiCA vs. Other Global Frameworks: What EU-Based Protocols Must Know Before Expanding Beyond the EU | CN | **Scope guard: Seg 2–10 only — protocols / DeFi / exchanges / wallets whose primary EU regime is MiCA.** For RWA / tokenized securities expansion, the comparison baseline is MiFID II / Prospectus Regulation / DLT Pilot — NOT MiCA. Article must explicitly state this scope upfront. Title-test alternative for RWA buyer: a separate piece "MiFID II + DLT Pilot vs. US Reg D / Reg A+ vs. MAS / ADGM: Cross-Border RWA Tokenization" (parked — Phase 3+). |
 | MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset | Both | RWA classification boundary — `[Both]` split CTA; lives in A1 EU Compliance section, referenced in B1. **Article must conclude that for ownership-token RWA the answer is MiFID II + DLT Pilot Regime; MiCA only applies to ARTs or service-level CASP.** |
 | EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI | Both | AI-powered RWA valuation / oracle = potential high-risk AI; `[Both]` split CTA; lives in A1 EU Compliance section, referenced in B1 |
+| **eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms: Becoming a Relying Party Before the Dec 31, 2026 Deadline** *(P5-eIDAS-X — scheduled in [[InnBlockchain - Editorial Calendar]])* | Both | Cross-cutting article covering two relying-party patterns: (a) wallet authentication for B4 WalletTech / B5 PayTech / B7 BankTech consumer-KYC flows, (b) investor KYC for A1 + B1 RWA tokenization platforms. Also covers B3 LendTech borrower KYC + B8 InsurTech policyholder KYC (same relying-party pattern). Lives in A1 MOFU Compliance Depth section; cross-referenced in B1, B3, B4, B7, B8 hooks. Split CTA footer. Hard Dec 31, 2026 deadline (the only date the strategy doc should reference — it's an external regulatory deadline, not a calendar slot). |
 | MiFID II + DLT Pilot Regime for Tokenized Assets: What EU WealthTechs Must Get Right Before Launch (and Where MiCA Actually Fits) 🇪🇺 | FT | Regulatory obligations for existing financial businesses tokenizing assets — MiFID II + Prospectus + DLT Pilot are primary; MiCA only as service-level CASP or for ART tokens |
 | MiFID II Instrument Classification for Tokenized Assets: Is Your Token a Financial Instrument? 🇪🇺 | FT | — |
 | DLT Pilot Regime for Tokenized Securities Settlement: What EU WealthTechs Need to Know 🇪🇺 | FT | — |
 | STOs in 2026: The Regulatory Landscape for Security Token Offerings Under MiFID II, Prospectus Regulation, and DLT Pilot Regime 🇪🇺 | FT | STOs are MiFID II financial instruments, not MiCA crypto-assets (Art. 2(4) exclusion) |
 | MiCA CASP Compliance for Licensed Exchanges: What Your Smart Contract Architecture Must Satisfy 🇪🇺 | FT | Applies equally to CEX, DEX, DeFi-adjacent licensed products |
-| MiCA and PSD2 Compliance for EU E-Money Wallets Adding Crypto Features: What Licence Holders Must Know 🇪🇺 | FT | BaFin/DNB/CBI/Banque de France licence holders |
+| PSD3 + MiCA Compliance for EU E-Money Wallets Adding Crypto Features: What Licence Holders Must Know 🇪🇺 | FT | BaFin/DNB/CBI/Banque de France licence holders |
 | **Preparing for MiCA License Application: Roadmap for Existing FinTechs** 🇪🇺 | FT (Park-status nurture) | Keeps unlicensed-but-considering FinTechs warm; 12-month roadmap |
 
 ### P6 — Private & Hybrid Blockchain *(Track B only)*
@@ -293,7 +326,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **TOFU — Awareness:**
 - What Is Asset Tokenization? A Plain-English Guide `[Both]` *(merged from CN/FT awareness — split CTA footer; distributed via LinkedIn for RWA Felix + WealthTech Sam, plus SEO)*
 - How to Tokenize Real-World Assets: Smart Contract Architecture, Oracle Design, and EU MiFID II + DLT Pilot Regime Compliance *(hub — primary regime is MiFID II, not MiCA; see warning callout at top of A1)*
-- MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 *(#1 classification question for any RWA founder. Split CTA footer. Canonical reference: [[EU-Fintech-Compliance-Landscape]]. **Scope boundary vs. B1 "MiFID II Instrument Classification" article:** this article answers "which regime applies and why" at awareness level — threshold test, asset-type logic, consequences of each path. The B1 article covers MiFID II mechanics for firms who have already determined MiFID II applies. Do NOT overlap.)*
+- MiCA or MiFID II? How to Know Which EU Regime Governs Your Tokenized Asset `[Both]` 🇪🇺 *(#1 classification question for any RWA founder. Split CTA footer. Canonical reference: [[EU-Compliance-Landscape]]. **Scope boundary vs. B1 "MiFID II Instrument Classification" article:** this article answers "which regime applies and why" at awareness level — threshold test, asset-type logic, consequences of each path. The B1 article covers MiFID II mechanics for firms who have already determined MiFID II applies. Do NOT overlap.)*
 - [POST-MORTEM] How Oracle Manipulation Compromises RWA Platforms — Root Cause and Prevention *(risk-hook awareness piece; surfaces the oracle integrity problem before architecture articles)*
 
 **MOFU — Technical Architecture:**
@@ -307,6 +340,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 - Prospectus Regulation vs. MiCA Whitepaper for Token Issuance: Which Document Your RWA Platform Actually Needs, and What Smart Contracts Must Enforce *(compliance mechanics — pairs with MiFID II + DLT Pilot Compliance article above. **Renamed from "MiCA Whitepaper Requirements" — most RWA platforms need a Prospectus or Prospectus exemption under MiFID II, not a MiCA white paper; the article should make the choice explicit by token classification.**)*
 - AML Compliance for RWA Investor Onboarding: Art Market Participants, Accredited Investors, and Cross-Border Asset Due Diligence 🇪🇺 *(CN-specific: Art Market Participant status for tokenized art, accredited investor verification, cross-border checks — not covered by generic P5 KYC/AML article)*
 - EU AI Act for Tokenized Asset Platforms: When Your Valuation Oracle or AI Pricing Model Is High-Risk AI `[Both]` 🇪🇺 *(AI-powered valuation / commodity pricing / risk scoring = potential high-risk AI; immutable audit trail required. Split CTA footer)*
+- eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms: Becoming a Relying Party Before the Dec 31, 2026 Deadline `[Both]` 🇪🇺 *(broadened rev 12 from a B4-WalletTech-only scope to `[Both]` cross-cutting. Covers two relying-party patterns in one article: (a) **wallet authentication** for B4 WalletTech / B5 PayTech / B7 BankTech consumer-KYC flows, (b) **investor KYC** for A1 + B1 RWA tokenization platforms onboarding EU investors. Hard external deadline — Dec 31, 2026 EUDI Wallet availability across all Member States; relying-party acceptance enforceable from that date. Split CTA footer: **Track A:** scope an RWA build with EUDI Wallet integration / **Track B:** download Vendor Risk Pack. Replaces the prior B4-specific eIDAS article — see also B1 + B4 cross-references.)*
 
 **MOFU — Asset-Class Deep Dives:**
 - Fractional Real Estate Tokenization: Smart Contract Architecture for Property Fractionalization and Compliant Issuance
@@ -335,7 +369,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **Hub:** `How to Build a Secure DEX: From AMM Design to Audit-Ready Deployment`
 *▶ Landing Page:* `/solutions/dex-protocol`
 
-> **EU compliance hooks (Seg 2):** MiCA CASP registration is mandatory for EU-facing trading/custody of crypto-assets. AML/AMLA Travel Rule applies to transfers ≥€1,000. DORA applies if classified as critical ICT third-party. Travel Rule article is in P5 — cross-link from relevant A2 articles.
+> **EU compliance hooks (Seg 2):** MiCA CASP registration is mandatory for EU-facing trading/custody of crypto-assets. **TFR Travel Rule (Regulation (EU) 2023/1113) applies with no threshold for CASP-to-CASP crypto transfers** (the €1,000 threshold applies only to unhosted-wallet ownership verification — do not confuse the two). DORA applies — CASPs are explicitly named in DORA Article 2 scope. Travel Rule article is in P5 — cross-link from relevant A2 articles.
 
 #### Use-Case Clusters
 
@@ -371,7 +405,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **Hub:** `Building a Secure DeFi Lending Protocol: Architecture, Liquidations, and Audit Readiness`
 *▶ Landing Page:* `/solutions/defi-protocol`
 
-> **EU compliance hooks (Seg 3):** MiCA CASP applies if lending/yield products constitute crypto-asset services for EU users. AML/AMLA Travel Rule applies. EU AI Act high-risk AI category applies if AI is used for credit/risk scoring — immutable audit trail required. This AI Act angle is a content gap: no P5 article covers it for DeFi-native protocols specifically (P5 AI Act articles are Track B only). Add A3-specific article.
+> **EU compliance hooks (Seg 3):** MiCA CASP applies if lending/yield products constitute crypto-asset services for EU users. **DORA applies** to every Seg 2–10 segment classified as a CASP (per [[EU-Compliance-Landscape]] Article 2 scope). AML/AMLA Travel Rule applies. EU AI Act high-risk AI category applies if AI is used for credit/risk scoring — immutable audit trail required. This AI Act angle is a content gap: no P5 article covers it for DeFi-native protocols specifically (P5 AI Act articles are Track B only). Add A3-specific article.
 
 #### Use-Case Clusters
 
@@ -437,7 +471,7 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 **Hub:** `How to Build a Secure NFT Platform: From Minting Contracts to Marketplace Architecture`
 *▶ Landing Page:* `/solutions/nft-platform`
 
-> **EU compliance hooks (Seg 5):** MiCA explicitly exempts unique NFTs but ESMA is actively probing fractionalized NFTs and collections with fungible economics — compliance posture is live and evolving, not settled. AML/AMLA applies for high-value NFT transfers and platforms that may qualify as Art Market Participants. This is a content gap and a trust-building angle for EU-based NFT founders: no article currently addresses MiCA NFT classification risk specifically.
+> **EU compliance hooks (Seg 5):** MiCA explicitly exempts unique NFTs but ESMA is actively probing fractionalized NFTs and collections with fungible economics — compliance posture is live and evolving, not settled. AML/AMLA applies for high-value NFT transfers and platforms that may qualify as Art Market Participants (**€10,000+ transaction threshold** per AMLD obliged-entity scope). **DORA applies** if the NFT venue is classified as a CASP — fact-pattern tracks MiCA classification per [[EU-Compliance-Landscape]] (i.e., if the venue becomes MiCA-scope through fractionalized NFTs or fungible economics, DORA follows). **EU AI Act applies** if AI is used in pricing, recommendation engines, or generative-NFT mechanics — secondary trigger. This is a content gap and a trust-building angle for EU-based NFT founders: no article currently addresses MiCA NFT classification risk specifically.
 
 #### Use-Case Clusters
 
@@ -467,10 +501,12 @@ Pillars are shared infrastructure. Where the framing genuinely differs by track,
 
 ### A6 — Token Launch & IDO Launchpad *(Active)*
 
-**Target:** Protocol teams launching tokens — IDO/IEO launchpads, token sale platforms, vesting/distribution infrastructure. Testnet live, tokenomics defined, fundraising timeline confirmed. $20k+ floor. EU-registered token issuances must address MiCA whitepaper requirements (cross-link P5).
+**Target:** Protocol teams launching tokens — IDO/IEO launchpads, token sale platforms, vesting/distribution infrastructure. Testnet live, tokenomics defined, fundraising timeline confirmed. $20k+ floor.
 
 **Hub:** `How to Launch a Token Securely: From Smart Contracts to IDO Infrastructure`
 *▶ Landing Page:* `/solutions/token-launch`
+
+> **EU compliance hooks (Seg 6):** MiCA White Paper obligation for public crypto-asset offerings (prospectus-equivalent liability) — primary regime. **DORA applies** because per [[EU-Compliance-Landscape]] "placing of crypto-assets" is a Title V CASP service, putting launchpads in DORA Article 2 scope. AML/AMLA applies. eIDAS 2.0 KYC acceptance applies to investor onboarding from 31 Dec 2026. MiCA whitepaper article cross-links to P5.
 
 #### Use-Case Clusters
 
@@ -601,6 +637,7 @@ Key articles:
 - DORA for Tokenized Securities Infrastructure: ICT Resilience Obligations for WealthTechs Building on DLT 🇪🇺 *(oracle providers as critical ICT third-parties, DLT settlement resilience testing, incident reporting for tokenized securities — different surface area from generic P5 DORA article)*
 - AML / AMLA for Institutional RWA Investor Onboarding: Travel Rule Obligations for Tokenized Securities Transfers Between Institutional Clients 🇪🇺 *(WealthTech-specific AML surface: institutional investor onboarding onto tokenized securities platforms — different from P5 Travel Rule article which covers licensed exchanges B2)*
 - *(EU AI Act for AI valuation / pricing: see "EU AI Act for Tokenized Asset Platforms" in A1 MOFU Compliance Depth — shared `[Both]` article; split CTA footer serves both tracks)*
+- *(eIDAS 2.0 EUDI Wallet for RWA investor KYC: see "eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms..." in A1 MOFU Compliance Depth — shared `[Both]` article covering investor-KYC relying-party pattern for tokenized-securities platforms; hard Dec 31, 2026 deadline)*
 
 **BOFU — Decision:**
 - What Compliance Officers Need Before Approving a Tokenized Securities Build: MiFID II Instrument Review, DLT Pilot Authorization, and DORA Third-Party Risk 🇪🇺 *(Carol gates every B1 deal — this is the unlock article. Covers MiFID II classification review, DLT Pilot authorization timeline, DORA resilience testing for settlement infra — none of this is in the generic P1 Carol article)*
@@ -629,7 +666,7 @@ Key articles:
 - CEX Architecture Deep Dive: Matching Engine, Wallet Custody, and Fiat On-Ramp Design
 - Regulated Exchange Architecture: On-Chain vs. Off-Chain Order Books Under MiCA CASP — Audit Requirements, Liability, and Technical Trade-offs
 - Building Wallet Infrastructure for a Crypto Exchange: Custody, Security, and MPC
-- KYC/AML Integration for Crypto Exchanges: Meeting FATF and Local Regulations
+- KYC/AML Integration for Crypto Exchanges: Meeting EU TFR (Regulation (EU) 2023/1113) and Local Regulations
 - How to Choose the Right Blockchain for Your Exchange (Ethereum, Solana, Polygon)
 - Exchange Security Checklist: Smart Contract Audits, Cold Storage, and Incident Response
 - MiCA CASP Compliance for Licensed Exchanges: What Your Smart Contract Architecture Must Satisfy 🇪🇺
@@ -646,7 +683,7 @@ Key articles:
 **Hub:** `Blockchain for Digital Lending: Automating Credit from Origination to Repayment`
 *▶ Landing Page:* `/solutions/defi-lending`
 
-> **EU compliance hooks (LendTech):** CCD2 (Consumer Credit Directive 2) in force Nov 20, 2026 — hard deadline for BNPL and consumer lenders. EU AI Act high-risk AI applies to credit scoring and fraud detection models (immutable audit trail required). AML/AMLA. Both CCD2 and the EU AI Act credit-scoring angle are content gaps — no P5 or AI+Blockchain cluster article covers them from a LendTech perspective. AI+Blockchain cluster is validation-gated until 2026-05-31; CCD2 article has no gate.
+> **EU compliance hooks (LendTech):** CCD2 (Consumer Credit Directive 2) in force Nov 20, 2026 — hard deadline for BNPL and consumer lenders. EU AI Act high-risk AI applies to credit scoring and fraud detection models (immutable audit trail required). AML/AMLA. **DORA applies** only if the lender holds a credit institution or PI license alongside CCD2 (per [[EU-Compliance-Landscape]] Article 2 scope — conditional on entity type, not universal for LendTech). **eIDAS 2.0** KYC acceptance applies to borrower onboarding from 31 Dec 2026 (covered by the cross-cutting A1 `[Both]` article — borrower KYC follows the same relying-party pattern as wallet authentication). Both CCD2 and the EU AI Act credit-scoring angle are content gaps — no P5 or AI+Blockchain cluster article covers them from a LendTech perspective. AI+Blockchain cluster is validation-gated until 2026-05-31; CCD2 article has no gate.
 
 #### Articles
 - Smart Contracts for Loan Origination: Automating Credit Agreements End-to-End
@@ -672,16 +709,16 @@ Key articles:
 **Hub:** `Adding Blockchain Rails to Your FinTech Wallet: Stablecoin Settlement, DeFi Yield & Multi-Chain`
 *▶ Landing Page:* `/solutions/fintech-wallets`
 
-> **EU compliance hooks (WalletTech):** PSD3/PSR (payment services authorization), MiCA (if crypto wallet feature added), eIDAS 2.0 (digital identity for wallet authentication — mandatory wallet availability by Dec 31, 2026), AML/AMLA Travel Rule. eIDAS 2.0 is a hard deadline and a content gap — no article currently covers it for wallet operators.
+> **EU compliance hooks (WalletTech):** **PSD3/PSR** (payment services authorization — primary regime), **eIDAS 2.0** (digital identity for wallet authentication — mandatory wallet availability by Dec 31, 2026; covered by the broadened `[Both]` article *"eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms..."* in A1 MOFU Compliance Depth, cross-listed here in B4 articles), **DORA** (PIs and EMIs are explicitly in DORA Article 2 scope — applies whether or not a crypto feature is added), **AML/AMLA Travel Rule**, **MiCA** (only if crypto wallet feature added — stablecoin send/receive, crypto custody, on-chain swap).
 
 #### Articles
 - How to Add Stablecoin Settlement to Your FinTech Wallet: Architecture & Compliance Guide
 - Multi-Chain Asset Support for Regulated Wallets: What E-Money Institutions Need to Know
 - DeFi Yield Integration for Licensed FinTech Wallets: How to Access On-Chain Returns Compliantly
 - Custodial vs. Non-Custodial Architecture for Regulated E-Money Wallets
-- MiCA and PSD2 Compliance for EU E-Money Wallets Adding Crypto Features: What Licence Holders Must Know 🇪🇺
-- eIDAS 2.0 for FinTech Wallets: What Digital Identity Wallet Obligations Mean for E-Money and Payment Apps Before Dec 2026 🇪🇺 *(new — hard deadline; no P5 equivalent)*
-- MPC for Payment Service Providers: Replacing Seed Phrase Custody Under PSD2 and MiCA *(renamed to escape "MPC wallet" generic SERP; narrower long-tail target)*
+- PSD3 + MiCA Compliance for EU E-Money Wallets Adding Crypto Features: What Licence Holders Must Know 🇪🇺
+- *(eIDAS 2.0 EUDI Wallet broadened to `[Both]` cross-cutting — see "eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms..." in A1 articles. Was originally B4-scoped; broadened rev 12 to also serve A1 + B1 RWA investor KYC and other CASP segments doing customer KYC.)*
+- MPC for Payment Service Providers: Replacing Seed Phrase Custody Under PSD2/PSD3 and MiCA *(renamed to escape "MPC wallet" generic SERP; narrower long-tail target)*
 - *(Embedded Wallets merged: see "Embedded Wallets Compared: Privy, Dynamic, Web3Auth..." in A4 articles — same shared `[Both]` article)*
 - *(Passkey merged: see "Passkey Authentication for Crypto Wallets..." in A4 articles — same shared `[Both]` article)*
 - Account Abstraction for FinTech: What ERC-4337 Means for Your Wallet User Onboarding *(trending)*
@@ -710,13 +747,13 @@ Target: WealthTech, LendTech, RegTech, BankTech companies deploying AI for credi
 #### B5 — Cross-Border Remittance & Payments (PayTech) *(Watch)*
 *▶ Landing Page:* `/solutions/remittance`. **No portfolio yet — activation gated on Active clusters producing pipeline.**
 
-> **EU compliance hooks (PayTech):** IPR (Instant Payments Regulation) — mandatory euro credit transfers and Verification of Payee (VoP) from Oct 2025 (already in force). PSD3/PSR. AML/AMLA. IPR is an immediate compliance pressure for any EU PayTech and a strong content hook. Add IPR article on segment activation.
+> **EU compliance hooks (PayTech):** IPR (Instant Payments Regulation) — mandatory euro credit transfers and Verification of Payee (VoP) from Oct 2025 (already in force). PSD3/PSR. **DORA applies** because PSPs are explicitly in DORA Article 2 scope per [[EU-Compliance-Landscape]] — 2% annual turnover penalty for ICT-resilience breaches. AML/AMLA. **eIDAS 2.0** sender/receiver KYC acceptance applies from 31 Dec 2026. IPR is an immediate compliance pressure for any EU PayTech and a strong content hook. Add IPR article on segment activation.
 
 - Cross-Border Remittance on Blockchain vs. SWIFT: Speed, Cost & Compliance Compared
 - Stablecoins for Remittance: USDC vs. USDT vs. Local CBDCs — Which Rail Wins?
 - How to Build a Blockchain Remittance Corridor: Technical Architecture
 - Eliminating Correspondent Banking: A Step-by-Step Guide for PayTechs
-- Regulatory Compliance for Cross-Border Blockchain Payments (FATF Travel Rule)
+- Regulatory Compliance for Cross-Border Blockchain Payments (EU TFR — Regulation (EU) 2023/1113)
 - EU Instant Payments Regulation (IPR): What PayTechs Must Build for Mandatory Euro Credit Transfers 🇪🇺 *(new — IPR already in force Oct 2025; add on segment activation)*
 - The True Cost of SWIFT vs. Blockchain Remittance: A Margin Analysis for PayTechs
 - On-Chain FX Settlement: How Atomic Swaps Are Replacing Nostro/Vostro Accounts *(trending)*
@@ -724,22 +761,25 @@ Target: WealthTech, LendTech, RegTech, BankTech companies deploying AI for credi
 #### B6 — Compliance, KYC/AML & RegTech *(Watch — EU Exception)*
 *▶ Landing Page:* `/solutions/regtech-kyc`
 
-> [!WARNING] EU exception — MiCA + DORA articles are NOT Watch
-> RegTech segment is Watch (no portfolio yet) but MiCA + DORA articles below apply to all Active clusters. Publish during Active phase — tag for EU LinkedIn distribution.
+> [!WARNING] EU exception — cross-cutting regulatory articles are NOT Watch
+> RegTech segment is Watch (no portfolio yet) but the **cross-cutting EU regulatory articles** below are not Watch-gated — they're tagged for EU LinkedIn distribution and scheduled when capacity allows. **RegTech's own regime is AML/AMLA + EU AI Act** (per [[EU-Compliance-Landscape]]), not MiCA — the cross-cutting categories that ship outside Watch gating are: AMLA rulebook explainers, DORA cross-cutting articles (apply to all licensed-entity segments), EU AI Act articles (apply to LendTech / RegTech / InsurTech), and segment-specific MiCA articles (which serve their target MiCA-scope segments — Seg 2 ExchangeTech, Seg 4 WalletTech-crypto, Seg 6 Token Launch — not RegTech itself). See [[InnBlockchain - Editorial Calendar]] for actual publish dates.
 
-- MiCA Compliance for FinTech Builders: CASP Registration, MiFID II Crossover, and What Your Regulated Business Must Do Before Launch 🇪🇺 *(EU priority — Active phase)*
-- DORA for FinTechs Using Blockchain Vendors: ICT Third-Party Risk, Contractual Obligations, and Audit Rights 🇪🇺 *(EU priority — Active phase)*
+- MiCA Compliance for FinTech Builders: CASP Registration, MiFID II Crossover, and What Your Regulated Business Must Do Before Launch 🇪🇺
+- DORA for FinTechs Using Blockchain Vendors: ICT Third-Party Risk, Contractual Obligations, and Audit Rights 🇪🇺
 - How Blockchain Makes KYC Reusable and Cuts Onboarding Time by 60%
-- AML on the Blockchain: How to Meet FATF Travel Rule Requirements
+- AML on the Blockchain: How to Meet EU TFR (Regulation (EU) 2023/1113) Travel Rule Requirements
 - Decentralized Identity (DID) for FinTech: What It Is and How to Implement It
 - GDPR and Blockchain: Solving the Immutability vs. Right-to-Forget Conflict
 - How to Build a Regulatory-Ready Blockchain App From Day One
 - RegTech in 2026: Which Compliance Tasks Can Blockchain Automate?
 - Blockchain Audit Trails: How to Give Regulators What They Want
-- **Preparing for MiCA License Application: Roadmap for Existing FinTechs** 🇪🇺 *(Park-status nurture — Active phase)*
+- **Preparing for MiCA License Application: Roadmap for Existing FinTechs** 🇪🇺 *(Park-status nurture)*
 
 #### B7 — Corporate Treasury & FX (BankTech) *(Watch — Blocked on CFO persona)*
 *▶ Landing Page:* `/solutions/treasury-fx`. **Blocked: CFO persona undefined in ICP. Activate when CFO persona defined + BankTech case study available.**
+
+> **EU compliance hooks (BankTech Treasury):** Banks are credit institutions — automatically in **DORA Article 2 scope** (2% annual turnover penalty for ICT-resilience breaches) per [[EU-Compliance-Landscape]]. PSD3/PSR applies to the bank's payment-services activity (separate authorization basis from CRD). AML/AMLA applies broadly. **eIDAS 2.0** account-opening KYC must accept the EUDI Wallet as a relying party from Dec 31, 2026 (covered by the cross-cutting A1 `[Both]` article). MiFID II applies if the bank offers investment services alongside treasury. MiCA enters only if a crypto product is added (e.g., institutional digital-asset custody, stablecoin issuance). On activation, surface DORA + AML/AMLA as the primary article hooks.
+
 - Blockchain ROI for Corporate Treasury: The CFO's Case for Real-Time Settlement and Cash Visibility
 - Corporate Treasury Blockchain Architecture: How Private Chains Deliver Real-Time Cash Visibility and FX Settlement
 - How Treasury Teams Use Private Blockchains to Eliminate Correspondent Banking Delays
@@ -751,6 +791,9 @@ Target: WealthTech, LendTech, RegTech, BankTech companies deploying AI for credi
 
 #### B8 — Insurance & Fraud Detection (InsurTech) *(Watch — Long Cycle)*
 *▶ Landing Page:* `/solutions/insurtech`. **Long 90–180 day cycle, no portfolio. Activate only with team capacity + case study.**
+
+> **EU compliance hooks (InsurTech):** Insurers are explicitly in **DORA Article 2 scope** per [[EU-Compliance-Landscape]]. **EU AI Act** applies because underwriting AI (pricing, eligibility, claims-likelihood scoring) is classified as high-risk — tamper-proof audit trail required. **AML/AMLA** applies to life-insurance and certain financial insurance products under AMLD — **pure P&C insurance is generally out of AML/AMLA scope**, but assess product-by-product; some parametric and embedded products straddle the line. **eIDAS 2.0** policyholder KYC must accept the EUDI Wallet as a relying party from Dec 31, 2026 (covered by the cross-cutting A1 `[Both]` article). MiCA is out of scope unless a crypto-linked product is added (e.g., on-chain parametric payouts in stablecoin). On activation, surface DORA + EU AI Act as the primary article hooks.
+
 - Parametric Insurance Explained: How Smart Contracts Automate Claims on Trigger Events
 - Blockchain for Health & Trade Insurance: Reducing Fraud and Processing Time
 - How Insurers Use Shared Ledgers to Eliminate Duplicate Claims
@@ -857,7 +900,7 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 ### Phase 0 + Track A Phase 1 → see Editorial Calendar
 
 > [!IMPORTANT] Date-locked schedule moved
-> Phase 0 (WL-0) and the full 22-article Track A Phase 1 publish schedule — TOFU/MOFU/BOFU sequencing, `[LinkedIn + SEO]` / `[SEO + X]` distribution tagging, and LP-gate dependencies — now live in [[InnBlockchain - Editorial Calendar]] (rev 2, 2026-05-18). 2/wk cadence locked. Phase 1 closes Week 21 (Oct 6, 2026).
+> Phase 0 (WL-0) and the full Track A Phase 1 publish schedule — TOFU/MOFU/BOFU sequencing, `[LinkedIn + SEO]` / `[SEO + X]` distribution tagging, LP-gate dependencies, and Phase 1 close date — live in [[InnBlockchain - Editorial Calendar]].
 >
 > **Distribution principle (writer reference, retained here):**
 > - `[LinkedIn + SEO]` — Plain-language, asset-first articles for RWA Felix (non-technical asset owners). Distribute into EU PropTech / RWA Summit / real estate investment / commodity trade finance communities. Applies to: all Phase 1 TOFU (#1–5); Legal-Technical Interface (#10); all Asset-Class Deep Dives (#15–19); Custom Build vs. Securitize (#20); Audit Checklist (#21); WL-1 (#22).
@@ -897,7 +940,7 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 **B1 WealthTech / RWA Tokenization** ⭐ *Primary Focus Q2 2026* → see Editorial Calendar
 
 > [!IMPORTANT] Date-locked schedule moved
-> Track B B1 publish sequence (17 of 19 articles, plus B1 hub + Carol BOFU + Lead Magnet) now lives in [[InnBlockchain - Editorial Calendar]] — interleaved with Track A Phase 1 on Thursday slots, closing Week 22 (Oct 15, 2026). Articles formerly numbered B1-#1 through B1-#19 retain their IDs as references.
+> Track B B1 publish sequence (17 of 19 articles, plus B1 hub + Carol BOFU + Lead Magnet) lives in [[InnBlockchain - Editorial Calendar]] — interleaved with Track A Phase 1 on Thursday slots. Articles formerly numbered B1-#1 through B1-#19 retain their IDs as references; the two excluded articles (B1-#4 Utility NFTs + B1-#11 Tokenized US Treasuries) are watch-candidates per the calendar's overflow queue.
 >
 > **Cluster anchoring rule (writer reference, retained here):** Hub (B1-#1) anchors first, then TOFU → MOFU (Platform → Asset Classes → Compliance) → BOFU. Carol (B1-#18) gates every WealthTech deal — publish out-of-sequence if a live prospect is in procurement.
 >
@@ -933,13 +976,13 @@ WL is priced at $20k+ — undercutting market competitors (Antier-class at ~$30k
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
-| 24 | How to Add Stablecoin Settlement to Your FinTech Wallet: Architecture & Compliance Guide | B4 | Consideration | CTO | **8.4** || 25 | MiCA and PSD2 Compliance for EU E-Money Wallets Adding Crypto Features 🇪🇺 | B4 | Consideration + Decision | CTO / CCO | **8.3** || — | Embedded Wallets Compared: Privy, Dynamic, Web3Auth — Architecture for Web3 Builders and Licensed FinTech Operators `[Both]` *(merged — distributed cross-track)* | A4 + B4 | Awareness + Consideration | CTO (CN + FT) | **8.3** |
+| 24 | How to Add Stablecoin Settlement to Your FinTech Wallet: Architecture & Compliance Guide | B4 | Consideration | CTO | **8.4** || 25 | PSD3 + MiCA Compliance for EU E-Money Wallets Adding Crypto Features 🇪🇺 | B4 | Consideration + Decision | CTO / CCO | **8.3** || — | Embedded Wallets Compared: Privy, Dynamic, Web3Auth — Architecture for Web3 Builders and Licensed FinTech Operators `[Both]` *(merged — distributed cross-track)* | A4 + B4 | Awareness + Consideration | CTO (CN + FT) | **8.3** |
 | 26 | Account Abstraction for FinTech: What ERC-4337 Means for Your Wallet User Onboarding | B4 | Consideration | CTO | **8.2** || — | Passkey Authentication for Crypto Wallets: Replacing Seed Phrases in Self-Custody and Licensed E-Money `[Both]` *(merged — distributed cross-track)* | A4 + B4 | Awareness | CTO (CN + FT) | **8.2** |
 
 **Track B Cross-Pillar (Security + AI+Blockchain + Carol + Park-Status)**
 
-> [!INFO] Early-ship cross-pillar trio moved to Editorial Calendar
-> **C1** *(Carol Vendor Risk Pack, 8.4)*, **T4-N** *(Tom Hiring Cost, 8.4)*, **P1-N** *(MiCA License Application, 8.5)* are date-locked in [[InnBlockchain - Editorial Calendar]] at W4 / W6 / W7 respectively — they ship inside Phase 1, not after B1 close. Strategy doc retains them as reference IDs only; do not also schedule them here.
+> [!INFO] Early-ship cross-pillar articles moved to Editorial Calendar
+> Four cross-pillar articles are scheduled inside Phase 1, not after B1 close: **C1** *(Carol Vendor Risk Pack, 8.4)*, **T4-N** *(Tom Hiring Cost, 8.4)*, **P5-DORA-X** *(DORA for All EU Licensed Financial Entities, 8.5)*, **P5-eIDAS-X** *(eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms, 8.7 — `[Both]`)*. Strategy doc retains them as reference IDs only; **slot assignments + scheduling rationale live in [[InnBlockchain - Editorial Calendar]]**, do not duplicate here. **P1-N** *(MiCA License Application)* is deferred to Phase 2 — audience (existing FinTechs licensing into MiCA CASP) activates only when `/solutions/regulated-exchange` + `/solutions/fintech-wallets` ship.
 
 | # | Title | Cluster | Stage | Persona | Score |
 |---|---|---|---|---|---|
@@ -1072,7 +1115,12 @@ TIER 1 — TECHNOLOGY PILLARS (shared across tracks)
 ├── P3: ZK, MPC & Advanced Cryptography          [CN primary]
 ├── P4: Engineering Velocity & Talent            [Both — framing differs]
 ├── P5: EU Regulatory Compliance                 [Both — framing differs]
-│        (MiCA, MiFID II, DORA, EU AI Act, DLT Pilot Regime)
+│        (Track A primary: MiFID II + Prospectus + DLT Pilot for Seg 1 RWA;
+│         MiCA for Seg 2–10. Track B primary by segment: MiFID II + DLT Pilot
+│         for WealthTech; MiCA CASP for ExchangeTech; CCD2 + EU AI Act for
+│         LendTech; PSD3 + eIDAS for WalletTech / PayTech; IPR for PayTech;
+│         DORA cross-cutting all licensed entities; AML/AMLA cross-cutting
+│         obliged entities; GDPR universal. See [[EU-Compliance-Landscape]].)
 ├── P6: Private & Hybrid Blockchain              [FT only — Hyperledger/Corda/Quorum]
 └── P7: Blockchain ROI & Business Case           [FT primary]
 
@@ -1100,7 +1148,7 @@ TIER 2 — TRACK B: REGULATED FINTECH
 ├── [🟢 ACTIVE] B3: DEFI & DIGITAL LENDING (existing lenders)
 ├── [🟢 ACTIVE] B4: DIGITAL WALLETS & E-MONEY (regulated only)
 ├── [⚪ WATCH] B5: CROSS-BORDER REMITTANCE
-├── [⚪ WATCH — EU EXCEPTION] B6: COMPLIANCE / REGTECH (MiCA + DORA + Park-status nurture publish Active phase)
+├── [⚪ WATCH — EU EXCEPTION] B6: COMPLIANCE / REGTECH (own regime = AML/AMLA + EU AI Act; cross-cutting AMLA/DORA/AI Act articles + Park-status nurture not Watch-gated — schedule per [[InnBlockchain - Editorial Calendar]])
 ├── [⚪ WATCH — BLOCKED ON CFO] B7: CORPORATE TREASURY & FX
 ├── [⚪ WATCH] B8: INSURANCE & FRAUD DETECTION
 └── AI + Blockchain Cluster (B-cross-pillar) ⏳ Validation-gated to 2026-05-31
@@ -1133,11 +1181,13 @@ NOTES:
 
 ### Track A — Phase 1: RWA + EU Compliance
 
+> **Keyword regime guard (rev 7, 2026-05-20):** Track A Phase 1 keyword set must lead with **MiFID II / Prospectus / DLT Pilot** for RWA compliance queries — not MiCA. The only MiCA keywords retained here serve the boundary-clarifier articles (#3 *MiCA Explained*, #4 *MiCA or MiFID II?*, #11 *Prospectus vs. MiCA Whitepaper*), which exist to route MiCA-misframed buyers to the correct regime. Generic MiCA keywords (`mica compliance checklist`, `mica compliant token issuance`) belong in Track A Phase 2 (DeFi / DEX / token launch) or P5 cluster, not Phase 1 RWA.
+
 **Awareness:**
-`rwa tokenization smart contract` · `real world asset tokenization platform` · `how to tokenize real estate blockchain` · `real estate tokenization architecture` · `vehicle tokenization blockchain` · `commodity tokenization smart contract` · `private credit tokenization defi` · `art tokenization on-chain` · `mica compliance crypto 2026` · `mica regulation explained` · `mica compliance checklist` · `erc-3643 token standard` · `erc-1400 security token` · `rwa oracle manipulation`
+`rwa tokenization smart contract` · `real world asset tokenization platform` · `how to tokenize real estate blockchain` · `real estate tokenization architecture` · `vehicle tokenization blockchain` · `commodity tokenization smart contract` · `private credit tokenization defi` · `art tokenization on-chain` · **`mifid ii tokenized securities`** · **`dlt pilot regime tokenized assets`** · **`prospectus regulation token issuance`** · `mica or mifid ii tokenized asset` *(boundary-clarifier query)* · `mica regulation explained` *(general MiCA awareness — routes to #3)* · `erc-3643 token standard` · `erc-1400 security token` · `rwa oracle manipulation`
 
 **Consideration / Decision:**
-`rwa tokenization smart contract audit` · `erc-3643 vs erc-1400 comparison` · `oracle design real world assets` · `investor whitelisting smart contract kyc` · `mica whitepaper requirements token issuance` · `securitize vs tokeny vs polymath comparison` · `rwa tokenization development company` · `smart contract audit rwa platform` · `eu crypto compliance smart contracts` · `mica compliant token issuance`
+`rwa tokenization smart contract audit` · `erc-3643 vs erc-1400 comparison` · `oracle design real world assets` · `investor whitelisting smart contract kyc` · **`prospectus vs mica whitepaper rwa`** *(boundary-clarifier — owned by #11)* · **`mifid ii rwa tokenization compliance`** · **`dlt pilot regime rwa application`** · `securitize vs tokeny vs polymath comparison` · `rwa tokenization development company` · `smart contract audit rwa platform` · `eu crypto compliance smart contracts` · ~~`mica compliant token issuance`~~ *(removed — for RWA the correct query is "MiFID II + Prospectus compliant token issuance"; the MiCA-compliant phrasing was the SEO surface of the misframe)*
 
 ### Track A — Phase 2: Other Verticals
 
@@ -1175,7 +1225,7 @@ NOTES:
 
 > Cannibalization-fix rules: removed `real-world asset tokenization platform` (claimed by Track A — hyphen variant is the same SERP). `smart contract audit services` / `web3 security audit process` / `smart contract audit checklist` are also Track A SERPs at consideration stage — replaced with regulated-FinTech-specific long-tail variants below.
 
-`tokenization platform for wealthtech` · `rwa tokenization for licensed asset managers` · `asset tokenization MiCA MiFID II` · `tokenized securities blockchain development` · `STO platform engineering` · `real estate tokenization mifid ii` · `MiFID II tokenized securities` · `DLT pilot regime tokenized securities` · `MiCA exchange compliance` · `regulator-grade smart contract audit` · `smart contract audit for licensed fintech` · `compliance audit defensibility blockchain` · `regulatory sign-off blockchain vendor` · `vendor risk pack blockchain` · `hire compliance-aware blockchain engineers` · `blockchain integration for fintech` · `best blockchain for regulated exchange` · `smart contract audit for regulated exchange` · `smart contract audit for payments` · `DEX compliance engineering` · `MiCA CASP smart contract development` · `hire web3 developers fintech` · `blockchain KYC solution` · `parametric insurance smart contract` · `blockchain treasury management` · `blockchain cross-border remittance solution` · `blockchain lending integration fintech` · `DORA blockchain compliance` · `smart contract upgrade governance fintech`
+`tokenization platform for wealthtech` · `rwa tokenization for licensed asset managers` · **`asset tokenization MiFID II Prospectus DLT Pilot`** *(re-ordered from "MiCA MiFID II" — MiFID II is the primary regime for tokenized securities per Art. 2(4))* · `tokenized securities blockchain development` · `STO platform engineering` · `real estate tokenization mifid ii` · `MiFID II tokenized securities` · `DLT pilot regime tokenized securities` · `MiCA exchange compliance` · `regulator-grade smart contract audit` · `smart contract audit for licensed fintech` · `compliance audit defensibility blockchain` · `regulatory sign-off blockchain vendor` · `vendor risk pack blockchain` · `hire compliance-aware blockchain engineers` · `blockchain integration for fintech` · `best blockchain for regulated exchange` · `smart contract audit for regulated exchange` · `smart contract audit for payments` · `DEX compliance engineering` · `MiCA CASP smart contract development` · `hire web3 developers fintech` · `blockchain KYC solution` · `parametric insurance smart contract` · `blockchain treasury management` · `blockchain cross-border remittance solution` · `blockchain lending integration fintech` · `DORA blockchain compliance` · `smart contract upgrade governance fintech`
 
 **AI + Blockchain Consideration** ⏳ *Validation-gated:*
 `EU AI Act high risk AI fintech` · `EU AI Act audit trail fintech` · `blockchain alongside AI fintech`

@@ -7,20 +7,22 @@ date_published: 2026-05-18
 url: ""
 confidence: high
 key_claims:
-  - "270 conversational AEO/GEO prompts mapped 1:1 to the 44 date-locked articles in `InnBlockchain - Editorial Calendar` (rev 2) plus 9 overflow / out-of-sequence override articles — total 53+ Phase 1 articles."
-  - "Scope is strictly Phase 1: Phase 0 (WL-0), Track A Phase 1 #1–#22 (incl. WL-1), Track B B1 WealthTech (17 dated + 2 overflow + 1 post-launch), Cross-Pillar early-ships (C1, T4-N, P1-N), Phase 2 starter (#23). Out of scope: Phase 2 verticals A2–A6, Track B B2–B8, WL-2 through WL-6 — build when Phase 2 calendar is cut post-Oct 2026."
-  - "Each article block carries 3–6 prompts plus 5 metadata fields: Track (`[CN]` / `[FT]` / `[Both]`), Stage (TOFU/MOFU/BOFU/Post-launch), Persona (Founding Felix · RWA Felix · Security Sasha · Product Paulo · Strategic Sam · Technical Tom · Compliance Carol), Sales motion (`[Audit]` / `[Dev]` / `[White-Label]` / `[Carol]`), Distribution (SEO+X / 📎 LinkedIn+SEO / LinkedIn ABM)."
+  - "~270 conversational AEO/GEO prompts mapped 1:1 to the 41 date-locked Phase 1 articles plus 9 overflow / out-of-sequence override articles — 52+ Phase 1 articles total. Source synced with Content Strategy rev 16 and Editorial Calendar rev 9."
+  - "Strict Phase 1 scope: Phase 0 (WL-0), Track A Phase 1 #1, #2, #4–#13, #15–#22 (20 articles incl. WL-1 closing W20), Track B B1 WealthTech (17 dated W3–W22 + 2 overflow + 1 post-launch), Cross-Pillar early-ships (C1, T4-N, P5-DORA-X, P5-eIDAS-X), Phase 2 starter (#23 at W22). Out of scope: Phase 2 verticals A2–A6, Track B B2–B8, WL-2 through WL-6, plus the three Phase-1-deferred articles (#3 MiCA Explained, #14 MiCA Checklist CN, P1-N MiCA License Application) — those go in the Phase 2 AEO file when it's cut Q4 2026."
+  - "MiCA-as-RWA-cover misframe correction (rev 4): 5 article titles renamed to lead with MiFID II + Prospectus Regulation + DLT Pilot Regime (the regimes that actually apply to RWA ownership tokens per MiCA Article 2(4) exclusion). Affected: #2 hub, #6 RWA compliance, #11 Prospectus vs MiCA Whitepaper, B1-#10 STOs, B1-#13 MiFID II + DLT Pilot for Tokenized Assets. Prompts rewritten across all 5 articles to lead with the correct regime stack and explicitly answer the boundary question."
+  - "Structural sync (rev 5): three articles REMOVED from Phase 1 per Calendar rev 5 segment-scope audit — #3 MiCA Explained (Seg 2/4 audience), #14 MiCA Checklist CN (Seg 2–10 scope, not RWA), P1-N MiCA License Application (RegTech audience not activated). Two articles ADDED per Calendar rev 6/7 promotions — P5-DORA-X DORA for All EU Licensed Financial Entities (W7 Thu, cross-cutting CCO overview) and P5-eIDAS-X eIDAS 2.0 EUDI Wallet `[Both]` (W13 Tue, broadened cross-cutting article serves wallet auth + RWA investor KYC ahead of Dec 31 2026 deadline). Track A Tuesday column cascaded forward by 1 week. Track A Phase 1 close moves from W21 to W20."
+  - "Each article block carries 5 mandatory metadata fields: Track (`[CN]` / `[FT]` / `[Both]`), Stage (TOFU / MOFU / BOFU / Post-launch), Persona (Founding Felix · RWA Felix · Security Sasha · Product Paulo · Strategic Sam · Technical Tom · Compliance Carol), Sales motion (`[Audit]` / `[Dev]` / `[White-Label]` / `[Carol]`), Distribution (SEO+X / 📎 LinkedIn+SEO / LinkedIn ABM). 3–6 conversational prompts per article."
   - "Operational rule: every prompt must be answerable in the article's first 150 words — literally. Burying the answer below H3 #3 is the #1 reason AI engines don't cite articles that rank organically."
   - "Article construction protocol: (1) find article block, (2) draft lede so it literally answers 3+ prompts, (3) mirror prompts as H2/H3 headings, (4) add prompts verbatim as FAQPage JSON-LD at bottom, (5) probe 2–3 prompts against ChatGPT/Claude/Perplexity 30 days post-publish and rework lede if not cited."
-  - "Dedup pass (rev 3, 2026-05-18) removed 11 cross-article prompt overlaps that would have created internal AEO competition between InnBlockchain articles. Notable: #4 vs B1-#16 MiFID II classification (strategy doc line 292 explicit 'Do NOT overlap') — B1-#16 rescoped to MiFID II mechanics only. Each affected block now carries `*(Scope: ...)*` line stating which prompts it owns vs. which sister article owns the alternative."
-  - "10 AEO drafting principles enumerated: 150-word answer rule, H2/H3=prompts verbatim, FAQPage JSON-LD, cite specifics (versions/dates/named vendors), name competitors (Tokeny, Securitize, Polymath, RealT, Fireblocks, SettleMint), date-stamp regulation, markdown tables not images, persona-aligned vocabulary by track, avoid marketing voice, update bi-annually."
-  - "12 highest-priority AEO prompts for Q2 2026 GTM ranked at top of doc — covers ERC-3643 vs ERC-1400, MiCA-for-RWA-platforms, RWA audit checks, DLT Pilot Regime, build-vs-license TCO, white-label vendor query, flash loan attack prevention, AML for institutional RWA, AI-written contract audit, CCD2 BNPL deadline, eIDAS 2.0 wallet deadline."
-  - "Monthly AI search citation probe schedule across 6 engines: ChatGPT (Search) weekly · Claude (Web Search) bi-weekly · Perplexity weekly · Google AI Overviews weekly · Gemini bi-weekly · Microsoft Copilot monthly. Citation tracker file (`InnBlockchain - AI Citation Tracker.md`) recommended but not yet created."
+  - "Dedup discipline: 11 cross-article overlaps removed (rev 3) plus one boundary-enforcement scope clarifier added to B1-#14 in rev 5 (P5-DORA-X cross-cutting CCO overview vs B1-#14 DLT-tokenized-securities-specific DORA mechanics). 9 explicit `*(Scope: ...)*` ownership-boundary lines now span the file. Strategy doc line 292's 'Do NOT overlap' rule between #4 and B1-#16 MiFID II is enforced."
+  - "Naming-precision pass (rev 5 TFR patch): B1-#15 travel-rule prompt rewritten from FATF framing to TFR (Regulation (EU) 2023/1113) per Content Strategy rev 9 naming-precision rule. Contrast prompt kept so the article can still capture buyers using colloquial 'FATF travel rule' phrasing."
+  - "10 AEO drafting principles: 150-word answer rule, H2/H3=prompts verbatim, FAQPage JSON-LD, cite specifics (versions/dates/named vendors), name competitors (Tokeny, Securitize, Polymath, RealT, Fireblocks, SettleMint), date-stamp regulation, markdown tables not images, persona-aligned vocabulary by track, avoid marketing voice, update bi-annually."
+  - "Monthly AI search citation probe schedule across 6 engines: ChatGPT (Search) weekly · Claude (Web Search) bi-weekly · Perplexity weekly · Google AI Overviews weekly · Gemini bi-weekly (Gemini probe scope updated rev 5 to include MiFID II + DLT Pilot + Prospectus + eIDAS 2.0) · Microsoft Copilot monthly. Citation tracker file (`InnBlockchain - AI Citation Tracker.md`) recommended but not yet created."
   - "Persona-vocabulary rule: `[CN]` articles use 'protocol TVL,' 'mainnet,' 'exploit vector,' 'audit-ready'; `[FT]` articles use 'regulator-defensible,' 'compliance sign-off,' 'vendor risk,' 'DLT settlement'; `[Both]` articles avoid both lexicons and write neutrally with split CTAs. AI engines match on lexical proximity to the user's prompt phrasing."
-  - "Replan triggers: (1) Phase 1 close Week 21 / Oct 6, 2026 → build Phase 2 AEO file; (2) Editorial calendar replan; (3) AI engine major model release (GPT-5 Search, Claude 5, Perplexity Pro 3) → re-test top 12 prompts; (4) Competitor breakthrough — if Tokeny / Securitize / Antier starts ranking for our target prompts on ChatGPT/Claude/Perplexity, rework affected article lede + cite specificity."
-ingest_rev: 1
+  - "Replan triggers: (1) Phase 1 close — dual dates per rev 5 — Track A W20 (Sep 28, 2026) + Track B B1 W22 (Oct 15, 2026); on close, build Phase 2 AEO file including the three Phase-1-deferred articles; (2) Editorial calendar replan; (3) AI engine major model release (GPT-5 Search, Claude 5, Perplexity Pro 3) → re-test top 12 prompts; (4) Competitor breakthrough — if Tokeny / Securitize / Antier starts ranking for our target prompts on ChatGPT/Claude/Perplexity, rework affected article lede + cite specificity."
+ingest_rev: 2
 created: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-21
 tags:
   - source
   - AEO
@@ -44,12 +46,15 @@ related:
   - "[[ERC-1400]]"
   - "[[DLT-Pilot-Regime]]"
   - "[[EU-AML-AMLA]]"
+  - "[[EU-Compliance-Landscape]]"
   - "[[sources/_index]]"
 ---
 
 # InnBlockchain — Content AEO GEO Prompts (Phase 1)
 
-**Source**: `.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md` (rev 3, 2026-05-18) | InnBlockchain Marketing | hash `c3dffd0b1d3944f110df30b81b6f4402`
+**Source**: `.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md` (rev 5 + TFR patch, 2026-05-21) | InnBlockchain Marketing | hash `30a031c4814a5f2e8bc75b7ef184ee7b`
+
+**Synced with:** Content Strategy rev 16, Editorial Calendar rev 9.
 
 ---
 
@@ -57,26 +62,37 @@ related:
 
 The execution-layer companion to [[InnBlockchain Content Strategy]] and the editorial calendar. Where the strategy doc specifies *what* articles to publish and the calendar specifies *when*, this document specifies the *exact conversational queries each article must literally answer in its first 150 words* to be citable by ChatGPT, Claude, Perplexity, Google AI Overviews, Gemini, and Copilot.
 
-It is the InnBlockchain-side parallel to the Trioangle [[SEO-AEO-GEO-Prompt-Library]] — but structured differently: Trioangle's is a 180-prompt template substituted across 10 clone-script verticals. InnBlockchain's is a 270-prompt article-by-article inventory tied 1:1 to a 22-week Phase 1 editorial schedule.
+It is the InnBlockchain-side parallel to the Trioangle [[SEO-AEO-GEO-Prompt-Library]] — but structured differently: Trioangle's is a 180-prompt template substituted across 10 clone-script verticals. InnBlockchain's is a ~270-prompt article-by-article inventory tied 1:1 to a 22-week Phase 1 editorial schedule.
 
 ---
 
-## Scope
+## Scope (post rev-5 sync)
 
 Strictly Phase 1 of [[InnBlockchain Content Strategy]] (May 18 – Oct 15, 2026):
 
 | Bucket | Articles | Weeks |
 |---|---|---|
 | Phase 0 — WL-0 (Own vs. License TCO) | 1 | W1 |
-| Track A Phase 1 #1–#22 (incl. WL-1) | 22 | W1–W21 |
+| Track A Phase 1 (#1, #2, #4–#13, #15–#22, incl. WL-1) | 20 | W1–W20 |
 | Track B B1 WealthTech (dated) | 17 | W3–W22 |
-| Cross-Pillar early-ship (C1, T4-N, P1-N) | 3 | W4 / W6 / W7 |
+| Cross-Pillar early-ship (C1, T4-N, P5-DORA-X, P5-eIDAS-X) | 4 | W4 / W6 / W7 / W13 |
 | Phase 2 starter (#23 post-mortem) | 1 | W22 |
 | Overflow queue (B1-#4, B1-#11, B1 Post-Launch) | 3 | Trigger-based |
 | Out-of-sequence overrides (Sasha A/B, Paulo, AI overlay, Case A/B) | 6+ | Reactive |
-| **Total** | **53+** | **22 weeks** |
+| **Total** | **52+** | **22 weeks** |
 
-Out of scope: Phase 2 verticals A2–A6 (DEX/DeFi/Wallet/NFT/Token Launch), Track B B2–B8, WL-2 through WL-6. Build those when Phase 2 calendar is cut Q4 2026.
+> [!INFO] Phase 1 deferrals (rev 5)
+> Three articles removed from Phase 1 per Calendar rev 5 segment-scope audit. Will be picked up in the Phase 2 AEO file:
+> - **#3** *MiCA Explained* — Seg 2/4 audience; MiCA LPs not live in Phase 1
+> - **#14** *MiCA Compliance Checklist for Crypto-Native Startups* — Seg 2–10 scope, not RWA
+> - **P1-N** *Preparing for MiCA License Application* — RegTech audience activated only when `/solutions/regulated-exchange` + `/solutions/fintech-wallets` ship
+
+> [!INFO] Two new cross-pillar articles (rev 5)
+> Both promoted from Phase 2 P5 Rebalancing queue per Calendar rev 6 + 7:
+> - **P5-DORA-X** *DORA for All EU Licensed Financial Entities* (W7 Thu, [FT], `[Carol]`) — cross-cutting CCO overview spanning every Active Track B segment that touches a licensed entity in DORA Article 2 scope. Replaces P1-N's slot.
+> - **P5-eIDAS-X** *eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms* (W13 Tue, `[Both]`, split CTA) — broadened from B4-WalletTech-only to cross-cutting. Serves B4/B5/B7 wallet auth AND A1/B1 RWA investor KYC. Hard Dec 31, 2026 EUDI Wallet deadline drives urgency.
+
+Out of scope: Phase 2 verticals A2–A6 (DEX/DeFi/Wallet/NFT/Token Launch), Track B B2–B8, WL-2 through WL-6.
 
 ---
 
@@ -85,16 +101,35 @@ Out of scope: Phase 2 verticals A2–A6 (DEX/DeFi/Wallet/NFT/Token Launch), Trac
 Each article gets a structured block:
 
 ```
-[CALENDAR ID] — Article title
+[CALENDAR ID] — Article title (score)
 - Track: [CN] / [FT] / [Both]
 - Stage: TOFU / MOFU / BOFU / Post-launch
 - Persona: who's asking
 - Sales motion: [Audit] / [Dev] / [White-Label] / [Carol]
 - Distribution: SEO+X / 📎 LinkedIn+SEO / LinkedIn ABM
 - Prompts: 3–6 conversational queries
+- (Scope: ...) — optional line stating ownership boundary vs. sister article
 ```
 
 Prompt phrasing reflects real LLM query patterns — verbose, context-embedded ("I run a licensed asset management firm — should I build my own RWA platform?"), multi-part — not 3-word search keywords.
+
+---
+
+## The MiCA Misframe Correction (rev 4)
+
+Five articles renamed in-place to fix a factual error: RWA ownership tokens are **MiFID II financial instruments** under Article 2(4) — explicitly excluded from MiCA scope. The original titles framed MiCA as the cover regime, which would have sent readers (and ChatGPT/Claude) to the wrong regulatory stack.
+
+| Article | Old title | New title |
+|---|---|---|
+| #2 A1 Hub | *...and MiCA Compliance* | *...and EU MiFID II + DLT Pilot Regime Compliance* |
+| #6 | *MiCA Compliance for RWA Tokenization Platforms* | *MiFID II + DLT Pilot Regime Compliance for RWA Tokenization Platforms* |
+| #11 | *MiCA Whitepaper Requirements for Token Issuance* | *Prospectus Regulation vs. MiCA Whitepaper for Token Issuance* |
+| B1-#10 | *STOs ... Under MiCA* | *STOs ... Under MiFID II, Prospectus Regulation, and DLT Pilot Regime* |
+| B1-#13 | *MiCA and MiFID II for Tokenized Assets* | *MiFID II + DLT Pilot Regime for Tokenized Assets (and Where MiCA Actually Fits)* |
+
+Prompts in all five articles were rewritten to lead with MiFID II + Prospectus + DLT Pilot framing and explicitly answer the boundary question. New prompts hit the misframe head-on (e.g., *"Why isn't MiCA the right regime for RWA tokenization?"*, *"Do I file a Prospectus or a MiCA white paper for my STO?"*).
+
+Articles where MiCA IS the correct regime (#3 *MiCA Explained*, #14 *MiCA Compliance Checklist for Crypto-Native Startups* scoped to Seg 2–10, P1-N *MiCA License Application*) — those three are all out of Phase 1 scope post rev-5 because their target audiences aren't activated yet.
 
 ---
 
@@ -107,7 +142,7 @@ Prompt phrasing reflects real LLM query patterns — verbose, context-embedded (
 3. **FAQPage JSON-LD** — embed prompts as schema at article bottom. Required for Google AI Overviews + Perplexity citation lift.
 4. **Cite specifics** — *"ERC-3643, ratified 2022, used by Tokeny and Securitize"* > *"a popular permissioned token standard."*
 5. **Name competitors** — *"Tokeny, Securitize, Polymath, RealT, Fireblocks, SettleMint"* > *"leading platforms."* Comparison queries dominate AI search.
-6. **Date-stamp regulation** — *"MiCA (in force June 2024; CASP authorisation deadline July 2026; Title V transitional period until July 2027)."*
+6. **Date-stamp regulation** — *"DORA (in force June 2023; application date Jan 17, 2025)"*, *"eIDAS 2.0 EUDI Wallet rollout Dec 31, 2026"*, *"TFR Regulation 2023/1113"*.
 7. **Markdown tables, not images** — tables in markdown are AI-citable; image tables are invisible.
 8. **Persona-aligned vocabulary** — `[CN]`: *protocol TVL, mainnet, exploit vector, audit-ready*. `[FT]`: *regulator-defensible, compliance sign-off, vendor risk, DLT settlement*. `[Both]`: neutral, split CTAs.
 9. **Avoid marketing voice** — *"industry-leading, cutting-edge, revolutionary"* get filtered in extraction.
@@ -115,32 +150,20 @@ Prompt phrasing reflects real LLM query patterns — verbose, context-embedded (
 
 ---
 
-## Top-12 Phase 1 AEO Priorities (Q2 2026 GTM)
-
-The 12 prompts most likely to be issued by an in-funnel buyer in the next 90 days. If InnBlockchain isn't cited for these on ChatGPT/Claude/Perplexity within 60 days of publish, article needs a lede rework.
-
-1. *"What's the difference between ERC-3643 and ERC-1400 for tokenizing real-world assets?"* — [[ERC-3643]] vs [[ERC-1400]]
-2. *"Does MiCA apply to my tokenized real estate platform if I'm based in Germany?"*
-3. *"What does an RWA tokenization smart contract audit actually check for?"*
-4. *"How is the EU DLT Pilot Regime different from MiCA for tokenized securities?"* — [[DLT-Pilot-Regime]]
-5. *"Is it cheaper to build my own RWA tokenization platform or license one from Tokeny / Securitize?"*
-6. *"Who builds white-label RWA tokenization platforms in 2026?"*
-7. *"What is a flash loan attack and how do DEXes prevent them?"*
-8. *"What does a regulated FinTech CTO actually need to give a smart contract auditor?"*
-9. *"Is my AI-powered credit scoring model a high-risk AI system under the EU AI Act?"*
-10. *"How long before the CCD2 deadline do I need to be compliant if I run a BNPL on blockchain?"*
-11. *"What's wrong with smart contracts written by Cursor or ChatGPT?"*
-12. *"What is the eIDAS 2.0 wallet requirement and does my e-money wallet have to comply by Dec 2026?"*
-
----
-
 ## Dedup Discipline
 
-Rev 3 (2026-05-18) removed 11 cross-article prompt overlaps that would have created internal AEO competition between InnBlockchain articles fighting for the same conversational query. Each affected block now carries an explicit `*(Scope: ...)*` line stating which prompts it owns vs. which sister article owns the alternative.
+Rev 3 removed 11 cross-article prompt overlaps. Rev 5 added one more scope clarifier (B1-#14 vs P5-DORA-X — DLT-tokenized-securities-specific DORA mechanics vs cross-cutting CCO DORA overview). **9 explicit `*(Scope: ...)*` ownership-boundary lines now span the file.**
 
-Notable enforcement: [[InnBlockchain Content Strategy]] line 292 says "Do NOT overlap" between `#4 MiCA or MiFID II?` (TOFU regime classification) and `B1-#16 MiFID II Instrument Classification` (MOFU mechanics). The prompts file enforces this — `B1-#16` was rescoped to MiFID II *mechanics once classification confirmed* (instrument category, reporting, conduct rules); `#4` owns the *which regime applies* question.
+Notable enforcement points:
+- **#4 vs B1-#16 MiFID II** — [[InnBlockchain Content Strategy]] line 292 says "Do NOT overlap". `#4` owns regime classification; `B1-#16` owns MiFID II mechanics once classified.
+- **WL-0 vs #20** — WL-0 owns 5-year TCO math; #20 owns when-custom-is-technically-justified.
+- **B1-#1 hub vs B1-#19 lead magnet** — hub stays TOFU scoping; lead magnet owns BOFU build/buy/partner framework.
+- **#5 post-mortem vs #8 architecture** — post-mortem covers detection/forensic; prevention-architecture owned by #8.
+- **#12 CN-specific AML vs B1-#15 institutional AML** — Art Market Participant / accredited-investor angle owned by #12; institutional securities transfers + travel rule owned by B1-#15.
+- **P5-DORA-X vs B1-#14** — cross-cutting CCO overview vs DLT-securities-specific (BOTH sides carry the scope clarifier).
+- **Sasha A vs Sasha B** — A is severity framework only; B is end-to-end audit report reading.
 
-Acceptable remaining parallels (not fixed — by design):
+Acceptable cross-track parallels (by design, not duplication):
 - `#7` (CN) vs `B1-#12` (FT) on ERC-3643 vs ERC-1400 — deliberate two-track split
 - `#20` (CN) vs `B1-#19` (FT) on build/buy decision — deliberate two-track split
 - Case Study A (CN) vs B (FT) — deliberate two-track parallel
@@ -155,7 +178,7 @@ Acceptable remaining parallels (not fixed — by design):
 | Claude with Web Search | Track A Phase 1 + Track B B1 prompts | Bi-weekly |
 | Perplexity | WL-0 + WL-1 + RWA architecture prompts | Weekly |
 | Google AI Overviews | All Phase 1 prompts via Google search | Weekly |
-| Gemini | EU compliance prompts (MiCA, MiFID II, DORA, DLT Pilot, EU AI Act) | Bi-weekly |
+| Gemini | EU compliance prompts (MiFID II, DLT Pilot, Prospectus Regulation, MiCA, DORA, EU AI Act, eIDAS 2.0) | Bi-weekly |
 | Microsoft Copilot | Track B B1 prompts (WealthTech CTO/CCO queries) | Monthly |
 
 Citation tracker file (recommended, not yet created): `InnBlockchain - AI Citation Tracker.md` — one row per prompt, columns for date, engine, citation status, competitors named, action.
@@ -166,8 +189,8 @@ Citation tracker file (recommended, not yet created): `InnBlockchain - AI Citati
 
 This document is re-cut (not patched) when:
 
-1. **Phase 1 close (Week 21 / Oct 6, 2026)** → build Phase 2 AEO prompts file (covers A2–A6, B2–B4, WL-2 through WL-6, AI+Blockchain cluster post-validation).
-2. **Editorial calendar replan** (any of the 7 triggers in `InnBlockchain - Editorial Calendar` § Replan Triggers) → re-cut affected weeks.
+1. **Phase 1 close (dual dates per rev 5)** — Track A closes Week 20 / Sep 28, 2026; Track B B1 closes Week 22 / Oct 15, 2026. On close, build Phase 2 AEO prompts file (covers A2–A6, B2–B4, WL-2 through WL-6, AI+Blockchain cluster post-validation, plus the three Phase-1-deferred articles: #3 MiCA Explained, #14 MiCA Checklist CN, P1-N MiCA License Application).
+2. **Editorial calendar replan** (any of the Replan Triggers in [[InnBlockchain - Editorial Calendar]]) → re-cut affected weeks.
 3. **AI search engine major model release** (e.g., GPT-5 Search, Claude 5, Perplexity Pro 3) → re-test top 12 prompts; update Drafting Principles if citation patterns shift.
 4. **Competitor breakthrough** — if Tokeny, Securitize, or Antier starts ranking for InnBlockchain's target prompts on ChatGPT/Claude/Perplexity, rework affected article lede + cite specificity.
 
@@ -176,9 +199,9 @@ This document is re-cut (not patched) when:
 ## Cross-References
 
 - Strategic parent: [[InnBlockchain Content Strategy]]
-- Editorial cadence: `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md` (rev 2, 2026-05-18)
+- Editorial cadence: `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md`
 - Concept synthesis: [[InnBlockchain Content AEO GEO Prompts]]
 - ICPs: [[InnBlockchain Crypto Native ICP]] · [[InnBlockchain FinTech ICP]]
 - Trioangle parallel approach: [[SEO-AEO-GEO-Prompt-Library]]
 - Strategic origin of AI-search pivot: [[SEO-Recovery-Strategy-2025-26]]
-- Domain concepts: [[Asset-Tokenization-RWA]] · [[ERC-3643]] · [[ERC-1400]] · [[DLT-Pilot-Regime]] · [[EU-AML-AMLA]]
+- Domain concepts: [[Asset-Tokenization-RWA]] · [[ERC-3643]] · [[ERC-1400]] · [[DLT-Pilot-Regime]] · [[EU-AML-AMLA]] · [[EU-Compliance-Landscape]]
