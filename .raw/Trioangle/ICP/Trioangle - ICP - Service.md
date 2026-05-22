@@ -24,14 +24,16 @@ tags:
 >
 > **🥈 Secondary service line — Web & Mobile Application Development.** Platform rebuilds, architectural modernization, multi-region/multi-vertical expansion, mobile-app modernization. Still offered to established operators when the brief explicitly requires it, but **not the lead pitch** — dev work is heavily commoditized in 2026 and competing on dev-only is margin-compression. Surfaces naturally after an AI engagement establishes the relationship. Project sizes $10k–$120k+.
 >
-> Operating since **2015**, Trioangle has delivered **800+ platforms across 150+ countries** *(self-reported — audit against CRM before high-stakes pitch / RFP / PR use; **cumulative since 2015, not active customers** — see [[Trioangle Growth Plan]] for active-base reality and reference-pool guidance)* — across 9 verticals: Delivery & Logistics, Ride-Hailing & Transport, Logistics & Fleet Management, Travel & Hospitality, Commerce & Marketplaces, On-Demand Home Services, Social & Entertainment, Education & E-Learning, Multi-Service / Super Apps. **This vertical-delivery moat is what makes AI-first positioning credible** — a generic AI agency learns the domain on the client's dime; Trioangle already shipped the platform whose data the AI now feeds on.
+> Operating since **2015**, Trioangle has delivered **800+ platforms across 150+ countries** *(self-reported — audit against CRM before high-stakes pitch / RFP / PR use; **cumulative since 2015, not active customers** — see [[Trioangle Growth Plan]] for active-base reality and reference-pool guidance)* — across 9 verticals: Delivery & Logistics, Ride-Hailing & Transport, Logistics & Fleet Management, Travel & Hospitality, Commerce & Marketplaces, On-Demand Home Services, Social & Entertainment, Education & E-Learning, Multi-Service / Super Apps. *(Active SEO/marketing focus narrows to 8 verticals — see Active Marketing Focus callout below.)* **This vertical-delivery moat is what makes AI-first positioning credible** — a generic AI agency learns the domain on the client's dime; Trioangle already shipped the platform whose data the AI now feeds on.
 
 > [!WARNING] Validation Status — Assumption-Based (Not Yet Validated)
 > Built from historical service-line sales and market observation. Persona motivations, channel scores, and proof points marked *(self-reported)* are **hypotheses** until confirmed via recent customer interviews (Target: 10–15 — see Research Templates section below for the interview script and survey instrument). Internal review ≠ customer validation.
 >
 > **When to update:** Quarterly minimum. Also after every 50 new customers, after any pricing or service-line change, after a new market entry, and after each batch of customer-interview synthesis.
 >
-> **Last internal review:** 2026-04-30 — AI-first reframe across all 5 personas (AI Engineering = primary; Web/Mobile Dev = secondary). Established-operators-only filter applied. Persona Tiering: P5 direct primary, P1/P2 direct secondary, P3/P4 channel-only. AI Audit Sprint = primary entry product, Discovery Sprint = fallback. Pain 5 (AI Gap) elevated across all personas. Channel 4 (AI Engineering Outbound) added. Loss Reasons reordered AI-first. Vertical AI footprint disclosed (5 of 9 verticals have shipped AI cases). Authority + Inertia objections added; Twitter/X, Reddit, Podcasts, Newsletter sponsorship channels added; Research Templates appendix added (interview script, survey, synthesis, validation plan).
+> **Last internal review:** 2026-05-21 — Active marketing focus narrowed to **8 verticals**: Rentals broken out as standalone (vacation + car + boat + equipment + gear + fashion + furniture P2P); Travel/hotel/OTA, Social-media, Video-streaming, EdTech, Dating, Short-video, B2B Fleet Management, Real-estate dropped from active SEO marketing. Historical 9-vertical delivery breadth preserved as credibility moat. 7 productized AI services formalized (RAG, AI agents, customer-support, WhatsApp AI, search, voice, content moderation) plus AI engineering hub page.
+>
+> **Previous review:** 2026-04-30 — AI-first reframe across all 5 personas (AI Engineering = primary; Web/Mobile Dev = secondary). Established-operators-only filter applied. Persona Tiering: P5 direct primary, P1/P2 direct secondary, P3/P4 channel-only. AI Audit Sprint = primary entry product, Discovery Sprint = fallback. Pain 5 (AI Gap) elevated across all personas. Channel 4 (AI Engineering Outbound) added. Loss Reasons reordered AI-first. Vertical AI footprint disclosed (5 of 9 verticals have shipped AI cases). Authority + Inertia objections added; Twitter/X, Reddit, Podcasts, Newsletter sponsorship channels added; Research Templates appendix added (interview script, survey, synthesis, validation plan).
 
 > [!IMPORTANT] AI-Era Positioning Rule
 > **Never position on "we build faster with AI." Position on domain expertise, certainty of delivery, and risk reduction.**
@@ -45,6 +47,24 @@ tags:
 
 > [!IMPORTANT] 800+ stat — global disambiguation rule (applies everywhere)
 > Anywhere this doc references "800+ platforms," the figure is **cumulative platform deliveries since 2015 — not AI features**. AI delivery count is a separate, much smaller, growing number that should be tracked independently. Anchor sales positioning on **vertical depth across 9 verticals**, not AI delivery volume. Avoid copy that conflates the two (e.g., "we've built AI features in 800+ platforms"). Full caveat in §⚔️ Competitive Positioning → Primary Positioning Statement.
+
+> [!IMPORTANT] Active Marketing Focus — Narrower than Historical Delivery Breadth
+> Trioangle has delivered across 9 verticals historically (the credibility moat backing the 800+ stat). **Active SEO and outbound marketing focus narrows to 8 verticals** for sharper conversion and defensible AI positioning.
+>
+> **Active marketing verticals (8):**
+> Ride-hailing · On-demand (umbrella; broad on-demand search funnels into ride-hailing / delivery / home-services) · Delivery · Marketplace · Home-services · **Rentals** (new standalone — broader than just travel/hospitality; covers vacation + car + boat + equipment + gear + fashion + furniture P2P rentals) · Super-app · Ecommerce.
+>
+> **Dropped from active marketing** (historical delivery preserved as credibility):
+> - **Travel / hotel / OTA-only** — most of Trioangle's "40+ travel deliveries" are actually vacation rental + car rental P2P platforms (absorbed into Rentals). Hotel/OTA delivery is minimal; targeting would produce thin content against specialized travel-tech competitors.
+> - **Social-media** — saturated category, big-tech dominated; most historical social deliveries are pre-traction clone work (Product ICP / P1–P2 buyers), not Service ICP P5 targets.
+> - **Video-streaming / OTT** (Netflix / Twitch / long-form) — dominated by specialized platforms (Vimeo OTT, Brightcove, Mux); historical deliveries mostly Product ICP.
+> - **EdTech** — consumer Q&A and Udemy-clone segments commoditized by free LLMs (Chegg-style erosion); post-2022 bubble bust contracted the operator landscape.
+> - **Dating** — Match Group + Bumble dominate mass market; specialty niche too small for dedicated focus.
+> - **Short-video / TikTok-category** — small P5 pool (~20–30 operators globally) doesn't justify dedicated focus versus core verticals.
+> - **B2B Fleet Management** — Trioangle's ride-hailing/delivery history is consumer-facing, not B2B fleet ops; no credible domain depth.
+> - **Real-estate / proptech** — distinct vertical (MLS integration, mortgage matching, property valuation) where Trioangle has no credible delivery history.
+>
+> **When a buyer asks about an out-of-marketing vertical:** the credibility claim stands (we've shipped it historically), but lead with vertical-delivery framing, not AI claims — those don't have production cases or active investment.
 
 > [!IMPORTANT] Service Line Priority — AI First, Web/Mobile Dev Second
 > Per the Executive Summary, this ICP has two service lines weighted unequally — AI Engineering is the lead motion; Web/Mobile Dev is secondary.
@@ -66,7 +86,7 @@ tags:
 | 4 | MENA Relationship Buyer (*Rashid*) | 🤝 Channel only | AI-aware (mixed) | $30k–$120k+ | 1–3 months relationship + 1–2 weeks close | AI Audit (relationship-led) | Ghosted Agency + Domain expertise |
 | 5 | AI-Forward Platform Operator (*Aisha*) | 🎯 Direct primary | AI-first | $15k–$120k+ | 2–4 weeks (<$25k) · 4–6 weeks (>$25k) | AI Audit Sprint (default) | AI Gap + Domain expertise |
 
-> **Vertical AI footprint** — All 5 personas span 9 platform-delivery verticals (Delivery, Ride-Hailing, Logistics & Fleet, Travel, Marketplaces, Home Services, Social, Education, Super Apps). **AI engineering currently has shipped production cases in 5 verticals** (ride-hailing, logistics & fleet, marketplace/commerce, home services, delivery). Travel, social/entertainment, and education are platform-delivery verticals where AI feature work is in early development — be honest about case-study availability when a buyer asks.
+> **Vertical AI footprint** — All 5 personas span 9 platform-delivery verticals (Delivery, Ride-Hailing, Logistics & Fleet, Travel, Marketplaces, Home Services, Social, Education, Super Apps). **AI engineering currently has shipped production cases in 5 verticals** (ride-hailing, logistics & fleet, marketplace/commerce, home services, delivery). **Active SEO/marketing focus narrows to 8 verticals** — ride-hailing, on-demand (umbrella), delivery, marketplace, home-services, rentals, super-app, ecommerce (see Active Marketing Focus callout above for the full dropped-categories list). Travel/hotel-only, social/entertainment, education, dating, video-streaming, short-video, B2B fleet management, and real-estate are out of active marketing scope; vacation + car + other P2P rentals are consolidated under the new Rentals vertical. Be honest about case-study availability and marketing scope when a buyer asks.
 
 ---
 
@@ -76,7 +96,7 @@ tags:
 
 | Attribute | Details |
 |---|---|
-| **Industry** | **9 verticals** — Delivery & Logistics, Ride-Hailing & Transport, Logistics & Fleet Management, Travel & Hospitality, Commerce & Marketplaces, On-Demand Home Services, Social & Entertainment, Education & E-Learning, and Multi-Service / Super Apps |
+| **Industry** | **8 active target verticals** — Ride-Hailing & Transport, On-Demand (marketing umbrella across ride-hailing / delivery / home-services), Delivery & Logistics, Marketplace & Commerce, Home Services, Rentals (vacation + car + boat + equipment + gear + fashion + furniture P2P), Multi-Service / Super App, E-Commerce. *Historical delivery breadth = 9 verticals (includes Travel/Hospitality, Logistics & Fleet, Social/Entertainment, Education/E-Learning, which are out of active marketing — see Active Marketing Focus callout above).* |
 | **Size** | 10–500+ employees (established mid-market platform operators to enterprises) |
 | **Revenue** | $1M+ ARR with 12+ months of operational history. **Freshly-funded pre-traction companies are out of scope** — funding alone does not qualify; revenue traction does. |
 | **Growth Stage** | Established operating businesses with proven revenue (Series B+ scale or profitable mid-market), enterprise-grade businesses investing in digital infrastructure, or family-group/enterprise-backed operators. **Not Seed-stage startups, not pre-launch operators.** |
@@ -386,7 +406,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 ---
 
 ### Persona 3 — 🏛️ The "Digital Transformation Enterprise Buyer" (*Diana*) — **Dev-first**
-**Role:** Head of Digital / VP of Product / CIO | **Age:** 38–55 | **Company:** Established offline business (50–500 employees) in an industry that overlaps Trioangle's 9 verticals — **logistics & fleet, hospitality, on-demand home services, commerce/marketplace**. *(Industries outside the 9-vertical library — pure real-estate, pure healthcare, etc. — should be assessed case-by-case; our domain-depth moat doesn't apply there.)*
+**Role:** Head of Digital / VP of Product / CIO | **Age:** 38–55 | **Company:** Established offline business (50–500 employees) in an industry that overlaps Trioangle's 9 verticals — actively marketed (**on-demand home services, commerce/marketplace**) plus channel-inbound from historical verticals (**hospitality, logistics & fleet**). *(Industries outside the 9-vertical library — pure real-estate, pure healthcare, etc. — should be assessed case-by-case; our domain-depth moat doesn't apply there.)*
 
 > Runs a large, operationally successful offline business being disrupted by digital-native competitors (Flexport in logistics, Airbnb in hospitality, etc.). Has internal IT but no product development capability. Has gone through multiple failed "digital transformation" initiatives led by big consulting firms that charged $500k+ and delivered a PowerPoint.
 
@@ -409,7 +429,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 **✅ Do say:** *"We combine the speed of a startup engineering team with the enterprise-grade delivery standards your compliance team requires: SLAs, documentation, security certifications."*
 **❌ Don't say:** *"We're a scrappy startup team that moves fast."*
 
-**Key Benefit:** Proven delivery track record + vertical depth in their specific domain — logistics & fleet, hospitality, home services, commerce/marketplace. (Industries outside the 9-vertical library do not get the same depth claim.)
+**Key Benefit:** Proven delivery track record + vertical depth in their specific domain — actively marketed (on-demand home services, commerce/marketplace) plus historical/channel-inbound (hospitality, logistics & fleet). (Industries outside the 9-vertical library do not get the same depth claim.)
 **Proof Needed:** Enterprise client case studies, named references, security certifications, formal proposal document with SLAs, team bios with LinkedIn profiles.
 
 **Repeat-Buy Cadence:** 1–2 large projects/year (vs 2–4 for P5). **Typical 3-phase sequence: Phase 1 platform build (digital transformation, Year 1) → Phase 2 AI feature initiative once platform is live and data has accumulated (Year 2) → Phase 3 compliance/scaling/new geography (Year 2–3).** Formal procurement each phase, reduced friction once vendor is approved.
@@ -462,7 +482,7 @@ In Service Line Priority order — AI goals first (primary across all five perso
 ---
 
 ### Persona 5 — 🤖 The "AI-Forward Platform Operator" (*Aisha*)
-**Role:** CTO / CPO / Head of Product | **Age:** 30–46 | **Company:** Established profitable mid-size platform business or Series B+ scale operator in ride-hailing, logistics, marketplace, or home services vertical (working platform with active users)
+**Role:** CTO / CPO / Head of Product | **Age:** 30–46 | **Company:** Established profitable mid-size platform business or Series B+ scale operator in one of Trioangle's 8 active marketing verticals — ride-hailing, on-demand, delivery, marketplace, home-services, rentals (vacation/car/equipment P2P), super-app, ecommerce (working platform with active users)
 
 > Runs an already-functioning platform — not a broken MVP, not a greenfield build. The platform works. But they're watching competitors use dynamic pricing, AI-assisted matching, demand forecasting, or conversational booking, and they know they're falling behind. They have internal engineers, but those engineers are heads-down maintaining the existing product and have no ML/AI experience. They need an AI engineering partner who already understands their domain — not a generic AI agency that will spend 3 months "learning the business" before writing a single line of code.
 
@@ -668,7 +688,7 @@ This section catalogs *which* objections occur in this ICP and *what they tell y
 | Established Operator Networks (Channel 3) | ⭐⭐⭐⭐⭐ | Industry associations, vertical operator forums, MENA accelerators (Hub71/DIFC/Flat6Labs/STV), late-stage VC growth-fund portfolio referrals — **not** Seed/Series A VC portfolios | Relationship |
 | AI Engineering Outbound (Channel 4) | ⭐⭐⭐⭐⭐ | Trigger-based engineering-language outbound for P5: competitor AI moves, ML/AI Engineer job postings, public AI underperformance signals → free AI Readiness Call → paid AI Audit Sprint | Paid |
 | AI Search + SEO (combined) | ⭐⭐⭐⭐ | Long-form technical content optimized for both LLM search summaries (ChatGPT, Perplexity, Gemini) and traditional SEO. Target queries: "AI for ride-hailing", "AI dispatch optimization", vertical-architecture deep-dives. P5 primary inbound. | Free/Time |
-| Industry Events & Conferences | ⭐⭐⭐⭐ | Sponsoring vertical-specific operator conferences (logistics tech, proptech, foodtech, AI Engineer World's Fair) | Paid |
+| Industry Events & Conferences | ⭐⭐⭐⭐ | Sponsoring vertical-specific operator conferences (logistics tech, marketplace, foodtech, mobility, AI Engineer World's Fair) | Paid |
 | AI Engineering Communities + Reddit (combined) | ⭐⭐⭐ | Substantive participation in Latent Space Discord, AI Engineer World's Fair, AI-focused LinkedIn groups, r/MachineLearning, r/ExperiencedDevs, r/startups. Long-form technical answers where prospects ask dispatch/pricing/AI integration questions. Never self-promote; reputation builds slowly. | Free/Paid |
 | Case Study Content (YouTube/Blog) | ⭐⭐⭐ | "How we shipped AI dispatch optimization for [X] vertical with 18% revenue lift" — vertical-AI case studies, not platform-rebuild stories | Free/Time |
 | Cold Email (Apollo/ZoomInfo) | ⭐⭐⭐ | Targeted outreach to established operators with public AI feature / platform-rebuild / expansion signals | Paid |
@@ -709,7 +729,7 @@ Per-persona ranking — single Top-3 conflates very different buying motions.
 | **YouTube** | Architecture breakdown videos (ByteByteGo), system design interviews, startup scaling case studies |
 | **Communities** | CTO Craft Slack, HackerNews, r/ExperiencedDevs, Rands Leadership Slack, private founder communities |
 | **Review Platforms** | Clutch.co, G2, Trustpilot, GoodFirms |
-| **Events** | SaaStr Annual, TechCrunch Disrupt, Money20/20, vertical-specific expos (Home Delivery World, PropTech conferences) |
+| **Events** | SaaStr Annual, TechCrunch Disrupt, Money20/20, vertical-specific expos (Home Delivery World, Shoptalk, mobility/ride-hailing summits) |
 
 ---
 
@@ -755,7 +775,7 @@ Per-persona ranking — single Top-3 conflates very different buying motions.
 > "800+ platforms since 2015" counts cumulative *platform* deliveries, not AI features. The AI Engineering service line launched in 2026; actual AI feature delivery count is much smaller and should be tracked separately. Until that number is established, AI positioning copy anchors on **domain knowledge of the verticals** (which 800+ demonstrates), not AI delivery volume. Avoid "we've built AI features in 800+ platforms" — conflates the two. Use the version below, which is honest about the bridge: domain expertise from platform delivery → applied to AI features.
 
 > [!IMPORTANT]
-> *"For established platform operators in delivery, ride-hailing, logistics, marketplace, home services, and adjacent verticals that need to embed AI features into their already-running platform — Trioangle delivers domain-specific AI engineering: intelligent dispatch, dynamic pricing, demand forecasting, fraud detection, and conversational interfaces, integrated into your existing codebase as an isolated service layer with rule-based fallbacks. Our edge is domain knowledge — built across 800+ platform engagements since 2015 in these exact verticals — applied to the AI integration layer. We don't sell AI strategy decks. We don't teach you what AI can do. We ship the specific AI features that move your business metrics in production, in verticals we already understand at the edge-case level — without destabilizing the platform you've spent years building."*
+> *"For established platform operators in delivery, ride-hailing, marketplace, home services, rentals, super-apps, e-commerce, and on-demand verticals that need to embed AI features into their already-running platform — Trioangle delivers domain-specific AI engineering: intelligent dispatch, dynamic pricing, demand forecasting, fraud detection, and conversational interfaces, integrated into your existing codebase as an isolated service layer with rule-based fallbacks. Our edge is domain knowledge — built across 800+ platform engagements since 2015 in these exact verticals — applied to the AI integration layer. We don't sell AI strategy decks. We don't teach you what AI can do. We ship the specific AI features that move your business metrics in production, in verticals we already understand at the edge-case level — without destabilizing the platform you've spent years building."*
 
 ### 🥈 Secondary Positioning Statement — Web & Mobile Development for Established Operators
 
@@ -822,7 +842,7 @@ Run after interviews surface themes. Target ≥100 responses for quantitative; 3
 - Willingness to pay range for the top-ranked AI feature: <$15k / $15k–$30k / $30k–$60k / $60k–$120k / $120k+
 
 **Demographics (2–3 questions):**
-- Vertical — multiple choice (matching the 9 ICP verticals)
+- Vertical — multiple choice from 8 active target verticals (ride-hailing, on-demand, delivery, marketplace, home-services, rentals, super-app, ecommerce) + "Other (historical / out-of-marketing — please specify)"
 - Annual revenue range
 - Open to a 30-min follow-up interview? (Yes/No + email)
 
