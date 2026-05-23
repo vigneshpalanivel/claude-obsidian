@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-23 | Total pages: 221 | Sources ingested: 70 (+1 internal merge, no new source page)
+Last updated: 2026-05-24 | Total pages: 223 | Sources ingested: 71 (+3 internal merges, no new source pages)
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -67,14 +67,16 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Stablecoin-Cross-Border-Payments]] — stablecoin sandwich pattern; $305B supply; 0.5–2% vs 3–8% traditional; GENIUS Act 2025 (status: current)
 - [[Smart-Contracts-Finance]] — parametric insurance (Lemonade); DeFi lending (Aave/Compound); AI-adaptive contracts; oracle risk (status: current)
 - [[CBDC-Central-Bank-Digital-Currency]] — 137 countries exploring; e-CNY (2.25B wallets); e-rupee +334% YoY; US rejected CBDCs (Trump EO) (status: current)
-- [[MiFID-II]] — primary EU investment services framework (effective Jan 2018); financial instruments definition; 8 core obligations; token classification cascade test (ESMA May 2025); €44.5M fines 2024; DLT Pilot Regime entry; ERC-3643 alignment (status: current)
+- [[MiFID-II]] — primary EU investment services framework (effective Jan 2018); financial instruments definition; 8 core obligations; token classification cascade test (ESMA May 2025); €44.5M fines 2024; DLT Pilot Regime entry; ERC-3643 alignment; strategic/positioning layer (status: current)
+- [[MiFID-II-NCA-Authorization-Mechanics]] — practitioner companion to MiFID-II; IFD Art 9 capital tiers €75k/€150k/€750k, Class 1 €30bn reclass, Art 5(4) head-office co-location, client categorization Annex II, Art 24/25 disclosures, Art 16 organizational + best execution + recording, Art 16(5)↔DORA, MAR + MiFIR Art 26 T+1, Art 7(3) 6mo statutory clock, MiFID III phased rollout to Jun 2026, InnBlockchain service-mapping table (status: current)
 - [[MiFID-III]] — 2024 revision (Directive 2024/790); PFOF ban June 2026; consolidated tape; expanded reporting April 2026; active monitoring from Sep 2025 (status: current)
 - [[DLT-Pilot-Regime]] — EU sandbox for tokenized securities (live March 2023); 4 platforms authorized (Clearstream/21X/360X/LISE); €100B cap proposed; EC April 2026 package proposing permanent; ECB Trigger Solution for central bank money settlement (status: current)
 - [[EU-Fintech-Compliance-Landscape]] — 10 key EU fintech regulations (MiFID II/III, DORA, MiCA, AI Act, PSD3, IPR, AML, FiDA, eIDAS 2.0, CCD2); enforcement +417% YoY; dependency map (status: current)
 - [[US-Fintech-Compliance-Landscape]] — US federal + 50-state fragmented map (SEC/CFTC/FinCEN/OCC/FDIC/Fed/CFPB/IRS + state MTLs); GENIUS Act Jul 2025; CLARITY Act pending Senate; CTA narrowed Mar 2025; SAB 121 rescinded; Tornado Cash delisted; 1099-DA DeFi piece repealed; ICP-mapped (status: current)
 - [[MiCA-Regulation]] — EU crypto single market; 1 July 2026 transition end; 65% compliance; €540M+ fines; covers CASPs not DeFi/security tokens; strategic/positioning layer (status: current)
-- [[MiCA-NCA-Authorization-Mechanics]] — practitioner companion to MiCA-Regulation; CASP capital classes (€50k/€125k/€150k), ART/EMT formulas, white paper mechanics + iXBRL, Article 74 wind-down, Article 70(3) client fiat, Article 66↔DORA, application timeline 6–12mo, dossier contents, fit-and-proper, InnBlockchain service-mapping table (status: current)
-- [[DORA-Regulation]] — ICT resilience law; Jan 2025 active; 5 pillars; 2% turnover penalty; third-party vendor mapping hardest lift (status: current)
+- [[MiCA-NCA-Authorization-Mechanics]] — practitioner companion to MiCA-Regulation; Article 60 simplified-notification pathway + 60(10) carve-out, Annex IV CASP classes (€50k/€125k/€150k cumulative — custody is Class 2, trading platform is Class 3), ART/EMT formulas, ART permanent redemption Art 39 + recovery/redemption plans Arts 46/47 (6-month deadline), means-of-exchange cap Art 23, white paper mechanics (machine-readable per ESMA RTS, no Level 1 iXBRL date), Article 74 wind-down, Article 70(3) client fiat, Articles 34(10) / 68(7)–(8)↔DORA (NOT Art 66), service-specific Arts 75–82, qualifying holdings 20%/30%/50%, significance criteria Art 43(1) — 7 criteria including DMA gatekeeper + cumulation, significant CASP Art 85 (15M users), Article 111 penalty schedule (3%/12.5%/12.5%/5%/2%/15%), 2024 AML Package transition, application timeline 6–12mo (status: current — re-ingested 2026-05-24 at source v2.2 after verbatim regulation cross-check)
+- [[DORA-Regulation]] — ICT resilience law; Jan 2025 active; 5 pillars; not an authorisation regime; sectoral penalty hooks (CASP 3% / CRD 10% / MiFID 10%) not direct "2% DORA cap"; CTPP regime separate, Lead Overseer = EBA/ESMA/EIOPA not ECB; strategic/positioning layer (status: current — updated 2026-05-24 with practitioner-page pointer + three corrections)
+- [[DORA-NCA-Supervision-Mechanics]] — practitioner companion to DORA-Regulation; Article 2 scope full list, Art 16 simplified framework + microenterprise carve-outs, Pillar 1 ICT risk framework + CIF identification (Art 8), Pillar 2 incident classification (Reg 2024/1772 seven criteria) + 4h/24h reporting, Pillar 3 basic testing battery (Art 25) + TLPT every 3 yr (Arts 26-27 + Reg 2025/295) with corrected external-tester rule, Pillar 4 Register of Information (Reg 2024/2956 ITS) + Art 30(2)/(3) contractual provisions + Art 28(8) exit strategy, Pillar 5 info sharing (Art 45), CTPP regime (Arts 31-44 + Reg 2024/1502) with Art 35(6) 1%/6-month cap, sectoral penalty hooks table, MiCA/MiFID II/PSD3/NIS2 integration, 8-instrument Level 2 cross-reference map, InnBlockchain service-mapping table (status: current)
 - [[EU-AML-AMLA]] — 3-part AML package; AMLA Frankfurt July 2025; AMLR directly applicable July 2027; Travel Rule all crypto (status: current)
 - [[EU-AI-Act-Fintech]] — high-risk AI (credit scoring, fraud, AML) Aug 2026; €35M max fine; blockchain audit trail use case (status: current)
 - [[PSD3-Open-Banking-EU]] — PSD3/PSR Nov 2025 agreement; IPR sending + VoP Oct 2025 (active); FiDA open finance ~2027 (status: current)
@@ -161,7 +163,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 
 ## Sources
 
-- [[autoresearch-dlt-pilot-regime]] — 2026-05-14 | web research (9 searches, 4 fetches) | 1 concept rewrite + 2 entities + 1 synthesis pages created
+- [[autoresearch-dlt-pilot-regime]] — 2026-05-14 | web research (9 searches, 4 fetches) | 1 concept rewrite + 2 entities + 1 synthesis pages created | **2026-05-24 dlt-pilot ingest**: Addendum — internal dlt-pilot-checklist.md (v1.2, hash `41e046e2dcc7d2cc55c8d3e76d2bcf5a`) merged here; 20+ v1.0 errors corrected across two verification passes against Wayback-archived Regulation (EU) 2022/858 (Article 4(2) source corrected to MiFID II Art 53(3); Article 5 paragraph numbering reconstructed; Article 6 dual-track TSS carve-outs added; 30-wd/30-cd/90-wd statutory timeline; 6-monthly periodic reporting; 4-month material-change notice; Art 7(8)-(10) take-over with 5-year deadline; amending articles 16/17/18 numbering corrected)
 - [[autoresearch-mifid-ii]] — 2026-05-14 | web research (9 searches, 4 fetches) | 3 concept + 1 entity + 1 synthesis pages created
 - [[autoresearch-hyperledger-fabric-ca]] — 2026-04-16 | web research (5 searches) | 1 concept page created
 - [[autoresearch-hyperledger-fabric]] — 2026-04-16 | web research (5 searches) | 1 concept page created
@@ -198,7 +200,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[DeFi-TradFi-Convergence-2025]] — 2026-04-16 | web research | GENIUS Act, hybrid models, AI-DeFi agents, DEX volume
 - [[Asset-Tokenization-RWA-2026]] — 2026-04-16 | web research | $33.84B market, BlackRock BUIDL, McKinsey/BIS projections
 - [[EU-Fintech-Compliance-Overview-2026]] — 2026-04-16 | web research | 9 key EU regulations, enforcement climate, $1.23B fines H1 2025
-- [[EU-MiCA-DORA-AML-2025]] — 2026-04-16 | web research | DORA 5 pillars, MiCA timeline, AMLA 3-part package | **2026-05-20**: Addendum added — internal mica-checklist.md merged here (no new source page per ingest instruction)
+- [[EU-MiCA-DORA-AML-2025]] — 2026-04-16 | web research | DORA 5 pillars, MiCA timeline, AMLA 3-part package | **2026-05-20**: Addendum added — internal mica-checklist.md merged here (no new source page per ingest instruction) | **2026-05-24 mica re-ingest**: source v1.0 → v2.2; 10+ material errors corrected against verbatim Regulation (EU) 2023/1114; superseded_claims registered in frontmatter | **2026-05-24 dora ingest**: Addendum #2 — internal dora-checklist.md (v1.1, hash 7846555f77db1b3eac861b5ab510385a) merged here; six v1.0 errors corrected in source pre-ingest (TLPT external-tester rule, Art 35(6) 6-month cap + Art 50 hook, CRD penalty cite, CTPP 3-of-4 heuristic, microenterprise definition, NIS2 displacement framing)
 - [[EU-PSD3-IPR-FiDA-AIAct-2026]] — 2026-04-16 | web research | PSD3/PSR, IPR VoP Oct 2025, FiDA, AI Act, eIDAS 2.0
 - [[Scaler-AI-Engineering-Definition-2026]] — 2026-04-23 | web research | definition of AI engineering vs ML engineering vs data science
 - [[SecondTalent-Top-10-AI-Engineering-Skills-2026]] — 2026-04-23 | web research | 10 in-demand skills + US salary ranges; LLM fine-tuning highest-premium

@@ -10,6 +10,7 @@ tags:
   - compliance
   - regulation
 status: current
+last_reingested: 2026-05-24
 related:
   - "[[MiCA-NCA-Authorization-Mechanics]]"
   - "[[EU-Fintech-Compliance-Landscape]]"
@@ -41,28 +42,32 @@ MiCA (Regulation (EU) 2023/1114) is the EU's unified regulatory framework for cr
 - Crypto transfer services
 - Advisory firms on crypto-assets
 
-**Not covered by MiCA (Article 2(2)–(4) exclusion):**
-- **Tokenized securities / RWA ownership tokens** (tokenized bonds, equities, fractional real estate, revenue-claim tokens) — these are MiFID II financial instruments. Classification is structural (transferability + claim on issuer/asset), **not** economic — distributing yield is not the trigger; conferring a security-like claim is. Trading/settlement infra path: **DLT Pilot Regime**, not MiCA.
-- Deposits, structured deposits (CRD/CRR)
-- Insurance / pension products (Solvency II / IORP II)
-- CBDCs and services provided exclusively by central banks
-- Securitization positions
-- Fully decentralized DeFi protocols (no identifiable issuer or service provider — narrow, fact-specific)
-- NFTs (generally, unless fractionalized into fungible economic interests)
+**Not covered by MiCA (Article 2 exclusions):**
+- **Tokenized securities / RWA ownership tokens** (tokenized bonds, equities, fractional real estate, revenue-claim tokens) — these are MiFID II financial instruments under Article 2(4)(a). Classification is structural (transferability + claim on issuer/asset), **not** economic — distributing yield is not the trigger; conferring a security-like claim is. Trading/settlement infra path: **DLT Pilot Regime**, not MiCA.
+- Deposits, structured deposits — CRD/CRR (Art 2(4)(b))
+- Insurance / pension products — Solvency II / IORP II / PEPP (Art 2(4)(e)–(j))
+- CBDCs and services provided exclusively by central banks (Art 2(2)(c))
+- Securitization positions (Art 2(4)(d))
+- NFTs and other unique non-fungible crypto-assets (Art 2(3)) — except where fractionalised or issued in a large series indicating fungibility in substance
+- Intra-group services to parent / subsidiaries (Art 2(2)(a))
+- **Fully decentralised** crypto-asset services without any intermediary — outside MiCA per Recital 22. **However**, the same Recital makes clear that crypto-assets with no identifiable issuer fall outside Titles II/III/IV only (issuance/white-paper obligations) — **CASPs providing services *in respect of* such no-issuer crypto-assets remain fully within Title V**. A Bitcoin-style token doesn't need a white paper, but the exchange listing it still needs CASP authorisation.
 
 > [!warning] RWA ≠ MiCA
 > MiCA's "Asset-Referenced Token" (ART) sounds like it covers RWA tokenization. It does not. ARTs *reference* the value of underlying assets (basket-pegged stablecoins). A token that confers **ownership** of an asset — even without yield distribution — is a transferable security under MiFID II and is excluded from MiCA by Article 2(4). The two regimes are mutually exclusive at the token level.
 
 ## Implementation Timeline
 
-| Date | Event |
-|------|-------|
-| 29 June 2023 | MiCA published in Official Journal |
-| 30 June 2024 | Title III (ARTs) and Title IV (EMTs) provisions apply |
-| 30 December 2024 | Full MiCA application — Titles I, II, V, VI, VII apply |
-| 23 December 2025 | White papers must comply with iXBRL format requirements |
-| End 2025 | Spain's 12-month transition deadline |
-| **1 July 2026** | Transitional period ends — all "grandfathered" providers must be authorized or cease operations |
+| Date | Event | Source |
+|------|-------|---|
+| 9 June 2023 | MiCA published in Official Journal (OJ L 150) | — |
+| 29 June 2023 | MiCA entered into force (20 days after publication) | Art 149(1) |
+| 30 June 2024 | Title III (ARTs) and Title IV (EMTs) apply | Art 149(3) |
+| 30 December 2024 | Full MiCA application — Titles I, II, V, VI, VII | Art 149(2) |
+| End 2025 | Spain's 12-month transition deadline | National option per Art 143(3) |
+| **1 July 2026** | Latest end of CASP transitional period — "grandfathered" providers must be authorised or cease, unless their home MS has shortened the period | Art 143(3) |
+
+> [!info] White-paper machine-readable format
+> Articles 6, 19, and 51 require white papers in a machine-readable format. The specific technical format (commonly expected to be iXBRL) and effective date are set by ESMA RTS / Commission Delegated Regulation — **not by MiCA Level 1**. Verify the current effective date with counsel; do not anchor on the "23 December 2025 iXBRL" claim that circulated pre-2026 (it was a v1 source error, not in Level 1).
 
 ## Territorial Scope
 
@@ -77,7 +82,7 @@ Reverse solicitation is a narrow, fact-specific defense — not a planning tool.
 ---
 
 > [!info] Going to file an NCA application?
-> The article-by-article detail — CASP capital classes, ART/EMT formulas, white paper mechanics, Article 74 wind-down plan, Article 70(3) client fiat placement, Article 66 ↔ DORA, dossier contents, application timeline, "fit and proper" requirements — lives in [[MiCA-NCA-Authorization-Mechanics]]. This page stays at the *what MiCA is and where it applies* layer.
+> The article-by-article detail — Article 60 simplified-notification pathway, Annex IV CASP capital classes, ART/EMT formulas, white paper mechanics, Article 74 wind-down plan, Articles 46/47 recovery/redemption plans, Article 70(3) client fiat placement, Articles 34(10) / 68(7)–(8) ↔ DORA, dossier contents, application timeline, "fit and proper" requirements, Article 111 penalty schedule — lives in [[MiCA-NCA-Authorization-Mechanics]]. This page stays at the *what MiCA is and where it applies* layer.
 
 ## Enforcement (Q1 2025 Data)
 

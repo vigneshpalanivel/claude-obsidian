@@ -64,18 +64,26 @@ The Pilot Regime grants exemptions from the specific provisions that create thes
 
 ## Permission Process
 
-**Authorization requirements:**
+**Authorization requirements (Articles 8/9/10):**
 - Apply to national competent authority (NCA) using ESMA's standardized templates (published March 2023)
-- Submit: business plan, rules of the DLT MI, description of DLT + IT/cyber arrangements, safekeeping arrangements, investor protection plan
-- Permission is valid throughout the EU for up to **6 years** from issuance
-- NCAs may grant exemptions under Article 4 (DLT MTF) and Article 5 (DLT SS) conditional on compensatory measures
+- Application contents (all three articles): business plan + rules of the DLT MI + legal terms (Art 7(1)); DLT functioning description (Art 7(2)); IT/cyber arrangements (Art 7(4)); prudential safeguards evidence (Art 7(6) 3rd subparagraph); safekeeping arrangements (Art 7(5)); investor protection + complaints/redress (Art 7(6) 2nd subparagraph); transition strategy (Art 7(7)); itemised exemptions with justifications + compensatory measures
+- **Statutory timeline:** 30 working days completeness check → 30 calendar days ESMA non-binding opinion (Art 8(7)/9(7)/10(8)) → 90 working days substantive decision (Art 8(9)/9(9)/10(9)). **Practical reality:** DLT MTF 6–9 months; DLT SS 9–12 months; DLT TSS 12–18+ months.
+- For DLT SS and DLT TSS, the application is also sent to the CSDR Article 12 relevant authorities, who provide a non-binding opinion on DLT-system features within 30 calendar days (Art 9(7) 4th subparagraph / Art 10(8) 4th subparagraph)
+- Permission valid throughout the EU for up to **6 years** from issuance (Art 8(11)/9(11)/10(11)), capped by the regime sunset (currently 23 March 2029)
+- NCAs grant exemptions under Article 4 (DLT MTF — only two exemption pathways: Art 4(2) extension of MiFID II Art 53(3) for direct natural/legal-person admission with 7 cumulative conditions; Art 4(3) waiver of MiFIR Art 26 transaction reporting with "regulatory observer participant" compensatory access) and Article 5 (DLT SS — nine exemption paragraphs against specific CSDR provisions) conditional on compensatory measures
+- **Article 6 DLT TSS structural carve-outs:** Article 6(1)(b) statutorily carves out CSDR Articles 9, 16, 17, 18, 20, 26, 27, 28, 31, 42, 43, 44, 46, 47 for investment-firm-operated TSS; Article 6(2)(b) carves out MiFID II Articles 5–13 for CSD-operated TSS. **This is the legal mechanism** that makes single-entity venue + settlement possible — without it, 21X / LISE could not exist.
 
-**Compensatory measures framework** — rather than prescriptive alternatives, operators propose their own safeguards. Examples:
-- Settlement finality: must settle "in near real time or no later than T+2"
-- Issue integrity: equivalent controls to CSD's asset integrity requirements
-- Asset segregation: cryptographic segregation of client assets (multi-sig, separate wallets)
+**Compensatory measures framework** — for most exemption pathways, the operator proposes its own safeguards (Article 4 + most of Article 5). For some (Article 5(2), 5(3), 5(6), 5(7)), the regulation prescribes minimum ensure-conditions the compensatory measures must meet. Examples:
+- Settlement finality (Article 5(7)(a)): must settle "at close to real time or intraday and in any case no later than the second business day after the conclusion of the trade" — **T+2 maximum**
+- Issue integrity (Article 5(2)(b)(ii)): number of DLT FIs recorded by the CSD = total DLT FIs on the distributed ledger at any given time
+- No securities overdrafts (Article 5(2)(b)(iv))
+- Asset segregation (Article 7(5) 3rd subparagraph): cryptographic segregation of client assets — and, unlike MiCA Article 75, **consent-based use on operator's own account is permitted** (Article 7(5) 1st subparagraph)
+- Take-over arrangements (Article 7(8)/(9)/(10)): best-efforts deal with a traditional MTF / CSD to receive the operation, in place within **5 years** of permission
 
 **The 18-month process at 21X** involved: BaFin + Bundesbank + ESMA + ECB coordination — giving a realistic sense of what DLT TSS authorization requires.
+
+> [!tip] For article-level practitioner detail
+> See the [InnBlockchain DLT Pilot Regime Business Readiness Checklist](../../.raw/InnBlockchain/EU%20Compliance/dlt-pilot-checklist.md) (v1.2, 13 sections, scorecard format). The checklist walks each Article-paragraph-by-Article-paragraph requirement against the verbatim text of Regulation (EU) 2022/858.
 
 ---
 

@@ -1,8 +1,9 @@
 ---
 type: source
 title: "autoresearch: MiFID II"
-source_type: web_research
+source_type: web_research + internal-checklist
 date_published: 2026-05-14
+updated: 2026-05-24
 url: multiple
 confidence: high
 key_claims:
@@ -11,7 +12,19 @@ key_claims:
   - ESMA binding guidelines on crypto-as-financial-instruments effective May 18, 2025
   - DLT Pilot Regime: 3 operational platforms (Clearstream, 21X, 360X) as of May 2026; cap raised to €100B
   - 2024 enforcement: €44.5M in MiFID II/MiFIR fines; 189 fines; largest €12.9M (Citigroup, Art 17)
-  - MiFID III: PFOF ban June 2026; consolidated tape; expanded reporting; active monitoring from Sep 2025
+  - MiFID III: PFOF ban 30 June 2026; consolidated tape; expanded reporting; active monitoring from Sep 2025
+  - IFR/IFD initial-capital tiers (under MiFID Art 15 → IFD Art 9) €75k / €150k / €750k by service mix and client-money status
+  - Class 1 reclassification threshold €30bn — investment firms above this become credit institutions under CRR / ECB-SSM supervision
+  - Article 5(4) head-office co-location — registered office AND head office in same Member State, no brass-plate structures
+  - Article 7(3) statutory authorization clock = 6 months from complete application; 6–12 months realistic with Q&A
+  - DORA fully applicable 17 Jan 2025; Art 16(5) cross-reference means DORA readiness assessed at MiFID II authorization
+  - RTS 27 repealed; RTS 28 publication status under review post-MiFID III
+internal_sources:
+  - path: ".raw/InnBlockchain/EU Compliance/mifid2-checklist.md"
+    hash: "f723288bf30076448ecd2d8944265e75"
+    ingested: "2026-05-24"
+    derived_pages:
+      - "wiki/concepts/MiFID-II-NCA-Authorization-Mechanics.md"
 tags:
   - MiFID-II
   - EU
@@ -19,6 +32,7 @@ tags:
   - autoresearch
 related:
   - "[[MiFID-II]]"
+  - "[[MiFID-II-NCA-Authorization-Mechanics]]"
   - "[[MiFID-III]]"
   - "[[DLT-Pilot-Regime]]"
   - "[[ESMA]]"

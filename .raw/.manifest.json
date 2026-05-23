@@ -1,5 +1,76 @@
 {
   "sources": {
+    ".raw/InnBlockchain/EU Compliance/dlt-pilot-checklist.md": {
+      "hash": "41e046e2dcc7d2cc55c8d3e76d2bcf5a",
+      "version": "1.2",
+      "ingested_at": "2026-05-24",
+      "pages_created": [],
+      "pages_updated": [
+        "wiki/concepts/DLT-Pilot-Regime.md",
+        "wiki/sources/autoresearch-dlt-pilot-regime.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ],
+      "notes": "Source written from training-data knowledge + the 2026-05-14 autoresearch source, then put through TWO verification passes against Wayback-archived Regulation (EU) 2022/858 text (live EUR-Lex blocked by AWS WAF same as MiCA / DORA ingests; Wayback Machine archive of CELEX:32022R0858 returned full 554KB text). Two passes corrected 20+ material errors in v1.0: (1) Article 4(2) source corrected to MiFID II Article 53(3), not Article 19(1); (2) Article 5 paragraph numbering reconstructed throughout — 5(2)=book-entry/securities account (CSDR 2(1)(4)/(9)/(28), 3, 37, 38), 5(3)=settlement discipline (CSDR 6/7), 5(4)=outsourcing (CSDR 19), 5(5)=participants beyond Directive 98/26/EC Art 2(f) NOT CSDR 33, 5(6)=CSDR 33/34/35, 5(7)=CSDR 39 with T+2 ceiling, 5(8)=CSDR 40 cash settlement, 5(9)=CSDR 50/51/53; (3) Article 6 dual-track TSS statutory carve-outs added — 6(1)(b) carves out 14 CSDR articles for IF/MO-operated TSS, 6(2)(b) carves out MiFID II Arts 5-13 for CSD-operated TSS; (4) Article 3 corrections (removed unsupported sovereign-bond exclusion; added €200m corporate-bond carve-out under 3(1)(b) 2nd subparagraph; added 3(6) NCA lower-threshold power; corrected 3(2) wording; added 3(4) monthly-average calc method; added 3(5) monthly threshold reporting); (5) Article 7(5) consent-based asset reuse permitted — explicit divergence from MiCA Art 75; (6) Article 7(6) operator strict liability up to market value, sole defence is external-event clause; NCA may require additional own funds OR insurance under 7(6) 3rd subparagraph; (7) Article 7(7) retail-investor specificity + ongoing-update-with-NCA-approval; Article 7(8)/(9)/(10) take-over arrangements with 3-month receiving-CSD response (no market-share refusal) and 5-year deadline; (8) procedural corrections — NCA completeness 30 working days not 25; ESMA 30-calendar-day non-binding opinion; 90-working-day substantive decision; refusal grounds 8(10)/9(10)/10(10); withdrawal grounds 8(12)/9(12)/10(12); (9) Article 11(1) 4-month advance material-business-plan notice + 5 categories of without-delay notifications; Article 11(4) 6-monthly periodic reporting (not quarterly); (10) Article 19 split application dates corrected; (11) amending-article numbering corrected — 16=MiFIR, 17=CSDR, 18=MiFID II (v1.0 had 18=MiFIR); Article 18's amendment to MiFID II Art 4(1)(15) expressly added DLT-issued instruments to financial-instrument definition (legal anchor for tokenized-securities regime independent of pilot continuation). v1.2 second pass: (12) Section 2.1 Type B added Article 2(7) initial-recording + safekeeping arms of DLT SS definition; softened single-permission-rule claim; (13) Section 10.2 step 8a corrected — CSDR Art 12 relevant-authorities opinion applies to DLT SS AND TSS not TSS only; (14) Section 9.1 MAR application anchored directly in Article 3(7) DLT Pilot Regulation (not derived from MiFID II status); MAR doesn't extend to DLT FIs only recorded on DLT SS. One verbatim citation slip in the OJ text preserved as-written: Article 7(6) 2nd subparagraph cross-references 'Articles 8(13), 9(11) and 10(10)' for cessation circumstances — those numbers don't correspond to cessation provisions, intended references look like 8(12)/9(12)/10(12); flagged on source and addendum but not 'corrected' on initiative. Fourth use of 'filed under existing source page, no new source page' convention (Addendum on [[autoresearch-dlt-pilot-regime]] mirrors the pattern used for mica-checklist and dora-checklist on [[EU-MiCA-DORA-AML-2025]]). Methodology note: Wayback Machine fallback was successful this time (returned full regulation text); same technique applies for future EUR-Lex-blocked ingests."
+    },
+    ".raw/InnBlockchain/EU Compliance/dora-checklist.md": {
+      "hash": "7846555f77db1b3eac861b5ab510385a",
+      "version": "1.1",
+      "ingested_at": "2026-05-24",
+      "pages_created": [
+        "wiki/concepts/DORA-NCA-Supervision-Mechanics.md"
+      ],
+      "pages_updated": [
+        "wiki/concepts/DORA-Regulation.md",
+        "wiki/sources/EU-MiCA-DORA-AML-2025.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ],
+      "notes": "Split-pattern ingest mirroring 2026-05-20 MiCA-NCA-Authorization-Mechanics + 2026-05-24 MiFID-II-NCA-Authorization-Mechanics. DORA is not an authorisation regime — restructured around the five pillars (ICT risk mgmt / incident reporting / resilience testing / third-party risk / info sharing) plus sectoral integration (MiCA, MiFID II, PSD3, NIS2). Three substantive corrections to the existing strategic [[DORA-Regulation]] page that were misframed in the 2026-04-16 initial ingest: (1) CTPPs are not just 'any SaaS vendor' — they're formally designated by ESAs against Commission Delegated Regulation (EU) 2024/1502; corrected via dedicated callout that the CTPP regime is separate (Articles 31-44) from financial-entity scope (Article 2); (2) Lead Overseer is EBA/ESMA/EIOPA by sectoral mix, NOT ECB — original page listed ECB first; corrected; (3) The '2% of turnover' figure for financial entities is sectoral-derivative, not direct DORA Level 1 — DORA defers to sectoral law (MiCA 3-15%, CRD 10%, MiFID 10%); only CTPPs have a direct DORA penalty under Article 35(6) (1% of avg daily WW turnover per day for up to 6 months) + separate Article 50 administrative penalties. Six errors corrected in source .raw file pre-ingest (training-data verification, EUR-Lex direct URL blocked by AWS WAF same as 2026-05-24 MiCA verification, Wayback fallback NOT used this time — preserved as [!gap] callout on practitioner page): (a) TLPT external-tester rule per Art 26(8) (default external every cycle, internal only for non-significant CIs and not consecutive); (b) Art 35(6) CTPP penalty 6-month cap + Art 50 admin-penalty hook (v1.0 omitted both); (c) CRD penalty cite Articles 65–67 not Article 67; (d) CTPP 3-of-4 heuristic softened (not regulation-based); (e) Microenterprise definition per Commission Recommendation 2003/361/EC (< 10 staff AND (turnover ≤ €2M OR balance sheet ≤ €2M)); (f) NIS2 displacement framing refined per Article 4(1) (obligation-level not blanket). Third use of 'filed under existing combined source page, no new source page' convention (Addendum #2 in [[EU-MiCA-DORA-AML-2025]]). Key insight on '2% DORA' misconception flagged in log but [[EU-Fintech-Compliance-Landscape]] line 12 + [[EU-MiCA-DORA-AML-2025]] DORA-section penalty paragraph deliberately NOT edited this ingest (out of scope — confine corrections to the DORA cluster; both flagged for future review)."
+    },
+    ".raw/InnBlockchain/EU Compliance/mica-checklist.md": {
+      "hash": "3283a5686d6f09eb49c11e2535129d5f",
+      "version": "2.2",
+      "ingested_at": "2026-05-20",
+      "reingested_at": "2026-05-24",
+      "reingest_history": [
+        {
+          "date": "2026-05-20",
+          "reason": "Initial ingest at v1.0 (hash 79a90bdf14e17887faa9dcb048c5b7f4). Material integrated into MiCA-Regulation under 'Practitioner Detail' section; addendum added to EU-MiCA-DORA-AML-2025 source page registering internal_sources entry."
+        },
+        {
+          "date": "2026-05-24",
+          "reason": "Re-ingest at v2.2 after two verification passes against verbatim Regulation (EU) 2023/1114 text (via Wayback-archived EUR-Lex snapshot of CELEX:32023R1114; direct EUR-Lex blocked by AWS WAF). 10+ material errors corrected in source (CASP Annex IV class swap; Art 66 → 34(10)/68(7)-(8) ICT citation; 30%/60% deposits ART not EMT; significance criteria rebuilt at Art 43(1) verbatim; 20% not 20-40% stress buffer; iXBRL Dec 2025 date removed; insider lists/personal dealing reframed as MAR not MiCA; Art 39 redemption no-fee; Art 75 own-account consent carve-out removed; Art 111 penalty tiers rebuilt). 20+ missing requirements added (Art 60 simplified-notification + 60(10) carve-out, Arts 22/23 ART reporting + means-of-exchange cap, Art 39 redemption right, Arts 46/47 recovery/redemption plans, Art 55 EMT equivalent, Art 10 failed-offer mechanics, Arts 12/25/53 ongoing update duty, Arts 33/69 mgmt body changes, Arts 41-42/83-84 qualifying holdings, Art 65 passporting, Art 73 outsourcing detail, Arts 75-82 service-specific obligations, Art 85 significant CASP 15M users, Art 88 inside info disclosure mechanics, Art 92 STORs, Arts 102-105 product intervention, Art 111 penalties). Section 1.2 rebuilt against Art 2 verbatim with Recital 22 decentralisation framing. Section 6.1 updated to 2024 EU AML Package (Reg 2024/1624 AMLR, Dir 2024/1640 AMLD6, Reg 2024/1620 AMLA Reg). Source grew 561 → 796 lines."
+        }
+      ],
+      "pages_created": [],
+      "pages_updated": [
+        "wiki/concepts/MiCA-NCA-Authorization-Mechanics.md",
+        "wiki/concepts/MiCA-Regulation.md",
+        "wiki/sources/EU-MiCA-DORA-AML-2025.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ],
+      "notes": "Source verified against Regulation (EU) 2023/1114 verbatim text. The MiFID II ingest on 2026-05-24 had back-patched an AMLA date fix into line 379 of mica-checklist.md prior to this v2.2 work; that fix is preserved and extended (full 2024 AML Package now reflected). Companion practitioner page MiCA-NCA-Authorization-Mechanics is the canonical article-by-article reference; strategic MiCA-Regulation page is the what-it-is/where-it-applies layer; the source EU-MiCA-DORA-AML-2025 page holds both the original web research and the addendum registering this internal source. Open item: ESMA/EBA Level 2 / Level 3 RTS continue to evolve — cross-validate Article-level claims against current ESMA/EBA publications and home-NCA-specific guidance before any real filing."
+    },
+    ".raw/InnBlockchain/EU Compliance/mifid2-checklist.md": {
+      "hash": "f723288bf30076448ecd2d8944265e75",
+      "ingested_at": "2026-05-24",
+      "pages_created": [
+        "wiki/concepts/MiFID-II-NCA-Authorization-Mechanics.md"
+      ],
+      "pages_updated": [
+        "wiki/concepts/MiFID-II.md",
+        "wiki/sources/autoresearch-mifid-ii.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/hot.md"
+      ],
+      "notes": "Split-pattern ingest mirroring May 20 MiCA-NCA-Authorization-Mechanics. Same-session error fixes to source .raw file (verified vs EUR-Lex CELEX:32014L0065): A7 placing-without-firm-commitment moved from €750k to €75k/€150k IFD Art 9 tier; ESMA register cite changed Article 8 → Article 5(3); AMLA dates corrected from 'from 2026' to direct supervision 1 Jan 2028 / powers 1 Jul 2025. AMLA fix back-patched to mica-checklist.md line 379 for cross-doc consistency. Source-grounding gap (training-recall not EUR-Lex-grounded) preserved as `[!gap]` callout on new concept page: IFR/IFD tiers + AMLA dates + MiFID III RTS status + CTP go-live."
+    },
     ".raw/InnBlockchain/US Compliance/US-Compliance-Landscape.md": {
       "hash": "254a3ec743648bc33d3ee207f6a065fd",
       "ingested_at": "2026-05-23",
