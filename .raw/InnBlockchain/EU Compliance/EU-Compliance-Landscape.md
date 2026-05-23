@@ -91,7 +91,7 @@ Regulations overlap and create compliance tension points:
 >
 > **TFR Travel Rule** (Regulation (EU) 2023/1113): no threshold for CASP-to-CASP crypto transfers; €1,000 threshold applies only to unhosted-wallet ownership verification. Applies to **every** Seg 2-10 CASP segment. Does **NOT** apply to Seg 1 unless the firm also operates a CASP side — MiFID-classified tokens aren't crypto-assets under MiCA, so the TFR mechanism doesn't reach them. Segment cells use "Travel Rule" as shorthand; Seg 1 retains the explicit disclaimer because the RWA misframe lives there.
 >
-> **DORA** applies to every Seg 2-10 segment that is classified as a CASP (CASPs are explicitly named in DORA Article 2 scope). For the grey-zone segments (Seg 5 NFT, Seg 7 DAO), DORA tracks the same fact-pattern as MiCA — if the venue is a CASP under MiCA, it's a financial entity under DORA.
+> **DORA** applies via two pathways: (a) every Seg 2-10 segment that is classified as a CASP (CASPs are explicitly named in DORA Article 2(f) scope), and (b) Seg 1 RWA platforms via the MiFID II investment-firm / DLT Pilot Regime trading-venue or CSD pathway (DORA Article 2(e), (g), (i)) — the Seg 1 firm doesn't need to be a CASP to be in scope. For the grey-zone segments (Seg 5 NFT, Seg 7 DAO), DORA tracks the same fact-pattern as MiCA — if the venue is a CASP under MiCA, it's a financial entity under DORA.
 
 | Segment | EU Compliance Obligations |
 |---|---|
@@ -140,7 +140,7 @@ Regulations overlap and create compliance tension points:
 | **MiFID II / III** | Seg 1 RWA primary (ownership tokens are securities by default) | WealthTech (primary), ExchangeTech (if trading financial instruments) |
 | **DLT Pilot Regime** | Seg 1 RWA (DLT MTF / SS / TSS — the real on-chain securities infra path) | WealthTech (primary — DLT MTF/SS/TSS) |
 | **AML / AMLA** | Seg 1 (AMLD obliged entity — investment firm / securities issuer, not CASP-classified); Seg 2-8 + Seg 10 (CASP-classified); Seg 9 conditional on fiat off-ramp or material P2P value | All segments where AMLD obliged entity (most); InsurTech limited to life-insurance + certain financial insurance products (pure P&C out) |
-| **DORA** | **All CASP segments (Seg 2-10) — CASPs are explicitly named in DORA scope**; most material at Seg 8 (critical ICT infra) and Seg 10 (AI agents executing services) | All in DORA Article 2 scope via their own entity type: BankTech (credit institutions), InsurTech (insurers), WealthTech (investment firms), ExchangeTech (CASPs), WalletTech + PayTech (PIs/EMIs). LendTech conditional — only if credit institution or PI license held. RegTech conditional — only via the CTPP designation pathway, which is a narrow process applied to ICT vendors serving multiple financial entities; most RegTech vendors are out |
+| **DORA** | **Seg 1 RWA** via MiFID II investment-firm / DLT Pilot Regime trading-venue or CSD pathway (DORA Art. 2(e), (g), (i)); **all CASP segments (Seg 2-10)** via Art. 2(f) — CASPs explicitly named in DORA scope; most material at Seg 8 (critical ICT infra) and Seg 10 (AI agents executing services) | All in DORA Article 2 scope via their own entity type: BankTech (credit institutions), InsurTech (insurers), WealthTech (investment firms), ExchangeTech (CASPs), WalletTech + PayTech (PIs/EMIs). LendTech conditional — only if credit institution or PI license held. RegTech conditional — only via the CTPP designation pathway, which is a narrow process applied to ICT vendors serving multiple financial entities; most RegTech vendors are out |
 | **EU AI Act** | Seg 3 DeFi Lending + Seg 10 AI×Crypto (primary); secondary at Seg 1 (AI for asset valuation / oracles), Seg 5 (AI in NFT mechanics), Seg 9 (AI in gaming purchases) | LendTech, RegTech, InsurTech, BankTech (all primary — high-risk AI in core function) |
 | **PSD3 / PSR** | — | PayTech, WalletTech, BankTech |
 | **IPR** | — | PayTech (mandatory) |
@@ -157,5 +157,58 @@ EU compliance is a direct revenue driver for InnBlockchain:
 - **FinTech ICP**: Compliance Carol (CCO) is the regulatory veto-holder. Vendor risk pack contents are segment-scoped — **all FinTech segments**: ISO/SOC 2, data residency, GDPR processing. **DORA third-party clauses** for all *licensed* financial entities (which is most FinTech segments: BankTech, InsurTech, WealthTech, ExchangeTech, WalletTech, PayTech). RegTech only carries DORA via the CTPP pathway if designated critical; LendTech only if it holds a credit-institution / PI license alongside CCD2. **Only if the FinTech touches non-MiFID crypto-assets** (ExchangeTech, WalletTech with crypto, BankTech with crypto product, WealthTech with stablecoin/utility-token side): add MiCA compliance context. Pure-fiat PayTech, LendTech, RegTech, InsurTech are out of MiCA scope — do not lead with MiCA in those rooms.
 - **Crypto Native ICP**: MiCA is the dominant framing for Seg 2-10; **Seg 1 RWA is MiFID-primary, not MiCA** — DLT Pilot Regime is both the correct infra path and the highest-intent sales hook (10 pending applications including Securitize / Spain)
 - **AI+Blockchain opportunity**: EU AI Act mandates on-chain audit trails for high-risk AI decisions (credit scoring, fraud) — direct use case for blockchain-based compliance infrastructure across LendTech, RegTech, and Seg 10 AI×Crypto
+
+## Primary Sources
+
+Citations use EUR-Lex ELI URLs (the canonical, version-stable form). Supervisor pages are listed separately because that's where RTS/ITS, Q&As, and deadline updates publish post-adoption.
+
+### Legislation in force
+
+| Regulation | Instrument | Official source |
+|---|---|---|
+| MiFID II | Directive 2014/65/EU | https://eur-lex.europa.eu/eli/dir/2014/65/oj |
+| MiFIR | Regulation (EU) 600/2014 | https://eur-lex.europa.eu/eli/reg/2014/600/oj |
+| MiFID III review — Directive | Directive (EU) 2024/790 | https://eur-lex.europa.eu/eli/dir/2024/790/oj |
+| MiFID III review — Regulation | Regulation (EU) 2024/791 | https://eur-lex.europa.eu/eli/reg/2024/791/oj |
+| DORA | Regulation (EU) 2022/2554 | https://eur-lex.europa.eu/eli/reg/2022/2554/oj |
+| MiCA | Regulation (EU) 2023/1114 | https://eur-lex.europa.eu/eli/reg/2023/1114/oj |
+| TFR (Travel Rule) | Regulation (EU) 2023/1113 | https://eur-lex.europa.eu/eli/reg/2023/1113/oj |
+| EU AI Act | Regulation (EU) 2024/1689 | https://eur-lex.europa.eu/eli/reg/2024/1689/oj |
+| IPR (Instant Payments) | Regulation (EU) 2024/886 | https://eur-lex.europa.eu/eli/reg/2024/886/oj |
+| CCD2 | Directive (EU) 2023/2225 | https://eur-lex.europa.eu/eli/dir/2023/2225/oj |
+| AMLR (single rulebook) | Regulation (EU) 2024/1624 | https://eur-lex.europa.eu/eli/reg/2024/1624/oj |
+| AMLD6 | Directive (EU) 2024/1640 | https://eur-lex.europa.eu/eli/dir/2024/1640/oj |
+| AMLA Regulation | Regulation (EU) 2024/1620 | https://eur-lex.europa.eu/eli/reg/2024/1620/oj |
+| eIDAS 2.0 | Regulation (EU) 2024/1183 | https://eur-lex.europa.eu/eli/reg/2024/1183/oj |
+| GDPR | Regulation (EU) 2016/679 | https://eur-lex.europa.eu/eli/reg/2016/679/oj |
+| DLT Pilot Regime | Regulation (EU) 2022/858 | https://eur-lex.europa.eu/eli/reg/2022/858/oj |
+| Prospectus Regulation (Seg 1 RWA) | Regulation (EU) 2017/1129 | https://eur-lex.europa.eu/eli/reg/2017/1129/oj |
+
+### Proposals not yet in the OJ (re-check before citing)
+
+| File | Commission proposal | Official source |
+|---|---|---|
+| PSD3 (Directive) | COM(2023) 367 final | https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0367 |
+| PSR (Regulation) | COM(2023) 366 final | https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0366 |
+| FiDA | COM(2023) 360 final | https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0360 |
+
+> [!warning] AML row is three instruments, not one
+> The table at the top of this doc shows "EU AML / AMLA" as a single line for readability. The legal source is three separate instruments — AMLR (direct-effect rulebook), AMLD6 (transposition obligation on Member States), and the AMLA Regulation (authority establishment). They have different application dates and different scopes. Cite all three when used in a compliance memo.
+
+### Supervisors and authority pages
+
+Where RTS/ITS, Q&As, transitional guidance, and enforcement statistics publish:
+
+- **ESMA** (MiCA, MiFID II/III, DLT Pilot, Prospectus): https://www.esma.europa.eu
+  - MiCA hub: https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica
+- **EBA** (DORA joint ESAs, PSD3/PSR, AML transition): https://www.eba.europa.eu
+  - DORA: https://www.eba.europa.eu/regulation-and-policy/digital-operational-resilience-act-dora
+- **EIOPA** (InsurTech, DORA insurance pathway): https://www.eiopa.europa.eu
+- **AMLA** (Frankfurt, operational since Jul 2025): https://anti-money-laundering-authority.europa.eu
+- **ENISA** (DORA technical incident reporting): https://www.enisa.europa.eu
+- **EDPB** (GDPR ↔ AML reconciliation, GDPR ↔ AI Act): https://www.edpb.europa.eu
+- **EU AI Office** (AI Act enforcement, codes of practice): https://digital-strategy.ec.europa.eu/en/policies/ai-office
+- **ECB** (IPR, eurozone payments oversight): https://www.ecb.europa.eu
+- **Commission — payments package tracker** (PSD3/PSR/FiDA status): https://finance.ec.europa.eu/publications/financial-data-access-and-payments-package_en
 
 See: [[MiFID-II]] | [[MiFID-III]] | [[MiCA-Regulation]] | [[MiCA-NCA-Authorization-Mechanics]] | [[DORA-Regulation]] | [[EU-AML-AMLA]] | [[EU-AI-Act-Fintech]] | [[PSD3-Open-Banking-EU]] | [[DLT-Pilot-Regime]] | [[ESMA]] | [[Asset-Tokenization-RWA]]
