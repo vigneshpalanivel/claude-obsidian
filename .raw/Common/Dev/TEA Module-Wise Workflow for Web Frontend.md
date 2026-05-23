@@ -1,22 +1,27 @@
 ---
-title: "TEA Module-Wise Workflow for Large Frontend Apps"
+title: "TEA Module-Wise Workflow for Large Web Frontend Apps"
 author: Vignesh
 created: 2026-05-22
-description: End-to-end task list for running BMad TEA on a brownfield frontend app with 30+ modules, no epics, no stories.
+updated: 2026-05-23
+description: End-to-end task list for running BMad TEA on a brownfield web frontend app with 30+ modules, no epics, no stories.
 tags:
   - bmad
   - tea
   - testing
   - workflow
-  - frontend
+  - web-frontend
   - brownfield
 ---
 
-# TEA Module-Wise Workflow for Large Frontend Apps
+# TEA Module-Wise Workflow for Large Web Frontend Apps
 
-End-to-end task list for running BMad TEA (`document-project` → `test-design` → `automate`) on a brownfield frontend app with 30+ modules, no epics, no stories — just code.
+End-to-end task list for running BMad TEA (`document-project` → `test-design` → `automate`) on a brownfield web frontend app with 30+ modules, no epics, no stories — just code.
+
+> *Scope: web frontends only (React, Vue, Svelte, Angular, vanilla JS, etc.). For React Native, Flutter, or native mobile, the tier strategy applies but tooling (Playwright, Vitest, browser exploration) and the knowledge skill must be swapped — author a separate workflow for those stacks.*
 
 ## Critical Pre-Decision: Tier the Modules
+
+> *"Module" here means a feature area / business domain (auth, checkout, orders) — a way to split the codebase by user-facing functionality. It is **not** a framework-specific construct (Angular NgModule, ES module, Python module, etc.).*
 
 Do not run test-design + automate on all 30 modules equally. That's 60-120 hours of work, most of it wasted on low-traffic modules, and the result is a 1500-test suite with high flake rate that gets ignored within a month.
 
@@ -48,8 +53,8 @@ Two things to internalize before starting:
    tea_use_playwright_utils: true     # if Playwright
    output_folder: docs/qa             # or your preference — pick one and stick
    ```
-4. Decide **E2E + API runner**: **Playwright** (default, recommended for frontend apps in 2026) or Cypress. Set it before `framework` runs.
-5. Decide **component test runner**: **Vitest + Testing Library** is the modern default for any frontend framework. Jest + Testing Library if you're already on it. Don't add a second runner if one is already set up — pick what's there and move on.
+4. **E2E + API runner: Playwright.** This workflow is framework-agnostic — it works for React, Vue, Svelte, Angular, or any web frontend. Coding patterns for the generated test code come from a framework-specific knowledge skill (one per stack). Available today: `bmad-react-test-kb`. For other stacks, author a comparable skill or write patterns inline.
+5. Decide **component test runner**: **Vitest** (framework-agnostic) + `@testing-library/<your-framework>` (e.g. `@testing-library/react`, `@testing-library/vue`, `@testing-library/svelte`) is the modern default. Jest + Testing Library if you're already on it. Don't add a second runner if one is already set up — pick what's there and move on.
 6. Decide **visual regression tool**:
    - **Playwright built-in `toHaveScreenshot()`** — zero extra tooling, snapshots committed to repo. Best default unless you need cloud diff review.
    - **Percy** or **Chromatic** — cloud-hosted diffs with reviewer UI. Worth it only if non-engineers review visual changes or you need cross-browser/device baselines.
@@ -64,7 +69,7 @@ Two things to internalize before starting:
    - **Module tiers** (added in step 10 — same file).
 
    Skip anything `document-project` already covered well: directory structure, component tree, declared routes, dependencies, state management library, API surface.
-9. **Run `/bmad:tea:framework`** once. Scaffolds Playwright/Cypress E2E + API infra at the repo root. Don't repeat per module — all modules share the same `tests/` tree. Configure component test runner (Vitest config) and visual regression baselines (snapshot dir or Percy/Chromatic project) in the same pass.
+9. **Run `/bmad:tea:framework`** once. Scaffolds Playwright E2E + API infra at the repo root. Don't repeat per module — all modules share the same `tests/` tree. Configure component test runner (Vitest config) and visual regression baselines (snapshot dir or Percy/Chromatic project) in the same pass.
 
 ## Module inventory
 
