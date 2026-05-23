@@ -19,6 +19,14 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## 2026-05-23 | ingest | US Fintech Compliance Landscape (new) — companion to EU doc
+- Source: `.raw/InnBlockchain/US Compliance/US-Compliance-Landscape.md` (new file, hash `254a3ec743648bc33d3ee207f6a065fd`)
+- Pages created: [[US-Fintech-Compliance-Landscape]] — new wiki concept; mirrors [[EU-Fintech-Compliance-Landscape]] section-for-section but reflects US's fragmented regulator/state architecture
+- Pages updated: [[index]] (added entry under Concepts, page count 220 → 221), [[hot]], [[log]]
+- Web research: 12 WebSearches (May 2026 status of GENIUS Act, CLARITY Act, CTA, CFPB 1033, 1099-DA DeFi CRA repeal, Tornado Cash / Van Loon, SAB 121 rescission, MTMA state adoption, Colorado AI Act delay)
+- Key insight: US compliance is structurally inverse to the EU. EU = single market + directly-applicable regulations + intensifying enforcement; US = federal/state fragmentation + 8 overlapping regulators + collapsing federal crypto enforcement post-Atkins + rising state AG/DFPI/DFS enforcement. Three structural differences forced full rewrite of the Dependency Map (no clean "universal/broad/conditional" — instead HORIZONTAL / FEDERAL CONDITIONAL / STATE CONDITIONAL), the RWA misframe callout (5 production paths including Reg D + [[Regulation-S]] concurrent, not the EU's MiFID/MiCA mutual-exclusivity), and the InnBlockchain Relevance section (sells process not certainty; state MTL coverage as the dominant friction; GENIUS Act as 2026-2027 build-out wedge).
+- Reg S expansion: added in 5 locations across Seg 1, Seg 6, RWA misframe (with *SEC v. Telegram* flowback warning), WealthTech, and Quick Reference matrix. Wikilinks to existing canonical [[Regulation-S]] concept page (not stub).
+
 ## 2026-05-21 | re-ingest | InnBlockchain Content AEO GEO Prompts (rev 5 + TFR patch)
 - Source: `.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md` (hash `30a031c4814a5f2e8bc75b7ef184ee7b`, was `c3dffd0b1d3944f110df30b81b6f4402`)
 - Summary: [[InnBlockchain-Content-AEO-GEO-Prompts]] (rewritten)

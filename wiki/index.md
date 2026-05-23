@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-20 | Total pages: 220 | Sources ingested: 70 (+1 internal merge, no new source page)
+Last updated: 2026-05-23 | Total pages: 221 | Sources ingested: 70 (+1 internal merge, no new source page)
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -71,6 +71,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[MiFID-III]] — 2024 revision (Directive 2024/790); PFOF ban June 2026; consolidated tape; expanded reporting April 2026; active monitoring from Sep 2025 (status: current)
 - [[DLT-Pilot-Regime]] — EU sandbox for tokenized securities (live March 2023); 4 platforms authorized (Clearstream/21X/360X/LISE); €100B cap proposed; EC April 2026 package proposing permanent; ECB Trigger Solution for central bank money settlement (status: current)
 - [[EU-Fintech-Compliance-Landscape]] — 10 key EU fintech regulations (MiFID II/III, DORA, MiCA, AI Act, PSD3, IPR, AML, FiDA, eIDAS 2.0, CCD2); enforcement +417% YoY; dependency map (status: current)
+- [[US-Fintech-Compliance-Landscape]] — US federal + 50-state fragmented map (SEC/CFTC/FinCEN/OCC/FDIC/Fed/CFPB/IRS + state MTLs); GENIUS Act Jul 2025; CLARITY Act pending Senate; CTA narrowed Mar 2025; SAB 121 rescinded; Tornado Cash delisted; 1099-DA DeFi piece repealed; ICP-mapped (status: current)
 - [[MiCA-Regulation]] — EU crypto single market; 1 July 2026 transition end; 65% compliance; €540M+ fines; covers CASPs not DeFi/security tokens; strategic/positioning layer (status: current)
 - [[MiCA-NCA-Authorization-Mechanics]] — practitioner companion to MiCA-Regulation; CASP capital classes (€50k/€125k/€150k), ART/EMT formulas, white paper mechanics + iXBRL, Article 74 wind-down, Article 70(3) client fiat, Article 66↔DORA, application timeline 6–12mo, dossier contents, fit-and-proper, InnBlockchain service-mapping table (status: current)
 - [[DORA-Regulation]] — ICT resilience law; Jan 2025 active; 5 pillars; 2% turnover penalty; third-party vendor mapping hardest lift (status: current)
