@@ -89,8 +89,9 @@ Categorization requires periodic review when client circumstances change.
 - Both must document and retain governance records
 
 ### 6. Recordkeeping
-- Minimum **5 years** retention for all services, activities, transactions
-- From 2025 onward (MiFID III): active monitoring + verification, not just storage
+- Minimum **5 years** retention for all services, activities, transactions (extendable to 7 on NCA request)
+- Applies to all telephone and electronic communications relating to dealing on own account and client order services (Art. 16(7))
+- Unchanged by the 2024 MiFID/MiFIR Review
 
 ### 7. Algorithmic Trading (Article 17)
 - Resilient systems with sufficient capacity
