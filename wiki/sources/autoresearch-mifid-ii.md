@@ -21,8 +21,16 @@ key_claims:
   - RTS 27 repealed; RTS 28 publication status under review post-MiFID III
 internal_sources:
   - path: ".raw/InnBlockchain/EU Compliance/mifid2-checklist.md"
-    hash: "f723288bf30076448ecd2d8944265e75"
+    hash: "092e0ef3e509342813def75de3ca37df"
+    version: "1.1"
     ingested: "2026-05-24"
+    reingested: "2026-05-24"
+    verified_against:
+      - ".raw/InnBlockchain/EU Compliance/mifid2.html"
+      - ".raw/InnBlockchain/EU Compliance/mifid3-791.html"
+      - ".raw/InnBlockchain/EU Compliance/amla.html"
+      - ".raw/InnBlockchain/EU Compliance/dora.html"
+      - ".raw/InnBlockchain/EU Compliance/prospectus.html"
     derived_pages:
       - "wiki/concepts/MiFID-II-NCA-Authorization-Mechanics.md"
 tags:

@@ -10,11 +10,12 @@ tags:
   - compliance
   - regulation
 status: current
-last_reingested: 2026-05-24
+last_reingested: 2026-05-25
 related:
   - "[[MiCA-NCA-Authorization-Mechanics]]"
   - "[[EU-Fintech-Compliance-Landscape]]"
   - "[[EU-AML-AMLA]]"
+  - "[[TFR-Regulation]]"
   - "[[DORA-Regulation]]"
   - "[[MiFID-II]]"
   - "[[CBDC-Central-Bank-Digital-Currency]]"

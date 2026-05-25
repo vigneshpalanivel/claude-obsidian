@@ -279,7 +279,10 @@ For businesses issuing e-money tokens:
 - [ ] Authorized as a credit institution or electronic money institution (prerequisite) *(Article 48)*
 - [ ] 1:1 funds-equivalent backing maintained at all times *(Article 48(2))*
 - [ ] Funds received in exchange for EMTs invested in secure, low-risk assets denominated in the same official currency referenced by the token *(Article 54)*
-- [ ] Holders have a redemption right at par value at any time *(Article 49)*
+- [ ] EMTs issued **at par value** on receipt of funds *(Article 49(3))*
+- [ ] Holders have a redemption right **at any time and at par value**, paid in funds (other than e-money) *(Article 49(4))*
+- [ ] **Redemption shall not be subject to a fee** — parallel to the ART rule, without prejudice to Article 46 (recovery plan) applied *mutatis mutandis* via Article 55 *(Article 49(6))*
+- [ ] Conditions for redemption **prominently stated in the white paper** *(Article 49(5), referring to Article 51(1)(d))*
 - [ ] **No interest paid** to token holders or by CASPs in respect of services related to EMTs *(Article 50)*
 - [ ] Reserve assets legally segregated from issuer's balance sheet
 
@@ -789,7 +792,8 @@ Competent authorities, **ESMA**, and **EBA** all have powers to **prohibit or re
 
 *Disclaimer: This checklist is provided for informational and educational purposes only. It does not constitute legal, financial, or regulatory advice. MiCA requirements are subject to national implementation measures, ESMA/EBA technical standards, and ongoing regulatory guidance. Always engage qualified EU crypto-regulatory legal counsel for your specific business and jurisdiction.*
 
-*Document version: 2.2 | Last updated: May 2026*
+*Document version: 2.3 | Last updated: May 2026*
+*Changes in v2.3 (final verification pass against local-copy mica.html, full text of Regulation (EU) 2023/1114, OJ L 150, 9 June 2023): cross-checked 85+ specific claims (article numbers, monetary amounts, percentages, time periods, subsection mappings) against verbatim regulation text. All passed except one missing detail: added Article 49(6) "redemption of e-money tokens shall not be subject to a fee" (parallel to Article 39(3) for ARTs) — Section 4.3 EMT bullets expanded.*
 *Changes in v2.2: rebuilt Section 1.2 against Article 2 with full exclusion list and a clarified decentralisation note distinguishing Title II–IV (issuance) carve-outs from continuing Title V (CASP) coverage; updated Section 6.1 to the 2024 EU AML Package (Reg 2024/1624 AMLR, Dir 2024/1640 AMLD6, Reg 2024/1620 AMLA Regulation) with transitional planning to the current AMLD4/5 regime until July 2027.*
 *Changes in v2.0: corrected CASP capital class table against Annex IV; corrected ICT citations to Articles 34(10) and 68(7)–(8); corrected 30%/60% bank-deposit rule scope (ARTs, not EMTs); corrected significance criteria table against Article 43(1); added missing requirements (Articles 10, 12, 22, 23, 39, 41–42, 46, 47, 55, 60, 65, 69, 73, 75–85, 88, 92, 102–105, 111).*
 *Changes in v2.1 (second-pass corrections): (i) corrected Article 39 redemption rule — no fee on normal redemption, only under recovery plan (Art 46); (ii) corrected Article 75 custody — removed incorrect "with consent" carve-out, anchored to Article 70(1); (iii) corrected Article 76 trading platform bullets to track the regulation verbatim; (iv) reframed insider lists / personal dealing as best practice / Art 72 controls — not MiCA Level 1 obligations; (v) rebuilt Article 111 penalty table to match the actual percentage tiers (3% / 5% / 12.5% / 2% / 15%) and disgorgement multipliers (2× general, 3× market abuse); (vi) added Article 117 EMT supervision derogation; (vii) added Article 81(14) portfolio-management quarterly statements and inducement restrictions; (viii) added Article 60(10) carve-out (no Annex IV / Arts 62–64, 67, 83–84 for financial-entity CASPs).*

@@ -324,7 +324,7 @@ ESMA selects CTPs via competitive procedure based on: technical resilience, gove
 **Mandatory contribution:**
 - Real-time transmission of trading data to the CTP
 - Harmonised format and protocol (RTS-specified)
-- No remuneration to contributors except via the revenue-redistribution arrangements applicable to bonds (Articles 27h(5)–(7))
+- No remuneration to contributors except via the revenue-redistribution arrangements under Article 27h(5)–(7) — i.e., the bonds CTP arrangement (Art. 27h(5)) or the operative shares/ETFs redistribution scheme (Art. 27h(6)–(7)). OTC derivatives CTP contributors receive no redistribution (Art. 22a(6))
 
 **Exemptions:**
 - **Small venues** with less than 1% of Union trading volume in the relevant asset class — exempt unless they opt in
@@ -333,7 +333,7 @@ ESMA selects CTPs via competitive procedure based on: technical resilience, gove
 
 **Build actions:**
 - [ ] Confirm whether the firm operates a trading venue, APA, or qualifying SI subject to mandatory data contribution
-- [ ] Assess whether small-venue or SME-growth-market exemption applies — and whether opt-in is strategically warranted (for revenue-redistribution participation on bonds)
+- [ ] Assess whether small-venue or SME-growth-market exemption applies — and whether opt-in is strategically warranted (small-venue opt-in is the gateway to the shares/ETFs CTP revenue-redistribution scheme under Art. 27h(6))
 - [ ] Build harmonised real-time data-transmission infrastructure (RTS-driven, deadline-dependent)
 - [ ] Allocate licensing budget for CT consumption (free 15-min delay is available from venues/APAs; CTPs may charge for real-time)
 
@@ -348,25 +348,45 @@ The shares/ETFs CTP publishes the **European Best Bid and Offer** (EBBO) — the
 
 ---
 
-### 6.4 — Revenue Redistribution for Bonds CTP (MiFIR Article 27h(5)–(7) — new)
+### 6.4 — Revenue Redistribution Schemes (MiFIR Article 27h(5)–(8) — new)
 
-For the **bonds** CTP only, a revenue-redistribution arrangement applies. Contributing venues receive a share of CTP subscription revenue, with the formula weighted (RTS-specified) by:
-- Volume of trading on small venues
-- New bond issuances
-- Pre-trade-transparent trading
+Two separate redistribution regimes apply across the three CTPs. **Do not conflate them** — the operative weighted-criteria scheme is the shares/ETFs scheme; the bonds scheme is a selection-criterion arrangement whose design is left to the applicant.
 
-This is intended to compensate small venues for the loss of proprietary data revenue. There is **no** revenue redistribution for shares/ETFs or OTC derivatives CTPs.
+#### Shares/ETFs CTP — Operative Statutory Scheme (Article 27h(6)–(8))
 
-- [ ] If operating a bond venue: track the revenue-redistribution RTS (deadline 29 December 2024) — affects business case
-- [ ] If a small bond venue: opt-in decision must factor projected redistribution revenue
+The shares/ETFs CTP **shall** redistribute part of its revenue to data contributors meeting one or more of the following criteria, with RTS-specified weightings:
+
+| Criterion | Source | Weighting hierarchy (Art. 27h(8)) |
+|---|---|---|
+| (a) Data contributor is a regulated market or SME growth market whose annual share trading volume ≤ **1%** of Union annual share trading volume ("small trading venue") | Art. 27h(6)(a) | **Highest** weight |
+| (b) Data contributor is a trading venue that provided initial admission to trading of shares/ETFs on or after **27 March 2019** | Art. 27h(6)(b) | Middle weight |
+| (c) Data transmitted by a trading venue, pertaining to transactions in shares/ETFs concluded on a pre-trade-transparent trading system (and not subject to a reference price waiver under Art. 4(1)(c)) | Art. 27h(6)(c) | Lowest weight |
+
+Where a venue meets more than one criterion, amounts are added cumulatively (Art. 27h(7), third subparagraph). ESMA RTS specifying exact weightings was due **29 December 2024** (Art. 27h(8)).
+
+#### Bonds CTP — Selection-Criterion Arrangement (Article 27h(5) referenced via Article 27da(2)(i))
+
+The bonds CTP applicant **must include** revenue-redistribution arrangements as part of its bid (Art. 27da(2)(i)). The arrangement itself is governed by Art. 27h(5). The design — including which contributors receive redistribution and on what basis — is **left to the applicant** within the framework of Art. 27h(5), not prescribed by the three-criteria scheme above.
+
+#### OTC Derivatives CTP — No Redistribution
+
+No revenue redistribution applies to the OTC derivatives CTP (neither selection criterion nor operative scheme).
+
+**Build actions:**
+- [ ] If operating a small trading venue in shares/ETFs (<1% Union volume): opt-in decision (per Art. 22a(2)–(3)) is the gateway to the shares/ETFs CTP redistribution scheme — model projected revenue against the RTS weighting hierarchy
+- [ ] If a venue gave initial admission to shares/ETFs on or after 27 March 2019: factor middle-tier redistribution into the data-contribution business case
+- [ ] If operating a pre-trade-transparent equity venue (not on the reference price waiver): factor lowest-tier redistribution into the business case
+- [ ] If applying as a bonds CTP: design a redistribution arrangement that satisfies Art. 27h(5) and articulate it in the selection-procedure bid (Art. 27da(2)(i))
+- [ ] If operating a bond venue: track ESMA bonds-CTP selection procedure (initiated 29 December 2024) — bidder redistribution proposals determine your eventual revenue share
 
 ---
 
-### 6.5 — Free Access for Academics, Regulators, Retail
+### 6.5 — Free Access for Retail, Academics, Civil Society, Competent Authorities (MiFIR Article 27h(1)(b))
 
-For the **shares/ETFs** CTP, the EBBO and post-trade data must be available free of charge to academics for non-commercial research, to regulators, and (where commercially feasible) to retail investors. This is a Commission-driven public-good provision.
+Every CTP — not just the shares/ETFs CTP — must collect fees from users *"while providing access, free of charge, to the consolidated tape to retail investors, academics, civil society organisations and competent authorities"* (Art. 27h(1)(b), verbatim). No "non-commercial research" or "where commercially feasible" qualifier applies — the four categories receive free access unconditionally.
 
-- [ ] If consuming CT data commercially: confirm your usage is paid commercial use (academic/retail free access does not apply to firm-level consumption)
+- [ ] If consuming CT data commercially: confirm your usage is paid commercial use (free-access categories do not extend to firm-level commercial consumption)
+- [ ] If operating a CTP: build fee schedule and access-tier infrastructure that segregates the four free-access categories from paying users at onboarding
 
 **Reference:** Regulation (EU) 2024/791 amendments inserting MiFIR Articles 22a, 22b, 27da, 27db, 27g, 27h (consolidated tape regime)
 

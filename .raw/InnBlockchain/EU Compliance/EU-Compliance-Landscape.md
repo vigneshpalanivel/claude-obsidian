@@ -2,11 +2,12 @@
 
 The EU is the world's most active jurisdiction for fintech regulation. By 2026, over 60 new or revised directives and regulations are in force. For any fintech operating in the EU or serving EU customers, compliance is not optional — it is the cost of market access.
 
-## The Ten Key Regulations (2025-2026)
+## Key EU Fintech Regulations (2025-2026)
 
 | Regulation | Focus | Key Deadline | Penalty |
 |-----------|-------|-------------|---------|
 | **MiFID II/III** | Investment services + markets | MiFID II in force since Jan 2018; MiFID III phased rollout: Sep 2025 active monitoring · Apr 2026 expanded reporting · Jun 2026 PFOF ban + consolidated tape | €44.5M EU fines in 2024 (single-year) |
+| **Prospectus Regulation** | Public-offer + admission-to-trading disclosure for transferable securities (issuer-level obligation; instrument classification borrowed from MiFID II Art. 4(1)(44) — issuer does *not* need to be MiFID-authorised) | In force since 21 Jul 2019; **Listing Act (Reg 2024/2809) amendments apply from 5 Mar 2026** — new EU Follow-on Prospectus, EU Growth Issuance Document, exemption threshold raised to €12m, page limits + standardised format | ≥€5M or 3% turnover for legal persons; ≥€700k for natural persons; ≥2× profits gained / losses avoided (Art. 38) |
 | **DORA** | ICT resilience | Jan 2025 (in force) | 2% annual turnover |
 | **MiCA** | Crypto-asset services | **1 Jul 2026** (transition end); white papers iXBRL-format from 23 Dec 2025 | €540M+ cumulative fines + license revocation |
 | **EU AI Act** | High-risk AI systems | Aug 2, 2026 (high-risk obligations); prohibited practices already in force from Feb 2, 2025 | €35M / 7% turnover |
@@ -17,7 +18,7 @@ The EU is the world's most active jurisdiction for fintech regulation. By 2026, 
 | **FiDA** | Open finance / data access | ~2027 (trilogue paused) | TBD |
 | **eIDAS 2.0** | Digital identity wallet | Dec 31, 2026 (EU Digital Identity Wallet available across all Member States) | Sanctions or loss of authorization scope for regulated FIs that refuse to accept the EUDI Wallet when required |
 
-Two further regimes also apply but sit outside the "ten" because they trigger differently — **GDPR** (Regulation (EU) 2016/679) is universal across any entity processing EU residents' personal data, fintech or not; **DLT Pilot Regime** (Regulation (EU) 2022/858) is a conditional infrastructure sandbox for tokenized-securities trading + settlement (DLT MTF / SS / TSS; permanence package proposed April 2026). Both are mapped in the Dependency Map below.
+Two further regimes also apply but sit outside the table because they trigger differently — **GDPR** (Regulation (EU) 2016/679) is universal across any entity processing EU residents' personal data, fintech or not; **DLT Pilot Regime** (Regulation (EU) 2022/858) is a conditional infrastructure sandbox for tokenized-securities trading + settlement (DLT MTF / SS / TSS; permanence package proposed April 2026). Both are mapped in the Dependency Map below.
 
 ## Enforcement Climate
 
@@ -54,6 +55,15 @@ AML/AMLA ───────────► All "obliged entities" per AMLR Ar
 ─── CONDITIONAL (applies only when a triggering activity is present) ────────────
 MiFID II / III ─────► Investment services + financial instruments
                        (includes ownership-conferring tokenized securities)
+Prospectus Reg ─────► Issuer-level obligation when offering transferable
+                       securities to the public in the EU, or seeking admission
+                       to trading on an EU regulated market. Triggers on the
+                       *issuer*, not on intermediaries. Borrows MiFID II's
+                       "transferable security" definition (Art. 4(1)(44)) —
+                       the issuer itself does NOT need MiFID authorisation.
+                       Listing Act (Reg 2024/2809) amendments apply from
+                       5 Mar 2026 — new EU Follow-on Prospectus + EU Growth
+                       Issuance Document, exemption threshold up to €12m.
 MiCA ───────────────► Non-MiFID crypto-asset services + stablecoin issuance
                        (does NOT cover ownership-conferring RWA tokens)
 DLT Pilot Regime ───► On-chain tokenized securities trading + settlement infra
@@ -126,6 +136,32 @@ Regulations overlap and create compliance tension points:
 >
 > Selling MiCA-as-RWA-cover to a Seg 1 prospect is a credibility risk: wrong regulatory regime (MiFID II under prospectus + ESMA convergence vs MiCA white-paper regime — both supervised by the same national NCAs, but the substantive obligations diverge), wrong offering document (prospectus vs white paper), wrong infrastructure path (DLT Pilot Regime vs CASP authorization).
 
+> [!info] Three Roles in Tokenized Securities — Issuer / Venue Operator / Dealer-Advisor
+> A platform working with tokenized securities can play one role, two roles, or all three at once. Each role triggers a different regulatory regime, and the compliance burden compounds when roles stack.
+>
+> **Issuer** — The entity that creates the financial instrument and offers it to investors. Mints the token. Files the offering document.
+> - Primary obligations: **Prospectus Regulation** + **MAR** (inside-information disclosure once admitted to trading) + national corporate disclosure rules.
+> - Does NOT trigger MiFID II investment-firm authorization, MiFIR transaction reporting, or DLT Pilot Regime by itself.
+>
+> **Venue Operator** — The entity that runs an investor-to-investor trading system in the financial instrument. Operates the order book. Matches buyers and sellers under non-discretionary rules. Publishes prices.
+> - Triggered by MiFID II Art. 4(1)(22) MTF definition: multiple **third-party** buying and selling interests brought together in a system that results in a contract. "Third party" means parties other than the platform operator. The trigger is **investor-to-investor matching**, not whether you list assets from third-party issuers. Selling only your own assets to investors does NOT make you a venue. The moment investors can trade with each other on your platform — even in tokens you originally minted — you become a venue operator.
+> - Primary obligations: **MiFID II venue authorization** + **DLT Pilot Regime license** (DLT MTF / SS / TSS depending on scope) + **MiFIR Arts 3–23** (pre/post-trade transparency) + **MiFIR Art. 26** (transaction reporting on every executed trade) + **DORA** + **AMLR**.
+>
+> **Dealer / Advisor** — The entity that takes active positions in the financial instrument, takes the other side of every trade on its own account, or gives advice about it.
+> - Triggered by any of: platform takes the other side of every trade from its own treasury (investors never trade with each other — they each only trade with the platform — this is the **Systematic Internaliser** regime under MiFID II Art. 4(1)(20)) · buying back own tokens at quoted prices · providing market-making or liquidity provision · giving personalized recommendations to investors · managing investor portfolios on a discretionary basis · executing client orders against external venues or own book · underwriting or placing tokens for other issuers.
+> - Primary obligations: **MiFID II investment-firm authorization** (with the specific permissions depending on which services are provided) + **MiFIR Art. 26** transaction reporting on every executed trade + **MiFIR Art. 27** best execution + **MiFID II Arts 24–25** disclosure and suitability + **IFR/IFD** capital adequacy + **product governance** (Art. 16(3)). Systematic Internalisers additionally owe pre-trade quoting and transparency under **MiFIR Arts 14–20** (SI-specific regime — narrower than the full Arts 3–23 venue regime).
+>
+> **The Venue vs Dealer fork.** Both routes are regulated investment-firm activity but the regime differs structurally:
+> - **Investors trade with each other** through the platform's matching system → **Venue Operator** (MTF or OTF). Infrastructure-heavy: full venue authorization + DLT Pilot license + Arts 3–23 transparency.
+> - **Platform takes the other side of every trade** from its own treasury → **Dealer / Systematic Internaliser**. Capital-heavy: platform holds inventory, carries market risk, IFR/IFD K-factor capital math.
+>
+> **Routing test for first intake:**
+> 1. Can investors trade with each other on the platform (investor-to-investor matching)? → Yes adds Venue Operator role.
+> 2. Does the platform take the other side of trades from its own treasury, buy back tokens at quoted prices, or post bid/ask quotes on own account? → Yes adds Dealer / Systematic Internaliser role.
+> 3. Does the platform recommend specific tokens to specific investors or manage their portfolios? → Yes adds Advisor role.
+>
+> Each "yes" adds an independent regulatory stack. A platform that answers no to all three is in the issuer-only lane (lightest compliance lift). The only way to genuinely stay in the pure-issuer lane is **no on-platform secondary trading at all** — tokens locked, exits only off-platform or via narrow redemption-to-issuer arrangements that fall under the MiFID II Art. 2(1)(d) "occasional" carve-out. Continuous redemption-on-demand probably does not qualify. A platform that answers yes to all three is in the full investment-firm + venue + advisor lane (largest compliance burden, smallest addressable market). The shift in compliance scope between role layers is roughly 3× in budget and timeline.
+
 ### FinTech ICP
 
 | Segment | EU Compliance Obligations |
@@ -147,6 +183,7 @@ Regulations overlap and create compliance tension points:
 |---|---|---|
 | **MiCA** | Seg 2-10 primary; Seg 1 only if ART or CASP services on non-MiFID assets | ExchangeTech, WalletTech (with crypto), BankTech (with crypto); WealthTech only if non-MiFID crypto-asset side |
 | **MiFID II / III** | Seg 1 RWA primary (ownership tokens are securities by default) | WealthTech (primary), ExchangeTech (if trading financial instruments) |
+| **Prospectus Regulation** | Seg 1 RWA (any public offer or admission to trading of an ownership-conferring token); Seg 6 IDO if the token is MiFID-classified (security token, not utility); Seg 7 DAO if governance tokens confer economic rights and are deemed transferable securities — fact-specific | WealthTech (primary — every public offer of a tokenised security); ExchangeTech indirectly (must verify a compliant prospectus exists before admitting a security token to trading) |
 | **DLT Pilot Regime** | Seg 1 RWA (DLT MTF / SS / TSS — the real on-chain securities infra path) | WealthTech (primary — DLT MTF/SS/TSS) |
 | **AML / AMLA** | **Obliged-entity coverage (AMLR + AMLD6):** Seg 1 (AMLR obliged entity — investment firm / securities issuer, not CASP-classified); Seg 2, 6 full CASP coverage; Seg 3, 4, 7, 8, 9, 10 conditional on CASP classification under MiCA (truly decentralized DeFi / pure non-custodial / pure-software DAO / pure L2 protocol / pure in-game economy without fiat ramp / pure AI tooling are out); Seg 5 conditional on fractionalized/fungible status or Art Market Participant ≥€10k trigger. **AMLA direct supervision (Reg 2024/1620):** narrow — most plausible at Seg 2 large cross-border CASPs; rest supervised nationally under AMLD6 transposition | **Obliged entities (AMLR + AMLD6):** WealthTech (investment firm), ExchangeTech (CASP/investment firm), LendTech (consumer lender / credit institution), WalletTech (EMI/PI/CASP), PayTech (PI), BankTech (credit institution); InsurTech limited to life + certain financial insurance products (pure P&C out); **RegTech NOT an obliged entity itself** — SaaS to FIs, indirect only. **AMLA direct supervision:** prototypical for ExchangeTech and BankTech at cross-border scale; the rest are supervised nationally |
 | **DORA** | **Seg 1 RWA** via MiFID II investment-firm / DLT Pilot Regime trading-venue or CSD pathway (DORA Art. 2(e), (g), (i)); **all CASP segments (Seg 2-10)** via Art. 2(f) — CASPs explicitly named in DORA scope; most material at Seg 8 (critical ICT infra) and Seg 10 (AI agents executing services) | All in DORA Article 2 scope via their own entity type: BankTech (credit institutions), InsurTech (insurers), WealthTech (investment firms), ExchangeTech (CASPs), WalletTech + PayTech (PIs/EMIs). LendTech conditional — only if credit institution or PI license held. RegTech conditional — only via the CTPP designation pathway, which is a narrow process applied to ICT vendors serving multiple financial entities; most RegTech vendors are out |
@@ -191,7 +228,8 @@ Citations use EUR-Lex ELI URLs (the canonical, version-stable form). Supervisor 
 | eIDAS 2.0 | Regulation (EU) 2024/1183 | https://eur-lex.europa.eu/eli/reg/2024/1183/oj |
 | GDPR | Regulation (EU) 2016/679 | https://eur-lex.europa.eu/eli/reg/2016/679/oj |
 | DLT Pilot Regime | Regulation (EU) 2022/858 | https://eur-lex.europa.eu/eli/reg/2022/858/oj |
-| Prospectus Regulation (Seg 1 RWA) | Regulation (EU) 2017/1129 | https://eur-lex.europa.eu/eli/reg/2017/1129/oj |
+| Prospectus Regulation | Regulation (EU) 2017/1129 | https://eur-lex.europa.eu/eli/reg/2017/1129/oj |
+| EU Listing Act (Prospectus Reg amendments, applies from 5 Mar 2026) | Regulation (EU) 2024/2809 | https://eur-lex.europa.eu/eli/reg/2024/2809/oj |
 
 ### Proposals not yet in the OJ (re-check before citing)
 

@@ -2,7 +2,7 @@
 type: concept
 title: "MiCA — NCA Authorization Mechanics (Practitioner Detail)"
 created: 2026-05-20
-updated: 2026-05-24
+updated: 2026-05-25
 tags:
   - MiCA
   - EU
@@ -25,7 +25,7 @@ related:
 
 # MiCA — NCA Authorization Mechanics (Practitioner Detail)
 
-The article-level requirements an EU crypto-regulatory specialist walks a founder through at first intake. Companion to [[MiCA-Regulation]] (which holds the strategic/positioning framing). Sourced from `.raw/InnBlockchain/EU Compliance/mica-checklist.md` (v2.2, re-ingested 2026-05-24 after second-pass verification against Regulation (EU) 2023/1114 verbatim text).
+The article-level requirements an EU crypto-regulatory specialist walks a founder through at first intake. Companion to [[MiCA-Regulation]] (which holds the strategic/positioning framing). Sourced from `.raw/InnBlockchain/EU Compliance/mica-checklist.md` (v2.3, re-ingested 2026-05-25 after triple-check verification against locally-downloaded full text of Regulation (EU) 2023/1114 — 85+ specific claims all verified verbatim).
 
 > [!info] When to read this page
 > Read this when you're scoping or executing an NCA filing — capital math, white paper structure, dossier contents, application timeline, mandatory policies. For the *whether MiCA applies / which regime / ICP routing* question, start at [[MiCA-Regulation]].
@@ -90,7 +90,10 @@ Plus:
 - **Prerequisite**: authorisation as a credit institution OR electronic money institution *(Article 48)*. Standard MiCA CASP authorisation alone is NOT sufficient
 - 1:1 funds-equivalent backing at all times *(Article 48(2))*
 - Funds received in exchange for EMTs invested in **secure, low-risk assets denominated in the same official currency** referenced by the token *(Article 54)*
-- Holders have a **redemption right at par value at any time** *(Article 49)*
+- EMTs issued **at par value** on receipt of funds *(Article 49(3))*
+- Holders have a **redemption right at any time and at par value**, paid in funds other than e-money *(Article 49(4))*
+- **EMT redemption shall not be subject to a fee** *(Article 49(6))* — parallel to the ART rule in Article 39(3), without prejudice to Article 46 applied *mutatis mutandis* via Article 55
+- Conditions for redemption **prominently stated in the white paper** *(Article 49(5), referring to Article 51(1)(d))*
 - **No interest** paid to holders or by CASPs in respect of services related to EMTs *(Article 50)*
 - Reserve assets legally segregated from issuer balance sheet
 - **Recovery and redemption plans** *(Article 55)* — Article 46 and Article 47 apply *mutatis mutandis*; plans to be notified within **6 months** of the offer to the public or admission to trading
@@ -372,4 +375,4 @@ Plus disgorgement: at least **2× profits gained / losses avoided** for (a)–(d
 - **"One process, not two" DORA framing** applies at MiCA authorisation only (via Articles 34(10) and 68(7)–(8)). Post-authorisation DORA enforcement is independent (up to 2% turnover penalty). Don't rely on this page as your DORA reference once operational.
 - **ESMA / EBA Level 2 / Level 3 technical standards** continue to be issued. Operational details may evolve.
 
-> [!gap] This page is derived from a single source (`.raw/InnBlockchain/EU Compliance/mica-checklist.md`, v2.2, hash `3283a5686d6f09eb49c11e2535129d5f`, re-ingested 2026-05-24). The source was second-pass-verified against the regulation text. Cross-validation against ESMA / EBA Level 2 publications + NCA-specific guidance is still recommended before relying on any specific Article-level claim for a real filing.
+> [!gap] This page is derived from a single source (`.raw/InnBlockchain/EU Compliance/mica-checklist.md`, v2.3, hash `492b5075eb46fb2a8a156fbad9b758b0`, re-ingested 2026-05-24, triple-checked 2026-05-25 against locally-downloaded mica.html (full text of Regulation (EU) 2023/1114, OJ L 150)). 85+ specific claims (article numbers, monetary amounts, percentages, time periods, subsection mappings, Annex IV) all verified verbatim. Cross-validation against ESMA / EBA Level 2 publications + NCA-specific guidance is still recommended before relying on any specific Article-level claim for a real filing.

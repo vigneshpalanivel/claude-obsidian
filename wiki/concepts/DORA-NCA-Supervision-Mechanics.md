@@ -25,7 +25,7 @@ related:
 
 # DORA — NCA Supervision Mechanics (Practitioner Detail)
 
-The article-level requirements an EU ICT / financial-regulatory specialist walks an entity through at first intake. Companion to [[DORA-Regulation]] (which holds the strategic / "what-is-DORA" framing). Sourced from `.raw/InnBlockchain/EU Compliance/dora-checklist.md` (v1.1, hash `7846555f77db1b3eac861b5ab510385a`).
+The article-level requirements an EU ICT / financial-regulatory specialist walks an entity through at first intake. Companion to [[DORA-Regulation]] (which holds the strategic / "what-is-DORA" framing). Sourced from `.raw/InnBlockchain/EU Compliance/dora-checklist.md` (v1.2 — re-verified 2026-05-25 against verbatim Regulation (EU) 2022/2554 text via locally-saved EUR-Lex HTML; 5 material errors + 4 precision issues corrected from v1.1).
 
 > [!info] When to read this page
 > Read this when you're scoping or executing a DORA compliance buildout — pillar-by-pillar artefact list, Register of Information mechanics, TLPT scoping, contractual provisions, sectoral integration. For the *what-is-DORA / who's-in-scope* question, start at [[DORA-Regulation]].
@@ -60,23 +60,25 @@ DORA Article 2(1) lists ~20 categories of "financial entity." If your sectoral a
 - **Sub-threshold AIFMs** below AIFMD registration-only threshold
 - **Small Solvency II insurance / reinsurance undertakings** under Article 4 exemption
 - **Microenterprise insurance intermediaries** not on a professional basis for life / investment-based insurance
-- **IORPs operating pension schemes with fewer than 15 members in total** — *fully out of DORA scope*
+- **IORPs operating pension schemes with not more than 15 members in total** (i.e. ≤ 15) — *fully out of DORA scope* per Article 2(3)(c)
 - **Natural / legal persons exempted under MiFID II Articles 2 and 3**
 - Post Office Giro institutions covered by CRD Article 2(5)(3)
 
 ## Proportionality — Simplified Framework (Article 16)
 
-Smaller / lower-risk entities qualify for a **simplified ICT risk management framework** under Article 16:
+Smaller / lower-risk entities qualify for a **simplified ICT risk management framework** under Article 16(1) first subparagraph:
 
 - Small and non-interconnected investment firms (per IFR / IFD definition)
-- PIs exempted under PSD2 Article 32
-- EMIs exempted under Directive 2009/110/EC Article 9
-- **IORPs with fewer than 100 members in total** (15–99 — fewer than 15 is fully out of scope)
-- Small insurance / reinsurance intermediaries, ancillary intermediaries
+- Payment institutions exempted pursuant to Directive (EU) 2015/2366 (PSD2 Article 32)
+- Institutions exempted pursuant to Directive 2013/36/EU (CRD) where the Member State has not applied the Article 2(4) carve-back
+- Electronic money institutions exempted pursuant to Directive 2009/110/EC (Article 9)
+- "Small" institutions for occupational retirement provision — i.e. those with **less than 100 members in total** per Article 3(53), where the Member State has exercised the Article 5 Directive (EU) 2016/2341 derogation (so they would otherwise be IORP-out of scope)
+
+> **Insurance intermediary carve-out is fuller than simplified.** Insurance, reinsurance, and ancillary insurance intermediaries that qualify as microenterprises or SMEs are **fully out of DORA scope** under Article 2(3) + recital 39 — *not* subject to the simplified framework.
 
 Detailed in Commission Delegated Regulation (EU) 2024/1774 Title II. Simplified ≠ exempt — you still need a written framework, incident process, basic testing, third-party register, and reporting workflow.
 
-**Microenterprise carve-outs** further lighten specific obligations (training cadence, contractual provisions, audit frequency). Microenterprise = fewer than 10 staff AND (annual turnover ≤ €2M OR balance sheet ≤ €2M) per Commission Recommendation 2003/361/EC, imported via DORA Article 3(60).
+**Microenterprise carve-outs** further lighten specific obligations (Articles 5(3), 6(4)–(6), 30(3) derogation, others). Microenterprise definition per Article 3(60): a financial entity employing **fewer than 10 persons** with **annual turnover and/or balance sheet total not exceeding €2M**. **Exclusion within the carve-out:** trading venues, central counterparties, trade repositories, and central securities depositories **cannot** qualify as microenterprises regardless of size, per the Article 3(60) verbatim text.
 
 ## Pillar 1 — ICT Risk Management Framework (Articles 5–16)
 
@@ -130,17 +132,16 @@ Detailed content of the framework is specified in **Commission Delegated Regulat
 ## Pillar 2 — Incident Management, Classification & Reporting (Articles 17–23)
 
 ### Classification (Article 18)
-Major-incident classification is **objective**, not discretionary. Criteria specified in **Commission Delegated Regulation (EU) 2024/1772**:
+Major-incident classification is **objective**, not discretionary. Article 18(1) sets out **six criteria** (a)–(f); materiality thresholds within each are specified in **Commission Delegated Regulation (EU) 2024/1772**:
 
-- Clients / financial counterparties / transactions affected
-- Reputational impact
-- Duration + service downtime
-- Geographical spread
-- Data losses — confidentiality, integrity, availability
-- Criticality of services affected
-- Economic impact
+- **(a)** Clients / financial counterparts / transactions affected **+ reputational impact** (bundled into one criterion)
+- **(b)** Duration of the incident, including service downtime
+- **(c)** Geographical spread, particularly affecting **more than two Member States**
+- **(d)** Data losses — availability, authenticity, integrity, **or** confidentiality
+- **(e)** Criticality of the services affected
+- **(f)** Economic impact — direct and indirect costs and losses, in absolute and relative terms
 
-Operationalised in the incident-management runbook; classification decision log maintained for every call.
+Article 18(2) separately governs classification of **significant cyber threats** along three axes (criticality, number/relevance of targets, geographical spread). Operationalised in the incident-management runbook; classification decision log maintained for every call.
 
 ### Reporting Timelines (Articles 19–20)
 Three sequential reports per major incident, on harmonised templates:
@@ -179,7 +180,7 @@ Required **at least every three years** on live production systems for entities 
 - Methodology aligned with TIBER-EU as built into the RTS
 - **Pooled / joint TLPT** with other in-scope entities sharing the same provider is permitted (and may be required for efficiency)
 - Third-party providers included where they support CIFs — provider consent + contractual arrangements in advance
-- **Testers:** default rule is *external testers every cycle*. Non-significant credit institutions may use internal testers, but **not in two consecutive cycles** *(Article 26(8))*
+- **Testers (Article 26(8)):** financial entities **may use internal testers** for TLPT, but **must contract external testers every three tests** (and the threat-intelligence provider must always be external per recital 61). **Stricter rule for significant credit institutions** (SSM Reg Art 6(4)) — they shall **only use external testers** in accordance with Article 27(1)(a)–(e); no internal-tester option
 - NCA / TLPT authority issues attestation on completion of each cycle
 
 > [!info] TLPT operational reality
@@ -190,34 +191,39 @@ Required **at least every three years** on live production systems for entities 
 Three load-bearing artefacts: **the contract**, **the Register**, **the exit plan**.
 
 ### Register of Information (Article 28(3))
-- Maintained for *every* ICT third-party arrangement, separately flagged for those supporting critical or important functions
-- **Annual submission to NCA** using the harmonised ITS template — **Commission Implementing Regulation (EU) 2024/2956**
-- Pre-notification of any new ICT provider supporting a CIF — to NCA before contract execution
-- Notification of any change (including sub-outsourcing) to CIF arrangements
+Article 28(3) imposes a layered obligation:
+- **Maintain + update** the Register at entity / sub-consolidated / consolidated levels, covering *every* ICT third-party arrangement, separately flagged for those supporting CIFs
+- **Annual summary reporting** to NCA on: number of new arrangements, categories of providers, types of contractual arrangements, ICT services and functions provided (Article 28(3) third subparagraph — "at least yearly")
+- **On-demand full Register** delivery: NCA may request full Register or specific sections at any time (Article 28(3) fourth subparagraph)
+- **Timely notification** of any planned CIF arrangement, **and** when an existing function becomes critical or important (Article 28(3) fifth subparagraph)
+
+In practice the annual summary + on-demand-full pattern is consolidated into a single annual submission using the harmonised ITS template — **Commission Implementing Regulation (EU) 2024/2956**.
 
 > [!warning] The Register is the operationally heaviest artefact
 > The ITS template has ~14 sub-templates and ~50 fields per contract. Most entities under-budget this by 3–5×. Treat as a standing data-engineering project, not a one-time exercise.
 
 ### Key Contractual Provisions (Article 30)
 
-**Minimum for all ICT contracts (Article 30(2)):**
-- Description of all functions + services
-- Locations of performance + data processing/storage
-- Data protection (incl. personal data) + availability / authenticity / integrity / confidentiality
-- SLAs with quantifiable targets + remedies
-- Notice + reporting obligations of the provider
-- Audit, access, inspection rights — for the financial entity, its appointed third parties, **and the NCA**
-- Termination rights + minimum notice periods
-- Conditions for sub-contracting
+**Minimum for all ICT contracts — Article 30(2), 9 elements (a)–(i):**
+- **(a)** Description of all functions + services, **including sub-contracting permissions and conditions for CIF services**
+- **(b)** Locations of performance + data processing/storage, with **advance notification of changes**
+- **(c)** Availability / authenticity / integrity / confidentiality of data (incl. personal data)
+- **(d)** **Access, recovery, return of data** on insolvency / resolution / discontinuation / termination
+- **(e)** Service level descriptions, including updates and revisions
+- **(f)** **Provider obligation to assist on ICT incidents** at no additional cost (or pre-determined cost)
+- **(g)** Provider obligation to fully cooperate with NCAs + resolution authorities
+- **(h)** Termination rights + minimum notice periods
+- **(i)** **Conditions for provider participation in the financial entity's ICT security awareness + resilience training programmes** (Art 13(6))
 
-**Additional for critical-or-important functions (Article 30(3)):**
-- Full SLA descriptions with quantitative + qualitative targets
-- Incident-impacting notice + reporting obligations
-- Cooperation with NCAs + resolution authorities (access, on-site, information)
-- Termination triggers (breach, regulatory breach, insolvency, performance deterioration)
-- Provider participation in financial entity's ICT awareness programmes + TLPT exercises
-- **Documented exit strategy per contract** (see below)
-- Incident-response cooperation
+**Additional for critical-or-important functions — Article 30(3), 6 elements (a)–(f):**
+- **(a)** Full SLA descriptions with **precise quantitative and qualitative performance targets**, monitoring + corrective actions
+- **(b)** Notice periods + reporting obligations of the provider, **including material developments affecting CIF service delivery**
+- **(c)** **Requirements for the provider to implement and test business contingency plans, and to maintain ICT security measures, tools, and policies appropriate to the financial entity's regulatory framework**
+- **(d)** Provider obligation to participate + fully cooperate in the financial entity's TLPT (Arts 26 + 27)
+- **(e)** Right to monitor provider's performance — **unrestricted** access / inspection / audit (financial entity + appointed third parties + NCA + Lead Overseer), alternative assurance levels, full cooperation during on-site inspections, scope/procedures/frequency
+- **(f)** **Exit strategies** — establishment of a mandatory adequate transition period for migration to another provider or in-house
+
+> **Microenterprise derogation (Art 30(3) last subparagraph):** the (e) audit/inspection right may be delegated to an independent third party appointed by the provider.
 
 **Sub-outsourcing controls (Article 30(2), (3), and Article 30(5) RTS):**
 - Pre-notification of any planned sub-outsourcing of CIF services
@@ -251,8 +257,13 @@ A separate regime for *vendors*, not financial entities. CTPP designation is a *
 - Sub-contracting transparency — full chain disclosed
 - Lead Overseer recommendations addressed within prescribed deadlines
 
-### CTPP Penalty Exposure *(Article 35(6))*
-**Periodic penalty payments of up to 1% of average daily worldwide turnover** in the preceding business year, **per day, for up to 6 months**, until compliance is achieved. Separately, administrative penalties for CTPP infringements are imposed by NCAs under **Article 50**.
+### CTPP Penalty Exposure *(Article 35(6)–(8))*
+Paragraph attribution matters here:
+- **Article 35(6)** — Lead Overseer adopts a decision imposing a **periodic penalty payment** after at least 30 calendar days of non-compliance with measures under Article 35(1)(a)–(c)
+- **Article 35(7)** — payment imposed on a daily basis until compliance, **for no more than 6 months** from notification
+- **Article 35(8)** — **up to 1% of average daily worldwide turnover** in the preceding business year; gravity, duration, intent/negligence, and cooperation as calibration criteria
+
+**Note:** **Article 50 administrative penalties apply to financial entities, not to CTPPs.** CTPP enforcement runs **exclusively** through the Lead Overseer regime in Articles 31–44 and the periodic penalty payments in Article 35(6)–(8). There is no NCA-imposed administrative penalty track for CTPPs.
 
 ## Supervision & Penalties for Financial Entities
 
@@ -341,4 +352,7 @@ Primary fit: **all CASP-classified segments** (Crypto Native Seg 2–10 + FinTec
 - **CTPP designation list** is published on the ESAs' Joint Committee page and updates faster than this doc will. Re-check before relying on a specific designation.
 - **NIS2 displacement** is obligation-level, not blanket — Member State transposition determines residual registration / CSIRT-cooperation duties.
 
-> [!gap] This page is derived from `.raw/InnBlockchain/EU Compliance/dora-checklist.md` (v1.1, hash `7846555f77db1b3eac861b5ab510385a`). The article-level claims are training-data-grounded against my knowledge of Regulation (EU) 2022/2554, but **the EUR-Lex source was unreachable at ingest time** (AWS WAF JS challenge blocked WebFetch, curl, and defuddle). Same constraint as the May 24 MiCA verification — the difference is MiCA fell back to a Wayback-archived snapshot; DORA was built without a verbatim cross-check pass. Treat Level 2 RTS citations (Delegated Regulations 2024/1502, 2024/1772, 2024/1773, 2024/1774, 2025/295, Implementing Regulation 2024/2956) as the most likely to drift — ESAs Joint Committee has amended several since first OJ publication. Cross-validate against ESMA / EBA / EIOPA publications and home-NCA-specific guidance before any real filing.
+> [!info] Verification status (2026-05-25)
+> This page is derived from `.raw/InnBlockchain/EU Compliance/dora-checklist.md` (v1.2). The v1.0 → v1.1 → v1.2 path went: v1.0 training-data-grounded, v1.1 corrected 6 errors training-data-only, v1.2 verified against the verbatim Regulation (EU) 2022/2554 text via locally-saved EUR-Lex HTML (`.raw/InnBlockchain/EU Compliance/dora.html`, 749KB) — the user manually saved this because live EUR-Lex blocks programmatic fetch via AWS WAF. **v1.2 surfaced 5 material errors and 4 precision issues in v1.1** that have now been corrected: TLPT external/internal-tester rule (v1.1 inverted the polarity — actual rule is internal allowed by default but external every 3 tests; significant CIs external-only), Article 35(6)/(7)/(8) paragraph attribution, Article 50 scope (financial entities only, not CTPPs), Article 18 criterion count (6 not 7), Article 30(2) verbatim 9-item list + Article 30(3) verbatim 6-item list, Article 16 simplified-framework list (small insurance intermediaries are FULLY OUT of scope, not in simplified framework), IORP 15-member threshold ("not more than 15" = ≤15, not "fewer than 15"), microenterprise carve-outs-within-the-carve-out (trading venues/CCPs/trade repositories/CSDs can't qualify), Article 28(3) Register obligation layering (annual summary + on-demand full + planned-CIF notification).
+> 
+> Level 2 RTS citations (Delegated Regulations 2024/1502, 2024/1772, 2024/1773, 2024/1774, 2025/295, Implementing Regulation 2024/2956) remain the most likely to drift — ESAs Joint Committee continues to amend. Cross-validate against current ESMA / EBA / EIOPA publications and home-NCA-specific guidance before any real filing. The harmonised reporting RTS / ITS hour-counts under Article 20 are also unstable — the 4h/24h numbers in Section 4.3 are practitioner reads, not Level 1 verbatim.

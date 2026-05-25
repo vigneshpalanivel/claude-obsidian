@@ -29,10 +29,11 @@ key_claims:
   - Article 39 — ART redemption shall not be subject to a fee on normal redemption (fees only under recovery plan, Article 46)
 internal_sources:
   - path: ".raw/InnBlockchain/EU Compliance/mica-checklist.md"
-    hash: "3283a5686d6f09eb49c11e2535129d5f"
-    version: "2.2"
+    hash: "492b5075eb46fb2a8a156fbad9b758b0"
+    version: "2.3"
     ingested: 2026-05-20
     reingested: 2026-05-24
+    triple_checked: 2026-05-25
     type: practitioner-checklist
     purpose: "Pre-NCA-application readiness assessment authored by InnBlockchain for MiCA-bound founders. Re-ingested after second-pass verification against Regulation (EU) 2023/1114 verbatim text via Wayback-archived EUR-Lex."
     superseded_claims:
@@ -48,17 +49,26 @@ internal_sources:
       - "Article 111 penalty percentages — v1 collapsed into 3% / 12.5%; corrected to the actual six tiers (3% / 12.5% / 12.5% / 5% / 2% / 15%)"
   - path: ".raw/InnBlockchain/EU Compliance/dora-checklist.md"
     hash: "7846555f77db1b3eac861b5ab510385a"
-    version: "1.1"
+    version: "1.2"
     ingested: 2026-05-24
+    reverified: 2026-05-25
     type: practitioner-checklist
-    purpose: "DORA continuous-compliance readiness assessment authored by InnBlockchain for in-scope financial entities (or applicants for sectoral authorisation). Built around the five DORA pillars (ICT risk management, incident reporting, resilience testing including TLPT, third-party risk + CTPP regime, information sharing) plus sectoral integration (MiCA, MiFID II, PSD3, NIS2). Filed under this source page (not a separate source page) per the same convention used for mica-checklist."
+    purpose: "DORA continuous-compliance readiness assessment authored by InnBlockchain for in-scope financial entities (or applicants for sectoral authorisation). Built around the five DORA pillars (ICT risk management, incident reporting, resilience testing including TLPT, third-party risk + CTPP regime, information sharing) plus sectoral integration (MiCA, MiFID II, PSD3, NIS2). Filed under this source page (not a separate source page) per the same convention used for mica-checklist. Re-verified 2026-05-25 against Regulation (EU) 2022/2554 verbatim text via locally-saved EUR-Lex HTML (`.raw/InnBlockchain/EU Compliance/dora.html`)."
+    verification_artefact: ".raw/InnBlockchain/EU Compliance/dora.html"
     superseded_claims:
-      - "v1.0 had TLPT external-tester rule wrong (said 'every three cycles'); corrected to Article 26(8): default external every cycle, internal allowed only for non-significant credit institutions and not in consecutive cycles"
-      - "v1.0 omitted the 6-month duration cap on Article 35(6) CTPP periodic penalty payments and the separate Article 50 administrative-penalty hook for CTPPs"
-      - "v1.0 cited 'CRD Article 67' for credit institution penalty hook; corrected to Articles 65–67"
-      - "v1.0 implied a quantitative '3-of-4 yes = CTPP candidate' heuristic; corrected — actual designation is by the ESAs against Commission Delegated Regulation (EU) 2024/1502 criteria"
-      - "v1.0 microenterprise definition ambiguous on AND/OR between turnover and balance sheet; corrected per Commission Recommendation 2003/361/EC: < 10 staff AND (turnover ≤ €2M OR balance sheet ≤ €2M)"
-      - "v1.0 NIS2 displacement framing oversimplified; corrected — NIS2 Article 4(1) is obligation-level displacement, not blanket exemption; registration and CSIRT-cooperation duties may still bite via Member State transposition"
+      - "v1.0 had TLPT external-tester rule wrong (said 'every three cycles'); v1.1 'corrected' to default external every cycle with internal-only-for-non-significant-CIs-not-consecutive — but THIS WAS ALSO WRONG (inverted polarity). v1.2 corrected to actual Article 26(8): financial entities MAY use internal testers, but must contract external testers every three tests; only credit institutions SIGNIFICANT under SSM Regulation Art 6(4) are restricted to external testers only"
+      - "v1.0 omitted the 6-month duration cap on CTPP periodic penalty payments. v1.1 added it but cited the cap as 'Article 35(6)' — actually the trigger is 35(6), the 6-month cap is 35(7), and the 1% rate is 35(8). v1.2 has the paragraph attribution correct"
+      - "v1.1 stated 'administrative penalties for infringements by CTPPs are imposed by NCAs under Article 50' — WRONG. Article 50 administrative penalties apply only to financial entities. CTPP enforcement runs exclusively through Articles 31–44 (Lead Overseer) + Article 35(6)–(8) periodic penalty payments. v1.2 has this corrected"
+      - "v1.0/v1.1 listed 7 Article 18 classification criteria (treating reputation as separate). Actual Article 18(1) is 6 criteria (a)–(f); reputation is bundled into (a) with clients/transactions. v1.2 rewritten with verbatim 6-item list"
+      - "v1.0/v1.1 Article 30(2) minimum-provisions list had 8 items and missed (d) data return on insolvency, (f) provider incident assistance, (i) security awareness participation; AND wrongly included (e) audit rights + (b) reporting obligations that are actually in Article 30(3). v1.2 rewritten with verbatim 9-item Art 30(2) list (a)–(i)"
+      - "v1.0/v1.1 Article 30(3) CIF additional-provisions list missed (c) business contingency plans + ICT security measures. v1.2 rewritten with verbatim 6-item Art 30(3) list (a)–(f)"
+      - "v1.0/v1.1 listed 'small insurance / reinsurance intermediaries' under Article 16 simplified framework. Actually they are FULLY OUT of DORA scope under Article 2(3) + recital 39. v1.2 corrected — Article 16 list now reads verbatim against Article 16(1) first subparagraph"
+      - "v1.0/v1.1 IORP full-exclusion threshold cited as 'fewer than 15 members'. Actual Article 2(3)(c): 'not more than 15 members' (≤ 15). v1.2 corrected"
+      - "v1.0/v1.1 microenterprise definition omitted the Article 3(60) carve-out-within-the-carve-out — trading venues, CCPs, trade repositories, and CSDs cannot qualify as microenterprises regardless of size. v1.2 added"
+      - "v1.0/v1.1 cited 'CRD Article 67' for credit institution penalty hook; v1.1 corrected to Articles 65–67"
+      - "v1.0/v1.1 implied a quantitative '3-of-4 yes = CTPP candidate' heuristic; v1.1 softened — actual designation is by the ESAs against Commission Delegated Regulation (EU) 2024/1502 criteria"
+      - "v1.0/v1.1 NIS2 displacement framing oversimplified; v1.1 corrected — NIS2 Article 4(1) is obligation-level displacement, not blanket exemption; registration and CSIRT-cooperation duties may still bite via Member State transposition"
+      - "v1.0/v1.1 Register of Information described as straight 'annual submission'. Actual Article 28(3): annual summary report (number of new arrangements, categories, types, services) + on-demand full Register + timely planned-CIF notification. v1.2 layered correctly; ITS template is the operational consolidation"
 ---
 
 # EU MiCA, DORA, and AML Regulations: 2025 Deep Dive
@@ -177,13 +187,15 @@ AMLA must balance effective data sharing with EU GDPR requirements. Effective AM
 
 ## Addendum — Internal MiCA Readiness Checklist (Ingested 2026-05-20, Re-ingested 2026-05-24 at v2.2)
 
-**Source:** `.raw/InnBlockchain/EU Compliance/mica-checklist.md` (v2.2, hash `3283a5686d6f09eb49c11e2535129d5f`)
+**Source:** `.raw/InnBlockchain/EU Compliance/mica-checklist.md` (v2.3, hash `492b5075eb46fb2a8a156fbad9b758b0`, triple-checked 2026-05-25)
 **Type:** Internal InnBlockchain practitioner artifact — pre-NCA-application readiness assessment, 13 sections, scorecard format, written from the perspective of "what a specialist EU crypto-reg lawyer walks a founder through in a first intake meeting."
 **Why it lives here**: per ingest instruction, no separate source page; the operational detail it contributes is integrated into [[MiCA-NCA-Authorization-Mechanics]] (article-by-article) and [[MiCA-Regulation]] (strategic/positioning).
 
-### Re-ingest Summary (2026-05-24, v2.2)
+### Re-ingest Summary (v2.2 on 2026-05-24, triple-checked to v2.3 on 2026-05-25)
 
 After the v1.0 ingest, the source checklist was put through two verification passes against the regulation text (via Wayback-archived EUR-Lex, since live EUR-Lex blocks automated fetches behind AWS WAF). The passes surfaced and corrected **10+ material errors** in v1.0 — several of which had propagated into wiki notes. The re-ingest updates [[MiCA-NCA-Authorization-Mechanics]] and [[MiCA-Regulation]] to track the corrected source. See `superseded_claims` in frontmatter for the specific corrections.
+
+**Triple-check (v2.3, 2026-05-25):** the user downloaded `mica.html` (full text of Regulation (EU) 2023/1114, OJ L 150, 1.68 MB) into the same `.raw/InnBlockchain/EU Compliance/` folder. Used as an authoritative second source to cross-verify v2.2. 85+ specific claims — article numbers, monetary amounts, percentages, time periods, subsection mappings, Annex IV class breakdown — all verified verbatim. **One missing detail surfaced**: Article 49(6) ("redemption of e-money tokens shall not be subject to a fee") was not in the v2.2 EMT section. Added, plus expanded EMT redemption bullets to cover Article 49(3) par-value issuance, Article 49(4) par-value redemption mechanics, Article 49(5) white-paper disclosure, Article 49(6) no-fee rule. Hash updated `3283a568...` → `492b5075...`; source grew 796 → 800 lines.
 
 ### What the Checklist Adds (Beyond the 2025 Web Research)
 
@@ -219,7 +231,7 @@ Web research above is macro (timeline, penalties, compliance rate). The internal
 
 ---
 
-## Addendum — Internal DORA Readiness Checklist (Ingested 2026-05-24 at v1.1)
+## Addendum — Internal DORA Readiness Checklist (Ingested 2026-05-24 at v1.1; Re-verified 2026-05-25 at v1.2 against local EUR-Lex HTML)
 
 **Source:** `.raw/InnBlockchain/EU Compliance/dora-checklist.md` (v1.1, hash `7846555f77db1b3eac861b5ab510385a`)
 **Type:** Internal InnBlockchain practitioner artifact — DORA continuous-compliance readiness assessment, 13 sections, scorecard format, written from the perspective of "what a specialist EU ICT / financial-regulatory lawyer walks an in-scope entity through in a first intake meeting."
@@ -248,9 +260,9 @@ DORA is **not an authorisation regime**. So the MiCA checklist's structure (appl
 15. **NIS2 displacement** (Art 4(1)) — obligation-level, not blanket. Registration in national NIS2 registries and CSIRT cooperation may still bite via Member State transposition. Group-level non-financial entities may still fall directly under NIS2.
 16. **Key Level 2 cross-reference map** — 8 instruments: Commission Delegated Regulations 2024/1502 (CTPP designation), 2024/1772 (incident classification), 2024/1773 (CIF contractual policies), 2024/1774 (risk management + simplified framework), 2025/295 (TLPT); Commission Implementing Regulation 2024/2956 (Register ITS); harmonised reporting RTS/ITS under Art 20; sub-outsourcing RTS under Art 30(5).
 
-### Source-grounding note (preserved as `[!gap]` callout on practitioner page)
+### Verification status (2026-05-25 update)
 
-The DORA checklist was built **without** a verbatim Regulation (EU) 2022/2554 cross-check pass — EUR-Lex direct URL blocked by AWS WAF JS challenge, defuddle returned empty, and Wayback was not used as fallback (unlike the MiCA v2.2 re-ingest). The article-level claims are training-data-grounded against my working knowledge of DORA, with two operational hedges applied in the source: (i) **harmonised reporting RTS / ITS hour-counts** are presented as practitioner reads rather than verbatim quotes, since timing has moved across drafts under Art 20; (ii) **Level 2 RTS citations** (Delegated Regulations 2024/1502, 2024/1772, 2024/1773, 2024/1774, 2025/295, Implementing Regulation 2024/2956) are flagged as the most likely to drift since the ESAs Joint Committee continues to issue amendments. For any real filing, cross-validate against current ESMA / EBA / EIOPA publications and home-NCA-specific guidance before relying on a specific Article-level claim.
+The 2026-05-24 ingest at v1.1 was built **without** a verbatim Regulation (EU) 2022/2554 cross-check — EUR-Lex direct URL blocked by AWS WAF JS challenge, Wayback fallback was not used. The 2026-05-25 verification pass closed that gap: user manually saved EUR-Lex HTML to `.raw/InnBlockchain/EU Compliance/dora.html` (749KB); defuddle yielded 2,695 lines clean markdown; systematic Article-by-Article cross-check surfaced **5 material errors + 4 precision issues in v1.1**, all corrected at v1.2. Notable: v1.1's "correction" of the Article 26(8) TLPT tester rule went 180° in the wrong direction — v1.0 was actually closer to correct. See `superseded_claims` in frontmatter for the full list. Two residual hedges remain: (i) **harmonised reporting RTS / ITS hour-counts** under Article 20 are practitioner reads, since timing has moved across drafts; (ii) **Level 2 RTS citations** (Delegated Regulations 2024/1502, 2024/1772, 2024/1773, 2024/1774, 2025/295, Implementing Regulation 2024/2956) are flagged as the most likely to drift. For any real filing, cross-validate against current ESMA / EBA / EIOPA publications and home-NCA-specific guidance.
 
 ### Why this matters for InnBlockchain client work
 

@@ -79,11 +79,11 @@ PFOF — receiving any fee, commission, or non-monetary benefit from a third par
 
 Three EU consolidated tape providers, awarded via competitive ESMA selection on 5-year exclusive mandates:
 
-- **Bonds CTP** — selection initiated 29 December 2024; revenue-redistribution arrangement (small venues + new issuances + pre-trade-transparent trading weighted)
-- **Shares/ETFs CTP** — selection within 6 months of bonds; publishes the **European Best Bid and Offer (EBBO)** *without* the venue MIC
-- **OTC derivatives CTP** — selection after derivative-identifier delegated act; minimum 6 months after shares/ETFs
+- **Bonds CTP** — selection initiated 29 December 2024; the applicant must propose revenue-redistribution arrangements under Art. 27h(5) as a selection criterion (Art. 27da(2)(i)) — but the design is left to the applicant, not prescribed
+- **Shares/ETFs CTP** — selection within 6 months of bonds; publishes the **European Best Bid and Offer (EBBO)** *without* the venue MIC; subject to an **operative statutory redistribution scheme** (Art. 27h(6)–(8)) weighted across small trading venues (<1% Union share volume), venues that gave initial admission on/after 27 March 2019, and pre-trade-transparent transactions — with hierarchy: small venues > 2019 admissions > pre-trade-transparent
+- **OTC derivatives CTP** — selection after derivative-identifier delegated act; minimum 6 months after shares/ETFs; no revenue redistribution applies
 
-**Mandatory data contribution** applies to RMs, MTFs, OTFs, APAs, DPEs, and in-scope SIs. Small venues (<1% Union trading volume) and SME growth markets (85%+ self-execution) are exempt unless they opt in. Real-time transmission in harmonised RTS-specified format.
+**Mandatory data contribution** applies to RMs, MTFs, OTFs, APAs, DPEs, and in-scope SIs. Small venues (<1% Union trading volume) and SME growth markets (85%+ self-execution) are exempt unless they opt in. Real-time transmission in harmonised RTS-specified format. **Free access** to the tape applies to retail investors, academics, civil society organisations, and competent authorities — across all CTPs (Art. 27h(1)(b)).
 
 The Commission will assess by 30 June 2026 whether the anonymised EBBO design for shares/ETFs is sufficient and may propose legislative amendments.
 

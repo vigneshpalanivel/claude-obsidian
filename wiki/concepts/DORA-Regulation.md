@@ -63,7 +63,7 @@ DORA applies to **over 22,000 financial entities** across the EU. The full Artic
 ### 4. Third-Party ICT Risk Management
 - Map all ICT vendor relationships (**Register of Information** — submitted annually to NCA via Commission Implementing Regulation (EU) 2024/2956 template)
 - Renegotiate vendor contracts to include DORA-mandatory clauses per Article 30 (exit rights, audit rights, SLAs, sub-contracting disclosure)
-- Critical Third-Party Providers (CTPPs) face direct supervision by a **Lead Overseer — EBA, ESMA, or EIOPA** (assigned by sectoral mix). ECB is *not* a DORA Lead Overseer; ECB's role is via the SSM for credit institutions
+- Critical Third-Party Providers (CTPPs) face direct supervision by a **Lead Overseer — EBA, ESMA, or EIOPA** (assigned by Article 31(1)(b) based on the sectoral mix of the CTPP's financial-entity customer base, weighted by total assets). The **ECB is not a CTPP Lead Overseer**. However, the ECB **is** a DORA competent authority under Article 46(a) for **credit institutions classified as significant under the SSM Regulation Article 6(4)** — direct DORA supervision of the largest euro-area banks runs through the ECB, not just national NCAs
 - **Most impactful for fintechs**: Heavy third-party dependency (cloud infrastructure, payments APIs, compliance SaaS) means extensive contract renegotiation. The Register of Information is the operationally heaviest artefact — most entities under-budget it by 3–5×
 
 ### 5. Information and Intelligence Sharing

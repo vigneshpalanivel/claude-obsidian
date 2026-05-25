@@ -15,7 +15,10 @@ tags:
   - tokenization
 related:
   - "[[MiFID-II-NCA-Authorization-Mechanics]]"
+  - "[[MiFIR-Operational-Mechanics]]"
   - "[[MiFID-III]]"
+  - "[[EU-Listing-Act]]"
+  - "[[Prospectus-Regulation]]"
   - "[[MiCA-Regulation]]"
   - "[[EU-Fintech-Compliance-Landscape]]"
   - "[[DLT-Pilot-Regime]]"
@@ -33,7 +36,7 @@ related:
 > MiFID II = the baseline compliance framework for any firm handling financial instruments in the EU, regardless of whether the instrument is traditional or tokenized.
 
 > [!info] Practitioner detail
-> This page holds the **strategic / positioning** framing — scope, token classification cascade, enforcement, DLT implications, InnBlockchain routing. For the article-level **NCA authorization mechanics** (IFD Article 9 capital tiers €75k/€150k/€750k, Article 5(4) head-office co-location, Article 16 organizational requirements, dossier contents, application timeline, MiFID III phased rollout, InnBlockchain service-mapping table), see [[MiFID-II-NCA-Authorization-Mechanics]].
+> This page holds the **strategic / positioning** framing — scope, token classification cascade, enforcement, DLT implications, InnBlockchain routing. For the article-level **NCA authorization mechanics** (IFD Article 9 capital tiers €75k/€150k/€750k, Article 5(4) head-office co-location, Article 16 organizational requirements, dossier contents, application timeline, MiFID III phased rollout, InnBlockchain service-mapping table), see [[MiFID-II-NCA-Authorization-Mechanics]]. For the **MiFIR operational mechanics** (pre/post-trade transparency, Article 26 transaction reporting, SI opt-in regime, DTO, consolidated tape, PFOF ban), see [[MiFIR-Operational-Mechanics]].
 
 ---
 
