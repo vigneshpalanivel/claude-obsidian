@@ -23,6 +23,7 @@ related:
   - "[[MiFID-III]]"
   - "[[EU-Listing-Act]]"
   - "[[Prospectus-Regulation]]"
+  - "[[MAR-Regulation]]"
   - "[[DLT-Pilot-Regime]]"
   - "[[DORA-Regulation]]"
   - "[[EU-Fintech-Compliance-Landscape]]"

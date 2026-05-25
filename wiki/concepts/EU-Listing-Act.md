@@ -20,6 +20,7 @@ status: current
 last_reingested: 2026-05-25
 related:
   - "[[Prospectus-Regulation]]"
+  - "[[MAR-Regulation]]"
   - "[[MiFID-II]]"
   - "[[MiFID-II-NCA-Authorization-Mechanics]]"
   - "[[MiFID-III]]"

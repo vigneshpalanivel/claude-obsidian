@@ -14,6 +14,7 @@ status: current
 last_reingested: 2026-05-25
 related:
   - "[[EU-Listing-Act]]"
+  - "[[MAR-Regulation]]"
   - "[[MiFID-II]]"
   - "[[MiFID-III]]"
   - "[[DLT-Pilot-Regime]]"
