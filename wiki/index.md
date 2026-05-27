@@ -56,6 +56,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[InnBlockchain Channel Partner ICP]] — 3 advisory personas; routing hub to 3 sister ICPs; NCNDA Day 1; assumption-based (status: current)
 - [[InnBlockchain Crypto Products ICP]] — Trioangle clone scripts $5k-$20k; 5 archetype-first personas; Burned Builder highest urgency (status: current)
 - [[InnBlockchain Content Strategy]] — umbrella for three parallel InnBlockchain content programs; routing gate = company origin not licensing (status: current)
+- [[InnBlockchain Editorial Calendar]] — 42-article 22-week Phase 1 publishing schedule at 2x/week (Tue + Thu, 10:00 CET); LP gate sequence; cross-pillar early-ship articles (status: current)
+- [[InnBlockchain Content Repurposing Plan]] — derivative-content blueprint: 4 tiers gated by score + LP state; per-track asset families (Track A X/Telegram, Track B LinkedIn ABM); split-CTA discipline for `[Both]` articles; Fri block scales 2–5 hr by Tier 1 count (status: current)
 - [[InnBlockchain Landing Pages Plan]] — full site architecture for innblockchain.com; 7 tech pages, 4 service pages, 8 FinTech + 10 Web3 solutions; strict ICP URL separation (status: current)
 - [[Blockchain-Pharmaceutical-Supply-Chain]] — blockchain applied to pharma supply chain: anti-counterfeit, DSCSA compliance, cold chain, traceability; market CAGR 21% (status: current)
 - [[Blockchain-Fintech-Solutions]] — 7 core use cases (payments, tokenization, KYC, trade finance, etc.); platform comparison (Fabric/Corda/Besu); $8.35B market growing 44.4% CAGR (status: current)

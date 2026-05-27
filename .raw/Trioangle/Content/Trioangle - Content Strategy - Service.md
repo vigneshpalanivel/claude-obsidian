@@ -10,10 +10,10 @@
 | Element | Detail |
 |---------|--------|
 | **Goal** | Generate qualified inbound leads for $15k–$120k+ AI feature builds (primary) and $10k–$120k+ custom dev engagements (secondary) — all targeting established platform operators only |
-| **Primary Audience** | AI-Forward Platform Operators (P5 — direct primary). Inbound conversion for Scaling CTOs (P1) and Non-Technical Founder-Operators (P2). Channel-partner enablement only for Enterprise Digital Buyers (P3) and MENA Relationship Buyers (P4). |
+| **Primary Audience** | AI-Forward Platform Operators (P5 — direct primary). Scaling CTOs (P1) and Non-Technical Founder-Operators (P2) are **direct secondary** — targeted outbound when triggers fire + inbound conversion (established operating businesses with AI pressure; entry conversation often starts with platform pain, AI surfaces in second meeting). Channel-partner enablement only for Enterprise Digital Buyers (P3) and MENA Relationship Buyers (P4). |
 | **Content Mix** | 60% Searchable (SEO) · 25% Shareable (Thought Leadership) · 15% Both *("Both" articles are counted within the 60%/25% split — the 15% reflects the overlap subset, not an additional category)* |
 | **Publishing Cadence** | 3 posts/week (2 searchable + 1 shareable) |
-| **Buyer Personas Served** | 🎯 **Direct primary:** AI-Forward Platform Operator (P5). 🪶 **Inbound only:** Scaling CTO (P1), Non-Technical Founder-Operator (P2). 🤝 **Channel-partner enablement only:** Enterprise Digital Buyer (P3), MENA Relationship Buyer (P4). |
+| **Buyer Personas Served** | 🎯 **Direct primary:** AI-Forward Platform Operator (P5). 🎯 **Direct secondary:** Scaling CTO (P1), Non-Technical Founder-Operator (P2) — established operating businesses; targeted outbound + inbound. 🤝 **Channel-partner enablement only:** Enterprise Digital Buyer (P3), MENA Relationship Buyer (P4). |
 
 > [!IMPORTANT] Service Line Priority — AI First, Custom Dev Second
 > Per [[ICP - Service]], the two service lines are not equally weighted:
@@ -36,6 +36,13 @@
 >
 > **Editorial rule:** In any AI-context article (Pillar 7 or AI mentions in Pillars 1–5), do **not** cite 800+ as an AI delivery count. Avoid phrasings like "we've built AI features in 800+ platforms" — that conflates the two and misrepresents the AI track record. Use the unquantified framing above instead.
 
+> [!IMPORTANT] Active Marketing Focus — 8 Verticals (Not All 9 Historical)
+> Per [[ICP - Service]] Active Marketing Focus callout, Trioangle's historical delivery breadth covers 9 verticals, but **active SEO/marketing focus narrows to 8**: ride-hailing, on-demand (umbrella), delivery, marketplace, home-services, rentals (new standalone — vacation + car + boat + equipment + gear + fashion + furniture P2P), super-app, ecommerce.
+>
+> **Dropped from active marketing** (historical delivery preserved as credibility): Travel/hotel/OTA-only (vacation rental absorbed into Rentals) · Social-media · Video-streaming/OTT · EdTech · Dating · Short-video · B2B Fleet Management · Real-estate/proptech.
+>
+> **Editorial implication:** Pillar 7 vertical deep-dives (Cluster 7.2) cover only the 8 active marketing verticals. Articles originally drafted for dropped verticals (#105 Dating, #106 EdTech, #117 Short Video/Social, #118 Travel/OTA) have been **removed from the roadmap** — restore from git history if any of these verticals are reinstated to active marketing.
+
 ---
 
 ## Part 1: Content Verticals
@@ -45,10 +52,10 @@ Seven verticals aligned to ICP pain points, buying triggers, and buyer personas.
 | # | Vertical | Service Line | ICP Alignment | Primary Persona |
 |---|----------|------|--------------|-----------------|
 | **V1** | 🥇 **Domain-Specific AI Engineering for Existing Platforms** | **PRIMARY** | Pain Point 5 ("We know we need AI but don't know where to start") + AI-Era Positioning Rule | AI-Forward Platform Operator (P5) — direct primary |
-| V2 | **Platform Operator Tech Strategy & Established-Operator Leadership** | Secondary | Pain Point 1 (Scalability) + Pain Point 4 (Speed vs Quality) + Existing-Operator triggers (Series C+, expansion, outage, AI gap) | Scaling CTO (P1 — inbound) + Non-Technical Founder-Operator (P2 — inbound) |
+| V2 | **Platform Operator Tech Strategy & Established-Operator Leadership** | Secondary | Pain Point 1 (Scalability) + Pain Point 4 (Speed vs Quality) + Existing-Operator triggers (Series C+, expansion, outage, AI gap) | Scaling CTO (P1 — direct secondary) + Non-Technical Founder-Operator (P2 — direct secondary) |
 | V3 | **Choosing & Managing a Dev/AI Partner** | Both | Pain Points 2 & 3 (Ghosted Agency + IP Anxiety) | All Personas |
-| V4 | **Building On-Demand & Marketplace Platforms** | Secondary | Pain Point 6 (Missing Domain Expertise) | Scaling CTO + Founder-Operator (inbound) |
-| V5 | **Scalable Architecture & Tech Debt for Established Operators** | Secondary | Pain Point 1 (Scalability Crisis) at production scale | Scaling CTO (P1 — inbound) |
+| V4 | **Building On-Demand & Marketplace Platforms** | Secondary | Pain Point 6 (Missing Domain Expertise) | Scaling CTO + Founder-Operator (direct secondary) |
+| V5 | **Scalable Architecture & Tech Debt for Established Operators** | Secondary | Pain Point 1 (Scalability Crisis) at production scale | Scaling CTO (P1 — direct secondary) |
 | V6 | **Enterprise Digital Transformation (Channel-Partner Enablement)** | Secondary | Enterprise buyer needs + compliance — content drives partner conversations, not direct outbound | Channel partners → Enterprise Buyer (P3) |
 | V7 | **MENA Market & Regional Platform Leadership (Channel-Partner Enablement)** | Secondary | Persona 4 — relationship-first trust, Vision 2030 mandates, Gulf cultural context — content supports channel partners and warm referrals only | Channel partners → MENA Relationship Buyer (P4) |
 
@@ -147,29 +154,25 @@ Seven verticals aligned to ICP pain points, buying triggers, and buyer personas.
 
 #### Cluster 3.1: Platform Architecture by Vertical
 
-Each article surfaces its matching [[Trioangle Landing Page Plan|industry LP]] in a bottom "Related Services" box — **not** as a primary CTA. Architecture articles attract pre-traction builders alongside qualified Existing-Operator readers; the contextual placement surfaces the LP to qualified readers without over-pitching the early-funnel ones. See Part 6 Rule 10 for the intent-split rule.
+Each article surfaces its matching [[Trioangle Service LP Plan|industry LP]] in a bottom "Related Services" box — **not** as a primary CTA. Architecture articles attract pre-traction builders alongside qualified Existing-Operator readers; the contextual placement surfaces the LP to qualified readers without over-pitching the early-funnel ones. See Part 6 Rule 10 for the intent-split rule.
 
 | # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (Related Services box) |
 |---|--------------|----------------|-------|------|----------|--------------------------------------|
 | 26 | How to Build a Ride-Hailing Platform: Architecture, Features, and Pitfalls | build ride-hailing platform | Awareness | Searchable | 9.0 | `/industries/ride-hailing` |
 | 27 | Building a Multi-Vendor Food Delivery App: Technical Architecture Guide | build food delivery app architecture | Awareness | Searchable | 8.8 | `/industries/delivery` |
-| 28 | Rental Marketplace Architecture: Handling Availability, Pricing, and Multi-Location Inventory | rental marketplace architecture | Awareness | Searchable | 8.2 | `/industries/travel` |
+| 28 | Rental Marketplace Architecture: Handling Availability, Pricing, and Multi-Location Inventory | rental marketplace architecture | Awareness | Searchable | 8.2 | `/industries/rentals` |
 | 29 | Super App Development: Combining Rides, Deliveries, and Payments in One Platform | super app development guide | Awareness | Both | 8.5 | `/industries/super-app` |
 | 30 | On-Demand Home Services Platform Architecture: Booking, Dispatch, and Provider Management | on-demand home services platform | Awareness | Searchable | 8.1 | `/industries/home-services` |
-| 61 | Fleet Management Platform Architecture: Real-Time Tracking, Route Optimization, and Driver Management | fleet management platform development | Awareness | Searchable | 8.4 | `/industries/delivery` |
 | 62 | Building a TMS & Supply Chain Platform: Order Management, Carrier Integration, and Warehouse Logic | TMS supply chain platform development | Awareness | Searchable | 8.0 | `/industries/delivery` |
 | 63 | Grocery & Pharmacy Delivery Platform Architecture: Slot Scheduling, Cold-Chain Logic, and Age Verification | grocery delivery app development | Awareness | Searchable | 8.3 | `/industries/delivery` |
 | 64 | E-Commerce Marketplace Development: Multi-Seller Inventory, Search, and Seller Onboarding Architecture | e-commerce marketplace development | Awareness | Searchable | 8.6 | `/industries/ecommerce` · `/industries/marketplace` |
-| 65 | Dating App Architecture: Matching Algorithms, Safety & Moderation, and Subscription Monetization | dating app development architecture | Awareness | Searchable | 7.8 | `/industries/social-media` |
-| 66 | Short Video Platform Architecture: Feed Ranking, Streaming, and Moderation at Scale | short video platform architecture guide | Awareness | Searchable | 7.9 | `/industries/social-media` |
-| 67 | EdTech Platform Architecture: Live Classes, Course Marketplaces, and Learner Progress at Scale | edtech platform development guide | Awareness | Searchable | 7.7 | `/industries/education` |
 | 74 | Classifieds Platform Architecture: Search, Moderation, and Trust & Safety | classified ads platform development | Awareness | Searchable | 8.2 | `/industries/marketplace` |
+
+> [!NOTE] Articles #61, #65, #66, #67 — Removed from roadmap
+> Architecture articles for dropped verticals — #61 (Fleet Management — B2B fleet ops dropped from active marketing; Trioangle's ride-hailing/delivery history is consumer-facing), #65 (Dating App Architecture — dating dropped), #66 (Short Video Platform Architecture — short-video dropped), #67 (EdTech Platform Architecture — edtech dropped) — are removed from the Cluster 3.1 roadmap. The AI cousins (#105, #106, #117, #118) were already removed per Active Marketing Focus. Restore from git history if any of these verticals are reinstated.
 
 > [!NOTE] Persona restriction — Article #62 (TMS & Supply Chain Platform)
 > Primary persona is **Scaling CTO + Enterprise Buyer**, not Seed-stage Founder-CTOs. Brief accordingly and use the Scaling CTO CTA (Technical Architecture Review), not discovery call.
-
-> [!NOTE] Article #66 (Short Video & Social Entertainment) — Scope Note
-> Focus entirely on short-video and social entertainment architecture (TikTok/Reels-style platforms). Do not cross-reference long-form video platforms or unrelated platform types. For dating platform architecture, see Article #65.
 
 #### Cluster 3.2: Core Technical Components
 
@@ -287,8 +290,9 @@ Each article surfaces its matching [[Trioangle Landing Page Plan|industry LP]] i
 | # | Article Title | Target Keyword | Stage | Type | Priority |
 |---|--------------|----------------|-------|------|----------|
 | 54 | Building Digital Logistics Platforms: Route Optimization, Fleet Tracking, and Real-Time Dispatch | digital logistics platform development | Awareness | Searchable | 8.2 |
-| 56 | Hospitality Tech: Building Custom Booking and Operations Platforms | hospitality platform custom development | Awareness | Searchable | 7.8 |
-| 57 | PropTech Platform Development: Multi-Listing, Virtual Tours, and Transaction Management | proptech platform development | Awareness | Searchable | 7.6 |
+
+> [!NOTE] Articles #56 (Hospitality Tech) and #57 (PropTech) — Removed from roadmap
+> Both target verticals that are dropped from active SEO/marketing scope per [[ICP - Service]] Active Marketing Focus (Travel/hotel/OTA-only and Real-estate/proptech). Even though Pillar 5 is channel-partner enablement, the consistent application of "no active marketing content for dropped verticals" removes these. P3 enterprise inbound from hospitality/proptech operators is still handled via channel partners — content support is paused. Restore from git history if either vertical is reinstated.
 
 #### Cluster 5.3: Enterprise Procurement & Partnership
 
@@ -348,7 +352,7 @@ Each article surfaces its matching [[Trioangle Landing Page Plan|industry LP]] i
 > **Service Line Priority:** 🥇 PRIMARY — this is the lead motion for the full editorial calendar
 
 > [!IMPORTANT] Pillar 7 is the Primary Content Motion
-> Per [[ICP - Service]] Service Line Priority, AI Engineering is the primary motion. **Pillar 7 publishes from Month 1 onward** — not Month 7+. It is the largest pillar by article count (**28 articles** vs 11 in the original plan: #82–#92, #102–#118), covers all 9 landing-page verticals, and directly maps to the ICP's loss reasons. Every Pillar 7 article must enforce both the **AI-Era Positioning Rule** and the **Existing-Operator Filter** (target reader runs a $1M+ ARR live platform — never a freshly-funded MVP).
+> Per [[ICP - Service]] Service Line Priority, AI Engineering is the primary motion. **Pillar 7 publishes from Month 1 onward** — not Month 7+. It is the largest pillar by article count (**24 articles**: #82–#92, #102–#104, #107–#116; #105, #106, #117, #118 removed per Active Marketing Focus — see callout above), covering the **8 active marketing verticals** (ride-hailing, on-demand, delivery, marketplace, home-services, rentals, super-app, ecommerce). Every Pillar 7 article must enforce both the **AI-Era Positioning Rule** and the **Existing-Operator Filter** (target reader runs a $1M+ ARR live platform — never a freshly-funded MVP).
 
 > [!IMPORTANT] AI-Era Positioning Rule (Global to Pillar 7)
 > **Never position on "we build faster with AI." Position on domain expertise, certainty of delivery, and risk reduction.** Every Pillar 7 article must reinforce that Trioangle sells *domain-specific AI features shipped into production* — not AI consulting, not LLM demos, not "AI-assisted development speed." Reference: *ICP — Service, AI-Era Positioning Rule.*
@@ -362,13 +366,13 @@ Each article surfaces its matching [[Trioangle Landing Page Plan|industry LP]] i
 
 | # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) |
 |---|--------------|----------------|-------|------|----------|--------------------------|
-| 82 | Which AI Features Actually Move Marketplace Metrics (And Which Are Hype) | AI features marketplace platform | Awareness | Shareable | 9.0 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] |
-| 83 | How to Audit Your Platform's AI Readiness Before Hiring Anyone: A Self-Assessment Framework | platform AI readiness self-assessment | Awareness | Both | 8.7 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] |
-| 84 | Why Generic AI Consultants Fail Platform Businesses — and What to Look For Instead | AI consultant vs AI engineering platform | Awareness | Shareable | 8.6 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] |
+| 82 | Which AI Features Actually Move Marketplace Metrics (And Which Are Hype) | AI features marketplace platform | Awareness | Shareable | 9.0 | [[Trioangle Service LP Plan\|`/ai-engineering/` hub]] |
+| 83 | How to Audit Your Platform's AI Readiness Before Hiring Anyone: A Self-Assessment Framework | platform AI readiness self-assessment | Awareness | Both | 8.7 | [[Trioangle Service LP Plan\|`/ai-engineering/` hub]] |
+| 84 | Why Generic AI Consultants Fail Platform Businesses — and What to Look For Instead | AI consultant vs AI engineering platform | Awareness | Shareable | 8.6 | [[Trioangle Service LP Plan\|`/ai-engineering/` hub]] |
 
-#### Cluster 7.2: AI Feature Deep-Dives by Vertical (All 9 Verticals)
+#### Cluster 7.2: AI Feature Deep-Dives by Vertical (8 Active Marketing Verticals)
 
-To match the ICP's "domain-specific AI applied to 9 verticals" moat, Cluster 7.2 covers every vertical Trioangle has shipped. Each article cross-links to its base-platform architecture article in Cluster 3.1 (see Part 6 Rule 9), and to the matching [[Trioangle Landing Page Plan|industry / AI-service LP]] as the primary CTA.
+Cluster 7.2 covers the **8 active marketing verticals** (ride-hailing, on-demand, delivery, marketplace, home-services, rentals, super-app, ecommerce) — every article in this cluster has an active LP cross-link destination. Each article cross-links to its base-platform architecture article in Cluster 3.1 (see Part 6 Rule 9), and to the matching [[Trioangle Service LP Plan|industry / AI-service LP]] as the primary CTA. Articles originally drafted for dropped verticals (#105, #106, #117, #118) have been removed — see note below.
 
 | # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) |
 |---|--------------|----------------|-------|------|----------|--------------------------|
@@ -376,19 +380,15 @@ To match the ICP's "domain-specific AI applied to 9 verticals" moat, Cluster 7.2
 | 86 | Intelligent Dispatch: How AI Is Replacing Rule-Based Matching in On-Demand Platforms | AI dispatch optimization | Consideration | Searchable | 8.9 | `/industries/ride-hailing` · `/industries/delivery` |
 | 87 | Marketplace Fraud Detection with AI: Patterns, Models, and Production Integration | AI marketplace fraud detection | Consideration | Searchable | 8.8 | `/industries/marketplace` (+ `/ai-engineering/ai-content-moderation` secondary) |
 | 88 | Demand Forecasting for Logistics and Delivery Platforms: From Historical Data to Live Models | AI demand forecasting logistics | Consideration | Searchable | 8.5 | `/industries/delivery` |
-| 89 | Conversational Booking Interfaces: When LLM-Powered Chat Beats Forms (And When It Doesn't) | AI conversational booking | Consideration | Both | 8.3 | `/industries/home-services` · `/industries/travel` (+ `/ai-engineering/ai-customer-support-bot`, `/ai-engineering/whatsapp-ai-automation`, `/ai-engineering/voice-ai-development` secondary) |
-| 102 | AI for Rental Marketplaces: Availability Prediction, Dynamic Pricing, and Smart Recommendations | AI rental marketplace platform | Consideration | Searchable | 8.6 | `/industries/travel` · `/industries/marketplace` |
+| 89 | Conversational Booking Interfaces: When LLM-Powered Chat Beats Forms (And When It Doesn't) | AI conversational booking | Consideration | Both | 8.3 | `/industries/home-services` · `/industries/rentals` (+ `/ai-engineering/ai-customer-support-bot`, `/ai-engineering/whatsapp-ai-automation`, `/ai-engineering/voice-ai-development` secondary) |
+| 102 | AI for Rental Marketplaces: Availability Prediction, Dynamic Pricing, and Smart Recommendations | AI rental marketplace platform | Consideration | Searchable | 8.6 | `/industries/rentals` · `/industries/marketplace` |
 | 103 | AI for On-Demand Home Services: Intelligent Provider Matching and Demand Prediction | AI home services matching | Consideration | Searchable | 8.4 | `/industries/home-services` |
 | 104 | AI for Classifieds Platforms: Smart Moderation, Listing-Quality Scoring, and Trust Signals | AI classifieds moderation | Consideration | Searchable | 8.2 | `/industries/marketplace` (+ `/ai-engineering/ai-content-moderation`, `/ai-engineering/ai-search-upgrade` secondary) |
-| 105 | AI for Dating Apps: Beyond Rule-Based Matching — Embedding-Based Compatibility Models | AI dating matching algorithm | Consideration | Searchable | 8.0 | `/industries/social-media` |
-| 106 | AI for EdTech Platforms: Personalized Learning Paths and Engagement Prediction | AI edtech personalization | Consideration | Searchable | 7.9 | `/industries/education` |
 | 107 | AI for E-Commerce Marketplaces: Search Ranking, Recommendation, and Multi-Seller Trust Scoring | AI ecommerce marketplace | Consideration | Searchable | 8.7 | `/industries/ecommerce` (+ `/ai-engineering/ai-search-upgrade` secondary) |
 | 108 | AI for Super Apps: Cross-Service Intelligence and Unified User Intent Models | AI super app cross-service | Consideration | Searchable | 8.3 | `/industries/super-app` (+ `/ai-engineering/ai-agents-automation` secondary) |
-| 117 | AI for Short Video and Social Apps: Feed Ranking, Content Moderation, and Creator Recommendations | AI feed ranking short video platform | Awareness | Searchable | 8.2 | `/industries/social-media` (+ `/ai-engineering/ai-content-moderation` secondary) |
-| 118 | AI for Online Booking and OTA Platforms: Demand Forecasting, Dynamic Pricing, and Booking Assistants | AI demand forecasting booking platform | Awareness | Searchable | 8.1 | `/industries/travel` |
 
-> [!NOTE] #117 and #118 — Awareness Stage Until Production Cases Confirmed
-> Per [[Trioangle Landing Page Plan]] Priority 15–17 caveat, social/entertainment and travel/hospitality are platform-delivery verticals where AI feature production cases are in early development. Articles #117 and #118 must **lead with platform delivery depth** ("engineers who've shipped 20+ social platforms") — not AI outcome metrics (lift %, precision/recall). Do not apply the A/B-test framing requirement to these articles until at least one production AI case exists per vertical. Upgrade to Consideration stage and add specific metrics when cases are confirmed. CTA for both: free AI Readiness Call only (not AI Audit Sprint) until proof exists.
+> [!NOTE] Articles #105, #106, #117, #118 — Removed from roadmap
+> Per the Active Marketing Focus decision, Dating (#105), EdTech (#106), Short Video/Social (#117), and Online Booking/OTA (#118) target verticals that are dropped from active SEO marketing scope. These articles are removed from the roadmap. If any of these verticals are reinstated later (per LP Plan "Out of SEO Scope" revisit conditions), restore the articles from git history.
 
 #### Cluster 7.3: Production AI Integration & Risk
 
@@ -401,9 +401,9 @@ To match the ICP's "domain-specific AI applied to 9 verticals" moat, Cluster 7.2
 
 | # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) | Canonical for |
 |---|--------------|----------------|-------|------|----------|--------------------------|---------------|
-| 90 | How to Add AI Features to a Live Platform Without Breaking Stability | AI integration existing platform | Decision | Searchable | 8.8 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] (every `/ai-engineering/[service]` LP also reverse-links here) | **Canonical long-form** for live-platform AI integration anxiety; LP AEO Prompt 5 links here |
-| 91 | AI Service Isolation: Architecture Patterns for Fallback-Safe Machine Learning in Production | AI fallback architecture production | Decision | Searchable | 8.2 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] (every `/ai-engineering/[service]` LP Tech-Depth section reverse-links here) | **Canonical long-form** for service-isolation architecture pattern; LP AEO Prompts 5, 13 + Industry Prompt 34 link here |
-| 92 | GitHub Copilot vs. AI Feature Engineering: Why Your Internal Team Still Needs a Delivery Partner | Copilot vs AI engineering agency | Consideration | Shareable | 8.4 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] | **Canonical long-form** for Copilot/coding-tools comparison; Industry AEO Prompt 14 links here |
+| 90 | How to Add AI Features to a Live Platform Without Breaking Stability | AI integration existing platform | Decision | Searchable | 8.8 | [[Trioangle Service LP Plan\|`/ai-engineering/` hub]] (every `/ai-engineering/[service]` LP also reverse-links here) | **Canonical long-form** for live-platform AI integration anxiety; LP AEO Prompt 5 links here |
+| 91 | AI Service Isolation: Architecture Patterns for Fallback-Safe Machine Learning in Production | AI fallback architecture production | Decision | Searchable | 8.2 | [[Trioangle Service LP Plan\|`/ai-engineering/` hub]] (every `/ai-engineering/[service]` LP Tech-Depth section reverse-links here) | **Canonical long-form** for service-isolation architecture pattern; LP AEO Prompts 5, 13 + Industry Prompt 34 link here |
+| 92 | GitHub Copilot vs. AI Feature Engineering: Why Your Internal Team Still Needs a Delivery Partner | Copilot vs AI engineering agency | Consideration | Shareable | 8.4 | [[Trioangle Service LP Plan\|`/ai-engineering/` hub]] | **Canonical long-form** for Copilot/coding-tools comparison; Industry AEO Prompt 14 links here |
 
 #### Cluster 7.4: Build vs Buy vs SaaS — Loss-Reason Counter Content
 
@@ -429,7 +429,7 @@ Maps directly to the ICP's [[ICP - Service]] Loss Reasons table. Each article ex
 
 | # | Article Title | Target Keyword | Stage | Type | Priority | LP Cross-link (CTA zone) |
 |---|--------------|----------------|-------|------|----------|--------------------------|
-| 113 | Inside Our AI Engineering Stack: pgvector, LangGraph, Service Isolation, and Why We Picked Each | AI engineering architecture choices | Consideration | Searchable | 8.4 | [[Trioangle Landing Page Plan\|`/ai-engineering/` hub]] (+ `/ai-engineering/rag-knowledge-assistant`, `/ai-engineering/ai-agents-automation` secondary — the two services where pgvector + LangGraph show up most directly) |
+| 113 | Inside Our AI Engineering Stack: pgvector, LangGraph, Service Isolation, and Why We Picked Each | AI engineering architecture choices | Consideration | Searchable | 8.4 | [[Trioangle Service LP Plan\|`/ai-engineering/` hub]] (+ `/ai-engineering/rag-knowledge-assistant`, `/ai-engineering/ai-agents-automation` secondary — the two services where pgvector + LangGraph show up most directly) |
 
 > [!NOTE] Pillar 7 CTA — Two-Step Funnel (Free Call → Paid Sprint)
 > Per [[ICP - Service]] AI Funnel disambiguation, Pillar 7 uses a two-step CTA funnel:
@@ -438,8 +438,7 @@ Maps directly to the ICP's [[ICP - Service]] Loss Reasons table. Each article ex
 >
 > **Stage routing:**
 > - **Awareness articles (#82, #83, #84, #92, #111):** Lead with the **free AI Readiness Call** — these readers are still qualifying themselves.
-> - **Late Consideration / Decision articles (#85–#91, #102–#108, #109, #110, #112):** Lead with the **paid AI Audit Sprint** directly — these readers have already self-qualified by reading vertical-specific content; routing them through the free call adds friction.
-> - **Awareness articles — social & travel (#117, #118):** Lead with the **free AI Readiness Call** only. These verticals have limited production AI delivery cases; do not use the AI Audit Sprint CTA until at least one vertical-specific AI case is confirmed and the article is upgraded to Consideration stage.
+> - **Late Consideration / Decision articles (#85–#91, #102–#104, #107, #108, #109, #110, #112):** Lead with the **paid AI Audit Sprint** directly — these readers have already self-qualified by reading vertical-specific content; routing them through the free call adds friction.
 > - **Loss-reason articles (Cluster 7.4):** Use the AI Audit Sprint CTA framed around honest build-vs-buy advice — the differentiator vs the SaaS competitor is *"we'll tell you to use the SaaS if it fits."*
 > - **Implementation articles (#114, #115, #116):** Reader is an existing client 3+ months post-AI-feature-ship. Use the **paid AI Audit Sprint** CTA framed as **"AI feature health check"** (#114, #115 — 1-week retrospective audit of a shipped AI feature, scoped and priced separately from initial Audit Sprint) or **"model refresh engagement"** (#116 — scoped for clients 3+ months post-initial-build). These articles are the canonical upsell content for the second AI project in the 2–4/year repeat-buy cadence — do not use a generic AI Audit Sprint CTA; the engagement type must match the post-launch context.
 >
@@ -449,10 +448,10 @@ Maps directly to the ICP's [[ICP - Service]] Loss Reasons table. Each article ex
 
 ## Part 2b: Priority Topics (All Articles by Score)
 
-All 97 articles sorted by priority score descending (#1–#92 + #102–#116). Use this table for editorial planning, sprint scheduling, and quick-win identification. Score = Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20%) + Resource Efficiency (10%).
+All 87 articles sorted by priority score descending (#1–#92 + #102–#116, with #56, #57, #61, #65, #66, #67, #105, #106 removed per Active Marketing Focus; #117, #118 also removed). Use this table for editorial planning, sprint scheduling, and quick-win identification. Score = Customer Impact (40%) + Content-Market Fit (30%) + Search Potential (20%) + Resource Efficiency (10%).
 
 > [!IMPORTANT] Pillar 7 Scheduling Rule — Add 0.5 to All Pillar 7 Scores When Sprint-Planning
-> Per Service Line Priority, Pillar 7 (AI Engineering) is the primary motion. When comparing Pillar 7 articles against non-Pillar-7 articles for sprint scheduling, **add 0.5 to the Pillar 7 article score** before comparing. Example: Pillar 7 article scoring 9.0 outranks a non-Pillar-7 article scoring 9.4. This rule is mandatory — do not rely on the raw numeric scores alone when sequencing sprints. The 90-day roadmap in Part 5 already applies this rule; when filling gaps or reprioritizing, apply it manually using this formula. Pillar 7 articles: #82–#92, #102–#113.
+> Per Service Line Priority, Pillar 7 (AI Engineering) is the primary motion. When comparing Pillar 7 articles against non-Pillar-7 articles for sprint scheduling, **add 0.5 to the Pillar 7 article score** before comparing. Example: Pillar 7 article scoring 9.0 outranks a non-Pillar-7 article scoring 9.4. This rule is mandatory — do not rely on the raw numeric scores alone when sequencing sprints. The 90-day roadmap in Part 5 already applies this rule; when filling gaps or reprioritizing, apply it manually using this formula. Pillar 7 articles: #82–#92, #102–#104, #107–#116 (24 total — #105, #106, #117, #118 removed).
 
 | # | Title | Cluster | Persona | Stage | Type | Score |
 |---|-------|---------|---------|-------|------|-------|
@@ -497,7 +496,6 @@ All 97 articles sorted by priority score descending (#1–#92 + #102–#116). Us
 | 68 | Building Platforms for the MENA Market: Technical, Cultural, and Regulatory Considerations | 6.1 | MENA | Awareness | Shareable | 8.5 |
 | 7 | Real-Time Tracking Architecture: How Ride-Hailing Apps Handle Millions of GPS Pings | 1.2 | CTO | Awareness | Both | 8.4 |
 | 45 | How Non-Technical Founder-Operators Can Evaluate Engineering Quality on a Working Platform | 4.2 | Founder-Operator | Awareness | Searchable | 8.4 |
-| 61 | Fleet Management Platform Architecture: Real-Time Tracking, Route Optimization, and Driver Management | 3.1 | CTO+Founder-Operator | Awareness | Searchable | 8.4 |
 | 79 | How to Salvage a Failed Dev Partnership: A Playbook for Paused or Stalled Engagements | 2.3 | All | Awareness | Both | 8.4 |
 | 4 | Monolith vs. Microservices: When to Make the Switch | 1.1 | CTO | Consideration | Searchable | 8.3 |
 | 18 | Why Domain Expertise Matters More Than Generic Coding Skill | 2.1 | All | Awareness | Shareable | 8.3 |
@@ -520,15 +518,10 @@ All 97 articles sorted by priority score descending (#1–#92 + #102–#116). Us
 | 70 | Why Western Agencies Fail in the Gulf — and What to Look for in a Regional Tech Partner | 6.1 | MENA | Awareness | Shareable | 8.0 |
 | 8 | Database Optimization for High-Volume On-Demand Platforms | 1.2 | CTO | Consideration | Searchable | 7.9 |
 | 34 | Payment Gateway Integration Strategy for Marketplace Platforms | 3.2 | CTO | Consideration | Searchable | 7.9 |
-| 66 | Short Video Platform Architecture: Feed Ranking, Streaming, and Moderation at Scale | 3.1 | CTO+Founder-Operator | Awareness | Searchable | 7.9 |
 | 13 | CI/CD Pipeline Setup for Marketplace Platforms: From Zero to Production | 1.3 | CTO | Implementation | Searchable | 7.8 |
 | 49 | PCI-DSS for Marketplace Payments: What Your Engineering Team Needs to Know | 4.3 | Scaling CTO | Awareness | Searchable | 7.8 |
-| 56 | Hospitality Tech: Building Custom Booking and Operations Platforms | 5.2 | Enterprise | Awareness | Searchable | 7.8 |
-| 65 | Dating App Architecture: Matching Algorithms, Safety & Moderation, and Subscription Monetization | 3.1 | CTO+Founder-Operator | Awareness | Searchable | 7.8 |
 | 71 | Arabic Localization for Platforms: RTL Support, Multi-Currency, and Cultural UX Considerations | 6.1 | MENA | Consideration | Searchable | 7.8 |
 | 78 | Senior Engineers vs. Junior Engineers: How to Staff Your Established-Operator Platform Team | 4.2 | CTO+Founder-Operator | Consideration | Searchable | 7.8 |
-| 67 | EdTech Platform Architecture: Live Classes, Course Marketplaces, and Learner Progress at Scale | 3.1 | CTO+Founder-Operator | Awareness | Searchable | 7.7 |
-| 57 | PropTech Platform Development: Multi-Listing, Virtual Tours, and Transaction Management | 5.2 | Enterprise | Awareness | Searchable | 7.6 |
 | 73 | Platform Development in Dubai vs. Singapore vs. London: Cost, Speed, and Expertise Compared | 6.2 | MENA | Consideration | Searchable | 7.6 |
 | 9 | Redis Caching Strategies for Marketplace Applications | 1.2 | CTO | Consideration | Searchable | 7.5 |
 | 24 | Agile Sprint Planning with an External Dev Team: Best Practices | 2.3 | All | Implementation | Searchable | 7.5 |
@@ -553,15 +546,11 @@ Sorted by score. Schedule ahead of equivalently-scored non-Pillar-7 articles per
 | 113 | Inside Our AI Engineering Stack: pgvector, LangGraph, Service Isolation, and Why We Picked Each | 7.5 | AI-Forward | Consideration | Searchable | 8.4 |
 | 108 | AI for Super Apps: Cross-Service Intelligence and Unified User Intent Models | 7.2 | AI-Forward | Consideration | Searchable | 8.3 |
 | 104 | AI for Classifieds Platforms: Smart Moderation, Listing-Quality Scoring, and Trust Signals | 7.2 | AI-Forward | Consideration | Searchable | 8.2 |
-| 105 | AI for Dating Apps: Beyond Rule-Based Matching — Embedding-Based Compatibility Models | 7.2 | AI-Forward | Consideration | Searchable | 8.0 |
-| 106 | AI for EdTech Platforms: Personalized Learning Paths and Engagement Prediction | 7.2 | AI-Forward | Consideration | Searchable | 7.9 |
-| 117 | AI for Short Video and Social Apps: Feed Ranking, Content Moderation, and Creator Recommendations | 7.2 | AI-Forward | Awareness | Searchable | 8.2 |
-| 118 | AI for Online Booking and OTA Platforms: Demand Forecasting, Dynamic Pricing, and Booking Assistants | 7.2 | AI-Forward | Awareness | Searchable | 8.1 |
 
 > [!NOTE] Priority Table — Item 81 and Pillar 7 Expansion (Sort Position)
-> Article #81 scores **7.8** — sorts alongside #8, #34, #65, #66, #71, #78. Appended sequentially to preserve reference numbers. Treat as equivalent to same-scored items when sprint-scheduling.
+> Article #81 scores **7.8** — sorts alongside #13, #49, #71, #78. Appended sequentially to preserve reference numbers. Treat as equivalent to same-scored items when sprint-scheduling.
 >
-> Pillar 7 articles #102–#113 are appended as a separate sub-table (above) rather than re-merging into the master ranked list — preserves stable reference numbers from prior versions of this document while making the new AI inventory scannable in one block. When sprint-scheduling, **always evaluate Pillar 7 candidates first** before non-Pillar-7 candidates of equivalent score, per Service Line Priority.
+> Pillar 7 articles #102–#104, #107–#113 are appended as a separate sub-table (above) rather than re-merging into the master ranked list — preserves stable reference numbers from prior versions of this document while making the new AI inventory scannable in one block. When sprint-scheduling, **always evaluate Pillar 7 candidates first** before non-Pillar-7 candidates of equivalent score, per Service Line Priority.
 
 ---
 
@@ -597,9 +586,9 @@ CTAs are listed in **Service Line Priority** order: AI-Forward Platform Operator
 
 | Persona | Tier | Primary CTA | Secondary CTA | Content Tone |
 |---------|------|------------|--------------|--------------|
-| **🥇 AI-Forward Platform Operator (P5)** | 🎯 Direct primary | **Awareness** (#82, #83, #84, #92, #111): *"Book a free 1-hour **AI Readiness Call** — engineering-language, no slide deck"* · **Decision** (#85–#91, #102–#108, #109, #110, #112): *"Book a paid 2-week **AI Audit Sprint** ($1,500–$4,000, fee credited toward delivery) — we'll tell you honestly: build, buy, or bad idea"* | "Download: AI Readiness Self-Assessment (vertical-specific)" | Engineer-to-engineer, skeptical-of-hype, domain-proof-first. Never use "AI transformation" or "strategy" language. Always ground in shipped production outcomes in their vertical. A/B-test framing required for every metric claim. |
-| **Scaling CTO (P1)** | 🪶 Inbound only | If AI scope present: route to **AI Audit Sprint** first (P5 funnel). If pure dev: *"Book a Technical Architecture Review"* — no upfront fee, peer-level scoping conversation. | "Download: Architecture Audit Checklist" | Deep technical, data-driven, peer-level. Established-operator framing only — reader runs a $1M+ ARR live platform. |
-| **Non-Technical Founder-Operator (P2)** | 🪶 Inbound only | **Founder-Operator awareness articles** (#45, #46, #47, #77): *"Book a free 20-minute fit call — no commitment, no pitch. We work exclusively with platforms doing $1M+ ARR with 12+ months of operating history; we'll tell you honestly whether we're the right partner."* · **Established-operator playbook articles** (#39, #40, #43): *"Book a paid Discovery Sprint"* (or AI Audit Sprint if AI angle in scope). | "Download: Non-Technical Founder-Operator's Guide to Hiring a Dev/AI Partner" | Accessible, empathetic, business-outcome focused. Reader runs a working business — never frame as MVP-builder or pre-revenue founder. |
+| **🥇 AI-Forward Platform Operator (P5)** | 🎯 Direct primary | **Awareness** (#82, #83, #84, #92, #111): *"Book a free 1-hour **AI Readiness Call** — engineering-language, no slide deck"* · **Decision** (#85–#91, #102–#104, #107, #108, #109, #110, #112): *"Book a paid 2-week **AI Audit Sprint** ($1,500–$4,000, fee credited toward delivery) — we'll tell you honestly: build, buy, or bad idea"* | "Download: AI Readiness Self-Assessment (vertical-specific)" | Engineer-to-engineer, skeptical-of-hype, domain-proof-first. Never use "AI transformation" or "strategy" language. Always ground in shipped production outcomes in their vertical. A/B-test framing required for every metric claim. |
+| **Scaling CTO (P1)** | 🎯 Direct secondary | If AI scope present: route to **AI Audit Sprint** first (P5 funnel). If pure dev: *"Book a Technical Architecture Review"* — no upfront fee, peer-level scoping conversation. | "Download: Architecture Audit Checklist" | Deep technical, data-driven, peer-level. Established-operator framing only — reader runs a $1M+ ARR live platform. |
+| **Non-Technical Founder-Operator (P2)** | 🎯 Direct secondary | **Founder-Operator awareness articles** (#45, #46, #47, #77): *"Book a free 20-minute fit call — no commitment, no pitch. We work exclusively with platforms doing $1M+ ARR with 12+ months of operating history; we'll tell you honestly whether we're the right partner."* · **Established-operator playbook articles** (#39, #40, #43): *"Book a paid Discovery Sprint"* (or AI Audit Sprint if AI angle in scope). | "Download: Non-Technical Founder-Operator's Guide to Hiring a Dev/AI Partner" | Accessible, empathetic, business-outcome focused. Reader runs a working business — never frame as MVP-builder or pre-revenue founder. |
 | **Enterprise Digital Buyer (P3)** | 🤝 Channel-partner only | **Partner CTA (lead):** *"Are you a consulting firm with an enterprise client scoping a digital platform? Apply to our delivery-partner program."* · **Buyer CTA (secondary, soft):** *"Request a partner-routed introduction — we work primarily through our consultancy partners."* | "Download: Enterprise Digital Platform ROI Calculator (partner-co-branded)" | Professional, ROI-focused, compliance-aware. 80% cost anchor + 16-week delivery anchor required before every CTA. |
 | **MENA Relationship Buyer (P4)** | 🤝 Channel-partner only | "Connect with us on LinkedIn or WhatsApp — no forms, no pitch decks. We work primarily through warm introductions from Hub71/DIFC/Flat6Labs/STV networks." | "View MENA client references (LinkedIn DM or WhatsApp delivery only)" | Relationship-first, respectful, reputation-aware — never transactional. |
 
@@ -618,11 +607,11 @@ CTAs are listed in **Service Line Priority** order: AI-Forward Platform Operator
 
 Maps each ICP persona to the articles most relevant at each funnel stage. Use this for editorial prioritization, LinkedIn ABM article selection, and email nurture sequencing.
 
-### Persona 1: Scaling CTO — 🪶 Inbound only
+### Persona 1: Scaling CTO — 🎯 Direct secondary
 *Established platform business with active users (Series B+ scale or profitable mid-market — **not** a freshly-funded Seed/Series A startup). Owns engineering decisions. Pain: platform architecture failing under load, tech debt from a fast-built early platform breaking at production scale, managing a dev/AI partner or evaluating one.*
 
-> [!NOTE] Inbound-Only Tier
-> Per [[ICP - Service]] Persona Tiering, P1 is **🪶 opportunistic only** — single-project shaped, not the 2–4 projects/year cadence Track 2 needs. Serve when they appear inbound (organic SEO, Clutch, referral); do **not** build outbound motions targeting them. The article list and writer brief below are reference material for inbound conversion, not outbound activation.
+> [!NOTE] Direct Secondary Tier
+> Per [[ICP - Service]] Persona Tiering, P1 is **🎯 direct secondary** — established operating business with AI pressure but they don't yet self-identify as AI buyers. Pursue via targeted outbound when triggers fire (Series C+ round, expansion, public outage, AI-feature-gap vs vertical competitor, key engineering departure) + inbound conversion (organic SEO, Clutch, referral). Entry conversation often starts with platform pain; AI surfaces in second meeting. Entry product: AI Audit Sprint preferred; Discovery Sprint fallback for non-AI rebuild briefs (with AI Audit Sprint named as follow-on).
 
 | Funnel Stage | Articles |
 |-------------|----------|
@@ -638,14 +627,14 @@ Maps each ICP persona to the articles most relevant at each funnel stage. Use th
 
 ---
 
-### Persona 2: Non-Technical Founder-Operator — 🪶 Inbound only
+### Persona 2: Non-Technical Founder-Operator — 🎯 Direct secondary
 *Non-technical or early-technical founder of an **established operating business** (12+ months revenue traction, profitable or near-profitable) where the original technical co-founder has left or never existed. Typically a founder-led marketplace, services business, or vertical platform that grew on operational excellence rather than technical sophistication. **Not a freshly-funded Seed-stage startup.** Pain: needs the working platform rebuilt or significantly extended, no technical translator, previously burned by a ghosting agency, worried about IP and vendor lock-in.*
 
 > [!IMPORTANT] Persona 2 Redefinition — Established Operators Only
 > Per [[ICP - Service]], Persona 2 has been redefined. The original strategy framed P2 as a "post-Seed/Series A founder" building from MVP. The current ICP scopes P2 to **operators of established businesses with 12+ months revenue traction**. Article framings, writer briefs, and CTAs below reflect that. Pre-traction founders are out of scope for this strategy.
 
-> [!NOTE] Inbound-Only Tier
-> P2 is **🪶 opportunistic only** — single-project shaped, not the 2–4 projects/year cadence Track 2 needs. Serve when they appear inbound; do **not** build outbound motions targeting them.
+> [!NOTE] Direct Secondary Tier
+> P2 is **🎯 direct secondary** — established operating business with AI pressure. Pursue via targeted outbound when triggers fire (Series C+, expansion, key engineering departure at established platform, vertical AI competitor pressure) + inbound conversion. Entry product: AI Audit Sprint preferred when AI angle in scope; Discovery Sprint fallback for non-AI rebuild briefs (with AI Audit Sprint named as follow-on).
 
 | Funnel Stage | Articles |
 |-------------|----------|
@@ -673,7 +662,7 @@ Maps each ICP persona to the articles most relevant at each funnel stage. Use th
 
 | Funnel Stage | Articles |
 |-------------|----------|
-| **Awareness** | #51 (why consulting firms fail), #52 (business case for digital platform), #54 (digital logistics platforms), #56 (hospitality tech), #57 (PropTech) |
+| **Awareness** | #51 (why consulting firms fail), #52 (business case for digital platform), #54 (digital logistics platforms) |
 | **Consideration** | #59 (boutique vs Accenture), #53 (legacy migration), #48 (SOC 2 compliance) ‡, #81 (how to read Clutch/G2 reviews) |
 | **Decision** | #58 (how to write an RFP), #38 (true cost of building), #23 (discovery sprint), #22 (contracts) |
 | **Implementation** | #60 (change management for new platforms), #13 (CI/CD), #49 (PCI-DSS) |
@@ -706,15 +695,15 @@ Maps each ICP persona to the articles most relevant at each funnel stage. Use th
 ---
 
 ### 🥇 Persona 5: AI-Forward Platform Operator — 🎯 Direct Primary
-*CTO / CPO / Head of Product running an established, profitable platform across any of the 9 canonical verticals: ride-hailing, delivery & logistics, marketplace & commerce (incl. classifieds), home services, e-commerce, super app, travel & hospitality, social & entertainment (incl. dating), education. Not a broken MVP, not a freshly-funded pre-traction startup. Internal engineers exist but have no ML/AI experience. Pain: knows competitors are shipping AI features (dynamic pricing, intelligent dispatch, demand forecasting, fraud detection) and is falling behind; board asks about AI roadmap every meeting; skeptical of generic AI vendors who "learn the domain" for 3 months before writing code.*
+*CTO / CPO / Head of Product running an established, profitable platform in one of Trioangle's **8 active marketing verticals**: ride-hailing, on-demand (umbrella), delivery, marketplace & commerce (incl. classifieds), home-services, rentals (vacation + car + boat + equipment + gear + fashion + furniture P2P), super-app, ecommerce. Not a broken MVP, not a freshly-funded pre-traction startup. Internal engineers exist but have no ML/AI experience. Pain: knows competitors are shipping AI features (dynamic pricing, intelligent dispatch, demand forecasting, fraud detection) and is falling behind; board asks about AI roadmap every meeting; skeptical of generic AI vendors who "learn the domain" for 3 months before writing code.*
 
 > [!IMPORTANT] Direct Primary Tier — The Recurring-Revenue Base
 > Per [[ICP - Service]] Persona Tiering, P5 is **🎯 direct primary** — the active outbound priority and the recurring-revenue base for the Service ICP. The AI Audit Sprint is the entry product. Repeat-buy cadence is **2–4 AI feature projects per year per active client** — the AI roadmap delivered in the Audit Sprint *is* the project queue. Every editorial decision (sprint sequencing, lead-magnet investment, distribution-channel weight) should disproportionately favor P5 reach.
 
 | Funnel Stage | Articles |
 |-------------|----------|
-| **Awareness** | #82 (AI features that move marketplace metrics), #83 (platform AI readiness self-assessment), #84 (why generic AI consultants fail platforms), #92 (Copilot vs AI feature engineering), #111 (data readiness for AI), #117 (AI for social & entertainment — awareness only until production cases confirmed), #118 (AI for travel & hospitality — awareness only until production cases confirmed) |
-| **Consideration (vertical AI deep-dives)** | #85 (AI dynamic pricing for ride-hailing), #86 (intelligent dispatch), #87 (marketplace fraud detection), #88 (demand forecasting for logistics), #89 (conversational booking interfaces), #102 (AI for rental marketplaces), #103 (AI for home services), #104 (AI for classifieds), #105 (AI for dating), #106 (AI for edtech), #107 (AI for e-commerce marketplaces), #108 (AI for super apps) |
+| **Awareness** | #82 (AI features that move marketplace metrics), #83 (platform AI readiness self-assessment), #84 (why generic AI consultants fail platforms), #92 (Copilot vs AI feature engineering), #111 (data readiness for AI) |
+| **Consideration (vertical AI deep-dives)** | #85 (AI dynamic pricing for ride-hailing), #86 (intelligent dispatch), #87 (marketplace fraud detection), #88 (demand forecasting for logistics), #89 (conversational booking interfaces), #102 (AI for rental marketplaces), #103 (AI for home services), #104 (AI for classifieds), #107 (AI for e-commerce marketplaces), #108 (AI for super apps) |
 | **Consideration (build-vs-buy-vs-SaaS)** | #109 (AWS Personalize vs custom AI), #110 (Pinecone+OpenAI vs domain partner), #112 (Vertex AI vs custom models), #113 (AI engineering stack architecture choices) |
 | **Decision** | #90 (adding AI to a live platform without breaking it), #91 (AI service isolation / fallback architecture) |
 | **Implementation** | #114 (Post-Launch AI Ops: Monitoring Model Drift), #115 (A/B Testing AI Features Against Rule-Based Baselines), #116 (When to Retrain: Model Refresh Cadence). All three scheduled Month 5 W20. CTA: paid AI Audit Sprint framed as "AI feature health check" or "model refresh engagement" — these articles drive the second AI project in the 2–4/year repeat-buy cadence. |
@@ -789,8 +778,6 @@ Keyword strategy for the Pillar 7 articles targeting P5 (AI-Forward Platform Ope
 | AI availability prediction dynamic pricing rental marketplace | Low | Low | 7.2 | #102 |
 | AI home services matching | Low | Low | 7.2 | #103 |
 | AI classifieds moderation | Low | Low | 7.2 | #104 |
-| AI compatibility matching algorithm dating platforms | Low | Medium | 7.2 | #105 |
-| AI edtech personalization | Low | Low | 7.2 | #106 |
 | AI product search ranking recommendations ecommerce platform | Medium | Medium | 7.2 | #107 |
 | AI cross-service intelligence super app platforms | Low | Low | 7.2 | #108 |
 | AWS Personalize vs custom AI | Low | Low | 7.4 | #109 |
@@ -801,8 +788,6 @@ Keyword strategy for the Pillar 7 articles targeting P5 (AI-Forward Platform Ope
 | AI model drift monitoring production platform | Low | Low | 7.3 | #114 |
 | A/B testing AI features production | Low | Low | 7.3 | #115 |
 | AI model retraining cadence marketplace | Low | Low | 7.3 | #116 |
-| AI feed ranking content moderation short video platforms | Low | Low | 7.2 | #117 |
-| AI demand forecasting dynamic pricing online booking platforms | Low | Low | 7.2 | #118 |
 
 ### 🥇 AEO/GEO Query Patterns (LLM Search — ChatGPT, Perplexity, Gemini)
 
@@ -822,8 +807,6 @@ Per [[Trioangle - Marketing Plan - Service]] §Channel 1, AI search is the highe
 | "How does AI fraud detection work in marketplace platforms?" | #87 | Pattern-named H2 with precision/recall metrics cited |
 | "How does AI demand forecasting work for delivery platforms?" | #88 | Model-named H2 with MAPE metric cited |
 | "Can I use GitHub Copilot for AI features instead of hiring an AI engineering partner?" | #92 | Direct-comparison H2 with productivity-vs-system-design distinction |
-| "How does AI feed ranking and content moderation work in short video and social platforms?" | #117 | Technical-explanation H2 with feed ranking algorithm and moderation pipeline named in first sentence |
-| "How does AI demand forecasting work for online booking and OTA platforms?" | #118 | Model-named H2 with booking demand patterns, seasonal variation, and dynamic pricing examples cited |
 
 > [!NOTE] AEO/GEO Verification — Before Publish
 > For each Pillar 7 article, run the LLM query in ChatGPT and Perplexity *before publish* to see what currently ranks. If the article's H2 doesn't match a high-intent query that returns no clear answer today, the AEO/GEO opportunity is wasted. Adjust the H2 to capture the question verbatim before publishing — this is the leverage the Marketing Plan ranks as Channel 1.
@@ -839,15 +822,11 @@ Informational/architectural searches from builders researching how to build or s
 | multi-vendor food delivery platform architecture | High | High | #27 | Delivery & Logistics |
 | food delivery app technical architecture breakdown | Medium | Medium | #27 | Delivery & Logistics |
 | grocery delivery platform slot scheduling architecture | Medium | Medium | #63 | Delivery & Logistics |
-| fleet management platform real-time tracking architecture | Medium | Medium | #61 | Logistics & Fleet Management |
 | TMS platform development | Low | Low | #62 | Logistics & Fleet Management |
-| rental marketplace platform availability pricing architecture | Medium | Medium | #28 | Travel & Hospitality |
+| rental marketplace platform availability pricing architecture | Medium | Medium | #28 | Rentals |
 | multi-seller ecommerce marketplace platform architecture | High | High | #64 | Commerce & Marketplaces |
 | classifieds platform search moderation trust architecture | Low | Low | #74 | Commerce & Marketplaces |
 | on-demand home services platform technical architecture | Medium | Low | #30 | On-Demand Home Services |
-| dating app matching algorithm safety architecture | Medium | Medium | #65 | Social & Entertainment |
-| short video platform feed ranking streaming architecture | Medium | Medium | #66 | Social & Entertainment |
-| edtech platform live classes course marketplace architecture | Medium | Low | #67 | Education & E-Learning |
 | super app platform architecture rides delivery services | Medium | Medium | #29 | Multi-Service / Super Apps |
 | Gojek-style super app technical architecture guide | Low | Low | #29 | Multi-Service / Super Apps |
 | multi-region platform architecture | Low | Low | #76 | Global Expansion |
@@ -866,11 +845,11 @@ Informational/architectural searches from builders researching how to build or s
 - **Months 1–3:** Pillar 7 AI Engineering front-loaded (50–67% of weekly inventory). Pillar 2 trust articles run in parallel.
 - **Months 4–5:** Remaining Pillar 7 vertical AI articles + custom-dev long-tail (Pillars 1, 3, 4). P5 implementation articles (#114–#116) promoted to Month 5 W20.
 - **Month 6:** Implementation depth, enterprise industry content, compliance track, MENA Pillar 6 close.
-- **Month 7+:** #117/#118 (pending production AI cases), refreshes, SEO long-tail.
+- **Month 7+:** Refreshes, SEO long-tail, second-pass updates to Pillar 7 articles as new AI case studies land in active marketing verticals.
 - **Pillar 5/6:** Channel-partner enablement only — 1 article/month, not weekly.
 
 > [!NOTE] Publishing vs. Outbound Distribution — Trigger Activation (Updated for Established-Operator Filter)
-> All ~97 articles are published to the blog on schedule for SEO indexing. **However, the following timing-sensitive articles should be withheld from outbound ABM/Channel-4 sequences** until a matching ICP trigger event is detected for a specific prospect.
+> All ~87 articles are published to the blog on schedule for SEO indexing. **However, the following timing-sensitive articles should be withheld from outbound ABM/Channel-4 sequences** until a matching ICP trigger event is detected for a specific prospect.
 >
 > **Triggers retired** (per [[ICP - Service]] — pre-traction Seed/Series A funding is no longer a primary trigger; established operators only):
 > - ❌ Seed funding announcement
@@ -883,7 +862,7 @@ Informational/architectural searches from builders researching how to build or s
 > - **#43** (Late-Stage Investor / Acquirer Tech Stack Evaluation) → Send after a Series C+ funding announcement or M&A signal
 > - **#77** (When to Hire Senior CTO/VP Engineering for Established Platform) → Send when a senior CTO or VP Engineering job posting at an established operator is detected
 > - **#80** (Vertical AI Competitor Just Shipped) → Send when a direct vertical competitor announces an AI feature launch (NOT a funding round)
-> - **#85–#92, #102–#108** (Pillar 7 vertical AI deep-dives) → Send via Channel 4 (AI Engineering Outbound) when a vertical AI competitor in the prospect's exact category announces a feature, OR when the prospect posts an ML/AI Engineer role
+> - **#85–#92, #102–#104, #107, #108** (Pillar 7 vertical AI deep-dives) → Send via Channel 4 (AI Engineering Outbound) when a vertical AI competitor in the prospect's exact category announces a feature, OR when the prospect posts an ML/AI Engineer role
 >
 > Cold distribution of these articles without the matching trigger significantly reduces relevance and response rates. Articles marked **‡** in the editorial calendar — publish to the blog on schedule; withhold from outbound until the matching established-operator trigger is confirmed. Reference: *ICP — Service, Engagement Timing — Advance vs. Pause; Existing-Operator Filter.*
 
@@ -944,7 +923,7 @@ graph TD
     C75 -.->|"cross-link"| C72
     C75 -.->|"cross-link"| C71
 
-    LP_IND["Landing Pages: /industries/[9 verticals]"]
+    LP_IND["Landing Pages: /industries/[8 active verticals]"]
     LP_AI["Landing Pages: /ai-engineering/ hub + 7 service pages"]
 
     C72 -.->|"CTA link"| LP_IND
@@ -964,13 +943,13 @@ graph TD
 4. **Build vs. Buy** posts (#36, #37) cross-link to the relevant Cluster 3.1 vertical architecture articles to anchor the build decision in the reader's specific platform type
 5. **Case studies** link to the relevant technical cluster they demonstrate
 6. **Cross-vertical technical articles** must link to every applicable vertical article in Cluster 3.1:
-   - #31 (Dispatch algorithms) → links to #26 (ride-hailing), #27 (food delivery), #63 (grocery), #30 (home services), #61 (fleet)
+   - #31 (Dispatch algorithms) → links to #26 (ride-hailing), #27 (food delivery), #63 (grocery), #30 (home services)
    - #32 (Multi-vendor commission) → links to #27 (food delivery), #28 (rental), #64 (e-commerce), #29 (super app), #74 (classifieds)
-   - #7 (Real-time tracking) → links to #26 (ride-hailing), #61 (fleet), #63 (grocery), #29 (super app)
-   - #34 (Payment gateway) → links to #64 (e-commerce), #27 (food delivery), #28 (rental), #65 (dating)
-7. Every **vertical article** (#26–#30, #61–#67, #74) links back to the relevant Cluster 3.2 core component articles. For #74 (Classifieds Platform): cross-link to #32 (multi-vendor commission flow) and #34 (payment gateway integration). MENA articles (#68–#73) are excluded — Cluster 3.2 components are not relevant to Pillar 6 content.
-8. **Cluster 5.2 ↔ Cluster 3.1 paired articles**: enterprise-pillar vertical articles cross-link to their startup/CTO counterpart — readers arriving via enterprise SEO should reach the technical depth articles: #54 (Digital Logistics) ↔ #61/#62 (Fleet/TMS); #56 (Hospitality Tech) ↔ #28 (Rental Marketplace); #57 (PropTech) ↔ #28 (Rental Marketplace) *(both share property inventory, availability-engine, and pricing-calendar architecture)*.
-9. **Pillar 7 ↔ Cluster 3.1 vertical paired articles**: each Cluster 7.2 AI feature article must cross-link to the base platform architecture article for the same vertical — readers need the foundational system before the AI layer: #85 (AI Dynamic Pricing Ride-Hailing) ↔ #26 (Ride-Hailing Architecture); #86 (Intelligent Dispatch) ↔ #26, #27, #30, #61 (Ride-Hailing, Food Delivery, Home Services, Fleet); #87 (Marketplace Fraud Detection) ↔ #64, #28, #74 (E-Commerce, Rental, Classifieds); #88 (Demand Forecasting for Logistics) ↔ #61, #62, #63 (Fleet, TMS, Grocery); #89 (Conversational Booking) ↔ #30, #28, #56 (Home Services, Rental, Hospitality); #117 (AI for Short Video and Social Apps) ↔ #65 (Dating App Architecture), #66 (Short Video Platform Architecture); #118 (AI for Online Booking and OTA Platforms) ↔ #28 (Rental Marketplace Architecture), #56 (Hospitality Tech). Also: Cluster 7.3 articles (#90, #91) cross-link to Cluster 1.2 architecture articles (#6, #7) since AI isolation patterns are a subset of scalable architecture.
+   - #7 (Real-time tracking) → links to #26 (ride-hailing), #63 (grocery), #29 (super app)
+   - #34 (Payment gateway) → links to #64 (e-commerce), #27 (food delivery), #28 (rental)
+7. Every **vertical article** (#26–#30, #62, #63, #64, #74) links back to the relevant Cluster 3.2 core component articles. For #74 (Classifieds Platform): cross-link to #32 (multi-vendor commission flow) and #34 (payment gateway integration). MENA articles (#68–#73) are excluded — Cluster 3.2 components are not relevant to Pillar 6 content.
+8. **Cluster 5.2 ↔ Cluster 3.1 paired articles**: enterprise-pillar vertical articles cross-link to their startup/CTO counterpart — readers arriving via enterprise SEO should reach the technical depth articles: #54 (Digital Logistics) ↔ #62 (TMS).
+9. **Pillar 7 ↔ Cluster 3.1 vertical paired articles**: each Cluster 7.2 AI feature article must cross-link to the base platform architecture article for the same vertical — readers need the foundational system before the AI layer: #85 (AI Dynamic Pricing Ride-Hailing) ↔ #26 (Ride-Hailing Architecture); #86 (Intelligent Dispatch) ↔ #26, #27, #30 (Ride-Hailing, Food Delivery, Home Services); #87 (Marketplace Fraud Detection) ↔ #64, #28, #74 (E-Commerce, Rental, Classifieds); #88 (Demand Forecasting for Logistics) ↔ #62, #63 (TMS, Grocery); #89 (Conversational Booking) ↔ #30, #28 (Home Services, Rental); #102 (AI for Rental Marketplaces) ↔ #28 (Rental Marketplace Architecture); #103 (AI for Home Services) ↔ #30 (Home Services Architecture); #104 (AI for Classifieds) ↔ #74 (Classifieds Architecture); #107 (AI for E-Commerce) ↔ #64 (E-Commerce Architecture); #108 (AI for Super Apps) ↔ #29 (Super App Architecture). Also: Cluster 7.3 articles (#90, #91) cross-link to Cluster 1.2 architecture articles (#6, #7) since AI isolation patterns are a subset of scalable architecture.
 
 10. **Blog → Landing Page cross-links (intent-split rule):** Landing page links appear in the **CTA zone only** — never inline within body copy. Inline landing page links read as a sales pitch and damage the informational credibility of the article. CTA zone placement reads as a natural next step. The intent split is non-negotiable: the blog owns educational/informational intent; the landing page owns commercial/conversion intent.
 
@@ -982,16 +961,12 @@ graph TD
     | #86 (Intelligent Dispatch) | `/industries/ride-hailing` · `/industries/delivery` | "See our AI dispatch work for ride-hailing and delivery platforms →" |
     | #87 (Marketplace Fraud Detection) | `/industries/marketplace` | "See how we build AI fraud detection for marketplace platforms →" |
     | #88 (Demand Forecasting, Logistics) | `/industries/delivery` | "See our AI demand forecasting work for delivery platforms →" |
-    | #89 (Conversational Booking Interfaces) | `/industries/home-services` · `/industries/travel` (+ secondary: `/ai-engineering/voice-ai-development` when the article's voice-bot section is the entry point) | "See our conversational booking AI work →" |
-    | #102 (AI for Rental Marketplaces) | `/industries/travel` · `/industries/marketplace` | "See how we build AI for rental marketplace platforms →" |
+    | #89 (Conversational Booking Interfaces) | `/industries/home-services` · `/industries/rentals` (+ secondary: `/ai-engineering/voice-ai-development` when the article's voice-bot section is the entry point) | "See our conversational booking AI work →" |
+    | #102 (AI for Rental Marketplaces) | `/industries/rentals` · `/industries/marketplace` | "See how we build AI for rental marketplace platforms →" |
     | #103 (AI for Home Services) | `/industries/home-services` | "See our AI work for on-demand home services platforms →" |
     | #104 (AI for Classifieds) | `/industries/marketplace` | "See how we build AI for classifieds platforms →" |
-    | #105 (AI for Dating Apps) | `/industries/social-media` | "See our AI work for social and dating platforms →" |
-    | #106 (AI for EdTech) | `/industries/education` | "See how we build AI for edtech platforms →" |
     | #107 (AI for E-Commerce) | `/industries/ecommerce` | "See our AI work for e-commerce marketplace platforms →" |
     | #108 (AI for Super Apps) | `/industries/super-app` | "See how we build AI for super app platforms →" |
-    | #117 (AI for Short Video and Social Apps) | `/industries/social-media` | "See our AI work for social and video platforms →" |
-    | #118 (AI for Online Booking and OTA Platforms) | `/industries/travel` | "See how we build AI for booking and OTA platforms →" |
 
     **Cluster 3.1 → /industries/ (contextual mention — "Related Services" box, not CTA):** Architecture articles are read by builders who may not yet qualify under the Existing-Operator Filter. Link once, in a bottom "Related Services" sidebar or box — not as a conversion CTA. This surfaces the landing page to qualified readers without over-pitching early-funnel ones.
 
@@ -999,16 +974,12 @@ graph TD
     |---|---|
     | #26 (Ride-Hailing Platform Architecture) | `/industries/ride-hailing` |
     | #27 (Food Delivery Platform Architecture) | `/industries/delivery` |
-    | #28 (Rental Marketplace Architecture) | `/industries/travel` |
+    | #28 (Rental Marketplace Architecture) | `/industries/rentals` |
     | #29 (Super App Architecture) | `/industries/super-app` |
     | #30 (Home Services Platform Architecture) | `/industries/home-services` |
-    | #61 (Fleet Management Architecture) | `/industries/delivery` |
     | #62 (TMS & Supply Chain Architecture) | `/industries/delivery` |
     | #63 (Grocery Delivery Architecture) | `/industries/delivery` |
     | #64 (E-Commerce Marketplace Architecture) | `/industries/ecommerce` · `/industries/marketplace` |
-    | #65 (Dating App Architecture) | `/industries/social-media` |
-    | #66 (Short Video Platform Architecture) | `/industries/social-media` |
-    | #67 (EdTech Platform Architecture) | `/industries/education` |
     | #74 (Classifieds Platform Architecture) | `/industries/marketplace` |
 
     **Cluster 7.1, 7.3, 7.4, 7.5 → /ai-engineering/ hub (CTA zone):** #82, #83, #84 (AI Strategy); #90, #91, #92 (Production AI Integration & Risk); #109, #110, #111, #112, #113 (Build vs Buy + Stack Hub); #114, #115, #116 (Post-Launch AI Ops — Implementation) → `/ai-engineering/` hub. These articles address the "should I build AI at all / who should I use / how do I keep it running" question; the hub page is the natural next step. Note: #90 and #91 are also reverse-linked from every `/ai-engineering/[service]` LP Tech-Depth section per Cluster 7.3 cross-link rule.
@@ -1017,7 +988,7 @@ graph TD
 
     | Content Focus | Service Page |
     |---|---|
-    | Content moderation (featured in #87, #104, #117) | `/ai-engineering/ai-content-moderation` |
+    | Content moderation (featured in #87, #104) | `/ai-engineering/ai-content-moderation` |
     | Search ranking (featured in #104, #107) | `/ai-engineering/ai-search-upgrade` |
     | Conversational / booking interfaces (#89) | `/ai-engineering/ai-customer-support-bot` · `/ai-engineering/whatsapp-ai-automation` |
     | Voice AI / phone-bot booking (#89 when voice-bot section is entry point) | `/ai-engineering/voice-ai-development` |
@@ -1029,16 +1000,15 @@ graph TD
     | Landing Page | Blog → Architecture | Blog → AI Feature |
     |---|---|---|
     | `/industries/ride-hailing` | #26 (Ride-Hailing Architecture) | #85 (AI Dynamic Pricing), #86 (Intelligent Dispatch) |
-    | `/industries/delivery` | #27 (Food Delivery), #61 (Fleet), #62 (TMS), #63 (Grocery) | #86 (Dispatch), #88 (Demand Forecasting) |
+    | `/industries/on-demand` | #26, #27, #30 (umbrella across ride-hailing / delivery / home-services architecture) | #86 (Dispatch — cross-vertical) |
+    | `/industries/delivery` | #27 (Food Delivery), #62 (TMS), #63 (Grocery) | #86 (Dispatch), #88 (Demand Forecasting) |
     | `/industries/marketplace` | #64 (E-Commerce), #74 (Classifieds) | #87 (Fraud Detection), #104 (AI Classifieds) |
-    | `/industries/home-services` | #30 (Home Services Architecture) | #103 (AI Home Services) |
-    | `/industries/ecommerce` | #64 (E-Commerce Architecture) | #107 (AI E-Commerce) |
+    | `/industries/home-services` | #30 (Home Services Architecture) | #103 (AI Home Services), #89 (Conversational Booking — secondary) |
+    | `/industries/rentals` | #28 (Rental Marketplace Architecture) | #89 (Conversational Booking), #102 (AI Rental) |
     | `/industries/super-app` | #29 (Super App Architecture) | #108 (AI Super Apps) |
-    | `/industries/travel` | #28 (Rental Marketplace Architecture) | #89 (Conversational Booking), #102 (AI Rental), #118 (AI Booking/OTA) |
-    | `/industries/social-media` | #65 (Dating App), #66 (Short Video) | #105 (AI Dating), #117 (AI Short Video/Social) |
-    | `/industries/education` | #67 (EdTech Architecture) | #106 (AI EdTech) |
+    | `/industries/ecommerce` | #64 (E-Commerce Architecture) | #107 (AI E-Commerce) |
     | `/ai-engineering/` hub | — | #82, #83, #84 (AI Strategy); #92 (Copilot vs AI Engineering); #109, #110, #111, #112 (Build-vs-Buy); #114, #115, #116 (Post-Launch AI Ops — Implementation). **NOT #113** — #113 is architecture deep-dive linked from individual service LPs, not from hub. #90 and #91 reverse-link from every `/ai-engineering/[service]` LP Tech-Depth section, not from hub directly. |
-    | `/ai-engineering/ai-content-moderation` | — | #87, #104, #117 |
+    | `/ai-engineering/ai-content-moderation` | — | #87, #104 |
     | `/ai-engineering/ai-search-upgrade` | — | #104, #107 |
     | `/ai-engineering/rag-knowledge-assistant` | — | #110, #113 |
     | `/ai-engineering/ai-agents-automation` | — | #89, #108, #113 |
@@ -1051,13 +1021,13 @@ graph TD
 ## Part 7: Distribution Channels
 
 > [!IMPORTANT] Channel Priority — Service Line Priority Applies Here Too
-> Channel weight follows persona tiering: 🎯 P5 (direct primary) gets the most outbound investment via Channel 4 (AI Engineering Outbound). 🤝 P3/P4 outbound is suspended pending channel-partner program — distribution for Pillars 5 and 6 is content-only (SEO + partner co-marketing). 🪶 P1/P2 ABM is downgraded from active outbound to inbound-conversion accelerator (when an inbound P1/P2 lead arrives via Clutch/SEO, send the matching article — do NOT prospect cold).
+> Channel weight follows persona tiering: 🎯 P5 (direct primary) gets the most outbound investment via Channel 4 (AI Engineering Outbound). 🎯 P1/P2 (direct secondary) get trigger-based targeted outbound via Channel 1 (LinkedIn ABM) when signals fire (Series C+ round, expansion, outage, key engineering departure, vertical AI competitor pressure) plus inbound conversion. 🤝 P3/P4 outbound is suspended pending channel-partner program — distribution for Pillars 5 and 6 is content-only (SEO + partner co-marketing).
 
 | Channel | Content Type | Frequency | Persona Match | Tier |
 |---------|-------------|-----------|---------------|------|
 | **🥇 Channel 4 — AI Engineering Outbound (Primary)** | Trigger-based engineering-language outbound to P5 prospects: **Step 1 (Day 0)** — connection request mentioning a specific competitor AI feature in their vertical, no pitch. **Step 2 (Day 4)** — vertical-specific case proof: writeup of an analogous AI feature shipped (e.g., #85 dynamic pricing with named A/B test result) — *useful or not, no agenda*. **Step 3 (Day 10)** — soft scoping ask routing to **free 1-hour AI Readiness Call** (escalates to paid AI Audit Sprint if a fit). **Trigger conditions (any one):** vertical competitor announces an AI feature; prospect posts an ML/AI Engineer role; prospect's recent investor deck/blog mentions AI roadmap; public underperformance signal (dispatch latency complaints, pricing volatility, fraud false positives in user reviews). **Banned language:** "AI transformation," "strategy session," "train a custom LLM," "AI roadmap discussion," "AI platform demo." Reference: *ICP — Service, Channel 4 — AI Engineering Outbound.* | 15–25/week (batched by trigger events) | 🎯 P5 (direct primary) | Active |
 | **LinkedIn (Organic)** | Thought leadership snippets from Pillar 7 shareable posts (primary), Pillar 2/4 (secondary). Comment substantively on prospect platform-AI posts to build P5 reputation. | 5×/week | All — P5 emphasis | Active |
-| **LinkedIn (ABM) — Inbound-Conversion Accelerator Only** | 🪶 **Downgraded from active outbound to inbound-conversion accelerator.** When an inbound P1/P2 lead arrives via Clutch, SEO, or referral, send a 3-message sequence with vertical-matched articles (Cluster 3.1 vertical pieces #26–#30, #61–#67, #74; or Cluster 3.2 core components #31–#35, #76; or Pillar 7 vertical AI articles when AI scope is in the brief). **Do NOT prospect P1/P2 cold** — per [[ICP - Service]] Persona Tiering, P1/P2 are opportunistic only (single-project shaped, not the recurring-revenue base). Match article to vertical precisely; never send a generic capabilities link. | Reactive only (no outbound quota) | 🪶 P1 + P2 (inbound conversion only) | Inbound only |
+| **LinkedIn (ABM) — Trigger-Based Outbound + Inbound Conversion** | 🎯 **Trigger-based targeted outbound for P1/P2 + inbound conversion accelerator.** For outbound: prospect P1/P2 when triggers fire — Series C+ round, public expansion, platform outage, key engineering departure, vertical AI competitor shipped AI feature, ML/AI Engineer job posting. 3-step soft sequence: connection (no pitch) → value-first message (architecture insight or vertical AI case) → soft ask (20-min peer call or AI Readiness Call if AI scope). For inbound: when a P1/P2 lead arrives via Clutch, SEO, or referral, send a 3-message sequence with vertical-matched articles (Cluster 3.1 vertical pieces #26–#30, #62, #63, #64, #74; or Cluster 3.2 core components #31–#35, #76; or Pillar 7 vertical AI articles when AI scope is in the brief). Match article to vertical precisely; never send a generic capabilities link. | 10–20 outbound/week (trigger-batched) + reactive inbound | 🎯 P1 + P2 (direct secondary) | Targeted outbound + inbound |
 | **HackerNews** | Technical deep-dives (Clusters 1.2, 3.2) | 2×/month | Scaling CTO |
 | **Email Newsletter (P5-primary)** | **Bi-weekly** engineering-language send to a curated P5-only list (CTOs/CPOs at $1M+ ARR platform operators). Content: 1 Pillar 7 deep-dive feature + 1 "don't build this" honest take + 1 vertical AI industry signal. List-build via Pillar 7 lead-magnet downloads. Separate from sales sequences — newsletter list lives in ESP (Customer.io or ConvertKit); sales 1:1 sequences live in HubSpot. *(Rationale: P5 is skeptical of high-frequency vendor email. Weekly sends increase unsubscribe rate without improving conversion. Bi-weekly preserves list health. Per [[Trioangle - Marketing Plan - Service]] §Content Operating Model.)* **Secondary channel-partner digest:** Pillar 5/6 enablement content sent bi-monthly to P3/P4 channel partner contacts via separate list — not mixed with the P5 newsletter. | Bi-weekly | P5-only (primary); P3/P4 channel partners (secondary, bi-monthly, separate list) |
 | **CTO Craft / Rands Leadership Slack** | Relevant post shares with context | 2–3×/month | Scaling CTO |
@@ -1065,9 +1035,9 @@ graph TD
 | **Established Operator Networks (Channel-Partner Enablement)** | 3-step active sequence — **scoped to established operators only**, per the ICP Existing-Operator Filter: (1) Map 10–15 target organizations across **late-stage growth funds** (a16z growth, Insight Partners, GA growth — invest in $50M+ ARR established platforms), **vertical industry associations** (CSCMP for logistics, Marketplace Conference, Home Services Industry Council, Movmi for mobility, etc.), and **MENA channel partners** (Hub71, DIFC Innovation Hub, Flat6Labs, STV). (2) Warm intro meeting with operations/portfolio-support team; bring 2–3 anonymized case studies of established-operator clients in their vertical (NOT pre-traction startup case studies). (3) Quarterly 3-bullet engineering insight to the partner team — not a pitch, a reason to recommend Trioangle when an established operator asks for a dev/AI partner. **Seed/Series A VC outreach retired** — those portfolios are pre-traction and out of scope per the Existing-Operator Filter. | Quarterly touchpoint per partner | 🎯 P5 (via vertical operator networks) · 🤝 P3/P4 (via consultancy partners and MENA accelerators) |
 | **WhatsApp / Direct MENA Outreach** | Warm introductions via shared Gulf connections before any message; brief, personal, relationship-first. Reference UAE/KSA clients by name. Never send a discovery form link — offer a direct call or WhatsApp conversation. | As opportunities arise | MENA Relationship Buyer |
 | **Reddit r/ExperiencedDevs** | Technical architecture posts with genuine discussion | 2×/month | CTO |
-| **Cold Email (Apollo/ZoomInfo) — P5 Primary, P1/P2 Suspended** | **For P5 (active):** 3-step trigger-based sequence aligned with Channel 4 — **Email 1** value hook referencing the prospect's vertical AI competitor and a specific engineering challenge in shipping AI to a live platform (no deck). **Email 2** — share the most relevant Pillar 7 vertical AI article (#85–#89, #102–#108) matched precisely to their vertical, with one line of context. **Email 3** — soft ask for a free 1-hour AI Readiness Call, escalating to paid AI Audit Sprint if a fit. **Trigger conditions:** vertical AI competitor launch; ML/AI Engineer job posting; investor deck/blog AI mention; public AI feature underperformance signal. **For P1/P2 (suspended):** Cold email to P1/P2 prospects is **paused** pending the channel-partner program — per ICP Persona Tiering, P1/P2 are opportunistic-only and direct outbound is not justified by the single-project economics. Reroute P1/P2 inbound leads to the LinkedIn ABM inbound-conversion accelerator. **Old Seed/Series A funding triggers retired** — pre-traction startups are out of scope per the Existing-Operator Filter. | 10–20/week for P5 (batched by trigger events); 0/week for P1/P2 | 🎯 P5 active · 🪶 P1/P2 suspended |
+| **Cold Email (Apollo/ZoomInfo) — P5 Primary, P1/P2 Trigger-Based** | **For P5 (active):** 3-step trigger-based sequence aligned with Channel 4 — **Email 1** value hook referencing the prospect's vertical AI competitor and a specific engineering challenge in shipping AI to a live platform (no deck). **Email 2** — share the most relevant Pillar 7 vertical AI article (#85–#89, #102–#104, #107, #108) matched precisely to their vertical, with one line of context. **Email 3** — soft ask for a free 1-hour AI Readiness Call, escalating to paid AI Audit Sprint if a fit. **P5 trigger conditions:** vertical AI competitor launch; ML/AI Engineer job posting; investor deck/blog AI mention; public AI feature underperformance signal. **For P1/P2 (trigger-based):** Cold email to P1/P2 is **active when established-operator triggers fire** — Series C+ growth round in an established platform business, public expansion announcement, platform outage publicly mentioned, key engineering lead departure, acquirer/late-stage technical DD underway. Use Discovery Sprint CTA (or AI Audit Sprint if AI angle in trigger). **Old Seed/Series A funding triggers retired** — pre-traction startups are out of scope per the Existing-Operator Filter. | 10–20/week for P5 (batched by trigger events); 5–10/week for P1/P2 (batched by triggers) | 🎯 P5 active · 🎯 P1/P2 trigger-based |
 | **Newsletter Pitch (Lenny's / The Pragmatic Engineer / ByteByteGo)** | Quarterly pitch of 1–2 shareable articles to newsletter editors or guest-post programs. **ByteByteGo + The Pragmatic Engineer (Gergely Orosz):** pitch Pillar 1 deep-dives and Cluster 3.2 architecture breakdowns; frame as systems design insight, not promotional. **Lenny's Newsletter:** pitch Pillar 4 thought leadership (startup CTO guidance, non-technical founder challenges). Never pitch searchable/SEO articles — shareable-format only. These readers are the exact Scaling CTO persona; a feature or mention converts at very high intent. | 1–2 pitches/quarter | Scaling CTO |
-| **Industry Events & Conferences** | Repurpose 2–3 shareable Pillar 1 and Pillar 4 articles into conference talk abstracts/proposals. Priority events: **Home Delivery World** (logistics/food delivery, Cluster 3.1), **SaaStr Annual** (Enterprise Buyer + Scaling CTO), **TechCrunch Disrupt** (funded startups, Founder-CTO), **PropTech conferences** (Cluster 5.2), **AI Engineer World's Fair** (Pillar 7, Persona 5). Speaking slots deliver more Scaling CTO and AI-Forward credibility than sponsorships — prioritise accordingly. | 2–4 events/year | Scaling CTO + Enterprise + AI-Forward |
+| **Industry Events & Conferences** | Repurpose 2–3 shareable Pillar 1 and Pillar 4 articles into conference talk abstracts/proposals. Priority events: **Home Delivery World** (logistics/food delivery, Cluster 3.1), **Shoptalk** (ecommerce / marketplace operators, aligned with active marketing), **SaaStr Annual** (Enterprise Buyer + Scaling CTO), **TechCrunch Disrupt** (funded startups, Founder-CTO), **mobility/ride-hailing summits** (Pillar 7 P5 reach), **AI Engineer World's Fair** (Pillar 7, Persona 5). Speaking slots deliver more Scaling CTO and AI-Forward credibility than sponsorships — prioritise accordingly. | 2–4 events/year | Scaling CTO + Enterprise + AI-Forward |
 | **AI Search (ChatGPT, Perplexity, Gemini)** | Optimize Pillar 7 articles and high-intent vertical articles (#85–#91) for LLM search summaries: clear H2/H3 structure, direct-answer opening paragraphs, named-entity stats (vertical + metric + outcome), and schema markup. Target queries like "AI for ride-hailing dispatch," "marketplace fraud detection AI," "dynamic pricing for logistics." Persona 5 and Scaling CTO increasingly research via LLM search before Google. Reference: *ICP — Service, Channel Strategy (AI Search row).* | Ongoing | Scaling CTO + AI-Forward |
 | **AI Engineering Communities** | Share Pillar 7 articles in Latent Space Discord, AI Engineer World's Fair community, AI-focused LinkedIn groups, r/MachineLearning. Frame as domain-specific AI implementation insights — never generic AI takes. Respond to platform-AI questions with genuine engineering answers, not product pitches. | 2×/month | AI-Forward Platform Operator |
 
@@ -1098,7 +1068,7 @@ graph TD
 > - **Post-acquisition integration** → Hold for 90 days post-announcement; re-evaluate after new leadership direction is confirmed
 > - **Enterprise Q1 / Q3 budget freeze** → Shift to content engagement only (like/comment on posts, share relevant articles); no direct outreach or ask
 > - **Vendor fatigue (recently concluded a failed agency engagement)** → Do not trigger standard sequence. Route to empathy-first content (#79) and offer a no-pitch architecture review only — never an AI Audit Sprint or Discovery Sprint booking
-> - **Price-shopping signals (loss-reason match)** → If the prospect leads with "what's your hourly rate?" before any scope discussion, do not route to outbound; the ICP loss-reason table flags this as high-probability "undercut on price" loss. Respond with domain-proof content (#18, #85–#87, #102–#108) and only escalate to sales contact if they engage with the domain-specificity angle.
+> - **Price-shopping signals (loss-reason match)** → If the prospect leads with "what's your hourly rate?" before any scope discussion, do not route to outbound; the ICP loss-reason table flags this as high-probability "undercut on price" loss. Respond with domain-proof content (#18, #85–#87, #102–#104, #107, #108) and only escalate to sales contact if they engage with the domain-specificity angle.
 > - **Copilot/AI-tool self-serve posture** → If the prospect says "we're trying Copilot/Cursor internally first," do not push paid Sprints. Route to #92 (Copilot vs AI Feature Engineering) and offer the **free 1-hour AI Readiness Call** as the low-friction entry point.
 > - **Hyperscaler/SaaS-first posture (P5 loss-reason match)** → If the prospect says "we're trying AWS Personalize / Vertex AI / Pinecone first," route to #109/#110/#112 (build-vs-buy loss-reason articles) — the differentiator is *honesty about when SaaS fits*. Win the right-fit prospect; disqualify yourself from the wrong-fit one.
 >
@@ -1112,16 +1082,16 @@ Lead magnets are listed in Service Line Priority order: Pillar 7 (AI Engineering
 
 | Asset | Format | Pillar Alignment | Persona | Funnel Step |
 |-------|--------|------------------|---------|-------------|
-| 🥇 **AI Readiness Self-Assessment** (vertical-specific) | PDF — **9 versions**, one per ICP vertical (aligned to [[Trioangle Landing Page Plan]] canonical verticals): ride-hailing · delivery & logistics · marketplace & commerce · home services · e-commerce · super app · travel & hospitality · social & entertainment · education. *(Note: the travel & hospitality and social & entertainment versions must lead with platform delivery depth rather than AI outcome metrics until production AI cases are confirmed for these verticals — see Cluster 7.2 #117/#118 caveat note.)* | Pillar 7 (Cluster 7.1 + 7.2) | 🎯 P5 (direct primary) | **Top of funnel** — Email gate → CTA: *"Book a free 1-hour AI Readiness Call"* (free qualification — identifies the 2–3 highest-ROI AI use cases at a conversation level; no formal deliverable; the goal is to qualify and surface whether a paid AI Audit Sprint is the next step) |
+| 🥇 **AI Readiness Self-Assessment** (vertical-specific) | PDF — **8 versions**, one per active marketing vertical (aligned to [[Trioangle Service LP Plan]] active verticals): ride-hailing · on-demand · delivery · marketplace · home-services · rentals · super-app · ecommerce. | Pillar 7 (Cluster 7.1 + 7.2) | 🎯 P5 (direct primary) | **Top of funnel** — Email gate → CTA: *"Book a free 1-hour AI Readiness Call"* (free qualification — identifies the 2–3 highest-ROI AI use cases at a conversation level; no formal deliverable; the goal is to qualify and surface whether a paid AI Audit Sprint is the next step) |
 | 🥇 **AI Audit Sprint Deliverable Sample** | PDF deck — anonymized data audit + AI feature shortlist + reference architecture + build-vs-buy recommendations from a real prior engagement | Pillar 7 (Cluster 7.2 + 7.3 + 7.4) | 🎯 P5 (direct primary) | **Mid-funnel decision** — Email gate → CTA: *"Book a paid 2-week AI Audit Sprint ($1,500–$4,000, fee credited toward delivery)"* — full data audit, feature shortlist, reference architecture, build-vs-buy recommendations per feature, fixed-price quote for the top feature, engineering team introduction. **Post-download nurture sequence (3 emails, spaced 3–5 days apart):** Email 1 (Day 0, immediate) — confirmation + PDF link + one-line context on which section of the sample maps to the reader's vertical ("The dispatch algorithm section on page 6 covers the same decision framework we use for [vertical] platforms"). Email 2 (Day 4) — send the most relevant Cluster 7.2 vertical AI article for the reader's vertical (matched from download source article), framed as "the technical depth behind what you saw in the sample." No CTA. Email 3 (Day 8) — soft booking ask: *"If you want to run this process on your own platform data, the AI Audit Sprint is 2 weeks, $1,500–$4,000, fee credited toward delivery. We'll tell you honestly: build, buy, or bad idea — one feature at a time. [Book the sprint →]"* Do not use "transform," "strategy," or "AI platform" language in any nurture email. If the reader books an AI Readiness Call during the nurture sequence, pause the nurture and hand off to sales. |
 | Discovery Sprint Sample Deliverable | PDF deck — ERD, system architecture diagram, wireframes, fixed-price estimate sample | Pillar 2 / Pillar 3 | All (custom-dev briefs, no AI angle) | Sales handoff — Secondary entry product per ICP. Used only when the prospect arrives with a non-AI custom-dev / rebuild brief. |
-| Architecture Audit Checklist | PDF | Pillar 1 | 🪶 Scaling CTO (P1 — inbound) | Email gate |
-| Non-Technical Founder-Operator's Guide to Hiring a Dev/AI Partner | PDF (12pp — established-operator framing; explicit Existing-Operator Filter qualification language: $1M+ ARR, 12mo+ operational history) | Pillar 2 / Pillar 4 | 🪶 Founder-Operator (P2 — inbound) | Email gate |
-| Build vs. Buy Decision Matrix (extended for AI) | Interactive tool — covers (a) custom dev vs off-the-shelf platform solutions AND (b) custom AI vs hyperscaler SaaS (AWS Personalize / Vertex AI / Pinecone+OpenAI) | Pillar 3 + Pillar 7 (Cluster 7.4) | 🎯 P5 + 🪶 P1/P2 inbound | Ungated (retarget) |
-| Tech Due Diligence Preparation Kit (Late-Stage / Acquisition) | PDF bundle — explicitly framed for **established operators going through Series C+ growth round, acquisition due diligence, or PE diligence** (not Seed/Series A pre-traction founders, who are out of scope) | Pillar 4 (Cluster 4.1) | 🪶 P1 + P2 (established-operator inbound) | Email gate → Sales handoff for verified post-Series-C and acquisition prospects |
+| Architecture Audit Checklist | PDF | Pillar 1 | 🎯 Scaling CTO (P1 — direct secondary) | Email gate |
+| Non-Technical Founder-Operator's Guide to Hiring a Dev/AI Partner | PDF (12pp — established-operator framing; explicit Existing-Operator Filter qualification language: $1M+ ARR, 12mo+ operational history) | Pillar 2 / Pillar 4 | 🎯 Founder-Operator (P2 — direct secondary) | Email gate |
+| Build vs. Buy Decision Matrix (extended for AI) | Interactive tool — covers (a) custom dev vs off-the-shelf platform solutions AND (b) custom AI vs hyperscaler SaaS (AWS Personalize / Vertex AI / Pinecone+OpenAI) | Pillar 3 + Pillar 7 (Cluster 7.4) | 🎯 P5 + P1/P2 (direct secondary) | Ungated (retarget) |
+| Tech Due Diligence Preparation Kit (Late-Stage / Acquisition) | PDF bundle — explicitly framed for **established operators going through Series C+ growth round, acquisition due diligence, or PE diligence** (not Seed/Series A pre-traction founders, who are out of scope) | Pillar 4 (Cluster 4.1) | 🎯 P1 + P2 (direct secondary) | Email gate → Sales handoff for verified post-Series-C and acquisition prospects |
 | 🤝 Enterprise Digital Platform ROI Calculator (partner-co-branded) | Interactive spreadsheet — co-brandable for channel-partner consultancies | Pillar 5 | 🤝 Channel partners → P3 Enterprise Buyer | Email gate / partner-distributed |
 | 🤝 MENA Platform Partner Reference Pack | PDF — named UAE/KSA client references, Arabic-language capability overview, Vision 2030 vertical alignment | Pillar 6 | 🤝 Warm-referral sources → P4 MENA Buyer | Direct share (no form — delivered via LinkedIn DM or WhatsApp) |
-| Vertical Platform Scope Template | PDF (one-page per vertical: ride-hailing, food delivery, fleet, e-commerce, home services, super app, rental, classifieds, dating, edtech) | Pillar 3, Cluster 3.1 | 🪶 Scaling CTO + Founder-Operator (inbound) | Email gate — offered inside Cluster 3.1 vertical articles as "download the scope template for this platform type" |
+| Vertical Platform Scope Template | PDF (one-page per **active marketing vertical**: ride-hailing, on-demand, delivery, marketplace, home services, rentals, super-app, ecommerce — 8 verticals matching the LP Plan; classifieds covered under marketplace) | Pillar 3, Cluster 3.1 | 🎯 Scaling CTO + Founder-Operator (direct secondary) | Email gate — offered inside Cluster 3.1 vertical articles as "download the scope template for this platform type" |
 | Clutch Case Study Template | Google Doc template | Pillar 2 + Cluster 3.1 + Pillar 7 vertical AI articles | All | Internal (sales/delivery team — Clutch-format case studies mapping problem → architecture/AI feature decision → A/B-tested outcome metric; link from every 5-star Clutch review) |
 
 ---
@@ -1219,9 +1189,9 @@ Lead magnets are listed in Service Line Priority order: Pillar 7 (AI Engineering
 | Pillar / Cluster | Dominant Persona | Tone |
 |---|---|---|
 | 🥇 **Pillar 7 (AI Engineering — primary motion)** | 🎯 AI-Forward Platform Operator (P5) | Engineer-to-engineer, skeptical-of-hype. Every claim anchored in a shipped production outcome with a named metric (dispatch latency %, fraud detection precision/recall, pricing elasticity, demand forecast MAPE) — and the required A/B test framing: *"[metric] improved by [X]% in A/B test against rule-based baseline, measured over [N] weeks in production."* Never use "AI transformation," "strategy," or "train a custom LLM" language. Benchmark against rule-based baselines with real A/B tests, not vibes. Apply the AI Proof-Point Caveat — never cite 800+ as an AI delivery count. |
-| Pillars 1, 3 (Clusters 1.x, 3.x) | 🪶 Scaling CTO (inbound only) | Peer-level technical authority — write like a senior engineer to another senior engineer at an **established platform business**. Lead with architecture specifics at production scale, named tradeoffs, and real numbers. Never frame as "your first 1000 users" or MVP advice. No softening language. |
-| Cluster 4.1 established-operator articles (#39, #40, #43) | 🪶 Scaling CTO + 🪶 Non-Technical Founder-Operator (inbound) | Urgent and practical — late-stage growth-round / acquisition pressure is real. Frame around late-stage investor expectations, acquisition due-diligence rigor, and timeline certainty for an established business under capital scrutiny. **Not Seed/Series A pre-traction framing** — that audience is out of scope. |
-| Cluster 4.2 founder-operator articles (#45, #46, #47, #77) | 🪶 Non-Technical Founder-Operator (inbound) | Accessible and empathetic — no jargon. Lead with business outcomes for a **working business with real revenue**, not pre-revenue MVP framing. Acknowledge the emotional weight of running an established business without a technical co-founder. |
+| Pillars 1, 3 (Clusters 1.x, 3.x) | 🎯 Scaling CTO (direct secondary) | Peer-level technical authority — write like a senior engineer to another senior engineer at an **established platform business**. Lead with architecture specifics at production scale, named tradeoffs, and real numbers. Never frame as "your first 1000 users" or MVP advice. No softening language. |
+| Cluster 4.1 established-operator articles (#39, #40, #43) | 🎯 Scaling CTO + 🎯 Non-Technical Founder-Operator (direct secondary) | Urgent and practical — late-stage growth-round / acquisition pressure is real. Frame around late-stage investor expectations, acquisition due-diligence rigor, and timeline certainty for an established business under capital scrutiny. **Not Seed/Series A pre-traction framing** — that audience is out of scope. |
+| Cluster 4.2 founder-operator articles (#45, #46, #47, #77) | 🎯 Non-Technical Founder-Operator (direct secondary) | Accessible and empathetic — no jargon. Lead with business outcomes for a **working business with real revenue**, not pre-revenue MVP framing. Acknowledge the emotional weight of running an established business without a technical co-founder. |
 | Pillar 2 (vendor trust) | All | Empathetic to past pain — acknowledge ghosting, IP anxiety, and budget losses before offering guidance. Never position Trioangle early. |
 | 🤝 **Pillar 5 (Enterprise — channel-partner enablement)** | Channel partners → Enterprise Digital Buyer (P3) | Professional and ROI-driven — board-level language, compliance credibility signals, cost and timeline benchmarks before every CTA. **Pivot framing toward channel partners** ("here's the ammunition you need to recommend Trioangle to your enterprise client"). Dual-CTA block (Partner CTA lead + Buyer CTA secondary) required at end of every article. |
 | 🤝 **Pillar 6 (MENA — channel-partner enablement)** | Warm-referral sources → MENA Relationship Buyer (P4) | Respectful, personal, reputation-aware — no transactional language anywhere. Reference Gulf market context and Vision 2030 naturally. Never use forms, SLA tables, or pricing references in body copy. Pillar 6 builds Gulf-market topical authority that channel partners and warm introduction sources can confidently recommend; it does not drive direct conversion. |
@@ -1244,7 +1214,7 @@ Lead magnets are listed in Service Line Priority order: Pillar 7 (AI Engineering
 - ✅ **AEO/GEO snippet structure verified** — per [[Trioangle - Marketing Plan - Service]] §Channel 1 (AI Search SEO, Rank 1 channel): every Pillar 7 article must be structured for LLM-search citation. Required: (a) direct-answer opening sentence for each H2/H3 section (answer the implied question in the first sentence, before elaborating); (b) FAQ-style headers where the H2 or H3 is a full question a P5 reader would type into ChatGPT or Perplexity (e.g., "How does AI dynamic pricing work in ride-hailing platforms?"); (c) named-entity stats with vertical + metric + outcome in body text — these are the snippets LLMs extract; (d) schema markup on article template (FAQ schema + Article schema). If the AEO structure is absent, downgrade to Pillar 1–4 and rewrite before promoting to Pillar 7.
 
 **Proof-dependency gate for Consideration- and Decision-stage articles:**
-- ✅ **Consideration-stage Pillar 7 articles** (#85–#92, #102–#113, #114–#116) **must not publish** until at least one real AI feature A/B-tested outcome metric is in the [[Trioangle - Marketing Plan - Service]] Proof Production Pipeline. Without a verified metric, the A/B-test framing requirement cannot be met, and the article is a liability rather than a credibility signal. Sequence Awareness-stage Pillar 7 articles (#82, #83, #84, #111) first — they can publish before proof metrics exist. The Proof Production Pipeline is a Q2 2026 Marketing Plan deliverable; Consideration-stage Pillar 7 publishing unlocks once the first case study metric is confirmed.
+- ✅ **Consideration-stage Pillar 7 articles** (#85–#92, #102–#104, #107–#116) **must not publish** until at least one real AI feature A/B-tested outcome metric is in the [[Trioangle - Marketing Plan - Service]] Proof Production Pipeline. Without a verified metric, the A/B-test framing requirement cannot be met, and the article is a liability rather than a credibility signal. Sequence Awareness-stage Pillar 7 articles (#82, #83, #84, #111) first — they can publish before proof metrics exist. The Proof Production Pipeline is a Q2 2026 Marketing Plan deliverable; Consideration-stage Pillar 7 publishing unlocks once the first case study metric is confirmed.
 - ✅ **Decision- and Consideration-stage Pillar 1–4 articles** must include at least one proof library metric in the conclusion paragraph immediately before the CTA. Required pool: 14-week avg. launch, 99.7% uptime in first 6 months, Phase 2 return rate, sprint velocity (features/sprint), cost vs. in-house comparison, Client NPS (60+), API response SLA (<200ms at P99 load). Do not end a Decision-stage article without a credibility data point. Reference: *ICP — Service, Diversified Social Proof.*
 
 ### Proof Signal Mapping by Article
@@ -1277,7 +1247,7 @@ Maps ICP objection handlers to the articles where writers should surface the rel
 | **Timeline realism** | #23, #38, #39 | Paid Discovery Sprint first → guaranteed delivery timeline post-scoping; no surprises |
 | **Vendor comparison** | #14, #16, #59, #81 | **⚠️ PRE-PUBLISH GATE — DO NOT USE THE 800+ COUNT UNTIL INTERNALLY AUDITED.** The "800+ platforms since 2015" figure is self-reported and has not been verified against delivery records. Until the audit is complete: (1) Do not cite "800+" as an exact number in any article, case study, or RFP response. (2) Use instead: *"Platforms delivered across ride-hailing, logistics, marketplace, home services, and adjacent verticals since 2015 — ask us for domain-specific reference counts in your exact vertical."* (3) Once audited and confirmed, update this table with the verified figure and remove this gate. **Audit owner:** [assign internally]. **Audit scope:** count all billed platform deliveries by vertical category since 2015, excluding internal tools and pre-launch engagements. Verify against invoiced project records. Until the audit is complete, the "domain knowledge from 800+ platform engagements applied to the AI integration layer" framing must also be replaced with the unquantified version above in all Pillar 7 articles. Ask any competitor their domain delivery count in your exact vertical — that framing still stands regardless of audit status. |
 | **AI coding tools / "we'll use Copilot internally"** | #84, #92, #82 | AI coding tools help engineers type faster — they don't give domain expertise in ML/AI system design or vertical-specific production integration. Use Copilot for productivity; use a domain-specific AI engineering partner for AI features that ship. Route to free **AI Readiness Call**, not paid Sprint. |
-| **"Can't we just use ChatGPT / an AI SaaS tool?"** | #83, #85, #86, #87, #102–#108 | Generic AI tools don't know your dispatch logic, driver supply curves, or marketplace commission structure. The value is in the integration layer and domain-specific tuning, not the model itself. |
+| **"Can't we just use ChatGPT / an AI SaaS tool?"** | #83, #85, #86, #87, #102–#104, #107, #108 | Generic AI tools don't know your dispatch logic, driver supply curves, or marketplace commission structure. The value is in the integration layer and domain-specific tuning, not the model itself. |
 | **"AWS Personalize / Vertex AI handles this for us"** | #109, #112 | Honest answer: for some use cases, yes — and we'll tell you so in the AI Audit Sprint. Hyperscaler SaaS wins on managed convenience and fast spin-up. We win the right-fit deals — custom integration, vertical-specific tuning, data ownership, AI features SaaS can't deliver. The AI Audit Sprint includes a build-vs-buy recommendation per feature *honestly* — sometimes that means recommending the SaaS. |
 | **"Pinecone + OpenAI handles this for us"** | #110 | Same honest framing as hyperscaler SaaS. Pinecone+OpenAI is great for generic semantic search; it doesn't know your marketplace commission flows, dispatch logic, or domain edge cases. The integration + tuning layer is the moat, not the embeddings. |
 | **"Our data isn't ready for AI yet"** | #111 | Honest — most data isn't. The AI Audit Sprint includes a data-readiness audit. If event data has <3 months of clean history or no labels for the target outcome, AI build is premature → we recommend a paid data-instrumentation engagement as a bridge. Better to know now than 6 months in. |
@@ -1287,7 +1257,7 @@ Maps ICP objection handlers to the articles where writers should surface the rel
 1. **Brief** → Topic, keyword, persona, CTA, outline (Content Strategist). **Mandatory pre-brief checklist:**
    - [ ] **Existing-Operator Filter check:** Is the implied reader an established platform operator ($1M+ ARR, 12+ months operational)? If no → out of scope — decline or reframe. If unclear → reframe.
    - [ ] **Service Line Priority check:** Is AI in scope (any way)? If yes → CTA defaults to AI Audit Sprint funnel (Free Call → Paid Sprint). If no → CTA defaults to Discovery Sprint or Technical Architecture Review.
-   - [ ] **Persona Tier check:** Is the article targeted at 🎯 P5 (direct primary), 🪶 P1/P2 (inbound only), or 🤝 P3/P4 (channel-partner enablement)? Tier dictates CTA structure and tone.
+   - [ ] **Persona Tier check:** Is the article targeted at 🎯 P5 (direct primary), 🎯 P1/P2 (direct secondary — targeted outbound + inbound), or 🤝 P3/P4 (channel-partner enablement)? Tier dictates CTA structure and tone.
 2. **Draft** → First draft by subject matter expert or technical writer. AI articles must include A/B test framing on every metric claim.
 3. **Technical Review** → Senior engineer validates accuracy. AI articles validated by AI engineering lead.
 4. **Editorial Review** → Copy editor for clarity, tone, SEO elements. **Banned-language check:** scan for "AI transformation," "strategy session," "train a custom LLM," and the AI Proof-Point Caveat violation ("we've built AI features in 800+ platforms"). For Pillars 5/6: confirm channel-partner discipline (no direct-buyer transactional language).

@@ -3,7 +3,7 @@ type: concept
 title: "InnBlockchain Content Strategy"
 status: current
 created: 2026-04-16
-updated: 2026-05-21
+updated: 2026-05-26
 tags:
   - concept
   - content-strategy
@@ -16,9 +16,14 @@ related:
   - "[[InnBlockchain FinTech ICP]]"
   - "[[InnBlockchain Crypto Products ICP]]"
   - "[[InnBlockchain Channel Partner ICP]]"
+  - "[[InnBlockchain Editorial Calendar]]"
+  - "[[InnBlockchain Content Repurposing Plan]]"
   - "[[EU-Fintech-Compliance-Landscape]]"
   - "[[Trioangle Content Strategy]]"
 ---
+
+> [!info] Layer separation (rev 17, 2026-05-26)
+> This strategy doc owns **article inventory + scoring + sales motion tagging + routing rules**. It does NOT own publish dates ([[InnBlockchain Editorial Calendar]]) or derivative-content production ([[InnBlockchain Content Repurposing Plan]]). The Distribution Channels section in the canonical doc covers primary channels for **source articles only** — derivative formats (X threads, LinkedIn carousels, quote graphics, lead magnets, video, vendor risk PDFs) and the tiered investment model live in the Repurposing Plan.
 
 # InnBlockchain Content Strategy
 

@@ -4,8 +4,8 @@ company:
 department:
   - marketing
 priority: highest
-rev: 16
-last_revised: 2026-05-21
+rev: 17
+last_revised: 2026-05-26
 revision_notes: |
   rev 1 (2026-05-13): merged from `Content Strategy - Crypto Native.md` + `Content Strategy - FinTech.md` (both rev 3) into one source-of-truth with `[CN]` / `[FT]` / `[Both]` track tagging.
   rev 2 (2026-05-13): cannibalization-fix — 7 awareness articles retagged `[Both]`, 2 pairs merged, 1 killed (STOs vs ICOs), 6 Track B articles renamed to escape Track A SERP, Track B keyword tables rewritten. ~9 article reduction.
@@ -22,6 +22,7 @@ revision_notes: |
   rev 13 (2026-05-21): 6th-pass cleanup — fixed 3 small consequences of rev 12 not fully coordinating with rev 10. (1) B4 WalletTech hook claim "no article currently covers it for wallet operators" was stale post-rev-12; replaced with pointer to the broadened `[Both]` article. (2) B7 BankTech hook (added rev 10) was missing eIDAS 2.0 — added with cross-reference to A1 article. (3) B8 InsurTech hook (added rev 10) was missing eIDAS 2.0 — added with cross-reference to A1 article. Also added the same cross-reference to B3 LendTech hook for writer-discoverability. All five segments that touch eIDAS (B3 borrower KYC, B4 wallet auth, B5 sender/receiver KYC, B7 account-opening KYC, B8 policyholder KYC + A1/B1 investor KYC) now point to one shared article.
   rev 14 (2026-05-21): 7th-pass cross-doc audit — fixed 2 sync consequences of rev 12 (same kind rev 11 caught for DORA-X, but for eIDAS-X this time). (1) Cross-Pillar early-ship callout (line 981) said "three cross-pillar articles" but rev 12 added a fourth (P5-eIDAS-X at W13). Updated to four articles with W13 narrative. (2) P5 article inventory table was missing P5-eIDAS-X — article scheduled in calendar + present in A1 cluster but not in P5 roster that drives writer briefs. Added inventory row matching the `[Both]` pattern used for EU AI Act + DORA-X (cluster-primary, P5-cross-listed). After this rev, Strategy doc + Editorial Calendar are fully consistent on both P5-DORA-X and P5-eIDAS-X across all surfaces.
   rev 15 (2026-05-21): removed false "Active phase" date commitments that the calendar doesn't honor. Three B6 articles were tagged "EU priority — Active phase" or "Park-status nurture — Active phase" implying Phase 1 scheduling, but Phase 1 calendar has no slot for them (42 slots filled by 21 Track A + 17 B1 + 4 cross-pillar). Cleaned: (1) #30 *MiCA Compliance for FinTech Builders* — removed "(EU priority — Active phase)" tag. (2) #31 *DORA for FinTechs Using Blockchain Vendors* — removed same tag (distinct from P5-DORA-X at W7). (3) *Preparing for MiCA License Application* — removed "(Park-status nurture — Active phase)" tag, was already deferred from Phase 1 in Calendar rev 5. (4) B6 cluster callout reworded from "ship during Active phase" to "not Watch-gated; schedule per Editorial Calendar." (5) Track B diagram (B6 row) reworded same way. Strategy now stays at article-inventory layer; calendar owns scheduling per the rev 5 separation-of-concerns rule. Strategy `Active phase` rules at lines 208 + 1034 retained — those are Watch-gating rules ("don't Watch-defer just because RegTech is Watch"), not per-article date commitments.
+  rev 17 (2026-05-26): repurposing-content extraction. Spun out derivative-content rules into new sister doc `InnBlockchain - Content Repurposing Plan.md` (tiered investment model: Tier 1 full chain / Tier 2 standard / Tier 3 amplify-only / Tier 0 gated; per-track asset families; split-CTA discipline for `[Both]` articles). Stripped from this doc: (1) Track B Distribution Channels table row "LinkedIn carousels — 7–10 slide repurpose per published article — WealthTech first" (moved to Repurposing Plan as Track B asset family row + tier 1/2 trigger + WealthTech-first sequencing rule). (2) Track A Distribution Channels table row clarified — "Crypto Twitter/X threads + SEO blog" → "Crypto Twitter/X + SEO blog" (X thread is a derivative format owned by Repurposing Plan, not a primary channel). Added section-header callout linking to Repurposing Plan for derivative production. Distribution Channels section now strictly covers primary channels for source articles. Lead magnet inventory + persona-coded BOFU assets (e.g., Vendor Risk Pack, Compliance Audit Defensibility Pack, audit checklists) retained here as part of article inventory — those are source artefacts with their own destination LPs, not derivatives.
   rev 16 (2026-05-21): layer-clean pass — stripped 9 calendar-scheduling references that had bled into the strategy doc as breadcrumbs from rev 10-12 promotions. Removed: (1) Cross-Pillar early-ship callout's W4/W6/W7/W13 slot assignments + rev-history reassignment narrative ("W7 was reassigned to P5-DORA-X in Calendar rev 6 because... W13 was reassigned from #14 in Calendar rev 7 because..."). (2) Phase 1 close date ("Week 21 — Oct 6, 2026"). (3) Track B B1 close date ("Week 22 — Oct 15, 2026"). (4) P5-DORA-X + P5-eIDAS-X inventory row week/rev references. (5) Phase 2 Rebalancing DORA promotion row's "W7 Thursday + rev 6" detail. (6) Rule-of-thumb post-promotion "W7 Thursday" reference. (7) #14 deferral annotation "(was W14 Track A)". (8) Stale calendar rev reference "(rev 2, 2026-05-18)" in Phase 1 callout. Article IDs (C1, T4-N, P5-DORA-X, P5-eIDAS-X, B1-#X) kept as reference; week numbers + rev numbers + reassignment history removed. Strategy now references the calendar by wikilink for scheduling, doesn't duplicate slot detail. The only external date the strategy still references is the **Dec 31, 2026 EUDI Wallet deadline** in the eIDAS-X row — that's a regulatory deadline (external commitment), not a calendar slot.
 tags:
   - content
@@ -1042,13 +1043,13 @@ Watch clusters (B5–B8) activate when activation criteria are met (any two of f
 
 ## 📡 Distribution Channels
 
-> Track determines distribution channel. Within each track, content type determines emphasis.
+> Track determines distribution channel. Within each track, content type determines emphasis. **Tables below cover primary channels for source articles only.** Derivative content production (X threads, LinkedIn carousels, quote graphics, lead magnets, video, vendor risk PDFs) and the tiered investment model that governs which articles get which derivatives → see [[InnBlockchain - Content Repurposing Plan]].
 
 ### Track A — Crypto-Native Distribution
 
 | Content Type | Primary Channel | Use |
 |---|---|---|
-| Hub guides, exploit post-mortems, technical deep dives | Crypto Twitter/X threads + SEO blog | Founding Felix discovery |
+| Hub guides, exploit post-mortems, technical deep dives | Crypto Twitter/X + SEO blog | Founding Felix discovery |
 | Audit methodology, severity framework, sample reports | Solodit + GitHub + audit-firm directories | Security Sasha trust-building at $10M+ protocols |
 | Plain-language RWA explainers (Phase 1 TOFU #1–5; Legal-Technical Interface #10; Asset-Class Deep Dives #15–19; Custom Build vs. Securitize #20; Audit Checklist #21; WL-1 #22) | LinkedIn (EU PropTech, RWA Summit, real estate investment communities) | RWA Felix discovery — non-technical asset owners |
 | Technical writeups | Hacker News (Show HN / Ask HN), Telegram dev groups, ETHGlobal/DevCon speaking | Founding Felix engagement |
@@ -1066,7 +1067,6 @@ Watch clusters (B5–B8) activate when activation criteria are met (any two of f
 | Technical explainers, security checklists | Blockchain engineering Slack/Discord, GitHub, Hacker News | Technical Tom discovery |
 | Cost analysis, ROI pieces | Low-volume personalised cold email | Strategic Sam, business-case framing |
 | EU compliance content | LinkedIn ABM EU geography filter (Germany, Netherlands, France, Ireland, Nordics, Baltics) | EU prospects priority distribution |
-| LinkedIn carousels | LinkedIn organic + sponsored | 7–10 slide repurpose per published article — WealthTech first |
 | Compliance content / vendor risk assets | Reactive deployment when Carol surfaces; proactive trust signal for compliance-sensitive Sams | CCO approval workflow |
 | White-label SEO articles | *(See Track A row above — unified WL roster serves both ICPs from one set of articles)* | — |
 

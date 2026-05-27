@@ -4,8 +4,8 @@ company:
 department:
   - marketing
 priority: highest
-rev: 9
-last_revised: 2026-05-21
+rev: 10
+last_revised: 2026-05-26
 revision_notes: |
   rev 1 (2026-05-18): initial editorial calendar derived from `InnBlockchain - Content Strategy.md` rev 4. Locked Phase 1 close at 2/wk cadence (May 18 → Oct 18, 2026).
 
@@ -18,6 +18,7 @@ revision_notes: |
   rev 6 (2026-05-21): promoted **P5-DORA-X *DORA for All EU Licensed Financial Entities*** from the Phase 2 P5 Rebalancing queue (Content Strategy rev 9) into W7 Thursday, filling the OPEN slot left by P1-N's removal in rev 5. Reason: DORA is in scope for every Active Track B deal that touches a licensed entity (banks, insurers, investment firms, PIs, EMIs, CASPs) — the article serves immediate demand, not future-segment activation. Same Track B / cross-pillar / early-ship pattern P1-N originally occupied, but with the correct cross-cutting target. W13 Tuesday remains OPEN (Track A; promotion candidates unchanged).
   rev 7 (2026-05-21): promoted **P5-eIDAS-X *eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms*** `[Both]` from the Phase 2 P5 Rebalancing queue (Content Strategy rev 12) into W13 Tuesday, filling the OPEN slot left by #14 MiCA Checklist deferral in rev 4/5. Article broadened from prior B4-WalletTech-only scope to `[Both]` cross-cutting — serves wallet-authentication patterns (B4/B5/B7) AND RWA investor-KYC patterns (A1/B1) in one article. Hard Dec 31, 2026 EUDI Wallet deadline drives urgency. Both Phase 1 OPEN slots (W7 Thu + W13 Tue) now filled.
   rev 8 (2026-05-21): post-strategy-rev-16 sync — fixed 2 stale claims that survived the rev 5 deferrals. (1) Header "Derived from Content Strategy rev 4" — stale rev pin (strategy is now rev 16). Removed pin entirely; doc now references strategy by name without version, plus added explicit "do not rev-pin" guidance. (2) Gate Sequence MiCA destination LP "unblocks: All P5 MiCA articles" — overclaim post rev 5 (most P5 MiCA articles deferred). Rewrote to list the 4 actual articles still in Phase 1 that depend on the LP: #4 boundary clarifier, #11 Prospectus vs MiCA Whitepaper, P5-DORA-X cross-ref, P5-eIDAS-X cross-ref. Calendar internal breadcrumbs (in-row "shifted from W5 — rev 5" annotations) retained — they're appropriate for the calendar's own audit trail.
+  rev 10 (2026-05-26): repurposing-content extraction — sister to Content Strategy rev 17. Spun out derivative-content rules into new doc `InnBlockchain - Content Repurposing Plan.md`. Stripped from this doc: (1) Distribution Rhythm Wed row "X thread breakdown, LinkedIn quote graphic, Telegram dev group share" → replaced with "Tuesday article amplification (per Repurposing Plan tier for that article)" + section callout linking the Plan. (2) Distribution Rhythm Fri row "LinkedIn article version, EU PropTech / asset-class community syndication" → replaced same way. (3) Weekly Batch Workflow Fri row "Repurpose + measure — 2 hr — X threads, LinkedIn quote graphics, Telegram syndication" → kept the time block but replaced fixed-list-of-formats with "Per Repurposing Plan tier (Tier 1 full chain / Tier 2 standard / Tier 3 amplify-only / Tier 0 gated)". Duration also corrected to 2–5 hr range (scales with Tier 1 count per Plan). Staffing note expanded: Tier 1 weeks need designer/producer capacity. Added Repurposing Plan to References section. Publish slots (Tue/Thu 10:00 CET), gate sequence, posting times, Distribution by Track / Tag primary-channel table, Metrics Dashboard, and Replan Triggers all retained — this doc still owns publish scheduling + primary distribution + source-article metrics; the Plan owns derivative production.
   rev 9 (2026-05-21): two stale P1-N references surfaced in AEO/GEO Prompts rev-5 review — fixed both. (1) Distribution by Track / Tag table row "Track B Cross-Pillar (⏫ C1, T4-N, P1-N)" → updated to `(C1, T4-N, P5-DORA-X, P5-eIDAS-X)` with secondary-channel notes reflecting the post-rev-5/6/7 cross-pillar roster (compliance-officer LinkedIn + EU NCA regulator-network distribution for P5-DORA-X; cross-segment EU PropTech + WealthTech + e-money LinkedIn for P5-eIDAS-X `[Both]` with Dec 31, 2026 deadline urgency). (2) Metrics Dashboard row "Cross-Pillar early-ship articles (C1, T4-N, P1-N) — Track B inbound discovery calls within 60 days of publish" → updated to `(C1, T4-N, P5-DORA-X, P5-eIDAS-X)`. Distribution rhythm + early-ship pattern unchanged; only stale article IDs corrected. No new content.
 tags:
   - content
@@ -160,13 +161,16 @@ Publish immediately, do not wait for slot. Bump the scheduled Tuesday or Thursda
 
 ## 📡 Distribution Rhythm
 
+> [!INFO] Derivative content (what to produce + when)
+> The Wed + Fri amplification slots below run derivative formats (X threads, LinkedIn carousels, quote graphics, Telegram syndication, LinkedIn long-form versions). **Which derivatives get produced per article — tier gates, per-track asset families, split-CTA discipline for `[Both]` articles, anti-patterns — lives in [[InnBlockchain - Content Repurposing Plan]].** This table holds the publish + amplification cadence only.
+
 | Day | Action |
 |---|---|
 | Mon | Pre-launch tease (LinkedIn or X) for Tuesday's article; outreach planning |
 | **Tue** | **PUBLISH article #1** (default: Track A — technical pieces go SEO + X; 📎-tagged plain-language pieces go LinkedIn + SEO) |
-| Wed | Tuesday article amplification: X thread breakdown, LinkedIn quote graphic, Telegram dev group share |
+| Wed | Tuesday article amplification (per Repurposing Plan tier for that article) |
 | **Thu** | **PUBLISH article #2** (default: Track B B1 LinkedIn ABM; or 📎 cross-pillar early-ship pieces on LinkedIn + SEO) |
-| Fri | Thursday article amplification: LinkedIn article version, EU PropTech / asset-class community syndication |
+| Fri | Thursday article amplification (per Repurposing Plan tier for that article) |
 | Sat–Sun | Quiet on LinkedIn (60% engagement drop, per general best practice — strategy doc has no specific guidance). Crypto Twitter exploit-reactive only. |
 
 > [!INFO] Tuesday is no longer "technical-only"
@@ -202,9 +206,9 @@ Publish immediately, do not wait for slot. Bump the scheduled Tuesday or Thursda
 | Thursday article — draft | Wed | 3 hr | First draft |
 | Compliance review *(if `[FT]` or MiCA/MiFID II topic)* | Thu AM | 1 hr | Compliance sign-off |
 | Thursday article — publish + amplify | Thu 10:00 CET | 30 min | Publish + LinkedIn ABM push |
-| Repurpose + measure | Fri | 2 hr | X threads, LinkedIn quote graphics, Telegram syndication, log metrics |
+| Repurpose + measure | Fri | 2–5 hr (scales with Tier 1 count) | Per-article derivatives — produced per [[InnBlockchain - Content Repurposing Plan]] (Tier 1 full chain / Tier 2 standard / Tier 3 amplify-only / Tier 0 gated). Log per-derivative metrics. |
 
-**Total: ~13 hrs/wk per writer.** Workable with 1 senior content lead + 1 technical reviewer + 1 compliance reviewer (on call for Track B).
+**Total per writer:** ~11 hrs/wk floor (zero Tier 1 articles that week) to ~14 hrs/wk (two Tier 1 articles that week). 1 senior content lead + 1 technical reviewer + 1 compliance reviewer (on call for Track B); Tier 1 weeks also need designer/producer capacity for carousels + PDFs + video.
 
 ---
 
@@ -236,6 +240,7 @@ Track per-article, not aggregate. Vanity metrics (likes, retweets, followers) do
 ## 🔗 References
 
 - Source content strategy (article inventory, scoring, sales motion tagging, distribution principles): `[[InnBlockchain - Content Strategy]]` rev 4 (2026-05-14)
+- Content repurposing plan (derivative formats, tier gates, per-track asset families, Fri block scope): `[[InnBlockchain - Content Repurposing Plan]]`
 - ICP — Crypto Native: `[[ICP - Crypto Native]]`
 - ICP — FinTech: `[[ICP - FinTech]]`
 - Compliance reference: `[[EU-Fintech-Compliance-Landscape]]`

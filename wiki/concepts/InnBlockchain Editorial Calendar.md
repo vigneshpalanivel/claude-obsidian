@@ -3,7 +3,7 @@ type: concept
 title: "InnBlockchain Editorial Calendar"
 status: current
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-05-26
 tags:
   - concept
   - editorial-calendar
@@ -14,11 +14,15 @@ tags:
 related:
   - "[[InnBlockchain]]"
   - "[[InnBlockchain Content Strategy]]"
+  - "[[InnBlockchain Content Repurposing Plan]]"
   - "[[InnBlockchain Crypto Native ICP]]"
   - "[[InnBlockchain FinTech ICP]]"
   - "[[InnBlockchain Landing Pages Plan]]"
   - "[[EU-Fintech-Compliance-Landscape]]"
 ---
+
+> [!info] Layer separation (rev 10, 2026-05-26)
+> This calendar owns **publish dates + cadence + gate sequence + primary distribution table + source-article metrics**. The Wed + Fri amplification slots run derivative formats — **which derivatives get produced per article (tier gates, per-track asset families, split-CTA discipline) lives in [[InnBlockchain Content Repurposing Plan]]**. The Fri "Repurpose + measure" batch block scales 2–5 hr by Tier 1 count.
 
 # InnBlockchain Editorial Calendar
 
