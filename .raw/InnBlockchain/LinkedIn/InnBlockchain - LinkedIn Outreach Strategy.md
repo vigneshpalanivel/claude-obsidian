@@ -7,97 +7,88 @@ department:
 priority: high
 tags:
   - linkedin
+  - phase-1
+  - rwa
 ---
 
-# 🎯 LinkedIn Outreach Strategy
-*Updated 2026-04-06 — aligned to InnBlockchain ICPs (FinTech, Crypto Native, Channel Partner) and LinkedIn Profile Audit v2*
+# 🎯 LinkedIn Outreach Strategy — Phase 1 (RWA-only)
 
-> [!important] LinkedIn Reach Is ICP-Dependent
-> LinkedIn is the **primary outbound channel** for FinTech buyers, RWA founders, Channel Partner P2, and — with trigger-based personalisation — DeFi/protocol crypto-native founders. All five ICP tracks are covered in this strategy. X/Telegram outreach for DeFi/protocol is handled in a separate document.
+*Updated 2026-05-26 — Phase 1 focused (Weeks 1-21, RWA-only). Aligned to InnBlockchain ICPs (FinTech rev 2026-05-20, Crypto Native rev 2026-05-20) + Profile Content (current) + Editorial Calendar Phase 1 RWA-only commitment. Latest pass (2026-05-26): DM template regime-string sync — all T2-T4 templates now use full MiFID II/III + Prospectus + DLT Pilot + MAR stack matching the profile's compliance brief claim.*
 
-> [!warning] Cross-Channel Destination Dependency (Added 2026-05-11)
-> Outbound scope must be gated on innblockchain.com landing page availability. As of 2026-05-11, zero ICP-aligned landing pages per the [[InnBlockchain Landing Pages Plan]] are live (`/industries/`, `/solutions/`, `/services/smart-contracts` all return 404). Prospects who Google InnBlockchain or click through from Vignesh's profile land on a generic dev-shop homepage that contradicts the LinkedIn positioning — credibility hit compounds especially during Compliance Carol and Security Sasha diligence.
->
-> **Phased activation tied to landing page ship dates:**
-> - **Phase 1** (`/solutions/rwa-tokenization` live): RWA outreach only — FinTech WealthTech RWA + Crypto Native asset-backed Felix
-> - **Phase 2** (`/solutions/regulated-exchange` live): + FinTech ExchangeTech
-> - **Phase 3** (`/services/smart-contracts` live): + Crypto Native DeFi/Protocol (trigger-based only)
-> - **Phase 4** (remaining Solutions pages live): + LendTech, WalletTech, Channel Partner full activation
->
-> Until Phase 1 unblocks, **no LinkedIn DM sequences run.** Profile may be published earlier as ambient/inbound surface. Full constraint and Pre-Publish Hard Gate in `LinkedIn Profile Vignesh Content.md`.
+> [!important] Scope: Phase 1 RWA-only
+> This doc operates **only** Phase 1 outreach — FinTech WealthTech RWA + Crypto Native asset-backed RWA Felix. All other tracks (FinTech ExchangeTech / LendTech / WalletTech, Crypto Native DeFi/Protocol, Channel Partner P1/P2/P3) are documented in the sister reference doc: `InnBlockchain - LinkedIn Outreach Strategy - Phase 2-4 Reference.md`. **Do not run Phase 2-4 tracks from this doc.** After Phase 1 completes (~Week 22), the relevant Phase 2 track will be moved back into this doc and activated.
 
-> [!important] Outreach Readiness Gate (Added 2026-05-12)
-> The profile can be published as soon as the **Pre-Publish Hard Gate** in `LinkedIn Profile Vignesh Content.md` is cleared (assets the profile explicitly promises). **DM sequences require additional assets** beyond the profile-publish set — assets that don't appear on the profile but materially affect conversion once outreach traffic starts engaging.
+> [!warning] Cross-Channel Destination Dependency
+> Phase 1 outreach activates when `/solutions/rwa-tokenization` is live on innblockchain.com. **Re-verify LP status before running any DM sequences** — at last documented check (2026-05-23), the LP was 404. Until live: profile may publish as ambient/inbound surface, but no DM sequences run. Full constraint in `LinkedIn Profile Vignesh Content.md` Pre-Publish Hard Gate.
 >
-> **Outreach-Gate assets (must exist before first DM sequence runs):**
+> **Limited Phase 1 mid-point exception — eIDAS outbound test (added 2026-05-23):** A small-scope eIDAS 2.0 / WalletTech outbound test runs around Week 13 of Phase 1 (timed to the W13 `[Both]`-scope cross-cutting article *"eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms"* in the Editorial Calendar). Landing destination = **gated PDF download of the eIDAS inbound brief** (Option 3 — no full Solutions LP build required). See §7a Limited eIDAS Outbound Test below for scope, KPIs, and scale-up/park criteria. **CCD2 outbound remains deferred** until content support exists in the editorial calendar.
+
+> [!important] Outreach Readiness Gate
+> The profile can be published as soon as the **Pre-Publish Hard Gate** in `LinkedIn Profile Vignesh Content.md` is cleared. **DM sequences require additional assets** beyond the profile-publish set:
 >
-> **Inbound Conversion Assets** (Featured Section on the profile — empty Featured is a quality gap, not a credibility incident, so it doesn't block publish — but it kills outreach-driven conversion):
-> - [ ] **RWA Tokenization Compliance Checklist (MiFID II + Prospectus + DLT Pilot Regime)** for asset-backed founders (PDF, gated download on `/solutions/rwa-tokenization` landing page) — **NOT a generic "MiCA Readiness Checklist"** on that page; MiCA is the wrong regime for RWA ownership tokens and putting a MiCA-named asset on the RWA LP will immediately disqualify InnBlockchain with any compliance-savvy prospect
-> - [ ] MiCA Readiness Checklist for FinTech CTOs (PDF, gated download on `/solutions/regulated-exchange` and `/solutions/fintech-wallets` landing pages — **NOT the RWA landing page**; scope is Seg 2 ExchangeTech / Seg 4 WalletTech / Seg 3 LendTech where MiCA actually applies)
-> - [ ] Pre-Mainnet Smart Contract Self-Scan (PDF or Notion doc)
-> - [ ] RWA Tokenization Risk Checklist for Asset-Backed Founders (PDF, non-technical language)
-> - [ ] 1 anchor article published on InnBlockchain.com (RWA-focused recommended) — pinned to Featured
+> **Phase 1 required Featured asset:**
+> - [ ] **RWA Tokenization Risk Checklist for Asset-Backed Founders** (PDF, non-technical, 5-7 pages). Compliance framing: **MiFID II/III classification + Prospectus Regulation (under EU Listing Act 2024/2809 amendments) + DLT Pilot Regime + MAR ongoing-disclosure** — NOT MiCA (Art. 2(4) excludes financial instruments). Gated download on `/solutions/rwa-tokenization`.
+> - [ ] 1 anchor article published on InnBlockchain.com (RWA-focused, per Editorial Calendar W1-W3) — pinned to Featured.
 >
-> **Social Proof Threshold** (Sasha-grade diligence happens within the first 48 hours of outreach engagement; 2-3 recommendations gets the profile live but doesn't pass diligence):
+> **Social Proof Threshold** (Sasha-grade diligence happens within the first 48 hours of outreach engagement):
 > - [ ] 5+ total recommendations published across 3 of 5 categories (FinTech client, Crypto-native client, Security peer, Regulator-adjacent, Engineering hire)
-> - [ ] 8+ recommendations for Sasha-grade pass rate — see `Recommendation Request Templates.md` for sequencing
+> - [ ] 8+ recommendations for Sasha-grade pass rate — see `Recommendation Request Templates.md`
 >
-> **Content Cadence** (outreach without active content engagement converts poorly — connection-accept lands on a profile, prospect checks recent activity, sees a dormant feed, downgrades the engagement):
+> **Content Cadence** (connection-accept lands on a profile; prospect checks recent activity):
 > - [ ] 4-6 weeks of feed posts already published before first DM sequence — 4-5x per week per [[InnBlockchain LinkedIn Strategy]]
-> - [ ] Newsletter "Secure by Design" launched OR explicitly deferred with a documented activation date
+> - [ ] Newsletter "Secure by Design" decision recorded — current state: **deferred** until 50+ subscribers / 4-6 weeks of baseline follow count. Revisit at Phase 1 mid-point (~Week 10).
 >
 > **Platform Setup** (per `InnBlockchain - LinkedIn Marketing Strategy.md`):
 > - [ ] Creator Mode enabled
 > - [ ] Custom URL claimed and clean
-> - [ ] Sales Navigator subscription active with saved searches per track
+> - [ ] Sales Navigator subscription active with saved searches per RWA track
 > - [ ] Outreach tooling (Expandi.io / Lemlist or equivalent) configured with personalisation variables
 > - [ ] CRM/pipeline tracker live for T1-T5 sequence state per prospect
 >
-> **Operational Readiness** (capacity to actually run the daily budget defined in this strategy):
-> - [ ] Owner identified for daily 15-20 personalised connection requests
+> **Operational Readiness:**
+> - [ ] Owner identified for daily 12-17 personalised RWA connection requests + 2-3 ambient signals (total hard cap 20/day)
 > - [ ] Owner identified for ≤1-hour comment-reply window on feed engagement
-> - [ ] Vignesh's time budgeted for discovery calls expected from converted sequences (2-4/week per KPI table)
+> - [ ] Vignesh's time budgeted for 3-6 discovery calls/week expected from RWA sequences
 >
-> **Why split the gates this way:** Profile-publish promises must be honoured Day 1 — any prospect reading the published profile creates a possibility of testing those promises (vendor risk pack request, link click, claim verification). Outreach-gate assets are conversion infrastructure — their absence doesn't actively mislead anyone reading the profile passively, but it kills the funnel once outreach traffic starts landing.
+> **Phase 1 Inbound Preparedness — Non-RWA Deadline-Driven Inquiries (Option C hybrid, 2026-05-23):**
+> Phase 1 outbound is RWA-only, but two non-RWA segments have **near-term EU regulatory deadlines** that will surface organic inbound. We don't outbound on these in Phase 1 but should be inbound-ready within 24 hours:
+> - [ ] **eIDAS 2.0 / EUDI Wallet inbound brief** (3-4 pages) — WalletTech + any licensed FI doing customer KYC must accept EUDI Wallet by **Dec 31, 2026**. Vendor selection window is open NOW (~7 months out).
+> - [ ] **CCD2 + EU AI Act inbound brief** (3-4 pages) — LendTech deadline **Nov 20, 2026** (CCD2 national measures) + **Aug 2, 2026** (EU AI Act high-risk for credit scoring). Vendor selection window is open NOW for CCD2 (~6 months), closing for AI Act (~10 weeks).
+> - See **Deadline Priority Overlay** section in `InnBlockchain - LinkedIn Outreach Strategy - Phase 2-4 Reference.md` for the temporal-urgency rationale across all 2026-2027 EU regulatory deadlines.
 
 ---
 
-## 📋 1. Executive Summary (Outreach Focus)
+## 📋 1. Executive Summary (Phase 1)
 
-The strategic goal for InnBlockchain is: **Execute ICP-aligned outbound outreach → Convert to qualified discovery calls.** Outreach covers five distinct tracks across three ICP categories, each with separate personas, channel priorities, and message angles.
+The strategic goal for Phase 1 is: **Execute RWA-aligned outbound outreach → Convert to qualified EU discovery calls** across two parallel RWA tracks.
 
-| Priority | ICP Track | LinkedIn Priority | Primary Geography | Primary Personas |
-| :--- | :--- | :--- | :--- | :--- |
-| **🥇 1** | **FinTech — RWA / WealthTech** | ⭐⭐⭐⭐⭐ | EU Continental Europe | Strategic Sam (CEO/CPO), Technical Tom (CTO) |
-| **🥇 1** | **Crypto Native — RWA** | ⭐⭐⭐⭐⭐ | EU Continental Europe | RWA Felix (asset-backed founder/developer) |
-| **🥈 2** | **FinTech — ExchangeTech, LendTech, WalletTech** | ⭐⭐⭐⭐ | EU Continental Europe | Strategic Sam, Technical Tom |
-| **🥈 2** | **Channel Partner P2** | ⭐⭐⭐⭐⭐ | EU Continental Europe (Primary) | FinTech transformation principals |
-| **🥈 2** | **Crypto Native — DeFi/Protocol** | ⭐⭐⭐ (trigger-based, high personalisation) | EU Continental Europe | Founding Felix (founder/CTO), Security Sasha (Head of Security) |
-| **3** | **Channel Partner P1/P3** | ⭐⭐ (X/Telegram first — LinkedIn secondary) | EU Continental Europe (Primary) | Web3/crypto advisory founders |
+| Phase 1 Track | LinkedIn Priority | Primary Geography | Primary Personas |
+| :--- | :--- | :--- | :--- |
+| **🥇 FinTech — RWA / WealthTech** | ⭐⭐⭐⭐⭐ | EU Continental Europe | Strategic Sam (CEO/CPO), Technical Tom (CTO) |
+| **🥇 Crypto Native — RWA** | ⭐⭐⭐⭐⭐ | EU Continental Europe | RWA Felix (asset-backed founder/developer) |
 
-> [!warning] Geography Gate — All ICP Tracks
-> EU Continental Europe is the sole outbound geography for **all ICP tracks** until 5 projects are closed. This now includes Channel Partners — the Channel Partner ICP is aligned with FinTech and Crypto Native geo priority. Do not run outbound targeting UK, UAE, Singapore, US, Canada, or Australia for any ICP until the gate is met. Watch geography activation per jurisdiction once the gate is met: **UK** (FCA framing required — distinct from MiCA), **UAE** (ADGM/VARA/DFSA framing), **Singapore** (MAS framing), **US** (FinCEN/SEC framing), **Canada / Australia** — each requires its own regulatory brief before outbound launches.
+> [!warning] Geography Gate
+> EU Continental Europe is the sole outbound geography for Phase 1 — until 5 RWA projects are closed. Do not run outbound targeting UK, UAE, Singapore, US, Canada, or Australia.
+> Watch geography activation per jurisdiction (post 5-project gate):
+> - **EU (current):** per-segment regime menu — see [[EU-Fintech-Compliance-Landscape]] (MiFID II/III, DORA, MiCA, AI Act, PSD3, IPR, AML, FiDA, eIDAS 2.0, CCD2)
+> - **UK:** FCA / UK cryptoasset regime framing required — distinct from MiCA
+> - **UAE:** ADGM/VARA/DFSA framing
+> - **Singapore:** MAS framing
+> - **US:** SEC/CFTC/FinCEN/OCC + state MTL framing — see [[US-Fintech-Compliance-Landscape]]
+> - **Canada / Australia:** each requires its own regulatory brief before outbound launches
 
 ---
 
-## 👥 2. ICP Segments & LinkedIn Personas
+## 👥 2. Phase 1 ICP Tracks
 
-### 2.1 ICP — FinTech
+### 2.1 FinTech — RWA / WealthTech
 
 > [!quote] Positioning on LinkedIn
-> *"InnBlockchain is the blockchain engineering team for regulated FinTech companies who need to move fast without creating compliance or security risk."*
+> *"InnBlockchain is the blockchain engineering team for regulated FinTech WealthTech companies who need to ship MiFID II/III + Prospectus + DLT Pilot Regime + MAR tokenization without creating compliance or security risk."*
 
-**Active Segments (run outbound now — in priority order):**
-
-| Priority | Segment | LinkedIn Targets | Their Core LinkedIn-Surfaceable Pain |
-| :--- | :--- | :--- | :--- |
-| **🥇 1** | **WealthTech / RWA Tokenization** | CTO/CPO/Head of Product at asset management, STOs, tokenized securities platforms | "We want to tokenize real assets but one smart contract flaw could compromise ownership rights and licensing" |
-| **🥈 2** | **ExchangeTech** | CTO/CEO at licensed CEX, DEX, or FinTech adding exchange/trading | "We need compliant exchange infrastructure but lack the blockchain engineering depth to build it without regulatory risk" |
-| **3** | **LendTech** | CTO/VP Eng at blockchain lending platforms | "We're adding DeFi lending rails but need audit-ready, MiCA-compliant smart contracts" |
-| **3** | **WalletTech** | CTO/CPO at regulated crypto wallet providers | "We need institutional-grade custody infrastructure without building in-house security expertise" |
-
-**Watch Segments (do not run outbound yet — respond to inbound only):**
-PayTech, RegTech, BankTech, InsurTech
+| LinkedIn Targets | Their Core LinkedIn-Surfaceable Pain |
+| :--- | :--- |
+| CTO/CPO/Head of Product at asset management, STOs, tokenized securities platforms | "We want to tokenize real assets but one smart contract flaw could compromise ownership rights and licensing" |
 
 **Buyer Personas:**
 
@@ -108,54 +99,45 @@ PayTech, RegTech, BankTech, InsurTech
 | **Compliance Carol** | CCO / Head of Compliance | Vendor risk, non-compliant code, regulatory exposure | Not a primary outreach target — surface her after Sam/Tom are engaged; ask "who handles vendor risk approval?" |
 
 **LinkedIn Search Filters (Sales Navigator):**
-- Title: `CTO OR CEO OR CPO OR "VP Engineering" OR "Head of Product" OR "Head of Digital Transformation"`
+- Title: `CTO OR CEO OR CPO OR "VP Engineering" OR "Head of Product" OR "Head of Tokenization" OR "Head of Digital Assets"`
 - Industry: Financial Services
 - Company size: 50–500 employees
 - Geography: EU (Germany, Netherlands, France, Ireland, Nordics, Baltics)
-- Keywords: `"RWA" OR "RWA tokenization" OR "tokenized securities" OR WealthTech OR "MiFID II" OR "DLT Pilot Regime" OR "STO" OR "Prospectus" OR MiCA OR "crypto exchange" OR "DeFi lending" OR "blockchain"` *(MiFID II / DLT Pilot keywords surface the Seg 1 RWA-savvy buyer who has correctly identified their regime; MiCA keyword retained for Seg 2 ExchangeTech surface)*
+- Keywords: `"RWA" OR "RWA tokenization" OR "tokenized securities" OR WealthTech OR "MiFID II" OR "DLT Pilot Regime" OR "STO" OR "Prospectus" OR "tokenized assets"` *(MiCA keyword DELIBERATELY OMITTED — Phase 1 RWA targets are MiFID II financial instruments under Art. 2(4); MiCA framing here is the Compliance Carol disqualifier.)*
 
-**Buying Triggers (use as personalization hooks — RWA first):**
+**Buying Triggers (Phase 1 RWA):**
 - 🥇 Post or announcement about tokenizing real assets, STOs, or tokenized securities
 - 🥇 Upcoming platform launch with a tokenized asset (real estate, private credit, commodities)
-- 🥇 **MiFID II authorization filing / Prospectus filing / DLT Pilot Regime application** announcement for a tokenization product *(NOT "MiCA deadline" — RWA ownership tokens are MiFID II financial instruments under Art. 2(4))*
-- 🥈 MiCA compliance deadline for a Seg 2 ExchangeTech / Seg 4 WalletTech / Seg 3 LendTech product *(MiCA is the correct regime for these segments, NOT for Seg 1 RWA)*
+- 🥇 **MiFID II authorization filing / Prospectus filing / DLT Pilot Regime application** announcement for a tokenization product *(NOT "MiCA deadline" — RWA ownership tokens are MiFID II financial instruments)*
+- 🥇 **EU Listing Act 2024/2809 ongoing-disclosure work** — Mar 5 + Jun 5, 2026 cliffs are mostly past for new vendor selection, but already-listed issuers absorbing the MAR Art 17 protracted-process narrowing and new EU Follow-on / EU Growth Issuance documentation are in active scoping. Trigger: any LinkedIn mention of MAR / Listing Act / new prospectus filing.
 - Job posting for "Blockchain Developer", "Solidity Engineer", or "Smart Contract Engineer"
 - New funding round announced — need to build fast
 - Competitor acquired a blockchain engineering firm
 - LinkedIn post about "exploring Web3" or adding blockchain infrastructure
-- EU AI Act audit trail obligation (EU-regulated FinTechs in credit scoring, fraud detection, KYC)
 
 ---
 
-### 2.2 ICP — Crypto Native
+### 2.2 Crypto Native — RWA (Segment 1)
 
 > [!quote] Positioning on LinkedIn
-> *"For crypto-native companies and protocols who need to ship secure, audit-ready on-chain products — InnBlockchain provides embedded Web3 engineering and smart contract security."*
+> *"For asset-backed founders putting their first real-world asset on-chain — InnBlockchain provides MiFID II/III + Prospectus + DLT Pilot Regime + MAR-aligned smart contract infrastructure that bigger audit firms are too slow and too generic to deliver."*
 
-> [!note] LinkedIn Approach by Sub-Segment
-> **RWA (Segment 1):** LinkedIn is the primary channel — EU PropTech founders, real estate developers, and commodity producers are active here. Run structured ABM sequences.
-> **DeFi/Protocol (Segments 2–6):** LinkedIn is a secondary channel — use trigger-based, high-personalisation outreach only (exploit signal, funding round, upcoming audit). No generic sequences. X/Telegram outreach for these segments is covered in a separate strategy document.
-
----
-
-#### Segment 1 — RWA Tokenization 🥇 (Priority 1)
-
-| LinkedIn Targets | Geography | Core Pain |
-| :--- | :--- | :--- |
-| Real estate developers / PropTech founders tokenizing assets | EU (primary) | "One minting bug or oracle exploit doesn't drain a pool — it transfers someone's property" |
-| Vehicle fleet owners, commodity producers putting assets on-chain | EU (primary) | "We have the asset but no blockchain engineering expertise — one flaw compromises real ownership rights" |
-| Asset-backed founders building tokenization platforms | EU (primary) | "We need a smart contract build budget of $20k+ and a security-first partner who understands MiFID II classification and DLT Pilot Regime application — and who won't waste time pitching us MiCA framing for tokens that are securities" |
+| LinkedIn Targets | Core Pain |
+| :--- | :--- |
+| Real estate developers / PropTech founders tokenizing assets | "One minting bug or oracle exploit doesn't drain a pool — it transfers someone's property" |
+| Vehicle fleet owners, commodity producers putting assets on-chain | "We have the asset but no blockchain engineering expertise — one flaw compromises real ownership rights" |
+| Asset-backed founders building tokenization platforms | "We need a smart contract build budget of $20k+ and a security-first partner who understands MiFID II classification and DLT Pilot Regime application — and who won't waste time pitching us MiCA framing for tokens that are securities" |
 
 **Qualification Minimum:** Confirmed asset to tokenize + smart contract build budget of $20k+. May not be VC-funded — qualify on asset value and platform budget, not fundraise amount. DQ: idea-stage with no underlying asset, no codebase, no build budget.
 
-**LinkedIn Search Filters — RWA:**
+**LinkedIn Search Filters — RWA Crypto Native:**
 - Title: `Founder OR CEO OR CTO OR "Managing Director" OR "Head of Tokenization" OR "Head of Digital Assets"`
 - Industry: Real Estate / Commodities / Financial Services
 - Geography: EU Continental Europe
-- Keywords: `"RWA tokenization" OR "real estate tokenization" OR "asset tokenization" OR "tokenized securities" OR "MiFID II" OR "DLT Pilot Regime" OR "Prospectus" OR "STO" OR "tokenized assets" OR "property on-chain"` *(MiCA keyword REMOVED from RWA-specific search — RWA ownership tokens are MiFID II financial instruments; MiCA keyword would surface buyers misframed on regime and also produce false-positive matches with Seg 2 ExchangeTech)*
-- Groups: EU PropTech tokenization groups, real estate investment communities, commodity trade finance circles, **DLT Pilot Regime / Security Token / MiFID II tokenization discussion groups** *(NOT generic MiCA forums — wrong regulator for RWA)*
+- Keywords: `"RWA tokenization" OR "real estate tokenization" OR "asset tokenization" OR "tokenized securities" OR "MiFID II" OR "DLT Pilot Regime" OR "Prospectus" OR "STO" OR "tokenized assets" OR "property on-chain"` *(MiCA keyword REMOVED — RWA ownership tokens are MiFID II financial instruments; MiCA keyword would surface buyers misframed on regime.)*
+- Groups: EU PropTech tokenization groups, real estate investment communities, commodity trade finance circles, **DLT Pilot Regime / Security Token / MiFID II tokenization discussion groups** *(NOT generic MiCA forums — wrong regulator for RWA.)*
 
-**Buying Triggers — RWA:**
+**Buying Triggers — RWA Crypto Native:**
 - Upcoming first asset issuance or token launch date
 - Platform launch date with real asset backing
 - **MiFID II authorization filing / Prospectus filing / DLT Pilot Regime application** deadline *(NOT "MiCA deadline" — RWA ownership tokens are MiFID II financial instruments under Art. 2(4))*
@@ -164,168 +146,43 @@ PayTech, RegTech, BankTech, InsurTech
 
 ---
 
-#### Segments 2–6 — DeFi / Protocol 🥈 (Priority 2 — trigger-based only)
+## 🔍 3. Finding Your Phase 1 Target Audience
 
-**Active Sub-Segments:**
+### FinTech WealthTech RWA — LinkedIn Search Methods
 
-| Segment | LinkedIn Targets | Core Pain |
-| :--- | :--- | :--- |
-| **DEX / On-Chain Trading** | Founder, CTO at crypto-native CEX/DEX | "We're scaling TVL but one Solidity flaw wipes the liquidity pool — and we can't hire enough senior engineers fast enough" |
-| **DeFi Protocols** (lending, yield, staking) | Founder, Protocol Lead, Head of Engineering | "One reentrancy bug or oracle exploit on mainnet ends the protocol — we need a security partner embedded in our sprint cycle" |
-| **Web3 Wallets** | CTO, Head of Product | "Custody and key management are security-critical — we need an engineering partner who treats security as architecture, not an afterthought" |
-| **Token Launch / IDO** | Founder, CTO | "Our token launch is a smart contract security event — every contract needs to be audit-ready before the sale opens" |
-| **NFT Platforms** | Founder, CTO | "One minting exploit or royalty bug destroys creator trust immediately" |
-
-**Buyer Personas:**
-
-| Persona | Who | What They Fear | LinkedIn Signal |
-| :--- | :--- | :--- | :--- |
-| **Founding Felix** | Technical founder / CEO / CTO | Mainnet exploit wiping TVL or ending the protocol; can't hire enough senior Web3 engineers | Posts about protocol architecture, audit prep, fundraising, mainnet launch — less frequent on LinkedIn than X/Telegram |
-| **Security Sasha** | Head of Security / Blockchain Security Lead | Pre-launch audit gaps, post-launch exploit liability | Posts about smart contract security, audit findings, protocol vulnerabilities |
-
-**Qualification Minimum:** Testnet live or past. $2M+ raised (seed/Series A/token treasury) or confirmed token launch budget. DQ: whitepaper-only with no technical progress; pre-raise with zero build budget.
-
-**LinkedIn Search Filters — DeFi/Protocol:**
-- Title: `Founder OR CEO OR CTO OR "Protocol Lead" OR "Head of Engineering" OR "Head of Security" OR "Blockchain Lead"`
-- Industry: Financial Services / Computer Software / Blockchain / Cryptocurrency
-- Company size: 5–100 employees
-- Geography: EU Continental Europe
-- Keywords: `DeFi OR "smart contract" OR "protocol security" OR Solidity OR "Web3 engineering" OR "blockchain security" OR "token launch" OR DEX OR "DeFi protocol"`
-
-**Buying Triggers — DeFi/Protocol (personalise every request around one of these):**
-- 🔴 Comparable protocol in the same ecosystem was recently exploited — highest urgency, reach within 48 hours
-- Upcoming mainnet launch or audit deadline announced on LinkedIn or X
-- New funding round or token sale announced — build pressure is immediate
-- Job posting for "Solidity Engineer", "Smart Contract Developer", or "Blockchain Security"
-- Post about audit prep, security architecture, or "looking for an audit partner"
-- Protocol scaling — post about increasing TVL, new chain deployment, or cross-chain expansion
-
-**Watch Sub-Segments — Segments 7–10 (respond to inbound only, no active outbound):**
-
-| Segment | Activation Trigger Before Any Outbound |
-| :--- | :--- |
-| **DAO Infrastructure** | A DAO governance exploit drives 5+ inbound inquiries in one week, OR a funded DAO tooling company approaches directly |
-| **L2 / Chain Infrastructure** | An L2 or bridge project approaches directly with a scoped request, OR InnBlockchain completes a bridge/ZK audit case study |
-| **Web3 Gaming / GameFi** | 2+ GameFi deals closed through inbound referral, OR a funded GameFi studio ($5M+ raised) approaches via X/Telegram |
-| **AI x Crypto** | 3+ inbound inquiries from AI x crypto projects in one quarter, OR AI-generated code audit content drives measurable inbound leads |
-
----
-
-### 2.3 ICP — Channel Partner
-
-> [!quote] Positioning on LinkedIn
-> *"InnBlockchain is your silent delivery arm — the blockchain engineering team your advisory clients need, sub-contracted through you."*
-
-**Three Partner Personas:**
-
-| Persona                                       | Who                                                                          | LinkedIn Presence                          | Priority  |
-| :-------------------------------------------- | :--------------------------------------------------------------------------- | :----------------------------------------- | :-------- |
-| **P1 — Web3 Crypto Advisor**                  | Tokenomics, Web3 GTM, DeFi strategy advisory firms                           | Low — primarily Crypto Twitter/X, Telegram | Secondary |
-| **P2 — FinTech Transformation Consultant**    | FinTech digital transformation consultancies, blockchain regulatory advisory | High — LinkedIn is primary channel         | Primary   |
-| **P3 — Crypto Regulatory/Compliance Advisor** | MiCA, VASP, licensing-focused advisory boutiques                             | Medium — LinkedIn + regulatory forums      | Secondary |
-
-**LinkedIn Search Filters — Channel Partner P2 (primary):**
-- Title: `Principal OR Partner OR "Managing Director" OR Founder OR "Practice Lead"`
-- Industry: Management Consulting / Financial Services
-- Company size: 2–50 employees
-- Geography: **EU Continental — Primary:** Germany, Netherlands, France, Switzerland | **Watch (post 5-project gate):** UK, UAE (Dubai), Singapore, US, Canada, Australia
-- Keywords: `"blockchain advisory" OR "FinTech transformation" OR "digital transformation" OR "tokenomics" OR "MiCA advisory" OR "blockchain strategy"`
-
-**Positive LinkedIn Outbound Signals (P2):**
-- LinkedIn profile shows blockchain strategy advisory for regulated FinTechs but no implementation case studies
-- Publishes on Finextra/PYMNTS/Banking Technology about blockchain for compliance but cites no delivered builds
-- Client case studies ending at "roadmap delivered" with no build phase
-- Website describes regulatory advisory without naming a development partner
-
-**LinkedIn Search Filters — Channel Partner P3 (secondary):**
-- Title: `Founder OR Partner OR "Managing Director" OR "Regulatory Advisor" OR "Compliance Consultant" OR "Legal Counsel"`
-- Industry: Legal Services / Management Consulting / Financial Services
-- Company size: 1–20 employees
-- Geography: **EU Continental — Primary:** Germany, Netherlands, France, Switzerland (MiCA Crypto Valley) | **Watch (post 5-project gate):** UK, UAE (Dubai)
-- Keywords: `"MiCA advisory" OR "VASP licensing" OR "crypto compliance" OR "blockchain regulatory" OR "digital asset regulation" OR "crypto legal"`
-
-**Positive LinkedIn Outbound Signals (P3):**
-- Publishes about MiCA implementation, VASP registration, or crypto licensing with no build partner cited
-- Advises crypto founders on regulatory structure but their LinkedIn shows no technology delivery background
-- Speaks at MiCA / digital asset regulatory conferences — they have clients who are in build mode post-licensing
-
----
-
-## 🔍 3. Finding Your Target Audience (Per ICP)
-
-### FinTech — Primary LinkedIn Search Methods
-
-1. **Sales Navigator ABM:** Title (CTO/CEO/CPO) + Industry (Financial Services) + Location (EU: Germany, Netherlands, France, Ireland, Nordics, Baltics) + Keywords (RWA/WealthTech/tokenization/MiFID II/DLT Pilot/STO/MiCA/blockchain/exchange). Run vertical-by-vertical: **WealthTech/RWA → ExchangeTech → LendTech → WalletTech** (RWA is first — do not start ExchangeTech sequences until WealthTech/RWA pipeline has 10+ active leads). **Per-vertical keyword regime:** WealthTech/RWA = MiFID II + DLT Pilot keywords (NOT MiCA); ExchangeTech = MiCA + CASP keywords; WalletTech = PSD3 + MiCA keywords; LendTech = CCD2 + EU AI Act keywords.
-2. **LinkedIn Groups:** FinTech Founders EU, Finextra community, blockchain-in-finance groups, MiCA regulatory discussion groups *(for Seg 2 ExchangeTech / Seg 4 WalletTech; for Seg 1 RWA use DLT Pilot Regime / Security Token / MiFID II groups instead)*.
-3. **Job Postings:** Companies posting "Blockchain Developer", "Solidity Engineer", or "Smart Contract Developer" are active build signals — reach out to the CTO within 48 hours.
-4. **Content Engagement:** Engage on posts about MiCA compliance *(for ExchangeTech / WalletTech prospects)*, MiFID II + DLT Pilot Regime + Prospectus Regulation *(for RWA / WealthTech prospects)*, blockchain infrastructure, or RWA tokenization before connecting.
-5. **Events:** Attendees and speakers at Money20/20 Europe (Amsterdam), FinTech Connect — EU only until gate met.
+1. **Sales Navigator ABM:** Title (CTO/CEO/CPO/Head of Tokenization) + Industry (Financial Services) + Location (EU: Germany, Netherlands, France, Ireland, Nordics, Baltics) + Keywords: MiFID II + Prospectus + DLT Pilot + RWA + tokenized securities + STO (NOT MiCA — Art. 2(4) excludes financial instruments).
+2. **LinkedIn Groups:** DLT Pilot Regime / Security Token / MiFID II tokenization discussion groups. Avoid generic MiCA regulatory groups for Phase 1 — wrong regulator for RWA.
+3. **Job Postings:** Companies posting "Blockchain Developer", "Solidity Engineer", or "Smart Contract Developer" with a WealthTech / tokenization context — reach out to the CTO within 48 hours.
+4. **Content Engagement:** Engage on posts about MiFID II + DLT Pilot Regime + Prospectus Regulation tokenization before connecting.
+5. **Events:** EU Security Token Summit, DLT Pilot Regime / MiFID II tokenization regulatory forums, local asset tokenization law forums (German eWpG, French DLT bond law, Luxembourg DLT framework), Money20/20 Europe (Amsterdam — WealthTech track).
 
 ### RWA Crypto Native — LinkedIn Search Methods
 
-1. **LinkedIn Groups:** EU PropTech tokenization groups, real estate investment communities, EU commodity and trade finance circles, **DLT Pilot Regime / Security Token / MiFID II tokenization regulatory groups** *(NOT generic MiCA forums for RWA — MiCA is the wrong regulator for ownership-token RWA per Art. 2(4))*. **Establish presence for at least 2 weeks before direct outreach** — engage with posts, comment meaningfully, do not DM cold from a group you joined yesterday.
-2. **Sales Navigator:** Title (Founder/CEO/CTO) + Industry (Real Estate/Commodities) + Location (EU) + Keywords ("asset tokenization" OR "RWA" OR "property on-chain").
-3. **Events:** RWA Summit community, EU Security Token Summit, DLT Pilot Regime / MiFID II tokenization regulatory forums, and local asset tokenization law forums (German eWpG, French DLT bond law, Luxembourg DLT framework).
-
-### DeFi/Protocol Crypto Native — LinkedIn Search Methods
-
-1. **Trigger-first prospecting:** Do not run cold volume searches for DeFi/Protocol. Identify prospects via a buying trigger first (exploit news, job posting, funding announcement, audit post), then search LinkedIn for the founder/CTO of that specific protocol.
-2. **Sales Navigator (trigger-activated):** Title (Founder/CTO/Protocol Lead/Head of Security) + Industry (Blockchain/Cryptocurrency/Financial Services) + Company size (5–100) + Location (EU) + Keywords (DeFi/smart contract/protocol security/Solidity).
-3. **Job Postings:** Protocols posting for "Solidity Engineer" or "Smart Contract Developer" are actively building — connect with the CTO or Founder within 48 hours.
-4. **LinkedIn post monitoring:** Search for posts mentioning "audit", "mainnet launch", "smart contract security", "looking for audit partner" — connect immediately with a relevant, specific hook.
-5. **Post-funding:** When an EU DeFi/protocol announces a funding round on LinkedIn or Crunchbase, connect with the technical founder within 72 hours — build pressure is immediate post-raise.
-
-### Channel Partner P2 — LinkedIn Search Methods
-
-1. **Sales Navigator ABM:** Title (Principal/Partner/Managing Director) + Industry (Management Consulting) + Location (EU: Germany, Netherlands, France, Switzerland) + Keywords (blockchain advisory, FinTech transformation, tokenomics, MiCA advisory). Do not include UK, UAE, Singapore, or US until the 5-project EU gate is met.
-2. **Finextra / PYMNTS / Banking Technology:** Authors publishing about blockchain strategy with no delivery track record — identify and connect via LinkedIn.
-3. **EU FinTech events:** Money20/20 Europe (Amsterdam), FinTech Connect — look for panellists from boutique EU advisory firms, not Big4.
-
-### Channel Partner P3 — LinkedIn Search Methods
-
-1. **Sales Navigator (signal-activated):** Title (Founder/Partner/Regulatory Advisor/Compliance Consultant/Legal Counsel) + Industry (Legal Services/Management Consulting) + Location (EU: Germany, Netherlands, France, Switzerland) + Keywords (MiCA advisory/VASP licensing/crypto compliance/digital asset regulation). EU only until the 5-project gate is met — do not include UK or UAE until then. Run only when a licensing announcement or regulatory publication is the trigger — not cold volume.
-2. **LinkedIn post monitoring:** Search for posts about MiCA CASP obligations, VASP registration timelines, or crypto licensing milestones — authors who cite no build partner are P3 candidates.
-3. **Regulatory event speakers:** Identify advisors presenting at MiCA implementation, VASP registration, or digital asset regulation conferences — they are actively advising clients who will enter build phase post-licensing.
+1. **LinkedIn Groups:** EU PropTech tokenization groups, real estate investment communities, EU commodity and trade finance circles, **DLT Pilot Regime / Security Token / MiFID II tokenization regulatory groups**. **Establish presence for at least 2 weeks before direct outreach** — engage with posts, comment meaningfully, do not DM cold from a group you joined yesterday.
+2. **Sales Navigator:** Title (Founder/CEO/CTO/"Head of Tokenization"/"Head of Digital Assets") + Industry (Real Estate/Commodities/Financial Services) + Location (EU) + Keywords: `"RWA tokenization" OR "real estate tokenization" OR "asset tokenization" OR "tokenized securities" OR "MiFID II" OR "DLT Pilot Regime" OR "Prospectus" OR "STO" OR "tokenized assets" OR "property on-chain"`.
+3. **Events:** RWA Summit community, EU Security Token Summit, DLT Pilot Regime / MiFID II tokenization regulatory forums, and local asset tokenization law forums.
 
 ---
 
-## 🧲 4. Lead Generation Strategies (ICP-Specific)
+## 🧲 4. Phase 1 Lead Generation Strategies
 
-### FinTech
-1. **🥇 RWA / Tokenization Trigger Outreach:** When a EU WealthTech or asset manager announces tokenization, STOs, or RWA platform plans — connect within 72 hours with an asset-specific, **MiFID II + Prospectus + DLT Pilot Regime-aligned** angle *(NOT MiCA — that's the wrong regime for ownership-token RWA per Art. 2(4))*. This is the highest-priority lead type. For Seg 2 ExchangeTech / Seg 4 WalletTech triggers, MiCA-aligned framing is correct.
-2. **🥇 Content → Inbound (RWA-first):** Publish RWA tokenization (MiFID II + DLT Pilot framing) and MiCA-CASP / ExchangeTech compliance engineering content first; gate a guide for lead capture; follow up with engaged leads. (See [[Content Strategy - FinTech]])
-3. **MiCA Trigger Outreach:** When a EU FinTech announces a broader MiCA compliance push, connect with a specific MiCA engineering angle within 72 hours.
-4. **Job Posting Signal:** Connect with the CTO when they post for "Blockchain Developer" — frame as the faster, lower-risk alternative.
-5. **Comment to Connect:** Engage meaningfully on Strategic Sam's or Technical Tom's posts about blockchain infrastructure before sending a connection request.
-6. **Free Security Review Offer:** "30-min smart contract architecture review" — high-resonance lead magnet for Technical Tom.
+### FinTech WealthTech RWA
+1. **🥇 RWA / Tokenization Trigger Outreach:** When a EU WealthTech or asset manager announces tokenization, STOs, or RWA platform plans — connect within 72 hours with an asset-specific, **MiFID II + Prospectus + DLT Pilot Regime-aligned** angle *(NOT MiCA — that's the wrong regime for ownership-token RWA per Art. 2(4))*. This is the highest-priority lead type.
+2. **🥇 Content → Inbound (RWA-first):** Publish RWA tokenization (MiFID II + DLT Pilot framing) content per [[InnBlockchain Editorial Calendar]] W1-W21 sequence; gate a guide for lead capture; follow up with engaged leads.
+3. **Job Posting Signal:** Connect with the CTO when they post for "Blockchain Developer" — frame as the faster, lower-risk alternative.
+4. **Comment to Connect:** Engage meaningfully on Strategic Sam's or Technical Tom's posts about MiFID II + DLT Pilot Regime tokenization before sending a connection request.
+5. **Free MiFID II Security Review Offer:** "30-min smart contract architecture review against MiFID II + DLT Pilot Regime requirements" — high-resonance lead magnet for Technical Tom.
 
 ### RWA Crypto Native
 1. **Asset-First Outreach:** Open with the asset type, not blockchain language. "I noticed you're building a tokenization platform for [real estate / commodities]…"
-2. **MiFID II + DLT Pilot Compliance Hook (for RWA):** Lead with **MiFID II classification + Prospectus Regulation + DLT Pilot Regime** as the framing — RWA founders who have done their homework already know MiCA is the wrong regime and will judge you for pitching it. Local asset tokenization law (German eWpG, French DLT bond law, Luxembourg DLT framework) is a strong secondary framing. **MiCA framing is the right hook for Seg 2 ExchangeTech / Seg 4 WalletTech / Seg 3 LendTech — not Seg 1 RWA.**
-3. **Community Presence → DM:** Join EU PropTech tokenization and trade finance LinkedIn groups. Engage for 2 weeks minimum before direct outreach (see Section 3 and Section 9).
-
-### DeFi/Protocol Crypto Native
-1. **🔴 Exploit Signal (highest urgency):** When a protocol in the same ecosystem is exploited, reach out to similar protocols within 48 hours — empathy first, concrete offer second: *"We saw what happened to [Protocol X]. We've worked with protocols using similar architecture and can run a rapid security review in 2 weeks."*
-2. **Funding Signal:** Connect with the technical founder within 72 hours of a funding announcement. Frame as: build pressure is immediate post-raise, security can't be deferred to the last sprint before launch.
-3. **Job Posting Signal:** CTO posting for a Solidity engineer = they're actively building without enough security expertise — reach out with the embedded-partner angle.
-4. **Pre-Audit Offer:** "30-min smart contract architecture review before your next audit" — removes friction for Founding Felix who fears audit failures.
-5. **Content → Inbound:** Publish protocol security content (AI-coded smart contract risks, common EVM audit findings, DeFi exploit post-mortems) — DeFi founders who engage with this content are warm leads. (See [[Content Strategy - Crypto Native]])
-
-### Channel Partner P2
-1. **Content Gap Signal:** Identify advisory firms publishing strategy content but citing no build results — their gap is the pitch.
-2. **Sub-contracting Angle:** Lead with the business model fit: they keep the client and the billing; InnBlockchain handles the build.
-3. **Referral from Law Firms / VCs:** FinTech-focused compliance law firms and FinTech VCs are warm intro channels — develop these relationships first.
-
-### Channel Partner P3
-1. **Post-Licensing Build Signal:** MiCA / VASP advisors whose clients have just obtained licensing are immediately entering build phase — their client needs blockchain engineering now. Connect with the advisor, not the client directly.
-2. **Conference Signal:** Identify P3 advisors speaking at MiCA or digital asset regulation events — they are actively advising clients who will need a development partner.
-3. **Regulatory Publication → DM:** Authors on LinkedIn publishing about MiCA CASP obligations or VASP registration with no tech delivery track record — connect with the sub-contracting framing.
+2. **MiFID II + DLT Pilot Compliance Hook:** Lead with **MiFID II classification + Prospectus Regulation + DLT Pilot Regime** as the framing — RWA founders who have done their homework already know MiCA is the wrong regime and will judge you for pitching it. Local asset tokenization law (German eWpG, French DLT bond law, Luxembourg DLT framework) is a strong secondary framing.
+3. **Community Presence → DM:** Join EU PropTech tokenization and trade finance LinkedIn groups. Engage for 2 weeks minimum before direct outreach.
 
 ---
 
-## ✉️ 5. Outreach Message Templates & Sequence Cadence
+## ✉️ 5. Phase 1 DM Templates & Sequence Cadence
 
-### Sequence Structure (apply to all ICP tracks)
+### Sequence Structure (apply to both RWA tracks)
 
 | Touchpoint | Timing | Action |
 | :--- | :--- | :--- |
@@ -335,134 +192,74 @@ PayTech, RegTech, BankTech, InsurTech
 | **T4** | Day 12–14 | Soft ask — reference their context, propose a short call |
 | **T5** | Day 21 | Final nudge — brief, low-pressure close or park for 60 days |
 
-> [!tip] Most deals close at T3–T5. Do not skip steps or compress the cadence — a same-day pitch after connecting kills trust with every ICP.
+> [!tip] Most deals close at T3–T5. Do not skip steps or compress the cadence — a same-day pitch after connecting kills trust.
 
 > [!warning] T1 Character Limit — 300 Characters Maximum
 > LinkedIn connection request notes are hard-capped at 300 characters. Before sending any T1, paste the filled-in message into a character counter. The templates below are written to fit — but real company names, protocol names, and asset types will expand length. If it exceeds 300 chars, cut the middle clause, not the personalisation hook or the sign-off.
+>
+> **How to read template brackets:** Slash-separated options in brackets (e.g., `[tokenization platform / smart contract infrastructure]`) are **choices — pick ONE, don't include the slash or other options**. Single-item brackets (e.g., `[First Name]`, `[Company]`) are direct insertion variables. Filled message will be shorter than the template as displayed.
 
 ---
 
-### 🥇 FinTech RWA / WealthTech (Priority 1)
+### 🥇 FinTech RWA / WealthTech
 
 **T1 — Connection Request (Strategic Sam, RWA/WealthTech):**
 *"Hi [First Name], noticed [Company]'s work on [tokenized securities / STO / RWA platform]. At InnBlockchain we build the smart contract infrastructure for EU WealthTech teams — the part where a flaw doesn't just affect liquidity, it affects ownership rights and licensing. Would love to connect."*
 
 **T1 — Connection Request (Technical Tom, RWA/WealthTech):**
-*"Hi [First Name], saw [Company] is building [tokenization platform / smart contract infrastructure for assets]. I run InnBlockchain — we embed with WealthTech engineering teams on **MiFID II + DLT Pilot Regime** smart contract security for tokenized securities (MiCA-aligned framing on the exchange / CASP side). Always good to connect with CTOs working in this space."*
+*"Hi [First Name], saw [Company] is building [tokenization platform / smart contract infrastructure]. I run InnBlockchain — we embed with WealthTech engineering teams on **MiFID II/III + Prospectus + DLT Pilot** smart contract security. Always good to connect with CTOs in this space."*
 
 **T2 — Welcome / No Pitch:**
-*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain. We specialise in blockchain engineering for EU regulated FinTech — a lot of our work right now is **RWA tokenization under MiFID II + DLT Pilot Regime** and MiCA-compliant CASP infrastructure for licensed exchanges and wallets. What's the current focus on the blockchain side at [Company]?"*
+*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain. We specialise in blockchain engineering for EU regulated FinTech — Phase 1 of our roadmap is fully focused on **RWA tokenization under MiFID II/III + Prospectus + DLT Pilot Regime + MAR**. What's the current focus on the tokenization side at [Company]?"*
 
 **T3 — Value Asset (Content Share):**
-*"Hi [First Name], I published a short piece on the 3 smart contract patterns EU WealthTech platforms get wrong before a MiCA audit — thought it might be useful given what you're building at [Company]. Happy to share if relevant."*
+*"Hi [First Name], I published a short piece on the 3 smart contract patterns EU WealthTech platforms get wrong before a **MiFID II/III + Prospectus + DLT Pilot Regime + MAR** audit (different stack from MiCA — Art. 2(4) excludes financial instruments) — thought it might be useful given what you're building at [Company]. Happy to share if relevant."*
 
 **T4 — Soft Ask:**
-*"Hi [First Name], given [Company]'s focus on [tokenization / RWA / WealthTech infrastructure], I think there's a genuine overlap with what we do at InnBlockchain — particularly on the security and **MiFID II + DLT Pilot Regime** compliance engineering side. Would a 20-min call make sense to see if there's a fit?"*
+*"Hi [First Name], given [Company]'s focus on [tokenization / RWA / WealthTech infrastructure], I think there's a genuine overlap with what we do at InnBlockchain — particularly on the security and **MiFID II/III + Prospectus + DLT Pilot Regime + MAR** compliance engineering side. Would a 20-min call make sense to see if there's a fit?"*
 
 ---
 
-### FinTech — Non-RWA (ExchangeTech, LendTech, WalletTech)
-
-**T1 — Connection Request (Strategic Sam):**
-*"Hi [First Name], I saw [Company]'s move into [exchange / DeFi lending / custody]. At InnBlockchain, we work with regulated FinTech teams building blockchain infrastructure without creating MiCA compliance risk. Would love to connect — no pitch."*
-
-**T1 — Connection Request (Technical Tom):**
-*"Hi [First Name], noticed [Company] is building [exchange infrastructure / lending rails / wallet custody]. I run InnBlockchain — we embed with FinTech engineering teams on smart contract security and EU-compliant blockchain builds. Always good to connect with CTOs in this space."*
-
-**T2 — Welcome / No Pitch:**
-*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain — we specialise in blockchain engineering and smart contract security for regulated FinTech. What's your current focus on the blockchain side at [Company]?"*
-
-**T3 — Job Posting Signal Follow-Up** *(use when T1 was triggered by a job posting)*:
-*"Hi [First Name], saw [Company] posted for a Blockchain/Solidity engineer — strong signal you're moving fast on this. We work with FinTech CTOs who find it faster and lower-risk to partner with a specialised firm for the initial build, especially where MiCA is involved. Worth a 20-min call?"*
-
-**T3 — Value Asset (Content Share):**
-*"Hi [First Name], I published a short piece on the compliance risks EU [ExchangeTech / LendTech] teams run into when building on-chain — thought it might be relevant to what you're working on at [Company]. Happy to share."*
-
-**T4 — Soft Ask:**
-*"Hi [First Name], given [Company]'s focus on [exchange / DeFi lending / custody infrastructure] — would a 20-min call make sense? I think there's a genuine overlap on the smart contract security and MiCA compliance engineering side. No commitment, just useful to compare notes."*
-
----
-
-### 🥇 RWA Crypto Native (Priority 1)
+### 🥇 RWA Crypto Native
 
 **T1 — Connection Request (Asset-First):**
 *"Hi [First Name], came across your work on [real estate tokenization / commodity on-chain / RWA platform] at [Company]. At InnBlockchain we build and audit smart contract infrastructure for asset tokenization — where a flaw doesn't just drain a pool, it compromises ownership rights. Would love to connect."*
 
-**T2 — Welcome / MiCA Angle:**
-*"Hi [First Name], thanks for connecting! Quick question — are you already working through **MiFID II classification and DLT Pilot Regime scoping** for the tokenization side, or is that still being scoped? We've been supporting EU asset tokenization builds with MiFID II + Prospectus + DLT Pilot-aligned smart contract architecture and happy to share what we've seen."*
+**T2 — Welcome / Regime Angle (MiFID II/III + Prospectus + DLT Pilot + MAR for RWA):**
+*"Hi [First Name], thanks for connecting! Quick question — are you already working through **MiFID II/III classification, Prospectus filing, and DLT Pilot Regime scoping** for the tokenization side, or is that still being scoped? We've been supporting EU asset tokenization builds with MiFID II/III + Prospectus + DLT Pilot + MAR-aligned smart contract architecture and happy to share what we've seen."*
 
 **T3 — Value Asset:**
 *"Hi [First Name], put together a short guide on the smart contract security checks every RWA tokenization platform should run before first asset issuance — happy to share if you're at that stage with [Company]."*
 
 **T4 — Soft Ask:**
-*"Hi [First Name], given the stage [Company] seems to be at with the [asset type] tokenization — would a 20-min call make sense? Specifically to walk through the security and **MiFID II + DLT Pilot Regime** engineering side before your first issuance. No commitment, just useful context."*
+*"Hi [First Name], given the stage [Company] seems to be at with the [asset type] tokenization — would a 20-min call make sense? Specifically to walk through the security and **MiFID II/III + Prospectus + DLT Pilot Regime + MAR** engineering side before your first issuance. No commitment, just useful context."*
 
 ---
 
-### 🥈 DeFi / Protocol Crypto Native (Priority 2 — trigger-based)
+### 🧪 eIDAS 2.0 Outbound Test (Limited Phase 1 mid-point — see §7a)
 
-> [!warning] Every T1 must reference a specific trigger — exploit, funding round, job posting, or audit post. A generic connection request to a DeFi founder will be ignored.
+> [!important] Scope: limited test only
+> These templates run during a small-scope eIDAS 2.0 outbound test (Week 13 onwards, ~20-30 prospects in first 2 weeks). Test validates whether deadline-driven outbound for WalletTech converts before committing to `/solutions/fintech-wallets` LP build. If KPIs hit, scale up. If not, park and re-evaluate. **Landing destination = gated PDF download of the eIDAS inbound brief (Option 3).**
 
-**T1 — Connection Request (Exploit Signal):**
-*"Hi [First Name], saw what happened to [Protocol X] — protocols with similar [lending / DEX / staking] architecture are reviewing their contracts right now. At InnBlockchain we do rapid security reviews in 2 weeks. Worth connecting."*
+**T1 — Connection Request (FinTech CTO / Head of Product, eIDAS angle):**
+*"Hi [First Name], saw [Company] is preparing for eIDAS 2.0 EUDI Wallet integration (Dec 2026 deadline). InnBlockchain builds the wallet-acceptance + KYC relying-party infrastructure for regulated FIs. Always good to connect with FinTech CTOs in this space."*
 
-**T1 — Connection Request (Funding Signal):**
-*"Hi [First Name], congrats on the [Protocol]'s raise — exciting milestone. I run InnBlockchain, we work with DeFi teams who need embedded smart contract security as they scale post-raise. Always good to connect with technical founders at this stage."*
+**T2 — Welcome / Open Question:**
+*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain — we build EU regulated-FinTech infrastructure, including the eIDAS 2.0 EUDI Wallet relying-party integration that's mandatory for licensed FIs by Dec 31, 2026. Curious — is [Company] already scoping that integration, or still in early architecture?"*
 
-**T1 — Connection Request (Job Posting Signal):**
-*"Hi [First Name], noticed [Protocol] is hiring a Solidity engineer — strong signal you're scaling fast. We work with DeFi teams as an embedded security partner alongside their in-house build. Worth connecting."*
-
-**T1 — Connection Request (Audit / Launch Signal):**
-*"Hi [First Name], saw [Protocol] is preparing for [mainnet / audit / token launch]. At InnBlockchain we embed with protocol teams on smart contract security through the launch sprint — one exploit post-mainnet ends a protocol. Would love to connect."*
-
-**T2 — Welcome / No Pitch (Security-First):**
-*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain — we work embedded with DeFi and protocol teams on smart contract security. What's the current build stage at [Protocol]? Are you in audit prep or still in the sprint cycle?"*
-
-**T3 — Value Asset:**
-*"Hi [First Name], put together a short breakdown of the top 5 smart contract vulnerabilities in [DeFi lending / DEX / token launch] contracts we see before audits — happy to share if useful at [Protocol]'s current stage."*
+**T3 — Value Asset (gated PDF brief):**
+*"Hi [First Name], put together a short brief on what licensed FIs need to engineer for eIDAS 2.0 EUDI Wallet relying-party acceptance — covers the must-have integration patterns and the common architecture pitfalls we see. Happy to share — link to download here: [GATED PDF URL]."*
 
 **T4 — Soft Ask:**
-*"Hi [First Name], given [Protocol]'s upcoming [mainnet / audit / launch] — would a 30-min architecture review call make sense? We'd walk through the highest-risk contract surfaces specific to [Protocol]'s stack. No commitment."*
+*"Hi [First Name], given [Company]'s [licensed e-money / payment institution / WealthTech] status and the Dec 2026 EUDI Wallet deadline — would a 20-min architecture review call make sense? Specifically to walk through the relying-party integration patterns and what your KYC flow needs to absorb. No commitment."*
 
 ---
 
-### Channel Partner P2
-
-**T1 — Connection Request:**
-*"Hi [First Name], been following your work on [blockchain transformation / MiCA advisory / tokenization strategy]. At InnBlockchain, we work as a silent delivery arm for advisory firms — handle the build phase for their clients, they keep the relationship. Thought it worth connecting."*
-
-**T2 — Welcome / Business Model:**
-*"Hi [First Name], thanks for connecting! The pattern I see with blockchain advisory firms: strategy mandate goes well, then the client asks 'who builds this?' — and the firm either loses the engagement to a dev shop or manages a freelancer patchwork. We solve that. Open to comparing notes?"*
-
-**T3 — Value Asset:**
-*"Hi [First Name], wrote up how the sub-contracting model works in practice for [FinTech transformation / Web3 advisory] firms — including how we handle IP, client ownership, and NDAs. Worth sharing if you're thinking about this for [Company]."*
-
-**T4 — Soft Ask:**
-*"Hi [First Name], given the clients [Company] advises on [FinTech blockchain transformation / MiCA compliance] — would a 30-min call make sense? Specifically to see whether there's a clean fit for sub-contracting the build phase. You retain the client relationship; we handle the engineering."*
-
----
-
-### Channel Partner P3
-
-**T1 — Connection Request:**
-*"Hi [First Name], been following your work on [MiCA advisory / VASP licensing / crypto regulatory structure]. At InnBlockchain, we often work alongside regulatory advisors as the build partner — clients who've just obtained licensing need engineering next. Thought it worth connecting."*
-
-**T2 — Welcome / No Pitch:**
-*"Hi [First Name], thanks for connecting! I'm Vignesh from InnBlockchain — we do blockchain engineering and smart contract security for crypto-native and regulated FinTech builds. Curious: do any of your clients reach the point where they've sorted regulatory structure and are now looking for a build partner?"*
-
-**T3 — Value Asset:**
-*"Hi [First Name], wrote up a short piece on what MiCA-licensed FinTechs typically need from a blockchain engineering partner in the first 90 days post-licensing — happy to share if relevant to any of [Company]'s clients."*
-
-**T4 — Soft Ask:**
-*"Hi [First Name], sounds like [Company]'s clients move from regulatory structure into build phase regularly. Would a 20-min call make sense to see whether InnBlockchain could be a fit as the sub-contracted engineering arm for those clients? We keep it simple — you refer or sub-contract, we deliver."*
-
----
-
-### Universal T5 — Final Nudge (all segments, Day 21)
+### Universal T5 — Final Nudge (Day 21)
 
 > [!note] Use T5 when T4 received no response. Keep it brief and low-pressure. If still no response after T5, park the lead for 60 days and re-engage with a new trigger if one appears.
 
-*"Hi [First Name], just circling back from my last message — happy to leave it here if the timing isn't right. If [Company]'s blockchain build or security priorities shift in the next few months, I'm easy to reach. Good luck with [specific thing from their LinkedIn — launch / audit / product]."*
+*"Hi [First Name], just circling back from my last message — happy to leave it here if the timing isn't right. If [Company]'s tokenization build or security priorities shift in the next few months, I'm easy to reach. Good luck with [specific thing from their LinkedIn — launch / audit / product]."*
 
 ---
 
@@ -472,9 +269,9 @@ Stay within safe limits to protect your account.
 
 | Tool | Use Case |
 | :--- | :--- |
-| **LinkedIn Sales Navigator** | ABM prospecting for FinTech and Channel Partner P2 — essential for filtered search by vertical, location, and title |
+| **LinkedIn Sales Navigator** | ABM prospecting for FinTech WealthTech + RWA Crypto Native — essential for filtered search by vertical, location, and title |
 | **Expandi.io** | Safe connection request sequences with personalisation variables |
-| **Lemlist** | Multi-channel sequences (LinkedIn + email) for Channel Partner P2 |
+| **Lemlist** | Multi-channel sequences (LinkedIn + email) — useful for warmer follow-up |
 | **PhantomBuster** | Group member export, job posting scrape |
 
 **Safe Daily Limits:**
@@ -484,105 +281,192 @@ Stay within safe limits to protect your account.
 - InMails (Sales Nav): 10–20
 
 > [!tip] Quality Over Volume
-> Personalise every connection request with a specific hook (MiCA trigger, job posting, post comment, asset type). Generic volume outreach will fail with Technical Tom and Strategic Sam — they receive high volumes of outreach and ignore anything that doesn't reference their specific context.
+> Personalise every connection request with a specific hook (RWA regime filing trigger — MiFID II/III, Prospectus, DLT Pilot, or MAR; asset type; job posting; post comment). Generic volume outreach will fail with Technical Tom and Strategic Sam — they receive high volumes of outreach and ignore anything that doesn't reference their specific context.
 
 ---
 
-## 📅 7. Weekly Action Plan
+## 📅 7. Phase 1 Weekly Action Plan
 
-**Daily connection budget: 15–20 total requests across all segments.** Split: 8–10 RWA (FinTech + Crypto Native) + 3–5 DeFi/Protocol (trigger-activated only) + 2–4 non-RWA FinTech or Channel Partner. Do not exceed 20/day.
+**Daily budget: 12-17 RWA structured ABM + 2-3 ambient organic signals (e.g., a DLT Pilot Regime / Security Token Summit speaker). Total hard cap: 20/day (LinkedIn account-restriction threshold per §9 Common Mistake #7). Zero non-RWA sequences.**
 
-| Day | 🥇 RWA (First Priority) | 🥈 DeFi/Protocol (Trigger-Based) | FinTech Non-RWA + Channel Partner |
+| Day | 🥇 RWA (FinTech WealthTech + Crypto Native Asset-Backed) |
+| :--- | :--- |
+| **Monday** | Identify 12-17 EU RWA leads + 2-3 ambient organic signals (total hard cap 20/day): FinTech WealthTech / STO / tokenized securities CTOs + Crypto Native PropTech / asset-backed founders (real estate, fleet, commodity, private credit). Check tokenization announcements, MiFID II/III + Prospectus + DLT Pilot + MAR + Listing Act filings, asset issuance announcements. Apply DQ filter. |
+| **Tuesday** | Send 12-17 personalised RWA T1 connection requests + 2-3 ambient signals — total hard cap 20/day (asset-specific hook for Crypto Native; MiFID II/III + Prospectus + DLT Pilot framing for FinTech WealthTech). |
+| **Wednesday** | Send T2 welcome to RWA connections from Mon-Tue (regime-aware open question — see §5 templates). Engage in EU PropTech, Security Token, MiFID II/III + DLT Pilot tokenization groups. |
+| **Thursday** | Publish RWA / tokenization content (per [[InnBlockchain Editorial Calendar]] W1-W21 Phase 1). Send T3 value asset to RWA connections from prior week (RWA security check guide, MiFID II/III + Prospectus + DLT Pilot + MAR audit pattern). |
+| **Friday** | Send T4 soft-ask to qualified RWA leads (10-14 days old, positive signal). Book discovery calls. T5 nudge or park stale leads. Update pipeline tracker. |
+
+**Pipeline tracking:** Log all accepted connections + replies to the *LinkedIn B2B Customer Outreach* CRM tracker (external — Zoho or equivalent, not a wiki note). Update status (Connected / Replied / Qualified / Call Booked / Closed / Parked) after each touchpoint.
+
+---
+
+## 🧪 7a. Limited eIDAS Outbound Test (Phase 1 mid-point)
+
+> [!important] Scope: small-scale demand validation
+> Phase 1 outbound is RWA-only. **One exception:** a small-scope eIDAS 2.0 / WalletTech outbound test, timed to the W13 cross-cutting eIDAS article in the [[InnBlockchain Editorial Calendar]] (article *"eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms"*, `[Both]` scope). The test validates whether deadline-driven outbound for WalletTech converts before committing engineering resources to a full `/solutions/fintech-wallets` LP.
+
+### Why eIDAS specifically (and not CCD2)
+
+- **Content support exists:** W13 cross-cutting article provides warm content backing the outbound. Outbound timed AFTER article publishes catches warmed audience.
+- **Deadline sweet spot:** Dec 31, 2026 EUDI Wallet deadline (7 months out as of May 2026) sits in the canonical 12-18 month vendor selection window. Strongest near-term deadline-driven demand.
+- **CCD2 deferred:** No CCD2 content in the Phase 1 editorial calendar; running CCD2 outbound without content backing would produce <2% reply rates and waste outreach capacity.
+
+### Pre-Test Assets (must exist before T1s fire)
+
+- [ ] **eIDAS 2.0 / EUDI Wallet Relying-Party Brief** (PDF, 3-4 pages) — already required in Phase 1 Inbound Preparedness Gate at top of this doc. Doubles as the gated download for the outbound test.
+- [ ] **Gated PDF landing page** — minimal landing destination for click-through from DMs. Captures email + redirects to PDF. Should include InnBlockchain branding + a single Calendly CTA at bottom. **NEW asset for the test — owner TBD.** Acceptable forms: (a) lightweight standalone page on `innblockchain.com/eidas-brief` (1-2 days dev work), (b) ConvertKit/Mailchimp gated download page (faster, less branded), (c) Notion-hosted gated page (fastest, weakest brand signal). Recommend (a) if dev capacity available.
+- [ ] **W13 cross-cutting article** published on InnBlockchain.com per [[InnBlockchain Editorial Calendar]] — *"eIDAS 2.0 EUDI Wallet for Regulated FinTechs and RWA Tokenization Platforms"*. T1s should NOT fire before this article publishes — the article is the warm content backing referenced in T3.
+- [ ] **eIDAS brief pinned to Featured Section** on Vignesh's LinkedIn profile (cross-reference: `LinkedIn Profile Vignesh Content.md` Featured Section — Phase 1 mid-point eIDAS entry).
+
+### Test parameters
+
+| Parameter | Value |
+| :--- | :--- |
+| Timing | Starts week of W13 article publish (estimated late July 2026 per editorial calendar W1 anchored at 2026-05-18). Do NOT start T1s before pre-test assets above are confirmed. |
+| Scope | 20-30 prospects total in first 2 weeks |
+| Daily allocation | 2-3 eIDAS T1s/day reserved within the daily budget (RWA budget reduced from 12-17 to 10-14 during test window only — total hard cap remains 20/day per §9 Common Mistake #7) |
+| Landing destination | **Option 3: gated PDF download of the eIDAS inbound brief** (no full Solutions LP build required for the test). Future scale-up may trigger `/solutions/fintech-wallets` build. |
+| Templates | See §5 "🧪 eIDAS 2.0 Outbound Test" templates (T1 — T4 above + Universal T5) |
+
+### Sales Navigator filters (eIDAS test)
+
+- Title: `CTO OR CPO OR "VP Engineering" OR "Head of Product" OR "Head of Digital Identity" OR "Head of KYC" OR "Head of Platform Engineering"` *(deliberately EXCLUDES Head of Compliance — Compliance Carol is a vendor-risk gatekeeper who responds to formal RFPs, not cold DMs; surface her after Sam/Tom are engaged per §2.1)*
+- Industry: Financial Services
+- Company size: 50–500 employees
+- Geography: EU Continental Europe
+- Keywords: `"EUDI Wallet" OR "eIDAS" OR "eIDAS 2.0" OR "Digital Identity Wallet" OR "e-money" OR "payment institution" OR "regulated wallet" OR "FinTech custody"`
+- Avoid: pure crypto-native wallet providers (those are Phase 3 territory, different ICP)
+
+### Scale-up vs Park criteria (after first 2 weeks)
+
+**Scale up to 40-60/month + commit to `/solutions/fintech-wallets` LP build if:**
+- Connection accept rate ≥35%
+- Reply rate (T2 welcome) ≥6%
+- ≥1 qualified discovery call booked
+
+**Park and re-evaluate if:**
+- Connection accept rate <25%
+- Reply rate <3%
+- Zero qualified discovery calls
+- Park reason candidates: (a) eIDAS not in active scoping stage with these buyers yet, (b) messaging needs adjustment, (c) content support insufficient
+
+### What the test answers
+
+1. **Demand validation:** Is the deadline-driven hypothesis correct? Are licensed FIs in active EUDI Wallet scoping in mid-2026?
+2. **Outreach mechanic validation:** Does the gated-PDF-as-landing-destination pattern convert? If yes, this is a template for other deadline-driven tests without LP build.
+3. **Cross-cutting article performance:** Does W13's `[Both]`-scope eIDAS article drive warm engagement on Vignesh's profile? (Informs broader content-strategy decisions about cross-cutting articles vs. vertical-specific content.)
+
+---
+
+## 📊 8. Phase 1 KPIs & Success Metrics
+
+| Metric | 🥇 FinTech RWA / WealthTech | 🥇 Crypto Native RWA | 🧪 eIDAS Outbound Test (W13 onwards) |
 | :--- | :--- | :--- | :--- |
-| **Monday** | Identify 8–10 EU RWA leads (FinTech WealthTech/STO + Crypto Native PropTech/asset-backed); check tokenization announcements; apply DQ filter | Monitor for DeFi exploit news (Rekt News, DeFi Llama), funding announcements, job postings, audit posts — identify 3–5 triggered DeFi/Protocol prospects | Identify 3–5 ExchangeTech/LendTech + 2–3 Channel Partner P2 targets |
-| **Tuesday** | Send 8–10 personalised RWA connection requests (asset-specific hook) | Send 3–5 trigger-based DeFi/Protocol requests (exploit / funding / audit hook — each one unique) | Send 2–4 non-RWA FinTech or Channel Partner P2 requests — **total cap: 15–20/day** |
-| **Wednesday** | Send T2 welcome to RWA connections from Mon–Tue; engage in EU PropTech + WealthTech groups | Send T2 welcome to DeFi/Protocol connections from Mon–Tue (security-first open question) | Send T2 to non-RWA FinTech + Channel Partner connections; T3/T4 follow-ups |
-| **Thursday** | Publish RWA/tokenization content; engage in **DLT Pilot Regime / MiFID II / Security Token** discussion groups (NOT MiCA groups for RWA — wrong regulator); send T3 value asset to RWA connections from prior week | Send T3 value asset (security vulnerability breakdown) to DeFi/Protocol connections from prior week; monitor for new exploit signals | Engage in FinTech Founders groups + MiCA regulatory groups (correct for Seg 2 ExchangeTech); monitor ExchangeTech/LendTech signals; send T3 to non-RWA |
-| **Friday** | Send T4 soft-ask to qualified RWA leads (10–14 days old, positive signal); book discovery calls | Send T4 soft-ask to qualified DeFi/Protocol leads (pre-audit architecture review offer); book discovery calls | Review all segment reply rates; T5 nudge or park stale leads; update pipeline tracker |
+| Connection Acceptance Rate | 30–45% | 25–40% | Scale-up if ≥35% / Park if <25% |
+| Reply Rate (T2 welcome) | ≥5% | 10–20% | Scale-up if ≥6% / Park if <3% |
+| Positive Response Rate | 3–8% | 5–10% | TBD — first measurement during 2-week test |
+| Discovery Calls Booked | 2–4/week | 1–2/week | Scale-up if ≥1 qualified call in 2 weeks / Park if zero |
+| Qualified Leads/Month | 8–15 EU RWA/WealthTech | 8–15 EU RWA Crypto Native | Test scope only: 20-30 prospects total in first 2 weeks |
 
-**Pipeline tracking:** Log all accepted connections + replies to [[LinkedIn B2B Customer Outreach - InnBlockchain]]. Update status (Connected / Replied / Qualified / Call Booked / Closed / Parked) after each touchpoint.
+**Phase 1 combined target: 16-30 qualified leads/month + 3-6 discovery calls/week from RWA outreach. eIDAS test is a limited-scope demand-validation overlay — does NOT contribute to Phase 1 exit criteria.**
 
-> [!note] Channel Partner P1 & P3 — Not on a Fixed Weekly Schedule
-> **P1** (Web3/crypto advisors) — connect when a signal appears on X/Telegram or at a crypto conference; LinkedIn is secondary. Fit into Tuesday's connection budget when a trigger is identified.
-> **P3** (MiCA/VASP regulatory advisors) — connect on LinkedIn when a regulatory publication, MiCA advisory post, or client licensing announcement is the trigger. Fit into Tuesday's budget. Once a P3 connection accepts, fold T2/T3/T4 follow-ups into the Wednesday/Thursday/Friday slots alongside other active sequences — same cadence (Day 1–2, Day 5–7, Day 12–14), same pipeline tracker. Do not treat P3 as fully ad-hoc once the connection is made; the structured sequence still applies.
-> Track all P1 and P3 activity in [[LinkedIn Channel Partner Outreach - InnBlockchain]].
-
----
-
-## 📊 8. Outreach KPIs & Success Metrics
-
-| Metric | FinTech (all segments) | Crypto Native RWA | DeFi / Protocol | Channel Partner P2 | Channel Partner P3 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Connection Acceptance Rate | 30–45% | 25–40% | 20–35% (trigger-based) | 35–50% | 30–45% |
-| Reply Rate (T2 welcome) | ≥5% | 10–20% | 8–15% (trigger context helps) | ≥5% | ≥5% |
-| Positive Response Rate | 3–8% | 5–10% | 5–10% | 5–10% | 5–10% |
-| Discovery Calls Booked | 2–4/week | 1–2/week | 1–2/week | 1–2/week | 1–2/month (opportunistic) |
-| Qualified Leads/Month | 15–30 EU FinTech | 8–15 EU RWA | 5–10 EU DeFi/Protocol | 5–10 partner leads | 2–5 partner leads |
+**Phase 1 exit criteria (signals readiness for Phase 2 activation):**
+- ✅ 5 RWA projects closed (FinTech WealthTech + Crypto Native RWA combined)
+- ✅ Phase 1 KPI bands consistently hit for 8+ consecutive weeks
+- ✅ Editorial Calendar Phase 1 (W1-W21) content published
+- ✅ `/solutions/regulated-exchange` and `/solutions/fintech-wallets` LPs scheduled for ship within 4 weeks
 
 > [!note] Benchmarks
-> All segments reflect EU Continental Europe outbound with high personalisation — Channel Partner is now EU-first, same as FinTech and Crypto Native. Channel Partner P3 benchmarks are assumption-based — unvalidated until 10+ P3 sequences are completed; update after first validation round. Reply rates below 2% on any sequence indicate a messaging problem — stop, diagnose, adjust before continuing.
+> All KPI bands reflect EU Continental Europe outbound with high personalisation. Reply rates below 2% on any active sequence indicate a messaging problem — stop, diagnose, adjust before continuing.
 
 ---
 
-## ❌ 9. Disqualification Signals & Mistakes to Avoid
+## ❌ 9. Phase 1 Disqualification Signals & Mistakes
 
-### DQ Signals — Stop and Do Not Connect / Advance
+### Phase 1 DQ Signals — Stop and Do Not Connect / Advance
 
 | ICP | Disqualify If |
 | :--- | :--- |
 | **FinTech RWA / WealthTech** | Idea-stage with no product, no licensing intent, no timeline |
+| **FinTech RWA / WealthTech** | "Just exploring" with no funding, no MiFID II / Prospectus / DLT Pilot pressure |
 | **Crypto Native RWA** | No underlying asset, no codebase, zero build budget — "just exploring tokenization" |
 | **Crypto Native RWA** | Jurisdiction with explicit crypto/tokenization ban or no regulatory clarity |
-| **DeFi / Protocol** | Whitepaper-only with no technical progress, no testnet, no build budget |
-| **DeFi / Protocol** | No trigger identified — do not connect cold without a specific hook |
-| **FinTech (all)** | "Just exploring" with no timeline, no funding, no MiCA/licensing pressure |
-| **Channel Partner P2** | Big4 / large consultancy (too slow, wrong partnership dynamic) |
-| **Channel Partner P2** | Advisory firm with its own in-house blockchain dev team — they don't need us |
-| **Channel Partner P3** | Pure law firm (legal-only, no advisory clients in build phase) — not a sub-contracting fit |
-| **Channel Partner P3** | Regulatory advisor whose clients are all pre-licensing with no near-term build timeline |
-| **All** | Prospect is hiring multiple blockchain dev firms simultaneously for competitive pitches |
+| **All RWA** | Prospect is hiring multiple blockchain dev firms simultaneously for competitive pitches |
+| **All RWA** | Crypto-native exchange/DeFi/wallet startup with no asset-backing — route to Phase 3 watchlist, do not run sequences in Phase 1 |
+| **All RWA** | Existing regulated FinTech with no RWA / tokenization intent (e.g., pure ExchangeTech) — route to Phase 2 watchlist, do not run sequences in Phase 1 |
 
-### Common Mistakes
+### Phase 1 Common Mistakes
 
-1. **Running generic cold LinkedIn sequences for DeFi/protocol founders** — every connection request must be anchored to a specific trigger (exploit, funding, job posting, audit post). No trigger = no outreach. X/Telegram strategy for these segments is in a separate document.
+1. **Pitching MiCA framing to an RWA prospect** — RWA ownership tokens are MiFID II financial instruments under Art. 2(4); MiCA is the wrong regime. This is the #1 Compliance Carol disqualifier. Always lead with MiFID II/III + Prospectus + DLT Pilot Regime + MAR for Seg 1 RWA.
 2. **Pitching in the first message (T1)** — the connection request note is max 300 characters and sets tone only; the pitch starts at T4 at the earliest.
 3. **Using generic connection requests** — "I came across your profile" without a specific reference will be ignored by every ICP.
 4. **Treating FinTech RWA and Crypto Native RWA as the same audience** — WealthTech/STO buyers are regulated FinTech compliance-first; Crypto Native RWA founders are asset-first. The framing and message angle are different even though both say "RWA".
 5. **Mixing FinTech and Crypto Native messaging in a single sequence** — Strategic Sam is compliance-first; RWA Felix is ownership-risk-first. Never cross sequences.
-6. **Outreaching outside EU Continental Europe for any ICP** — EU only until the 5-project gate is met. This applies to all tracks including Channel Partners. Each Watch geography requires its own regulatory brief before outbound launches: UK (FCA), UAE (ADGM/VARA/DFSA), Singapore (MAS), US (FinCEN/SEC), Canada, Australia.
+6. **Outreaching outside EU Continental Europe** — see Geography Gate in §1 for activation map. EU only until 5-project gate.
 7. **Exceeding 15–20 connection requests/day** — account restrictions trigger at high volume; personalisation quality matters more than quantity.
 8. **Stopping after T2** — most deals happen at T3–T5; one welcome message is not a sequence.
 9. **Pitching Trioangle or generic software dev** — every message from this profile is InnBlockchain blockchain engineering and Web3 security only.
 10. **Direct outreach from a group you joined the same day** — establish 2-week presence in LinkedIn groups before any DMs to group members.
+11. **Running Phase 2-4 sequences in Phase 1** — see `InnBlockchain - LinkedIn Outreach Strategy - Phase 2-4 Reference.md` for those tracks; activate only when their respective LP gates are met.
 
 ---
 
 ## 🔗 10. Profile Alignment (Outreach Effectiveness)
 
-Your LinkedIn profile is the landing page every prospect visits after accepting your connection. See [[LinkedIn Profile Audit Vignesh]] for the full audit.
+Your LinkedIn profile is the landing page every prospect visits after accepting your connection. Canonical profile copy + version-controlled source: [[LinkedIn-Profile-Content-Vignesh-InnBlockchain]] (source) and [[InnBlockchain Vignesh LinkedIn Profile]] (concept / decision log).
 
-**Minimum required before running outreach:**
-- [ ] Headline updated to lead with RWA: *"CEO @ InnBlockchain | RWA Tokenization (MiFID II + DLT Pilot) · WealthTech · ExchangeTech (MiCA CASP) | Smart Contract Security | Blockchain Engineering for EU Regulated FinTech | 7+ Years"* (RWA leads with MiFID II + DLT Pilot — correct regime; ExchangeTech gets MiCA CASP framing; aligns with priority ICP across both FinTech and Crypto Native. **Old version used MiCA for RWA — credibility risk with Compliance Carol; corrected rev 2026-05-19.**)
-- [ ] About section rewritten with ICP pain-point language (MiCA, smart contract security, Web3 talent gap)
-- [ ] Banner updated — InnBlockchain branded, remove "Turn Your Business Ideas Into Reality" / "200+ Mentored"
-- [ ] Featured section added — InnBlockchain service pages + 1 RWA tokenization article (framed under MiFID II + DLT Pilot Regime, not MiCA) + 1 MiCA CASP article for ExchangeTech segment
-- [ ] ICP-aligned skills added: Smart Contract Security, Solidity, **RWA Tokenization, MiFID II Compliance, DLT Pilot Regime**, MiCA Compliance, DeFi *(MiFID II / DLT Pilot pinned ahead of MiCA — correct regime for top-priority RWA segment; MiCA retained for ExchangeTech / WalletTech surface)*
+**Profile state must satisfy the Pre-Publish Hard Gate before outreach begins** — see the `Pre-Publish Hard Gate` section in `LinkedIn Profile Vignesh Content.md`. Phase 1 summary:
 
-> [!danger] Do Not Run Outreach Before Profile Is Updated
-> A prospect who accepts your connection and visits a profile with the current headline ("CEO | Software Specialist") will not book a call. The profile rebuild is a prerequisite, not a parallel task.
+- [ ] Vendor risk pack + sample audit + **MiFID II/III + Prospectus + DLT Pilot Regime + MAR + EU Listing Act** compliance brief built (Phase 1 — RWA primary). Phase 2/3/4 briefs (MiCA CASP, PSD3 + eIDAS, CCD2 + EU AI Act) deferred to respective LP activation gates.
+- [ ] About `[INSERT REFERENCE]` placeholders filled OR fallback line used — no visible placeholders at publish.
+- [ ] `innblockchain.com/solutions/rwa-tokenization` page live + hero matches About hero (RWA + **MiFID II/III + Prospectus + DLT Pilot Regime + MAR** + asset-backed founders language — NOT "RWA + MiCA").
+- [ ] 2-3 recommendations published (full 5-8 target by Phase 1 outreach start — see Outreach Readiness Gate at top of this doc).
+- [ ] InnBlockchain CEO Experience entry populated (start year, EU city, filled placeholders).
+- [ ] "7+ years building blockchain infrastructure" claim verified against existing LinkedIn Experience.
+- [ ] "15+ protocols audited" count verified + **segment spread** verified (must span ≥2 of asset tokenization / regulated exchanges / DeFi lending).
+- [ ] **Operational capacity verified** for "We can start next week" — revise to honest timeframe if booked 3+ weeks out.
+- [ ] **Asset 1 (RWA Tokenization Risk Checklist) + Asset 2 (1 anchor article) pinned to Featured at publish.** Asset 3 (eIDAS brief) built W11-W12 and pinned at W13 alongside the cross-cutting eIDAS article — Phase 1 mid-point asset, required before §7a test fires but NOT publish-blocking. Assets 4-5 (MiCA Checklist + Pre-Mainnet Self-Scan) deferred to Phase 2/3.
+
+**Profile carries three founder paths in About body** — Path 1 (asset-backed RWA Felix) and Path 2 (Regulated FinTech leaders, including WalletTech for the eIDAS test) are Phase 1 outreach-active. Path 3 (Crypto-native protocols) is profile-surface only in Phase 1 — ambient inbound acceptable, no outbound until Phase 3. The eIDAS outbound test (§7a) targets WalletTech buyers who recognise themselves in Path 2.
+
+> [!danger] Do Not Run Outreach Before Profile Is Published + Pre-Publish Gate Cleared
+> A prospect who accepts your connection and lands on an incomplete profile — broken Featured section, 404 CTA link, unfilled reference placeholders, or a vendor risk pack request that goes unanswered — will not book a call. The profile state is a prerequisite, not a parallel task. Outreach Readiness Gate at top of this doc lists the additional assets required before sequences begin.
 
 ---
 
-## 💡 Summary: The Outreach Formula
+## 🚦 Phase 1 → Phase 2 Transition Protocol
 
-**ICP-ALIGNED PROFILE** + **SEGMENT-SPECIFIC TARGETING** + **TRIGGER-BASED PERSONALISATION** + **VALUE-DRIVEN SEQUENCES** + **SYSTEMATIC FOLLOW-UP** = **QUALIFIED EU DISCOVERY CALLS**
+When Phase 1 exit criteria are met (see §8), execute these steps to activate Phase 2:
+
+1. **Verify LP gates:** `/solutions/regulated-exchange` and `/solutions/fintech-wallets` live and aligned with profile About hero.
+2. **Verify Phase 2 assets:** MiCA CASP compliance brief built; PSD3 + eIDAS brief built (where applicable to active Phase 2 segments).
+3. **Update profile compliance signal line** — add MiCA CASP brief to "available on request" list (drop "on inquiry" qualifier for newly-active segments).
+4. **Move Phase 2 sections** from `InnBlockchain - LinkedIn Outreach Strategy - Phase 2-4 Reference.md` into this active doc.
+5. **Update §1 Executive Summary** to add Phase 2 track rows.
+6. **Update §7 Weekly Action Plan** to add Phase 2 daily allocation.
+7. **Update §8 KPIs** to add Phase 2 columns + revise combined targets.
+8. **Update §9 DQ Signals + Mistakes** to add Phase 2-specific rules.
+9. **Update header date and scope note** to reflect Phase 1 + Phase 2 active.
+10. **Communicate change to outreach owner** — daily budget reshuffles when Phase 2 activates.
+
+---
+
+## 💡 Summary: The Phase 1 Outreach Formula
+
+**ICP-ALIGNED RWA PROFILE** + **MiFID II + DLT PILOT REGIME-AWARE TARGETING** + **ASSET-FIRST / WEALTHTECH-FIRST PERSONALISATION** + **VALUE-DRIVEN T1-T5 SEQUENCES** + **SYSTEMATIC FOLLOW-UP** = **QUALIFIED EU RWA DISCOVERY CALLS**
 
 | Related Notes |
 | :--- |
-| [[ICP - FinTech]] |
-| [[ICP - Crypto Native]] |
-| [[ICP - Channel Partner-I]] |
-| [[LinkedIn Profile Audit Vignesh]] |
-| [[Content Strategy - FinTech]] |
-| [[Content Strategy - Crypto Native]] |
-| [[LinkedIn Marketing Strategy]] |
+| **Phase 2-4 Reference (deferred tracks):** `InnBlockchain - LinkedIn Outreach Strategy - Phase 2-4 Reference.md` |
+| [[InnBlockchain FinTech ICP]] (concept) / `InnBlockchain - ICP - FinTech.md` (source) |
+| [[InnBlockchain Crypto Native ICP]] (concept) / `InnBlockchain - ICP - Crypto Native.md` (source) |
+| [[InnBlockchain Vignesh LinkedIn Profile]] (concept) / `LinkedIn Profile Vignesh Content.md` (source) |
+| [[LinkedIn-Marketing-Strategy-InnBlockchain]] (sister doc — platform setup + content cadence) |
+| [[Recommendation-Request-Templates-InnBlockchain]] (sister doc — recommendation pipeline) |
+| [[InnBlockchain LinkedIn Strategy]] (umbrella concept) |
+| [[InnBlockchain LinkedIn Recommendation Strategy]] (5 recommender categories) |
+| [[InnBlockchain Landing Pages Plan]] (cross-channel destination dependency) |
+| [[InnBlockchain Editorial Calendar]] (Phase 1 RWA-only content sequence W1-W21) |
+| [[EU-Fintech-Compliance-Landscape]] / [[US-Fintech-Compliance-Landscape]] (per-segment regime mapping) |
+| [[InnBlockchain FinTech Content Strategy]] / [[InnBlockchain Crypto Native Content Strategy]] |

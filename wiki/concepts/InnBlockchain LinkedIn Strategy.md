@@ -2,7 +2,7 @@
 type: concept
 title: "InnBlockchain LinkedIn Strategy"
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-27
 tags:
   - concept
   - linkedin
@@ -19,8 +19,11 @@ related:
   - "[[InnBlockchain FinTech ICP]]"
   - "[[InnBlockchain Crypto Native ICP]]"
   - "[[InnBlockchain Channel Partner ICP]]"
-  - "[[InnBlockchain FinTech Content Strategy]]"
-  - "[[InnBlockchain Crypto Native Content Strategy]]"
+  - "[[InnBlockchain Content Strategy]]"
+  - "[[InnBlockchain Editorial Calendar]]"
+  - "[[InnBlockchain Content Repurposing Plan]]"
+  - "[[InnBlockchain Vignesh LinkedIn Profile]]"
+  - "[[EU-Compliance-Landscape]]"
 ---
 
 # InnBlockchain LinkedIn Strategy
@@ -29,15 +32,35 @@ LinkedIn is InnBlockchain's **primary B2B channel** — combining organic author
 
 **The flywheel**: Optimised Profile → ICP-Aligned Content → Trigger-Based Outreach → Discovery Call
 
-Two ICP streams run simultaneously from the same profile:
-- **FinTech track**: Strategic Sam (CEO/CPO) + Technical Tom (CTO) at regulated EU FinTechs
-- **Crypto Native track**: Founding Felix + Security Sasha at EU DeFi/protocol + RWA founders
+> [!note] Scope + division of concerns (rev 2026-05-27)
+> This concept synthesises the full LinkedIn motion — platform mechanics + outreach + profile + content + recommendations — in one place. Authoritative sources for each layer:
+> - **Platform mechanics + organic feed cadence + algorithm + analytics (phase-agnostic):** [[LinkedIn-Marketing-Strategy-InnBlockchain]] *(raw is also phase-agnostic post-rev 2026-05-27)*
+> - **Current-phase outbound scope (which tracks/geos are switched on):** [[LinkedIn-Outreach-Strategy-InnBlockchain]] *(now Phase 1 RWA-only)*
+> - **Profile copy:** [[InnBlockchain Vignesh LinkedIn Profile]]
+> - **Content inventory + sales-motion tags:** [[InnBlockchain Content Strategy]] *(single merged doc, supersedes the earlier FinTech + Crypto Native split)*
+> - **Publish dates:** [[InnBlockchain Editorial Calendar]]
+> - **Derivative-content production rules (Tier 1/2/3/0):** [[InnBlockchain Content Repurposing Plan]]
+> - **Canonical regulatory reference:** [[EU-Compliance-Landscape]]
+>
+> The two ICP streams below describe the **full** addressable buyer set; which streams are actively prospected at any given time is set by the Outreach Strategy per phase.
+
+Two ICP streams served from the same profile (full addressable set):
+- **FinTech track**: Strategic Sam (CEO/CPO) + Technical Tom (CTO) + Compliance Carol + RWA Felix at regulated EU FinTechs
+- **Crypto Native track**: Founding Felix + Security Sasha + RWA Felix at EU DeFi/protocol + asset-backed founders
 
 ---
 
-## Geography Gate
+## Phase-Scoped Activation (replaces prior "Geography Gate")
 
-**EU Continental Europe only** until 5 projects are closed. No outbound to UK, US, UAE, Singapore, MENA, or SEA for any ICP track (including Channel Partners). Each Watch geography requires a separate regulatory brief before activation: UK (FCA), UAE (ADGM/VARA/DFSA), Singapore (MAS), US (FinCEN/SEC).
+Which ICP tracks run outbound, which geographies are in-scope, which destination LPs are live, and what the current readiness gates look like are all **set by the active Outreach Strategy revision** — not by this concept doc.
+
+General rules that hold across phases:
+
+- **Geography:** EU Continental Europe is the default active outbound geography. Each Watch geography (UK / UAE / Singapore / US) requires a separate regulatory brief before activation: UK (FCA), UAE (ADGM/VARA/DFSA), Singapore (MAS), US (FinCEN/SEC).
+- **Cross-channel destinations:** every LinkedIn surface that points at an InnBlockchain.com destination requires the destination LP to be live before that surface activates (see Cross-Channel Destination Dependency below).
+- **Readiness gates:** profile publish and outreach launch are separate readiness events with separate asset lists (see Two Publish Gates below).
+
+**Phase 1 active scope (as of 2026-05-26):** RWA-only — FinTech WealthTech RWA + Crypto Native asset-backed RWA Felix. ExchangeTech / WalletTech / LendTech / DeFi / Channel Partner tracks are documented but **not running outbound** until Phase 1 closes — see Outreach Strategy Phase 2-4 reference doc.
 
 ---
 
@@ -46,35 +69,44 @@ Two ICP streams run simultaneously from the same profile:
 | Item | Requirement |
 |------|-------------|
 | Creator Mode | On (mandatory before any outreach) |
-| Profile Headline | "CEO @ InnBlockchain \| RWA Tokenization (MiFID II + DLT Pilot) · WealthTech · ExchangeTech (MiCA CASP) \| Smart Contract Security \| Blockchain Engineering for EU Regulated FinTech \| 7+ Years" *(rev 2026-05-19 — regime split per segment; original paired MiCA with RWA which is a Carol-credibility risk under Art. 2(4))* |
-| Banner | Updated — remove "Turn Your Business Ideas Into Reality" / "200+ Mentored". Hero line: "RWA Tokenization (MiFID II + DLT Pilot) · MiCA-Compliant Exchange & Wallet Infrastructure · Audit-Ready by Design" |
-| Featured Section | InnBlockchain service pages + 1 RWA / MiFID II + DLT Pilot article (NOT a MiCA/RWA article — wrong regime pairing) + 1 MiCA CASP article for ExchangeTech segment |
-| About Section | ICP pain-point language — **per-segment regime**: MiFID II + DLT Pilot for RWA / WealthTech; MiCA for ExchangeTech; PSD3 for WalletTech; CCD2 for LendTech. Plus: smart contract security, Web3 talent gap |
-| Skills | Smart Contract Security, RWA Tokenization, **MiFID II Compliance, DLT Pilot Regime**, Solidity, MiCA Compliance (active for ExchangeTech / WalletTech), DeFi |
-| Showcase Pages | Smart Contract Security · FinTech Blockchain Engineering · RWA Tokenization |
-| Newsletter | "Secure by Design" — bi-weekly, 400-700 words, target 500 subscribers in 90 days |
+| Profile Headline | *(current, verified 2026-05-26 — 170 chars)* "CEO @ InnBlockchain \| RWA Tokenization · WealthTech · ExchangeTech · WalletTech · Smart Contract Security \| Blockchain Engineering for EU Regulated FinTech \| 7+ Years" — regime stack (MiFID II/III + DLT Pilot for RWA; MiCA CASP for Exchange/Wallet; PSD3 + eIDAS for WalletTech) carried by About + Featured + Skills + compliance brief, not by parentheticals in the headline (kept for scan-friendliness) |
+| Banner | *(current, rev 2026-05-26)* Three lines: (1) "Blockchain Engineering & Smart Contract Security for EU-Regulated FinTech and Crypto-Native Founders" · (2) "Compliance as Engineering Priority — Not Legal Review. Vendor Risk Pack Day 1. Code Ownership at Exit." · (3) "Built for founders who can't afford to get this wrong." |
+| Featured Section | InnBlockchain service pages (when live) + 1 RWA / MiFID II + DLT Pilot article (NOT a MiCA/RWA article — wrong regime pairing) + 1 MiCA CASP article for ExchangeTech segment (activated alongside the corresponding LP) + RWA Tokenization Risk Checklist (gated PDF on `/solutions/rwa-tokenization` — required for Phase 1) |
+| About Section | ICP pain-point language — **per-segment regime**: MiFID II/III + Prospectus + DLT Pilot + MAR for RWA / WealthTech; MiCA CASP for ExchangeTech; PSD3 + eIDAS 2.0 + MiCA for WalletTech; CCD2 + EU AI Act for LendTech; DORA cross-cutting for BankTech/InsurTech. Plus: smart contract security, Web3 talent gap. Current copy in [[InnBlockchain Vignesh LinkedIn Profile]] |
+| Skills | Smart Contract Security, RWA Tokenization, **MiFID II Compliance, DLT Pilot Regime, eIDAS 2.0**, Solidity, MiCA Compliance (active for ExchangeTech / WalletTech), DeFi |
+| Showcase Pages | Smart Contract Security · FinTech Blockchain Engineering · RWA Tokenization — **destination-gated: create each only when the corresponding InnBlockchain.com LP is live** (`/services/smart-contracts`, `/industries/fintech/` or successor segment LPs, `/solutions/rwa-tokenization`). Activate in LP-ship order per [[InnBlockchain Landing Pages Plan]] |
+| Newsletter | "Secure by Design" — **activation-gated** (do not launch until 4-6 weeks of consistent feed posting + ~50+ engaged followers). Once active: bi-weekly, 400-700 words; reasonable 90-day target = 500 subscribers post-activation. Current state tracked in [[LinkedIn-Outreach-Strategy-InnBlockchain]] Outreach Readiness Gate |
 
-> Do not run outreach before profile is updated. The current headline ("CEO, Software Specialist") kills conversion.
+> Do not run outreach before profile is updated. The pre-publish hard gate (assets the published profile **promises**) must be cleared before profile publish; the outreach readiness gate (assets traffic needs once outreach starts) is a separate, later event — see Two Publish Gates below.
 
 ---
 
 ## Content Engine
 
-### Cadence
-- **Vignesh (personal)**: 4-5x/week — 3x text posts, 1x carousel, 1x video or poll
+> [!info] Division of concerns within content
+> - **Article inventory + sales-motion tags + ICP routing:** [[InnBlockchain Content Strategy]]
+> - **Long-form publish schedule (Tue + Thu 10:00 CET, 2 articles/week):** [[InnBlockchain Editorial Calendar]]
+> - **Derivative content per article (Tier 1/2/3/0, per-track asset families, split-CTA, LinkedIn output cap + ≥48 hr spacing):** [[InnBlockchain Content Repurposing Plan]]
+> - **This section covers LinkedIn-native organic feed cadence + algorithm rules + authority clusters.** Feed cadence is distinct from the article-publish cadence; most feed posts derive from the calendar's articles via the Repurposing Plan tier rules.
+
+### LinkedIn Feed Cadence (Organic Posts)
+- **Vignesh (personal)**: 4-5x/week — 3x text posts, 1x carousel (7-10 slides), 1x video or poll
 - **InnBlockchain (company page)**: 3x/week — 2x repurposed Vignesh posts + 1x company-specific
 - Alternate personal and company page posts on different days (not same day)
+- **Spacing rule for same-source-article posts:** ≥48 hr between any two LinkedIn posts derived from the same article (cross-pillar Tier 1 articles capped at 1/week to keep this aggregate under control — per Repurposing Plan rev 6)
 
-### 5 Authority Topic Clusters (own these — 3 of every 5 posts must be in these)
+### 6 Authority Topic Clusters (own these — 3 of every 5 posts must be in these)
 
-| Cluster | Primary ICP |
-|---------|------------|
-| MiCA CASP compliance engineering (ExchangeTech, WalletTech) | FinTech Seg 2/4 (Sam, Tom, Carol) — NOT for RWA |
-| MiFID II + DLT Pilot Regime tokenization engineering | FinTech WealthTech (Seg 1) + Crypto Native RWA Felix |
-| RWA tokenization security | FinTech WealthTech + Crypto Native RWA Felix (frame under MiFID II + DLT Pilot, NOT MiCA) |
-| Smart contract audit readiness | Crypto Native (Felix, Sasha) |
-| AI-generated smart contract risk | Both ICPs |
-| Web3 talent gap solutions | Both ICPs |
+Not every cluster is active in every phase — cluster activation follows the current-phase ICP scope set by the Outreach Strategy. Listed below in their full phase-agnostic form:
+
+| Cluster | Primary ICP | Phase-1 status |
+|---------|------------|---------------|
+| MiFID II + DLT Pilot Regime tokenization engineering | FinTech WealthTech (Seg 1) + Crypto Native RWA Felix | **Active** |
+| RWA tokenization security (frame under MiFID II + DLT Pilot, NOT MiCA per Art. 2(4)) | FinTech WealthTech + Crypto Native RWA Felix | **Active** |
+| Smart contract audit readiness | Crypto Native (Felix, Sasha) | Ambient (Phase 2 outbound) |
+| AI-generated smart contract risk | Both ICPs | Active (cross-cutting) |
+| Web3 talent gap solutions | Both ICPs | Active (cross-cutting) |
+| MiCA CASP compliance engineering (ExchangeTech, WalletTech) — NOT for RWA | FinTech Seg 2/4 (Sam, Tom, Carol) | Phase 2 (waits for `/solutions/regulated-exchange` + `/solutions/fintech-wallets` LPs) |
 
 ### Optimal Posting Times (EU / CET)
 Tuesday 08:00-09:30, Wednesday 09:00-10:30, Thursday 08:00-10:00, Monday 07:30-09:00. Avoid Friday.
@@ -84,6 +116,7 @@ Tuesday 08:00-09:30, Wednesday 09:00-10:30, Thursday 08:00-10:00, Monday 07:30-0
 - Reply to every comment within the first hour
 - Delete and repost if a post gets zero engagement in first hour (don't let it decay)
 - 3-5 hashtags max, placed at the bottom
+- **Hashtag regime hygiene:** do NOT pair `#MiCA` with `#RWATokenization` in the same post (regime mismatch — RWA = MiFID II + Prospectus + DLT Pilot under Art. 2(4))
 
 ---
 
@@ -164,16 +197,18 @@ Reply rate below 2% on any sequence = messaging problem, stop and diagnose befor
 
 ---
 
-## Cross-Channel Destination Dependency (Added 2026-05-12)
+## Cross-Channel Destination Dependency
 
-The flywheel (Profile → Content → Outreach → Discovery Call) assumes prospects who engage will encounter coherent InnBlockchain positioning across channels. As of 2026-05-12, **zero ICP-aligned landing pages per [[InnBlockchain Landing Pages Plan]] are live** — verified via sitemap.xml (`/industries/`, `/solutions/`, `/services/smart-contracts` all 404).
+The flywheel (Profile → Content → Outreach → Discovery Call) assumes prospects who engage will encounter coherent InnBlockchain positioning across channels. **Any LinkedIn surface pointing at a 404 destination wastes the touch and damages credibility.**
 
-The dependency cascades across every layer of the strategy:
+**General rule (phase-agnostic):** every LinkedIn outbound surface that routes the prospect to an InnBlockchain.com page requires that page to be live before the surface activates. Verify destinations before deploying:
 
-- **Profile** ([[InnBlockchain Vignesh LinkedIn Profile]]) — About CTA cannot link to a 404; pre-publish hard gate now includes `/solutions/rwa-tokenization` live
-- **Outreach** ([[LinkedIn-Outreach-Strategy-InnBlockchain]]) — phased activation: Phase 1 RWA-only after `/solutions/rwa-tokenization` ships; Phase 2 + ExchangeTech; Phase 3 + DeFi/Protocol; Phase 4 + remaining
-- **Marketing** ([[LinkedIn-Marketing-Strategy-InnBlockchain]]) — Company Page CTAs, LinkedIn Article cross-links, Showcase Pages all currently route to non-existent destinations
-- **Content** ([[InnBlockchain FinTech Content Strategy]], [[InnBlockchain Crypto Native Content Strategy]]) — vertical clusters publish only after corresponding solution pages live
+- **Profile** ([[InnBlockchain Vignesh LinkedIn Profile]]) — About CTA cannot link to a 404; the Pre-Publish Hard Gate enumerates which LPs must be live before profile publish per phase
+- **Outreach** ([[LinkedIn-Outreach-Strategy-InnBlockchain]]) — phased activation: Phase 1 RWA-only after `/solutions/rwa-tokenization` ships; subsequent phases add tracks as their LPs ship (`/solutions/regulated-exchange`, `/solutions/fintech-wallets`, etc.)
+- **Marketing** ([[LinkedIn-Marketing-Strategy-InnBlockchain]]) — Company Page CTAs, Showcase Pages, and LinkedIn Article cross-links must each point to a live LP. When the relevant LP is not yet live, route to the closest live destination (currently the primary active-phase Solutions LP) rather than 404s
+- **Content** ([[InnBlockchain Content Strategy]] + [[InnBlockchain Editorial Calendar]]) — vertical clusters publish only after corresponding solution pages live; current state tracked in the Editorial Calendar's Reference Build Hard Gate
+
+LP shipping schedule lives in [[InnBlockchain Landing Pages Plan]]; current Phase 1 gate state lives in [[LinkedIn-Outreach-Strategy-InnBlockchain]] (Cross-Channel Destination Dependency) and [[InnBlockchain Vignesh LinkedIn Profile]] (Pre-Publish Hard Gate).
 
 ## Two Publish Gates (Added 2026-05-12)
 

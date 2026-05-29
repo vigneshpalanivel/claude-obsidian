@@ -9,14 +9,18 @@ tags:
 ---
 
 # 📣 LinkedIn Marketing Strategy — InnBlockchain
-*Updated 2026-04-06 — aligned to InnBlockchain ICPs, Content Strategies, Outreach Strategy, and Profile Audit*
+*Updated 2026-05-27 — phase-agnostic LinkedIn platform strategy. Pairs with the phase-scoped Outreach Strategy + Editorial Calendar for the current phase's active tracks, geographies, and publish cadence.*
+
+> [!important] Scope of this doc
+> This doc owns **LinkedIn platform mechanics** — profile + company page setup, algorithm rules, organic post format/cadence, authority-building motions, and analytics. It is **phase-agnostic** and remains stable across Phase 1 → Phase 4. Anything phase-scoped (which ICP tracks are active outbound, which geographies, which destination LPs are live, current newsletter activation state) lives in the linked sister docs below — consult them before activating any outbound surface.
 
 > [!important] Linked Documents — Read These First
-> This strategy covers LinkedIn-specific platform tactics only. For ICP definitions, content topics, outreach sequences, and profile rewrites, refer to:
-> - [[ICP - FinTech]] · [[ICP - Crypto Native]]
-> - [[Content Strategy - FinTech]] · [[Content Strategy - Crypto Native]]
-> - [[LinkedIn Outreach Strategy]]
-> - [[LinkedIn Profile Audit Vignesh]]
+> - **ICPs:** [[ICP - FinTech]] · [[ICP - Crypto Native]]
+> - **Content inventory + sales-motion tagging:** [[InnBlockchain - Content Strategy]] *(single merged doc since 2026-05-13 — supersedes the prior split `Content Strategy - FinTech` + `Content Strategy - Crypto Native` files)*
+> - **Publish dates + cadence:** [[InnBlockchain - Editorial Calendar]]
+> - **Derivative-content rules (tiered):** [[InnBlockchain - Content Repurposing Plan]]
+> - **Outreach sequences + current-phase scope:** [[InnBlockchain - LinkedIn Outreach Strategy]] (Phase 1 active) + [[InnBlockchain - LinkedIn Outreach Strategy - Phase 2-4 Reference]]
+> - **Profile copy:** [[LinkedIn Profile Vignesh Content]]
 
 ---
 
@@ -26,23 +30,19 @@ LinkedIn is InnBlockchain's **primary platform** for B2B authority-building, inb
 
 **Optimised Profile → ICP-Aligned Content → Trigger-Based Outreach → Discovery Call**
 
-Two ICP categories are served simultaneously from the same profile and company page — regulated FinTech buyers (Strategic Sam, Technical Tom) and crypto-native protocol buyers (Founding Felix, Security Sasha). Content and outreach angles differ per ICP; platform mechanics are shared.
+Two ICP categories are served from the same profile and company page — regulated FinTech buyers (Strategic Sam, Technical Tom, Compliance Carol, RWA Felix) and crypto-native protocol buyers (Founding Felix, Security Sasha). Content and outreach angles differ per ICP; platform mechanics are shared.
 
-> [!warning] Geography Gate
-> EU Continental Europe is the **sole** active outbound geography for FinTech and Crypto Native until **5 projects are closed**. Do not run LinkedIn ABM sequences targeting UK, US, MENA, or SEA until that gate is met.
+> [!info] Phase-scoped activation
+> Which ICP tracks run outbound, which geographies are in-scope, and which destination LPs are live at any given time are **set by the active Outreach Strategy revision**, not by this doc. Before activating any LinkedIn outbound surface (DM sequences, Showcase Pages, Article CTAs), check the current-phase scope in [[InnBlockchain - LinkedIn Outreach Strategy]]. This doc describes the platform machinery; the Outreach Strategy decides what's switched on.
 
-> [!warning] Cross-Channel Destination Dependency (Added 2026-05-11)
-> Multiple CTAs in this strategy route to innblockchain.com pages that do not yet exist (verified via sitemap.xml on 2026-05-11):
-> - **Company Page "Contact us" CTA** → "InnBlockchain.com discovery call booking page" — booking page does not exist
-> - **LinkedIn Articles** → "cross-link to InnBlockchain.com" — most ICP-aligned destinations (`/solutions/rwa-tokenization`, `/services/smart-contracts`, `/industries/fintech/`) do not exist
-> - **Showcase Pages** (Smart Contract Security, FinTech Blockchain Engineering, RWA Tokenization) reference InnBlockchain.com sub-pages that do not exist
+> [!warning] Cross-Channel Destination Dependency — General Rule
+> Every LinkedIn outbound surface routes the prospect somewhere — the Company Page "Contact us" CTA, each Showcase Page, every LinkedIn Article cross-link. **A live LinkedIn surface pointing at a 404 destination wastes the touch and damages credibility.**
 >
-> Until the corresponding pages ship per [[InnBlockchain Landing Pages Plan]]:
-> - Route all CTAs and cross-links to **innblockchain.com/solutions/rwa-tokenization** (Phase 1) — single coherent destination
-> - Do not build Showcase Pages that reference non-existent landing pages
-> - Do not publish LinkedIn Articles with internal links to 404 destinations
->
-> Phased activation matches the outreach plan — see Cross-Channel Destination Dependency in `InnBlockchain - LinkedIn Outreach Strategy.md` and Pre-Publish Hard Gate in `LinkedIn Profile Vignesh Content.md`.
+> Rules that apply across all phases:
+> - **Verify the destination LP is live before activating the surface** that points to it (Showcase Page, Article cross-link, Company Page CTA button). Check sitemap or fetch the URL directly.
+> - **Do not publish Showcase Pages or LinkedIn Articles with internal links to destinations that 404.** Hold the asset until the LP ships.
+> - **When the relevant LP is not yet live but the LinkedIn surface still needs to function as an ambient/inbound channel,** route all CTAs to the single closest live destination rather than 404s.
+> - LP shipping schedule lives in [[InnBlockchain Landing Pages Plan]]; current Phase 1 gate state lives in [[InnBlockchain - LinkedIn Outreach Strategy]] (Cross-Channel Destination Dependency) and [[LinkedIn Profile Vignesh Content]] (Pre-Publish Hard Gate).
 
 ---
 
@@ -59,12 +59,13 @@ Two ICP categories are served simultaneously from the same profile and company p
 ### Company Page (InnBlockchain)
 
 - **Page type:** Company page (not showcase) — treat showcase pages as sub-pages per service line
-- **Showcase Pages to create:**
-  - InnBlockchain Smart Contract Security
-  - InnBlockchain FinTech Blockchain Engineering
-  - InnBlockchain RWA Tokenization
+- **Showcase Pages — service-line sub-pages** (create one per service line **only when the corresponding InnBlockchain.com LP is live** — Showcase Pages must link to a real destination, see Destination Dependency callout above):
+  - InnBlockchain RWA Tokenization → `/solutions/rwa-tokenization`
+  - InnBlockchain Smart Contract Security → `/services/smart-contracts`
+  - InnBlockchain FinTech Blockchain Engineering → `/industries/fintech/` (or successor segment LPs: `/solutions/regulated-exchange`, `/solutions/fintech-wallets`, etc.)
+  - Activate Showcase Pages in the same order the LPs ship per [[InnBlockchain Landing Pages Plan]]
 - **Lead Gen Forms:** Enable on the company page — captures name, email, company, and job title without leaving LinkedIn
-- **Call to Action button:** Set to "Contact us" → link to InnBlockchain.com discovery call booking page
+- **Call to Action button:** Set to "Contact us" → link to the live discovery-call booking destination on InnBlockchain.com. If the booking page is not yet live, route to the closest live destination LP (currently the primary active-phase Solutions LP) until booking ships.
 - **Affiliated pages:** Link Vignesh's personal profile as admin/employee — boosts organic reach when he posts
 
 ---
@@ -104,26 +105,34 @@ Post personal (Vignesh) and company page on alternating days — not the same da
 
 ## 📝 4. Organic Content — Platform Execution
 
-> Content topics and ICP mapping are defined in [[Content Strategy - FinTech]] and [[Content Strategy - Crypto Native]]. This section covers how to execute on the LinkedIn platform.
+> [!note] Division of concerns
+> - **Article inventory + sales-motion tagging + ICP routing** → [[InnBlockchain - Content Strategy]]
+> - **What article publishes when (Tue/Thu 10:00 CET publish slots)** → [[InnBlockchain - Editorial Calendar]]
+> - **Derivative-content production from each article (Tier 1/2/3/0 model, per-track asset families, split-CTA discipline)** → [[InnBlockchain - Content Repurposing Plan]]
+>
+> This section covers **LinkedIn-native post formats, organic post cadence on the feed, hook/structure mechanics, and hashtag/engagement rules** — independent of which article a post is derived from. The cadence numbers below are the **LinkedIn organic feed cadence** for Vignesh's personal profile + the InnBlockchain company page. It is distinct from the editorial calendar's article-publish cadence (2 long-form articles/week, Tue + Thu) — most feed posts are derivatives of those articles, but standalone feed-only posts (takes, polls, comments-on-news) also count toward feed cadence.
 
 ### Post Format Guide
 
 | Format | Algorithm Strength | Best Use | Length |
 | :--- | :--- | :--- | :--- |
 | **Text post** | ⭐⭐⭐⭐⭐ | Thought leadership, takes, contrarian views | 150–300 words; 3–5 short paragraphs |
-| **Carousel (PDF)** | ⭐⭐⭐⭐⭐ | Step-by-step guides, checklists, explainers | 7–12 slides; slide 1 = hook, last slide = CTA |
+| **Carousel (PDF)** | ⭐⭐⭐⭐⭐ | Step-by-step guides, checklists, explainers | **7–10 slides** *(working spec — matches Content Repurposing Plan)*; slide 1 = hook, last slide = CTA |
 | **Short video (native)** | ⭐⭐⭐⭐ | Founder on camera; trending topic quick takes | 30–90 seconds; captions mandatory (85% watch muted) |
-| **LinkedIn Article** | ⭐⭐⭐ (SEO value) | Long-form SEO authority pieces | 1,200–2,500 words; cross-link to InnBlockchain.com |
+| **LinkedIn Article** | ⭐⭐⭐ (SEO value) | Long-form SEO authority pieces | 1,200–2,500 words; cross-link to InnBlockchain.com **only when destination LP is live** (see §1 Destination Dependency) |
 | **Poll** | ⭐⭐⭐⭐ | Engagement driver; audience research | 2–4 options; follow up with a post using the results |
 | **Document post** | ⭐⭐⭐⭐ | Same as carousel but single-file | Use for reports, guides, checklists |
 | **Image post** | ⭐⭐ | Announcements, milestones | Only when image adds information — not decoration |
 
-### Content Cadence
+### LinkedIn Feed Cadence (Organic Posts)
 
 | Account | Frequency | Mix |
 | :--- | :--- | :--- |
 | **Vignesh (personal)** | 4–5x / week | 3× text posts · 1× carousel · 1× video or poll |
 | **InnBlockchain (company page)** | 3x / week | 2× repurposed Vignesh posts + 1× company-specific (case study, milestone, service post) |
+
+> [!warning] Same-profile multi-audience spacing rule
+> Per [[InnBlockchain - Content Repurposing Plan]] (rev 3+), when a single profile posts multiple LinkedIn assets derived from the **same source article** within a week (e.g., a carousel + a long-form + a persona-coded variant for a `[Both]` article), enforce **≥48 hr spacing between posts about the same article** and cap cross-pillar Tier 1 article publishes at 1/week. Same-profile dual carousels for `[Both]` RWA-themed articles require differentiated hashtag stacks + ideally sponsored targeting on at least one to avoid diluting the algorithm's audience-targeting signal. The 4–5x weekly cadence above is the **aggregate** ceiling — the spacing rule lives below it.
 
 ### Hook Formula (First 2 Lines)
 
@@ -194,17 +203,26 @@ LinkedIn's algorithm categorises creators by topic. Posting consistently on the 
 
 ### 5.2 LinkedIn Newsletter
 
-A LinkedIn Newsletter sends a direct notification to every subscriber when a new issue is published — it bypasses the feed algorithm entirely.
+A LinkedIn Newsletter sends a direct notification to every subscriber when a new issue is published — it bypasses the feed algorithm entirely. It is part of the authority-building toolset, but it requires a **minimum follower base** to be worth activating.
 
-- **Launch one newsletter** under Vignesh's Creator Mode profile
+> [!info] Activation gate
+> A newsletter launched too early fails publicly (low subscriber count, no notification reach), and the resulting empty subscriber list is harder to relaunch than to launch fresh later. **Activation criteria:**
+> - 4–6 weeks of consistent feed posting (4–5x/week) already published, and
+> - At least ~50+ engaged followers / a baseline of inbound profile views from ICP-relevant accounts
+>
+> Current activation state is tracked in [[InnBlockchain - LinkedIn Outreach Strategy]] under *Outreach Readiness Gate → Content Cadence*. Revisit at each phase mid-point.
+
+**Once activated, the spec:**
+
+- **Account:** Vignesh's Creator Mode profile (Creator Mode must be on — newsletters require it)
 - **Suggested name:** *"Secure by Design"* — blockchain engineering and Web3 security for FinTech and protocol teams
 - **Cadence:** Bi-weekly (every 2 weeks) — consistency matters more than frequency
 - **Format:** 400–700 words. One topic per issue. End with a question or a CTA to reply.
-- **Topic rotation:** Alternate between FinTech angle (RWA = MiFID II + DLT Pilot; ExchangeTech = MiCA CASP; WalletTech = PSD3 + MiCA; LendTech = CCD2 + AI Act) and Crypto Native angle (audit readiness, protocol security, AI-generated code risk). Do NOT pair RWA with MiCA in the same post — regime mismatch.
+- **Topic rotation:** Alternate between FinTech angle (RWA = MiFID II/III + Prospectus + DLT Pilot; ExchangeTech = MiCA CASP; WalletTech = PSD3 + MiCA + eIDAS 2.0; LendTech = CCD2 + AI Act; PayTech = PSD3 + TFR; BankTech/InsurTech = DORA cross-cutting) and Crypto Native angle (audit readiness, protocol security, AI-generated code risk). **Do NOT pair RWA with MiCA in the same issue — RWA is MiFID II + Prospectus + DLT Pilot under Art. 2(4); pairing it with MiCA signals regime confusion to compliance-savvy readers.** Per-segment regime stack lives in [[EU-Compliance-Landscape]] (canonical reference).
 - **Growth tactic:** Promote each new issue as a LinkedIn post on publish day — post engagement feeds newsletter discovery
 
 > [!tip] Why Newsletter Over Articles
-> LinkedIn Articles have weak distribution — they rely on search and shares. A newsletter subscriber list is a direct audience you own on the platform. Aim for 500 subscribers in the first 90 days.
+> LinkedIn Articles have weak distribution — they rely on search and shares. A newsletter subscriber list is a direct audience you own on the platform. Reasonable target after launch: 500 subscribers in the first 90 days post-activation.
 
 ---
 
@@ -238,7 +256,7 @@ Authority is validated by what others say about you — not what you say about y
 - Target: 5 minimum on Vignesh's profile — at least 2 from FinTech clients, 2 from Crypto Native clients
 - Ask immediately after a successful project delivery — not cold, not months later
 - Give a specific prompt scoped to the engagement's actual regime — for a tokenized-securities / RWA build: *"Could you mention the MiFID II + DLT Pilot Regime engineering side / the audit outcome / the on-time delivery?"* For a licensed CEX/DEX/CASP build: *"Could you mention the MiCA CASP compliance side / the audit outcome / the on-time delivery?"* Match the prompt to what they actually engaged you for — asking a tokenized-securities client to mention "MiCA compliance" exposes a regime confusion they'll judge.
-- Full guidance: [[LinkedIn Profile Audit Vignesh]]
+- Full guidance + templates: [[Recommendation Request Templates]] · profile copy in [[LinkedIn Profile Vignesh Content]]
 
 **Being cited and reshared:**
 - When a post gets reshared by someone with a large following, engage their repost with a reply — it keeps the thread alive and signals credibility to their audience
@@ -259,7 +277,7 @@ LinkedIn authority compounds slowly, then suddenly. The signals that build long-
 | :--- | :--- |
 | **Posting consistency** | Never go more than 3 days without a post — gaps reset algorithm momentum |
 | **Topic ownership** | Return to the same topic clusters repeatedly — the algorithm needs 30+ posts on a topic before categorising you as an authority in it |
-| **Profile completeness** | A complete, ICP-aligned profile converts authority into inbound — see [[LinkedIn Profile Audit Vignesh]] for the 30-day rebuild checklist |
+| **Profile completeness** | A complete, ICP-aligned profile converts authority into inbound — see [[LinkedIn Profile Vignesh Content]] for the current copy + Pre-Publish Hard Gate |
 | **Engagement reciprocity** | Like and comment on posts from ICP followers — they are more likely to engage back on your posts, feeding your reach |
 | **Creator Mode on** | Required for newsletter, analytics, and "Follow" CTA — must be enabled |
 
@@ -302,11 +320,11 @@ LinkedIn authority compounds slowly, then suddenly. The signals that build long-
 
 - [ ] Review top 3 posts by impressions — what format/topic drove it?
 - [ ] Check profile views — did a specific post spike views?
-- [ ] Check newsletter subscriber count — is it growing week-on-week?
+- [ ] *(If newsletter is activated — see §5.2 gate)* Check newsletter subscriber count — is it growing week-on-week?
 - [ ] Review comment activity — which accounts engaged, are any ICP-relevant?
-- [ ] Review outreach response rates (T1 accept, T2 reply) — see [[LinkedIn Outreach Strategy]]
+- [ ] Review outreach response rates (T1 accept, T2 reply) — see [[InnBlockchain - LinkedIn Outreach Strategy]]
 - [ ] Log any new qualified leads from LinkedIn → Zoho CRM
-- [ ] Identify 1 post to repurpose as a carousel or video next week
+- [ ] Identify 1 post to repurpose as a carousel or video next week (route through [[InnBlockchain - Content Repurposing Plan]] tier rules)
 
 ---
 
@@ -314,9 +332,14 @@ LinkedIn authority compounds slowly, then suddenly. The signals that build long-
 
 | Document | What It Covers |
 | :--- | :--- |
-| [[ICP - FinTech]] | FinTech buyer personas, segments, pain points, qualifying criteria, objection handling |
-| [[ICP - Crypto Native]] | Crypto Native buyer personas, segments, pain points, qualifying criteria, objection handling |
-| [[Content Strategy - FinTech]] | Full content pillars, topic clusters, and article list for the FinTech ICP |
-| [[Content Strategy - Crypto Native]] | Full content pillars, topic clusters, and article list for the Crypto Native ICP |
-| [[LinkedIn Outreach Strategy]] | Outreach sequences, Sales Navigator filters, and message templates per ICP track |
-| [[LinkedIn Profile Audit Vignesh]] | Profile audit (50/100), headline/About/Featured rewrites, 30-day action checklist |
+| [[ICP - FinTech]] | FinTech buyer personas (Sam, Tom, Carol, RWA Felix), segments, pain points, qualifying criteria, objection handling |
+| [[ICP - Crypto Native]] | Crypto Native buyer personas (Founding Felix, Security Sasha), segments, pain points, qualifying criteria, objection handling |
+| [[InnBlockchain - Content Strategy]] | Single merged content strategy: article inventory, scoring, cluster mapping, sales-motion tags, `[CN]` / `[FT]` / `[Both]` track tagging, routing rules |
+| [[InnBlockchain - Editorial Calendar]] | Publish schedule (Tue + Thu 10:00 CET slots), 2 articles/week, gate sequences, distribution rhythm |
+| [[InnBlockchain - Content Repurposing Plan]] | Tier 1/2/3/0 investment model, per-track asset families, split-CTA discipline, LinkedIn output cap + spacing rules |
+| [[InnBlockchain - LinkedIn Outreach Strategy]] | Current active-phase outreach: sequences, Sales Navigator filters, message templates, readiness gates |
+| [[InnBlockchain - LinkedIn Outreach Strategy - Phase 2-4 Reference]] | Parked outreach tracks for phases not currently active |
+| [[LinkedIn Profile Vignesh Content]] | Final ICP-aligned profile copy (Headline, Banner, About, Featured, Skills) + Pre-Publish Hard Gate |
+| [[Recommendation Request Templates]] | Templates for soliciting recommendations across the 5 categories (FinTech client, Crypto-native client, Security peer, Regulator-adjacent, Engineering hire) |
+| [[EU-Compliance-Landscape]] | Canonical regulatory reference (MiFID II/III, MiCA, DLT Pilot, Prospectus, DORA, PSD3, eIDAS 2.0, CCD2, TFR, AML/AMLA, EU AI Act, MAR) — settles any regime framing in topic clusters / hooks / hashtag tables |
+| [[InnBlockchain Landing Pages Plan]] | LP shipping schedule — gates Showcase Page activation + Article CTA destinations |
