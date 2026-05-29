@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-05-26
+updated: 2026-05-29
 tags:
   - meta
   - log
@@ -18,6 +18,19 @@ related:
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
+
+## 2026-05-29 | ingest | InnBlockchain Content Repurposing Design Toolkit (new concept) — design-only child of the Plan
+- Canonical source: `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Design Toolkit.md` (new file, rev 1 → rev 5, same session 2026-05-29).
+- Page created: [[InnBlockchain Content Repurposing Design Toolkit]] — synthesizes rev 5 of the raw source. Sits beside [[InnBlockchain Content Repurposing Plan]] (parent) and [[InnBlockchain Phase 1 Execution Playbook]] (WS13 spot-check ramp + WS15 ownership).
+- **Why a separate doc from the Plan**: Plan owns *what* gets produced (formats, tiers, output cap, anti-patterns). Toolkit owns *how it gets produced* (tools, AI vs designer split, brand standards, hallucination control). Bundling bloated the Plan with execution detail that changes on a different cadence than format strategy and obscured that MP2 (not the dedicated repurposing resource) owns the design layer.
+- **rev 1**: initial design toolkit drafted. Tool stack (Canva Pro + Descript + Beautiful.ai + Midjourney + ChatGPT Pro + native schedulers + PTD). Per-asset-category tool + owner map across Track A, Track B, Cross-Track, Compliance briefs, Profile/LP. AI vs designer decision shorthand (10 rows; default AI, escalate to PTD only on Designer rows). Brand consistency standards (PTD owns one-time W2–W3 setup; MP2 maintains via templates). AI hallucination risk + spot-check protocol with concrete failure mode (ChatGPT plausibly outputs "MiCA-compliant RWA tokenization" — wrong because RWA ownership tokens are MiFID II financial instruments excluded from MiCA per Art. 2(4)). MP2 regime-leak checklist (5 items). Per-asset production workflows for 6 key examples (carousel, video, sample audit, lead magnet, Mirror.xyz, Telegram).
+- **rev 2**: removed all tool cost / pricing / budget references — tool stack table now tool + function + owner only (no $/mo column, no total stack cost summary). Comp structures explicitly out of scope (covered in hiring discussion, not this doc).
+- **rev 3**: collapsed Compliance briefs section from 4 regime-specific rows (MiFID/Prospectus/DLT/MAR/Listing Act, DORA, eIDAS 2.0, RWA Checklist) to 3 asset-category rows (standard brief PDF / Carol-grade brief PDF / regulatory checklist PDF). Regime-specific scope (which briefs, which weeks, which LPs) belongs in Content Strategy + Content Repurposing Plan — toolkit is about tooling, not content scope. References block pruned 10 → 5 (dropped Landing Pages AEO GEO Prompts, Content AEO GEO Prompts, LinkedIn Profile Vignesh Content, LinkedIn Marketing Strategy — none referenced inline, cargo-culted from the Plan's reference list).
+- **rev 4**: repositioned doc as **design-only child** of the Plan. Stripped duplicated content owned by parent docs. Pre-Publish Checks 9 → 3 (kept brand template adherence, AI-generated copy review, regime-leak check; dropped track tag, sales motion tag, CTA destination, compliance sign-off, output cap, tier scope — all owned by Plan / Strategy / Playbook). Failure Modes 7 → 5 (dropped LinkedIn output cap breach + Vignesh review SLA — distribution/workflow concerns owned by Playbook Risk Register + Plan Anti-Patterns). Scope callout rewritten to make child-doc relationship explicit and route each non-design concern to its owning parent doc.
+- **rev 5**: full duplication audit against parent Plan. Three classes of cuts: (a) **Asset Category Map** — stripped every row's parentheticals (tier scope, slide counts, video lengths, persona-coding callouts, spacing rules, specific event names, Gate 1/Gate 2 LP routing, "deferred to Phase 2" notes). Asset name + tool + production-owner + posting-owner only. Asset spec lives in Plan; row's job is the tool/owner join. (b) **Production Workflows** — pulled embedded Plan content into pointer links (Carousel + Video → Plan § LinkedIn output cap; Sample Audit → Plan § Cross-Track Assets disclosure; Lead magnet → Content Strategy regime scope; Mirror.xyz → Plan Track A canonical URL rule; Telegram → Editorial Calendar timing). Annual refresh trigger step removed (pure Plan content). (c) **Failure mode #5** rephrased from "Carol-pattern asset without compliance review" (duplicated Plan anti-pattern verbatim) to **visual-layer regime leak** — design-execution extension catching misframes added during slide/infographic layout that source-article review missed. Distinct layer from Plan's content-review concern.
+- **Scope reframe**: doc is now positioned as "The Design Toolkit Plan for Content" — the design layer of content production. Not a sibling of the Plan, not a workstream of the Playbook — a planning doc specifically for design execution.
+- No `.raw/.manifest.json` change (this is an internal authored doc, not an external artefact ingest).
+- Pages: [[InnBlockchain Content Repurposing Design Toolkit]] (new concept), [[index]] (+1 entry), [[hot]], [[log]].
 
 ## 2026-05-26 | mirror | InnBlockchain Content Repurposing Plan wiki concept page updated to rev 5
 - Canonical source: `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Plan.md` (rev 2 → rev 5, same date 2026-05-26; all five revisions occurred in a single session).
