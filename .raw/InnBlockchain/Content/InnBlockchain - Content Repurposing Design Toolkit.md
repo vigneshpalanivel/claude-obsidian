@@ -31,7 +31,7 @@ tags:
 > - **MP2** = Marketing Person #2 (Design/AI Visual) — owns AI visual generation + brand consistency · **primary owner of this toolkit**
 > - **SCW** = Senior Content Writer — owns article writing + persona-variant copy + repurposing copy structuring
 > - **PTD** = Part-time Designer — owns high-stakes pieces (Sample Audit Report, vendor risk pack, brand template setup, complex regulatory infographics)
-> - **SM** = Senior Sales Manager — owns DM templates + vendor risk pack delivery
+> - **Sales Person** = full-cycle outreach + calls — owns DM templates + vendor risk pack delivery
 > - **Vignesh** = founder · final review + compliance self-review + on-camera for video
 
 ---
@@ -87,7 +87,7 @@ Each derivative format from [[InnBlockchain - Content Repurposing Plan]] mapped 
 | Asset | Production tool | Production owner | Posting owner |
 |---|---|---|---|
 | **LinkedIn document carousel** | Canva Pro + ChatGPT | MP2 | MP1 (LinkedIn native scheduler) |
-| **Vendor risk pack PDF** ⭐ | Designer | PTD | SM (delivers on request) |
+| **Vendor risk pack PDF** ⭐ | Designer | PTD | Sales Person (delivers on request) |
 | **Persona-specific LinkedIn post variants** | ChatGPT + SCW + Canva | SCW (copy) + MP2 (visuals) | MP1 |
 | **LinkedIn long-form article** | ChatGPT + SCW writing | SCW (copy) + MP2 (visual elements) | MP1 |
 | **Whitepaper / ebook** | Designer | PTD | MP1 (gated download + email capture) |
@@ -96,7 +96,7 @@ Each derivative format from [[InnBlockchain - Content Repurposing Plan]] mapped 
 | **LinkedIn quote graphic** | Canva Pro templates | MP2 | MP1 |
 | **Conference deck-slide** | Canva (template-driven slide bank) | MP2 | Vignesh (uses at event) |
 | **Webinar / panel talking points** | Notion / Google Docs | SCW | Vignesh |
-| **Email nurture excerpt** | Plain text drafted in CRM | SCW (copy) | SM (CRM sequence) |
+| **Email nurture excerpt** | Plain text drafted in CRM | SCW (copy) | Sales Person (CRM sequence) |
 
 ### Cross-Track Assets
 
@@ -112,8 +112,8 @@ Regime-specific scope (which briefs, which weeks, which LPs) lives in [[InnBlock
 
 | Asset category | Production tool | Production owner | Posting owner |
 |---|---|---|---|
-| **Compliance brief PDF — standard** | Beautiful.ai | MP2 | MP1 + SM |
-| **Compliance brief PDF — Carol-grade** | Designer | PTD | SM delivers on request |
+| **Compliance brief PDF — standard** | Beautiful.ai | MP2 | MP1 + Sales Person |
+| **Compliance brief PDF — Carol-grade** | Designer | PTD | Sales Person delivers on request |
 | **Regulatory checklist PDF** | Canva OR Beautiful.ai | MP2 | MP1 (gated download on LP) |
 
 ### Profile / LP design support
