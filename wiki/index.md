@@ -94,9 +94,9 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[PSD3-Open-Banking-EU]] — PSD3/PSR Nov 2025 agreement; IPR sending + VoP Oct 2025 (active); FiDA open finance ~2027 (status: current)
 - [[Hyperledger-Fabric]] — dominant enterprise permissioned blockchain; execute-order-validate model; 2000+ TPS; channels, chaincode (Go/JS/Java), Raft consensus; Fabric-X targets 100k TPS for digital assets (status: current)
 - [[Hyperledger-Fabric-CA]] — Fabric Certificate Authority: root of org identity; Org CA + TLS CA per org; registration vs enrollment; NodeOUs; CRL revocation; HSM/LDAP integration (status: current)
-- [[InnBlockchain Crypto Native Content Strategy]] — 5 pillars × 10 verticals × 51 articles; strict Phase 1 lock on RWA + MiCA (status: current)
-- [[InnBlockchain FinTech Content Strategy]] — 4 pillars × 8 clusters; WealthTech primary Q2 2026; LinkedIn ABM dominant channel (status: current)
-- [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current)
+- [[InnBlockchain Crypto Native Content Strategy]] — redirect stub → [[InnBlockchain Content Strategy]] (Track A) (status: superseded 2026-05-13 by consolidation)
+- [[InnBlockchain FinTech Content Strategy]] — redirect stub → [[InnBlockchain Content Strategy]] (Track B) (status: superseded 2026-05-13 by consolidation)
+- [[InnBlockchain Crypto Products Content Strategy]] — 4 verticals × 5 pillars × 40 articles; Security Hub first; AI Search is new TOFU (status: current — separate program, not consolidated)
 - [[InnBlockchain Content AEO GEO Prompts]] — 270 conversational AEO/GEO prompts mapped 1:1 to 53+ Phase 1 articles; 10 drafting principles; rev-3 dedup pass (status: current)
 - [[InnBlockchain LinkedIn Strategy]] — LinkedIn as primary B2B channel; flywheel: profile → content → trigger-based outreach → discovery call; EU gate; RWA priority 1 across both ICPs (status: current)
 - [[InnBlockchain Vignesh LinkedIn Profile]] — ICP-aligned rewrite of Vignesh's personal profile; headline/about/banner/skills; reframes speed objection; surfaces RWA Felix + Compliance Carol; cross-channel phased on landing page availability; split publish/outreach gates (status: current)
@@ -197,9 +197,10 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[ICP-InnBlockchain-FinTech]] — 2026-04-15 | InnBlockchain regulated FinTech ICP | WealthTech primary Q2 2026, Carol veto gate
 - [[ICP-InnBlockchain-Channel-Partner]] — 2026-04-15 | InnBlockchain advisory firm channel ICP | 3 personas, routing hub
 - [[ICP-InnBlockchain-Crypto-Products]] — 2026-04-15 | Trioangle-branded clone script line | 5 archetype-first personas
-- [[Content-Strategy-InnBlockchain-Crypto-Native]] — 2026-04-16 | 5 pillars × 10 verticals × 51 scored articles; Phase 1 RWA lock
-- [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first
-- [[Content-Strategy-InnBlockchain-FinTech]] — 2026-04-16 | 4 pillars × 8 clusters; WealthTech primary; LinkedIn ABM dominant
+- [[Content-Strategy-InnBlockchain]] — 2026-05-31 | consolidated source page for the unified InnBlockchain content strategy (both ICPs via track tagging); rev 19; replaces the two pre-merge per-ICP source pages
+- [[Content-Strategy-InnBlockchain-Crypto-Native]] — redirect stub → [[Content-Strategy-InnBlockchain]] (superseded 2026-05-13 by consolidation)
+- [[Content-Strategy-InnBlockchain-Crypto-Products]] — 2026-04-16 | 4 verticals × 5 pillars × 40 articles; Security Hub first (separate program, not consolidated)
+- [[Content-Strategy-InnBlockchain-FinTech]] — redirect stub → [[Content-Strategy-InnBlockchain]] (superseded 2026-05-13 by consolidation)
 - [[InnBlockchain-Content-AEO-GEO-Prompts]] — 2026-05-18 | internal | 270 prompts × 53+ Phase 1 articles; 10 AEO drafting principles; rev-3 dedup pass
 - [[LinkedIn-Marketing-Strategy-InnBlockchain]] — 2026-04-16 (rev 2: 2026-05-12) | platform setup, algorithm mechanics, content cadence, authority clusters, newsletter, analytics targets; cross-channel CTA dependency added
 - [[LinkedIn-Outreach-Strategy-InnBlockchain]] — 2026-04-16 (rev 2: 2026-05-12) | 5 ICP tracks, 5-touchpoint sequences, Sales Nav filters, daily budgets, KPIs, DQ signals; cross-channel phasing + Outreach Readiness Gate added

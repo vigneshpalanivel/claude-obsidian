@@ -3,7 +3,7 @@ type: concept
 title: "InnBlockchain Content Strategy"
 status: current
 created: 2026-04-16
-updated: 2026-05-26
+updated: 2026-05-31
 tags:
   - concept
   - content-strategy
@@ -18,7 +18,7 @@ related:
   - "[[InnBlockchain Channel Partner ICP]]"
   - "[[InnBlockchain Editorial Calendar]]"
   - "[[InnBlockchain Content Repurposing Plan]]"
-  - "[[EU-Fintech-Compliance-Landscape]]"
+  - "[[EU-Compliance-Landscape]]"
   - "[[Trioangle Content Strategy]]"
 ---
 
@@ -27,7 +27,7 @@ related:
 
 # InnBlockchain Content Strategy
 
-The InnBlockchain content program. As of rev 1 (2026-05-13), the Crypto Native + FinTech strategies are **merged into one source-of-truth doc** at `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md` (currently at rev 13, 2026-05-21). One doc serves both ICPs via track tagging (`[CN]` / `[FT]` / `[Both]`); the Crypto Products strategy remains separate.
+The InnBlockchain content program. As of rev 1 (2026-05-13), the Crypto Native + FinTech strategies are **merged into one source-of-truth doc** at `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md` (currently at rev 19, 2026-05-31). One doc serves both ICPs via track tagging (`[CN]` / `[FT]` / `[Both]`); the Crypto Products strategy remains separate.
 
 > [!warning] Wiki concept docs for the per-ICP strategies are deprecated
 > [[InnBlockchain Crypto Native Content Strategy]] and [[InnBlockchain FinTech Content Strategy]] are **pre-merge artifacts** (last refreshed 2026-05-13 before the rev 1 consolidation). They no longer reflect the canonical strategy. Use the canonical `.raw` doc instead. This umbrella page is the only current wiki summary.
@@ -36,9 +36,10 @@ The InnBlockchain content program. As of rev 1 (2026-05-13), the Crypto Native +
 
 | Strategy | Source | Status |
 |---|---|---|
-| **InnBlockchain (unified CN + FT)** | `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md` (rev 13, 2026-05-21) | 🟢 current |
+| **InnBlockchain (unified CN + FT)** | `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md` (rev 19, 2026-05-31) | 🟢 current |
 | Crypto Products | `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Products.md` | 🟢 separate program (clone-script $5k–$25k buyers) |
-| Editorial schedule | `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md` (rev 7, 2026-05-21) | 🟢 publish dates live here; strategy doc has article inventory |
+| Editorial schedule | `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md` | 🟢 publish dates live here; strategy doc has article inventory |
+| Repurposing / derivatives | `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Plan.md` (rev 7, 2026-05-27) | 🟢 derivative content production owns this layer (rev 17 separation) |
 
 ## Two ICPs, One Strategy
 
@@ -57,10 +58,10 @@ Both tracks lead with RWA in Q2 2026 — the segment is the cross-ICP battlegrou
 
 ## Canonical Regulatory Reference
 
-> [!info] [[EU-Fintech-Compliance-Landscape]] is the single source of truth
-> Every regulatory framing in the canonical strategy doc — A1 RWA warning callout, B1 audience qualifier, Phase 1 Segment-Scope Guard, per-segment article titles, P5 scope guards — is a scoped excerpt of the landscape doc. **If any article framing diverges, the landscape doc wins.** Two misframes to avoid: MiCA-is-not-universal-for-FinTechs, and WealthTech RWA ≠ MiCA (ownership tokens are MiFID II financial instruments under Art. 2(4)).
+> [!info] [[EU-Compliance-Landscape]] is the single source of truth
+> Every regulatory framing in the canonical strategy doc — A1 RWA warning callout, B1 audience qualifier, Phase 1 Segment-Scope Guard, per-segment article titles, P5 scope guards — is a scoped excerpt of the landscape doc. **If any article framing diverges, the landscape doc wins.** Two misframes to avoid: MiCA-is-not-universal-for-FinTechs, and WealthTech RWA ≠ MiCA (ownership tokens are MiFID II financial instruments under Art. 2(4)). (Wikilink renamed from `[[EU-Fintech-Compliance-Landscape]]` in rev 8 — doc now spans both ICPs.)
 
-## EU Regulatory Coverage (post rev 13)
+## EU Regulatory Coverage (post rev 19)
 
 The strategy carries article inventory for every regulation in the canonical landscape map:
 
@@ -68,19 +69,19 @@ The strategy carries article inventory for every regulation in the canonical lan
 |---|---|
 | MiFID II + Prospectus + DLT Pilot Regime | 🟢 deep — primary regime for A1 + B1 RWA Phase 1 |
 | MiCA | 🟢 deep — but explicitly scope-guarded (boundary clarifiers; not RWA) |
-| DORA | 🟢 promoted to Phase 1 (P5-DORA-X at W7 — cross-cutting for all licensed financial entities) |
-| EU AI Act | 🟢 [Both] tokenized-asset article + B3 LendTech + Track B AI+Blockchain cluster (validation-gated) |
+| DORA | 🟢 Phase 1 (P5-DORA-X — cross-cutting for all licensed financial entities; rev 10 promotion) |
+| EU AI Act | 🟢 [Both] tokenized-asset article + B3 LendTech + Track B AI+Blockchain cluster (validation-gated to 2026-05-31) |
 | AML/AMLA + TFR Travel Rule | 🟢 covered (TFR not FATF — naming-precision rev 9/10) |
-| eIDAS 2.0 | 🟢 promoted to Phase 1 (P5-eIDAS-X at W13 — broadened [Both] article serving wallet auth + RWA investor KYC) |
+| eIDAS 2.0 | 🟢 Phase 1 (P5-eIDAS-X — broadened [Both] article serving wallet auth + RWA investor KYC; rev 12 promotion) |
 | CCD2 | 🟡 1 article (B3 LendTech); cross-cutting article queued for Phase 2 |
 | PSD3 / PSR | 🟡 1 paired article (B4 WalletTech); standalone queued for Phase 2 |
 | IPR | 🟡 1 article (B5 PayTech); activation-gated |
 | GDPR | 🟡 partial (B6 RegTech); cross-cutting article queued for Phase 2 |
 | FiDA | ⚪ deferred (trilogue paused) |
 
-## The Two Misframes Corrected (rev 6 → rev 13)
+## The Two Misframes Corrected (rev 6 → rev 19)
 
-The canonical doc has been through 13 revisions correcting two structural misframes:
+The canonical doc has been through 19 revisions correcting two structural misframes:
 
 1. **RWA ≠ MiCA.** Tokens conferring ownership of real assets are MiFID II financial instruments excluded from MiCA by Art. 2(4). The primary regime stack for RWA is MiFID II + Prospectus Regulation + DLT Pilot Regime. Six article titles renamed (rev 6) to lead with MiFID II / DLT Pilot framing; scope-guards added to P5 MiCA articles (rev 7); SEO keyword tables rewritten (rev 9); Track B P5 hub re-titled (rev 10).
 
@@ -90,7 +91,7 @@ The canonical doc has been through 13 revisions correcting two structural misfra
 
 Six articles queued for Phase 2 to balance the regulatory inventory (MiCA-heavy in absolute count): GDPR cross-cutting (highest remaining priority), AML/AMLA Package, CCD2 standalone, IPR standalone, PSD3 standalone, FiDA (deferred). DORA + eIDAS already promoted to Phase 1.
 
-## Cross-Cutting Rules (post rev 13)
+## Cross-Cutting Rules (post rev 19)
 
 > [!key-insight] Company origin is the routing gate, not licensing
 > A licensed crypto-native DEX stays in Crypto Native. A licensed incumbent adding crypto routes to FinTech. First discovery question: *"Is your company a crypto-native startup, or an existing regulated financial business adding a crypto product?"*
@@ -100,6 +101,7 @@ Six articles queued for Phase 2 to balance the regulatory inventory (MiCA-heavy 
 - **Two motions never mix in one outreach.** Security Audit vs Development/Engineering — different buyers, cycles, ACVs.
 - **AI-code audit overlay** activates immediately on any active segment deal — no gate.
 - **`[Both]` shared-article pattern.** When a regulation cuts across multiple segments (EU AI Act for tokenized assets, eIDAS for KYC, MiCA-or-MiFID-II boundary), one article serves both audiences via split CTA footer. Used 3× in current inventory.
+- **Per-article inline tagging (rev 18).** Phase 1 + cross-pillar + WL Roster articles carry inline `[#ID] [Track] [Motion]` prefixes. `[Both]`-tagged articles add a `[Both: Sub-type]` qualifier — `Technical` (Tom-coded derivative), `RWA-themed` (Sam-coded + dual carousel pattern), `Compliance-led` (Carol-coded primary). Sub-type values map to [[InnBlockchain Content Repurposing Plan]] rev 8 topic→persona map; writers + repurposing producers look up tags inline rather than re-deriving classification from article content. 8 borderline motion-tag cases flagged `(motion-inferred)` for owner verification. **NOT yet applied to Phase 2 / Watch verticals / full pillar inventories** — those get tags as they enter production.
 
 ## Distribution Split
 
@@ -116,20 +118,29 @@ Six articles queued for Phase 2 to balance the regulatory inventory (MiCA-heavy 
 
 ## Revision History
 
-13 revisions on canonical doc since 2026-04-16:
+19 revisions on canonical doc since 2026-04-16:
 - **rev 1–5 (May 13–18)**: structural consolidation — merge CN + FT, cannibalization fix, WL unification, priority plan restructure, editorial schedule extraction.
 - **rev 6–7 (May 19–20)**: MiCA misframe correction (6 article renames + P5 scope guards).
-- **rev 8 (May 20)**: canonical regulatory reference callout pointing to [[EU-Fintech-Compliance-Landscape]].
+- **rev 8 (May 20)**: canonical regulatory reference callout pointing to [[EU-Compliance-Landscape]] (renamed from `[[EU-Fintech-Compliance-Landscape]]` — doc now spans both ICPs).
 - **rev 9 (May 20)**: post-canonical audit — 4 errors + 2 gaps fixed; Phase 2 Rebalancing callout added.
-- **rev 10 (May 21)**: 4th-pass audit — DORA gap fixed across 5 segments + 2 segments missing hooks (B7, B8) + Track B P5 Hub re-ordered.
+- **rev 10 (May 21)**: 4th-pass audit — DORA gap fixed across 5 segments + 2 segments missing hooks (B7, B8) + Track B P5 Hub re-ordered. **DORA promoted to Phase 1** (P5-DORA-X cross-cutting article).
 - **rev 11 (May 21)**: 5th-pass audit — fixed P1-N stale reference + added P5-DORA-X to inventory.
-- **rev 12 (May 21)**: closed RWA Phase 1 eIDAS gap via broadened [Both] article promoted to W13.
+- **rev 12 (May 21)**: closed RWA Phase 1 eIDAS gap via broadened [Both] article promoted to Phase 1.
 - **rev 13 (May 21)**: 6th-pass cleanup — eIDAS cross-references added to B7 + B8 + B3 hooks; stale claim removed from B4 hook.
+- **rev 14 (May 21)**: 7th-pass cross-doc audit — added P5-eIDAS-X to P5 inventory; Cross-Pillar early-ship callout updated from 3 articles to 4 (P5-DORA-X + P5-eIDAS-X + C1 + T4-N).
+- **rev 15 (May 21)**: removed false "Active phase" date commitments from 3 B6 articles + cluster callout — strategy doc stays at article-inventory layer; Editorial Calendar owns scheduling.
+- **rev 16 (May 21)**: layer-clean pass — stripped 9 calendar-scheduling references that bled into the strategy doc as breadcrumbs from rev 10–12 promotions (week numbers, rev numbers, reassignment history). Only external date retained is the Dec 31 2026 EUDI Wallet deadline.
+- **rev 17 (May 26)**: repurposing-content extraction — spun out derivative-content rules into sister doc [[InnBlockchain Content Repurposing Plan]] (tiered investment model: Tier 1/2/3/0; per-track asset families; split-CTA discipline). Distribution Channels section now strictly covers primary channels for source articles.
+- **rev 18 (May 31)**: per-article inline tag application — added `[#ID] [Track] [Motion]` prefixes (with `[Both: Sub-type]` qualifier where applicable) to every Phase 1 + cross-pillar + WL Roster article entry. Closes the lookup-protocol gap surfaced during the RWA Blog 1 repurposing audit. Sub-type values (`Technical` / `RWA-themed` / `Compliance-led`) map to Repurposing Plan rev 8 topic→persona map. 8 borderline motion-tag cases flagged `(motion-inferred)` for owner verification. No article content changed.
+- **rev 19 (May 31)**: hygiene pass — 3 fixes on full-doc review. (1) Repaired ~20 concatenated table rows in Priority Content Plan (Phase 2 + Phase 3 Track A, Track B B2/B3/B4, Track B Watch) where `||` separators replaced newlines — rev 1 merge artifact breaking Obsidian table rendering. (2) Reordered rev 16 / rev 17 entries in revision_notes block (chronological inversion). (3) Added A1 article-ID-numbering callout above A1 Articles subsection explaining `[#3]` and `[#14]` (P5 cross-pillar articles cross-listed; #14 deferred Phase 1 → Phase 2 per rev 7). Formatting and clarity only — no article content changed.
 
 ## See Also
 
 - Entity: [[InnBlockchain]]
-- Canonical regulatory map: [[EU-Fintech-Compliance-Landscape]]
+- Canonical regulatory map: [[EU-Compliance-Landscape]]
+- Editorial Calendar (publish dates): [[InnBlockchain Editorial Calendar]]
+- Derivative content production: [[InnBlockchain Content Repurposing Plan]]
+- Design toolkit (derivative production tooling): [[InnBlockchain Content Repurposing Design Toolkit]]
 - Sister program (Trioangle): [[Trioangle Content Strategy]]
 - Crypto Products (separate): [[InnBlockchain Crypto Products Content Strategy]]
 - Deprecated pre-merge per-ICP docs: [[InnBlockchain Crypto Native Content Strategy]] · [[InnBlockchain FinTech Content Strategy]]
