@@ -4,8 +4,8 @@ company:
 department:
   - marketing
 priority: highest
-rev: 13
-last_revised: 2026-06-01
+rev: 20
+last_revised: 2026-06-03
 revision_notes: |
   rev 1 (2026-05-26): operational task playbook for Phase 1 RWA execution (W1 May 18 → W22 Oct 15, 2026). Covers 14 workstreams: LP delivery · SEO/AEO/GEO · LinkedIn assets · Compliance briefs + vendor risk pack · Content production · LinkedIn organic · LinkedIn outbound · eIDAS test · Events + partner intros · Pipeline + CRM · Compliance review · Case study capture · Validation. Built from canonical source docs.
   rev 2 (2026-05-26): absorbed `InnBlockchain - Marketing Plan.md` (deleted) per single-source-of-truth decision.
@@ -17,6 +17,13 @@ revision_notes: |
   rev 6 (2026-05-27): full review cleanup pass against rev 5. Fixed 14 issues including: dates updated to 2026-05-27 · Pain Point 5 deadline escalation · WS15 Vignesh capacity cut (24 of 44 articles ship with zero derivatives) · Featured Assets renumbered · Risk Register reordered by category · Money20/20 2027 removed from Phase 1 · WS14 MVP scope clarified as mockup not working dApp.
   rev 7 (2026-05-27): **dropped MiCA destination LP from Phase 1.** Phase 1 is RWA-only; MiCA-scope buyers are Phase 2 ICP. Replaced with external-link routing for boundary articles. Diverges from Editorial Calendar Gate Sequence row 3 — calendar should be updated to match.
   rev 8 (2026-05-28): integrated final team configuration. Phase 1 team confirmed: 2 Marketing Persons (Ops/Distribution/SEO + Design/AI Visual) + Sales Person + Senior Content Writer + Part-time Designer + Vignesh + Frontend Dev. WS15 capacity cuts partially relaxed (Tier 1 full + Tier 2 lite + Tier 3 amplify-only).
+  rev 20 (2026-06-03): **Telegram dev-group dropped from Phase 1 — doesn't map to ICP.** RWA Felix (Phase 1 CN buyer) is asset-first non-technical, doesn't live in Telegram. Sam/Tom/Carol committee (Phase 1 FT buyer) evaluates via vendor risk pack + audit report, not Telegram. Audience that DOES live in Telegram (Solidity devs · DeFi builders · smart contract engineers) is not a Phase 1 buyer or material influencer. Carryover from generic Web3 marketing template caught in rev 20 audit. Sweep: (1) WS7 Weekly batch workflow — Fri "Telegram syndication" removed. (2) WS8 Per-platform formatting spec — Telegram column removed from rules table; "1× Telegram dev-group share" line removed from Cross-platform asset bundle; intro callout updated to "LinkedIn + X (Track A) or LinkedIn-only (Track B)" with explicit Telegram-dropped note. (3) WS15 Tier 2 derivative chain — Telegram dev-group share removed from Track A scaled-back chain. (4) [[InnBlockchain - Content Repurposing Design Toolkit]] swept in parallel (rev 7): Track A asset map row + production workflow + Editorial Calendar pointer reference. (5) [[InnBlockchain - ICP - Crypto Native]] swept (rev 1): 7 places where Telegram was incorrectly attributed as RWA Felix outreach channel — bumped LinkedIn priority for RWA, added explicit "NOT Telegram" notes where the channel mix matters. DeFi/protocol Telegram refs (Segments 2–6, Phase 2/3) + AI x crypto refs (Segment 10) + Sasha professional communities left intact — those are correctly scoped. Telegram is a Phase 2/3 channel for DeFi-protocol Felix, not a Phase 1 channel.
+  rev 19 (2026-06-03): **secondary-channel setup gap closure.** Three new subsections added to close the same pattern gap that the LinkedIn Company Page expansion (rev 16) closed: channel is used as a publish destination throughout Phase 1 but has zero setup/ongoing-ops tasks. (1) **WS3 X (Twitter)** — three new subsections: Initial setup (one-time W1: account claim · Premium decision · bio · header · pinned tweet) · Completeness + recategorisation (W1–W3 parallel to LinkedIn accelerator: following audit · Communities · cross-association · 5–10 reply-comments/day) · Ongoing operations (1 X thread/wk per Track A article · 2–4 standalone posts/wk · SP strategic replies · X Space deferral rule · analytics tracking · hygiene hard rules). (2) **WS3 GitHub + Solodit** — methodology credibility surfaces (one-time setup + per-contribution cadence) — GitHub org claim + reference repos + README · Solodit profile + methodology content + historical findings submission. Different shape than X / LinkedIn: credibility surface for technical buyers (Felix CTO + Sasha) not publish channel with weekly cadence. (3) **WS8 Newsletter vendor-selection decision criteria** — pre-decided framework for W10 revisit so it's a 30-min call not a 2-week research sprint: 5-vendor trade-off table (Beehiiv · Substack · LinkedIn Newsletter · ConvertKit · self-hosted) + 4 decision triggers + default recommendation (Beehiiv as default; LinkedIn Newsletter if <200 subscribers at W10 for fastest first-issue ship). Telegram dev-group curation deferred per user (NOT included this rev — flagged as gap but would live as sister doc, not in playbook).
+  rev 18 (2026-06-02): **Sales Person → SP abbreviation swept throughout body content** (178 inline occurrences). Full name "Sales Person" retained in the Per-Role Quick Reference legend row (`**SP** — Sales Person`) + the Team configuration callout (which now defines all three abbreviations: MPs · CW · SP) + rev 8/9/17 historical rev notes. **No collision with SME** = Subject Matter Expert (different role) since the abbreviations differ. Rev 9's caution applied to SM (= Senior Sales Manager at the time), not SP. Pattern now consistent across all three abbreviated roles: short form in body, full name in legend.
+  rev 17 (2026-06-02): three ownership refinements. (1) **WS1 LP Delivery owner expanded** — Dev (build) + MPs (on-page SEO + GA4 + email-capture coordination) + Vignesh oversight. MPs added to Per-Role Quick Reference WS1 column. (2) **WS4 Compliance Briefs owner expanded** — Vignesh (regulatory content + self-review) + CW (brief structuring + Style Guide voice) + Designer (PDF layout). CW added to Per-Role Quick Reference WS4 column. WS4 body content updated for all three briefs (MiFID II/III stack + DORA + eIDAS 2.0) to tag CW into the drafting flow. (3) **WS9.5a relaxed from rev 8 absolute rule** — Sales Person can send first warm DM using Vignesh-voice template with explicit Vignesh reference in opener ("I work with Vignesh — he asked me to reach out"); Vignesh per-DM approves before send (24-hr SLA, ≤15 min/day calendar block); Vignesh sends personally only when relationship calls for it (Vignesh's judgment). Updates cascaded: WS9.5a Ownership split callout · per-client + per-connection message templates · daily/weekly cadence · Workstream Map row 9.5a · Risk Register Trioangle entry · WS5 Vignesh calendar block (Trioangle DM time drops 1-3/wk → 0-1/wk personal + ≤15 min/day approval) · WS9.5b Common Mistakes callout · WS9 Discovery Call escalation triggers. **SM/SME/SP question pending at this rev**: SM already gone from live content (rev 9); SME = Subject Matter Expert (different role from Sales Person) — kept as-is; Sales Person → SP abbreviation not yet applied at rev 17 — confirmation pending.
+  rev 16 (2026-06-02): **role-execution gap closure — 6 new operational subsections** added across WS3, WS7, WS8, WS9, WS12. Same pattern as rev 14's Per-Article Production Checklist: role exists, tasks named, but no end-to-end execution guide. (1) **WS3 LinkedIn Company Page expanded** — split into Initial setup + Completeness audit (one-time + quarterly) + Ongoing operations (posting cadence + content types + analytics tracking + Showcase Pages revisit criteria + hygiene hard rules). Replaces the previous 4-bullet setup with a complete operational surface. (2) **WS3 Brand System foundation** — Designer's W2–W3 sprint output now enumerated (typography · color · logo rules · Canva templates · Beautiful.ai template · Descript style · profile banner · Midjourney style guide · MPs handoff verification). Pre-Featured-asset gate. (3) **WS7 CW Content Style Guide** — voice + tone + formatting standards + source citation rules + title/meta template + alt-text template + internal linking strategy + per-track voice modifiers. Referenced by Per-Article Production Checklist Phase 2 step 9. (4) **WS8 Per-platform formatting spec** — LinkedIn vs X vs Telegram formatting rules (character limits · hashtags · aspect ratios · best EU posting times · external-link placement). MPs enforce in scheduling. (5) **WS9 Discovery Call Master Sequence** — 20-step / 5-phase walk-through (Pre-call · Opening · Discovery · Qualification + close-the-loop · Post-call) with Vignesh escalation triggers + Common mistakes from rev 8 risk register. (6) **WS12 Pipeline-stage exit criteria** — explicit gates for Connected → Replied → Qualified → Call Booked → Closed transitions + Parked + re-engagement rules + hygiene rules. Dev LP launch verification checklist deferred per user (NOT included this rev).
+  rev 15 (2026-06-02): added **CORE-EEAT scoring step** to the WS7 Per-Article Production Checklist — new step 17 in Phase 3 (Pre-publish), runs AFTER SME review + Vignesh compliance sign-off (step 16) and BEFORE final scheduled-batch approval (step 18, was 17). Sequence now: SME review → compliance corrections applied → **CORE-EEAT score** → final batch approval → publish. Ordering rule called out as a !WARNING callout: scoring an uncorrected draft wastes the AI skill call AND can produce a false high score on regime-leaked content. CORE-EEAT score-vs-performance tracking also added to Phase 4 Friday metrics (step 22) + Monthly Review pattern check (step 23). **AI skill itself is not yet configured** — checklist references it as "CORE-EEAT AI scoring skill (to be configured)". Phase 4 step numbering renumbered 18-22 → 19-23 to accommodate the new Phase 3 insertion.
+  rev 14 (2026-06-02): added **Per-Article Production Checklist** inside WS7 — single linear walk-through (22 steps across 4 phases: Pre-write · Write · Pre-publish · Post-publish) the CW opens once per article. Each step names the doc to consult (Editorial Calendar, Content Strategy, ICP doc, EU-Compliance-Landscape, Content AEO GEO Prompts, Content Repurposing Plan, Landing Pages Plan) at the moment it applies. Supersedes-without-replacing the existing fragmented checklists (9-item AEO/GEO + 4-item sales-motion-tag + WS13 compliance review) by linking to them in sequence. Includes a hard-stop callout for 3 conditions that block past Phase 2 (LP 404 · regime uncertainty · Pain Point 5 validation pending). Single-source-of-truth answer: **Editorial Calendar** for *what* to write; all other docs are consulted at the step where they apply.
   rev 13 (2026-06-01): **extended inline role tags to ALL workstreams + introduced CW abbreviation.** Rev 12 tagged 7 silent workstreams (WS1/2/3/4/10/11/14); rev 13 extends inline **(Role)** tags to WS5, WS6, WS7, WS8, WS9, WS9.5a, WS9.5b, WS12, WS13, WS15 so every checkbox carries its owner regardless of which section a team member opens. Also abbreviated **Content Writer → CW** throughout body content to reduce visual noise (CW shorter than other role names by ~50%). Full name "Content Writer" retained only in the Per-Role Quick Reference legend row (`**CW** — Content Writer`) + the Team configuration callout + rev 8/9/11 historical notes. WS7 article-row block uses a single owner-pattern note instead of tagging all 40 individual article checkboxes (owner pattern is identical: CW drafts · SME reviews · Vignesh compliance reviews · MPs publish + amplify).
   rev 12 (2026-06-01): **inline role tags for previously-silent workstreams.** Prefixed every checkbox in WS1, WS2, WS3, WS4, WS10, WS11, WS14 with **(Role)** owner tag so each role can CTRL-F themselves and find their tasks inside the section body, not just at the Workstream Map row. Targeted scope — these 7 workstreams previously had zero role mentions in body content (gap identified by Per-Role Quick Reference audit). Other workstreams (WS5, WS7, WS8, WS9, WS9.5a, WS9.5b, WS12, WS13, WS15) already named their owners in section body and were not re-tagged. Tags use the format **(Role)** before the task text; multi-owner tasks use the format **(Role A · Role B)** with workflow direction (e.g., "MPs draft → Dev implements", "Designer builds · Vignesh review").
   rev 11 (2026-06-01): two cleanup passes. (1) Collapsed the two-marketing-person split throughout — single **MPs** label used everywhere (Workstream Map, WS8 ownership callout, WS13 spot-check protocol, WS15 derivative-tier table, Risk Register, W3 critical path). Team config callout updated to drop the MP1/MP2 abbreviation definitions. Internal task allocation between the two marketing persons is left to be decided operationally; this doc no longer prescribes it. (2) Shortened role names: Frontend Dev → **Dev** · Senior Content Writer → **Content Writer** · Part-time Designer → **Designer**. FD/SCW/PTD abbreviations dropped in favor of the (now short) full names. Historical rev notes (rev 8/9) kept verbatim — they document the state at the time they landed.
@@ -38,9 +45,9 @@ tags:
 > [!DANGER] SPEED MODE active
 > Compressed timeline to generate LinkedIn leads ASAP. **Honest reset: Vignesh has NO warm FinTech network. Direct warm DMs to FT WealthTech / RWA prospects = same low conversion as cold. Speed Mode leans on three tracks:**
 >
-> - **WS9.5a — Adjacent-Network Warm Intros** — Vignesh first warm DM to Trioangle clients (real estate, marketplace, commodity verticals = candidate RWA Felix prospects) + tech/crypto connections for 2nd-degree FT WealthTech intros. Sales Person carries forward after positive response. Trioangle active client base ~30 → universe depletes by ~W12–W15.
-> - **WS9.5b — Engagement-Led Inbound** — Sales Person runs high-volume strategic commenting (5–10/day) on RWA prospects' posts + reactive DMs + LinkedIn polls.
-> - **Structured ABM Track (WS9)** — activates ~W5. Sales Person owns full-cycle with close authority.
+> - **WS9.5a — Adjacent-Network Warm Intros** — Vignesh first warm DM to Trioangle clients (real estate, marketplace, commodity verticals = candidate RWA Felix prospects) + tech/crypto connections for 2nd-degree FT WealthTech intros. SP carries forward after positive response. Trioangle active client base ~30 → universe depletes by ~W12–W15.
+> - **WS9.5b — Engagement-Led Inbound** — SP runs high-volume strategic commenting (5–10/day) on RWA prospects' posts + reactive DMs + LinkedIn polls.
+> - **Structured ABM Track (WS9)** — activates ~W5. SP owns full-cycle with close authority.
 >
 > **What stays non-negotiable** (compressing these collapses conversion to zero):
 > 1. LP Gate 1 (`/solutions/rwa-tokenization`) must be live before any structured DM
@@ -56,7 +63,7 @@ tags:
 >
 > **Team capacity model:**
 > - **WS15 Tier coverage**: Tier 1 articles get full derivative chain; Tier 2 articles get scaled-back chain (carousel + LinkedIn long-form + X thread, skip video/infographic/persona variants); Tier 3 amplify-only. Enabled by MPs + CW + Designer combined production capacity.
-> - **Vignesh load ~15–25 hr/wk marketing** (Sales Person takes calls + outreach; MPs cover posting + SEO + GA4 + visual production; CW takes article + repurposing structuring).
+> - **Vignesh load ~15–25 hr/wk marketing** (SP takes calls + outreach; MPs cover posting + SEO + GA4 + visual production; CW takes article + repurposing structuring).
 
 > [!INFO] Source map (every section cites one of these)
 > | File | What it informs |
@@ -223,9 +230,9 @@ To prevent drift — what this playbook does NOT cover:
 | Role | Workstreams you touch | Key responsibilities | Read first |
 |---|---|---|---|
 | **Dev** | WS1 · WS5 (analytics wiring) | LP Gates 1 + 2 shipped by **EOD W3** (single point of failure for Speed Mode) · email-capture forms · GA4 + UTM wiring · 301 redirects per migration map | WS1 → WS5 § Analytics |
-| **CW** — Content Writer | WS7 (primary) · WS2 (per-article AEO drafting) · WS8 (post copy) · WS15 (repurposing copy structuring) | Article drafts + AEO sections per editorial calendar · LinkedIn post copy (Vignesh approves) · structure Tier 1/2 articles into derivative copy briefs for MPs to design + distribute | WS7 · WS15 · WS2 § Per-article AEO |
-| **MPs** — Marketing Persons | WS2 (LP on-page SEO + monthly citation probes) · WS3 (Featured assets ops) · WS8 (scheduling + posting + visuals + company page) · WS12 (GA4 dashboard + per-format CTR + monthly review prep) · WS15 (posting + AI visual production for derivative chain) | LP on-page SEO + citation probes · Featured asset operations · post scheduling + design + distribution across LinkedIn/X/newsletter · AI visual generation for Tier 1 derivative chain + Tier 2 lite chain · GA4 dashboard + weekly metrics report | WS2 · WS3 · WS8 · WS15 · WS12 § Analytics |
-| **Sales Person** | WS5 (CRM ownership) · WS8 (strategic commenting) · WS9 (Structured ABM, **primary**) · WS9.5a (carry forward after Vignesh's first warm DM) · WS9.5b (Engagement-Led Inbound, **primary**) · WS10 (eIDAS Outbound Test) · WS12 (CRM + pipeline tracking) · WS13 (DM template approval before send) | LinkedIn outbound full-cycle (DM → discovery call → close authority) · CRM hygiene + pipeline weekly reviews · strategic commenting (5–10/day) on RWA prospects · backup discovery call owner · DM template self-approval against compliance checklist | WS9 · WS9.5a · WS9.5b · WS10 · WS12 · WS5 § CRM |
+| **CW** — Content Writer | WS7 (primary) · WS2 (per-article AEO drafting) · WS4 (brief structuring + Style Guide voice) · WS8 (post copy) · WS15 (repurposing copy structuring) | Article drafts + AEO sections per editorial calendar · LinkedIn post copy (Vignesh approves) · compliance brief structuring (Vignesh authors regulatory content) · structure Tier 1/2 articles into derivative copy briefs for MPs to design + distribute | WS7 · WS15 · WS2 § Per-article AEO · WS4 |
+| **MPs** — Marketing Persons | WS1 (LP on-page SEO + GA4 + email-capture coordination) · WS2 (LP on-page SEO + monthly citation probes) · WS3 (Featured assets ops · Company Page ongoing ops) · WS8 (scheduling + posting + visuals + per-platform formatting) · WS12 (GA4 dashboard + per-format CTR + monthly review prep) · WS15 (posting + AI visual production for derivative chain) | LP on-page SEO + citation probes · GA4 + email-capture coordination with Dev on LP build · Featured asset operations · Company Page ongoing ops · post scheduling + design + distribution across LinkedIn/X/newsletter · AI visual generation for Tier 1 derivative chain + Tier 2 lite chain · GA4 dashboard + weekly metrics report | WS1 · WS2 · WS3 · WS8 · WS15 · WS12 § Analytics |
+| **SP** — Sales Person | WS5 (CRM ownership) · WS8 (strategic commenting) · WS9 (Structured ABM, **primary**) · WS9.5a (drafts first warm DM in Vignesh voice · carries thread after positive response) · WS9.5b (Engagement-Led Inbound, **primary**) · WS10 (eIDAS Outbound Test) · WS12 (CRM + pipeline tracking) · WS13 (DM template approval before send) | LinkedIn outbound full-cycle (DM → discovery call → close authority) · CRM hygiene + pipeline weekly reviews · strategic commenting (5–10/day) on RWA prospects · backup discovery call owner · DM template self-approval against compliance checklist | WS9 · WS9.5a · WS9.5b · WS10 · WS12 · WS5 § CRM |
 | **Designer** | WS3 (PDF asset design) · WS4 (Compliance brief + Vendor Risk Pack layout) · WS14 (MVP mockup fallback) · WS15 (high-stakes pieces + brand templates) | PDF layout for **Sample Audit Report** (highest-leverage Phase 1 asset), Risk Checklist, Vendor Risk Pack · brand-consistent templates MPs reuse for derivative chain · MVP mockup if W14 fallback fires | WS3 · WS4 · WS15 § High-stakes pieces |
 | **Vignesh** — Founder | All workstreams (final-review authority) · Primary on WS3 (profile content + recommendations outreach) · WS4 (compliance self-review) · WS6 (validation) · WS9.5a (first warm DM) · WS11 (Events + Partner/VC intros) · WS13 (compliance review process) | Final compliance + content + DM-template review · Profile content authoring + recommendations outreach · weekly + monthly KPI reviews · events + 1:1 intros (Money20/20 W3, Sibos W22+) · backup-of-backup discovery calls | WS3 · WS4 · WS6 · WS11 · WS13 · Risk Register |
 
@@ -234,25 +241,25 @@ To prevent drift — what this playbook does NOT cover:
 ## 🗺️ Workstream Map
 
 > [!INFO] Team configuration
-> Phase 1 team: **2 Marketing Persons · Sales Person · Content Writer · Designer · Vignesh (founder) · Dev (existing)**. Used throughout this doc: **MPs** = Marketing Persons (both, collectively) · **CW** = Content Writer. All other roles written out by name. Sales Person written out (no abbreviation, avoids SM/SME confusion).
+> Phase 1 team: **2 Marketing Persons · Sales Person · Content Writer · Designer · Vignesh (founder) · Dev (existing)**. Used throughout this doc: **MPs** = Marketing Persons (both, collectively) · **CW** = Content Writer · **SP** = Sales Person (rev 18 — does NOT collide with SME = Subject Matter Expert; SM was the rev 9 collision risk and is already gone from live content). Designer + Vignesh + Dev written out by name.
 
 | # | Workstream | Owner | Trigger to start | Source of truth |
 |---|---|---|---|---|
-| 1 | **LP Delivery** | Dev + Vignesh oversight | Critical path — start immediately | [[InnBlockchain - Landing Pages Plan]] |
+| 1 | **LP Delivery** | Dev (build) + MPs (on-page SEO + GA4 + email-capture coordination) + Vignesh (oversight + About copy review) | Critical path — start immediately | [[InnBlockchain - Landing Pages Plan]] |
 | 2 | **SEO / AEO / GEO** | MPs (LP on-page SEO + monthly citation probes) + CW (per-article AEO drafting) | Per LP — starts when LP shell exists | [[InnBlockchain - Landing Pages AEO GEO Prompts]] · [[InnBlockchain - Content AEO GEO Prompts]] |
 | 3 | **LinkedIn Profile + Featured + Recommendations** | Vignesh (profile content + recommendations outreach) + MPs (Featured assets ops) + Designer (PDF asset design) | Pre-publish gate | [[LinkedIn Profile Vignesh Content]] · [[Recommendation Request Templates]] |
-| 4 | **Compliance Briefs + Vendor Risk Pack** | Vignesh (self-review per prior decision) + Designer (PDF layout) | Pre-publish gate | [[EU-Compliance-Landscape]] + regulation checklists |
-| 5 | **Platform Setup (CRM + Tooling)** | Vignesh + MPs (analytics + email capture) + Sales Person (CRM ownership once onboarded) | Must exist before any DMs | [[InnBlockchain - LinkedIn Marketing Strategy]] § 6 + [[InnBlockchain - LinkedIn Outreach Strategy]] § 6 |
+| 4 | **Compliance Briefs + Vendor Risk Pack** | Vignesh (regulatory content + self-review) + CW (brief structuring + Content Style Guide voice) + Designer (PDF layout) | Pre-publish gate | [[EU-Compliance-Landscape]] + regulation checklists |
+| 5 | **Platform Setup (CRM + Tooling)** | Vignesh + MPs (analytics + email capture) + SP (CRM ownership once onboarded) | Must exist before any DMs | [[InnBlockchain - LinkedIn Marketing Strategy]] § 6 + [[InnBlockchain - LinkedIn Outreach Strategy]] § 6 |
 | 6 | **Validation** | Vignesh (default) | TIME-CRITICAL — W2 result deadline | [[InnBlockchain - ICP - FinTech]] Pain Point 5 |
 | 7 | **Content Production** | CW (drafts + AEO + structuring) + SME reviewer + Vignesh (compliance self-review) | Per editorial calendar W1+ | [[InnBlockchain - Content Strategy]] · [[InnBlockchain - Editorial Calendar]] |
-| 8 | **LinkedIn Organic (feed + newsletter)** | Vignesh (authors all posts) + MPs (schedules + posts + visuals + company page) + Sales Person (strategic commenting from W8) | Feed warm-up needed pre-outreach | [[InnBlockchain - LinkedIn Marketing Strategy]] |
-| 9 | **LinkedIn Outbound — Structured ABM** | **Sales Person** | Compressed: Outreach Readiness Gate clears ~W5 | [[InnBlockchain - LinkedIn Outreach Strategy]] |
-| **9.5a** | **Adjacent-Network Warm Intros** | Vignesh first warm DM (existing relationships) → Sales Person carries forward after positive response | W1 Day 1 | This playbook WS9.5a |
-| **9.5b** | **Engagement-Led Inbound** | **Sales Person** | W1 Day 1 | This playbook WS9.5b |
-| 10 | **eIDAS Outbound Test** | Sales Person | W13 (~Aug 2026) | [[InnBlockchain - LinkedIn Outreach Strategy]] § 7a |
+| 8 | **LinkedIn Organic (feed + newsletter)** | Vignesh (authors all posts) + MPs (schedules + posts + visuals + company page) + SP (strategic commenting from W8) | Feed warm-up needed pre-outreach | [[InnBlockchain - LinkedIn Marketing Strategy]] |
+| 9 | **LinkedIn Outbound — Structured ABM** | **SP** | Compressed: Outreach Readiness Gate clears ~W5 | [[InnBlockchain - LinkedIn Outreach Strategy]] |
+| **9.5a** | **Adjacent-Network Warm Intros** | SP drafts in Vignesh voice + sends from own profile · Vignesh per-DM approves (24-hr SLA) · Vignesh sends personally when relationship calls for it · SP carries forward after positive response | W1 Day 1 | This playbook WS9.5a |
+| **9.5b** | **Engagement-Led Inbound** | **SP** | W1 Day 1 | This playbook WS9.5b |
+| 10 | **eIDAS Outbound Test** | SP | W13 (~Aug 2026) | [[InnBlockchain - LinkedIn Outreach Strategy]] § 7a |
 | 11 | **Events + Partner / VC Intros** | Vignesh | Money20/20 Europe Jun 2–4 (attendance + meetings); pursue Sibos Oct + Money20/20 Jun 2027 for speaking | ICP docs § Channel Strategy |
-| 12 | **Pipeline + CRM + Measurement** | Sales Person (CRM ownership + pipeline tracking) + MPs (GA4 dashboard + per-format CTR + monthly review prep) + Vignesh (weekly + monthly reviews) | Must exist before any DMs | [[InnBlockchain - LinkedIn Outreach Strategy]] § 8 |
-| 13 | **Compliance Review Process** | Vignesh (self-review with structured checklist) + spot-checks on MPs visual output + Sales Person DM template approval before send | Every Thursday Phase 1 article + Cross-Pillar | [[InnBlockchain - Editorial Calendar]] § Weekly Batch Workflow |
+| 12 | **Pipeline + CRM + Measurement** | SP (CRM ownership + pipeline tracking) + MPs (GA4 dashboard + per-format CTR + monthly review prep) + Vignesh (weekly + monthly reviews) | Must exist before any DMs | [[InnBlockchain - LinkedIn Outreach Strategy]] § 8 |
+| 13 | **Compliance Review Process** | Vignesh (self-review with structured checklist) + spot-checks on MPs visual output + SP DM template approval before send | Every Thursday Phase 1 article + Cross-Pillar | [[InnBlockchain - Editorial Calendar]] § Weekly Batch Workflow |
 | 14 | **Case Study Capture** | Vignesh + delivery team + Designer (MVP mockup if W14 fallback triggers) | Every new client engagement | [[InnBlockchain - Editorial Calendar]] § Gate-dependent + Override |
 | **15** | **Content Repurposing** | CW (copy structuring) + MPs (AI visual generation + posting + distribution) + Designer (high-stakes pieces) + Vignesh (final review) | Per published article + Cross-Track Assets standalone | [[InnBlockchain - Content Repurposing Plan]] |
 
@@ -351,12 +358,149 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Vignesh)** Operational capacity verified — "We can start next week" must reflect current team availability; revise to honest timeframe if booked 3+ weeks out
 - [ ] **(Vignesh)** About CTA link (`innblockchain.com/solutions/rwa-tokenization`) does NOT 404 (blocked on WS1 Gate 1)
 
-### LinkedIn Company Page setup (LinkedIn entity, not the website)
-*(This is `linkedin.com/company/innblockchain` — the LinkedIn-side Page Vignesh posts company content from. Separate from innblockchain.com, which is dev-team owned in WS1.)*
+### LinkedIn Company Page — initial setup (one-time, W1)
+*(This is `linkedin.com/company/innblockchain` — the LinkedIn-side Page Vignesh posts company content from. Separate from innblockchain.com, which is Dev-owned in WS1.)*
 - [ ] **(Vignesh)** LinkedIn Company Page exists (claimed/created on LinkedIn) with Vignesh as Page admin
 - [ ] **(Vignesh)** CTA button on LinkedIn Page: "Contact us" → discovery call link (NOT a 404 destination)
 - [ ] **(Vignesh)** Vignesh linked as employee on his personal profile (cross-association boosts organic reach when he posts)
 - [ ] **(Vignesh)** Showcase Pages DEFERRED until Phase 2 (per [[InnBlockchain - LinkedIn Marketing Strategy]] Cross-Channel Destination Dependency warning — Showcase Pages reference LPs that don't exist)
+
+### LinkedIn Company Page — completeness audit (one-time at setup + quarterly)
+
+> [!INFO] Setup makes the Page live; completeness makes it credibility-grade
+> Company Page is the institutional surface — vendor risk reviewers, recruiters, partners, and Carol check it as part of vendor diligence. A live-but-empty Page reads as a shell company.
+
+- [ ] **(Vignesh authors · MPs maintain)** About section: ~2,000-char company description with RWA + MiFID II/III + Prospectus + DLT Pilot + MAR positioning — must match Vignesh profile About claim verification (no contradictions on years · audit count · segment scope)
+- [ ] **(Vignesh)** Industry: **Financial Services** (NOT "Software Development" — categorisation determines who LinkedIn shows the Page to)
+- [ ] **(Vignesh)** Company size band selected
+- [ ] **(Vignesh)** Headquarters location + founded year
+- [ ] **(Vignesh)** Website link: `innblockchain.com` (verified live, not 404 — re-check after any LP migration)
+- [ ] **(Designer · MPs apply)** Banner image: Phase 1 brand template (refresh anchored to phase milestones — Phase 1 close, Phase 2 launch, etc.)
+- [ ] **(MPs)** Specialties field: RWA Tokenization · Smart Contract Security · MiFID II/III Compliance · DLT Pilot Regime · ERC-3643 — match Vignesh profile Skills top 3 + 2
+
+### LinkedIn Company Page — ongoing operations (post-setup, weekly)
+
+> [!INFO] Page-specific content types, NOT personal-feed re-broadcasts
+> Treat Page as a separate publishing destination with its own cadence (3×/wk per WS8) and content mix — case studies · milestones · service availability · industry commentary — not a duplicate of Vignesh's personal feed.
+
+#### Posting cadence + mix (3×/wk per WS8 § Posting cadence — Company page)
+- [ ] **(MPs)** 2× repurposed Vignesh posts/wk — ≥48 hr lag from personal post (avoid double-feed cannibalisation)
+- [ ] **(Vignesh authors · MPs schedule)** 1× company-specific post/wk — case study OR milestone OR service post OR industry commentary
+- [ ] **(MPs)** Alternate days with Vignesh personal — never both same day on same topic
+- [ ] **(MPs)** 3–5 hashtags per post (same algorithm rules as personal feed)
+
+#### Page-specific content types
+- [ ] **(Vignesh + delivery team)** Case study posts — fire when WS14 case study gates clear (anonymised + screenshot-cleared)
+- [ ] **(Vignesh)** Milestone posts — first audit shipped · first RWA platform live · 5-project EU gate hit · Phase 1 close
+- [ ] **(Vignesh + MPs)** Service-availability posts — "vendor risk pack available on request" · "RWA Tokenization Risk Checklist download (Gate 1 LP)" · "sample audit report on request"
+- [ ] **(Vignesh + MPs · institutional voice not first-person)** Industry commentary — re-share Vignesh personal hot-take from Page in slightly more formal voice
+- [ ] **(DEFER to Phase 2)** Employee spotlight posts — only when team grows past founder + ~5
+
+#### Analytics tracking (MPs report monthly · Vignesh reviews)
+- [ ] **(MPs)** Page follower growth — target +25–50/mo Phase 1
+- [ ] **(MPs)** Page-view sources (referrer = personal feed · search · external) — Vignesh employee cross-association should drive ~40% of Page views
+- [ ] **(MPs)** Post engagement rate per content type — feed into monthly review pattern-match
+- [ ] **(MPs)** CTA button click rate — if "Contact us" → discovery call gets <5 clicks/mo in Phase 1, escalate (Page underperforming · revisit content cadence)
+- [ ] **(MPs · Vignesh reviews)** Compare Page engagement vs Vignesh personal feed — Page typically ~10–20% of personal feed reach · <5% = problem signal
+
+#### Showcase Pages revisit criteria (deferred per setup; revisit when ALL true)
+- [ ] At least 1 Phase 2 sub-page LP shipped (e.g., `/solutions/regulated-exchange` for MiCA CASP)
+- [ ] Page follower count >500 (Showcase Pages divide audience — only worth it past 500)
+- [ ] 2+ distinct ICP segments active (different content speaks to different audiences)
+- [ ] Phase 1 close cleared (W22+) — Showcase Pages are Phase 2 work
+
+> [!WARNING] Page hygiene hard rules
+> - **(MPs)** Never post Company Page same day as personal feed on same topic (cannibalises reach)
+> - **(MPs · Vignesh enforces)** Never use Trioangle messaging or general software dev framing on this Page — pure InnBlockchain RWA tokenization positioning
+> - **(Vignesh quarterly)** Page admin access list audited — only Vignesh + 1 MP have posting access · never more
+> - **(MPs)** Cross-association integrity: Vignesh's personal Experience entry for InnBlockchain must always link to the Company Page (verify after any profile edit · breaks if Company Page URL changes)
+
+### X (Twitter) — initial setup (one-time, W1)
+
+> [!INFO] Why X matters for Phase 1
+> Track A derivative chain produces an X thread per Tier 1/2/3 article (~12+ X threads per Phase 1 cycle). Algorithm boost requires baseline profile authority + warmup similar to LinkedIn. Categorisation problem applies same way — existing Vignesh X handle (if any) is likely Trioangle-coded, not RWA-coded.
+
+- [ ] **(Vignesh)** X account claim — handle ideally matches LinkedIn (`@vigneshpalanivel` or similar) · existing handle audit if reusing
+- [ ] **(Vignesh decision)** Premium subscription decision — required for long-form thread tweets (>280 char/tweet) · algorithm boost · video uploads >2 min · Spaces hosting. **Recommendation: Premium from W1** given thread volume.
+- [ ] **(Vignesh)** Bio in regulatory + RWA framing — match LinkedIn About first sentence (RWA + MiFID II/III + DLT Pilot + asset-backed founders — **NOT MiCA**)
+- [ ] **(Vignesh + MPs · Designer template)** Header image: brand template (match LinkedIn profile banner for cross-channel consistency)
+- [ ] **(Vignesh)** Location: EU city matching LinkedIn (NCA jurisdiction signal)
+- [ ] **(Vignesh)** Website link: innblockchain.com (verified live, not 404)
+- [ ] **(Vignesh)** Pinned tweet: 1 RWA tokenization signal thread (preview of highest-leverage Tier 1 article OR Sample Audit + Risk Checklist call-out)
+
+### X (Twitter) — completeness + recategorisation (W1–W3, parallel to LinkedIn recategorisation)
+
+> [!IMPORTANT] X categorisation problem
+> Same as LinkedIn — Vignesh's existing X signal (if any) is Trioangle / general dev, NOT blockchain/FinTech. The algorithm needs to re-categorise. Run X recategorisation parallel to LinkedIn Profile Recategorisation Accelerator (WS8).
+
+- [ ] **(Vignesh + MPs)** Following list audit — unfollow off-topic accounts · follow 50–100 carefully chosen EU FinTech / RWA / MiFID II / DLT Pilot / smart contract audit accounts (not bulk)
+- [ ] **(Vignesh)** X Communities membership — RWA · Tokenization · Smart Contract Security · MiFID II adjacent · Web3 Compliance (target 3–5 active communities)
+- [ ] **(MPs · Vignesh review)** Cross-association: X handle linked from LinkedIn Contact Info + LP About page + Featured assets footer
+- [ ] **(SP · Vignesh contributes ≤15 min/day)** First-2-weeks engagement: 5–10 reply-comments/day on EU WealthTech / RWA / MiFID II X accounts (same algorithm signal as LinkedIn strategic commenting; same WS9.5b conversion logic)
+
+### X (Twitter) — ongoing operations (post-setup, weekly)
+
+> [!INFO] X-specific cadence
+> Less than LinkedIn (X audience less institutional · CN-skewed). One X thread per Track A article (Tier 1 full · Tier 2 includes X thread · Tier 3 amplify includes 1 X thread). Native scheduler per WS8 § Per-platform formatting spec.
+
+#### Posting cadence + mix
+- [ ] **(MPs schedule · Vignesh authors · CW outlines thread)** 1× X thread/wk per Track A article (Tier 1 full · Tier 2 lite · Tier 3 amplify-only)
+- [ ] **(Vignesh authors · MPs schedule)** 2–4× standalone X posts/wk (commentary · poll · hot-take on RWA / MiFID II news)
+- [ ] **(SP)** 5–10 strategic replies/day on EU RWA / MiFID II thought-leader X accounts (parallel to WS9.5b LinkedIn commenting)
+- [ ] **(Vignesh decision · MPs coordinate)** 1× X Space (audio room) per Phase 1 quarter — **IF** Premium acquired AND co-host EU RWA / MiFID II voice. Defer to W10+ unless inbound Spaces invitation lands first.
+
+#### Analytics tracking (MPs report monthly · Vignesh reviews)
+- [ ] **(MPs)** Follower growth — target +50–100/mo Phase 1
+- [ ] **(MPs)** Thread completion rate per Tier 1 X thread — drop-off pattern feeds next thread structure
+- [ ] **(MPs)** Click-through to LP from X bio link + thread last-tweet link — target ≥2% on Tier 1
+- [ ] **(MPs · Vignesh decision at monthly)** Compare X engagement vs LinkedIn engagement — if X consistently <20% of LinkedIn reach for 4+ consecutive weeks, reduce X cadence to amplify-only (X is secondary channel; don't burn capacity on a flat surface)
+
+> [!WARNING] X hygiene hard rules
+> - **(Vignesh)** Never post Trioangle content from this handle post-recategorisation (never confuse the signal)
+> - **(Vignesh + MPs)** Never use MiCA framing for RWA on X (#1 Carol disqualifier — same hard rule as LinkedIn)
+> - **(Vignesh)** Never engage in crypto-Twitter drama / shitposting / vendor disputes — institutional positioning depends on signal-only behavior
+> - **(MPs)** Never schedule X thread same day as LinkedIn long-form post on same article (cross-platform cannibalisation; ≥24 hr stagger)
+
+### GitHub + Solodit — methodology credibility surfaces (one-time setup + per-contribution)
+
+> [!INFO] Different shape than LinkedIn / X
+> GitHub + Solodit are credibility surfaces for **technical buyers** (RWA Felix CTO vetting + Sasha-grade audit credibility) — NOT publish channels with weekly cadence. One-time setup + per-contribution cadence (per Tier 1 article that has a code or methodology angle).
+
+#### GitHub presence (Vignesh + CW + senior engineer)
+- [ ] **(Vignesh)** Org claim — `github.com/innblockchain` or equivalent · 2FA required on all admins
+- [ ] **(CW drafts · Vignesh + senior engineer review)** Org README: RWA + MiFID II + DLT Pilot positioning · methodology overview · link to LP Gate 1
+- [ ] **(senior engineer · Vignesh review)** 1–2 reference repos: smart contract audit methodology examples · ERC-3643 / ERC-1400 implementation patterns · investor whitelisting reference implementation
+- [ ] **(senior engineer)** Per Tier 1 Track A article that mentions code: tag the repo as canonical source · link the article from repo README
+- [ ] **(Vignesh quarterly)** Org settings audit: members · admin access · 2FA enforcement · SECURITY.md file present + accurate
+
+#### Solodit profile (Vignesh + senior engineer)
+- [ ] **(Vignesh + senior engineer)** Profile claim — auditor handle matches LinkedIn + GitHub
+- [ ] **(senior engineer)** Methodology profile content — vulnerability classes you've reported · severity framework (matches Sample Audit Report PDF framework per WS3 Asset 2) · disclosure track record
+- [ ] **(senior engineer · per published audit finding)** Submit findings from public disclosure to Solodit — Phase 1 minimum: 2–3 historical findings · ongoing: every new disclosure
+- [ ] **(Vignesh monthly)** Review Solodit profile views + finding citations · pattern-match against Sasha-grade discovery call mentions
+
+> [!INFO] Asset-map cross-reference
+> GitHub repo / templates + Solodit profile contribution are listed as Track A derivatives in [[InnBlockchain - Content Repurposing Plan]]. This subsection covers the platform setup; per-article contribution work lives in the Plan.
+
+### Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)
+
+> [!INFO] Templates must exist before MPs produce derivatives at consistent quality
+> The toolkit ([[InnBlockchain - Content Repurposing Design Toolkit]]) defines WHICH tools to use; the brand system defines WHAT the templates look like. Required before MPs ramp on AI visual production in WS15.
+
+#### Required artifacts (Designer owns build · MPs verify before WS15 ramp)
+- [ ] **(Designer)** Typography system — display font · body font · scale (h1–h6 + body + caption) · line-height rules
+- [ ] **(Designer)** Color palette — primary · secondary · accent · semantic (success / warning / error) · neutral scale · usage rules
+- [ ] **(Designer)** Logo usage rules — clearspace · minimum size · color variants · forbidden treatments (no shadows · no rotation · no stretching)
+- [ ] **(Designer)** Canva carousel templates — LinkedIn 10-slide + 7-slide variants · title slide + summary slide mandatory
+- [ ] **(Designer)** Canva quote-graphic + single-image templates — LinkedIn 1:1 · LinkedIn 4:5 vertical · X 1:1
+- [ ] **(Designer)** Beautiful.ai lead magnet template — title page · TOC · body content · CTA back-cover
+- [ ] **(Designer)** Descript caption + lower-third style — font · color · positioning
+- [ ] **(Designer)** LinkedIn profile banner template — text variants for Phase 1 · Phase 2 · post-Phase 1 milestones
+- [ ] **(Designer)** Midjourney hero image style guide — prompt patterns + forbidden cliché list (no Bitcoin logos · no gold coins · no matrix code · no "fake businesspeople shaking hands")
+- [ ] **(MPs verify)** Brand handoff: MPs can independently produce 1× carousel + 1× quote graphic + 1× lead magnet using only templates (no ad-hoc design)
+
+> [!IMPORTANT] Storage + handoff rule
+> Templates live in shared Canva Pro Team library + Figma file (Designer-owned). All new template requests routed to Designer — **no ad-lib Canva templates by MPs**. Brand drift is one of the failure modes in [[InnBlockchain - Content Repurposing Design Toolkit]] § Failure modes.
 
 ### Featured assets — chronological build order
 
@@ -408,10 +552,10 @@ To prevent drift — what this playbook does NOT cover:
 > Source: [[EU-Compliance-Landscape]] + 14 regulation checklists ([[mifid2-checklist]], [[mifid3-checklist]], [[mifir-checklist]], [[prospectus-checklist]], [[dlt-pilot-checklist]], [[mar-checklist]], [[eu-listing-checklist]], [[dora-checklist]], [[mica-checklist]], [[aml-checklist]], [[tfr-checklist]], [[ccd2-checklist]], [[eidas2-checklist]], [[ipr-checklist]], [[gdpr-checklist]])
 
 ### Phase 1 primary compliance brief — required before profile publish
-- [ ] **(Vignesh drafts + self-reviews · Designer lays out PDF)** **MiFID II/III + Prospectus + DLT Pilot Regime + MAR + EU Listing Act brief** built (PDF, ~6–10 pages). Pull regime detail from:
+- [ ] **(Vignesh drafts regulatory content + self-reviews · CW structures + applies Style Guide voice · Designer lays out PDF)** **MiFID II/III + Prospectus + DLT Pilot Regime + MAR + EU Listing Act brief** built (PDF, ~6–10 pages). Pull regime detail from:
   - [[mifid2-checklist]] · [[mifid3-checklist]] · [[prospectus-checklist]] · [[dlt-pilot-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]]
 - [ ] **(Vignesh)** Brief framing matches profile About copy (Carol on an RWA prospect judges by this asset)
-- [ ] **(Sales Person on request · MPs maintain link)** Brief is delivered on request (linked from About: "available on request")
+- [ ] **(SP on request · MPs maintain link)** Brief is delivered on request (linked from About: "available on request")
 - [ ] **(MPs)** Brief stored in version-controlled asset library
 
 ### Vendor risk pack — required before profile publish
@@ -421,11 +565,11 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Vignesh)** Data residency + processing statement
 - [ ] **(Vignesh + Designer)** Sample audit report (anonymised, regulator-grade) — at least one available
 - [ ] **(Designer assembles · Vignesh review)** Pack assembled as a single PDF or zipped folder
-- [ ] **(Sales Person + MPs)** Deliverable within 24 hours of any vendor risk request
+- [ ] **(SP + MPs)** Deliverable within 24 hours of any vendor risk request
 
 ### Phase 1 cross-cutting briefs (built mid-phase for cross-cutting articles)
-- [ ] **(Vignesh drafts + self-reviews · Designer lays out PDF)** **DORA brief** — for W7 P5-DORA-X cross-cutting article. Pull from [[dora-checklist]]. Cross-references MiFID II + DLT Pilot regime stack.
-- [ ] **(Vignesh drafts + self-reviews · Designer lays out PDF)** **eIDAS 2.0 brief** — for W13 P5-eIDAS-X cross-cutting article. Built W11–W12. Pull from [[eidas2-checklist]]. Doubles as Featured Asset 4 + eIDAS outbound test landing-page download.
+- [ ] **(Vignesh drafts regulatory content + self-reviews · CW structures + applies Style Guide voice · Designer lays out PDF)** **DORA brief** — for W7 P5-DORA-X cross-cutting article. Pull from [[dora-checklist]]. Cross-references MiFID II + DLT Pilot regime stack.
+- [ ] **(Vignesh drafts regulatory content + self-reviews · CW structures + applies Style Guide voice · Designer lays out PDF)** **eIDAS 2.0 brief** — for W13 P5-eIDAS-X cross-cutting article. Built W11–W12. Pull from [[eidas2-checklist]]. Doubles as Featured Asset 4 + eIDAS outbound test landing-page download.
 
 ### Briefs explicitly DEFERRED to Phase 2/3 (do NOT build in Phase 1)
 - MiCA CASP brief — Phase 2 when `/solutions/regulated-exchange` ships
@@ -443,35 +587,35 @@ To prevent drift — what this playbook does NOT cover:
 > Structured DM activation W4 (Jun 8) requires the full platform stack operational. Warm-Network Track (WS9.5) only needs Sales Nav (to identify warm prospects) + manual CRM tracking — can run with reduced infrastructure.
 
 ### Required before structured DMs (W4 activation gate)
-- [ ] **(Vignesh procures · Sales Person uses)** **LinkedIn Sales Navigator** subscription active (Day 1 — also needed for WS9.5 warm-network target identification)
-- [ ] **(Sales Person)** **Saved searches per RWA track** created:
+- [ ] **(Vignesh procures · SP uses)** **LinkedIn Sales Navigator** subscription active (Day 1 — also needed for WS9.5 warm-network target identification)
+- [ ] **(SP)** **Saved searches per RWA track** created:
   - FinTech WealthTech filter (Title + Industry + Company size + EU geo + RWA/MiFID II keywords — NO MiCA keyword per [[InnBlockchain - LinkedIn Outreach Strategy]] § 2.1)
   - CN PropTech / asset-backed Felix filter (Real Estate / Commodities industry + EU geo + asset tokenization keywords)
-- [ ] **(Sales Person)** **Outreach tooling** configured (Expandi.io OR Lemlist) with personalisation variables
-- [ ] **(Sales Person)** **CRM/pipeline tracker** live (Zoho or equivalent) with T1–T5 sequence state per prospect
-- [ ] **(Sales Person)** Pipeline fields: Connected · Replied · Qualified · Call Booked · Closed · Parked
+- [ ] **(SP)** **Outreach tooling** configured (Expandi.io OR Lemlist) with personalisation variables
+- [ ] **(SP)** **CRM/pipeline tracker** live (Zoho or equivalent) with T1–T5 sequence state per prospect
+- [ ] **(SP)** Pipeline fields: Connected · Replied · Qualified · Call Booked · Closed · Parked
 - [ ] **(Vignesh procures · MPs use)** **Shield Analytics** subscription for LinkedIn deep content analytics (optional but high-leverage)
-- [ ] **(Sales Person)** **Calendly** discovery call booking link live + tested
+- [ ] **(SP)** **Calendly** discovery call booking link live + tested
 
 ### Analytics + lead-capture infrastructure (funnel math depends on these)
 - [ ] **(MPs configure · Dev wires events)** **GA4 configured** on innblockchain.com — track LP page-views, time-on-page, scroll depth, CTA clicks, form submissions. Required for time-to-LP-click <60s + LP form-fill rate ≥2% targets in WS12. Set up GA4 transition events specifically for `/solutions/rwa-tokenization` and `/solutions/tokenization`.
 - [ ] **(MPs choose tool · Dev integrates with CRM)** **Email capture mechanism** live — for gated PDF downloads (RWA Risk Checklist, eIDAS brief, vendor risk pack). Options: native CMS form (WordPress / framework), ConvertKit, Mailchimp, or HubSpot Forms. Whatever's chosen must integrate with CRM (auto-create lead record on form submit) and trigger the manual delivery workflow within 24 hrs.
-- [ ] **(Sales Person)** **CRM data hygiene + import** — if any historical LinkedIn contacts / prior discovery calls / referral conversations exist outside Zoho, import + tag with source. Avoids re-outreaching prior contacts and protects relationship credibility.
+- [ ] **(SP)** **CRM data hygiene + import** — if any historical LinkedIn contacts / prior discovery calls / referral conversations exist outside Zoho, import + tag with source. Avoids re-outreaching prior contacts and protects relationship credibility.
 
 ### Discovery call infrastructure
-- [ ] **(Sales Person drafts · Vignesh review)** **Discovery call prep template** built — what Vignesh opens with for each track:
+- [ ] **(SP drafts · Vignesh review)** **Discovery call prep template** built — what Vignesh opens with for each track:
   - **CN RWA Felix:** plain-language opener about their asset class; do NOT lead with technical depth or GitHub; reference call with similar-asset founder ready to offer
   - **FT WealthTech Sam:** ROI + zero-incident framing; case studies / audit reports ready; ask "who handles vendor risk approval?" by minute 15
   - Vendor risk pack + sample audit report + segment-specific compliance brief queued for instant delivery if Carol surfaces
-- [ ] **(Sales Person)** **Pre-call checklist** — per prospect: review their LinkedIn for trigger / company news / regime alignment; pull any prior touchpoints from CRM
+- [ ] **(SP)** **Pre-call checklist** — per prospect: review their LinkedIn for trigger / company news / regime alignment; pull any prior touchpoints from CRM
 
 ### Vignesh calendar time-blocked — founder-only work
-- [ ] **(Vignesh)** **Daily 15–30 min** for final review of MPs / Sales Person / CW output (per SLA: 24 hr article review, 24 hr visual review, 48 hr DM template review)
-- [ ] **(Vignesh)** **Daily ≤30 min** strategic comments on highest-leverage ICP posts (Sales Person does the volume; Vignesh contributes to keep founder voice in the feed)
-- [ ] **(Vignesh)** **1–2 discovery call slots/wk** for FT WealthTech > $100k OR Carol vendor review escalations (Sales Person takes the rest)
+- [ ] **(Vignesh)** **Daily 15–30 min** for final review of MPs / SP / CW output (per SLA: 24 hr article review, 24 hr visual review, 48 hr DM template review)
+- [ ] **(Vignesh)** **Daily ≤30 min** strategic comments on highest-leverage ICP posts (SP does the volume; Vignesh contributes to keep founder voice in the feed)
+- [ ] **(Vignesh)** **1–2 discovery call slots/wk** for FT WealthTech > $100k OR Carol vendor review escalations (SP takes the rest)
 - [ ] **(Vignesh)** **Weekly Fri review** 60 min — pipeline tracker + per-channel KPIs + risk register + team blockers
-- [ ] **(Vignesh)** **Monthly review** last Fri 2 hr — top/bottom 3 articles · 5-project EU gate progress · capacity check (MP utilization, content writer pace, Sales Person close rate)
-- [ ] **(Vignesh)** **WS9.5a Trioangle direct outreach** — Vignesh first warm DM per client (~1–3 DMs/wk personal time)
+- [ ] **(Vignesh)** **Monthly review** last Fri 2 hr — top/bottom 3 articles · 5-project EU gate progress · capacity check (MP utilization, content writer pace, SP close rate)
+- [ ] **(Vignesh · ≤15 min/day)** **WS9.5a per-DM approval** — review SP drafted DMs (Trioangle + adjacent network) + sign off within 24 hr SLA. Vignesh sends personally only when relationship calls for it (~0–1 DMs/wk personal time vs. rev 8's 1–3/wk).
 - [ ] **(Vignesh)** **WS6 Pain Point 5 interviews** (if Path A chosen) — 3–5 calls during W2 only
 - [ ] **(Vignesh)** **Event execution** — Money20/20 Europe (~W3) · Sibos (~W19–W22) · RWA Summit (block 1–2 days per event)
 - [ ] **(Vignesh)** **Bi-weekly newsletter writing block** (if newsletter activated W10+)
@@ -515,9 +659,65 @@ To prevent drift — what this playbook does NOT cover:
 | Wed | Thursday article first draft | CW | 3 hr |
 | Thu AM | **Compliance review** — Phase 1 Thursday slot is Track B by default, so compliance reviews **every Thursday article + W4/W7/W13 Cross-Pillar pieces**. 48-hr SLA. | Vignesh (self-review) | 1 hr |
 | **Thu 10:00 CET** | **PUBLISH article #2** + LinkedIn ABM amplification | MPs publish · Vignesh approves | 30 min |
-| Fri | Repurpose + measure: X threads, LinkedIn quote graphics, Telegram syndication, log metrics | CW (structure) + MPs (produce + post) | 2 hr |
+| Fri | Repurpose + measure: X threads, LinkedIn quote graphics, log metrics | CW (structure) + MPs (produce + post) | 2 hr |
 
 **Total: ~13 hrs/wk per writer.** Workable with CW + technical SME reviewer + Vignesh compliance self-review on-call.
+
+### Per-Article Production Checklist (CW master sequence — open once per article)
+
+> [!INFO] Single linear walk-through · ~25–35 min to step through · ~13 hr to execute per article
+> Replaces nothing — supersedes the AEO/GEO + sales-motion-tag + WS13 compliance fragments by linking to them in order. Open this Monday morning for the Tue slot · Wednesday morning for the Thu slot. The single source of truth for *what* to write is **[[InnBlockchain - Editorial Calendar]]**; everything else is consulted at the step where it applies. Run sequentially — Phase 2 won't make sense without Phase 1; Phase 4 can't fire correctly if Phase 1 missed the tier.
+
+#### Phase 1 — Pre-write (Mon AM for Tue slot · Wed AM for Thu slot · ~30 min)
+
+| # | Step | Doc to consult |
+|---|---|---|
+| 1 | **(CW)** Confirm this week's slot — article ID, tier (1/2/3/0), score, track tag (`[CN]` / `[FT]` / `[Both]`), gate dependencies | [[InnBlockchain - Editorial Calendar]] § Phase 1 Close Schedule |
+| 2 | **(CW · escalate to Dev if 404)** Verify destination LP is live — if 404, escalate as P0 before drafting (Tier 0 rule: no repurposing on LP-gated articles) | [[InnBlockchain - Landing Pages Plan]] § matching solution sub-page |
+| 3 | **(CW)** Confirm article positioning — pillar / cluster · primary persona · sales motion · `[Audit]` / `[Dev]` / `[White-Label]` motion lock | [[InnBlockchain - Content Strategy]] § Pillar Map + § Sales Motion Tagging |
+| 4 | **(CW)** Confirm persona language for this track (Felix asset-first for CN · Sam/Tom/Carol committee for FT) | [[InnBlockchain - ICP - Crypto Native]] OR [[InnBlockchain - ICP - FinTech]] (whichever the track tag points to) |
+| 5 | **(CW · Vignesh confirms on regime questions)** Confirm regime framing — which regulations apply, which to AVOID (RWA = MiFID II/III + Prospectus + DLT Pilot + MAR + EU Listing Act · **NEVER MiCA on RWA**) | [[EU-Compliance-Landscape]] + the per-regime checklist (e.g., [[mifid2-checklist]], [[dlt-pilot-checklist]], [[mar-checklist]]) |
+| 6 | **(CW)** Pull per-article AEO prompt block + apply 13 AEO Drafting Principles | [[InnBlockchain - Content AEO GEO Prompts]] § Phase 1 Week-by-Week Article Prompts + § AEO Drafting Principles |
+| 7 | **(CW)** Confirm derivative chain scope by tier — Tier 1 full chain · Tier 2 scaled-back · Tier 3 amplify-only · Tier 0 none. Plan derivative copy structure while outlining. | [[InnBlockchain - Content Repurposing Plan]] § Repurposing Tiers + WS15 § Phase 1 derivative scope |
+
+#### Phase 2 — Write (Mon PM for Tue slot · Wed for Thu slot · ~3 hr)
+
+| # | Step | Doc to consult |
+|---|---|---|
+| 8 | **(CW)** Outline per AEO prompt block (H2/H3 = prompts verbatim per Principle 2) | [[InnBlockchain - Content AEO GEO Prompts]] § AEO Drafting Principles |
+| 9 | **(CW)** Run the **9-item Per-article AEO/GEO checklist** below as drafting gate | WS7 § Per-article AEO/GEO checklist (immediately below) |
+| 10 | **(CW · Vignesh confirms)** Run the **4-item sales-motion tag checklist** below — tag mandatory before submitting for review | WS7 § Per-article sales-motion tag (immediately below) |
+| 11 | **(CW)** If `[Both]` article: confirm split CTA footer routes correctly (Gate 1 for CN · Gate 2 for FT) | [[InnBlockchain - Landing Pages Plan]] + WS1 Gate 1/2 |
+| 12 | **(CW)** If MiCA-boundary article (W4 #4, W8 #11): add external-link routing footer (rev 7 — no internal MiCA LP) | WS1 § External-link routing for MiCA-boundary articles |
+
+#### Phase 3 — Pre-publish (Tue AM for Tue slot · Thu AM for Thu slot · 48-hr SLA from draft submit)
+
+| # | Step | Doc to consult |
+|---|---|---|
+| 13 | **(CW submits · SME reviews)** First draft to SME (senior engineer or auditor) by EOD day-before-publish — 1 hr review Tue AM / Thu AM | WS7 § Weekly batch workflow |
+| 14 | **(CW submits to Vignesh)** If Thursday Track B OR Cross-Pillar (W4 Thu C1 · W6 Thu T4-N · W7 Thu P5-DORA-X · W13 Tue P5-eIDAS-X): submit to Vignesh for compliance review — 48-hr SLA | WS13 § Pre-publish review |
+| 15 | **(Vignesh executes)** Run the **WS13 compliance review checklist** — 5 regime-leak gates (no MiCA-on-RWA · date-stamped refs · per-segment scope · `[Both]` split CTA · reviewer sign-off logged) | WS13 § Pre-publish review |
+| 16 | **(Vignesh signs · CW receives sign-off)** Compliance sign-off logged before publish — escalate after 2 missed cycles | WS13 § Pre-publish review |
+| 17 | **(CW runs AI skill · Vignesh reviews score)** **CORE-EEAT score check** — run AI scoring skill on the corrected draft (post-SME + post-compliance, all source-doc corrections applied). Threshold + iteration rule lives in the skill; if score below threshold, loop back to relevant Phase 2 step and re-submit before Phase 3 sign-off is final. **Run AFTER step 16, never before — scoring an uncorrected draft wastes the check.** | CORE-EEAT AI scoring skill *(to be configured · sister tool to [[InnBlockchain - Content AEO GEO Prompts]])* |
+| 18 | **(MPs schedule · Vignesh approves Mon AM batch)** Final scheduled batch approved Mon AM before MPs publish Mon–Fri | WS13 § Delegated-work spot-check protocol |
+
+#### Phase 4 — Post-publish (Tue or Thu 10:00 CET + Friday + monthly · ongoing)
+
+| # | Step | Doc to consult |
+|---|---|---|
+| 19 | **(MPs publish · Vignesh approves at 10:00 CET)** Article publish + LinkedIn/X amplification (no link in post body — drop in comment 1) | WS8 § Posting cadence + § Engagement tactics |
+| 20 | **(CW structures derivative copy · MPs produce visuals · Designer for high-stakes)** Trigger derivative chain per article tier — run WS15 6-step gate sequence (Article Tier → Format Priority → Track → Motion → Persona → LP) | WS15 § Per-published-article repurposing checklist |
+| 21 | **(MPs enforce in scheduling)** Verify LinkedIn output cap — ≥48 hr spacing between any two posts about same article · ≤7 posts/wk steady state · cross-pillar Tier 1 distributes across 3 weeks (not launch week) | WS8 § LinkedIn output cap + WS15 § LinkedIn output cap enforcement |
+| 22 | **(CW logs Friday · MPs report GA4)** Friday: log per-article metrics — X thread CTR · LinkedIn carousel CTR · time-to-LP-click (<60s median target) · LP form-fill rate (≥2% cold / ≥5% warm) · booked discovery calls attributed per article · **CORE-EEAT post-publish delta** (if score correlates with ranking / citation outcomes, feed back into next-article drafting) | WS7 § Weekly batch workflow Fri + WS12 § Per-article tracking |
+| 23 | **(Vignesh + CW · last Fri of month)** Monthly review — top 3 / bottom 3 articles by booked discovery calls · pattern-match for next month's slot · check Watch-candidate articles (kill at 90 days if zero inbound) · trigger Tier 0 backfill derivatives if LP shipped · **CORE-EEAT score-vs-performance pattern check** (which dimensions correlate with bookings?) | WS12 § Monthly review + WS15 § Monthly Repurposing Review |
+
+> [!IMPORTANT] Hard stop — do not proceed past Phase 2 if any of these are true
+> - Destination LP returns 404 (step 2) — Tier 0 rule: blocked until LP ships, no Phase 3/4
+> - Regime framing uncertain on MiCA boundary (step 5) — escalate to Vignesh, do not draft under wrong regime
+> - Pain Point 5 cluster article and validation not passed (W2 deadline per WS6) — article never activates
+
+> [!WARNING] CORE-EEAT ordering rule (step 17)
+> CORE-EEAT scoring MUST run after step 16 (compliance sign-off), not before. Running it on an uncorrected draft wastes the AI-skill call AND can produce a false high score on regime-leaked content. Sequence: SME review → Vignesh compliance → corrections applied → **CORE-EEAT score** → final batch approval → publish.
 
 ### Per-article AEO/GEO checklist (every Phase 1 article)
 - [ ] **(CW)** Pull per-article prompt block from [[InnBlockchain - Content AEO GEO Prompts]] § Phase 1 Week-by-Week Article Prompts
@@ -535,6 +735,53 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(CW · Vignesh confirms)** Sales motion: `[Audit]` / `[Dev]` / `[White-Label]` / `[Audit + Dev]`
 - [ ] **(CW · Vignesh confirms)** Destination LP (track-specific even when topic shared)
 - [ ] **(CW · Vignesh confirms)** CTA matching the sales motion (no motion mixing in one article's CTA — `[Both]` uses split CTA footer)
+
+### CW Content Style Guide (referenced in Per-Article Production Checklist Phase 2)
+
+> [!INFO] HOW to write — voice / tone / formatting rules the AEO checklist doesn't cover
+> The 9-item AEO/GEO checklist above enforces STRUCTURE (H2 prompts · 150-word answers · FAQPage JSON-LD · markdown tables). This style guide enforces VOICE so 40 articles ship in one consistent voice rather than 40 different ones.
+
+#### Voice + tone
+- **(CW)** Voice: senior engineer + compliance reviewer + founder, in that order. Never marketing-coded. Never breathless or hype-y.
+- **(CW)** Tone: direct, specific, pressure-tested. Lead with the hard part. Push back hardest when the reader sounds certain.
+- **(CW)** Reader assumption: knows Web3 fundamentals · knows their own asset class · does NOT know the regulatory + audit edge cases (which is why they're reading)
+- **(CW)** AVOID: "leverage" (use "use") · "solutions" (name the thing) · "seamless" (replace with specific failure mode handled) · "robust" (cite the spec)
+- **(CW)** FAVOUR: specific regulation names + dates · specific tech versions · specific failure modes + how mitigated · specific costs / timelines (per AEO Principle 4)
+
+#### Formatting standards
+- **(CW)** Em-dashes (—) for parenthetical asides; never double hyphens (--)
+- **(CW)** US spelling throughout (per Vignesh profile English-only setting)
+- **(CW)** Numbers: spell out one–nine; numerals 10+. Currencies: $20k+ in headlines; full notation in tables.
+- **(CW)** Code: inline backticks for short identifiers (e.g., `ERC-3643`); fenced code blocks for multi-line snippets
+- **(CW)** Lists: numbered for sequences; bullets for parallel items; tables for comparisons
+- **(CW)** Bold = the load-bearing claim of a paragraph (one per paragraph max). Italics = first introduction of a regulatory term.
+
+#### Source citation standard
+- **(CW · Vignesh confirms in compliance review)** Every regulatory claim date-stamped with regulation source (e.g., "MiFID II Art. 4(1)(15) — as of 2026"). Per AEO Principle 8.
+- **(CW)** Every numeric claim sourced inline (ESMA · national NCA · industry report · vendor whitepaper). Avoid unsourced figures.
+- **(CW)** Competitor mentions: name the standard / spec / interface (ERC-3643 · ERC-1400) NOT the vendor (Securitize · Tokeny). Per AEO Principle 5.
+- **(CW)** Internal links: every article internally links to its destination LP (Gate 1 or Gate 2) + at least 1 sister article in the same cluster.
+
+#### Title + meta-description + OG card
+- **(CW)** Title (H1) max 60 chars for SERP display; primary keyword in first 30 chars
+- **(CW)** Meta description: 150–160 chars; answer the H1 question in one sentence; include CTA verb (Download · Read · Compare)
+- **(MPs · Designer template)** OG / Twitter card image: pulled from Designer brand template; never article hero image directly
+
+#### Alt-text template (every image)
+- **(CW drafts · MPs apply at publish)** Describe what the image shows (not "image of") · include any text shown in the image · ≤125 chars
+- **(CW)** Diagrams: describe the relationship being shown (e.g., "Flow from issuer wallet → smart contract → investor whitelist")
+
+#### Internal linking strategy
+- **(CW)** Hub-and-spoke: every Tier 1 hub article internally linked from every Tier 2/3 article in its cluster
+- **(CW)** Cross-pillar (C1, T4-N, P5-DORA-X, P5-eIDAS-X): explicit cross-pillar back-links to the persona-coded LP
+- **(CW · Vignesh monthly review)** No orphans: every article has ≥2 internal incoming links within 4 weeks of publish
+
+#### Per-track voice modifiers
+| Track | Voice modifier |
+|---|---|
+| `[CN]` Crypto Native | Felix asset-first opener · plain-language regulatory framing · founder-to-founder tone |
+| `[FT]` FinTech WealthTech | Sam ROI-first · Tom technical-first · Carol compliance-first — match the segment in the article hook |
+| `[Both]` | Lead with regulatory + asset framing · split-CTA footer routes by persona · never blend voices in a single paragraph |
 
 ### Phase 1 W1–W22 article-by-article execution
 
@@ -616,11 +863,11 @@ To prevent drift — what this playbook does NOT cover:
 > [!INFO] Ownership split (rev 8)
 > - **Vignesh** authors all personal-feed posts (voice = founder)
 > - **MPs** schedule + post (LinkedIn native scheduler) + manage company page (3×/wk) + coordinate Tue/Thu publish-day amplification + produce visual assets needed for feed posts (graphics, video clips)
-> - **Sales Person** (from W8) handles 5–10 strategic comments/day on RWA prospects' posts (WS9.5b primary track); Vignesh contributes ≤30 min/day to keep founder voice in the feed
+> - **SP** (from W8) handles 5–10 strategic comments/day on RWA prospects' posts (WS9.5b primary track); Vignesh contributes ≤30 min/day to keep founder voice in the feed
 
 ### Posting cadence (Vignesh personal — 4–5×/wk per § 4 Content Cadence)
 *(SPEED MODE rev 4.2: feed warmup is 3 weeks before structured DMs activate W5 — softened from rev 4's 2-week claim. Reason: Vignesh's 7+ year LinkedIn signal is **Trioangle CEO / general software dev**, not blockchain/FinTech. The algorithm needs to RE-CATEGORISE the profile to a new topic cluster, not just confirm existing signal. 2 weeks insufficient for re-categorisation; 3 weeks with aggressive Profile Recategorisation Accelerator gets close.)*
-- [ ] **(Vignesh authors · MPs schedule + post · Sales Person comments)** **Mon** — feed post; comment on 5–10 ICP posts (FT + CN); engage 3-5 morning posts
+- [ ] **(Vignesh authors · MPs schedule + post · SP comments)** **Mon** — feed post; comment on 5–10 ICP posts (FT + CN); engage 3-5 morning posts
 - [ ] **(Vignesh authors · MPs schedule + post)** **Tue** — feed post amplifying Tuesday article (no link in body — drop link in comment 1)
 - [ ] **(Vignesh authors · MPs schedule + post + company page repost)** **Wed** — feed post; company page repost
 - [ ] **(Vignesh authors · MPs design carousel + post)** **Thu** — carousel post (algorithm preference)
@@ -630,7 +877,7 @@ To prevent drift — what this playbook does NOT cover:
 ### Profile Recategorisation Accelerator (W2–W3 only — Speed Mode-specific)
 - [ ] **(Vignesh authors · MPs post)** **2 posts/day** in W2–W3 (vs 1/day normal cadence) to flood the algorithm with RWA / MiFID II / DLT Pilot / blockchain-security signal
 - [ ] **(Vignesh authors · MPs gatekeep cluster discipline)** **EVERY post in W2–W3 must hit a topic cluster** (no off-topic posts — see § 5.1 clusters); off-topic posts in this window confirm the wrong categorisation
-- [ ] **(Sales Person · Vignesh contributes ≤30 min/day)** **Strategic comments amplified to 10–15/day in W2–W3** (vs 5–10 normal) on EU WealthTech / RWA accounts — comments are a strong topic-relevance signal to the algorithm
+- [ ] **(SP · Vignesh contributes ≤30 min/day)** **Strategic comments amplified to 10–15/day in W2–W3** (vs 5–10 normal) on EU WealthTech / RWA accounts — comments are a strong topic-relevance signal to the algorithm
 - [ ] **(MPs track · Vignesh reviews)** **Track Search Appearance metric weekly** — if search appearances for "RWA" / "MiFID II" / "tokenization" don't show signal by W4, accelerator is failing and warmup needs to extend
 
 ### Posting cadence (Company page — 3×/wk)
@@ -639,6 +886,37 @@ To prevent drift — what this playbook does NOT cover:
 
 ### Posting times (EU primary — per § 3.2)
 - Tue 08:00–09:30 CET · Wed 09:00–10:30 CET · Thu 08:00–10:00 CET · Mon 07:30–09:00 CET · Avoid Fri after 12:00 CET
+
+### Per-platform formatting spec (MPs enforce in scheduling)
+
+> [!INFO] Same article, different platform, different format
+> One article generates derivatives for LinkedIn + X (Track A) or LinkedIn-only (Track B). MPs apply per-platform format when scheduling. Designer brand templates enforce safe-area rules.
+>
+> **Telegram dev-groups dropped from Phase 1 (rev 20)** — audience is developers, not Phase 1 ICP (RWA Felix is asset-first non-technical · Sam/Tom/Carol committee evaluates via vendor risk pack + audit report). Re-evaluate for Phase 2/3 DeFi-protocol Felix scope.
+
+| Format | LinkedIn | X (Twitter) |
+|---|---|---|
+| Character limit (post body) | 3,000 (ideal: ~1,300 to clear the "see more" cut) | 280 per tweet (thread for >280) |
+| Hashtag count | 3–5 max (algorithm penalises 6+) | 1–2 per tweet |
+| Image aspect ratio | 1:1 (single) · 4:5 (vertical) · 1.91:1 (link preview) · 1080×1080 carousel | 16:9 (header) · 1:1 (in-tweet) |
+| Carousel slide count | 7–10 ideal (algorithm preference); title + summary slide mandatory | n/a (use thread) |
+| Video length | 30s–3 min (native upload) | 30s–2 min |
+| External links | **DROP IN COMMENT 1 (never body)** | Allowed in body (no penalty) |
+| @-tagging | Sparingly — only people likely to engage | Freely (1–2 max) |
+| Best EU posting times | Tue 08:00–09:30 · Wed 09:00–10:30 · Thu 08:00–10:00 · Mon 07:30–09:00 | Same EU windows + Sat AM |
+
+#### Per-platform safe-area + cropping rules (Designer templates enforce)
+- **(MPs · Designer templates)** LinkedIn carousel: title slide + summary slide MANDATORY (algorithm uses these for thumbnail) · never put critical info on the last slide (low completion rate)
+- **(MPs · Designer templates)** X thread cover: title + thread length signal ("🧵 8/" pattern) · author handle visible
+
+#### Cross-platform asset bundle per article (Tier 1 — full chain · per WS15)
+- [ ] **(MPs)** 1× LinkedIn 10-slide carousel
+- [ ] **(Vignesh authors · MPs schedule)** 1× LinkedIn long-form post (~1,300 char ideal)
+- [ ] **(CW outlines · MPs produce header + schedule)** 1× X thread (5–8 tweets)
+- [ ] **(MPs)** 1× LinkedIn quote graphic (Tue or Wed amplification)
+- [ ] **(Designer · MPs host)** 1× lead magnet PDF (where applicable per Format Priority S)
+
+Tier 2 + Tier 3 use scaled chains per WS15 § Phase 1 derivative scope.
 
 ### Topic cluster discipline (per § 5.1)
 - [ ] **(Vignesh authors · MPs gatekeep cluster discipline)** **3 of every 5 posts** must fall inside these clusters:
@@ -651,23 +929,49 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(MPs check)** Every off-topic post dilutes the algorithm's categorisation
 
 ### Engagement tactics (per § 4 Engagement Tactics)
-- [ ] **(Sales Person + Vignesh)** Comment on ICP posts BEFORE publishing your own each morning (warms the algorithm)
+- [ ] **(SP + Vignesh)** Comment on ICP posts BEFORE publishing your own each morning (warms the algorithm)
 - [ ] **(MPs publish · Vignesh authors)** Drop external links in comment #1, not the post body (algorithm penalises external links in body)
 - [ ] **(Vignesh)** Reply to every comment within the first hour (re-triggers the algorithm)
 - [ ] **(Vignesh)** Tag sparingly — only people likely to engage
 - [ ] **(Vignesh)** Repost ICP-relevant news with 2–3 lines of your own analysis (positions you as the filter)
 
 ### Strategic commenting (per § 5.3)
-- [ ] **(Sales Person)** 5–10 high-quality comments per day on high-reach ICP posts
-- [ ] **(Sales Person · Vignesh shadows first 20)** Comment quality: specific point / counterargument / data point — never "great post"
-- [ ] **(Sales Person)** 3–5 sentences max
-- [ ] **(Sales Person)** End with a question when possible
-- [ ] **(Sales Person)** Comment within first 30 minutes of post going live
+- [ ] **(SP)** 5–10 high-quality comments per day on high-reach ICP posts
+- [ ] **(SP · Vignesh shadows first 20)** Comment quality: specific point / counterargument / data point — never "great post"
+- [ ] **(SP)** 3–5 sentences max
+- [ ] **(SP)** End with a question when possible
+- [ ] **(SP)** Comment within first 30 minutes of post going live
 
 ### Newsletter "Secure by Design" — DEFERRED
 - [ ] **(Vignesh decision)** Decision recorded: deferred until 50+ subscribers / 4–6 weeks of baseline follower count established
 - [ ] **(Vignesh)** Revisit at Phase 1 mid-point (~W10)
 - [ ] **(Vignesh authors · MPs assemble + send)** If activated: bi-weekly, 400–700 words, one topic per issue, alternating FinTech / Crypto Native angle
+
+#### Vendor-selection decision criteria (for W10 revisit — pre-decided so revisit is a 30-min call, not a 2-week research sprint)
+
+> [!INFO] Decision framework when revisit fires
+> If W10 revisit goes "activate", the platform decision is the bottleneck. Pre-decide what matters.
+
+| Vendor | Best for | Trade-off |
+|---|---|---|
+| **Beehiiv** | Analytics + segmentation + zero revenue cut + no platform lock-in | Smaller discovery network than Substack; slightly more setup work |
+| **Substack** | Audience growth + discovery (built-in recommendation network) | 10% revenue cut if paid · weaker analytics · founder voice ties to platform |
+| **LinkedIn Newsletter** | Native to existing audience · zero migration · auto-distribution | Lock-in to LinkedIn algorithm · no email list ownership · weak analytics |
+| **ConvertKit (now Kit)** | Email automation + CRM integration | No publish-network · pay per subscriber tier |
+| **Self-hosted (Ghost / WordPress)** | Full control + own subscriber list + own analytics | Higher engineering cost · no built-in discovery |
+
+#### Decision triggers (commit when ALL true at W10 revisit)
+- [ ] **(MPs report · Vignesh decides)** 50+ subscribers on LP email-capture list (gate from WS5)
+- [ ] **(MPs report)** 4+ consecutive weeks of follower growth above baseline (>50/mo Phase 1 target)
+- [ ] **(Vignesh decision)** Vignesh has 1–2 hr/wk bi-weekly writing capacity (NOT during Phase 1 production crunch — confirm against current Vignesh load)
+- [ ] **(Vignesh)** Phase 1 close cleared (W22+) OR newsletter activated as Phase 2 launchpad rather than mid-Phase-1 distraction
+
+#### Default recommendation (if W10 revisit fires + decision triggers pass)
+- **Default: Beehiiv** — analytics + segmentation + revenue retention + no lock-in. Best long-term play.
+- **Alternative: LinkedIn Newsletter** — if subscriber list <200 at W10, prefer LinkedIn Newsletter for fastest first-issue ship (lower friction); migrate to Beehiiv at >500 subscribers
+- **Defer Substack** until subscriber base >1,000 (discovery network compounds at scale)
+- **Avoid ConvertKit** unless Phase 2 commits to email-CRM-integrated drip sequences
+- **Avoid self-hosted** unless engineering capacity confirmed available (Phase 1 Dev is fully booked on LP delivery)
 
 ### Authority signals to track (per § 5.5 — first 30 days are invisible, signals appear W8–W12)
 - Profile views: 100–300 / week
@@ -692,15 +996,15 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 > **SPEED MODE rev 4.2:** activation compressed W6 → W5. Adjacent-Network (WS9.5a) + Engagement-Led (WS9.5b) tracks run in parallel and start W1 Day 1 without these gates.
 
 > [!INFO] Ownership
-> - **Primary owner: Sales Person** — full-cycle: DMs → sequences → discovery calls → sales-led closes (Vignesh joins for FT WealthTech > $100k OR Carol vendor reviews)
-> - Sales Person ramp at start: 1–2 wk (regime-leak training + voice/style guide + Vignesh shadows first 10 DMs before approval to send)
-> - Sales Person writes from **Vignesh's profile** (recommended) or own profile — decision in open items
+> - **Primary owner: SP** — full-cycle: DMs → sequences → discovery calls → sales-led closes (Vignesh joins for FT WealthTech > $100k OR Carol vendor reviews)
+> - SP ramp at start: 1–2 wk (regime-leak training + voice/style guide + Vignesh shadows first 10 DMs before approval to send)
+> - SP writes from **Vignesh's profile** (recommended) or own profile — decision in open items
 
 ### Pre-flight ready items (must clear before W5 activation)
-- [ ] **(Sales Person verifies · Vignesh confirms gate clear)** **Outreach Readiness Gate cleared** — every box in WS3 + WS4 + WS5 + **3 weeks of feed posts** (compressed from 4–6 wks; cannot drop below 3 because profile recategorisation needs the time)
-- [ ] **(Sales Person)** LP Gates 1 + 2 verified live (not 404) — hard gate, not compressible
+- [ ] **(SP verifies · Vignesh confirms gate clear)** **Outreach Readiness Gate cleared** — every box in WS3 + WS4 + WS5 + **3 weeks of feed posts** (compressed from 4–6 wks; cannot drop below 3 because profile recategorisation needs the time)
+- [ ] **(SP)** LP Gates 1 + 2 verified live (not 404) — hard gate, not compressible
 - [ ] **(Vignesh tracks)** 5+ recommendations published across 3 of 5 categories
-- [ ] **(Sales Person + MPs ensure delivery infra ready)** Compliance brief (MiFID II/III + Prospectus + DLT Pilot + MAR + Listing Act) + vendor risk pack + Sample Audit Report PDF ready for instant delivery
+- [ ] **(SP + MPs ensure delivery infra ready)** Compliance brief (MiFID II/III + Prospectus + DLT Pilot + MAR + Listing Act) + vendor risk pack + Sample Audit Report PDF ready for instant delivery
 
 ### Mid-flight checkpoint (W4 — go / no-go for W5 activation)
 - [ ] **(MPs report · Vignesh decides go/no-go)** Profile Search Appearances showing RWA / MiFID II / tokenization signal — if NOT trending, profile categorisation hasn't shifted, warmup extends 1 wk → structured DMs slip W5 → W6
@@ -720,20 +1024,20 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 | **Fri** | Send T4 soft-ask to qualified RWA leads (10–14 days old, positive signal). Book discovery calls. T5 nudge or park stale leads. Update CRM pipeline tracker. |
 
 ### Sequence per prospect (T1 → T5)
-- [ ] **(Sales Person)** **T1 (Day 0)** — personalised connection request (300 char max). Hook = a specific RWA trigger.
-- [ ] **(Sales Person)** **T2 (Day 1–2 post-accept)** — welcome message, no pitch, open question about their work
-- [ ] **(Sales Person)** **T3 (Day 5–7)** — share relevant content (RWA security guide, MiFID II + DLT Pilot audit pattern, asset-class deep dive)
-- [ ] **(Sales Person)** **T4 (Day 12–14)** — soft ask referencing their context, propose 20-min call
-- [ ] **(Sales Person)** **T5 (Day 21)** — final nudge or park for 60 days
+- [ ] **(SP)** **T1 (Day 0)** — personalised connection request (300 char max). Hook = a specific RWA trigger.
+- [ ] **(SP)** **T2 (Day 1–2 post-accept)** — welcome message, no pitch, open question about their work
+- [ ] **(SP)** **T3 (Day 5–7)** — share relevant content (RWA security guide, MiFID II + DLT Pilot audit pattern, asset-class deep dive)
+- [ ] **(SP)** **T4 (Day 12–14)** — soft ask referencing their context, propose 20-min call
+- [ ] **(SP)** **T5 (Day 21)** — final nudge or park for 60 days
 
 ### Templates — pull verbatim from [[InnBlockchain - LinkedIn Outreach Strategy]] § 5
-- **(Sales Person uses · Vignesh approves all new template variants)** FinTech RWA / WealthTech templates: § 5 🥇 FinTech RWA / WealthTech block
-- **(Sales Person uses · Vignesh approves all new template variants)** CN RWA Felix templates: § 5 🥇 RWA Crypto Native block
-- **(Sales Person uses · Vignesh approves all new template variants)** Universal T5: § 5 Universal T5 — Final Nudge
+- **(SP uses · Vignesh approves all new template variants)** FinTech RWA / WealthTech templates: § 5 🥇 FinTech RWA / WealthTech block
+- **(SP uses · Vignesh approves all new template variants)** CN RWA Felix templates: § 5 🥇 RWA Crypto Native block
+- **(SP uses · Vignesh approves all new template variants)** Universal T5: § 5 Universal T5 — Final Nudge
 
 ### Sales Navigator filters
-- [ ] **(Sales Person)** FT WealthTech RWA saved search created per § 2.1 (Title + Industry Financial Services + Company size 50–500 + EU geo + RWA/MiFID II/DLT Pilot/STO keywords — **NO MiCA keyword**)
-- [ ] **(Sales Person)** CN RWA Felix saved search created per § 2.2 (Title + Industry Real Estate/Commodities/Financial Services + EU geo + asset tokenization keywords)
+- [ ] **(SP)** FT WealthTech RWA saved search created per § 2.1 (Title + Industry Financial Services + Company size 50–500 + EU geo + RWA/MiFID II/DLT Pilot/STO keywords — **NO MiCA keyword**)
+- [ ] **(SP)** CN RWA Felix saved search created per § 2.2 (Title + Industry Real Estate/Commodities/Financial Services + EU geo + asset tokenization keywords)
 
 ### Safe daily limits (per § 6 Outreach Automation)
 - Profile views: 80–100/day
@@ -742,13 +1046,13 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 - InMails: 10–20/day
 
 ### Disqualification signals — do NOT connect / advance (per § 9)
-- [ ] **(Sales Person)** FT RWA: idea-stage with no product, no licensing intent, no timeline
-- [ ] **(Sales Person)** FT RWA: "just exploring" with no funding, no MiFID II / Prospectus / DLT Pilot pressure
-- [ ] **(Sales Person)** CN RWA: no underlying asset, no codebase, zero build budget
-- [ ] **(Sales Person)** CN RWA: jurisdiction with explicit crypto/tokenization ban
-- [ ] **(Sales Person)** All: hiring multiple blockchain dev firms simultaneously for competitive pitches
-- [ ] **(Sales Person)** CN exchange/DeFi/wallet startup with no asset-backing → park to Phase 3 watchlist
-- [ ] **(Sales Person)** FT non-RWA (pure ExchangeTech / etc.) → park to Phase 2 watchlist
+- [ ] **(SP)** FT RWA: idea-stage with no product, no licensing intent, no timeline
+- [ ] **(SP)** FT RWA: "just exploring" with no funding, no MiFID II / Prospectus / DLT Pilot pressure
+- [ ] **(SP)** CN RWA: no underlying asset, no codebase, zero build budget
+- [ ] **(SP)** CN RWA: jurisdiction with explicit crypto/tokenization ban
+- [ ] **(SP)** All: hiring multiple blockchain dev firms simultaneously for competitive pitches
+- [ ] **(SP)** CN exchange/DeFi/wallet startup with no asset-backing → park to Phase 3 watchlist
+- [ ] **(SP)** FT non-RWA (pure ExchangeTech / etc.) → park to Phase 2 watchlist
 
 > [!IMPORTANT] Hard rules — review monthly, not checkable
 > *(These are standing rules, not one-time tasks. Per § 9 Phase 1 Common Mistakes.)*
@@ -763,17 +1067,74 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 > - Never pitch Trioangle or generic software dev from this profile
 > - Never DM from a group joined the same day (2-week presence minimum)
 
+### Discovery Call Master Sequence (SP — per booked call)
+
+> [!INFO] Single linear walk-through · ~5 min prep + 30–60 min call + 10 min post-call
+> The DM track (T1–T5 above) gets the call BOOKED. This sequence governs what happens IN the call. Open per call. Supersedes the WS5 segment-specific 2-liners by expanding them into 5 phases. Pairs with the [[InnBlockchain - LinkedIn Outreach Strategy]] § 5 call patterns where they exist.
+
+#### Phase 1 — Pre-call (5 min before)
+| # | Step | Doc |
+|---|---|---|
+| 1 | **(SP)** Pull prospect from CRM — source · trigger · prior touchpoints · track tag | WS12 § Per-prospect tracking |
+| 2 | **(SP)** Confirm segment — CN RWA Felix · FT WealthTech Sam · Tom · Carol | [[InnBlockchain - ICP - Crypto Native]] / [[InnBlockchain - ICP - FinTech]] |
+| 3 | **(SP)** Open WS5 segment-specific prep + queue vendor risk pack + sample audit + compliance brief for instant delivery | WS5 § Discovery call infrastructure + WS4 |
+| 4 | **(SP)** Identify the qualifying question to ask by minute 15 (vendor risk approver · timeline · budget signal) | this section Phase 3 |
+
+#### Phase 2 — Opening (0–5 min)
+| # | Step | What to say (high level) |
+|---|---|---|
+| 5 | **(SP)** Persona-aligned opener (NOT generic "thanks for the call") | CN Felix: asset-class-first · FT Sam: outcome-first · FT Tom: technical-first · FT Carol: compliance-first |
+| 6 | **(SP)** Set call frame: agenda + time check + intent | "I have 30 min — want to understand your roadmap; not pitching today unless you ask" |
+| 7 | **(SP · listen ≥80% of opening)** First-5-min question: what brought you to this call? | Listen for trigger signal that matches a Phase 1 DM hook |
+
+#### Phase 3 — Discovery (5–25 min — listen + qualify · first 20 min listen, not pitch)
+| # | Step | What to qualify against |
+|---|---|---|
+| 8 | **(SP)** Asset class / use case detail | RWA bucket map (real estate · vehicles · commodities · private credit · art) |
+| 9 | **(SP)** Stage: idea / building / live / scaling | DQ filter from WS9 § Disqualification signals |
+| 10 | **(SP · escalate if confused)** Regulatory posture: who handles compliance? Are they MiFID II / DLT Pilot aware OR MiCA-confused? | MiCA-on-RWA confusion = red flag · escalate to Vignesh same-day |
+| 11 | **(SP)** Budget signal: vendor evaluation? RFP? Committee? | $100k+ FT WealthTech threshold = Vignesh co-pitch (WS12 routing) |
+| 12 | **(SP)** Timeline: when do they want a vendor? | <90 days = warm · 6+ months = nurture |
+| 13 | **(SP)** Procurement: who else approves? | Carol involvement surfaced = vendor risk pack within 24 hr (WS4) |
+
+#### Phase 4 — Qualification + close-the-loop (25–35 min)
+| # | Step | Action |
+|---|---|---|
+| 14 | **(SP)** Qualify against ICP gates (track + stage + budget + timeline + regulatory + procurement) | Pass = next step · fail = park 60d (WS12 stage transitions) |
+| 15 | **(SP)** If qualified → schedule next step on the call (proposal · scoping · vendor risk pack delivery + follow-up) | Calendly on screen during call |
+| 16 | **(SP + WS4 delivery infra)** If Carol involvement surfaced → confirm vendor risk pack within 24 hr | WS4 vendor risk pack |
+| 17 | **(SP)** Confirm what you'll send next 24 hr (sample audit · compliance brief · vendor risk pack) | Set the SLA; never miss it |
+
+#### Phase 5 — Post-call (10 min after)
+| # | Step | Doc |
+|---|---|---|
+| 18 | **(SP)** Log call: status update · next-step action · CRM stage transition with reason | WS12 § Per-prospect tracking + § Pipeline-stage exit criteria |
+| 19 | **(SP)** Send promised assets within 24 hr (sample audit · compliance brief · vendor risk pack) | WS4 + WS3 Featured assets |
+| 20 | **(SP)** Schedule follow-up cadence per pipeline stage | WS12 § Pipeline-stage exit criteria |
+
+> [!IMPORTANT] Vignesh escalation triggers (during call OR within 1 hr after)
+> - Carol explicitly asks "can I speak to the founder?" → **always escalate**
+> - FT WealthTech Sam deal value indicated > $100k → escalate for co-pitch (SP opens, Vignesh joins last 15 min OR Vignesh leads + SP observes for handoff per WS12 routing)
+> - Trioangle existing client → SP carries the thread (per WS9.5a rev 16) but route to Vignesh for pricing conversation OR if client explicitly asks for founder OR if anything in the relationship history feels off
+> - Regime confusion SP can't resolve (prospect insists "we need MiCA for this RWA tokenization") → escalate same-day for Vignesh to clarify
+
+> [!WARNING] Common mistakes (from rev 8 risk register)
+> - Pitching too early (selling vs listening = lower close rate) — **first 20 min listen + qualify, don't pitch**
+> - Misjudging Carol-handoff threshold (handles Carol when she wants CEO, OR escalates Vignesh when SP could've handled) — explicit rule: Carol asks "can I speak to the founder?" = always escalate · Carol asking compliance-specific questions SP can answer = SP handles
+> - Trioangle client gets SP pitch with no Vignesh reference (reads inauthentic) — process per WS9.5a rev 16: SP CAN send first warm DM but **must reference Vignesh explicitly** in the opener ("I work with Vignesh — he asked me to reach out about [your asset class]") · Vignesh per-DM approves before send · Vignesh sends personally when relationship calls for it (Vignesh's judgment)
+
 ---
 
 ## WS9.5a — Adjacent-Network Warm Intros (Speed Mode)
 
 > **Activates W1 Day 1. No Outreach Readiness Gate.** Vignesh has NO direct warm network in FinTech. He DOES have adjacent network from Trioangle (real estate / marketplace / commodity / general-business clients) + tech/crypto connections. This track uses that adjacent network for **2nd-degree intros**, not direct DMs to FinTech prospects.
 
-> [!INFO] Ownership split (rev 8)
-> - **Vignesh always sends first warm DM** — these are HIS existing Trioangle relationships; client must hear from him first, not a sales rep
-> - **Sales Person brought into thread** only after positive response received (introduces sales mgr: "I'd like to bring [name] in to walk through specifics — he leads our RWA platform conversations")
-> - **Sales Person carries forward** discovery call coordination + technical scoping + close
+> [!INFO] Ownership split (rev 16 — relaxed from rev 8)
+> - **SP can send first warm DM** using a Vignesh-voice template, with **Vignesh per-DM approval** before send (not just template-level approval — the specific personalised version for each prospect). Sender = SP's profile; opener references Vignesh explicitly ("I work with Vignesh at InnBlockchain — he asked me to reach out about [your asset class]"). Avoids the security issue of shared account access while preserving the warm-relationship signal.
+> - **Vignesh sends personally** only when the relationship calls for it — close personal contacts · founder-CEO peers · cases where SP framing would feel inauthentic. Vignesh's call.
+> - **SP carries forward** thread after first response — discovery call coordination + technical scoping + close
 > - Vignesh joins live call only if Trioangle client explicitly asks for founder (high-value cases)
+> - Per-DM approval SLA: Vignesh reviews + signs off within 24 hr of SP submitting drafted DM
 
 ### Why 2nd-degree intros, not direct DMs
 - **Vignesh's Trioangle clients in real estate / commodity / marketplace verticals are themselves candidate RWA Felix prospects** — many of them are asset owners considering tokenization. Direct conversation with them is legitimate (existing relationship).
@@ -781,24 +1142,28 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 - Volume is intrinsically low. Don't expect more than 1–3 intro requests/wk.
 
 ### Target identification (this week)
-- [ ] **(Vignesh + Sales Person)** **Audit Trioangle client base** — list every client who is in real estate, commodity, marketplace, or asset-backed verticals. These are direct RWA Felix candidates.
-- [ ] **(Vignesh + Sales Person)** **Audit existing LinkedIn connections** in tech, crypto, blockchain, fintech-adjacent spaces — list those who likely know FT WealthTech buyers
-- [ ] **(Vignesh + Sales Person)** Score by: relationship recency · likely RWA/tokenization relevance · willingness to make intro
+- [ ] **(Vignesh + SP)** **Audit Trioangle client base** — list every client who is in real estate, commodity, marketplace, or asset-backed verticals. These are direct RWA Felix candidates.
+- [ ] **(Vignesh + SP)** **Audit existing LinkedIn connections** in tech, crypto, blockchain, fintech-adjacent spaces — list those who likely know FT WealthTech buyers
+- [ ] **(Vignesh + SP)** Score by: relationship recency · likely RWA/tokenization relevance · willingness to make intro
 
 ### Trioangle client outreach (direct conversation — they ARE RWA Felix candidates)
-- [ ] **(Vignesh sends first DM · Sales Person carries forward)** **Per-client message:** "We've worked together on [X]. We've been doing RWA tokenization work — building smart contract infrastructure for real estate / commodity / fleet asset owners under MiFID II + DLT Pilot. Are you exploring tokenization for [their asset class] or know anyone who is?"
-- [ ] **(Sales Person leads · Vignesh joins live call only on request)** If yes / interested → discovery call (same prep template per WS5)
-- [ ] **(Vignesh)** If no but warm → ask "anyone in your network looking at this?"
+- [ ] **(SP drafts in Vignesh voice · Vignesh per-DM approves · SP sends from own profile)** **Per-client message:** "Hi [name], I work with Vignesh at InnBlockchain — he asked me to reach out. You've worked together on [X]; we've been doing RWA tokenization work — building smart contract infrastructure for real estate / commodity / fleet asset owners under MiFID II + DLT Pilot. Are you exploring tokenization for [their asset class] or know anyone who is?"
+- [ ] **(SP leads · Vignesh joins live call only on request)** If yes / interested → discovery call (same prep template per WS5)
+- [ ] **(SP · escalate to Vignesh if Trioangle-relationship-specific)** If no but warm → ask "anyone in your network looking at this?"
 
 ### Adjacent-network warm intro requests (not direct DMs to FinTech)
-- [ ] **(Vignesh sends first DM · Sales Person picks up after intro lands)** **Per-connection ask:** "I'm building out InnBlockchain's RWA tokenization practice — focused on EU WealthTech + asset-backed founders. Do you know anyone in [their adjacent space] working on tokenization who'd be worth a 15-min conversation? Happy to return the favour any time."
-- [ ] **(Vignesh)** Reciprocity offer ("happy to return the favour") increases response rate 2–3×
-- [ ] **(Sales Person)** If intro happens → treat the intro'd prospect as warm-referred (much higher conversion than cold)
+- [ ] **(SP drafts in Vignesh voice · Vignesh per-DM approves · SP sends from own profile)** **Per-connection ask:** "Hi [name], I work with Vignesh at InnBlockchain. We're building out our RWA tokenization practice — focused on EU WealthTech + asset-backed founders. Do you know anyone in [their adjacent space] working on tokenization who'd be worth a 15-min conversation? Happy to return the favour any time."
+- [ ] **(SP drafts · Vignesh approves opener pattern)** Reciprocity offer ("happy to return the favour") increases response rate 2–3×
+- [ ] **(SP)** If intro happens → treat the intro'd prospect as warm-referred (much higher conversion than cold)
+
+> [!IMPORTANT] When Vignesh sends personally instead (Vignesh's judgment call)
+> Default = SP drafts + sends per above. Vignesh sends personally when: close personal contact (>5 years sustained relationship) · founder-CEO peer where SP framing reads inauthentic · prior dispute / sensitive context that needs founder presence. Vignesh's judgment, not a hard rule. When Vignesh sends, SP picks up the thread on positive response same as the default flow.
 
 ### Daily / weekly cadence
-- [ ] **(Vignesh)** **1–3 Trioangle client direct DMs/wk** (limited universe; quality over volume)
-- [ ] **(Vignesh)** **2–4 adjacent-network intro requests/wk**
-- [ ] **(Sales Person)** **Track in CRM** under Source = "Adjacent-Network Intro" or "Trioangle Client Direct"
+- [ ] **(SP drafts · Vignesh approves 24-hr SLA)** **1–3 Trioangle client direct DMs/wk** (limited universe; quality over volume)
+- [ ] **(SP drafts · Vignesh approves 24-hr SLA)** **2–4 adjacent-network intro requests/wk**
+- [ ] **(SP)** **Track in CRM** under Source = "Adjacent-Network Intro" or "Trioangle Client Direct" · tag whether Sales-Person-sent or Vignesh-sent for monthly review pattern check
+- [ ] **(Vignesh · daily, ≤15 min)** Review SP drafted DMs + sign off (24-hr SLA) — calendar block for this
 
 > [!IMPORTANT] Trioangle universe depletes by ~W12–W15
 > ~30 active Trioangle clients × 1–3 DMs/wk × 20 wks = the universe is exhausted within 10–20 weeks. **Realistic depletion: W12–W15** (mid-to-late Phase 1). After depletion: Trioangle direct outreach stops; only adjacent-network intro requests continue (lower volume); WS9.5b engagement-led carries the immediate-lead load. Plan for this transition at the W10 monthly review.
@@ -813,9 +1178,9 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 | Qualified leads / mo from this track | 2–4 |
 
 ### What NOT to do
-- [ ] **(Vignesh + Sales Person)** Never send direct DMs to FinTech prospects framed as "warm" — Vignesh doesn't have that warmth in FinTech; prospects will see through it instantly
-- [ ] **(Vignesh + Sales Person)** Never burn Trioangle client relationships with pitch-y RWA framing — these are existing trust relationships, treat as such
-- [ ] **(Vignesh + Sales Person)** Never mention MiCA when discussing RWA
+- [ ] **(Vignesh + SP)** Never send direct DMs to FinTech prospects framed as "warm" — Vignesh doesn't have that warmth in FinTech; prospects will see through it instantly
+- [ ] **(Vignesh + SP)** Never burn Trioangle client relationships with pitch-y RWA framing — these are existing trust relationships, treat as such
+- [ ] **(Vignesh + SP)** Never mention MiCA when discussing RWA
 
 ---
 
@@ -824,8 +1189,8 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 > **Activates W1 Day 1. Genuine ASAP play that doesn't require warm network OR readiness gate.** Surface RWA / WealthTech prospects by engaging meaningfully on their LinkedIn content; convert engagement → reactive DMs from people who engage back. This is the source-doc-prescribed engagement tactic (see [[InnBlockchain - LinkedIn Marketing Strategy]] § 5.3 Strategic Comment Strategy) elevated to a primary outbound channel for the no-warm-network reality.
 
 > [!INFO] Ownership (rev 8)
-> - **Primary from W8: Sales Person** takes over commenting volume + reactive DMs; Vignesh contributes ≤30 min/day to maintain founder voice in the feed
-> - Sales Person ramp on commenting requires SME fluency — Vignesh shadows first 20 comments before Sales Person goes solo (regime-leak risk identical to DM track)
+> - **Primary from W8: SP** takes over commenting volume + reactive DMs; Vignesh contributes ≤30 min/day to maintain founder voice in the feed
+> - SP ramp on commenting requires SME fluency — Vignesh shadows first 20 comments before SP goes solo (regime-leak risk identical to DM track)
 
 ### Why this works without warm network
 - **Substantive comments on a thought-leader's post are seen by their entire audience** — often 1k–10k+ ICP-relevant followers per comment
@@ -833,22 +1198,22 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 - **No conversion gate required** — engagement is free; prospects who engage actively are signaling interest
 
 ### Daily mechanics
-- [ ] **(Sales Person · Vignesh ≤30 min/day)** **5–10 substantive comments/day** on EU WealthTech / RWA / tokenization posts by Sam-tier accounts (FinTech founders, WealthTech CTOs, RWA commentators, MiFID II / DLT Pilot voices)
-- [ ] **(Sales Person · Vignesh shadows first 20)** Comment quality: specific point / counterargument / data point — **never** "great post"
-- [ ] **(Sales Person)** 3–5 sentences max
-- [ ] **(Sales Person)** End with a question when possible (invites a reply, extends the thread)
-- [ ] **(Sales Person)** Comment within first 30 minutes of post going live (algorithm rewards early high-quality comments)
-- [ ] **(Sales Person)** Identify target accounts — 30–50 EU RWA / WealthTech / MiFID II commentators to follow + monitor daily
+- [ ] **(SP · Vignesh ≤30 min/day)** **5–10 substantive comments/day** on EU WealthTech / RWA / tokenization posts by Sam-tier accounts (FinTech founders, WealthTech CTOs, RWA commentators, MiFID II / DLT Pilot voices)
+- [ ] **(SP · Vignesh shadows first 20)** Comment quality: specific point / counterargument / data point — **never** "great post"
+- [ ] **(SP)** 3–5 sentences max
+- [ ] **(SP)** End with a question when possible (invites a reply, extends the thread)
+- [ ] **(SP)** Comment within first 30 minutes of post going live (algorithm rewards early high-quality comments)
+- [ ] **(SP)** Identify target accounts — 30–50 EU RWA / WealthTech / MiFID II commentators to follow + monitor daily
 
 ### Reactive DM rule
-- [ ] **(Sales Person)** When someone replies to your comment with substance, follow up with a DM within 24 hrs: "Appreciated your point on [X] — saw you're working on [Y] at [Z]. Curious how you're thinking about [specific RWA / MiFID II question relevant to their post]."
-- [ ] **(Sales Person)** When someone engages with Vignesh's own posts (likes + comments) and matches ICP, follow up with a non-pitch-y DM within 24 hrs
-- [ ] **(Sales Person)** These reactive DMs are NOT cold — they're warm follow-ups to demonstrated interest. Conversion 3–5× cold DM.
+- [ ] **(SP)** When someone replies to your comment with substance, follow up with a DM within 24 hrs: "Appreciated your point on [X] — saw you're working on [Y] at [Z]. Curious how you're thinking about [specific RWA / MiFID II question relevant to their post]."
+- [ ] **(SP)** When someone engages with Vignesh's own posts (likes + comments) and matches ICP, follow up with a non-pitch-y DM within 24 hrs
+- [ ] **(SP)** These reactive DMs are NOT cold — they're warm follow-ups to demonstrated interest. Conversion 3–5× cold DM.
 
 ### LinkedIn polls (Speed Mode amplifier)
 - [ ] **(Vignesh authors · MPs schedule)** **1 poll/week** — ask a sharp question your ICP cares about (e.g., "Asset managers tokenizing: which framework are you using? — MiFID II + DLT Pilot / MiCA / Still figuring out / Not tokenizing yet")
 - [ ] **(MPs track engagement)** Polls drive 3–5× engagement vs text posts; voters self-identify as relevant audience
-- [ ] **(Sales Person)** Follow up with poll voters who match ICP via reactive DM
+- [ ] **(SP)** Follow up with poll voters who match ICP via reactive DM
 
 ### KPI targets (engagement-led inbound)
 | Metric | Target |
@@ -862,10 +1227,10 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 | Qualified leads / mo from this track | 3–6 (W6+) |
 
 ### What NOT to do
-- [ ] **(Sales Person)** Never comment "great post" or generic agreement — wastes the slot
-- [ ] **(Sales Person)** Never paste the same comment on multiple posts — flagged as spam
-- [ ] **(Sales Person)** Never DM someone who hasn't engaged with you — that's cold outreach, belongs in WS9 structured track
-- [ ] **(Sales Person)** Never mention MiCA when discussing RWA (same hard rule)
+- [ ] **(SP)** Never comment "great post" or generic agreement — wastes the slot
+- [ ] **(SP)** Never paste the same comment on multiple posts — flagged as spam
+- [ ] **(SP)** Never DM someone who hasn't engaged with you — that's cold outreach, belongs in WS9 structured track
+- [ ] **(SP)** Never mention MiCA when discussing RWA (same hard rule)
 
 ---
 
@@ -880,19 +1245,19 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 - [ ] **(MPs)** eIDAS brief pinned to Featured on Vignesh's profile
 
 ### Test parameters
-- [ ] **(Sales Person)** Timing: starts week of W13 article publish (~Aug 2026)
-- [ ] **(Sales Person)** Scope: 20–30 prospects total in first 2 weeks
-- [ ] **(Sales Person)** Daily allocation: 2–3 eIDAS T1s/day (RWA budget reduced 12–17 → 10–14 during test window only; cap 20/day)
-- [ ] **(Sales Person)** Landing destination: gated PDF download (no full Solutions LP build needed for test)
-- [ ] **(Sales Person — Vignesh approves new templates)** Templates per § 5 "🧪 eIDAS 2.0 Outbound Test" block
+- [ ] **(SP)** Timing: starts week of W13 article publish (~Aug 2026)
+- [ ] **(SP)** Scope: 20–30 prospects total in first 2 weeks
+- [ ] **(SP)** Daily allocation: 2–3 eIDAS T1s/day (RWA budget reduced 12–17 → 10–14 during test window only; cap 20/day)
+- [ ] **(SP)** Landing destination: gated PDF download (no full Solutions LP build needed for test)
+- [ ] **(SP — Vignesh approves new templates)** Templates per § 5 "🧪 eIDAS 2.0 Outbound Test" block
 
 ### Sales Navigator filters
-- [ ] **(Sales Person)** Title: CTO / CPO / VP Engineering / Head of Digital Identity / Head of KYC / Head of Platform Engineering (exclude Head of Compliance — Carol responds to formal RFPs not cold DMs)
-- [ ] **(Sales Person)** Industry: Financial Services
-- [ ] **(Sales Person)** Company size: 50–500
-- [ ] **(Sales Person)** Geography: EU Continental Europe
-- [ ] **(Sales Person)** Keywords: EUDI Wallet OR eIDAS OR eIDAS 2.0 OR Digital Identity Wallet OR e-money OR payment institution OR regulated wallet OR FinTech custody
-- [ ] **(Sales Person)** Exclude pure crypto-native wallet providers (Phase 3 territory)
+- [ ] **(SP)** Title: CTO / CPO / VP Engineering / Head of Digital Identity / Head of KYC / Head of Platform Engineering (exclude Head of Compliance — Carol responds to formal RFPs not cold DMs)
+- [ ] **(SP)** Industry: Financial Services
+- [ ] **(SP)** Company size: 50–500
+- [ ] **(SP)** Geography: EU Continental Europe
+- [ ] **(SP)** Keywords: EUDI Wallet OR eIDAS OR eIDAS 2.0 OR Digital Identity Wallet OR e-money OR payment institution OR regulated wallet OR FinTech custody
+- [ ] **(SP)** Exclude pure crypto-native wallet providers (Phase 3 territory)
 
 ### Scale-up vs park criteria (after first 2 weeks)
 - **Scale to 40–60/month + commit `/solutions/fintech-wallets` LP build IF:** accept rate ≥35% AND reply rate ≥6% AND ≥1 qualified discovery call
@@ -919,7 +1284,7 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 
 ### Event execution per attended event
 - [ ] **(Vignesh)** Book speaking slot OR host roundtable
-- [ ] **(Vignesh + Sales Person assist on outbound)** Book meetings 4 weeks in advance (don't just attend)
+- [ ] **(Vignesh + SP assist on outbound)** Book meetings 4 weeks in advance (don't just attend)
 - [ ] **(Vignesh authors · MPs schedule + amplify)** Post-event LinkedIn post with key takeaway (not just a photo)
 - [ ] **(MPs)** Tag event organiser (they often reshare)
 - [ ] **(MPs)** Link recording / slide deck in first comment
@@ -936,44 +1301,64 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 > Source: [[InnBlockchain - LinkedIn Outreach Strategy]] § 8 KPIs · [[InnBlockchain - LinkedIn Marketing Strategy]] § 6 Analytics · [[InnBlockchain - Editorial Calendar]] § Metrics Dashboard
 
 ### Per-prospect tracking (in CRM, after each touchpoint)
-- [ ] **(Sales Person)** Status field: Connected · Replied · Qualified · Call Booked · Closed · Parked
-- [ ] **(Sales Person)** Sequence state: T1 sent / T2 sent / T3 sent / T4 sent / T5 sent / Parked-60d
-- [ ] **(Sales Person)** Source field: Outbound DM / Inbound LP / Inbound content / Partner intro / Event
-- [ ] **(Sales Person)** Motion field: `[Audit]` / `[Dev]` / `[White-Label]`
-- [ ] **(Sales Person)** Trigger field: which buying trigger drove the connection
+- [ ] **(SP)** Status field: Connected · Replied · Qualified · Call Booked · Closed · Parked
+- [ ] **(SP)** Sequence state: T1 sent / T2 sent / T3 sent / T4 sent / T5 sent / Parked-60d
+- [ ] **(SP)** Source field: Outbound DM / Inbound LP / Inbound content / Partner intro / Event
+- [ ] **(SP)** Motion field: `[Audit]` / `[Dev]` / `[White-Label]`
+- [ ] **(SP)** Trigger field: which buying trigger drove the connection
+
+### Pipeline-stage exit criteria (SP enforces · Vignesh reviews monthly)
+
+> [!INFO] When does a prospect advance from stage X to stage X+1?
+> Without explicit criteria, "Qualified" means different things to different reviewers. These are the gates SP checks before transitioning a CRM status.
+
+| From → To | Criteria (ALL must be true) |
+|---|---|
+| **Connected → Replied** | T2 sent · prospect replied with anything substantive (1 sentence is enough) · NOT auto-reply / out-of-office |
+| **Replied → Qualified** | Prospect's role + company match ICP segment · prospect engaged on regulatory or technical specifics (not just "interesting, send more info") · clear use case or stage signal |
+| **Qualified → Call Booked** | Discovery call scheduled on Calendly · pre-call brief sent · prospect confirmed attendance (not just accepted invite) |
+| **Call Booked → Closed** | Discovery call completed (per WS9 § Discovery Call Master Sequence) · proposal sent · contract signed within 90 days of discovery |
+| **Any stage → Parked** | 21 days no response after T5 OR explicit "not now" with no near-term timeline OR DQ signal surfaced |
+| **Parked → Connected (re-engagement)** | 60 days minimum elapsed · new buying trigger detected · re-engagement DM sent fresh (NOT as T6) |
+
+> [!WARNING] Stage hygiene rules (SP enforces · Vignesh spot-checks)
+> - **(SP)** Never mark "Qualified" without a regulatory or technical specifics signal — vague interest = Replied, not Qualified
+> - **(SP)** Never advance a prospect on assumption — only on documented signal in CRM
+> - **(SP)** Always log stage transition reason in CRM (which signal triggered advance) — required for monthly pattern review
+> - **(SP · weekly Fri)** Stale "Call Booked" review — booked but not completed in 7 days = follow-up sequence; in 14 days = transition to Parked
 
 ### Per-article tracking (from [[InnBlockchain - Editorial Calendar]] § Metrics Dashboard)
 - [ ] **(MPs)** Time-to-LP-click <60s median (GA4 transition events)
 - [ ] **(MPs)** LP form-fill rate ≥2% cold / ≥5% warm EU LinkedIn
-- [ ] **(MPs · Sales Person reconciles in CRM)** Booked discovery calls attributed per article, per motion
+- [ ] **(MPs · SP reconciles in CRM)** Booked discovery calls attributed per article, per motion
 - [ ] **(MPs)** `[Both]` split-CTA performance
 - [ ] **(MPs)** Carol pieces — CCO-pattern reader profile (LinkedIn referrer + title contains "compliance")
 - [ ] **(MPs)** MiCA articles — EU geo split of LP-bound traffic (≥60% EU target)
-- [ ] **(MPs · Sales Person reconciles)** Cross-Pillar early-ship articles (C1, T4-N, P5-DORA-X, P5-eIDAS-X) — Track B discovery calls within 60 days of publish (target ≥1 each)
+- [ ] **(MPs · SP reconciles)** Cross-Pillar early-ship articles (C1, T4-N, P5-DORA-X, P5-eIDAS-X) — Track B discovery calls within 60 days of publish (target ≥1 each)
 
-### Discovery call division of labour (rev 8 — resolved by Sales Person hire)
+### Discovery call division of labour (rev 8 — resolved by SP hire)
 
 > [!INFO] Backup discovery call owner question resolved
-> Sales Person is the backup AND primary closer for most discovery calls. Prior rev 6 risk "Vignesh capacity ceiling on discovery calls (3–6/wk target)" reduces to ~1–2/wk for Vignesh (escalations only). Senior engineer / co-founder backup no longer required for routine overflow.
+> SP is the backup AND primary closer for most discovery calls. Prior rev 6 risk "Vignesh capacity ceiling on discovery calls (3–6/wk target)" reduces to ~1–2/wk for Vignesh (escalations only). Senior engineer / co-founder backup no longer required for routine overflow.
 
 | Call type | Owner | Vignesh involvement |
 |---|---|---|
-| **CN RWA Felix** — all asset classes, all stages | **Sales Person solo** | None unless Sales Person escalates |
-| **FT WealthTech Tom only** (CTO due diligence, technical scoping) | **Sales Person solo** | None |
-| **FT WealthTech Sam first call (deal value < $100k indicated)** | **Sales Person solo** | Notified via Slack/CRM |
-| **FT WealthTech Sam first call (deal value > $100k indicated)** | **Co-pitch** | Sales Person opens, Vignesh joins last 15 min OR Vignesh leads + Sales Person observes for handoff |
-| **FT WealthTech Carol vendor review** | **Sales Person submits vendor risk pack first** | Vignesh joins live call ONLY if Carol explicitly requests CEO |
-| **Trioangle existing client (WS9.5a)** | **Vignesh sends first warm DM** → Sales Person brought in after positive response → Sales Person runs discovery call | Vignesh on Slack/back-channel for any escalations |
-| **Adjacent-network warm intro recipients** | **Sales Person solo** | Intro was Vignesh's; introducee gets Sales Person call |
-| **Inbound from content / AEO / LP form-fill** | **Sales Person intake** | Sales Person routes to Vignesh only on high-ACV signal (> $100k OR Sam-tier title at $5M+ ARR FinTech) |
+| **CN RWA Felix** — all asset classes, all stages | **SP solo** | None unless SP escalates |
+| **FT WealthTech Tom only** (CTO due diligence, technical scoping) | **SP solo** | None |
+| **FT WealthTech Sam first call (deal value < $100k indicated)** | **SP solo** | Notified via Slack/CRM |
+| **FT WealthTech Sam first call (deal value > $100k indicated)** | **Co-pitch** | SP opens, Vignesh joins last 15 min OR Vignesh leads + SP observes for handoff |
+| **FT WealthTech Carol vendor review** | **SP submits vendor risk pack first** | Vignesh joins live call ONLY if Carol explicitly requests CEO |
+| **Trioangle existing client (WS9.5a)** | **Vignesh sends first warm DM** → SP brought in after positive response → SP runs discovery call | Vignesh on Slack/back-channel for any escalations |
+| **Adjacent-network warm intro recipients** | **SP solo** | Intro was Vignesh's; introducee gets SP call |
+| **Inbound from content / AEO / LP form-fill** | **SP intake** | SP routes to Vignesh only on high-ACV signal (> $100k OR Sam-tier title at $5M+ ARR FinTech) |
 
 ### Calendly routing rules
-- [ ] **(Sales Person)** **Default routing:** all new bookings → Sales Person Calendly
-- [ ] **(Sales Person + Vignesh)** **Vignesh Calendly slots reserved** for: FT WealthTech > $100k follow-ups · Carol-requested founder calls · Trioangle high-value client escalations · partner intro warm calls (VCs, core banking partners)
-- [ ] **(Sales Person flags · Vignesh opens slot)** **Escalation protocol:** Sales Person tags a call "needs Vignesh" in CRM → Vignesh's calendar opens a slot within 48 hr
+- [ ] **(SP)** **Default routing:** all new bookings → SP Calendly
+- [ ] **(SP + Vignesh)** **Vignesh Calendly slots reserved** for: FT WealthTech > $100k follow-ups · Carol-requested founder calls · Trioangle high-value client escalations · partner intro warm calls (VCs, core banking partners)
+- [ ] **(SP flags · Vignesh opens slot)** **Escalation protocol:** SP tags a call "needs Vignesh" in CRM → Vignesh's calendar opens a slot within 48 hr
 
 ### Weekly review (Fri 60 min — Vignesh owns)
-- [ ] **(Vignesh · Sales Person prepares)** Pipeline tracker review — new connects, replies, qualified leads, calls booked
+- [ ] **(Vignesh · SP prepares)** Pipeline tracker review — new connects, replies, qualified leads, calls booked
 - [ ] **(Vignesh · MPs prepare GA4 + per-format CTR snapshot)** Per-channel KPI review (DM rates, LP conversion, article performance)
 - [ ] **(Vignesh)** Risk register status (see Risk Register below)
 - [ ] **(Vignesh + CW)** Identify 1 post to repurpose as carousel or video next week
@@ -985,8 +1370,8 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 - [ ] **(Vignesh + CW)** Top 3 / bottom 3 articles by booked discovery calls — pattern-match
 - [ ] **(Dev reports · Vignesh decides)** LP gate status — any new 404s? Any LPs not yet shipped that block upcoming weeks?
 - [ ] **(CW + Vignesh decision)** Watch-candidate articles (B1-#4, B1-#11) inbound check — kill at 90 days if zero
-- [ ] **(Sales Person + Vignesh)** Override events fired (Carol, Sasha, AI overlay, exploit post-mortem) — log and re-sequence
-- [ ] **(Sales Person reports · Vignesh tracks)** EU 5-project gate progress — count of EU deals closed
+- [ ] **(SP + Vignesh)** Override events fired (Carol, Sasha, AI overlay, exploit post-mortem) — log and re-sequence
+- [ ] **(SP reports · Vignesh tracks)** EU 5-project gate progress — count of EU deals closed
 - [ ] **(MPs)** Monthly AI search citation probe per [[InnBlockchain - Landing Pages AEO GEO Prompts]] § Monthly AI Search Citation Probe (Perplexity / ChatGPT / Gemini sample queries)
 
 > [!WARNING] Reply rate <2% on any sequence = stop and diagnose
@@ -997,15 +1382,15 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 ## WS13 — Compliance Review Process
 
 > Source: [[InnBlockchain - Editorial Calendar]] § Weekly Batch Workflow · [[EU-Compliance-Landscape]]
-> **Rev 8 ownership:** Vignesh self-reviews articles (per prior team-config decision) + spot-checks delegated work (MPs visual output + Sales Person DM templates + Sales Person strategic comments) for regime-leak risk
+> **Rev 8 ownership:** Vignesh self-reviews articles (per prior team-config decision) + spot-checks delegated work (MPs visual output + SP DM templates + SP strategic comments) for regime-leak risk
 
 ### Delegated-work spot-check protocol (rev 8 — new for team config)
 
 > [!IMPORTANT] Spot-check ratio higher in first 4 weeks per role
 > Risk concentrates in first 4 weeks of each new hire's work. Spot-check 25% of output in W1–W4 of their ramp; drop to 10% from W5+ if zero regime-leak incidents detected.
 
-- [ ] **(Vignesh approves · Sales Person submits)** **Sales Person DM templates:** Vignesh approves every NEW template before send (T1, T2, T3, T4 wording variations per segment). Templates stay reusable; once approved, Sales Person uses without per-DM review.
-- [ ] **(Vignesh shadows + spot-checks · Sales Person produces)** **Sales Person strategic comments (WS9.5b):** Vignesh shadows first 20 comments before Sales Person goes solo · then spot-checks 25% of comments W1–W4 of Sales Person solo period · drops to 10% W5+
+- [ ] **(Vignesh approves · SP submits)** **SP DM templates:** Vignesh approves every NEW template before send (T1, T2, T3, T4 wording variations per segment). Templates stay reusable; once approved, SP uses without per-DM review.
+- [ ] **(Vignesh shadows + spot-checks · SP produces)** **SP strategic comments (WS9.5b):** Vignesh shadows first 20 comments before SP goes solo · then spot-checks 25% of comments W1–W4 of SP solo period · drops to 10% W5+
 - [ ] **(Vignesh spot-checks · MPs produce)** **MPs visual asset output (carousels, infographics, PDFs):** Vignesh reviews 25% before publish W1–W4 of MPs ramp · spot-checks 10% W5+. Key check: did AI auto-generated slide copy hallucinate any regulatory framing (e.g., "MiCA-compliant RWA tokenization")?
 - [ ] **(Vignesh approves Mon AM · MPs publish)** **MPs LinkedIn posts (Vignesh-authored content posted by MPs):** Vignesh approves final scheduled batch each Mon AM before MPs publish Mon–Fri
 - [ ] **(Vignesh)** **Sales-led close paperwork:** Vignesh signs all contracts regardless of who led the sale — contract review is the final compliance gate
@@ -1044,7 +1429,7 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 ### At engagement delivery / launch
 - [ ] **(Vignesh + delivery team)** Document deliverables (smart contracts shipped, audit findings, compliance work)
 - [ ] **(Vignesh + delivery team)** Capture screenshots (issuer dashboard, investor portal, KYC flow, regulator reporting view)
-- [ ] **(Vignesh + Sales Person)** Get client lead's quote (1–2 sentences on outcome)
+- [ ] **(Vignesh + SP)** Get client lead's quote (1–2 sentences on outcome)
 - [ ] **(Vignesh)** Confirm screenshot rights are signed-off
 - [ ] **(Vignesh + CW)** Tag for one of: Case Study A (CN RWA), Case Study B (FT WealthTech B1)
 
@@ -1080,7 +1465,7 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 | Article Tier | Derivative chain | Owner |
 |---|---|---|
 | **Tier 1** (~12 articles: hubs + cross-pillar + score ≥9.3) | **Full chain** — all S formats (carousel + lead magnet + X thread + vendor risk pack where applicable) + A formats (persona variants + LinkedIn long-form + GitHub/Solodit where applicable) | MPs produce visuals via AI + post/schedule · CW structures copy + persona variants · Designer for high-stakes (Sample Audit, regulatory infographics) · Vignesh final review |
-| **Tier 2** (~15–18 articles, score 8.5–9.2) | **Scaled-back chain** — carousel + LinkedIn long-form + X thread + Telegram dev-group share (Track A) OR carousel + LinkedIn long-form + quote graphic (Track B). Skip: video, infographic, persona variants × 3, GitHub. | MPs + CW (same as Tier 1 but lighter scope) |
+| **Tier 2** (~15–18 articles, score 8.5–9.2) | **Scaled-back chain** — carousel + LinkedIn long-form + X thread (Track A) OR carousel + LinkedIn long-form + quote graphic (Track B). Skip: video, infographic, persona variants × 3, GitHub. | MPs + CW (same as Tier 1 but lighter scope) |
 | **Tier 3** (~10–14 articles, score <8.5 OR Watch-candidate) | **Amplify-only** — 1 X thread (Track A) OR 1 LinkedIn quote graphic (Track B). No carousel, no PDF, no video. | MPs (minimal — <30 min per article) |
 | **Tier 0** (LP-gated, WL Reference Build pending, PP5 validation pending) | **No repurposing** | — |
 
@@ -1133,8 +1518,8 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 
 ### Repurposing-specific KPIs (extend WS12 metrics)
 - [ ] **(MPs)** Sample audit report downloads → call request within 30 days: ≥15% (intent signal)
-- [ ] **(MPs + Sales Person)** Sample audit report downloads → call booked within 90 days: ≥8% (Carol-cycle conversion)
-- [ ] **(MPs + Sales Person)** Lead magnet downloads → discovery calls booked within 30 days: ≥5%
+- [ ] **(MPs + SP)** Sample audit report downloads → call booked within 90 days: ≥8% (Carol-cycle conversion)
+- [ ] **(MPs + SP)** Lead magnet downloads → discovery calls booked within 30 days: ≥5%
 - [ ] **(MPs)** LinkedIn carousel CTR ≥ 2× LinkedIn text post
 - [ ] **(MPs)** X thread CTR ≥ 5× single tweet
 - [ ] **(MPs)** LinkedIn output cap compliance: zero breaches/wk (monthly root-cause if breached)
@@ -1177,9 +1562,9 @@ Consolidated cross-channel risks. Per-channel risks live in source docs. Organiz
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
 | Vignesh review SLA slips (24 hr article, 24 hr visual, 48 hr DM template) under volume | Medium | Medium — entire pipeline waits on his sign-off; bottleneck shifts from production to approval | Weekly Fri review checks SLA performance; if slipping, switch to spot-check protocol (review 25% randomly, not 100%) |
-| **NEW (rev 8) — Sales Person pitches too early in discovery calls** (selling vs listening = lower close rate) | Medium | Medium — closes drop; deals stall at scoping | Scripted discovery framework (first 20 min listening + qualify against ICP gates) · Vignesh sits in on Sales Person's first 3 calls to coach · monthly review tracks Sales Person close rate vs Vignesh-led benchmark |
-| **NEW (rev 8) — Sales Person misjudges Carol-handoff threshold** (handles Carol when she wants CEO; or escalates Vignesh when Sales Person could've handled) | Medium | Medium — either wastes Vignesh time OR damages Carol's vendor approval cycle | Explicit rule: Carol asks "can I speak to the founder?" = always escalate to Vignesh · monthly review tracks Sales Person escalation rate |
-| **NEW (rev 8) — Trioangle relationship damage if Sales Person owns too early** (client expected Vignesh, gets Sales Person pitch) | Medium | Medium — burns Trioangle client trust permanently | Hybrid handling: Vignesh always sends first warm DM; Sales Person brought into thread only after positive response. Process documented in WS9.5a |
+| **NEW (rev 8) — SP pitches too early in discovery calls** (selling vs listening = lower close rate) | Medium | Medium — closes drop; deals stall at scoping | Scripted discovery framework (first 20 min listening + qualify against ICP gates) · Vignesh sits in on SP's first 3 calls to coach · monthly review tracks SP close rate vs Vignesh-led benchmark |
+| **NEW (rev 8) — SP misjudges Carol-handoff threshold** (handles Carol when she wants CEO; or escalates Vignesh when SP could've handled) | Medium | Medium — either wastes Vignesh time OR damages Carol's vendor approval cycle | Explicit rule: Carol asks "can I speak to the founder?" = always escalate to Vignesh · monthly review tracks SP escalation rate |
+| **NEW (rev 8 · UPDATED rev 16) — Trioangle relationship damage if SP framing reads inauthentic** (client expected founder, gets SP pitch with no Vignesh reference) | Medium | Medium — burns Trioangle client trust permanently | Per rev 16: SP can send first warm DM but **must use Vignesh-voice template referencing Vignesh explicitly** ("I work with Vignesh — he asked me to reach out about [your asset class]"). Vignesh per-DM approves before send. Vignesh sends personally when relationship calls for it (Vignesh's judgment). Process documented in WS9.5a Ownership split callout. |
 | **NEW (rev 8) — MPs visual output ships with AI-hallucinated regulatory framing** (e.g., AI auto-generates slide copy saying "MiCA-compliant RWA tokenization") | Medium | High — same Carol-killing cost as a regime-leak DM | WS13 spot-check protocol on 25% of MPs visual output W1–W4 · regime-leak checklist for MPs to reference before publish · ChatGPT-generated copy reviewed against regime guide before slide commit |
 | **NEW (rev 8) — Content writer single point of failure** (no backup writer if CW sick/leaves) | Medium | High — 44-article schedule slips immediately | Accept the risk OR budget freelance writer retainer for emergencies · cross-train one MP to author 1 article in absence (degraded quality acceptable for 1–2 articles) |
 | Compliance reviewer not available on Thu publish (resolved by Vignesh self-review) | Low (own role) | Low — Vignesh prioritizes Thu review block in calendar | Vignesh blocks Thu AM for compliance review · escalation path if Vignesh travel collides with Thu publish |
@@ -1259,7 +1644,7 @@ Foundations sprint + immediate engagement-led lead generation in parallel. No di
 ---
 
 ## W5–W6 — Structured ABM activates + leads landing
-- [ ] **W5: Structured DMs activate at half cap (8–10/day RWA)** — Vignesh interim if Sales Person not yet onboarded
+- [ ] **W5: Structured DMs activate at half cap (8–10/day RWA)** — Vignesh interim if SP not yet onboarded
 - [ ] **W6: Full structured DM cadence (15–20/day)**
 - [ ] First structured-ABM calls expected by W7–W8
 - [ ] Continued recommendations backfill (Sasha-grade 7–8 by W8)
