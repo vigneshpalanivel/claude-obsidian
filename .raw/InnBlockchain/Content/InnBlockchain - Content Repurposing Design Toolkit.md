@@ -4,14 +4,16 @@ company:
 department:
   - marketing
 priority: high
-rev: 5
-last_revised: 2026-05-29
+rev: 7
+last_revised: 2026-06-03
 revision_notes: |
-  rev 1 (2026-05-29): initial design toolkit, design-child of Content Repurposing Plan + Playbook WS15. Tool stack, asset-category map, AI vs designer split, brand standards, hallucination spot-check, pre-publish checks. MP2 owns. Comp structures out of scope.
+  rev 1 (2026-05-29): initial design toolkit, design-child of Content Repurposing Plan + Playbook WS15. Tool stack, asset-category map, AI vs designer split, brand standards, hallucination spot-check, pre-publish checks. MPs owns. Comp structures out of scope.
   rev 2 (2026-05-29): removed all tool cost / pricing / budget references; tool stack table now tool + function + owner only.
   rev 3 (2026-05-29): collapsed 4 regime-specific compliance brief rows to 3 asset-category rows. References block pruned 10 → 5 (kept only inline-referenced docs).
   rev 4 (2026-05-29): repositioned as design-only child of Plan. Pre-Publish Checks 9 → 3 (design-only). Failure Modes 7 → 5 (dropped output-cap-breach + Vignesh SLA — owned by Playbook/Plan). Scope callout routes each non-design concern to its parent doc.
   rev 5 (2026-05-29): full duplication audit vs Plan. Asset Category Map: stripped all Plan-owned parentheticals (tier scope, format spec, spacing rules, event names, LP routing) — asset name + tool + owners only. Production Workflows: replaced embedded Plan content with pointer links (LinkedIn output cap, Cross-Track Assets disclosure, regime scope, canonical URL, Telegram timing). Failure mode #5 reframed as visual-layer regime leak (distinct from Plan's source-article review).
+  rev 7 (2026-06-03): **Telegram dev-group share dropped — doesn't map to Phase 1 ICP.** Synced to Playbook rev 20 sweep. RWA Felix (Phase 1 CN buyer) is asset-first non-technical; Sam/Tom/Carol (Phase 1 FT) evaluates via vendor risk pack + audit report. Telegram dev-group audience (Solidity devs · DeFi builders) is not a Phase 1 buyer. Sweep: (1) Asset Category Map Track A — "Telegram dev-group share" row removed. (2) Per-Asset Production Workflows — "Telegram dev-group share" workflow block removed. (3) References block — "Wed Telegram drop timing" pointer removed from Editorial Calendar reference description. Re-evaluate for Phase 2/3 DeFi-protocol scope (Telegram is correctly a high-converting channel for DeFi/protocol Felix per [[InnBlockchain - ICP - Crypto Native]] Segments 2–6).
+  rev 6 (2026-06-02): **alignment sweep to match Playbook rev 18 naming + ownership scheme.** Three changes: (1) Role abbreviation sweep — Marketing Person #1 + #2 → **MPs** (collective; internal split deferred to operational decision per Playbook rev 11) · Senior Content Writer (SCW) → **CW** · Part-time Designer (PTD) → **Designer** · "Sales Person" → **SP** in body content (full name in legend). (2) Team roles section restructured to match Playbook Per-Role Quick Reference + Team configuration callout — abbreviations defined once at the top. (3) Brand standards section adds a forward-reference to Playbook WS3 § Brand system foundation (Playbook rev 16) which independently enumerates the same artifacts as a checklist — toolkit defines the standards, Playbook tracks the W2–W3 sprint completion. Toolkit "primary owner" framing dropped (was the old MP2-specific framing) — now owned collectively by MPs with Designer for high-stakes pieces, mirroring Playbook WS15 ownership model.
 tags:
   - content
   - repurposing
@@ -26,13 +28,13 @@ tags:
 >
 > Child of [[InnBlockchain - Content Repurposing Plan]]. Out of scope (routed elsewhere): format priority + tier scope + output cap + anti-patterns → Plan · publish schedule → [[InnBlockchain - Editorial Calendar]] · workstream ownership + spot-check ramp → [[InnBlockchain - Phase 1 Execution Playbook]] WS13/WS15 · regime-specific scope → [[InnBlockchain - Content Strategy]] · regulatory map → [[EU-Compliance-Landscape]].
 
-> [!INFO] Team roles referenced
-> - **MP1** = Marketing Person #1 (Ops/Distribution/SEO) — owns posting + scheduling + LP on-page SEO
-> - **MP2** = Marketing Person #2 (Design/AI Visual) — owns AI visual generation + brand consistency · **primary owner of this toolkit**
-> - **SCW** = Senior Content Writer — owns article writing + persona-variant copy + repurposing copy structuring
-> - **PTD** = Part-time Designer — owns high-stakes pieces (Sample Audit Report, vendor risk pack, brand template setup, complex regulatory infographics)
-> - **Sales Person** = full-cycle outreach + calls — owns DM templates + vendor risk pack delivery
+> [!INFO] Team roles referenced (aligned with Playbook rev 18 Team configuration)
+> - **MPs** = Marketing Persons (both, collectively) — AI visual generation · posting + scheduling · brand template maintenance · LP on-page SEO · LP hero / banner image production · day-to-day owners of this toolkit (no internal MP1/MP2 split prescribed here; operational allocation deferred)
+> - **CW** = Content Writer — article writing · persona-variant copy · repurposing copy structuring · slide-copy outlines for MPs
+> - **Designer** = high-stakes pieces — Sample Audit Report · Vendor Risk Pack · brand template system setup (W2–W3 one-time) · complex regulatory infographics · W14 Internal MVP mockup
+> - **SP** = Sales Person — DM templates · vendor risk pack delivery (on request)
 > - **Vignesh** = founder · final review + compliance self-review + on-camera for video
+> - **Dev** = Frontend Dev — LP integration of hero images + email-capture wiring
 
 ---
 
@@ -42,15 +44,15 @@ tags:
 
 | Tool | What it does | Primary owner |
 |---|---|---|
-| **Canva Pro Team** | LinkedIn carousels (7–10 slides) · Quote graphics · Simple PDFs · Hero images · Brand template library | MP2 |
-| **Descript** | Video editing · AI captions · Voice cleanup · Audio waveform editing for 60–90s native video | MP2 |
-| **Beautiful.ai** *(or Tome as alternative)* | Lead magnet PDFs · Decks · Slide-based asset layouts (non-Carol-facing) | MP2 |
-| **Midjourney** *(or Adobe Firefly as alternative)* | Hero visuals · Abstract illustrations · Concept art for blog headers | MP2 |
-| **ChatGPT Pro** *(or Claude Pro)* | Slide caption generation · X thread structuring · LinkedIn long-form drafting assist · Persona variant rewrites *(requires human regime-leak review)* | MP2 + SCW |
-| **Buffer** *(optional)* | Multi-platform scheduling (LinkedIn + X + others from one dashboard) | MP1 |
-| **LinkedIn native scheduler** | Schedule personal feed + company page posts | MP1 |
-| **X native scheduler** | Schedule X threads | MP1 |
-| **Part-time Designer (human)** | Sample Audit Report PDF · Vendor risk pack PDF · Brand template system setup (one-time) · Complex regulatory/architecture infographics · W14 Internal MVP mockup | PTD |
+| **Canva Pro Team** | LinkedIn carousels (7–10 slides) · Quote graphics · Simple PDFs · Hero images · Brand template library | MPs |
+| **Descript** | Video editing · AI captions · Voice cleanup · Audio waveform editing for 60–90s native video | MPs |
+| **Beautiful.ai** *(or Tome as alternative)* | Lead magnet PDFs · Decks · Slide-based asset layouts (non-Carol-facing) | MPs |
+| **Midjourney** *(or Adobe Firefly as alternative)* | Hero visuals · Abstract illustrations · Concept art for blog headers | MPs |
+| **ChatGPT Pro** *(or Claude Pro)* | Slide caption generation · X thread structuring · LinkedIn long-form drafting assist · Persona variant rewrites *(requires human regime-leak review)* | MPs + CW |
+| **Buffer** *(optional)* | Multi-platform scheduling (LinkedIn + X + others from one dashboard) | MPs |
+| **LinkedIn native scheduler** | Schedule personal feed + company page posts | MPs |
+| **X native scheduler** | Schedule X threads | MPs |
+| **Part-time Designer (human)** | Sample Audit Report PDF · Vendor risk pack PDF · Brand template system setup (one-time) · Complex regulatory/architecture infographics · W14 Internal MVP mockup | Designer |
 
 ### Explicitly skipped (decided against)
 
@@ -58,7 +60,7 @@ tags:
 |---|---|
 | **Synthesia / HeyGen** (AI avatar video) | Too obvious a synthetic tell for CEO-positioned profile. Vignesh records on-camera; Descript edits. |
 | **Hootsuite Enterprise** | Overkill for Phase 1 volume. LinkedIn + X native schedulers + Buffer cover the cadence. |
-| **Adobe Creative Suite full subscription** | Heavyweight tooling for one user; Canva Pro + Descript + Midjourney cover the same use cases for a non-designer-hire profile. PTD may use their own Adobe license. |
+| **Adobe Creative Suite full subscription** | Heavyweight tooling for one user; Canva Pro + Descript + Midjourney cover the same use cases for a non-designer-hire profile. Designer may use their own Adobe license. |
 | **Loomly / Publer / Sprout Social** (alternative schedulers) | LinkedIn native + X native + Buffer combination is sufficient; no need for third schedule dashboard. |
 
 ---
@@ -71,40 +73,39 @@ Each derivative format from [[InnBlockchain - Content Repurposing Plan]] mapped 
 
 | Asset | Production tool | Production owner | Posting owner |
 |---|---|---|---|
-| **X thread** | ChatGPT + thread tool | SCW (copy) + MP2 (header image if needed) | MP1 (X native scheduler) |
-| **Lead magnet PDF / checklist** | Beautiful.ai OR Canva | MP2 | MP1 (gated LP + email capture) |
-| **GitHub repo / open-source templates** | GitHub UI | Vignesh + SCW + senior engineer | MP1 |
-| **Solodit profile contribution** | Solodit submission UI | Vignesh + senior engineer | MP1 |
-| **LinkedIn post — RWA Felix variant** | Canva Pro + ChatGPT | SCW (copy) + MP2 (visual) | MP1 |
-| **LinkedIn post — Tom variant** | Canva Pro + ChatGPT | SCW (copy) + MP2 (visual) | MP1 |
-| **Mirror.xyz cross-post** | Mirror.xyz native editor | SCW (text reformat) + MP2 (light visuals) | MP1 |
-| **Hacker News (Show HN / Ask HN)** | HN submission UI | SCW (positioning copy) | MP1 |
-| **Telegram dev-group share** | Plain text + link | MP1 | MP1 |
-| **LinkedIn quote graphic** | Canva Pro templates | MP2 | MP1 |
+| **X thread** | ChatGPT + thread tool | CW (copy) + MPs (header image if needed) | MPs (X native scheduler) |
+| **Lead magnet PDF / checklist** | Beautiful.ai OR Canva | MPs | MPs (gated LP + email capture) |
+| **GitHub repo / open-source templates** | GitHub UI | Vignesh + CW + senior engineer | MPs |
+| **Solodit profile contribution** | Solodit submission UI | Vignesh + senior engineer | MPs |
+| **LinkedIn post — RWA Felix variant** | Canva Pro + ChatGPT | CW (copy) + MPs (visual) | MPs |
+| **LinkedIn post — Tom variant** | Canva Pro + ChatGPT | CW (copy) + MPs (visual) | MPs |
+| **Mirror.xyz cross-post** | Mirror.xyz native editor | CW (text reformat) + MPs (light visuals) | MPs |
+| **Hacker News (Show HN / Ask HN)** | HN submission UI | CW (positioning copy) | MPs |
+| **LinkedIn quote graphic** | Canva Pro templates | MPs | MPs |
 
 ### Track B — FinTech derivatives
 
 | Asset | Production tool | Production owner | Posting owner |
 |---|---|---|---|
-| **LinkedIn document carousel** | Canva Pro + ChatGPT | MP2 | MP1 (LinkedIn native scheduler) |
-| **Vendor risk pack PDF** ⭐ | Designer | PTD | Sales Person (delivers on request) |
-| **Persona-specific LinkedIn post variants** | ChatGPT + SCW + Canva | SCW (copy) + MP2 (visuals) | MP1 |
-| **LinkedIn long-form article** | ChatGPT + SCW writing | SCW (copy) + MP2 (visual elements) | MP1 |
-| **Whitepaper / ebook** | Designer | PTD | MP1 (gated download + email capture) |
-| **Standalone infographic** | PTD for complex regulatory maps; Canva for simple comparison tables | PTD (complex) OR MP2 (simple) | MP1 |
-| **LinkedIn native video** | Descript (edit) + phone (record) | MP2 (edits) + Vignesh (on-camera) | MP1 |
-| **LinkedIn quote graphic** | Canva Pro templates | MP2 | MP1 |
-| **Conference deck-slide** | Canva (template-driven slide bank) | MP2 | Vignesh (uses at event) |
-| **Webinar / panel talking points** | Notion / Google Docs | SCW | Vignesh |
-| **Email nurture excerpt** | Plain text drafted in CRM | SCW (copy) | Sales Person (CRM sequence) |
+| **LinkedIn document carousel** | Canva Pro + ChatGPT | MPs | MPs (LinkedIn native scheduler) |
+| **Vendor risk pack PDF** ⭐ | Designer | Designer | SP (delivers on request) |
+| **Persona-specific LinkedIn post variants** | ChatGPT + CW + Canva | CW (copy) + MPs (visuals) | MPs |
+| **LinkedIn long-form article** | ChatGPT + CW writing | CW (copy) + MPs (visual elements) | MPs |
+| **Whitepaper / ebook** | Designer | Designer | MPs (gated download + email capture) |
+| **Standalone infographic** | Designer for complex regulatory maps; Canva for simple comparison tables | Designer (complex) OR MPs (simple) | MPs |
+| **LinkedIn native video** | Descript (edit) + phone (record) | MPs (edits) + Vignesh (on-camera) | MPs |
+| **LinkedIn quote graphic** | Canva Pro templates | MPs | MPs |
+| **Conference deck-slide** | Canva (template-driven slide bank) | MPs | Vignesh (uses at event) |
+| **Webinar / panel talking points** | Notion / Google Docs | CW | Vignesh |
+| **Email nurture excerpt** | Plain text drafted in CRM | CW (copy) | SP (CRM sequence) |
 
 ### Cross-Track Assets
 
 | Asset | Production tool | Production owner | Posting owner |
 |---|---|---|---|
-| **Sample Audit Report PDF** ⭐ | Designer + Compliance sign-off | PTD — NOT AI | MP1 (gated download) |
-| **Original Research / Data Report** | Designer + SCW + Vignesh (sprint protocol → [[InnBlockchain - Content Repurposing Plan]] § Research-report sprint) | PTD + SCW | MP1 |
-| **Own Email Newsletter** | Beautiful.ai for layout OR newsletter platform native (Substack / Beehiiv) | SCW (copy) + MP2 (visuals) | MP1 |
+| **Sample Audit Report PDF** ⭐ | Designer + Compliance sign-off | Designer — NOT AI | MPs (gated download) |
+| **Original Research / Data Report** | Designer + CW + Vignesh (sprint protocol → [[InnBlockchain - Content Repurposing Plan]] § Research-report sprint) | Designer + CW | MPs |
+| **Own Email Newsletter** | Beautiful.ai for layout OR newsletter platform native (Substack / Beehiiv) | CW (copy) + MPs (visuals) | MPs |
 
 ### Compliance briefs + checklists
 
@@ -112,30 +113,30 @@ Regime-specific scope (which briefs, which weeks, which LPs) lives in [[InnBlock
 
 | Asset category | Production tool | Production owner | Posting owner |
 |---|---|---|---|
-| **Compliance brief PDF — standard** | Beautiful.ai | MP2 | MP1 + Sales Person |
-| **Compliance brief PDF — Carol-grade** | Designer | PTD | Sales Person delivers on request |
-| **Regulatory checklist PDF** | Canva OR Beautiful.ai | MP2 | MP1 (gated download on LP) |
+| **Compliance brief PDF — standard** | Beautiful.ai | MPs | MPs + SP |
+| **Compliance brief PDF — Carol-grade** | Designer | Designer | SP delivers on request |
+| **Regulatory checklist PDF** | Canva OR Beautiful.ai | MPs | MPs (gated download on LP) |
 
 ### Profile / LP design support
 
 | Asset | Production tool | Production owner | Posting owner |
 |---|---|---|---|
-| **LP hero images** | Midjourney / Adobe Firefly | MP2 | FD (integrates into LP code) |
-| **LinkedIn profile banner** | Canva Pro template | MP2 | Vignesh |
-| **Article hero images** | Midjourney / Canva | MP2 | MP1 |
-| **Product mockup / wireframe** | Figma + Canva | PTD | MP2 (integrates into LP) |
+| **LP hero images** | Midjourney / Adobe Firefly | MPs | Dev (integrates into LP code) |
+| **LinkedIn profile banner** | Canva Pro template | MPs | Vignesh |
+| **Article hero images** | Midjourney / Canva | MPs | MPs |
+| **Product mockup / wireframe** | Figma + Canva | Designer | MPs (integrates into LP) |
 
 ---
 
 ## 🧭 Decision Shorthand: AI vs Designer
 
-When MP2 picks up a new asset, run this in order:
+When MPs picks up a new asset, run this in order:
 
 | If the asset is... | Use |
 |---|---|
 | Going on LinkedIn feed only (not gated, not Carol-facing) | **AI** (Canva + ChatGPT) |
 | A lead magnet downloaded via email-capture form, non-Carol audience | **AI** (Beautiful.ai or Canva) |
-| A lead magnet that Carol or Sam might include in vendor review file | **Designer** (PTD) |
+| A lead magnet that Carol or Sam might include in vendor review file | **Designer** (Designer) |
 | **Sample Audit Report or Vendor Risk Pack** | **Designer** — non-negotiable |
 | A complex regulatory map or architecture diagram | **Designer** if accuracy matters; AI for simple comparison tables |
 | Brand template / system foundation (typography, color, logo placement standards) | **Designer (one-time setup), then AI maintains via templates** |
@@ -144,15 +145,18 @@ When MP2 picks up a new asset, run this in order:
 | Hero image or abstract illustration | **AI** (Midjourney / Firefly) |
 | Trade event deck slide for Vignesh to present | **AI** template-driven (Canva); single high-value event = Designer |
 
-**Default lean:** AI first; escalate to PTD when the asset hits one of the "Designer" rows above. Don't pre-emptively escalate everything to PTD — designer capacity is finite and reserved for the items where credibility hinges on human polish.
+**Default lean:** AI first; escalate to Designer when the asset hits one of the "Designer" rows above. Don't pre-emptively escalate everything to Designer — designer capacity is finite and reserved for the items where credibility hinges on human polish.
 
 ---
 
 ## 🎨 Brand Consistency Standards
 
-Brand system is set up ONCE by PTD in W2–W3, then maintained by MP2 across all assets.
+Brand system is set up ONCE by Designer in W2–W3, then maintained by MPs across all assets.
 
-### Brand system deliverables (PTD owns initial setup — ~5 days W2–W3)
+> [!INFO] Cross-doc alignment
+> The same artifact list also lives in [[InnBlockchain - Phase 1 Execution Playbook]] WS3 § Brand system foundation (Playbook rev 16) — there as a Designer W2–W3 sprint checklist tracked at the operational level. This toolkit defines the standards; the Playbook tracks sprint completion. Keep both in sync when artifact list changes.
+
+### Brand system deliverables (Designer owns initial setup — ~5 days W2–W3)
 
 - [ ] **Typography system** — primary headline font · body font · accent font · size hierarchy (H1/H2/H3/body/caption) · sizing for carousel slides vs PDF vs video subtitle
 - [ ] **Color palette** — primary brand color · secondary · accent · neutrals · semantic colors (success/warning/error/info) · accessibility contrast ratios documented
@@ -164,11 +168,11 @@ Brand system is set up ONCE by PTD in W2–W3, then maintained by MP2 across all
 - [ ] **LinkedIn profile banner template** + variants for event seasons
 - [ ] **Article hero image style guide** — Midjourney prompts that produce on-brand visuals (style keywords, color guidance, composition rules)
 
-### MP2 maintenance (ongoing)
+### MPs maintenance (ongoing)
 
 - [ ] Every new asset uses an existing template — no ad-lib new colors/fonts/layouts
-- [ ] Quarterly brand consistency review with PTD (drift correction)
-- [ ] New template requests routed to PTD (don't create new templates ad hoc in Canva)
+- [ ] Quarterly brand consistency review with Designer (drift correction)
+- [ ] New template requests routed to Designer (don't create new templates ad hoc in Canva)
 
 ### Hard "never" rules for visual output
 
@@ -176,7 +180,7 @@ Brand system is set up ONCE by PTD in W2–W3, then maintained by MP2 across all
 - [ ] Never use stock photos of "fake businesspeople shaking hands" — uniformly unprofessional in B2B FinTech
 - [ ] Never use crypto cliché visuals (Bitcoin logo · gold coins · floating blockchain rectangles · matrix-code overlays) — wrong tone for regulated FinTech buyers
 - [ ] Never publish a carousel slide that doesn't fit the template — visual inconsistency reads as scattered to Compliance Carol
-- [ ] Never publish a Sample Audit Report or Vendor Risk Pack that wasn't designed by PTD
+- [ ] Never publish a Sample Audit Report or Vendor Risk Pack that wasn't designed by Designer
 - [ ] Never use AI avatar video (Synthesia / HeyGen) for CEO-positioned content
 - [ ] Never publish AI-generated copy on a slide without human regime-leak review
 
@@ -198,21 +202,21 @@ ChatGPT doesn't know the MiFID II / DLT Pilot vs MiCA regime boundary because it
 
 ### Spot-check protocol (per [[InnBlockchain - Phase 1 Execution Playbook]] WS13)
 
-| Asset type | Review intensity W1–W4 of MP2 ramp | Steady-state W5+ |
+| Asset type | Review intensity W1–W4 of MPs ramp | Steady-state W5+ |
 |---|---|---|
-| MP2 carousels (Track B Tier 1, cross-pillar) | Vignesh reviews 100% before publish | Vignesh reviews 25% sample |
-| MP2 carousels (Track A Tier 2/3, lower stakes) | Vignesh reviews 25% sample | Vignesh reviews 10% sample |
-| MP2 quote graphics / single-image visuals | Vignesh reviews 25% sample | Vignesh reviews 10% sample |
-| MP2 LP hero images / article hero images | Vignesh reviews 100% (low volume) | Vignesh reviews 100% |
-| MP2 video edits (Vignesh on-camera) | Vignesh reviews 100% (he's the talent) | Vignesh reviews 100% |
-| MP2 lead magnet PDFs (non-Carol-facing) | Vignesh reviews 100% before publish | Vignesh reviews 50% sample |
-| PTD high-stakes pieces (Sample Audit, vendor risk pack, complex infographics) | Vignesh reviews 100% + Compliance sign-off | Vignesh reviews 100% + Compliance sign-off |
+| MPs carousels (Track B Tier 1, cross-pillar) | Vignesh reviews 100% before publish | Vignesh reviews 25% sample |
+| MPs carousels (Track A Tier 2/3, lower stakes) | Vignesh reviews 25% sample | Vignesh reviews 10% sample |
+| MPs quote graphics / single-image visuals | Vignesh reviews 25% sample | Vignesh reviews 10% sample |
+| MPs LP hero images / article hero images | Vignesh reviews 100% (low volume) | Vignesh reviews 100% |
+| MPs video edits (Vignesh on-camera) | Vignesh reviews 100% (he's the talent) | Vignesh reviews 100% |
+| MPs lead magnet PDFs (non-Carol-facing) | Vignesh reviews 100% before publish | Vignesh reviews 50% sample |
+| Designer high-stakes pieces (Sample Audit, vendor risk pack, complex infographics) | Vignesh reviews 100% + Compliance sign-off | Vignesh reviews 100% + Compliance sign-off |
 
-### Hard rule for MP2
+### Hard rule for MPs
 
 > Every AI-generated slide caption / video subtitle / PDF body copy gets a regime-leak check against the canonical map in [[EU-Compliance-Landscape]] before publish. ChatGPT-generated copy is **suggestive, not authoritative**.
 
-**MP2 regime-leak checklist** (apply before publish on every AI-generated copy):
+**MPs regime-leak checklist** (apply before publish on every AI-generated copy):
 - [ ] No "MiCA" + "RWA" in same slide / sentence / caption
 - [ ] No "MiCA-compliant tokenization" or similar formulations
 - [ ] All regulatory references date-stamped (e.g., "MiFID II — as of 2026")
@@ -229,57 +233,50 @@ Workflows below cover design execution steps. Asset spec (slide count, video len
 
 **Total time: ~3–4 hr per article**
 
-1. **SCW writes slide-by-slide copy outline** (~1 hr) — persona coding per [[InnBlockchain - Content Repurposing Plan]] § `[Both]` Articles
-2. **MP2 generates visual layout in Canva** (~1.5 hr) — uses brand template, fills slide copy, generates hero image via Midjourney if needed
-3. **MP2 regime-leak check** (~15 min) — runs MP2 regime-leak checklist on slide copy
+1. **CW writes slide-by-slide copy outline** (~1 hr) — persona coding per [[InnBlockchain - Content Repurposing Plan]] § `[Both]` Articles
+2. **MPs generates visual layout in Canva** (~1.5 hr) — uses brand template, fills slide copy, generates hero image via Midjourney if needed
+3. **MPs regime-leak check** (~15 min) — runs MPs regime-leak checklist on slide copy
 4. **Compliance review** (~30 min) — Vignesh reviews for regime accuracy at sample rate per § AI Hallucination Risk
-5. **MP1 schedules publish** (~15 min) — LinkedIn native scheduler, per [[InnBlockchain - Content Repurposing Plan]] § LinkedIn output cap
+5. **MPs schedules publish** (~15 min) — LinkedIn native scheduler, per [[InnBlockchain - Content Repurposing Plan]] § LinkedIn output cap
 
 ### LinkedIn native video
 
 **Total time: ~4–6 hr per article**
 
-1. **SCW drafts script** (~1 hr) — one key insight from source article
+1. **CW drafts script** (~1 hr) — one key insight from source article
 2. **Vignesh records** (~30 min) — on phone, native camera, good lighting + audio
-3. **MP2 edits in Descript** (~2–3 hr) — auto-caption + manual cleanup · B-roll if any · branded lower-thirds + outro card · audio cleanup
-4. **MP2 regime-leak check on captions** (~15 min) — Descript auto-captions may hallucinate regulatory terms; verify against canonical regime map
+3. **MPs edits in Descript** (~2–3 hr) — auto-caption + manual cleanup · B-roll if any · branded lower-thirds + outro card · audio cleanup
+4. **MPs regime-leak check on captions** (~15 min) — Descript auto-captions may hallucinate regulatory terms; verify against canonical regime map
 5. **Vignesh final review** (~15 min) — he's the talent, sign-off required
-6. **MP1 schedules publish** (~10 min) — captions on by default, per [[InnBlockchain - Content Repurposing Plan]] § LinkedIn output cap
+6. **MPs schedules publish** (~10 min) — captions on by default, per [[InnBlockchain - Content Repurposing Plan]] § LinkedIn output cap
 
 ### Sample Audit Report PDF
 
-**Total time: ~15–25 hr — designer (PTD) + Compliance (Vignesh)**
+**Total time: ~15–25 hr — designer (Designer) + Compliance (Vignesh)**
 
 1. **Vignesh writes report content** (~5–8 hr) — methodology + findings drawn from publicly available exploit research + InnBlockchain methodology (synthetic acceptable per [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets)
-2. **PTD designs PDF layout** (~6–10 hr) — mimics regulator-grade audit firm report format (Trail of Bits / OpenZeppelin / Halborn structures as reference) · cover · executive summary · methodology · findings table · severity classification · appendix · branded footer
+2. **Designer designs PDF layout** (~6–10 hr) — mimics regulator-grade audit firm report format (Trail of Bits / OpenZeppelin / Halborn structures as reference) · cover · executive summary · methodology · findings table · severity classification · appendix · branded footer
 3. **Front-matter disclosure inserted** — exact wording + when-it-applies per [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets disclosure rule
 4. **Compliance reviewer sign-off** (~2–4 hr) — Vignesh self-review against canonical regime map; check all regulatory references are accurate
-5. **MP1 hosts on gated LP** (~30 min) — gated PDF download, email capture form, pinned to Featured on LinkedIn profile
+5. **MPs hosts on gated LP** (~30 min) — gated PDF download, email capture form, pinned to Featured on LinkedIn profile
 
 ### Lead magnet PDF (non-Carol-facing)
 
 **Total time: ~3–4 hr per asset**
 
-1. **SCW drafts content** (~1.5 hr) — checklist body copy; regime scope per [[InnBlockchain - Content Strategy]]
-2. **MP2 generates layout in Beautiful.ai or Canva** (~1 hr) — applies brand template, formats checklist items
-3. **MP2 regime-leak check** (~15 min)
+1. **CW drafts content** (~1.5 hr) — checklist body copy; regime scope per [[InnBlockchain - Content Strategy]]
+2. **MPs generates layout in Beautiful.ai or Canva** (~1 hr) — applies brand template, formats checklist items
+3. **MPs regime-leak check** (~15 min)
 4. **Vignesh self-reviews compliance** (~30 min)
-5. **MP1 hosts on gated LP** (~30 min) — email capture form, "Download" CTA, pinned to Featured
+5. **MPs hosts on gated LP** (~30 min) — email capture form, "Download" CTA, pinned to Featured
 
 ### Mirror.xyz cross-post
 
 **Total time: ~30 min per article**
 
-1. **SCW reformats source article for Mirror** (~15 min) — Mirror UI; canonical URL rule per [[InnBlockchain - Content Repurposing Plan]] Track A asset family
-2. **MP2 adds light visuals if needed** (~10 min) — hero image, inline diagrams
-3. **MP1 publishes** (~5 min)
-
-### Telegram dev-group share
-
-**Total time: ~15 min per article**
-
-1. **MP1 writes short paragraph + link** (~10 min) — community-context appropriate, not broadcast-tone
-2. **MP1 posts to 3–5 curated dev groups** (~5 min) — timing per [[InnBlockchain - Editorial Calendar]]
+1. **CW reformats source article for Mirror** (~15 min) — Mirror UI; canonical URL rule per [[InnBlockchain - Content Repurposing Plan]] Track A asset family
+2. **MPs adds light visuals if needed** (~10 min) — hero image, inline diagrams
+3. **MPs publishes** (~5 min)
 
 ---
 
@@ -289,7 +286,7 @@ General publish discipline (track tag, sales motion tag, CTA destination, tier s
 
 - [ ] **Brand template adherence** — typography, color, logo placement match brand system; no ad-lib visual elements
 - [ ] **AI-generated copy reviewed by human** — never publish ChatGPT-generated slide / caption / PDF copy directly; human pass + Vignesh sign-off at the rate set in § AI Hallucination Risk
-- [ ] **MP2 regime-leak checklist passed** on every AI-generated slide / caption / body copy — see § AI Hallucination Risk for the checklist + anchor map
+- [ ] **MPs regime-leak checklist passed** on every AI-generated slide / caption / body copy — see § AI Hallucination Risk for the checklist + anchor map
 
 ---
 
@@ -297,8 +294,8 @@ General publish discipline (track tag, sales motion tag, CTA destination, tier s
 
 Distribution-side and workflow-SLA failure modes (LinkedIn output cap breach, Vignesh review SLA slip, etc.) are owned by [[InnBlockchain - Phase 1 Execution Playbook]] Risk Register + [[InnBlockchain - Content Repurposing Plan]] § Anti-Patterns. The design-specific ones below:
 
-1. **AI-hallucinated regulatory framing on slides** (MP2 visual output ships with "MiCA-compliant RWA" or similar) — Critical · same Carol-killing cost as regime-leak DM · spot-check protocol mandatory
-2. **Brand consistency drift** (MP2 creates new templates ad hoc; carousel #1 looks different from carousel #5) — Medium · monthly review with PTD catches drift
+1. **AI-hallucinated regulatory framing on slides** (MPs visual output ships with "MiCA-compliant RWA" or similar) — Critical · same Carol-killing cost as regime-leak DM · spot-check protocol mandatory
+2. **Brand consistency drift** (MPs creates new templates ad hoc; carousel #1 looks different from carousel #5) — Medium · monthly review with Designer catches drift
 3. **Sample Audit Report shipped without designer polish or compliance sign-off** — Critical · undercuts the highest-leverage Phase 1 asset
 4. **Synthetic Sample Audit shipped without explicit disclosure** — Critical · reputational + regulatory risk
 5. **Visual-layer regime leak on Carol-pattern asset** — Critical · slide captions / infographic labels / diagram annotations added during design (often AI-generated) can introduce regulatory misframes that the content review missed. Compliance review must cover the *visual-layer copy*, not just the source article. (Plan anti-pattern covers the source-article review; this is the design-output-layer extension.)
@@ -311,8 +308,8 @@ Only docs actually pulled from inline in this toolkit. Regime-specific scope, AE
 
 - **[[InnBlockchain - Content Repurposing Plan]]** — parent doc: tiers (1/2/3/0), Format Priority (S/A/B/C/D), per-track asset families, LinkedIn output cap + 3-week cross-pillar cadence, research-report sprint protocol, Anti-Patterns
 - **[[InnBlockchain - Phase 1 Execution Playbook]]** — WS13 spot-check ramp (W1–W4 → W5+), WS15 ownership + capacity model, Risk Register
-- **[[EU-Compliance-Landscape]]** — canonical regulatory regime map; the anchor for every MP2 regime-leak check
-- **[[InnBlockchain - Editorial Calendar]]** — publish schedule + distribution rhythm (cross-pillar 3-week cadence, Wed Telegram drop timing)
+- **[[EU-Compliance-Landscape]]** — canonical regulatory regime map; the anchor for every MPs regime-leak check
+- **[[InnBlockchain - Editorial Calendar]]** — publish schedule + distribution rhythm (cross-pillar 3-week cadence)
 - **[[InnBlockchain - Content Strategy]]** — article inventory + sales motion tagging; regime-specific compliance brief scope (which briefs, which weeks, which LPs)
 
 ---
@@ -323,7 +320,7 @@ Re-cut this toolkit when:
 
 1. **AI tool capability shift** — Canva / Descript / Beautiful.ai / Midjourney / ChatGPT introduce features that change AI vs designer split (e.g., AI infographic tools become accurate enough for regulatory maps) — quarterly review
 2. **Hallucination incident** — a published AI-generated asset contains a regulatory misframe (MiCA-on-RWA leak in carousel copy, etc.) — immediate spot-check protocol tightening + post-mortem
-3. **PTD capacity change** — designer engagement scales up (e.g., move to retainer) or down (e.g., contract ends without renewal) — re-allocate high-stakes pieces between PTD and MP2
-4. **Phase 2 dedicated repurposing resource hired** — toolkit becomes owned by that resource, MP2 supports
+3. **Designer capacity change** — designer engagement scales up (e.g., move to retainer) or down (e.g., contract ends without renewal) — re-allocate high-stakes pieces between Designer and MPs
+4. **Phase 2 dedicated repurposing resource hired** — toolkit becomes owned by that resource, MPs supports
 5. **Brand system v2** — quarterly brand consistency review surfaces enough drift / new use cases to warrant template refresh
 6. **LinkedIn algorithm shift** — if carousel reach collapses or video performance changes materially, tool prioritization adjusts

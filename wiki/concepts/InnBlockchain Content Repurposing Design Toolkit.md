@@ -3,7 +3,7 @@ type: concept
 title: "InnBlockchain Content Repurposing Design Toolkit"
 status: current
 created: 2026-05-29
-updated: 2026-06-01
+updated: 2026-06-03
 tags:
   - concept
   - content-repurposing
@@ -23,7 +23,7 @@ related:
 
 The **Design Toolkit Plan for Content** — the design layer of content production for the InnBlockchain Phase 1 program. Owned operationally by the **MPs** (Marketing Persons collectively, handling AI visual production + posting) with the **Designer** carrying the high-stakes pieces. Child of [[InnBlockchain Content Repurposing Plan]]; covers what the Plan deliberately doesn't.
 
-> **Canonical source:** `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Design Toolkit.md` (rev 5).
+> **Canonical source:** `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Design Toolkit.md` (rev 7).
 
 ## What this owns vs what it routes elsewhere
 
@@ -44,7 +44,7 @@ The **Design Toolkit Plan for Content** — the design layer of content producti
 - **MPs** — 2 Marketing Persons (collectively) · LP on-page SEO + Featured assets ops · posting + scheduling · AI visual generation + brand consistency maintenance via templates · primary day-to-day owner of the toolkit
 - **CW** — Content Writer · article writing + persona-variant copy + repurposing copy structuring
 - **Designer** — high-stakes pieces (Sample Audit Report, vendor risk pack, brand template setup, complex regulatory infographics, MVP mockup fallback)
-- **Sales Person** — DM templates + vendor risk pack delivery
+- **SP** — Sales Person · DM templates + vendor risk pack delivery (on request)
 - **Vignesh** — founder · final review + compliance self-review + on-camera for video
 - **Dev** — LP integration of hero images + email-capture wiring
 
@@ -78,9 +78,8 @@ Asset spec (slide count, video length, etc.), tier coverage, publish cadence, an
 | Solodit profile contribution | Solodit submission UI | Vignesh + senior engineer | MPs |
 | LinkedIn post — RWA Felix variant | Canva Pro + ChatGPT | CW + MPs | MPs |
 | LinkedIn post — Tom variant | Canva Pro + ChatGPT | CW + MPs | MPs |
-| Mirror.xyz cross-post | Mirror.xyz native editor | CW + MPs | MPs |
+| Paragraph.xyz cross-post | Paragraph.xyz native editor | CW + MPs | MPs |
 | Hacker News (Show / Ask HN) | HN submission UI | CW | MPs |
-| Telegram dev-group share | Plain text + link | MPs | MPs |
 | LinkedIn quote graphic | Canva Pro templates | MPs | MPs |
 
 ### Track B — FinTech derivatives
@@ -88,7 +87,7 @@ Asset spec (slide count, video length, etc.), tier coverage, publish cadence, an
 | Asset | Production tool | Production owner | Posting owner |
 |---|---|---|---|
 | LinkedIn document carousel | Canva Pro + ChatGPT | MPs | MPs |
-| **Vendor risk pack PDF** ⭐ | Designer | Designer | Sales Person (delivers on request) |
+| **Vendor risk pack PDF** ⭐ | Designer | Designer | SP (delivers on request) |
 | Persona-specific LinkedIn variants (Sam / Tom / Carol) | ChatGPT + CW + Canva | CW + MPs | MPs |
 | LinkedIn long-form article | ChatGPT + CW | CW + MPs | MPs |
 | Whitepaper / ebook | Designer | Designer | MPs |
@@ -97,7 +96,7 @@ Asset spec (slide count, video length, etc.), tier coverage, publish cadence, an
 | LinkedIn quote graphic | Canva Pro templates | MPs | MPs |
 | Conference deck-slide | Canva (template-driven slide bank) | MPs | Vignesh |
 | Webinar / panel talking points | Notion / Google Docs | CW | Vignesh |
-| Email nurture excerpt | Plain text in CRM | CW | Sales Person |
+| Email nurture excerpt | Plain text in CRM | CW | SP |
 
 ### Cross-Track Assets
 
@@ -113,8 +112,8 @@ Regime scope lives in [[InnBlockchain Content Strategy]]; this table is asset-ca
 
 | Asset category | Production tool | Production owner | Posting owner |
 |---|---|---|---|
-| Compliance brief PDF — standard | Beautiful.ai | MPs | MPs + Sales Person |
-| Compliance brief PDF — Carol-grade | Designer | Designer | Sales Person |
+| Compliance brief PDF — standard | Beautiful.ai | MPs | MPs + SP |
+| Compliance brief PDF — Carol-grade | Designer | Designer | SP |
 | Regulatory checklist PDF | Canva OR Beautiful.ai | MPs | MPs (gated download) |
 
 ### Profile / LP design support
@@ -148,6 +147,8 @@ When MPs pick up a new asset, run this in order:
 ## Brand consistency standards
 
 Designer owns initial brand system setup in W2–W3 (~5 days): typography system, color palette, logo usage rules, Canva carousel + quote graphic template sets, Beautiful.ai lead magnet template, Descript lower-thirds + caption styles, LinkedIn profile banner template, Midjourney hero image style guide. MPs maintain via templates ongoing; new template requests routed to Designer (no ad-lib templates in Canva).
+
+> **Cross-doc alignment:** the same artifact list lives in [[InnBlockchain Phase 1 Execution Playbook]] WS3 § Brand system foundation (Playbook rev 16) — there as a Designer W2–W3 sprint checklist tracked at the operational level. This toolkit defines the standards; the Playbook tracks sprint completion. Keep both in sync when the artifact list changes.
 
 **Hard "never" rules for visual output:**
 
@@ -183,8 +184,7 @@ Workflows cover design execution steps only. Asset spec, tier scope, publish cad
 | LinkedIn native video | ~4–6 hr | CW script → Vignesh records on phone → MPs Descript edit → MPs caption regime-leak check → Vignesh final review → MPs schedule |
 | Sample Audit Report PDF | ~15–25 hr | Vignesh writes content → Designer designs PDF layout → front-matter disclosure → Vignesh compliance sign-off → MPs host on gated LP |
 | Lead magnet PDF (non-Carol) | ~3–4 hr | CW drafts → MPs Beautiful.ai/Canva layout → MPs regime-leak check → Vignesh compliance review → MPs host on gated LP |
-| Mirror.xyz cross-post | ~30 min | CW reformats → MPs light visuals → MPs publish |
-| Telegram dev-group share | ~15 min | MPs write paragraph + link → MPs post to curated groups |
+| Paragraph.xyz cross-post | ~30 min | CW reformats → MPs light visuals → MPs publish |
 
 ## Pre-publish quality checks — design only
 
@@ -214,6 +214,12 @@ Re-cut this toolkit when:
 4. **Phase 2 dedicated repurposing resource hired** — toolkit becomes owned by that resource, MPs support
 5. **Brand system v2** — quarterly brand consistency review surfaces enough drift / new use cases
 6. **LinkedIn algorithm shift** — carousel reach collapses or video performance changes materially → tool prioritization adjusts
+
+## Rev 7 change note (2026-06-03)
+
+**Telegram dev-group share dropped from Phase 1 (synced to Playbook rev 20).** Track A asset map row + per-asset production workflow + Editorial Calendar pointer reference all removed. Phase 1 Track A = RWA Felix only (non-technical, LinkedIn-led, doesn't live in Telegram). Re-evaluate for Phase 2/3 DeFi-protocol Felix scope. Mirror.xyz reference corrected to Paragraph.xyz (Mirror shut down September 2025).
+
+---
 
 ## Why this is a separate doc from the Plan
 
