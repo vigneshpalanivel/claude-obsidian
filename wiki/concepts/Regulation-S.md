@@ -2,7 +2,7 @@
 type: concept
 title: "Regulation S — Offshore Offerings of Securities"
 created: 2026-05-07
-updated: 2026-05-07
+updated: 2026-06-04
 tags:
   - Regulation-S
   - SEC
@@ -12,7 +12,12 @@ tags:
   - US-law
 status: current
 related:
+  - "[[Rule-144]]"
   - "[[Rule-144A]]"
+  - "[[OFAC-Sanctions]]"
+  - "[[Real-Estate-RWA-Reg-S-Implementation]]"
+  - "[[Real-Estate-RWA-Reg-S-Affiliate-Addendum]]"
+  - "[[US-Fintech-Compliance-Landscape]]"
   - "[[Research: US Reg S]]"
   - "[[Fourscore-Regulation-S-Guide]]"
   - "[[Cleary-Reg-S-Selling-Transfer-Restrictions]]"
@@ -20,6 +25,13 @@ related:
   - "[[Pillsbury-Restricted-Securities-Reg-S]]"
   - "[[Morrison-Foerster-Reg-S-FAQs]]"
   - "[[SEC-Problematic-Practices-Reg-S-1995]]"
+internal_artifacts:
+  - path: ".raw/InnBlockchain/US Compliance/reg-s-checklist.md"
+    hash: "44803bd4095d4d79526fc4034004cedd"
+    version: "1.6"
+    registered: 2026-06-04
+    derived_from: this wiki concept + verbatim cross-check against eCFR §§ 230.901–230.905
+    purpose: "Source-derived InnBlockchain client-facing Reg S compliance checklist. 10 sections + scorecard, scoped strictly to the five Reg S sections. Cross-references rule-144-checklist.md (for §5/§8.3 Rule 144 mechanics) and ofac-checklist.md (for §8.4 sanctions). v1.6 changelog: cross-references added to Rule 144 and OFAC checklists; tightened safe-harbor scope language; sanctions and affiliate-machinery framing aligned to the parallel checklists."
 ---
 
 # Regulation S — Offshore Offerings of Securities
@@ -162,3 +174,6 @@ Token offerings increasingly use a Reg D + Reg S structure: Reg D for U.S. accre
 5. Buyer certifications (non-U.S. person; offshore at time of order)
 6. If raising in U.S. concurrently → structure as Reg D / 144A / Reg S three-leg, treat them as separate offerings, isolate marketing channels
 7. For U.S. domestic issuers: account for Rule 905 — these are restricted securities for Rule 144 purposes
+
+> [!tip] Companion source-derived checklist
+> A full source-derived Reg S compliance checklist scoped strictly to 17 CFR §§ 230.901–230.905 is maintained as an internal artifact at `.raw/InnBlockchain/US Compliance/reg-s-checklist.md` (v1.6, 2026-06-04). It cross-references the parallel [[Rule-144]] and [[OFAC-Sanctions]] checklists for mechanics that Reg S relies on but does not itself define (Rule 144 holding-period and affiliate conditions via the Rule 905 bridge; OFAC sanctions screening that applies cumulatively to every Reg S offering by a U.S. person). The InnBlockchain implementation of Reg S Category 3 for a real-estate STO is documented in [[Real-Estate-RWA-Reg-S-Implementation]], with the optional Rule 144 affiliate machinery preserved separately at [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]].

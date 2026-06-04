@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-05-29
+updated: 2026-06-04
 tags:
   - meta
   - log
@@ -18,6 +18,73 @@ related:
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
+
+## 2026-06-04 | re-ingest | InnBlockchain US-Compliance-Landscape raw → wiki mirror (post batch-ingest sync)
+
+Re-ingest of `.raw/InnBlockchain/US Compliance/US-Compliance-Landscape.md` following the same-day batch ingest of the five new US-compliance source documents. Raw file edited to cross-reference the four new wiki concept pages and to add a Primary Sources section matching the EU-Compliance-Landscape.md structural pattern. Wiki concept page [[US-Fintech-Compliance-Landscape]] body mirrored to match raw (canonical-source invariant preserved per the artifact's `purpose` field).
+
+- **Raw hash**: `254a3ec743648bc33d3ee207f6a065fd` → `2ad8832cb1e413c06537981097663dbd` (previous_hash preserved in manifest)
+- **Pages updated**: [[US-Fintech-Compliance-Landscape]] (body + internal_artifacts hash + frontmatter updated:2026-06-04); [[hot]]; [[log]]; `.raw/.manifest.json` (new entry for US-Compliance-Landscape.md re-ingest with full modification_reason)
+- **Edits applied** (seven targeted updates following EU pattern):
+  1. Seg 1 RWA Tokenization row — inline wikilinks added: [[Regulation-S]] + [[Rule-144]] (via Rule 905 bridge) + [[OFAC-Sanctions]] + pointer to [[Real-Estate-RWA-Reg-S-Implementation]]
+  2. "RWA in the US ≠ Just Tokenize It" warning callout — pointers to [[Real-Estate-RWA-Reg-S-Implementation]] + [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]]
+  3. WealthTech FinTech row — wikilinked [[Regulation-S]] + [[Rule-144]] + [[Real-Estate-RWA-Reg-S-Implementation]] + [[OFAC-Sanctions]]
+  4. Quick Reference table "Reg D 506(c) / Reg A+ / Reg CF / Reg S" row — wikilinked [[Regulation-S]] + cross-refs to [[Rule-144]] / [[Real-Estate-RWA-Reg-S-Implementation]] / [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]]
+  5. Crypto Native InnBlockchain Relevance bullet — added pointer to [[Real-Estate-RWA-Reg-S-Implementation]] + [[OFAC-Sanctions]]
+  6. **NEW Primary Sources section** at the bottom matching EU pattern — three subsections: Federal Securities Regulations (eCFR URLs for §§ 230.901-905 individually + § 230.144 + § 230.144A + Reg D/A/CF parts + Rule 15c2-11), Federal Sanctions Regulations (31 CFR Parts 501/510/515/542/560/589 + SDN List), Other Federal Regulations (GENIUS Act + CLARITY Act + Travel Rule + FinCEN MSB + Form 1099-DA + CTA + Section 1033); Supervisors and Agency Pages list (SEC + Crypto Task Force, CFTC, FinCEN, OFAC Recent Actions + Virtual Currency Guidance URL, IRS, OCC, FDIC, Fed, CFPB, NY DFS, CA DFPI)
+  7. See: line bottom — replaced orphan [[OFAC]] with [[OFAC-Sanctions]] + replaced orphan [[Reg-S-Offshore-Safe-Harbor]] with [[Regulation-S]] + added [[Rule-144]] + [[Real-Estate-RWA-Reg-S-Implementation]] + [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]]
+- **Structural fit**: matches EU-Compliance-Landscape.md pattern (Primary Sources block at bottom with EUR-Lex ELI URLs for the EU version, eCFR URLs for the US version; inline wikilinks to operational/implementation concept pages embedded in segment-row text, not collected in a top-level "Companion Checklists" callout).
+- **Workflow note**: user explicitly directed the EU-Compliance-Landscape.md pattern after rejecting an earlier draft that proposed a top-level "Companion Source-Derived Compliance Checklists" callout section at the top of the document. The pattern actually used by EU is inline wikilinks + a Primary Sources section at the bottom — applied here.
+
+## 2026-06-04 | batch ingest | InnBlockchain US Compliance + Real Estate RWA Reg S Implementation suite
+
+Batch ingest of 5 source-derived documents authored in a single in-session sprint covering the U.S. private-securities regulatory stack and a reference implementation for a U.S.-domiciled real-estate Reg S Category 3 STO. Establishes the U.S.-compliance parallel to the prior EU-compliance ingest sweep (MiCA, DORA, MiFID II, GDPR, AMLR, TFR, IPR, EU Listing Act, CCD2, MAR).
+
+**Sources ingested:**
+- `.raw/InnBlockchain/US Compliance/reg-s-checklist.md` v1.6, hash `44803bd4095d4d79526fc4034004cedd` — Reg S (17 CFR §§ 230.901–230.905) source-derived checklist
+- `.raw/InnBlockchain/US Compliance/rule-144-checklist.md` v1.0, hash `1fe424f6387937900d75c245f1e14303` — Rule 144 (17 CFR § 230.144) source-derived checklist
+- `.raw/InnBlockchain/US Compliance/ofac-checklist.md` v1.0, hash `67cd6e0afe8d6a5c2b8b58e010e729c2` — OFAC sanctions (31 CFR Chapter V) source-derived checklist
+- `.raw/InnBlockchain/Dev/real_estate_rwa_reg_s.md`, hash `8ac97d5d423f016520014cbbe2b04972` — Real-estate RWA Reg S Cat 3 implementation guide (affiliate-free)
+- `.raw/InnBlockchain/Dev/real_estate_rwa_reg_s_affiliate_addendum.md`, hash `b4a8785ce1eac575f5405e26768d523a` — Optional Rule 144 affiliate-machinery extension
+
+**Pages created (4 new concepts):**
+- [[Rule-144]] — resale safe harbor concept, distinct from existing [[Rule-144A]] (QIB resale safe harbor). Covers two-path framework (non-affiliate vs affiliate), the four ongoing affiliate conditions, tacking rules, shell-company carve-out (de-SPAC implications), and the Rule 905 bridge to [[Regulation-S]].
+- [[OFAC-Sanctions]] — closes the [[OFAC]] orphan link that existed in [[US-Fintech-Compliance-Landscape]] See: line. Covers the four screening dimensions (SDN identity, SDN wallet address, comprehensive country embargoes, 50 Percent Rule beneficial-ownership look-through), screening cadence, blocking + reporting obligations (TD F 90-22.50 within 10 business days, Annual Report of Blocked Property by Sept 30), licensing framework, voluntary self-disclosure, October 2021 virtual currency guidance, Tornado Cash / Van Loon doctrinal posture (cross-references [[Tornado-Cash-Van-Loon]]), recent crypto enforcement comparables.
+- [[Real-Estate-RWA-Reg-S-Implementation]] — full architecture for a U.S.-domiciled real-estate sponsor doing a Reg S Cat 3 offshore-only STO under affiliate-free architecture. Covers ERC-1400 family + ERC-3643 identity + ComplianceRegistry; transfer validation gates; off-chain → on-chain attestation mechanisms (Identity Registry push / EIP-712 pull / Merkle proof / Oracle); the affiliate-free five structural commitments (sponsor economics via Class B Promote Units at LLC level; 9.99% concentration cap; no token-attached governance; affiliate-creating-event BLOCKED flag; OM disclosure language).
+- [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] — optional extension preserving the full Rule 144 affiliate machinery for deals requiring on-platform affiliate trading (e.g., strategic institutional investor with board representation). Explicitly NOT implemented in base deployments. Documents the four sub-gates, 3-month tail, household + group-control attribution, Rule 144(c) current-information killswitch, Form 144 hook, and the strategic recommendation that sponsor economics always go through LLC promote rather than tokens.
+
+**Pages updated:**
+- [[Regulation-S]] — frontmatter `related:` expanded with [[Rule-144]], [[OFAC-Sanctions]], [[Real-Estate-RWA-Reg-S-Implementation]], [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]], [[US-Fintech-Compliance-Landscape]]. `internal_artifacts` block added with reg-s-checklist.md v1.6 entry. Companion-checklist tip callout added at bottom of practical-checklist section.
+- [[US-Fintech-Compliance-Landscape]] — `related:` block expanded with [[Rule-144]], [[OFAC-Sanctions]], [[Real-Estate-RWA-Reg-S-Implementation]], [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]]. See: line at bottom updated to replace orphan [[OFAC]] with [[OFAC-Sanctions]] and add the four new pages.
+- [[index]] — concept entries for [[Rule-144]], [[OFAC-Sanctions]], [[Real-Estate-RWA-Reg-S-Implementation]], [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] added; [[Regulation-S]] entry extended with checklist version reference. Total pages: 229 → 233 (+4 new concept pages; existing Regulation-S updated in place).
+- `.raw/.manifest.json` — 5 new entries registered.
+
+**Structural fit:** This is the U.S.-compliance parallel to the prior EU compliance ingest sweep. The structural pattern matches:
+- Per-regulation source-derived checklist in `.raw/InnBlockchain/<X> Compliance/<rule>-checklist.md`
+- Per-regulation concept page in `wiki/concepts/<Rule>.md` with `internal_artifacts` block linking back
+- Compliance landscape concept page ([[EU-Fintech-Compliance-Landscape]] / [[US-Fintech-Compliance-Landscape]]) as the umbrella
+- Practitioner implementation guides as separate concept pages where the deal-specific configuration is itself a structural pattern
+
+**Cross-regulatory bridges documented:**
+- **Reg S Rule 905 → Rule 144** — Cat 3 domestic-issuer equity acquired under Reg S becomes "restricted securities" under Rule 144 indefinitely. This is the single most important conceptual bridge in the U.S. private-securities stack and is explicit in both [[Regulation-S]] and [[Rule-144]] concept pages.
+- **All securities regulations → OFAC** — OFAC applies cumulatively to every U.S.-person transaction independent of any securities-law exemption. [[OFAC-Sanctions]] is positioned as a cross-cutting concept that every securities-law concept must reference.
+- **Implementation pattern → source checklists** — [[Real-Estate-RWA-Reg-S-Implementation]] cross-references all three source checklists; each implementation gate maps to a specific source-checklist section.
+
+**Key insight #1 — Affiliate-free architecture is the high-leverage simplification.** Refusing to support on-chain affiliate trading removes Rule 144(e) volume cap, Rule 144(f) manner-of-sale, Rule 144(c) current-information attestations, Rule 144(h) Form 144 hooks, and Rule 144(a)(2) household + group-control attribution from the contract. For 90%+ of U.S.-sponsor real-estate STOs, this is the right call — sponsor economics go through LLC promote at the operating-agreement level instead.
+
+**Key insight #2 — Rule 144(c) Current Public Information is the practical killswitch for non-reporting issuers.** Maintaining a Rule 15c2-11 information statement on file is a real ongoing operational commitment (audited financials + material-events monitoring + public publication). Without it, affiliates have ZERO U.S. resale path through Rule 144, regardless of holding period or volume. This is the strategic decision that determines whether the affiliate addendum is even useful in a given deployment.
+
+**Key insight #3 — OFAC applies to U.S.-domiciled issuers conducting offshore Reg S offerings.** The single most common misframe: "we're Reg S-only therefore we're outside U.S. jurisdiction" is false. If the issuing SPV is a U.S.-organized entity, every transaction the issuer touches is a U.S.-person transaction for OFAC purposes — regardless of where the counterparty sits. The offshore character of the offering increases OFAC exposure (sanctioned-jurisdiction nationals in the offshore investor base, 50 Percent Rule on layered offshore holding companies) rather than reducing it.
+
+**Key insight #4 — Two structurally independent clocks must be checked independently in `canTransfer`.** The 12-month Reg S distribution compliance period and the 12-month Rule 144 holding period for non-reporting issuers run concurrently but are independent: Reg S blocks ALL sales to U.S. persons until expiry; Rule 144 gates only U.S. resales post-expiry. Conflating them is the design risk that creates Section 5 / Section 12(a)(1) rescission liability after the 12-month clock expires.
+
+**Key insight #5 — Florida-situs assets compliance was deliberately removed from scope.** The earlier draft of the implementation guide included FIRPTA (IRC § 1445), §§ 1441/1442 withholding, Florida documentary stamp tax, and Florida Securities Act considerations. These are NOT Reg S — they are federal tax, state property tax, and state blue sky frameworks that apply cumulatively. They were removed to keep the Reg S document strictly scoped. Future deployments needing tax-withholding implementation will require a separate Dev document or source-derived US Compliance checklist.
+
+**NOT created this ingest:** No new `wiki/sources/` page. The five InnBlockchain documents are **internal artifacts** (authored in this session, not external sources) — registered via `internal_artifacts` frontmatter blocks on the concept pages and in `.raw/.manifest.json`, but not duplicated as separate source-summary pages. This matches the pattern used by the existing [[US-Fintech-Compliance-Landscape]] `internal_artifacts` block.
+
+**Methodology pattern:** This is the first US-compliance ingest sweep. Future U.S. checklists (e.g., a Reg D 506(c) checklist if the client adopts a Reg D + Reg S combination structure, a Reg A+ Tier 2 checklist, a FIRPTA-and-withholding checklist for the tax stack) should follow this same structural pattern: source-derived checklist in `.raw/InnBlockchain/US Compliance/<rule>-checklist.md` → concept page in `wiki/concepts/<Rule>.md` → cross-references in [[US-Fintech-Compliance-Landscape]] and adjacent concept pages → manifest registration. The InnBlockchain content-strategy convention of treating "internal artifacts" distinctly from external sources is preserved.
+
+Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Implementation]] (new), [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] (new), [[Regulation-S]] (updated), [[US-Fintech-Compliance-Landscape]] (updated), [[index]] (5 entries; total 229 → 233), [[hot]], [[log]]. `.raw/.manifest.json` updated with 5 new entries.
 
 ## 2026-06-03 | update + mirror | InnBlockchain Content Repurposing Plan rev 10 → rev 15 (raw) + wiki concept page mirrored
 - **Raw revs 11–14** (2026-05-31 through 2026-06-03 — added in prior/parallel sessions): rev 11 = 7-gap closure pass adding 5 new anti-patterns (persona-variant triad for non-cross-pillar articles, Vendor Risk Pack for non-Carol-pattern articles, visual continuity drift across derivatives, email nurture misalignment, derivative narrow-framing of hub articles) + Lookup Protocol persona-definition warning + Quarterly Audit platform validity check; rev 12 = consistency-drift cleanup (9 functional inconsistencies from successive additive edits — dangling `[Both]` lead-in sentence, Tier Matrix Step 3 `[Both]` map duplicate, Paulo missing from persona list, `[Both]` inventory paragraph missing P5-DORA-X); rev 13 = `[Cross-Motion]` vs `[Audit + Dev]` CTA contradiction resolved (`[Audit + Dev]` = one motion for ONE buyer end-to-end; `[Cross-Motion]` = per-persona motion for TWO alternative buyer paths; CTA Template Appendix `[Cross-Motion]` column now scoped to lead magnets + decision-framework derivatives only); rev 14 = Phase 1 vs Phase 2+ Track A scope clarified — Telegram/GitHub/HN/Paragraph/Solodit dev-protocol-surface derivatives scoped to Phase 2/3 DeFi/protocol Felix only, do NOT produce for Phase 1 articles; X thread preserved for Phase 1.

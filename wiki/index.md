@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-05-25 | Total pages: 229 | Sources ingested: 75 (+3 internal merges, no new source pages)
+Last updated: 2026-06-04 | Total pages: 233 | Sources ingested: 75 (+3 internal merges, no new source pages) + 5 InnBlockchain internal artifacts (reg-s-checklist v1.6, rule-144-checklist v1.0, ofac-checklist v1.0, real_estate_rwa_reg_s.md, real_estate_rwa_reg_s_affiliate_addendum.md)
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -138,8 +138,12 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle-Sales-Operations]] — CEO-level weak points (6), Ansoff growth framework, 90+ sales initiatives organized by function, 14 OKR KPIs; synthesizes culture/process/product gaps (status: current)
 - [[SEO-Recovery-Strategy-2025-26]] — GEO/AIO era playbook; info keywords → BoFU shift; E-E-A-T; AI crawler allowlist; CITE score framework (target 80); new metrics (AI citation rate, LLM referral traffic) (status: current)
 - [[SEO-AEO-GEO-Prompt-Library]] — 180-prompt master template (SEO 75 / AEO 40 / GEO 60 / Hybrid 5); reusable across all 10 Trioangle verticals via variable substitution; operationalises the GEO/AIO recovery strategy (status: current)
-- [[Regulation-S]] — SEC safe harbor for offshore offerings of securities under Securities Act §5; two core conditions (offshore transaction + no directed selling efforts in U.S.); three categories sorted by SUSMI; Rule 905 keeps U.S. domestic equity restricted under Rule 144 even after offshore resale (status: current)
+- [[Regulation-S]] — SEC safe harbor for offshore offerings of securities under Securities Act §5; two core conditions (offshore transaction + no directed selling efforts in U.S.); three categories sorted by SUSMI; Rule 905 keeps U.S. domestic equity restricted under Rule 144 even after offshore resale; source-derived checklist v1.6 at `.raw/InnBlockchain/US Compliance/reg-s-checklist.md` (status: current)
+- [[Rule-144]] — SEC resale safe harbor for restricted and affiliate-held securities under §4(a)(1); two paths (non-affiliate vs affiliate); 6 mo / 12 mo holding period by issuer reporting status; affiliate path layers volume cap (Rule 144(e)), manner of sale (Rule 144(f)), current public information (Rule 144(c)), Form 144 (Rule 144(h)) + 3-month tail; Rule 905 bridge keeps Reg S Cat 3 domestic-issuer equity restricted indefinitely; source-derived checklist v1.0 at `.raw/InnBlockchain/US Compliance/rule-144-checklist.md` (status: current)
 - [[Rule-144A]] — SEC safe harbor for resales of restricted securities to QIBs (≥$100M discretionary AUM); routinely paired with Reg S in global bond/convertible offerings >$100M deal size (status: current)
+- [[OFAC-Sanctions]] — Treasury sanctions enforcement; strict liability for U.S. persons; four screening dimensions (SDN identity, SDN wallet, comprehensive country, 50 Percent Rule); daily SDN updates; blocking + TD F 90-22.50 (10 business days) + Annual Report of Blocked Property (Sept 30); license framework + voluntary self-disclosure; October 2021 virtual currency guidance; source-derived checklist v1.0 at `.raw/InnBlockchain/US Compliance/ofac-checklist.md` (status: current)
+- [[Real-Estate-RWA-Reg-S-Implementation]] — InnBlockchain reference architecture for a U.S.-domiciled real-estate sponsor doing a Reg S Cat 3 offshore-only STO under affiliate-free architecture; ERC-1400 family + ERC-3643 identity + ComplianceRegistry; enforces Reg S, Rule 144 non-affiliate path, OFAC at every transfer; 12-month per-tranche compliance clocks + Rule 905 permanent restricted status; 9.99% concentration cap; full implementation specification at `.raw/InnBlockchain/Dev/real_estate_rwa_reg_s.md` (status: current)
+- [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] — Optional extension to the base implementation for deals requiring on-platform affiliate trading (e.g., strategic institutional investor with board representation); full Rule 144 affiliate machinery (volume cap, manner of sale, current public information, Form 144, 3-month tail, household + group-control attribution); NOT implemented in base deployments; specification at `.raw/InnBlockchain/Dev/real_estate_rwa_reg_s_affiliate_addendum.md` (status: optional-extension)
 
 ---
 
