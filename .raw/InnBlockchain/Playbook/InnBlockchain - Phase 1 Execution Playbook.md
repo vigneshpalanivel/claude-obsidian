@@ -17,7 +17,13 @@ revision_notes: |
   rev 6 (2026-05-27): full review cleanup pass against rev 5. Fixed 14 issues including: dates updated to 2026-05-27 · Pain Point 5 deadline escalation · WS15 Vignesh capacity cut (24 of 44 articles ship with zero derivatives) · Featured Assets renumbered · Risk Register reordered by category · Money20/20 2027 removed from Phase 1 · WS14 MVP scope clarified as mockup not working dApp.
   rev 7 (2026-05-27): **dropped MiCA destination LP from Phase 1.** Phase 1 is RWA-only; MiCA-scope buyers are Phase 2 ICP. Replaced with external-link routing for boundary articles. Diverges from Editorial Calendar Gate Sequence row 3 — calendar should be updated to match.
   rev 8 (2026-05-28): integrated final team configuration. Phase 1 team confirmed: 2 Marketing Persons (Ops/Distribution/SEO + Design/AI Visual) + Sales Person + Senior Content Writer + Part-time Designer + Vignesh + Frontend Dev. WS15 capacity cuts partially relaxed (Tier 1 full + Tier 2 lite + Tier 3 amplify-only).
-  rev 20 (2026-06-03): **Telegram dev-group dropped from Phase 1 — doesn't map to ICP.** RWA Felix (Phase 1 CN buyer) is asset-first non-technical, doesn't live in Telegram. Sam/Tom/Carol committee (Phase 1 FT buyer) evaluates via vendor risk pack + audit report, not Telegram. Audience that DOES live in Telegram (Solidity devs · DeFi builders · smart contract engineers) is not a Phase 1 buyer or material influencer. Carryover from generic Web3 marketing template caught in rev 20 audit. Sweep: (1) WS7 Weekly batch workflow — Fri "Telegram syndication" removed. (2) WS8 Per-platform formatting spec — Telegram column removed from rules table; "1× Telegram dev-group share" line removed from Cross-platform asset bundle; intro callout updated to "LinkedIn + X (Track A) or LinkedIn-only (Track B)" with explicit Telegram-dropped note. (3) WS15 Tier 2 derivative chain — Telegram dev-group share removed from Track A scaled-back chain. (4) [[InnBlockchain - Content Repurposing Design Toolkit]] swept in parallel (rev 7): Track A asset map row + production workflow + Editorial Calendar pointer reference. (5) [[InnBlockchain - ICP - Crypto Native]] swept (rev 1): 7 places where Telegram was incorrectly attributed as RWA Felix outreach channel — bumped LinkedIn priority for RWA, added explicit "NOT Telegram" notes where the channel mix matters. DeFi/protocol Telegram refs (Segments 2–6, Phase 2/3) + AI x crypto refs (Segment 10) + Sasha professional communities left intact — those are correctly scoped. Telegram is a Phase 2/3 channel for DeFi-protocol Felix, not a Phase 1 channel.
+  rev 20 (2026-06-03): three scope-clarification changes — **(a) Telegram dev-group dropped from Phase 1, (b) X Company account added (parallel to LinkedIn Company Page), (c) Cross-channel cannibalisation matrix consolidated in WS8.** Details below.
+
+  **(a) Telegram dev-group dropped from Phase 1 — doesn't map to ICP.** RWA Felix (Phase 1 CN buyer) is asset-first non-technical, doesn't live in Telegram. Sam/Tom/Carol committee (Phase 1 FT buyer) evaluates via vendor risk pack + audit report, not Telegram. Audience that DOES live in Telegram (Solidity devs · DeFi builders · smart contract engineers) is not a Phase 1 buyer or material influencer. Carryover from generic Web3 marketing template caught in rev 20 audit. Sweep: (1) WS7 Weekly batch workflow — Fri "Telegram syndication" removed. (2) WS8 Per-platform formatting spec — Telegram column removed from rules table; "1× Telegram dev-group share" line removed from Cross-platform asset bundle; intro callout updated to "LinkedIn + X (Track A) or LinkedIn-only (Track B)" with explicit Telegram-dropped note. (3) WS15 Tier 2 derivative chain — Telegram dev-group share removed from Track A scaled-back chain. (4) [[InnBlockchain - Content Repurposing Design Toolkit]] swept in parallel (rev 7): Track A asset map row + production workflow + Editorial Calendar pointer reference. (5) [[InnBlockchain - ICP - Crypto Native]] swept (rev 1): 7 places where Telegram was incorrectly attributed as RWA Felix outreach channel — bumped LinkedIn priority for RWA, added explicit "NOT Telegram" notes where the channel mix matters. DeFi/protocol Telegram refs (Segments 2–6, Phase 2/3) + AI x crypto refs (Segment 10) + Sasha professional communities left intact — those are correctly scoped. Telegram is a Phase 2/3 channel for DeFi-protocol Felix, not a Phase 1 channel.
+
+  **(b) X Company account added** (parallel to LinkedIn Company Page) — three new WS3 subsections after the existing X (Twitter) personal block: Initial setup (one-time W1: handle claim · Premium decision · header · bio · pinned tweet · cross-association with Vignesh personal handle) · Completeness audit (one-time at setup + quarterly · checks profile completeness · last-tweet recency · cross-channel framing alignment) · Ongoing operations (low-cadence 1× post/wk steady state · repost-Vignesh-thread-with-corporate-comment pattern · ≥48 hr spacing on Vignesh-thread reposts · Company-X-references-Vignesh-handle rule · analytics tracking with reduce-cadence trigger if <10% of personal X reach for 8+ wks). Designed as **credibility floor for vendor evaluation** (Tom/Carol search "InnBlockchain" on X during eval), NOT engagement channel. Voice is corporate-only — founder-personal voice stays on Vignesh personal X. Hygiene rules added: never industry drama from Company handle · never MiCA framing · never let account go dormant >14 days.
+
+  **(c) Cross-channel cannibalisation matrix** added to WS8 § LinkedIn output cap as canonical source for all spacing rules. Previously scattered across 5 subsections (WS3 LinkedIn Company Page · WS3 X personal · WS3 X Company · WS8 LinkedIn output cap · WS15 LinkedIn output cap enforcement) — MPs had to assemble logic from multiple places to enforce in real-time scheduling. Matrix consolidates 10 vectors with rule + spacing + reason + original-section pointer columns. **NEW vector handled (#4 in matrix):** LinkedIn Company Page ↔ X Company same-day same-announcement (previously unhandled cross-channel cross-account cannibalisation). MPs scheduling enforcement workflow added as 5-checkbox Mon AM batch-approval gate. Scattered rules retained where they live but cross-reference matrix as authoritative.
   rev 19 (2026-06-03): **secondary-channel setup gap closure.** Three new subsections added to close the same pattern gap that the LinkedIn Company Page expansion (rev 16) closed: channel is used as a publish destination throughout Phase 1 but has zero setup/ongoing-ops tasks. (1) **WS3 X (Twitter)** — three new subsections: Initial setup (one-time W1: account claim · Premium decision · bio · header · pinned tweet) · Completeness + recategorisation (W1–W3 parallel to LinkedIn accelerator: following audit · Communities · cross-association · 5–10 reply-comments/day) · Ongoing operations (1 X thread/wk per Track A article · 2–4 standalone posts/wk · SP strategic replies · X Space deferral rule · analytics tracking · hygiene hard rules). (2) **WS3 GitHub + Solodit** — methodology credibility surfaces (one-time setup + per-contribution cadence) — GitHub org claim + reference repos + README · Solodit profile + methodology content + historical findings submission. Different shape than X / LinkedIn: credibility surface for technical buyers (Felix CTO + Sasha) not publish channel with weekly cadence. (3) **WS8 Newsletter vendor-selection decision criteria** — pre-decided framework for W10 revisit so it's a 30-min call not a 2-week research sprint: 5-vendor trade-off table (Beehiiv · Substack · LinkedIn Newsletter · ConvertKit · self-hosted) + 4 decision triggers + default recommendation (Beehiiv as default; LinkedIn Newsletter if <200 subscribers at W10 for fastest first-issue ship). Telegram dev-group curation deferred per user (NOT included this rev — flagged as gap but would live as sister doc, not in playbook).
   rev 18 (2026-06-02): **Sales Person → SP abbreviation swept throughout body content** (178 inline occurrences). Full name "Sales Person" retained in the Per-Role Quick Reference legend row (`**SP** — Sales Person`) + the Team configuration callout (which now defines all three abbreviations: MPs · CW · SP) + rev 8/9/17 historical rev notes. **No collision with SME** = Subject Matter Expert (different role) since the abbreviations differ. Rev 9's caution applied to SM (= Senior Sales Manager at the time), not SP. Pattern now consistent across all three abbreviated roles: short form in body, full name in legend.
   rev 17 (2026-06-02): three ownership refinements. (1) **WS1 LP Delivery owner expanded** — Dev (build) + MPs (on-page SEO + GA4 + email-capture coordination) + Vignesh oversight. MPs added to Per-Role Quick Reference WS1 column. (2) **WS4 Compliance Briefs owner expanded** — Vignesh (regulatory content + self-review) + CW (brief structuring + Style Guide voice) + Designer (PDF layout). CW added to Per-Role Quick Reference WS4 column. WS4 body content updated for all three briefs (MiFID II/III stack + DORA + eIDAS 2.0) to tag CW into the drafting flow. (3) **WS9.5a relaxed from rev 8 absolute rule** — Sales Person can send first warm DM using Vignesh-voice template with explicit Vignesh reference in opener ("I work with Vignesh — he asked me to reach out"); Vignesh per-DM approves before send (24-hr SLA, ≤15 min/day calendar block); Vignesh sends personally only when relationship calls for it (Vignesh's judgment). Updates cascaded: WS9.5a Ownership split callout · per-client + per-connection message templates · daily/weekly cadence · Workstream Map row 9.5a · Risk Register Trioangle entry · WS5 Vignesh calendar block (Trioangle DM time drops 1-3/wk → 0-1/wk personal + ≤15 min/day approval) · WS9.5b Common Mistakes callout · WS9 Discovery Call escalation triggers. **SM/SME/SP question pending at this rev**: SM already gone from live content (rev 9); SME = Subject Matter Expert (different role from Sales Person) — kept as-is; Sales Person → SP abbreviation not yet applied at rev 17 — confirmation pending.
@@ -460,6 +466,58 @@ To prevent drift — what this playbook does NOT cover:
 > - **(Vignesh + MPs)** Never use MiCA framing for RWA on X (#1 Carol disqualifier — same hard rule as LinkedIn)
 > - **(Vignesh)** Never engage in crypto-Twitter drama / shitposting / vendor disputes — institutional positioning depends on signal-only behavior
 > - **(MPs)** Never schedule X thread same day as LinkedIn long-form post on same article (cross-platform cannibalisation; ≥24 hr stagger)
+
+### X Company account — initial setup (one-time, W1)
+
+> [!INFO] Why a Company X account for Phase 1
+> Parallel to LinkedIn Company Page. Lower cadence than Vignesh personal (B2B regulated FinTech buyers follow founder voice more than corporate accounts) but **non-zero — provides corporate credibility surface for vendor evaluation** (when Tom or Carol search "InnBlockchain" on X, they find an active corporate handle, not a dormant or absent one). Company account is **credibility floor**, not engagement channel.
+
+- [ ] **(Vignesh + MPs)** Claim X handle: `@InnBlockchain` (or closest available) · Premium subscription decision (recommendation: **single shared Premium tier with Vignesh personal · NOT separate** — saves cost · X allows Premium on multiple handles per billing)
+- [ ] **(MPs · Designer template)** Header image: brand template variant (distinct from Vignesh personal banner — corporate framing · matches LinkedIn Company Page banner for cross-channel consistency)
+- [ ] **(Vignesh + MPs)** Profile photo: InnBlockchain logo (Designer-provided per Brand system foundation)
+- [ ] **(Vignesh)** Bio: regulatory + RWA framing (corporate variant — "RWA tokenization engineering for EU asset-backed founders + WealthTech platforms · MiFID II + DLT Pilot + Prospectus regime" — match LinkedIn Company Page tagline, NOT Vignesh personal voice)
+- [ ] **(Vignesh)** Location: EU city (matches LinkedIn Company Page)
+- [ ] **(MPs)** Website link: innblockchain.com (verified live, not 404)
+- [ ] **(MPs)** Pinned tweet: corporate brief on InnBlockchain — RWA practice positioning + link to Gate 1 LP. Refresh quarterly.
+
+### X Company account — completeness audit (one-time at setup + quarterly)
+
+> [!IMPORTANT] Different shape than personal X — completeness > cadence
+> Company X is a credibility floor: must look active + professional when a buyer lands there during vendor evaluation. Quarterly check that the floor stays intact.
+
+- [ ] **(MPs)** Profile completeness: handle · bio · location · website · profile photo · header image · pinned tweet all populated + on-brand
+- [ ] **(MPs)** Last-tweet recency check: most recent post within last 14 days (older = signals dormant company)
+- [ ] **(Vignesh)** Bio regulatory framing matches LinkedIn Company Page tagline (no drift across surfaces)
+- [ ] **(MPs)** Cross-association: Vignesh personal X handle visible in Company X bio · Company X link in Vignesh personal bio (low-friction signal that founder + company are connected)
+- [ ] **(MPs)** Followers / following ratio sanity check: not following obviously off-brand accounts · not following 0 accounts (looks dormant)
+- [ ] **(MPs)** Verified status check: if Premium acquired, blue check displayed (vs. mistakenly removed by X)
+
+### X Company account — ongoing operations (post-setup, weekly)
+
+> [!INFO] Low-cadence company channel
+> ~1 post/wk steady state. NOT a content firehose. Mix is **repurposed Vignesh threads (Vignesh-authored, MPs reframe in corporate voice) + occasional company news / milestone / case study**. Designed to maintain credibility floor without competing with Vignesh personal X reach.
+
+#### Posting cadence + mix
+- [ ] **(MPs schedule · Vignesh approves)** 1× post/wk — mix per month: 2× repurposed Vignesh thread (corporate-reframed) + 1× company news / milestone / Case Study tease + 1× repost of high-engagement Vignesh thread with corporate framing comment
+- [ ] **(MPs)** Repost (with quote) Vignesh's highest-engagement personal thread of the prior week — provides Vignesh thread amplification + Company account stays active
+- [ ] **(MPs · Vignesh approves quarterly)** Pinned tweet refresh — replace quarterly with the latest highest-leverage Tier 1 article + current LP CTA
+
+#### Cross-platform anti-cannibalisation rules
+- [ ] **(MPs enforce in scheduling)** Never post Company X same day as Vignesh personal X on the same topic (cannibalises personal feed reach — personal X is primary channel for Phase 1)
+- [ ] **(MPs)** Company X posts always reference Vignesh by handle (when relevant) — corporate voice should never compete with founder voice; should reinforce it
+- [ ] **(MPs)** ≥48 hr spacing between Company X repost of a Vignesh thread + original Vignesh post
+
+#### Analytics tracking (MPs report monthly · Vignesh reviews)
+- [ ] **(MPs)** Follower count growth — target +20–40/mo (lower than personal X; corporate accounts compound slower)
+- [ ] **(MPs)** Per-post impressions vs Vignesh personal baseline — if Company X impressions consistently <10% of personal for 8+ weeks, reduce cadence to 1× post / 2 wks (don't burn capacity on a flat surface)
+- [ ] **(MPs)** Click-through to LP from Company X bio link — track separately from personal X to attribute correctly
+- [ ] **(MPs · monthly review)** Inbound DMs to Company handle — flag any that look like buyer-evaluation signal (Carol-style profile checking out the company)
+
+> [!WARNING] Company X hygiene hard rules
+> - **(MPs · Vignesh approves)** Corporate voice ONLY — never the founder-personal-opinion voice (that lives on Vignesh personal X). If a post feels personal, it goes on Vignesh's handle, not Company.
+> - **(MPs)** Never engage in industry drama / vendor disputes / hot-takes from Company handle (institutional positioning · same hard rule as LinkedIn Company Page)
+> - **(MPs)** Never use MiCA framing for RWA (#1 Carol disqualifier — applies to every surface)
+> - **(MPs)** Never let the account go dormant >14 days — buyer-evaluation visitor lands on stale account = credibility damage. If approaching dormancy, ship the repost-with-quote variant immediately.
 
 ### GitHub + Solodit — methodology credibility surfaces (one-time setup + per-contribution)
 
@@ -987,6 +1045,35 @@ Once content repurposing starts producing carousels + persona variants + long-fo
 - [ ] **(CW enforces in calendar)** **Cross-pillar Tier 1 publishes capped at 1/week** in Editorial Calendar to avoid breaching spacing across two articles
 - [ ] **(MPs monitor + cap)** **Steady-state aggregate target: 4–7 LinkedIn posts/week** from one profile. Above 7 = feed reads as content firehose; cap enforces thoughtful-publisher feel
 - [ ] **(MPs decide defers · CW flags conflicts)** **Tier 2 Track B aggregate rule:** if 2 Tier 2 Track B articles publish same week AND a cross-pillar Tier 1 launch week is active = >7 posts/wk → defer one Tier 2 article's quote graphic to the following week
+
+### 🚦 Cross-channel cannibalisation matrix (rev 20 — canonical source)
+
+> [!IMPORTANT] Single canonical reference for all cross-channel spacing rules
+> Cannibalisation rules previously lived scattered across 5 subsections (WS3 LinkedIn Company Page · WS3 X personal · WS3 X Company · WS8 LinkedIn output cap · WS15 LinkedIn output cap enforcement). MPs must consult multiple sections to enforce in real-time scheduling. This matrix is now the **canonical source**. Scattered rules retained where they live but cross-reference back here as authoritative.
+
+| # | Vector | Rule | Spacing | Reason | Original section |
+|---|---|---|---|---|---|
+| 1 | **Vignesh LinkedIn personal ↔ LinkedIn Company Page** (same topic) | Never same day | ≥24 hr stagger | Cannibalises personal feed reach | WS3 § LinkedIn Company Page ongoing ops |
+| 2 | **Vignesh LinkedIn personal ↔ Vignesh X personal** (same article) | Never same day | ≥24 hr stagger | Cross-platform cannibalisation; same audience on both | WS3 § X personal hygiene |
+| 3 | **Vignesh X personal ↔ X Company** (same topic) | Never same day; Company X always references @Vignesh-handle | ≥24 hr stagger · ≥48 hr if Company X reposts a Vignesh thread | Corporate voice must reinforce founder voice, not compete with it | WS3 § X Company hygiene (rev 20) |
+| 4 | **LinkedIn Company Page ↔ X Company** (same announcement) | Never same day across both Company channels | ≥24 hr stagger | Buyer evaluator scrolling both channels same day = duplicate reach with no incremental impression value | **NEW rev 20 — previously unhandled** |
+| 5 | **Two LinkedIn posts about same article from same profile** (Vignesh personal OR Company Page) | Per-profile ≥48 hr spacing | ≥48 hr | Algorithm penalty + audience fatigue | WS8 § LinkedIn output cap |
+| 6 | **Cross-pillar Tier 1 article LinkedIn cadence** (C1 · T4-N · P5-DORA-X · P5-eIDAS-X) | Distribute carousel + long-form + persona variants across 3 weeks, NOT launch week | 3-week distribution | Cross-pillar Tier 1 = highest-leverage; concentrated launch = wasted derivative chain | WS8 + WS15 + [[InnBlockchain - Content Repurposing Plan]] § Track B |
+| 7 | **Two cross-pillar Tier 1 articles in same week** | Editorial Calendar enforces 1/wk cross-pillar cap | n/a (slot rule) | Prevents back-to-back cross-pillar spacing breaches | WS8 § LinkedIn output cap |
+| 8 | **Aggregate LinkedIn posts/wk from one profile** | Steady-state ≤7/wk; firehose threshold above that | weekly aggregate cap | Content firehose reads as low-signal · damages thoughtful-publisher framing | WS8 § LinkedIn output cap |
+| 9 | **Tier 2 Track B aggregate conflict** | If 2 Tier 2 Track B articles publish same week AND cross-pillar Tier 1 launch week active = >7/wk → defer one Tier 2 article's quote graphic to following week | conditional defer | Aggregate cap breach mitigation | WS8 § LinkedIn output cap |
+| 10 | **`[Both]` parallel chains** (Track A X thread + Track B LinkedIn carousel from same source) | Run concurrently within 3-week cadence — NOT sequentially. Platforms don't overlap so no cross-cannibalisation; output cap applies to each side independently | concurrent | Parallel ≠ doubled · platform-split not platform-doubled | [[InnBlockchain - Content Repurposing Plan]] Operating Principle 5 |
+
+**MPs scheduling enforcement workflow** (apply this every Mon AM batch-approval):
+
+- [ ] **(MPs)** For each scheduled post: identify which channel (LinkedIn personal · LinkedIn Company · X personal · X Company) + which article / topic
+- [ ] **(MPs)** Run matrix lookup against the prior 48 hr scheduled queue: any same-channel · same-account · same-topic violations?
+- [ ] **(MPs)** Aggregate weekly count check: are we within ≤7/wk LinkedIn from each profile? Are we within ≤4/wk X from each handle?
+- [ ] **(MPs)** Cross-pillar Tier 1 week check: is this week already a cross-pillar Tier 1 launch week? If yes, apply Tier 2 Track B aggregate rule (vector 9).
+- [ ] **(MPs · Vignesh approves batch Mon AM)** Submit batch with matrix-check log noted; Vignesh approves at WS13 spot-check pace.
+
+> [!WARNING] When in doubt, stagger — not skip
+> If two posts conflict on the matrix, defer one by 24–48 hr. Don't drop a post entirely unless the article is Tier 0 or the conflict is unresolvable within the week.
 
 ---
 

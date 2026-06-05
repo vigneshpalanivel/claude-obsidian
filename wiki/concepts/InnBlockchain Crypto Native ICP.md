@@ -2,8 +2,9 @@
 type: concept
 title: "InnBlockchain Crypto Native ICP"
 created: 2026-04-15
-updated: 2026-04-15
+updated: 2026-06-03
 reingested: 2026-04-15
+source_rev_synced: ICP rev 1 (Telegram corrections in raw — wiki concept altitude unaffected; no Telegram references at this level)
 tags:
   - concept
   - icp
