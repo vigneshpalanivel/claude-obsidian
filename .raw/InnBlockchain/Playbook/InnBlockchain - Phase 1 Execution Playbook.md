@@ -4,7 +4,7 @@ company:
 department:
   - marketing
 priority: highest
-rev: 20
+rev: 21
 last_revised: 2026-06-03
 revision_notes: |
   rev 1 (2026-05-26): operational task playbook for Phase 1 RWA execution (W1 May 18 → W22 Oct 15, 2026). Covers 14 workstreams: LP delivery · SEO/AEO/GEO · LinkedIn assets · Compliance briefs + vendor risk pack · Content production · LinkedIn organic · LinkedIn outbound · eIDAS test · Events + partner intros · Pipeline + CRM · Compliance review · Case study capture · Validation. Built from canonical source docs.
@@ -17,6 +17,8 @@ revision_notes: |
   rev 6 (2026-05-27): full review cleanup pass against rev 5. Fixed 14 issues including: dates updated to 2026-05-27 · Pain Point 5 deadline escalation · WS15 Vignesh capacity cut (24 of 44 articles ship with zero derivatives) · Featured Assets renumbered · Risk Register reordered by category · Money20/20 2027 removed from Phase 1 · WS14 MVP scope clarified as mockup not working dApp.
   rev 7 (2026-05-27): **dropped MiCA destination LP from Phase 1.** Phase 1 is RWA-only; MiCA-scope buyers are Phase 2 ICP. Replaced with external-link routing for boundary articles. Diverges from Editorial Calendar Gate Sequence row 3 — calendar should be updated to match.
   rev 8 (2026-05-28): integrated final team configuration. Phase 1 team confirmed: 2 Marketing Persons (Ops/Distribution/SEO + Design/AI Visual) + Sales Person + Senior Content Writer + Part-time Designer + Vignesh + Frontend Dev. WS15 capacity cuts partially relaxed (Tier 1 full + Tier 2 lite + Tier 3 amplify-only).
+  rev 21 (2026-06-03): **Vignesh Pre-Launch LP Sign-Off Checklist added to WS1.** Same gap pattern as rev 16 (LinkedIn Company Page expansion) + rev 19 (X Twitter setup) + rev 20 (X Company): role named, partial tasks existed, end-to-end execution hole. Vignesh previously had only 3 LP review tasks (hero H1+H2 × 2 + About page = ~10% of LP surface). Articles get full WS13 Phase 3 compliance review with 8 explicit gates — LPs deserve same treatment given they're CRITICAL PATH + #1 Carol disqualifier surface alongside DM templates. New checklist covers the other 90%: full LP body regulatory framing · FAQPage JSON-LD (AEO citation surface — Perplexity / ChatGPT quote verbatim) · CTA copy + destination targeting (broken-CTA-to-Phase-2 = Carol trust drop) · email-capture trigger + delivery workflow text · asset-download workflow text · verified-live check (Dev reports · Vignesh confirms) · cross-doc consistency check · sign-off logged. 48-hr SLA matches article review. Escalation rules: Dev → Vignesh same day if slip risk · Vignesh blocks launch on regulatory leak (never "fix it after launch" — AEO citation propagates faster than fix) · Vignesh travel collides = block out or delay. Post-launch verification (48 hr · doesn't block launch but catches drift): AEO citation probe · GA4 event firing confirmation · email-capture external-email test. Fires per LP: Gate 1 + Gate 2 (before EOD W3) · eIDAS gated PDF page (before W13) · any future LP. Vignesh cover sheet also bumped to rev 2 with WS1 row added + "LP review" surfaced explicitly in hard rules.
+
   rev 20 (2026-06-03): three scope-clarification changes — **(a) Telegram dev-group dropped from Phase 1, (b) X Company account added (parallel to LinkedIn Company Page), (c) Cross-channel cannibalisation matrix consolidated in WS8.** Details below.
 
   **(a) Telegram dev-group dropped from Phase 1 — doesn't map to ICP.** RWA Felix (Phase 1 CN buyer) is asset-first non-technical, doesn't live in Telegram. Sam/Tom/Carol committee (Phase 1 FT buyer) evaluates via vendor risk pack + audit report, not Telegram. Audience that DOES live in Telegram (Solidity devs · DeFi builders · smart contract engineers) is not a Phase 1 buyer or material influencer. Carryover from generic Web3 marketing template caught in rev 20 audit. Sweep: (1) WS7 Weekly batch workflow — Fri "Telegram syndication" removed. (2) WS8 Per-platform formatting spec — Telegram column removed from rules table; "1× Telegram dev-group share" line removed from Cross-platform asset bundle; intro callout updated to "LinkedIn + X (Track A) or LinkedIn-only (Track B)" with explicit Telegram-dropped note. (3) WS15 Tier 2 derivative chain — Telegram dev-group share removed from Track A scaled-back chain. (4) [[InnBlockchain - Content Repurposing Design Toolkit]] swept in parallel (rev 7): Track A asset map row + production workflow + Editorial Calendar pointer reference. (5) [[InnBlockchain - ICP - Crypto Native]] swept (rev 1): 7 places where Telegram was incorrectly attributed as RWA Felix outreach channel — bumped LinkedIn priority for RWA, added explicit "NOT Telegram" notes where the channel mix matters. DeFi/protocol Telegram refs (Segments 2–6, Phase 2/3) + AI x crypto refs (Segment 10) + Sasha professional communities left intact — those are correctly scoped. Telegram is a Phase 2/3 channel for DeFi-protocol Felix, not a Phase 1 channel.
@@ -313,6 +315,37 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Dev)** **Home page (`/`) routing:** add RWA tile pointing to Gate 1 + WealthTech tile pointing to Gate 2
 - [ ] **(Vignesh)** **About page:** ensure no claims contradict [[LinkedIn Profile Vignesh Content]] Pre-Publish Hard Gate (7+ years, 15+ protocols audited zero critical, EU FinTech focus)
 - [ ] **(Dev)** **Sitemap.xml updated** so all new LPs are indexable
+
+### Vignesh Pre-Launch LP Sign-Off Checklist (rev 21 — per LP, fires before any LP goes live)
+
+> [!IMPORTANT] Single regulatory authority on the LP surface
+> LP Gates 1 + 2 are the **CRITICAL PATH** for Phase 1 + the **#1 Carol disqualifier surface** alongside DM templates. Per the WS13 self-review pattern, every Phase 1 article gets a Vignesh regulatory sign-off — LPs deserve the same treatment (arguably higher-stakes since they're the destination for every article CTA). Build-phase hero + About reviews (covered above) catch ~10% of the LP surface — this checklist covers the other 90% before launch. 48-hr SLA same as article pre-publish review.
+
+#### When this fires (per LP — before launch)
+- [ ] **(Vignesh)** Gate 1 (`/solutions/rwa-tokenization`) — before EOD W3 launch
+- [ ] **(Vignesh)** Gate 2 (`/solutions/tokenization`) — before EOD W3 launch
+- [ ] **(Vignesh)** eIDAS gated PDF page (`/eidas-brief` per WS10) — before W13 eIDAS Outbound Test
+- [ ] **(Vignesh)** Any future LP (Phase 2 destinations) — before publish
+
+#### Pre-launch regulatory gates (Vignesh executes per LP · 48-hr SLA)
+- [ ] **(Vignesh)** **Full LP body regulatory framing** — read every paragraph, not just hero. No MiCA-on-RWA leaks · regime correctly named per [[EU-Compliance-Landscape]] canonical map · no compliance-officer-confusing language (e.g., RWA token framed as MiCA crypto-asset)
+- [ ] **(Vignesh)** **FAQPage JSON-LD copy review** — AEO citation surface; Perplexity / ChatGPT / Gemini will quote these answers verbatim to vendor-research queries. Same regime-leak risk as article body. Verify all Q&A pairs match the canonical regime map. Date-stamp regulatory references (AEO Principle 8).
+- [ ] **(Vignesh + Dev verification)** **CTA copy + destination targeting** — primary CTA + secondary CTA both point to the correct destination per [[InnBlockchain - Landing Pages Plan]] (Gate 1 = Risk Checklist gated download · Gate 2 = vendor risk pack request + sample audit · eIDAS = gated PDF download). **No CTA points to a Phase 2 LP that doesn't exist** (broken-CTA-to-Phase-2 = Carol-killing trust drop).
+- [ ] **(Vignesh)** **Email-capture trigger + delivery workflow text** — auto-reply email body + SLA promise ("We'll send your [asset] within 24 hr") regulatory framing reviewed + deliverability tested end-to-end (form submit → CRM lead record created → trigger fires → email lands in inbox, not spam)
+- [ ] **(Vignesh)** **Asset-download workflow text** — Sample Audit Report PDF + Risk Checklist PDF + Vendor Risk Pack delivery message regulatory framing reviewed (asset itself signed off in WS3 / WS4 — this is the *delivery message* layer that's often overlooked)
+- [ ] **(Dev reports · Vignesh confirms before sign-off)** **Verified-live check** — LP not 404 · all 301 redirects working (per WS1 Cross-LP work) · sitemap.xml entry present · FAQPage JSON-LD validates per Schema.org validator · GA4 events firing for page-view + CTA-click + form-submit (test from incognito session)
+- [ ] **(Vignesh)** **Cross-doc consistency check** — no claims contradict [[LinkedIn Profile Vignesh Content]] Pre-Publish Hard Gate (7+ years · 15+ protocols audited zero critical · EU FinTech focus). No claims contradict [[InnBlockchain - Content Strategy]] § sales motion tagging for the destination LP (Gate 1 → `[Audit]` / `[Dev]` close; Gate 2 → `[Audit + Dev]` / `[White-Label]` close).
+- [ ] **(Vignesh)** **Sign-off logged** before launch — note in CRM or LP version-control log: `Vignesh pre-launch sign-off [date], LP [Gate name], regulatory framing verified against [EU-Compliance-Landscape] rev [N], FAQPage JSON-LD reviewed, CTA destinations verified, email-capture workflow tested end-to-end.` Logging is non-optional — if it's not logged, it didn't happen and the launch is blocked.
+
+#### Escalation rules
+- [ ] **(Dev → Vignesh same day)** If Dev can't ship on the date Vignesh sign-off is needed (sign-off cycle = 48 hr; Dev needs to deliver 48 hr before EOD W3 launch) → flag P0 same day for slip-vs-scope-compress decision
+- [ ] **(Vignesh blocks launch)** If Vignesh finds regulatory leak during pre-launch review → block launch · Dev fixes · re-sign-off · only then publish. **Never publish "fix it after launch"** — LP is the AEO citation surface; once Perplexity / ChatGPT cite the leaked version it propagates faster than the fix.
+- [ ] **(Vignesh)** If Vignesh travel collides with launch window → block out launch day in calendar 1 wk ahead OR delay launch (no compliance reviewer in Phase 1 per rev 8 self-review decision — Vignesh is the only sign-off authority)
+
+#### Post-launch verification (Vignesh + MPs · within 48 hr of launch · doesn't block launch but catches drift)
+- [ ] **(MPs run probe · Vignesh reviews results)** AEO citation probe per [[InnBlockchain - Landing Pages AEO GEO Prompts]] § Monthly AI Search Citation Probe — does Perplexity / ChatGPT now cite the LP for vendor-evaluation queries within 48 hr? (Indexing lag is normal; 48-hr check confirms LP is reachable)
+- [ ] **(MPs)** GA4 event firing confirmation across first 50 page-views · first 10 form-submits (catches schema drift between Dev event spec + actual fire)
+- [ ] **(MPs · external email test)** Email-capture workflow operational confirmation — submit test form from a Gmail / Outlook account NOT in InnBlockchain domain · confirm email lands within SLA · not in spam folder
 
 ---
 

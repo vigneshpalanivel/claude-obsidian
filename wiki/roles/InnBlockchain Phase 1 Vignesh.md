@@ -5,11 +5,12 @@ department:
   - marketing
 role: Vignesh
 priority: highest
-rev: 1
+rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 20
+playbook_rev_synced: 21
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
+  rev 2 (2026-06-03): sync to Playbook rev 21 — adds **WS1 Pre-Launch LP Sign-Off** to Workstreams table + Hard rules + Timeline blocks (8-gate checklist fires per LP before launch · 48-hr SLA · Vignesh blocks launch on regulatory leak · post-launch 48-hr verification).
   rev 1 (2026-06-03): initial cover sheet for Vignesh (Founder · final-review authority across all 15 workstreams · primary on WS3/WS4/WS6/WS9.5a/WS11/WS13). Sister doc to Dev / MPs / SP / CW / Designer cover sheets.
 tags:
   - role
@@ -33,7 +34,7 @@ tags:
 
 | WS | Your role | Anchor |
 |---|---|---|
-| WS1 | Oversight + About copy regulatory framing review | [[InnBlockchain - Phase 1 Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] |
+| WS1 | Oversight + Hero H1/H2 regulatory framing review (Gate 1 + Gate 2) + About copy regulatory framing + **Pre-Launch LP Sign-Off Checklist (rev 21 — 8 gates per LP, 48-hr SLA, fires before any LP goes live)** | [[InnBlockchain - Phase 1 Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] · [[InnBlockchain - Phase 1 Execution Playbook#Vignesh Pre-Launch LP Sign-Off Checklist (rev 21 — per LP, fires before any LP goes live)]] |
 | WS2 | Final-review on regime-leak risk for AEO copy | [[InnBlockchain - Phase 1 Execution Playbook#WS2 — SEO / AEO / GEO (per LP)]] |
 | **WS3** | **PRIMARY** — profile content authoring · recommendations outreach (5+ before structured DMs · Sasha-grade target 7–8) · LinkedIn + X handle setup + bio + pinned tweet | [[InnBlockchain - Phase 1 Execution Playbook#WS3 — LinkedIn Profile + Featured Assets + Recommendations]] |
 | **WS4** | **PRIMARY** — regulatory content drafter + compliance self-review (per rev 8 decision · CW structures + Style Guide voice) | [[InnBlockchain - Phase 1 Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
@@ -80,6 +81,7 @@ tags:
 ## 🚫 Hard rules (memorise — these never relax)
 
 - **Never delegate final compliance review on Track B / MiFID II / DLT Pilot articles** (rev 8 self-review decision — you are the regulatory authority).
+- **Never let an LP launch without your Pre-Launch Sign-Off Checklist** (rev 21 · 8 gates · 48-hr SLA). LPs are CRITICAL PATH + the #1 Carol disqualifier surface alongside DM templates. AEO citation propagates faster than fixes — once Perplexity / ChatGPT cite a leaked LP version, you can't recall it. Block launch on any regulatory leak; never "fix it after launch."
 - **Never let MiCA framing into a published asset** — applies to articles · LinkedIn posts · X posts · visual derivatives · DMs · LP copy. #1 Carol disqualifier.
 - **Carol asks for founder → always join the call** (no SP shielding).
 - **Never approve Sample Audit Report or Vendor Risk Pack without your compliance sign-off** — highest-leverage Phase 1 production items.

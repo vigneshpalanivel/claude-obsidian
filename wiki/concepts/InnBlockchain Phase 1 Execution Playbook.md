@@ -32,7 +32,7 @@ related:
 
 Single canonical marketing document for Phase 1 RWA execution (22 weeks, W1 → W22 — date-independent per rev 9 durability pass). Combines strategic frame (scope, sequencing, KPI rollup, risk register, out-of-scope fences) with operational do-list across **15 workstreams**. **Speed Mode is active** — compressed timeline to generate LinkedIn leads ASAP, with honest reset for the no-warm-FinTech-network reality.
 
-Source: `.raw/InnBlockchain/Playbook/InnBlockchain - Phase 1 Execution Playbook.md` (rev 20).
+Source: `.raw/InnBlockchain/Playbook/InnBlockchain - Phase 1 Execution Playbook.md` (rev 21).
 
 ---
 
@@ -131,7 +131,7 @@ Vignesh's existing 7-yr LinkedIn signal = Trioangle CEO / general dev. Algorithm
 
 | # | Workstream | Owner | Trigger |
 |---|---|---|---|
-| 1 | **LP Delivery** (CRITICAL PATH) | Dev (build) + MPs (on-page SEO + GA4 + email-capture coordination) + Vignesh oversight (rev 17) | Start immediately |
+| 1 | **LP Delivery** (CRITICAL PATH) | Dev (build) + MPs (on-page SEO + GA4 + email-capture coordination) + Vignesh oversight (rev 17) + **Vignesh Pre-Launch Sign-Off Checklist (rev 21 — 8 gates per LP, 48-hr SLA)** | Start immediately |
 | 2 | **SEO / AEO / GEO** | MPs (LP on-page) + CW (per-article AEO) | Per LP shell |
 | 3 | **Social Profile + Featured + Recommendations** | Vignesh + MPs (Featured ops + LinkedIn Company Page ongoing — rev 16 · **X personal ongoing — rev 19 · X Company ongoing — rev 20**) + Designer (PDF + W2–W3 brand system) | Pre-publish gate |
 | 4 | **Compliance Briefs + Vendor Risk Pack** | Vignesh (regulatory content + self-review) + CW (brief structuring + Style Guide voice — rev 17) + Designer (PDF layout) | Pre-publish gate |
@@ -206,6 +206,14 @@ Telegram dev-group share removed from WS7 weekly batch workflow, WS8 per-platfor
 ### X Company account added (rev 20 — parallel to LinkedIn Company Page)
 
 Three new WS3 subsections after the existing X (Twitter) personal block: Initial setup (one-time W1 — handle claim · Premium decision · header · bio · pinned tweet · cross-association with @Vignesh-handle) · Completeness audit (one-time at setup + quarterly — profile completeness · last-tweet recency · cross-channel framing alignment) · Ongoing operations (low-cadence 1× post/wk steady state · repost-Vignesh-thread-with-corporate-comment pattern · ≥48 hr spacing on Vignesh-thread reposts · Company-X-references-Vignesh-handle rule · analytics tracking with reduce-cadence trigger if <10% of personal X reach for 8+ wks). **Designed as credibility floor for vendor evaluation** (Tom/Carol search "InnBlockchain" on X during eval), NOT engagement channel. Voice is corporate-only — founder-personal voice stays on Vignesh personal X. Hygiene rules: never industry drama from Company handle · never MiCA framing · never let account go dormant >14 days.
+
+### Vignesh Pre-Launch LP Sign-Off Checklist (rev 21 — WS1)
+
+New WS1 subsection. Same gap pattern as rev 16 / 19 / 20 closures: role named, partial tasks (hero H1+H2 + About page = ~10% of LP surface), end-to-end execution hole. Articles get full WS13 Phase 3 compliance review with 8 explicit gates — LPs deserve same treatment given they're CRITICAL PATH + #1 Carol disqualifier surface alongside DM templates.
+
+New checklist covers the other 90% of the LP surface: full LP body regulatory framing · FAQPage JSON-LD (AEO citation surface — Perplexity / ChatGPT quote verbatim) · CTA copy + destination targeting (broken-CTA-to-Phase-2 = Carol trust drop) · email-capture trigger + delivery workflow text · asset-download workflow text · verified-live check (Dev reports · Vignesh confirms) · cross-doc consistency check · sign-off logged. **48-hr SLA matches article review.** Fires per LP: Gate 1 + Gate 2 (before EOD W3) · eIDAS gated PDF page (before W13) · any future LP.
+
+**Hard rule:** Vignesh blocks launch on regulatory leak — never "fix it after launch" (AEO citation propagates faster than fixes). Post-launch 48-hr verification (AEO citation probe · GA4 event firing · email-capture external-email test) doesn't block launch but catches drift.
 
 ### Cross-channel cannibalisation matrix (rev 20 — canonical source)
 
