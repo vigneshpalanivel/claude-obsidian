@@ -5,11 +5,12 @@ department:
   - marketing
 role: CW
 priority: high
-rev: 1
+rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 20
+playbook_rev_synced: 22
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
+  rev 2 (2026-06-03): sync to Playbook rev 22 — W1 Tue publish slot timestamp converted CET → IST (10:00 CET → 13:30 IST · Phase 1 entirely within CEST window · +3:30 conversion).
   rev 1 (2026-06-03): initial cover sheet for CW role (Content Writer — primary article drafter + compliance brief structuring + repurposing copy structuring). Sister doc to Dev / MPs / SP / Designer / Vignesh cover sheets.
 tags:
   - role
@@ -45,7 +46,7 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 |---|---|
 | **W1 Mon AM** | First Per-Article Production Checklist run — W1 Tue article outline + Pre-write phase |
 | **W1 Mon PM** | W1 Tue article first draft |
-| **W1 Tue 10:00 CET** | W1 Tue article publishes (MPs publish; you tagged + submitted) |
+| **W1 Tue 13:30 IST** | W1 Tue article publishes (MPs publish; you tagged + submitted) |
 | **W1 Wed** | W1 Thu article first draft |
 | **W1 Thu** | Vignesh compliance review (if Track B or Cross-Pillar) · CORE-EEAT scoring (Phase 3 step 17) · publish |
 | **W1 Fri** | Repurpose + measure (X thread outlines · LinkedIn quote graphic copy briefs · metrics log) · ~2 hr |

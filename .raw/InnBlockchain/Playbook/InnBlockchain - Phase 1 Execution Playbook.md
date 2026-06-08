@@ -4,7 +4,7 @@ company:
 department:
   - marketing
 priority: highest
-rev: 21
+rev: 22
 last_revised: 2026-06-03
 revision_notes: |
   rev 1 (2026-05-26): operational task playbook for Phase 1 RWA execution (W1 May 18 → W22 Oct 15, 2026). Covers 14 workstreams: LP delivery · SEO/AEO/GEO · LinkedIn assets · Compliance briefs + vendor risk pack · Content production · LinkedIn organic · LinkedIn outbound · eIDAS test · Events + partner intros · Pipeline + CRM · Compliance review · Case study capture · Validation. Built from canonical source docs.
@@ -17,6 +17,8 @@ revision_notes: |
   rev 6 (2026-05-27): full review cleanup pass against rev 5. Fixed 14 issues including: dates updated to 2026-05-27 · Pain Point 5 deadline escalation · WS15 Vignesh capacity cut (24 of 44 articles ship with zero derivatives) · Featured Assets renumbered · Risk Register reordered by category · Money20/20 2027 removed from Phase 1 · WS14 MVP scope clarified as mockup not working dApp.
   rev 7 (2026-05-27): **dropped MiCA destination LP from Phase 1.** Phase 1 is RWA-only; MiCA-scope buyers are Phase 2 ICP. Replaced with external-link routing for boundary articles. Diverges from Editorial Calendar Gate Sequence row 3 — calendar should be updated to match.
   rev 8 (2026-05-28): integrated final team configuration. Phase 1 team confirmed: 2 Marketing Persons (Ops/Distribution/SEO + Design/AI Visual) + Sales Person + Senior Content Writer + Part-time Designer + Vignesh + Frontend Dev. WS15 capacity cuts partially relaxed (Tier 1 full + Tier 2 lite + Tier 3 amplify-only).
+  rev 22 (2026-06-03): **all CET timestamps converted to IST** — operational team executes from India. Conversion **+3:30 from European local** (Phase 1 May–Oct 2026 = entirely within CEST window · UTC+2 → IST UTC+5:30). Affected: WS7 weekly batch (Tue 10:00 CET → 13:30 IST · Thu 10:00 CET → 13:30 IST) · Per-Article Production Checklist Phase 4 + step 19 + 40-article owner-pattern callout · WS8 § Posting times (Tue 08:00–09:30 → 11:30–13:00 IST · Wed 09:00–10:30 → 12:30–14:00 IST · Thu 08:00–10:00 → 11:30–13:30 IST · Mon 07:30–09:00 → 11:00–12:30 IST · Avoid Fri after 12:00 → after 15:30 IST). Explanatory IST conversion callout added to WS8 § Posting times — preserves EU buyer-behavior context + flags Oct 26 DST switch (Phase 2 must re-anchor). Parallel sweeps in same rev: CW Cover Sheet · [[InnBlockchain - Editorial Calendar]] · [[InnBlockchain - Content Repurposing Plan]] (X thread timing). Historical CET refs in rev notes left intact per convention.
+
   rev 21 (2026-06-03): **Vignesh Pre-Launch LP Sign-Off Checklist added to WS1.** Same gap pattern as rev 16 (LinkedIn Company Page expansion) + rev 19 (X Twitter setup) + rev 20 (X Company): role named, partial tasks existed, end-to-end execution hole. Vignesh previously had only 3 LP review tasks (hero H1+H2 × 2 + About page = ~10% of LP surface). Articles get full WS13 Phase 3 compliance review with 8 explicit gates — LPs deserve same treatment given they're CRITICAL PATH + #1 Carol disqualifier surface alongside DM templates. New checklist covers the other 90%: full LP body regulatory framing · FAQPage JSON-LD (AEO citation surface — Perplexity / ChatGPT quote verbatim) · CTA copy + destination targeting (broken-CTA-to-Phase-2 = Carol trust drop) · email-capture trigger + delivery workflow text · asset-download workflow text · verified-live check (Dev reports · Vignesh confirms) · cross-doc consistency check · sign-off logged. 48-hr SLA matches article review. Escalation rules: Dev → Vignesh same day if slip risk · Vignesh blocks launch on regulatory leak (never "fix it after launch" — AEO citation propagates faster than fix) · Vignesh travel collides = block out or delay. Post-launch verification (48 hr · doesn't block launch but catches drift): AEO citation probe · GA4 event firing confirmation · email-capture external-email test. Fires per LP: Gate 1 + Gate 2 (before EOD W3) · eIDAS gated PDF page (before W13) · any future LP. Vignesh cover sheet also bumped to rev 2 with WS1 row added + "LP review" surfaced explicitly in hard rules.
 
   rev 20 (2026-06-03): three scope-clarification changes — **(a) Telegram dev-group dropped from Phase 1, (b) X Company account added (parallel to LinkedIn Company Page), (c) Cross-channel cannibalisation matrix consolidated in WS8.** Details below.
@@ -746,10 +748,10 @@ To prevent drift — what this playbook does NOT cover:
 | Mon AM | Research + outline both articles for the week · pre-launch tease post | CW | 2 hr |
 | Mon PM | Tuesday article first draft | CW | 3 hr |
 | Tue AM | SME review (senior engineer or auditor) | SME | 1 hr |
-| **Tue 10:00 CET** | **PUBLISH article #1** + LinkedIn/X amplification | MPs publish · Vignesh approves | 30 min |
+| **Tue 13:30 IST** | **PUBLISH article #1** + LinkedIn/X amplification | MPs publish · Vignesh approves | 30 min |
 | Wed | Thursday article first draft | CW | 3 hr |
 | Thu AM | **Compliance review** — Phase 1 Thursday slot is Track B by default, so compliance reviews **every Thursday article + W4/W7/W13 Cross-Pillar pieces**. 48-hr SLA. | Vignesh (self-review) | 1 hr |
-| **Thu 10:00 CET** | **PUBLISH article #2** + LinkedIn ABM amplification | MPs publish · Vignesh approves | 30 min |
+| **Thu 13:30 IST** | **PUBLISH article #2** + LinkedIn ABM amplification | MPs publish · Vignesh approves | 30 min |
 | Fri | Repurpose + measure: X threads, LinkedIn quote graphics, log metrics | CW (structure) + MPs (produce + post) | 2 hr |
 
 **Total: ~13 hrs/wk per writer.** Workable with CW + technical SME reviewer + Vignesh compliance self-review on-call.
@@ -792,11 +794,11 @@ To prevent drift — what this playbook does NOT cover:
 | 17 | **(CW runs AI skill · Vignesh reviews score)** **CORE-EEAT score check** — run AI scoring skill on the corrected draft (post-SME + post-compliance, all source-doc corrections applied). Threshold + iteration rule lives in the skill; if score below threshold, loop back to relevant Phase 2 step and re-submit before Phase 3 sign-off is final. **Run AFTER step 16, never before — scoring an uncorrected draft wastes the check.** | CORE-EEAT AI scoring skill *(to be configured · sister tool to [[InnBlockchain - Content AEO GEO Prompts]])* |
 | 18 | **(MPs schedule · Vignesh approves Mon AM batch)** Final scheduled batch approved Mon AM before MPs publish Mon–Fri | WS13 § Delegated-work spot-check protocol |
 
-#### Phase 4 — Post-publish (Tue or Thu 10:00 CET + Friday + monthly · ongoing)
+#### Phase 4 — Post-publish (Tue or Thu 13:30 IST + Friday + monthly · ongoing)
 
 | # | Step | Doc to consult |
 |---|---|---|
-| 19 | **(MPs publish · Vignesh approves at 10:00 CET)** Article publish + LinkedIn/X amplification (no link in post body — drop in comment 1) | WS8 § Posting cadence + § Engagement tactics |
+| 19 | **(MPs publish · Vignesh approves at 13:30 IST)** Article publish + LinkedIn/X amplification (no link in post body — drop in comment 1) | WS8 § Posting cadence + § Engagement tactics |
 | 20 | **(CW structures derivative copy · MPs produce visuals · Designer for high-stakes)** Trigger derivative chain per article tier — run WS15 6-step gate sequence (Article Tier → Format Priority → Track → Motion → Persona → LP) | WS15 § Per-published-article repurposing checklist |
 | 21 | **(MPs enforce in scheduling)** Verify LinkedIn output cap — ≥48 hr spacing between any two posts about same article · ≤7 posts/wk steady state · cross-pillar Tier 1 distributes across 3 weeks (not launch week) | WS8 § LinkedIn output cap + WS15 § LinkedIn output cap enforcement |
 | 22 | **(CW logs Friday · MPs report GA4)** Friday: log per-article metrics — X thread CTR · LinkedIn carousel CTR · time-to-LP-click (<60s median target) · LP form-fill rate (≥2% cold / ≥5% warm) · booked discovery calls attributed per article · **CORE-EEAT post-publish delta** (if score correlates with ranking / citation outcomes, feed back into next-article drafting) | WS7 § Weekly batch workflow Fri + WS12 § Per-article tracking |
@@ -879,7 +881,7 @@ To prevent drift — what this playbook does NOT cover:
 > Full schedule + scoring + dependency detail: [[InnBlockchain - Editorial Calendar]] § Phase 1 Close Schedule. Per-article AEO prompts: [[InnBlockchain - Content AEO GEO Prompts]] § Week-by-Week.
 
 > [!INFO] Owner pattern for every Phase 1 article checkbox below
-> **CW** drafts (Mon/Wed) · **SME** reviews (Tue AM) · **Vignesh** compliance self-review (Thu AM Track B + Cross-Pillar) · **MPs** publish + LinkedIn/X amplify (Tue/Thu 10:00 CET). Individual rows below not re-tagged — owner pattern is identical across all 40 articles.
+> **CW** drafts (Mon/Wed) · **SME** reviews (Tue AM) · **Vignesh** compliance self-review (Thu AM Track B + Cross-Pillar) · **MPs** publish + LinkedIn/X amplify (Tue/Thu 13:30 IST). Individual rows below not re-tagged — owner pattern is identical across all 40 articles.
 
 **Phase 1 TOFU (W1–W3) — gates LP-dependent**
 - [ ] W1 Tue — WL-0 *Own vs. License: 5-Year TCO* (Phase 0 white-label)
@@ -976,7 +978,10 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(MPs)** Alternate days with Vignesh personal — never both same day
 
 ### Posting times (EU primary — per § 3.2)
-- Tue 08:00–09:30 CET · Wed 09:00–10:30 CET · Thu 08:00–10:00 CET · Mon 07:30–09:00 CET · Avoid Fri after 12:00 CET
+- Tue 11:30–13:00 IST · Wed 12:30–14:00 IST · Thu 11:30–13:30 IST · Mon 11:00–12:30 IST · Avoid Fri after 15:30 IST
+
+> [!INFO] Time-zone convention (rev 22)
+> All times converted to **IST** (UTC+5:30) — operational team executes from India. EU posting peaks are anchored to EU buyer behavior on LinkedIn — IST times above correspond to **EU local Tue/Wed/Thu 08:00–10:30 + Mon 07:30–09:00 + Fri after 12:00** (Phase 1 May–Oct 2026 falls entirely within CEST window = UTC+2 · IST = European local + 3:30). **Post-Oct 26, 2026 (CEST → CET DST switch)** these IST values shift +1 hr — Phase 1 closes Oct 15 so this doesn't affect Phase 1, but Phase 2 schedule must re-anchor times after the DST switch.
 
 ### Per-platform formatting spec (MPs enforce in scheduling)
 

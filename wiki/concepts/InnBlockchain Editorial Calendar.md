@@ -3,7 +3,7 @@ type: concept
 title: "InnBlockchain Editorial Calendar"
 status: current
 created: 2026-05-21
-updated: 2026-05-26
+updated: 2026-06-03
 tags:
   - concept
   - editorial-calendar
@@ -28,7 +28,7 @@ related:
 
 Source of truth for **what publishes when** in InnBlockchain content. The strategy doc holds the article inventory; this calendar holds the date schedule.
 
-> **Canonical source:** `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md` (currently at rev 8, 2026-05-21).
+> **Canonical source:** `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md` (rev 11, 2026-06-03 — all CET timestamps converted to IST synced to Playbook rev 22).
 > **Strategy doc:** [[InnBlockchain Content Strategy]] (currently at rev 16; tracks article inventory + scoring + routing rules).
 > **Layer separation:** strategy = inventory; calendar = schedule. Cross-references between the two docs go by wikilink, not by version pin.
 

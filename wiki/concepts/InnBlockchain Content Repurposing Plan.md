@@ -26,7 +26,7 @@ related:
 
 The InnBlockchain-specific derivative-content blueprint. Sits beside [[InnBlockchain Content Strategy]] (article inventory + scoring) and [[InnBlockchain Editorial Calendar]] (publish dates + cadence); paired with its design-only child [[InnBlockchain Content Repurposing Design Toolkit]] (Plan owns *what* to produce; Toolkit owns *how*). This doc owns **which articles get which derivatives, in what priority, at what cadence, by a dedicated resource** — and documents why every excluded format was excluded so future format questions can be answered from the doc without relitigating.
 
-> **Canonical source:** `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Plan.md` (currently rev 15, 2026-06-03).
+> **Canonical source:** `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Plan.md` (rev 18, 2026-06-03 — X thread post times converted to IST synced to Playbook rev 22).
 > **Generic concept reference:** [[Content Repurposing Workflow]] — three approaches (one-to-one / one-to-many / atomization), 7-step workflow. The InnBlockchain plan is the operationalization for this program specifically.
 
 ## Why this doc exists

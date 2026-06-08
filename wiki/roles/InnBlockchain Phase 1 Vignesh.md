@@ -7,7 +7,7 @@ role: Vignesh
 priority: highest
 rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 21
+playbook_rev_synced: 22
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
   rev 2 (2026-06-03): sync to Playbook rev 21 — adds **WS1 Pre-Launch LP Sign-Off** to Workstreams table + Hard rules + Timeline blocks (8-gate checklist fires per LP before launch · 48-hr SLA · Vignesh blocks launch on regulatory leak · post-launch 48-hr verification).

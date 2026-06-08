@@ -4,9 +4,10 @@ company:
 department:
   - marketing
 priority: highest
-rev: 10
-last_revised: 2026-05-26
+rev: 11
+last_revised: 2026-06-03
 revision_notes: |
+  rev 11 (2026-06-03): all CET timestamps converted to IST — synced to [[InnBlockchain - Phase 1 Execution Playbook]] rev 22. Conversion +3:30 from European local (Phase 1 entirely within CEST window). Affected: How-to-read callout (Tue+Thu 10:00 CET → 13:30 IST) · § Posting times (LinkedIn 08:00–10:00 CEST → 11:30–13:30 IST · X 09:00/14:00/19:00 CEST → 12:30/17:30/22:30 IST) · Weekly Batch Workflow Tue/Thu publish rows. New IST conversion callout in § Posting times — preserves EU buyer-behavior context + flags Oct 26 DST switch (Phase 2 must re-anchor). Historical CET ref in rev 10 note left intact per convention.
   rev 1 (2026-05-18): initial editorial calendar derived from `InnBlockchain - Content Strategy.md` rev 4. Locked Phase 1 close at 2/wk cadence (May 18 → Oct 18, 2026).
 
   rev 2 (2026-05-18): seven cross-strategy gaps fixed. (1) Added three Track B Cross-Pillar early-ship articles per strategy doc lines 1071–1073: C1 Carol Vendor Risk Pack (W4), T4-N Tom Hiring Cost (W6), P1-N MiCA License Application (W7). (2) Resolved B1-#4 Utility NFTs omission — explicitly deferred to overflow queue with watch-candidate flag. (3) Added 📎 LinkedIn-first distribution tags to #1, #2, #3, #4, #5, #18, #20, #21, #22 per strategy doc line 859. Reframed 📎 as "LinkedIn + SEO" (additive, not LinkedIn-only). (4) Added Reference Build Hard Gate (cleared 2026-05-14) to gate sequence table. (5) Added B1 Post-Launch piece "Expanding Your RWA Platform to New Markets" to gate-dependent section. (6) Removed fabricated newsletter recommendation (not in strategy doc). (7) Added explicit note acknowledging Track A Phase 1 publish sequence deviates from strategy doc's TOFU-first ordering due to LP gate timing. Phase 1 close shifted from Week 19 (Sep 22) to Week 21 (Oct 6) — 2-week slip absorbs C1/T4-N/P1-N insertions and [Both] article migration to Tuesday slots. B1-#11 US Treasuries also deferred to overflow (watch-candidate). Track A Phase 2 starter reduced from 3 articles to 1 (W22 only).
@@ -31,7 +32,7 @@ tags:
 > [!NOTE] How to read this calendar
 > Source of truth for **what publishes when** for both ICPs (Track A Crypto Native + Track B FinTech). Derived from `InnBlockchain - Content Strategy.md` (article inventory, scoring, cluster mapping, sales motion tags, routing rules). This doc locks dates; the strategy doc holds the inventory. **Do not pin a specific strategy rev here — both docs evolve in parallel and rev-pinning creates stale references.**
 >
-> Two publish slots per week: **Tue + Thu, 10:00 CET**. Tuesday default = Track A (mixed SEO+X for technical pieces, LinkedIn+SEO for plain-language RWA pieces). Thursday default = Track B (LinkedIn ABM for B1; LinkedIn + SEO for cross-pillar early-ship pieces).
+> Two publish slots per week: **Tue + Thu, 13:30 IST** (= EU local 10:00 CEST · Phase 1 entirely within CEST window). Tuesday default = Track A (mixed SEO+X for technical pieces, LinkedIn+SEO for plain-language RWA pieces). Thursday default = Track B (LinkedIn ABM for B1; LinkedIn + SEO for cross-pillar early-ship pieces).
 
 ---
 
@@ -178,8 +179,11 @@ Publish immediately, do not wait for slot. Bump the scheduled Tuesday or Thursda
 
 ### Posting Times (EU primary)
 
-- **LinkedIn** (Sam, Carol, RWA Felix): Tue–Thu 08:00–10:00 CET
-- **X / Crypto Twitter** (Founding Felix, Sasha): 09:00 + 14:00 + 19:00 CET
+- **LinkedIn** (Sam, Carol, RWA Felix): Tue–Thu **11:30–13:30 IST** (= EU local 08:00–10:00 CEST)
+- **X / Crypto Twitter** (Founding Felix, Sasha): **12:30 + 17:30 + 22:30 IST** (= EU local 09:00 + 14:00 + 19:00 CEST)
+
+> [!INFO] IST conversion (synced to Playbook rev 22)
+> All EU posting peak times converted to IST (UTC+5:30) for operational team in India. Conversion is **+3:30 from European local** during Phase 1 (May–Oct 2026 = entirely CEST window). Post-Oct 26, 2026 (CEST → CET DST switch) IST values shift +1 hr — Phase 1 closes Oct 15 so no Phase-1 impact; Phase 2 must re-anchor.
 - **Telegram dev groups**: Wed afternoon (post-Tuesday article amplification)
 
 ### Distribution by Track / Tag
@@ -202,10 +206,10 @@ Publish immediately, do not wait for slot. Bump the scheduled Tuesday or Thursda
 | Research + outline | Mon AM | 2 hr | Both articles for the week outlined; sources gathered |
 | Tuesday article — draft | Mon PM | 3 hr | First draft |
 | Subject-matter review | Tue AM | 1 hr | Senior engineer / auditor review |
-| Tuesday article — publish + amplify | Tue 10:00 CET | 30 min | Publish + LinkedIn/X push |
+| Tuesday article — publish + amplify | Tue 13:30 IST | 30 min | Publish + LinkedIn/X push |
 | Thursday article — draft | Wed | 3 hr | First draft |
 | Compliance review *(if `[FT]` or MiCA/MiFID II topic)* | Thu AM | 1 hr | Compliance sign-off |
-| Thursday article — publish + amplify | Thu 10:00 CET | 30 min | Publish + LinkedIn ABM push |
+| Thursday article — publish + amplify | Thu 13:30 IST | 30 min | Publish + LinkedIn ABM push |
 | Repurpose + measure | Fri | 2–5 hr (scales with Tier 1 count) | Per-article derivatives — produced per [[InnBlockchain - Content Repurposing Plan]] (Tier 1 full chain / Tier 2 standard / Tier 3 amplify-only / Tier 0 gated). Log per-derivative metrics. |
 
 **Total per writer:** ~11 hrs/wk floor (zero Tier 1 articles that week) to ~14 hrs/wk (two Tier 1 articles that week). 1 senior content lead + 1 technical reviewer + 1 compliance reviewer (on call for Track B); Tier 1 weeks also need designer/producer capacity for carousels + PDFs + video.

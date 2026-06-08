@@ -7,7 +7,7 @@ role: Dev
 priority: high
 rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 20
+playbook_rev_synced: 22
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
   rev 2 (2026-06-03): sync to Playbook rev 20 — Dev scope unaffected by rev 20 changes (X Company addition + Cross-channel cannibalisation matrix touch MPs + WS3/WS8, not WS1 LP delivery). Rev bump for cover-sheet-cohort consistency only.

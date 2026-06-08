@@ -32,7 +32,7 @@ related:
 
 Single canonical marketing document for Phase 1 RWA execution (22 weeks, W1 → W22 — date-independent per rev 9 durability pass). Combines strategic frame (scope, sequencing, KPI rollup, risk register, out-of-scope fences) with operational do-list across **15 workstreams**. **Speed Mode is active** — compressed timeline to generate LinkedIn leads ASAP, with honest reset for the no-warm-FinTech-network reality.
 
-Source: `.raw/InnBlockchain/Playbook/InnBlockchain - Phase 1 Execution Playbook.md` (rev 21).
+Source: `.raw/InnBlockchain/Playbook/InnBlockchain - Phase 1 Execution Playbook.md` (rev 22).
 
 ---
 
@@ -206,6 +206,22 @@ Telegram dev-group share removed from WS7 weekly batch workflow, WS8 per-platfor
 ### X Company account added (rev 20 — parallel to LinkedIn Company Page)
 
 Three new WS3 subsections after the existing X (Twitter) personal block: Initial setup (one-time W1 — handle claim · Premium decision · header · bio · pinned tweet · cross-association with @Vignesh-handle) · Completeness audit (one-time at setup + quarterly — profile completeness · last-tweet recency · cross-channel framing alignment) · Ongoing operations (low-cadence 1× post/wk steady state · repost-Vignesh-thread-with-corporate-comment pattern · ≥48 hr spacing on Vignesh-thread reposts · Company-X-references-Vignesh-handle rule · analytics tracking with reduce-cadence trigger if <10% of personal X reach for 8+ wks). **Designed as credibility floor for vendor evaluation** (Tom/Carol search "InnBlockchain" on X during eval), NOT engagement channel. Voice is corporate-only — founder-personal voice stays on Vignesh personal X. Hygiene rules: never industry drama from Company handle · never MiCA framing · never let account go dormant >14 days.
+
+### Time-zone convention (rev 22 — all times in IST)
+
+All EU posting peak timestamps converted to **IST (UTC+5:30)** — operational team executes from India. Conversion = **+3:30 from European local**. Phase 1 (May–Oct 2026) falls entirely within the **CEST** window (EU DST ends Oct 26 · Phase 1 closes Oct 15). Affected timestamps:
+
+| Old (CET label · EU local) | New (IST) |
+|---|---|
+| Tue + Thu 10:00 publish slot | **13:30 IST** |
+| LinkedIn peak Tue 08:00–09:30 | 11:30–13:00 IST |
+| LinkedIn peak Wed 09:00–10:30 | 12:30–14:00 IST |
+| LinkedIn peak Thu 08:00–10:00 | 11:30–13:30 IST |
+| LinkedIn peak Mon 07:30–09:00 | 11:00–12:30 IST |
+| Avoid Fri after 12:00 | after 15:30 IST |
+| X thread post times 09:00 / 14:00 / 19:00 | 12:30 / 17:30 / 22:30 IST |
+
+**Phase 2 caution:** post-Oct 26, 2026 DST switch, IST values shift +1 hr — Phase 2 schedule must re-anchor. Parallel sweeps in same rev: CW Cover Sheet · [[InnBlockchain Editorial Calendar]] · [[InnBlockchain Content Repurposing Plan]] (X thread timing).
 
 ### Vignesh Pre-Launch LP Sign-Off Checklist (rev 21 — WS1)
 

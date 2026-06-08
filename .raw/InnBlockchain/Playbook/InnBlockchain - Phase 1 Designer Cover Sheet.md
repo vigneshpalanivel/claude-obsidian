@@ -7,7 +7,7 @@ role: Designer
 priority: high
 rev: 1
 last_revised: 2026-06-03
-playbook_rev_synced: 20
+playbook_rev_synced: 22
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
   rev 1 (2026-06-03): initial cover sheet for Designer role (part-time engagement; high-stakes pieces + brand system foundation + MVP fallback). Sister doc to Dev / MPs / SP / CW / Vignesh cover sheets.

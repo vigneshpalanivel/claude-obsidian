@@ -7,7 +7,7 @@ role: SP
 priority: high
 rev: 1
 last_revised: 2026-06-03
-playbook_rev_synced: 20
+playbook_rev_synced: 22
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
   rev 1 (2026-06-03): initial cover sheet for SP role (Sales Person — full-cycle outbound + discovery + close authority). Sister doc to Dev / MPs / CW / Designer / Vignesh cover sheets.

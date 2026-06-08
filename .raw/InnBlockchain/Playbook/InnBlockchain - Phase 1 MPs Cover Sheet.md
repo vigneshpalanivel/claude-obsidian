@@ -7,7 +7,7 @@ role: MPs
 priority: high
 rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 20
+playbook_rev_synced: 22
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
   rev 2 (2026-06-03): sync to Playbook rev 20 — adds X Company account ops (new WS3 subsections) + Cross-channel cannibalisation matrix (new WS8 canonical source) to Workstreams table + Hard rules + Read first.
