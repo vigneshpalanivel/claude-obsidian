@@ -255,7 +255,21 @@ If the issuer is NOT subject to Exchange Act § 13 or § 15(d) reporting, **adeq
 - [ ] **Non-reporting issuer:** minimum **ONE YEAR** must elapse between the later of (a) the date of acquisition from the issuer or an affiliate, and (b) any resale in reliance on Rule 144
 - [ ] **If acquired by purchase:** holding period does NOT begin until **full purchase price or other consideration is paid** by the acquirer
 
-**Reference:** 17 CFR § 230.144(d)(1)
+### 5.1a — Automatic Tacking for Non-Affiliate Holders (Rule 144(d)(1))
+
+> [!key-insight] **The holding period clock applies to "any subsequent holder," not to each individual purchaser.**
+> Rule 144(d)(1)(i) and (ii) both state that the minimum period must elapse "between the later of the date of the acquisition of the securities from the issuer, or from an affiliate of the issuer, and any resale of such securities in reliance on this section **for the account of either the acquiror or any subsequent holder of those securities**." The clock measures from when the securities FIRST LEFT the issuer (or affiliate) — it does NOT restart on subsequent transfers between non-affiliates.
+
+- [ ] **Ordinary non-affiliate-to-non-affiliate secondary transfers tack automatically.** When Holder X (non-affiliate) acquires restricted securities from the issuer at T=0, and later sells to Holder Y (non-affiliate) at T+N months, Y's Rule 144 holding-period clock is measured from T=0 — NOT from T+N. Y inherits X's full holding period for Rule 144 purposes
+- [ ] **This is the GENERAL rule for ordinary secondary trades.** Not one of the Rule 144(d)(3) "special situations" in Section 5.3 below. Without this automatic tacking, restricted securities could never practically trade in a secondary market — every secondary purchase would restart a fresh 6 or 12-month clock
+- [ ] **When tacking does NOT apply (clock starts fresh on the new acquisition date):**
+  - The new holder acquires **directly from the issuer** (primary acquisition — treated as a fresh start)
+  - The new holder acquires **from an affiliate of the issuer** (purchase from an affiliate is treated like purchase from the issuer for Rule 144 holding-period purposes; the affiliate's prior holding period does NOT tack to the buyer)
+  - One of the Rule 144(d)(3) special-situation restarts applies — Rule 145(a) transactions (Section 5.3(viii)), non-recourse pledges (Section 5.3(iv)), or certain amendment-driven conversions (Section 5.3(ii) exception)
+- [ ] **Practical implication for the affiliate-free architecture:** Tacking only works as long as the chain of holders is uniformly non-affiliate. A holder who becomes an affiliate by operation of law disrupts the tacking chain for any tokens passing through their hands. This is one of the structural reasons to enforce affiliate-free token holding from the outset
+
+**Reference:** 17 CFR § 230.144(d)(1)(i)–(ii); the "any subsequent holder" language is the operative phrase.
+**Verbatim source URL:** https://www.ecfr.gov/current/title-17/chapter-II/part-230/section-230.144 (locate § 230.144(d)(1)(i) for the 6-month rule and § 230.144(d)(1)(ii) for the 1-year rule — both contain identical "for the account of either the acquiror or any subsequent holder of those securities" language).
 
 ---
 
@@ -271,7 +285,13 @@ A promissory note, other obligation to pay, or installment purchase contract is 
 
 ---
 
-### 5.3 — Tacking Rules — When the Clock Carries Over (Rule 144(d)(3))
+### 5.3 — Special Tacking and Restart Rules (Rule 144(d)(3))
+
+> [!info] **These are SPECIAL situations layered on top of the general Rule 144(d)(1) automatic non-affiliate tacking covered in §5.1a above.** The (d)(3) subsections either:
+> - (a) **extend tacking** to specific scenarios that would otherwise look like a fresh acquisition (stock dividends, conversions/exchanges between same-issuer securities, contingent issuance, recourse pledges, gifts, trusts, estates, holding-company formations, cashless option exercises), OR
+> - (b) **restart the clock** in specific scenarios that would otherwise look like ordinary transfers (Rule 145(a) merger / share-exchange transactions, non-recourse pledges, certain amendment-driven conversions where consideration was paid).
+>
+> If a transaction does not fit one of the (d)(3) special situations, the general Rule 144(d)(1) rule from §5.1a applies — tacking for non-affiliate-to-non-affiliate, fresh start for issuer/affiliate acquisition.
 
 Holding period determination in special-acquisition scenarios:
 
