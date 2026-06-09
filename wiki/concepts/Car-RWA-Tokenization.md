@@ -3,6 +3,7 @@ title: "Car RWA Tokenization: System Design"
 type: concept
 status: current
 created: 2026-04-25
+updated: 2026-06-09
 tags:
   - RWA
   - tokenization
@@ -265,7 +266,7 @@ The Car Token (ERC-1400 / ERC-3643 representing SPV equity + revenue rights) is 
 
 | Jurisdiction | Regime | Key obligations |
 |---|---|---|
-| **EU** | **MiFID II + Prospectus Regulation** (token = transferable security; **not** MiCA — Art. 2(4) excludes financial instruments). Secondary trading on a regulated DLT platform = **DLT Pilot Regime** (DLT MTF / TSS). Issuer authorization or partnership with a licensed investment firm required. | Prospectus or exemption (≤€8M private placement, qualified-investor-only, etc.); MiFID-compliant investor categorization; transaction reporting; DLT Pilot operator for secondary venue |
+| **EU** | **MiFID II + Prospectus Regulation** (token = transferable security; **not** MiCA — Art. 2(4) excludes financial instruments). **AIFMD / UCITS** (the SPV pools capital from passive investors for rental yield + resale value — a *collective investment undertaking* by default, so a fund-manager regime applies and the token is also a unit in a CIU under MiFID Annex I C(3)). The DAO's *periodic* governance votes do **not** amount to the day-to-day control that escapes AIF status, and passive rental yield is **not** the "operating-business" carve-out — so AIFMD is the base case, not optional. Secondary trading on a regulated DLT platform = **DLT Pilot Regime** (DLT MTF / TSS). Issuer authorization or partnership with a licensed investment firm required. | Prospectus or exemption (≤€8M private placement, qualified-investor-only, etc.); **AIFM coverage** — a single small-value SPV sits far below the AIFMD de minimis thresholds (€100M leveraged / €500M unleveraged, AUM), so the realistic path is a **sub-threshold AIFM registration** (national, lighter — but no EU marketing passport) rather than full AIFM authorization; scale to a multi-car portfolio and full authorization + depositary + AIFMD reporting kick in; MiFID-compliant investor categorization; transaction reporting; DLT Pilot operator for secondary venue |
 | **US** | Reg D 506(c) (accredited only) or Reg A+ (retail with SEC qualification); secondary on an ATS or licensed exchange. Token is a security under Howey by design. | Investor accreditation verification; SEC filings; transfer restrictions per Reg D |
 | **MENA (ADGM / DFSA / VARA)** | Investment Token regime (security token) under FSRA / DFSA / VARA Virtual Asset framework — varies by emirate | Issuer authorization; investor categorization; custody under licensed VASP |
 
