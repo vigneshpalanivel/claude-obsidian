@@ -5,11 +5,12 @@ department:
   - marketing
 role: Dev
 priority: high
-rev: 2
+rev: 3
 last_revised: 2026-06-03
-playbook_rev_synced: 22
+playbook_rev_synced: 28
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
+  rev 3 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need to execute Phase 1 (not just playbook). LP Sign-Off Checklist extracted to cross-phase framework — added to your doc list.
   rev 2 (2026-06-03): sync to Playbook rev 20 — Dev scope unaffected by rev 20 changes (X Company addition + Cross-channel cannibalisation matrix touch MPs + WS3/WS8, not WS1 LP delivery). Rev bump for cover-sheet-cohort consistency only.
   rev 1 (2026-06-03): initial cover sheet — pilot draft for Option B (lightweight per-role cover sheets). One slice of [[InnBlockchain - Phase 1 Execution Playbook]] rev 19 for daily/weekly Dev-role use. Content is not duplicated from the playbook — anchor links route Dev into their workstream sections for task detail. Sync rule: when playbook revs, only re-touch this sheet if heading anchors change OR Dev ownership scope changes.
 tags:
@@ -72,6 +73,19 @@ LP Gates 1 + 2 build (**CRITICAL PATH** — single point of failure for Speed Mo
 - GA4 / email-capture integration blockers → **MPs** (your day-to-day liaison — they own the configuration choices)
 - Hero image hand-off blocked → **Designer** (via MPs for coordination)
 - Anything regulatory → **Vignesh** (never make a regulatory judgment call yourself)
+
+## 📂 Necessary documents to execute Phase 1 (your full doc bundle)
+
+These are everything you need to do your job — share/bookmark all 6:
+
+| # | Document | What it's for |
+|---|---|---|
+| 1 | [[InnBlockchain - Phase 1 Execution Playbook]] | Master ops doc — WS1 (your section) + WS5 + WS10 |
+| 2 | [[InnBlockchain - Phase 1 Dev Cover Sheet]] | This doc — your daily/weekly reference |
+| 3 | **[[InnBlockchain - LP Sign-Off Checklist]]** (cross-phase framework) | The 8 gates Vignesh signs off on per LP before you launch — you provide the verified-live check (item 6) |
+| 4 | [[InnBlockchain - Landing Pages Plan]] | Canonical LP IA + content spec + migration map (301 redirects) |
+| 5 | [[InnBlockchain - Landing Pages AEO GEO Prompts]] | 13 AEO Drafting Principles for LP body copy (MPs lead drafting; you implement) |
+| 6 | [[EU-Compliance-Landscape]] | Regulatory framing reference — when Vignesh flags MiCA-on-RWA leak in hero copy, this is the canonical map |
 
 ## ❌ What you DON'T own (redirect if asked)
 

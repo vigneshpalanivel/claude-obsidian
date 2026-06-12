@@ -5,11 +5,13 @@ department:
   - marketing
 role: Vignesh
 priority: highest
-rev: 2
+rev: 5
 last_revised: 2026-06-03
-playbook_rev_synced: 22
+playbook_rev_synced: 28
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
+  rev 5 (2026-06-03): sync to Playbook rev 28 — 8th cross-phase framework extracted: Per-Article Production Checklist. Added to your "Necessary documents" cross-phase frameworks row (you're the compliance + accuracy reviewer at Phase 3 steps 13–16, and the final batch approver at step 20).
+  rev 4 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need across all 15 workstreams (you reference more docs than any other role). All 7 extracted cross-phase frameworks added to your doc list.
   rev 2 (2026-06-03): sync to Playbook rev 21 — adds **WS1 Pre-Launch LP Sign-Off** to Workstreams table + Hard rules + Timeline blocks (8-gate checklist fires per LP before launch · 48-hr SLA · Vignesh blocks launch on regulatory leak · post-launch 48-hr verification).
   rev 1 (2026-06-03): initial cover sheet for Vignesh (Founder · final-review authority across all 15 workstreams · primary on WS3/WS4/WS6/WS9.5a/WS11/WS13). Sister doc to Dev / MPs / SP / CW / Designer cover sheets.
 tags:
@@ -40,7 +42,7 @@ tags:
 | **WS4** | **PRIMARY** — regulatory content drafter + compliance self-review (per rev 8 decision · CW structures + Style Guide voice) | [[InnBlockchain - Phase 1 Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
 | WS5 | Procures Sales Nav + Shield · drafts discovery call prep template · daily 15–30 min final review block | [[InnBlockchain - Phase 1 Execution Playbook#Vignesh calendar time-blocked — founder-only work]] |
 | **WS6** | **PRIMARY (TIME-CRITICAL)** — Pain Point 5 validation (Path A interviews during W2 · result by EOD W2) | [[InnBlockchain - Phase 1 Execution Playbook#WS6 — Validation (W2 deadline)]] |
-| WS7 | Compliance self-review every Thursday article + Cross-Pillar (W4/W7/W13) · monthly + quarterly Format-Priority Audit with CW | [[InnBlockchain - Phase 1 Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
+| WS7 | **Tue AM technical accuracy + regime-leak review (rev 24 — replaces SME, 1 hr/article)** · Thu AM compliance self-review every Thursday article + Cross-Pillar (W4/W7/W13) · monthly + quarterly Format-Priority Audit with CW | [[InnBlockchain - Phase 1 Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
 | WS8 | Authors all personal-feed posts (4–5×/wk) · ≤30 min/day strategic comments · X poll authorship · newsletter authorship (when activated W10+) | [[InnBlockchain - Phase 1 Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
 | WS9 | First 3 SP discovery calls coaching · backup discovery call owner for FT > $100k + Carol escalations | [[InnBlockchain - Phase 1 Execution Playbook#WS9 — LinkedIn Outbound — Structured ABM (DM Sequences)]] |
 | **WS9.5a** | **PRIMARY** — per-DM approval on SP-drafted Trioangle + adjacent DMs (24-hr SLA · ≤15 min/day calendar block · rev 17) · personal-sent only when relationship calls for it (your judgment) | [[InnBlockchain - Phase 1 Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] |
@@ -61,7 +63,8 @@ tags:
 | **Daily ≤15 min** — WS9.5a per-DM approval (SP-drafted Trioangle/adjacent DMs) | Daily | WS5 |
 | **1–2 discovery call slots/wk** — FT WealthTech > $100k OR Carol escalations OR Trioangle high-value | Weekly | WS5 |
 | **Weekly Fri 60 min** — pipeline tracker · per-channel KPIs · risk register · team blockers | Weekly | WS12 |
-| **Every Thursday** — compliance review for Track B + Cross-Pillar articles (48-hr SLA) | Weekly | WS13 |
+| **Every Tuesday AM** — technical accuracy + regime-leak review on Tue article (1 hr · rev 24 — replaces SME slot) | Weekly | WS7 |
+| **Every Thursday AM** — compliance review for Track B + Cross-Pillar articles (48-hr SLA · 1 hr) | Weekly | WS13 |
 | **Monthly last Fri 2 hr** — top/bottom 3 articles · 5-project EU gate progress · pipeline-stage exit criteria audit | Monthly | WS12 + WS15 |
 | **W2** — Pain Point 5 validation interviews (3–5 calls during W2 only · if Path A) | One-time W2 | WS6 |
 | **~W3** — Money20/20 Europe Amsterdam (attendance + 5–10 meetings · NOT speaking) | One-time W3 | WS11 |
@@ -106,6 +109,19 @@ You touch the most tasks of any role (~212 of 474). Most are review/approval, no
 - Cross-train one MP to author 1 article in CW absence (rev 8 risk mitigation)
 - WS13 spot-check protocol pace: if zero regime-leak incidents detected by W5, drop from 25% to 10% sampling (frees ~3 hr/wk)
 - WS9.5a per-DM SLA slipping (>24 hr) → flag at Weekly Fri review; either cut volume or compress approval block
+
+## 📂 Necessary documents to execute Phase 1 (your full doc bundle — heaviest of all roles)
+
+You touch all 15 workstreams, so you reference the most docs. Bundle organized by category:
+
+| Category | Documents |
+|---|---|
+| **Master playbook + your sheet** | [[InnBlockchain - Phase 1 Execution Playbook]] · [[InnBlockchain - Phase 1 Vignesh Cover Sheet]] |
+| **Cross-phase frameworks (rev 27–28)** — review sign-off authority | **[[InnBlockchain - Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[InnBlockchain - LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[InnBlockchain - Content Style Guide]]** (CW writing rules) · **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** (MPs scheduling) · **[[InnBlockchain - Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[InnBlockchain - Discovery Call Master Sequence]]** (SP per call) · **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[InnBlockchain - Newsletter Vendor Selection]]** (W10 revisit) |
+| **Regulatory canon** (you self-review against these) | [[EU-Compliance-Landscape]] + 14 regulation checklists ([[mifid2-checklist]] · [[mifid3-checklist]] · [[prospectus-checklist]] · [[dlt-pilot-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]] · [[dora-checklist]] · [[mica-checklist]] · [[aml-checklist]] · [[tfr-checklist]] · [[ccd2-checklist]] · [[eidas2-checklist]] · [[ipr-checklist]] · [[gdpr-checklist]]) |
+| **ICP truth source** | [[InnBlockchain - ICP - Crypto Native]] · [[InnBlockchain - ICP - FinTech]] |
+| **Content production canon** | [[InnBlockchain - Content Strategy]] · [[InnBlockchain - Editorial Calendar]] · [[InnBlockchain - Content AEO GEO Prompts]] · [[InnBlockchain - Content Repurposing Plan]] · [[InnBlockchain - Content Repurposing Design Toolkit]] |
+| **LP + LinkedIn execution** | [[InnBlockchain - Landing Pages Plan]] · [[InnBlockchain - Landing Pages AEO GEO Prompts]] · [[InnBlockchain - LinkedIn Strategy]] · [[InnBlockchain - LinkedIn Outreach Strategy]] · [[LinkedIn Profile Vignesh Content]] · [[Recommendation Request Templates]] |
 
 ## ❌ What you DON'T own (you're authority, not executor)
 

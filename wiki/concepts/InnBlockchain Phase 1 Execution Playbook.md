@@ -32,7 +32,7 @@ related:
 
 Single canonical marketing document for Phase 1 RWA execution (22 weeks, W1 → W22 — date-independent per rev 9 durability pass). Combines strategic frame (scope, sequencing, KPI rollup, risk register, out-of-scope fences) with operational do-list across **15 workstreams**. **Speed Mode is active** — compressed timeline to generate LinkedIn leads ASAP, with honest reset for the no-warm-FinTech-network reality.
 
-Source: `.raw/InnBlockchain/Playbook/InnBlockchain - Phase 1 Execution Playbook.md` (rev 22).
+Source: `.raw/InnBlockchain/Playbook/InnBlockchain - Phase 1 Execution Playbook.md` (rev 28).
 
 ---
 
@@ -133,12 +133,12 @@ Vignesh's existing 7-yr LinkedIn signal = Trioangle CEO / general dev. Algorithm
 |---|---|---|---|
 | 1 | **LP Delivery** (CRITICAL PATH) | Dev (build) + MPs (on-page SEO + GA4 + email-capture coordination) + Vignesh oversight (rev 17) + **Vignesh Pre-Launch Sign-Off Checklist (rev 21 — 8 gates per LP, 48-hr SLA)** | Start immediately |
 | 2 | **SEO / AEO / GEO** | MPs (LP on-page) + CW (per-article AEO) | Per LP shell |
-| 3 | **Social Profile + Featured + Recommendations** | Vignesh + MPs (Featured ops + LinkedIn Company Page ongoing — rev 16 · **X personal ongoing — rev 19 · X Company ongoing — rev 20**) + Designer (PDF + W2–W3 brand system) | Pre-publish gate |
+| 3 | **Social Profile + Featured + Recommendations** | Vignesh + MPs (Featured ops + LinkedIn Company Page ongoing — rev 16 · **X personal ongoing — rev 19**) + Designer (PDF + W2–W3 brand system) | Pre-publish gate |
 | 4 | **Compliance Briefs + Vendor Risk Pack** | Vignesh (regulatory content + self-review) + CW (brief structuring + Style Guide voice — rev 17) + Designer (PDF layout) | Pre-publish gate |
 | 5 | **Platform Setup (CRM + Tooling)** | Vignesh + MPs (analytics) + SP (CRM) | Pre-DM |
 | 6 | **Validation (Pain Point 5)** | Vignesh | W2 deadline |
-| 7 | **Content Production** | CW + SME reviewer + Vignesh (compliance) | Per editorial calendar · **23-step Per-Article Production Checklist** (rev 14–15) + **CW Content Style Guide** (rev 16) |
-| 8 | **LinkedIn Organic (feed + newsletter)** | Vignesh authors · MPs schedule + per-platform format + visuals (rev 16) · SP comments (W8+) · **Cross-channel cannibalisation matrix (rev 20 — canonical source for all spacing rules)** | Feed warmup pre-outreach |
+| 7 | **Content Production** | CW (drafts · AEO · WordPress publish on /academy) + Vignesh (Tue AM accuracy + Thu AM compliance — rev 24 · SME role retired) + MPs (LinkedIn/X social amplification) | Per editorial calendar · **25-step Per-Article Production Checklist** (rev 14–15 · rev 26 added derivative chain pre-publish) + **CW Content Style Guide** (rev 16) |
+| 8 | **LinkedIn Organic (feed + newsletter)** | Vignesh authors · MPs schedule + per-platform format + visuals (rev 16) · SP comments (W8+) · **Cross-channel cannibalisation matrix (rev 20 added · rev 23 renumbered 8 vectors — canonical source)** | Feed warmup pre-outreach |
 | 9 | **LinkedIn Outbound — Structured ABM** | SP · **20-step Discovery Call Master Sequence** (rev 16) | W5 |
 | 9.5a | **Adjacent-Network Warm Intros** | SP drafts first warm DM in Vignesh voice + sends from own profile · Vignesh per-DM approves (24-hr SLA, rev 17) · Vignesh sends personally when relationship calls for it · SP carries thread after positive response | W1 Day 1 |
 | 9.5b | **Engagement-Led Inbound** | SP | W1 Day 1 |
@@ -153,7 +153,7 @@ Every checkbox in the source playbook now carries an explicit **(Role)** owner t
 
 ### Per-Article Production Checklist (WS7 — rev 14 + 15)
 
-The CW opens a single 23-step master sequence once per article — replaces nothing, supersedes the existing AEO/GEO + sales-motion-tag + WS13 compliance fragments by linking to them in order. Four phases:
+The CW opens a single 25-step master sequence once per article (was 23 — rev 26 added 2 steps when derivative chain moved from Phase 4 to Phase 3 pre-publish so source-article corrections surface in time). Replaces nothing — supersedes the existing AEO/GEO + sales-motion-tag + WS13 compliance fragments by linking to them in order. Four phases:
 
 | Phase | Window | Steps | Key docs consulted |
 |---|---|---|---|
@@ -203,9 +203,11 @@ Three more operational subsections added in rev 19 — same gap pattern as rev 1
 
 Telegram dev-group share removed from WS7 weekly batch workflow, WS8 per-platform formatting spec, and WS15 Tier 2 derivative chain. **Why:** Phase 1 ICP doesn't live there — RWA Felix (CN buyer) is asset-first non-technical; Sam/Tom/Carol (FT buyer) evaluates via vendor risk pack + audit report. The Telegram audience (Solidity devs · DeFi builders) is not a Phase 1 buyer. Re-evaluate for Phase 2/3 DeFi-protocol Felix scope. Parallel sweeps: [[InnBlockchain Content Repurposing Design Toolkit]] rev 7 + [[InnBlockchain Crypto Native ICP]] rev 1 corrected same bug in their respective scopes.
 
-### X Company account added (rev 20 — parallel to LinkedIn Company Page)
+### X Company account — ADDED rev 20, ROLLED BACK rev 23
 
-Three new WS3 subsections after the existing X (Twitter) personal block: Initial setup (one-time W1 — handle claim · Premium decision · header · bio · pinned tweet · cross-association with @Vignesh-handle) · Completeness audit (one-time at setup + quarterly — profile completeness · last-tweet recency · cross-channel framing alignment) · Ongoing operations (low-cadence 1× post/wk steady state · repost-Vignesh-thread-with-corporate-comment pattern · ≥48 hr spacing on Vignesh-thread reposts · Company-X-references-Vignesh-handle rule · analytics tracking with reduce-cadence trigger if <10% of personal X reach for 8+ wks). **Designed as credibility floor for vendor evaluation** (Tom/Carol search "InnBlockchain" on X during eval), NOT engagement channel. Voice is corporate-only — founder-personal voice stays on Vignesh personal X. Hygiene rules: never industry drama from Company handle · never MiCA framing · never let account go dormant >14 days.
+Rev 20 added three WS3 subsections (initial setup + completeness audit + ongoing operations) modelled as "parallel to LinkedIn Company Page." **Rolled back rev 23 — X does not have a structural Company Page concept** (every X account is just an account; no separate entity type, no admin role hierarchy, no `/company/` URL pattern). Rev 20 imported the LinkedIn-Page mental model where it doesn't apply, claiming "credibility floor for vendor evaluation" — but B2B regulated FinTech buyers don't vendor-research on X the way they do on LinkedIn; founder voice dominates in this niche.
+
+**Phase 1 X presence = Vignesh personal handle only.** Revisit corporate X handle at Phase 2 only if (a) X drives material LP traffic OR (b) ecosystem-engagement use case surfaces. Cannibalisation matrix vectors 3 + 4 (which depended on X Company existing) also removed; matrix renumbered 1–10 → 1–8.
 
 ### Time-zone convention (rev 22 — all times in IST)
 
@@ -231,22 +233,20 @@ New checklist covers the other 90% of the LP surface: full LP body regulatory fr
 
 **Hard rule:** Vignesh blocks launch on regulatory leak — never "fix it after launch" (AEO citation propagates faster than fixes). Post-launch 48-hr verification (AEO citation probe · GA4 event firing · email-capture external-email test) doesn't block launch but catches drift.
 
-### Cross-channel cannibalisation matrix (rev 20 — canonical source)
+### Cross-channel cannibalisation matrix (rev 20 added · rev 23 renumbered after X Company rollback — canonical source)
 
-Added to WS8 § LinkedIn output cap as **canonical source for all spacing rules**. Previously scattered across 5 subsections (WS3 LinkedIn Company Page · WS3 X personal · WS3 X Company · WS8 LinkedIn output cap · WS15 LinkedIn output cap enforcement) — MPs had to assemble logic from multiple places to enforce in real-time scheduling. **Matrix consolidates 10 vectors** with rule + spacing + reason + original-section pointer columns:
+Added to WS8 § LinkedIn output cap as **canonical source for all spacing rules**. Previously scattered across 4 subsections (WS3 LinkedIn Company Page · WS3 X personal · WS8 LinkedIn output cap · WS15 LinkedIn output cap enforcement) — MPs had to assemble logic from multiple places to enforce in real-time scheduling. **Matrix consolidates 8 vectors** (was 10; vectors 3 + 4 removed in rev 23 X Company rollback) with rule + spacing + reason + original-section pointer columns:
 
 | # | Vector | Spacing |
 |---|---|---|
 | 1 | LinkedIn personal ↔ LinkedIn Company Page (same topic) | ≥24 hr stagger |
 | 2 | LinkedIn personal ↔ X personal (same article) | ≥24 hr stagger |
-| 3 | X personal ↔ X Company (same topic) | ≥24 hr (+ ≥48 hr if repost) |
-| 4 | **LinkedIn Company ↔ X Company (same announcement) — NEW rev 20, previously unhandled** | ≥24 hr stagger |
-| 5 | Same article, same LinkedIn profile (multiple posts) | ≥48 hr |
-| 6 | Cross-pillar Tier 1 article (C1·T4-N·P5-DORA-X·P5-eIDAS-X) cadence | 3-week distribution |
-| 7 | Two cross-pillar Tier 1 articles in same week | 1/wk cap |
-| 8 | Aggregate LinkedIn posts/wk from one profile | ≤7/wk steady-state |
-| 9 | Tier 2 Track B aggregate conflict | conditional defer |
-| 10 | `[Both]` parallel chains (Track A X thread + Track B LinkedIn carousel) | concurrent (no cross-cannibalisation; platforms don't overlap) |
+| 3 | Same article, same LinkedIn profile (multiple posts) | ≥48 hr |
+| 4 | Cross-pillar Tier 1 article (C1·T4-N·P5-DORA-X·P5-eIDAS-X) cadence | 3-week distribution |
+| 5 | Two cross-pillar Tier 1 articles in same week | 1/wk cap |
+| 6 | Aggregate LinkedIn posts/wk from one profile | ≤7/wk steady-state |
+| 7 | Tier 2 Track B aggregate conflict | conditional defer |
+| 8 | `[Both]` parallel chains (Track A X thread + Track B LinkedIn carousel) | concurrent (no cross-cannibalisation; platforms don't overlap) |
 
 **MPs scheduling enforcement workflow** added as 5-checkbox Mon AM batch-approval gate. Scattered rules retained where they live but cross-reference matrix as authoritative.
 

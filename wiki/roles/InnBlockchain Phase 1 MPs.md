@@ -5,11 +5,14 @@ department:
   - marketing
 role: MPs
 priority: high
-rev: 2
+rev: 5
 last_revised: 2026-06-03
-playbook_rev_synced: 22
+playbook_rev_synced: 28
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
+  rev 5 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need (not just playbook). Cross-Channel Cannibalisation Matrix + Per-Platform Posting Spec + Newsletter Vendor Selection + Content Style Guide extracted to cross-phase frameworks — all added to doc list.
+  rev 4 (2026-06-03): sync to Playbook rev 25 — **publish scope clarified**: MPs publish LinkedIn/X social amplification only · CW publishes the WordPress article on innblockchain.com/academy. Top-level scope + WS7-adjacent context + Don't-own section updated.
+  rev 3 (2026-06-03): sync to Playbook rev 23 — rev 20 X Company account addition rolled back (X has no Company Page concept; over-recommendation corrected). WS3 row updated to remove X Company ops · Read-first updated · Hard rule for "vector 4 LinkedIn Company ↔ X Company" removed · cannibalisation matrix renumbered 1–8 (was 1–10).
   rev 2 (2026-06-03): sync to Playbook rev 20 — adds X Company account ops (new WS3 subsections) + Cross-channel cannibalisation matrix (new WS8 canonical source) to Workstreams table + Hard rules + Read first.
   rev 1 (2026-06-03): initial cover sheet for MPs role (Marketing Persons collective — both MPs share this slice; operational task allocation between MP1 + MP2 deferred to internal decision per Playbook rev 11).
 tags:
@@ -28,7 +31,7 @@ tags:
 
 ## 🎯 What you own (top-level)
 
-LP on-page SEO + GA4 + email-capture coordination (rev 17) · Featured assets ops · LinkedIn Company Page ongoing ops + X (Twitter) ongoing ops · LinkedIn scheduling + posting + per-platform formatting · AI visual production via Canva / Beautiful.ai / Midjourney / ChatGPT · GA4 dashboard + per-format CTR + monthly review prep · derivative chain production (visual + posting + distribution) · brand template maintenance (Designer builds; you maintain via templates).
+LP on-page SEO + GA4 + email-capture coordination (rev 17) · Featured assets ops · LinkedIn Company Page ongoing ops + X (Twitter) ongoing ops · **LinkedIn + X social amplification publishing (rev 25 — NOT WordPress article publish; that's CW on innblockchain.com/academy)** · per-platform formatting · AI visual production via Canva / Beautiful.ai / Midjourney / ChatGPT · GA4 dashboard + per-format CTR + monthly review prep · derivative chain production (visual + posting + distribution) · brand template maintenance (Designer builds; you maintain via templates).
 
 ## 🗺️ Workstreams you touch
 
@@ -36,7 +39,7 @@ LP on-page SEO + GA4 + email-capture coordination (rev 17) · Featured assets op
 |---|---|---|
 | **WS1 — LP Delivery** | LP on-page SEO + GA4 + email-capture coordination with Dev (rev 17) | [[InnBlockchain - Phase 1 Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] |
 | **WS2 — SEO / AEO / GEO** | **PRIMARY (LP-side)** — LP on-page SEO + monthly AI citation probes | [[InnBlockchain - Phase 1 Execution Playbook#WS2 — SEO / AEO / GEO (per LP)]] |
-| **WS3 — Profile + Featured + Channels** | Featured assets ops · LinkedIn Company Page ongoing ops · X (Twitter) personal ongoing ops · **X Company account ongoing ops (rev 20)** · brand template maintenance | [[InnBlockchain - Phase 1 Execution Playbook#LinkedIn Company Page — ongoing operations (post-setup, weekly)]] · [[InnBlockchain - Phase 1 Execution Playbook#X Company account — ongoing operations (post-setup, weekly)]] |
+| **WS3 — Profile + Featured + Channels** | Featured assets ops · LinkedIn Company Page ongoing ops · X (Twitter) personal ongoing ops · brand template maintenance | [[InnBlockchain - Phase 1 Execution Playbook#LinkedIn Company Page — ongoing operations (post-setup, weekly)]] · [[InnBlockchain - Phase 1 Execution Playbook#X (Twitter) — ongoing operations (post-setup, weekly)]] |
 | **WS5 — Platform Setup** | Analytics + email-capture configuration (with Dev integration) | [[InnBlockchain - Phase 1 Execution Playbook#Analytics + lead-capture infrastructure (funnel math depends on these)]] |
 | **WS8 — LinkedIn Organic** | LinkedIn schedules + posts + visuals + Company Page · per-platform formatting (LinkedIn + X — Telegram dropped Phase 1 per rev 20) · LinkedIn output cap enforcement · **Cross-channel cannibalisation matrix enforcement (rev 20 · canonical source)** | [[InnBlockchain - Phase 1 Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] · [[InnBlockchain - Phase 1 Execution Playbook#🚦 Cross-channel cannibalisation matrix (rev 20 — canonical source)]] |
 | **WS12 — Pipeline + CRM + Measurement** | GA4 dashboard + per-format CTR + monthly review prep | [[InnBlockchain - Phase 1 Execution Playbook#WS12 — Pipeline + CRM + Measurement]] |
@@ -59,7 +62,7 @@ LP on-page SEO + GA4 + email-capture coordination (rev 17) · Featured assets op
 1. [[InnBlockchain - Phase 1 Execution Playbook#🚦 Cross-channel cannibalisation matrix (rev 20 — canonical source)]] — **canonical source for ALL spacing rules** (read this first, every other rule cross-references back here)
 2. [[InnBlockchain - Phase 1 Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] — your daily-cadence section (posting + per-platform formatting + LinkedIn output cap)
 3. [[InnBlockchain - Phase 1 Execution Playbook#WS15 — Content Repurposing (NEW rev 5)]] — Tier 1/2/3 derivative chain production
-4. [[InnBlockchain - Phase 1 Execution Playbook#X (Twitter) — initial setup (one-time, W1)]] — X personal profile + ongoing ops (rev 19) · then read X Company account setup + ops (rev 20)
+4. [[InnBlockchain - Phase 1 Execution Playbook#X (Twitter) — initial setup (one-time, W1)]] — X personal profile + ongoing ops (rev 19) · Phase 1 X presence = Vignesh personal handle only (no corporate handle per rev 23 rollback)
 5. [[InnBlockchain - Content Repurposing Design Toolkit]] — tool stack + Asset → Tool + Owner Map (your day-to-day production reference)
 6. [[InnBlockchain - Content Repurposing Plan]] — canonical tier definitions + format priority + per-track asset families (route per-derivative decisions here)
 7. [[InnBlockchain - Landing Pages AEO GEO Prompts]] — per-LP SEO drafting principles
@@ -70,14 +73,30 @@ LP on-page SEO + GA4 + email-capture coordination (rev 17) · Featured assets op
 - **Apply the Cross-channel cannibalisation matrix on every Mon AM batch approval** (rev 20 · 10 vectors with rules + spacing). Canonical source: [[InnBlockchain - Phase 1 Execution Playbook#🚦 Cross-channel cannibalisation matrix (rev 20 — canonical source)]]. Most-violated vectors below.
 - **≥48 hr spacing between any two LinkedIn posts about the same article** from one profile (output cap rule · vector 5).
 - **Never schedule X thread same day as LinkedIn long-form on same article** — cross-platform cannibalisation; ≥24 hr stagger (vector 2).
-- **Never post LinkedIn Company Page same day as X Company on same announcement** — ≥24 hr stagger across both Company channels (vector 4 · NEW rev 20).
-- **Company X posts always reference @Vignesh-handle** — corporate voice reinforces founder voice, never competes with it (vector 3).
-- **Company X cadence cap: 1× post/wk steady state** — never let account go dormant >14 days (credibility floor for vendor evaluation).
 - **Never use ad-lib templates** — every new asset uses an existing Designer-built brand template. New template requests routed to Designer.
 - **Never post Company Page same day as personal feed on same topic** (cannibalises reach).
 - **Never produce Phase 1 articles for Telegram / GitHub gist / HN / Paragraph** — Phase 2/3 only per [[InnBlockchain - Content Repurposing Plan]] rev 14 (RWA Felix doesn't live on those surfaces).
 - **AI-generated copy never publishes without human regime-leak check** — run the regime-leak checklist in [[InnBlockchain - Content Repurposing Design Toolkit]] § AI Hallucination Risk on every slide / caption / body copy.
 - **Steady-state aggregate cap: ≤7 LinkedIn posts/wk from one profile** — above 7 = feed reads as content firehose.
+
+## 📂 Necessary documents to execute Phase 1 (your full doc bundle)
+
+These are everything you need to do your job:
+
+| # | Document | What it's for |
+|---|---|---|
+| 1 | [[InnBlockchain - Phase 1 Execution Playbook]] | Master ops doc — WS1 + WS2 + WS3 + WS5 + WS8 + WS12 + WS15 |
+| 2 | [[InnBlockchain - Phase 1 MPs Cover Sheet]] | This doc — your daily/weekly reference |
+| 3 | **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** (cross-phase framework) | Canonical source for ALL spacing rules — apply Mon AM batch approval |
+| 4 | **[[InnBlockchain - Per-Platform Posting Spec]]** (cross-phase framework) | LinkedIn vs X formatting rules + EU posting times in IST + cross-platform asset bundle |
+| 5 | **[[InnBlockchain - Content Style Guide]]** (cross-phase framework) | Voice/tone rules for LinkedIn post copy (Vignesh approves; you apply) |
+| 6 | **[[InnBlockchain - Newsletter Vendor Selection]]** (cross-phase framework) | Decision criteria for W10 revisit — Beehiiv default |
+| 7 | [[InnBlockchain - Content Repurposing Plan]] | Canonical tier defs + format priority + per-track asset families |
+| 8 | [[InnBlockchain - Content Repurposing Design Toolkit]] | Tool stack + Asset → Tool + Owner Map (day-to-day production reference) |
+| 9 | [[InnBlockchain - Landing Pages Plan]] | LP coordination with Dev (on-page SEO touchpoints) |
+| 10 | [[InnBlockchain - Landing Pages AEO GEO Prompts]] | 13 AEO Drafting Principles + monthly AI citation probe |
+| 11 | [[InnBlockchain - LinkedIn Strategy]] | LinkedIn algorithm + content cadence + engagement tactics |
+| 12 | [[EU-Compliance-Landscape]] | Regulatory framing reference — escalate regime questions to Vignesh |
 
 ## ☎️ Backup / escalation
 
@@ -91,7 +110,7 @@ LP on-page SEO + GA4 + email-capture coordination (rev 17) · Featured assets op
 
 - LP build (HTML / framework code) → **Dev**
 - LP body copy drafting → **CW + Vignesh** (you do on-page SEO + drafting per AEO Principles; Vignesh approves regulatory framing)
-- Article drafting → **CW**
+- Article drafting + **WordPress publish on innblockchain.com/academy** → **CW** (you handle social amplification only)
 - Discovery calls / outbound DMs → **SP**
 - Brand template setup (one-time W2–W3 sprint) → **Designer** (you maintain via templates ongoing)
 - High-stakes PDF design (Sample Audit Report · Vendor Risk Pack · complex regulatory infographics) → **Designer**

@@ -5,11 +5,12 @@ department:
   - marketing
 role: Designer
 priority: high
-rev: 1
+rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 22
+playbook_rev_synced: 28
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
+  rev 2 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need (not just playbook).
   rev 1 (2026-06-03): initial cover sheet for Designer role (part-time engagement; high-stakes pieces + brand system foundation + MVP fallback). Sister doc to Dev / MPs / SP / CW / Vignesh cover sheets.
 tags:
   - role
@@ -68,6 +69,18 @@ tags:
 - **Never use crypto-cliché visuals** (Bitcoin logo · gold coins · floating blockchain rectangles · matrix-code overlays) — wrong tone for regulated FinTech buyers.
 - **Never use stock photos of "fake businesspeople shaking hands"** — uniformly unprofessional in B2B FinTech.
 - **Never make regulatory judgment calls yourself** — if a slide caption or infographic label touches regulatory framing, escalate to Vignesh BEFORE publish.
+
+## 📂 Necessary documents to execute Phase 1 (your full doc bundle)
+
+These are everything you need to do your job:
+
+| # | Document | What it's for |
+|---|---|---|
+| 1 | [[InnBlockchain - Phase 1 Execution Playbook]] | Master ops doc — WS3 + WS4 + WS14 + WS15 |
+| 2 | [[InnBlockchain - Phase 1 Designer Cover Sheet]] | This doc — your daily/weekly reference |
+| 3 | [[InnBlockchain - Content Repurposing Design Toolkit]] | **Your primary day-to-day reference** — tool stack · Decision Shorthand (AI vs Designer split) · Brand Consistency Standards · Sample Audit Report production workflow |
+| 4 | [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets | Sample Audit Report disclosure rule (synthetic vs real audit) + annual refresh anchor |
+| 5 | [[EU-Compliance-Landscape]] | Regulatory framing reference — never make regulatory judgment yourself; escalate to Vignesh BEFORE publish if a slide/infographic touches regulatory framing |
 
 ## ☎️ Backup / escalation
 

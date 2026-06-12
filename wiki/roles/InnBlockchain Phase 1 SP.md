@@ -5,11 +5,12 @@ department:
   - marketing
 role: SP
 priority: high
-rev: 1
+rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 22
+playbook_rev_synced: 28
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 revision_notes: |
+  rev 2 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need (not just playbook). Discovery Call Master Sequence + Pipeline Stage Exit Criteria extracted to cross-phase frameworks — both added to doc list.
   rev 1 (2026-06-03): initial cover sheet for SP role (Sales Person — full-cycle outbound + discovery + close authority). Sister doc to Dev / MPs / CW / Designer / Vignesh cover sheets.
 tags:
   - role
@@ -85,6 +86,21 @@ LinkedIn outbound full-cycle (DM → discovery call → close authority) · CRM 
 - Trioangle existing client → route to Vignesh for pricing conversation · OR if client explicitly asks for founder · OR if relationship history feels off
 - Regime confusion you can't resolve (e.g., prospect insists "we need MiCA for this RWA tokenization") → escalate same-day
 - New DM template variant needed → Vignesh approves before send (cannot reuse approved templates with substantial changes)
+
+## 📂 Necessary documents to execute Phase 1 (your full doc bundle)
+
+These are everything you need to do your job:
+
+| # | Document | What it's for |
+|---|---|---|
+| 1 | [[InnBlockchain - Phase 1 Execution Playbook]] | Master ops doc — WS5 + WS8 + WS9 + WS9.5a + WS9.5b + WS10 + WS12 + WS13 |
+| 2 | [[InnBlockchain - Phase 1 SP Cover Sheet]] | This doc — your daily/weekly reference |
+| 3 | **[[InnBlockchain - Discovery Call Master Sequence]]** (cross-phase framework) | Your 20-step playbook for every call — 5 phases · Vignesh escalation triggers · common mistakes |
+| 4 | **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (cross-phase framework) | Stage advancement rules — Connected → Replied → Qualified → Call Booked → Closed |
+| 5 | [[InnBlockchain - LinkedIn Outreach Strategy]] | Canonical T1→T5 templates · regime keywords · disqualification signals |
+| 6 | [[InnBlockchain - ICP - Crypto Native]] | RWA Felix buyer pattern for qualification |
+| 7 | [[InnBlockchain - ICP - FinTech]] | Sam/Tom/Carol buyer pattern for qualification |
+| 8 | [[EU-Compliance-Landscape]] | Regulatory framing reference — never make regulatory judgment yourself; escalate to Vignesh same-day |
 
 ## ☎️ Backup / escalation
 
