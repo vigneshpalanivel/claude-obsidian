@@ -8,7 +8,7 @@
 
 **Token standard:** **ERC-1400** (the security-token standard) — a family of related Ethereum specifications:
 
-- **ERC-1410** — _partitioned tokens_. Lets one token contract hold multiple "partitions," each carrying its own compliance state. Used here for one partition per closing tranche so each closing's 12-month lockup runs independently.
+- **ERC-1410** — _partitioned tokens_. Lets one token contract hold multiple "partitions," each carrying its own compliance state (notably a `closeDate` that anchors that partition's 12-month Reg S lockup). A continuous offering uses a single partition; a scheduled multi-tranche offering uses one partition per close, each lockup running independently.
 - **ERC-1594** — _transfer validation_. Defines the `canTransfer` hook the token calls before every transfer to check whether it's allowed; this is where the Reg S and Rule 144 rules are enforced.
 - **ERC-1643** — _document registry_. A standard way for the token to publish references (URI + hash fingerprint) to the offering memorandum, legends, and other legal documents.
 - **ERC-1644** — _controller operations_. A built-in capability for the issuer to force-transfer or burn tokens to remediate non-compliant transfers, exercised through governance-controlled keys.
@@ -23,25 +23,25 @@
 
 ## CONFIRMED ISSUER PROFILE
 
-| Attribute                                   | Value                                                         | Source                                                                                                         |
-| ------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Issuer location                             | Florida, USA                                                  | Client input                                                                                                   |
-| Business                                    | Real estate (U.S.-situs assets)                               | Client input                                                                                                   |
-| Likely entity form                          | Florida LLC, Delaware LLC, or Delaware statutory trust        | Standard real estate SPV practice                                                                              |
-| **Domestic vs Foreign**                     | **Domestic issuer**                                           | Rule 902(e) — fails Rule 405 FPI exclusion on both prongs (U.S. ownership + U.S. management/assets/operations) |
-| **Reporting status**                        | **Non-reporting issuer**                                      | Rule 902(i) — no §12(b)/(g) registration, no §15(d) filings, no 12-month reporting history                     |
-| **Security type**                           | **Equity** (LLC membership / beneficial interest tokenized)   | Token represents pro-rata ownership in property cash flows and disposition proceeds                            |
-| **Reg S Category**                          | **Category 3 — domestic-issuer equity** (Rule 903(b)(3)(iii)) | Cross-ref: [reg-s-checklist §3.2 Category 3](../US%20Compliance/reg-s-checklist.md)                            |
-| **Distribution compliance period**          | **12 months**                                                 | Rule 903(b)(3)(iii)(A) — 1-year period because non-reporting (6 months would only apply if reporting)          |
-| **Restricted-securities status**            | **Permanent under Rule 905**                                  | Rule 905 makes domestic-issuer equity acquired under Reg S "restricted securities" under Rule 144 indefinitely |
-| **Rule 144 holding period for U.S. resale** | **12 months**                                                 | Rule 144(d) — non-reporting issuer threshold                                                                   |
+| Attribute                                   | Value                                                         | Source                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Issuer location                             | Florida, USA                                                  | Client input                                                                                                                                                                                                                                                                                                                                                                                       |
+| Business                                    | Real estate (U.S.-situs assets)                               | Client input                                                                                                                                                                                                                                                                                                                                                                                       |
+| Likely entity form                          | Florida LLC, Delaware LLC, or Delaware statutory trust        | Standard real estate SPV practice                                                                                                                                                                                                                                                                                                                                                                  |
+| **Domestic vs Foreign**                     | **Domestic issuer**                                           | Rule 902(e) → Rule 405 "foreign issuer" definition turns on **jurisdiction of organization**: a Florida-organized LLC is organized under U.S. law, so it is NOT a "foreign issuer" → domestic issuer. (The U.S.-ownership + U.S.-management two-prong test is the separate "foreign _private_ issuer" test under Rule 405 / Rule 3b-4 — a different determination, not the one that controls here) |
+| **Reporting status**                        | **Non-reporting issuer**                                      | Rule 902(i) — no §12(b)/(g) registration, no §15(d) filings, no 12-month reporting history                                                                                                                                                                                                                                                                                                         |
+| **Security type**                           | **Equity** (LLC membership / beneficial interest tokenized)   | Token represents pro-rata ownership in property cash flows and disposition proceeds                                                                                                                                                                                                                                                                                                                |
+| **Reg S Category**                          | **Category 3 — domestic-issuer equity** (Rule 903(b)(3)(iii)) | Cross-ref: [reg-s-checklist §3.2 Category 3](../US%20Compliance/reg-s-checklist.md)                                                                                                                                                                                                                                                                                                                |
+| **Distribution compliance period**          | **12 months, from each partition's `closeDate`**              | Rule 903(b)(3)(iii)(A) 1-year period (non-reporting). Per Rule 902(f), a partition's period starts at its `closeDate` — set at creation for a defined tranche (f)(1), or filled at completion of distribution for a continuous offering (f)(2). See Section C                                                                                                                                      |
+| **Restricted-securities status**            | **Permanent under Rule 905**                                  | Rule 905 makes domestic-issuer equity acquired under Reg S "restricted securities" under Rule 144 indefinitely                                                                                                                                                                                                                                                                                     |
+| **Rule 144 holding period for U.S. resale** | **12 months**                                                 | Rule 144(d) — non-reporting issuer threshold                                                                                                                                                                                                                                                                                                                                                       |
 
 ## OPERATIONAL CONSTRAINTS THE CLIENT HAS ACCEPTED
 
 Reg S-only is the chosen path. The client has accepted the following constraints — the platform enforces them on-chain, and the offering documents must disclose them prominently:
 
-1. **No sales to any U.S. person for the entire 12-month distribution compliance period, per closing tranche.** Floridians and other U.S.-resident investors cannot subscribe during this window. If the sponsor's existing network is U.S.-heavy, the distribution channel must be built offshore (foreign placement agents, non-U.S. introducers, offshore investor lists).
-2. **Tokens are permanent restricted securities under Rule 905.** Even after the 12-month Reg S lockup closes, U.S. resale is gated by Rule 144. For non-affiliate holders — which under the affiliate-free architecture means every holder — the Rule 144 12-month holding period runs **concurrently** with the Reg S compliance period under Rule 144(d)(1)(ii) tacking (measured from the partition's closing date), so both clear at the same moment. The total time from a partition's close to its first eligible U.S. resale is 12 months, NOT 24. For affiliates by operation of law, ongoing restrictions (volume caps, broker-only sales channels, current public information, Form 144 filings) apply that this platform does not support — wallet is `BLOCKED` instead.
+1. **No sales to any U.S. person from offering open until the partition's distribution compliance period expires.** The offering's compliance period starts at the partition's **`closeDate`** — for the client's current continuous structure (Rule 902(f)(2)) that `closeDate` is filled in only when the distribution completes (full placement or issuer termination), so the 12-month clock does not even start until then. U.S.-resident investors cannot subscribe at any point during the offering, and cannot receive resold tokens until 12 months AFTER the `closeDate`. If the sponsor's network is U.S.-heavy, the distribution channel must be built offshore (foreign placement agents, non-U.S. introducers, offshore investor lists).
+2. **Tokens are permanent restricted securities under Rule 905, and the two clocks do NOT align.** Two separate clocks run: (a) the **Rule 144 holding period** starts at each holder's **full-payment (subscription) date** — per holder, not shared — with Rule 144(d)(1)(ii) tacking inherited on secondary transfers; (b) the **Reg S distribution compliance period** starts at the partition's `closeDate`, which (never in the past, with mints stopping once it arrives) lands at or after every holder's payment. The **Reg S `closeDate` clock always clears last — it is the binding constraint.** An investor who subscribes early may satisfy her Rule 144 12-month holding period months before the Reg S gate opens, yet still cannot sell to U.S. persons until the `closeDate + 12 months` passes. Total time from an early subscription to first eligible U.S. resale = (months until `closeDate`) + 12 months — potentially well beyond 12 months from payment. For affiliates by operation of law, ongoing restrictions (volume caps, broker-only channels, current public information, Form 144) apply that this platform does not support — wallet is `BLOCKED` instead.
 3. **No directed selling efforts into the U.S.** Website, marketing, social channels, PR — all must be geo-fenced and U.S.-investor-excluded. A single U.S.-readable promotion can collapse the Reg S safe harbor.
 4. **The sponsor cannot personally subscribe under Reg S.** The Florida-resident sponsor is a U.S. person; he cannot buy tokens. His economics come through the LLC promote (see Architectural Decision §1 — Sponsor economics — below), not through token subscription.
 
@@ -63,7 +63,7 @@ Reg S is a safe harbor from Section 5 **registration** requirements only. Even w
 
 ## ARCHITECTURAL DECISION: AFFILIATE-FREE TOKEN STRUCTURE (LOCKED)
 
-**No affiliate of the issuer will hold tokens.** This is the single most consequential design decision in the project. It removes a substantial layer of compliance machinery from the on-chain logic — Rule 144(e) volume caps, Rule 144(f) manner-of-sale routing, Rule 144(c) current public information attestations, Rule 144(h) Form 144 filings, and the Rule 144(a)(2) household / group-control attribution rules.
+**No affiliate of the issuer will hold tokens.** This is the single most consequential design decision in the project. It removes a substantial layer of compliance machinery from the on-chain logic — Rule 144(e) volume caps, Rule 144(f) manner-of-sale routing, Rule 144(c) current public information attestations, Rule 144(h) Form 144 filings, the Rule 144(a)(2) "person" attribution rules (household relatives + controlled trusts/entities), and the Section 13(d)/Rule 13d-5 group-control rules.
 
 The five structural commitments below maintain the affiliate-free architecture:
 
@@ -76,7 +76,7 @@ The five structural commitments below maintain the affiliate-free architecture:
 
 ### 2. Per-investor concentration cap (on-chain enforced)
 
-- [ ] **Hard maximum holding per identity: 9.99% of the token's total supply across ALL partitions** — prevents any single holder from triggering the SEC's presumptive 10%-holder affiliate flag. The affiliate presumption is measured at the **class** level, and the partitions are fungible tranches of one class (segregated only for compliance clocks), so the cap must be the class-wide aggregate — NOT 9.99% of each partition (which would let a holder reach ~N×10% of the class across N closings)
+- [ ] **Hard maximum holding per identity: 9.99% of the token's total supply across ALL partitions** — keeps every holder below the 10% threshold commonly associated with a _rebuttable_ affiliate presumption. **Note the cap is necessary, not sufficient:** under Rule 144(a)(1) affiliate status is a **control** test, not an ownership-percentage test (rule-144-checklist §2.1) — a sub-10% holder can still be an affiliate via a board seat, veto rights, or concerted action. Control-based affiliate creation is caught separately by the BLOCKED triggers in §4 below; the 9.99% cap only removes the ownership-percentage vector. The cap is measured at the **class** level — the partitions are fungible tranches of one class (segregated only for compliance clocks), so the cap is the class-wide aggregate — NOT 9.99% of each partition (which would let a holder reach ~N×10% of the class across N closings)
 - [ ] The cap is checked inside the `canTransfer` hook (ERC-1594) on every secondary transfer, and at issuance (mint) on every subscription
 - [ ] The cap applies after aggregating balances across all wallets associated with the same identity in the ERC-3643 identity registry **and across all partitions that identity holds** — investors cannot split holdings across multiple wallets or across closing tranches to evade
 
@@ -92,7 +92,7 @@ The five structural commitments below maintain the affiliate-free architecture:
 - [ ] If the off-chain KYC pipeline detects any of the following for any token holder, the identity registry flags the wallet as `BLOCKED` (the affiliate-free architecture does not classify anyone as an "affiliate" — there is no affiliate state, only BLOCKED). Each trigger flows from **Rule 144(a)(1)** — affiliate = "a person that directly or indirectly through one or more intermediaries, controls, is controlled by, or is under common control with" the issuer:
   - The holder is appointed an officer, director, or manager of the SPV → presumptive control → affiliate under Rule 144(a)(1)
   - The holder enters a voting agreement or shareholder agreement with other holders → joint control via group beneficial ownership (Section 13(d) / Rule 13d-5) → affiliate under Rule 144(a)(1)
-  - Household attribution under Rule 144(a)(2)(i) — relative or spouse sharing the same home as an SPV affiliate. The (a)(2)(i) attribution is technically for Rule 144(e) sales-aggregation, but combined with the related party's affiliate status, the holder is treated as a presumptive affiliate under Rule 144(a)(1)
+  - Household attribution under Rule 144(a)(2)(i) — relative or spouse sharing the same home as an SPV affiliate. Per rule-144-checklist §2.2, the Rule 144(a)(2) "person" definition governs whose account securities are sold across ALL sales-side conditions (holding period, volume, manner of sale, Form 144) — not just (e) aggregation. A household member of an SPV affiliate therefore sits inside that affiliate's Rule 144 "person," and combined with the related party's affiliate status is treated as a presumptive affiliate under Rule 144(a)(1)
   - Concerted-action signal — multiple holders coordinating as a block (Section 13(d) / Rule 13d-5 group beneficial ownership → joint control) → affiliate under Rule 144(a)(1)
 - [ ] Once BLOCKED, all outgoing transfers from that wallet revert in `canTransfer`. The holder must liquidate via registered offerings, Reg S Rule 904 offshore-only resales, or other paths handled entirely off-chain. The platform offers no on-chain affiliate-resale path
 
@@ -204,7 +204,7 @@ The hook enforces both:
 The hook returns `false` (reject) when:
 
 - [ ] Recipient is **not in the identity registry** (no KYC) → reason: `"NO_KYC"`
-- [ ] Recipient is a **U.S. person** AND the distribution compliance period has not expired AND recipient is not classified as `DISTRIBUTOR` → reason: `"REG_S_US_PERSON_RESTRICTED"`. This is the core Rule 903(b)(3)(iii)(A) gate during the 12-month lockup
+- [ ] Recipient is a **U.S. person** AND the sender-partition's compliance period has not expired (`closeDate == max` OR `block.timestamp < closeDate + 12 months`) AND recipient is not classified as `DISTRIBUTOR` → reason: `"REG_S_US_PERSON_RESTRICTED"`. This is the core Rule 903(b)(3)(iii)(A) gate; an unset `closeDate` (`max`) blocks until the partition's distribution closes (Section C)
 - [ ] Recipient or sender is **OFAC-flagged** in the identity registry — covering any of the four OFAC failure modes from §A.1.2: (1) SDN-listed identity, (2) SDN-listed wallet address, (3) comprehensively-sanctioned country of residence (Cuba, Iran, North Korea, Syria, Crimea/Donetsk/Luhansk/Kherson/Zaporizhzhia), or (4) 50%+ aggregated ownership by SDN-listed persons. Strict liability — check applies on both sender AND recipient on every transfer → reason: `"OFAC_BLOCKED"`. Stale OFAC screening (>30 days old) also rejects → reason: `"OFAC_SCREENING_STALE"`
 - [ ] Sender is flagged `BLOCKED` (covers any holder who became an affiliate by operation of law under the affiliate-free architecture) → reason: `"SENDER_BLOCKED"`
 - [ ] Sender or recipient identity record has **stale KYC** beyond the re-verification window (e.g., 12 months since last KYC refresh) → reason: `"KYC_EXPIRED"`
@@ -216,24 +216,37 @@ Return codes follow ERC-1066 (Ethereum Status Codes) where possible for explorer
 
 ---
 
-## C. Distribution Compliance Period Logic (the 12-Month Lockup per Closing)
+## C. Distribution Compliance Period Logic — Per-Partition `closeDate` (Rule 902(f))
 
-_Cross-reference: checklist §3.2 Category 3 equity (Rule 903(b)(3)(iii)(A))_
+_Cross-reference: checklist §3.2 Category 3 equity (Rule 903(b)(3)(iii)(A)), §2.4 (Rule 902(f) distribution compliance period definition)_
 
-**Locked for this issuer profile: 12-month compliance period per closing tranche.** (`isReportingIssuer = false` → Rule 903(b)(3)(iii)(A) 1-year branch applies. The 6-month branch would only apply if the issuer were a public reporting company.)
+**Core model — one field, one gate, no modes.** A **partition is an offering**, and its **`closeDate` is the start of that offering's Reg S distribution compliance period**. The compliance period for a partition runs `closeDate → closeDate + 12 months` (`isReportingIssuer = false` → 1-year branch; the 6-month branch would only apply if the issuer were a public reporting company). There is **no separate global variable and no "continuous vs. tranche" branching** — there is one field, `partition.closeDate`, and `canTransfer` uniformly reads the **sender's partition's** value (it does NOT hardcode any partition index).
 
-- [ ] Storage on-chain: a `distributionComplianceEnd` timestamp **per partition** (closing tranche), set per Rule 902(f)'s "later of" rule — the LATER of (a) the date securities were first offered to persons OTHER than distributors, or (b) the date of closing of the offering. In typical primary offerings the closing date controls; in rare structures where non-distributor offers begin after closing, the offer date controls. The issuer sets the value at each closing based on the actual offer/close timeline
-- [ ] Storage on-chain: an `isReportingIssuer` boolean — hard-coded `false` for this client until/unless he later registers under the Exchange Act. The boolean stays in the contract so the same code can serve a future reporting-issuer deployment without redeployment
-- [ ] **Per-partition compliance period** via ERC-1410 partitions — real estate offerings typically close in waves (subscription period → first close → interim closes → final close). Each closing tranche gets its own ERC-1410 partition with an independent 12-month clock starting from that closing date. A single global clock would force every subscriber to wait until the last close before any tokens become tradeable, which is unfair to early subscribers
-- [ ] **Rule 902(f) interpretation caveat:** Rule 902(f)(2) states that in a _continuous offering_, the distribution compliance period commences upon "completion of the distribution, as determined and certified by the managing underwriter." A strict reading treats the entire rolling-close offering as a single offering with one compliance period beginning at final close. The per-tranche-per-partition approach used here is a practitioner interpretation treating each closing tranche as a discrete offering for distribution-compliance purposes. This is the dominant practice for real estate STOs but is not the only defensible reading of Rule 902(f). Confirm with counsel that the chosen interpretation matches the offering's distributor-agreement and offering-document language, and consider documenting the per-tranche treatment explicitly in the placement agent's distribution-completion certification
-- [ ] During the 12-month compliance period for a given partition, `canTransfer` enforces all of Section B's checks plus:
-  - Distributor confirmation event emission when a token is transferred to a known dealer or selling-concession recipient (Rule 903(b)(3)(iv)) — emits `DistributorConfirmationRequired` for the off-chain placement agent to action
-  - Buyer recertification event when a partition is transferred to a new wallet during the period — the new holder must reaffirm non-U.S.-person status (Rule 903(b)(3)(iii)(B)(1))
-- [ ] **After** the 12-month period expires for a given partition, U.S.-person transfers become eligible for Rule 144 analysis but the **restricted-securities status persists indefinitely** — see Section D
+- [ ] **Storage on-chain: `closeDate` per partition.** Semantics: the date that partition's distribution closed under Rule 902(f) — the LATER of first-offer-to-non-distributors or the close; the close controls in normal primary offerings
+- [ ] **Unset sentinel = `type(uint256).max` (NEVER `0`).** A partition whose distribution has not closed carries `closeDate = type(uint256).max`, so `closeDate + 12 months` never arrives and the Reg S gate blocks ALL U.S.-person transfers of that partition's tokens. The sentinel — not a mode flag — is what makes the gate uniform and **fails safe**. `0` would fail OPEN (`0 + 12mo` is ancient history → the check passes → U.S. transfers allowed before the period starts → Section 5 violation). Use `max`
+- [ ] Storage on-chain: an `isReportingIssuer` boolean — hard-coded `false` until/unless the issuer later registers under the Exchange Act. The boolean stays in the contract so the same code can serve a future reporting-issuer deployment without redeployment
 
-> **Architecture note:** ERC-1410 partitions are the correct mechanism for tranche segregation. They give each closing tranche its own clock and its own Rule 144 holding period, while keeping the tokens fungible for distribution and reporting purposes.
+**`closeDate` gets its value one of two ways — same field, same gate, only the timing of the write differs:**
 
-> **Client conversation point:** Confirm with the sponsor that the offering has a defined final-close date. If the deal stays open-ended (rolling close indefinitely), each new subscription doesn't reset prior subscribers' clocks, but each new partition adds another 12-month clock to manage. Three or more years of overlapping clocks is operationally manageable but worth surfacing.
+- [ ] **Set at partition creation (defined tranche — Rule 902(f)(1)):** if the tranche has a firm, contractually-fixed (future) close date, write `closeDate` at `createPartition`. Mints are accepted until that date arrives. Used by an issuer running a scheduled multi-tranche offering
+- [ ] **Filled later via `setCloseDate` (continuous / unknown close — Rule 902(f)(2)):** if the close is not known up front — e.g. a continuous offering that ends "upon full placement or earlier termination by issuer" — the partition is created with `closeDate = max`, and the compliance officer calls `setCloseDate` with a (near-future) cutoff when the distribution completes (the Rule 902(f)(2) completion-of-distribution determination, backed by the placement agent's certification per §L.6) via an EIP-712 authorized, multi-sig-gated write. Mints stop when that cutoff arrives. Emits `CloseDateSet(partition, closeDate)`. **A continuous offering is simply a tranche whose `closeDate` is filled in later — typically a single partition.** This is the client's current whitepaper structure
+
+**On-chain constraints when writing `closeDate` (these prevent a Section 5 under-restriction bug). The whole ruleset collapses to two invariants plus one corollary:**
+
+- [ ] **(1) `closeDate` must be NOW or a future date when written** — `require(closeDate >= block.timestamp)`, enforced both at `createPartition` and in `setCloseDate`. The only forbidden value is a **past** date; that is the precise safety boundary. A past `closeDate` is the backdating attack — `closeDate + 12 months` could already be expired, opening the gate for tokens that never served a lockup. `closeDate == now` is safe (it yields a full 12-month period) and is the natural "close the distribution right now" write for a continuous offering: mints stop in that same block. This rule eliminates backdating by construction and subsumes "`closeDate >= latest mint`" — see invariant (2)
+- [ ] **(2) `mint` is allowed iff `block.timestamp < closeDate`** (an unset `closeDate == max` → always allowed until set). Once the date **arrives** (`block.timestamp >= closeDate`), `mint` into that partition reverts — **no sales after the close**. New subscriptions go into a fresh partition. Note the trigger is the date _arriving_, NOT the value being _set_ — a future `closeDate` set at creation still allows mints until it arrives
+- [ ] **Corollary — `closeDate` is mutable only while still in the future.** `setCloseDate` may update the value (extend later, or pull in to an earlier _still-future_ date) ONLY while `block.timestamp < closeDate`. Once the date has been reached it is **immutable** — updating a period that has already started would un-start or shift it. Both update directions are safe while future, because invariant (2) makes whatever date you land on the genuine close (no mints occur past it)
+- [ ] **⚠️ The indefinite-restriction trap (surface to the client and counsel):** for a "filled later" (continuous) partition, if the compliance officer never writes the `closeDate`, it stays `max` and **every token in that partition is permanently restricted from U.S.-person resale** — the period never starts. An under-subscribed offering left open indefinitely freezes all U.S. resale paths forever. **Mitigation:** the placement agreement MUST obligate the completion certification on a defined trigger (full placement OR termination), and the offering documents should set a **long-stop date** at which the offering auto-terminates and `closeDate` is written regardless of placement level. Without a long-stop, "earlier termination by issuer" places the period start under unilateral issuer discretion — an SEC substance-over-form concern (cf. reg-s-checklist §10.2)
+
+**During and after the compliance period:**
+
+- [ ] While the partition's offering is open (`closeDate` not yet set, or not yet arrived), `canTransfer` enforces all of Section B's checks plus: (a) distributor confirmation event when a token goes to a known dealer / selling-concession recipient (Rule 903(b)(3)(iv)) — emits `DistributorConfirmationRequired`; (b) buyer recertification event when tokens move to a new wallet during the offering — the new holder reaffirms non-U.S.-person status (Rule 903(b)(3)(iii)(B)(1))
+- [ ] **After** a partition's compliance period expires (`closeDate + 12 months`), U.S.-person transfers of that partition's tokens become eligible for Rule 144 analysis, but the **restricted-securities status persists indefinitely** — see Section D
+- [ ] **Rule 144 holding-period clock is SEPARATE and per-holder** — see Section D. It is keyed to each holder's full-payment date (`acquisitionTimestamp`), NOT to `closeDate` and NOT to the mint event. Because `closeDate` is never in the past when written and mints stop once it arrives (invariants 1–2 above), every lot's payment date precedes `closeDate`, so the Reg S gate (`closeDate + 12mo`) always clears at or after every lot's Rule 144 gate (`acquisitionTimestamp + 12mo`) — **the Reg S `closeDate` gate is always the binding constraint**, and the per-lot Rule 144 clock is audit-only on-chain (Section D)
+
+> **What partitions are for here:** (1) the Reg S compliance-period container — one `closeDate` per partition; (2) distribution snapshots and reporting. A continuous offering uses a single partition; a scheduled multi-tranche offering uses one partition per tranche. The Rule 144 per-holder clock is tracked separately (audit record / event log — Section D), not by the partition's `closeDate`.
+
+> **Client conversation point:** A continuous offering (single partition, `closeDate` filled at completion) means every U.S.-resale clock is pinned to ONE future completion event the issuer/placement agent controls — early subscribers wait the full remaining offering period PLUS 12 months. A scheduled multi-tranche offering (one partition per close) lets early tranches start their clocks sooner — better subscriber liquidity, but requires the issuer to commit to defined closes and to amend the whitepaper to describe the tranche structure. Confirm which the client wants; the placement agreement must commit the agent to write each `closeDate` on a defined trigger with a long-stop backstop.
 
 ---
 
@@ -243,13 +256,24 @@ _Cross-reference: checklist §5 (Resale Limitations), §8.3 (Rule 144 interactio
 
 **This is the trap most token issuers miss.** Even after the Reg S compliance period expires, the tokens remain Rule 144 "restricted securities" **forever** because the issuer is domestic. The compliance period is time-limited; the restricted-status is permanent.
 
-Under the affiliate-free architecture, every holder is by structural commitment a **non-affiliate**. Rule 144's clean non-affiliate path (Rule 144(b)(1)(ii) for non-reporting issuers) applies: after 12 months of holding (with automatic tacking from the partition's issuance date), a non-affiliate can resell to U.S. persons with no volume cap, no manner-of-sale restriction, no current-information requirement, no Form 144.
+**Why does Rule 144 apply to a Reg S offering at all?** Rule 144 is not chosen here — **Rule 905 of Regulation S imposes it automatically.** By issuing domestic-issuer equity under Reg S Rule 903, every token is stamped as a "restricted security" under Rule 144(a)(3)(v) by operation of law. The issuer does nothing extra — Rule 905 is the bridge. Reg S governs the primary offering (issuer → offshore investors); Rule 905 hands the baton to Rule 144, which then governs any subsequent U.S.-person resale by those investors. An investor who asks "why can't I just sell to my U.S. friend after 12 months?" is asking a Rule 144 question, not a Reg S question.
 
-- [ ] **Per-partition storage on-chain: `issuanceTimestamp`** (= the closing date of the partition's tranche). This is the date the securities first left the issuer for that partition, and the date from which the Rule 144 12-month clock measures for **ALL** holders in the partition. Under the affiliate-free architecture, every transfer chain is non-affiliate-to-non-affiliate, so Rule 144(d)(1)(ii)'s "any subsequent holder" tacking applies — the clock measures from the partition's `issuanceTimestamp`, NOT from each holder's personal acquisition date (see [rule-144-checklist.md §5.1a](../US%20Compliance/rule-144-checklist.md) for the verbatim source)
-- [ ] **No per-holder `acquisitionTimestamp` needed for Rule 144 purposes.** All non-affiliate holders in the same partition share the same Rule 144 clock — measured from `partition.issuanceTimestamp`. A per-holder `lastReceivedTimestamp` may still be useful for audit trail, distribution snapshots, or tax reporting, but it does NOT factor into the Rule 144 holding-period check
-- [ ] **Rule 144 clock and distribution compliance period clock ALIGN.** Under this implementation, `partition.distributionComplianceEnd = partition.issuanceTimestamp + 12 months` (for non-reporting issuer Cat 3 equity per Rule 903(b)(3)(iii)(A); 6 months for the reserved reporting-issuer path). The Reg S distribution compliance period and the Rule 144 12-month holding period CLEAR AT THE SAME MOMENT for every non-affiliate holder in the partition. The two gates in `canTransfer` are checking effectively the same condition — passing one means passing the other. This alignment is a real architectural simplification flowing from the affiliate-free decision plus the choice to use partition-level (not per-holder) Rule 144 clock tracking
-- [ ] `canTransfer` checks: if recipient is a U.S. person and is not relying on registration or another exemption, has `block.timestamp >= partition.issuanceTimestamp + 365 days` been satisfied?
+Under the affiliate-free architecture, every holder is by structural commitment a **non-affiliate**. Rule 144's clean non-affiliate path (Rule 144(b)(1)(ii) for non-reporting issuers) applies: after the holding period clears (12 months from the holder's own **acquisition date** — the date they paid in full and assumed the investment risk — with automatic Rule 144(d)(1)(ii) tacking inherited on secondary transfers), a non-affiliate can resell to U.S. persons with no volume cap, no manner-of-sale restriction, no current-information requirement, no Form 144 — **provided the partition's Reg S compliance period (`closeDate + 12 months`) has also expired** (Section C). These two conditions clear at different times; see the alignment bullet below.
+
+- [ ] **Per-acquisition-lot storage on-chain: `acquisitionTimestamp`** (= the date the acquirer **paid in full and assumed the economic risk** of the investment — Rule 144(d)(1)). This is NOT the contract's mint event: under [rule-144-checklist.md §5.1](../US%20Compliance/rule-144-checklist.md), "the holding period shall not begin until full purchase price or other consideration is paid by the acquirer." For a rolling subscription, each investor pays on a different date, so each primary acquisition carries its own `acquisitionTimestamp`. The Rule 144 clock is therefore **per holder, not shared across a partition** — different subscribers in the same offering can clear their holding period on different dates
+- [ ] **Tacking travels with the tokens (Rule 144(d)(1)(ii)).** On a non-affiliate-to-non-affiliate transfer, the receiver does NOT get a fresh clock — the tokens carry their existing `acquisitionTimestamp` to the new holder, tracing back to the original acquisition from the issuer. Implementation: model each primary acquisition as its own **ERC-1410 (sub)partition (lot)** whose `acquisitionTimestamp` is intrinsic and immutable; when tokens move, they stay in their lot and carry the timestamp automatically. This makes "per-holder acquisitionTimestamp with tacking" fall out of the partition machinery without separate per-wallet bookkeeping
+- [ ] **Mixed-date wallet handling.** A wallet may hold tokens from multiple lots acquired on different dates (the same investor subscribes twice, or subscribes once and receives a tacked transfer). Each lot has its own `acquisitionTimestamp` and therefore its own Rule 144 `holdingEnd`. On a partial sale, the lot being sold determines the applicable date. Use **FIFO** (oldest lot first) for precision, or the **conservative rule** (gate the whole balance on the latest lot's date — over-restrictive but simplest). **Never gate on the earliest lot — that would let newer tokens sell before their true Rule 144 date (under-restrictive, legal risk)**
+- [ ] **Do you actually need a FIFO slot/consumption engine? With the not-in-the-past `closeDate` (Section C) — NO.** Because the Reg S `closeDate` gate is binding and does not open until `closeDate + 12 months`, and `closeDate` is never in the past while mints stop once it arrives (so every lot's payment precedes `closeDate`), every lot has already cleared its own 12-month Rule 144 clock by the time the Reg S gate opens. There is no reachable state where a U.S. transfer is permitted while any lot is still inside its Rule 144 window. **So the per-lot distinction never changes a `canTransfer` outcome.** You should still **capture `acquisitionTimestamp` per acquisition** (a cheap record / event-log entry — needed for audit, legal proof, and the wash trail), but you can **skip the FIFO consumption engine**. Build the full slot engine ONLY if a partition uses **escrow-until-close with the Rule 144 clock as a binding gate**, or other structures where lot precision actually decides a transfer
+- [ ] **Rule 144 clock and Reg S compliance period clock do NOT align — Reg S is the binding constraint.** Two distinct values gate a U.S.-person resale: (a) the **Reg S** gate, `block.timestamp >= senderPartition.closeDate + 365 days` (per partition — Section C); and (b) the **Rule 144** gate, `block.timestamp >= lot.acquisitionTimestamp + 365 days` (per acquisition lot / per holder, with tacking). Because `closeDate` is never in the past when written and no mints occur after it arrives (Section C invariants 1–2), every lot's `acquisitionTimestamp` (a payment) precedes `closeDate`, so `closeDate >= every lot.acquisitionTimestamp` — and the Reg S gate always clears at or after the Rule 144 gate **for every lot in the partition**. **Practical result: the Reg S `closeDate` gate is always the operative blocker.** By the time it clears, every lot's Rule 144 holding period has already cleared. Gate 3 (Rule 144) is therefore never the binding check, but it is RETAINED because (i) it maps to a distinct source regulation for the audit trail, and (ii) the **Rule 144 holding period — not the Reg S period — governs whether a non-affiliate U.S. resale "washes" the restricted-securities label off the buyer's tokens** (Rule 905 / Rule 144 wash). The two gates would align and clear simultaneously only with **escrow-until-close settlement** (tokens released and full payment deemed made at the close), where every holder's `acquisitionTimestamp` equals the partition's `closeDate`
+- [ ] `canTransfer` checks for a U.S.-person recipient not relying on registration/other exemption: BOTH (a) `senderPartition.closeDate != type(uint256).max AND block.timestamp >= senderPartition.closeDate + 365 days` (Reg S — the binding gate; an unset `closeDate` blocks) AND (b) `block.timestamp >= lot.acquisitionTimestamp + 365 days` for the lot(s) being transferred (Rule 144 — always already satisfied once the Reg S gate clears, but checked for audit-trail completeness and to confirm the wash applies)
 - [ ] **No affiliate-seller branching needed in `canTransfer`** — under the affiliate-free architecture, the identity registry never carries an "affiliate" classification. Any holder who becomes an affiliate by operation of law is flagged `BLOCKED` instead, and the affiliate path is closed entirely. The full Rule 144 affiliate-seller conditions (volume cap, manner-of-sale, current public information, Form 144) are described in [rule-144-checklist.md](../US%20Compliance/rule-144-checklist.md) §§ 6–9 — referenced for completeness but not implemented in this contract
+
+> **Implementation decision — this platform (MVP): conservative per-holder-per-partition `holdingEnd`, no on-chain lots.** The per-acquisition-lot model above is the _regulatory reference_. The on-chain implementation is a conservative simplification that the not-in-the-past `closeDate` (Section C) makes exact:
+>
+> - **Stored field = `issuanceTimestamp` (the mint timestamp), not a separately-captured full-payment date.** It is used as a **conservative proxy** for the Rule 144(d)(1) acquisition (full-payment) date. Valid because issuance always follows full payment in this architecture — USDT `purchaseByPartition` pulls payment and mints atomically (payment == mint); fiat `issueByPartition` mints only after off-chain settlement (payment precedes mint) — so the mint date is always **≥** the true acquisition date (conservative, never under-restrictive). The precise full-payment date lives in the off-chain subscription/settlement record (the SEC evidence file pairs the on-chain mint event with the off-chain payment confirmation). **Guardrail:** if any future deployment mints **before** payment (installments / promissory notes), this proxy is invalid and the real payment date must be supplied (e.g. via `data`).
+> - **On-chain Rule 144 state = one conservative `holdingEnd` per holder PER PARTITION — `holdingEnd[holder][partition]`.** Because transfers are `transferByPartition` (tokens move within a specific partition), and each partition snapshots its own `holdingPeriod` at creation (different partitions can have different periods), the Rule 144 clock must be scoped to the partition being transferred. A single global `holdingEnd[holder]` across all partitions would bleed a longer-period partition's clock onto tokens in a shorter-period partition — blocking a sale in P1 because the holder also holds tokens in P2 with a longer clock. That is not legally required and is unfair. The correct mapping is `holdingEnd[holder][partition]`, raised **monotonically** on every acquisition into that partition — `holdingEnd[holder][partition] = max(stored, block.timestamp + partition.holdingPeriod)` — and **never lowered**. On transfer-in, tacking is applied within the same partition: `holdingEnd[to][partition] = max(holdingEnd[to][partition], holdingEnd[from][partition])`. Per-acquisition `issuanceTimestamp`s are emitted in events; true per-lot detail is reconstructed **off-chain** by the indexer for the audit trail and the wash determination — no on-chain lot storage, no FIFO consumption engine.
+> - **Accepted trade-off (within a partition).** An investor who acquires the same partition more than once has her earlier lots in that partition locked until her latest lot in that partition clears (up to one extra `holdingPeriod` within the partition). Tokens in other partitions are unaffected. This is **legally safe** — an issuer may always impose a longer hold than Rule 144 requires; over-restriction within a partition is never a violation — and a minor liquidity/UX cost, surfaced in the investor UI ("your \<partition\> holding unlocks on \<latest-lot date\>").
+> - **When to add on-chain per-lot + FIFO.** Only if the client requires **precise per-lot liquidity within a partition** (selling each lot the moment it individually clears), or adopts a structure where the Rule 144 clock becomes the **binding** gate (e.g. escrow-until-close). Neither holds for the continuous / defined-tranche `closeDate` model here, where the Reg S gate always clears last — so the per-holder-per-partition conservative `holdingEnd` changes no outcome. Defer the lot engine until a client insists.
 
 ---
 
@@ -308,7 +332,8 @@ On-chain compliance monitoring depends on rich, structured events emitted by the
 - [ ] `BlockedPropertyHeld(holder, partition, amount, blockingDate)` — emitted on the original blocking event and tracked for the Annual Report of Blocked Property due September 30 each year (§A.1.4)
 - [ ] `DistributorConfirmationRequired(distributor, downstreamDealer, partition)` — triggers the off-chain Rule 903(b)(3)(iv) confirmation notice workflow at the placement agent
 - [ ] `ComplianceFlagRaised(holder, flagType, evidence)` — when off-chain monitoring detects a suspicious pattern (e.g., a wallet receiving tokens from a known mixer)
-- [ ] `PartitionComplianceExpired(partition, timestamp)` — emitted when a partition's distribution compliance period ends; signals the world that the partition is now eligible for Rule 144 secondary trading
+- [ ] `CloseDateSet(partition, closeDate)` — emitted when a partition's `closeDate` is written (at creation for a defined tranche, or filled later by the compliance officer at completion of distribution — Section C). For a "filled later" (continuous) partition this is the single most consequential event in the contract's life: it starts that partition's Reg S compliance clock. Off-chain monitoring should alert if a continuous partition has been open beyond the long-stop date without this event firing (the indefinite-restriction trap, Section C)
+- [ ] `PartitionComplianceExpired(partition, timestamp)` — emitted when a partition's distribution compliance period ends (`closeDate + 12 months`); signals that U.S.-person secondary trading of that partition's tokens under Rule 144 is now possible (every holder's Rule 144 `holdingEnd[holder][partition]` having already cleared by this point — mints stop once `closeDate` arrives, so each acquisition's `issuanceTimestamp` precedes `closeDate`)
 - [ ] `RestrictedSecuritiesNoted(holder, partition, amount)` — emitted on every U.S.-person sale post-compliance-period to flag the Rule 144 tracking obligation
 
 These events form the SEC evidence file. Every off-chain monitoring tool and every future SEC inquiry will reconstruct compliance posture from this event stream.
@@ -336,6 +361,8 @@ Before any tokens are minted, the platform must verify:
 - [ ] OFAC screening result is fresh (within e.g. 30 days) at mint time
 - [ ] Recipient wallet is registered in the identity registry; mints to unregistered wallets are rejected
 - [ ] Recipient's resulting balance does not exceed the 9.99% concentration cap (measured on the identity's class-wide aggregate across all wallets and partitions)
+- [ ] **The target partition is still open** — `mint` is allowed iff `block.timestamp < partition.closeDate` (an unset `closeDate == max` → open). It reverts once the `closeDate` has **arrived** (`block.timestamp >= closeDate`) — NOT merely because a future `closeDate` has been set (Section C, invariant 2). No sales after the close. New subscriptions after a close go into a fresh partition
+- [ ] **Record the Rule 144 acquisition anchor** — capture the lot's `acquisitionTimestamp` = the date **full payment cleared** for this subscription (Rule 144(d)(1), Section D), NOT the mint block per se. If minting precedes payment confirmation (e.g., escrow), set `acquisitionTimestamp` to the payment-confirmation date. This is captured as an audit record / event-log entry (per-lot on-chain state is not required — because `closeDate` is never in the past and mints stop when it arrives, every lot has cleared its Rule 144 clock before the Reg S gate opens; Section D); it feeds the wash determination and audit trail, never the binding gate
 - [ ] Emit `PurchaserCertified(investor, subscriptionHash, certificationType, partition)` event at mint
 - [ ] For real estate: link the mint event to the property record (property NFT or on-chain property registry entry) so the new holding can be tied to a specific underlying asset for distributions and reporting
 
@@ -371,7 +398,7 @@ These compliance items are **operational, not contract-level** — do not invest
 
 Use the ERC-1400 family with the following modules, each with one clear responsibility:
 
-1. **ERC-1410 Partitioned Token** — one partition per closing tranche. Each partition carries its own 12-month compliance clock independently
+1. **ERC-1410 Partitioned Token** — a partition is an offering. Each partition carries one `closeDate` (Section C); its Reg S compliance period is `closeDate + 12 months`. A continuous offering uses a single partition (`closeDate` filled at completion); a scheduled multi-tranche offering uses one partition per tranche (`closeDate` set at each close). `canTransfer` reads the **sender's** partition's `closeDate` — never a hardcoded index. The Rule 144 per-holder clock is tracked separately (Section D), not by the partition
 2. **ERC-1594 Transfer Validation** — `canTransfer` calls into a separate `ComplianceRegistry` contract (upgradeable behind a transparent proxy). Compliance rules change; the token contract should not. Decoupling them lets the rules engine track SEC guidance evolution without forcing a token redeployment
 3. **ERC-1643 Document Registry** — for the five legend / disclosure documents (Section E)
 4. **ERC-1644 Controller Operations** — for force-transfers and compliance corrections (Section F)
@@ -392,9 +419,9 @@ Keep the **token contract minimal**. Every Reg S rule should live in the complia
 ┌─────────────────────────┐      ┌────────────────────────┐
 │  ComplianceRegistry     │─────▶│  IdentityRegistry      │
 │  - Reg S rules          │      │  (ERC-3643 / ONCHAINID)│
-│  - Rule 144 tracking    │      │  - KYC status          │
+│  - Rule 144 audit clock │      │  - KYC status          │
 │  - Hedging blocklist    │      │  - U.S. person flag    │
-│  - Compliance periods   │      │  - OFAC status         │
+│  - per-partition closeDate│    │  - OFAC status         │
 │  - Concentration cap    │      │  - Concentration ledger│
 └──────────┬──────────────┘      └────────────────────────┘
            │
@@ -416,19 +443,19 @@ _The most important architectural pattern for security-token compliance: most Re
 
 ### L.1 — Catalogue of Compliance Checks (off-chain action vs on-chain validation)
 
-| #   | Compliance check                                                       | Off-chain action                                                             | What gets to the chain                                             | On-chain validation point                                                                                                                                                  |
-| --- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | KYC identity verification                                              | KYC provider (Jumio, Onfido, Sumsub) runs document + liveness check          | Status flag + verification timestamp written to identity registry  | `canTransfer` reads registry every transfer                                                                                                                                |
-| 2   | U.S. person classification (Rule 902(k))                               | KYC review + residency + entity-structure analysis                           | Boolean flag + ISO jurisdiction code in identity registry          | `canTransfer` rejects U.S.-flagged recipient during compliance period                                                                                                      |
-| 3   | OFAC SDN screening                                                     | Sanctions screening service (Chainalysis, TRM Labs, ComplyAdvantage)         | Status flag + screening timestamp in identity registry             | `canTransfer` blocks on flagged sender OR recipient                                                                                                                        |
-| 4   | "For account or benefit of U.S. person" determination (Rule 902(h))    | Compliance officer manual review for nominee structures, trust beneficiaries | EIP-712 signed attestation per transfer above threshold            | `canTransfer` verifies signature + expiry for high-value transfers                                                                                                         |
-| 5   | Reg S purchaser certification (Rule 903(b)(3)(iii)(B)(1))              | Investor signs subscription agreement off-chain                              | Document hash + investor EIP-712 signature recorded at mint        | `mint` requires signed certification reference                                                                                                                             |
-| 6   | Reasonable belief buyer is offshore at order origination (Rule 902(h)) | Sponsor / placement agent based on KYC, IP geolocation, declarations         | EIP-712 signed mint-authorization attestation by compliance signer | `mint` verifies signature freshness (24-hour window)                                                                                                                       |
-| 7   | Distributor confirmation notice sent (Rule 903(b)(3)(iv))              | Placement agent emails confirmation off-chain                                | Notice hash + recipient + timestamp emitted in event log           | Per transfer to known dealer/concession recipient                                                                                                                          |
-| 8   | Reg S compliance period (Rule 903(b)(3)(iii)(A))                       | None — pure timestamp arithmetic                                             | N/A (fully on-chain)                                               | `canTransfer` compares `block.timestamp` to partition's `distributionComplianceEnd`                                                                                        |
-| 9   | Rule 144 holding period (post-compliance period U.S. resale)           | None — pure timestamp arithmetic                                             | N/A (fully on-chain)                                               | `canTransfer` for U.S.-bound resale checks `block.timestamp >= partition.issuanceTimestamp + 365 days` (partition-level clock; Rule 144(d)(1)(ii) tacking — see Section D) |
+| #   | Compliance check                                                       | Off-chain action                                                                                                                                                                    | What gets to the chain                                                                                       | On-chain validation point                                                                                                                                                                      |
+| --- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | KYC identity verification                                              | KYC provider (Jumio, Onfido, Sumsub) runs document + liveness check                                                                                                                 | Status flag + verification timestamp written to identity registry                                            | `canTransfer` reads registry every transfer                                                                                                                                                    |
+| 2   | U.S. person classification (Rule 902(k))                               | KYC review + residency + entity-structure analysis                                                                                                                                  | Boolean flag + ISO jurisdiction code in identity registry                                                    | `canTransfer` rejects U.S.-flagged recipient during compliance period                                                                                                                          |
+| 3   | OFAC SDN screening                                                     | Sanctions screening service (Chainalysis, TRM Labs, ComplyAdvantage)                                                                                                                | Status flag + screening timestamp in identity registry                                                       | `canTransfer` blocks on flagged sender OR recipient                                                                                                                                            |
+| 4   | "For account or benefit of U.S. person" determination (Rule 902(h))    | Compliance officer manual review for nominee structures, trust beneficiaries                                                                                                        | EIP-712 signed attestation per transfer above threshold                                                      | `canTransfer` verifies signature + expiry for high-value transfers                                                                                                                             |
+| 5   | Reg S purchaser certification (Rule 903(b)(3)(iii)(B)(1))              | Investor signs subscription agreement off-chain                                                                                                                                     | Document hash + investor EIP-712 signature recorded at mint                                                  | `mint` requires signed certification reference                                                                                                                                                 |
+| 6   | Reasonable belief buyer is offshore at order origination (Rule 902(h)) | Sponsor / placement agent based on KYC, IP geolocation, declarations                                                                                                                | EIP-712 signed mint-authorization attestation by compliance signer                                           | `mint` verifies signature freshness (24-hour window)                                                                                                                                           |
+| 7   | Distributor confirmation notice sent (Rule 903(b)(3)(iv))              | Placement agent emails confirmation off-chain                                                                                                                                       | Notice hash + recipient + timestamp emitted in event log                                                     | Per transfer to known dealer/concession recipient                                                                                                                                              |
+| 8   | Reg S compliance period (Rule 902(f))                                  | For a continuous partition: placement agent certifies completion of distribution (full placement OR issuer termination). For a defined tranche: the close date is known at creation | EIP-712 authorized write → compliance officer sets `partition.closeDate` (or it is set at `createPartition`) | `canTransfer` checks `senderPartition.closeDate != max AND block.timestamp >= closeDate + 12mo` (an unset `closeDate` blocks)                                                                  |
+| 9   | Rule 144 holding period (post-compliance period U.S. resale)           | None — pure timestamp arithmetic (but the acquisition date must be captured at subscription/payment)                                                                                | N/A (timestamp on-chain; payment confirmation off-chain feeds it)                                            | `canTransfer` for U.S.-bound resale checks `block.timestamp >= lot.acquisitionTimestamp + 365 days` (per-holder/per-lot clock = full-payment date; Rule 144(d)(1)(ii) tacking — see Section D) |
 
-Items 8 and 9 are the only purely on-chain checks. Everything else is a hybrid where off-chain decisions need a trustworthy path onto the chain.
+Item 9 (Rule 144 holding period) is pure on-chain timestamp arithmetic once the acquisition date is captured. Item 8 (Reg S compliance period) is pure arithmetic too once the partition's `closeDate` is set — but for a continuous partition that `closeDate` depends on the off-chain completion-of-distribution determination reaching the chain before the clock can even start. Everything else is a hybrid where off-chain decisions need a trustworthy path onto the chain.
 
 ### L.2 — Four Attestation Mechanisms (pick the right one per check)
 
@@ -511,14 +538,14 @@ The single most important on-chain rule: when any required attestation is missin
 
 ### L.6 — Trust Boundaries (Who Is Trusted to Attest What)
 
-| Off-chain role               | What they attest to                                        | On-chain mechanism                                    | Compromise impact                                                        |
-| ---------------------------- | ---------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------ |
-| KYC provider                 | Identity, residency, U.S.-person status                    | Identity registry write role (provider's address)     | Bad actors get KYC clearance → identity gate fails for some investors    |
-| Sanctions screening provider | OFAC / sanctions status                                    | Identity registry write role (separate from KYC)      | Sanctioned actors clear screening → OFAC violation                       |
-| Compliance officer           | Edge-case determinations, beneficial-ownership reviews     | EIP-712 signer                                        | Signed-off bad transfers; mitigated by per-attestation amount limits     |
-| Sponsor / GP                 | Mint authorization, offering close timestamps              | Multi-sig controller (M-of-N)                         | Unauthorized mints; mitigated by M-of-N and time-lock on threshold mints |
-| Placement agent              | Distributor notification, offshore-buyer reasonable belief | EIP-712 signer (separate key from compliance officer) | False offshore-buyer claims; signer scope limited to specific facts      |
-| Contract upgrader            | Compliance rule changes                                    | Multi-sig + time-lock + governance                    | Rule changes; mitigated by 7+ day time-lock allowing investor review     |
+| Off-chain role               | What they attest to                                                                                                                              | On-chain mechanism                                    | Compromise impact                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| KYC provider                 | Identity, residency, U.S.-person status                                                                                                          | Identity registry write role (provider's address)     | Bad actors get KYC clearance → identity gate fails for some investors                                                                                                                                                                                                                                                                                                                                                |
+| Sanctions screening provider | OFAC / sanctions status                                                                                                                          | Identity registry write role (separate from KYC)      | Sanctioned actors clear screening → OFAC violation                                                                                                                                                                                                                                                                                                                                                                   |
+| Compliance officer           | Edge-case determinations, beneficial-ownership reviews                                                                                           | EIP-712 signer                                        | Signed-off bad transfers; mitigated by per-attestation amount limits                                                                                                                                                                                                                                                                                                                                                 |
+| Sponsor / GP                 | Mint authorization, offering close timestamps                                                                                                    | Multi-sig controller (M-of-N)                         | Unauthorized mints; mitigated by M-of-N and time-lock on threshold mints                                                                                                                                                                                                                                                                                                                                             |
+| Placement agent              | Distributor notification, offshore-buyer reasonable belief, **Rule 902(f) completion-of-distribution certification (the partition `closeDate`)** | EIP-712 signer (separate key from compliance officer) | False offshore-buyer claims; **premature or withheld `closeDate` distorts the Reg S clock start** — mitigate by contractually fixing the certification triggers and long-stop date in the placement agreement, the on-chain write constraints (not-in-the-past, immutable once reached, no mints after it arrives) per Section C, and dual sign-off (placement agent certifies, compliance officer records on-chain) |
+| Contract upgrader            | Compliance rule changes                                                                                                                          | Multi-sig + time-lock + governance                    | Rule changes; mitigated by 7+ day time-lock allowing investor review                                                                                                                                                                                                                                                                                                                                                 |
 
 Every role above is a potential compromise vector. **Multi-sig + time-lock + segregated signer scope** is non-negotiable for production deployment. Document each role, its key custody arrangement, and its rotation schedule in the offering memorandum.
 
@@ -542,8 +569,9 @@ Before mainnet deployment:
 - [ ] Independent smart contract security audit (compliance logic + standard reentrancy / access control)
 - [ ] Reg S condition mapping document — every contract function annotated with the Rule it enforces (auditor and SEC-reviewer friendly)
 - [ ] Test coverage of every `canTransfer` reason code with both pass and fail paths
-- [ ] Test coverage of ERC-1410 partition compliance period transitions (before / at / after expiry)
-- [ ] Test coverage of Rule 144 holding period math for the affiliate-free non-reporting issuer scenario (and the reserved reporting-issuer path for future deployments)
+- [ ] Test coverage of the per-partition `closeDate` lifecycle: (a) unset `closeDate == type(uint256).max` blocks ALL U.S.-person transfers; (b) `closeDate` set at creation (defined tranche); (c) `closeDate` filled later by the compliance officer (continuous); (d) the boundary at `closeDate + 12 months` (before / at / after expiry); (e) **`0` sentinel must NOT be accepted / must not pass the gate** (fail-open regression test)
+- [ ] Test coverage of the `closeDate` write constraints: rejects a **past** value (`closeDate < block.timestamp`) at both `createPartition` and `setCloseDate`; **accepts current (`== now`) and future values**; rejects any update once the existing `closeDate` has been reached (immutable-after-arrival); confirms `mint` is allowed while `block.timestamp < closeDate` (including a future `closeDate` set at creation) and reverts once `block.timestamp >= closeDate` (including `closeDate == now`, which stops mints in the same block)
+- [ ] Test coverage of Rule 144 holding period math (per-holder `acquisitionTimestamp` = full-payment date, with tacking on transfer) for the affiliate-free non-reporting issuer scenario; confirm the Reg S `closeDate` gate always clears at or after every lot's Rule 144 gate (the binding-constraint invariant)
 - [ ] Test coverage of ERC-1644 controller force-transfer with multi-sig governance
 - [ ] Test coverage of concentration-cap aggregation across multiple wallets AND multiple partitions bound to the same identity (class-level aggregate)
 - [ ] Test coverage of EIP-712 signature verification, expiry, and revocation
@@ -562,9 +590,11 @@ _Illustrative walk-through of how the smart contract enforces the Reg S 12-month
 
 - **The SPV** — a non-reporting U.S.-domiciled LLC; sole owner of a U.S.-situs commercial property
 - **The token** — ERC-1400 security token representing pro-rata equity in the property
-- **The offering** — Reg S Category 3, single primary close at **T=0** (chosen for simplicity; production deployments typically use multiple per-tranche closings, each carrying its own 12-month clock per ERC-1410 partitioning)
-- **Compliance period** — 12 months per Rule 903(b)(3)(iii)(A), non-reporting issuer branch
-- **Rule 144 holding period** — 12 months per Rule 144(d)(1)(ii), non-reporting issuer threshold
+- **The offering** — Reg S Category 3, **continuous offering** (Rule 902(f)(2)): "Offering End Date: Upon full placement or earlier termination by issuer." No fixed closing date → modeled as a **single partition** whose `closeDate` is filled in at completion. Tokens are minted continuously into that partition as investors subscribe. T=0 = the date the offering opens and the first tokens are minted
+- **Setting the `closeDate`** — at some point the placement agent certifies "completion of distribution" (on full placement or issuer termination) and the compliance officer writes the partition's `closeDate`. This write — NOT any individual mint — starts the Reg S compliance clock. In this example, full placement is reached at **T+9mo**, so `closeDate = T+9mo`
+- **Reg S distribution compliance period** — 12 months per Rule 903(b)(3)(iii)(A), running from the partition's **`closeDate`**. Here: `closeDate + 12mo` = T+9mo → **T+21mo**. One value for this single-partition offering
+- **Rule 144 holding period** — 12 months per Rule 144(d)(1), running from each holder's **full-payment (subscription) date** (with tacking inherited on secondary transfers). Investor A, who paid in full at T=0, clears her Rule 144 holding period at **T+12mo**. Per holder — NOT global
+- **The key lesson of this example:** these are **two independent regimes** governed by different statutes, anchored to different events, and they do NOT align. Investor A's Rule 144 clock clears at T+12mo, but the Reg S gate stays shut until T+21mo. **Reg S is the binding constraint** — Investor A cannot sell to a U.S. person until T+21mo even though her Rule 144 holding period cleared 9 months earlier
 
 ### Cast
 
@@ -577,10 +607,29 @@ _Illustrative walk-through of how the smart contract enforces the Reg S 12-month
 | Investor E  | New York    | U.S. person (retail)                        |
 | The Sponsor | Florida     | U.S. person AND affiliate (manages the SPV) |
 
-### The Two Clocks
+### Two Independent Regimes — Kept Separate
 
-- 🟥 **Distribution compliance period clock** — runs from T=0 to T+12mo. The Reg S strict gate.
-- 🟦 **Rule 144 holding period clock** — starts independently for each holder on the date they acquire tokens; runs 12 months. The restricted-securities gate.
+These two rules are **separate legal regimes**. They share no clock, no anchor event, and no statutory home. To avoid confusion, understand each ON ITS OWN first, then see how they combine. **Do not think of them as one "two-clock" mechanism — think of them as two independent gates that happen to be checked in the same `canTransfer` call.**
+
+**🟥 Regime 1 — Reg S Distribution Compliance Period** _(governs WHEN any U.S.-person transfer is permitted at all)_
+
+- Statute: Rule 903(b)(3)(iii)(A) / Rule 902(f)
+- Anchor: the partition's **`closeDate`** — here filled at completion of distribution (T+9mo)
+- Duration: 12 months → `closeDate + 12mo` ends **T+21mo**
+- Scope: the partition's `closeDate` (this continuous offering uses a single partition), identical for every holder in it
+- Effect: blocks ALL U.S.-person transfers until it expires. Says nothing about restricted-securities status
+- Ignore Rule 144 entirely when reasoning about this regime
+
+**🟦 Regime 2 — Rule 144 Restricted-Securities Status & Holding Period** _(governs WHETHER a permitted U.S. resale is exempt and washes the restriction)_
+
+- Statute: Rule 144(d)(1) holding period; Rule 905 / Rule 144(a)(3)(v) restricted status
+- Anchor: **each holder's own full-payment date** (per holder, with Rule 144(d)(1)(ii) tacking inherited on secondary transfers). Investor A paid at T=0 → clears **T+12mo**
+- Duration: 12 months per holder/lot
+- Scope: per acquisition lot — different subscribers clear on different dates
+- Effect: once cleared, a non-affiliate U.S. resale is exempt and washes the Rule 905 restricted label off the buyer's tokens. Says nothing about the Reg S offering window
+- Ignore Reg S entirely when reasoning about this regime
+
+**How the two combine (the ONLY place they interact):** a U.S.-person resale requires BOTH gates open — Reg S expired AND Rule 144 holding period cleared. Because the partition's `closeDate` (T+9mo) is constrained to land at or after every holder's full-payment date, **the Reg S gate always clears last and is the binding constraint.** By the time Reg S opens (`closeDate + 12mo` = T+21mo), every holder's Rule 144 clock has already cleared — so the only practical question left is the Reg S window. Rule 144 still matters for one thing: it determines that the eventual sale **washes the restricted label**. That is the entire interaction; nothing else couples the two regimes.
 
 ---
 
@@ -589,22 +638,23 @@ _Illustrative walk-through of how the smart contract enforces the Reg S 12-month
 **1a. Investor A buys 1,000 tokens directly from the SPV**
 
 - Investor A is in Mexico City; signs subscription offshore; wires from a Mexican bank
-- 🟥 Distribution clock just started — Investor A is non-U.S. person → fine
-- 🟦 Rule 144 clock starts for Investor A at T=0
+- SPV delivers 1,000 tokens to Investor A's wallet at T=0; her full payment settles the same day, so her Rule 144 `acquisitionTimestamp` = T=0
+- 🟥 _Regime 1 (Reg S):_ compliance period has not started (no certification) — but Investor A is a non-U.S. person, so the Reg S U.S.-person gate is not implicated
+- 🟦 _Regime 2 (Rule 144):_ Investor A's `acquisitionTimestamp` = T=0 (her full-payment date). Her personal 12-month holding clock will clear at T+12mo. This is HER clock — other subscribers who pay on other dates have their own
 - **Result: ✅ ALLOWED.** Investor A holds 1,000 tokens
-- Tokens carry the permanent "restricted securities" label under Rule 905
+- Tokens carry the permanent "restricted securities" label — Rule 905 of Reg S imposed this automatically at issuance (Regime 2). Removing it later requires a Rule 144 non-affiliate U.S. resale
 
 **1b. Investor D tries to buy 500 tokens directly from the SPV**
 
 - Investor D is a U.S. resident
-- 🟥 Distribution clock active — Reg S blocks ALL U.S.-person sales during this window
+- 🟥 Reg S compliance period has not even started (distribution not yet closed) → the partition's `closeDate` is unset (`type(uint256).max`) → the gate blocks ALL U.S.-person sales with no expiry in sight
 - Accredited status does not help. Signing from a Bali villa does not help. Investor D is a U.S. resident under Rule 902(k)
 - **Result: ❌ BLOCKED** — `REG_S_US_PERSON_RESTRICTED`
 
 **1c. The Sponsor tries to subscribe for 5,000 tokens**
 
 - Sponsor is U.S. resident AND an affiliate of the SPV
-- 🟥 Distribution clock active — same gate as Investor D
+- 🟥 Same gate as Investor D — U.S. person, compliance period not started
 - **Result: ❌ BLOCKED.** Sponsor economics must come through LLC-level Class B Promote Units, not through tokens. (This is the affiliate-free architectural commitment.)
 
 ---
@@ -614,68 +664,88 @@ _Illustrative walk-through of how the smart contract enforces the Reg S 12-month
 **2a. Investor A wants to sell 100 tokens to Investor B (offshore-to-offshore)**
 
 - Both non-U.S. persons
-- 🟥 Distribution clock still active (9 months remaining)
+- 🟥 _Regime 1 (Reg S):_ compliance period still not started — but this is an offshore-to-offshore sale, so the Reg S U.S.-person gate is not implicated
 - Transfer is offshore-to-offshore — Rule 902(h) offshore-transaction test satisfied via the Rule 904 secondary-resale path
-- 🟦 Rule 144 clock: only 3 months elapsed for Investor A — but Rule 144 only matters for U.S.-person sales
+- 🟦 _Regime 2 (Rule 144):_ the 100 tokens carry their `acquisitionTimestamp` = T=0 with them. Investor B **inherits** that timestamp via Rule 144(d)(1)(ii) tacking — B's clock does NOT restart at T+3mo. B is treated as having held since T=0 for any future U.S.-person resale. (Rule 144 only bites on U.S.-person sales, so it is not blocking anything here)
 - **Result: ✅ ALLOWED.** Investor B now holds 100 tokens
-- Tokens in B's hands are still "restricted securities" — the label travels with the tokens
+- Tokens in B's hands are still "restricted securities" — Rule 905 label travels with the tokens through every offshore transfer. Only a Rule 144 non-affiliate U.S. resale removes it
 
 **2b. Investor A wants to sell 100 tokens to Investor D (offshore to U.S.)**
 
 - Investor D is a U.S. person
-- 🟥 Distribution clock still active — strict no-U.S.-persons rule applies regardless of who is selling
+- 🟥 Reg S compliance period not started → U.S.-person gate blocks with no expiry in sight
 - 🟦 Rule 144 holding period: only 3 months — insufficient anyway
-- **Result: ❌ BLOCKED.** Both gates fail; the Reg S strict gate alone is sufficient
+- **Result: ❌ BLOCKED.** Both gates fail; the Reg S gate alone is sufficient
 
 **2c. Investor C sells 200 tokens to Investor E**
 
-- 🟥 Distribution clock still active
+- 🟥 Reg S compliance period not started; both U.S. persons
 - **Result: ❌ BLOCKED.** Same reason as 2b
 
 ---
 
-### Scenario 3 — Eleven Months In (T+11mo)
+### Scenario 3 — Full Placement → `closeDate` Written (T+9mo)
 
-**3a. Investor B wants to sell to Investor D**
+The offering reaches **full placement** at T+9mo. Per the whitepaper ("Upon full placement or earlier termination by issuer"), the placement agent issues the Rule 902(f)(2) completion-of-distribution certification that day, and the compliance officer writes the partition's `closeDate`.
 
-- 🟥 Distribution clock still active (1 month to go)
-- **Result: ❌ BLOCKED.** Even with 30 days remaining, the strict Reg S rule still applies. The smart contract does not care that the clock is "almost done"
+**3a. The `closeDate` is written**
+
+- Placement agent signs the Rule 902(f)(2) certification (full placement reached)
+- Compliance officer records it on-chain via EIP-712: calls `setCloseDate` with the partition's `closeDate = T+9mo` (a future date at the moment of writing, just ahead of the cutoff). Mints stop the instant T+9mo arrives; the partition is then closed to new mints
+- `CloseDateSet(partition, T+9mo)` event emitted
+- **The Reg S compliance clock now starts — and will run until `closeDate + 12mo` = T+21mo.** Before this write it had not started at all. This single event is what un-freezes the eventual U.S.-resale path
+- Note: every investor in this partition — whether they paid at T=0 or T+8mo — now shares this same T+21mo Reg S end date. Only the per-holder Rule 144 clocks (Regime 2) differ by subscription date
 
 ---
 
-### Scenario 4 — Day After Distribution Period Expires (T+12mo + 1 day)
+### Scenario 4 — The Misalignment (T+12mo + 1 day)
 
-🟥 **Distribution compliance period: EXPIRED.** The Reg S strict gate is now OPEN.
+🟦 **Investor A's Rule 144 holding period: CLEARED** (T=0 full payment + 12 months + 1 day).
+🟥 **Reg S compliance period: STILL ACTIVE** (runs to T+21mo — another ~9 months to go).
 
-The tokens are still "restricted securities" — the label is permanent. Now Rule 144 governs U.S. resales.
+This is the central lesson of the continuous-offering structure: **the Rule 144 clock has cleared, but the Reg S gate is still shut. Reg S binds.**
 
-**4a. Investor B wants to sell 100 tokens to Investor D**
+**4a. Investor A wants to sell 100 tokens to Investor D (U.S. person)**
 
-- 🟥 Distribution clock: ✅ EXPIRED
-- 🟦 Rule 144 holding period for Investor B: **tacks back to Investor A's original acquisition at T=0** — automatic non-affiliate-to-non-affiliate tacking under Rule 144(d)(1)(ii). The 12-month clock measures from when the securities first left the issuer, not from each subsequent transfer. 12 months + 1 day has elapsed since T=0 → ✅ MET
-- Investor B is a non-affiliate
+- 🟦 Rule 144 holding period for Investor A: paid in full at T=0, held 12 months + 1 day → ✅ MET
+- 🟥 Reg S compliance period: ❌ NOT expired — `closeDate + 12mo` = T+21mo, and it is only T+12mo+1day
+- **Result: ❌ BLOCKED** — `REG_S_US_PERSON_RESTRICTED`. Even though Investor A satisfied her Rule 144 holding period 9 months ago, the partition's Reg S compliance period — pinned to the T+9mo `closeDate` — has not run out. **The Reg S gate is the binding constraint.**
+
+> 💡 **This is exactly the trap the continuous-offering structure creates.** Under a defined-closing-tranche structure (Rule 902(f)(1)) **with escrow-until-close settlement** — where the tranche closes at T=0 and full payment is deemed made then — Investor A's two clocks would both anchor at T=0 and clear at T+12mo, so she could sell now. Because the client chose a continuous offering, the partition's `closeDate` was not written until completion at T+9mo, pushing her first eligible U.S. resale out to `closeDate + 12mo` = T+21mo. The earlier an investor subscribed relative to the `closeDate`, the longer the gap between their Rule 144 clearance and their Reg S clearance.
+
+**4b. Investor B wants to sell 100 tokens to Investor D (U.S. person)**
+
+- 🟦 Rule 144 holding period for Investor B: **tacks back to Investor A's full-payment date at T=0** — automatic non-affiliate-to-non-affiliate tacking under Rule 144(d)(1)(ii). 12 months + 1 day elapsed since T=0 → ✅ MET
+- 🟥 Reg S compliance period: ❌ NOT expired (T+21mo)
+- **Result: ❌ BLOCKED** — same as 4a. Tacking gave B a cleared Rule 144 clock, but the Reg S gate still binds for everyone until T+21mo
+
+> 💡 **Tacking rule (Rule 144(d)(1)(ii)):** _"a minimum of one year must elapse between the later of the date of the acquisition of the securities from the issuer, or from an affiliate of the issuer, and any resale of such securities in reliance on this section **for the account of either the acquiror or any subsequent holder of those securities.**"_ When Investor A (a non-affiliate) sold to Investor B at T+3mo, B's Rule 144 clock tacked back to A's full-payment date at T=0 — it did NOT restart at T+3mo. Automatic tacking is the general rule for ordinary non-affiliate-to-non-affiliate transfers; it is NOT one of the Rule 144(d)(3) "special situations." But note: in this continuous offering, the Rule 144 clock is never the binding gate anyway — Reg S always clears later.
+
+> ⚠️ **When tacking does NOT apply (counterfactual):** If Investor B had acquired directly from the issuer, OR from an **affiliate** of the issuer, B's Rule 144 clock would start fresh on B's acquisition date. Purchase from an affiliate is treated like purchase from the issuer for Rule 144 holding-period purposes. Tacking only applies between non-affiliates. This is the practical reason the affiliate-free architecture matters — any holder who becomes an affiliate by operation of law would disrupt the tacking chain for tokens passing through their hands.
+
+---
+
+### Scenario 5 — Reg S Period Finally Expires (T+21mo + 1 day)
+
+🟥 **Reg S compliance period: EXPIRED** (certification T+9mo + 12 months). The Reg S gate is now OPEN.
+🟦 **Every holder's Rule 144 holding period: long since CLEARED** (the latest subscription payment was before T+9mo, so the latest Rule 144 clock cleared by T+21mo at most).
+
+The tokens are still "restricted securities" — the Rule 905 label is permanent. Now a Rule 144 non-affiliate resale can wash it.
+
+**5a. Investor A wants to sell 100 tokens to Investor D (U.S. person)**
+
+- 🟥 Reg S compliance period: ✅ EXPIRED
+- 🟦 Rule 144 holding period: ✅ MET (cleared at T+12mo)
+- Investor A is a non-affiliate; Rule 144(b)(1)(ii) non-reporting non-affiliate path — no volume cap, no manner-of-sale restriction, no current-info requirement, no Form 144
 - **Result: ✅ ALLOWED.** Investor D now holds 100 tokens
-- Tokens in D's hands lose the "restricted" label — Rule 144 non-affiliate sale washed it off
+- Tokens in D's hands **lose the "restricted" label** — the Rule 144 non-affiliate sale washed it off. (Here the Rule 144 clock matters: it is what authorizes the wash, even though it was never the binding gate.)
 
-> 💡 **Tacking rule (Rule 144(d)(1)(ii)):** _"a minimum of one year must elapse between the later of the date of the acquisition of the securities from the issuer, or from an affiliate of the issuer, and any resale of such securities in reliance on this section **for the account of either the acquiror or any subsequent holder of those securities.**"_ When Investor A (a non-affiliate) sold to Investor B at T+3mo, B's Rule 144 clock tacked back to A's original acquisition at T=0 — it did NOT restart at T+3mo. This automatic tacking is the general rule for ordinary non-affiliate-to-non-affiliate transfers; it is NOT one of the Rule 144(d)(3) "special situations." Without this rule, restricted securities could never trade in a secondary market in any practical way.
+> ⚠️ **Critical contrast:** if Investor A had instead sold via Rule 904 (offshore-to-offshore), the tokens would **stay** restricted regardless of how many times traded offshore. The label only comes off via a Rule 144 non-affiliate resale to a U.S. person.
 
-> ⚠️ **When tacking does NOT apply (counterfactual):** If Investor B had instead acquired the tokens directly from the issuer at T+3mo (hypothetically — not possible in a Reg S Cat 3 offshore-only offering, but illustrative), OR from an **affiliate** of the issuer at T+3mo, B's Rule 144 clock would start fresh on the date B acquired. Purchase from an affiliate is treated like purchase from the issuer for Rule 144 holding-period purposes. Tacking only applies between non-affiliates. This is the practical reason the affiliate-free architecture matters — any holder who becomes an affiliate by operation of law would disrupt the tacking chain for tokens passing through their hands.
+**5b. The Sponsor (counterfactually holding tokens) tries to sell to Investor E**
 
-**4b. Investor A wants to sell 100 tokens to Investor D**
-
-- 🟥 Distribution clock: ✅ EXPIRED
-- 🟦 Rule 144 holding period for Investor A: acquired at T=0, has held 12 months + 1 day — ✅ MET
-- Investor A is a non-affiliate (passive investor)
-- Rule 144 non-affiliate path for non-reporting issuers (Rule 144(b)(1)(ii)) — no volume cap, no manner-of-sale restriction, no current-info requirement, no Form 144
-- **Result: ✅ ALLOWED.** Investor D now holds 100 tokens
-- Tokens in D's hands **lose the "restricted" label** — the Rule 144 non-affiliate sale washed it off
-
-> ⚠️ **Critical contrast:** if Investor A had instead sold via Rule 904 (offshore-to-offshore) at the same moment, the tokens would **stay** restricted regardless of how many times traded offshore. The label only comes off via a Rule 144 non-affiliate resale.
-
-**4c. The Sponsor (counterfactually holding tokens) tries to sell to Investor E**
-
-- Note: under the affiliate-free architecture, the Sponsor **does not hold tokens**. This scenario is a counterfactual to illustrate why
-- 🟥 Distribution clock: ✅ EXPIRED
+- Note: under the affiliate-free architecture, the Sponsor **does not hold tokens**. This is a counterfactual to illustrate why
+- 🟥 Reg S compliance period: ✅ EXPIRED
 - 🟦 Rule 144 holding period: assume ✅ MET
 - BUT the Sponsor is an **affiliate** → ongoing Rule 144 restrictions never lift:
   - Volume limit (Rule 144(e)): greater of 1% of outstanding OR average weekly trading volume × 13 (90-day window)
@@ -686,29 +756,30 @@ The tokens are still "restricted securities" — the label is permanent. Now Rul
 
 ---
 
-### Scenario 5 — Two Years In (T+24mo)
+### Scenario 6 — Free Trading (T+30mo)
 
-**5a. Investor D (who bought from Investor A at T+12mo+1 day) wants to sell to Investor E**
+**6a. Investor D (who bought from Investor A at T+21mo) wants to sell to Investor E**
 
-- Investor D's tokens are NOT restricted — the label was washed when Investor A made the Rule 144 non-affiliate sale to Investor D
+- Investor D's tokens are NOT restricted — the label was washed when Investor A made the Rule 144 non-affiliate sale to D
 - No Reg S analysis, no Rule 144 analysis needed
-- **Result: ✅ ALLOWED.** Investor E now holds the tokens free and clear
-
-**5b. Investor B (who never sold) wants to sell 100 tokens to Investor E**
-
-- 🟥 Distribution clock: ✅ EXPIRED long ago
-- 🟦 Rule 144 holding period for Investor B: 24mo - 3mo = 21 months ✅ MET
-- Non-affiliate, non-reporting issuer, holding period > 12 months
-- **Result: ✅ ALLOWED.** Investor E now holds B's tokens free of restriction (label washed off via Rule 144 non-affiliate path)
+- **Result: ✅ ALLOWED.** Investor E holds the tokens free and clear
 
 ---
 
-### The Two Clocks Distinguished
+### The Two Regimes Distinguished (kept separate)
 
-| Concept                               | What is it?                                | When does it apply?                                                                                               | What does it do?                                                                                                                                                                            |
-| ------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🟥 **Distribution compliance period** | A TIME WINDOW measured from offering close | T=0 → T+12mo (12 months total)                                                                                    | Blocks every U.S.-person sale by anyone — issuer, distributors, secondary sellers. After expiry, the Reg S gate is OPEN                                                                     |
-| 🟦 **Restricted-securities status**   | A LABEL on the token itself (Rule 905)     | Forever — the label never comes off as long as the security exists in someone's hands who acquired it under Reg S | Gates U.S. resales through Rule 144 conditions (mainly the holding period). Once a non-affiliate properly resells under Rule 144, the tokens in the buyer's hands lose the restricted label |
+|                             | 🟥 Regime 1 — Reg S Distribution Compliance Period                                     | 🟦 Regime 2 — Rule 144 Restricted-Securities Status          |
+| --------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Statute**                 | Rule 903(b)(3)(iii)(A) / Rule 902(f)(2)                                                | Rule 144(d)(1) + Rule 905 / Rule 144(a)(3)(v)                |
+| **What it is**              | A TIME WINDOW for the offering                                                         | A LABEL on the token + a per-holder holding clock            |
+| **Anchor event**            | The partition's `closeDate` (set at creation, or filled at completion of distribution) | Each holder's own full-payment date (with tacking)           |
+| **Scope**                   | One `closeDate` per partition, same for every holder in it                             | Per acquisition lot / per holder                             |
+| **Window**                  | `closeDate` → `closeDate + 12mo` (T+9mo → T+21mo)                                      | each holder's full-payment date + 12mo                       |
+| **What it gates**           | WHETHER any U.S.-person transfer is allowed at all                                     | WHETHER a permitted U.S. resale is exempt + washes the label |
+| **Binding?**                | **Yes — always clears last**                                                           | No — always already cleared by the time Regime 1 opens       |
+| **Reason for any coupling** | none — independent regime                                                              | only the wash determination links back to a permitted sale   |
+
+Read each column on its own. The only cell where they touch is the bottom row: Reg S is the binding gate; Rule 144 decides the wash. Otherwise they are unrelated.
 
 ### Smart Contract Translation
 
@@ -719,18 +790,30 @@ The tokens are still "restricted securities" — the label is permanent. Now Rul
    If NO  → only check OFAC, KYC → likely ALLOW
    If YES → continue:
 
-2. 🟥 Has the distribution compliance period for the SENDER's partition expired?
-   (block.timestamp >= partition.distributionComplianceEnd)
+2. 🟥 Has the SENDER-PARTITION's Reg S distribution compliance period expired?
+   (senderPartition.closeDate != type(uint256).max
+    AND block.timestamp >= senderPartition.closeDate + 365 days)
+   closeDate = the partition's close date — set at createPartition for a defined
+   tranche, or written by the compliance officer at completion of distribution
+   for a continuous offering (Section C). Unset sentinel is type(uint256).max.
+   If closeDate == max (not closed yet) → BLOCK: the clock has not started.
+   (Never use 0 as the sentinel — 0 + 365 days is in the past → fails OPEN.)
+   THIS IS THE BINDING GATE.
    If NO  → BLOCK with reason REG_S_US_PERSON_RESTRICTED
    If YES → continue:
 
-3. 🟦 Has the Rule 144 12-month holding period for the partition cleared?
-   (block.timestamp >= partition.issuanceTimestamp + 365 days)
-   Under Approach B + Rule 144(d)(1)(ii) tacking, this measures from the
-   partition's issuance date (closing date), NOT from each holder's personal
-   acquisition. All non-affiliate holders in the partition share this clock.
-   For non-reporting issuer Cat 3 equity, this gate clears at the SAME
-   moment as gate 2 (both = partition.issuanceTimestamp + 12 months).
+3. 🟦 Has the Rule 144 12-month holding period for the lot(s) being sent cleared?
+   Regulatory reference: block.timestamp >= lot.acquisitionTimestamp + 365 days
+   (per acquisition lot; acquisitionTimestamp = full-payment date, tacking applies)
+   On-chain implementation (Section D): block.timestamp >= holdingEnd[from][partition]
+   where holdingEnd[from][partition] = conservative max of all acquisition timestamps
+   within this partition for this holder (issuanceTimestamp proxy + holdingPeriod),
+   raised monotonically, never lowered; scoped PER PARTITION so a longer-period
+   partition does not bleed onto this partition's clock.
+   Under the continuous offering, closeDate >= every issuanceTimestamp in the
+   partition, so this gate has ALWAYS already cleared by the time gate 2 clears —
+   it is never the binding blocker here, but it is checked to confirm the Rule 144
+   wash applies (the buyer receives unrestricted securities) and for audit mapping.
    If NO  → BLOCK with reason RULE_144_HOLDING_PERIOD_NOT_MET
    If YES → continue:
 
@@ -741,7 +824,7 @@ The tokens are still "restricted securities" — the label is permanent. Now Rul
    Otherwise → ALLOW (Rule 144(b)(1)(ii) non-affiliate path is clear)
 ```
 
-Gates 2 (🟥) and 3 (🟦) are conceptually distinct — the Reg S strict gate vs. the Rule 144 restricted-securities gate — but under Approach B (partition-level Rule 144 clock) plus non-reporting issuer Cat 3 equity, they measure the same underlying value (`partition.issuanceTimestamp + 12 months`) and clear simultaneously. Keeping them as separate checks preserves the audit trail's mapping back to source regulations and forward-compatibility with hypothetical deployments where the two clocks could differ. Under the standard non-reporting Cat 3 deployment documented in this guide (and the reserved reporting-issuer 6-month branch), they always align.
+Gates 2 (🟥) and 3 (🟦) are conceptually distinct — the Reg S strict gate vs. the Rule 144 restricted-securities gate — and **they do NOT clear at the same time.** Gate 2 reads the sender partition's `closeDate + 12 months`; gate 3 reads each lot's `acquisitionTimestamp + 12 months` (= the holder's full-payment date, with tacking — Section D). Because `closeDate` is never in the past and mints stop once it arrives (so every lot's payment precedes `closeDate`), gate 2 always clears at or after gate 3 — **gate 2 (Reg S) is the binding constraint.** Gate 3 is retained because (a) it maps to a distinct source regulation for audit, and (b) it determines whether a permitted U.S. resale washes the Rule 905 restricted label off the buyer's tokens. The two gates clear simultaneously only with **escrow-until-close settlement**, where every holder's acquisition (full-payment) date coincides with the partition's `closeDate` — see Section C / Section D.
 
 ---
 
