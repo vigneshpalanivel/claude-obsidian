@@ -25,6 +25,7 @@ All entity pages — people, organizations, products, and tools.
 ## People
 
 - [[Andrej Karpathy]] — AI researcher, educator; originated the LLM Wiki pattern
+- [[Vignesh]] — founder of Trioangle and InnBlockchain; owner of this vault
 
 ---
 
