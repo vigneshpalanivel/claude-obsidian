@@ -7,13 +7,8 @@ role: Vignesh
 priority: highest
 rev: 5
 last_revised: 2026-06-03
-playbook_rev_synced: 28
+playbook_rev_synced: 32
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
-revision_notes: |
-  rev 5 (2026-06-03): sync to Playbook rev 28 — 8th cross-phase framework extracted: Per-Article Production Checklist. Added to your "Necessary documents" cross-phase frameworks row (you're the compliance + accuracy reviewer at Phase 3 steps 13–16, and the final batch approver at step 20).
-  rev 4 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need across all 15 workstreams (you reference more docs than any other role). All 7 extracted cross-phase frameworks added to your doc list.
-  rev 2 (2026-06-03): sync to Playbook rev 21 — adds **WS1 Pre-Launch LP Sign-Off** to Workstreams table + Hard rules + Timeline blocks (8-gate checklist fires per LP before launch · 48-hr SLA · Vignesh blocks launch on regulatory leak · post-launch 48-hr verification).
-  rev 1 (2026-06-03): initial cover sheet for Vignesh (Founder · final-review authority across all 15 workstreams · primary on WS3/WS4/WS6/WS9.5a/WS11/WS13). Sister doc to Dev / MPs / SP / CW / Designer cover sheets.
 tags:
   - role
   - vignesh

@@ -7,14 +7,8 @@ role: MPs
 priority: high
 rev: 5
 last_revised: 2026-06-03
-playbook_rev_synced: 28
+playbook_rev_synced: 32
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
-revision_notes: |
-  rev 5 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need (not just playbook). Cross-Channel Cannibalisation Matrix + Per-Platform Posting Spec + Newsletter Vendor Selection + Content Style Guide extracted to cross-phase frameworks — all added to doc list.
-  rev 4 (2026-06-03): sync to Playbook rev 25 — **publish scope clarified**: MPs publish LinkedIn/X social amplification only · CW publishes the WordPress article on innblockchain.com/academy. Top-level scope + WS7-adjacent context + Don't-own section updated.
-  rev 3 (2026-06-03): sync to Playbook rev 23 — rev 20 X Company account addition rolled back (X has no Company Page concept; over-recommendation corrected). WS3 row updated to remove X Company ops · Read-first updated · Hard rule for "vector 4 LinkedIn Company ↔ X Company" removed · cannibalisation matrix renumbered 1–8 (was 1–10).
-  rev 2 (2026-06-03): sync to Playbook rev 20 — adds X Company account ops (new WS3 subsections) + Cross-channel cannibalisation matrix (new WS8 canonical source) to Workstreams table + Hard rules + Read first.
-  rev 1 (2026-06-03): initial cover sheet for MPs role (Marketing Persons collective — both MPs share this slice; operational task allocation between MP1 + MP2 deferred to internal decision per Playbook rev 11).
 tags:
   - role
   - mps

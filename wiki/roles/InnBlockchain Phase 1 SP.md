@@ -7,11 +7,8 @@ role: SP
 priority: high
 rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 28
+playbook_rev_synced: 32
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
-revision_notes: |
-  rev 2 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need (not just playbook). Discovery Call Master Sequence + Pipeline Stage Exit Criteria extracted to cross-phase frameworks — both added to doc list.
-  rev 1 (2026-06-03): initial cover sheet for SP role (Sales Person — full-cycle outbound + discovery + close authority). Sister doc to Dev / MPs / CW / Designer / Vignesh cover sheets.
 tags:
   - role
   - sp

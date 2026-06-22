@@ -1,23 +1,23 @@
 ---
 company:
-  - innblockchain
+ - innblockchain
 department:
-  - marketing
+ - marketing
 priority: high
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 26 § WS8 § Per-platform formatting spec"
+parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] § WS8 § Per-platform formatting spec"
 scope: cross-phase
 applies_to:
-  - phase-1
-  - phase-2
-  - phase-3
+ - phase-1
+ - phase-2
+ - phase-3
 tags:
-  - framework
-  - posting
-  - per-platform
-  - mps
-  - cross-phase
+ - framework
+ - posting
+ - per-platform
+ - mps
+ - cross-phase
 ---
 
 # Per-Platform Posting Spec
@@ -27,7 +27,7 @@ tags:
 >
 > **Telegram dev-groups dropped from Phase 1** — audience is developers, not Phase 1 ICP (RWA Felix is asset-first non-technical · Sam/Tom/Carol committee evaluates via vendor risk pack + audit report). Re-evaluate for Phase 2/3 DeFi-protocol Felix scope.
 >
-> Extracted from [[InnBlockchain - Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Channel formatting rules are stable across phases; per-track asset bundle composition shifts when new ICP personas activate.
+> Extracted from [[InnBlockchain - Phase 1 Execution Playbook]] → cross-phase framework. Channel formatting rules are stable across phases; per-track asset bundle composition shifts when new ICP personas activate.
 
 ## Per-platform rules table
 

@@ -7,12 +7,8 @@ role: Dev
 priority: high
 rev: 3
 last_revised: 2026-06-03
-playbook_rev_synced: 28
+playbook_rev_synced: 32
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
-revision_notes: |
-  rev 3 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need to execute Phase 1 (not just playbook). LP Sign-Off Checklist extracted to cross-phase framework — added to your doc list.
-  rev 2 (2026-06-03): sync to Playbook rev 20 — Dev scope unaffected by rev 20 changes (X Company addition + Cross-channel cannibalisation matrix touch MPs + WS3/WS8, not WS1 LP delivery). Rev bump for cover-sheet-cohort consistency only.
-  rev 1 (2026-06-03): initial cover sheet — pilot draft for Option B (lightweight per-role cover sheets). One slice of [[InnBlockchain - Phase 1 Execution Playbook]] rev 19 for daily/weekly Dev-role use. Content is not duplicated from the playbook — anchor links route Dev into their workstream sections for task detail. Sync rule: when playbook revs, only re-touch this sheet if heading anchors change OR Dev ownership scope changes.
 tags:
   - role
   - dev

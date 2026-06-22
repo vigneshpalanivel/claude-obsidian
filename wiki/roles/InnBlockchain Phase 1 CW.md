@@ -7,15 +7,8 @@ role: CW
 priority: high
 rev: 6
 last_revised: 2026-06-03
-playbook_rev_synced: 28
+playbook_rev_synced: 32
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
-revision_notes: |
-  rev 6 (2026-06-03): sync to Playbook rev 28 — Per-Article Production Checklist extracted to cross-phase framework. Added to "Necessary documents" doc bundle as item #4 (most important framework for your daily work — open per article). Read-first updated to point at framework first.
-  rev 5 (2026-06-03): sync to Playbook rev 27 — added "Necessary documents" section listing all docs you need (not just playbook). Content Style Guide extracted to cross-phase framework — added to doc list.
-  rev 4 (2026-06-03): sync to Playbook rev 25 — **CW owns WordPress publish on innblockchain.com/academy** (previously implicit; now explicit). MPs scope clarified to LinkedIn/X social amplification only. WS7 row + Timeline + Don't-own section updated.
-  rev 3 (2026-06-03): sync to Playbook rev 24 — SME reviewer role removed; "SME reviewer unavailable Tue/Thu → Vignesh self-review" replaced with "Vignesh review SLA slipping → escalate at Weekly Fri review". Owner pattern in cover-sheet intro updated.
-  rev 2 (2026-06-03): sync to Playbook rev 22 — W1 Tue publish slot timestamp converted CET → IST (10:00 CET → 13:30 IST · Phase 1 entirely within CEST window · +3:30 conversion).
-  rev 1 (2026-06-03): initial cover sheet for CW role (Content Writer — primary article drafter + compliance brief structuring + repurposing copy structuring). Sister doc to Dev / MPs / SP / Designer / Vignesh cover sheets.
 tags:
   - role
   - cw

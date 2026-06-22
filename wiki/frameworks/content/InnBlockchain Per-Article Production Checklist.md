@@ -4,9 +4,9 @@ company:
 department:
   - marketing
 priority: high
-rev: 1
-last_revised: 2026-06-03
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 27 § WS7 § Per-Article Production Checklist"
+rev: 2
+last_revised: 2026-06-13
+parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 27 § WS7 § Per-Article Production Checklist + rev 29 § WS15 § Per-published-article repurposing checklist (moved into step 19 expansion)"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -59,8 +59,20 @@ tags:
 | 16 | **(Vignesh signs · CW receives sign-off)** Compliance sign-off logged before publish — escalate after 2 missed cycles | Playbook WS13 § Pre-publish review |
 | 17 | **(CW runs AI skill · Vignesh reviews score)** **CORE-EEAT score check** — run AI scoring skill on the corrected draft (post-Vignesh accuracy + post-compliance, all source-doc corrections applied). Threshold + iteration rule lives in the skill; if score below threshold, loop back to relevant Phase 2 step and re-submit before Phase 3 sign-off is final. **Run AFTER step 16, never before — scoring an uncorrected draft wastes the check.** | CORE-EEAT AI scoring skill *(to be configured · sister tool to [[InnBlockchain - Content AEO GEO Prompts]])* |
 | 18 | **(Vignesh approves content for repurposing)** Article content approved post-CORE-EEAT — CW can now run derivative chain. **NOT yet final publish approval** (that's step 20); this is a "content is good enough to repurpose against" gate so derivative work can begin without risking source-article rework | Playbook WS13 § Delegated-work spot-check protocol |
-| 19 | **(CW runs derivative chain pre-publish · MPs produce visuals · Designer for high-stakes)** Run 6-step gate sequence (Article Tier → Format Priority → Track → Motion → Persona → LP) + structure Tier 1/2 derivative copy (carousel slide outlines · X thread copy · persona variants · LinkedIn long-form · lead magnet body · email nurture excerpt). **If derivative work surfaces source-article corrections** (carousel summary reveals unclear framing · persona variant exposes misalignment · X thread distillation surfaces missing claim) — apply corrections to source article BEFORE step 20 publish. If corrections touch regulatory framing → loop back to Phase 3 step 14/15 (Vignesh re-reviews) before proceeding | [[InnBlockchain - Content Repurposing Plan]] + Playbook WS15 § Per-published-article repurposing checklist |
+| 19 | **(CW runs derivative chain pre-publish · MPs produce visuals · Designer for high-stakes)** Run **6-step derivative gate sequence below** + structure Tier 1/2 derivative copy (carousel slide outlines · X thread copy · persona variants · LinkedIn long-form · lead magnet body · email nurture excerpt). **If derivative work surfaces source-article corrections** (carousel summary reveals unclear framing · persona variant exposes misalignment · X thread distillation surfaces missing claim) — apply corrections to source article BEFORE step 20 publish. If corrections touch regulatory framing → loop back to Phase 3 step 14/15 (Vignesh re-reviews) before proceeding | [[InnBlockchain - Content Repurposing Plan]] + § Step 19 expanded below |
 | 20 | **(MPs schedule · Vignesh approves Mon AM final batch)** Final scheduled batch approved Mon AM — **both source article + derivative assets locked** before publish window opens. Source corrections from step 19 must be applied + re-approved before this step fires | Playbook WS13 § Delegated-work spot-check protocol |
+
+## Step 19 expanded — 6-step derivative gate sequence (every published article)
+
+> [!INFO] Run these 6 gates in order to decide WHICH derivatives to produce
+> Each gate is a checkbox. Skip a gate = wasted production (wrong tier · wrong format · wrong audience · wrong CTA). Was previously WS15 § Per-published-article repurposing checklist in the playbook; moved here as the step 19 expansion in rev 29.
+
+- [ ] **(CW)** **Step 1: Article Tier gate** — Tier 1 / 2 / 3 / 0 per article score (see [[InnBlockchain - Editorial Calendar]])
+- [ ] **(CW)** **Step 2: Format Priority gate** — produce all applicable S formats; A formats if Tier 1; B formats if Tier 1 + bandwidth; never C or D
+- [ ] **(CW)** **Step 3: Track gate** — `[CN]` → Track A asset family · `[FT]` → Track B asset family · `[Both]` → parallel chains per [[InnBlockchain - Content Repurposing Plan]] § `[Both]` Articles
+- [ ] **(CW · Vignesh confirms)** **Step 4: Motion gate** — preserve `[Audit]` / `[Dev]` / `[White-Label]` CTA across every derivative — never mix
+- [ ] **(CW + Vignesh)** **Step 5: Persona gate (cross-pillar only)** — per-phase cross-pillar persona coding. *Phase 1 overlay:* C1 Carol-coded · T4-N Sam/Tom-coded · P5-DORA-X compliance-officer + EU NCA · P5-eIDAS-X split with Dec 31 2026 urgency.
+- [ ] **(MPs check · Dev confirms LP live)** **Step 6: LP gate** — Tier 0 if destination LP returns 404 → no repurposing. When LP ships, run derivative backfill chain.
 
 ## Phase 4 — Publish + Post-publish (publish window + Friday + monthly · ongoing)
 

@@ -1,23 +1,23 @@
 ---
 company:
-  - innblockchain
+ - innblockchain
 department:
-  - marketing
+ - marketing
 priority: high
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 26 § WS1 § Vignesh Pre-Launch LP Sign-Off Checklist"
+parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] § WS1 § Vignesh Pre-Launch LP Sign-Off Checklist"
 scope: cross-phase
 applies_to:
-  - phase-1
-  - phase-2
-  - phase-3
+ - phase-1
+ - phase-2
+ - phase-3
 tags:
-  - framework
-  - landing-pages
-  - vignesh
-  - sign-off
-  - cross-phase
+ - framework
+ - landing-pages
+ - vignesh
+ - sign-off
+ - cross-phase
 ---
 
 # Vignesh Pre-Launch LP Sign-Off Checklist
@@ -25,7 +25,7 @@ tags:
 > [!IMPORTANT] Single regulatory authority on the LP surface · cross-phase framework
 > Every LP (Phase 1 Gate 1 + Gate 2 · Phase 2 destinations · any future LP) gets a Vignesh regulatory sign-off before launch. LPs are the **#1 Carol disqualifier surface** alongside DM templates. Build-phase hero + About reviews catch ~10% of the LP surface — this checklist covers the other 90%. **48-hr SLA same as article pre-publish review.**
 >
-> Extracted from [[InnBlockchain - Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Phase 1 fires this checklist for Gate 1 + Gate 2 + eIDAS gated PDF; Phase 2 will fire for new destination LPs.
+> Extracted from [[InnBlockchain - Phase 1 Execution Playbook]] → cross-phase framework. Phase 1 fires this checklist for Gate 1 + Gate 2 + eIDAS gated PDF; Phase 2 will fire for new destination LPs.
 
 ## When this fires (per LP — before launch)
 
