@@ -7,7 +7,7 @@ role: MPs
 priority: high
 rev: 5
 last_revised: 2026-06-03
-playbook_rev_synced: 33
+playbook_rev_synced: 34
 parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
 tags:
  - role

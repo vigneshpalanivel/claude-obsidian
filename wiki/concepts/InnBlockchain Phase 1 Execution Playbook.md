@@ -4,7 +4,7 @@ company:
 department:
  - marketing
 priority: highest
-rev: 33
+rev: 34
 last_revised: 2026-06-22
 tags:
  - marketing
@@ -79,14 +79,15 @@ Regulatory regime, budget floors, geography rule, qualifying criteria, persona d
 
 ## Critical Path — Landing Pages Gate Everything
 
-Two LPs gate Phase 1 outreach activation. No DMs run, no outreach CTAs route correctly, until both ship.
+Three LPs gate Phase 1 outreach activation. No DMs run, no outreach CTAs route correctly, until all three ship.
 
 | Gate | LP | Unblocks |
 |---|---|---|
 | 1 | `/solutions/rwa-tokenization` | Track A A1 cluster · CN RWA Felix DM sequences |
-| 2 | `/solutions/tokenization` | Track B B1 cluster · FT WealthTech DM sequences |
+| 2 | `/` (homepage) | Top-of-funnel inbound · brand search · routing tiles to Gates 1 + 3 |
+| 3 | `/solutions/tokenization` | Track B B1 cluster · FT WealthTech DM sequences |
 
-> [!IMPORTANT] Phase 1 outreach CTAs route only to Gates 1 and 2. Never MiCA.
+> [!IMPORTANT] Phase 1 outreach CTAs route only to Gates 1, 2, and 3. Never MiCA.
 > RWA ownership tokens are MiFID II financial instruments per Art. 2(4) — see [[EU-Compliance-Landscape]]. A MiCA LP CTA on any RWA-facing surface is a credibility incident.
 
 > [!INFO] No MiCA LP in Phase 1
@@ -102,7 +103,7 @@ Editorial Calendar owns the publish schedule. LinkedIn Outreach Strategy owns se
 |---|---|---|
 | **W1 (May 18 – 24)** | *Calendar planned:* WL-0 *Own vs. License: 5-Year TCO* (Tue May 19) · #2 *How to Tokenize Real-World Assets* A1 hub (Thu May 21, blocked on LP Gate 1 ship target same day). *Actual status:* LP Gate 1 was still 404 at 2026-05-23 check → A1 hub publish likely slipped; WL-0 may have shipped (no LP dependency). **Audit this week's actual deliverables before proceeding.** | DMs not running. Profile foundations in progress (or should have been). |
 | **W2 (May 26 – 31)** | LP build sprint kicks off · profile content publish-ready · feed warmup starts (Profile Recategorisation Accelerator: 2 posts/day for first 2 wks) · compliance brief + vendor risk pack + **Sample Audit Report (synthetic) 5-day sprint** · 5 recommendations requested in batch · WL-0 publish if not done in W1 | **Adjacent-Network + Engagement-Led Tracks activate Day 1.** Trioangle client audit + adjacent intro requests + 5–10 strategic comments/day on RWA prospects' posts. |
-| **W3 (Jun 1–7)** | LP Gates 1 + 2 ship by EOD W3 · A1 hub + B1 hub publish · profile publishes when Gate 1 live + Asset 3 (anchor article) pinnable · 3+ recommendations published | Adjacent + Engagement tracks continue. Structured ABM prep: Sales Nav saved searches built, Expandi/Lemlist configured, first batch of 20–30 structured prospects identified for W5 activation. |
+| **W3 (Jun 1–7)** | LP Gates 1 + 2 (homepage) + 3 ship by EOD W3 · A1 hub + B1 hub publish · profile publishes when Gate 1 live + Asset 3 (anchor article) pinnable · 3+ recommendations published | Adjacent + Engagement tracks continue. Structured ABM prep: Sales Nav saved searches built, Expandi/Lemlist configured, first batch of 20–30 structured prospects identified for W5 activation. |
 | **W4 (Jun 8–14)** | Phase 1 MOFU starts: C1 Carol (W4 Thu) + #4 *MiCA or MiFID II?* (W4 Tue) | Adjacent + Engagement continuing. Profile recategorisation visible (search-appearance signal shifting). Structured DM prep finalised. 5+ recommendations published. |
 | **W5 (Jun 15–21)** | #8 *Oracle Design for RWA* + B1-#5 *Tech Stack* | **Structured ABM DMs activate at half cap (8–10/day RWA).** Adjacent + Engagement still running in parallel. |
 | **W6–8 (Jun 22 – Jul 12)** | MOFU compliance depth: T4-N Tom · P5-DORA-X · architecture pieces | **Full structured ABM cap (15–20/day).** First discovery calls from Adjacent + Engagement tracks (sent W2–W4, replies clustering W5–W7). First structured-ABM calls expected by W7–W8. |
@@ -184,7 +185,8 @@ To prevent drift — what this playbook does NOT cover:
 |---|---|
 | Phase 1 duration | 22 weeks (W1 → W22) |
 | LP Gate 1 (`/solutions/rwa-tokenization`) target ship | **EOD W3** — 5-day dev sprint |
-| LP Gate 2 (`/solutions/tokenization`) target ship | **EOD W3** — parallel sprint |
+| LP Gate 2 (`/` homepage) target ship | **EOD W3** — parallel sprint |
+| LP Gate 3 (`/solutions/tokenization`) target ship | **EOD W3** — parallel sprint |
 | Pain Point 5 validation deadline | **End of W2** (assignment deadline at end of W1) |
 | **Sample Audit Report PDF (synthetic) sprint** | **EOD W3** — gates FT WealthTech DMs per non-negotiable |
 | **Adjacent-Network + Engagement-Led Tracks activate** | **W1 Day 1** — no gate, immediate |
@@ -194,8 +196,8 @@ To prevent drift — what this playbook does NOT cover:
 | Track A Phase 1 close | **W20** |
 | Track B B1 close | **W22** |
 
-> [!DANGER] LP Gate 1 ship by EOD W3 is THE single point of failure for Speed Mode
-> If dev can't ship LP Gate 1 in the 5-day sprint window, structured DMs slip back to W6 (original schedule). Adjacent-Network + Engagement-Led Tracks still run regardless (no LP dependency). Escalate LP delivery to dev as P0 immediately.
+> [!DANGER] LP Gates 1 + 2 + 3 ship by EOD W3 is THE single point of failure for Speed Mode
+> Three LPs in a 5-day sprint is +50% scope vs the original 2-LP plan. If dev can't ship Gate 1 in the sprint window, structured DMs slip back to W6 (original schedule). Adjacent-Network + Engagement-Led Tracks still run regardless (no LP dependency). Escalate LP delivery to dev as P0 immediately. **Slip ordering if capacity-bound:** Gate 1 first (CN RWA — primary DM destination) · Gate 3 second (FT WealthTech) · Gate 2 (homepage) last (top-funnel inbound — affects organic but not outreach).
 
 ---
 
@@ -253,7 +255,7 @@ To prevent drift — what this playbook does NOT cover:
 > Source: [[InnBlockchain - Landing Pages Plan]] · [[InnBlockchain - Editorial Calendar]] § Gate Sequence
 
 ### Pre-flight verification
-- [ ] **(Dev)** **Verify current LP status** of both Phase 1 outreach-gating LPs: `/solutions/rwa-tokenization` (Gate 1) + `/solutions/tokenization` (Gate 2). If either 404, all dependent tasks are blocked. *(MiCA LP dropped from Phase 1 scope — see Critical Path callout.)*
+- [ ] **(Dev)** **Verify current LP status** of all three Phase 1 outreach-gating LPs: `/solutions/rwa-tokenization` (Gate 1) + `/` homepage (Gate 2) + `/solutions/tokenization` (Gate 3). If any 404 OR fails the 13 Drafting Principles / regulatory framing check, all dependent tasks are blocked. *(MiCA LP dropped from Phase 1 scope — see Critical Path callout.)*
 
 ### Gate 1 — `/solutions/rwa-tokenization` (Crypto Native RWA Felix)
 - [ ] **(Dev)** Build LP shell per [[InnBlockchain - Landing Pages Plan]] § Web3 & DeFi Solution Sub-Pages
@@ -265,7 +267,17 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Dev)** Secondary CTA: discovery call (Calendly)
 - [ ] **(Dev)** 301 redirects from retired pages per [[InnBlockchain - Landing Pages Plan]] § Existing Pages Migration Map (`/token-development` → here)
 
-### Gate 2 — `/solutions/tokenization` (FinTech WealthTech Sam/Tom/Carol)
+### Gate 2 — `/` homepage (top-of-funnel inbound · brand search · routing hub)
+- [ ] **(Dev)** Rebuild homepage to LP-grade — current homepage may carry Trioangle / general-dev framing that contradicts Phase 1 RWA + FinTech positioning
+- [ ] **(Dev + Vignesh review)** Hero H1 + H2 in InnBlockchain umbrella positioning (RWA tokenization + FinTech WealthTech infrastructure · MiFID II/III + Prospectus + DLT Pilot + MAR + Listing Act regime · **NEVER MiCA framing on any homepage element**)
+- [ ] **(Dev)** Body copy follows the 13 Drafting Principles (same standard as Gates 1 + 3)
+- [ ] **(Dev)** FAQPage JSON-LD with umbrella prompts ("what does InnBlockchain do" · "RWA tokenization vs MiCA" · "audit + tokenization services")
+- [ ] **(Dev)** **Track routing tiles above the fold:** RWA tile → Gate 1 (`/solutions/rwa-tokenization`) · WealthTech tile → Gate 3 (`/solutions/tokenization`) — both must visually parallel + track click events separately in GA4
+- [ ] **(Dev)** Single proof block above the fold (Principle 11)
+- [ ] **(Dev)** CTA: discovery call (Calendly) — primary · "Vendor risk pack on request" — secondary
+- [ ] **(Dev)** 301 redirects from any retired homepage variants per [[InnBlockchain - Landing Pages Plan]] § Existing Pages Migration Map
+
+### Gate 3 — `/solutions/tokenization` (FinTech WealthTech Sam/Tom/Carol)
 - [ ] **(Dev)** Build LP shell per [[InnBlockchain - Landing Pages Plan]] § FinTech Solution Sub-Pages
 - [ ] **(Dev + Vignesh review)** Hero H1 + H2 in WealthTech CTO/CCO language (MiFID II + Prospectus + DLT Pilot + MAR + Listing Act)
 - [ ] **(Dev)** Body copy follows the 13 Drafting Principles (same as Gate 1)
@@ -275,19 +287,29 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Dev)** CTA: discovery call + "Request vendor risk pack"
 - [ ] **(Dev)** 301 redirects: `/sto-development` + `/token-development` (STO portion) → here
 
-### External-link routing for MiCA-boundary articles (replaces former Gate 3)
-- [ ] **(Dev)** For W4 #4 *MiCA or MiFID II?* and W8 #11 *Prospectus vs MiCA Whitepaper* — add footer routing: *"If your token is structured as a MiCA crypto-asset, see [ESMA MiCA registry] or your national NCA. Otherwise, MiFID II + DLT Pilot Regime is where we work →"* with link to Gate 1 (CN) or Gate 2 (FT) based on track tag
-- [ ] **(Dev)** For W7 P5-DORA-X and W13 P5-eIDAS-X — no MiCA-destination handling needed; CTAs route to Gates 1+2 (the regulated FI / RWA audience these articles serve)
+### External-link routing for MiCA-boundary articles
+- [ ] **(Dev)** For W4 #4 *MiCA or MiFID II?* and W8 #11 *Prospectus vs MiCA Whitepaper* — add footer routing: *"If your token is structured as a MiCA crypto-asset, see [ESMA MiCA registry] or your national NCA. Otherwise, MiFID II + DLT Pilot Regime is where we work →"* with link to Gate 1 (CN) or Gate 3 (FT) based on track tag
+- [ ] **(Dev)** For W7 P5-DORA-X and W13 P5-eIDAS-X — no MiCA-destination handling needed; CTAs route to Gates 1 + 3 (the regulated FI / RWA audience these articles serve)
 
 ### Cross-LP work
 - [ ] **(Dev)** **Audit all retired URLs:** confirm 301 redirects per [[InnBlockchain - Landing Pages Plan]] § Existing Pages Migration Map
-- [ ] **(Dev)** **Home page (`/`) routing:** add RWA tile pointing to Gate 1 + WealthTech tile pointing to Gate 2
 - [ ] **(Vignesh)** **About page:** ensure no claims contradict [[LinkedIn Profile Vignesh Content]] Pre-Publish Hard Gate (7+ years, 15+ protocols audited zero critical, EU FinTech focus)
 - [ ] **(Dev)** **Sitemap.xml updated** so all new LPs are indexable
 
+### Industry pages — `/industries/fintech` + `/industries/web3` (non-gated · Phase 1 close)
+
+> [!INFO] Industry pages are NOT outreach-gating
+> Distinct from Gates 1 + 2 + 3 (which gate DM activation). Industry pages serve organic discovery + cross-link authority + umbrella positioning per industry vertical. No DM dependency. Target: ship by **EOD W22** (Phase 1 close). Slip-tolerant — can move into Phase 2 if Dev capacity bound by Gate 1/2/3 + WS10 eIDAS work.
+
+- [ ] **(Dev)** Build `/industries/fintech` — umbrella page for FT WealthTech positioning · links to Gate 3 (`/solutions/tokenization`) as primary CTA · regime tags MiFID II + Prospectus + DLT Pilot + MAR + Listing Act
+- [ ] **(Dev)** Build `/industries/web3` — umbrella page for CN RWA + protocol audit positioning · links to Gate 1 (`/solutions/rwa-tokenization`) as primary CTA · regime tags MiFID II + DLT Pilot Regime (NOT MiCA on this page even though Web3 audience expects it — keep regime tight to InnBlockchain's actual scope)
+- [ ] **(Dev + Vignesh review)** Both pages follow the 13 Drafting Principles (same standard as the Gates) — FAQPage JSON-LD · single proof block · regime date-stamps
+- [ ] **(MPs)** Internal-link strategy: every Phase 1 Track A article footer adds "Industry: Web3" link · every Track B article footer adds "Industry: FinTech" link · feeds topical authority back to industry pages
+- [ ] **(Vignesh)** Pre-Launch LP Sign-Off applies (same 8-gate checklist) — fires before EOD W22
+
 ### Vignesh Pre-Launch LP Sign-Off Checklist (extracted to [[InnBlockchain - LP Sign-Off Checklist]])
 
-> Cross-phase framework extracted from this playbook → see [[InnBlockchain - LP Sign-Off Checklist]] for the full 8-gate checklist + escalation rules + post-launch verification. Phase 1 fires this checklist for Gate 1 + Gate 2 (before EOD W3) + eIDAS gated PDF page (before W13). 48-hr SLA · sign-off logged before launch · Vignesh blocks launch on any regulatory leak.
+> Cross-phase framework extracted from this playbook → see [[InnBlockchain - LP Sign-Off Checklist]] for the full 8-gate checklist + escalation rules + post-launch verification. Phase 1 fires this checklist for Gate 1 + Gate 2 (homepage) + Gate 3 (before EOD W3) + eIDAS gated PDF page (before W13) + `/industries/fintech` + `/industries/web3` (before EOD W22). 48-hr SLA · sign-off logged before launch · Vignesh blocks launch on any regulatory leak.
 
 ---
 
@@ -373,7 +395,7 @@ To prevent drift — what this playbook does NOT cover:
 
 **Phase 1 publish-required (W2–W3 sprint — both committed Featured pins)**
 - [ ] **(Designer builds · Vignesh content review · MPs upload + pin)** **Asset 1 — RWA Tokenization Risk Checklist for Asset-Backed Founders** (PDF, 5–7 pages, non-technical). Regime framing: MiFID II/III + Prospectus + DLT Pilot Regime + MAR + EU Listing Act — **NOT MiCA**. Pinned to Featured. Hosted as gated download on Gate 1 LP.
-- [ ] **(Designer builds · Vignesh content + compliance sign-off · MPs upload + pin)** **Asset 2 — Sample Audit Report / Sample Deliverable PDF** (Cross-Track Asset; exempt from per-article rules per [[InnBlockchain - Content Repurposing Plan]]). **Single highest-leverage Phase 1 production item** — gates $10M+ Sasha + Track B Tom + Carol pre-call trust. Built W2–W3 sprint. **Pinned to Featured (committed, not optional)**. Hosted on Gate 2 LP as gated download.
+- [ ] **(Designer builds · Vignesh content + compliance sign-off · MPs upload + pin)** **Asset 2 — Sample Audit Report / Sample Deliverable PDF** (Cross-Track Asset; exempt from per-article rules per [[InnBlockchain - Content Repurposing Plan]]). **Single highest-leverage Phase 1 production item** — gates $10M+ Sasha + Track B Tom + Carol pre-call trust. Built W2–W3 sprint. **Pinned to Featured (committed, not optional)**. Hosted on Gate 3 LP as gated download.
  - **Phase 1 production form: synthetic reference report** (no portfolio yet) — methodology + findings drawn from publicly available exploit research + InnBlockchain methodology.
  - **Mandatory front-matter disclosure: "Sample reference report — methodology and findings drawn from publicly available exploit research; no client engagement."** Synthetic-without-disclosure undercuts Carol-defensibility and creates reputational risk.
  - **Replan trigger:** when first delivered engagement allows redacted real audit (likely mid-to-late Phase 1 if WL-1 or B1 client signs) → redacted real audit supersedes synthetic; synthetic stays archived.
@@ -443,7 +465,7 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(SP)** **Calendly** discovery call booking link live + tested
 
 ### Analytics + lead-capture infrastructure (funnel math depends on these)
-- [ ] **(MPs configure · Dev wires events)** **GA4 configured** on innblockchain.com — track LP page-views, time-on-page, scroll depth, CTA clicks, form submissions. Required for time-to-LP-click <60s + LP form-fill rate ≥2% targets in WS12. Set up GA4 transition events specifically for `/solutions/rwa-tokenization` and `/solutions/tokenization`.
+- [ ] **(MPs configure · Dev wires events)** **GA4 configured** on innblockchain.com — track LP page-views, time-on-page, scroll depth, CTA clicks, form submissions. Required for time-to-LP-click <60s + LP form-fill rate ≥2% targets in WS12. Set up GA4 transition events specifically for `/solutions/rwa-tokenization` (Gate 1) + `/` homepage (Gate 2 · also track the RWA tile vs WealthTech tile click events separately) + `/solutions/tokenization` (Gate 3).
 - [ ] **(MPs choose tool · Dev integrates with CRM)** **Email capture mechanism** live — for gated PDF downloads (RWA Risk Checklist, eIDAS brief, vendor risk pack). Options: native CMS form (WordPress / framework), ConvertKit, Mailchimp, or HubSpot Forms. Whatever's chosen must integrate with CRM (auto-create lead record on form submit) and trigger the manual delivery workflow within 24 hrs.
 - [ ] **(SP)** **CRM data hygiene + import** — if any historical LinkedIn contacts / prior discovery calls / referral conversations exist outside Zoho, import + tag with source. Avoids re-outreaching prior contacts and protects relationship credibility.
 
@@ -1044,7 +1066,8 @@ Consolidated cross-channel risks. Per-channel risks live in source docs. Organiz
 ### Critical Path risks
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
-| LP Gates 1+2 slip beyond Week 3 (Speed Mode target ship) | Medium | Critical — structured DMs slip back to ~W6; Speed Mode plan defaults to baseline timeline | Weekly status until clear · escalate to dev as P0 · Adjacent-Network (WS9.5a) + Engagement-Led (WS9.5b) Tracks still run regardless (no LP dependency) · do NOT launch structured DMs until LP live |
+| LP Gates 1 + 2 + 3 slip beyond Week 3 (Speed Mode target ship) | Medium–High | Critical — structured DMs slip back to ~W6; Speed Mode plan defaults to baseline timeline | Weekly status until clear · escalate to dev as P0 · Adjacent-Network (WS9.5a) + Engagement-Led (WS9.5b) Tracks still run regardless (no LP dependency) · do NOT launch structured DMs until Gate 1 live |
+| **3-LPs-in-5-days Dev sprint scope** (Phase 1 expanded from 2 LPs to 3 — homepage rebuilt as Gate 2) | Medium | High — Dev capacity now +50%; raises likelihood of at least one Gate slipping the EOD W3 window | Slip ordering pre-agreed: Gate 1 (CN RWA) ships first — DM activation depends on it · Gate 3 (FT) second · Gate 2 (homepage) last (affects organic inbound but not outreach, can slip into W4 without blocking structured DMs). Vignesh decides at W2 mid-point: if all 3 won't ship by EOD W3, Gate 2 slips, Gate 1 + Gate 3 protected. |
 | Sample Audit Report PDF not produced in W2–W3 | High if no W2–W3 sprint commitment | High — single highest-leverage Phase 1 asset per [[InnBlockchain - Content Repurposing Plan]]; without it, $10M+ Sasha + Track B Tom + Carol don't book the discovery call | 3-day sprint W2 with Compliance co-owner · synthetic reference report acceptable (with explicit disclosure) until first delivered engagement |
 | Outreach Readiness Gate stalls (Featured assets, <5 recommendations, <4 wks feed posts) | Medium | High — premature DMs convert near zero | Treat as separate critical path · weekly checkbox vs [[InnBlockchain - LinkedIn Outreach Strategy]] § Outreach Readiness Gate |
 | Pain Point 5 validation never happens (owner not named end of W1) | Medium | Medium — kills 5 Track B articles + World Summit AI angle | WS6 escalation: decide Path A (Vignesh runs interviews W2) or Path B (mark cluster dropped, log in Replan Triggers) by end of W1 |
@@ -1093,7 +1116,8 @@ Editorial Calendar planned W1 publishes + foundations work. Run a W1 retro at en
 
 ### W1 LP delivery targets
 - [ ] **LP Gate 1** (`/solutions/rwa-tokenization`) — Editorial Calendar target
-- [ ] **LP Gate 2** (`/solutions/tokenization`) — Editorial Calendar target
+- [ ] **LP Gate 2** (`/` homepage) — rebuild to LP-grade per Phase 1 positioning
+- [ ] **LP Gate 3** (`/solutions/tokenization`) — Editorial Calendar target
 
 ### W1 foundations work (kicked off immediately)
 - [ ] Profile content drafting (per [[LinkedIn Profile Vignesh Content]])
@@ -1172,6 +1196,7 @@ Foundations sprint + immediate engagement-led lead generation in parallel. No di
 ## Phase 1 close (W19–W22)
 - [ ] BOFU lead magnets + Carol piece + WL-1 publish
 - [ ] Track A close W20 · Track B B1 close W22
+- [ ] **Industry pages live by EOD W22** — `/industries/fintech` + `/industries/web3` (non-gated · slip-tolerant into Phase 2 if Dev capacity bound)
 - [ ] Phase 1 retro for Phase 2 planning (separate doc)
 
 ---
