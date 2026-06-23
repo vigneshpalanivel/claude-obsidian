@@ -28,7 +28,7 @@ related:
 
 ICP-aligned rewrite of Vignesh's personal LinkedIn profile copy. Designed to support trigger-based LinkedIn outreach to FinTech RWA/WealthTech, Crypto-Native RWA, and (Phase 3+) DeFi/Protocol ICP leads per [[InnBlockchain LinkedIn Strategy]].
 
-Source draft: `.raw/InnBlockchain/LinkedIn/LinkedIn Profile Vignesh Content.md` → [[LinkedIn-Profile-Content-Vignesh-InnBlockchain]]
+Source draft: `.raw/InnBlockchain/sales-marketing/LinkedIn/LinkedIn Profile Vignesh Content.md` → [[LinkedIn-Profile-Content-Vignesh-InnBlockchain]]
 
 ## Why This Rewrite Was Needed
 

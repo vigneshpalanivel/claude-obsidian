@@ -192,7 +192,7 @@ Acceptable cross-track parallels remain (deliberate by strategy doc design): `#7
 Article construction protocol:
 
 1. Open the article you're drafting from the editorial calendar.
-2. Find its block in `.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md`.
+2. Find its block in `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content AEO GEO Prompts.md`.
 3. Draft the lede so it literally answers 3+ of the prompts in the first 150 words.
 4. Mirror prompts as H2/H3 headings.
 5. Add prompts verbatim as FAQPage JSON-LD schema at the article bottom.
@@ -239,4 +239,4 @@ Re-cut (not patched) when:
 
 ## Source
 
-`.raw/InnBlockchain/Content/InnBlockchain - Content AEO GEO Prompts.md` (rev 5 + TFR patch, 2026-05-21, hash `30a031c4814a5f2e8bc75b7ef184ee7b`) — see [[InnBlockchain-Content-AEO-GEO-Prompts]] source note.
+`.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content AEO GEO Prompts.md` (rev 5 + TFR patch, 2026-05-21, hash `30a031c4814a5f2e8bc75b7ef184ee7b`) — see [[InnBlockchain-Content-AEO-GEO-Prompts]] source note.

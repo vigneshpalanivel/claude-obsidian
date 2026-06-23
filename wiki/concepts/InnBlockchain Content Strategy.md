@@ -27,7 +27,7 @@ related:
 
 # InnBlockchain Content Strategy
 
-The InnBlockchain content program. As of rev 1 (2026-05-13), the Crypto Native + FinTech strategies are **merged into one source-of-truth doc** at `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md` (currently at rev 19, 2026-05-31). One doc serves both ICPs via track tagging (`[CN]` / `[FT]` / `[Both]`); the Crypto Products strategy remains separate.
+The InnBlockchain content program. As of rev 1 (2026-05-13), the Crypto Native + FinTech strategies are **merged into one source-of-truth doc** at `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Strategy.md` (currently at rev 19, 2026-05-31). One doc serves both ICPs via track tagging (`[CN]` / `[FT]` / `[Both]`); the Crypto Products strategy remains separate.
 
 > [!warning] Wiki concept docs for the per-ICP strategies are deprecated
 > [[InnBlockchain Crypto Native Content Strategy]] and [[InnBlockchain FinTech Content Strategy]] are **pre-merge artifacts** (last refreshed 2026-05-13 before the rev 1 consolidation). They no longer reflect the canonical strategy. Use the canonical `.raw` doc instead. This umbrella page is the only current wiki summary.
@@ -36,10 +36,10 @@ The InnBlockchain content program. As of rev 1 (2026-05-13), the Crypto Native +
 
 | Strategy | Source | Status |
 |---|---|---|
-| **InnBlockchain (unified CN + FT)** | `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md` (rev 19, 2026-05-31) | 🟢 current |
-| Crypto Products | `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy - Crypto Products.md` | 🟢 separate program (clone-script $5k–$25k buyers) |
-| Editorial schedule | `.raw/InnBlockchain/Content/InnBlockchain - Editorial Calendar.md` | 🟢 publish dates live here; strategy doc has article inventory |
-| Repurposing / derivatives | `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Plan.md` (rev 7, 2026-05-27) | 🟢 derivative content production owns this layer (rev 17 separation) |
+| **InnBlockchain (unified CN + FT)** | `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Strategy.md` (rev 19, 2026-05-31) | 🟢 current |
+| Crypto Products | `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Strategy - Crypto Products.md` | 🟢 separate program (clone-script $5k–$25k buyers) |
+| Editorial schedule | `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Editorial Calendar.md` | 🟢 publish dates live here; strategy doc has article inventory |
+| Repurposing / derivatives | `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Repurposing Plan.md` (rev 7, 2026-05-27) | 🟢 derivative content production owns this layer (rev 17 separation) |
 
 ## Two ICPs, One Strategy
 

@@ -1,0 +1,3 @@
+[submodule ".raw/InnBlockchain/sales-marketing"]
+	path = .raw/InnBlockchain/sales-marketing
+	url = git@github-innblockchain:InnBlockchain/sales-marketing.git

@@ -48,7 +48,7 @@ related:
 
 # LinkedIn Profile Content — Vignesh / InnBlockchain
 
-Source: `.raw/InnBlockchain/LinkedIn/LinkedIn Profile Vignesh Content.md`
+Source: `.raw/InnBlockchain/sales-marketing/LinkedIn/LinkedIn Profile Vignesh Content.md`
 
 Final ICP-aligned copy for Vignesh's personal LinkedIn profile. Authored 2026-05-11 in a multi-session review against [[InnBlockchain FinTech ICP]] + [[InnBlockchain Crypto Native ICP]] + [[InnBlockchain LinkedIn Strategy]]. Cross-channel audit on 2026-05-11 surfaced that all planned ICP-aligned landing pages per [[InnBlockchain Landing Pages Plan]] return 404; profile launch now phase-gated on landing page availability with RWA page as Phase 1 trigger.
 

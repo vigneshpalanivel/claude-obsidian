@@ -55,7 +55,7 @@ related:
 
 # Content Strategy — InnBlockchain (consolidated, both ICPs)
 
-Source: `.raw/InnBlockchain/Content/InnBlockchain - Content Strategy.md`
+Source: `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Strategy.md`
 
 ## What this doc is
 

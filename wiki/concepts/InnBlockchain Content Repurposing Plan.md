@@ -26,7 +26,7 @@ related:
 
 The InnBlockchain-specific derivative-content blueprint. Sits beside [[InnBlockchain Content Strategy]] (article inventory + scoring) and [[InnBlockchain Editorial Calendar]] (publish dates + cadence); paired with its design-only child [[InnBlockchain Content Repurposing Design Toolkit]] (Plan owns *what* to produce; Toolkit owns *how*). This doc owns **which articles get which derivatives, in what priority, at what cadence, by a dedicated resource** — and documents why every excluded format was excluded so future format questions can be answered from the doc without relitigating.
 
-> **Canonical source:** `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Plan.md` (rev 18, 2026-06-03 — X thread post times converted to IST synced to Playbook rev 22).
+> **Canonical source:** `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Repurposing Plan.md` (rev 18, 2026-06-03 — X thread post times converted to IST synced to Playbook rev 22).
 > **Generic concept reference:** [[Content Repurposing Workflow]] — three approaches (one-to-one / one-to-many / atomization), 7-step workflow. The InnBlockchain plan is the operationalization for this program specifically.
 
 ## Why this doc exists
@@ -365,7 +365,7 @@ A **dedicated repurposing resource** owns this calendar. Friday block retained f
 3. **`[Cross-Motion]` CTA column scope:** the `[Cross-Motion]` column in the CTA Template Appendix is **for lead magnets + decision-framework derivatives + visual derivatives without explicit CTA (event slides, webinar talking points) only** — NOT a neutral default for all derivatives of `[Cross-Motion]` articles.
 4. **Source article CTA must match the registered motion tag** — fix the source article BEFORE producing derivatives if there's drift.
 
-> For the verbatim per-format × per-motion close-text table, see canonical source `.raw/InnBlockchain/Content/InnBlockchain - Content Repurposing Plan.md` §Per-Motion CTA Template Appendix.
+> For the verbatim per-format × per-motion close-text table, see canonical source `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Repurposing Plan.md` §Per-Motion CTA Template Appendix.
 
 ## Anti-patterns
 
