@@ -19,6 +19,16 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## 2026-06-23 | ingest | Trioangle Service Landing Page — AI Tech Stack
+
+Single-source ingest of `.raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md` (raw → wiki mirror). Defines the AI tech-stack section for Trioangle's service landing pages, built to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors.
+
+- **Source**: `.raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md` (hash `7a8c201272818d5f758ec76054fefa8f`)
+- **Summary**: [[AI-Tech-Stack-LP-Trioangle]]
+- **Pages created**: [[Trioangle Service Landing Page AI Tech Stack]] (concept), [[AI-Tech-Stack-LP-Trioangle]] (source)
+- **Pages updated**: [[index]] (concept + source rows), [[hot]], [[log]], `.raw/.manifest.json`
+- **Key insight**: A clean AI tool list is necessary but not sufficient to position as AI engineering — a logo grid alone reads as integrator. Editorial discipline carried into the wiki: vendors reframed as range (self-hosted-first + mandatory model-agnostic header), tech-vs-feature split, non-AI items purged (channels/hosting/video), per-LP grouping aligned to [[Trioangle Landing Page Plan]]. Proof-point caveat from [[Trioangle Service ICP]] applies — several tools are unverified category defaults.
+
 ## 2026-06-04 | re-ingest | InnBlockchain US-Compliance-Landscape raw → wiki mirror (post batch-ingest sync)
 
 Re-ingest of `.raw/InnBlockchain/US Compliance/US-Compliance-Landscape.md` following the same-day batch ingest of the five new US-compliance source documents. Raw file edited to cross-reference the four new wiki concept pages and to add a Primary Sources section matching the EU-Compliance-Landscape.md structural pattern. Wiki concept page [[US-Fintech-Compliance-Landscape]] body mirrored to match raw (canonical-source invariant preserved per the artifact's `purpose` field).
