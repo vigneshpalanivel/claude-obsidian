@@ -23,7 +23,7 @@ related:
 
 The **Design Toolkit Plan for Content** — the design layer of content production for the InnBlockchain Phase 1 program. Owned operationally by the **MPs** (Marketing Persons collectively, handling AI visual production + posting) with the **Designer** carrying the high-stakes pieces. Child of [[InnBlockchain Content Repurposing Plan]]; covers what the Plan deliberately doesn't.
 
-> **Canonical source:** `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Repurposing Design Toolkit.md` (rev 7).
+> **Canonical source:** `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Content Repurposing Design Toolkit.md` (rev 7).
 
 ## What this owns vs what it routes elsewhere
 

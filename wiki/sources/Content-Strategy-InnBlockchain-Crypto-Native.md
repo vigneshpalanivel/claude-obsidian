@@ -11,10 +11,10 @@ tags:
 ---
 
 > [!warning] This source page no longer reflects a live `.raw` document.
-> The standalone `.raw/InnBlockchain - Content Strategy - Crypto Native.md` was merged into the consolidated `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Strategy.md` on 2026-05-13 (rev 1). Source split as the wiki used to organise it no longer exists.
+> The standalone `.raw/InnBlockchain - Content Strategy - Crypto Native.md` was merged into the consolidated `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Content Strategy.md` on 2026-05-13 (rev 1). Source split as the wiki used to organise it no longer exists.
 >
 > **→ Consolidated source page: [[Content-Strategy-InnBlockchain]]**
 > **→ Synthesis concept page: [[InnBlockchain Content Strategy]]** (Track A serves Crypto Native via segment tagging A1–A10)
-> **→ Canonical raw doc:** `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Strategy.md`
+> **→ Canonical raw doc:** `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Content Strategy.md`
 >
 > This stub exists only to absorb inbound wikilinks. Update any link you control to point to [[Content-Strategy-InnBlockchain]] or [[InnBlockchain Content Strategy]] instead.

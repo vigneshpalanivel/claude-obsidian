@@ -48,7 +48,7 @@ related:
 
 # LinkedIn Recommendation Request Templates — Vignesh / InnBlockchain
 
-Source: `.raw/InnBlockchain/sales-marketing/LinkedIn/Recommendation Request Templates.md`
+Source: `.raw/InnBlockchain/sales-marketing/Service/LinkedIn/Recommendation Request Templates.md`
 
 Operational outreach copy for requesting LinkedIn recommendations that support InnBlockchain's ICP-aligned profile positioning. 5 templated request copy variants — one per recommender category — each with embedded ICP-aligned talking-point bullets and a "what good looks like" sample recommendation.
 
@@ -63,7 +63,7 @@ Operational outreach copy for requesting LinkedIn recommendations that support I
 
 ## Why This Source Is Separate from Profile Content
 
-These are operational outreach assets, not profile copy. They live in `.raw/InnBlockchain/sales-marketing/LinkedIn/` alongside the profile content doc to keep the LinkedIn-related operational artifacts co-located, but they don't appear on the profile itself — they generate the recommendations that appear on the profile.
+These are operational outreach assets, not profile copy. They live in `.raw/InnBlockchain/sales-marketing/Service/LinkedIn/` alongside the profile content doc to keep the LinkedIn-related operational artifacts co-located, but they don't appear on the profile itself — they generate the recommendations that appear on the profile.
 
 ## See Also
 

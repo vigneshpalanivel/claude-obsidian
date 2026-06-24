@@ -52,7 +52,7 @@ related:
 
 # InnBlockchain — Content AEO GEO Prompts (Phase 1)
 
-**Source**: `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content AEO GEO Prompts.md` (rev 5 + TFR patch, 2026-05-21) | InnBlockchain Marketing | hash `30a031c4814a5f2e8bc75b7ef184ee7b`
+**Source**: `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Content AEO GEO Prompts.md` (rev 5 + TFR patch, 2026-05-21) | InnBlockchain Marketing | hash `30a031c4814a5f2e8bc75b7ef184ee7b`
 
 **Synced with:** Content Strategy rev 16, Editorial Calendar rev 9.
 
@@ -199,7 +199,7 @@ This document is re-cut (not patched) when:
 ## Cross-References
 
 - Strategic parent: [[InnBlockchain Content Strategy]]
-- Editorial cadence: `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Editorial Calendar.md`
+- Editorial cadence: `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Editorial Calendar.md`
 - Concept synthesis: [[InnBlockchain Content AEO GEO Prompts]]
 - ICPs: [[InnBlockchain Crypto Native ICP]] · [[InnBlockchain FinTech ICP]]
 - Trioangle parallel approach: [[SEO-AEO-GEO-Prompt-Library]]

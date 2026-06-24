@@ -15,6 +15,6 @@ tags:
 >
 > **→ Go to [[InnBlockchain Content Strategy]]** (umbrella overview; Track A serves Crypto Native via segment tagging A1–A10).
 >
-> Canonical source: `.raw/InnBlockchain/sales-marketing/Content/InnBlockchain - Content Strategy.md` (rev 14, 2026-05-21).
+> Canonical source: `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Content Strategy.md` (rev 14, 2026-05-21).
 >
 > This stub exists only to absorb inbound wikilinks. Update any link you control to point to [[InnBlockchain Content Strategy]] instead.
