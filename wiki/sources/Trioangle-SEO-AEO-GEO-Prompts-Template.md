@@ -42,7 +42,7 @@ related:
 
 # 100+ SEO + AEO + GEO Prompts Template — Trioangle
 
-**Source**: `.raw/Trioangle/SEO/SEO_AEO_GEO_Prompts_Template.md` | Trioangle internal | 2026
+**Source**: `.raw/Trioangle/sales-marketing/Service/SEO/SEO_AEO_GEO_Prompts_Template.md` | Trioangle internal | 2026
 
 ---
 

@@ -343,7 +343,7 @@
         "wiki/log.md"
       ]
     },
-    ".raw/Trioangle/ICP/Trioangle - ICP - Product.md": {
+    ".raw/Trioangle/sales-marketing/Product/ICP/Trioangle - ICP - Product.md": {
       "hash": "49a33ebcc94df0cf94944dbfbc1d6771",
       "ingested_at": "2026-04-15",
       "reingested_at": "2026-04-30",
@@ -372,7 +372,7 @@
         "wiki/log.md"
       ]
     },
-    ".raw/Trioangle/ICP/Trioangle - ICP - Channel Partner.md": {
+    ".raw/Trioangle/sales-marketing/Service/ICP/Trioangle - ICP - Channel Partner.md": {
       "hash": "41a5096bb45b38f0e10c4309a09ef40f",
       "ingested_at": "2026-04-15",
       "reingested_at": "2026-04-30",
@@ -507,7 +507,7 @@
         "wiki/index.md"
       ]
     },
-    ".raw/Trioangle/ICP/Trioangle - ICP - Service.md": {
+    ".raw/Trioangle/sales-marketing/Service/ICP/Trioangle - ICP - Service.md": {
       "hash": "3247ab2ac3f5b891140b0108dfc59e87",
       "ingested_at": "2026-04-30",
       "rev": 5,
@@ -519,7 +519,7 @@
         "wiki/hot.md"
       ]
     },
-    ".raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md": {
+    ".raw/Trioangle/sales-marketing/Service/Sales/Trioangle - Sales Playbook - Service.md": {
       "hash": "c8ea174c1bb833e053c15b80facfe7ad",
       "ingested_at": "2026-05-09",
       "ingest_reason": "Service-ICP operating playbook authored in this session — companion to Service ICP strategy doc. Created because legacy Trioangle Sales Initiatives + KPIs lists are Product-ICP-scoped (formally tagged scope: product-icp-only on 2026-05-09) and don't apply to Service-ICP economics ($10k–$120k+, 45–180 day cycles, sprint-gated proposals).",
@@ -591,7 +591,7 @@
         "wiki/hot.md"
       ]
     },
-    ".raw/Trioangle/Trioangle Landing Page Plan.md": {
+    ".raw/Trioangle/sales-marketing/Service/Trioangle Service LP Plan.md": {
       "hash": "7d6d41519ebb2881e942b5308f490520",
       "ingested_at": "2026-05-16",
       "pages_created": [],
@@ -693,7 +693,7 @@
       ],
       "notes": "Fifth US-compliance ingest in the 2026-06-04 batch. Optional extension to the base implementation in real_estate_rwa_reg_s.md, preserving the full Rule 144 affiliate-condition machinery for deployments where the affiliate-free architecture is not viable. New concept page [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] created, explicitly tagged status: optional-extension to distinguish from production-ready concept pages. Adoption scenarios: (a) institutional investor with board representation triggers affiliate status; (b) sponsor specifically requires on-chain token-level liquidity (rare — LLC promote is the better economic instrument); (c) platform re-use for a deal where affiliate-free architecture cannot be maintained. The seven affiliate categories the identity registry must support (OFFICER_DIRECTOR, SPONSOR_GP, TEN_PERCENT_HOLDER, BOARD_APPOINTEE, HOUSEHOLD_ATTRIBUTION, GROUP_CONTROL, INDIRECT_CONTROL) + status transitions with the Rule 144(b)(1) 3-month tail (affiliateExitTimestamp + 90 days) + the four-sub-gate affiliate canTransfer logic (volume cap Rule 144(e), manner of sale Rule 144(f), current public information Rule 144(c), Form 144 Rule 144(h)) + the Rule 144(c) current-information killswitch (without a Rule 15c2-11 information statement on file, the affiliate machinery provides NO value because sub-gate 3c never passes) + group aggregation for GROUP_CONTROL members to prevent split-sale evasion. Strategic recommendation embedded: sponsor economics should always go through LLC promote (Class B Promote Units) rather than tokens, even when the affiliate machinery is available — the Rule 144(c) and 1% / weekly-volume caps make sponsor liquidity through tokens operationally near-frozen anyway."
     },
-    ".raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md": {
+    ".raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md": {
       "hash": "7a8c201272818d5f758ec76054fefa8f",
       "ingested_at": "2026-06-23",
       "pages_created": [

@@ -55,7 +55,7 @@ related:
 
 # ICP — Trioangle Custom Development & AI Engineering
 
-**Source**: `.raw/Trioangle/ICP/Trioangle - ICP - Service.md` | Trioangle internal | 2026 | Status: documented; Track 2 outbound not yet activated; pending customer-interview validation cycle
+**Source**: `.raw/Trioangle/sales-marketing/Service/ICP/Trioangle - ICP - Service.md` | Trioangle internal | 2026 | Status: documented; Track 2 outbound not yet activated; pending customer-interview validation cycle
 
 > [!NOTE] Re-ingest 2026-05-21
 > This file reflects the post-LP-Plan alignment pass: Active Marketing Focus distinction (8 active marketing verticals vs 9 historical delivery breadth), Rentals broken out as standalone vertical (absorbing vacation rental from former Travel page), 8 categories dropped from active marketing (Travel/hotel/OTA-only, Social-media, Video-streaming/OTT, EdTech, Dating, Short-video, B2B Fleet Management, Real-estate/proptech), P1+P2 retiering from Opportunistic-only to Direct-secondary (Established-Operator Filter applied), 7 productized AI services formalized. Prior version preserved in git history.

@@ -4,7 +4,7 @@ type: source
 status: ingested
 created: 2026-05-15
 ingested: 2026-05-15
-source_path: ".raw/Trioangle/Content/Trioangle - Editorial Calendar - Service.md"
+source_path: ".raw/Trioangle/sales-marketing/Service/Content/Trioangle - Editorial Calendar - Service.md"
 tags:
   - source
   - trioangle
@@ -23,7 +23,7 @@ related:
 
 **Date ingested:** 2026-05-15
 **Source type:** Internal content operations document (.raw/)
-**Source file:** `.raw/Trioangle/Content/Trioangle - Editorial Calendar - Service.md`
+**Source file:** `.raw/Trioangle/sales-marketing/Service/Content/Trioangle - Editorial Calendar - Service.md`
 **Author intent:** Publishing schedule for the Trioangle AI Engineering and Custom Development blog. Companion to the Service Content Strategy (article briefs, keyword strategy, persona mapping, CTA rules). Extracted from Content Strategy Part 5 and maintained separately as the operational schedule.
 
 **Pages created:** 1 concept page
@@ -76,7 +76,7 @@ Decision-stage articles through Month 5: #5 (case study), #90, #91, #23, #22. Th
 
 ## Changes Applied During This Ingest Session
 
-The source file was substantially updated before ingest in this session. Changes applied to `.raw/Trioangle/Content/Trioangle - Editorial Calendar - Service.md`:
+The source file was substantially updated before ingest in this session. Changes applied to `.raw/Trioangle/sales-marketing/Service/Content/Trioangle - Editorial Calendar - Service.md`:
 
 1. **Cadence reduced from 3x/week to 2x/week** — header updated; all 6 month tables rebuilt with 8 slots each (Mon + Thu); deferred articles documented inline and in Month 7+ table.
 2. **Capacity and Quality Gate callout added** — warning block before Month 1 covering: who writes each article type, target length by article type, edit/review cycle requirements, cadence reduction trigger, Month 4 quality checkpoint.

@@ -4,7 +4,7 @@ type: source
 status: ingested
 created: 2026-06-23
 ingested: 2026-06-23
-source_path: ".raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md"
+source_path: ".raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md"
 tags:
   - source
   - trioangle
@@ -22,7 +22,7 @@ related:
 
 **Date ingested:** 2026-06-23
 **Source type:** Internal marketing/positioning document (.raw/)
-**Source file:** `.raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md`
+**Source file:** `.raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md`
 **Author intent:** Define the AI technology list for the "Tech Stack" section of Trioangle's service landing pages, in a way that reinforces AI-engineering positioning rather than diluting it with over-mentioned third-party vendors. Built collaboratively, iterating from the ArmourPath AI Addon tech reference up to a per-LP grouping aligned with [[Trioangle Landing Page Plan]].
 
 **Pages created:** 1 concept page

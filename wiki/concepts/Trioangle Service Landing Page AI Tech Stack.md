@@ -4,7 +4,7 @@ title: "Trioangle Service Landing Page AI Tech Stack"
 status: current
 created: 2026-06-23
 updated: 2026-06-23
-source: ".raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md"
+source: ".raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md"
 tags:
   - concept
   - trioangle

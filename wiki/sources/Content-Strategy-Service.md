@@ -54,7 +54,7 @@ related:
 
 # Content Strategy — Trioangle AI Engineering & Custom Development Blog
 
-**Source**: `.raw/Trioangle/Content/Trioangle - Content Strategy - Service.md` | Trioangle internal | 2026 | Status: post-AI-pivot + post-LP-Plan refresh; pre-publish-gate active for 800+ stat
+**Source**: `.raw/Trioangle/sales-marketing/Service/Content/Trioangle - Content Strategy - Service.md` | Trioangle internal | 2026 | Status: post-AI-pivot + post-LP-Plan refresh; pre-publish-gate active for 800+ stat
 
 > [!NOTE] Re-ingest 2026-05-23
 > This file reflects the post-LP-Plan + post-active-marketing-focus alignment pass. **AI Engineering is the primary service line** (was secondary in prior version). **Pillar 7 (AI Engineering)** added — primary motion with 24 articles + 0.5 score bonus when sprint-scheduling. **Pillar count expanded 6 → 7**. **Article count 81 → 87** (10 dropped-vertical articles removed; #56, #57, #61, #65, #66, #67, #105, #106, #117, #118). **Active Marketing Focus** distinction added (8 active verticals vs 9 historical breadth). **Persona Tiering updated** — P1+P2 retiered from "Inbound only / Opportunistic" to "Direct secondary" (established operating businesses with AI pressure). **Persona 5 (AI-Forward Platform Operator)** added as direct primary. **AI Audit Sprint + AI Readiness Call** two-step CTA funnel formalized. **Channel 4 (AI Engineering Outbound)** added. **Existing-Operator Filter** mandatory across all articles.

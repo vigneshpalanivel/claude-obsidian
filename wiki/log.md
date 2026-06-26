@@ -21,9 +21,9 @@ Append-only. New entries go at the TOP. Never edit past entries.
 
 ## 2026-06-23 | ingest | Trioangle Service Landing Page — AI Tech Stack
 
-Single-source ingest of `.raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md` (raw → wiki mirror). Defines the AI tech-stack section for Trioangle's service landing pages, built to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors.
+Single-source ingest of `.raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md` (raw → wiki mirror). Defines the AI tech-stack section for Trioangle's service landing pages, built to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors.
 
-- **Source**: `.raw/Trioangle/Trioangle Service Landing Page - AI Tech Stack.md` (hash `7a8c201272818d5f758ec76054fefa8f`)
+- **Source**: `.raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md` (hash `7a8c201272818d5f758ec76054fefa8f`)
 - **Summary**: [[AI-Tech-Stack-LP-Trioangle]]
 - **Pages created**: [[Trioangle Service Landing Page AI Tech Stack]] (concept), [[AI-Tech-Stack-LP-Trioangle]] (source)
 - **Pages updated**: [[index]] (concept + source rows), [[hot]], [[log]], `.raw/.manifest.json`
@@ -480,13 +480,13 @@ Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Imp
 - Key insight: Execution-layer companion to [[InnBlockchain Content Strategy]]. 270 conversational prompts mapped 1:1 to 53+ Phase 1 articles — strategy says *what*, editorial calendar says *when*, this says *what literal questions each article must answer in the first 150 words.* Structurally different from Trioangle's [[SEO-AEO-GEO-Prompt-Library]] (template × 10 verticals = 1,800 instances) — InnBlockchain's is article-by-article, single conversational-query framing, mandatory track/stage/persona/motion metadata per block. Rev-3 dedup pass removed 11 cross-article overlaps that would have created internal AEO competition; each affected block now carries `*(Scope: ...)*` ownership-boundary line. Phase 1 scope only (May–Oct 2026); Phase 2 prompts deferred until Q4 2026 when Phase 2 calendar is cut.
 
 ## 2026-05-16 | re-ingest | Trioangle Landing Page Plan
-- Source: `.raw/Trioangle/Trioangle Landing Page Plan.md` (hash `7d6d41519ebb2881e942b5308f490520`)
+- Source: `.raw/Trioangle/sales-marketing/Service/Trioangle Service LP Plan.md` (hash `7d6d41519ebb2881e942b5308f490520`)
 - Summary: [[Trioangle Landing Page Plan]] (concept)
 - Pages updated: [[Trioangle Landing Page Plan]], [[hot]], [[log]]
 - Key finding: Landing page plan restructured against Service ICP P5 in three passes — (1) competitor-validated slug rename + new `/industries/super-app/` page, (2) multi-service keyword rows (AI primary + Dev & Product) with all brand references stripped, (3) three-CTA routing per industry page with operator qualification filter, trigger subheads, P3/P4 inbound routing, and Travel/Social/Education aspirational-keyword gating. AI service pages (Priorities 5/6/7/10–13) now route through AI Audit Sprint funnel instead of skipping to "Get a fixed-price quote." Hub headline corrected from "800+ platforms in your vertical" → "800+ platforms across 9 verticals" (vertical-agnostic page). Document is now ICP-aligned at the strategy layer — copywriting pass on actual page builds is the next step.
 
 ## 2026-05-15 | ingest | Trioangle Editorial Calendar — Service
-- Source: `.raw/Trioangle/Content/Trioangle - Editorial Calendar - Service.md`
+- Source: `.raw/Trioangle/sales-marketing/Service/Content/Trioangle - Editorial Calendar - Service.md`
 - Pages created: [[Trioangle Service Editorial Calendar]] (concept), [[Editorial-Calendar-Service-Trioangle]] (source)
 - Pages updated: [[index]] (pages 217→219, sources 69→70), [[hot]], [[log]]
 - Key finding: Calendar restructured from 3x/week (72 articles/6 months) to 2x/week (48 articles/6 months). All 26 Pillar 7 AI engineering articles preserved in Months 1-5. 24 lower-priority Pillar 1/3 architecture articles moved to Month 7+ queue. Operational additions: capacity gate (pre-launch checklist + fallback trigger), distribution plan (per-article LinkedIn/Channel4/newsletter matrix), metrics dashboard (weekly targets + monthly review checklist + quarterly pivot go/no-go questions).
@@ -533,7 +533,7 @@ Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Imp
 - Open question: Whether to specify "two regulatory cycles" (2018 ICO wave + 2023 MiCA passage) or keep vague. Recommend specifying after first 5 discovery calls — vague version is currently working as a credibility hook.
 
 ## [2026-05-09] ingest | Trioangle - Sales Playbook - Service.md
-- Source: `.raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md` (hash → c8ea174c1bb833e053c15b80facfe7ad)
+- Source: `.raw/Trioangle/sales-marketing/Service/Sales/Trioangle - Sales Playbook - Service.md` (hash → c8ea174c1bb833e053c15b80facfe7ad)
 - Pages created: [[Sales-Playbook-Service-Trioangle]] (source), [[Trioangle Service Sales Playbook]] (concept)
 - Pages updated: [[Trioangle Service ICP]] (strategy/operating-layer cross-link added), [[Trioangle-Sales-Operations]] (scope-warning callout — Initiatives + KPIs sections are Product-ICP-only, Service-ICP operating layer now lives in new playbook), [[Trioangle-Sales-Internal-Docs]] (file-level scope flagged), [[Trioangle]] entity (playbook added to sources), [[index]] (page count 191→193, source count 60→61), [[hot]], [[log]]
 - Trigger: 2026-05-09 session — user authored the Sales Playbook for Service ICP, then explicitly marked the legacy `Trioangle Sales Initiatives List.md` and `Trioangle Sales KPIs List.md` as Product-ICP-only via `scope: product-icp-only` frontmatter + warning banners. Service-ICP-specific operating-layer docs were missing — the playbook closes that gap.
@@ -561,7 +561,7 @@ Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Imp
 ---
 
 ## [2026-04-30] reingest | Trioangle - ICP - Service.md (Pass 5 — full Pivot/Growth alignment)
-- Source: `.raw/Trioangle/ICP/Trioangle - ICP - Service.md` (hash → 3247ab2ac3f5b891140b0108dfc59e87)
+- Source: `.raw/Trioangle/sales-marketing/Service/ICP/Trioangle - ICP - Service.md` (hash → 3247ab2ac3f5b891140b0108dfc59e87)
 - Pages updated: [[Trioangle Service ICP]] (full rewrite, rev 5), [[ICP-Service-Trioangle]] (key_claims expanded from 9 → 18, related extended to Growth Plan + AI Pivot Plan, all 5 persona budgets/timelines updated, new sections: Persona Tiering, Existing-Operator Filter, Two Pre-Sales Products, AI Funnel disambiguation, Pain → Persona Matrix, Loss Reasons, Volume Targets, AI delivery count caveat)
 - Trigger: full review of source against [[Trioangle 2.0 AI Pivot Plan]] and [[Trioangle Growth Plan]] surfaced 14 cross-document gaps. User selected 10 to fix (1, 3, 6, 8, 9, 10, 11, 12, 13, 14); skipped 4 (activation banner, P3+P4 channel-only enforcement, Track 1/2 framing, vertical count 8 vs 9 reconciliation).
 - Source edits applied (10 substantive changes):
@@ -630,7 +630,7 @@ Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Imp
 - Cross-document boundaries enforced: [[Trioangle Growth Plan]] owns recurring revenue + repeat business + customer LTV across all tracks; [[Trioangle AI Delivery Kit]] owns the internal toolkit + vertical-tuned templates + technical tooling; [[Trioangle Product ICP]] / [[Trioangle Service ICP]] own buyer definitions; [[Trioangle Channel Partner Personas]] owns the partner program; this plan owns AI capability building, productization, project delivery, phasing, and the moat narrative
 
 ## [2026-04-30] reingest | Trioangle - ICP - Product.md (Pass 4 — Pivot/Growth alignment + smaller fixes)
-- Source: `.raw/Trioangle/ICP/Trioangle - ICP - Product.md` (hash → 49a33ebcc94df0cf94944dbfbc1d6771)
+- Source: `.raw/Trioangle/sales-marketing/Product/ICP/Trioangle - ICP - Product.md` (hash → 49a33ebcc94df0cf94944dbfbc1d6771)
 - Pages updated: [[Trioangle Product ICP]] (full rewrite, rev 4), [[ICP-Product-Trioangle]] (key_claims expanded, reingest summary callout, persona budget table updated to $500 floors), [[Trioangle Buyer Personas]] (rev 2: P1/P4/P6 budget floors → $500, P2 composition-shift trigger added, P6 origin section + sunset trigger added, related links extended to Pivot/Growth Plans)
 - Trigger: source ICP underwent two iterative review passes against [[Trioangle 2.0 AI Pivot Plan]] and [[Trioangle Growth Plan]]. First pass surfaced 5 standalone issues (800+ verifiability, AI add-on timing, P2/P6 re-eval triggers, cheapest-option enforcement, $500 floor); second pass surfaced 7 cross-document conflicts and gaps (Two-Track architecture invisible, "compounding engine" overstatement, mortality math not linked, Track 2 graduation path undocumented, Service ICP outbound state, Phase 2 brand shift not noted, AI add-on pitch timing reverted to handover for Pivot Plan alignment).
 - Source edits applied (13 substantive changes):
@@ -652,10 +652,10 @@ Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Imp
 
 ---
 
-## [2026-04-30] ingest | Trioangle/SEO/SEO_AEO_GEO_Prompts_Template.md
-- Source: `.raw/Trioangle/SEO/SEO_AEO_GEO_Prompts_Template.md`
+## [2026-04-30] ingest | Trioangle/sales-marketing/Service/SEO/SEO_AEO_GEO_Prompts_Template.md
+- Source: `.raw/Trioangle/sales-marketing/Service/SEO/SEO_AEO_GEO_Prompts_Template.md`
 - Pages created: [[Trioangle-SEO-AEO-GEO-Prompts-Template]] (source), [[SEO-AEO-GEO-Prompt-Library]] (concept)
-- Trigger: new file dropped into `.raw/Trioangle/SEO/`. 180-prompt master template covering SEO (75) + AEO (40) + GEO (60) + Hybrid (5). Reusable across all 10 Trioangle clone script verticals via variable substitution ([Product Name], [Script Type], [market leader], [Persona N], [Feature N]).
+- Trigger: new file dropped into `.raw/Trioangle/sales-marketing/Service/SEO/`. 180-prompt master template covering SEO (75) + AEO (40) + GEO (60) + Hybrid (5). Reusable across all 10 Trioangle clone script verticals via variable substitution ([Product Name], [Script Type], [market leader], [Persona N], [Feature N]).
 - Key facts captured:
   - Three engine classes: SEO (Google/Bing rankings), AEO (featured snippets + voice), GEO (ChatGPT/Gemini/Claude/Perplexity/Bing Copilot citation)
   - SEO sub-buckets are intent-based (informational → transactional progression maps to TOFU → BOFU funnel); AEO sub-buckets are format-based (definition vs how-to vs comparison vs voice); GEO sub-buckets are use-case-based (overview, authority, scenario, deep-dive, trend, conversion)
@@ -670,7 +670,7 @@ Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Imp
 ---
 
 ## [2026-04-30] reingest | Trioangle - ICP - Channel Partner.md (Pass 3 — AI pivot alignment)
-- Source: `.raw/Trioangle/ICP/Trioangle - ICP - Channel Partner.md` (hash → 41a5096bb45b38f0e10c4309a09ef40f)
+- Source: `.raw/Trioangle/sales-marketing/Service/ICP/Trioangle - ICP - Channel Partner.md` (hash → 41a5096bb45b38f0e10c4309a09ef40f)
 - Pages updated: [[ICP-Channel-Partner-Trioangle]] (key_claims, Delivery modes row, Qualifying budget row, Pricing model row, Two Scoping Sprints section, 800+ Stat Guard section, Pricing Model section, Validation Status), [[Trioangle Channel Partner Personas]] (intro post-pivot framing, Quick Reference table with dominant brief types, P1 Persona 6 routing, P2 AI-Forward routing, P3 AI-Forward range corrected to $15k-$120k+, Margin Model project-based note, Two Scoping Sprints section, 800+ Stat Guard section)
 - Trigger: full review against [[Trioangle 2.0 AI Pivot Plan]] and [[Trioangle Growth Plan]] revealed Channel Partner doc was strategically stale — pre-pivot framing of Trioangle as generic web/mobile dev shop with no AI specialist positioning, despite Growth Plan calling AI specialist work "the wedge that doesn't commoditize against vibe-coding."
 - Source edits applied (9 substantive changes):

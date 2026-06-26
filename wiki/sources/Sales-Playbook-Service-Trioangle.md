@@ -4,7 +4,7 @@ type: source
 status: ingested
 created: 2026-05-09
 ingested: 2026-05-09
-source_path: ".raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md"
+source_path: ".raw/Trioangle/sales-marketing/Service/Sales/Trioangle - Sales Playbook - Service.md"
 tags:
   - source
   - trioangle
@@ -25,7 +25,7 @@ related:
 
 **Date ingested:** 2026-05-09
 **Source type:** Internal sales operating document (.raw/)
-**Source file:** `.raw/Trioangle/Sales/Trioangle - Sales Playbook - Service.md`
+**Source file:** `.raw/Trioangle/sales-marketing/Service/Sales/Trioangle - Sales Playbook - Service.md`
 **Author intent:** Operating layer for the Service ICP — what reps DO day-to-day. Companion to [[ICP-Service-Trioangle]] (strategy layer).
 
 **Pages created:** 1 concept page
