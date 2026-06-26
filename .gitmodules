@@ -1,3 +1,6 @@
 [submodule ".raw/InnBlockchain/sales-marketing"]
 	path = .raw/InnBlockchain/sales-marketing
 	url = git@github-innblockchain:InnBlockchain/sales-marketing.git
+[submodule ".raw/Trioangle/sales-marketing"]
+	path = .raw/Trioangle/sales-marketing
+	url = git@bitbucket.org:vignesh_palanivel_/sales-marketing.git
