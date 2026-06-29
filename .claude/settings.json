@@ -44,7 +44,9 @@
       "Bash(pandoc --version)",
       "Bash(brew list *)",
       "Bash(python3 -c \"import markdown2, weasyprint\")",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "Bash(md5 -q \".raw/Trioangle/sales-marketing/Product/SEO/CITE Report.md\")",
+      "Bash(md5 -q \".raw/Trioangle/sales-marketing/Product/SEO/Playbook/CITE Score Improvement Playbook.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

@@ -178,6 +178,9 @@ Traditional metrics (rankings, organic sessions) are no longer sufficient. Add:
 
 ## CITE Score: Off-Page SEO Framework (Target: 80)
 
+> [!contradiction] Conflict with [[Trioangle CITE Audit & Improvement Plan]]
+> This page defines "CITE Score" as a **4-component off-page framework** (Editorial Links, Anchor Text, Knowledge Graph, Review Platforms) with **target 80**. The 2026-06-26 [[CITE-Report-Trioangle]] uses **CITE = Citation / Identity / Trust / Eminence** — a 40-item weighted domain-authority audit with **target 90+**. Same name, different model and target. Reconcile which is canonical for Trioangle before tracking progress against either.
+
 A structured framework for off-page authority building across 4 components:
 
 | Component | Tactics |

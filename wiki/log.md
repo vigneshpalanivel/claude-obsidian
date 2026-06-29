@@ -19,6 +19,14 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-06-29] batch ingest | Trioangle CITE Audit + Improvement Playbook
+- Sources: `.raw/Trioangle/sales-marketing/Product/SEO/CITE Report.md`, `.raw/Trioangle/sales-marketing/Product/SEO/Playbook/CITE Score Improvement Playbook.md`
+- Summaries: [[CITE-Report-Trioangle]], [[CITE-Score-Improvement-Playbook-Trioangle]]
+- Pages created: [[Trioangle CITE Audit & Improvement Plan]], [[CITE-Report-Trioangle]], [[CITE-Score-Improvement-Playbook-Trioangle]]
+- Pages updated: [[index]], [[concepts/_index]], [[hot]], [[SEO-Recovery-Strategy-2025-26]] (contradiction callout)
+- Key insight: trioangle.com scores 62/100 (Medium) on CITE = Citation/Identity/Trust/Eminence; playbook targets 90+ via an AI-citations-first sequence on the "earn the score, don't game it" principle.
+- Contradiction flagged: this audit's CITE (C-I-T-E, 40-item, target 90+) ≠ [[SEO-Recovery-Strategy-2025-26]]'s "CITE Score" (4-component off-page, target 80). Same name, different model.
+
 ## 2026-06-23 | ingest | Trioangle Service Landing Page — AI Tech Stack
 
 Single-source ingest of `.raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md` (raw → wiki mirror). Defines the AI tech-stack section for Trioangle's service landing pages, built to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors.

@@ -24,7 +24,7 @@ related:
 
 # Wiki Index
 
-Last updated: 2026-06-04 | Total pages: 233 | Sources ingested: 75 (+3 internal merges, no new source pages) + 5 InnBlockchain internal artifacts (reg-s-checklist v1.6, rule-144-checklist v1.0, ofac-checklist v1.0, real_estate_rwa_reg_s.md, real_estate_rwa_reg_s_affiliate_addendum.md)
+Last updated: 2026-06-29 | Total pages: 236 | Sources ingested: 77 (+3 internal merges, no new source pages) + 5 InnBlockchain internal artifacts (reg-s-checklist v1.6, rule-144-checklist v1.0, ofac-checklist v1.0, real_estate_rwa_reg_s.md, real_estate_rwa_reg_s_affiliate_addendum.md) + 2 Trioangle CITE artifacts (CITE Report, CITE Score Improvement Playbook)
 
 Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[getting-started]]
 
@@ -139,6 +139,7 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle-Sales-Operations]] — CEO-level weak points (6), Ansoff growth framework, 90+ sales initiatives organized by function, 14 OKR KPIs; synthesizes culture/process/product gaps (status: current)
 - [[SEO-Recovery-Strategy-2025-26]] — GEO/AIO era playbook; info keywords → BoFU shift; E-E-A-T; AI crawler allowlist; CITE score framework (target 80); new metrics (AI citation rate, LLM referral traffic) (status: current)
 - [[SEO-AEO-GEO-Prompt-Library]] — 180-prompt master template (SEO 75 / AEO 40 / GEO 60 / Hybrid 5); reusable across all 10 Trioangle verticals via variable substitution; operationalises the GEO/AIO recovery strategy (status: current)
+- [[Trioangle CITE Audit & Improvement Plan]] — trioangle.com CITE audit (62/100 Medium; C-I-T-E = Citation/Identity/Trust/Eminence, 40 items) + AI-citations-first improvement playbook targeting 90+; "earn the score, don't game it"; flags a naming clash with [[SEO-Recovery-Strategy-2025-26]]'s 4-component "CITE Score" (status: current)
 - [[Regulation-S]] — SEC safe harbor for offshore offerings of securities under Securities Act §5; two core conditions (offshore transaction + no directed selling efforts in U.S.); three categories sorted by SUSMI; Rule 905 keeps U.S. domestic equity restricted under Rule 144 even after offshore resale; source-derived checklist v1.6 at `.raw/InnBlockchain/US Compliance/reg-s-checklist.md` (status: current)
 - [[Rule-144]] — SEC resale safe harbor for restricted and affiliate-held securities under §4(a)(1); two paths (non-affiliate vs affiliate); 6 mo / 12 mo holding period by issuer reporting status; affiliate path layers volume cap (Rule 144(e)), manner of sale (Rule 144(f)), current public information (Rule 144(c)), Form 144 (Rule 144(h)) + 3-month tail; Rule 905 bridge keeps Reg S Cat 3 domestic-issuer equity restricted indefinitely; source-derived checklist v1.0 at `.raw/InnBlockchain/US Compliance/rule-144-checklist.md` (status: current)
 - [[Rule-144A]] — SEC safe harbor for resales of restricted securities to QIBs (≥$100M discretionary AUM); routinely paired with Reg S in global bond/convertible offerings >$100M deal size (status: current)
@@ -246,6 +247,8 @@ Navigation: [[overview]] | [[log]] | [[hot]] | [[dashboard]] | [[Wiki Map]] | [[
 - [[Trioangle-Sales-Internal-Docs]] — 2026-04-25 | internal .raw/ docs | 3 files ingested; weak points, initiatives, KPIs; 1 concept page created
 - [[seo-recovery-strategy-map]] — 2026-04-25 | internal SVG strategy map | GEO/AIO SEO recovery playbook; 1 concept page created
 - [[Trioangle-SEO-AEO-GEO-Prompts-Template]] — 2026-04-30 | Trioangle internal | 180-prompt master template (SEO/AEO/GEO/Hybrid) for clone script verticals; 1 concept page created
+- [[CITE-Report-Trioangle]] — 2026-06-29 | Trioangle internal audit (domain-authority-auditor v9.9.10) | trioangle.com 62/100 Medium on CITE (Citation/Identity/Trust/Eminence); 3 hard fails (press, original research, AI citation breadth)
+- [[CITE-Score-Improvement-Playbook-Trioangle]] — 2026-06-29 | Trioangle internal playbook | AI-citations-first plan to take CITE 62 → 90+; "earn the score, don't game it"; 4 phases over 12–18 months
 - [[Fourscore-Regulation-S-Guide]] — 2026-05-07 | autoresearch | practitioner primer on Reg S two-condition framework
 - [[Cleary-Reg-S-Selling-Transfer-Restrictions]] — 2026-05-07 | autoresearch | Cleary Gottlieb practitioner guide; Cat 1/2/3 framework, directed selling efforts examples, 144A integration
 - [[Cornell-LII-Rule-902-Definitions]] — 2026-05-07 | autoresearch | primary regulatory text (17 CFR § 230.902); 8-category U.S. person def, offshore transaction test, SUSMI thresholds

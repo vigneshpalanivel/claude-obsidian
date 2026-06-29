@@ -53,6 +53,7 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 - [[Trioangle Service ICP]] — 5 buyer personas for custom development and AI engineering; Persona 5 (AI-Forward Platform Operator) is a 2026-emergent archetype
 - [[Trioangle Channel Partner Personas]] — 3 partner personas (agencies/consulting firms) who sub-contract to Trioangle; only path to Enterprise and MENA buyers
 - [[Trioangle Content Strategy]] — two parallel content programs (product: 10 silos; service: 81 articles); CTA is persona-gated and non-negotiable
+- [[Trioangle CITE Audit & Improvement Plan]] — trioangle.com scores 62/100 (Medium) on CITE = Citation/Identity/Trust/Eminence; AI-citations-first playbook to reach 90+; "earn the score, don't game it"
 
 ---
 

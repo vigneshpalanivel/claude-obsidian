@@ -706,6 +706,36 @@
         "wiki/hot.md"
       ],
       "notes": "AI tech-stack section for Trioangle service landing pages, engineered to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors. Built collaboratively from the ArmourPath AI Addon tech reference up to a per-LP grouping aligned with [[Trioangle Landing Page Plan]]. Four editorial moves encode the positioning: (1) vendors reframed as range not dependency (self-hosted/open-weight options first per row + mandatory model-agnostic header line); (2) tech-vs-feature split (Master AI Stack = tools only, 10 categories; features like recommendation/fraud/dynamic-pricing/dispatch live in the per-LP grouping using the exact master category names); (3) non-AI items purged to protect position (Cloud/Infra Docker/AWS/Laravel/MinIO; Conversational & Messaging Twilio/WhatsApp channels + redundant Rasa; FFmpeg/pHash; FAISS dup; entire unused Video AI category) with the rule 'channels & integrations are not AI tech'; (4) scope corrected against the real offering (addon doc under-scoped; added Agent Frameworks, Voice AI, ML/Forecasting/Optimization, RAG frameworks, each backing a real LP). Key caveat carried into the wiki: a clean logo grid is necessary but not sufficient to position as AI engineering (reads as integrator on its own) - the page still needs an architecture explainer, a 'hard parts we own' section (evals/guardrails/latency/cost/retraining), and a production proof point. Proof-point discipline from [[Trioangle Service ICP]] applies: Haystack/CrewAI/AutoGen/PyTorch/TensorFlow/YOLO/Coqui/Piper are unverified category defaults to confirm before publishing."
+    },
+    ".raw/Trioangle/sales-marketing/Product/SEO/CITE Report.md": {
+      "hash": "2617f18b23822d871e3cbd0d0d6ce742",
+      "ingested_at": "2026-06-29",
+      "pages_created": [
+        "wiki/concepts/Trioangle CITE Audit & Improvement Plan.md",
+        "wiki/sources/CITE-Report-Trioangle.md"
+      ],
+      "pages_updated": [
+        "wiki/index.md",
+        "wiki/concepts/_index.md",
+        "wiki/concepts/SEO-Recovery-Strategy-2025-26.md",
+        "wiki/hot.md",
+        "wiki/log.md"
+      ],
+      "notes": "2026-06-26 domain-authority audit of trioangle.com (domain-authority-auditor v9.9.10). CITE = Citation/Identity/Trust/Eminence, 40 items, weighted C25/I30/T25/E20 for Product & Service domain. Score 62/100 (Medium); raw C50/I70/T75/E50. Three hard fails: E04 press, E05 original research, C08 AI citation breadth. Tasks were removed from this report in-session and relocated to the companion CITE Score Improvement Playbook (report now diagnostic-only). Tooling caveat: C01/C04/C09/C10 + C05-C08 scored Partial pending Ahrefs/Semrush + AI-citation monitoring."
+    },
+    ".raw/Trioangle/sales-marketing/Product/SEO/Playbook/CITE Score Improvement Playbook.md": {
+      "hash": "90a185f2020a6f116dcdf9969815c164",
+      "ingested_at": "2026-06-29",
+      "pages_created": [
+        "wiki/sources/CITE-Score-Improvement-Playbook-Trioangle.md"
+      ],
+      "pages_updated": [
+        "wiki/concepts/Trioangle CITE Audit & Improvement Plan.md",
+        "wiki/index.md",
+        "wiki/hot.md",
+        "wiki/log.md"
+      ],
+      "notes": "Companion playbook to CITE Report. Target 90+ (Excellent) from 62 baseline, framed as 12-18 month program. Operating principle 'earn the score, don't game it'. Per-dimension conversion roadmap with an AI Citation Impact column (High/Med/Low/None). Phases sequenced AI-citations-first (not cheapest-points-first); citation-neutral quick wins deferred to Phase 4. Two clocks: retrieval-time (weeks-months) vs parametric (years). Naming clash with SEO-Recovery-Strategy-2025-26's 4-component 'CITE Score' flagged via contradiction callouts."
     }
   }
 }
