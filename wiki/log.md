@@ -19,6 +19,26 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-07-02] re-ingest + split | EU-Compliance-Landscape → RWA/STO lane extracted to sibling landscape
+- Raw files: `.raw/…/EU Compliance/EU-Compliance-Landscape.md` (hash `1024abb578174718999c384a43b67ea3`, prev `3459c9355aee4e142a073eb3e11df8de`) + NEW `.raw/…/EU Compliance/RWA-STO-EU-Compliance-Landscape.md` (hash `4937ddff80b256a9924f95d22d166b27`)
+- Split: all RWA/STO-specific content (Token Classification / RWA≠MiCA, Three Roles Issuer-Venue-Dealer/SI, Fund Classification UCITS→AIF→ELTIF, detailed MiFID II/III + AIFMD/UCITS + ELTIF 2.0 + Prospectus + MAR + EU Listing Act + DLT Pilot rows, Seg 1 + WealthTech full obligation lists, Primary Sources) moved OUT of the generic landscape INTO the new RWA/STO landscape. Generic file keeps FinTech (ExchangeTech/LendTech/WalletTech/PayTech/RegTech/BankTech/InsurTech) + Crypto Native Seg 2-10 + horizontal regimes; Seg 1 + WealthTech retained as MINIMAL one-row pointers (not removed — corrected mid-session after over-cut).
+- RWA/STO landscape also gained a Cross-cutting regimes callout + Compliance by Segment section so DORA/AML/eIDAS/GDPR/AI Act/MiCA are visible in context (user flagged the initial split dropped them).
+- Folder reorg: 19 `*-checklist.md` files moved to `EU Compliance/Checklist/`; landscape files now sit alone at the `EU Compliance/` top level.
+- Pages created: [[RWA-STO-EU-Compliance-Landscape]]
+- Pages updated: [[EU-Fintech-Compliance-Landscape]] (RWA content stripped to minimal pointers, both internal_artifacts hashes updated, RWA-STO added to related + See:), [[hot]], [[log]], `.raw/.manifest.json`
+
+## [2026-07-02] re-ingest | EU-Compliance-Landscape — UCITS/ELTIF 2.0 Quick Reference + Fund Classification Decision Tree
+- Raw file: `.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/EU-Compliance-Landscape.md` (hash `3459c9355aee4e142a073eb3e11df8de`, prev `46ed084f0c262b21d99563c634850052`)
+- Changes: Quick Reference split (AIFMD/UCITS → AIFMD + UCITS + ELTIF 2.0 rows); AIFMD/UCITS regulations table row expanded with full UCITS description; new Fund Classification Decision Tree callout (UCITS→AIF→ELTIF logic, professional/retail + liquid/illiquid definitions); ELTIF 2.0 added to WealthTech cell; ELTIF 2.0 opportunity added to InnBlockchain Relevance; ELTIF 2.0 Primary Sources rows added
+- Pages updated: [[EU-Fintech-Compliance-Landscape]], [[hot]], [[log]]
+
+## [2026-07-01] ingest | ELTIF 2.0 Checklist + EU-Compliance-Landscape update
+- Source: `.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/eltif-checklist.md` (hash `8d56afdc8f3cef6735f68724a593bc03`; sourced from ELTIF.mhtml = Reg (EU) 2023/606, OJ L 80/1, 20 Mar 2023)
+- Pages created: [[ELTIF-2.0]]
+- Pages updated: [[EU-Fintech-Compliance-Landscape]] (ELTIF 2.0 row in regulations table, CONDITIONAL Dependency Map entry, Seg 1 expanded mention, Primary Sources rows for Reg 2023/606 + Reg 2015/760, [[ELTIF-2.0]] wikilink added), [[index]] (+1 ELTIF-2.0 entry), [[hot]], [[log]]
+- Raw also updated: `.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/EU-Compliance-Landscape.md` (same structural changes mirrored)
+- Key insight: ELTIF 2.0 is the EU product label directly relevant to InnBlockchain's tokenization work — enables tokenised ELTIF units (ERC-3643), smart-contract matching mechanisms, and retail-access EU passporting for infrastructure/real-asset funds; 55%/50%/100% NAV numbers sourced verbatim from the mhtml.
+
 ## [2026-06-29] batch ingest | Trioangle CITE Audit + Improvement Playbook
 - Sources: `.raw/Trioangle/sales-marketing/Product/SEO/CITE Report.md`, `.raw/Trioangle/sales-marketing/Product/SEO/Playbook/CITE Score Improvement Playbook.md`
 - Summaries: [[CITE-Report-Trioangle]], [[CITE-Score-Improvement-Playbook-Trioangle]]

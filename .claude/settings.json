@@ -49,13 +49,22 @@
       "Bash(md5 -q \".raw/Trioangle/sales-marketing/Product/SEO/Playbook/CITE Score Improvement Playbook.md\")",
       "Bash(git pull *)",
       "Bash(mv \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/EU Compliance\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/\")",
-      "Bash(mv \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/US Compliance\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/\")"
+      "Bash(mv \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/US Compliance\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/\")",
+      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/eltif-checklist.md\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); keys=[k for k in d.get\\('sources',{}\\) if 'eltif' in k.lower\\(\\)]; print\\(keys or 'not found'\\)\")",
+      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/EU-Compliance-Landscape.md\")",
+      "Bash(md5 \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/EU-Compliance-Landscape.md\")",
+      "Bash(mkdir -p \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/Checklist\" && mv \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/\"*-checklist.md \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/Checklist/\" && ls \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/\")",
+      "Bash(md5 -q \"EU-Compliance-Landscape.md\")",
+      "Bash(md5 -q \"RWA-STO-EU-Compliance-Landscape.md\")",
+      "Bash(python3 -c \"import json; json.load\\(open\\('.raw/.manifest.json'\\)\\); print\\('manifest OK'\\)\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
       "/Users/admin/.gemini",
       "/Users/admin/.ssh",
-      "/Users/admin/.agents/skills/linkedin-profile-optimizer"
+      "/Users/admin/.agents/skills/linkedin-profile-optimizer",
+      "/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance"
     ]
   }
 }
