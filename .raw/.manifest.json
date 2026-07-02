@@ -781,10 +781,12 @@
       "notes": "RWA/STO regulatory lane (MiFID II-primary, not MiCA), split out of EU-Compliance-Landscape.md. Carries: Token Classification (RWA≠MiCA), Three Roles (Issuer / Venue Operator / Dealer-SI with full SI definition + MiFID III layering), Fund Classification (UCITS→AIF→ELTIF decision tree + AIFMD plain-words callout), Key Regulations table (MiFID II/III, AIFMD/UCITS, ELTIF 2.0, Prospectus, MAR, EU Listing Act, DLT Pilot), Cross-cutting regimes callout (DORA/AML-AMLA/eIDAS/GDPR/AI Act/MiCA apply via entity classification), Compliance by Segment (Seg 1 + WealthTech full obligation lists), Dependency Map, Quick Reference, Implementation Checklists pointer, InnBlockchain Relevance, Primary Sources. 2026-07-02 same-session correction after initial split dropped per-segment DORA/AML/eIDAS/GDPR/AI Act detail: restored via Cross-cutting callout + Compliance by Segment section (user flagged the gap)."
     },
     ".raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md": {
-      "hash": "fe5bd4bff6da07e0f95af04426b4b685",
+      "hash": "a960fb010ffafa818e9ef332c99bbfd6",
+      "previous_hash": "776b046428d044372dd37234a56dfb7e",
       "ingested_at": "2026-07-02",
       "last_synced": "2026-07-02",
-      "role": "compliance-requirements baseline (the WHAT)",
+      "modification_reason": "2026-07-02 — later addition: consolidated contract-inventory table added as appendix §17 at the bottom (one-glance view of the contracts named across §3-§9, each linked to the section that specifies it; concrete interfaces/schemas still deferred to the Dev/ technical spec). Earlier same-session edits (3): (1) added 'Deployment-chain constraints — enforced by compliance' section (chain choice as a compliance requirement → permissioned/known-validator BFT EVM). (2) merged the former separate engineering-design doc (Dev/eu_rwa_sto_engineering_design.md, DELETED) in. (3) RESTRUCTURED from Part-I/Part-II (all-compliance-then-all-engineering) into REQUIREMENT-FIRST INTERLEAVED: §1-§10 each state the compliance obligation then the engineering approach for that same point (roles→lane phasing; chain→selection; token/identity→ERC-3643 rationale+topology; identity→claims service; fund→modules+valuation-oracle+matching-engine; MAR→freeze module+indexer/surveillance; venue→settlement engine+caps+reporting bridges; disclosure→doc registry; DORA→governor wrapper; GDPR→no-PII pattern); §11 on/off-chain boundary summary; §12-§15 cross-cutting engineering that can't attach to one point (NFRs, test/audit, build phasing, team); §16 consolidated open decisions (legal + engineering). Contract inventory now distributed per-section rather than a standalone table. A deeper technical spec to be authored in Dev/ before development.",
+      "role": "smart-contract design (requirement-first: each compliance point + its engineering approach, single doc)",
       "pages_created": [
         "wiki/concepts/RWA-STO-Smart-Contract-Design.md"
       ],
@@ -793,21 +795,7 @@
         "wiki/hot.md",
         "wiki/log.md"
       ],
-      "notes": "EU RWA/STO on-chain compliance-requirements doc for an ERC-3643/T-REX permissioned security token. Derived from RWA-STO-EU-Compliance-Landscape.md + the 15 EU Compliance/Checklist files via parallel cluster extraction (fund/AIFMD-UCITS-ELTIF, MAR/Prospectus/Listing, MiFID/MiFIR, DLT-Pilot/DORA, eIDAS/AML/GDPR). Requirements only (code omitted); each item marked fully-on-chain / partial-oracle / off-chain and Article-mapped. Paired with the engineering design doc (Dev/eu_rwa_sto_engineering_design.md). Both mirrored to concept [[RWA-STO-Smart-Contract-Design]]. Correct framing preserved: transfer restrictions derive from MiFID/Prospectus/ELTIF/DLT-Pilot, NOT MiCA; TFR Travel Rule does not apply to MiFID-classified tokens. File was authored in Dev/ then relocated to Content/Contract Design/ per user."
-    },
-    ".raw/InnBlockchain/Dev/eu_rwa_sto_engineering_design.md": {
-      "hash": "5f76d7a810e6e5d9df49191407f4f6e0",
-      "ingested_at": "2026-07-02",
-      "last_synced": "2026-07-02",
-      "role": "engineering design (the HOW)",
-      "pages_created": [],
-      "pages_updated": [
-        "wiki/concepts/RWA-STO-Smart-Contract-Design.md",
-        "wiki/index.md",
-        "wiki/hot.md",
-        "wiki/log.md"
-      ],
-      "notes": "CTO-facing engineering design consuming the compliance-requirements doc. Key decisions: D1 permissioned/known-validator BFT EVM (forced by MAR ordering surveillance + DLT Pilot finality + DORA validator control — public anonymous L1 rejected); D2 ERC-3643+ONCHAINID base; D3 off-chain-first (identity/valuation-oracle/matching/reporting bridges ~80% of effort); D4 role-lane phasing (issuer→fund→venue→dealer/SI); D5 DORA wrapper from day 1. Includes contract inventory + data model (RTS-22 trade-event schema flagged for day-1), NFRs, test/audit strategy (property/fuzz + formal verification of limit-breach invariants), build roadmap, and open CTO decisions. Mirrored to concept [[RWA-STO-Smart-Contract-Design]] alongside its requirements source."
+      "notes": "EU RWA/STO smart-contract design for an ERC-3643/T-REX permissioned security token. Derived from RWA-STO-EU-Compliance-Landscape.md + the 15 EU Compliance/Checklist files via parallel cluster extraction (fund/AIFMD-UCITS-ELTIF, MAR/Prospectus/Listing, MiFID/MiFIR, DLT-Pilot/DORA, eIDAS/AML/GDPR). Two parts: Part I compliance requirements (what the contracts enforce, on-chain vs off-chain, Article-mapped, code omitted) + Part II design/engineering approach (chain selection, architecture, contract inventory, NFRs, test/audit, build phasing). Key framing preserved: chain choice is compliance-enforced (permissioned BFT EVM); transfer restrictions derive from MiFID/Prospectus/ELTIF/DLT-Pilot NOT MiCA; TFR Travel Rule does not apply to MiFID-classified tokens; valuation/NAV oracle = #1 risk. Mirrored to concept [[RWA-STO-Smart-Contract-Design]]. History: authored in Dev/ → relocated to Content/Contract Design/ → engineering companion merged in and deleted (all 2026-07-02, same session)."
     }
   }
 }

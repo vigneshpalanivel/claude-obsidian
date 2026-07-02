@@ -19,6 +19,17 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-07-02] update | RWA/STO Smart-Contract Design — restructured to requirement-first interleaved
+- Reorganized from Part-I/Part-II (all-compliance-then-all-engineering) into **requirement-first**: §1-§10 each state a compliance obligation then the engineering approach for that same point; §11 on/off-chain boundary; §12-§15 cross-cutting engineering (NFRs, test/audit, phasing, team); §16 open decisions. Contract inventory now distributed per-section.
+- New hash `776b046428d044372dd37234a56dfb7e` (prev `e72a0e3c939f956531a52ff0d451659f`). Concept [[RWA-STO-Smart-Contract-Design]] + [[index]] + [[hot]] framing updated from "two parts" to "requirement-first".
+
+## [2026-07-02] update | RWA/STO Smart-Contract Design — engineering doc merged into contract-design doc
+- The separate engineering-design doc (`Dev/eu_rwa_sto_engineering_design.md`, was hash `5f76d7a810e6e5d9df49191407f4f6e0`) was **merged into** `Content/Contract Design/eu_rwa_sto_smart_contract_design.md` as **Part II** and then **deleted** — its content was outline-level, not enough to justify a separate file
+- Merged doc now two parts: Part I Compliance requirements (§1-§12 + chain-constraints) + Part II Design & engineering approach (§13-§20). New hash `e72a0e3c939f956531a52ff0d451659f` (prev `e47e981527c2b89f6a16b60ab0556fae`)
+- Also this session: chain-selection stated as a compliance *requirement* in Part I (Deployment-chain constraints section — MAR Art 16/12(2) + DLT Pilot Art 5(7)-(8)/CSDR Art 39 + DORA Art 12 → permissioned/known-validator BFT EVM)
+- Concept [[RWA-STO-Smart-Contract-Design]] now tracks ONE artifact (was two); manifest engineering entry removed; [[index]], [[hot]] updated
+- A deeper technical engineering spec (interfaces, schemas, sequence diagrams, gas budgets, test plans) to be authored in Dev/ before development begins
+
 ## [2026-07-02] ingest | RWA/STO Smart-Contract Design (EU) — requirements + engineering design pair
 - Sources: `.raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md` (hash `fe5bd4bff6da07e0f95af04426b4b685`, compliance-requirements baseline) + `.raw/InnBlockchain/Dev/eu_rwa_sto_engineering_design.md` (hash `5f76d7a810e6e5d9df49191407f4f6e0`, engineering design)
 - Built from [[RWA-STO-EU-Compliance-Landscape]] + the 15 EU Compliance/Checklist files via parallel cluster extraction; ERC-3643/T-REX base with justification; requirements↔engineering split (the WHAT vs the HOW)

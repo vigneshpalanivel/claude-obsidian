@@ -22,32 +22,26 @@ related:
   - "[[Asset-Tokenization-RWA]]"
 internal_artifacts:
   - path: ".raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md"
-    hash: "fe5bd4bff6da07e0f95af04426b4b685"
+    hash: "a960fb010ffafa818e9ef332c99bbfd6"
     registered: 2026-07-02
     last_synced: 2026-07-02
-    role: "compliance-requirements baseline (the WHAT: on-chain vs off-chain enforcement, article-mapped)"
-    purpose: "Client/dev-shareable artifact. Translates the EU RWA/STO compliance obligations (from RWA-STO-EU-Compliance-Landscape + the 15 EU Compliance/Checklist files) into on-chain enforcement requirements for an ERC-3643/T-REX permissioned security token. Requirements-only (code omitted); each item marked fully-on-chain / partial-oracle / off-chain and mapped to its Article. Built 2026-07-02 via parallel extraction across the checklist clusters."
-  - path: ".raw/InnBlockchain/Dev/eu_rwa_sto_engineering_design.md"
-    hash: "5f76d7a810e6e5d9df49191407f4f6e0"
-    registered: 2026-07-02
-    last_synced: 2026-07-02
-    role: "engineering design (the HOW: chain selection, off-chain services, contract inventory, NFRs, test/audit, build phasing)"
-    purpose: "CTO-facing engineering design that consumes the requirements doc. Makes the architecture decisions the requirements doc deliberately leaves open — chain selection, off-chain system architecture, data model, upgradeability/key-management, non-functional targets, test/audit strategy, and a phased build roadmap."
+    role: "smart-contract design — requirement-first (each compliance point + its engineering approach), single doc; §17 appendix = consolidated contract inventory"
+    purpose: "Client/dev-shareable artifact. Translates the EU RWA/STO compliance obligations (from RWA-STO-EU-Compliance-Landscape + the 15 EU Compliance/Checklist files) into an ERC-3643/T-REX permissioned-security-token design. Structured requirement-first and interleaved: §1-§10 each state the compliance obligation (Article-mapped) then the engineering approach for that same point (roles/lane-phasing, chain/selection, token-identity/ERC-3643, identity/claims-service, fund/modules+valuation-oracle+matching-engine, MAR/freeze+indexer, venue/settlement+caps+reporting-bridges, disclosure/doc-registry, DORA/governor, GDPR/no-PII); §11 on/off-chain boundary; §12-§15 cross-cutting engineering (NFRs, test/audit, phasing, team); §16 open decisions. Code omitted. Built 2026-07-02 via parallel extraction across the checklist clusters; a former separate engineering doc was merged in. A deeper technical spec (interfaces, schemas, gas budgets, test plans) to be authored in Dev/ before development."
 ---
 
 # RWA / STO Smart-Contract Design (EU)
 
-The **dev/engineering companion** to [[RWA-STO-EU-Compliance-Landscape]]. Two paired source artifacts translate the EU RWA/STO regulatory lane (MiFID II-primary, not MiCA) into a buildable tokenized-securities platform:
+The **dev/engineering companion** to [[RWA-STO-EU-Compliance-Landscape]]. A single source doc (`Content/Contract Design/eu_rwa_sto_smart_contract_design.md`) translates the EU RWA/STO regulatory lane (MiFID II-primary, not MiCA) into a buildable tokenized-securities platform, structured **requirement-first and interleaved**: each compliance point is stated (Article-mapped), then the engineering approach that satisfies it follows immediately.
 
-1. **Compliance-requirements baseline** (`Content/Contract Design/eu_rwa_sto_smart_contract_design.md`) — the *what*: what the smart contracts must enforce, what stays off-chain, article-mapped. Requirements only, code omitted.
-2. **Engineering design** (`Dev/eu_rwa_sto_engineering_design.md`) — the *how*: chain selection, off-chain service architecture, contract inventory, NFRs, test/audit strategy, build roadmap. Consumes (1) as its requirements source.
+- **§1–§10** — one section per compliance domain, each = *compliance obligation* → *engineering approach*: roles/lane-phasing · chain/selection · token-identity/ERC-3643 · identity/claims-service · fund-structure/modules+valuation-oracle+matching-engine · MAR/freeze+surveillance-indexer · venue/settlement+caps+reporting-bridges · disclosure/doc-registry · DORA/governor-wrapper · GDPR/no-PII-pattern.
+- **§11** on-chain vs off-chain boundary summary; **§12–§15** cross-cutting engineering that can't attach to one point (NFRs, test/audit, build phasing, team); **§16** consolidated open decisions (legal + engineering).
 
-Read the requirements doc for *what must be true*; the engineering doc for *how we build it*.
+A deeper technical engineering spec (Solidity interfaces, on-chain schemas, sequence diagrams, gas/throughput budgets, test plans) will be authored in `Dev/` **before development begins**.
 
 ## Key decisions & insights
 
 - **Token standard: ERC-3643 (T-REX) + ONCHAINID**, not ERC-1400 as base. EU compliance is identity-gated and rule-dense; ERC-3643 makes on-chain identity, a modular (pluggable, Article-mapped) compliance engine, and freeze/forced-transfer/recovery **standard primitives**. ERC-1400 leaves all of that as bespoke code. Borrow the ERC-1400 *partition pattern* only for per-tranche lock-ups and ELTIF side pockets, inside an ERC-3643 base.
-- **Chain: permissioned / known-validator EVM** (BFT instant-finality — Besu-class consortium, or controlled-sequencer appchain). Forced by three requirements that a public anonymous L1 cannot satisfy: MAR validator/sequencer front-running **surveillance** (Art 16), DLT Pilot deterministic **settlement finality** (Art 5(7)/CSDR Art 39), and DORA **validator control + failover** (Art 12). ERC-3643 is EVM-portable, so the token/identity core is unaffected.
+- **Chain: permissioned / known-validator EVM** (BFT instant-finality — Besu-class consortium, or controlled-sequencer appchain). This is a **compliance requirement, not a free engineering pick** — and is stated as such in *both* the requirements doc (as a constraint) and the engineering doc (as the selection). Forced by four requirements a public anonymous L1 cannot satisfy: MAR validator/sequencer front-running **surveillance** (Art 16/12(2)), DLT Pilot deterministic **settlement finality** (Art 5(7)-(8)/CSDR Art 39), DORA **validator control + failover** (Art 12), and an **NCA-accountable operator** (DLT Pilot authorisation). ERC-3643 is EVM-portable, so the token/identity core is unaffected. (GDPR no-PII-on-chain applies on any chain — not a selection driver.)
 - **~80% of the build is off-chain.** The contracts are the enforcement/settlement layer; the load-bearing systems are backend services: identity & claims (EUDI/QTSP intake), **valuation/NAV oracle**, sanctions/PEP/BO screening, the **ELTIF matching engine** (Art 19.2a), the reporting bridges (ARM Art 26 T+1 / APA transparency / CTP consolidated tape), and the event indexer for MAR surveillance.
 - **Role-lanes compound ~3× and are phased**: issuer core (token+identity+DORA wrapper) → fund-structure modules (ELTIF/UCITS/NAV/LMT) + document registry → venue (DLT MTF/SS/TSS + DvP + reporting) → dealer/SI (quoting + PFOF + consolidated tape). Ship the issuer lane first; don't carry venue/SI code a pure issuer doesn't need.
 - **Valuation/NAV oracle is the #1 risk** — every quantitative limit (ELTIF 55/20, UCITS 5/10/40, NAV borrowing caps) trusts it; a wrong NAV silently passes a breach. Multi-source + deviation guard + last-valid fallback; oracle failure must **halt** issuance/redemption, not pass silently.
