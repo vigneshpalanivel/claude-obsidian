@@ -57,7 +57,9 @@
       "Bash(mkdir -p \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/Checklist\" && mv \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/\"*-checklist.md \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/Checklist/\" && ls \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/\")",
       "Bash(md5 -q \"EU-Compliance-Landscape.md\")",
       "Bash(md5 -q \"RWA-STO-EU-Compliance-Landscape.md\")",
-      "Bash(python3 -c \"import json; json.load\\(open\\('.raw/.manifest.json'\\)\\); print\\('manifest OK'\\)\")"
+      "Bash(python3 -c \"import json; json.load\\(open\\('.raw/.manifest.json'\\)\\); print\\('manifest OK'\\)\")",
+      "Bash(md5 -q \".raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md\")",
+      "Bash(md5 -q \".raw/InnBlockchain/Dev/eu_rwa_sto_engineering_design.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

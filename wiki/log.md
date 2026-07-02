@@ -19,6 +19,14 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-07-02] ingest | RWA/STO Smart-Contract Design (EU) — requirements + engineering design pair
+- Sources: `.raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md` (hash `fe5bd4bff6da07e0f95af04426b4b685`, compliance-requirements baseline) + `.raw/InnBlockchain/Dev/eu_rwa_sto_engineering_design.md` (hash `5f76d7a810e6e5d9df49191407f4f6e0`, engineering design)
+- Built from [[RWA-STO-EU-Compliance-Landscape]] + the 15 EU Compliance/Checklist files via parallel cluster extraction; ERC-3643/T-REX base with justification; requirements↔engineering split (the WHAT vs the HOW)
+- Key decisions captured: ERC-3643 over ERC-1400 (identity+modular-compliance+freeze as standard primitives); permissioned/known-validator BFT EVM (public anonymous L1 fails MAR ordering surveillance + DLT-Pilot finality + DORA validator control); off-chain-first (~80% of effort — valuation oracle, matching engine, reporting bridges); role-lane phasing; valuation-oracle = #1 risk; GDPR no-PII-on-chain pattern; TFR does NOT apply; not MiCA
+- Pages created: [[RWA-STO-Smart-Contract-Design]] (tracks both artifacts)
+- Pages updated: [[index]], [[hot]], [[log]], `.raw/.manifest.json`
+- Note: requirements doc authored in Dev/, then relocated to Content/Contract Design/ per user; engineering doc stays in Dev/; cross-links between the two trees verified resolving
+
 ## [2026-07-02] re-ingest + split | EU-Compliance-Landscape → RWA/STO lane extracted to sibling landscape
 - Raw files: `.raw/…/EU Compliance/EU-Compliance-Landscape.md` (hash `1024abb578174718999c384a43b67ea3`, prev `3459c9355aee4e142a073eb3e11df8de`) + NEW `.raw/…/EU Compliance/RWA-STO-EU-Compliance-Landscape.md` (hash `4937ddff80b256a9924f95d22d166b27`)
 - Split: all RWA/STO-specific content (Token Classification / RWA≠MiCA, Three Roles Issuer-Venue-Dealer/SI, Fund Classification UCITS→AIF→ELTIF, detailed MiFID II/III + AIFMD/UCITS + ELTIF 2.0 + Prospectus + MAR + EU Listing Act + DLT Pilot rows, Seg 1 + WealthTech full obligation lists, Primary Sources) moved OUT of the generic landscape INTO the new RWA/STO landscape. Generic file keeps FinTech (ExchangeTech/LendTech/WalletTech/PayTech/RegTech/BankTech/InsurTech) + Crypto Native Seg 2-10 + horizontal regimes; Seg 1 + WealthTech retained as MINIMAL one-row pointers (not removed — corrected mid-session after over-cut).
