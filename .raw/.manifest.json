@@ -591,9 +591,11 @@
         "wiki/hot.md"
       ]
     },
-    ".raw/Trioangle/sales-marketing/Service/Trioangle Service LP Plan.md": {
+    ".raw/Trioangle/sales-marketing/Service/LP/LP Plan Trioangle Service.md": {
       "hash": "7d6d41519ebb2881e942b5308f490520",
       "ingested_at": "2026-05-16",
+      "moved_at": "2026-07-03",
+      "moved_note": "Relocated from Service/ root to Service/LP/ subfolder and renamed from 'Trioangle Service LP Plan.md'.",
       "pages_created": [],
       "pages_updated": [
         "wiki/concepts/Trioangle Landing Page Plan.md",
@@ -693,9 +695,11 @@
       ],
       "notes": "Fifth US-compliance ingest in the 2026-06-04 batch. Optional extension to the base implementation in real_estate_rwa_reg_s.md, preserving the full Rule 144 affiliate-condition machinery for deployments where the affiliate-free architecture is not viable. New concept page [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] created, explicitly tagged status: optional-extension to distinguish from production-ready concept pages. Adoption scenarios: (a) institutional investor with board representation triggers affiliate status; (b) sponsor specifically requires on-chain token-level liquidity (rare \u2014 LLC promote is the better economic instrument); (c) platform re-use for a deal where affiliate-free architecture cannot be maintained. The seven affiliate categories the identity registry must support (OFFICER_DIRECTOR, SPONSOR_GP, TEN_PERCENT_HOLDER, BOARD_APPOINTEE, HOUSEHOLD_ATTRIBUTION, GROUP_CONTROL, INDIRECT_CONTROL) + status transitions with the Rule 144(b)(1) 3-month tail (affiliateExitTimestamp + 90 days) + the four-sub-gate affiliate canTransfer logic (volume cap Rule 144(e), manner of sale Rule 144(f), current public information Rule 144(c), Form 144 Rule 144(h)) + the Rule 144(c) current-information killswitch (without a Rule 15c2-11 information statement on file, the affiliate machinery provides NO value because sub-gate 3c never passes) + group aggregation for GROUP_CONTROL members to prevent split-sale evasion. Strategic recommendation embedded: sponsor economics should always go through LLC promote (Class B Promote Units) rather than tokens, even when the affiliate machinery is available \u2014 the Rule 144(c) and 1% / weekly-volume caps make sponsor liquidity through tokens operationally near-frozen anyway."
     },
-    ".raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md": {
+    ".raw/Trioangle/sales-marketing/Service/LP/AI Tech Stack - Trioangle Service Landing Page.md": {
       "hash": "7a8c201272818d5f758ec76054fefa8f",
       "ingested_at": "2026-06-23",
+      "moved_at": "2026-07-03",
+      "moved_note": "Relocated from Service/ root to Service/LP/ subfolder and renamed from 'Trioangle Service Landing Page - AI Tech Stack.md'.",
       "pages_created": [
         "wiki/concepts/Trioangle Service Landing Page AI Tech Stack.md",
         "wiki/sources/AI-Tech-Stack-LP-Trioangle.md"
@@ -706,6 +710,21 @@
         "wiki/hot.md"
       ],
       "notes": "AI tech-stack section for Trioangle service landing pages, engineered to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors. Built collaboratively from the ArmourPath AI Addon tech reference up to a per-LP grouping aligned with [[Trioangle Landing Page Plan]]. Four editorial moves encode the positioning: (1) vendors reframed as range not dependency (self-hosted/open-weight options first per row + mandatory model-agnostic header line); (2) tech-vs-feature split (Master AI Stack = tools only, 10 categories; features like recommendation/fraud/dynamic-pricing/dispatch live in the per-LP grouping using the exact master category names); (3) non-AI items purged to protect position (Cloud/Infra Docker/AWS/Laravel/MinIO; Conversational & Messaging Twilio/WhatsApp channels + redundant Rasa; FFmpeg/pHash; FAISS dup; entire unused Video AI category) with the rule 'channels & integrations are not AI tech'; (4) scope corrected against the real offering (addon doc under-scoped; added Agent Frameworks, Voice AI, ML/Forecasting/Optimization, RAG frameworks, each backing a real LP). Key caveat carried into the wiki: a clean logo grid is necessary but not sufficient to position as AI engineering (reads as integrator on its own) - the page still needs an architecture explainer, a 'hard parts we own' section (evals/guardrails/latency/cost/retraining), and a production proof point. Proof-point discipline from [[Trioangle Service ICP]] applies: Haystack/CrewAI/AutoGen/PyTorch/TensorFlow/YOLO/Coqui/Piper are unverified category defaults to confirm before publishing."
+    },
+    ".raw/Trioangle/sales-marketing/Service/LP/LP - Ondemand_Home_Service.md": {
+      "registered_at": "2026-07-03",
+      "status": "not_ingested",
+      "notes": "On-demand home service landing page content. Added to Service/LP/ folder 2026-07-03."
+    },
+    ".raw/Trioangle/sales-marketing/Service/LP/AEO_GEO_Prompts_AI_Service_Landing_Page.md": {
+      "registered_at": "2026-07-03",
+      "status": "not_ingested",
+      "notes": "AEO/GEO prompt templates for Trioangle AI service landing page. Added to Service/LP/ folder 2026-07-03."
+    },
+    ".raw/Trioangle/sales-marketing/Service/LP/AEO_GEO_Prompt_Service_Industry_Landing_Pages.md": {
+      "registered_at": "2026-07-03",
+      "status": "not_ingested",
+      "notes": "AEO/GEO prompt templates for Trioangle service industry landing pages. Added to Service/LP/ folder 2026-07-03."
     },
     ".raw/Trioangle/sales-marketing/Product/SEO/CITE Report.md": {
       "hash": "2617f18b23822d871e3cbd0d0d6ce742",

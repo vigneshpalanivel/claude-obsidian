@@ -68,9 +68,9 @@ Append-only. New entries go at the TOP. Never edit past entries.
 
 ## 2026-06-23 | ingest | Trioangle Service Landing Page — AI Tech Stack
 
-Single-source ingest of `.raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md` (raw → wiki mirror). Defines the AI tech-stack section for Trioangle's service landing pages, built to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors.
+Single-source ingest of `.raw/Trioangle/sales-marketing/Service/LP/AI Tech Stack - Trioangle Service Landing Page.md` (raw → wiki mirror). Defines the AI tech-stack section for Trioangle's service landing pages, built to reinforce AI-engineering positioning rather than dilute it with over-mentioned third-party vendors.
 
-- **Source**: `.raw/Trioangle/sales-marketing/Service/Trioangle Service Landing Page - AI Tech Stack.md` (hash `7a8c201272818d5f758ec76054fefa8f`)
+- **Source**: `.raw/Trioangle/sales-marketing/Service/LP/AI Tech Stack - Trioangle Service Landing Page.md` (hash `7a8c201272818d5f758ec76054fefa8f`)
 - **Summary**: [[AI-Tech-Stack-LP-Trioangle]]
 - **Pages created**: [[Trioangle Service Landing Page AI Tech Stack]] (concept), [[AI-Tech-Stack-LP-Trioangle]] (source)
 - **Pages updated**: [[index]] (concept + source rows), [[hot]], [[log]], `.raw/.manifest.json`
@@ -527,7 +527,7 @@ Pages: [[Rule-144]] (new), [[OFAC-Sanctions]] (new), [[Real-Estate-RWA-Reg-S-Imp
 - Key insight: Execution-layer companion to [[InnBlockchain Content Strategy]]. 270 conversational prompts mapped 1:1 to 53+ Phase 1 articles — strategy says *what*, editorial calendar says *when*, this says *what literal questions each article must answer in the first 150 words.* Structurally different from Trioangle's [[SEO-AEO-GEO-Prompt-Library]] (template × 10 verticals = 1,800 instances) — InnBlockchain's is article-by-article, single conversational-query framing, mandatory track/stage/persona/motion metadata per block. Rev-3 dedup pass removed 11 cross-article overlaps that would have created internal AEO competition; each affected block now carries `*(Scope: ...)*` ownership-boundary line. Phase 1 scope only (May–Oct 2026); Phase 2 prompts deferred until Q4 2026 when Phase 2 calendar is cut.
 
 ## 2026-05-16 | re-ingest | Trioangle Landing Page Plan
-- Source: `.raw/Trioangle/sales-marketing/Service/Trioangle Service LP Plan.md` (hash `7d6d41519ebb2881e942b5308f490520`)
+- Source: `.raw/Trioangle/sales-marketing/Service/LP/LP Plan Trioangle Service.md` (hash `7d6d41519ebb2881e942b5308f490520`)
 - Summary: [[Trioangle Landing Page Plan]] (concept)
 - Pages updated: [[Trioangle Landing Page Plan]], [[hot]], [[log]]
 - Key finding: Landing page plan restructured against Service ICP P5 in three passes — (1) competitor-validated slug rename + new `/industries/super-app/` page, (2) multi-service keyword rows (AI primary + Dev & Product) with all brand references stripped, (3) three-CTA routing per industry page with operator qualification filter, trigger subheads, P3/P4 inbound routing, and Travel/Social/Education aspirational-keyword gating. AI service pages (Priorities 5/6/7/10–13) now route through AI Audit Sprint funnel instead of skipping to "Get a fixed-price quote." Hub headline corrected from "800+ platforms in your vertical" → "800+ platforms across 9 verticals" (vertical-agnostic page). Document is now ICP-aligned at the strategy layer — copywriting pass on actual page builds is the next step.

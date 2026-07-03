@@ -4,7 +4,7 @@ title: "Trioangle Landing Page Plan"
 status: current
 created: 2026-05-06
 updated: 2026-05-21
-source: ".raw/Trioangle/sales-marketing/Service/Trioangle Service LP Plan.md"
+source: ".raw/Trioangle/sales-marketing/Service/LP/LP Plan Trioangle Service.md"
 tags:
   - concept
   - trioangle
