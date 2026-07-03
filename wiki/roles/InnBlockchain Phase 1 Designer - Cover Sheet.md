@@ -1,24 +1,24 @@
 ---
 company:
-  - innblockchain
+ - innblockchain
 department:
-  - marketing
+ - marketing
 role: Designer
 priority: high
 rev: 2
 last_revised: 2026-06-03
-playbook_rev_synced: 32
-parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
+playbook_rev_synced: 34
+parent: "[[Execution Playbook]]"
 tags:
-  - role
-  - designer
-  - cover-sheet
-  - phase-1
+ - role
+ - designer
+ - cover-sheet
+ - phase-1
 ---
 
 # 🎨 Designer — Phase 1 Cover Sheet
 
-> **What this is:** Your slice of [[InnBlockchain - Phase 1 Execution Playbook]] (rev 20) for daily/weekly use. ~26 task touchpoints across 4 workstreams. **Part-time engagement** — concentrated W2–W3 brand system + Sample Audit Report sprint; then ~5–10 hr/mo on high-stakes pieces.
+> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. ~26 task touchpoints across 4 workstreams. **Part-time engagement** — concentrated W2–W3 brand system + Sample Audit Report sprint; then ~5–10 hr/mo on high-stakes pieces.
 
 ---
 
@@ -30,10 +30,10 @@ tags:
 
 | WS | Role | Anchor |
 |---|---|---|
-| **WS3 — Profile + Featured + Channels** | **W2–W3 brand system foundation sprint (PRIMARY)** · Featured asset PDF design (Risk Checklist · Sample Audit Report · eIDAS brief) · LinkedIn profile banner + X header templates | [[InnBlockchain - Phase 1 Execution Playbook#Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)]] · [[InnBlockchain - Phase 1 Execution Playbook#Featured assets — chronological build order]] |
-| **WS4 — Compliance Briefs + Vendor Risk Pack** | PDF layout for MiFID II/III + Prospectus + DLT Pilot brief · Vendor Risk Pack assembly · DORA brief (W7) · eIDAS 2.0 brief (W11–W12) | [[InnBlockchain - Phase 1 Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
-| **WS14 — Case Study Capture** | **W14 Internal MVP mockup fallback** (CONDITIONAL trigger — fires only if no client deployment cleared by W14) · Figma + branded UI screenshots for issuer dashboard, investor portal, KYC flow, regulator reporting view | [[InnBlockchain - Phase 1 Execution Playbook#Internal MVP fallback (trigger at W14–W15, not W18 — needs 4–6 wk runway before W20 BOFU)]] |
-| **WS15 — Content Repurposing** | High-stakes pieces only — complex regulatory infographics · Sample Audit Report annual refresh (anchor-tied to first-delivered engagement) · brand template enforcement (catch MPs drift) | [[InnBlockchain - Phase 1 Execution Playbook#WS15 — Content Repurposing (NEW rev 5)]] |
+| **WS3 — Profile + Featured + Channels** | **W2–W3 brand system foundation sprint (PRIMARY)** · Featured asset PDF design (Risk Checklist · Sample Audit Report · eIDAS brief) · LinkedIn profile banner + X header templates | [[Execution Playbook#Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)]] · [[Execution Playbook#Featured assets — chronological build order]] |
+| **WS4 — Compliance Briefs + Vendor Risk Pack** | PDF layout for MiFID II/III + Prospectus + DLT Pilot brief · Vendor Risk Pack assembly · DORA brief (W7) · eIDAS 2.0 brief (W11–W12) | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
+| **WS14 — Case Study Capture** | **W14 Internal MVP mockup fallback** (CONDITIONAL trigger — fires only if no client deployment cleared by W14) · Figma + branded UI screenshots for issuer dashboard, investor portal, KYC flow, regulator reporting view | [[Execution Playbook#Internal MVP fallback (trigger at W14–W15, not W18 — needs 4–6 wk runway before W20 BOFU)]] |
+| **WS15 — Content Repurposing** | High-stakes pieces only — complex regulatory infographics · Sample Audit Report annual refresh (anchor-tied to first-delivered engagement) · brand template enforcement (catch MPs drift) | [[Execution Playbook#WS15 — Content Repurposing]] |
 
 ## 📅 Timeline that affects you
 
@@ -50,10 +50,10 @@ tags:
 
 ## 📚 Read first (in this order)
 
-1. [[InnBlockchain - Phase 1 Execution Playbook#Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)]] — **your W2–W3 sprint deliverables checklist** (rev 16)
+1. [[Execution Playbook#Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)]] — **your W2–W3 sprint deliverables checklist**
 2. [[InnBlockchain - Content Repurposing Design Toolkit]] — tool stack · Decision Shorthand (AI vs Designer split) · Brand Consistency Standards · Sample Audit Report production workflow
-3. [[InnBlockchain - Phase 1 Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] — your PDF layout deliverables (3 compliance briefs + Vendor Risk Pack)
-4. [[InnBlockchain - Phase 1 Execution Playbook#Internal MVP fallback (trigger at W14–W15, not W18 — needs 4–6 wk runway before W20 BOFU)]] — W14 fallback decision tree
+3. [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] — your PDF layout deliverables (3 compliance briefs + Vendor Risk Pack)
+4. [[Execution Playbook#Internal MVP fallback (trigger at W14–W15, not W18 — needs 4–6 wk runway before W20 BOFU)]] — W14 fallback decision tree
 5. [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets — Sample Audit Report disclosure rule (synthetic vs real audit) + annual refresh anchor
 
 ## 🚫 Hard rules (memorise — these never relax)
@@ -73,8 +73,8 @@ These are everything you need to do your job:
 
 | # | Document | What it's for |
 |---|---|---|
-| 1 | [[InnBlockchain - Phase 1 Execution Playbook]] | Master ops doc — WS3 + WS4 + WS14 + WS15 |
-| 2 | [[InnBlockchain - Phase 1 Designer Cover Sheet]] | This doc — your daily/weekly reference |
+| 1 | [[Execution Playbook]] | Master ops doc — WS3 + WS4 + WS14 + WS15 |
+| 2 | [[Designer - Cover Sheet]] | This doc — your daily/weekly reference |
 | 3 | [[InnBlockchain - Content Repurposing Design Toolkit]] | **Your primary day-to-day reference** — tool stack · Decision Shorthand (AI vs Designer split) · Brand Consistency Standards · Sample Audit Report production workflow |
 | 4 | [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets | Sample Audit Report disclosure rule (synthetic vs real audit) + annual refresh anchor |
 | 5 | [[EU-Compliance-Landscape]] | Regulatory framing reference — never make regulatory judgment yourself; escalate to Vignesh BEFORE publish if a slide/infographic touches regulatory framing |
@@ -98,4 +98,4 @@ These are everything you need to do your job:
 
 ---
 
-> Cover sheet derived from [[InnBlockchain - Phase 1 Execution Playbook]] rev 20. When playbook revs, check this sheet for anchor changes; content updates propagate via links — no copy required.
+> Cover sheet derived from [[Execution Playbook]]. When playbook revs, check this sheet for anchor changes; content updates propagate via links — no copy required.

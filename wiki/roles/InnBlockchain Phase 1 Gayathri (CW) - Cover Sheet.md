@@ -4,11 +4,12 @@ company:
 department:
  - marketing
 role: CW
+assignee: Gayathri
 priority: high
 rev: 6
 last_revised: 2026-06-03
 playbook_rev_synced: 34
-parent: "[[InnBlockchain - Phase 1 Execution Playbook]]"
+parent: "[[Execution Playbook]]"
 tags:
  - role
  - cw
@@ -17,9 +18,9 @@ tags:
  - phase-1
 ---
 
-# ✍️ CW — Phase 1 Cover Sheet
+# ✍️ Gayathri (CW) — Phase 1 Cover Sheet
 
-> **What this is:** Your slice of [[InnBlockchain - Phase 1 Execution Playbook]] for daily/weekly use. ~55 tagged task touchpoints across 5 workstreams + 40-article execution block (owner pattern: you draft · Vignesh reviews Tue AM accuracy + Thu AM compliance · **you publish WordPress on innblockchain.com/academy** · MPs publish LinkedIn/X amplification). ~13 hr/wk per article batch.
+> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. ~55 tagged task touchpoints across 5 workstreams + 40-article execution block (owner pattern: you draft · Vignesh reviews Tue AM accuracy + Thu AM compliance · **you publish WordPress on innblockchain.com/academy** · MPs publish LinkedIn/X amplification). ~13 hr/wk per article batch.
 
 ---
 
@@ -31,11 +32,11 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 
 | WS | Role | Anchor |
 |---|---|---|
-| **WS2 — SEO / AEO / GEO** | Per-article AEO drafting (apply 13 AEO Drafting Principles per article) | [[InnBlockchain - Phase 1 Execution Playbook#WS2 — SEO / AEO / GEO (per LP)]] |
-| **WS4 — Compliance Briefs + Vendor Risk Pack** | Brief structuring + Style Guide voice | [[InnBlockchain - Phase 1 Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
-| **WS7 — Content Production** | **PRIMARY** — 40-article execution (W1–W22) · 25-step Per-Article Production Checklist per article · CW Content Style Guide enforcement | [[InnBlockchain - Phase 1 Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
-| **WS8 — LinkedIn Organic** | LinkedIn post copy (Vignesh approves) | [[InnBlockchain - Phase 1 Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
-| **WS15 — Content Repurposing** | Repurposing copy structuring for Tier 1/2 articles · 6-step gate sequence per published article (Tier · Format · Track · Motion · Persona · LP) · monthly Format Priority + Tier mix review with Vignesh · quarterly Format-Priority Audit half-day session | [[InnBlockchain - Phase 1 Execution Playbook#WS15 — Content Repurposing]] |
+| **WS2 — SEO / AEO / GEO** | Per-article AEO drafting (apply 13 AEO Drafting Principles per article) | [[Execution Playbook#WS2 — SEO / AEO / GEO (per LP)]] |
+| **WS4 — Compliance Briefs + Vendor Risk Pack** | Brief structuring + Style Guide voice | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
+| **WS7 — Content Production** | **PRIMARY** — 40-article execution (W1–W22) · 25-step Per-Article Production Checklist per article · CW Content Style Guide enforcement | [[Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
+| **WS8 — LinkedIn Organic** | LinkedIn post copy (Vignesh approves) | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
+| **WS15 — Content Repurposing** | Repurposing copy structuring for Tier 1/2 articles · 6-step gate sequence per published article (Tier · Format · Track · Motion · Persona · LP) · monthly Format Priority + Tier mix review with Vignesh · quarterly Format-Priority Audit half-day session | [[Execution Playbook#WS15 — Content Repurposing]] |
 
 ## 📅 Timeline that affects you
 
@@ -56,8 +57,8 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 
 ## 📚 Read first (in this order)
 
-1. [[InnBlockchain - Phase 1 Execution Playbook#Per-Article Production Checklist (CW master sequence — open once per article)]] — **open this once per article** · 25 steps · 4 phases
-2. [[InnBlockchain - Phase 1 Execution Playbook#CW Content Style Guide]] — voice / tone / formatting / citation / title-meta / alt-text / internal linking / per-track voice modifiers
+1. [[Execution Playbook#Per-Article Production Checklist (CW master sequence — open once per article)]] — **open this once per article** · 25 steps · 4 phases
+2. [[Execution Playbook#CW Content Style Guide]] — voice / tone / formatting / citation / title-meta / alt-text / internal linking / per-track voice modifiers
 3. [[InnBlockchain - Editorial Calendar]] — **single source of truth for what to write** (slot · tier · score · dependencies — open during Phase 1 step 1)
 4. [[InnBlockchain - Content Strategy]] — pillar map · sales motion tagging · article positioning
 5. [[InnBlockchain - Content AEO GEO Prompts]] — per-article prompt block + 13 AEO Drafting Principles
@@ -82,8 +83,8 @@ These are everything you need to do your job:
 
 | # | Document | What it's for |
 |---|---|---|
-| 1 | [[InnBlockchain - Phase 1 Execution Playbook]] | Master ops doc — WS2 + WS4 + WS7 + WS8 + WS15 |
-| 2 | [[InnBlockchain - Phase 1 CW Cover Sheet]] | This doc — your daily/weekly reference |
+| 1 | [[Execution Playbook]] | Master ops doc — WS2 + WS4 + WS7 + WS8 + WS15 |
+| 2 | [[Gayathri (CW) - Cover Sheet]] | This doc — your daily/weekly reference |
 | 3 | **[[InnBlockchain - Per-Article Production Checklist]]** (cross-phase framework) | **Your single most-used doc** — open ONCE PER ARTICLE · 4 phases · 25 steps · hard stops · CORE-EEAT ordering rule |
 | 4 | **[[InnBlockchain - Content Style Guide]]** (cross-phase framework) | HOW to write — voice/tone/formatting/citation rules. Applied at Per-Article Checklist Phase 2 step 11. |
 | 5 | [[InnBlockchain - Editorial Calendar]] | **Single source of truth for WHAT to write** (slot · tier · score · dependencies) — open at Per-Article Checklist Pre-write step 1 |
@@ -115,4 +116,4 @@ These are everything you need to do your job:
 
 ---
 
-> Cover sheet derived from [[InnBlockchain - Phase 1 Execution Playbook]]. When playbook revs, check this sheet for anchor changes; content updates propagate via links — no copy required.
+> Cover sheet derived from [[Execution Playbook]]. When playbook revs, check this sheet for anchor changes; content updates propagate via links — no copy required.

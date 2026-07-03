@@ -61,7 +61,14 @@
       "Bash(md5 -q \".raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md\")",
       "Bash(md5 -q \".raw/InnBlockchain/Dev/eu_rwa_sto_engineering_design.md\")",
       "Bash(md5 -q eu_rwa_sto_smart_contract_design.md)",
-      "Bash(md5 -q \"sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md\")"
+      "Bash(md5 -q \"sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md\")",
+      "Bash(grep -rl \"\\\\`/\\\\` \\(homepage\\)\\\\|/industries/web3\" --include=\"*.md\" .)",
+      "Bash(sed -i '' 's/\\\\*\\\\*Vignesh\\\\*\\\\* — Founder/\\\\*\\\\*Vignesh\\\\*\\\\* — CEO/' \"Execution Playbook.md\")",
+      "Bash(sed -i '' 's/Vignesh \\(founder\\)/Vignesh \\(CEO\\)/' \"Execution Playbook.md\")",
+      "Bash(sed -i '' 's/^ - founder$/ - ceo/' \"Vignesh - Cover Sheet.md\")",
+      "Bash(cp \"Execution Playbook.md\" /tmp/playbook-backup-before-names.md)",
+      "Bash(perl -CSD -0777 -i -pe 's{\\(\\\\*\\\\*\\\\\\(\\)\\([^\\)]*?\\)\\(\\\\\\)\\\\*\\\\*\\)}{ my\\($a,$b,$c\\)=\\($1,$2,$3\\); $b=~s/\\\\bCW\\\\b/Gayathri/g; $b=~s/\\\\bSP\\\\b/Vasanth/g; $b=~s/\\\\bMP1\\\\b/Sudharshini/g; $b=~s/\\\\bMP2\\\\b/Britto/g; \"$a$b$c\" }ge' 'Execution Playbook.md')",
+      "Bash(git stash *)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
