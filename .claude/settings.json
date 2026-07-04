@@ -68,7 +68,10 @@
       "Bash(sed -i '' 's/^ - founder$/ - ceo/' \"Vignesh - Cover Sheet.md\")",
       "Bash(cp \"Execution Playbook.md\" /tmp/playbook-backup-before-names.md)",
       "Bash(perl -CSD -0777 -i -pe 's{\\(\\\\*\\\\*\\\\\\(\\)\\([^\\)]*?\\)\\(\\\\\\)\\\\*\\\\*\\)}{ my\\($a,$b,$c\\)=\\($1,$2,$3\\); $b=~s/\\\\bCW\\\\b/Gayathri/g; $b=~s/\\\\bSP\\\\b/Vasanth/g; $b=~s/\\\\bMP1\\\\b/Sudharshini/g; $b=~s/\\\\bMP2\\\\b/Britto/g; \"$a$b$c\" }ge' 'Execution Playbook.md')",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian log --oneline -10 --name-status)",
+      "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian diff --name-only HEAD)",
+      "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian status --short)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
