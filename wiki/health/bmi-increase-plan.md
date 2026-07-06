@@ -35,32 +35,36 @@ status: active
 
 ## Meal Plan
 
-### Breakfast (7:00–7:30 AM)
-- 3 whole eggs cooked in ghee — 18g protein, +100 kcal from ghee
-- 2 slices whole wheat bread OR 3–4 idli
+> **Revised approach:** 3 meals + 1 liquid only. No snacking between meals — stomach needs full digestion time given existing gastric sensitivity. Add calories through density, not frequency.
+
+### Breakfast (7:00–7:30 AM) — Biggest meal of the day
+- 3 whole eggs cooked in ghee — 18g protein
+- 2 slices whole wheat bread with peanut butter — +190 kcal
 - 1 glass full fat milk — 8g protein
 - Almonds (padam) — continue existing habit
-- **~400–450 kcal | 28g protein**
+- **~600–650 kcal | 35g protein**
 
 ### Lunch (1:00–1:30 PM)
 - Buddha bowl (vendor) — continue
 - Add 2 boiled eggs from home alongside — +12g protein
 - OR ask vendor for extra chickpeas/egg
+- Add handful of groundnuts to bowl — +170 kcal
 - Drink omam/cumin water 20–30 min before (gas prevention)
-- **~600–700 kcal | 25–30g protein**
+- **~700–750 kcal | 30–35g protein**
 
-### Evening Snack (5:00 PM)
-- 2 tbsp peanut butter + banana — 300 kcal, 8g protein
-- OR full fat curd with jaggery — 200 kcal
-- Place this 1.5 hours after lunch — won't suppress dinner hunger
-- **~250–300 kcal**
+### Liquid (4:00 PM — between lunch and dinner only)
+- Full fat milk + banana blended — 350 kcal, 10g protein
+- OR full fat milk + 2 tbsp peanut butter blended — 380 kcal, 14g protein
+- Liquid digests faster — won't compete with 6:30 PM dinner hunger
+- **~350–380 kcal | 10–14g protein**
 
-### Dinner (6:00–6:30 PM — hard cutoff)
+### Dinner (6:00–6:30 PM — hard cutoff) — Largest carb meal
 - Rice (2 cups cooked) + dal + sabzi + curd
 - Add 100g chicken or fish 3–4x/week — 25g protein
 - OR paneer (100g) on non-meat days — 18g protein
 - Cook with extra ghee/coconut oil
-- **~700–800 kcal | 30–35g protein**
+- Curd on side every night — +60 kcal
+- **~750–850 kcal | 30–35g protein**
 
 ---
 
@@ -175,13 +179,13 @@ EFX burns calories needed for weight gain — pair it with resistance training. 
 
 ## Biggest Risk to This Plan
 
-**Skipping meals under work pressure** — busy day → miss snack → miss dinner timing → weight stagnates.
+**Skipping meals under work pressure** — busy day → miss dinner timing → weight stagnates.
 
 **Fix:** Set phone alarms for:
-- 11:30 AM — banana + groundnuts
-- 5:00 PM — peanut butter + banana
+- 4:00 PM — liquid meal (milk + banana blend)
+- 6:00 PM — start dinner before cutoff
 
-These two alarms alone add 600–700 kcal/day with zero cooking effort.
+**Do NOT eat snacks between meals** — stomach needs full digestion time given gastric sensitivity. Adding frequency makes things worse, not better.
 
 ---
 
