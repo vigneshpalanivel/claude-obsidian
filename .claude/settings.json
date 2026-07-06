@@ -71,14 +71,16 @@
       "Bash(git stash *)",
       "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian log --oneline -10 --name-status)",
       "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian diff --name-only HEAD)",
-      "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian status --short)"
+      "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian status --short)",
+      "Bash(mkdir -p /Users/admin/Projects/Personal/claude-obsidian/wiki/personal/health)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
       "/Users/admin/.gemini",
       "/Users/admin/.ssh",
       "/Users/admin/.agents/skills/linkedin-profile-optimizer",
-      "/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance"
+      "/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance",
+      "/Users/admin/Projects/Personal/claude-obsidian/wiki/personal"
     ]
   }
 }
