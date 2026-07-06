@@ -77,7 +77,8 @@
       "Bash(grep -rln \"\\\\[\\\\[Real-Estate-RWA-Reg-D-Reg-S-Implementation\" --include=\"*.md\" .)",
       "Bash(md5 -q \".raw/InnBlockchain/Dev/real_estate_rwa_reg_d_reg_s.md\")",
       "Bash(grep -rn \"0f176f91b5097a58a4fcfb69921e51bb\" --include=\"*.md\" --include=\"*.json\" .)",
-      "Bash(grep -nE '^#{1,3} |CTA BUTTON|Tokeniz|Exchange|Wallet|Launchpad|DeFi|NFT|Audit|Compliance|own|Lock|no lock|RWA|Real Estate|Commodit' 'Home Page.md')"
+      "Bash(grep -nE '^#{1,3} |CTA BUTTON|Tokeniz|Exchange|Wallet|Launchpad|DeFi|NFT|Audit|Compliance|own|Lock|no lock|RWA|Real Estate|Commodit' 'Home Page.md')",
+      "Bash(grep -nE 'Sales Nav|tooling stand-up|W1.{0,4}\\\\|.*CRM|W1–W3' \"Vasanth \\(SP\\) - Cover Sheet.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

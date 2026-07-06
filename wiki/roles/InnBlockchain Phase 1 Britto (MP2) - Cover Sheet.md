@@ -5,10 +5,11 @@ department:
  - marketing
 role: MP2
 assignee: Britto
+icp: crypto-native
 priority: high
-rev: 1
-last_revised: 2026-07-02
-playbook_rev_synced: 34
+rev: 3
+last_revised: 2026-07-03
+playbook_rev_synced: 35
 parent: "[[Execution Playbook]]"
 sibling: "[[Sudharshini (MP1) - Cover Sheet]]"
 tags:
@@ -16,92 +17,97 @@ tags:
  - mps
  - mp2
  - marketing-person
+ - crypto-native
  - cover-sheet
  - phase-1
 ---
 
-# 🎨 Britto (MP2) — Producer / Creative — Phase 1 Cover Sheet
+# 🟠 Britto (MP2) — Crypto Native Pod — Phase 1 Cover Sheet
 
-> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. The MP scope is split two ways — **you are the Producer / Creative** (AI visual production · Featured assets · brand templates · company-post production); **[[Sudharshini (MP1) - Cover Sheet|MP1]] is the Publisher / Analyst** (scheduling · SEO/AEO · analytics · cannibalisation enforcement). ~50% of the combined MP scope. Coordinate at **Mon AM batch approval** — you build only what survives MP1's cannibalisation cut.
+> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. The MP scope is split **by ICP, not by function** — **you own the Crypto Native (Track A / RWA Felix) funnel end-to-end**; **[[Sudharshini (MP1) - Cover Sheet|Sudharshini]] owns FinTech WealthTech (Track B) end-to-end**. You each run your persona's *whole* journey — SEO → content social → channel → visuals → analytics → conversion — so you build holistic knowledge of one buyer, not one function across two. A set of **shared surfaces you CO-OWN** (below) keeps the two pods from colliding on the one LinkedIn feed.
 
 ---
 
-## 🎯 What you own (top-level)
+## 🎯 What you own — the Crypto Native funnel end-to-end
 
-**AI visual production via Canva / Beautiful.ai / Midjourney / ChatGPT** · derivative chain visual production (Tier 1 full · Tier 2 lite · Tier 3 amplify) · Featured assets upload + pin ops · brand template maintenance (Designer builds; you maintain via templates) · LinkedIn Company Page company-specific post production · LP hero image integration coordination.
+Everything for the **RWA Felix / asset-backed founder** buyer (Track A · `[CN]` tag):
+- **Gate 1 LP** (`/solutions/rwa-tokenization`) — on-page SEO + AEO + monthly AI-citation probe
+- **X (Twitter) — full ownership** (X is CN-skewed / Crypto Twitter): setup · ongoing ops · threads · scheduling · analytics
+- **CN LinkedIn content** — Felix-coded posts (production + scheduling into the shared feed)
+- **Track A article amplification + visual derivatives** — carousels + quote graphics + single-image (**Claude design** per Designer's brand spec, not Canva) · X threads · Midjourney hero images · Track A repurposing chain
+- **Risk Checklist** Featured asset (Asset 1)
+- **GitHub + Solodit** methodology-credibility surfaces (technical CN buyer) — **you own + coordinate** the surface (keep it live · tag repos per article · track credibility signal); **senior engineer + Vignesh execute** the technical content (you don't write audit findings/repos)
+- **CN analytics** — X metrics · Track A article performance · Gate 1 funnel · **GA4 Property B (Academy on-site behaviour)** · **Academy GTM container** (manage tags + triggers; Dev installs)
+
+## 🤝 Shared surfaces you CO-OWN with Sudharshini (joint Mon AM sync)
+
+One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't be split:
+- **Mon AM cannibalisation + output-cap sync** — both bring the week's schedule · reconcile ≥48 hr spacing + ≤7 posts/wk across the *combined* queue · **Vignesh breaks ties**
+- **Company Page** — you produce CN company posts · sequencing decided jointly
+- **Gate 2 homepage** (routes to both gates) · **newsletter** (alternating CN/FT angle) · **brand-template application** (Designer owns build)
 
 ## 🗺️ Workstreams you touch
 
-| WS | Your slice | Anchor |
+| WS | Your CN slice | Anchor |
 |---|---|---|
-| **WS1 — LP Delivery** | LP hero image integration coordination (with Designer + Dev) | [[Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] |
-| **WS3 — Profile + Featured + Channels** | **PRIMARY** — Featured assets upload + pin ops · brand template maintenance · Company Page 1×/wk company-specific post **production** *(MP1 owns scheduling + cannibalisation)* | [[Execution Playbook#Featured assets — chronological build order]] |
-| **WS5 — Platform Setup** | Creative tool stack setup (Canva Pro + Beautiful.ai + Midjourney + ChatGPT) | [[Execution Playbook#WS5 — Platform Setup (CRM + Tooling) — SPEED MODE 5-day sprint]] |
-| **WS8 — LinkedIn Organic** | Visual production for feed posts (carousels · quote graphics · thumbnails) *(MP1 schedules + formats + publishes)* | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
-| **WS15 — Content Repurposing** | **PRIMARY** — AI visual generation (Tier 1 full · Tier 2 lite · Tier 3 amplify) · Canva production · Midjourney hero images | [[Execution Playbook#WS15 — Content Repurposing]] |
-
-## 🤝 Where you hand off to MP1
-
-- **MP1 decides the schedule → you produce to it.** At Mon AM batch approval MP1 locks the week's publish slots + cannibalisation calls. Build only what survives the cut — don't produce a carousel for a slot MP1 has decided to cannibalise.
-- **You hand finished assets to MP1 → MP1 publishes.** Deliver visuals pre-Mon-AM so MP1 can format + schedule.
-- **Featured assets:** you upload + pin; MP1 verifies the Featured slot doesn't cannibalise a scheduled feed post on the same asset.
+| **WS2 — SEO / AEO** | **Gate 1** on-page SEO + AI-citation probe · **Gate 1 LP technical SEO verify** (schema stack · canonicals · CWV · OG — Dev builds) · **GA4 Property B** (academy on-site) · **co-verify academy technical SEO** (you own Core Web Vitals) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
+| **WS3 — Profile + Featured + Channels** | **X (Twitter) full ownership** · Risk Checklist Featured asset · GitHub/Solodit · *(co-own Company Page)* | [[Execution Playbook#X (Twitter) — ongoing operations (post-setup, weekly)]] |
+| **WS8 — LinkedIn Organic** | CN (Felix-coded) post production + scheduling into shared feed · *(co-own cannibalisation + output cap)* | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
+| **WS12 — Measurement** | CN analytics — X · Track A articles · Gate 1 funnel · GA4 Property B | [[Execution Playbook#WS12 — Pipeline + CRM + Measurement]] |
+| **WS15 — Content Repurposing** | **Track A derivative chain** (CN visuals · X threads · carousels · Midjourney) | [[Execution Playbook#WS15 — Content Repurposing]] |
 
 ## 📅 Timeline that affects you
 
 | Week | What you ship |
 |---|---|
-| **W1 Day 1** | Creative tool stack stood up · Featured asset ops kickoff |
-| **W1–W3** | Featured assets uploaded + pinned · Profile Recategorisation Accelerator **visual production** |
-| **W2–W3** | Brand template handoff from Designer — verify you can independently produce 1× carousel + 1× quote graphic + 1× lead magnet from templates alone |
-| **EOD W3** | All Featured assets live |
-| **W3 onwards** | Weekly derivative visual production per editorial batch |
-| **W5+** | Cross-pillar Tier 1 3-week visual cadence (Launch wk carousel + long-form visual · W2 persona variant 2 + optional video · W3 persona variant 3) |
+| **W1 Day 1** | X account setup + CN channel infra · GA4 Property B wiring with Dev |
+| **W1–W3** | X recategorisation accelerator · Risk Checklist Featured asset live |
+| **EOD W3** | Gate 1 on-page SEO live · GA4 Property B firing |
+| **W3 onwards** | Weekly: CN LinkedIn posts + 1× X thread/wk per Track A article |
+| **Monthly (last Fri)** | Joint analytics session: Gate 1 citation probe · X metrics · Track A article perf · GA4 Property B |
+
+## 📚 Read first (in this order)
+
+1. [[InnBlockchain - ICP - Crypto Native]] — **your buyer** (RWA Felix — asset-first, not technical, does NOT vet on GitHub the way Tom does)
+2. [[Execution Playbook#X (Twitter) — ongoing operations (post-setup, weekly)]] — your primary channel
+3. [[Execution Playbook#🚦 Cross-channel cannibalisation matrix]] — the shared-queue rules you co-enforce at Mon AM
+4. [[InnBlockchain - Social Profile Setup]] — X setup + GitHub/Solodit
+5. [[InnBlockchain - Per-Platform Posting Spec]] — X + LinkedIn formatting
+6. [[InnBlockchain - Content Repurposing Plan]] — Track A derivative chain
 
 ## 🚫 Hard rules (memorise — these never relax)
 
-- **Never use MiCA framing on RWA assets** — #1 Carol disqualifier. Applies to every slide · caption · visual derivative. When in doubt, escalate to Vignesh.
-- **Never use ad-lib templates** — every asset uses an existing Designer-built brand template. New template requests routed to Designer (no self-made Canva templates).
-- **AI-generated copy never publishes without human regime-leak check** — run the regime-leak checklist in [[InnBlockchain - Content Repurposing Design Toolkit]] § AI Hallucination Risk on every slide / caption / body copy before handing to MP1.
-- **Build only to MP1's locked schedule** — never produce for a slot flagged for cannibalisation at Mon AM batch approval (wasted production).
-- **Midjourney hero images follow the forbidden-cliché list** — no Bitcoin logos · no gold coins · no matrix code · no fake-businessperson handshakes (per brand system foundation).
+- **Never use MiCA framing on RWA** — #1 Carol disqualifier. RWA = MiFID II/III + Prospectus + DLT Pilot + MAR. Applies to every CN post + Gate 1 copy.
+- **Never schedule into the shared LinkedIn feed without the Mon AM joint sync** — you and Sudharshini share the ≤7/wk cap; unilateral scheduling breaks it.
+- **X hygiene:** never post Trioangle/off-positioning from the handle post-recategorisation · never crypto-Twitter drama (institutional positioning).
+- **Never use ad-lib templates** — carousel / quote-graphic / single-image use the **Claude design spec** (Designer-owned · not Canva, not ad-lib prompts); other assets use Designer's Canva templates. All changes routed to Designer.
+- **AI-generated copy never publishes without a regime-leak check** (Content Repurposing Design Toolkit § AI Hallucination Risk) before scheduling.
 
-## 🔁 Cross-training (keeps the backup real)
+## 🔁 Cross-training + coverage
 
-- **Review the GA4 dashboard 1×/wk** (context maintenance) so you can cover if MP1 is out — you need to understand which formats are winning to prioritise production.
-- **If MP1 out sick:** you publish to conservative defaults; use MP1's cannibalisation cheat sheet + add +12 hr buffer to any spacing decision.
+- **Sit in on Sudharshini's FT analytics monthly** so you can cover her pod if she's out (and vice-versa) — the ICP split must not become a bus-factor of 1 per persona.
+- **If Sudharshini is out:** you run the joint Mon AM sync solo to conservative defaults (add +12 hr to any spacing call).
 
-## 📂 Necessary documents to execute Phase 1 (your full doc bundle)
+## 📂 Necessary documents (your full doc bundle)
 
-| # | Document | What it's for |
+| # | Document | For |
 |---|---|---|
-| 1 | [[Execution Playbook]] | Master ops doc — WS1 + WS3 + WS5 + WS8 + WS15 |
-| 2 | [[Britto (MP2) - Cover Sheet]] | This doc — your daily/weekly reference |
-| 3 | [[Sudharshini (MP1) - Cover Sheet]] | Your sibling's scope — know the handoff seams |
-| 4 | [[InnBlockchain - Content Repurposing Design Toolkit]] | Tool stack + Asset → Tool + Owner Map (your #1 day-to-day production reference) |
-| 5 | [[InnBlockchain - Content Repurposing Plan]] | Tier defs + format priority + per-track asset families |
-| 6 | **[[InnBlockchain - Content Style Guide]]** | Voice/tone for any copy you place in visuals (Vignesh approves) |
-| 7 | **[[InnBlockchain - Per-Platform Posting Spec]]** | Asset dimensions per platform (LinkedIn 1:1 / 4:5 · X 1:1 · carousel slide counts) |
-| 8 | **[[InnBlockchain - Newsletter Vendor Selection]]** | Decision criteria for W10 revisit — Beehiiv default (you assemble when activated) |
-| 9 | [[EU-Compliance-Landscape]] | Regulatory framing reference — escalate regime questions to Vignesh |
-
-## ☎️ Backup / escalation
-
-- Brand template needs / new template request → **Designer**
-- Regulatory framing uncertainty (MiCA · MiFID II · DLT Pilot) → **Vignesh** (same day)
-- Schedule / cannibalisation questions → **[[Sudharshini (MP1) - Cover Sheet|MP1]]**
-- AI hallucination on slide copy → spot-check escalation per [[Execution Playbook#WS13 — Compliance Review Process]]
-- High-stakes PDF design (Sample Audit Report · Vendor Risk Pack · complex regulatory infographics) → **Designer**
+| 1 | [[Execution Playbook]] | Master ops — WS2 (Gate 1) · WS3 (X) · WS8 · WS12 · WS15 |
+| 2 | [[Britto (MP2) - Cover Sheet]] | This doc |
+| 3 | [[Sudharshini (MP1) - Cover Sheet]] | FT pod — the co-own seams |
+| 4 | [[InnBlockchain - ICP - Crypto Native]] | Your buyer definition |
+| 5 | **[[InnBlockchain - Social Profile Setup]]** | X + GitHub + Solodit setup |
+| 6 | **[[InnBlockchain - Per-Platform Posting Spec]]** | X / LinkedIn formatting |
+| 7 | **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** | Shared-queue rules (co-enforce) |
+| 8 | [[InnBlockchain - Content Repurposing Plan]] | Track A derivative chain |
+| 9 | [[EU-Compliance-Landscape]] | Regime framing — escalate to Vignesh |
 
 ## ❌ What you DON'T own (redirect if asked)
 
-- **Scheduling + per-platform formatting + publishing + cannibalisation enforcement + GA4 analytics → [[Sudharshini (MP1) - Cover Sheet|MP1]]**
-- LP build (HTML / framework code) → **Dev**
-- Article drafting + **WordPress publish on innblockchain.com/academy** → **CW**
-- Discovery calls / outbound DMs → **SP**
-- Brand template **setup** (one-time W2–W3 sprint) → **Designer** (you maintain via templates ongoing)
-- Vendor Risk Pack delivery → **SP** (on request)
-- Profile content authoring → **Vignesh**
+- **FinTech / Track B / Sam-Tom-Carol funnel → [[Sudharshini (MP1) - Cover Sheet|Sudharshini]]** (Gate 3 · Track B visuals · Sample Audit · vendor risk pack · GA4 Property A + LP-from-academy)
+- Article drafting + WordPress publish → **CW (Gayathri)** (you own CN social + visuals, not the article copy)
+- LP build (code) → **Dev** · Discovery calls / DMs → **Vasanth (SP)** · High-stakes PDF design → **Designer** · Profile content → **Vignesh**
 
 ---
 
-> Cover sheet derived from [[Execution Playbook]]. When playbook revs, check this sheet for anchor changes; content updates propagate via links — no copy required.
+> Cover sheet derived from [[Execution Playbook]]. Split axis = ICP (you = Crypto Native). When the playbook revs, check anchors here; content propagates via links.

@@ -152,18 +152,18 @@ tags:
 
 ## GitHub + Solodit — methodology credibility surfaces
 
-> [!INFO] Different shape than LinkedIn / X
-> GitHub + Solodit are credibility surfaces for **technical buyers** (Felix CTO vetting + Sasha-grade audit credibility) — NOT publish channels with weekly cadence. One-time setup + per-contribution cadence (per Tier 1 article that has a code or methodology angle).
+> [!INFO] Different shape than LinkedIn / X · owned by the Crypto Native pod
+> GitHub + Solodit are credibility surfaces for **technical buyers** (Felix CTO vetting + Sasha-grade audit credibility) — NOT publish channels with weekly cadence. One-time setup + per-contribution cadence (per Tier 1 article that has a code or methodology angle). **These sit in the Crypto Native funnel, so the CN-pod marketer owns + coordinates the surface** (keeps it live · tracks credibility signal · tags repos per article) — but the **technical content is executed by the senior engineer + founder** (owner ≠ executor). *Phase 1: Britto owns/coordinates.*
 
-### GitHub presence (Vignesh + CW + senior engineer)
+### GitHub presence (CN-pod marketer owns/coordinates · Vignesh org-admin · CW + senior engineer execute)
 
 - [ ] **(Vignesh)** Org claim — `github.com/<orgname>` · 2FA required on all admins
 - [ ] **(CW drafts · Vignesh + senior engineer review)** Org README: current-phase positioning · methodology overview · link to primary LP
 - [ ] **(senior engineer · Vignesh review)** 1–2 reference repos: methodology examples · standards implementation patterns · reference implementations
-- [ ] **(senior engineer)** Per Tier 1 Track A article that mentions code: tag the repo as canonical source · link the article from repo README
+- [ ] **(CN-pod marketer coordinates · senior engineer executes)** Per Tier 1 Track A article that mentions code: tag the repo as canonical source · link the article from repo README
 - [ ] **(Vignesh quarterly)** Org settings audit: members · admin access · 2FA enforcement · SECURITY.md file present + accurate
 
-### Solodit profile (Vignesh + senior engineer)
+### Solodit profile (CN-pod marketer owns/coordinates · Vignesh + senior engineer execute)
 
 - [ ] **(Vignesh + senior engineer)** Profile claim — auditor handle matches LinkedIn + GitHub
 - [ ] **(senior engineer)** Methodology profile content — vulnerability classes you've reported · severity framework (matches Sample Audit Report PDF framework) · disclosure track record

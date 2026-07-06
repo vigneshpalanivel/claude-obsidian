@@ -7,8 +7,8 @@ role: CW
 assignee: Gayathri
 priority: high
 rev: 6
-last_revised: 2026-06-03
-playbook_rev_synced: 34
+last_revised: 2026-07-06
+playbook_rev_synced: 35
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -20,7 +20,7 @@ tags:
 
 # ✍️ Gayathri (CW) — Phase 1 Cover Sheet
 
-> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. ~55 tagged task touchpoints across 5 workstreams + 40-article execution block (owner pattern: you draft · Vignesh reviews Tue AM accuracy + Thu AM compliance · **you publish WordPress on innblockchain.com/academy** · MPs publish LinkedIn/X amplification). ~13 hr/wk per article batch.
+> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. ~55 tagged task touchpoints across 5 workstreams + 40-article execution block (owner pattern: you draft · Vignesh reviews Tue AM accuracy + Thu AM compliance · **you publish WordPress on innblockchain.com/academy** · Sudharshini + Britto publish LinkedIn/X amplification). ~13 hr/wk per article batch.
 
 ---
 
@@ -32,7 +32,7 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 
 | WS | Role | Anchor |
 |---|---|---|
-| **WS2 — SEO / AEO / GEO** | Per-article AEO drafting (apply 13 AEO Drafting Principles per article) | [[Execution Playbook#WS2 — SEO / AEO / GEO (per LP)]] |
+| **WS2 — SEO / AEO / GEO** | Per-article AEO drafting (apply 13 AEO Drafting Principles per article) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
 | **WS4 — Compliance Briefs + Vendor Risk Pack** | Brief structuring + Style Guide voice | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
 | **WS7 — Content Production** | **PRIMARY** — 40-article execution (W1–W22) · 25-step Per-Article Production Checklist per article · CW Content Style Guide enforcement | [[Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
 | **WS8 — LinkedIn Organic** | LinkedIn post copy (Vignesh approves) | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
@@ -44,20 +44,20 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 |---|---|
 | **W1 Mon AM** | First Per-Article Production Checklist run — W1 Tue article outline + Pre-write phase |
 | **W1 Mon PM** | W1 Tue article first draft |
-| **W1 Tue 13:30 IST** | **W1 Tue article publishes — you publish on WordPress (/academy)** · MPs publish LinkedIn/X social amplification simultaneously |
+| **W1 Tue 13:30 IST** | **W1 Tue article publishes — you publish on WordPress (/academy)** · Sudharshini + Britto publish LinkedIn/X social amplification simultaneously |
 | **W1 Wed** | W1 Thu article first draft |
 | **W1 Thu** | Vignesh compliance review (if Track B or Cross-Pillar) · CORE-EEAT scoring (Phase 3 step 17) · publish |
 | **W1 Fri** | Repurpose + measure (X thread outlines · LinkedIn quote graphic copy briefs · metrics log) · ~2 hr |
 | **Every week (W1–W22)** | Same Mon/Wed/Tue/Thu/Fri rhythm · ~13 hr/wk per writer |
 | **W2–W3** | Compliance brief structuring sprint (alongside Vignesh regulatory drafting) — MiFID II/III + Prospectus + DLT Pilot brief |
-| **W7** | DORA cross-cutting brief structuring (for P5-DORA-X article) |
+| **W7** | P5-DORA-X article structuring (DORA now a section in the primary brief — no standalone DORA brief unless a prospect asks) |
 | **W11–W12** | eIDAS 2.0 brief structuring (for W13 P5-eIDAS-X article + Featured Asset 4) |
 | **Monthly (last Fri · 2 hr)** | Format Priority + Tier mix review with Vignesh · top/bottom articles pattern-match |
 | **Quarterly** | Format-Priority Audit half-day session with Vignesh |
 
 ## 📚 Read first (in this order)
 
-1. [[Execution Playbook#Per-Article Production Checklist (CW master sequence — open once per article)]] — **open this once per article** · 25 steps · 4 phases
+1. [[Execution Playbook#Per-Article Production Checklist (Gayathri master sequence — open once per article)]] — **open this once per article** · 25 steps · 4 phases
 2. [[Execution Playbook#CW Content Style Guide]] — voice / tone / formatting / citation / title-meta / alt-text / internal linking / per-track voice modifiers
 3. [[InnBlockchain - Editorial Calendar]] — **single source of truth for what to write** (slot · tier · score · dependencies — open during Phase 1 step 1)
 4. [[InnBlockchain - Content Strategy]] — pillar map · sales motion tagging · article positioning
@@ -106,10 +106,10 @@ These are everything you need to do your job:
 
 ## ❌ What you DON'T own (redirect if asked)
 
-- **LinkedIn/X social amplification publishing → MPs** (you publish the WordPress article on innblockchain.com/academy yourself · MPs handle only the social side)
-- LP copy implementation → **Dev** (with MPs SEO direction)
+- **LinkedIn/X social amplification publishing → Sudharshini + Britto** (you publish the WordPress article on innblockchain.com/academy yourself · Sudharshini + Britto handle only the social side)
+- LP copy implementation → **Dev** (with Sudharshini + Britto SEO direction)
 - DM templates → **SP** (Vignesh approves; you don't touch DM copy)
-- AI visual production (carousel slides · quote graphics · hero images) → **MPs** (you provide copy outlines; they design)
+- AI visual production (carousel slides · quote graphics · hero images) → **Sudharshini + Britto** (you provide copy outlines; they design)
 - PDF layout (Sample Audit Report · Vendor Risk Pack · compliance brief PDFs) → **Designer**
 - **Regulatory CONTENT of compliance briefs → Vignesh** (you structure + apply Style Guide voice; he writes the regulatory substance)
 - Per-derivative copy detail (X thread tweet-by-tweet · persona variant copy decisions per derivative type) → **[[InnBlockchain - Content Repurposing Plan]]** (you reference Plan for derivative rules; Plan is canonical)

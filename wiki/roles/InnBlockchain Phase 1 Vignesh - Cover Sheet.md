@@ -6,8 +6,8 @@ department:
 role: Vignesh
 priority: highest
 rev: 5
-last_revised: 2026-06-03
-playbook_rev_synced: 34
+last_revised: 2026-07-06
+playbook_rev_synced: 35
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -25,15 +25,15 @@ tags:
 
 ## 🎯 What you own (top-level)
 
-**Final-review authority across all 15 workstreams.** Primary execution on: WS3 (profile content + recommendations outreach) · WS4 (compliance brief regulatory content + self-review) · WS6 (Pain Point 5 validation) · WS9.5a (per-DM approval — 24-hr SLA on SP-drafted Trioangle/adjacent DMs) · WS11 (Events + Partner / VC intros) · WS13 (compliance review process — every Thursday Track B + Cross-Pillar article · spot-check on MPs visual + SP DM templates + SP strategic comments).
+**Final-review authority across all 15 workstreams.** Primary execution on: WS3 (profile content · **approves** recommendation requests — Vasanth runs the pipeline in Vignesh voice) · WS4 (compliance brief regulatory content + self-review) · WS6 (Pain Point 5 validation) · WS9.5a (per-DM approval — 24-hr SLA on SP-drafted Trioangle/adjacent DMs) · WS11 (Events + Partner / VC intros) · WS13 (compliance review process — every Thursday Track B + Cross-Pillar article · spot-check on Sudharshini + Britto visual + SP DM templates + SP strategic comments).
 
 ## 🗺️ Workstreams you touch (all 15 — primary on 6)
 
 | WS | Your role | Anchor |
 |---|---|---|
-| WS1 | Oversight + Hero H1/H2 regulatory framing review (Gate 1 + Gate 2) + About copy regulatory framing + **Pre-Launch LP Sign-Off Checklist** | [[Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] · [[Execution Playbook#Vignesh Pre-Launch LP Sign-Off Checklist]] |
-| WS2 | Final-review on regime-leak risk for AEO copy | [[Execution Playbook#WS2 — SEO / AEO / GEO (per LP)]] |
-| **WS3** | **PRIMARY** — profile content authoring · recommendations outreach (5+ before structured DMs · Sasha-grade target 7–8) · LinkedIn + X handle setup + bio + pinned tweet | [[Execution Playbook#WS3 — LinkedIn Profile + Featured Assets + Recommendations]] |
+| WS1 | Oversight + Hero H1/H2 regulatory framing review (all gate LPs — Gate 1 · Gate 2 homepage · Gate 3) + About copy regulatory framing + **Pre-Launch LP Sign-Off Checklist** | [[Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] · [[Execution Playbook#Vignesh Pre-Launch LP Sign-Off Checklist]] |
+| WS2 | Final-review on regime-leak risk for AEO copy | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
+| **WS3** | **PRIMARY** — profile content authoring · **approves + sends recommendation requests** (Vasanth drafts in Vignesh voice + runs the pipeline; 5+ before structured DMs · Sasha-grade 7–8) · LinkedIn + X handle setup + bio + pinned tweet | [[Execution Playbook#WS3 — LinkedIn Profile + Featured Assets + Recommendations]] |
 | **WS4** | **PRIMARY** — regulatory content drafter + compliance self-review (per decision · CW structures + Style Guide voice) | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
 | WS5 | Procures Sales Nav + Shield · drafts discovery call prep template · daily 15–30 min final review block | [[Execution Playbook#Vignesh calendar time-blocked — founder-only work]] |
 | **WS6** | **PRIMARY (TIME-CRITICAL)** — Pain Point 5 validation (Path A interviews during W2 · result by EOD W2) | [[Execution Playbook#WS6 — Validation (W2 deadline)]] |
@@ -45,7 +45,7 @@ tags:
 | WS10 | Authorizes eIDAS Outbound Test fire (W13) · reviews DM templates before SP send | [[Execution Playbook#WS10 — eIDAS Outbound Test (W13 mid-point, limited scope)]] |
 | **WS11** | **PRIMARY** — Events + Partner / VC intros (Money20/20 Europe W3 attendance · Sibos speaking pursuit · 2 partner intros/mo) | [[Execution Playbook#WS11 — Events + Partner / VC Intros]] |
 | WS12 | Weekly Fri 60-min pipeline + KPI + risk register review · monthly 2-hr top/bottom articles + 5-project EU gate progress · pipeline-stage exit criteria monthly audit | [[Execution Playbook#WS12 — Pipeline + CRM + Measurement]] |
-| **WS13** | **PRIMARY** — compliance review every Thursday Track B + Cross-Pillar article (48-hr SLA) · spot-check 25% MPs visual output W1–W4 → 10% W5+ · DM template approval before send · quarterly compliance brief refresh | [[Execution Playbook#WS13 — Compliance Review Process]] |
+| **WS13** | **PRIMARY** — compliance review every Thursday Track B + Cross-Pillar article (48-hr SLA) · spot-check 25% Sudharshini + Britto visual output W1–W4 → 10% W5+ · DM template approval before send · quarterly compliance brief refresh | [[Execution Playbook#WS13 — Compliance Review Process]] |
 | WS14 | Screenshot rights negotiation at contract sign · W14 MVP fallback trigger decision | [[Execution Playbook#WS14 — Case Study Capture]] |
 | WS15 | Final review on derivative chain output · monthly + quarterly Format-Priority Audit with CW | [[Execution Playbook#WS15 — Content Repurposing]] |
 
@@ -53,7 +53,7 @@ tags:
 
 | Block | Cadence | Source |
 |---|---|---|
-| **Daily 15–30 min** — final review of MPs / SP / CW output (SLA: 24 hr article · 24 hr visual · 48 hr DM template) | Daily | WS5 |
+| **Daily 15–30 min** — final review of Sudharshini + Britto / SP / CW output (SLA: 24 hr article · 24 hr visual · 48 hr DM template) | Daily | WS5 |
 | **Daily ≤30 min** — strategic comments on highest-leverage ICP posts (founder voice contribution) | Daily | WS5 |
 | **Daily ≤15 min** — WS9.5a per-DM approval (SP-drafted Trioangle/adjacent DMs) | Daily | WS5 |
 | **1–2 discovery call slots/wk** — FT WealthTech > $100k OR Carol escalations OR Trioangle high-value | Weekly | WS5 |
@@ -69,7 +69,7 @@ tags:
 
 1. [[Execution Playbook#🛡️ Risk Register]] — your weekly Fri 60-min review starts here
 2. [[Execution Playbook#Discovery call division of labour]] — who takes which call (SP solo vs co-pitch vs Vignesh)
-3. [[Execution Playbook#Vignesh escalation triggers (during call OR within 1 hr after)]] — when SP must escalate to you
+3. [[Execution Playbook#Discovery Call Master Sequence (Vasanth — per booked call)]] — when SP must escalate to you
 4. [[Execution Playbook#WS13 — Compliance Review Process]] — your compliance self-review checklist + delegated-work spot-check ratios
 5. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — per-DM approval workflow
 6. [[Execution Playbook#📅 Critical Path + Time-Critical Items]] — week-by-week milestones you own
@@ -112,7 +112,7 @@ You touch all 15 workstreams, so you reference the most docs. Bundle organized b
 | Category | Documents |
 |---|---|
 | **Master playbook + your sheet** | [[Execution Playbook]] · [[Vignesh - Cover Sheet]] |
-| **Cross-phase frameworks** — review sign-off authority | **[[InnBlockchain - Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[InnBlockchain - LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[InnBlockchain - Content Style Guide]]** (CW writing rules) · **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** (MPs scheduling) · **[[InnBlockchain - Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[InnBlockchain - Discovery Call Master Sequence]]** (SP per call) · **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[InnBlockchain - Newsletter Vendor Selection]]** (W10 revisit) |
+| **Cross-phase frameworks** — review sign-off authority | **[[InnBlockchain - Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[InnBlockchain - LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[InnBlockchain - Content Style Guide]]** (CW writing rules) · **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** (Sudharshini + Britto scheduling) · **[[InnBlockchain - Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[InnBlockchain - Discovery Call Master Sequence]]** (SP per call) · **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[InnBlockchain - Newsletter Vendor Selection]]** (W10 revisit) |
 | **Regulatory canon** (you self-review against these) | [[EU-Compliance-Landscape]] + 14 regulation checklists ([[mifid2-checklist]] · [[mifid3-checklist]] · [[prospectus-checklist]] · [[dlt-pilot-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]] · [[dora-checklist]] · [[mica-checklist]] · [[aml-checklist]] · [[tfr-checklist]] · [[ccd2-checklist]] · [[eidas2-checklist]] · [[ipr-checklist]] · [[gdpr-checklist]]) |
 | **ICP truth source** | [[InnBlockchain - ICP - Crypto Native]] · [[InnBlockchain - ICP - FinTech]] |
 | **Content production canon** | [[InnBlockchain - Content Strategy]] · [[InnBlockchain - Editorial Calendar]] · [[InnBlockchain - Content AEO GEO Prompts]] · [[InnBlockchain - Content Repurposing Plan]] · [[InnBlockchain - Content Repurposing Design Toolkit]] |
@@ -120,12 +120,12 @@ You touch all 15 workstreams, so you reference the most docs. Bundle organized b
 
 ## ❌ What you DON'T own (you're authority, not executor)
 
-- Day-to-day LinkedIn scheduling → **MPs**
+- Day-to-day LinkedIn scheduling → **Sudharshini + Britto**
 - Day-to-day outbound DMs → **SP** (you per-DM approve WS9.5a only · approve new template variants for all tracks)
 - Article first drafts → **CW**
 - LP build (code) → **Dev**
 - PDF layout → **Designer**
-- AI visual production → **MPs**
+- AI visual production → **Sudharshini + Britto**
 - (You're reviewer + authority + relationship layer + regulatory drafter — NOT day-to-day executor on anything except WS3 profile content / recommendations / WS6 validation / WS11 events)
 
 ---
