@@ -15,7 +15,7 @@ tags:
   - optional-extension
 status: optional-extension
 related:
-  - "[[Real-Estate-RWA-Reg-S-Implementation]]"
+  - "[[Real-Estate-RWA-Reg-D-Reg-S-Implementation]]"
   - "[[Rule-144]]"
   - "[[Regulation-S]]"
   - "[[OFAC-Sanctions]]"
@@ -24,13 +24,13 @@ internal_artifacts:
     hash: "b4a8785ce1eac575f5405e26768d523a"
     registered: 2026-06-04
     derived_from: this wiki concept + rule-144-checklist.md v1.0
-    purpose: "Optional extension to the affiliate-free base implementation in real_estate_rwa_reg_s.md. Preserves the full Rule 144 affiliate-condition machinery for deployments where the affiliate-free architecture is not viable — e.g., a strategic institutional investor with board representation. NOT implemented in base deployments; adopted only on explicit client decision to support on-platform affiliate trading."
+    purpose: "Optional extension to the affiliate-free base implementation in real_estate_rwa_reg_d_reg_s.md. Preserves the full Rule 144 affiliate-condition machinery for deployments where the affiliate-free architecture is not viable — e.g., a strategic institutional investor with board representation. NOT implemented in base deployments; adopted only on explicit client decision to support on-platform affiliate trading."
 ---
 
 # Real Estate RWA Reg S — Affiliate Trading Addendum (Optional Extension)
 
 > [!warning] Optional extension — NOT part of the base implementation
-> The base [[Real-Estate-RWA-Reg-S-Implementation]] commits to an **affiliate-free token structure**. No affiliate of the issuer holds tokens, and the platform does not support on-chain Rule 144 affiliate-resale conditions. Affiliates who emerge by operation of law are flagged `BLOCKED` and must liquidate off-platform.
+> The base [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]] commits to an **affiliate-free token structure**. No affiliate of the issuer holds tokens, and the platform does not support on-chain Rule 144 affiliate-resale conditions. Affiliates who emerge by operation of law are flagged `BLOCKED` and must liquidate off-platform.
 >
 > **This addendum is adopted only if a deal scenario requires on-chain affiliate trading capability** — typically when an institutional investor with board representation is part of the cap stack, or when a sponsor specifically requires token-level liquidity (unusual — sponsor liquidity should always go through LLC promote at the operating-agreement level).
 
@@ -77,7 +77,7 @@ On-chain: `affiliateExitTimestamp` per holder. `canTransfer` for U.S.-person sal
 
 ## Affiliate canTransfer Gate Logic
 
-For any U.S.-person-recipient transfer where the sender is an affiliate (or within the 3-month tail), four sub-gates must pass on top of the base [[Real-Estate-RWA-Reg-S-Implementation]] gates:
+For any U.S.-person-recipient transfer where the sender is an affiliate (or within the 3-month tail), four sub-gates must pass on top of the base [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]] gates:
 
 1. **Volume cap (Rule 144(e))** — rolling 90-day window; ≤ greater of (1% of `totalOutstanding(partition)`) OR (average weekly trading volume × 13). For illiquid securities, the 1% cap binds. Group aggregation across `GROUP_CONTROL` members prevents split-sale evasion.
 2. **Manner of sale (Rule 144(f))** — recipient is a registered broker contract OR transfer is routed through an approved-broker intermediary.
@@ -151,7 +151,7 @@ Maintain version control: track whether the deployment is base-only or base + ad
 
 ## Cross-References
 
-- [[Real-Estate-RWA-Reg-S-Implementation]] — the base implementation this addendum extends
+- [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]] — the base implementation this addendum extends
 - [[Rule-144]] — the source-of-authority concept for the affiliate-seller conditions implemented here
 - [[Regulation-S]] — the parent regulatory framework; Rule 905 is the bridge that makes Rule 144 apply to Reg S Cat 3 domestic-issuer equity
 - [[OFAC-Sanctions]] — applies cumulatively to every affiliate transfer

@@ -16,7 +16,7 @@ related:
   - "[[Regulation-S]]"
   - "[[Rule-144]]"
   - "[[US-Fintech-Compliance-Landscape]]"
-  - "[[Real-Estate-RWA-Reg-S-Implementation]]"
+  - "[[Real-Estate-RWA-Reg-D-Reg-S-Implementation]]"
   - "[[Tornado-Cash-Van-Loon]]"
   - "[[Asset-Tokenization-RWA]]"
 internal_artifacts:
@@ -197,4 +197,4 @@ For any U.S.-domiciled token issuer, OFAC compliance is non-negotiable and opera
 - **10-business-day off-chain TD F 90-22.50 filing workflow** triggered by blocked-transaction events
 - **Annual Report of Blocked Property** by September 30 each year for any still-frozen property
 
-This is implemented on-chain as part of the InnBlockchain real-estate RWA platform — see [[Real-Estate-RWA-Reg-S-Implementation]] §A.1 for the platform-specific application of these requirements.
+This is implemented on-chain as part of the InnBlockchain real-estate RWA platform — see [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]] §A.1 for the platform-specific application of these requirements.

@@ -1,12 +1,13 @@
 ---
 type: concept
-title: "Real Estate RWA Tokenization — Reg S Implementation (Affiliate-Free)"
+title: "Real Estate RWA Tokenization — Dual-Tranche Reg D 506(c) + Reg S Implementation (Affiliate-Free)"
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-18
 tags:
   - real-estate
   - RWA
   - tokenization
+  - Regulation-D
   - Regulation-S
   - Rule-144
   - OFAC
@@ -15,6 +16,7 @@ tags:
   - smart-contract
 status: current
 related:
+  - "[[Regulation-D]]"
   - "[[Regulation-S]]"
   - "[[Rule-144]]"
   - "[[OFAC-Sanctions]]"
@@ -22,16 +24,29 @@ related:
   - "[[Asset-Tokenization-RWA]]"
   - "[[US-Fintech-Compliance-Landscape]]"
 internal_artifacts:
-  - path: ".raw/InnBlockchain/Dev/real_estate_rwa_reg_s.md"
-    hash: "8ac97d5d423f016520014cbbe2b04972"
-    registered: 2026-06-04
-    derived_from: this wiki concept + reg-s-checklist.md v1.6 + rule-144-checklist.md v1.0 + ofac-checklist.md v1.0
-    purpose: "Full implementation guide for a U.S.-domiciled real-estate sponsor doing a Reg S Cat 3 offshore-only STO under an affiliate-free architecture. Covers identity registry, transfer validation, distribution compliance period mechanics, Rule 905 permanent restricted-securities tracking, ERC-1643 documents, ERC-1644 controller operations, hedging detection, off-chain compliance monitoring events, subscription flow, architecture, EIP-712 / Merkle / Oracle attestation mechanisms, and pre-deployment verification. Companion document: real_estate_rwa_reg_s_affiliate_addendum.md (NOT implemented in base deployment; preserved as optional extension)."
+  - path: ".raw/InnBlockchain/Dev/real_estate_rwa_reg_d_reg_s.md"
+    hash: "0f176f91b5097a58a4fcfb69921e51bb"
+    registered: 2026-06-18
+    derived_from: this wiki concept + reg-d-checklist.md v1.0 + reg-s-checklist.md v1.6 + rule-144-checklist.md v1.0 + ofac-checklist.md v1.0
+    purpose: "Full implementation guide for a U.S.-domiciled real-estate sponsor running a CONCURRENT DUAL-TRANCHE STO — a Reg D Rule 506(c) tranche for verified U.S. accredited investors + a Reg S tranche for offshore non-U.S. persons, kept non-integrated under Rule 152(b)(2), on one ERC-1400 token contract with per-tranche partitions (`REG_D` / `REG_S`). Affiliate-free architecture. Covers tranche-dispatched transfer validation, per-partition `closeDate` distribution-compliance mechanics (Reg S tranche), 506(c) accreditation verification (Reg D tranche), Rule 144 restricted-securities status for BOTH tranches (Rule 502(d) for Reg D, Rule 905 for Reg S), Form D + bad-actor gates, identity registry, ERC-1643 documents, ERC-1644 controller ops, off-chain monitoring events, subscription flow, architecture, attestation mechanisms, and pre-deployment verification. Companion: real_estate_rwa_reg_s_affiliate_addendum.md (optional affiliate-machinery extension, not in base)."
 ---
 
-# Real Estate RWA Tokenization — Reg S Implementation (Affiliate-Free)
+# Real Estate RWA Tokenization — Dual-Tranche Reg D 506(c) + Reg S Implementation (Affiliate-Free)
 
-A reference architecture for a U.S.-domiciled real-estate sponsor (Florida LLC or Delaware LLC / statutory trust holding U.S.-situs real estate) running a **Regulation S Category 3 offshore-only** STO with no on-platform affiliate-trading capability. The architecture is built on the ERC-1400 security-token standard family and enforces Reg S, [[Rule-144]] (non-affiliate path only), and [[OFAC-Sanctions]] compliance at every on-chain transaction.
+A reference architecture for a U.S.-domiciled real-estate sponsor (Florida LLC or Delaware LLC / statutory trust holding U.S.-situs real estate) running a **concurrent dual-tranche** STO: a **Regulation D Rule 506(c)** tranche for **verified U.S. accredited investors** alongside a **Regulation S** tranche for **offshore non-U.S. persons**. The two tranches are separate offerings kept from integrating under the **Rule 152(b)(2)** safe harbor; both produce **restricted securities** governed by [[Rule-144]]. Built on the ERC-1400 family, one token contract serves both tranches with each in its own partition (`REG_D` / `REG_S`), and `canTransfer` dispatches on the partition's tranche type. The architecture is affiliate-free and enforces [[Regulation-D]] (506(c) verification), Reg S (offshore / distribution-compliance), [[Rule-144]], and [[OFAC-Sanctions]] at every on-chain transaction.
+
+## The Dual-Tranche Split
+
+| | `REG_D` partition (Rule 506(c)) | `REG_S` partition (Rule 903 Cat 3) |
+|---|---|---|
+| Buyer pool | **U.S. accredited, verified** | Offshore **non-U.S. persons** |
+| Marketing | **General solicitation permitted** | No U.S. directed selling efforts |
+| Distribution compliance period | **None** | `closeDate + 12 months` |
+| Restricted via | **Rule 502(d)** (directly) | **Rule 905** bridge |
+| U.S. resale gate | Rule 144 only | Reg S period **AND** Rule 144 |
+| Issuer filings | Form D; bad-actor (506(d)); state notices | Reg S offering restrictions |
+
+`canTransfer` blocks a U.S. person out of a `REG_S` partition (`REG_S_US_PERSON_RESTRICTED`) and blocks a non-`US_ACCREDITED_VERIFIED` recipient out of a `REG_D` partition (`REG_D_NOT_VERIFIED_ACCREDITED`). A `REG_D` partition never consults `closeDate`. Same investor, same purchase date: a `REG_D` token clears U.S. resale at `acquisitionDate + 12mo` (Rule 144 only) while a same-vintage `REG_S` token clears only at `closeDate + 12mo` — the tranche determines the timeline.
 
 ## Confirmed Issuer Profile
 
@@ -39,22 +54,23 @@ A reference architecture for a U.S.-domiciled real-estate sponsor (Florida LLC o
 |---|---|---|
 | Issuer location | U.S. (Florida or Delaware) | Client input |
 | Business | Real estate (U.S.-situs assets) | Client input |
-| Domestic vs Foreign | **Domestic issuer** | Rule 902(e) — fails Rule 405 FPI exclusion on both prongs |
+| Domestic vs Foreign | **Domestic issuer** | Rule 902(e) → Rule 405 "foreign issuer" turns on jurisdiction of organization; a U.S.-organized LLC is not a foreign issuer (the U.S.-ownership + U.S.-management two-prong test is the separate "foreign *private* issuer" test, not the one that controls) |
 | Reporting status | **Non-reporting issuer** | Rule 902(i) — no §12(b)/(g) registration, no §15(d) filings |
 | Security type | **Equity** (LLC membership interest tokenized) | Token represents pro-rata cash flow and disposition rights |
-| Reg S Category | **Cat 3 — domestic-issuer equity** | Rule 903(b)(3)(iii) |
-| Distribution compliance period | **12 months** per closing | Rule 903(b)(3)(iii)(A) 1-year branch |
+| Offering exemptions | **Reg D 506(c) (U.S. accredited) + Reg S (offshore), concurrent** | Dual-tranche; non-integrated under Rule 152(b)(2); [[Regulation-D]] + [[Regulation-S]] |
+| Reg S Category (offshore tranche) | **Cat 3 — domestic-issuer equity** | Rule 903(b)(3)(iii) |
+| Distribution compliance period (`REG_S` only) | **12 months** from the partition's `closeDate` | Rule 903(b)(3)(iii)(A) 1-year branch; Rule 902(f) |
 | Restricted-securities status | **Permanent under Rule 905** | Rule 905 + Rule 144(a)(3)(v) |
 | Rule 144 holding period for U.S. resale | **12 months** | Rule 144(d) non-reporting threshold |
 
 ## Operational Constraints Accepted
 
-Reg S-only is the chosen path. The client has accepted four constraints baked into the platform:
+A concurrent dual-tranche raise is the chosen path. The client has accepted four constraints baked into the platform:
 
-1. **No U.S.-person sales during the 12-month lockup per closing tranche.** Distribution channel must be built offshore (foreign placement agents, non-U.S. introducers, offshore investor lists).
-2. **Tokens are permanent restricted securities under Rule 905.** Post-lockup U.S. resale requires the 12-month Rule 144 holding period to clear plus (for affiliates) ongoing Rule 144(b)(2) conditions that this platform does NOT support.
-3. **No directed selling efforts into the U.S.** Website, marketing, social channels, PR all geo-fenced. A single U.S.-readable promotion collapses the safe harbor.
-4. **The sponsor cannot personally subscribe under Reg S.** As a U.S. person, sponsor economics come through LLC promote at the operating-agreement level, not token subscription.
+1. **U.S. persons may buy only if accredited AND verified, and only in the `REG_D` tranche.** Non-accredited or unverified U.S. persons cannot subscribe at all; offshore non-U.S. persons buy in the `REG_S` tranche. The `REG_S` tranche blocks EVERY U.S. person (even verified-accredited) for the life of its distribution compliance period — a U.S. accredited buyer belongs in `REG_D`, never `REG_S`.
+2. **Both tranches produce permanent restricted securities → Rule 144.** `REG_D` tokens are restricted directly under Rule 502(d); `REG_S` domestic-equity tokens via the Rule 905 bridge. U.S. resale requires the 12-month Rule 144 holding period; the `REG_S` tranche additionally requires its `closeDate + 12mo` distribution compliance period (the binding gate on that tranche). Affiliate resale conditions (Rule 144(b)(2)) are NOT supported — affiliates are BLOCKED.
+3. **General solicitation is permitted for the 506(c) tranche — but the Reg S leg must stay a genuine offshore transaction.** Rule 152(b)(2) non-integrates the two; SEC guidance treats concurrent 506(c) general solicitation as not "directed selling efforts" for the Reg S offering, provided the Reg S offers/sales are not made to persons in the U.S.
+4. **The sponsor cannot personally subscribe — in either tranche.** He would qualify as accredited (director/officer, Rule 501(a)(4)), but the affiliate-free architecture blocks him. Sponsor economics come through the LLC promote, not tokens.
 
 ## The Architectural Decision: Affiliate-Free Token Structure (Locked)
 
@@ -90,7 +106,7 @@ If a deal structure cannot maintain the affiliate-free architecture (e.g., requi
 | Standard | Role |
 |---|---|
 | **ERC-1400** | Security token base standard with built-in compliance hooks |
-| **ERC-1410** | Partitioned tokens — one partition per closing tranche so each carries its own 12-month clock independently |
+| **ERC-1410** | Partitioned tokens — each partition tagged with a `tranche` type (`REG_D` / `REG_S`) that `canTransfer` dispatches on; `REG_S` partitions also carry a `closeDate` anchoring their 12-month Reg S clock, `REG_D` partitions do not |
 | **ERC-1594** | Transfer validation (`canTransfer`) — the on-chain enforcement point |
 | **ERC-1643** | Document registry — publishes the five required legal documents with URI + hash fingerprint |
 | **ERC-1644** | Controller operations — issuer's force-transfer / force-burn authority for non-compliant transfers |
@@ -135,7 +151,8 @@ The token contract is minimal. Every Reg S / Rule 144 / OFAC rule lives in the u
 The `canTransfer` hook returns `false` with a specific reason code when:
 
 - Recipient is not in the identity registry → `NO_KYC`
-- Recipient is a U.S. person AND distribution compliance period has not expired → `REG_S_US_PERSON_RESTRICTED`
+- **[`REG_S` partition]** Recipient is a U.S. person AND the distribution compliance period has not expired (`closeDate == max` or `now < closeDate + 12mo`) → `REG_S_US_PERSON_RESTRICTED` (does not apply to `REG_D`)
+- **[`REG_D` partition]** Recipient is a U.S. person who is not `US_ACCREDITED_VERIFIED` (accredited AND verified per Rule 506(c)(2)(ii); self-certification does not count) → `REG_D_NOT_VERIFIED_ACCREDITED`
 - Sender or recipient is OFAC-flagged (any of 4 dimensions per [[OFAC-Sanctions]]) → `OFAC_BLOCKED`
 - OFAC screening result > 30 days old → `OFAC_SCREENING_STALE`
 - Sender is BLOCKED (includes affiliate-creating events) → `SENDER_BLOCKED`
@@ -174,7 +191,7 @@ Documents are versioned via `setDocument` events. Prior versions are never delet
 
 ## Subscription / Mint Flow
 
-Initial issuance verifies, before any tokens are minted:
+The mint path dispatches on the target partition's tranche. A **`REG_D` mint** gates on **verified accredited status** (`US_ACCREDITED_VERIFIED` — a current 506(c) verification record, not self-certification; else `REG_D_NOT_VERIFIED_ACCREDITED` / `REG_D_VERIFICATION_STALE`), records the Rule 502(d) restricted-securities acknowledgement, confirms the pre-offering bad-actor clearance, and fires `FirstSaleRecorded(REG_D, …)` to start the 15-day Form D clock — no offshore test, no `closeDate`. A **`REG_S` mint** verifies, before any tokens are minted:
 - Signed off-chain subscription agreement hash
 - Purchaser classification (Merkle proof or oracle attestation from KYC provider)
 - EIP-712 purchaser certification per Rule 903(b)(3)(iii)(B)(1) (not a U.S. person AND not acquiring for U.S. account/benefit)
@@ -225,10 +242,11 @@ Before mainnet:
 
 ## Cross-Referenced Source Checklists
 
-The implementation is anchored to three source-derived compliance checklists, each scoped strictly to its own regulatory framework:
+The implementation is anchored to four source-derived compliance checklists, each scoped strictly to its own regulatory framework (all under `.raw/InnBlockchain/sales-marketing/Service/Content/US Compliance/`):
 
-- [[Regulation-S]] → `.raw/InnBlockchain/US Compliance/reg-s-checklist.md` (17 CFR §§ 230.901–230.905)
-- [[Rule-144]] → `.raw/InnBlockchain/US Compliance/rule-144-checklist.md` (17 CFR § 230.144)
-- [[OFAC-Sanctions]] → `.raw/InnBlockchain/US Compliance/ofac-checklist.md` (31 CFR Chapter V + SDN List + Executive Orders)
+- [[Regulation-D]] → `reg-d-checklist.md` (17 CFR §§ 230.500–230.508) — governs the `REG_D` 506(c) tranche
+- [[Regulation-S]] → `reg-s-checklist.md` (17 CFR §§ 230.901–230.905) — governs the `REG_S` offshore tranche
+- [[Rule-144]] → `rule-144-checklist.md` (17 CFR § 230.144) — resale of the restricted securities BOTH tranches produce
+- [[OFAC-Sanctions]] → `ofac-checklist.md` (31 CFR Chapter V + SDN List + Executive Orders) — cumulative with every exemption
 
 The implementation guide cross-references each by section so a counsel or auditor can trace every on-chain enforcement back to the source-derived regulatory provision.

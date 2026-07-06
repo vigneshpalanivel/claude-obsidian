@@ -15,7 +15,7 @@ related:
   - "[[Rule-144]]"
   - "[[Rule-144A]]"
   - "[[OFAC-Sanctions]]"
-  - "[[Real-Estate-RWA-Reg-S-Implementation]]"
+  - "[[Real-Estate-RWA-Reg-D-Reg-S-Implementation]]"
   - "[[Real-Estate-RWA-Reg-S-Affiliate-Addendum]]"
   - "[[US-Fintech-Compliance-Landscape]]"
   - "[[Research: US Reg S]]"
@@ -176,4 +176,4 @@ Token offerings increasingly use a Reg D + Reg S structure: Reg D for U.S. accre
 7. For U.S. domestic issuers: account for Rule 905 — these are restricted securities for Rule 144 purposes
 
 > [!tip] Companion source-derived checklist
-> A full source-derived Reg S compliance checklist scoped strictly to 17 CFR §§ 230.901–230.905 is maintained as an internal artifact at `.raw/InnBlockchain/US Compliance/reg-s-checklist.md` (v1.6, 2026-06-04). It cross-references the parallel [[Rule-144]] and [[OFAC-Sanctions]] checklists for mechanics that Reg S relies on but does not itself define (Rule 144 holding-period and affiliate conditions via the Rule 905 bridge; OFAC sanctions screening that applies cumulatively to every Reg S offering by a U.S. person). The InnBlockchain implementation of Reg S Category 3 for a real-estate STO is documented in [[Real-Estate-RWA-Reg-S-Implementation]], with the optional Rule 144 affiliate machinery preserved separately at [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]].
+> A full source-derived Reg S compliance checklist scoped strictly to 17 CFR §§ 230.901–230.905 is maintained as an internal artifact at `.raw/InnBlockchain/US Compliance/reg-s-checklist.md` (v1.6, 2026-06-04). It cross-references the parallel [[Rule-144]] and [[OFAC-Sanctions]] checklists for mechanics that Reg S relies on but does not itself define (Rule 144 holding-period and affiliate conditions via the Rule 905 bridge; OFAC sanctions screening that applies cumulatively to every Reg S offering by a U.S. person). The InnBlockchain implementation of Reg S Category 3 for a real-estate STO is documented in [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]], with the optional Rule 144 affiliate machinery preserved separately at [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]].

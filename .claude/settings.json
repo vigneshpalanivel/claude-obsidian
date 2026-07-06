@@ -73,7 +73,10 @@
       "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian diff --name-only HEAD)",
       "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian status --short)",
       "Bash(mkdir -p /Users/admin/Projects/Personal/claude-obsidian/wiki/personal/health)",
-      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/US Compliance/reg-d-checklist.md\")"
+      "Bash(md5 -q \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/US Compliance/reg-d-checklist.md\")",
+      "Bash(grep -rln \"\\\\[\\\\[Real-Estate-RWA-Reg-D-Reg-S-Implementation\" --include=\"*.md\" .)",
+      "Bash(md5 -q \".raw/InnBlockchain/Dev/real_estate_rwa_reg_d_reg_s.md\")",
+      "Bash(grep -rn \"0f176f91b5097a58a4fcfb69921e51bb\" --include=\"*.md\" --include=\"*.json\" .)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

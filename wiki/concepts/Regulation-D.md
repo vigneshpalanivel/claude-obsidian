@@ -17,7 +17,7 @@ related:
   - "[[Rule-144]]"
   - "[[Rule-144A]]"
   - "[[OFAC-Sanctions]]"
-  - "[[Real-Estate-RWA-Reg-S-Implementation]]"
+  - "[[Real-Estate-RWA-Reg-D-Reg-S-Implementation]]"
   - "[[US-Fintech-Compliance-Landscape]]"
 internal_artifacts:
   - path: ".raw/InnBlockchain/sales-marketing/Service/Content/US Compliance/reg-d-checklist.md"
@@ -106,7 +106,7 @@ Rule 506 is **unavailable** if any "covered person" (issuer, directors, executiv
 
 ## Reg D + Reg S — the Concurrent Dual-Tranche
 
-The standard token / RWA structure in 2024–2026: **Rule 506(c) for U.S. verified-accredited investors + [[Regulation-S]] for offshore non-U.S. persons**, run concurrently and kept from integrating via the **Rule 152(b)(2)** safe harbor. Keep separate subscription pools, documents, and records; ensure no directed selling efforts into the U.S. from the Reg S leg, and no non-accredited/unverified sales in the 506(c) leg. For a domestic-issuer equity token, the Reg S leg also triggers the **Rule 905** restricted-securities bridge into [[Rule-144]] — see [[Real-Estate-RWA-Reg-S-Implementation]] for the InnBlockchain reference architecture.
+The standard token / RWA structure in 2024–2026: **Rule 506(c) for U.S. verified-accredited investors + [[Regulation-S]] for offshore non-U.S. persons**, run concurrently and kept from integrating via the **Rule 152(b)(2)** safe harbor. Keep separate subscription pools, documents, and records; ensure no directed selling efforts into the U.S. from the Reg S leg, and no non-accredited/unverified sales in the 506(c) leg. For a domestic-issuer equity token, the Reg S leg also triggers the **Rule 905** restricted-securities bridge into [[Rule-144]] — see [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]] for the InnBlockchain reference architecture.
 
 ## Reg D vs Reg S — Choose the Buyer Pool
 

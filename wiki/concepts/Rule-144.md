@@ -16,7 +16,7 @@ related:
   - "[[Regulation-S]]"
   - "[[Rule-144A]]"
   - "[[OFAC-Sanctions]]"
-  - "[[Real-Estate-RWA-Reg-S-Implementation]]"
+  - "[[Real-Estate-RWA-Reg-D-Reg-S-Implementation]]"
   - "[[Real-Estate-RWA-Reg-S-Affiliate-Addendum]]"
   - "[[US-Fintech-Compliance-Landscape]]"
 internal_artifacts:
@@ -129,7 +129,7 @@ This is the most-misunderstood aspect of Reg S Cat 3 in practice: the 12-month R
 - The Reg S clock blocks **all** sales to U.S. persons until expiry (regardless of who is selling)
 - The Rule 144 clock gates **non-affiliate U.S. resales** to a "permitted manner" path after expiry
 
-For a domestic non-reporting issuer with affiliate-free architecture (e.g., the InnBlockchain real-estate RWA pattern at [[Real-Estate-RWA-Reg-S-Implementation]]), the two clocks expire at the same time and the post-expiry resale path is the clean non-affiliate Rule 144(b)(1)(ii) path — no volume cap, no manner-of-sale restriction, no current-information requirement, no Form 144.
+For a domestic non-reporting issuer with affiliate-free architecture (e.g., the InnBlockchain real-estate RWA pattern at [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]]), the two clocks expire at the same time and the post-expiry resale path is the clean non-affiliate Rule 144(b)(1)(ii) path — no volume cap, no manner-of-sale restriction, no current-information requirement, no Form 144.
 
 ## Rule 144 vs Rule 144A
 
@@ -158,7 +158,7 @@ For a domestic non-reporting real-estate sponsor doing an offshore Reg S Cat 3 S
 
 - **Non-affiliate offshore investors** clear the 12-month Rule 144 holding period concurrently with the 12-month Reg S distribution compliance period. After both clear, U.S. resale via Rule 144(b)(1)(ii) is unconditional (subject only to the offshore-to-onshore mechanics).
 - **The sponsor** — by definition an affiliate — would face the full Rule 144(b)(2) affiliate-path machinery (volume cap, manner of sale, current information, Form 144) on any U.S. resale. The Rule 144(c) current-information requirement is typically the binding killswitch for a non-reporting issuer.
-- **InnBlockchain's recommended structure** keeps the sponsor's economics at the LLC level (Class B Promote Units) rather than in tokens, removing the affiliate-trading scenario entirely. See [[Real-Estate-RWA-Reg-S-Implementation]] for the architecture; [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] preserves the full affiliate-machinery option for deals where it cannot be avoided.
+- **InnBlockchain's recommended structure** keeps the sponsor's economics at the LLC level (Class B Promote Units) rather than in tokens, removing the affiliate-trading scenario entirely. See [[Real-Estate-RWA-Reg-D-Reg-S-Implementation]] for the architecture; [[Real-Estate-RWA-Reg-S-Affiliate-Addendum]] preserves the full affiliate-machinery option for deals where it cannot be avoided.
 
 ## Key Sources
 

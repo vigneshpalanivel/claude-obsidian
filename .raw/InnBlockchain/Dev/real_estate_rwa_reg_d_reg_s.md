@@ -1,15 +1,18 @@
-# Real Estate RWA Tokenization under Regulation S — Implementation Guide for Sponsors, Counsel, and Builders
+# Real Estate RWA Tokenization — Dual-Tranche Reg D 506(c) + Regulation S Implementation Guide for Sponsors, Counsel, and Builders
+
+**Offering structure:** This is a **concurrent dual-tranche offering** — a **Regulation D Rule 506(c)** tranche for **U.S. accredited investors** (general solicitation permitted, accreditation verified) run alongside a **Regulation S** tranche for **offshore non-U.S. persons**. The two tranches are separate offerings kept from integrating under the **Rule 152(b)(2)** safe harbor. Both produce **restricted securities** governed by **Rule 144**; **OFAC** applies to both cumulatively. One ERC-1400 token contract serves both, with each tranche in its own partition(s).
 
 **Source authorities:**
 
-- [reg-s-checklist.md](../sales-marketing/Service/Content/US%20Compliance/reg-s-checklist.md) — single source of truth for Regulation S requirements (17 CFR §§ 230.901–230.905)
-- [rule-144-checklist.md](../sales-marketing/Service/Content/US%20Compliance/rule-144-checklist.md) — single source of truth for Rule 144 resale conditions (17 CFR § 230.144), reached from Reg S via the Rule 905 bridge
-- [ofac-checklist.md](../sales-marketing/Service/Content/US%20Compliance/ofac-checklist.md) — single source of truth for OFAC sanctions compliance (31 CFR Chapter V, SDN List, Executive Orders, program-specific regulations, virtual currency guidance), applied independently of and cumulatively with Reg S and Rule 144
+- [reg-d-checklist.md](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md) — single source of truth for Regulation D requirements (17 CFR §§ 230.500–230.508), governing the U.S.-accredited Rule 506(c) tranche (accredited-investor definition, verification, general solicitation, Form D, bad-actor disqualification, integration via Rule 152)
+- [reg-s-checklist.md](../sales-marketing/Service/Content/US%20Compliance/reg-s-checklist.md) — single source of truth for Regulation S requirements (17 CFR §§ 230.901–230.905), governing the offshore tranche
+- [rule-144-checklist.md](../sales-marketing/Service/Content/US%20Compliance/rule-144-checklist.md) — single source of truth for Rule 144 resale conditions (17 CFR § 230.144). BOTH tranches produce restricted securities: the Reg D tranche directly (Rule 502(d)); the Reg S tranche via the Rule 905 bridge for domestic-issuer equity
+- [ofac-checklist.md](../sales-marketing/Service/Content/US%20Compliance/ofac-checklist.md) — single source of truth for OFAC sanctions compliance (31 CFR Chapter V, SDN List, Executive Orders, program-specific regulations, virtual currency guidance), applied independently of and cumulatively with Reg D, Reg S, and Rule 144
 
 **Token standard:** **ERC-1400** (the security-token standard) — a family of related Ethereum specifications:
 
-- **ERC-1410** — _partitioned tokens_. Lets one token contract hold multiple "partitions," each carrying its own compliance state (notably a `closeDate` that anchors that partition's 12-month Reg S lockup). A continuous offering uses a single partition; a scheduled multi-tranche offering uses one partition per close, each lockup running independently.
-- **ERC-1594** — _transfer validation_. Defines the `canTransfer` hook the token calls before every transfer to check whether it's allowed; this is where the Reg S and Rule 144 rules are enforced.
+- **ERC-1410** — _partitioned tokens_. Lets one token contract hold multiple "partitions," each carrying its own compliance state. Partitions do double duty here: (a) they segregate the **exemption tranche** — `REG_D` partitions (U.S. accredited, Rule 506(c)) vs `REG_S` partitions (offshore) — which keeps the two offerings non-integrated and lets `canTransfer` apply the right rules; and (b) within the Reg S tranche, each partition carries a `closeDate` anchoring that partition's 12-month Reg S lockup. Reg D partitions have no Reg S `closeDate` (that is a Reg S concept). See Section C and the Reg D section.
+- **ERC-1594** — _transfer validation_. Defines the `canTransfer` hook the token calls before every transfer to check whether it's allowed; this is where the Reg D (506(c) eligibility), Reg S (offshore / distribution-compliance), and Rule 144 (restricted-securities resale) rules are enforced, dispatched by the partition's tranche type.
 - **ERC-1643** — _document registry_. A standard way for the token to publish references (URI + hash fingerprint) to the offering memorandum, legends, and other legal documents.
 - **ERC-1644** — _controller operations_. A built-in capability for the issuer to force-transfer or burn tokens to remediate non-compliant transfers, exercised through governance-controlled keys.
 
@@ -31,6 +34,9 @@
 | **Domestic vs Foreign**                     | **Domestic issuer**                                           | Rule 902(e) → Rule 405 "foreign issuer" definition turns on **jurisdiction of organization**: a Florida-organized LLC is organized under U.S. law, so it is NOT a "foreign issuer" → domestic issuer. (The U.S.-ownership + U.S.-management two-prong test is the separate "foreign _private_ issuer" test under Rule 405 / Rule 3b-4 — a different determination, not the one that controls here) |
 | **Reporting status**                        | **Non-reporting issuer**                                      | Rule 902(i) — no §12(b)/(g) registration, no §15(d) filings, no 12-month reporting history                                                                                                                                                                                                                                                                                                         |
 | **Security type**                           | **Equity** (LLC membership / beneficial interest tokenized)   | Token represents pro-rata ownership in property cash flows and disposition proceeds                                                                                                                                                                                                                                                                                                                |
+| **Offering exemptions**                     | **Reg D Rule 506(c) (U.S. accredited) + Reg S (offshore), concurrent** | Dual-tranche. 506(c) permits general solicitation to **verified** accredited U.S. investors; Reg S covers offshore non-U.S. persons. Kept non-integrated under Rule 152(b)(2). Cross-ref: [reg-d-checklist §6](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md), [reg-s-checklist](../sales-marketing/Service/Content/US%20Compliance/reg-s-checklist.md) |
+| **Reg D accreditation verification**        | **Required — "reasonable steps to verify" (Rule 506(c)(2)(ii))** | Self-certification is NOT enough. Verification (income/net-worth docs, or a registered BD/RIA/attorney/CPA letter) is an on-chain gate at mint for `REG_D` partitions. Cross-ref: [reg-d-checklist §6](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md) |
+| **Reg D filings / disqualification**        | **Form D within 15 days of first sale; bad-actor clear (Rule 506(d))** | Form D on EDGAR; state notice filings (506 = covered security, Section 18 preemption). Bad-actor questionnaires for all covered persons. Cross-ref: [reg-d-checklist §§8–9](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md) |
 | **Reg S Category**                          | **Category 3 — domestic-issuer equity** (Rule 903(b)(3)(iii)) | Cross-ref: [reg-s-checklist §3.2 Category 3](../sales-marketing/Service/Content/US%20Compliance/reg-s-checklist.md)                                                                                                                                                                                                                                                                                                                |
 | **Distribution compliance period**          | **12 months, from each partition's `closeDate`**              | Rule 903(b)(3)(iii)(A) 1-year period (non-reporting). Per Rule 902(f), a partition's period starts at its `closeDate` — set at creation for a defined tranche (f)(1), or filled at completion of distribution for a continuous offering (f)(2). See Section C                                                                                                                                      |
 | **Restricted-securities status**            | **Permanent under Rule 905**                                  | Rule 905 makes domestic-issuer equity acquired under Reg S "restricted securities" under Rule 144 indefinitely                                                                                                                                                                                                                                                                                     |
@@ -38,12 +44,12 @@
 
 ## OPERATIONAL CONSTRAINTS THE CLIENT HAS ACCEPTED
 
-Reg S-only is the chosen path. The client has accepted the following constraints — the platform enforces them on-chain, and the offering documents must disclose them prominently:
+A **concurrent dual-tranche** raise is the chosen path: a **Reg D 506(c)** tranche for verified U.S. accredited investors + a **Reg S** tranche for offshore non-U.S. persons. The client has accepted the following constraints — the platform enforces them on-chain, and the offering documents must disclose them prominently:
 
-1. **No sales to any U.S. person from offering open until the partition's distribution compliance period expires.** The offering's compliance period starts at the partition's **`closeDate`** — for the client's current continuous structure (Rule 902(f)(2)) that `closeDate` is filled in only when the distribution completes (full placement or issuer termination), so the 12-month clock does not even start until then. U.S.-resident investors cannot subscribe at any point during the offering, and cannot receive resold tokens until 12 months AFTER the `closeDate`. If the sponsor's network is U.S.-heavy, the distribution channel must be built offshore (foreign placement agents, non-U.S. introducers, offshore investor lists).
-2. **Tokens are permanent restricted securities under Rule 905, and the two clocks do NOT align.** Two separate clocks run: (a) the **Rule 144 holding period** starts at each holder's **full-payment (subscription) date** — per holder, not shared — with Rule 144(d)(1)(ii) tacking inherited on secondary transfers; (b) the **Reg S distribution compliance period** starts at the partition's `closeDate`, which (never in the past, with mints stopping once it arrives) lands at or after every holder's payment. The **Reg S `closeDate` clock always clears last — it is the binding constraint.** An investor who subscribes early may satisfy her Rule 144 12-month holding period months before the Reg S gate opens, yet still cannot sell to U.S. persons until the `closeDate + 12 months` passes. Total time from an early subscription to first eligible U.S. resale = (months until `closeDate`) + 12 months — potentially well beyond 12 months from payment. For affiliates by operation of law, ongoing restrictions (volume caps, broker-only channels, current public information, Form 144) apply that this platform does not support — wallet is `BLOCKED` instead.
-3. **No directed selling efforts into the U.S.** Website, marketing, social channels, PR — all must be geo-fenced and U.S.-investor-excluded. A single U.S.-readable promotion can collapse the Reg S safe harbor.
-4. **The sponsor cannot personally subscribe under Reg S.** The Florida-resident sponsor is a U.S. person; he cannot buy tokens. His economics come through the LLC promote (see Architectural Decision §1 — Sponsor economics — below), not through token subscription.
+1. **U.S. persons may buy ONLY if they are accredited AND verified, and ONLY in the Reg D (506(c)) tranche.** A U.S. person who is not accredited, or is accredited but not verified under Rule 506(c)(2)(ii), cannot subscribe at all. Offshore non-U.S. persons subscribe in the **Reg S** tranche. **The Reg S tranche still blocks EVERY U.S. person** (even a verified-accredited one) for the life of that partition's distribution compliance period — a U.S. accredited buyer belongs in a `REG_D` partition, never a `REG_S` partition. Verified U.S. accredited investors and offshore investors are kept in separate partitions so the two exemptions do not integrate (Rule 152(b)(2)).
+2. **Both tranches produce restricted securities → Rule 144 governs resale.** The Reg D tranche is restricted directly under Rule 502(d); the Reg S domestic-equity tranche is restricted via the Rule 905 bridge. In BOTH, U.S. resale requires the Rule 144 holding period (12 months, non-reporting) measured from each holder's full-payment date, with Rule 144(d)(1)(ii) tacking. **The Reg S tranche additionally carries the Reg S distribution compliance period** (the partition's `closeDate + 12 months`), during which NO U.S.-person transfer is allowed regardless of Rule 144 — so on a Reg S partition the two clocks run and the `closeDate` clock binds (Section C/D). **The Reg D tranche has NO Reg S compliance period** — only the Rule 144 holding period gates its U.S. resale. For any holder who becomes an affiliate by operation of law, ongoing Rule 144 affiliate restrictions (volume caps, broker-only channels, current public information, Form 144) apply that this platform does not support — wallet is `BLOCKED` instead.
+3. **General solicitation is PERMITTED for the 506(c) tranche — but Reg S non-integration must be protected.** Rule 506(c) allows public marketing (website, social, demo days) to reach U.S. accredited investors, provided every U.S. purchaser is verified. The concurrent Reg S tranche relies on the **Rule 152(b)(2)** integration safe harbor, and SEC guidance treats concurrent 506(c) general solicitation as not constituting "directed selling efforts" that would break the Reg S offering — **provided the Reg S offers/sales themselves remain genuine offshore transactions** (not made to persons in the U.S. for the Reg S securities). Counsel must structure the marketing so the Reg S leg keeps its offshore character; the platform enforces the buyer-side gates, not the marketing.
+4. **The sponsor still cannot personally subscribe — in either tranche.** The Florida-resident sponsor would qualify as an accredited investor (as a director/officer under Rule 501(a)(4)), so 506(c) does not exclude him. But the **affiliate-free architecture** (below) does: no affiliate holds tokens. His economics come through the LLC promote (see Architectural Decision §1), not through token subscription, in either tranche.
 
 ---
 
@@ -58,6 +64,49 @@ Reg S is a safe harbor from Section 5 **registration** requirements only. Even w
 - [ ] **OFAC sanctions** — see §A.1. Reg S does not exempt from any OFAC obligation; strict liability applies
 
 > **Common misunderstanding:** "We're Reg S-compliant" does not mean "We're securities-law-compliant." Reg S is one piece of a much larger compliance perimeter. The platform's enforcement gates address Reg S Section 5 registration risk and OFAC; everything else requires its own off-chain controls.
+
+---
+
+## THE DUAL-TRANCHE STRUCTURE — Reg D 506(c) (U.S.) + Reg S (Offshore)
+
+_Source authority for the U.S. tranche: [reg-d-checklist.md](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md) — single source of truth for Regulation D (17 CFR §§ 230.500–230.508). This section describes only the implementation-specific application to the platform; refer to the checklist for the full accredited-investor definition, verification methods, general-conditions detail, bad-actor taxonomy, Form D mechanics, Rule 508, and Section 18 preemption._
+
+One token contract, two exemptions, two purchaser pools. Each holding lives in a partition tagged with a **`tranche` type**, and `canTransfer` dispatches on it:
+
+| | **`REG_D` partition (Rule 506(c))** | **`REG_S` partition (Rule 903 Cat 3)** |
+|---|---|---|
+| Buyer pool | **U.S. accredited investors, verified** | Offshore **non-U.S. persons** |
+| Marketing | **General solicitation permitted** | No directed selling efforts in the U.S. |
+| Distribution compliance period | **None** (Reg S concept only) | `closeDate + 12 months` (Section C) |
+| U.S.-person gate | Recipient must be `US_ACCREDITED_VERIFIED` (or a later Rule 144-eligible resale) | ALL U.S. persons blocked during the compliance period |
+| Restricted securities? | **Yes — directly, Rule 502(d)** | Yes — via the Rule 905 bridge |
+| Resale into the U.S. | Rule 144 holding period (12 mo, non-reporting) | Reg S compliance period **AND** Rule 144 |
+| Issuer filings | **Form D; bad-actor (506(d)); state notices** | Reg S offering restrictions |
+
+### Why two partitions, not one pool — integration (Rule 152)
+
+- [ ] **The two tranches must NOT integrate.** Keeping the U.S.-accredited holdings in `REG_D` partitions and the offshore holdings in `REG_S` partitions — separate purchaser pools, separate subscription documents, separate legends — supports the **Rule 152(b)(2)** safe harbor, under which Reg S offers and sales do not integrate with the concurrent 506(c) offering
+- [ ] Do NOT mint the same investor into both tranches for the same economic interest; route each subscriber to exactly one tranche by their status (verified U.S. accredited → `REG_D`; offshore non-U.S. person → `REG_S`)
+
+### Rule 506(c) conditions enforced on-chain (`REG_D` partitions)
+
+- [ ] **All purchasers accredited (Rule 501(a))** — `mint` to a `REG_D` partition requires the recipient's identity record to carry an **accredited** flag. A single non-accredited purchaser destroys 506(c) for the whole tranche
+- [ ] **Reasonable steps to VERIFY (Rule 506(c)(2)(ii)) — self-certification is NOT enough.** Verification is an off-chain determination (income docs / net-worth docs + credit report / a registered BD, SEC-RIA, licensed attorney, or CPA confirmation letter) recorded on-chain as a **verification attestation** (method, date, provider) in the identity registry, gated at `mint`. See Section A and the mint flow (Section I). Verification is generally reliable for a bounded window (re-verify on a material change; a written re-representation refreshes it)
+- [ ] **General solicitation permitted** — the platform imposes no marketing gate on the `REG_D` tranche; the accredited-and-verified check at mint is what makes public solicitation safe
+- [ ] **Restricted securities (Rule 502(d))** — `REG_D` tokens carry the restrictive legend (Section E) and are subject to Rule 144 for U.S. resale (Section D). There is **no Reg S distribution compliance period** on a `REG_D` partition — its `closeDate` field is unused / `type(uint256).max`, and the Reg S U.S.-person gate does not apply to it
+
+### Off-chain gates the platform records but does not compute
+
+- [ ] **Bad-actor disqualification (Rule 506(d))** — before the offering, run bad-actor questionnaires for all covered persons (issuer, directors, executive/participating officers, 20% owners, promoters, placement agents). A disqualifying event makes Rule 506 unavailable. This is a pre-deployment / pre-offering gate, evidenced by an on-chain attestation hash; the platform does not adjudicate it. Cross-ref: [reg-d-checklist §8](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md)
+- [ ] **Form D (Rule 503)** — file on EDGAR within **15 calendar days after the first sale** in the 506(c) tranche; amend annually / on material change. The platform emits a `FirstSaleRecorded(tranche, timestamp)` event off which the compliance team runs the 15-day clock. Cross-ref: [reg-d-checklist §9](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md)
+- [ ] **State Blue Sky** — 506(c) securities are federally covered (Section 18); file state **notice** filings + fees where U.S. purchasers reside. Reg S offshore sales are separately analyzed. Cross-ref: [reg-d-checklist §11](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md)
+- [ ] **Information / anti-fraud** — 506(c) to all-accredited requires no mandated disclosure schedule, but the PPM must be accurate; Section 17(a) / 10b-5 apply to both tranches regardless of exemption
+
+### What is identical across both tranches
+
+- [ ] **OFAC** screening (Section A.1), **KYC**, the **affiliate-free architecture** (no affiliate holds tokens in either tranche), the **9.99% class-wide concentration cap** (aggregated across BOTH tranches — it is one class of equity), and **Rule 144** restricted-securities resale all apply uniformly. The tranche type changes only the *primary-issuance eligibility* and whether a Reg S distribution compliance period runs
+
+> **Cross-tranche transfers:** a token's restricted status and its Rule 144 clock travel with it regardless of tranche. A `REG_D` token resold offshore to a non-U.S. person (Rule 904) stays restricted (Rule 905, domestic equity); a `REG_S` token cannot be transferred to a U.S. person until its compliance period expires and Rule 144 is met. To keep the analysis clean, the reference design routes secondary transfers **within the same partition** and treats any cross-tranche movement as a controller-mediated, compliance-reviewed action rather than an open-market transfer.
 
 ---
 
@@ -125,9 +174,9 @@ The on-chain identity registry — implemented using **ERC-3643** (T-REX) or an 
   - **U.S.-person status flag** — covering all 8 categories of Rule 902(k)(1) (resident natural persons, U.S.-organized entities, U.S. estates/trusts, U.S.-branch accounts, foreign entities formed by U.S. persons to invest in unregistered securities, etc. — not just citizenship)
   - **Jurisdiction / residency code** — ISO 3166-1 alpha-3
   - **KYC verification timestamp + provider attestation hash** (the cryptographic fingerprint of the KYC dossier the provider signed off on)
-  - **Accredited / institutional status flags** (narrow relevance — Rule 902(k)(1)(viii) carve-out for institutional accredited investors)
+  - **Accredited-investor status + Rule 506(c) verification attestation** — for the U.S. tranche: an `accredited` flag (which Rule 501(a) category), plus a **verification record** `{verified: bool, method, providerId, verifiedAt, evidenceHash, expiresAt}` capturing the "reasonable steps to verify" under Rule 506(c)(2)(ii) (income docs, net-worth docs + credit report, or a registered BD / SEC-RIA / attorney / CPA confirmation letter). `verified` alone — not `accredited` alone — is what admits a U.S. person to a `REG_D` mint. Self-certification does not set `verified`. (Also retains the narrow Rule 902(k)(1)(viii) institutional-accredited carve-out relevant to the Reg S side)
   - **OFAC / sanctions screening result set** — see §A.1 below for the full framework. Includes: SDN match flag, crypto-address SDN flag, comprehensively-embargoed jurisdiction flag, 50-Percent-Rule beneficial-ownership flag, last screening timestamp, SDN list version at screening, screening provider ID
-  - **Investor classification:** `DISTRIBUTOR` (placement agent's own holding), `NON_US_PERSON` (standard offshore investor), `US_PERSON_QUALIFIED` (rare — purchase did not require registration), `BLOCKED` (suspended for any reason, including affiliate-creating events or OFAC flag)
+  - **Investor classification:** `DISTRIBUTOR` (placement agent's own holding), `NON_US_PERSON` (offshore investor — eligible for `REG_S` partitions), **`US_ACCREDITED_VERIFIED`** (U.S. person, accredited AND verified under Rule 506(c) — eligible for `REG_D` partitions), `US_PERSON_QUALIFIED` (rare — a U.S. person whose Reg S-side purchase did not require registration), `US_PERSON` (U.S. person, not accredited/verified — ineligible for any primary mint), `BLOCKED` (suspended for any reason, including affiliate-creating events or OFAC flag)
 - [ ] The identity registry must be **updatable** by an authorized compliance role — investors can become U.S. persons (move residency), lose accredited status, get sanctioned. Status changes propagate immediately to every subsequent `canTransfer` decision
 - [ ] The identity registry contract is **separate and upgradeable** independently of the token contract. KYC rules and identity claims can evolve without redeploying the token; the same identity is reusable across multiple security tokens
 
@@ -194,17 +243,20 @@ The offering memorandum discloses the OFAC compliance framework; the compliance 
 
 _Cross-reference: checklist §3.2 Category 3, §6.3 (Investor Verification & KYC Controls)_
 
-The ERC-1594 `canTransfer` hook (and its partition-aware counterpart `canTransferByPartition`) is the on-chain enforcement point for every Reg S and Rule 144 rule. It runs before every transfer and either allows it or reverts with a specific reason code. ERC-1066 status codes are used where they apply, so wallets and explorers can display human-readable rejection reasons.
+The ERC-1594 `canTransfer` hook (and its partition-aware counterpart `canTransferByPartition`) is the on-chain enforcement point for every Reg D 506(c), Reg S, and Rule 144 rule. It runs before every transfer and either allows it or reverts with a specific reason code, **dispatching on the partition's `tranche` type** (`REG_D` vs `REG_S`). ERC-1066 status codes are used where they apply, so wallets and explorers can display human-readable rejection reasons.
 
-The hook enforces both:
+The hook enforces, by tranche:
 
-- **Rule 903 conditions** (issuer-side safe harbor) — applies at mint and to any transfer from the issuer, a distributor, or any of their affiliates. The Rule 903 path is the primary issuance path through `mint` (§I)
-- **Rule 904 conditions** (offshore-resale safe harbor) — applies to peer-to-peer secondary transfers by non-issuer holders. Rule 904's universal conditions are enforced through these gates: (a) the offshore-transaction prong (Rule 902(h)) is enforced via the U.S.-person check below — the sale is not made to a person in the U.S.; (b) the "no directed selling efforts by the seller" condition is captured as a binding covenant in the Subscription Agreement (§E Document 4) and is not on-chain enforceable — relies on the seller's covenant plus off-chain monitoring; (c) the Rule 904(b)(1) dealer-confirmation notice requirement is handled via the `DistributorConfirmationRequired` event (§H) routed to the placement agent's off-chain workflow
+- **Rule 506(c) conditions** (`REG_D` partitions) — the recipient must be `US_ACCREDITED_VERIFIED` for a primary mint or an in-tranche holding transfer; there is no Reg S distribution compliance period on a `REG_D` partition
+- **Rule 903 conditions** (`REG_S` partitions, issuer-side safe harbor) — applies at mint and to any transfer from the issuer, a distributor, or any of their affiliates. The Rule 903 path is the primary issuance path through `mint` (§I)
+- **Rule 904 conditions** (`REG_S` partitions, offshore-resale safe harbor) — applies to peer-to-peer secondary transfers by non-issuer holders. Rule 904's universal conditions are enforced through these gates: (a) the offshore-transaction prong (Rule 902(h)) is enforced via the U.S.-person check below — the sale is not made to a person in the U.S.; (b) the "no directed selling efforts by the seller" condition is captured as a binding covenant in the Subscription Agreement (§E Document 4) and is not on-chain enforceable — relies on the seller's covenant plus off-chain monitoring; (c) the Rule 904(b)(1) dealer-confirmation notice requirement is handled via the `DistributorConfirmationRequired` event (§H) routed to the placement agent's off-chain workflow
+- **Rule 144 conditions** (both tranches) — restricted-securities resale into the U.S., §D
 
 The hook returns `false` (reject) when:
 
 - [ ] Recipient is **not in the identity registry** (no KYC) → reason: `"NO_KYC"`
-- [ ] Recipient is a **U.S. person** AND the sender-partition's compliance period has not expired (`closeDate == max` OR `block.timestamp < closeDate + 12 months`) AND recipient is not classified as `DISTRIBUTOR` → reason: `"REG_S_US_PERSON_RESTRICTED"`. This is the core Rule 903(b)(3)(iii)(A) gate; an unset `closeDate` (`max`) blocks until the partition's distribution closes (Section C)
+- [ ] **[`REG_S` partition]** Recipient is a **U.S. person** AND the sender-partition's compliance period has not expired (`closeDate == max` OR `block.timestamp < closeDate + 12 months`) AND recipient is not classified as `DISTRIBUTOR` → reason: `"REG_S_US_PERSON_RESTRICTED"`. This is the core Rule 903(b)(3)(iii)(A) gate; an unset `closeDate` (`max`) blocks until the partition's distribution closes (Section C). **This gate does NOT apply to `REG_D` partitions**
+- [ ] **[`REG_D` partition]** Recipient is a **U.S. person who is NOT `US_ACCREDITED_VERIFIED`** (accredited AND verified under Rule 506(c)(2)(ii)) → reason: `"REG_D_NOT_VERIFIED_ACCREDITED"`. A single non-verified U.S. purchaser breaks 506(c) for the tranche. (After the Rule 144 holding period clears, a non-affiliate resale may go to a broader set — §D — but primary mints and in-tranche transfers require verified-accredited status)
 - [ ] Recipient or sender is **OFAC-flagged** in the identity registry — covering any of the four OFAC failure modes from §A.1.2: (1) SDN-listed identity, (2) SDN-listed wallet address, (3) comprehensively-sanctioned country of residence (Cuba, Iran, North Korea, Syria, Crimea/Donetsk/Luhansk/Kherson/Zaporizhzhia), or (4) 50%+ aggregated ownership by SDN-listed persons. Strict liability — check applies on both sender AND recipient on every transfer → reason: `"OFAC_BLOCKED"`. Stale OFAC screening (>30 days old) also rejects → reason: `"OFAC_SCREENING_STALE"`
 - [ ] Sender is flagged `BLOCKED` (covers any holder who became an affiliate by operation of law under the affiliate-free architecture) → reason: `"SENDER_BLOCKED"`
 - [ ] Sender or recipient identity record has **stale KYC** beyond the re-verification window (e.g., 12 months since last KYC refresh) → reason: `"KYC_EXPIRED"`
@@ -220,7 +272,9 @@ Return codes follow ERC-1066 (Ethereum Status Codes) where possible for explorer
 
 _Cross-reference: checklist §3.2 Category 3 equity (Rule 903(b)(3)(iii)(A)), §2.4 (Rule 902(f) distribution compliance period definition)_
 
-**Core model — one field, one gate, no modes.** A **partition is an offering**, and its **`closeDate` is the start of that offering's Reg S distribution compliance period**. The compliance period for a partition runs `closeDate → closeDate + 12 months` (`isReportingIssuer = false` → 1-year branch; the 6-month branch would only apply if the issuer were a public reporting company). There is **no separate global variable and no "continuous vs. tranche" branching** — there is one field, `partition.closeDate`, and `canTransfer` uniformly reads the **sender's partition's** value (it does NOT hardcode any partition index).
+> **Scope: this section governs `REG_S` partitions only.** The Reg S distribution compliance period is a Regulation S concept. `REG_D` partitions (Rule 506(c), U.S. accredited) have **no** distribution compliance period — their `closeDate` field is unused (`type(uint256).max`) and the Reg S U.S.-person gate never fires for them; a `REG_D` holding is gated by 506(c) eligibility at issuance (Section B / the Reg D section) and by Rule 144 for U.S. resale (Section D). Everything below applies to `REG_S` partitions.
+
+**Core model — one field, one gate, no modes.** A **`REG_S` partition is an offering**, and its **`closeDate` is the start of that offering's Reg S distribution compliance period**. The compliance period for a partition runs `closeDate → closeDate + 12 months` (`isReportingIssuer = false` → 1-year branch; the 6-month branch would only apply if the issuer were a public reporting company). There is **no separate global variable and no "continuous vs. tranche" branching** — there is one field, `partition.closeDate`, and `canTransfer` uniformly reads the **sender's partition's** value (it does NOT hardcode any partition index).
 
 - [ ] **Storage on-chain: `closeDate` per partition.** Semantics: the date that partition's distribution closed under Rule 902(f) — the LATER of first-offer-to-non-distributors or the close; the close controls in normal primary offerings
 - [ ] **Unset sentinel = `type(uint256).max` (NEVER `0`).** A partition whose distribution has not closed carries `closeDate = type(uint256).max`, so `closeDate + 12 months` never arrives and the Reg S gate blocks ALL U.S.-person transfers of that partition's tokens. The sentinel — not a mode flag — is what makes the gate uniform and **fails safe**. `0` would fail OPEN (`0 + 12mo` is ancient history → the check passes → U.S. transfers allowed before the period starts → Section 5 violation). Use `max`
@@ -250,15 +304,23 @@ _Cross-reference: checklist §3.2 Category 3 equity (Rule 903(b)(3)(iii)(A)), §
 
 ---
 
-## D. Permanent Restricted-Securities Status — Rule 905
+## D. Permanent Restricted-Securities Status — Rule 144 (both tranches)
 
-_Cross-reference: checklist §5 (Resale Limitations), §8.3 (Rule 144 interaction)_
+_Cross-reference: [rule-144-checklist.md](../sales-marketing/Service/Content/US%20Compliance/rule-144-checklist.md) §5 (holding period), [reg-s-checklist.md §5](../sales-marketing/Service/Content/US%20Compliance/reg-s-checklist.md) (Rule 905), [reg-d-checklist.md §7.4](../sales-marketing/Service/Content/US%20Compliance/reg-d-checklist.md) (Rule 502(d) restricted securities)_
 
-**This is the trap most token issuers miss.** Even after the Reg S compliance period expires, the tokens remain Rule 144 "restricted securities" **forever** because the issuer is domestic. The compliance period is time-limited; the restricted-status is permanent.
+**BOTH tranches produce restricted securities → Rule 144 governs U.S. resale of every token.** They arrive at restricted status by different doors:
 
-**Why does Rule 144 apply to a Reg S offering at all?** Rule 144 is not chosen here — **Rule 905 of Regulation S imposes it automatically.** By issuing domestic-issuer equity under Reg S Rule 903, every token is stamped as a "restricted security" under Rule 144(a)(3)(v) by operation of law. The issuer does nothing extra — Rule 905 is the bridge. Reg S governs the primary offering (issuer → offshore investors); Rule 905 hands the baton to Rule 144, which then governs any subsequent U.S.-person resale by those investors. An investor who asks "why can't I just sell to my U.S. friend after 12 months?" is asking a Rule 144 question, not a Reg S question.
+- **`REG_D` tokens** — restricted **directly** under **Rule 502(d)**: securities sold in a Reg D transaction are restricted securities, full stop
+- **`REG_S` tokens** — restricted via the **Rule 905** bridge: domestic-issuer equity sold under Reg S is deemed a "restricted security" under Rule 144(a)(3)(v)
 
-Under the affiliate-free architecture, every holder is by structural commitment a **non-affiliate**. Rule 144's clean non-affiliate path (Rule 144(b)(1)(ii) for non-reporting issuers) applies: after the holding period clears (12 months from the holder's own **acquisition date** — the date they paid in full and assumed the investment risk — with automatic Rule 144(d)(1)(ii) tacking inherited on secondary transfers), a non-affiliate can resell to U.S. persons with no volume cap, no manner-of-sale restriction, no current-information requirement, no Form 144 — **provided the partition's Reg S compliance period (`closeDate + 12 months`) has also expired** (Section C). These two conditions clear at different times; see the alignment bullet below.
+Either way the consequence is the same and **permanent**: the restricted label persists for the life of the security (the compliance period is time-limited; the restricted status is not), and any U.S. resale requires the **Rule 144 holding period** (12 months, non-reporting), registration, or another exemption. The Rule 144 machinery below (per-holder `acquisitionTimestamp` = full-payment date, tacking, the affiliate-free non-affiliate path) applies **identically to both tranches**. The ONE difference is the extra Reg S gate:
+
+- On a **`REG_D` partition**, Rule 144 is the **only** U.S.-resale gate — there is no Reg S compliance period.
+- On a **`REG_S` partition**, a U.S. resale must clear **both** the Reg S compliance period (`closeDate + 12 months`, Section C) **and** Rule 144 — and the `closeDate` clock is the binding one (see the alignment bullet).
+
+**Why does Rule 144 apply at all?** Neither exemption "chooses" it — each *produces* restricted securities by operation of law (Rule 502(d) for Reg D; Rule 905 for Reg S). Reg D / Reg S govern the primary offering; Rule 144 governs the subsequent U.S. resale. An investor asking "why can't I just sell to my U.S. friend after 12 months?" is asking a Rule 144 question in either tranche.
+
+Under the affiliate-free architecture, every holder is by structural commitment a **non-affiliate**. Rule 144's clean non-affiliate path (Rule 144(b)(1)(ii) for non-reporting issuers) applies: after the holding period clears (12 months from the holder's own **acquisition date** — the date they paid in full and assumed the investment risk — with automatic Rule 144(d)(1)(ii) tacking inherited on secondary transfers), a non-affiliate can resell to U.S. persons with no volume cap, no manner-of-sale restriction, no current-information requirement, no Form 144. **On a `REG_D` partition that is the whole U.S.-resale test.** On a **`REG_S` partition**, the sale must ALSO wait for the Reg S compliance period (`closeDate + 12 months`, Section C) — the two conditions clear at different times and the `closeDate` clock binds; see the alignment bullet below.
 
 - [ ] **Per-acquisition-lot storage on-chain: `acquisitionTimestamp`** (= the date the acquirer **paid in full and assumed the economic risk** of the investment — Rule 144(d)(1)). This is NOT the contract's mint event: under [rule-144-checklist.md §5.1](../sales-marketing/Service/Content/US%20Compliance/rule-144-checklist.md), "the holding period shall not begin until full purchase price or other consideration is paid by the acquirer." For a rolling subscription, each investor pays on a different date, so each primary acquisition carries its own `acquisitionTimestamp`. The Rule 144 clock is therefore **per holder, not shared across a partition** — different subscribers in the same offering can clear their holding period on different dates
 - [ ] **Tacking travels with the tokens (Rule 144(d)(1)(ii)).** On a non-affiliate-to-non-affiliate transfer, the receiver does NOT get a fresh clock — the tokens carry their existing `acquisitionTimestamp` to the new holder, tracing back to the original acquisition from the issuer. Implementation: model each primary acquisition as its own **ERC-1410 (sub)partition (lot)** whose `acquisitionTimestamp` is intrinsic and immutable; when tokens move, they stay in their lot and carry the timestamp automatically. This makes "per-holder acquisitionTimestamp with tacking" fall out of the partition machinery without separate per-wallet bookkeeping
@@ -285,8 +347,9 @@ ERC-1643's document registry is a standardized way for the token to publish refe
 
 - [ ] **Document 1: Reg S unregistered-securities legend** — _"The securities … have not been registered under the U.S. Securities Act of 1933, as amended, and may not be offered or sold in the United States or to U.S. persons (other than distributors) unless registered under the Act or an applicable exemption from registration is available."_
 - [ ] **Document 2: Hedging-restriction legend** — _"Hedging transactions involving these securities may not be conducted unless in compliance with the U.S. Securities Act of 1933."_
-- [ ] **Document 3: Transfer-restriction legend** (Cat 3 domestic equity) — transfer prohibited except per Reg S / registration / exemption
-- [ ] **Document 4: Subscription / Purchase Agreement template hash** — the cryptographic fingerprint of the executed agreement template, with purchaser certifications and resale covenants
+- [ ] **Document 3: Transfer-restriction legend** (Cat 3 domestic equity) — transfer prohibited except per Reg S / registration / exemption. Applies to `REG_S` tokens
+- [ ] **Document 3b: Reg D restricted-securities legend** (Rule 502(d)) — for `REG_D` tokens: _"These securities have not been registered under the Securities Act of 1933 and are 'restricted securities' within the meaning of Rule 144. They may not be offered, sold, pledged, or otherwise transferred except pursuant to registration or an available exemption (including Rule 144)."_ The two tranches carry different legends; the ERC-1643 document bound to a holding is selected by the partition's `tranche` type
+- [ ] **Document 4: Subscription / Purchase Agreement template hash** — the cryptographic fingerprint of the executed agreement template, with purchaser certifications and resale covenants. Two templates: the Reg S offshore subscription agreement (`REG_S`) and the Reg D 506(c) accredited-investor subscription agreement with accreditation representations and the Rule 502(d) restricted-securities acknowledgement (`REG_D`)
 - [ ] **Document 5: Property-specific PPM / offering memorandum** — for real estate, the underlying property due diligence package (title, environmental, lease roll, appraisal)
 - [ ] Documents are **versioned** — `setDocument` emits an event with the publication timestamp so off-chain readers can reconstruct the full disclosure history. Prior versions are never deleted — investors and regulators can always inspect what was disclosed at any prior moment
 
@@ -336,6 +399,8 @@ On-chain compliance monitoring depends on rich, structured events emitted by the
 - [ ] `CloseDateSet(partition, closeDate)` — emitted when a partition's `closeDate` is written (at creation for a defined tranche, or filled later by the compliance officer at completion of distribution — Section C). For a "filled later" (continuous) partition this is the single most consequential event in the contract's life: it starts that partition's Reg S compliance clock. Off-chain monitoring should alert if a continuous partition has been open beyond the long-stop date without this event firing (the indefinite-restriction trap, Section C)
 - [ ] `PartitionComplianceExpired(partition, timestamp)` — emitted when a partition's distribution compliance period ends (`closeDate + 12 months`); signals that U.S.-person secondary trading of that partition's tokens under Rule 144 is now possible (every holder's Rule 144 `holdingEnd[holder][partition]` having already cleared by this point — mints stop once `closeDate` arrives, so each acquisition's `issuanceTimestamp` precedes `closeDate`)
 - [ ] `RestrictedSecuritiesNoted(holder, partition, amount)` — emitted on every U.S.-person sale post-compliance-period to flag the Rule 144 tracking obligation
+- [ ] `FirstSaleRecorded(tranche, timestamp)` — emitted on the first mint in each tranche. For `REG_D` it starts the **15-day Form D** filing clock (Rule 503); the off-chain compliance team must file on EDGAR within 15 calendar days. Also feeds the state notice-filing workflow (Section 18 covered-security notices)
+- [ ] `AccreditationVerified(investor, method, providerId, expiresAt, evidenceHash)` — emitted when a 506(c) verification record is written to the registry; the audit trail proving "reasonable steps to verify" for every `REG_D` purchaser (Rule 506(c)(2)(ii))
 
 These events form the SEC evidence file. Every off-chain monitoring tool and every future SEC inquiry will reconstruct compliance posture from this event stream.
 
@@ -345,7 +410,16 @@ These events form the SEC evidence file. Every off-chain monitoring tool and eve
 
 _Cross-reference: checklist §6.1 (Pre-Offering Documentation), §6.3 (Investor Verification)_
 
-Initial issuance happens through the `mint` function (or its partition-aware equivalent). Every primary sale must satisfy the **Rule 902(h) two-prong offshore-transaction test**:
+Initial issuance happens through the `mint` function (or its partition-aware equivalent). **The mint path dispatches on the target partition's `tranche` type:**
+
+- **`REG_D` mint (Rule 506(c), U.S. accredited)** — see §I.1 below.
+- **`REG_S` mint (Rule 903, offshore)** — must satisfy the Rule 902(h) offshore-transaction test, detailed immediately below.
+
+**Requirements common to BOTH tranches** (checked at every mint regardless of partition): recipient is in the identity registry (else reject); OFAC screening fresh (§A.1); recipient not `BLOCKED`; the **9.99% class-wide concentration cap** holds (aggregated across BOTH tranches — it is one class); the **Rule 144 acquisition anchor** (`acquisitionTimestamp` = full-payment date) is recorded; and the property record is linked. These are listed once at the end of this section.
+
+### I.0 — `REG_S` mint (Rule 903 offshore-transaction test)
+
+Every `REG_S` primary sale must satisfy the **Rule 902(h) two-prong offshore-transaction test**:
 
 - **Prong A** — the offer is not made to a person in the United States. Enforced via the recipient U.S.-person check (item below). Implicit in the identity-registry classification: the recipient must not be flagged `US_PERSON` (unless qualified under the narrow U.S.-person carve-out)
 - **Prong B** — at the time the buy order is originated, the buyer is outside the United States, or the seller reasonably believes so. **Rule 902(h)(1)(ii) lets the issuer, a distributor, or any person acting on their behalf form that reasonable belief — a separate placement agent is NOT required.** Who forms it depends on the offering structure:
@@ -362,6 +436,19 @@ Before any tokens are minted, the platform must verify:
 - [ ] Signed certification that the purchaser is not a U.S. person AND not acquiring for U.S. account/benefit, OR is a U.S. person whose purchase did not require registration (Rule 903(b)(3)(iii)(B)(1)) — typically an EIP-712 signed message from the investor
 - [ ] **Resale-restriction and hedging covenant from purchaser** (Rule 903(b)(3)(iii)(B)(2)) — the executed Subscription Agreement (§E Document 4) contains the purchaser's binding covenant to (a) resell only in accordance with Reg S, registration, or another exemption, AND (b) not engage in hedging transactions unless in compliance with the Securities Act. The platform records the agreement hash; the covenant itself is enforced via legal recourse, not via on-chain check
 - [ ] **(Only when an offering uses a placement agent — OPTIONAL, `placementAgent` configured)** EIP-712 mint-authorization attestation by the placement agent (Rule 902(h) Prong B) — fresh within its deadline window; signed by the placement agent's compliance signer; attests to the offshore-buyer reasonable belief based on KYC + IP geolocation + declared location at order origination. **For a direct offering this row does not apply** — Prong B rests on the non-U.S. KYC determination + the investor's own offshore certification (issuer forms the 902(h)(1)(ii) belief)
+
+### I.1 — `REG_D` mint (Rule 506(c) verification)
+
+A `REG_D` primary sale has NO offshore test and NO distribution compliance period; the gate is **verified accredited status**:
+
+- [ ] **Recipient is `US_ACCREDITED_VERIFIED`** — the identity record carries both the `accredited` flag (a Rule 501(a) category) AND a completed **verification record** (`verified = true`, not expired). Self-certification does NOT satisfy this; `mint` reverts with `REG_D_NOT_VERIFIED_ACCREDITED` otherwise (Rule 506(c)(2)(ii))
+- [ ] **Verification attestation present and current** — `{method, providerId, verifiedAt, evidenceHash, expiresAt}` recorded in the registry (income docs / net-worth docs + credit report / registered BD-RIA-attorney-CPA letter). Verification is time-bounded; a stale verification (`block.timestamp > expiresAt`) reverts with `REG_D_VERIFICATION_STALE`
+- [ ] **Signed subscription agreement hash** present, containing the purchaser's accredited-investor representations and the **Rule 502(d) restricted-securities acknowledgement + resale covenant** (resell only under Rule 144, registration, or another exemption)
+- [ ] **Bad-actor and Form D pre-conditions confirmed at the offering level** — the pre-offering bad-actor clearance attestation (Rule 506(d)) is on file, and the `FirstSaleRecorded(REG_D, timestamp)` event fires on the first `REG_D` mint to start the 15-day Form D clock (§ the Reg D section)
+- [ ] **No Reg S artifacts** — a `REG_D` mint does NOT require the Rule 902(h) offshore certification and does NOT set a `closeDate`; the partition's `closeDate` stays `type(uint256).max` and is never consulted for `REG_D` tokens
+
+### I.2 — Requirements common to both tranches
+
 - [ ] OFAC screening result is fresh (within e.g. 30 days) at mint time
 - [ ] Recipient wallet is registered in the identity registry; mints to unregistered wallets are rejected
 - [ ] Recipient's resulting balance does not exceed the 9.99% concentration cap (measured on the identity's class-wide aggregate across all wallets and partitions)
@@ -383,7 +470,11 @@ These compliance items are **operational, not contract-level** — do not invest
 | Tombstone advertisement compliance (§2.3)                                                                   | Compliance review queue for ads                                                          |
 | Distributor written agreement (Rule 902(g)(1))                                                              | Legal documents, signed before placement                                                 |
 | Press release / social media review (§6.4)                                                                  | Communications playbook + compliance gate                                                |
-| Concurrent Reg D integration analysis (§8.1)                                                                | Counsel + offering structure                                                             |
+| Reg D / Reg S integration analysis (Rule 152) — keeping the tranches non-integrated                        | Counsel + offering structure                                                             |
+| **Reg D Form D filing** — EDGAR within 15 days of first `REG_D` sale; annual + material-change amendments (Rule 503) | Compliance officer via EDGAR (clock started by `FirstSaleRecorded`)                      |
+| **Reg D 506(c) accreditation verification — the actual document review** (income/net-worth docs, or BD/RIA/attorney/CPA letter) | Verification provider / compliance officer; only the resulting attestation goes on-chain |
+| **Reg D bad-actor (Rule 506(d)) diligence** — questionnaires for all covered persons, refreshed each offering | Counsel + compliance officer (pre-offering gate; attestation hash on-chain)              |
+| **Reg D state Blue Sky notice filings** — 506 covered-security notices + fees where U.S. purchasers reside (Section 18) | Counsel / compliance ops                                                                 |
 | §13(d) / §16 / §12(g) Exchange Act reporting (§8.2)                                                         | Issuer's separate SEC filings                                                            |
 | Record retention (§6.3)                                                                                     | Off-chain compliance database (5+ years)                                                 |
 | AML SAR filings                                                                                             | MLRO + transaction monitoring system                                                     |
@@ -402,7 +493,7 @@ These compliance items are **operational, not contract-level** — do not invest
 
 Use the ERC-1400 family with the following modules, each with one clear responsibility:
 
-1. **ERC-1410 Partitioned Token** — a partition is an offering. Each partition carries one `closeDate` (Section C); its Reg S compliance period is `closeDate + 12 months`. A continuous offering uses a single partition (`closeDate` filled at completion); a scheduled multi-tranche offering uses one partition per tranche (`closeDate` set at each close). `canTransfer` reads the **sender's** partition's `closeDate` — never a hardcoded index. The Rule 144 per-holder clock is tracked separately (Section D), not by the partition
+1. **ERC-1410 Partitioned Token** — a partition is an offering, tagged with a **`tranche` type** (`REG_D` or `REG_S`) that `canTransfer` dispatches on. `REG_S` partitions carry a `closeDate` (Section C); their Reg S compliance period is `closeDate + 12 months` (single partition for a continuous offering, one per tranche for scheduled closes). `REG_D` partitions have no `closeDate` (`type(uint256).max`) — the 506(c) verified-accredited gate applies at issuance and Rule 144 governs U.S. resale. `canTransfer` reads the **sender's** partition — never a hardcoded index. The Rule 144 per-holder clock is tracked separately (Section D), not by the partition
 2. **ERC-1594 Transfer Validation** — `canTransfer` calls into a separate `ComplianceRegistry` contract (upgradeable behind a transparent proxy). Compliance rules change; the token contract should not. Decoupling them lets the rules engine track SEC guidance evolution without forcing a token redeployment
 3. **ERC-1643 Document Registry** — for the five legend / disclosure documents (Section E)
 4. **ERC-1644 Controller Operations** — for force-transfers and compliance corrections (Section F)
@@ -546,6 +637,7 @@ The single most important on-chain rule: when any required attestation is missin
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | KYC provider                                                                        | Identity, residency, U.S.-person status                                                                                                                                                                                                                                            | Identity registry write role (provider's address)     | Bad actors get KYC clearance → identity gate fails for some investors                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Sanctions screening provider                                                        | OFAC / sanctions status                                                                                                                                                                                                                                                            | Identity registry write role (separate from KYC)      | Sanctioned actors clear screening → OFAC violation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Accreditation verification provider (Reg D 506(c))                                  | U.S. accredited-investor status "verified" under Rule 506(c)(2)(ii)                                                                                                                                                                                                                | Identity registry write role (writes the verification record) | A non-qualified U.S. person is marked verified → 506(c) broken for the whole `REG_D` tranche → Section 5 exposure. Mitigate with independent providers (registered BD/RIA/attorney/CPA), evidence-hash retention, and the `expiresAt` freshness gate |
 | Compliance officer                                                                  | Edge-case determinations, beneficial-ownership reviews                                                                                                                                                                                                                             | EIP-712 signer                                        | Signed-off bad transfers; mitigated by per-attestation amount limits                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Sponsor / GP                                                                        | Mint authorization, offering close timestamps                                                                                                                                                                                                                                      | Multi-sig controller (M-of-N)                         | Unauthorized mints; mitigated by M-of-N and time-lock on threshold mints                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Placement agent **(when the offering engages one; optional for a direct offering)** | Distributor notification, offshore-buyer reasonable belief **(optional on-chain attestation — only when `placementAgent` configured; otherwise the issuer forms the 902(h) belief via KYC)**, **Rule 902(f) completion-of-distribution certification (the partition `closeDate`)** | EIP-712 signer (separate key from compliance officer) | False offshore-buyer claims; **premature or withheld `closeDate` distorts the Reg S clock start** — mitigate by contractually fixing the certification triggers and long-stop date in the placement agreement, the on-chain write constraints (not-in-the-past, immutable once reached, no mints after it arrives) per Section C, and dual sign-off **when an agent is engaged** (placement agent certifies **off-chain**, compliance officer records on-chain via the multi-sig write; a direct offering has the issuer determine completion). The completion certification is **off-chain** — no on-chain agent signature; an optional emit-only `completionCertHash` anchors the cert doc |
@@ -564,6 +656,8 @@ Every role above is a potential compromise vector. **Multi-sig + time-lock + seg
 
 Conflating the two will let restricted tokens leak into unrestricted U.S. trading after the 12-month compliance period expires, creating Section 5 / Section 12(a)(1) rescission liability for the issuer and the offshore reseller. The on-chain `canTransfer` logic must check both states independently — passing one is not enough.
 
+**Second biggest risk (dual-tranche): a mint into the wrong partition.** Minting a U.S. accredited investor into a `REG_S` partition, or an offshore/unverified buyer into a `REG_D` partition, breaks the exemption for that token — and, worse, can taint the tranche. The mint path must **hard-gate on the recipient's classification vs the partition's `tranche` type** (Section B / I), and the routing (which tranche a subscriber belongs to) must be decided off-chain at onboarding and enforced on-chain at mint — never left to the caller. A related risk is **506(c) verification drift**: relying on a stale or self-certified accreditation admits a non-qualified U.S. person, breaking 506(c) for the whole tranche — hence the `expiresAt` freshness gate and the `verified`-not-`accredited` distinction.
+
 ---
 
 ## N. Pre-Deployment Verification Checklist
@@ -576,6 +670,10 @@ Before mainnet deployment:
 - [ ] Test coverage of the per-partition `closeDate` lifecycle: (a) unset `closeDate == type(uint256).max` blocks ALL U.S.-person transfers; (b) `closeDate` set at creation (defined tranche); (c) `closeDate` filled later by the compliance officer (continuous); (d) the boundary at `closeDate + 12 months` (before / at / after expiry); (e) **`0` sentinel must NOT be accepted / must not pass the gate** (fail-open regression test)
 - [ ] Test coverage of the `closeDate` write constraints: rejects a **past** value (`closeDate < block.timestamp`) at both `createPartition` and `setCloseDate`; **accepts current (`== now`) and future values**; rejects any update once the existing `closeDate` has been reached (immutable-after-arrival); confirms `mint` is allowed while `block.timestamp < closeDate` (including a future `closeDate` set at creation) and reverts once `block.timestamp >= closeDate` (including `closeDate == now`, which stops mints in the same block)
 - [ ] Test coverage of Rule 144 holding period math (per-holder `acquisitionTimestamp` = full-payment date, with tacking on transfer) for the affiliate-free non-reporting issuer scenario; confirm the Reg S `closeDate` gate always clears at or after every lot's Rule 144 gate (the binding-constraint invariant)
+- [ ] **Test coverage of tranche dispatch in `canTransfer`:** a U.S. person (even accredited/verified) is BLOCKED into a `REG_S` partition (`REG_S_US_PERSON_RESTRICTED`); a non-`US_ACCREDITED_VERIFIED` recipient is BLOCKED into a `REG_D` partition (`REG_D_NOT_VERIFIED_ACCREDITED`); a `US_ACCREDITED_VERIFIED` recipient is ALLOWED into a `REG_D` partition; a `REG_D` partition never consults `closeDate` (stays `type(uint256).max`) and its only U.S.-resale gate is Rule 144
+- [ ] **Test coverage of the 506(c) verification gate:** `REG_D` mint reverts on a self-certified-only (unverified) recipient; reverts on a stale verification (`block.timestamp > expiresAt`); passes on a current verification record; the `accredited` flag alone (without `verified`) does NOT admit a `REG_D` mint
+- [ ] **Test coverage of tranche isolation / integration:** the same identity is not minted into both tranches for the same interest; the 9.99% concentration cap aggregates across BOTH `REG_D` and `REG_S` partitions (one class); `FirstSaleRecorded(REG_D, …)` fires on the first `REG_D` sale (Form D clock)
+- [ ] **Test coverage of the `REG_D` vs `REG_S` timing contrast:** a `REG_D` holder clears U.S. resale at `acquisitionTimestamp + 12mo` (Rule 144 only); a `REG_S` holder of the same vintage clears only at `closeDate + 12mo` (later) — assert the 9-month-style gap from the worked example
 - [ ] Test coverage of ERC-1644 controller force-transfer with multi-sig governance
 - [ ] Test coverage of concentration-cap aggregation across multiple wallets AND multiple partitions bound to the same identity (class-level aggregate)
 - [ ] Test coverage of EIP-712 signature verification, expiry, and revocation
@@ -594,7 +692,7 @@ _Illustrative walk-through of how the smart contract enforces the Reg S 12-month
 
 - **The SPV** — a non-reporting U.S.-domiciled LLC; sole owner of a U.S.-situs commercial property
 - **The token** — ERC-1400 security token representing pro-rata equity in the property
-- **The offering** — Reg S Category 3, **continuous offering** (Rule 902(f)(2)): "Offering End Date: Upon full placement or earlier termination by issuer." No fixed closing date → modeled as a **single partition** whose `closeDate` is filled in at completion. Tokens are minted continuously into that partition as investors subscribe. T=0 = the date the offering opens and the first tokens are minted
+- **The offering** — a **concurrent dual-tranche** raise: a **`REG_S` partition** (Reg S Cat 3 continuous offering, Rule 902(f)(2), "end date upon full placement or earlier termination") for offshore investors, PLUS a **`REG_D` partition** (Rule 506(c)) for verified U.S. accredited investors. The `REG_S` partition's `closeDate` is filled at completion; the `REG_D` partition has **no** `closeDate` (its field stays `type(uint256).max`). Tokens are minted continuously into whichever partition matches the buyer. T=0 = the date the offering opens
 - **Setting the `closeDate`** — at some point the placement agent certifies "completion of distribution" (on full placement or issuer termination) and the compliance officer writes the partition's `closeDate`. This write — NOT any individual mint — starts the Reg S compliance clock. In this example, full placement is reached at **T+9mo**, so `closeDate = T+9mo`
 - **Reg S distribution compliance period** — 12 months per Rule 903(b)(3)(iii)(A), running from the partition's **`closeDate`**. Here: `closeDate + 12mo` = T+9mo → **T+21mo**. One value for this single-partition offering
 - **Rule 144 holding period** — 12 months per Rule 144(d)(1), running from each holder's **full-payment (subscription) date** (with tacking inherited on secondary transfers). Investor A, who paid in full at T=0, clears her Rule 144 holding period at **T+12mo**. Per holder — NOT global
@@ -602,14 +700,14 @@ _Illustrative walk-through of how the smart contract enforces the Reg S 12-month
 
 ### Cast
 
-| Actor       | Location    | Status                                      |
-| ----------- | ----------- | ------------------------------------------- |
-| Investor A  | Mexico City | Non-U.S. person                             |
-| Investor B  | Munich      | Non-U.S. person                             |
-| Investor C  | Tokyo       | Non-U.S. person                             |
-| Investor D  | Los Angeles | U.S. person (accredited)                    |
-| Investor E  | New York    | U.S. person (retail)                        |
-| The Sponsor | Florida     | U.S. person AND affiliate (manages the SPV) |
+| Actor       | Location    | Status                                                      | Eligible tranche |
+| ----------- | ----------- | ----------------------------------------------------------- | ---------------- |
+| Investor A  | Mexico City | Non-U.S. person                                             | `REG_S`          |
+| Investor B  | Munich      | Non-U.S. person                                             | `REG_S`          |
+| Investor C  | Tokyo       | Non-U.S. person                                             | `REG_S`          |
+| Investor D  | Los Angeles | U.S. person, **accredited AND verified** (Rule 506(c))      | `REG_D`          |
+| Investor E  | New York    | U.S. person, retail (not accredited)                        | **none**         |
+| The Sponsor | Florida     | U.S. person AND affiliate (manages the SPV)                 | **none** (affiliate-free) |
 
 ### Two Independent Regimes — Kept Separate
 
@@ -648,18 +746,23 @@ These two rules are **separate legal regimes**. They share no clock, no anchor e
 - **Result: ✅ ALLOWED.** Investor A holds 1,000 tokens
 - Tokens carry the permanent "restricted securities" label — Rule 905 of Reg S imposed this automatically at issuance (Regime 2). Removing it later requires a Rule 144 non-affiliate U.S. resale
 
-**1b. Investor D tries to buy 500 tokens directly from the SPV**
+**1b. Investor D (U.S., verified accredited) buys 500 tokens — routed by tranche**
 
-- Investor D is a U.S. resident
-- 🟥 Reg S compliance period has not even started (distribution not yet closed) → the partition's `closeDate` is unset (`type(uint256).max`) → the gate blocks ALL U.S.-person sales with no expiry in sight
-- Accredited status does not help. Signing from a Bali villa does not help. Investor D is a U.S. resident under Rule 902(k)
-- **Result: ❌ BLOCKED** — `REG_S_US_PERSON_RESTRICTED`
+- Investor D is a U.S. resident, but **accredited AND verified** under Rule 506(c).
+- **Into the `REG_S` partition → ❌ BLOCKED** (`REG_S_US_PERSON_RESTRICTED`). The Reg S tranche blocks EVERY U.S. person; accredited status does not help, and signing from a Bali villa does not help — she is a U.S. resident under Rule 902(k). A U.S. accredited investor does not belong in a `REG_S` partition.
+- **Into the `REG_D` partition → ✅ ALLOWED.** She is `US_ACCREDITED_VERIFIED`; the 506(c) mint gate passes. SPV delivers 500 tokens into the `REG_D` partition; her Rule 144 `acquisitionTimestamp` = her full-payment date. The `REG_D` partition has no `closeDate` / no Reg S compliance period — her only future U.S.-resale gate is the Rule 144 12-month holding period.
+- Tokens are restricted securities **directly under Rule 502(d)** (not the Rule 905 bridge — that is the Reg S door).
 
-**1c. The Sponsor tries to subscribe for 5,000 tokens**
+**1c. Investor E (U.S., retail) tries to buy — both tranches**
 
-- Sponsor is U.S. resident AND an affiliate of the SPV
-- 🟥 Same gate as Investor D — U.S. person, compliance period not started
-- **Result: ❌ BLOCKED.** Sponsor economics must come through LLC-level Class B Promote Units, not through tokens. (This is the affiliate-free architectural commitment.)
+- Investor E is a U.S. person, **not accredited**.
+- `REG_S` → ❌ BLOCKED (U.S. person). `REG_D` → ❌ BLOCKED (`REG_D_NOT_VERIFIED_ACCREDITED` — 506(c) is accredited-only). **There is no tranche for a non-accredited U.S. retail investor.**
+
+**1d. The Sponsor tries to subscribe for 5,000 tokens — both tranches**
+
+- Sponsor is a U.S. resident AND an affiliate of the SPV. He would qualify as accredited (director/officer, Rule 501(a)(4)), so 506(c) alone would not stop him.
+- BUT the **affiliate-free architecture** blocks him in **both** tranches — no affiliate holds tokens.
+- **Result: ❌ BLOCKED.** Sponsor economics come through LLC-level Class B Promote Units, not tokens.
 
 ---
 
@@ -767,6 +870,25 @@ The tokens are still "restricted securities" — the Rule 905 label is permanent
 - Investor D's tokens are NOT restricted — the label was washed when Investor A made the Rule 144 non-affiliate sale to D
 - No Reg S analysis, no Rule 144 analysis needed
 - **Result: ✅ ALLOWED.** Investor E holds the tokens free and clear
+
+---
+
+### Scenario 7 — The `REG_D` Tranche (only one clock)
+
+Investor D's **`REG_D`** holding (the 500 tokens she bought in 1b at T=0) behaves differently from the Reg S tranche: there is **no Reg S distribution compliance period** — only the Rule 144 clock.
+
+**7a. Investor D wants to sell her `REG_D` tokens to another U.S. accredited investor at T+11mo**
+
+- 🟥 _Regime 1 (Reg S):_ **does not apply** — `REG_D` partition has no `closeDate`. There is no Reg S gate.
+- 🟦 _Regime 2 (Rule 144):_ her `acquisitionTimestamp` = T=0; 11 months elapsed → holding period **not yet met** (needs 12).
+- **Result: ❌ BLOCKED** — `RULE_144_HOLDING_PERIOD_NOT_MET`. The only gate on a `REG_D` token is Rule 144, and it has not cleared.
+
+**7b. Same sale at T+12mo + 1 day**
+
+- 🟦 Rule 144 holding period: ✅ MET (12 months from her T=0 full payment). Investor D is a non-affiliate; non-reporting non-affiliate path — no volume cap, no Form 144.
+- **Result: ✅ ALLOWED.** The buyer receives washed, unrestricted tokens.
+
+> 💡 **The contrast that makes the dual-tranche point:** Investor D's `REG_D` tokens became U.S.-resaleable at **T+12mo** (Rule 144 only). The *same* investor's Reg S-side tokens would not clear until **T+21mo** (`closeDate + 12mo`, because the Reg S compliance period is the binding gate on that partition). Same investor, same issuer, same day of purchase — **9 months' difference, entirely because of which tranche the tokens live in.** That is why the partitions are kept separate and why `canTransfer` dispatches on tranche.
 
 ---
 
