@@ -4,9 +4,10 @@ company:
 department:
   - marketing
 priority: highest
-rev: 40
+rev: 41
 last_revised: 2026-07-07
 revision_notes: |
+  rev 41 (2026-07-07): **completed the half-finished Social Profile Setup extraction.** [[InnBlockchain - Social Profile Setup]] (cross-phase framework, rev 1) had genericized WS3's LinkedIn Company Page + X (Twitter) + GitHub/Solodit content but the playbook still carried the full duplicate + had no link either direction. Fixes: (1) added `parent_extraction_source` to the framework (was missing — every other extracted framework has it). (2) Hollowed the 3 WS3 sections to pointer stubs → [[InnBlockchain - Social Profile Setup]], each retaining a compact **Phase 1 specifics** block (concrete handles/URLs · regime strings · specialties · X communities · Britto/Sudharshini owner mappings · "not MiCA"/"not Trioangle" hygiene · setup status) — the values the generic framework deliberately omits. Removed ~110 lines of duplicated generic setup steps; nothing Phase-1-specific lost. Followed the WS11-Events / WS14 precedent (stub + retained specifics). (3) **Cascade:** collapsed sub-headers broke anchors — redirected the rev-40 WS8 Company-Page-cadence pointer to the framework (its old WS3 anchor was removed); repointed Britto cover sheet (×2) + Dev cover sheet X-anchor to the new `#X (Twitter) — personal handle` stub / the framework. Cover sheets Britto + Dev synced to rev 41.
   rev 40 (2026-07-07): **task-duplication consolidation pass — 4 same-task-in-two-places dupes resolved to single canonical homes (pointer-stub pattern).** (A) **Sales Nav saved searches** — WS9 § Sales Navigator filters was a verbatim copy of the WS5 creation task; WS9 → pointer, WS5 canonical (setup, W4-gated). (B) **Strategic commenting mechanics** (5–10/day · never "great post" · 3–5 sentences · question · within 30 min) — WS8 § Strategic commenting duplicated WS9.5b § Daily mechanics; WS8 → pointer, WS9.5b canonical (its primary play). Vasanth cover-sheet anchor `#Strategic commenting (per § 5.3)` preserved (header kept). (C) **Company Page 3×/wk cadence + mix** — WS8 § Posting cadence (Company page) duplicated WS3 § Company Page ongoing ops (which carried MORE detail despite WS3 labelling WS8 as source); WS8 → pointer, WS3 canonical; fixed WS3's backwards "per WS8" label. (D) **LinkedIn output-cap rules** (≥48hr · cross-pillar 3-week · 1/wk · ≤7 aggregate · Tier 2 defer) were written 3×: WS8 § output cap + WS15 § output cap enforcement + the extracted Cannibalisation Matrix (canonical). WS8 → pointer (folded into the matrix stub directly below it); WS15 → keeps its repurposing-specific bits (Monthly Repurposing Review feedback loop + concrete 3-week derivative sequence) but points cap rules to the matrix. Borderline setup-vs-use restatements (pipeline status fields WS5↔WS12 · monthly citation probe WS2↔WS12 · weekly/monthly review WS5↔WS12) left as-is — each has a legitimate reason to appear in both spots. No task content lost; every dupe now has one source of truth.
   rev 39 (2026-07-07): **outreach model changed — Vasanth operates Vignesh's LinkedIn profile directly (all LinkedIn activity), first-person Vignesh.** Supersedes the rev 17 "SP sends from own profile with 'I work with Vignesh' opener" model. (1) **WS9.5a** ownership callout + both message templates rewritten first-person Vignesh — third-party opener removed (now wrong, not just unnecessary, since every message originates from Vignesh's account). (2) **Approval gate rescoped** from per-DM 24-hr SLA to: new template variants + any regime-framed message + recommendation-request copy only; routine sends within approved templates go autonomously. Cascaded to WS5 Vignesh calendar block + WS9 ownership open-item (resolved: Vignesh's profile, decided) + Per-Role Quick Reference (SP + Vignesh rows) + Workstream Map 9.5a. (3) **WS3 recommendations** mechanic flipped: Vasanth sends from Vignesh's profile (was "Vignesh sends"), Vignesh approves copy. (4) **Cold ABM (WS9) confirmed on Vignesh's profile at full 15–20/day** (concentration risk accepted). (5) **Risk register:** replaced the "Vasanth framing reads inauthentic" risk (failure mode gone) with two new risks — Vignesh profile restriction/action (Critical: one account carries all outreach + recommendations + Featured) + regime slip published first-person under Vignesh's name. (6) Discovery-call division-of-labour + Speed Mode intro callout + critical-path checkboxes updated. Cover sheets (Vasanth, Vignesh) + peripheral Sales docs swept in parallel.
   rev 38 (2026-07-06): **MiCA Phase 2 content removed — guardrails retained.** 4 removals: (1) Pre-flight WS1 parenthetical "MiCA LP dropped from Phase 1 scope" note — redundant with Critical Path callout. (2) Showcase Pages revisit criterion `for MiCA CASP` example — Phase 2 LP example stripped; criterion retained. (3) WS4 source checklist: `[[mica-checklist]]` removed (MiCA briefs are Phase 2; only Phase 1 regime checklists listed; count 14 → 13). (4) Topic cluster discipline: `MiCA CASP compliance engineering (Seg 2/4 — not RWA)` removed from the 5-cluster list — Phase 2 ICP topic has no place in Phase 1 content cadence. All "NEVER MiCA for RWA" guardrail statements, boundary-article references (W4 #4 · W8 #11), external-link routing, Sales Nav "NO MiCA keyword" filter, and risk-register entries retained — those are Phase 1 operational.
@@ -439,132 +440,47 @@ To prevent drift — what this playbook does NOT cover:
 - [x] **(Vignesh)** Operational capacity verified — "We can start next week" must reflect current team availability; revise to honest timeframe if booked 3+ weeks out
 - [x] **(Vignesh)** About CTA link (`innblockchain.com/solutions/rwa-tokenization`) does NOT 404 (blocked on WS1 Gate 1)
 
-### LinkedIn Company Page — initial setup (one-time, W1)
-*(This is `linkedin.com/company/innblockchain` — the LinkedIn-side Page Vignesh posts company content from. Separate from innblockchain.com, which is Dev-owned in WS1.)*
-- [x] **(Vignesh)** LinkedIn Company Page exists (claimed/created on LinkedIn) with Vignesh as Page admin
-- [x] **(Vignesh)** CTA button on LinkedIn Page: "Contact us" → discovery call link (NOT a 404 destination)
-- [x] **(Vignesh)** Vignesh linked as employee on his personal profile (cross-association boosts organic reach when he posts)
-- [x] **(Vignesh)** Showcase Pages DEFERRED until Phase 2 (per [[InnBlockchain - LinkedIn Marketing Strategy]] Cross-Channel Destination Dependency warning — Showcase Pages reference LPs that don't exist)
+### LinkedIn Company Page
 
-### LinkedIn Company Page — completeness audit (one-time at setup + quarterly)
+> [!NOTE] Setup + ongoing-ops workflow extracted to standalone cross-phase framework — open the doc below, not this stub
+> Initial setup · completeness audit · ongoing operations (3×/wk posting cadence + mix · content types · analytics targets · Showcase revisit criteria · hygiene hard rules). Reusable across Phase 1–3.
+> **[[InnBlockchain - Social Profile Setup]] § LinkedIn Company Page**
 
-> [!INFO] Setup makes the Page live; completeness makes it credibility-grade
-> Company Page is the institutional surface — vendor risk reviewers, recruiters, partners, and Carol check it as part of vendor diligence. A live-but-empty Page reads as a shell company.
+**Phase 1 specifics (the concrete values the generic framework omits):**
+- Page `linkedin.com/company/innblockchain` · Vignesh = admin · Industry **Financial Services** · Website `innblockchain.com` — **status: setup + completeness DONE (W1)** · banner (Designer + Britto) outstanding
+- Positioning: RWA + MiFID II/III + Prospectus + DLT Pilot + MAR · Specialties = RWA Tokenization · Smart Contract Security · MiFID II/III Compliance · DLT Pilot Regime · ERC-3643
+- Owners: **Sudharshini + Britto** maintain + schedule · Vignesh authors company-specific posts
+- Milestone-post examples: first audit shipped · first RWA platform live · 5-project EU gate hit · Phase 1 close · service posts route to RWA Risk Checklist (Gate 1) + sample audit on request
+- Hygiene (Phase 1): **never Trioangle / general-dev framing** on the Page · admin list = Vignesh + 1 MP only
+- Showcase Pages: DEFERRED to Phase 2 (first revisit trigger = 1 Phase 2 sub-page LP shipped, e.g. `/solutions/regulated-exchange`)
 
-- [x] **(Vignesh authors · Sudharshini + Britto maintain)** About section: ~2,000-char company description with RWA + MiFID II/III + Prospectus + DLT Pilot + MAR positioning — must match Vignesh profile About claim verification (no contradictions on years · audit count · segment scope)
-- [x] **(Vignesh)** Industry: **Financial Services** (NOT "Software Development" — categorisation determines who LinkedIn shows the Page to)
-- [x] **(Vignesh)** Company size band selected
-- [x] **(Vignesh)** Headquarters location + founded year
-- [x] **(Vignesh)** Website link: `innblockchain.com` (verified live, not 404 — re-check after any LP migration)
-- [ ] **(Designer · Britto apply)** Banner image: Phase 1 brand template (refresh anchored to phase milestones — Phase 1 close, Phase 2 launch, etc.)
-- [x] **(Sudharshini + Britto)** Specialties field: RWA Tokenization · Smart Contract Security · MiFID II/III Compliance · DLT Pilot Regime · ERC-3643 — match Vignesh profile Skills top 3 + 2
+### X (Twitter) — personal handle
 
-### LinkedIn Company Page — ongoing operations (post-setup, weekly)
+> [!NOTE] Setup + ongoing-ops workflow extracted to standalone cross-phase framework — open the doc below, not this stub
+> Initial setup · completeness + recategorisation · ongoing operations (1 thread/wk per Track A article + standalone posts + strategic replies) · analytics · hygiene · corporate-X decision. Reusable across Phase 1–3.
+> **[[InnBlockchain - Social Profile Setup]] § X (Twitter) personal handle**
 
-> [!INFO] Page-specific content types, NOT personal-feed re-broadcasts
-> Treat Page as a separate publishing destination with its own cadence (3×/wk per WS8) and content mix — case studies · milestones · service availability · industry commentary — not a duplicate of Vignesh's personal feed.
+**Phase 1 specifics (the concrete values the generic framework omits):**
+- Handle `@vigneshpalanivel` (or similar) · Premium **recommended from W1** given thread volume · Website innblockchain.com — **status: not yet set up**
+- Bio + positioning: RWA + MiFID II/III + DLT Pilot + asset-backed founders — **NOT MiCA**
+- Communities (target 3–5): RWA · Tokenization · Smart Contract Security · MiFID II adjacent · Web3 Compliance
+- Owners: **Britto** owns + schedules · Vignesh authors · Gayathri outlines threads · **Vasanth** runs 5–10 strategic replies/day (parallel to WS9.5b) + first-2-weeks 5–10 reply-comments/day
+- Recategorisation: run parallel to the LinkedIn Profile Recategorisation Accelerator (WS8) — existing X signal is Trioangle/general-dev, needs re-coding to RWA
+- Hygiene (Phase 1): never Trioangle content post-recategorisation · **never MiCA framing for RWA** (#1 Carol disqualifier) · no crypto-Twitter drama
+- **No corporate X account in Phase 1** — Vignesh personal handle only (Britto-owned); revisit at Phase 2 only if X drives material LP traffic or an ecosystem-engagement use case surfaces
 
-#### Posting cadence + mix (3×/wk — canonical; WS8 § Posting cadence points here)
-- [ ] **(Sudharshini + Britto)** 2× repurposed Vignesh posts/wk — ≥48 hr lag from personal post (avoid double-feed cannibalisation)
-- [ ] **(Vignesh authors · Sudharshini + Britto schedule)** 1× company-specific post/wk — case study OR milestone OR service post OR industry commentary
-- [ ] **(Sudharshini + Britto)** Alternate days with Vignesh personal — never both same day on same topic
-- [ ] **(Sudharshini + Britto)** 3–5 hashtags per post (same algorithm rules as personal feed)
+### GitHub + Solodit — methodology credibility surfaces
 
-#### Page-specific content types
-- [ ] **(Vignesh + delivery team)** Case study posts — fire when WS14 case study gates clear (anonymised + screenshot-cleared)
-- [ ] **(Vignesh)** Milestone posts — first audit shipped · first RWA platform live · 5-project EU gate hit · Phase 1 close
-- [ ] **(Vignesh + Sudharshini + Britto)** Service-availability posts — "vendor risk pack available on request" · "RWA Tokenization Risk Checklist download (Gate 1 LP)" · "sample audit report on request"
-- [ ] **(Vignesh + Sudharshini + Britto · institutional voice not first-person)** Industry commentary — re-share Vignesh personal hot-take from Page in slightly more formal voice
-- [ ] **(DEFER to Phase 2)** Employee spotlight posts — only when team grows past founder + ~5
+> [!NOTE] Setup workflow extracted to standalone cross-phase framework — open the doc below, not this stub
+> GitHub org + reference repos + per-article repo tagging · Solodit profile + methodology content + findings submission. Credibility surface for technical buyers (owner ≠ executor). Reusable across Phase 1–3.
+> **[[InnBlockchain - Social Profile Setup]] § GitHub + Solodit**
 
-#### Analytics tracking (Sudharshini + Britto reports monthly · Vignesh reviews)
-- [ ] **(Sudharshini + Britto)** Page follower growth — target +25–50/mo Phase 1
-- [ ] **(Sudharshini + Britto)** Page-view sources (referrer = personal feed · search · external) — Vignesh employee cross-association should drive ~40% of Page views
-- [ ] **(Sudharshini + Britto)** Post engagement rate per content type — feed into monthly review pattern-match
-- [ ] **(Sudharshini + Britto)** CTA button click rate — if "Contact us" → discovery call gets <5 clicks/mo in Phase 1, escalate (Page underperforming · revisit content cadence)
-- [ ] **(Sudharshini + Britto · Vignesh reviews)** Compare Page engagement vs Vignesh personal feed — Page typically ~10–20% of personal feed reach · <5% = problem signal
-
-#### Showcase Pages revisit criteria (deferred per setup; revisit when ALL true)
-- [ ] At least 1 Phase 2 sub-page LP shipped (e.g., `/solutions/regulated-exchange`)
-- [ ] Page follower count >500 (Showcase Pages divide audience — only worth it past 500)
-- [ ] 2+ distinct ICP segments active (different content speaks to different audiences)
-- [ ] Phase 1 close cleared (W22+) — Showcase Pages are Phase 2 work
-
-> [!WARNING] Page hygiene hard rules
-> - **(Sudharshini + Britto)** Never post Company Page same day as personal feed on same topic (cannibalises reach)
-> - **(Sudharshini + Britto · Vignesh enforces)** Never use Trioangle messaging or general software dev framing on this Page — pure InnBlockchain RWA tokenization positioning
-> - **(Vignesh quarterly)** Page admin access list audited — only Vignesh + 1 MP have posting access · never more
-> - **(Sudharshini + Britto)** Cross-association integrity: Vignesh's personal Experience entry for InnBlockchain must always link to the Company Page (verify after any profile edit · breaks if Company Page URL changes)
-
-### X (Twitter) — initial setup (one-time, W1)
-
-> [!INFO] Why X matters for Phase 1
-> Track A derivative chain produces an X thread per Tier 1/2/3 article (~12+ X threads per Phase 1 cycle). Algorithm boost requires baseline profile authority + warmup similar to LinkedIn. Categorisation problem applies same way — existing Vignesh X handle (if any) is likely Trioangle-coded, not RWA-coded.
-
-- [ ] **(Vignesh)** X account claim — handle ideally matches LinkedIn (`@vigneshpalanivel` or similar) · existing handle audit if reusing
-- [ ] **(Vignesh decision)** Premium subscription decision — required for long-form thread tweets (>280 char/tweet) · algorithm boost · video uploads >2 min · Spaces hosting. **Recommendation: Premium from W1** given thread volume.
-- [ ] **(Vignesh)** Bio in regulatory + RWA framing — match LinkedIn About first sentence (RWA + MiFID II/III + DLT Pilot + asset-backed founders — **NOT MiCA**)
-- [ ] **(Vignesh + Britto · Designer template)** Header image: brand template (match LinkedIn profile banner for cross-channel consistency)
-- [ ] **(Vignesh)** Location: EU city matching LinkedIn (NCA jurisdiction signal)
-- [ ] **(Vignesh)** Website link: innblockchain.com (verified live, not 404)
-- [ ] **(Vignesh)** Pinned tweet: 1 RWA tokenization signal thread (preview of highest-leverage Tier 1 article OR Sample Audit + Risk Checklist call-out)
-
-### X (Twitter) — completeness + recategorisation (W1–W3, parallel to LinkedIn recategorisation)
-
-> [!IMPORTANT] X categorisation problem
-> Same as LinkedIn — Vignesh's existing X signal (if any) is Trioangle / general dev, NOT blockchain/FinTech. The algorithm needs to re-categorise. Run X recategorisation parallel to LinkedIn Profile Recategorisation Accelerator (WS8).
-
-- [ ] **(Vignesh + Britto)** Following list audit — unfollow off-topic accounts · follow 50–100 carefully chosen EU FinTech / RWA / MiFID II / DLT Pilot / smart contract audit accounts (not bulk)
-- [ ] **(Vignesh)** X Communities membership — RWA · Tokenization · Smart Contract Security · MiFID II adjacent · Web3 Compliance (target 3–5 active communities)
-- [ ] **(Britto · Vignesh review)** Cross-association: X handle linked from LinkedIn Contact Info + LP About page + Featured assets footer
-- [ ] **(Vasanth · Vignesh contributes ≤15 min/day)** First-2-weeks engagement: 5–10 reply-comments/day on EU WealthTech / RWA / MiFID II X accounts (same algorithm signal as LinkedIn strategic commenting; same WS9.5b conversion logic)
-
-### X (Twitter) — ongoing operations (post-setup, weekly)
-
-> [!INFO] X-specific cadence
-> Less than LinkedIn (X audience less institutional · CN-skewed). One X thread per Track A article (Tier 1 full · Tier 2 includes X thread · Tier 3 amplify includes 1 X thread). Native scheduler per WS8 § Per-platform formatting spec.
-
-#### Posting cadence + mix
-- [ ] **(Britto schedule · Vignesh authors · Gayathri outlines thread)** 1× X thread/wk per Track A article (Tier 1 full · Tier 2 lite · Tier 3 amplify-only)
-- [ ] **(Vignesh authors · Britto schedule)** 2–4× standalone X posts/wk (commentary · poll · hot-take on RWA / MiFID II news)
-- [ ] **(Vasanth)** 5–10 strategic replies/day on EU RWA / MiFID II thought-leader X accounts (parallel to WS9.5b LinkedIn commenting)
-- [ ] **(Vignesh decision · Britto coordinate)** 1× X Space (audio room) per Phase 1 quarter — **IF** Premium acquired AND co-host EU RWA / MiFID II voice. Defer to W10+ unless inbound Spaces invitation lands first.
-
-#### Analytics tracking (Britto reports monthly · Vignesh reviews)
-- [ ] **(Britto)** Follower growth — target +50–100/mo Phase 1
-- [ ] **(Britto)** Thread completion rate per Tier 1 X thread — drop-off pattern feeds next thread structure
-- [ ] **(Britto)** Click-through to LP from X bio link + thread last-tweet link — target ≥2% on Tier 1
-- [ ] **(Britto · Vignesh decision at monthly)** Compare X engagement vs LinkedIn engagement — if X consistently <20% of LinkedIn reach for 4+ consecutive weeks, reduce X cadence to amplify-only (X is secondary channel; don't burn capacity on a flat surface)
-
-> [!WARNING] X hygiene hard rules
-> - **(Vignesh)** Never post Trioangle content from this handle post-recategorisation (never confuse the signal)
-> - **(Vignesh + Britto)** Never use MiCA framing for RWA on X (#1 Carol disqualifier — same hard rule as LinkedIn)
-> - **(Vignesh)** Never engage in crypto-Twitter drama / shitposting / vendor disputes — institutional positioning depends on signal-only behavior
-> - **(Britto)** Never schedule X thread same day as LinkedIn long-form post on same article (cross-platform cannibalisation; ≥24 hr stagger)
-
-> [!INFO] No corporate X account in Phase 1 (do not re-add)
-> X has no structural Company Page concept like LinkedIn or Facebook — every X account is just an account (no separate entity type, no admin hierarchy, no `/company/` URL). Phase 1 X presence = **Vignesh's personal handle only** (Britto-owned). B2B regulated-FinTech buyers don't vendor-research on X the way they do on LinkedIn; founder voice dominates this niche. Revisit a corporate X handle at Phase 2 only if (a) X drives material LP traffic OR (b) an ecosystem-engagement use case surfaces.
-
-### GitHub + Solodit — methodology credibility surfaces (one-time setup + per-contribution)
-
-> [!INFO] Different shape than LinkedIn / X · owned by Britto (Crypto Native pod)
-> GitHub + Solodit are credibility surfaces for **technical buyers** (RWA Felix CTO vetting + Sasha-grade audit credibility) — NOT publish channels with weekly cadence. One-time setup + per-contribution cadence (per Tier 1 article that has a code or methodology angle). **These sit in the Crypto Native funnel, so Britto owns + coordinates the surface** (keeps it live · tracks its credibility signal · tags repos per article) — but the **technical content is executed by the senior engineer + Vignesh** (Britto doesn't write audit findings or reference repos). Owner ≠ executor.
-
-#### GitHub presence (Britto owns + coordinates · Vignesh org-admin · Gayathri + senior engineer execute)
-- [ ] **(Vignesh)** Org claim — `github.com/innblockchain` or equivalent · 2FA required on all admins
-- [ ] **(Gayathri drafts · Vignesh + senior engineer review · Britto coordinates)** Org README: RWA + MiFID II + DLT Pilot positioning · methodology overview · link to LP Gate 1
-- [ ] **(senior engineer executes · Vignesh review · Britto coordinates)** 1–2 reference repos: smart contract audit methodology examples · ERC-3643 / ERC-1400 implementation patterns · investor whitelisting reference implementation
-- [ ] **(Britto coordinates · senior engineer executes)** Per Tier 1 Track A article that mentions code: tag the repo as canonical source · link the article from repo README
-- [ ] **(Vignesh quarterly)** Org settings audit: members · admin access · 2FA enforcement · SECURITY.md file present + accurate
-
-#### Solodit profile (Britto owns + coordinates · Vignesh + senior engineer execute)
-- [ ] **(Vignesh + senior engineer)** Profile claim — auditor handle matches LinkedIn + GitHub
-- [ ] **(senior engineer executes · Britto coordinates)** Methodology profile content — vulnerability classes you've reported · severity framework (matches Sample Audit Report PDF framework per WS3 Asset 2) · disclosure track record
-- [ ] **(senior engineer executes · per published audit finding · Britto tracks cadence)** Submit findings from public disclosure to Solodit — Phase 1 minimum: 2–3 historical findings · ongoing: every new disclosure
-- [ ] **(Britto + Vignesh monthly)** Review Solodit profile views + finding citations · pattern-match against Sasha-grade discovery call mentions
-
-> [!INFO] Asset-map cross-reference
-> GitHub repo / templates + Solodit profile contribution are listed as Track A derivatives in [[InnBlockchain - Content Repurposing Plan]]. This subsection covers the platform setup; per-article contribution work lives in the Plan.
+**Phase 1 specifics (the concrete values the generic framework omits):**
+- GitHub org `github.com/innblockchain` · 2FA on all admins · README positioning RWA + MiFID II + DLT Pilot · link to LP Gate 1 — **status: not yet set up**
+- Reference repos: smart contract audit methodology · **ERC-3643 / ERC-1400** implementation patterns · investor whitelisting reference
+- Owners: **Britto** owns + coordinates the surface (keeps live · tags repos per Tier 1 Track A code article) · **Vignesh** org-admin · **senior engineer + Vignesh** execute technical content · Gayathri drafts README
+- Solodit: auditor handle matches LinkedIn + GitHub · severity framework matches Sample Audit Report PDF (WS3 Asset 2) · Phase 1 minimum 2–3 historical findings before launch
+- Asset-map: GitHub repos + Solodit contributions are Track A derivatives in [[InnBlockchain - Content Repurposing Plan]] (per-article contribution work lives in the Plan)
 
 ### Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)
 
@@ -893,8 +809,8 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Sudharshini + Britto track · Vignesh reviews)** **Track Search Appearance metric weekly** — if search appearances for "RWA" / "MiFID II" / "tokenization" don't show signal by W4, accelerator is failing and warmup needs to extend
 
 ### Posting cadence (Company page — 3×/wk)
-> [!NOTE] Canonical home is WS3 — don't duplicate the Company Page mix here
-> Company Page cadence + mix (3×/wk · 2 repurposed + 1 company-specific · ≥48hr lag · alternate days · hashtags) lives with the full Company Page operation in [[Execution Playbook#LinkedIn Company Page — ongoing operations (post-setup, weekly)|WS3 § Company Page ongoing operations]] alongside content types, analytics, and hygiene rules.
+> [!NOTE] Canonical home is the Social Profile Setup framework — don't duplicate the Company Page mix here
+> Company Page cadence + mix (3×/wk · 2 repurposed + 1 company-specific · ≥48hr lag · alternate days · hashtags) is canonical in [[InnBlockchain - Social Profile Setup]] § LinkedIn Company Page § Ongoing operations; Phase 1 owner + positioning specifics are in [[Execution Playbook#LinkedIn Company Page|WS3 § LinkedIn Company Page]].
 
 ### Posting times (EU primary — per § 3.2)
 - Tue 11:30–13:00 IST · Wed 12:30–14:00 IST · Thu 11:30–13:30 IST · Mon 11:00–12:30 IST · Avoid Fri after 15:30 IST

@@ -7,9 +7,9 @@ role: MP2
 assignee: Britto
 icp: crypto-native
 priority: high
-rev: 3
-last_revised: 2026-07-03
-playbook_rev_synced: 35
+rev: 4
+last_revised: 2026-07-07
+playbook_rev_synced: 41
 parent: "[[Execution Playbook]]"
 sibling: "[[Sudharshini (MP1) - Cover Sheet]]"
 tags:
@@ -51,7 +51,7 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 | WS | Your CN slice | Anchor |
 |---|---|---|
 | **WS2 — SEO / AEO** | **Gate 1** on-page SEO + AI-citation probe · **Gate 1 LP technical SEO verify** (schema stack · canonicals · CWV · OG — Dev builds) · **GA4 Property B** (academy on-site) · **co-verify academy technical SEO** (you own Core Web Vitals) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
-| **WS3 — Profile + Featured + Channels** | **X (Twitter) full ownership** · Risk Checklist Featured asset · GitHub/Solodit · *(co-own Company Page)* | [[Execution Playbook#X (Twitter) — ongoing operations (post-setup, weekly)]] |
+| **WS3 — Profile + Featured + Channels** | **X (Twitter) full ownership** · Risk Checklist Featured asset · GitHub/Solodit · *(co-own Company Page)* | [[Execution Playbook#X (Twitter) — personal handle]] · [[InnBlockchain - Social Profile Setup]] |
 | **WS8 — LinkedIn Organic** | CN (Felix-coded) post production + scheduling into shared feed · *(co-own cannibalisation + output cap)* | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
 | **WS12 — Measurement** | CN analytics — X · Track A articles · Gate 1 funnel · GA4 Property B | [[Execution Playbook#WS12 — Pipeline + CRM + Measurement]] |
 | **WS15 — Content Repurposing** | **Track A derivative chain** (CN visuals · X threads · carousels · Midjourney) | [[Execution Playbook#WS15 — Content Repurposing]] |
@@ -69,7 +69,7 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 ## 📚 Read first (in this order)
 
 1. [[InnBlockchain - ICP - Crypto Native]] — **your buyer** (RWA Felix — asset-first, not technical, does NOT vet on GitHub the way Tom does)
-2. [[Execution Playbook#X (Twitter) — ongoing operations (post-setup, weekly)]] — your primary channel
+2. [[InnBlockchain - Social Profile Setup]] § X (Twitter) — your primary channel's setup + ops workflow (Phase 1 specifics in [[Execution Playbook#X (Twitter) — personal handle]])
 3. [[Execution Playbook#🚦 Cross-channel cannibalisation matrix]] — the shared-queue rules you co-enforce at Mon AM
 4. [[InnBlockchain - Social Profile Setup]] — X setup + GitHub/Solodit
 5. [[InnBlockchain - Per-Platform Posting Spec]] — X + LinkedIn formatting

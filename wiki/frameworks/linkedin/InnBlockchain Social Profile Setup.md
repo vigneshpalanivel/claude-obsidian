@@ -6,6 +6,7 @@ department:
 priority: high
 rev: 1
 last_revised: 2026-06-13
+parent_extraction_source: "[[Execution Playbook]] § WS3 § LinkedIn Company Page + § X (Twitter) + § GitHub + Solodit"
 scope: cross-phase
 applies_to:
  - phase-1
