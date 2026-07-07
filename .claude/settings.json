@@ -100,7 +100,8 @@
       "Bash(grep -rn \"\\\\[\\\\[Social Media Post Type Strategy Report\" .raw)",
       "Bash(rm \".raw/InnBlockchain/sales-marketing/Service/LinkedIn/Social Media Post Type Strategy Report.md\")",
       "Bash(grep -rn \"Social Media Post Type Strategy Report\" .raw)",
-      "Bash(awk -F: '$1>60 {print}')"
+      "Bash(awk -F: '$1>60 {print}')",
+      "Bash(md5 -q \".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/RWA-STO-EU-Compliance-Criteria.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

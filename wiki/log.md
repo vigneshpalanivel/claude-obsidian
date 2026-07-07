@@ -19,6 +19,14 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-07-07] ingest | RWA-STO-EU-Compliance-Criteria — 19 Mermaid decision trees
+- Source: `.raw/…/EU Compliance/RWA-STO-EU-Compliance-Criteria.md` (hash `5a0f88a667d5d6c549271cadfbffe947`) — diagrams-only companion to [[RWA-STO-EU-Compliance-Landscape]]
+- Content: 19 Mermaid flowcharts sourced from the landscape + all 15 Checklist/ files (parallel extraction). Sections: A classification/scope (token MiFID-vs-MiCA, MiCA ART/EMT/utility, role stack, venue type), B investor/offering (client classification, suitability tiers, prospectus exemptions+formats, MAR/PDMR), C fund structuring (UCITS→AIF→ELTIF, AIFMD levels, UCITS gate, ELTIF retail/pro split, LOF), D infrastructure/horizontal (DLT Pilot caps, DORA proportionality/TLPT, AMLR CDD, TFR carve-out, eIDAS, cross-cutting)
+- Pages created: [[RWA-STO-EU-Compliance-Criteria]]
+- Pages updated: [[index]], [[hot]], [[log]], `.raw/.manifest.json`
+- Caveats: checklist-extracted thresholds not independently re-verified; Mermaid not render-tested
+- NOTE: the RWA-STO landscape raw file has accumulated unmirrored edits (role summary table, MAR-in-Issuer bullet, 9 review fixes incl. MiFID II Art 27 + MiFIR Arts 4-5 corrections) — wiki concept [[RWA-STO-EU-Compliance-Landscape]] still at hash `3a5514933436b5db63867659c0bfb1b9`, re-ingest pending
+
 ## [2026-07-02] update | RWA/STO Smart-Contract Design — restructured to requirement-first interleaved
 - Reorganized from Part-I/Part-II (all-compliance-then-all-engineering) into **requirement-first**: §1-§10 each state a compliance obligation then the engineering approach for that same point; §11 on/off-chain boundary; §12-§15 cross-cutting engineering (NFRs, test/audit, phasing, team); §16 open decisions. Contract inventory now distributed per-section.
 - New hash `776b046428d044372dd37234a56dfb7e` (prev `e72a0e3c939f956531a52ff0d451659f`). Concept [[RWA-STO-Smart-Contract-Design]] + [[index]] + [[hot]] framing updated from "two parts" to "requirement-first".
