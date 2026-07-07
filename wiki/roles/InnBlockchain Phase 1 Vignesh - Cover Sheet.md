@@ -5,9 +5,9 @@ department:
  - marketing
 role: Vignesh
 priority: highest
-rev: 5
-last_revised: 2026-07-06
-playbook_rev_synced: 35
+rev: 6
+last_revised: 2026-07-07
+playbook_rev_synced: 39
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -25,7 +25,7 @@ tags:
 
 ## 🎯 What you own (top-level)
 
-**Final-review authority across all 15 workstreams.** Primary execution on: WS3 (profile content · **approves** recommendation requests — Vasanth runs the pipeline in Vignesh voice) · WS4 (compliance brief regulatory content + self-review) · WS6 (Pain Point 5 validation) · WS9.5a (per-DM approval — 24-hr SLA on SP-drafted Trioangle/adjacent DMs) · WS11 (Events + Partner / VC intros) · WS13 (compliance review process — every Thursday Track B + Cross-Pillar article · spot-check on Sudharshini + Britto visual + SP DM templates + SP strategic comments).
+**Final-review authority across all 15 workstreams.** Primary execution on: WS3 (profile content · **approves** recommendation-request copy — Vasanth runs the pipeline + sends from your profile) · WS4 (compliance brief regulatory content + self-review) · WS6 (Pain Point 5 validation) · WS9.5a (**you own the profile Vasanth operates** — scoped sign-off on new template variants + regime-framed messages, not per-DM) · WS11 (Events + Partner / VC intros) · WS13 (compliance review process — every Thursday Track B + Cross-Pillar article · spot-check on Sudharshini + Britto visual + SP DM templates + SP strategic comments).
 
 ## 🗺️ Workstreams you touch (all 15 — primary on 6)
 
@@ -33,14 +33,14 @@ tags:
 |---|---|---|
 | WS1 | Oversight + Hero H1/H2 regulatory framing review (all gate LPs — Gate 1 · Gate 2 homepage · Gate 3) + About copy regulatory framing + **Pre-Launch LP Sign-Off Checklist** | [[Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] · [[Execution Playbook#Vignesh Pre-Launch LP Sign-Off Checklist]] |
 | WS2 | Final-review on regime-leak risk for AEO copy | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
-| **WS3** | **PRIMARY** — profile content authoring · **approves + sends recommendation requests** (Vasanth drafts in Vignesh voice + runs the pipeline; 5+ before structured DMs · Sasha-grade 7–8) · LinkedIn + X handle setup + bio + pinned tweet | [[Execution Playbook#WS3 — LinkedIn Profile + Featured Assets + Recommendations]] |
+| **WS3** | **PRIMARY** — profile content authoring · **approves recommendation-request copy** (Vasanth runs the pipeline + sends from your profile; 5+ before structured DMs · Sasha-grade 7–8) · LinkedIn + X handle setup + bio + pinned tweet | [[Execution Playbook#WS3 — LinkedIn Profile + Featured Assets + Recommendations]] |
 | **WS4** | **PRIMARY** — regulatory content drafter + compliance self-review (per decision · CW structures + Style Guide voice) | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
 | WS5 | Procures Sales Nav + Shield · drafts discovery call prep template · daily 15–30 min final review block | [[Execution Playbook#Vignesh calendar time-blocked — founder-only work]] |
 | **WS6** | **PRIMARY (TIME-CRITICAL)** — Pain Point 5 validation (Path A interviews during W2 · result by EOD W2) | [[Execution Playbook#WS6 — Validation (W2 deadline)]] |
 | WS7 | **Tue AM technical accuracy + regime-leak review** · Thu AM compliance self-review every Thursday article + Cross-Pillar (W4/W7/W13) · monthly + quarterly Format-Priority Audit with CW | [[Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
 | WS8 | Authors all personal-feed posts (4–5×/wk) · ≤30 min/day strategic comments · X poll authorship · newsletter authorship (when activated W10+) | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
 | WS9 | First 3 SP discovery calls coaching · backup discovery call owner for FT > $100k + Carol escalations | [[Execution Playbook#WS9 — LinkedIn Outbound — Structured ABM (DM Sequences)]] |
-| **WS9.5a** | **PRIMARY** — per-DM approval on SP-drafted Trioangle + adjacent DMs (24-hr SLA · ≤15 min/day calendar block) · personal-sent only when relationship calls for it (your judgment) | [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] |
+| **WS9.5a** | **Relationship owner** — Vasanth operates your profile + sends first-person as you; you sign off on new template variants + any regime-framed message before send (not every DM) · draft it yourself only for sensitive/senior relationships | [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] |
 | WS9.5b | ≤30 min/day strategic commenting contribution (founder voice in feed) · approval on SP strategic comments first 20 | [[Execution Playbook#WS9.5b — Engagement-Led Inbound (Speed Mode)]] |
 | WS10 | Authorizes eIDAS Outbound Test fire (W13) · reviews DM templates before SP send | [[Execution Playbook#WS10 — eIDAS Outbound Test (W13 mid-point, limited scope)]] |
 | **WS11** | **PRIMARY** — Events + Partner / VC intros (Money20/20 Europe W3 attendance · Sibos speaking pursuit · 2 partner intros/mo) | [[Execution Playbook#WS11 — Events + Partner / VC Intros]] |
@@ -55,7 +55,7 @@ tags:
 |---|---|---|
 | **Daily 15–30 min** — final review of Sudharshini + Britto / SP / CW output (SLA: 24 hr article · 24 hr visual · 48 hr DM template) | Daily | WS5 |
 | **Daily ≤30 min** — strategic comments on highest-leverage ICP posts (founder voice contribution) | Daily | WS5 |
-| **Daily ≤15 min** — WS9.5a per-DM approval (SP-drafted Trioangle/adjacent DMs) | Daily | WS5 |
+| **As needed** — scoped outreach sign-off (new template variants + regime-framed messages + recommendation-request copy · not routine sends) | Ad hoc | WS5 |
 | **1–2 discovery call slots/wk** — FT WealthTech > $100k OR Carol escalations OR Trioangle high-value | Weekly | WS5 |
 | **Weekly Fri 60 min** — pipeline tracker · per-channel KPIs · risk register · team blockers | Weekly | WS12 |
 | **Every Tuesday AM** — technical accuracy + regime-leak review on Tue article (1 hr — replaces SME slot) | Weekly | WS7 |
@@ -71,7 +71,7 @@ tags:
 2. [[Execution Playbook#Discovery call division of labour]] — who takes which call (SP solo vs co-pitch vs Vignesh)
 3. [[Execution Playbook#Discovery Call Master Sequence (Vasanth — per booked call)]] — when SP must escalate to you
 4. [[Execution Playbook#WS13 — Compliance Review Process]] — your compliance self-review checklist + delegated-work spot-check ratios
-5. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — per-DM approval workflow
+5. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — Vasanth operates your profile · scoped sign-off (new variants + regime framing)
 6. [[Execution Playbook#📅 Critical Path + Time-Critical Items]] — week-by-week milestones you own
 7. [[EU-Compliance-Landscape]] + 14 regulation checklists — your canonical regulatory framing source (you self-review against this)
 8. [[InnBlockchain - LinkedIn Outreach Strategy]] — T1–T5 templates + Common Mistakes (SP uses; you approve every new variant)
@@ -84,7 +84,7 @@ tags:
 - **Carol asks for founder → always join the call** (no SP shielding).
 - **Never approve Sample Audit Report or Vendor Risk Pack without your compliance sign-off** — highest-leverage Phase 1 production items.
 - **Discovery call escalation triggers (must accept):** $100k+ FT WealthTech deal · Carol explicit founder request · Trioangle high-value client · regime confusion SP can't resolve.
-- **Per-DM approval SLA: 24 hr on SP-drafted WS9.5a DMs** — Trioangle relationships compound on speed of response.
+- **Vasanth operates your LinkedIn profile** — all outreach + commenting + recommendation requests go out first-person as you. Sign off on new template variants + any regime-framed message + recommendation-request copy before they send; routine messages in approved templates go without your review. One account carries everything — if it gets restricted, the whole outreach surface + recommendations + Featured go down together.
 - **Never delegate pricing or contract decision** — you review every contract personally before sign.
 - **Never let SP send a NEW DM template variant without your approval** — once approved, SP uses freely; new variants always come back to you.
 - **Pain Point 5 validation decision by EOD W2** — silent miss is the worst outcome (per WS6).
@@ -121,7 +121,7 @@ You touch all 15 workstreams, so you reference the most docs. Bundle organized b
 ## ❌ What you DON'T own (you're authority, not executor)
 
 - Day-to-day LinkedIn scheduling → **Sudharshini + Britto**
-- Day-to-day outbound DMs → **SP** (you per-DM approve WS9.5a only · approve new template variants for all tracks)
+- Day-to-day outbound DMs + operating your LinkedIn profile → **SP** (Vasanth sends first-person as you; you approve new template variants + regime-framed messages + recommendation copy, not routine sends)
 - Article first drafts → **CW**
 - LP build (code) → **Dev**
 - PDF layout → **Designer**

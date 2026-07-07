@@ -6,9 +6,9 @@ department:
 role: SP
 assignee: Vasanth
 priority: high
-rev: 2
-last_revised: 2026-07-06
-playbook_rev_synced: 35
+rev: 3
+last_revised: 2026-07-07
+playbook_rev_synced: 39
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -20,23 +20,23 @@ tags:
 
 # 📞 Vasanth (SP) — Phase 1 Cover Sheet
 
-> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. ~102 task touchpoints across 8 workstreams. Full-cycle DM → discovery → close authority on Phase 1 RWA pipeline.
+> **What this is:** Your slice of [[Execution Playbook]] for daily/weekly use. ~102 task touchpoints across 8 workstreams. Full-cycle DM → discovery → close authority on Phase 1 RWA pipeline. **You operate Vignesh's LinkedIn profile directly** — all outreach, commenting, and recommendation requests go out first-person as Vignesh, from his account.
 
 ---
 
 ## 🎯 What you own (top-level)
 
-LinkedIn outbound full-cycle (DM → discovery call → close authority) · CRM hygiene + pipeline-stage exit criteria enforcement · WS9.5a Trioangle + adjacent-network warm DMs (draft in Vignesh voice; Vignesh per-DM approves) · **WS3 recommendation-request pipeline** (draft requests + follow-ups + reciprocity notes in Vignesh voice · Vignesh approves + sends from his profile) · WS9.5b strategic commenting + reactive DMs as primary play · X engagement (5–10 strategic replies/day on RWA accounts) · vendor risk pack delivery on request · backup discovery call owner (covers Vignesh overflow except FT > $100k + Carol).
+**You operate Vignesh's LinkedIn profile** (outreach · commenting · recommendation requests — all first-person Vignesh). LinkedIn outbound full-cycle (DM → discovery call → close authority) · CRM hygiene + pipeline-stage exit criteria enforcement · WS9.5a Trioangle + adjacent-network outreach (direct conversation from Vignesh's profile — no "I work with Vignesh" opener) · **WS3 recommendation-request pipeline** (draft requests + follow-ups + reciprocity notes · Vignesh approves copy · you send from his profile) · WS9.5b strategic commenting + reactive DMs as primary play · X engagement (5–10 strategic replies/day on RWA accounts) · vendor risk pack delivery on request · backup discovery call owner (covers Vignesh overflow except FT > $100k + Carol). **Send routine messages autonomously within Vignesh-approved templates; new variants + any regime-framed message + recommendation copy → Vignesh sign-off first.**
 
 ## 🗺️ Workstreams you touch
 
 | WS | Role | Anchor |
 |---|---|---|
-| **WS3 — Recommendations** | **Run the recommendation-request pipeline in Vignesh's voice** — draft requests / follow-ups / reciprocity notes · apply the 5-category recommender filter · track the gates (3+ pre-publish · 5+ pre-DM) · Vignesh approves + sends from his profile | [[Execution Playbook#Recommendations pipeline — SPEED MODE (batch 5–8 requests THIS WEEK)]] |
+| **WS3 — Recommendations** | **Run the recommendation-request pipeline from Vignesh's profile** — draft requests / follow-ups / reciprocity notes · apply the 5-category recommender filter · track the gates (3+ pre-publish · 5+ pre-DM) · Vignesh approves the copy · you send from his account | [[Execution Playbook#Recommendations pipeline — SPEED MODE (batch 5–8 requests THIS WEEK)]] |
 | **WS5 — Platform Setup** | CRM ownership + Sales Nav + Calendly + outreach tooling setup | [[Execution Playbook#WS5 — Platform Setup (CRM + Tooling) — SPEED MODE 5-day sprint]] |
 | **WS8 — LinkedIn Organic** | Strategic commenting from W8 (5–10/day on RWA prospects) · X engagement parallel | [[Execution Playbook#Strategic commenting (per § 5.3)]] |
-| **WS9 — Structured ABM** | **PRIMARY** — T1→T5 sequences · 15–20 connection requests/day · Discovery Call Master Sequence (20-step / 5-phase) | [[Execution Playbook#WS9 — LinkedIn Outbound — Structured ABM (DM Sequences)]] |
-| **WS9.5a — Adjacent-Network Warm Intros** | Draft Trioangle + adjacent-network DMs in Vignesh voice with explicit Vignesh-reference opener · Vignesh per-DM approves (24-hr SLA) · carry thread after positive response | [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] |
+| **WS9 — Structured ABM** | **PRIMARY** — T1→T5 sequences · 15–20 connection requests/day **from Vignesh's profile** (stay within LinkedIn's native daily limits — this profile also carries warm outreach + recommendations) · Discovery Call Master Sequence (20-step / 5-phase) | [[Execution Playbook#WS9 — LinkedIn Outbound — Structured ABM (DM Sequences)]] |
+| **WS9.5a — Adjacent-Network Warm Intros** | Send Trioangle + adjacent-network outreach from Vignesh's profile (first-person Vignesh · no third-party opener) · regime-framed messages → Vignesh sign-off first · carry thread after positive response | [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] |
 | **WS9.5b — Engagement-Led Inbound** | **PRIMARY** — 5–10 substantive comments/day · reactive DMs on engagement · LinkedIn poll follow-ups | [[Execution Playbook#WS9.5b — Engagement-Led Inbound (Speed Mode)]] |
 | **WS10 — eIDAS Outbound Test** | W13 limited-scope outbound test (20–30 prospects in first 2 wks · 2–3 T1s/day) | [[Execution Playbook#WS10 — eIDAS Outbound Test (W13 mid-point, limited scope)]] |
 | **WS12 — Pipeline + CRM + Measurement** | CRM ownership · pipeline-stage exit criteria enforcement (Connected → Replied → Qualified → Call Booked → Closed transitions) · weekly Fri pipeline review prep | [[Execution Playbook#Pipeline-stage exit criteria (Vasanth enforces · Vignesh reviews monthly)]] |
@@ -63,7 +63,7 @@ LinkedIn outbound full-cycle (DM → discovery call → close authority) · CRM 
 1. [[Execution Playbook#WS9 — LinkedIn Outbound — Structured ABM (DM Sequences)]] — primary section + T1→T5 sequence rules
 2. [[Execution Playbook#Discovery Call Master Sequence (Vasanth — per booked call)]] — 20-step playbook for every call
 3. [[Execution Playbook#Pipeline-stage exit criteria (Vasanth enforces · Vignesh reviews monthly)]] — stage advancement rules
-4. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — Vignesh-voice DM drafting + per-DM approval workflow
+4. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — first-person Vignesh outreach from his profile + scoped sign-off workflow
 5. [[Execution Playbook#WS9.5b — Engagement-Led Inbound (Speed Mode)]] — commenting + reactive DM rules
 6. [[InnBlockchain - LinkedIn Outreach Strategy]] — canonical T1→T5 template source · regime keywords · disqualification signals
 7. [[InnBlockchain - ICP - FinTech]] + [[InnBlockchain - ICP - Crypto Native]] — buyer-pattern source of truth for qualification
@@ -73,7 +73,8 @@ LinkedIn outbound full-cycle (DM → discovery call → close authority) · CRM 
 - **Never pitch MiCA framing to an RWA prospect** — #1 Carol disqualifier. RWA = MiFID II/III + Prospectus + DLT Pilot + MAR + EU Listing Act.
 - **Carol asks "can I speak to the founder?" → ALWAYS escalate to Vignesh** — never SP-shield a Carol founder request.
 - **Never pitch in T1** — 300-char connection request is tone only. Pitching here = ignored.
-- **Never send WS9.5a first warm DM without Vignesh per-DM approval** — Vignesh-voice template + 24-hr SLA approval before send.
+- **Never send a new template variant or any regime-framed message without Vignesh sign-off** — you operate his profile + his name is on every send; routine messages in approved templates go autonomously, but new wording or any RWA/regime claim gets his approval first.
+- **Never let cold ABM volume push the profile past LinkedIn's native daily limits** — this one account carries all warm outreach + cold ABM + recommendations; a restriction takes the whole outreach surface down. If a soft-restriction warning appears, pause cold ABM and tell Vignesh.
 - **Never exceed 20 connection requests/day** (LinkedIn throttle threshold).
 - **Never advance prospect stage without documented CRM signal** (per WS12 Pipeline-stage exit criteria — "Qualified" requires regulatory or technical specifics, not vague interest).
 - **Discovery call: first 20 min listen + qualify before pitching**.
@@ -95,7 +96,7 @@ These are everything you need to do your job:
 |---|---|---|
 | 1 | [[Execution Playbook]] | Master ops doc — WS3 (recommendations) + WS5 + WS8 + WS9 + WS9.5a + WS9.5b + WS10 + WS12 + WS13 |
 | 2 | [[Vasanth (SP) - Cover Sheet]] | This doc — your daily/weekly reference |
-| 3 | **[[InnBlockchain - Recommendations Outreach Pipeline]]** (cross-phase framework) | The 5-category recommender pipeline + filter + gates — you run it in Vignesh's voice; he approves + sends |
+| 3 | **[[InnBlockchain - Recommendations Outreach Pipeline]]** (cross-phase framework) | The 5-category recommender pipeline + filter + gates — you run it from Vignesh's profile; he approves the copy, you send |
 | 4 | **[[Recommendation Request Templates]]** | The request-message templates you draft from (5 recommender categories + ops schedule) |
 | 5 | **[[InnBlockchain - Discovery Call Master Sequence]]** (cross-phase framework) | Your 20-step playbook for every call — 5 phases · Vignesh escalation triggers · common mistakes |
 | 6 | **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (cross-phase framework) | Stage advancement rules — Connected → Replied → Qualified → Call Booked → Closed |
@@ -114,8 +115,8 @@ These are everything you need to do your job:
 
 ## ❌ What you DON'T own (redirect if asked)
 
-- Profile content authoring → **Vignesh** (you USE Vignesh's profile signal; he authors)
-- Recommendation **approval + final send** → **Vignesh** (you draft in his voice + run the pipeline + track gates; he approves + it goes from his profile — his relationships, his asks)
+- Profile content authoring → **Vignesh** (you OPERATE his profile for outreach; he authors the bio / About / positioning — operating ≠ authoring)
+- Recommendation-request **copy approval** → **Vignesh** (you draft + run the pipeline + track gates + send from his account; he approves the copy — his relationships, his asks)
 - Article drafting / content production → **CW**
 - LP builds → **Dev**
 - PDF design / vendor risk pack layout → **Designer** (you deliver; Designer builds)

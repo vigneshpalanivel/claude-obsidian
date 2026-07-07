@@ -8,6 +8,8 @@ rev: 1
 last_revised: 2026-06-03
 parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 26 § WS8 § Cross-channel cannibalisation matrix"
 scope: cross-phase
+aliases:
+  - "InnBlockchain - Cross-Channel Cannibalisation Matrix"
 applies_to:
   - phase-1
   - phase-2

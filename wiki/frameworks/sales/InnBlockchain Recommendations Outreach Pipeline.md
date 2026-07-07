@@ -25,8 +25,8 @@ tags:
 > [!INFO] LinkedIn recommendation outreach framework · cross-phase
 > Recommendations are evergreen credibility infrastructure — same outreach pattern applies every phase. Phase 1 ran in SPEED MODE (batched 5–8 requests in one week); Phase 2+ can revert to the slower 4-week stagger from [[Recommendation Request Templates]] § Operational Schedule if no urgency.
 
-> [!NOTE] Ownership — SP runs it in the founder's voice (Phase 1: Vasanth)
-> The **SP drafts every request / follow-up / reciprocity note in the founder's (Vignesh's) voice, runs the pipeline, and tracks the gates; the founder approves each message + it goes out from the founder's profile** (a recommendation request must originate from the person being recommended — the founder sends, or the SP sends via the founder's account once approved). Same model as WS9.5a warm intros. The "off-brand" judgment on received recommendations stays the founder's.
+> [!NOTE] Ownership — SP operates the founder's profile (Phase 1: Vasanth)
+> The **SP operates the founder's (Vignesh's) LinkedIn profile — drafts every request / follow-up / reciprocity note, runs the pipeline, tracks the gates, and sends from the founder's account.** A recommendation request originates from the founder's profile by definition. **The founder approves the request copy before it sends** (his relationships + his name on the ask). Same model as WS9.5a. The "off-brand" judgment on received recommendations stays the founder's.
 
 ## Outreach pipeline
 
@@ -34,9 +34,9 @@ tags:
 
 *(Trade-off: recommendations landing in a 7–10 day window is slightly less "earned-looking" than staggered, but acceptable when speed matters. Stagger across 5 working days vs 1 day if even mild smoothing is desired.)*
 
-- [ ] **(Vasanth drafts in Vignesh voice · Vignesh approves + sends)** **Day 1–2 (Tue–Wed):** send 2 Category 1 (FinTech client) + 1 Category 5 (engineering hire) requests via LinkedIn DM
-- [ ] **(Vasanth drafts in Vignesh voice · Vignesh approves + sends)** **Day 3–4 (Thu–Fri):** send 2 Category 2 (crypto-native client) + 1 Category 3 (security peer) + 1 Category 4 (regulator-adjacent) requests
-- [ ] **(Vasanth drafts in Vignesh voice · Vignesh approves + posts)** **Day 5–7 (next Mon–Wed):** follow up on non-responses (one polite nudge max); write 2–3 reciprocity recommendations for yes-responders
+- [ ] **(Vasanth drafts · Vignesh approves copy · Vasanth sends from Vignesh's profile)** **Day 1–2 (Tue–Wed):** send 2 Category 1 (FinTech client) + 1 Category 5 (engineering hire) requests via LinkedIn DM
+- [ ] **(Vasanth drafts · Vignesh approves copy · Vasanth sends from Vignesh's profile)** **Day 3–4 (Thu–Fri):** send 2 Category 2 (crypto-native client) + 1 Category 3 (security peer) + 1 Category 4 (regulator-adjacent) requests
+- [ ] **(Vasanth drafts · Vignesh approves copy · Vasanth sends from Vignesh's profile)** **Day 5–7 (next Mon–Wed):** follow up on non-responses (one polite nudge max); write 2–3 reciprocity recommendations for yes-responders
 
 ### Standard mode (staggered · default when no urgency)
 

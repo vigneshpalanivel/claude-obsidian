@@ -21,14 +21,21 @@ Likely triggers in Buddha bowl (vendor lunch): raw chickpeas, raw broccoli/cauli
 - Do NOT drink large amounts during or immediately after meal — dilutes stomach acid
 
 ### After Lunch (most important step)
-- Drink **warm cumin (jeera) water immediately after eating** — within 5–10 minutes
-- 150–200ml warm cup — small, not large
-- Acts as carminative — reduces gas formation during digestion
-- **Cumin water is after eating, not before** — no benefit before food arrives
+- Drink **buttermilk (moru) immediately after eating** — within 5–10 minutes
+- Preparation: thin homemade buttermilk + pinch of salt only
+- Chew few cumin seeds alongside the buttermilk — same effect as roasted cumin powder
+- Start with 150ml first week — increase to full glass if no bloating
+- **Buttermilk is after eating, not before**
 
-### At Office (no boiling available)
-- Steep cumin seeds in hot water from pantry for 3–5 minutes — works fine
-- OR **chew a small pinch of raw omam (ajwain/carom seeds)** after lunch — strongest carminative, zero preparation needed
+### 20–30 Minutes After Buttermilk
+- **Warm cumin water** — steep cumin seeds in hot water 3–5 min, drink warm
+- Sequence: finish eating → buttermilk immediately → 20–30 min gap → cumin water
+- Both together give stronger carminative effect than either alone
+
+### If Buttermilk Not Available at Office
+- Skip buttermilk step
+- Cumin water immediately after lunch instead
+- OR **chew a small pinch of raw omam (ajwain/carom seeds)** — strongest carminative, zero preparation needed
 
 ---
 
@@ -91,16 +98,56 @@ Likely triggers in Buddha bowl (vendor lunch): raw chickpeas, raw broccoli/cauli
 
 > High water volume (3L+) with insufficient salt can cause electrolyte imbalance → headache. Add pinch of salt + lemon to one glass of water daily.
 
+## After Dinner Rule
+
+- **6:30 PM dinner = last food and liquid of the day — no exceptions**
+- No milk, no banana, no snacks, no warm water after dinner
+- 3.5 hour gap to 10 PM sleep protects against overnight gas buildup → morning headache
+- This single rule is the most important protection for sleep quality and morning headache prevention
+
+---
+
+## Eye Strain — Headache Prevention
+
+### Root Cause
+Normal blink rate 15–20/min drops to 5–7/min during screen work → dry eyes → strain → forehead headache. AC office + allergic conjunctivitis (connected to sinusitis) amplifies this further.
+
+### Daily Routine
+
+| Time | Action |
+|------|--------|
+| Start of work | 1 drop lubricating eye drops each eye |
+| Every 20 min | 20-20-20 rule — look 20 feet away for 20 seconds |
+| After lunch | 1 drop lubricating eye drops |
+| Midday | Splash cold water on eyes |
+| Every hour | Conscious full blink 10 times |
+
+### Screen Setup (One-Time Fix)
+| Factor | Correct Position |
+|--------|----------------|
+| Screen distance | Arm's length (~60cm) |
+| Screen height | Top of monitor at eye level — not looking down |
+| Brightness | Match room light — not brighter than surroundings |
+| Night mode | On after 5 PM |
+
+### Eye Drops
+- **Lubricating eye drops (artificial tears)** — OTC, no prescription needed
+- Brands: Refresh Tears or Systane — available at any pharmacy
+- Use 2–3 times daily — prevention, not just when irritated
+- White eye discharge during day = allergic conjunctivitis connected to sinusitis — mention to ENT
+
 ---
 
 ## Connection to Sinusitis
 
-Both gastric gas AND sinusitis cause forehead headache — they often combine in the afternoon. Treating only one gives partial relief. Full resolution requires:
+All four headache causes combine in the afternoon — treating only one gives partial relief. Full resolution requires:
 
-1. ENT treatment for sinusitis (primary cause)
-2. Omam after lunch (gastric cause)
-3. 20-20-20 eye rule (eye strain cause)
-4. Neck stretch midday (tension cause)
+| Cause | Solution | Status |
+|-------|---------|--------|
+| Sinusitis | ENT treatment | Pending — book appointment |
+| Gastric gas | Buttermilk + cumin water after lunch | Active |
+| Eye strain | Eye drops + 20-20-20 + blink | Active |
+| Neck tension | Midday neck stretch 2–3 min | Active |
 
 ---
 

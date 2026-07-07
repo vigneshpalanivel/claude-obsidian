@@ -106,6 +106,7 @@ All reports from Aarthi Scans & Labs and Apollo Hospitals, Madurai.
 3. **Minimal right maxillary sinusitis**
 
 > This is the structural cause of forehead headaches and sloshing sensation. No surgery needed for minimal sinusitis — managed medically with nasal spray, steam, saline rinse.
+> **Root driver is allergy (allergic rhinoconjunctivitis)** — same histamine response causes body heat sensation + sneezing + eye itching + white eye discharge + sinus inflammation simultaneously. All five symptoms are one condition, not separate problems. Needs antihistamine + nasal corticosteroid from ENT.
 
 ---
 

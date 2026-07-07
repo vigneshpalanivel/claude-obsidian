@@ -35,36 +35,58 @@ status: active
 
 ## Meal Plan
 
-> **Revised approach:** 3 meals + 1 liquid only. No snacking between meals — stomach needs full digestion time given existing gastric sensitivity. Add calories through density, not frequency.
+> **Core rule:** Breakfast and lunch carry the weight gain load. Dinner is for recovery, not calories. Heavy/fried foods at dinner trigger overnight gas → morning headache → disrupted sleep → slower weight gain. Consistent light dinners beat heavy occasional ones.
 
-### Breakfast (7:00–7:30 AM) — Biggest meal of the day
-- 3 whole eggs cooked in ghee — 18g protein
-- 2 slices whole wheat bread with peanut butter — +190 kcal
-- 1 glass full fat milk — 8g protein
-- Almonds (padam) — continue existing habit
-- **~600–650 kcal | 35g protein**
+### Breakfast (7:00–7:30 AM) — Build gradually, week by week
+**Current comfortable baseline:**
+- 2 egg omelette
+- 8 almonds + 10 pumpkin seeds + 2 walnuts
+- 1 local green banana
+- 2 tbsp green grams + 2 raisins
+- **1 glass full fat milk** — at breakfast only, never at night
+- 1 coffee at office 10:00–10:30 AM
+- 1 tea at 3:00 PM — hard limit, no third caffeine drink ever
+- **~557 kcal | ~29g protein**
 
-### Lunch (1:00–1:30 PM)
+**Week 2 addition:** 1 tbsp peanut butter with banana
+**Week 3 addition:** 1 more egg (total 3 eggs)
+**Week 4 addition:** 2 idli OR 1 slice wheat bread
+**Target breakfast (Month 2+):** ~750–800 kcal | 38g protein
+
+### Lunch (1:00–1:30 PM) — Protein focus
 - Buddha bowl (vendor) — continue
 - Add 2 boiled eggs from home alongside — +12g protein
-- OR ask vendor for extra chickpeas/egg
 - Add handful of groundnuts to bowl — +170 kcal
-- Drink omam/cumin water 20–30 min before (gas prevention)
-- **~700–750 kcal | 30–35g protein**
+- **Buttermilk (moru) immediately after** — thin, homemade, with pinch of salt only
+- Start with 150ml first week, increase to full glass if no bloating
+- **Warm cumin water** — 20–30 minutes after buttermilk settles
+- Sequence: finish eating → buttermilk → 20–30 min → cumin water
+- **~700 kcal | 30g protein**
 
 ### Liquid (4:00 PM — between lunch and dinner only)
 - Full fat milk + banana blended — 350 kcal, 10g protein
 - OR full fat milk + 2 tbsp peanut butter blended — 380 kcal, 14g protein
-- Liquid digests faster — won't compete with 6:30 PM dinner hunger
+- Liquid digests faster — won't compete with dinner hunger
 - **~350–380 kcal | 10–14g protein**
 
-### Dinner (6:00–6:30 PM — hard cutoff) — Largest carb meal
-- Rice (2 cups cooked) + dal + sabzi + curd
-- Add 100g chicken or fish 3–4x/week — 25g protein
-- OR paneer (100g) on non-meat days — 18g protein
-- Cook with extra ghee/coconut oil
-- Curd on side every night — +60 kcal
-- **~750–850 kcal | 30–35g protein**
+### Dinner (6:00–6:30 PM — LIGHT, always — last food of the day)
+- Plain rice (1.5 cups) + dal + curd — non-negotiable base
+- Protein: **grilled or boiled chicken only** — no frying
+- OR paneer in simple thin curry — no heavy gravy
+- Cooked vegetables only — no raw
+- Small ghee on rice (1 tsp only) — fine
+- Curd on side every night
+- **~500–550 kcal | 25g protein**
+
+### Dinner Rules (Non-Negotiable)
+
+| Allowed at Dinner | Never at Dinner |
+|------------------|----------------|
+| Plain rice + dal + curd | Ghee roast, fried items |
+| Grilled/boiled chicken | Chicken 65, crispy items |
+| Paneer in thin curry | Heavy oil gravies |
+| Cooked sabzi | Raw vegetables |
+| 1 tsp ghee on rice | Deep fry anything |
 
 ---
 

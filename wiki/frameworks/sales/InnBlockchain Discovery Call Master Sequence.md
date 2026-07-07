@@ -1,22 +1,22 @@
 ---
 company:
-  - innblockchain
+ - innblockchain
 department:
-  - marketing
+ - marketing
 priority: high
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 26 § WS9 § Discovery Call Master Sequence"
+parent_extraction_source: "[[Execution Playbook]] § WS9 § Discovery Call Master Sequence"
 scope: cross-phase
 applies_to:
-  - phase-1
-  - phase-2
-  - phase-3
+ - phase-1
+ - phase-2
+ - phase-3
 tags:
-  - framework
-  - discovery-call
-  - sp
-  - cross-phase
+ - framework
+ - discovery-call
+ - sp
+ - cross-phase
 ---
 
 # Discovery Call Master Sequence
@@ -24,7 +24,7 @@ tags:
 > [!INFO] Single linear walk-through · ~5 min prep + 30–60 min call + 10 min post-call · cross-phase framework
 > The DM track gets the call BOOKED. This sequence governs what happens IN the call. Open per call. 5 phases · 20 steps. Pairs with [[InnBlockchain - LinkedIn Outreach Strategy]] § 5 call patterns where they exist.
 >
-> Extracted from [[InnBlockchain - Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). 5-phase structure (pre-call → opening → discovery → qualification → post-call) is universal. Phase 1 escalation triggers reference Carol / Sam / $100k threshold / Trioangle — those overlays update per phase.
+> Extracted from [[Execution Playbook]] → cross-phase framework. 5-phase structure (pre-call → opening → discovery → qualification → post-call) is universal. Phase 1 escalation triggers reference Carol / Sam / $100k threshold / Trioangle — those overlays update per phase.
 
 ## Phase 1 — Pre-call (5 min before)
 
@@ -80,11 +80,11 @@ These are Phase 1 triggers — update per phase as ICP shifts.
 - **Trioangle existing client** → SP carries the thread but route to Vignesh for pricing conversation OR if client explicitly asks for founder OR if anything in the relationship history feels off
 - **Regime confusion SP can't resolve** (prospect insists "we need MiCA for this RWA tokenization") → escalate same-day for Vignesh to clarify
 
-## Common mistakes (from rev 8 risk register)
+## Common mistakes (from risk register)
 
 - Pitching too early (selling vs listening = lower close rate) — **first 20 min listen + qualify, don't pitch**
 - Misjudging compliance-officer-handoff threshold — explicit rule: compliance officer asks "can I speak to the founder?" = always escalate · compliance officer asking compliance-specific questions SP can answer = SP handles
-- Existing-client gets SP pitch with no Vignesh reference (reads inauthentic) — process per WS9.5a: SP CAN send first warm DM but **must reference Vignesh explicitly** in the opener · Vignesh per-DM approves before send · Vignesh sends personally when relationship calls for it (Vignesh's judgment)
+- Existing-client outreach — process per WS9.5a: the SP **operates the founder's LinkedIn profile** and sends first-person as the founder (no third-party "I work with [founder]" opener). New template variants + any regime-framed message get founder sign-off before send; the founder drafts personally only for sensitive/senior relationships
 
 ## Why this is a separate doc
 
