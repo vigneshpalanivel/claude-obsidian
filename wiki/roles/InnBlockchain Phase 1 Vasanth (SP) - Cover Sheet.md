@@ -8,7 +8,7 @@ assignee: Vasanth
 priority: high
 rev: 3
 last_revised: 2026-07-07
-playbook_rev_synced: 39
+playbook_rev_synced: 42
 parent: "[[Execution Playbook]]"
 tags:
  - role

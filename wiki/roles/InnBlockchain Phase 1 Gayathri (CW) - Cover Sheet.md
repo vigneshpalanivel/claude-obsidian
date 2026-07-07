@@ -8,7 +8,7 @@ assignee: Gayathri
 priority: high
 rev: 6
 last_revised: 2026-07-06
-playbook_rev_synced: 35
+playbook_rev_synced: 42
 parent: "[[Execution Playbook]]"
 tags:
  - role

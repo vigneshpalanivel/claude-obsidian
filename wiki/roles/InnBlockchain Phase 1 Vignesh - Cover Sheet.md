@@ -5,9 +5,9 @@ department:
  - marketing
 role: Vignesh
 priority: highest
-rev: 6
+rev: 7
 last_revised: 2026-07-07
-playbook_rev_synced: 39
+playbook_rev_synced: 42
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -73,7 +73,7 @@ tags:
 4. [[Execution Playbook#WS13 — Compliance Review Process]] — your compliance self-review checklist + delegated-work spot-check ratios
 5. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — Vasanth operates your profile · scoped sign-off (new variants + regime framing)
 6. [[Execution Playbook#📅 Critical Path + Time-Critical Items]] — week-by-week milestones you own
-7. [[EU-Compliance-Landscape]] + 14 regulation checklists — your canonical regulatory framing source (you self-review against this)
+7. [[EU-Compliance-Landscape]] + 14 regulation checklists — your canonical regulatory framing source (you self-review against this). *Count note: 13 are Phase 1 regime sources; [[mica-checklist]] is in YOUR canon only to review the two MiCA-boundary articles (W4 #4 · W8 #11) — never as an RWA framing source.*
 8. [[InnBlockchain - LinkedIn Outreach Strategy]] — T1–T5 templates + Common Mistakes (SP uses; you approve every new variant)
 
 ## 🚫 Hard rules (memorise — these never relax)
@@ -112,8 +112,8 @@ You touch all 15 workstreams, so you reference the most docs. Bundle organized b
 | Category | Documents |
 |---|---|
 | **Master playbook + your sheet** | [[Execution Playbook]] · [[Vignesh - Cover Sheet]] |
-| **Cross-phase frameworks** — review sign-off authority | **[[InnBlockchain - Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[InnBlockchain - LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[InnBlockchain - Content Style Guide]]** (CW writing rules) · **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** (Sudharshini + Britto scheduling) · **[[InnBlockchain - Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[InnBlockchain - Discovery Call Master Sequence]]** (SP per call) · **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[InnBlockchain - Newsletter Vendor Selection]]** (W10 revisit) |
-| **Regulatory canon** (you self-review against these) | [[EU-Compliance-Landscape]] + 14 regulation checklists ([[mifid2-checklist]] · [[mifid3-checklist]] · [[prospectus-checklist]] · [[dlt-pilot-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]] · [[dora-checklist]] · [[mica-checklist]] · [[aml-checklist]] · [[tfr-checklist]] · [[ccd2-checklist]] · [[eidas2-checklist]] · [[ipr-checklist]] · [[gdpr-checklist]]) |
+| **Cross-phase frameworks** — review sign-off authority | **[[InnBlockchain - Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[InnBlockchain - LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[InnBlockchain - Content Style Guide]]** (CW writing rules) · **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** (Sudharshini + Britto scheduling) · **[[InnBlockchain - Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[InnBlockchain - Discovery Call Master Sequence]]** (SP per call) · **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[InnBlockchain - Newsletter Vendor Selection]]** (W10 revisit) · **[[InnBlockchain - Delegated-Work Spot-Check Protocol]]** (your WS13 spot-check ratios — 25% W1–W4 → 10% W5+) · **[[InnBlockchain - Event Execution Playbook]]** (your WS11 per-event sequence) · **[[InnBlockchain - Case Study Capture Framework]]** (your WS14 screenshot-rights + MVP-fallback trigger call) |
+| **Regulatory canon** (you self-review against these) | [[EU-Compliance-Landscape]] + 14 regulation checklists ([[mifid2-checklist]] · [[mifid3-checklist]] · [[prospectus-checklist]] · [[dlt-pilot-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]] · [[dora-checklist]] · [[mica-checklist]] *(boundary-article review ONLY — W4 #4 · W8 #11; never an RWA framing source; WS4 briefs use the other 13)* · [[aml-checklist]] · [[tfr-checklist]] · [[ccd2-checklist]] · [[eidas2-checklist]] · [[ipr-checklist]] · [[gdpr-checklist]]) |
 | **ICP truth source** | [[InnBlockchain - ICP - Crypto Native]] · [[InnBlockchain - ICP - FinTech]] |
 | **Content production canon** | [[InnBlockchain - Content Strategy]] · [[InnBlockchain - Editorial Calendar]] · [[InnBlockchain - Content AEO GEO Prompts]] · [[InnBlockchain - Content Repurposing Plan]] · [[InnBlockchain - Content Repurposing Design Toolkit]] |
 | **LP + LinkedIn execution** | [[InnBlockchain - Landing Pages Plan]] · [[InnBlockchain - Landing Pages AEO GEO Prompts]] · [[InnBlockchain - LinkedIn Strategy]] · [[InnBlockchain - LinkedIn Outreach Strategy]] · [[LinkedIn Profile Vignesh Content]] · [[Recommendation Request Templates]] |

@@ -7,9 +7,9 @@ role: MP1
 assignee: Sudharshini
 icp: fintech
 priority: high
-rev: 3
-last_revised: 2026-07-03
-playbook_rev_synced: 35
+rev: 4
+last_revised: 2026-07-07
+playbook_rev_synced: 42
 parent: "[[Execution Playbook]]"
 sibling: "[[Britto (MP2) - Cover Sheet]]"
 tags:
@@ -100,6 +100,8 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 | 7 | [[InnBlockchain - Landing Pages AEO GEO Prompts]] | Gate 3 AEO + academy organic |
 | 8 | [[InnBlockchain - Content Repurposing Plan]] | Track B derivative chain |
 | 9 | [[EU-Compliance-Landscape]] | Regime framing — escalate to Vignesh |
+| 10 | **[[InnBlockchain - Content Repurposing Design Toolkit]]** | Tool stack + Claude design spec for carousel/quote-graphic/single-image (your hard rule cites its § AI Hallucination Risk regime-leak check) |
+| 11 | **[[InnBlockchain - Newsletter Vendor Selection]]** (cross-phase framework) | W10 newsletter revisit — you co-own the newsletter surface; decision triggers + Beehiiv default |
 
 ## ❌ What you DON'T own (redirect if asked)
 

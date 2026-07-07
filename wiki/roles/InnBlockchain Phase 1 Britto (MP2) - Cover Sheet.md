@@ -7,9 +7,9 @@ role: MP2
 assignee: Britto
 icp: crypto-native
 priority: high
-rev: 4
+rev: 5
 last_revised: 2026-07-07
-playbook_rev_synced: 41
+playbook_rev_synced: 42
 parent: "[[Execution Playbook]]"
 sibling: "[[Sudharshini (MP1) - Cover Sheet]]"
 tags:
@@ -101,6 +101,8 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 | 7 | **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** | Shared-queue rules (co-enforce) |
 | 8 | [[InnBlockchain - Content Repurposing Plan]] | Track A derivative chain |
 | 9 | [[EU-Compliance-Landscape]] | Regime framing — escalate to Vignesh |
+| 10 | **[[InnBlockchain - Content Repurposing Design Toolkit]]** | Tool stack + Claude design spec for carousel/quote-graphic/single-image (your hard rule cites its § AI Hallucination Risk regime-leak check) |
+| 11 | **[[InnBlockchain - Newsletter Vendor Selection]]** (cross-phase framework) | W10 newsletter revisit — you co-own the newsletter surface + own assembly when activated |
 
 ## ❌ What you DON'T own (redirect if asked)
 
