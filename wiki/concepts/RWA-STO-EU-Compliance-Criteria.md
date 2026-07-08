@@ -1,8 +1,8 @@
 ---
 type: concept
-title: "RWA / STO EU Compliance Criteria (Decision Diagrams)"
+title: "RWA / STO EU Compliance — Applicability Criteria"
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-07-08
 tags:
   - EU
   - RWA
@@ -26,51 +26,35 @@ related:
   - "[[TFR-Regulation]]"
 internal_artifacts:
   - path: ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/RWA-STO-EU-Compliance-Criteria.md"
-    hash: "699bfdcdb7560e9547cad1b2a8c8b915"
+    hash: "da2b9e403b056ff516ae82bbee1ae435"
     registered: 2026-07-07
     last_synced: 2026-07-08
-    role: "visual criteria companion to the RWA/STO landscape — 18 Mermaid decision trees"
-    purpose: "Diagrams-only artifact: every RWA/STO classification and trigger decision as a Mermaid flowchart, with article refs and numeric thresholds in the nodes. Sourced from BOTH the RWA-STO landscape (top-level classification) AND the 15 per-regulation Checklist/ files (granular thresholds, formats, proportionality tests) — extracted via parallel checklist sweep 2026-07-07. 2026-07-08: removed the MiCA sub-classification diagram (former A2 — ART/EMT/utility) as out of scope for the MiFID-lane RWA/STO file; A1 still shows the exit-to-MiCA boundary + the CASP-overlay case; sections renumbered (A1-A3). Consistent with the 2026-07-07 landscape corrections (best execution = MiFID II Art 27; eIDAS acceptance ~2026-2027; PDMR €20k + MS opt-up €50k; DLT Pilot ~10 applications + €6bn/€9bn caps)."
+    role: "per-regulation APPLICABILITY gates — 18 Mermaid 'does this regime apply?' decision trees"
+    purpose: "Diagrams-only artifact. 2026-07-08 REVAMP: pivoted from classification decision trees to APPLICABILITY gates — one Mermaid tree per compliance regime answering 'does this apply to my RWA/STO platform, yes/no, and under what condition?', each ending in APPLIES (scope/trigger) or does-NOT-apply (reason). Sourced from the per-regulation Checklist/ files (scope sections). 18 gates: 1.x securities-core (MiFID II, MiFIR, MiFID III, Prospectus, MAR, EU Listing Act) · 2.x fund (AIFMD, AIFMD II, UCITS, ELTIF 2.0) · 3.x infra (DLT Pilot) · 4.x horizontal (DORA, AMLR, eIDAS, GDPR, EU AI Act, MiCA, TFR) · §5 out-of-scope note (CCD2, IPR, PSD3). Gates ASSUME the token is already classified as a MiFID security — the token/role/fund CLASSIFICATION trees are the landscape's content and are deliberately NOT included here (user may add later). Prior version (18 classification trees sourced from landscape + checklists) fully replaced."
 ---
 
-# RWA / STO EU Compliance Criteria (Decision Diagrams)
+# RWA / STO EU Compliance — Applicability Criteria
 
-The **visual criteria companion** to [[RWA-STO-EU-Compliance-Landscape]]: 18 Mermaid decision trees covering every classification and trigger decision in the EU RWA/STO lane, with article references and numeric thresholds in the nodes. Diagrams only — the landscape and the per-regulation checklists carry the explanations.
+The **applicability companion** to [[RWA-STO-EU-Compliance-Landscape]]: for each EU compliance regime relevant to an RWA/STO platform, one Mermaid decision tree answering a single question — **does this regulation apply to me, yes or no, and under what condition?** Each gate ends in **APPLIES** (with the scope/trigger) or **does NOT apply** (with the reason). Sourced from the per-regulation Checklist/ scope sections. Diagrams only.
 
-Unlike the landscape (top-level classification only), the criteria file also encodes the **granular checklist-level decisions**: prospectus exemptions + format selection, MiFID client classification (2-of-3 tests), venue-type determination, AIFMD authorisation thresholds, ELTIF retail/professional parameter split, LOF triggers, DLT Pilot caps, DORA proportionality/TLPT, AMLR CDD tiers, TFR applicability, eIDAS relying-party obligation. (MiCA sub-classification was deliberately excluded — RWA/STO is the MiFID lane; MiCA only enters as an exit-branch or a CASP side-business, both shown in A1.)
+> The gates **assume the token is already classified as a MiFID-lane security**. The token / role / fund **classification** decision trees are the landscape's content and are deliberately **not** duplicated here (may be added later).
 
-## The 18 diagrams
+## The 18 applicability gates
 
-**A. Classification & scope**
-- A1 Token classification — MiFID II financial instrument vs MiCA (Art 2(4)(a) carve-out); value-referencing/utility tokens exit to the MiCA lane (out of RWA/STO scope); CASP overlay only if the firm runs a non-MiFID crypto side-business
-- A2 Role stack — issuer → venue (Art 4(1)(22)) → dealer/SI (Art 4(1)(20)) → advisor
-- A3 Venue type — RM vs MTF vs OTF vs SI (equity automatic / non-equity opt-in post-2024) vs DLT overlay
+**1. Securities-core** — 1.1 MiFID II (provide an investment service? issuer-only ⇒ N/A) · 1.2 MiFIR (execute ⇒ Art 26; venue/SI ⇒ transparency) · 1.3 MiFID III (venue or dealer/SI only) · 1.4 Prospectus (public offer/admission minus exemptions; <€12m from Jun 2026) · 1.5 MAR (admitted/pending-admission to an EU venue) · 1.6 EU Listing Act (via Prospectus/MAR/MiFIR nexus)
 
-**B. Investor & offering**
-- B1 Client classification — per-se professional (2-of-3: ≥€20M BS / ≥€40M turnover / ≥€2M own funds) vs ECP vs elective professional (2-of-3: ≥€500k portfolio / 10+ trades/qtr / ≥1yr finance work) vs retail default
-- B2 Suitability (advice/portfolio mgmt) vs appropriateness (non-advised complex) vs execution-only (non-complex + client-initiated + warned)
-- B3 Prospectus — exclusions (Art 1(2)) → exemptions (QI-only, <150 persons/MS, ≥€100k denom/ticket, <30% fungibility) → €12M threshold (5 Jun 2026) → format (Standard 300pp / Base / URD / EU Follow-on ≥18mo admitted / EU Growth ≤€50M SME, both from 5 Mar 2026)
-- B4 MAR — admitted/pending-admission trigger (incl. DLT MTF/TSS) → PDMR €20k (MS opt-up €50k) 3-BD notification → 30-day closed period + Art 19(12) exceptions
+**2. Fund regimes** — 2.1 AIFMD (is it an AIF? then full >€100m lev / >€500m unlev, else sub-threshold) · 2.2 AIFMD II (all AIFMs by 16 Apr 2026; +LOF rules if loan-originating) · 2.3 UCITS (open-ended + liquid + retail — rare) · 2.4 ELTIF 2.0 (full AIFM + retail passport for illiquid ≥55%)
 
-**C. Fund structuring**
-- C1 UCITS → AIF → ELTIF sequenced test
-- C2 AIFMD level — sub-threshold (≤€100M leveraged / ≤€500M unleveraged+5yr-locked, no passport) vs full (Art 6); Art 3(4) opt-in
-- C3 UCITS eligibility gate — open-ended → eligible assets (Art 50) → 5/10/40 (Art 52) → retail
-- C4 ELTIF retail vs professional-only — 50% vs 100% NAV borrowing; concentration (Art 13) + cross-holding (Art 15) waived for pro-only (Art 13(7))
-- C5 AIFMD II LOF — primary-lending-strategy trigger; closed-ended default; open-ended needs NCA-proven LMTs + ≥5% retention; ≤20% per borrower; financial-sector borrowers prohibited (Arts 15a–15b)
+**3. Infrastructure** — 3.1 DLT Pilot (on-chain venue/settlement + sandbox opt-in + within €500m/€1bn/€6bn caps)
 
-**D. Infrastructure & horizontal**
-- D1 DLT Pilot — MTF/SS/TSS permission choice; per-instrument caps (shares <€500M mcap, bonds <€1bn, funds <€500M AUM); aggregate €6bn admission ceiling / €9bn transition trigger; 7-condition retail direct access (Art 4(2))
-- D2 DORA — Art 2(1) scope; venue/CCP/CSD/TR can never be microenterprises; simplified framework (Art 16) vs full (Arts 5–15); TLPT every 3 yrs if "significant" (external testers every 3rd cycle; significant credit institutions external-only)
-- D3 AMLR — CDD triggers (≥€10k, ≥€1k CASP, relationship, suspicion) → EDD (PEP/high-risk-3rd-country) → AMLA selection (≥6 MS + high residual risk)
-- D4 TFR — MiFID-classified tokens OUT; crypto (incl. EMT) in with no de-minimis; self-hosted ≥€1k ownership verification
-- D5 eIDAS — public sector must accept; private strategic-sector + SCA must accept within 36 months of implementing acts (~late 2026–mid 2027); micro/small exempt
-- D6 Cross-cutting summary — always DORA/AML/GDPR; conditional AI Act / MiCA / TFR
+**4. Horizontal** — 4.1 DORA (financial entity; venues never micro; +CTPP path) · 4.2 AMLR (obliged entity; +AMLA direct if ≥6 MS + high risk) · 4.3 eIDAS (strategic sector + SCA + not micro ⇒ accept EUDI Wallet ~2026–2027) · 4.4 GDPR (any EU personal data ⇒ always) · 4.5 EU AI Act (high-risk AI deployment only) · 4.6 MiCA (does NOT apply to RWA tokens — only a CASP side-business) · 4.7 TFR (does NOT apply to MiFID tokens — crypto transfers only)
+
+**5. Out of scope** — CCD2 (consumer credit), IPR / PSD3-PSR (payments) noted as not triggered by securities activity.
 
 ## Use cases
 
-- **First-intake routing**: walk a prospect through A1 → A3 → C1 in one call
-- **Compliance-scoping proposals**: each diagram = one scoping question with its article basis
-- **Smart-contract design input**: the trees are the human-readable version of the gates the [[RWA-STO-Smart-Contract-Design]] compliance modules enforce
+- **Compliance-scoping a prospect**: run the platform through all 18 gates → the set that says APPLIES is the engagement scope
+- **Proposal / SoW basis**: each APPLIES gate = one workstream with its article trigger
+- **Pairs with**: [[RWA-STO-EU-Compliance-Landscape]] (why/how each applies) and [[RWA-STO-Smart-Contract-Design]] (what the applicable ones require on-chain)
 
 See: [[RWA-STO-EU-Compliance-Landscape]] | [[RWA-STO-Smart-Contract-Design]] | [[EU-Fintech-Compliance-Landscape]]

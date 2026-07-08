@@ -169,17 +169,18 @@ Follow-up after CT PNS (04 Jul 2026: minimal right maxillary sinusitis, S-shaped
 
 ---
 
-## Current Medications (as of Jul 2026 — verify with doctors)
+## Current Medications (as of Jul 2026)
 
-| Medicine | Dose | Time | Purpose | Prescribed by |
-|---------|------|------|---------|---------------|
-| Propranolol (Norten) | 10mg | Morning | Anxiety/migraine | Dr. Sabrin (Psychiatry) |
-| Escitalopram (Citalin) | 5mg | Night | Anxiety/depression | Dr. Sabrin (Psychiatry) |
-| Melatonin (Melocure) | 3mg | Night 8PM | Sleep | Dr. Sabrin (Psychiatry) |
-| Vitamin E (EL-VIT) | 400mg | Afternoon | Antioxidant | Pirait clinic |
-| **Allegra (Fexofenadine)** | 120mg | Once daily | Allergic rhinitis / antihistamine | Dr. Arun Ganesh (ENT) |
+| Medicine | Dose | Time | Purpose | Status |
+|---------|------|------|---------|--------|
+| **Allegra (Fexofenadine)** | 120mg | Once daily | Allergic rhinitis | **ACTIVE** — Dr. Arun Ganesh (ENT), Jul 2026 |
+| Propranolol (Norten) | 10mg | Morning | Anxiety/migraine | **STOPPED ~Jan 2026** |
+| Escitalopram (Citalin) | 5mg | Night | Anxiety/depression | **STOPPED ~Jan 2026** |
+| Melatonin (Melocure) | 3mg | Night 8PM | Sleep | **STOPPED ~Jan 2026** |
+| Vitamin E (EL-VIT) | 400mg | Afternoon | Antioxidant | Unconfirmed |
+| Sulfasalazine 500mg | — | — | Inflammatory arthritis | Likely stopped — confirm with Dr. Rajapandian K |
 
-> Sulfasalazine may have been stopped — last confirmed prescription Jan 2024. Confirm with Dr. Rajapandian K if still needed.
+> ⚠️ All psychiatric medications (Escitalopram, Propranolol, Melatonin) stopped ~Jan 2026 — supervision status unknown. Anxiety is now entirely unmedicated. Escitalopram should ideally be tapered not stopped abruptly — at 6 months post-stop, discontinuation effects resolved. Flag to Dr. Sabrin at next visit.
 
 ---
 

@@ -19,6 +19,12 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-07-08] revamp | RWA-STO-EU-Compliance-Criteria — pivoted to per-regulation applicability gates
+- Reworked the criteria file from CLASSIFICATION decision trees to **applicability gates**: 18 Mermaid "does this regime apply to my RWA/STO platform (yes/no, under what condition)?" trees, each ending APPLIES (scope) or does-NOT-apply (reason). Groups 1.x securities-core, 2.x fund, 3.x infra, 4.x horizontal, +§5 out-of-scope (CCD2/IPR/PSD3). Sourced from checklist scope sections.
+- Per user, token/role/fund CLASSIFICATION trees deliberately EXCLUDED (landscape content; may add later) — gates assume the token is already a MiFID security.
+- New hash `da2b9e403b056ff516ae82bbee1ae435` (prev `699bfdcdb7560e9547cad1b2a8c8b915`). Fully replaces the prior 18 classification diagrams. Concept [[RWA-STO-EU-Compliance-Criteria]] + [[index]] + [[hot]] + manifest updated.
+- (Earlier same-day: 2026-07-08 removed MiCA sub-classification diagram before this fuller revamp.)
+
 ## [2026-07-07] ingest | RWA-STO-EU-Compliance-Criteria — 19 Mermaid decision trees
 - Source: `.raw/…/EU Compliance/RWA-STO-EU-Compliance-Criteria.md` (hash `5a0f88a667d5d6c549271cadfbffe947`) — diagrams-only companion to [[RWA-STO-EU-Compliance-Landscape]]
 - Content: 19 Mermaid flowcharts sourced from the landscape + all 15 Checklist/ files (parallel extraction). Sections: A classification/scope (token MiFID-vs-MiCA, MiCA ART/EMT/utility, role stack, venue type), B investor/offering (client classification, suitability tiers, prospectus exemptions+formats, MAR/PDMR), C fund structuring (UCITS→AIF→ELTIF, AIFMD levels, UCITS gate, ELTIF retail/pro split, LOF), D infrastructure/horizontal (DLT Pilot caps, DORA proportionality/TLPT, AMLR CDD, TFR carve-out, eIDAS, cross-cutting)

@@ -95,7 +95,7 @@ Headache
 ### Common Triggers
 - Dust — especially AC filters in office
 - Temperature change — stepping from hot outside into cold AC
-- Stress — directly releases histamine even without external allergen
+- Stress — triggers histamine release via mast cell activation (CRH pathway), lowering the allergic threshold even without external allergen
 - Early morning — histamine naturally peaks between 6–8 AM
 
 ### Medical Term
