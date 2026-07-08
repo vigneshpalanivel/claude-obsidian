@@ -14,7 +14,7 @@ All doctor visits and medications chronologically.
 
 | Doctor | Specialty | Hospital | Condition |
 |--------|-----------|----------|-----------|
-| Dr. Arun Ganesh MS(ENT) | ENT | Aarthi Scans, Madurai | Sinusitis, nasal septum |
+| Dr. K Arun Ganesh MS(ENT) | ENT, Head & Neck / Skull Base Surgeon | KRK ENT Care, K.K.Nagar, Madurai | Sinusitis, nasal septum, giddiness |
 | Dr. S N Karthik DM(Neuro) | Neurology | Sri Nerve Clinic, Thiruppalai, Madurai | Migraine/tension headache |
 | Dr. Rajapandian K (Ortho) | Spine & Joint | Apollo Hospitals, Madurai | SI joint / spinal inflammation |
 | Dr. R Sabrin Sonjeev Ross | Psychiatry | Ahana Hospitals, Madurai | Anxiety, sleep, depression |
@@ -36,10 +36,12 @@ All doctor visits and medications chronologically.
 
 **Tests ordered:**
 - Apollo Ortho Package 2013
-- HLA B27 PCR (VIMTA) — for ankylosing spondylitis screening
+- HLA B27 PCR — for ankylosing spondylitis screening → **result: NEGATIVE (Not Detected)**
 - Creatinine
 - X-Ray Lumbar Spine AP & LAT
-- Vitamin D Total
+- Vitamin D Total → **9 ng/mL (severe deficiency)**; CRP → **27.6 mg/L (high)**
+
+> Baseline labs: see [[lab-reports-summary]] Jul 2023 section. HLA B27 negative → not classic AS; treated as seronegative inflammatory arthritis.
 
 **Medicines (3 days only):**
 - Dolonex DT 20mg (Piroxicam — NSAID) morning & night
@@ -60,7 +62,7 @@ All doctor visits and medications chronologically.
 
 **Advice:** Spine extension exercises
 
-> Sulfasalazine started here — indicates confirmed inflammatory arthritis/spondylitis diagnosis.
+> Sulfasalazine started here on high CRP (27.6) + clinical back pain — **empirical**, not on a genetic diagnosis. HLA B27 came back **negative**, so this is seronegative inflammatory arthritis, not confirmed ankylosing spondylitis.
 
 ---
 
@@ -146,6 +148,27 @@ All doctor visits and medications chronologically.
 
 ---
 
+### Jul 2026 — Dr. K Arun Ganesh (ENT, KRK ENT Care) — post CT PNS
+
+Follow-up after CT PNS (04 Jul 2026: minimal right maxillary sinusitis, S-shaped septal deviation, bilateral inferior turbinate hypertrophy). See [[lab-reports-summary]].
+
+**Clinic:** KRK ENT Care, K.K.Nagar, Madurai — Dr. K Arun Ganesh MBBS, MS(ENT), Coblation-trained upper-airway surgeon
+
+**Medicine prescribed (only one — confirmed by Vignesh):**
+- **Tab. Allegra 120mg (Fexofenadine)** — once daily, ~30 days — non-drowsy antihistamine for allergic rhinitis
+
+**Second sheet — giddiness consult note** (file named "Surgery" but content is a dizziness workup, NOT a surgical plan):
+- BP 142/75 mmHg
+- Complaint: **Giddiness**
+- Review of systems ruling out red flags: **No tinnitus, No ear discharge, No vomiting/nausea, No LOC (loss of consciousness), No blurring of vision**
+- Possibly "K/c/o HTN" (known/queried hypertension) — uncertain
+- ⚠️ Patient name on this sheet scrawled — reads like "Prem Selvam"; likely a misread of Vignesh's name or a front-desk error (BP 142/75 matches across both sheets → same patient)
+
+> **Allegra 120mg (fexofenadine) was the ONLY medicine prescribed** — no nasal spray, no eye drops, nothing else. Dr. Arun Ganesh chose a single-antihistamine approach, treating the **allergic driver** behind the sinusitis (see [[eye-strain-remedies]]).
+> **RESOLVED — no surgery was recommended.** Neither sheet mentions septoplasty or turbinate reduction. Management is (1) Allegra for allergic rhinitis + (2) a giddiness workup that excluded inner-ear / neurological red flags. Conservative, medical only. The structural findings (S-septum, turbinate hypertrophy) are noted but not being operated on.
+
+---
+
 ## Current Medications (as of Jul 2026 — verify with doctors)
 
 | Medicine | Dose | Time | Purpose | Prescribed by |
@@ -154,6 +177,7 @@ All doctor visits and medications chronologically.
 | Escitalopram (Citalin) | 5mg | Night | Anxiety/depression | Dr. Sabrin (Psychiatry) |
 | Melatonin (Melocure) | 3mg | Night 8PM | Sleep | Dr. Sabrin (Psychiatry) |
 | Vitamin E (EL-VIT) | 400mg | Afternoon | Antioxidant | Pirait clinic |
+| **Allegra (Fexofenadine)** | 120mg | Once daily | Allergic rhinitis / antihistamine | Dr. Arun Ganesh (ENT) |
 
 > Sulfasalazine may have been stopped — last confirmed prescription Jan 2024. Confirm with Dr. Rajapandian K if still needed.
 

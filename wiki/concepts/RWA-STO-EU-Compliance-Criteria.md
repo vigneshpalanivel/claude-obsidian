@@ -26,26 +26,25 @@ related:
   - "[[TFR-Regulation]]"
 internal_artifacts:
   - path: ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/RWA-STO-EU-Compliance-Criteria.md"
-    hash: "5a0f88a667d5d6c549271cadfbffe947"
+    hash: "699bfdcdb7560e9547cad1b2a8c8b915"
     registered: 2026-07-07
-    last_synced: 2026-07-07
-    role: "visual criteria companion to the RWA/STO landscape — 19 Mermaid decision trees"
-    purpose: "Diagrams-only artifact: every RWA/STO classification and trigger decision as a Mermaid flowchart, with article refs and numeric thresholds in the nodes. Sourced from BOTH the RWA-STO landscape (top-level classification) AND the 15 per-regulation Checklist/ files (granular thresholds, formats, proportionality tests) — extracted via parallel checklist sweep 2026-07-07. Consistent with the 2026-07-07 landscape corrections (best execution = MiFID II Art 27; eIDAS acceptance ~2026-2027; PDMR €20k + MS opt-up €50k; DLT Pilot ~10 applications + €6bn/€9bn caps)."
+    last_synced: 2026-07-08
+    role: "visual criteria companion to the RWA/STO landscape — 18 Mermaid decision trees"
+    purpose: "Diagrams-only artifact: every RWA/STO classification and trigger decision as a Mermaid flowchart, with article refs and numeric thresholds in the nodes. Sourced from BOTH the RWA-STO landscape (top-level classification) AND the 15 per-regulation Checklist/ files (granular thresholds, formats, proportionality tests) — extracted via parallel checklist sweep 2026-07-07. 2026-07-08: removed the MiCA sub-classification diagram (former A2 — ART/EMT/utility) as out of scope for the MiFID-lane RWA/STO file; A1 still shows the exit-to-MiCA boundary + the CASP-overlay case; sections renumbered (A1-A3). Consistent with the 2026-07-07 landscape corrections (best execution = MiFID II Art 27; eIDAS acceptance ~2026-2027; PDMR €20k + MS opt-up €50k; DLT Pilot ~10 applications + €6bn/€9bn caps)."
 ---
 
 # RWA / STO EU Compliance Criteria (Decision Diagrams)
 
-The **visual criteria companion** to [[RWA-STO-EU-Compliance-Landscape]]: 19 Mermaid decision trees covering every classification and trigger decision in the EU RWA/STO lane, with article references and numeric thresholds in the nodes. Diagrams only — the landscape and the per-regulation checklists carry the explanations.
+The **visual criteria companion** to [[RWA-STO-EU-Compliance-Landscape]]: 18 Mermaid decision trees covering every classification and trigger decision in the EU RWA/STO lane, with article references and numeric thresholds in the nodes. Diagrams only — the landscape and the per-regulation checklists carry the explanations.
 
-Unlike the landscape (top-level classification only), the criteria file also encodes the **granular checklist-level decisions**: prospectus exemptions + format selection, MiFID client classification (2-of-3 tests), venue-type determination, AIFMD authorisation thresholds, ELTIF retail/professional parameter split, LOF triggers, DLT Pilot caps, DORA proportionality/TLPT, AMLR CDD tiers, MiCA sub-classification, TFR applicability, eIDAS relying-party obligation.
+Unlike the landscape (top-level classification only), the criteria file also encodes the **granular checklist-level decisions**: prospectus exemptions + format selection, MiFID client classification (2-of-3 tests), venue-type determination, AIFMD authorisation thresholds, ELTIF retail/professional parameter split, LOF triggers, DLT Pilot caps, DORA proportionality/TLPT, AMLR CDD tiers, TFR applicability, eIDAS relying-party obligation. (MiCA sub-classification was deliberately excluded — RWA/STO is the MiFID lane; MiCA only enters as an exit-branch or a CASP side-business, both shown in A1.)
 
-## The 19 diagrams
+## The 18 diagrams
 
 **A. Classification & scope**
-- A1 Token classification — MiFID II financial instrument vs MiCA (Art 2(4)(a) carve-out; CASP overlay)
-- A2 MiCA sub-classification — EMT (1:1 single fiat, bank/EMI issuer) vs ART (≥2 currencies/commodities/basket, own funds ≥ max(€350k, 2% reserve, 25% fixed OH)) vs other crypto-asset (Title II); CASP via Art 60 notification (40 WD) vs full Art 59
-- A3 Role stack — issuer → venue (Art 4(1)(22)) → dealer/SI (Art 4(1)(20)) → advisor
-- A4 Venue type — RM vs MTF vs OTF vs SI (equity automatic / non-equity opt-in post-2024) vs DLT overlay
+- A1 Token classification — MiFID II financial instrument vs MiCA (Art 2(4)(a) carve-out); value-referencing/utility tokens exit to the MiCA lane (out of RWA/STO scope); CASP overlay only if the firm runs a non-MiFID crypto side-business
+- A2 Role stack — issuer → venue (Art 4(1)(22)) → dealer/SI (Art 4(1)(20)) → advisor
+- A3 Venue type — RM vs MTF vs OTF vs SI (equity automatic / non-equity opt-in post-2024) vs DLT overlay
 
 **B. Investor & offering**
 - B1 Client classification — per-se professional (2-of-3: ≥€20M BS / ≥€40M turnover / ≥€2M own funds) vs ECP vs elective professional (2-of-3: ≥€500k portfolio / 10+ trades/qtr / ≥1yr finance work) vs retail default

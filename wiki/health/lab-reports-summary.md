@@ -105,7 +105,7 @@ All reports from Aarthi Scans & Labs and Apollo Hospitals, Madurai.
 2. Bilateral inferior turbinate hypertrophy
 3. **Minimal right maxillary sinusitis**
 
-> This is the structural cause of forehead headaches and sloshing sensation. No surgery needed for minimal sinusitis — managed medically with nasal spray, steam, saline rinse.
+> This is the structural cause of forehead headaches and sloshing sensation. The *sinusitis* itself is minimal and medically managed (nasal spray, steam, saline rinse) — but the **septal deviation + turbinate hypertrophy are structural** and Dr. Arun Ganesh prescribed **only Allegra 120mg (fexofenadine antihistamine)** — treating the allergic driver medically. **No surgery recommended** — the second ENT sheet is a giddiness workup (ruling out inner-ear/neuro red flags), not a surgical plan; the S-septum + turbinate hypertrophy are noted but not being operated on. See [[prescription-history]] Jul 2026.
 > **Root driver is allergy (allergic rhinoconjunctivitis)** — same histamine response causes body heat sensation + sneezing + eye itching + white eye discharge + sinus inflammation simultaneously. All five symptoms are one condition, not separate problems. Needs antihistamine + nasal corticosteroid from ENT.
 
 ---
@@ -151,7 +151,37 @@ All reports from Aarthi Scans & Labs and Apollo Hospitals, Madurai.
 | Uric Acid | 5.5 mg/dL | 3.5–7.2 | Normal |
 | CRP (quantitative) | **5.00 mg/L** | Upto 6 | Upper limit |
 
-> CRP at upper limit coincides with active spinal inflammation period. Prompted Sulfasalazine treatment.
+> CRP already coming down from the Jul 2023 peak (27.6 → 5.0) on Sulfasalazine. Normalised fully by Jan 2024 (0.10).
+
+---
+
+## Jul 2023 — Baseline at First Ortho Visit (Apollo)
+
+**Date:** 22 Jul 2023 | Apollo Hospitals | Referred by Dr. Raja Pandian K | Ortho Package + HLA B27
+
+### HLA B27 (Molecular Biology — Real Time PCR)
+| Test | Result | Ref | Status |
+|------|--------|-----|--------|
+| **HLA B27-PCR** (whole blood EDTA) | **NOT DETECTED** | Not detected | **NEGATIVE** |
+
+> **HLA B27 negative.** ~90% of ankylosing spondylitis patients carry HLA-B27; only ~8% of healthy people do. A negative result makes **classic ankylosing spondylitis unlikely**. The inflammatory back pain treated from Jul 2023 was therefore managed as **seronegative** spondyloarthritis / inflammatory arthritis, not confirmed AS. Worth restating to Dr. Rajapandian K — Sulfasalazine was started empirically on high CRP + clinical picture, not on a genetic diagnosis.
+
+### Biochemistry + Haematology
+| Test | Result | Ref | Status |
+|------|--------|-----|--------|
+| **CRP (quantitative)** | **27.6 mg/L** | Upto 6 | **HIGH — active inflammation** |
+| **Vitamin D Total (25-OH)** | **9 ng/mL** | >30 normal; <20 deficient | **SEVERE DEFICIENCY** |
+| Uric Acid | 6.5 mg/dL | 3.5–7.2 | Upper-normal |
+| RA Factor | 25.8 IU/mL | <30 | Negative (but elevated) |
+| Creatinine | 1.0 mg/dL | 0.9–1.3 | Normal |
+| Glucose (random) | 90 mg/dL | <140 | Normal |
+| ESR | 10 mm/1st hr | 0–15 | Normal |
+| Haemoglobin | 15.4 g% | 13–18 | Normal |
+| PCV | 46% | 40–54 | Normal |
+
+> This is the true baseline. **CRP 27.6 was the trigger for Sulfasalazine** — the number the wiki previously started the story at (5.0 in Oct) was already the treated, declining value. Full CRP arc: **27.6 (Jul 2023) → 5.0 (Oct 2023) → 0.10 (Jan 2024)** — Sulfasalazine worked decisively.
+> **Vitamin D was severely deficient at 9** here, not just "insufficient" — the Jul 2024 reading of 29.95 shows Uprise D3 60K brought it up ~3× but still short of >30. Deficiency has been the long-standing pattern.
+> RA Factor 25.8 is technically negative but not trivial — combined with HLA-B27 negative, the picture is seronegative inflammatory arthritis.
 
 ---
 
@@ -180,9 +210,10 @@ All reports from Aarthi Scans & Labs and Apollo Hospitals, Madurai.
 | Marker | Trend | Action |
 |--------|-------|--------|
 | HDL | Chronically low (32) | Exercise + omega-3 + diet |
-| Vitamin D | Insufficient Jul 2024 | Continue D3 weekly |
-| CRP | High Oct 2023 → Normal Jan 2024 | Sulfasalazine working |
-| Uric Acid | Always normal (4.4–5.5) | No restriction needed |
+| Vitamin D | 9 (deficient, Jul 2023) → 29.95 (insufficient, Jul 2024) | Continue D3 weekly — still <30 |
+| CRP | 27.6 (Jul 2023) → 5.0 (Oct) → 0.10 (Jan 2024) | Sulfasalazine worked decisively |
+| HLA B27 | **Negative** (Jul 2023) | AS unlikely — seronegative picture |
+| Uric Acid | Upper-normal (6.5 Jul 2023) → 5.3 | No restriction needed |
 | Blood sugar | Consistently excellent | No concern |
 | Thyroid | Normal | No concern |
 | Kidney | Normal | No concern |
