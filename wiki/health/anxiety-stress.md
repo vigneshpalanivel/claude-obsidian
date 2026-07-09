@@ -91,25 +91,96 @@ Amplified loop
 
 ---
 
-## What Actually Reduces Stress
+## Why Cortisol Generates
 
-### Highest leverage (do these first)
+| Trigger | Relevance |
+|---------|-----------|
+| 12-hour cognitive work | Sustained decisions = sustained cortisol all day |
+| Skipping / undereating | Blood sugar drop → cortisol as emergency fuel signal |
+| Poor sleep | Sleep deprivation raises next-day cortisol baseline — self-feeding loop |
+| No physical movement | Cortisol accumulates with no disposal mechanism |
+| Anxiety (diagnosed) | Anxious thoughts trigger cortisol without external threat |
+| Caffeine on empty stomach | Coffee before food directly spikes cortisol |
+| Chronic inflammation | SI joint history; inflammation and cortisol drive each other bidirectionally |
+| Vitamin D deficiency | Chronically low Vit D associated with elevated cortisol baseline |
 
-| Action | Why it matters for your case |
-|--------|------------------------------|
-| **Consistent dinner — no skipping** | Fasting overnight spikes cortisol, amplifying every other symptom |
-| **Hard stop time from work** | Nervous system needs a clear end-of-day signal |
-| **No screens after 9 PM** | Blue light + work content keeps sympathetic system active past 10 PM sleep target |
-| **20 min walk daily** | Burns off accumulated cortisol from desk work; most effective single physical intervention |
-| **Consistent sleep time** | Sleep quality drives everything downstream — Melatonin helps onset but consistency matters more |
+### The Loop
 
-### Secondary
+```
+12hr work → cortisol builds
+    ↓
+Appetite suppressed → skip meals
+    ↓
+Blood sugar drops → more cortisol
+    ↓
+Poor sleep → next day baseline higher
+    ↓
+Next day harder → work longer → repeat
+```
+
+---
+
+## What Reduces Cortisol
+
+### Highest leverage
 
 | Action | Notes |
 |--------|-------|
-| Blue pea + ashwagandha tea | Mild cortisol reduction; fine at tea-bag quantities — see caution below |
-| Propranolol morning consistency | Already prescribed; don't skip doses |
-| Reduce decision load in evenings | Batch decisions to morning when cortisol is naturally higher and better suited for it |
+| **EFX elliptical 20–30 min, 3–4x/week after work** | Zero impact (safe for SI joint/spine). Finish by 8 PM — needs 2hr before 10 PM sleep. Eat protein within 45 min after. Cap at 30 min at BMI 17-18. |
+| **Consistent dinner — no skipping** | Fasting overnight spikes cortisol, amplifying every other symptom |
+| **Coffee after food, not before — no exceptions** | Caffeine on empty stomach directly triggers cortisol release before the day even starts. Eat first, then coffee. |
+| **Hard stop from work** | Nervous system needs a clear end-of-day signal — no work content after 9 PM |
+| **Consistent sleep time** | Sleep is the most powerful cortisol regulator; everything else is downstream |
+
+### Daily habits (low effort, high return)
+
+| Action | Notes |
+|--------|-------|
+| **Morning sunlight 10 min** | Regulates cortisol awakening response and circadian rhythm — sit near window during breakfast |
+| **Cold water face splash** | Activates dive reflex, drops cortisol acutely — already doing for eye strain |
+| **Physiological sigh** | Double inhale through nose (normal breath + quick top-up sniff) → long slow exhale through mouth. 2–3 reps, 30 seconds. Fastest acute cortisol drop available — usable at desk, unnoticeable. Use when body heat starts, before a difficult call, or any moment tension spikes. |
+| **4-7-8 breathing** | Inhale 4 counts → hold 7 counts → exhale 8 counts. 5–10 min. Best used in the pre-sleep wind-down slot (9:45–10 PM), not during work. Already practising — keep it in that slot consistently. |
+| **Warm shower after work** | Most underrated tool — muscle relaxation triggers parasympathetic system, drops cortisol significantly in 15 minutes. Key tool on 9-9 days when EFX isn't possible. |
+| **Brain dump before sleep** | Write tomorrow's tasks on paper for 5 min immediately after work ends. Closes open mental loops that keep cortisol elevated even after laptop closes. Critical for founders. |
+| **Music during commute / after work** | Listening to enjoyed music measurably reduces cortisol |
+| **Dark chocolate 20–30g after lunch (1–2 PM)** | 85%+ preferred (bitter, more flavanols, less sugar). Take after lunch — 8+ hours before sleep clears caffeine fully. Keep a bar at office desk. Chronic baseline cortisol reducer; not acute. |
+| **Consistent meal timing** | Predictable eating prevents blood sugar crashes that trigger cortisol throughout day |
+
+### Weekly
+
+| Action | Notes |
+|--------|-------|
+| Social time | Isolation directly elevates cortisol; even one comfortable social evening reduces baseline |
+| No screens after 9 PM | Blue light suppresses melatonin, keeps cortisol elevated into sleep window |
+
+---
+
+## Daily Protocol by Schedule Type
+
+### 9 AM–9 PM days (weekdays)
+
+| Time | Action |
+|------|--------|
+| Morning | Breakfast first → sunlight 10 min → coffee after food |
+| During work | Physiological sigh when tension builds; cold water face splash at lunch; step outside 5 min at lunch; music during non-call work |
+| Lunch | Eat on time — no skipping or delaying |
+| 9:00 PM | Hard stop — laptop closed, phone on DnD |
+| 9:00–9:15 PM | Brain dump — write tomorrow's tasks on paper |
+| 9:15–9:30 PM | Warm shower |
+| 9:30–9:45 PM | Dim lights, blue pea tea (optional) |
+| 9:45–10:00 PM | 4-7-8 breathing lying down |
+| 10:00 PM | Sleep |
+
+### 7:30 PM finish day + weekends (EFX days)
+
+| Time | Action |
+|------|--------|
+| After work | EFX 20–30 min immediately — finish by 8 PM |
+| Within 45 min after EFX | Protein meal |
+| Post-dinner | Dim lights, wind down |
+| 9:00 PM | No screens, dim lights |
+| 9:45–10:00 PM | 4-7-8 breathing |
+| 10:00 PM | Sleep |
 
 ---
 

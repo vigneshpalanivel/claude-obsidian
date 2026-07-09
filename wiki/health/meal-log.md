@@ -25,11 +25,14 @@ Daily food tracking. Target: ~2,200–2,400 kcal/day | 100–120g protein/day.
 | | Buttermilk | 35 | 2g |
 | Evening | 1 cup tea (milk + sugar) | 55 | 1g |
 | Dinner | Half grilled chicken (−1 piece) | 370 | 42g |
+| | Half egg fried rice (Indian style) | 220 | 7g |
+| | Mayonnaise | 90 | 0g |
+| | 2 pieces yellow jalebi | 120 | 1g |
 | | 1 glass full-fat milk | 150 | 8g |
 | | 1 banana | 95 | 1g |
-| **Total** | | **~1,970 kcal** | **~121g** |
+| **Total** | | **~2,400 kcal** | **~129g** |
 
-**Notes:** Skipped dinner previous night (Jul 7) → woke up with headache + sloshing sensation. Strong recovery breakfast. Protein target hit. Calories slightly below weight-gain target (~230 kcal short).
+**Notes:** Skipped dinner previous night (Jul 7) → woke up with headache + sloshing sensation. Strong recovery day — both calorie and protein targets hit. Jalebi + mayonnaise are pure sugar/fat additions; avoid close to sleep on future nights.
 
 ---
 
@@ -79,13 +82,33 @@ Daily food tracking. Target: ~2,200–2,400 kcal/day | 100–120g protein/day.
 
 ---
 
+## 2026-07-09 (Thursday)
+
+| Meal | Food | Calories | Protein |
+|------|------|----------|---------|
+| Breakfast | Ven pongal + sambar | 325 | 10g |
+| | 2 egg omelette (capsicum + onion) | 200 | 13g |
+| | 1.5 tbsp peanut butter | 140 | 6g |
+| | 1 coffee (milk + sugar) | 80 | 2g |
+| Lunch | 2 cups rice | 400 | 8g |
+| | 3 prawn bhorta | 510 | 60g |
+| | 2 pieces fish shallow fry | 160 | 20g |
+| | Buttermilk | 35 | 2g |
+| | 1 jalebi | 65 | 0g |
+| | 1 cashew pista roll | 75 | 1g |
+| Dinner | 2 pieces fish fry | 220 | 22g |
+| **Total (so far)** | | **~2,210 kcal** | **~144g** |
+
+---
+
 ## Weekly Summary
 
 | Date | Calories | Protein | Notes |
 |------|----------|---------|-------|
 | 2026-07-06 | ~1,528 | ~46g | Breakfast snack-level only; protein ~55g short |
 | 2026-07-07 | ~1,633 | ~70g | Banana-only dinner; ~600 kcal short |
-| 2026-07-08 | ~1,970 | ~121g | Headache morning (from Jul 7 skip) |
+| 2026-07-08 | ~2,400 | ~129g | Headache morning (from Jul 7 skip); targets hit |
+| 2026-07-09 | TBD | TBD | |
 
 ---
 
