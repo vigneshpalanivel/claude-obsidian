@@ -22,10 +22,24 @@ Likely triggers in Buddha bowl (vendor lunch): raw chickpeas, raw broccoli/cauli
 
 ### After Lunch (most important step)
 - Drink **buttermilk (moru) immediately after eating** — within 5–10 minutes
-- Preparation: thin homemade buttermilk + pinch of salt only
+- Preparation: thin homemade buttermilk + pinch of salt + **curry leaves + coriander leaves**
 - Chew few cumin seeds alongside the buttermilk — same effect as roasted cumin powder
 - Start with 150ml first week — increase to full glass if no bloating
 - **Buttermilk is after eating, not before**
+
+#### Why Curry Leaves + Coriander Leaves in Buttermilk
+
+Both herbs add headache-prevention nutrients on top of buttermilk's probiotic + carminative effect:
+
+| Nutrient | Curry Leaves | Coriander Leaves | Headache relevance |
+|----------|-------------|-----------------|-------------------|
+| **Magnesium** | ✅ | ✅ | Low magnesium is one of the most common nutritional migraine/tension headache triggers — relaxes blood vessels and reduces pain-signalling neurotransmitters |
+| **Potassium** | ✅ | ✅ | Low potassium causes headaches; regulates blood pressure (relevant given variable BP readings) |
+| **Folate (B9)** | ✅ | — | B vitamins support nervous system; B9 specifically reduces migraine frequency |
+| **Quercetin** | — | ✅ | Anti-inflammatory flavonoid — reduces neuroinflammation that amplifies headache sensitivity |
+| **Iron** | ✅ | — | Low iron causes headaches; curry leaves have decent iron content |
+
+> Spiced buttermilk (with curry + coriander) hits three afternoon headache causes simultaneously: magnesium deficiency, gut-vagal headache (probiotic + carminative), and neuroinflammation (quercetin). Better than plain buttermilk.
 
 ### 20–30 Minutes After Buttermilk
 - **Warm cumin water** — steep cumin seeds in hot water 3–5 min, drink warm

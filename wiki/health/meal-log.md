@@ -8,6 +8,33 @@ status: active
 
 Daily food tracking. Target: ~2,200–2,400 kcal/day | 100–120g protein/day.
 
+## Weekday Meal Bases (Fixed)
+
+### Breakfast Base
+
+| Food | Calories | Protein |
+|------|----------|---------|
+| 2 tbsp peanut butter | 190 | 8g |
+| 2 egg omelette with butter | 215 | 12g |
+| 5 almonds | 35 | 1.5g |
+| 10 pumpkin seeds | 28 | 1.5g |
+| 2 walnuts | 52 | 1g |
+| **Base total** | **~520 kcal** | **~24g** |
+
+Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g protein.
+
+### Lunch Base
+
+| Food | Calories | Protein |
+|------|----------|---------|
+| Grilled chicken Buddha bowl | 595 | 45g |
+| Buttermilk | 35 | 2g |
+| **Base total** | **~630 kcal** | **~47g** |
+
+**Weekday combined base: ~1,150 kcal, ~71g protein** (before breakfast top-up and dinner)
+
+> Weekends: both breakfast and lunch are flexible/variable — log as eaten.
+
 ---
 
 ## 2026-07-08 (Wednesday)
@@ -96,8 +123,30 @@ Daily food tracking. Target: ~2,200–2,400 kcal/day | 100–120g protein/day.
 | | Buttermilk | 35 | 2g |
 | | 1 jalebi | 65 | 0g |
 | | 1 cashew pista roll | 75 | 1g |
-| Dinner | 2 pieces fish fry | 220 | 22g |
-| **Total (so far)** | | **~2,210 kcal** | **~144g** |
+| Dinner | 1 cup rice | 200 | 4g |
+| | 2 prawn bhorta | 340 | 40g |
+| | 1 fish shallow fry | 80 | 10g |
+| **Total** | | **~2,610 kcal** | **~176g** |
+
+**Notes:** Strongest day so far — both targets exceeded. Prawn bhorta at lunch and dinner drove protein. Good template for high-protein days.
+
+---
+
+## 2026-07-10 (Friday)
+
+| Meal | Food | Calories | Protein |
+|------|------|----------|---------|
+| Breakfast | 1 cup rice | 200 | 4g |
+| | Fish gravy | 60 | 2g |
+| | 2 fish shallow fry | 160 | 20g |
+| | 1 tbsp peanut butter | 95 | 4g |
+| | 1 egg omelette with butter | 105 | 6g |
+| | 1 tea (milk + sugar) | 55 | 1g |
+| Lunch | Buddha bowl (grain + chickpeas + veg + dressing) | 480 | 15g |
+| | Buttermilk (thick) | 80 | 4g |
+| | 2 egg omelette | 180 | 12g |
+| Dinner | — | — | — |
+| **Total** | | **TBD** | **TBD** |
 
 ---
 
@@ -108,7 +157,8 @@ Daily food tracking. Target: ~2,200–2,400 kcal/day | 100–120g protein/day.
 | 2026-07-06 | ~1,528 | ~46g | Breakfast snack-level only; protein ~55g short |
 | 2026-07-07 | ~1,633 | ~70g | Banana-only dinner; ~600 kcal short |
 | 2026-07-08 | ~2,400 | ~129g | Headache morning (from Jul 7 skip); targets hit |
-| 2026-07-09 | TBD | TBD | |
+| 2026-07-09 | ~2,610 | ~176g | Best day — targets exceeded; prawn + fish drove protein |
+| 2026-07-10 | TBD | TBD | |
 
 ---
 

@@ -126,7 +126,7 @@ Next day harder → work longer → repeat
 
 | Action | Notes |
 |--------|-------|
-| **EFX elliptical 20–30 min, 3–4x/week after work** | Zero impact (safe for SI joint/spine). Finish by 8 PM — needs 2hr before 10 PM sleep. Eat protein within 45 min after. Cap at 30 min at BMI 17-18. |
+| **EFX elliptical 20–25 min daily** | Zero impact (safe for SI joint/spine). Weekdays: morning only (6:00–6:25 AM) — lowers cortisol starting baseline before work. After-work EFX (finish by 8 PM) on 7:30 PM day + weekends — disposes accumulated cortisol. Never at 9:30 PM → only 30 min before sleep, cortisol spike worsens sleep. Cap at 25–30 min at BMI 17-18. Eat protein within 45 min after each session. |
 | **Consistent dinner — no skipping** | Fasting overnight spikes cortisol, amplifying every other symptom |
 | **Coffee after food, not before — no exceptions** | Caffeine on empty stomach directly triggers cortisol release before the day even starts. Eat first, then coffee. |
 | **Hard stop from work** | Nervous system needs a clear end-of-day signal — no work content after 9 PM |
@@ -139,7 +139,7 @@ Next day harder → work longer → repeat
 | **Morning sunlight 10 min** | Regulates cortisol awakening response and circadian rhythm — sit near window during breakfast |
 | **Cold water face splash** | Activates dive reflex, drops cortisol acutely — already doing for eye strain |
 | **Physiological sigh** | Double inhale through nose (normal breath + quick top-up sniff) → long slow exhale through mouth. 2–3 reps, 30 seconds. Fastest acute cortisol drop available — usable at desk, unnoticeable. Use when body heat starts, before a difficult call, or any moment tension spikes. |
-| **4-7-8 breathing** | Inhale 4 counts → hold 7 counts → exhale 8 counts. 5–10 min. Best used in the pre-sleep wind-down slot (9:45–10 PM), not during work. Already practising — keep it in that slot consistently. |
+| **4-7-8 breathing + meditation** | Inhale 4 counts → hold 7 counts → exhale 8 counts. Start with 5 min 4-7-8, then extend into 15–20 min guided meditation (Insight Timer app — free). Best in the pre-sleep slot (9:30–10 PM). Do NOT add as a separate new habit — extend the existing slot you already have. Chronic cortisol reducer; takes 4–6 weeks of daily consistency before measurable effect. 10 min daily beats 30 min twice a week. |
 | **Warm shower after work** | Most underrated tool — muscle relaxation triggers parasympathetic system, drops cortisol significantly in 15 minutes. Key tool on 9-9 days when EFX isn't possible. |
 | **Brain dump before sleep** | Write tomorrow's tasks on paper for 5 min immediately after work ends. Closes open mental loops that keep cortisol elevated even after laptop closes. Critical for founders. |
 | **Music during commute / after work** | Listening to enjoyed music measurably reduces cortisol |
@@ -155,31 +155,61 @@ Next day harder → work longer → repeat
 
 ---
 
+## Physical Exercise Plan
+
+| Day | EFX timing | Purpose |
+|-----|-----------|---------|
+| Mon–Fri (9-9 days) | **6:00–6:25 AM morning** | Lowers cortisol starting baseline before 9 AM work |
+| 7:30 PM weekday | **After work, finish by 8 PM** | Disposes cortisol accumulated during work day |
+| Saturday | **After work, flexible timing** | Full weekly disposal + HPA recalibration |
+| Sunday | **After work, flexible timing** | Full weekly disposal + HPA recalibration |
+
+> ⚠️ Never EFX at 9:30 PM with 10 PM sleep — 30 min gap only. Cortisol peaks during exercise, still spiked at 10 PM → delays sleep, worsens quality, raises next day's baseline. Counterproductive.
+> ⚠️ No double sessions (morning + evening same day) at BMI 17-18 — excess cardio burns muscle. On 7:30 PM day, skip morning EFX and do after-work only.
+
+---
+
 ## Daily Protocol by Schedule Type
 
 ### 9 AM–9 PM days (weekdays)
 
 | Time | Action |
 |------|--------|
-| Morning | Breakfast first → sunlight 10 min → coffee after food |
+| 6:00 AM | Wake |
+| 6:00–6:25 AM | **EFX 25 min** — morning cortisol baseline drop |
+| 6:25–6:40 AM | Shower — parasympathetic activation |
+| 6:40–7:15 AM | Breakfast + 10 min sunlight — coffee after food only |
 | During work | Physiological sigh when tension builds; cold water face splash at lunch; step outside 5 min at lunch; music during non-call work |
-| Lunch | Eat on time — no skipping or delaying |
+| Lunch | Eat on time + dark chocolate after |
 | 9:00 PM | Hard stop — laptop closed, phone on DnD |
 | 9:00–9:15 PM | Brain dump — write tomorrow's tasks on paper |
-| 9:15–9:30 PM | Warm shower |
-| 9:30–9:45 PM | Dim lights, blue pea tea (optional) |
-| 9:45–10:00 PM | 4-7-8 breathing lying down |
+| 9:15–9:30 PM | **Evening shower** — parasympathetic activation, body temperature drop, sleep signal |
+| 9:30–10:00 PM | Dim lights → 4-7-8 breathing (5 min) → guided meditation (15–20 min) — Insight Timer app |
 | 10:00 PM | Sleep |
 
-### 7:30 PM finish day + weekends (EFX days)
+### 7:30 PM finish day
 
 | Time | Action |
 |------|--------|
-| After work | EFX 20–30 min immediately — finish by 8 PM |
-| Within 45 min after EFX | Protein meal |
-| Post-dinner | Dim lights, wind down |
+| 6:00 AM | Wake — **no morning EFX today** |
+| 6:00–6:30 AM | Breakfast + sunlight (extra time since no EFX) |
+| After work (by 7:45 PM) | **EFX 25 min** — finish by 8 PM |
+| After EFX | **Shower** — post-exercise + wind-down |
+| Within 45 min after EFX | Protein dinner |
 | 9:00 PM | No screens, dim lights |
-| 9:45–10:00 PM | 4-7-8 breathing |
+| 9:15–9:30 PM | Brain dump |
+| 9:30–10:00 PM | Dim lights → 4-7-8 breathing (5 min) → guided meditation (15–20 min) |
+| 10:00 PM | Sleep |
+
+### Weekends
+
+| Time | Action |
+|------|--------|
+| 6:00 AM | Wake — morning EFX optional |
+| After work / evening | **EFX 25–30 min** — primary disposal session |
+| Within 45 min after EFX | Protein meal |
+| 9:00 PM | No screens, wind down |
+| 9:30–9:45 PM | 4-7-8 breathing |
 | 10:00 PM | Sleep |
 
 ---
