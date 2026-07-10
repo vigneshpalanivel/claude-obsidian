@@ -106,7 +106,8 @@
       "Bash(echo \"new hash: $\\(md5 -q RWA-STO-EU-Compliance-Criteria.md\\)\")",
       "Bash(grep -v \"^[0-9]\\\\{1,2\\\\}:\")",
       "Bash(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md)",
-      "Bash(echo \"mermaid blocks: $\\(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md\\)\")"
+      "Bash(echo \"mermaid blocks: $\\(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md\\)\")",
+      "Bash(md5 -q \".raw/Trioangle/sales-marketing/Product/SEO/CITE/CITE Playbook.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

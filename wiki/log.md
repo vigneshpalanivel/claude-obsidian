@@ -19,6 +19,14 @@ Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
 
+## [2026-07-10] re-ingest | Trioangle CITE Playbook (consolidated SSOT)
+- Source: `.raw/Trioangle/sales-marketing/Product/SEO/CITE/CITE Playbook.md` (hash `fb2e237c…`, was `90a185f2…`)
+- Summary: [[CITE-Score-Improvement-Playbook-Trioangle]] (rewritten as SSOT source page)
+- Pages updated: [[Trioangle CITE Audit & Improvement Plan]], [[CITE-Score-Improvement-Playbook-Trioangle]], [[index]], [[hot]]
+- Key insight: playbook is now a single source of truth — absorbed the retired Master Playbook + Implementation docs (deleted), relocated `SEO/Playbook/` → `SEO/CITE/`. Adds Opportunity Landscape (platform→CITE-gap mapping), Projected Outcomes, reusable Product Page CITE Template, benchmark examples, and an entity-fact conflict table (2015/2016 founding · Madurai/Chennai · 200+/750+).
+- Review-pass corrections folded in: item count ~26→~24; on-site bucket ~8–12 pts → ~70–74; 90+ anchored to the 18-month tail with Citation as binding constraint; provenance caveat on DA/traffic figures.
+- Path drift also recorded: [[CITE-Report-Trioangle]] relocated `SEO/CITE Report.md` → `SEO/CITE/CITE Report.md` (content unchanged, same hash).
+
 ## [2026-07-08] revamp | RWA-STO-EU-Compliance-Criteria — pivoted to per-regulation applicability gates
 - Reworked the criteria file from CLASSIFICATION decision trees to **applicability gates**: 18 Mermaid "does this regime apply to my RWA/STO platform (yes/no, under what condition)?" trees, each ending APPLIES (scope) or does-NOT-apply (reason). Groups 1.x securities-core, 2.x fund, 3.x infra, 4.x horizontal, +§5 out-of-scope (CCD2/IPR/PSD3). Sourced from checklist scope sections.
 - Per user, token/role/fund CLASSIFICATION trees deliberately EXCLUDED (landscape content; may add later) — gates assume the token is already a MiFID security.
