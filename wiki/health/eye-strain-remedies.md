@@ -97,6 +97,7 @@ Headache
 - Temperature change — stepping from hot outside into cold AC
 - Stress — triggers histamine release via mast cell activation (CRH pathway), lowering the allergic threshold even without external allergen
 - Early morning — histamine naturally peaks between 6–8 AM
+- **Spicy food (red / green chilli)** — confirmed personal trigger. Two mechanisms stack: (1) capsaicin activates TRPV1 nerves → neurogenic vasodilation + nasal fluid ("gustatory rhinitis" — a non-allergic runny nose), and (2) capsaicin and some spicy/aged dishes can also provoke mast-cell degranulation → histamine. Net effect mimics and amplifies the same body-heat + sinus + sloshing symptom cluster. Avoid on any flare day; keep chilli minimal in general given active sinusitis.
 
 ### Medical Term
 **Allergic rhinoconjunctivitis with sinusitis** — nose and eyes affected simultaneously by same allergen. Called "united airways."

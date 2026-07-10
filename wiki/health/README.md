@@ -46,7 +46,8 @@ If you are about to give a health answer and you have NOT opened these files thi
 
 - **Dinner:** no chicken or fish — eggs OK as protein. Light, before 6:30 PM.
 - **After 6:30 PM:** no food or liquid of any kind (gastric/sleep protection).
-- **Sinusitis active:** avoid spicy food (red/green chilli → capsaicin → sloshing), cold food, high-histamine/fermented foods on flare days. On Allegra 120mg.
+- **Spicy food (red/green chilli) = confirmed histamine/sinus trigger** — capsaicin → gustatory rhinitis + mast-cell histamine → body heat, sinus fluid, sloshing. Avoid on flare days, minimal generally.
+- **Sinusitis active:** also avoid cold food, high-histamine/fermented foods. On Allegra 120mg.
 - **BMI 17–18 (underweight):** calorie-dense choices; target ~2,200–2,400 kcal, 100–120g protein/day.
 - **Gastric-prone:** avoid raw legumes/chickpeas/broccoli, excess raw onion at night.
 - **Anxiety unmedicated since ~Jan 2026:** food, sleep, movement carry the load — no pharmaceutical backstop.

@@ -67,7 +67,8 @@ The single canonical profile. **Read this first for any health/food/medication/s
 
 - **Dinner:** no chicken or fish — **eggs OK**. Light, before 6:30 PM.
 - **After 6:30 PM:** no food or liquid of any kind (gastric + sleep protection).
-- **Sinusitis flare:** avoid spicy (red/green chilli → capsaicin → head sloshing), cold food, and high-histamine/fermented foods.
+- **Spicy food (red/green chilli) = confirmed histamine/sinus trigger.** Capsaicin drives both neurogenic nasal fluid (gustatory rhinitis) and mast-cell histamine release → body heat, sinus fluid, head sloshing. Avoid on flare days; keep minimal generally. See [[eye-strain-remedies]] triggers.
+- **Sinusitis flare:** also avoid cold food and high-histamine/fermented foods.
 - **BMI 17–18:** calorie-dense choices. Target **~2,200–2,400 kcal, 100–120g protein/day**.
 - **Gastric-prone:** avoid raw chickpeas/legumes, raw broccoli/cauliflower, excess raw onion — especially at night.
 - **Caffeine:** coffee only after food, never on empty stomach (cortisol spike). No caffeine near sleep.
