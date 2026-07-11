@@ -112,6 +112,23 @@ Both herbs add headache-prevention nutrients on top of buttermilk's probiotic + 
 
 > High water volume (3L+) with insufficient salt can cause electrolyte imbalance → headache. Add pinch of salt + lemon to one glass of water daily.
 
+## Fiber — Structural Gap (Constipation)
+
+Fiber intake is under target (~25–30g/day) **every day** in the [[meal-log]] — range ~11–22g. The diet is protein + refined carb (white rice, maida) + fat, with almost no fiber outside the **Buddha bowl** (~10g). On days without the bowl, fiber collapses to ~11g → constipation (observed Jul 11, after a zero-fiber Jul 10 dinner).
+
+**Key nuance for BMI increase:** fiber is for gut/regularity, NOT weight gain. High-volume low-cal fiber (raw salad, greens) *fills the stomach and sabotages the calorie target* — the opposite of what an underweight person needs. So get fiber **only from calorie-dense sources**:
+
+| Calorie-dense fiber (use these) | Fixes | Also helps |
+|--------------------------------|-------|-----------|
+| Dal / legumes / chickpeas | Constipation + protein | Weight gain |
+| Whole grain (oats, wheat) vs white rice/maida | Regularity | Weight gain, HDL |
+| Dried fruit — dates, figs, raisins (soaked) | Fast constipation relief | Gain calories |
+| Nuts, seeds, peanut butter | Mild fiber | Already eating |
+| Avocado | Fiber + fat | Gain calories, HDL |
+| Banana, papaya | Regularity (papaya strongest) | Potassium |
+
+**Daily rule:** one fiber source *independent of the Buddha bowl* every day — fruit + dal or whole grain. Plus warm water on waking (gastrocolic reflex) and daytime hydration (evening blocked by the 6:30 PM cutoff).
+
 ## After Dinner Rule
 
 - **6:30 PM dinner = last food and liquid of the day — no exceptions**

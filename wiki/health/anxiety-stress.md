@@ -214,9 +214,45 @@ Next day harder → work longer → repeat
 
 ---
 
+## Premature Ejaculation (PE) — Management
+
+PE is listed above as a physical anxiety symptom (sympathetic activation shortens ejaculatory latency). It is treatable — mostly without medication.
+
+### Key personal insight — the SSRI-stopping connection
+
+**Escitalopram (SSRI) was stopped ~Jan 2026. SSRIs *delay* ejaculation — they're the standard drug treatment for PE.** So while on Escitalopram (Feb 2025–Jan 2026) it was likely *suppressing* the PE; stopping it may have unmasked/worsened it. This timing is the single most relevant thing to raise with Dr. Sabrin. See [[prescription-history]].
+
+### Which doctor — psychiatrist first, not urologist
+
+| Route | When |
+|-------|------|
+| **Dr. Sabrin (psychiatrist)** — FIRST | PE is anxiety-driven, she knows the SSRI history, and the med lever (dapoxetine / SSRI) is hers. Start here. |
+| Psychologist | If performance-anxiety / sex-therapy (CBT) needed — via Dr. Sabrin referral |
+| Urologist | ONLY if PE comes **with erectile dysfunction**, pain, or urinary symptoms, OR if behavioral + psychiatric routes fail after ~2 months → rules out physical cause (hormones, thyroid, prostate) |
+
+> Open question to resolve: is it *only* quick ejaculation, or also difficulty getting/keeping an erection? If the latter, move urologist up the priority.
+
+### Do now — no prescription needed
+
+1. **Pelvic floor exercises (Kegels) — strongest evidence, daily.** Squeeze the muscle that stops urine mid-flow, 5–10 sec hold, release, 10 reps × 3/day. ~4–6 weeks of consistency for effect. Highest-leverage no-cost fix.
+2. **Stop-start / squeeze technique.** Pause before the point of no return until arousal subsides, then resume; or squeeze below the glans to reduce arousal. Trains latency.
+3. **Parasympathetic breathing during sex** — slow diaphragmatic exhale (same as the physiological sigh). PE is a sympathetic-overdrive event; slow breathing downshifts it.
+4. **Break the performance-anxiety loop** — worrying about PE feeds the sympathetic activation that causes it.
+5. **Topical lidocaine spray/cream** (OTC) — reduces sensitivity, applied ~15 min before, wiped off. On-demand, low-risk bridge while behavioral training builds.
+
+### Upstream drivers (already in this file's protocol)
+
+Sleep, cortisol reduction, consistent exercise all lower baseline sympathetic tone → directly help PE. PE is downstream of the same overload driving the other symptoms — treat the anxiety, treat the PE.
+
+> **Realistic framing:** behavioral + pelvic floor resolves or improves PE for most men, but over weeks of consistency, not instantly. Start Kegels now; escalate to Dr. Sabrin for the medication/SSRI question.
+
+---
+
 ## Ashwagandha Caution
 
-You're on **Escitalopram (SSRI)**. Ashwagandha has mild serotonergic activity and can affect thyroid hormones.
+⚠️ **Historical note — Escitalopram was stopped ~Jan 2026, so this interaction is not currently active.** Kept in case the SSRI is restarted (see PE section — restarting an SSRI is on the table with Dr. Sabrin).
+
+When on **Escitalopram (SSRI)**: ashwagandha has mild serotonergic activity and can affect thyroid hormones.
 
 - **At tea-bag quantities:** likely fine — below interaction threshold
 - **At supplement doses (capsules/powder):** check with Dr. Sabrin first
@@ -226,13 +262,13 @@ You're on **Escitalopram (SSRI)**. Ashwagandha has mild serotonergic activity an
 
 ## Medication Review Trigger
 
-Raise with Dr. Sabrin if any of the following persist:
-- PE despite 17+ months on Escitalopram
-- Sleep still poor despite Melatonin
+**Context: all psychiatric meds stopped ~Jan 2026 — currently unmedicated.** Raise with Dr. Sabrin if any of the following persist off-medication:
+- **PE — note it may have *worsened after stopping* Escitalopram** (SSRI was delaying it); ask about on-demand dapoxetine or restarting an SSRI (see PE section)
+- Sleep still poor since stopping Melatonin
 - Body heat / allergic flares worsening under stress
 - Appetite suppression on high-stress days
 
-The current medication manages symptoms — it does not reduce the underlying load. If symptoms are persisting, dose or medication may need adjustment, not just lifestyle changes.
+Lifestyle now carries the full load with no pharmaceutical backstop. If symptoms persist despite the protocol above, the medication question (restart / adjust / on-demand) is back on the table — that's Dr. Sabrin's call, not a lifestyle-only decision.
 
 ---
 
