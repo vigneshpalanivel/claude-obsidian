@@ -10,6 +10,20 @@ Daily food tracking. Target: ~2,200–2,400 kcal/day | 100–120g protein/day | 
 
 > **Fiber rule (for BMI increase):** fiber is for gut/regularity, NOT weight gain — bulky low-cal fiber (raw salad, greens) *fills you up and sabotages the calorie target*. Get fiber only from **calorie-dense sources**: dal/legumes, whole grain (vs white rice/maida), nuts/seeds, dried fruit (dates/figs/raisins), avocado, banana/papaya. These fix constipation AND add gain calories. See [[gastric-remedies]] fiber note.
 
+## Daily Calorie Split (Target Structure)
+
+Front-load the day; dinner is the adjustable patch. As long as breakfast and lunch each land in the 800–1,000 range, dinner patches the rest to ~2,400 without ever exceeding 800.
+
+| Meal | Calorie target | Protein | Fiber | Rule |
+|------|---------------|---------|-------|------|
+| Breakfast | 800–1,000 | ~30–35g | ~12g | Aim high; **never below 800** |
+| Lunch | 800–1,000 | ~45–55g | ~11g | Aim high; **never below 800** |
+| Dinner | patch to ~2,400 | ~15–25g | ~5–6g | **Cap 800**; light (~400) when B+L hit 1,000 |
+| **Total** | **~2,400** | **~100–115g** | **~28g** | |
+
+> **Self-consistent:** floor B+L (800+800=1,600) + max dinner (800) = 2,400. Top B+L (1,000+1,000=2,000) + light dinner (400) = 2,400. Works at both ends. **Only failure mode: breakfast or lunch below 800** — no legal (≤800) dinner can patch that. Hold the 800 floor on B and L; the rest self-corrects.
+> 800 dinner is a *medium* meal, not light — use it as an occasional patch, not routine, or the light-dinner benefit (gastric/sleep) is lost.
+
 ## Weekday Meal Bases (Fixed)
 
 ### Breakfast Base
@@ -164,7 +178,8 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 
 | Meal | Food | Calories | Protein | Fiber |
 |------|------|----------|---------|-------|
-| Breakfast | 5 almonds | 35 | 1.5g | 0.8g |
+| Breakfast | 2 tbsp soaked padam pisin (almond gum) — daily | 35 | 0g | 4g |
+| | 5 almonds | 35 | 1.5g | 0.8g |
 | | 10 pumpkin seeds | 28 | 1.5g | 0.3g |
 | | 3 walnuts | 78 | 1.5g | 1g |
 | | 1 egg omelette with butter | 105 | 6g | 0g |
@@ -180,10 +195,63 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 2 fried chicken wings | 200 | 14g | 0g |
 | Beverages | 1 tea (10:30 AM) | 55 | 1g | 0g |
 | | 1 tea (3:30 PM) | 55 | 1g | 0g |
-| Dinner | — | — | — | — |
-| **Running** | | **~2,006 kcal** | **~114.5g** | **~7g** |
+| Dinner | 2 chapati (whole wheat) | 240 | 6g | 5g |
+| | Paneer butter masala — 10 pieces, creamy | 550 | 32g | 2g |
+| **Total** | | **~2,831 kcal** | **~152.5g** | **~17.5g** |
 
-**Notes:** Fiber-light breakfast (no fruit/veg/whole grain) — relevant to this morning's constipation, which follows a near-zero-fiber fat-heavy dinner (tandoori + mayo + ghee roast + eggs) + low overnight hydration. Breakfast is snack-level (~436 kcal); needs strong lunch + dinner to reach ~2,200–2,400. Add fruit/fiber + warm water AM to fix bowel.
+**Notes:** Big surplus day (~2,831 kcal) — excellent for weight gain. Protein far over target (152g). Fiber improved to ~17.5g via chapati + padam pisin (best fiber day yet, still under 25–30 target). ⚠️ **Very high saturated-fat day** — fried chicken wings + goat brain + mutton nalli/sukka at lunch, then creamy paneer butter masala at dinner. Fine as a weekend feast, but this fat + purine (mutton/brain/organ) load shouldn't repeat weekly given HDL 32 + uric acid monitoring. Chapati was the right whole-grain call for fiber.
+
+---
+
+## 2026-07-12 (Sunday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 cups goat soup + 4 full leg pieces | 400 | 35g | 0g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| | 1 apple | 95 | 0.5g | 4g |
+| | 1 tea | 55 | 1g | 0g |
+| Lunch | 1.5 quail pepper fry | 300 | 30g | 0g |
+| | Quail half oil shallow fry | 120 | 10g | 0g |
+| | 1.5 cup rice | 300 | 6g | 1g |
+| | Rasam | 40 | 2g | 1g |
+| | Buttermilk | 40 | 2g | 0.2g |
+| | 1 tea | 55 | 1g | 0g |
+| | Banana chips (10) | 110 | 1g | 1g |
+| | 1 kaju katli (after lunch) | 60 | 1g | 0g |
+| | 1 cream biscuit | 55 | 0.5g | 0g |
+| | 1 lemon soda | 90 | 0g | 0g |
+| Dinner | 1 cup rice | 200 | 4g | 0.6g |
+| | Rasam | 40 | 2g | 1g |
+| | 1 full quail | 200 | 20g | 0g |
+| | Jamun fruit (8 pieces) | 60 | 1g | 2g |
+| | 4 rambutan | 30 | 0g | 1g |
+| **Total** | | **~2,360 kcal** | **~118.5g** | **~15.5g** |
+
+**Notes:** ✅ On-target day — rice + full quail made dinner a real meal. **~2,360 kcal (within 2,300–2,500 target), protein ~118.5g, fiber ~15.5g** (low — padam pisin skipped, no whole grain/dal). Snacks (kaju katli + biscuit + lemon soda) carried it over the floor — fine for calories, but empty/sugary; better to hit target with milk/nuts. Minor: lemon soda is carbonated → on the gastric avoid-list, keep occasional. **Jul 11 (2,831) + Jul 12 (2,360) → 2-day avg ~2,596 → clear surplus.**
+
+---
+
+## 2026-07-13 (Monday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | 6 soaked almonds | 40 | 2g | 1g |
+| | 10 pumpkin seeds | 28 | 1.5g | 0.3g |
+| | 2 walnuts | 52 | 1g | 0.7g |
+| | 3 jackfruit seeds (boiled) | 50 | 1.5g | 1.5g |
+| | 2 wheat bread | 140 | 6g | 4g |
+| | 2 egg omelette with butter | 215 | 12g | 0g |
+| | 1 tbsp peanut butter | 95 | 4g | 1g |
+| | 1 piece watermelon | 30 | 0.5g | 0.5g |
+| | ½ small orange | 20 | 0.5g | 1g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| Dinner | — | — | — | — |
+| **Running** | | **~1,335 kcal** | **~76g** | **~24g** |
+
+**Notes:** Strong start — **~13g fiber at breakfast alone** (best fiber breakfast yet): padam pisin + jackfruit seeds + wheat bread + watermelon + nuts. This is the fiber-lever advice applied. ~685 kcal / ~28.5g protein is a solid base; on track if lunch + dinner stay consistent.
 
 ---
 
@@ -196,7 +264,9 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | 2026-07-08 | ~2,400 | ~129g | ~18g | Headache morning (from Jul 7 skip); targets hit |
 | 2026-07-09 | ~2,610 | ~176g | ~11g | Best day on cal/protein — but **lowest fiber (no Buddha bowl)** → set up next-day constipation |
 | 2026-07-10 | ~2,500 | ~122g | ~15g | Targets exceeded; zero-fiber dinner (tandoori+mayo+ghee roast) → constipation Jul 11 |
-| 2026-07-11 | in progress | in progress | ~4g (bkfst) | Constipation AM; fiber-light breakfast — needs fruit + dal/whole grain + water |
+| 2026-07-11 | ~2,831 | ~152.5g | ~17.5g | Weekend feast — big surplus (great for BMI), protein way over. Very high sat-fat + purine (fried wings, goat brain, mutton, creamy paneer). Fiber best yet (chapati + padam pisin) but still short |
+| 2026-07-12 | ~2,360 | ~118.5g | ~15.5g | ✅ On-target (snacks carried it over floor). Fiber low ~15.5g (padam pisin skipped). 2-day avg w/ Jul 11 ~2,596 → clear surplus |
+| 2026-07-13 | in progress | in progress | ~23g (thru lunch) | Best fiber day forming — breakfast fiber stack + chicken bowl; on track to hit 25–30g target for the first time |
 
 > **Fiber trend: under target (~25–30g) every single day.** Best ~22g, worst ~11g. All fiber rides on the Buddha bowl. Target-hit days on calories/protein (Jul 9, 10) were still low-fiber → the constipation is structural, not random.
 

@@ -107,7 +107,18 @@
       "Bash(grep -v \"^[0-9]\\\\{1,2\\\\}:\")",
       "Bash(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md)",
       "Bash(echo \"mermaid blocks: $\\(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md\\)\")",
-      "Bash(md5 -q \".raw/Trioangle/sales-marketing/Product/SEO/CITE/CITE Playbook.md\")"
+      "Bash(md5 -q \".raw/Trioangle/sales-marketing/Product/SEO/CITE/CITE Playbook.md\")",
+      "Bash(echo \"gates: $\\(grep -cE '^## [0-9]' RWA-STO-EU-Compliance-Criteria.md\\) | mermaid: $\\(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md\\) | glossary bold-lead lines: $\\(grep -cE '^\\\\*\\\\*' RWA-STO-EU-Compliance-Criteria.md\\)\")",
+      "Bash(awk '/^```$/{c=NR} /^\\\\*\\\\*/{if\\(NR==c+1\\)print NR\": glossary after mermaid\"}' RWA-STO-EU-Compliance-Criteria.md)",
+      "Bash(md5 -q RWA-STO-EU-Compliance-Landscape.md)",
+      "Bash(echo \"RWA: $\\(md5 -q RWA-STO-EU-Compliance-Landscape.md\\)\")",
+      "Bash(md5 -q EU-Compliance-Landscape.md)",
+      "Bash(echo \"generic: $\\(md5 -q EU-Compliance-Landscape.md\\)\")",
+      "Bash(python3 -)",
+      "Bash(rm -f eltif-rts.mhtml t1-settlement.mhtml csdr.mhtml)",
+      "Bash(rm -f /tmp/eltif-rts.txt /tmp/t1.txt /tmp/csdr.txt)",
+      "Bash(echo \"gates \\(## n.n\\): $\\(grep -cE '^## [0-9]' RWA-STO-EU-Compliance-Criteria.md\\)  |  mermaid: $\\(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md\\)\")",
+      "Bash(grep -nE \"^#{1,3} \" RWA-STO-EU-Compliance-Criteria-Simple.md)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

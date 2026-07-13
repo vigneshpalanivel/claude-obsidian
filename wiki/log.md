@@ -27,6 +27,14 @@ Append-only. New entries go at the TOP. Never edit past entries.
 - Review-pass corrections folded in: item count ~26→~24; on-site bucket ~8–12 pts → ~70–74; 90+ anchored to the 18-month tail with Citation as binding constraint; provenance caveat on DA/traffic figures.
 - Path drift also recorded: [[CITE-Report-Trioangle]] relocated `SEO/CITE Report.md` → `SEO/CITE/CITE Report.md` (content unchanged, same hash).
 
+## [2026-07-11] batch ingest | EU Compliance — regulatory updates + 3 new checklists, all re-synced
+- **Regulatory currency pass** (web-verified): added **RIS** (Retail Investment Strategy — approved 12 Jun 2026, pre-OJ, ~end-2028; amends MiFID II/UCITS/AIFMD/IDD/PRIIPs; elective-professional €500k→€250k), **T+1 settlement** (Reg (EU) 2025/2075, applies 11 Oct 2027), **ELTIF 2.0 RTS** (Delegated Reg 2024/2759); corrected the DLT-Pilot "permanence" claim to ESMA's Jun-2025 Art-14 recommendation.
+- **Landscapes updated**: RWA-STO landscape (`6c899d1…`) + generic EU-Compliance landscape (`1a08da6…`) — RIS/T+1 rows, ELTIF-RTS, "On the horizon" callout, Primary Sources; both re-mirrored to concepts [[RWA-STO-EU-Compliance-Landscape]] + [[EU-Fintech-Compliance-Landscape]].
+- **Criteria** (`c0827ab…`): 18→**20 gates** — new §5 recently-adopted (5.1 T+1, 5.2 RIS), §6 out-of-scope; §2.4/§3.1 annotations. Concept [[RWA-STO-EU-Compliance-Criteria]] resynced.
+- **3 new checklists created + verified** and registered in manifest: `eltif-rts-checklist.md` (`7f11bc8…`, verified vs EUR-Lex — 2 errors fixed: redemption cap base = Art 9(1)(b) liquid bucket; Annex I example), `t1-settlement-checklist.md` (`65ec9c6…`, verified, clean), `ris-checklist.md` (`875d694…`, PROVISIONAL/pre-OJ). Verification MHTMLs deleted per user after verification.
+- Pages updated: [[RWA-STO-EU-Compliance-Landscape]], [[EU-Fintech-Compliance-Landscape]], [[RWA-STO-EU-Compliance-Criteria]], [[index]], [[hot]], [[log]], `.raw/.manifest.json` (55→58 sources).
+- Note: this session also earlier added the role-summary table + MAR-in-Issuer explainer + 9-item review-fix precision pass to the RWA landscape — now reflected in its concept via the re-mirror.
+
 ## [2026-07-08] revamp | RWA-STO-EU-Compliance-Criteria — pivoted to per-regulation applicability gates
 - Reworked the criteria file from CLASSIFICATION decision trees to **applicability gates**: 18 Mermaid "does this regime apply to my RWA/STO platform (yes/no, under what condition)?" trees, each ending APPLIES (scope) or does-NOT-apply (reason). Groups 1.x securities-core, 2.x fund, 3.x infra, 4.x horizontal, +§5 out-of-scope (CCD2/IPR/PSD3). Sourced from checklist scope sections.
 - Per user, token/role/fund CLASSIFICATION trees deliberately EXCLUDED (landscape content; may add later) — gates assume the token is already a MiFID security.
