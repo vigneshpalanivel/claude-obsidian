@@ -14,8 +14,8 @@ key_claims:
   - "T1 connection requests are hard-capped at 300 characters — check length before sending; cut middle clause not personalisation hook or sign-off if over"
   - "Daily connection budget: 15-20 total requests across all segments; 8-10 RWA + 3-5 DeFi/Protocol (trigger-activated) + 2-4 non-RWA FinTech/Channel Partner"
   - "DeFi/Protocol outreach requires a specific trigger for every T1 — exploit news, funding round, job posting, or audit post; generic cold requests are ignored"
-  - "FinTech RWA Sales Navigator filters: CTO/CEO/CPO/VP Engineering + Financial Services + 50-500 employees + EU (Germany, Netherlands, France, Ireland, Nordics, Baltics) + RWA/WealthTech/MiCA keywords"
-  - "Crypto Native RWA LinkedIn filters: Founder/CEO/CTO + Real Estate/Commodities + EU + asset tokenization/RWA/property on-chain keywords"
+  - "RWA Sales Navigator filters are now consolidated into the canonical build sheet [[Phase 1 LinkedIn Filter]] (2026-07-13); Outreach Strategy / Task List / Execution Playbook all point to it. FinTech `FT WealthTech RWA`: CTO/CEO/CPO/VP Eng/Head of Product/Head of Tokenization/Head of Digital Assets + Financial Services/Investment Management/Capital Markets + 50-500 (funded 11-50) + EU + RWA/MiFID II keywords, MiCA EXCLUDED"
+  - "Crypto Native `CN RWA Felix`: asset-owner titles (Founder/CEO/Owner/Director/Managing Partner — RWA Felix is a non-technical asset owner, not a crypto CTO) + Real Estate/Automotive/Investment Management/commodities + EU + asset-tokenization keywords, MiCA EXCLUDED"
   - "DeFi/Protocol outreach is trigger-first — identify trigger before searching LinkedIn; no cold volume search"
   - "Channel Partner P2 filters: Principal/Partner/MD + Management Consulting + 2-50 employees + EU (Germany, Netherlands, France, Switzerland) + blockchain advisory/FinTech transformation"
   - "Positive P2 signal: advisory profile with blockchain strategy content but zero implementation case studies — they need InnBlockchain as silent delivery arm"
@@ -85,19 +85,15 @@ Full LinkedIn outbound playbook for InnBlockchain across 5 ICP tracks. Covers Sa
 
 ## Sales Navigator Filters by Segment
 
-### FinTech RWA/WealthTech
-- Title: CTO OR CEO OR CPO OR "VP Engineering" OR "Head of Product" OR "Head of Digital Transformation"
-- Industry: Financial Services
-- Company size: 50-500
-- Geography: EU (Germany, Netherlands, France, Ireland, Nordics, Baltics)
-- Keywords: "RWA" OR "RWA tokenization" OR "tokenized securities" OR WealthTech OR MiCA OR "crypto exchange" OR "DeFi lending" OR "blockchain"
-- Vertical order: WealthTech/RWA first → ExchangeTech → LendTech → WalletTech
+### RWA Sales Navigator filters → canonical: [[Phase 1 LinkedIn Filter]]
 
-### Crypto Native RWA
-- Title: Founder OR CEO OR CTO OR "Managing Director" OR "Head of Tokenization" OR "Head of Digital Assets"
-- Industry: Real Estate / Commodities / Financial Services
-- Geography: EU Continental
-- Keywords: "RWA tokenization" OR "real estate tokenization" OR "asset tokenization" OR "MiCA" OR "tokenized assets" OR "property on-chain"
+The two Phase 1 RWA filters (`FT WealthTech RWA` + `CN RWA Felix`) are now defined field-by-field in [[Phase 1 LinkedIn Filter]] (ICP-calibrated 2026-07-13). Corrections vs. this doc's original ingest:
+
+- **MiCA is deliberately EXCLUDED from all RWA keywords** — RWA ownership tokens are MiFID II financial instruments under Art. 2(4); MiCA is the #1 Compliance-Carol disqualifier. (The `MiCA / crypto exchange / DeFi lending` keywords previously listed here were a pre-Phase-1 multi-track artifact and are wrong for RWA-only Phase 1.)
+- FinTech industry widened to Financial Services + Investment Management + Capital Markets; headcount 50-500 (+ funded 11-50 with manual check).
+- CN titles widened to **asset-owner titles** (Founder/CEO/Owner/Director/Managing Partner) — RWA Felix is a non-technical asset owner, not a crypto CTO — with Real Estate + Automotive + Investment Management + commodity industries.
+
+Build from the canonical doc, not the keyword strings previously listed here.
 
 ### DeFi/Protocol (trigger-activated only)
 - Identify trigger first (exploit, funding, job posting, audit post) — then search

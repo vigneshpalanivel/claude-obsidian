@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-06-04
+updated: 2026-07-13
 tags:
   - meta
   - log
@@ -18,6 +18,15 @@ related:
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
+
+## [2026-07-13] restructure | InnBlockchain LinkedIn Sales Nav filters → single canonical doc
+- New canonical doc: `.raw/…/Service/LinkedIn/Phase 1 LinkedIn Filter.md` (renamed + moved from the old "LinkedIn Filter Testing Tracker" under Sales/Recommendations). Reframed from a free-LinkedIn testing tracker into a Sales Navigator build sheet.
+- **De-duplication:** the two RWA Sales Nav filters (`FT WealthTech RWA` + `CN RWA Felix`) were copied across the Outreach Strategy (§2.1/2.2/3), Vasanth Task List (§1.2), and Execution Playbook (WS5/WS9) — all drifting. Collapsed to one source; every other doc now points to the canonical doc.
+- **Phase 1 ICP calibration** (vs [[InnBlockchain FinTech ICP]] + [[InnBlockchain Crypto Native ICP]]): FinTech industry widened to Financial Services + Investment Management + Capital Markets (not Banking = Phase 2); headcount 50-500 + funded 11-50. CN titles widened to asset-owner titles (Owner/Director/Managing Partner) because RWA Felix is a non-technical asset owner, not a crypto CTO; industries + Automotive + Investment Management. Guardrails confirmed: Carol excluded, EU-only, **MiCA excluded from all RWA keywords**.
+- **Two commenting filters** documented: Filter A (warm your T1 targets before the connection request) + Filter B (hashtag/tag content search to put Vignesh in front of the whole RWA/STO audience). Budget split ~70/30→B pre-outreach, ~40/60→A once T1s fire.
+- **eIDAS** removed from the RWA filter doc → its filter lives in Outreach Strategy §7a (Week-13 WalletTech test); Task List §7 + Playbook WS10 repoint there.
+- Pages updated: [[InnBlockchain LinkedIn Strategy]] (concept — corrected stale Sales Nav rows + added filter/commenting subsection), [[LinkedIn-Outreach-Strategy-InnBlockchain]] (source — corrected the wrong `MiCA` keyword in RWA filters), [[log]].
+- Note: `.raw/` is gitignored (untracked). The `sources/` mirror remains stale beyond the filters (pre-Phase-1 5-track model) — flagged for a future full re-ingest.
 
 ## [2026-07-10] re-ingest | Trioangle CITE Playbook (consolidated SSOT)
 - Source: `.raw/Trioangle/sales-marketing/Product/SEO/CITE/CITE Playbook.md` (hash `fb2e237c…`, was `90a185f2…`)

@@ -35,7 +35,8 @@ Front-load the day; dinner is the adjustable patch. As long as breakfast and lun
 | 5 almonds | 35 | 1.5g | 0.8g |
 | 10 pumpkin seeds | 28 | 1.5g | 0.3g |
 | 2 walnuts | 52 | 1g | 0.7g |
-| **Base total** | **~520 kcal** | **~24g** | **~3.8g** |
+| 1 tea (milk + sugar) | 55 | 1g | 0g |
+| **Base total** | **~575 kcal** | **~25g** | **~3.8g** |
 
 Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g protein. *(Note: this base is near-zero fiber — add fruit or whole grain to the top-up.)*
 
@@ -45,11 +46,12 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 |------|----------|---------|-------|
 | Grilled chicken Buddha bowl | 595 | 45g | ~10g |
 | Buttermilk | 35 | 2g | 0.2g |
-| **Base total** | **~630 kcal** | **~47g** | **~10g** |
+| 1 tea (milk + sugar) | 55 | 1g | 0g |
+| **Base total** | **~685 kcal** | **~48g** | **~10g** |
 
 > ⚠️ The Buddha bowl carries ~all your daily fiber. On days without it (e.g. Jul 9 prawn day = ~11g fiber), fiber collapses → constipation. Add a second independent fiber source daily (fruit / dal / whole grain) so you're not dependent on the bowl.
 
-**Weekday combined base: ~1,150 kcal, ~71g protein** (before breakfast top-up and dinner)
+**Weekday combined base: ~1,260 kcal, ~73g protein** (before breakfast top-up and dinner)
 
 > Weekends: both breakfast and lunch are flexible/variable — log as eaten.
 
@@ -246,10 +248,13 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 1 tbsp peanut butter | 95 | 4g | 1g |
 | | 1 piece watermelon | 30 | 0.5g | 0.5g |
 | | ½ small orange | 20 | 0.5g | 1g |
+| | ½ glass boiled rice water (kanji) | 40 | 1g | 0g |
+| | 1 tea (milk + sugar) | 55 | 1g | 0g |
 | Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
 | | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (milk + sugar) | 55 | 1g | 0g |
 | Dinner | — | — | — | — |
-| **Running** | | **~1,335 kcal** | **~76g** | **~24g** |
+| **Running** | | **~1,485 kcal** | **~79g** | **~24g** |
 
 **Notes:** Strong start — **~13g fiber at breakfast alone** (best fiber breakfast yet): padam pisin + jackfruit seeds + wheat bread + watermelon + nuts. This is the fiber-lever advice applied. ~685 kcal / ~28.5g protein is a solid base; on track if lunch + dinner stay consistent.
 

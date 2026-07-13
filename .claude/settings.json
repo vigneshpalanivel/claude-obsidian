@@ -118,7 +118,14 @@
       "Bash(rm -f eltif-rts.mhtml t1-settlement.mhtml csdr.mhtml)",
       "Bash(rm -f /tmp/eltif-rts.txt /tmp/t1.txt /tmp/csdr.txt)",
       "Bash(echo \"gates \\(## n.n\\): $\\(grep -cE '^## [0-9]' RWA-STO-EU-Compliance-Criteria.md\\)  |  mermaid: $\\(grep -c '^\\\\`\\\\`\\\\`mermaid' RWA-STO-EU-Compliance-Criteria.md\\)\")",
-      "Bash(grep -nE \"^#{1,3} \" RWA-STO-EU-Compliance-Criteria-Simple.md)"
+      "Bash(grep -nE \"^#{1,3} \" RWA-STO-EU-Compliance-Criteria-Simple.md)",
+      "Bash(git mv *)",
+      "Bash(cd .raw/InnBlockchain)",
+      "Bash(grep -rln \"Filter Testing Tracker\" --include=\"*.md\" .)",
+      "Bash(grep -rln \"Phase 1 LinkedIn Filter\" --include=\"*.md\" .)",
+      "Bash(grep -rln '\"Head of Tokenization\" OR \"Head of Digital Assets\"' --include=\"*.md\" .)",
+      "Bash(grep -rniE \"filter testing|Real Estate/Commodities|Financial Services \\\\+ 50-?500|Founder/CTO|Head of Tokenization.*Head of Digital Assets\" .)",
+      "Bash(grep -rln \"Phase 1 LinkedIn Filter\" .)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

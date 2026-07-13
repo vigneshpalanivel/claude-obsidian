@@ -2,7 +2,7 @@
 type: concept
 title: "InnBlockchain LinkedIn Strategy"
 created: 2026-04-16
-updated: 2026-05-27
+updated: 2026-07-13
 tags:
   - concept
   - linkedin
@@ -16,6 +16,7 @@ related:
   - "[[InnBlockchain]]"
   - "[[LinkedIn-Marketing-Strategy-InnBlockchain]]"
   - "[[LinkedIn-Outreach-Strategy-InnBlockchain]]"
+  - "[[Phase 1 LinkedIn Filter]]"
   - "[[InnBlockchain FinTech ICP]]"
   - "[[InnBlockchain Crypto Native ICP]]"
   - "[[InnBlockchain Channel Partner ICP]]"
@@ -152,6 +153,20 @@ Most deals close at T3-T5. Same-day pitch after connecting kills trust with ever
 ### RWA Is Always Priority 1
 RWA leads (both FinTech WealthTech and Crypto Native PropTech/asset-backed) are first within every daily budget. Do not start ExchangeTech sequences until WealthTech/RWA pipeline has 10+ active leads. Do not run cold DeFi/Protocol volume — trigger required for every T1.
 
+### Sales Navigator Filters (canonical: [[Phase 1 LinkedIn Filter]])
+
+Phase 1 Sales Nav filters are consolidated into a single canonical build sheet — [[Phase 1 LinkedIn Filter]] — which the Outreach Strategy, Vasanth Task List, and Execution Playbook all **point to** (de-duplicated 2026-07-13 to stop the copies drifting; ICP-calibrated against the FinTech + Crypto Native ICPs). Two RWA filters:
+
+- **`FT WealthTech RWA`** — titles CTO/CEO/CPO/VP Eng/Head of Product/Head of Tokenization/Head of Digital Assets · Financial Services + Investment Management + Capital Markets (not Banking = Phase 2) · EU · 50–500 (funded 11–50 with a manual funding check) · RWA/MiFID II keywords, **no MiCA**.
+- **`CN RWA Felix`** — widened to **asset-owner titles** (Founder/CEO/Owner/Director/Managing Partner) because RWA Felix is a non-technical domain expert, not a crypto CTO · Real Estate + Automotive + Investment Management + commodity industries · EU · asset-tokenization keywords, **no MiCA**.
+- **eIDAS test filter** is separate (Week 13 WalletTech test) — defined in Outreach Strategy § 7a, not the RWA filter doc.
+
+**Two commenting filters** (distinct from the outreach filters — these decide whose *posts* you comment on, not who gets a T1):
+
+- **Filter A — warm-up:** comment on your actual T1 targets (the Filter 1/2 people who post) *before* the connection request, so it lands on a warm name.
+- **Filter B — reach:** hashtag/tag content search (`#RWA`, `#STO`, `#Tokenization`…) to put Vignesh in front of the whole RWA/STO audience and generate reactive inbound. Deliberately wider than a title filter — reaches every ICP persona in the conversation. A comment ≠ a licence to DM.
+- Budget split (5–10 comments/day): ~70/30 toward B pre-outreach (W1–4, no pipeline to warm yet), shifting ~40/60 toward A once T1s fire (W5+).
+
 ---
 
 ## Key Distinctions by ICP
@@ -160,7 +175,7 @@ RWA leads (both FinTech WealthTech and Crypto Native PropTech/asset-backed) are 
 |-------------|------------------|
 | Compliance-first framing (**MiFID II + Prospectus Regulation + DLT Pilot Regime** — NOT MiCA; ownership tokens are excluded from MiCA per Art. 2(4)) | Ownership-risk-first framing (one flaw compromises property rights) |
 | Strategic Sam (CEO/CPO) is primary | RWA Felix (asset-backed founder) is primary |
-| Sales Navigator: Financial Services + 50-500 employees | Sales Navigator: Real Estate/Commodities + Founder/CTO |
+| Sales Navigator: Financial Services + Investment Management + Capital Markets · 50-500 (+ funded 11-50) | Sales Navigator: Real Estate + Automotive + Investment Management + commodities · asset-owner titles (Founder/CEO/Owner/Director/Managing Partner), not just crypto CTO |
 | Regulatory deadline is the trigger | First asset issuance date is the trigger |
 
 | DeFi/Protocol | Channel Partner P2 |
