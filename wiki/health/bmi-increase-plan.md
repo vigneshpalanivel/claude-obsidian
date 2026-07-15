@@ -11,8 +11,8 @@ status: active
 | Metric | Current | Target |
 |--------|---------|--------|
 | Height | 184cm | — |
-| Weight | ~60kg | 68–70kg |
-| BMI | 17–18 | 20–21 |
+| Weight | **58.5kg** (Jul 13, 2026) | 68–70kg |
+| BMI | **17.3** | 20–21 |
 | Timeline | — | 8–10 months |
 | Monthly gain target | — | 0.8–1kg/month |
 
@@ -51,50 +51,38 @@ What the log actually shows, vs what this plan assumed when written:
 
 ## Meal Plan
 
-> **Core rule:** Breakfast and lunch carry the weight gain load. Dinner is for recovery, not calories. Heavy/fried foods at dinner trigger overnight gas → morning headache → disrupted sleep → slower weight gain. Consistent light dinners beat heavy occasional ones.
+> **Daily Calorie Split: Breakfast 800–1,000 · Lunch 800–1,000 · Dinner ≤800 (patch to ~2,400).** Front-load the day — heaviest early when you can digest and burn it; dinner is the adjustable patch, kept light (~400) when B+L hit the top. **Hold the 800 floor on breakfast and lunch** — that's the one rule the whole system depends on. Full logic in [[meal-log]] "Daily Calorie Split."
+> Heavy/fried food at dinner → overnight gas → morning headache → poor sleep → slower gain. An 800 dinner is a *medium* patch, not the routine — light dinners win.
 
-### Breakfast (7:00–7:30 AM) — Build gradually, week by week
-**Current comfortable baseline:**
-- 2 egg omelette
-- 8 almonds + 10 pumpkin seeds + 2 walnuts
-- 1 local green banana
-- 2 tbsp green grams + 2 raisins
-- **1 glass full fat milk** — at breakfast only, never at night
-- 1 coffee at office 10:00–10:30 AM
-- 1 tea at 3:00 PM — hard limit, no third caffeine drink ever
-- **~557 kcal | ~29g protein**
+### Breakfast (7:00–7:30 AM) — target 800–1,000
+**Current base** (see [[meal-log]]):
+- 2 tbsp peanut butter + 2 egg omelette (butter)
+- Nuts: 5 almonds + 10 pumpkin seeds + 2 walnuts
+- 2 tbsp soaked padam pisin — daily fiber + coolant
+- 1 tea
+- **Base ~575 kcal | ~25g protein | ~4g fiber**
 
-**Week 1 (done — pulled forward):** ✅ 2 tbsp peanut butter already daily in breakfast base
-**Next addition:** 1 more egg (total 3 eggs)
-**Then:** 2 idli / ragi dosa / 1 slice wheat bread (whole grain = fiber too)
-**Target breakfast (Month 2+):** ~750–800 kcal | 38g protein
-> Breakfast base is near-zero fiber (nuts + egg + PB) — pair the whole-grain add with fruit to fix the fiber gap. See [[meal-log]] breakfast base.
+**Top up to 800–1,000** with: 2 wheat bread / rice+egg / pongal + **fruit** (banana / watermelon / orange) + **banana shake or milk**. Fruit + whole grain also close the fiber gap.
+> ⚠️ If 800+ in one sitting feels heavy (small stomach), split it: breakfast ~650 + a 10:30 AM snack ~300 (banana shake / nuts). Same total, gentler — ramp volume up gradually.
 
-### Lunch (1:00–1:30 PM) — Protein focus
-- Buddha bowl (vendor) — continue
-- Add 2 boiled eggs from home alongside — +12g protein
-- Add handful of groundnuts to bowl — +170 kcal
-- **Buttermilk (moru) immediately after** — thin, homemade, with pinch of salt only
-- Start with 150ml first week, increase to full glass if no bloating
-- **Warm cumin water** — 20–30 minutes after buttermilk settles
-- Sequence: finish eating → buttermilk → 20–30 min → cumin water
-- **~700 kcal | 30g protein**
+### Lunch (1:00–1:30 PM) — target 800–1,000
+- **Chicken Buddha bowl + buttermilk + 1 tea ≈ 685 base**
+- **Top up to 800–1,000:** +1.5 cup rice (+300) / +2 boiled eggs (+140) / +roasted chana or groundnuts (fiber + protein)
+- **Buttermilk immediately after** (curry + coriander leaves, pinch salt) → 20–30 min → warm cumin water — gastric routine
+- Office desk stash for the top-up: roasted chana, groundnuts, dates (see [[meal-log]])
 
 ### Liquid (4:00 PM — between lunch and dinner only)
-- Full fat milk + banana blended — 350 kcal, 10g protein
-- OR full fat milk + 2 tbsp peanut butter blended — 380 kcal, 14g protein
-- Liquid digests faster — won't compete with dinner hunger
-- **~350–380 kcal | 10–14g protein**
+- One blended drink, ~350–380 kcal, 10–14g protein — digests fast, won't compete with dinner hunger
+- **Options: see the "Key Strategy — Liquid Calories" table below** (banana shake, milk+PB blend, etc.)
 
-### Dinner (6:00–6:30 PM — LIGHT, always — last food of the day)
-> **No chicken or fish at dinner** (user constraint — see [[profile]]). Dinner protein = **eggs, paneer, or dal only.**
-- Plain rice (1.5 cups) OR millet + **dal** + curd — non-negotiable base (dal doubles as fiber)
-- Protein: **eggs (boiled/omelette), paneer in thin curry, or dal** — no chicken/fish
-- Cooked vegetables only — no raw
-- Small ghee on rice (1 tsp only) — fine
-- Curd on side every night
-- **This is also the best fiber slot** — dal + cooked veg here prevents the zero-fiber-dinner constipation seen Jul 10→11
-- **~500–550 kcal | 20–25g protein**
+### Dinner (6:00–6:30 PM) — patch, ≤800, light preferred
+> **No chicken or fish at dinner** (see [[profile]]). Protein = eggs, paneer, or dal.
+- **Light day (~400):** dal + rice/millet + cooked veg + curd — when B+L hit ~1,000 each
+- **Patch day (up to 800):** add more when B+L landed near the 800 floor, to reach ~2,400
+- Dal + cooked veg = best fiber slot; prevents zero-fiber-dinner constipation (Jul 10→11)
+- Small ghee on rice (1 tsp) fine; curd on the side
+- **Restaurant** (no rice+dal): chapati + paneer/egg, or egg fried rice (minimal oil) + eggs
+- **~400–800 kcal | 15–25g protein**
 
 ### Dinner Rules (Non-Negotiable)
 
@@ -116,11 +104,13 @@ What the log actually shows, vs what this plan assumed when written:
 
 | Option | Calories | Protein |
 |--------|---------|---------|
+| **Banana shake** (banana + full-fat milk + sugar) | ~300 kcal | 9g |
+| **Banana shake + 1 tbsp peanut butter** (best value) | ~390 kcal | 13g |
 | Full fat milk + banana blended | 350 kcal | 10g |
 | Full fat milk + 2 tbsp peanut butter blended | 380 kcal | 14g |
 | Full fat curd + mango/banana smoothie | 300 kcal | 8g |
 
-One glass daily adds ~350–380 kcal without competing with meal hunger.
+One glass daily adds ~300–390 kcal without competing with meal hunger. **Breakfast note:** a banana shake is a strong lever to clear the 800 breakfast floor — easy to drink even without appetite. Keep it breakfast/daytime only (milk + banana → not near sleep, per gastric after-dinner rule).
 
 ---
 
@@ -220,27 +210,27 @@ EFX burns calories needed for weight gain — pair it with resistance training. 
 
 Honest energy-balance projection based on actual logged intake — not the optimistic plan target.
 
-**Maintenance (TDEE):**
-- BMR (184cm, 60kg, 34M) ≈ 1,585 kcal
-- Sedentary 12-hr desk work → maintenance **~2,200/day**
-- With EFX 4×/wk + resistance → maintenance **~2,350–2,400/day**
+**Maintenance (TDEE) ≈ 1,900 kcal/day:**
+- Mifflin BMR (58.5kg, 184cm, 34M) ≈ 1,570 kcal
+- **Genuinely sedentary** — desk work + only ~5 min EFX ×2/week (negligible, ~15 kcal/day) → ×1.2 → **~1,900/day**
+- Empirical check: ate ~2,500 avg in week 1 and gained ~0.5kg → consistent with maintenance ~1,900–2,000
+- ⚠️ Earlier ~2,200–2,300 figure was an **overestimate** (assumed too much activity) — corrected to **~1,900**
 
-**Intake (meal-log):** diet days (Jul 8–10) avg **~2,500**; all 6 days incl. ramp-up avg **~2,130**.
+**Projection (1 kg ≈ 7,700 kcal; goal +10–11 kg, 58.5 → 68–70):**
 
-**Projection (1 kg ≈ 7,700 kcal):**
+| Intake | Surplus over ~1,900 | Monthly gain | Note |
+|--------|--------------------|--------------|------|
+| 2,150 | ~250 | ~1 kg | Clean/lean target rate |
+| **2,300** | **~400** | **~1.5 kg** | **Solid — already a real surplus** |
+| 2,400 | ~500 | ~2 kg | Fast — extra becomes fat unless lifting |
+| 2,500+ | ~600+ | ~2.3 kg+ | Too fast for a sedentary body → fat gain |
 
-| Scenario | Daily surplus | Monthly gain | 8–10 kg takes |
-|----------|--------------|--------------|----------------|
-| 2,500/day, minimal exercise | ~300 | ~1.1 kg | **~7–9 months** |
-| 2,500/day + full exercise plan | ~120 | ~0.5 kg | **~16–20 months** |
-| Light days recur (~2,130 avg) | ~0 | ~0 | **stalls — no gain** |
-
-> **Realistic estimate: ~10–14 months** at consistent ~2,500/day with moderate exercise. The plan's 8–10 months requires ~2,700–2,800/day on training days.
+> **Realistic estimate: ~8–11 months** to reach 68–70 kg at a consistent **~2,300–2,400/day**. Maintenance is LOW, so **2,300 is already a genuine surplus — do NOT push to 2,500+**; for a sedentary body that just adds fat.
 
 **The two rules that decide it:**
 
-1. **Floor > ceiling.** Good days run ~300 kcal above maintenance; one Jul-6-style light day (~1,530) is ~670 *below* → **one light day erases two good days.** That's why the 6-day average is only ~2,130 (basically maintenance). Never drop below ~2,300 on ANY day — the floor matters more than the peak.
-2. **Eat back exercise.** Every EFX session burns ~200 kcal of surplus. On training days, eat *more* (use the milk+PB blend, +380 kcal), don't hold intake flat.
+1. **Floor > ceiling.** One light day (~1,530) sits ~370 *below* maintenance and cancels a good day's surplus. Never drop below ~2,300 on ANY day.
+2. **Resistance training, not more calories.** Sedentary + no strength work → the surplus becomes **fat, not muscle**. To gain muscle (not just belly) toward the BMI target, do the home resistance routine (see Exercise Plan) 2–3×/week. Hold intake ~2,300–2,400 — the lever now is *lifting*, not eating more.
 
 > First 3–4 weeks may show ~1.5 kg from water/glycogen/food volume — not the true rate. Real tissue gain is the ~0.5–1 kg/month above. Weigh weekly, same time/conditions, and track the 4-week trend, not day-to-day.
 
@@ -248,7 +238,7 @@ Honest energy-balance projection based on actual logged intake — not the optim
 
 ## Monthly Milestones
 
-> Milestones below assume the ~2,500–2,800/day consistent case. If the log average drifts toward ~2,130 (light days), shift every milestone later — see Timeline Reality Check.
+> Milestones assume a consistent **~2,300–2,400/day** (a ~400–500 surplus over ~1,900 maintenance) + resistance training. Light days that dip below ~2,300 push every milestone later — see Timeline Reality Check.
 
 | Month | Target Weight | Focus |
 |-------|-------------|-------|
@@ -272,7 +262,7 @@ Honest energy-balance projection based on actual logged intake — not the optim
 
 ## Biggest Risk to This Plan
 
-**The light day, confirmed by [[meal-log]].** Jul 6 (~1,528 kcal) and Jul 7 (~1,633 kcal, banana-only dinner) each dropped ~900 kcal and ~50g protein — that's where weight gain is lost. Not the ceiling, the floor.
+**The light day** — the single failure mode. Full explanation in the "Floor > ceiling" rule under [Timeline Reality Check](#timeline-reality-check-from-meal-log-jul-2026) (one light day erases two good days; never below ~2,300). The fixes below are how you prevent it:
 
 **Fix:** Set phone alarms for:
 - 4:00 PM — liquid meal (milk + banana blend)

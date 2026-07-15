@@ -18,8 +18,8 @@ The single canonical profile. **Read this first for any health/food/medication/s
 | **Sex** | Male |
 | **Location** | Madurai, Tamil Nadu |
 | **Height** | ~184 cm |
-| **Weight** | ~59–61 kg (consistent across visits) |
-| **BMI** | ~17–18 — **underweight** |
+| **Weight** | **58.5 kg** (measured Jul 13, 2026) — historically 59–61 kg, drifted down |
+| **BMI** | **17.3** — **underweight** |
 | **Sleep** | 10 PM sleep → 6 AM wake, targets ~7–8 hrs |
 | **Dinner** | By 6:30 PM (3.5 hr gap before sleep) |
 

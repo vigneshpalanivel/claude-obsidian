@@ -252,11 +252,79 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 1 tea (milk + sugar) | 55 | 1g | 0g |
 | Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
 | | Buttermilk | 35 | 2g | 0.2g |
+| | ½ red banana | 55 | 0.7g | 1.5g |
 | | 1 tea (milk + sugar) | 55 | 1g | 0g |
-| Dinner | — | — | — | — |
-| **Running** | | **~1,485 kcal** | **~79g** | **~24g** |
+| Dinner | Egg fried rice (minimal oil) | 480 | 16g | 2g |
+| | 1 egg kalaki (scramble) | 90 | 6g | 0g |
+| | 1 one-side egg (fried) | 90 | 6g | 0g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| **Total** | | **~2,310 kcal** | **~109.5g** | **~30.5g** |
 
-**Notes:** Strong start — **~13g fiber at breakfast alone** (best fiber breakfast yet): padam pisin + jackfruit seeds + wheat bread + watermelon + nuts. This is the fiber-lever advice applied. ~685 kcal / ~28.5g protein is a solid base; on track if lunch + dinner stay consistent.
+**Notes:** ✅ **Complete on-target day — all three hit:** ~2,310 kcal (at floor), protein ~109.5g, **fiber ~30.5g (top of 25–30 target — hit for the first time).** Dinner ~770 (under 800 cap), all-egg protein per the no-chicken/fish rule, egg fried rice minimal oil. Front-loaded fiber (padam pisin + jackfruit seeds + wheat bread + fruit) + chicken bowl carried fiber before dinner even started. Best-structured day in the log — calories, protein, and fiber all in range together.
+
+---
+
+## 2026-07-14 (Tuesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | 6 almonds | 40 | 2g | 1g |
+| | 5 cashews | 45 | 1.5g | 0.5g |
+| | 10 pumpkin seeds | 28 | 1.5g | 0.3g |
+| | 2 walnuts | 52 | 1g | 0.7g |
+| | 4 tbsp pomegranate | 45 | 1g | 2g |
+| | 1 piece apple | 50 | 0.3g | 2g |
+| | Red banana shake + 2 tbsp peanut butter | 475 | 17.5g | 5g |
+| | 1 tea (~10 AM) | 55 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| Dinner | 3 chapati (whole wheat) | 360 | 9g | 7.5g |
+| | Paneer gravy | 300 | 14g | 2g |
+| | Raita (curd + veg) | 70 | 3g | 1g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| **Total** | | **~2,405 kcal** | **~102g** | **~42g** |
+
+**Notes:** ✅ Complete on-target day (2nd running) — ~2,405 kcal (solid ~500 surplus over ~1,900 maintenance), protein ~102g, dinner ~840 (slightly over 800 cap with the banana), paneer per no-chicken/fish rule, chapati whole grain. ⚠️ **Fiber ~42g — well over the 25–30 target** (2nd red banana of the day). More fiber isn't better mid-ramp + constipated; the gap is water + movement, not fiber. Also: banana at dinner is a sinus-timing compromise — better at breakfast/lunch; eat room-temp with the meal.
+
+---
+
+## 2026-07-15 (Wednesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | 6 almonds | 40 | 2g | 1g |
+| | 2 walnuts | 52 | 1g | 0.7g |
+| | 10 pumpkin seeds | 28 | 1.5g | 0.3g |
+| | 5 cashews | 45 | 1.5g | 0.5g |
+| | 4 tbsp pomegranate | 45 | 1g | 2g |
+| | 1 piece apple | 50 | 0.3g | 2g |
+| | Green peas boiled (6 tbsp) + onion | 60 | 4g | 4g |
+| | Red banana shake + 2 tbsp peanut butter | 475 | 17.5g | 5g |
+| | 1 tea (~10 AM) | 55 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| | 1 tea (after lunch) | 55 | 1g | 0g |
+| Dinner | — | — | — | — |
+| **Running** | | **~1,680 kcal** | **~79.5g** | **~32.7g** |
+
+**Notes:** Breakfast ~830 — **clears the 800 floor on its own, no tea needed** (front-loading working). ~19.5g fiber again. Green peas add protein + fiber. ⚠️ Raw onion + peas (legume) are mildly gas-forming — watch given the ongoing constipation; fiber's already high, no need to add more today.
+
+---
+
+## Weekly Weigh-In
+
+Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week trend, not day-to-day (±1kg daily noise from food/water/bowel).
+
+| Date | Weight | BMI | Δ vs prior | Notes |
+|------|--------|-----|-----------|-------|
+| ~Jul 6 (Week 0) | 58.0 kg | ~17.1 | baseline | ~2kg below the old ~60kg record — chronic undereating pre-diet |
+| 2026-07-13 (Week 1) | 58.5 kg | ~17.3 | **+0.5 kg** | First structured-diet week; early gain likely part water/glycogen, not pure tissue |
+
+> Target true tissue gain: ~0.8–1 kg/month. Week-1 +0.5kg is a positive signal but partly water/food volume — real rate only shows over 3–4 weeks. **Maintenance ≈ 1,900 kcal/day** (Mifflin BMR ~1,570 × 1.2 sedentary; the 5-min ×2/week EFX is negligible). So **~2,300–2,400/day is already a solid ~400–500 surplus — no need to push to 2,500+** (that's fat gain for a sedentary body). Real lever for *muscle* gain: resistance training, not more food.
 
 ---
 
@@ -271,7 +339,9 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | 2026-07-10 | ~2,500 | ~122g | ~15g | Targets exceeded; zero-fiber dinner (tandoori+mayo+ghee roast) → constipation Jul 11 |
 | 2026-07-11 | ~2,831 | ~152.5g | ~17.5g | Weekend feast — big surplus (great for BMI), protein way over. Very high sat-fat + purine (fried wings, goat brain, mutton, creamy paneer). Fiber best yet (chapati + padam pisin) but still short |
 | 2026-07-12 | ~2,360 | ~118.5g | ~15.5g | ✅ On-target (snacks carried it over floor). Fiber low ~15.5g (padam pisin skipped). 2-day avg w/ Jul 11 ~2,596 → clear surplus |
-| 2026-07-13 | in progress | in progress | ~23g (thru lunch) | Best fiber day forming — breakfast fiber stack + chicken bowl; on track to hit 25–30g target for the first time |
+| 2026-07-13 | ~2,310 | ~109.5g | ~30.5g | ✅ First fully complete day — cal, protein, AND fiber all in range. Egg-only dinner (fried rice minimal oil + eggs), all rules respected |
+| 2026-07-14 | ~2,405 | ~102g | ~42g | ✅ 2nd complete day, ~500 surplus. Fiber way over (~42g) — dial back, focus water+movement. Paneer+chapati dinner, rules respected |
+| 2026-07-15 | in progress | in progress | ~32.7g (thru lunch) | Breakfast cleared floor alone; fiber already over target by lunch (3rd day) — same bowl+bm+banana pattern |
 
 > **Fiber trend: under target (~25–30g) every single day.** Best ~22g, worst ~11g. All fiber rides on the Buddha bowl. Target-hit days on calories/protein (Jul 9, 10) were still low-fiber → the constipation is structural, not random.
 

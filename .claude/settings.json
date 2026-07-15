@@ -125,7 +125,9 @@
       "Bash(grep -rln \"Phase 1 LinkedIn Filter\" --include=\"*.md\" .)",
       "Bash(grep -rln '\"Head of Tokenization\" OR \"Head of Digital Assets\"' --include=\"*.md\" .)",
       "Bash(grep -rniE \"filter testing|Real Estate/Commodities|Financial Services \\\\+ 50-?500|Founder/CTO|Head of Tokenization.*Head of Digital Assets\" .)",
-      "Bash(grep -rln \"Phase 1 LinkedIn Filter\" .)"
+      "Bash(grep -rln \"Phase 1 LinkedIn Filter\" .)",
+      "Bash(awk 'NR>=352 && NR<=377 {print length\\($0\\)\": \"$0}' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/Phase 1/Repurposed Content/How to tokenize Real-World Assets - Repurposed Content.md\")",
+      "WebFetch(domain:www.innblockchain.com)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

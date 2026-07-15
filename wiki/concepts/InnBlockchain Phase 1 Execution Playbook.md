@@ -4,9 +4,10 @@ company:
 department:
   - marketing
 priority: highest
-rev: 42
+rev: 43
 last_revised: 2026-07-07
 revision_notes: |
+  rev 43 (2026-07-07): **WS8 feed-post definition added.** New callout in WS8 § Ownership split distinguishing the two content streams sharing the one feed: **feed post** (original founder-voice content — commentary/hot-take/poll/news-analysis · exists independent of the editorial calendar · drives algorithm categorisation + authority · topic-cluster discipline applies) vs **repurposed asset** (WS15 derivative of a published article · tier-gated · CW structures + MPs produce + Vignesh approves). Names the overlap explicitly: Tue/Thu amplification posts + Thu carousel slot ARE WS15 derivatives landing in the feed; Mon/Wed/Fri are typically original. Both streams count toward the ≤7/wk aggregate cap (matrix vector 6). Also resolved the latent ownership ambiguity: "Vignesh authors all personal-feed posts" → "authors all **original** personal-feed posts; WS15 derivatives he **approves**, not authors."
   rev 42 (2026-07-07): **holistic-review fix pass — 6 issues from the full playbook + linked-docs audit.** (1) **Matrix stub drift** (WS8): stub claimed "10-vector … X personal ↔ X Company" but [[InnBlockchain - Cross-Channel Cannibalisation Matrix]] has 8 vectors (X-Company vectors removed with the corporate-X drop) — stub rewritten to match the canonical doc. (2) **Two pitch docs carried the dead rev-17 outreach model** ("reference Vignesh explicitly · 24-hr SLA · may send personally") directly above the rev-39 first-person templates — routing callouts in [[InnBlockchain - RWA Tokenization Pitch - Trioangle Real Estate Marketplace Clients]] + [[InnBlockchain - Business Development Opportunities - Active Clients]] rewritten to the profile-operation model. (3) **Designer cover sheet's dead `#Internal MVP fallback` anchor** (×2, broken since rev 37 WS14 collapse) → repointed to [[InnBlockchain - Case Study Capture Framework]]; framework also added to Designer doc bundle. (4) **Source map now lists the 13 cross-phase frameworks** extracted from this playbook (map previously claimed completeness while omitting the whole framework layer; direction note added — this playbook is THEIR source). (5) **Checklist-count contradiction resolved**: 14 checklist files exist · 13 are WS4 brief/framing sources (rev 38) · [[mica-checklist]] retained ONLY for boundary-article review (W4 #4 · W8 #11) — count note added at Source map + both Vignesh cover-sheet spots. (6) **Cover-sheet doc-bundle gaps closed**: Vignesh + Spot-Check Protocol / Event Execution Playbook / Case Study Capture Framework · both MPs + Design Toolkit / Newsletter Vendor Selection. All 7 cover sheets synced to rev 42 (Britto 5 · Designer 3 · Sudharshini 4 · Vignesh 7 content-changed; Dev/Gayathri/Vasanth sync-marker only). Audit found healthy: all 47 wikilink targets resolve · 36/37 anchors (now 37/37) · all 13 frameworks carry parent_extraction_source · no stale sender-model language in strategy source docs.
   rev 41 (2026-07-07): **completed the half-finished Social Profile Setup extraction.** [[InnBlockchain - Social Profile Setup]] (cross-phase framework, rev 1) had genericized WS3's LinkedIn Company Page + X (Twitter) + GitHub/Solodit content but the playbook still carried the full duplicate + had no link either direction. Fixes: (1) added `parent_extraction_source` to the framework (was missing — every other extracted framework has it). (2) Hollowed the 3 WS3 sections to pointer stubs → [[InnBlockchain - Social Profile Setup]], each retaining a compact **Phase 1 specifics** block (concrete handles/URLs · regime strings · specialties · X communities · Britto/Sudharshini owner mappings · "not MiCA"/"not Trioangle" hygiene · setup status) — the values the generic framework deliberately omits. Removed ~110 lines of duplicated generic setup steps; nothing Phase-1-specific lost. Followed the WS11-Events / WS14 precedent (stub + retained specifics). (3) **Cascade:** collapsed sub-headers broke anchors — redirected the rev-40 WS8 Company-Page-cadence pointer to the framework (its old WS3 anchor was removed); repointed Britto cover sheet (×2) + Dev cover sheet X-anchor to the new `#X (Twitter) — personal handle` stub / the framework. Cover sheets Britto + Dev synced to rev 41.
   rev 40 (2026-07-07): **task-duplication consolidation pass — 4 same-task-in-two-places dupes resolved to single canonical homes (pointer-stub pattern).** (A) **Sales Nav saved searches** — WS9 § Sales Navigator filters was a verbatim copy of the WS5 creation task; WS9 → pointer, WS5 canonical (setup, W4-gated). (B) **Strategic commenting mechanics** (5–10/day · never "great post" · 3–5 sentences · question · within 30 min) — WS8 § Strategic commenting duplicated WS9.5b § Daily mechanics; WS8 → pointer, WS9.5b canonical (its primary play). Vasanth cover-sheet anchor `#Strategic commenting (per § 5.3)` preserved (header kept). (C) **Company Page 3×/wk cadence + mix** — WS8 § Posting cadence (Company page) duplicated WS3 § Company Page ongoing ops (which carried MORE detail despite WS3 labelling WS8 as source); WS8 → pointer, WS3 canonical; fixed WS3's backwards "per WS8" label. (D) **LinkedIn output-cap rules** (≥48hr · cross-pillar 3-week · 1/wk · ≤7 aggregate · Tier 2 defer) were written 3×: WS8 § output cap + WS15 § output cap enforcement + the extracted Cannibalisation Matrix (canonical). WS8 → pointer (folded into the matrix stub directly below it); WS15 → keeps its repurposing-specific bits (Monthly Repurposing Review feedback loop + concrete 3-week derivative sequence) but points cap rules to the matrix. Borderline setup-vs-use restatements (pipeline status fields WS5↔WS12 · monthly citation probe WS2↔WS12 · weekly/monthly review WS5↔WS12) left as-is — each has a legitimate reason to appear in both spots. No task content lost; every dupe now has one source of truth.
@@ -94,7 +95,8 @@ tags:
 > | [[InnBlockchain - Content Repurposing Plan]] | Repurposing tiers (1/2/3/0), Format Priority (S/A/B/C/D), per-track asset families, Cross-Track Assets (sample audit / research report / newsletter), LinkedIn output cap, dedicated-resource production cadence |
 > | [[InnBlockchain - Landing Pages AEO GEO Prompts]] | Per-LP AEO drafting prompts + JSON-LD + listicle targeting + monthly citation probes |
 > | [[InnBlockchain - LinkedIn Marketing Strategy]] | Platform setup, algorithm, content cadence, authority |
-> | [[InnBlockchain - LinkedIn Outreach Strategy]] | DM sequences, sales nav filters, weekly action plan, eIDAS test |
+> | [[InnBlockchain - LinkedIn Outreach Strategy]] | DM sequences, weekly action plan, eIDAS test (incl. its § 7a Sales Nav filter). RWA Sales Nav filters live in [[Phase 1 LinkedIn Filter]] |
+> | [[Phase 1 LinkedIn Filter]] | Canonical Sales Nav filter spec — the two RWA filters (`FT WealthTech RWA` + `CN RWA Felix`) |
 > | [[LinkedIn Profile Vignesh Content]] | Profile copy + Pre-Publish Hard Gate |
 > | [[Recommendation Request Templates]] | 5 recommender categories + ops schedule |
 > | [[RWA-STO-EU-Compliance-Landscape]] (RWA regime lane) + [[EU-Compliance-Landscape]] (horizontal regimes) + 14 regulation checklists | Per-segment regime map (RWA = MiFID II/III + Prospectus + DLT Pilot + MAR + Listing Act). *Count note: 13 are Phase 1 brief/framing sources (WS4); [[mica-checklist]] is the 14th — kept ONLY for reviewing the two MiCA-boundary articles (W4 #4 · W8 #11), never as an RWA framing source.* |
@@ -599,9 +601,7 @@ To prevent drift — what this playbook does NOT cover:
 ### Required before structured DMs (W4 activation gate)
 - [ ] **(Vignesh procures · Vasanth uses)** **LinkedIn Sales Navigator** subscription active (Day 1 — also needed for WS9.5 warm-network target identification)
 - [ ] **(Vasanth · complete in W1, before building saved searches)** **Sales Navigator training** — work through LinkedIn's official Sales Nav learning path + [[InnBlockchain - LinkedIn Outreach Strategy]] § 6 Outreach Automation. Cover: advanced filters + Boolean search · lead lists + account lists · saved-search alerts · warm-path / TeamLink surfacing (feeds WS9.5a) · InMail vs connection-request strategy · daily-limit / account-safety throttles (avoid restriction). **Gate:** Vasanth can independently build + refine an RWA-track saved search (below) and identify warm prospects for WS9.5 — needed by W1 Day 1 (WS9.5) and firmly before W4 structured-DM activation.
-- [ ] **(Vasanth)** **Saved searches per RWA track** created:
-  - FinTech WealthTech filter (Title + Industry + Company size + EU geo + RWA/MiFID II keywords — NO MiCA keyword per [[InnBlockchain - LinkedIn Outreach Strategy]] § 2.1)
-  - CN PropTech / asset-backed Felix filter (Real Estate / Commodities industry + EU geo + asset tokenization keywords)
+- [ ] **(Vasanth)** **Saved searches per RWA track** created (`FT WealthTech RWA` + `CN RWA Felix`) — build both from the canonical field-by-field spec in [[Phase 1 LinkedIn Filter]] (ICP-calibrated, **NO MiCA keyword**). Do not work from a filter definition pasted elsewhere; that doc is the single source of truth.
 - [ ] **(Vasanth)** **Outreach tooling** configured (Expandi.io OR Lemlist) with personalisation variables
 - [ ] **(Vasanth)** **CRM/pipeline tracker** live (Zoho or equivalent) with T1–T5 sequence state per prospect
 - [ ] **(Vasanth)** Pipeline fields: Connected · Replied · Qualified · Call Booked · Closed · Parked
@@ -791,9 +791,16 @@ To prevent drift — what this playbook does NOT cover:
 > Source: [[InnBlockchain - LinkedIn Marketing Strategy]]
 
 > [!INFO] Ownership split
-> - **Vignesh** authors all personal-feed posts (voice = founder)
+> - **Vignesh** authors all **original** personal-feed posts (voice = founder); WS15 derivatives he **approves**, not authors (CW structures · MPs produce)
 > - **Sudharshini** schedule + post (LinkedIn native scheduler) + manage company page (3×/wk) + coordinate Tue/Thu publish-day amplification + produce visual assets needed for feed posts (graphics, video clips)
 > - **Vasanth** (from W8) handles 5–10 strategic comments/day on RWA prospects' posts (WS9.5b primary track); Vignesh contributes ≤30 min/day to keep founder voice in the feed
+
+> [!INFO] What a "feed post" is — and how it differs from a repurposed asset
+> **Two content streams share this one feed:**
+> - **Feed post (this WS)** = original founder-voice content authored fresh by Vignesh — commentary · hot take · poll · ICP-relevant news with 2–3 lines of analysis. Exists independent of the editorial calendar; its job is **algorithm categorisation + authority** (the § 5.1 topic-cluster discipline and the W2–W3 Recategorisation Accelerator apply to these).
+> - **Repurposed asset (WS15)** = derivative of a **published article** — carousel · quote graphic · persona variant · LinkedIn long-form · X thread. Gated by Article Tier; Gayathri structures the copy, Sudharshini + Britto produce per the Claude design spec, Vignesh approves.
+> - **Where they meet:** some cadence slots below are *delivery vehicles* for WS15 output — the Tue/Thu article-amplification posts and the Thu carousel slot ARE repurposed assets landing in the feed; Mon/Wed/Fri slots are typically original posts.
+> - **Both streams count toward the ≤7 posts/wk aggregate cap** ([[InnBlockchain - Cross-Channel Cannibalisation Matrix]] vector 6) — original cadence is 4–5/wk, so a Tier 1 derivative chain landing in the same week is exactly what the Mon AM sync exists to space out.
 
 ### Posting cadence (Vignesh personal — 4–5×/wk per § 4 Content Cadence)
 *(SPEED MODE: feed warmup is 3 weeks before structured DMs activate W5 — softened's 2-week claim. Reason: Vignesh's 7+ year LinkedIn signal is **Trioangle CEO / general software dev**, not blockchain/FinTech. The algorithm needs to RE-CATEGORISE the profile to a new topic cluster, not just confirm existing signal. 2 weeks insufficient for re-categorisation; 3 weeks with aggressive Profile Recategorisation Accelerator gets close.)*
@@ -921,7 +928,7 @@ To prevent drift — what this playbook does NOT cover:
 - **(Vasanth uses · Vignesh approves all new template variants)** Universal T5: § 5 Universal T5 — Final Nudge
 
 ### Sales Navigator filters
-> Saved searches (FT WealthTech RWA + CN RWA Felix) are **built once in [[Execution Playbook#Required before structured DMs (W4 activation gate)|WS5 § Platform Setup]]** per [[InnBlockchain - LinkedIn Outreach Strategy]] § 2.1 (FT) / § 2.2 (CN) — **NO MiCA keyword**. Used here for the T1→T5 sequences; refresh as prospect data updates, don't recreate.
+> Saved searches (FT WealthTech RWA + CN RWA Felix) are **built once in [[Execution Playbook#Required before structured DMs (W4 activation gate)|WS5 § Platform Setup]]** from the canonical spec in [[Phase 1 LinkedIn Filter]] — **NO MiCA keyword**. Used here for the T1→T5 sequences; refresh as prospect data updates, don't recreate.
 
 ### Safe daily limits (per § 6 Outreach Automation)
 - Profile views: 80–100/day
@@ -1038,7 +1045,7 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Vasanth)** 3–5 sentences max
 - [ ] **(Vasanth)** End with a question when possible (invites a reply, extends the thread)
 - [ ] **(Vasanth)** Comment within first 30 minutes of post going live (algorithm rewards early high-quality comments)
-- [ ] **(Vasanth)** Identify target accounts — 30–50 EU RWA / WealthTech / MiFID II commentators to follow + monitor daily
+- [ ] **(Vasanth)** Build the comment target list per the **two commenting filters** in [[Phase 1 LinkedIn Filter]] § "Two commenting filters": **Filter B (tag/hashtag content search)** for broad RWA/STO reach + **Filter A (your T1 targets who post)** to warm specific leads before the connection request. Follow 30–50 core accounts to monitor daily, but drive breadth from hashtag search — not just the follow list.
 
 ### Reactive DM rule
 - [ ] **(Vasanth)** When someone replies to your comment with substance, follow up with a DM within 24 hrs: "Appreciated your point on [X] — saw you're working on [Y] at [Z]. Curious how you're thinking about [specific RWA / MiFID II question relevant to their post]."
@@ -1087,12 +1094,7 @@ To prevent drift — what this playbook does NOT cover:
 - [ ] **(Vasanth — Vignesh approves new templates)** Templates per § 5 "🧪 eIDAS 2.0 Outbound Test" block
 
 ### Sales Navigator filters
-- [ ] **(Vasanth)** Title: CTO / CPO / VP Engineering / Head of Digital Identity / Head of KYC / Head of Platform Engineering (exclude Head of Compliance — Carol responds to formal RFPs not cold DMs)
-- [ ] **(Vasanth)** Industry: Financial Services
-- [ ] **(Vasanth)** Company size: 50–500
-- [ ] **(Vasanth)** Geography: EU Continental Europe
-- [ ] **(Vasanth)** Keywords: EUDI Wallet OR eIDAS OR eIDAS 2.0 OR Digital Identity Wallet OR e-money OR payment institution OR regulated wallet OR FinTech custody
-- [ ] **(Vasanth)** Exclude pure crypto-native wallet providers (Phase 3 territory)
+- [ ] **(Vasanth)** Build the eIDAS test filter from the canonical spec in [[InnBlockchain - LinkedIn Outreach Strategy]] § 7a "Sales Navigator filters (eIDAS test)" — WalletTech titles (Head of Digital Identity/KYC/Platform Engineering, exclude Head of Compliance) · Financial Services · 50–500 · EU · eIDAS/EUDI Wallet keywords · exclude pure crypto-native wallet providers. This is a separate WalletTech filter — NOT one of the two RWA filters in [[Phase 1 LinkedIn Filter]].
 
 ### Scale-up vs park criteria (after first 2 weeks)
 - **Scale to 40–60/month + commit `/solutions/fintech-wallets` LP build IF:** accept rate ≥35% AND reply rate ≥6% AND ≥1 qualified discovery call
