@@ -37,7 +37,7 @@ related:
 
 # ICP — InnBlockchain Crypto Products
 
-Source file: `.raw/InnBlockchain - ICP - Crypto Products.md`
+Source file: `.raw/ICP - Crypto Products.md`
 
 Internal ICP document for the clone script product line. Note: although filed under InnBlockchain, the product is operated under the **[[Trioangle]]** brand. See [[InnBlockchain Crypto Products ICP]] for the synthesized concept page.
 

@@ -7,7 +7,7 @@ role: Designer
 priority: high
 rev: 3
 last_revised: 2026-07-07
-playbook_rev_synced: 42
+playbook_rev_synced: 50
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -32,7 +32,7 @@ tags:
 |---|---|---|
 | **WS3 — Profile + Featured + Channels** | **W2–W3 brand system foundation sprint (PRIMARY)** · Featured asset PDF design (Risk Checklist · Sample Audit Report · eIDAS brief) · LinkedIn profile banner + X header templates | [[Execution Playbook#Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)]] · [[Execution Playbook#Featured assets — chronological build order]] |
 | **WS4 — Compliance Briefs + Vendor Risk Pack** | PDF layout for MiFID II/III + Prospectus + DLT Pilot brief (incl. 1-page DORA section) · Vendor Risk Pack assembly · eIDAS 2.0 brief (W11–W12) · *(DORA standalone brief = on-inquiry only, not a Phase 1 build)* | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
-| **WS14 — Case Study Capture** | **W14 Internal MVP mockup fallback** (CONDITIONAL trigger — fires only if no client deployment cleared by W14) · Figma + branded UI screenshots for issuer dashboard, investor portal, KYC flow, regulator reporting view | [[InnBlockchain - Case Study Capture Framework]] § Internal MVP fallback |
+| **WS14 — Case Study Capture** | **W14 Internal MVP mockup fallback** (CONDITIONAL trigger — fires only if no client deployment cleared by W14) · Figma + branded UI screenshots for issuer dashboard, investor portal, KYC flow, regulator reporting view | [[Case Study Capture Framework]] § Internal MVP fallback |
 | **WS15 — Content Repurposing** | High-stakes pieces only — complex regulatory infographics · Sample Audit Report annual refresh (anchor-tied to first-delivered engagement) · brand template enforcement (catch Sudharshini + Britto drift) | [[Execution Playbook#WS15 — Content Repurposing]] |
 
 ## 📅 Timeline that affects you
@@ -51,10 +51,10 @@ tags:
 ## 📚 Read first (in this order)
 
 1. [[Execution Playbook#Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)]] — **your W2–W3 sprint deliverables checklist**
-2. [[InnBlockchain - Content Repurposing Design Toolkit]] — tool stack · Decision Shorthand (AI vs Designer split) · Brand Consistency Standards · Sample Audit Report production workflow
+2. [[Content Repurposing Design Toolkit]] — tool stack · Decision Shorthand (AI vs Designer split) · Brand Consistency Standards · Sample Audit Report production workflow
 3. [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] — your PDF layout deliverables (3 compliance briefs + Vendor Risk Pack)
-4. [[InnBlockchain - Case Study Capture Framework]] § Internal MVP fallback — W14 fallback decision tree (extracted from the playbook at rev 37; WS14 in the playbook is now a pointer stub)
-5. [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets — Sample Audit Report disclosure rule (synthetic vs real audit) + annual refresh anchor
+4. [[Case Study Capture Framework]] § Internal MVP fallback — W14 fallback decision tree (extracted from the playbook at rev 37; WS14 in the playbook is now a pointer stub)
+5. [[Content Repurposing Plan]] § Cross-Track Assets — Sample Audit Report disclosure rule (synthetic vs real audit) + annual refresh anchor
 
 ## 🚫 Hard rules (memorise — these never relax)
 
@@ -75,10 +75,10 @@ These are everything you need to do your job:
 |---|---|---|
 | 1 | [[Execution Playbook]] | Master ops doc — WS3 + WS4 + WS14 + WS15 |
 | 2 | [[Designer - Cover Sheet]] | This doc — your daily/weekly reference |
-| 3 | [[InnBlockchain - Content Repurposing Design Toolkit]] | **Your primary day-to-day reference** — tool stack · Decision Shorthand (AI vs Designer split) · Brand Consistency Standards · Sample Audit Report production workflow |
-| 4 | [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets | Sample Audit Report disclosure rule (synthetic vs real audit) + annual refresh anchor |
+| 3 | [[Content Repurposing Design Toolkit]] | **Your primary day-to-day reference** — tool stack · Decision Shorthand (AI vs Designer split) · Brand Consistency Standards · Sample Audit Report production workflow |
+| 4 | [[Content Repurposing Plan]] § Cross-Track Assets | Sample Audit Report disclosure rule (synthetic vs real audit) + annual refresh anchor |
 | 5 | [[EU-Compliance-Landscape]] | Regulatory framing reference — never make regulatory judgment yourself; escalate to Vignesh BEFORE publish if a slide/infographic touches regulatory framing |
-| 6 | **[[InnBlockchain - Case Study Capture Framework]]** (cross-phase framework) | Your WS14 anchor — Internal MVP fallback trigger + mockup scope (Figma + branded UI screenshots, NOT working dApp) |
+| 6 | **[[Case Study Capture Framework]]** (cross-phase framework) | Your WS14 anchor — Internal MVP fallback trigger + mockup scope (Figma + branded UI screenshots, NOT working dApp) |
 
 ## ☎️ Backup / escalation
 

@@ -39,7 +39,7 @@ related:
 
 # ICP — InnBlockchain Channel Partner (Blockchain Advisory Firms)
 
-Source file: `.raw/InnBlockchain - ICP - Channel Partner-I.md` (the "-I" distinguishes it from Trioangle's channel partner ICP).
+Source file: `.raw/ICP - Channel Partner-I.md` (the "-I" distinguishes it from Trioangle's channel partner ICP).
 
 Internal ICP document for InnBlockchain's advisory-firm channel partners. See [[InnBlockchain Channel Partner ICP]] for the synthesized concept page.
 

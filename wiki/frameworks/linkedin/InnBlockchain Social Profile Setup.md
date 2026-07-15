@@ -124,7 +124,7 @@ tags:
 ### Ongoing operations (post-setup, weekly)
 
 > [!INFO] X-specific cadence
-> Less than LinkedIn (X audience less institutional). Native scheduler per [[InnBlockchain - Per-Platform Posting Spec]].
+> Less than LinkedIn (X audience less institutional). Native scheduler per [[Per-Platform Posting Spec]].
 
 #### Posting cadence + mix
 
@@ -144,7 +144,7 @@ tags:
 > - **(Vignesh)** Never post off-positioning content from this handle post-recategorisation (never confuse the signal)
 > - **(Vignesh + MPs)** Never use wrong-regime framing for the current phase (#1 disqualifier)
 > - **(Vignesh)** Never engage in industry drama / shitposting / vendor disputes — institutional positioning depends on signal-only behavior
-> - **(MPs)** Never schedule X thread same day as LinkedIn long-form post on same article (cross-platform cannibalisation; ≥24 hr stagger per [[InnBlockchain - Cross-Channel Cannibalisation Matrix]])
+> - **(MPs)** Never schedule X thread same day as LinkedIn long-form post on same article (cross-platform cannibalisation; ≥24 hr stagger per [[Cross-Channel Cannibalisation Matrix]])
 
 > [!INFO] Corporate X handle decision
 > X does not have a structural Company Page concept like LinkedIn or Facebook (every account is just an account). Phase 1 default: corporate X handle = NOT created. Revisit only if (a) X drives material LP traffic OR (b) ecosystem-engagement use case surfaces.
@@ -172,7 +172,7 @@ tags:
 - [ ] **(Vignesh monthly)** Review Solodit profile views + finding citations · pattern-match against Sasha-grade discovery call mentions
 
 > [!INFO] Asset-map cross-reference
-> GitHub repo / templates + Solodit profile contribution are listed as Track A derivatives in [[InnBlockchain - Content Repurposing Plan]]. This subsection covers the platform setup; per-article contribution work lives in the Plan.
+> GitHub repo / templates + Solodit profile contribution are listed as Track A derivatives in [[Content Repurposing Plan]]. This subsection covers the platform setup; per-article contribution work lives in the Plan.
 
 ---
 

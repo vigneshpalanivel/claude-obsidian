@@ -13,7 +13,7 @@ revision_notes: |
   rev 4 (2026-05-29): repositioned as design-only child of Plan. Pre-Publish Checks 9 → 3 (design-only). Failure Modes 7 → 5 (dropped output-cap-breach + Vignesh SLA — owned by Playbook/Plan). Scope callout routes each non-design concern to its parent doc.
   rev 5 (2026-05-29): full duplication audit vs Plan. Asset Category Map: stripped all Plan-owned parentheticals (tier scope, format spec, spacing rules, event names, LP routing) — asset name + tool + owners only. Production Workflows: replaced embedded Plan content with pointer links (LinkedIn output cap, Cross-Track Assets disclosure, regime scope, canonical URL, Telegram timing). Failure mode #5 reframed as visual-layer regime leak (distinct from Plan's source-article review).
   rev 6 (2026-06-02): **alignment sweep to match Playbook rev 18 naming + ownership scheme.** Three changes: (1) Role abbreviation sweep — Marketing Person #1 + #2 → **MPs** (collective; internal split deferred to operational decision per Playbook rev 11) · Senior Content Writer (SCW) → **CW** · Part-time Designer (PTD) → **Designer** · "Sales Person" → **SP** in body content (full name in legend). (2) Team roles section restructured to match Playbook Per-Role Quick Reference + Team configuration callout — abbreviations defined once at the top. (3) Brand standards section adds a forward-reference to Playbook WS3 § Brand system foundation (Playbook rev 16) which independently enumerates the same artifacts as a checklist — toolkit defines the standards, Playbook tracks the W2–W3 sprint completion. Toolkit "primary owner" framing dropped (was the old MP2-specific framing) — now owned collectively by MPs with Designer for high-stakes pieces, mirroring Playbook WS15 ownership model.
-  rev 7 (2026-06-03): **Telegram dev-group share dropped — doesn't map to Phase 1 ICP.** Synced to Playbook rev 20 sweep. RWA Felix (Phase 1 CN buyer) is asset-first non-technical; Sam/Tom/Carol (Phase 1 FT) evaluates via vendor risk pack + audit report. Telegram dev-group audience (Solidity devs · DeFi builders) is not a Phase 1 buyer. Sweep: (1) Asset Category Map Track A — "Telegram dev-group share" row removed. (2) Per-Asset Production Workflows — "Telegram dev-group share" workflow block removed. (3) References block — "Wed Telegram drop timing" pointer removed from Editorial Calendar reference description. Re-evaluate for Phase 2/3 DeFi-protocol scope (Telegram is correctly a high-converting channel for DeFi/protocol Felix per [[InnBlockchain - ICP - Crypto Native]] Segments 2–6).
+  rev 7 (2026-06-03): **Telegram dev-group share dropped — doesn't map to Phase 1 ICP.** Synced to Playbook rev 20 sweep. RWA Felix (Phase 1 CN buyer) is asset-first non-technical; Sam/Tom/Carol (Phase 1 FT) evaluates via vendor risk pack + audit report. Telegram dev-group audience (Solidity devs · DeFi builders) is not a Phase 1 buyer. Sweep: (1) Asset Category Map Track A — "Telegram dev-group share" row removed. (2) Per-Asset Production Workflows — "Telegram dev-group share" workflow block removed. (3) References block — "Wed Telegram drop timing" pointer removed from Editorial Calendar reference description. Re-evaluate for Phase 2/3 DeFi-protocol scope (Telegram is correctly a high-converting channel for DeFi/protocol Felix per [[ICP - Crypto Native]] Segments 2–6).
   rev 8 (2026-07-06): **Claude design for carousel · quote-graphic · single-image post templates.** Synced to Playbook rev 35. Tool Stack: Claude row added (carousel + quote-graphic + single-image templates); carousel + quote-graphic removed from Canva's What-it-does. Asset Category Map: carousel + quote-graphic + single-image post rows updated across Track A + Track B (Canva Pro → Claude). Decision Shorthand: Claude-spec row added at top for the 3 formats. Brand Consistency Standards checklist: carousel + quote-graphic updated to Claude brand-locked prompt spec; single-image post template added. Per-asset workflow (LinkedIn carousel): Canva step updated to Claude design spec. Replan Triggers: Claude added to AI tool list.
 tags:
   - content
@@ -27,7 +27,7 @@ tags:
 > [!NOTE] Scope
 > **The Design Toolkit Plan for Content** — the design layer of content production. Covers tool stack, asset → tool/owner map, AI vs designer split, brand standards, hallucination spot-check, design-specific quality gates.
 >
-> Child of [[InnBlockchain - Content Repurposing Plan]]. Out of scope (routed elsewhere): format priority + tier scope + output cap + anti-patterns → Plan · publish schedule → [[InnBlockchain - Editorial Calendar]] · workstream ownership + spot-check ramp → [[Execution Playbook]] WS13/WS15 · regime-specific scope → [[InnBlockchain - Content Strategy]] · regulatory map → [[EU-Compliance-Landscape]].
+> Child of [[Content Repurposing Plan]]. Out of scope (routed elsewhere): format priority + tier scope + output cap + anti-patterns → Plan · publish schedule → [[Editorial Calendar]] · workstream ownership + spot-check ramp → [[Execution Playbook]] WS13/WS15 · regime-specific scope → [[Content Strategy]] · regulatory map → [[EU-Compliance-Landscape]].
 
 > [!INFO] Team roles referenced (aligned with Playbook rev 18 Team configuration)
 > - **MPs** = Marketing Persons (both, collectively) — AI visual generation · posting + scheduling · brand template maintenance · LP on-page SEO · LP hero / banner image production · day-to-day owners of this toolkit (no internal MP1/MP2 split prescribed here; operational allocation deferred)
@@ -69,7 +69,7 @@ tags:
 
 ## 🗂️ Asset Category → Tool + Owner Map
 
-Each derivative format from [[InnBlockchain - Content Repurposing Plan]] mapped to its production tool, production owner, and posting owner. **Asset spec, tier coverage, format definition (slide count, video length, etc.), publish cadence, and compliance-review requirements live in the Plan** — not here. The asset name is the join key.
+Each derivative format from [[Content Repurposing Plan]] mapped to its production tool, production owner, and posting owner. **Asset spec, tier coverage, format definition (slide count, video length, etc.), publish cadence, and compliance-review requirements live in the Plan** — not here. The asset name is the join key.
 
 ### Track A — Crypto Native derivatives
 
@@ -106,12 +106,12 @@ Each derivative format from [[InnBlockchain - Content Repurposing Plan]] mapped 
 | Asset | Production tool | Production owner | Posting owner |
 |---|---|---|---|
 | **Sample Audit Report PDF** ⭐ | Designer + Compliance sign-off | Designer — NOT AI | MPs (gated download) |
-| **Original Research / Data Report** | Designer + CW + Vignesh (sprint protocol → [[InnBlockchain - Content Repurposing Plan]] § Research-report sprint) | Designer + CW | MPs |
+| **Original Research / Data Report** | Designer + CW + Vignesh (sprint protocol → [[Content Repurposing Plan]] § Research-report sprint) | Designer + CW | MPs |
 | **Own Email Newsletter** | Beautiful.ai for layout OR newsletter platform native (Substack / Beehiiv) | CW (copy) + MPs (visuals) | MPs |
 
 ### Compliance briefs + checklists
 
-Regime-specific scope (which briefs, which weeks, which LPs) lives in [[InnBlockchain - Content Strategy]] and [[InnBlockchain - Content Repurposing Plan]]. This table is asset-category only.
+Regime-specific scope (which briefs, which weeks, which LPs) lives in [[Content Strategy]] and [[Content Repurposing Plan]]. This table is asset-category only.
 
 | Asset category | Production tool | Production owner | Posting owner |
 |---|---|---|---|
@@ -231,17 +231,17 @@ ChatGPT doesn't know the MiFID II / DLT Pilot vs MiCA regime boundary because it
 
 ## 🛠️ Per-Asset Production Workflow (Key Examples)
 
-Workflows below cover design execution steps. Asset spec (slide count, video length, page count), tier scope, publish cadence, and distribution rules live in [[InnBlockchain - Content Repurposing Plan]] + [[InnBlockchain - Editorial Calendar]].
+Workflows below cover design execution steps. Asset spec (slide count, video length, page count), tier scope, publish cadence, and distribution rules live in [[Content Repurposing Plan]] + [[Editorial Calendar]].
 
 ### LinkedIn carousel
 
 **Total time: ~3–4 hr per article**
 
-1. **CW writes slide-by-slide copy outline** (~1 hr) — persona coding per [[InnBlockchain - Content Repurposing Plan]] § `[Both]` Articles
+1. **CW writes slide-by-slide copy outline** (~1 hr) — persona coding per [[Content Repurposing Plan]] § `[Both]` Articles
 2. **MPs generates visual layout using Claude design spec** (~1.5 hr) — uses brand-locked prompt template, fills slide copy, generates hero image via Midjourney if needed
 3. **MPs regime-leak check** (~15 min) — runs MPs regime-leak checklist on slide copy
 4. **Compliance review** (~30 min) — Vignesh reviews for regime accuracy at sample rate per § AI Hallucination Risk
-5. **MPs schedules publish** (~15 min) — LinkedIn native scheduler, per [[InnBlockchain - Content Repurposing Plan]] § LinkedIn output cap
+5. **MPs schedules publish** (~15 min) — LinkedIn native scheduler, per [[Content Repurposing Plan]] § LinkedIn output cap
 
 ### LinkedIn native video
 
@@ -252,15 +252,15 @@ Workflows below cover design execution steps. Asset spec (slide count, video len
 3. **MPs edits in Descript** (~2–3 hr) — auto-caption + manual cleanup · B-roll if any · branded lower-thirds + outro card · audio cleanup
 4. **MPs regime-leak check on captions** (~15 min) — Descript auto-captions may hallucinate regulatory terms; verify against canonical regime map
 5. **Vignesh final review** (~15 min) — he's the talent, sign-off required
-6. **MPs schedules publish** (~10 min) — captions on by default, per [[InnBlockchain - Content Repurposing Plan]] § LinkedIn output cap
+6. **MPs schedules publish** (~10 min) — captions on by default, per [[Content Repurposing Plan]] § LinkedIn output cap
 
 ### Sample Audit Report PDF
 
 **Total time: ~15–25 hr — designer (Designer) + Compliance (Vignesh)**
 
-1. **Vignesh writes report content** (~5–8 hr) — methodology + findings drawn from publicly available exploit research + InnBlockchain methodology (synthetic acceptable per [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets)
+1. **Vignesh writes report content** (~5–8 hr) — methodology + findings drawn from publicly available exploit research + InnBlockchain methodology (synthetic acceptable per [[Content Repurposing Plan]] § Cross-Track Assets)
 2. **Designer designs PDF layout** (~6–10 hr) — mimics regulator-grade audit firm report format (Trail of Bits / OpenZeppelin / Halborn structures as reference) · cover · executive summary · methodology · findings table · severity classification · appendix · branded footer
-3. **Front-matter disclosure inserted** — exact wording + when-it-applies per [[InnBlockchain - Content Repurposing Plan]] § Cross-Track Assets disclosure rule
+3. **Front-matter disclosure inserted** — exact wording + when-it-applies per [[Content Repurposing Plan]] § Cross-Track Assets disclosure rule
 4. **Compliance reviewer sign-off** (~2–4 hr) — Vignesh self-review against canonical regime map; check all regulatory references are accurate
 5. **MPs hosts on gated LP** (~30 min) — gated PDF download, email capture form, pinned to Featured on LinkedIn profile
 
@@ -268,7 +268,7 @@ Workflows below cover design execution steps. Asset spec (slide count, video len
 
 **Total time: ~3–4 hr per asset**
 
-1. **CW drafts content** (~1.5 hr) — checklist body copy; regime scope per [[InnBlockchain - Content Strategy]]
+1. **CW drafts content** (~1.5 hr) — checklist body copy; regime scope per [[Content Strategy]]
 2. **MPs generates layout in Beautiful.ai or Canva** (~1 hr) — applies brand template, formats checklist items
 3. **MPs regime-leak check** (~15 min)
 4. **Vignesh self-reviews compliance** (~30 min)
@@ -278,7 +278,7 @@ Workflows below cover design execution steps. Asset spec (slide count, video len
 
 **Total time: ~30 min per article**
 
-1. **CW reformats source article for Mirror** (~15 min) — Mirror UI; canonical URL rule per [[InnBlockchain - Content Repurposing Plan]] Track A asset family
+1. **CW reformats source article for Mirror** (~15 min) — Mirror UI; canonical URL rule per [[Content Repurposing Plan]] Track A asset family
 2. **MPs adds light visuals if needed** (~10 min) — hero image, inline diagrams
 3. **MPs publishes** (~5 min)
 
@@ -286,7 +286,7 @@ Workflows below cover design execution steps. Asset spec (slide count, video len
 
 ## ✅ Pre-Publish Quality Checks — Design Only
 
-General publish discipline (track tag, sales motion tag, CTA destination, tier scope, output cap, compliance sign-off) is owned by [[InnBlockchain - Content Repurposing Plan]], [[InnBlockchain - Content Strategy]], and [[Execution Playbook]] WS13. Apply those checks **in addition to** the design-specific ones below.
+General publish discipline (track tag, sales motion tag, CTA destination, tier scope, output cap, compliance sign-off) is owned by [[Content Repurposing Plan]], [[Content Strategy]], and [[Execution Playbook]] WS13. Apply those checks **in addition to** the design-specific ones below.
 
 - [ ] **Brand template adherence** — typography, color, logo placement match brand system; no ad-lib visual elements
 - [ ] **AI-generated copy reviewed by human** — never publish ChatGPT-generated slide / caption / PDF copy directly; human pass + Vignesh sign-off at the rate set in § AI Hallucination Risk
@@ -296,7 +296,7 @@ General publish discipline (track tag, sales motion tag, CTA destination, tier s
 
 ## 🚨 Failure modes to actively monitor — Design Only
 
-Distribution-side and workflow-SLA failure modes (LinkedIn output cap breach, Vignesh review SLA slip, etc.) are owned by [[Execution Playbook]] Risk Register + [[InnBlockchain - Content Repurposing Plan]] § Anti-Patterns. The design-specific ones below:
+Distribution-side and workflow-SLA failure modes (LinkedIn output cap breach, Vignesh review SLA slip, etc.) are owned by [[Execution Playbook]] Risk Register + [[Content Repurposing Plan]] § Anti-Patterns. The design-specific ones below:
 
 1. **AI-hallucinated regulatory framing on slides** (MPs visual output ships with "MiCA-compliant RWA" or similar) — Critical · same Carol-killing cost as regime-leak DM · spot-check protocol mandatory
 2. **Brand consistency drift** (MPs creates new templates ad hoc; carousel #1 looks different from carousel #5) — Medium · monthly review with Designer catches drift
@@ -310,11 +310,11 @@ Distribution-side and workflow-SLA failure modes (LinkedIn output cap breach, Vi
 
 Only docs actually pulled from inline in this toolkit. Regime-specific scope, AEO prompts, LinkedIn algorithm strategy, and profile copy live in their own docs and aren't reached from here.
 
-- **[[InnBlockchain - Content Repurposing Plan]]** — parent doc: tiers (1/2/3/0), Format Priority (S/A/B/C/D), per-track asset families, LinkedIn output cap + 3-week cross-pillar cadence, research-report sprint protocol, Anti-Patterns
+- **[[Content Repurposing Plan]]** — parent doc: tiers (1/2/3/0), Format Priority (S/A/B/C/D), per-track asset families, LinkedIn output cap + 3-week cross-pillar cadence, research-report sprint protocol, Anti-Patterns
 - **[[Execution Playbook]]** — WS13 spot-check ramp (W1–W4 → W5+), WS15 ownership + capacity model, Risk Register
 - **[[EU-Compliance-Landscape]]** — canonical regulatory regime map; the anchor for every MPs regime-leak check
-- **[[InnBlockchain - Editorial Calendar]]** — publish schedule + distribution rhythm (cross-pillar 3-week cadence)
-- **[[InnBlockchain - Content Strategy]]** — article inventory + sales motion tagging; regime-specific compliance brief scope (which briefs, which weeks, which LPs)
+- **[[Editorial Calendar]]** — publish schedule + distribution rhythm (cross-pillar 3-week cadence)
+- **[[Content Strategy]]** — article inventory + sales motion tagging; regime-specific compliance brief scope (which briefs, which weeks, which LPs)
 
 ---
 

@@ -45,7 +45,7 @@ related:
 
 # Content Strategy — InnBlockchain Crypto Products
 
-Source: `.raw/InnBlockchain - Content Strategy - Crypto Products.md`
+Source: `.raw/Content Strategy - Crypto Products.md`
 
 ## Summary
 

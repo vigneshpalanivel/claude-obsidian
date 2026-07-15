@@ -27,7 +27,7 @@ key_claims:
   - "Social proof: 5+ recommendations on Vignesh's profile minimum across 3 of 5 categories (FinTech client, Crypto-native client, Security peer, Regulator-adjacent, Engineering hire); 8+ for Sasha-grade pass rate. Ask immediately after project delivery"
   - "Weekly analytics targets: Profile views 100-300/week; Post impressions 500-5,000+; Engagement rate 2-5%; Follower growth +50-100/month"
   - "Tools: LinkedIn Analytics (native), Shield Analytics, LinkedIn Sales Navigator, Zoho CRM"
-  - "Content division of concerns (rev 2026-05-27): article inventory + sales-motion tags → [[InnBlockchain - Content Strategy]] (single merged doc); publish dates → [[InnBlockchain - Editorial Calendar]]; derivative production (Tier 1/2/3/0) → [[InnBlockchain - Content Repurposing Plan]]; canonical regulatory reference → [[EU-Compliance-Landscape]]"
+  - "Content division of concerns (rev 2026-05-27): article inventory + sales-motion tags → [[Content Strategy]] (single merged doc); publish dates → [[Editorial Calendar]]; derivative production (Tier 1/2/3/0) → [[Content Repurposing Plan]]; canonical regulatory reference → [[EU-Compliance-Landscape]]"
 ingest_rev: 3
 created: 2026-04-16
 updated: 2026-05-27
@@ -56,7 +56,7 @@ related:
 
 # LinkedIn Marketing Strategy — InnBlockchain
 
-Source: `.raw/InnBlockchain - LinkedIn Marketing Strategy.md`
+Source: `.raw/LinkedIn Marketing Strategy.md`
 
 ## Summary
 

@@ -39,7 +39,7 @@ related:
 
 # ICP — InnBlockchain FinTech
 
-Source file: `.raw/InnBlockchain - ICP - FinTech.md`. Last reviewed 2026-04-03.
+Source file: `.raw/ICP - FinTech.md`. Last reviewed 2026-04-03.
 
 Internal ICP document for InnBlockchain's regulated FinTech segment. See [[InnBlockchain FinTech ICP]] for the synthesized concept page.
 

@@ -22,7 +22,7 @@ tags:
 # Discovery Call Master Sequence
 
 > [!INFO] Single linear walk-through · ~5 min prep + 30–60 min call + 10 min post-call · cross-phase framework
-> The DM track gets the call BOOKED. This sequence governs what happens IN the call. Open per call. 5 phases · 20 steps. Pairs with [[InnBlockchain - LinkedIn Outreach Strategy]] § 5 call patterns where they exist.
+> The DM track gets the call BOOKED. This sequence governs what happens IN the call. Open per call. 5 phases · 20 steps. Pairs with [[LinkedIn Outreach Strategy]] § 5 call patterns where they exist.
 >
 > Extracted from [[Execution Playbook]] → cross-phase framework. 5-phase structure (pre-call → opening → discovery → qualification → post-call) is universal. Phase 1 escalation triggers reference Carol / Sam / $100k threshold / Trioangle — those overlays update per phase.
 
@@ -31,7 +31,7 @@ tags:
 | # | Step | Doc |
 |---|---|---|
 | 1 | **(SP)** Pull prospect from CRM — source · trigger · prior touchpoints · track tag | Playbook WS12 § Per-prospect tracking |
-| 2 | **(SP)** Confirm segment — match against current-phase ICP | [[InnBlockchain - ICP - Crypto Native]] / [[InnBlockchain - ICP - FinTech]] |
+| 2 | **(SP)** Confirm segment — match against current-phase ICP | [[ICP - Crypto Native]] / [[ICP - FinTech]] |
 | 3 | **(SP)** Open segment-specific prep + queue vendor risk pack + sample audit + compliance brief for instant delivery | Playbook WS5 § Discovery call infrastructure + WS4 |
 | 4 | **(SP)** Identify the qualifying question to ask by minute 15 (vendor risk approver · timeline · budget signal) | this doc Phase 3 |
 
@@ -58,7 +58,7 @@ tags:
 
 | # | Step | Action |
 |---|---|---|
-| 14 | **(SP)** Qualify against ICP gates (track + stage + budget + timeline + regulatory + procurement) | Pass = next step · fail = park 60d (see [[InnBlockchain - Pipeline Stage Exit Criteria]]) |
+| 14 | **(SP)** Qualify against ICP gates (track + stage + budget + timeline + regulatory + procurement) | Pass = next step · fail = park 60d (see [[Pipeline Stage Exit Criteria]]) |
 | 15 | **(SP)** If qualified → schedule next step on the call (proposal · scoping · vendor risk pack delivery + follow-up) | Calendly on screen during call |
 | 16 | **(SP + delivery infra)** If compliance-officer involvement surfaced → confirm vendor risk pack within 24 hr | Playbook WS4 vendor risk pack |
 | 17 | **(SP)** Confirm what you'll send next 24 hr (sample audit · compliance brief · vendor risk pack) | Set the SLA; never miss it |
@@ -67,9 +67,9 @@ tags:
 
 | # | Step | Doc |
 |---|---|---|
-| 18 | **(SP)** Log call: status update · next-step action · CRM stage transition with reason | [[InnBlockchain - Pipeline Stage Exit Criteria]] |
+| 18 | **(SP)** Log call: status update · next-step action · CRM stage transition with reason | [[Pipeline Stage Exit Criteria]] |
 | 19 | **(SP)** Send promised assets within 24 hr (sample audit · compliance brief · vendor risk pack) | Playbook WS4 + WS3 Featured assets |
-| 20 | **(SP)** Schedule follow-up cadence per pipeline stage | [[InnBlockchain - Pipeline Stage Exit Criteria]] |
+| 20 | **(SP)** Schedule follow-up cadence per pipeline stage | [[Pipeline Stage Exit Criteria]] |
 
 ## Vignesh escalation triggers (during call OR within 1 hr after)
 

@@ -6,7 +6,7 @@ department:
 priority: high
 rev: 1
 last_revised: 2026-06-13
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 31 § WS14 § Case Study Capture (at-contract-sign + at-delivery + publishing trigger)"
+parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 31 § WS14 § Case Study Capture (at-contract-sign + at-delivery + publishing trigger)"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -38,7 +38,7 @@ tags:
 - [ ] **(Vignesh)** Confirm screenshot rights are signed-off (do not assume contract clause = sign-off · get explicit confirmation per asset)
 - [ ] **(Vignesh + CW)** Tag for one of the phase-specific case study categories (Phase 1: Case Study A = CN RWA · Case Study B = FT WealthTech B1)
 
-## Publishing trigger (out-of-sequence override per [[InnBlockchain - Editorial Calendar]])
+## Publishing trigger (out-of-sequence override per [[Editorial Calendar]])
 
 - [ ] **(CW drafts · Vignesh review · MPs publish)** Case study slots into next BOFU position when delivered + screenshots cleared
 - [ ] **(CW)** Per-vertical Post-Launch articles slot in after first client goes live in that vertical (Phase 1 examples: *Hardening a Live RWA Tokenization Platform* after first RWA client · *Expanding Your RWA Platform to New Markets* B1 Post-Launch after first B1 client)

@@ -6,7 +6,7 @@ department:
 priority: high
 rev: 1
 last_revised: 2026-06-13
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 31 § WS13 § Delegated-work spot-check protocol"
+parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 31 § WS13 § Delegated-work spot-check protocol"
 scope: cross-phase
 applies_to:
   - phase-1

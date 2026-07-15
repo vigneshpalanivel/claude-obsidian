@@ -17,7 +17,7 @@ key_claims:
   - "Dedup discipline: 11 cross-article overlaps removed (rev 3) plus one boundary-enforcement scope clarifier added to B1-#14 in rev 5 (P5-DORA-X cross-cutting CCO overview vs B1-#14 DLT-tokenized-securities-specific DORA mechanics). 9 explicit `*(Scope: ...)*` ownership-boundary lines now span the file. Strategy doc line 292's 'Do NOT overlap' rule between #4 and B1-#16 MiFID II is enforced."
   - "Naming-precision pass (rev 5 TFR patch): B1-#15 travel-rule prompt rewritten from FATF framing to TFR (Regulation (EU) 2023/1113) per Content Strategy rev 9 naming-precision rule. Contrast prompt kept so the article can still capture buyers using colloquial 'FATF travel rule' phrasing."
   - "10 AEO drafting principles: 150-word answer rule, H2/H3=prompts verbatim, FAQPage JSON-LD, cite specifics (versions/dates/named vendors), name competitors (Tokeny, Securitize, Polymath, RealT, Fireblocks, SettleMint), date-stamp regulation, markdown tables not images, persona-aligned vocabulary by track, avoid marketing voice, update bi-annually."
-  - "Monthly AI search citation probe schedule across 6 engines: ChatGPT (Search) weekly · Claude (Web Search) bi-weekly · Perplexity weekly · Google AI Overviews weekly · Gemini bi-weekly (Gemini probe scope updated rev 5 to include MiFID II + DLT Pilot + Prospectus + eIDAS 2.0) · Microsoft Copilot monthly. Citation tracker file (`InnBlockchain - AI Citation Tracker.md`) recommended but not yet created."
+  - "Monthly AI search citation probe schedule across 6 engines: ChatGPT (Search) weekly · Claude (Web Search) bi-weekly · Perplexity weekly · Google AI Overviews weekly · Gemini bi-weekly (Gemini probe scope updated rev 5 to include MiFID II + DLT Pilot + Prospectus + eIDAS 2.0) · Microsoft Copilot monthly. Citation tracker file (`AI Citation Tracker.md`) recommended but not yet created."
   - "Persona-vocabulary rule: `[CN]` articles use 'protocol TVL,' 'mainnet,' 'exploit vector,' 'audit-ready'; `[FT]` articles use 'regulator-defensible,' 'compliance sign-off,' 'vendor risk,' 'DLT settlement'; `[Both]` articles avoid both lexicons and write neutrally with split CTAs. AI engines match on lexical proximity to the user's prompt phrasing."
   - "Replan triggers: (1) Phase 1 close — dual dates per rev 5 — Track A W20 (Sep 28, 2026) + Track B B1 W22 (Oct 15, 2026); on close, build Phase 2 AEO file including the three Phase-1-deferred articles; (2) Editorial calendar replan; (3) AI engine major model release (GPT-5 Search, Claude 5, Perplexity Pro 3) → re-test top 12 prompts; (4) Competitor breakthrough — if Tokeny / Securitize / Antier starts ranking for our target prompts on ChatGPT/Claude/Perplexity, rework affected article lede + cite specificity."
 ingest_rev: 2
@@ -52,7 +52,7 @@ related:
 
 # InnBlockchain — Content AEO GEO Prompts (Phase 1)
 
-**Source**: `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Content AEO GEO Prompts.md` (rev 5 + TFR patch, 2026-05-21) | InnBlockchain Marketing | hash `30a031c4814a5f2e8bc75b7ef184ee7b`
+**Source**: `.raw/InnBlockchain/sales-marketing/Service/Content/Content AEO GEO Prompts.md` (rev 5 + TFR patch, 2026-05-21) | InnBlockchain Marketing | hash `30a031c4814a5f2e8bc75b7ef184ee7b`
 
 **Synced with:** Content Strategy rev 16, Editorial Calendar rev 9.
 
@@ -181,7 +181,7 @@ Acceptable cross-track parallels (by design, not duplication):
 | Gemini | EU compliance prompts (MiFID II, DLT Pilot, Prospectus Regulation, MiCA, DORA, EU AI Act, eIDAS 2.0) | Bi-weekly |
 | Microsoft Copilot | Track B B1 prompts (WealthTech CTO/CCO queries) | Monthly |
 
-Citation tracker file (recommended, not yet created): `InnBlockchain - AI Citation Tracker.md` — one row per prompt, columns for date, engine, citation status, competitors named, action.
+Citation tracker file (recommended, not yet created): `AI Citation Tracker.md` — one row per prompt, columns for date, engine, citation status, competitors named, action.
 
 ---
 
@@ -190,7 +190,7 @@ Citation tracker file (recommended, not yet created): `InnBlockchain - AI Citati
 This document is re-cut (not patched) when:
 
 1. **Phase 1 close (dual dates per rev 5)** — Track A closes Week 20 / Sep 28, 2026; Track B B1 closes Week 22 / Oct 15, 2026. On close, build Phase 2 AEO prompts file (covers A2–A6, B2–B4, WL-2 through WL-6, AI+Blockchain cluster post-validation, plus the three Phase-1-deferred articles: #3 MiCA Explained, #14 MiCA Checklist CN, P1-N MiCA License Application).
-2. **Editorial calendar replan** (any of the Replan Triggers in [[InnBlockchain - Editorial Calendar]]) → re-cut affected weeks.
+2. **Editorial calendar replan** (any of the Replan Triggers in [[Editorial Calendar]]) → re-cut affected weeks.
 3. **AI search engine major model release** (e.g., GPT-5 Search, Claude 5, Perplexity Pro 3) → re-test top 12 prompts; update Drafting Principles if citation patterns shift.
 4. **Competitor breakthrough** — if Tokeny, Securitize, or Antier starts ranking for InnBlockchain's target prompts on ChatGPT/Claude/Perplexity, rework affected article lede + cite specificity.
 
@@ -199,7 +199,7 @@ This document is re-cut (not patched) when:
 ## Cross-References
 
 - Strategic parent: [[InnBlockchain Content Strategy]]
-- Editorial cadence: `.raw/InnBlockchain/sales-marketing/Service/Content/InnBlockchain - Editorial Calendar.md`
+- Editorial cadence: `.raw/InnBlockchain/sales-marketing/Service/Content/Editorial Calendar.md`
 - Concept synthesis: [[InnBlockchain Content AEO GEO Prompts]]
 - ICPs: [[InnBlockchain Crypto Native ICP]] · [[InnBlockchain FinTech ICP]]
 - Trioangle parallel approach: [[SEO-AEO-GEO-Prompt-Library]]

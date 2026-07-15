@@ -8,7 +8,7 @@ assignee: Gayathri
 priority: high
 rev: 6
 last_revised: 2026-07-06
-playbook_rev_synced: 42
+playbook_rev_synced: 50
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -59,12 +59,12 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 
 1. [[Execution Playbook#Per-Article Production Checklist (Gayathri master sequence — open once per article)]] — **open this once per article** · 25 steps · 4 phases
 2. [[Execution Playbook#CW Content Style Guide]] — voice / tone / formatting / citation / title-meta / alt-text / internal linking / per-track voice modifiers
-3. [[InnBlockchain - Editorial Calendar]] — **single source of truth for what to write** (slot · tier · score · dependencies — open during Phase 1 step 1)
-4. [[InnBlockchain - Content Strategy]] — pillar map · sales motion tagging · article positioning
-5. [[InnBlockchain - Content AEO GEO Prompts]] — per-article prompt block + 13 AEO Drafting Principles
-6. [[InnBlockchain - ICP - Crypto Native]] + [[InnBlockchain - ICP - FinTech]] — persona language per track tag (Felix asset-first · Sam ROI · Tom technical · Carol compliance)
+3. [[Editorial Calendar]] — **single source of truth for what to write** (slot · tier · score · dependencies — open during Phase 1 step 1)
+4. [[Content Strategy]] — pillar map · sales motion tagging · article positioning
+5. [[Content AEO GEO Prompts]] — per-article prompt block + 13 AEO Drafting Principles
+6. [[ICP - Crypto Native]] + [[ICP - FinTech]] — persona language per track tag (Felix asset-first · Sam ROI · Tom technical · Carol compliance)
 7. [[EU-Compliance-Landscape]] + per-regime checklists — regime framing source (RWA = MiFID II/III + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA)
-8. [[InnBlockchain - Content Repurposing Plan]] — canonical tier definitions + derivative format priority (route per-derivative work here, NOT into the playbook)
+8. [[Content Repurposing Plan]] — canonical tier definitions + derivative format priority (route per-derivative work here, NOT into the playbook)
 
 ## 🚫 Hard rules (memorise — these never relax)
 
@@ -85,14 +85,14 @@ These are everything you need to do your job:
 |---|---|---|
 | 1 | [[Execution Playbook]] | Master ops doc — WS2 + WS4 + WS7 + WS8 + WS15 |
 | 2 | [[Gayathri (CW) - Cover Sheet]] | This doc — your daily/weekly reference |
-| 3 | **[[InnBlockchain - Per-Article Production Checklist]]** (cross-phase framework) | **Your single most-used doc** — open ONCE PER ARTICLE · 4 phases · 25 steps · hard stops · CORE-EEAT ordering rule |
-| 4 | **[[InnBlockchain - Content Style Guide]]** (cross-phase framework) | HOW to write — voice/tone/formatting/citation rules. Applied at Per-Article Checklist Phase 2 step 11. |
-| 5 | [[InnBlockchain - Editorial Calendar]] | **Single source of truth for WHAT to write** (slot · tier · score · dependencies) — open at Per-Article Checklist Pre-write step 1 |
-| 6 | [[InnBlockchain - Content Strategy]] | Pillar map · sales motion tagging · article positioning |
-| 7 | [[InnBlockchain - Content AEO GEO Prompts]] | Per-article prompt block + 13 AEO Drafting Principles |
-| 8 | [[InnBlockchain - Content Repurposing Plan]] | Canonical tier definitions + derivative format priority (route per-derivative work HERE, not into the playbook) |
-| 9 | [[InnBlockchain - ICP - Crypto Native]] | Persona language for `[CN]` track tag (Felix asset-first) |
-| 10 | [[InnBlockchain - ICP - FinTech]] | Persona language for `[FT]` track tag (Sam ROI / Tom technical / Carol compliance) |
+| 3 | **[[Per-Article Production Checklist]]** (cross-phase framework) | **Your single most-used doc** — open ONCE PER ARTICLE · 4 phases · 25 steps · hard stops · CORE-EEAT ordering rule |
+| 4 | **[[Content Style Guide]]** (cross-phase framework) | HOW to write — voice/tone/formatting/citation rules. Applied at Per-Article Checklist Phase 2 step 11. |
+| 5 | [[Editorial Calendar]] | **Single source of truth for WHAT to write** (slot · tier · score · dependencies) — open at Per-Article Checklist Pre-write step 1 |
+| 6 | [[Content Strategy]] | Pillar map · sales motion tagging · article positioning |
+| 7 | [[Content AEO GEO Prompts]] | Per-article prompt block + 13 AEO Drafting Principles |
+| 8 | [[Content Repurposing Plan]] | Canonical tier definitions + derivative format priority (route per-derivative work HERE, not into the playbook) |
+| 9 | [[ICP - Crypto Native]] | Persona language for `[CN]` track tag (Felix asset-first) |
+| 10 | [[ICP - FinTech]] | Persona language for `[FT]` track tag (Sam ROI / Tom technical / Carol compliance) |
 | 11 | [[EU-Compliance-Landscape]] + per-regime checklists | Canonical regulatory framing source (RWA = MiFID II/III + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA for Phase 1) |
 
 ## ☎️ Backup / escalation
@@ -112,7 +112,7 @@ These are everything you need to do your job:
 - AI visual production (carousel slides · quote graphics · hero images) → **Sudharshini + Britto** (you provide copy outlines; they design)
 - PDF layout (Sample Audit Report · Vendor Risk Pack · compliance brief PDFs) → **Designer**
 - **Regulatory CONTENT of compliance briefs → Vignesh** (you structure + apply Style Guide voice; he writes the regulatory substance)
-- Per-derivative copy detail (X thread tweet-by-tweet · persona variant copy decisions per derivative type) → **[[InnBlockchain - Content Repurposing Plan]]** (you reference Plan for derivative rules; Plan is canonical)
+- Per-derivative copy detail (X thread tweet-by-tweet · persona variant copy decisions per derivative type) → **[[Content Repurposing Plan]]** (you reference Plan for derivative rules; Plan is canonical)
 
 ---
 

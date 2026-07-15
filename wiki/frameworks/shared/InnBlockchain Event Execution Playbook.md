@@ -6,7 +6,7 @@ department:
 priority: medium
 rev: 1
 last_revised: 2026-06-13
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 31 § WS11 § Event execution per attended event"
+parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 31 § WS11 § Event execution per attended event"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -41,7 +41,7 @@ tags:
 - [ ] **(Vignesh authors · MPs schedule + amplify)** Post-event LinkedIn post with key takeaway (NOT just a photo — substantive observation from a session or conversation)
 - [ ] **(MPs)** Tag event organiser (they often reshare)
 - [ ] **(MPs)** Link recording / slide deck in first comment (per LinkedIn engagement tactic — external links off the body)
-- [ ] **(SP)** Send follow-up DMs to every meeting contact within 48 hr · log in CRM per [[InnBlockchain - Pipeline Stage Exit Criteria]]
+- [ ] **(SP)** Send follow-up DMs to every meeting contact within 48 hr · log in CRM per [[Pipeline Stage Exit Criteria]]
 - [ ] **(SP)** Deliver promised vendor risk pack / sample audit within 24 hr if any prospect requested it
 
 ## Speaking-slot lead time guidance (per event class)

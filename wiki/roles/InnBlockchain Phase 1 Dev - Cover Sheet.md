@@ -7,7 +7,7 @@ role: Dev
 priority: high
 rev: 4
 last_revised: 2026-07-07
-playbook_rev_synced: 42
+playbook_rev_synced: 50
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -54,13 +54,13 @@ LP Gates 1 + 2 + 3 build (**CRITICAL PATH** — single point of failure for Spee
 1. [[Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] — your primary section (~30 tasks)
 2. [[Execution Playbook#Analytics + lead-capture infrastructure (funnel math depends on these)]] — your WS5 GA4 + email-capture contribution
 3. [[Execution Playbook#WS10 — eIDAS Outbound Test (W13 mid-point, limited scope)]] § Pre-test assets — single eIDAS gated PDF page task
-4. [[InnBlockchain - Landing Pages Plan]] — canonical LP IA + content spec
-5. [[InnBlockchain - Landing Pages AEO GEO Prompts]] — per-LP SEO drafting principles (Sudharshini + Britto lead, you implement)
+4. [[Landing Pages Plan]] — canonical LP IA + content spec
+5. [[Landing Pages AEO GEO Prompts]] — per-LP SEO drafting principles (Sudharshini + Britto lead, you implement)
 
 ## 🚫 Hard rules (memorise — these never relax)
 
 - **LP Gates 1 + 2 + 3 shipping date is the single point of failure for Speed Mode.** If you can't commit to EOD W3, escalate to Vignesh as P0 same day so the team can plan structured DMs at the slipped date.
-- **301 redirects are not optional.** Every retired URL in [[InnBlockchain - Landing Pages Plan]] § Existing Pages Migration Map must redirect, or SEO equity dies.
+- **301 redirects are not optional.** Every retired URL in [[Landing Pages Plan]] § Existing Pages Migration Map must redirect, or SEO equity dies.
 - **Hero copy regulatory framing comes from Vignesh, not you.** Do not let dev-time copy decisions leak MiCA framing into RWA-focused LPs (MiCA Art. 2(4) exclusion is the #1 Carol disqualifier).
 - **FAQPage JSON-LD is mandatory on every LP.** AEO citation depends on it.
 - **No new analytics events without GA4 schema review** — drift breaks the per-format CTR tracking in WS12.
@@ -81,9 +81,9 @@ These are everything you need to do your job — share/bookmark all 6:
 |---|---|---|
 | 1 | [[Execution Playbook]] | Master ops doc — WS1 (your section) + WS5 + WS10 |
 | 2 | [[Dev - Cover Sheet]] | This doc — your daily/weekly reference |
-| 3 | **[[InnBlockchain - LP Sign-Off Checklist]]** (cross-phase framework) | The 8 gates Vignesh signs off on per LP before you launch — you provide the verified-live check (item 6) |
-| 4 | [[InnBlockchain - Landing Pages Plan]] | Canonical LP IA + content spec + migration map (301 redirects) |
-| 5 | [[InnBlockchain - Landing Pages AEO GEO Prompts]] | 13 AEO Drafting Principles for LP body copy (Sudharshini + Britto lead drafting; you implement) |
+| 3 | **[[LP Sign-Off Checklist]]** (cross-phase framework) | The 8 gates Vignesh signs off on per LP before you launch — you provide the verified-live check (item 6) |
+| 4 | [[Landing Pages Plan]] | Canonical LP IA + content spec + migration map (301 redirects) |
+| 5 | [[Landing Pages AEO GEO Prompts]] | 13 AEO Drafting Principles for LP body copy (Sudharshini + Britto lead drafting; you implement) |
 | 6 | [[EU-Compliance-Landscape]] | Regulatory framing reference — when Vignesh flags MiCA-on-RWA leak in hero copy, this is the canonical map |
 
 ## ❌ What you DON'T own (redirect if asked)

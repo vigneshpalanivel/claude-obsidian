@@ -54,9 +54,9 @@ Glossary:
 
 These three files are in `.raw/` but have no corresponding `wiki/sources/` page:
 
-- `InnBlockchain - Content Strategy - Crypto Native.md`
-- `InnBlockchain - Content Strategy - Crypto Products.md`
-- `InnBlockchain - Content Strategy - FinTech.md`
+- `Content Strategy - Crypto Native.md`
+- `Content Strategy - Crypto Products.md`
+- `Content Strategy - FinTech.md`
 
 > [!gap] The existing `Content-Strategy-InnBlockchain-Crypto-Native.md` and `Content-Strategy-InnBlockchain-Crypto-Products.md` source pages were written *before* the raw files were dropped. They likely need a re-ingest pass to re-cite the now-available source text and to create the missing `Content-Strategy-InnBlockchain-FinTech.md`.
 

@@ -18,7 +18,7 @@ related:
 
 # Source: Landing Pages Plan — InnBlockchain
 
-**File:** `.raw/InnBlockchain - Landing Pages Plan.md`
+**File:** `.raw/Landing Pages Plan.md`
 **Date ingested:** 2026-04-16
 **Source type:** Internal planning document
 

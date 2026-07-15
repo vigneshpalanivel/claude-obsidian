@@ -7,9 +7,9 @@ role: MP1
 assignee: Sudharshini
 icp: fintech
 priority: high
-rev: 4
-last_revised: 2026-07-07
-playbook_rev_synced: 42
+rev: 8
+last_revised: 2026-07-15
+playbook_rev_synced: 50
 parent: "[[Execution Playbook]]"
 sibling: "[[Britto (MP2) - Cover Sheet]]"
 tags:
@@ -58,7 +58,7 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 
 | Week | What you ship |
 |---|---|
-| **W1 Day 1** | Gate 3 coordination with Dev · GA4 Property A wiring · FT channel infra |
+| **W1 Day 1** | Gate 3 coordination with Dev · GA4 Property A wiring · FT channel infra · **build the external AEO/GEO tracking sheet** (live before the first Fri review — Britto populates his rows) |
 | **W1–W3** | Sample Audit Featured pin (when Designer delivers) · FT LinkedIn cadence stood up |
 | **EOD W3** | Gate 3 on-page SEO live · GA4 Property A firing · email-capture integrated |
 | **W3 onwards** | Weekly FT LinkedIn cadence (Sam/Tom/Carol posts) · Track B derivative chain |
@@ -66,12 +66,12 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 
 ## 📚 Read first (in this order)
 
-1. [[InnBlockchain - ICP - FinTech]] — **your buyer** (Sam ROI-first · Tom technical · Carol compliance-first)
+1. [[ICP - FinTech]] — **your buyer** (Sam ROI-first · Tom technical · Carol compliance-first)
 2. [[Execution Playbook#🚦 Cross-channel cannibalisation matrix]] — the shared-queue rules you co-enforce at Mon AM
 3. [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] — your primary channel
 4. [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] — Gate 3 SEO + academy organic tracking
 5. [[Execution Playbook#WS12 — Pipeline + CRM + Measurement]] — Gate 3 funnel + GA4 Property A
-6. [[InnBlockchain - Per-Platform Posting Spec]] — LinkedIn formatting
+6. [[Per-Platform Posting Spec]] — LinkedIn formatting
 
 ## 🚫 Hard rules (memorise — these never relax)
 
@@ -94,14 +94,16 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 | 1 | [[Execution Playbook]] | Master ops — WS2 (Gate 3) · WS3 · WS8 · WS12 · WS15 |
 | 2 | [[Sudharshini (MP1) - Cover Sheet]] | This doc |
 | 3 | [[Britto (MP2) - Cover Sheet]] | CN pod — the co-own seams |
-| 4 | [[InnBlockchain - ICP - FinTech]] | Your buyer definition |
-| 5 | **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** | Shared-queue rules (co-enforce) |
-| 6 | **[[InnBlockchain - Per-Platform Posting Spec]]** | LinkedIn formatting |
-| 7 | [[InnBlockchain - Landing Pages AEO GEO Prompts]] | Gate 3 AEO + academy organic |
-| 8 | [[InnBlockchain - Content Repurposing Plan]] | Track B derivative chain |
+| 4 | [[ICP - FinTech]] | Your buyer definition |
+| 5 | **[[Cross-Channel Cannibalisation Matrix]]** | Shared-queue rules (co-enforce) |
+| 6 | **[[Per-Platform Posting Spec]]** | LinkedIn formatting |
+| 7 | [[Landing Pages AEO GEO Prompts]] | Gate 3 AEO + academy organic |
+| 8 | [[Content Repurposing Plan]] | Track B derivative chain |
 | 9 | [[EU-Compliance-Landscape]] | Regime framing — escalate to Vignesh |
-| 10 | **[[InnBlockchain - Content Repurposing Design Toolkit]]** | Tool stack + Claude design spec for carousel/quote-graphic/single-image (your hard rule cites its § AI Hallucination Risk regime-leak check) |
-| 11 | **[[InnBlockchain - Newsletter Vendor Selection]]** (cross-phase framework) | W10 newsletter revisit — you co-own the newsletter surface; decision triggers + Beehiiv default |
+| 10 | **[[Content Repurposing Design Toolkit]]** | Tool stack + Claude design spec for carousel/quote-graphic/single-image (your hard rule cites its § AI Hallucination Risk regime-leak check) |
+| 11 | **[[Newsletter Vendor Selection]]** (cross-phase framework) | W10 newsletter revisit — you co-own the newsletter surface; decision triggers + Beehiiv default |
+| 12 | **[[CITE Score]]** (audit) + **[[CITE Score Task List]]** | Off-page AEO/GEO citation baseline (18/100 · Citations 8/100) — **raising it is a standing objective**; your monthly citation probe measures the outcome, the task list carries the improvement work |
+| 13 | **AEO/GEO tracking sheet** (external Google Sheet — outside the vault; spec in [[Execution Playbook]] WS2 § Per-LP citation health) | **The Phase 1 AEO/GEO KPI instrument** — you log Gate 3 + Gate 2 (co-own) + Track B article prompt results **WEEKLY, before Vignesh's Fri review** (✅/🟡/❌ per engine); its summary line is reviewed with Vignesh every Friday. SEO/SERP sheet = deferred, not mandatory Phase 1 |
 
 ## ❌ What you DON'T own (redirect if asked)
 

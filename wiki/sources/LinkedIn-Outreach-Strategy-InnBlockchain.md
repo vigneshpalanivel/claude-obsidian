@@ -52,7 +52,7 @@ related:
 
 # LinkedIn Outreach Strategy — InnBlockchain
 
-Source: `.raw/InnBlockchain - LinkedIn Outreach Strategy.md`
+Source: `.raw/LinkedIn Outreach Strategy.md`
 
 ## Summary
 

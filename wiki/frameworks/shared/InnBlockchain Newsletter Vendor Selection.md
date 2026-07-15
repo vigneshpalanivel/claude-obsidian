@@ -6,7 +6,7 @@ department:
 priority: medium
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 26 § WS8 § Newsletter Vendor-Selection Decision Criteria"
+parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 26 § WS8 § Newsletter Vendor-Selection Decision Criteria"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -24,7 +24,7 @@ tags:
 > [!INFO] Pre-decided framework so revisit is a 30-min call, not a 2-week research sprint
 > Newsletter is currently DEFERRED for Phase 1 (revisit ~W10). This framework documents the vendor decision criteria so when activation fires (any phase), the platform decision isn't the bottleneck.
 >
-> Extracted from [[InnBlockchain - Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Vendor landscape evaluation is stable across phases; revisit triggers update per phase.
+> Extracted from [[Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Vendor landscape evaluation is stable across phases; revisit triggers update per phase.
 
 ## Vendor comparison
 

@@ -5,9 +5,9 @@ department:
  - marketing
 role: Vignesh
 priority: highest
-rev: 7
-last_revised: 2026-07-07
-playbook_rev_synced: 42
+rev: 8
+last_revised: 2026-07-15
+playbook_rev_synced: 50
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -57,7 +57,7 @@ tags:
 | **Daily ≤30 min** — strategic comments on highest-leverage ICP posts (founder voice contribution) | Daily | WS5 |
 | **As needed** — scoped outreach sign-off (new template variants + regime-framed messages + recommendation-request copy · not routine sends) | Ad hoc | WS5 |
 | **1–2 discovery call slots/wk** — FT WealthTech > $100k OR Carol escalations OR Trioangle high-value | Weekly | WS5 |
-| **Weekly Fri 60 min** — pipeline tracker · per-channel KPIs · risk register · team blockers | Weekly | WS12 |
+| **Weekly Fri 60 min** — pipeline tracker · per-channel KPIs · **AEO/GEO citation KPI (external tracking sheet — Sudharshini + Britto update weekly before this review)** · risk register · team blockers | Weekly | WS12 |
 | **Every Tuesday AM** — technical accuracy + regime-leak review on Tue article (1 hr — replaces SME slot) | Weekly | WS7 |
 | **Every Thursday AM** — compliance review for Track B + Cross-Pillar articles (48-hr SLA · 1 hr) | Weekly | WS13 |
 | **Monthly last Fri 2 hr** — top/bottom 3 articles · 5-project EU gate progress · pipeline-stage exit criteria audit | Monthly | WS12 + WS15 |
@@ -74,7 +74,7 @@ tags:
 5. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — Vasanth operates your profile · scoped sign-off (new variants + regime framing)
 6. [[Execution Playbook#📅 Critical Path + Time-Critical Items]] — week-by-week milestones you own
 7. [[EU-Compliance-Landscape]] + 14 regulation checklists — your canonical regulatory framing source (you self-review against this). *Count note: 13 are Phase 1 regime sources; [[mica-checklist]] is in YOUR canon only to review the two MiCA-boundary articles (W4 #4 · W8 #11) — never as an RWA framing source.*
-8. [[InnBlockchain - LinkedIn Outreach Strategy]] — T1–T5 templates + Common Mistakes (SP uses; you approve every new variant)
+8. [[LinkedIn Outreach Strategy]] — T1–T5 templates + Common Mistakes (SP uses; you approve every new variant)
 
 ## 🚫 Hard rules (memorise — these never relax)
 
@@ -112,11 +112,11 @@ You touch all 15 workstreams, so you reference the most docs. Bundle organized b
 | Category | Documents |
 |---|---|
 | **Master playbook + your sheet** | [[Execution Playbook]] · [[Vignesh - Cover Sheet]] |
-| **Cross-phase frameworks** — review sign-off authority | **[[InnBlockchain - Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[InnBlockchain - LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[InnBlockchain - Content Style Guide]]** (CW writing rules) · **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** (Sudharshini + Britto scheduling) · **[[InnBlockchain - Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[InnBlockchain - Discovery Call Master Sequence]]** (SP per call) · **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[InnBlockchain - Newsletter Vendor Selection]]** (W10 revisit) · **[[InnBlockchain - Delegated-Work Spot-Check Protocol]]** (your WS13 spot-check ratios — 25% W1–W4 → 10% W5+) · **[[InnBlockchain - Event Execution Playbook]]** (your WS11 per-event sequence) · **[[InnBlockchain - Case Study Capture Framework]]** (your WS14 screenshot-rights + MVP-fallback trigger call) |
+| **Cross-phase frameworks** — review sign-off authority | **[[Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[Content Style Guide]]** (CW writing rules) · **[[Cross-Channel Cannibalisation Matrix]]** (Sudharshini + Britto scheduling) · **[[Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[Discovery Call Master Sequence]]** (SP per call) · **[[Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[Newsletter Vendor Selection]]** (W10 revisit) · **[[Delegated-Work Spot-Check Protocol]]** (your WS13 spot-check ratios — 25% W1–W4 → 10% W5+) · **[[Event Execution Playbook]]** (your WS11 per-event sequence) · **[[Case Study Capture Framework]]** (your WS14 screenshot-rights + MVP-fallback trigger call) |
 | **Regulatory canon** (you self-review against these) | [[EU-Compliance-Landscape]] + 14 regulation checklists ([[mifid2-checklist]] · [[mifid3-checklist]] · [[prospectus-checklist]] · [[dlt-pilot-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]] · [[dora-checklist]] · [[mica-checklist]] *(boundary-article review ONLY — W4 #4 · W8 #11; never an RWA framing source; WS4 briefs use the other 13)* · [[aml-checklist]] · [[tfr-checklist]] · [[ccd2-checklist]] · [[eidas2-checklist]] · [[ipr-checklist]] · [[gdpr-checklist]]) |
-| **ICP truth source** | [[InnBlockchain - ICP - Crypto Native]] · [[InnBlockchain - ICP - FinTech]] |
-| **Content production canon** | [[InnBlockchain - Content Strategy]] · [[InnBlockchain - Editorial Calendar]] · [[InnBlockchain - Content AEO GEO Prompts]] · [[InnBlockchain - Content Repurposing Plan]] · [[InnBlockchain - Content Repurposing Design Toolkit]] |
-| **LP + LinkedIn execution** | [[InnBlockchain - Landing Pages Plan]] · [[InnBlockchain - Landing Pages AEO GEO Prompts]] · [[InnBlockchain - LinkedIn Strategy]] · [[InnBlockchain - LinkedIn Outreach Strategy]] · [[LinkedIn Profile Vignesh Content]] · [[Recommendation Request Templates]] |
+| **ICP truth source** | [[ICP - Crypto Native]] · [[ICP - FinTech]] |
+| **Content production canon** | [[Content Strategy]] · [[Editorial Calendar]] · [[Content AEO GEO Prompts]] · [[Content Repurposing Plan]] · [[Content Repurposing Design Toolkit]] |
+| **LP + LinkedIn execution** | [[Landing Pages Plan]] · [[Landing Pages AEO GEO Prompts]] · [[LinkedIn Strategy]] · [[LinkedIn Outreach Strategy]] · [[LinkedIn Profile Vignesh Content]] · [[Recommendation Request Templates]] |
 
 ## ❌ What you DON'T own (you're authority, not executor)
 

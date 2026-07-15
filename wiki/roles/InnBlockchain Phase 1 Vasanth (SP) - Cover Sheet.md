@@ -6,9 +6,9 @@ department:
 role: SP
 assignee: Vasanth
 priority: high
-rev: 3
-last_revised: 2026-07-07
-playbook_rev_synced: 42
+rev: 4
+last_revised: 2026-07-15
+playbook_rev_synced: 50
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -33,11 +33,11 @@ tags:
 | WS | Role | Anchor |
 |---|---|---|
 | **WS3 — Recommendations** | **Run the recommendation-request pipeline from Vignesh's profile** — draft requests / follow-ups / reciprocity notes · apply the 5-category recommender filter · track the gates (3+ pre-publish · 5+ pre-DM) · Vignesh approves the copy · you send from his account | [[Execution Playbook#Recommendations pipeline — SPEED MODE (batch 5–8 requests THIS WEEK)]] |
-| **WS5 — Platform Setup** | CRM ownership + Sales Nav + Calendly + outreach tooling setup | [[Execution Playbook#WS5 — Platform Setup (CRM + Tooling) — SPEED MODE 5-day sprint]] |
+| **WS5 — Platform Setup** | CRM ownership + Sales Nav + Calendly + outreach tooling setup · build the two RWA saved searches from [[Phase 1 LinkedIn Filter]] (canonical filter spec) | [[Execution Playbook#WS5 — Platform Setup (CRM + Tooling) — SPEED MODE 5-day sprint]] |
 | **WS8 — LinkedIn Organic** | Strategic commenting from W8 (5–10/day on RWA prospects) · X engagement parallel | [[Execution Playbook#Strategic commenting (per § 5.3)]] |
 | **WS9 — Structured ABM** | **PRIMARY** — T1→T5 sequences · 15–20 connection requests/day **from Vignesh's profile** (stay within LinkedIn's native daily limits — this profile also carries warm outreach + recommendations) · Discovery Call Master Sequence (20-step / 5-phase) | [[Execution Playbook#WS9 — LinkedIn Outbound — Structured ABM (DM Sequences)]] |
 | **WS9.5a — Adjacent-Network Warm Intros** | Send Trioangle + adjacent-network outreach from Vignesh's profile (first-person Vignesh · no third-party opener) · regime-framed messages → Vignesh sign-off first · carry thread after positive response | [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] |
-| **WS9.5b — Engagement-Led Inbound** | **PRIMARY** — 5–10 substantive comments/day · reactive DMs on engagement · LinkedIn poll follow-ups | [[Execution Playbook#WS9.5b — Engagement-Led Inbound (Speed Mode)]] |
+| **WS9.5b — Engagement-Led Inbound** | **PRIMARY** — 5–10 substantive comments/day · reactive DMs on engagement · LinkedIn poll follow-ups · **influencer connects via the 2–3/day ambient slots** (engage first: 2–3 comment exchanges before the request) | [[Execution Playbook#WS9.5b — Engagement-Led Inbound (Speed Mode)]] |
 | **WS10 — eIDAS Outbound Test** | W13 limited-scope outbound test (20–30 prospects in first 2 wks · 2–3 T1s/day) | [[Execution Playbook#WS10 — eIDAS Outbound Test (W13 mid-point, limited scope)]] |
 | **WS12 — Pipeline + CRM + Measurement** | CRM ownership · pipeline-stage exit criteria enforcement (Connected → Replied → Qualified → Call Booked → Closed transitions) · weekly Fri pipeline review prep | [[Execution Playbook#Pipeline-stage exit criteria (Vasanth enforces · Vignesh reviews monthly)]] |
 | **WS13 — Compliance Review** | DM template approval before send (Vignesh approves every new template variant · spot-check on strategic comments) | [[Execution Playbook#WS13 — Compliance Review Process]] |
@@ -65,8 +65,8 @@ tags:
 3. [[Execution Playbook#Pipeline-stage exit criteria (Vasanth enforces · Vignesh reviews monthly)]] — stage advancement rules
 4. [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] — first-person Vignesh outreach from his profile + scoped sign-off workflow
 5. [[Execution Playbook#WS9.5b — Engagement-Led Inbound (Speed Mode)]] — commenting + reactive DM rules
-6. [[InnBlockchain - LinkedIn Outreach Strategy]] — canonical T1→T5 template source · regime keywords · disqualification signals
-7. [[InnBlockchain - ICP - FinTech]] + [[InnBlockchain - ICP - Crypto Native]] — buyer-pattern source of truth for qualification
+6. [[LinkedIn Outreach Strategy]] — canonical T1→T5 template source · regime keywords · disqualification signals
+7. [[ICP - FinTech]] + [[ICP - Crypto Native]] — buyer-pattern source of truth for qualification
 
 ## 🚫 Hard rules (memorise — these never relax)
 
@@ -79,6 +79,7 @@ tags:
 - **Never advance prospect stage without documented CRM signal** (per WS12 Pipeline-stage exit criteria — "Qualified" requires regulatory or technical specifics, not vague interest).
 - **Discovery call: first 20 min listen + qualify before pitching**.
 - **Never DM someone who hasn't engaged with you on WS9.5b** — that's cold outreach, belongs in WS9 structured track.
+- **Influencer connects use ONLY the 2–3/day ambient slots, after 2–3 substantive comment exchanges** — never pitch them, never put them in T1–T5, tag "Influencer/Network" in CRM (out of pipeline stages so conversion math stays clean).
 
 ## 🚨 Vignesh escalation triggers (during call OR within 1 hr after)
 
@@ -96,14 +97,15 @@ These are everything you need to do your job:
 |---|---|---|
 | 1 | [[Execution Playbook]] | Master ops doc — WS3 (recommendations) + WS5 + WS8 + WS9 + WS9.5a + WS9.5b + WS10 + WS12 + WS13 |
 | 2 | [[Vasanth (SP) - Cover Sheet]] | This doc — your daily/weekly reference |
-| 3 | **[[InnBlockchain - Recommendations Outreach Pipeline]]** (cross-phase framework) | The 5-category recommender pipeline + filter + gates — you run it from Vignesh's profile; he approves the copy, you send |
+| 3 | **[[Recommendations Outreach Pipeline]]** (cross-phase framework) | The 5-category recommender pipeline + filter + gates — you run it from Vignesh's profile; he approves the copy, you send |
 | 4 | **[[Recommendation Request Templates]]** | The request-message templates you draft from (5 recommender categories + ops schedule) |
-| 5 | **[[InnBlockchain - Discovery Call Master Sequence]]** (cross-phase framework) | Your 20-step playbook for every call — 5 phases · Vignesh escalation triggers · common mistakes |
-| 6 | **[[InnBlockchain - Pipeline Stage Exit Criteria]]** (cross-phase framework) | Stage advancement rules — Connected → Replied → Qualified → Call Booked → Closed |
-| 7 | [[InnBlockchain - LinkedIn Outreach Strategy]] | Canonical T1→T5 templates · regime keywords · disqualification signals |
-| 8 | [[InnBlockchain - ICP - Crypto Native]] | RWA Felix buyer pattern for qualification |
-| 9 | [[InnBlockchain - ICP - FinTech]] | Sam/Tom/Carol buyer pattern for qualification |
+| 5 | **[[Discovery Call Master Sequence]]** (cross-phase framework) | Your 20-step playbook for every call — 5 phases · Vignesh escalation triggers · common mistakes |
+| 6 | **[[Pipeline Stage Exit Criteria]]** (cross-phase framework) | Stage advancement rules — Connected → Replied → Qualified → Call Booked → Closed |
+| 7 | [[LinkedIn Outreach Strategy]] | Canonical T1→T5 templates · regime keywords · disqualification signals |
+| 8 | [[ICP - Crypto Native]] | RWA Felix buyer pattern for qualification |
+| 9 | [[ICP - FinTech]] | Sam/Tom/Carol buyer pattern for qualification |
 | 10 | [[EU-Compliance-Landscape]] | Regulatory framing reference — never make regulatory judgment yourself; escalate to Vignesh same-day |
+| 11 | **[[Phase 1 LinkedIn Filter]]** | Canonical Sales Nav filter spec — build the two RWA saved searches (`FT WealthTech RWA` + `CN RWA Felix`) from here (WS5). eIDAS test filter (WS10) lives in Outreach Strategy § 7a, not here |
 
 ## ☎️ Backup / escalation
 

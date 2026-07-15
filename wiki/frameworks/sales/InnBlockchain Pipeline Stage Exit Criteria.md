@@ -6,7 +6,7 @@ department:
 priority: high
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[InnBlockchain - Phase 1 Execution Playbook]] rev 26 § WS12 § Pipeline-stage exit criteria"
+parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 26 § WS12 § Pipeline-stage exit criteria"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -25,7 +25,7 @@ tags:
 > [!INFO] When does a prospect advance from stage X to stage X+1? · cross-phase framework
 > Without explicit criteria, "Qualified" means different things to different reviewers. These are the gates SP checks before transitioning a CRM status.
 >
-> Extracted from [[InnBlockchain - Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Stage advancement rules are stable across phases; ICP-segment specifics in the "Replied → Qualified" row update per phase.
+> Extracted from [[Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Stage advancement rules are stable across phases; ICP-segment specifics in the "Replied → Qualified" row update per phase.
 
 ## Stage transitions
 
@@ -34,7 +34,7 @@ tags:
 | **Connected → Replied** | T2 sent · prospect replied with anything substantive (1 sentence is enough) · NOT auto-reply / out-of-office |
 | **Replied → Qualified** | Prospect's role + company match current-phase ICP segment · prospect engaged on regulatory or technical specifics (not just "interesting, send more info") · clear use case or stage signal |
 | **Qualified → Call Booked** | Discovery call scheduled on Calendly · pre-call brief sent · prospect confirmed attendance (not just accepted invite) |
-| **Call Booked → Closed** | Discovery call completed (per [[InnBlockchain - Discovery Call Master Sequence]]) · proposal sent · contract signed within 90 days of discovery |
+| **Call Booked → Closed** | Discovery call completed (per [[Discovery Call Master Sequence]]) · proposal sent · contract signed within 90 days of discovery |
 | **Any stage → Parked** | 21 days no response after T5 OR explicit "not now" with no near-term timeline OR DQ signal surfaced |
 | **Parked → Connected (re-engagement)** | 60 days minimum elapsed · new buying trigger detected · re-engagement DM sent fresh (NOT as T6) |
 

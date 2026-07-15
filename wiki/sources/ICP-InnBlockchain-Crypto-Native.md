@@ -38,7 +38,7 @@ related:
 
 # ICP — InnBlockchain Crypto Native
 
-Source file: `.raw/InnBlockchain - ICP - Crypto Native.md`
+Source file: `.raw/ICP - Crypto Native.md`
 
 Internal ICP document for InnBlockchain's crypto-native segment. See [[InnBlockchain Crypto Native ICP]] for the synthesized concept page.
 

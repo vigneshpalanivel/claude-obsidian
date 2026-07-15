@@ -7,9 +7,9 @@ role: MP2
 assignee: Britto
 icp: crypto-native
 priority: high
-rev: 5
-last_revised: 2026-07-07
-playbook_rev_synced: 42
+rev: 9
+last_revised: 2026-07-15
+playbook_rev_synced: 50
 parent: "[[Execution Playbook]]"
 sibling: "[[Sudharshini (MP1) - Cover Sheet]]"
 tags:
@@ -51,7 +51,7 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 | WS | Your CN slice | Anchor |
 |---|---|---|
 | **WS2 — SEO / AEO** | **Gate 1** on-page SEO + AI-citation probe · **Gate 1 LP technical SEO verify** (schema stack · canonicals · CWV · OG — Dev builds) · **GA4 Property B** (academy on-site) · **co-verify academy technical SEO** (you own Core Web Vitals) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
-| **WS3 — Profile + Featured + Channels** | **X (Twitter) full ownership** · Risk Checklist Featured asset · GitHub/Solodit · *(co-own Company Page)* | [[Execution Playbook#X (Twitter) — personal handle]] · [[InnBlockchain - Social Profile Setup]] |
+| **WS3 — Profile + Featured + Channels** | **X (Twitter) full ownership** · Risk Checklist Featured asset · GitHub/Solodit · *(co-own Company Page)* | [[Execution Playbook#X (Twitter) — personal handle]] · [[Social Profile Setup]] |
 | **WS8 — LinkedIn Organic** | CN (Felix-coded) post production + scheduling into shared feed · *(co-own cannibalisation + output cap)* | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
 | **WS12 — Measurement** | CN analytics — X · Track A articles · Gate 1 funnel · GA4 Property B | [[Execution Playbook#WS12 — Pipeline + CRM + Measurement]] |
 | **WS15 — Content Repurposing** | **Track A derivative chain** (CN visuals · X threads · carousels · Midjourney) | [[Execution Playbook#WS15 — Content Repurposing]] |
@@ -60,7 +60,7 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 
 | Week | What you ship |
 |---|---|
-| **W1 Day 1** | X account setup + CN channel infra · GA4 Property B wiring with Dev |
+| **W1 Day 1** | X account setup + CN channel infra · GA4 Property B wiring with Dev · **populate your rows in the AEO/GEO tracking sheet** Sudharshini stands up (before the first Fri review) |
 | **W1–W3** | X recategorisation accelerator · Risk Checklist Featured asset live |
 | **EOD W3** | Gate 1 on-page SEO live · GA4 Property B firing |
 | **W3 onwards** | Weekly: CN LinkedIn posts + 1× X thread/wk per Track A article |
@@ -68,12 +68,12 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 
 ## 📚 Read first (in this order)
 
-1. [[InnBlockchain - ICP - Crypto Native]] — **your buyer** (RWA Felix — asset-first, not technical, does NOT vet on GitHub the way Tom does)
-2. [[InnBlockchain - Social Profile Setup]] § X (Twitter) — your primary channel's setup + ops workflow (Phase 1 specifics in [[Execution Playbook#X (Twitter) — personal handle]])
+1. [[ICP - Crypto Native]] — **your buyer** (RWA Felix — asset-first, not technical, does NOT vet on GitHub the way Tom does)
+2. [[Social Profile Setup]] § X (Twitter) — your primary channel's setup + ops workflow (Phase 1 specifics in [[Execution Playbook#X (Twitter) — personal handle]])
 3. [[Execution Playbook#🚦 Cross-channel cannibalisation matrix]] — the shared-queue rules you co-enforce at Mon AM
-4. [[InnBlockchain - Social Profile Setup]] — X setup + GitHub/Solodit
-5. [[InnBlockchain - Per-Platform Posting Spec]] — X + LinkedIn formatting
-6. [[InnBlockchain - Content Repurposing Plan]] — Track A derivative chain
+4. [[Social Profile Setup]] — X setup + GitHub/Solodit
+5. [[Per-Platform Posting Spec]] — X + LinkedIn formatting
+6. [[Content Repurposing Plan]] — Track A derivative chain
 
 ## 🚫 Hard rules (memorise — these never relax)
 
@@ -95,14 +95,16 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 | 1 | [[Execution Playbook]] | Master ops — WS2 (Gate 1) · WS3 (X) · WS8 · WS12 · WS15 |
 | 2 | [[Britto (MP2) - Cover Sheet]] | This doc |
 | 3 | [[Sudharshini (MP1) - Cover Sheet]] | FT pod — the co-own seams |
-| 4 | [[InnBlockchain - ICP - Crypto Native]] | Your buyer definition |
-| 5 | **[[InnBlockchain - Social Profile Setup]]** | X + GitHub + Solodit setup |
-| 6 | **[[InnBlockchain - Per-Platform Posting Spec]]** | X / LinkedIn formatting |
-| 7 | **[[InnBlockchain - Cross-Channel Cannibalisation Matrix]]** | Shared-queue rules (co-enforce) |
-| 8 | [[InnBlockchain - Content Repurposing Plan]] | Track A derivative chain |
+| 4 | [[ICP - Crypto Native]] | Your buyer definition |
+| 5 | **[[Social Profile Setup]]** | X + GitHub + Solodit setup |
+| 6 | **[[Per-Platform Posting Spec]]** | X / LinkedIn formatting |
+| 7 | **[[Cross-Channel Cannibalisation Matrix]]** | Shared-queue rules (co-enforce) |
+| 8 | [[Content Repurposing Plan]] | Track A derivative chain |
 | 9 | [[EU-Compliance-Landscape]] | Regime framing — escalate to Vignesh |
-| 10 | **[[InnBlockchain - Content Repurposing Design Toolkit]]** | Tool stack + Claude design spec for carousel/quote-graphic/single-image (your hard rule cites its § AI Hallucination Risk regime-leak check) |
-| 11 | **[[InnBlockchain - Newsletter Vendor Selection]]** (cross-phase framework) | W10 newsletter revisit — you co-own the newsletter surface + own assembly when activated |
+| 10 | **[[Content Repurposing Design Toolkit]]** | Tool stack + Claude design spec for carousel/quote-graphic/single-image (your hard rule cites its § AI Hallucination Risk regime-leak check) |
+| 11 | **[[Newsletter Vendor Selection]]** (cross-phase framework) | W10 newsletter revisit — you co-own the newsletter surface + own assembly when activated |
+| 12 | **[[CITE Score]]** (audit) + **[[CITE Score Task List]]** | Off-page AEO/GEO citation baseline (18/100 · Citations 8/100) — **raising it is a standing objective**; your monthly citation probe measures the outcome, the task list carries the improvement work |
+| 13 | **AEO/GEO tracking sheet** (external Google Sheet — outside the vault; spec in [[Execution Playbook]] WS2 § Per-LP citation health) | **The Phase 1 AEO/GEO KPI instrument** — you log Gate 1 + Gate 2 (co-own) + Track A article prompt results **WEEKLY, before Vignesh's Fri review** (✅/🟡/❌ per engine); Tier 1 articles carry the ≥1-citation-in-90-days KPI rows; summary line reviewed with Vignesh every Friday. SEO/SERP sheet = deferred, not mandatory Phase 1 |
 
 ## ❌ What you DON'T own (redirect if asked)
 
