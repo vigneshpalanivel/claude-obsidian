@@ -6,7 +6,7 @@ department:
 priority: high
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 26 § WS8 § Cross-channel cannibalisation matrix"
+parent_extraction_source: "[[InnBlockchain Phase 1 Execution Playbook]] rev 26 § WS8 § Cross-channel cannibalisation matrix"
 scope: cross-phase
 aliases:
   - "Cross-Channel Cannibalisation Matrix"
@@ -28,7 +28,7 @@ tags:
 > [!IMPORTANT] Single canonical reference for all cross-channel spacing rules · cross-phase framework
 > Cannibalisation rules previously scattered across 4 subsections in the playbook (WS3 LinkedIn Company Page · WS3 X personal · WS8 LinkedIn output cap · WS15 LinkedIn output cap enforcement). MPs must consult multiple sections to enforce in real-time scheduling. **This matrix is the canonical source.**
 >
-> Extracted from [[Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Vectors apply whenever LinkedIn/X are active publishing channels regardless of phase.
+> Extracted from [[InnBlockchain Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Vectors apply whenever LinkedIn/X are active publishing channels regardless of phase.
 
 ## 8 vectors
 

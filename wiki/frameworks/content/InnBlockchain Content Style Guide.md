@@ -6,7 +6,7 @@ department:
 priority: high
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 26 § WS7 § CW Content Style Guide"
+parent_extraction_source: "[[InnBlockchain Phase 1 Execution Playbook]] rev 26 § WS7 § CW Content Style Guide"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -25,7 +25,7 @@ tags:
 > [!INFO] HOW to write — voice / tone / formatting rules · cross-phase framework
 > The AEO/GEO checklist (in [[Content AEO GEO Prompts]]) enforces STRUCTURE — H2 prompts · 150-word answers · FAQPage JSON-LD · markdown tables. This style guide enforces VOICE so all articles ship in one consistent voice rather than 40 different ones per phase.
 >
-> Extracted from [[Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Voice / formatting / citation rules are stable across phases; per-track voice modifiers update when new ICP personas activate.
+> Extracted from [[InnBlockchain Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Voice / formatting / citation rules are stable across phases; per-track voice modifiers update when new ICP personas activate.
 
 ## Voice + tone
 

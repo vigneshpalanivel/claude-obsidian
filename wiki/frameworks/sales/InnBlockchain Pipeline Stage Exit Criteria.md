@@ -6,7 +6,7 @@ department:
 priority: high
 rev: 1
 last_revised: 2026-06-03
-parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 26 § WS12 § Pipeline-stage exit criteria"
+parent_extraction_source: "[[InnBlockchain Phase 1 Execution Playbook]] rev 26 § WS12 § Pipeline-stage exit criteria"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -25,7 +25,7 @@ tags:
 > [!INFO] When does a prospect advance from stage X to stage X+1? · cross-phase framework
 > Without explicit criteria, "Qualified" means different things to different reviewers. These are the gates SP checks before transitioning a CRM status.
 >
-> Extracted from [[Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Stage advancement rules are stable across phases; ICP-segment specifics in the "Replied → Qualified" row update per phase.
+> Extracted from [[InnBlockchain Phase 1 Execution Playbook]] rev 26 → cross-phase framework (rev 27). Stage advancement rules are stable across phases; ICP-segment specifics in the "Replied → Qualified" row update per phase.
 
 ## Stage transitions
 

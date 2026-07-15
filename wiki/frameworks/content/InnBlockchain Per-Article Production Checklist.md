@@ -6,7 +6,7 @@ department:
 priority: high
 rev: 2
 last_revised: 2026-06-13
-parent_extraction_source: "[[Phase 1 Execution Playbook]] rev 27 § WS7 § Per-Article Production Checklist + rev 29 § WS15 § Per-published-article repurposing checklist (moved into step 19 expansion)"
+parent_extraction_source: "[[InnBlockchain Phase 1 Execution Playbook]] rev 27 § WS7 § Per-Article Production Checklist + rev 29 § WS15 § Per-published-article repurposing checklist (moved into step 19 expansion)"
 scope: cross-phase
 applies_to:
   - phase-1
@@ -25,7 +25,7 @@ tags:
 > [!INFO] Single linear walk-through · ~25–35 min to step through · ~13 hr to execute per article · cross-phase framework
 > Open this Monday morning for the Tue slot · Wednesday morning for the Thu slot (or whatever cadence the current phase uses). The single source of truth for *what* to write is **[[Editorial Calendar]]**; everything else is consulted at the step where it applies. Run sequentially — Phase 2 won't make sense without Phase 1; Phase 4 can't fire correctly if Phase 1 missed the tier.
 >
-> Extracted from [[Phase 1 Execution Playbook]] rev 27 → cross-phase framework (rev 28). Workflow structure (4 phases · 25 steps · 48-hr SLA · Mon AM batch approval · CORE-EEAT ordering rule) is universal. Phase-specific overlays (LP gate names · cross-pillar article slugs · regime hard stops · Pain Point validation deadlines) are flagged inline.
+> Extracted from [[InnBlockchain Phase 1 Execution Playbook]] rev 27 → cross-phase framework (rev 28). Workflow structure (4 phases · 25 steps · 48-hr SLA · Mon AM batch approval · CORE-EEAT ordering rule) is universal. Phase-specific overlays (LP gate names · cross-pillar article slugs · regime hard stops · Pain Point validation deadlines) are flagged inline.
 
 ## Phase 1 — Pre-write (Mon AM for Tue slot · Wed AM for Thu slot · ~30 min)
 
