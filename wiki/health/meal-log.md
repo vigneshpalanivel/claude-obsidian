@@ -275,6 +275,7 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 2 walnuts | 52 | 1g | 0.7g |
 | | 4 tbsp pomegranate | 45 | 1g | 2g |
 | | 1 piece apple | 50 | 0.3g | 2g |
+| | 2 egg omelette with butter | 215 | 12g | 0g |
 | | Red banana shake + 2 tbsp peanut butter | 475 | 17.5g | 5g |
 | | 1 tea (~10 AM) | 55 | 1g | 0g |
 | Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
@@ -284,9 +285,9 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | Paneer gravy | 300 | 14g | 2g |
 | | Raita (curd + veg) | 70 | 3g | 1g |
 | | 1 red banana | 110 | 1.5g | 3g |
-| **Total** | | **~2,405 kcal** | **~102g** | **~42g** |
+| **Total** | | **~2,620 kcal** | **~114g** | **~42g** |
 
-**Notes:** ✅ Complete on-target day (2nd running) — ~2,405 kcal (solid ~500 surplus over ~1,900 maintenance), protein ~102g, dinner ~840 (slightly over 800 cap with the banana), paneer per no-chicken/fish rule, chapati whole grain. ⚠️ **Fiber ~42g — well over the 25–30 target** (2nd red banana of the day). More fiber isn't better mid-ramp + constipated; the gap is water + movement, not fiber. Also: banana at dinner is a sinus-timing compromise — better at breakfast/lunch; eat room-temp with the meal.
+**Notes:** ✅ Complete day (2nd running) — ~2,620 kcal (~720 surplus over ~1,900 maintenance — HIGH/fast for sedentary), protein ~114g, dinner ~840 (slightly over 800 cap with the banana), paneer per no-chicken/fish rule, chapati whole grain. ⚠️ **Fiber ~42g — well over the 25–30 target** (2nd red banana of the day). More fiber isn't better mid-ramp + constipated; the gap is water + movement, not fiber. Also: banana at dinner is a sinus-timing compromise — better at breakfast/lunch; eat room-temp with the meal.
 
 ---
 
@@ -302,16 +303,112 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 4 tbsp pomegranate | 45 | 1g | 2g |
 | | 1 piece apple | 50 | 0.3g | 2g |
 | | Green peas boiled (6 tbsp) + onion | 60 | 4g | 4g |
+| | 2 egg omelette with butter | 215 | 12g | 0g |
 | | Red banana shake + 2 tbsp peanut butter | 475 | 17.5g | 5g |
 | | 1 tea (~10 AM) | 55 | 1g | 0g |
 | Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
 | | Buttermilk | 35 | 2g | 0.2g |
 | | 1 red banana | 110 | 1.5g | 3g |
 | | 1 tea (after lunch) | 55 | 1g | 0g |
-| Dinner | — | — | — | — |
-| **Running** | | **~1,680 kcal** | **~79.5g** | **~32.7g** |
+| Dinner | Half grilled chicken (−1 piece) | 370 | 42g | 0g |
+| | 1 parotta (Madurai) | 220 | 5g | 1g |
+| | Salna | 100 | 3g | 1g |
+| | Mayonnaise | 90 | 0g | 0g |
+| | Onion (raw) | 15 | 0.3g | 0.5g |
+| **Total** | | **~2,690 kcal** | **~141.5g** | **~35.2g** |
 
-**Notes:** Breakfast ~830 — **clears the 800 floor on its own, no tea needed** (front-loading working). ~19.5g fiber again. Green peas add protein + fiber. ⚠️ Raw onion + peas (legume) are mildly gas-forming — watch given the ongoing constipation; fiber's already high, no need to add more today.
+**Notes:** Over-target day — ~2,690 kcal (~790 surplus over ~1,900 maintenance = fast-gain/fat territory for a sedentary body; aim 2,300–2,400, well under this). Protein ~141g. Dinner ~835 (over the 800 cap). ⚠️ **Chicken at dinner breaks the no-chicken/fish rule** (2nd time — Jul 10 was the first). ⚠️ **Parotta (maida) is the wrong dinner while constipated** — refined, low-fiber, slows the gut; exactly what to avoid right now. Salna = mild spicy (sinus); mayo = empty fat. Fiber ~35g (over target as usual).
+
+---
+
+## 2026-07-16 (Thursday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | 10 pumpkin seeds | 28 | 1.5g | 0.3g |
+| | 6 almonds | 40 | 2g | 1g |
+| | 2 walnuts | 52 | 1g | 0.7g |
+| | 1 piece apple | 50 | 0.3g | 2g |
+| | ½ small orange | 20 | 0.5g | 1g |
+| | 6 cashews | 50 | 1.5g | 0.5g |
+| | 2 egg omelette with butter | 215 | 12g | 0g |
+| | Red banana shake + 2 tbsp peanut butter | 475 | 17.5g | 5g |
+| | 1 tea (after breakfast) | 55 | 1g | 0g |
+| Lunch | Half beef biryani (2 pieces) | 350 | 18g | 1g |
+| | 3 pieces beef sukka | 180 | 21g | 0g |
+| | 2 pieces beef fry | 120 | 14g | 0g |
+| | 1 piece beef brain fry | 80 | 5g | 0g |
+| | 1 beef cutlet | 120 | 6g | 1g |
+| | 5 pieces beef liver | 150 | 20g | 0g |
+| | ½ red banana | 55 | 0.7g | 1.5g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| Dinner | 1 fried parotta | 250 | 5g | 1g |
+| | 1 pigeon gravy piece | 80 | 8g | 0g |
+| | 2 pieces mutton chukka | 120 | 14g | 0g |
+| | 2 tbsp egg kothu parotta | 120 | 4g | 1g |
+| | 1 beer | 150 | 1g | 0g |
+| | Few pieces of fruit | 50 | 0.5g | 1.5g |
+| **Total** | | **~2,880 kcal** | **~156.5g** | **~21.7g** |
+
+**Notes (lunch flag):** Huge protein (~87g from lunch alone) but a **purine + cholesterol bomb** — beef biryani + sukka + fry + cutlet + **brain + liver**. ⚠️ **Organ meats (brain + liver) are the highest-purine foods there are** — with your monitored uric acid (5.3) + inflammatory arthritis/SI-joint history, this is the single riskiest meal for a uric-acid/joint flare. Beef brain + liver also = very high cholesterol vs your low HDL (32). Zero fiber + heavy red meat **slows the gut → worsens the ongoing constipation.** Fine as a rare one-off, but organ-meat feasts must stay rare, and today it lands on an already-constipated day.
+
+**Notes (dinner):** ⚠️ **Beer on the SAME day as beef brain + liver = worst-case uric-acid day.** Beer is high-purine *and* alcohol blocks uric-acid excretion — stacked on the organ-meat lunch + pigeon + mutton, this is a real gout/joint-flare risk given your monitored uric acid (5.3) + inflammatory arthritis/SI-joint history. Fried parotta again (maida → constipation). **Day total ~2,880 kcal — very high (~980 surplus over ~1,900).** → Did you get any SI-joint or other joint pain over Jul 17–19? That's the day to watch after this purine load.
+
+> **Jul 17, 18, 19 still to be backfilled.**
+
+---
+
+## 2026-07-20 (Monday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | 6 almonds | 40 | 2g | 1g |
+| | 12 pumpkin seeds | 34 | 1.8g | 0.4g |
+| | 1 tsp flax seeds | 18 | 0.6g | 1g |
+| | 5 tbsp pomegranate | 55 | 1.2g | 2.5g |
+| | 3 tbsp green grams + onion | 55 | 3.5g | 3g |
+| | 2 egg omelette with butter | 215 | 12g | 0g |
+| | Red banana shake + 2 tbsp peanut butter | 475 | 17.5g | 5g |
+| | 3 walnuts | 78 | 1.5g | 1g |
+| | 5 cashews | 45 | 1.5g | 0.5g |
+| | 1 coconut sweet (purpy) | 90 | 1g | 1g |
+| Lunch | Mutton biryani + raita | 720 | 31g | 3g |
+| | Kelanga fish fry | 120 | 15g | 0g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| | 1 tea (after lunch) | 55 | 1g | 0g |
+| Dinner | 4 idli (home style) | 180 | 8g | 2g |
+| | Sambar with veg | 100 | 4g | 3g |
+| | Idli podi + 3 tsp oil | 150 | 2g | 1g |
+| **Total** | | **~2,575 kcal** | **~105.5g** | **~31.4g** |
+
+**Notes:** ✅ Dinner was light + **vegetarian (idli + sambar)** — the gentlest, most gut-friendly dinner of the week, and a smart reset after the beef/mutton/beer stretch; no meat ✓. 3 tsp oil in the podi bumped it to ~430 (idli+sambar alone ~280). Day ~2,575 (~675 surplus — still on the higher side; aim ~2,300–2,400). Fiber ~31g (over target), protein ~105g. Idli is fermented (mild histamine/sinus) — minor. Jul 17–19 still to backfill.
+
+---
+
+## 2026-07-21 (Tuesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 6 almonds | 40 | 2g | 1g |
+| | 12 pumpkin seeds | 34 | 1.8g | 0.4g |
+| | 1 tsp flax seeds | 18 | 0.6g | 1g |
+| | 1 orange | 62 | 1g | 3g |
+| | 2 egg omelette with butter | 215 | 12g | 0g |
+| | Red banana shake with palkova | 400 | 14g | 3g |
+| | 5 cashews | 45 | 1.5g | 0.5g |
+| | 1 piece sweet corn | 80 | 3g | 2.5g |
+| | 1 ginger tea | 40 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| | 1 mathi (sardine) fish fry | 80 | 8g | 0g |
+| | 2 tbsp peanut butter | 190 | 8g | 2g |
+| | 1 tea | 55 | 1g | 0g |
+| Dinner | — | — | — | — |
+| **Running** | | **~1,964 kcal** | **~100.5g** | **~26.4g** |
+
+**Notes:** Breakfast ~894 — clears the 800 floor. **No padam pisin today** (skipped) → fiber lower than usual (~11g), so lean on lunch/fruit for fiber. Palkova replaced peanut butter in the shake (milk sweet — calorie-dense, fine). Sweet corn adds fiber.
 
 ---
 
@@ -322,7 +419,9 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | Date | Weight | BMI | Δ vs prior | Notes |
 |------|--------|-----|-----------|-------|
 | ~Jul 6 (Week 0) | 58.0 kg | ~17.1 | baseline | ~2kg below the old ~60kg record — chronic undereating pre-diet |
-| 2026-07-13 (Week 1) | 58.5 kg | ~17.3 | **+0.5 kg** | First structured-diet week; early gain likely part water/glycogen, not pure tissue |
+| 2026-07-13 (Week 1) | 58.5 kg | ~17.3 | **+0.5 kg** | First structured-diet week; early gain likely part water/glycogen, not pure tissue. Conditions unspecified |
+| 2026-07-16 (interim) | 58.3 kg | ~17.2 | −0.2 (NOISE) | Post-toilet, minimal clothing — stricter conditions than Jul 13, NOT comparable. Impossible to lose on a ~700 surplus → daily fluctuation only. Standard conditions going forward: morning / post-toilet / minimal clothing. **Weigh WEEKLY, not daily** |
+| 2026-07-21 (Week 2) | 58.5 kg | ~17.3 | +0.5 vs baseline | **2-week trend +0.5kg ≈ ~1kg/month — ON TARGET, likely lean (slow) gain.** BUT slower than logged intake (~2,600 avg) predicts (~1.2kg expected) → EITHER portion estimates ~300/day high OR real maintenance ~2,300–2,400 (higher than 1,900 formula; adaptive thermogenesis). **Conclusion: current intake produces ideal gain — DO NOT cut. Earlier "you're overeating, dial back" was wrong per the scale.** |
 
 > Target true tissue gain: ~0.8–1 kg/month. Week-1 +0.5kg is a positive signal but partly water/food volume — real rate only shows over 3–4 weeks. **Maintenance ≈ 1,900 kcal/day** (Mifflin BMR ~1,570 × 1.2 sedentary; the 5-min ×2/week EFX is negligible). So **~2,300–2,400/day is already a solid ~400–500 surplus — no need to push to 2,500+** (that's fat gain for a sedentary body). Real lever for *muscle* gain: resistance training, not more food.
 
@@ -340,8 +439,14 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-07-11 | ~2,831 | ~152.5g | ~17.5g | Weekend feast — big surplus (great for BMI), protein way over. Very high sat-fat + purine (fried wings, goat brain, mutton, creamy paneer). Fiber best yet (chapati + padam pisin) but still short |
 | 2026-07-12 | ~2,360 | ~118.5g | ~15.5g | ✅ On-target (snacks carried it over floor). Fiber low ~15.5g (padam pisin skipped). 2-day avg w/ Jul 11 ~2,596 → clear surplus |
 | 2026-07-13 | ~2,310 | ~109.5g | ~30.5g | ✅ First fully complete day — cal, protein, AND fiber all in range. Egg-only dinner (fried rice minimal oil + eggs), all rules respected |
-| 2026-07-14 | ~2,405 | ~102g | ~42g | ✅ 2nd complete day, ~500 surplus. Fiber way over (~42g) — dial back, focus water+movement. Paneer+chapati dinner, rules respected |
-| 2026-07-15 | in progress | in progress | ~32.7g (thru lunch) | Breakfast cleared floor alone; fiber already over target by lunch (3rd day) — same bowl+bm+banana pattern |
+| 2026-07-14 | ~2,620 | ~114g | ~42g | High day (~720 surplus, fast) after adding 2 eggs. Fiber way over (~42g). Paneer+chapati dinner, rules respected |
+| 2026-07-15 | ~2,690 | ~141.5g | ~35g | High (~790 surplus, fast) after adding 2 eggs. Chicken-at-dinner (broke rule, 2nd time) + parotta/maida (bad while constipated). Protein very high, fiber over |
+| 2026-07-16 | ~2,880 | ~156.5g | ~22g | ⚠️ Huge purine day — beef brain+liver lunch + pigeon+mutton+**BEER** dinner. Gout/joint-flare risk. Very high cal (~980 surplus) |
+| 2026-07-17 | — | — | — | To backfill |
+| 2026-07-18 | — | — | — | To backfill |
+| 2026-07-19 | — | — | — | To backfill |
+| 2026-07-20 | ~2,575 | ~105.5g | ~31g | Light veg dinner (idli+sambar) — good reset after meat week. ~675 surplus (a bit high). Fiber over, flax added |
+| 2026-07-21 | in progress | in progress | ~24.4g (thru lunch) | ~1,719 thru lunch; fiber recovered near target. Ginger tea + sardine (omega-3 for HDL) |
 
 > **Fiber trend: under target (~25–30g) every single day.** Best ~22g, worst ~11g. All fiber rides on the Buddha bowl. Target-hit days on calories/protein (Jul 9, 10) were still low-fiber → the constipation is structural, not random.
 

@@ -127,7 +127,21 @@
       "Bash(grep -rniE \"filter testing|Real Estate/Commodities|Financial Services \\\\+ 50-?500|Founder/CTO|Head of Tokenization.*Head of Digital Assets\" .)",
       "Bash(grep -rln \"Phase 1 LinkedIn Filter\" .)",
       "Bash(awk 'NR>=352 && NR<=377 {print length\\($0\\)\": \"$0}' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/Phase 1/Repurposed Content/How to tokenize Real-World Assets - Repurposed Content.md\")",
-      "WebFetch(domain:www.innblockchain.com)"
+      "WebFetch(domain:www.innblockchain.com)",
+      "Bash(mv \"LinkedIn/InnBlockchain - Sudharshini \\(MP1\\) Task List.md\" \"SEO/InnBlockchain - Sudharshini \\(MP1\\) Task List.md\")",
+      "Bash(mv \"LinkedIn/InnBlockchain - Britto \\(MP2\\) Task List.md\" \"SEO/InnBlockchain - Britto \\(MP2\\) Task List.md\")",
+      "Bash(mv \"Sales/InnBlockchain - Vasanth \\(SP\\) Task List.md\" \"Sales/InnBlockchain - Vasanth \\(SP\\) Phase 1 Task List.md\")",
+      "Bash(mv \"Content/InnBlockchain - Gayathri \\(CW\\) Task List.md\" \"Content/InnBlockchain - Gayathri \\(CW\\) Phase 1 Task List.md\")",
+      "Bash(mv \"SEO/InnBlockchain - Sudharshini \\(MP1\\) Task List.md\" \"SEO/InnBlockchain - Sudharshini \\(MP1\\) Phase 1 Task List.md\")",
+      "Bash(mv \"SEO/InnBlockchain - Britto \\(MP2\\) Task List.md\" \"SEO/InnBlockchain - Britto \\(MP2\\) Phase 1 Task List.md\")",
+      "Bash(mv \"Playbook/Phase 1/InnBlockchain - Vignesh Task List.md\" \"Playbook/Phase 1/InnBlockchain - Vignesh Phase 1 Task List.md\")",
+      "Bash(rm \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/SEO/InnBlockchain - AEO GEO Prompt Tracking Sheet.md\")",
+      "Bash(find . -name \"*AEO GEO Prompt Tracking*\")",
+      "Bash(grep -rln \"AEO GEO Prompt Tracking Sheet\" --include=\"*.md\" .raw wiki)",
+      "Bash(awk -F'\\\\t' '{ if \\($2 !~ /InnBlockchain - / \\) print \"NON-PREFIX RENAME:\", $0 }')",
+      "Bash(awk 'NR==FNR{n[$0]=1; next} !\\($0 in n\\)' /tmp/notes.txt /tmp/utargets.txt)",
+      "Bash(grep -Fxf /tmp/reallybroken.txt /tmp/alltargets.txt)",
+      "Bash(grep -niE \"in-tranche transfer|require.{0,20}verified-accredited|US_ACCREDITED_VERIFIED for|holding transfer|only U\\\\.S\\\\.-resale gate|secondary\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Dev/real_estate_rwa_reg_d_reg_s.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
