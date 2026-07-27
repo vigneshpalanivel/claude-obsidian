@@ -11,9 +11,9 @@ status: active
 | Metric | Current | Target |
 |--------|---------|--------|
 | Height | 184cm | — |
-| Weight | **59.1kg** (Jul 27, 2026) | 68–70kg |
-| BMI | **~17.4** | 20–21 |
-| Timeline | — | 8–10 months |
+| Weight | **59.1kg** (Jul 27, 2026) | Phase 1: **70kg** · Phase 2: **73–75kg** |
+| BMI | **~17.4** | Phase 1: ~20.7 · Phase 2: ~21.5–22.2 |
+| Timeline | — | Phase 1: ~11 months · Phase 2: +5–8 months |
 | Monthly gain target | — | 0.8–1kg/month |
 
 **Root cause of underweight:** Originally low protein intake (low urea 14.8, ref 17–51). **Update (Jul 2026): protein is now largely fixed — see meal-log reconciliation below. The remaining blockers are consistency, fiber, and dinner quality, not protein.**
@@ -225,15 +225,28 @@ Honest energy-balance projection based on actual logged intake — not the optim
 
 ## Monthly Milestones
 
-> Milestones assume a consistent **~2,300–2,400/day** (a ~400–500 surplus over ~1,900 maintenance) + resistance training. Light days that dip below ~2,300 push every milestone later — see Timeline Reality Check.
+> Milestones from current baseline **59.1 kg (Jul 27, 2026)** at ~1 kg/month (consistent 2,300–2,400 kcal/day + resistance training). Light days below 2,300 push every milestone later.
 
-| Month | Target Weight | Focus |
-|-------|-------------|-------|
-| 1 | 61–61.5kg | Fix protein intake, add liquid calories |
-| 2 | 62–63kg | Add resistance training |
-| 3 | 63.5–64kg | Retest uric acid + lipid profile |
-| 5 | 65–66kg | HDL should start improving |
-| 8–10 | 68–70kg | Target BMI achieved (best case — see reality check) |
+### Phase 1 — 59.1 kg → 70 kg (BMI 17.4 → 20.7)
+
+| Month | Approx Date | Target Weight | Focus |
+|-------|-------------|--------------|-------|
+| 1 | Aug 2026 | ~60 kg | Consistent meal floor — no light days |
+| 2 | Sep 2026 | ~61 kg | Start resistance training (see [[exercise-plan]]) |
+| 3 | Oct 2026 | ~62 kg | Retest uric acid + lipid profile (HDL baseline) |
+| 5 | Dec 2026 | ~64 kg | HDL starting to respond to exercise + diet |
+| 8 | Mar 2027 | ~67 kg | Strength gains visible; reassess supplements |
+| 11 | Jun 2027 | **~70 kg** | **Phase 1 complete — reassess body composition** |
+
+### Phase 2 — 70 kg → 73–75 kg (BMI 20.7 → 21.5–22.2)
+
+> Phase 2 is the better long-term target for 184 cm. At 70 kg you're still lean — 73–75 kg adds the muscle mass that improves HDL, joint support, and spine stability meaningfully. Gain rate slows as BMI normalises (~0.5–0.8 kg/month).
+
+| Month from Phase 1 | Approx Date | Target Weight | Focus |
+|--------------------|-------------|--------------|-------|
+| +2 | Aug 2027 | ~71.5 kg | Assess: does 70 kg feel lean? Continue or consolidate |
+| +5 | Nov 2027 | ~73 kg | Retest full lipid panel — HDL should be climbing |
+| +8 | Feb 2028 | **~75 kg** | **Phase 2 complete — full target BMI 22.2** |
 
 ---
 

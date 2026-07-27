@@ -630,11 +630,15 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 2 tbsp green peas | 20 | 1.5g | 1.5g |
 | | Red banana shake (banana + 2 tbsp PB + 6 almonds + 5 cashews + 10 pumpkin seeds + milk ~200ml) | 530 | 20g | 6.4g |
 | | 1 tea (after breakfast) | 55 | 1g | 0g |
-| Lunch | — | — | — | — |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| | 2 tbsp peanut butter | 190 | 8g | 2g |
+| | 1 glass buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (milk + sugar) | 35 | 1g | 0g |
 | Dinner | — | — | — | — |
-| **Running** | | **~1,040 kcal** | **~52.7g** | **~9.9g** |
+| **Running** | | **~2,005 kcal** | **~110.2g** | **~25.1g** |
 
-**Notes:** Breakfast ~1,040 — just over 1,000 ceiling (cheese pushed it). Fine as one-off. Fiber ~10g from breakfast alone. Needs ~1,360 kcal more (lunch ~1,000 + dinner ~360 patches to 2,400).
+**Notes:** Breakfast ~1,040 — just over 1,000 ceiling (cheese pushed it). Fine as one-off. Lunch ~930 (within 800–1,000 ceiling). Running total strong — ~109g protein already, fiber at ~25g (at target floor already). Needs only ~430 kcal from dinner to close at 2,400 — keep it light.
 
 ---
 

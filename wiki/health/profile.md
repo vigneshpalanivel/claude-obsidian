@@ -19,7 +19,7 @@ The single canonical profile. **Read this first for any health/food/medication/s
 | **Location** | Madurai, Tamil Nadu |
 | **Height** | ~184 cm |
 | **Weight** | **58.5 kg** (measured Jul 13, 2026) — historically 59–61 kg, drifted down |
-| **BMI** | **17.3** — **underweight** |
+| **BMI** | **17.4** (59.1 kg, Jul 27) — **underweight** · target Phase 1: 70 kg (BMI 20.7) · Phase 2: 73–75 kg (BMI 21.5–22.2) |
 | **Sleep** | 10 PM sleep → 6 AM wake, targets ~7–8 hrs |
 | **Dinner** | By 6:30 PM (3.5 hr gap before sleep) |
 
@@ -33,7 +33,7 @@ The single canonical profile. **Read this first for any health/food/medication/s
 |-----------|--------|--------|--------|
 | **Right maxillary sinusitis** | Active | Dr. K Arun Ganesh (ENT) | CT PNS 04 Jul 2026: minimal right maxillary sinusitis, S-shaped septal deviation, bilateral inferior turbinate hypertrophy, left concha bullosa. Allergy-driven. **Only Allegra 120mg prescribed — NO surgery.** Allergen never tested. |
 | **Migraine + Tension-type headache** | Active since 2020 | Dr. S N Karthik (Neuro) | Multi-factorial: gastric, eye strain, cortisol, sinus all feed afternoon headache |
-| **Seronegative inflammatory spinal / SI joint pain** | Controlled | Dr. Rajapandian K (Ortho/Spine) | On Sulfasalazine since Jul 2023. **HLA B27 NEGATIVE → not classic AS.** CRP resolved 27.6 → 0.10 |
+| **Seronegative inflammatory spinal / SI joint pain** | Controlled | Dr. Rajapandian K (Ortho/Spine) | On Sulfasalazine since Jul 2023. **HLA B27 NEGATIVE → not classic AS.** CRP resolved 27.6 → 0.10. **Root trigger:** 10+ hr travel with wallet in back pocket of jeans (~6 years ago) → asymmetric pelvic pressure on right SI joint. **Relapse trigger:** free squats aiming for 50 reps (~2 years ago) after long symptom-free period. Free squats and high-volume/deep hip flexion movements permanently restricted. |
 | **Anxiety + sleep impairment** | Active, **unmedicated** | Dr. R Sabrin Sonjeev Ross (Psych) | Diagnosed Feb 2025. **All psych meds stopped ~Jan 2026.** Presents physically (body heat, sneezing, PE, sleep, headache), not as mental worry |
 
 ---
