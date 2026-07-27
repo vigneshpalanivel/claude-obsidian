@@ -141,7 +141,16 @@
       "Bash(awk -F'\\\\t' '{ if \\($2 !~ /InnBlockchain - / \\) print \"NON-PREFIX RENAME:\", $0 }')",
       "Bash(awk 'NR==FNR{n[$0]=1; next} !\\($0 in n\\)' /tmp/notes.txt /tmp/utargets.txt)",
       "Bash(grep -Fxf /tmp/reallybroken.txt /tmp/alltargets.txt)",
-      "Bash(grep -niE \"in-tranche transfer|require.{0,20}verified-accredited|US_ACCREDITED_VERIFIED for|holding transfer|only U\\\\.S\\\\.-resale gate|secondary\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Dev/real_estate_rwa_reg_d_reg_s.md\")"
+      "Bash(grep -niE \"in-tranche transfer|require.{0,20}verified-accredited|US_ACCREDITED_VERIFIED for|holding transfer|only U\\\\.S\\\\.-resale gate|secondary\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/Dev/real_estate_rwa_reg_d_reg_s.md\")",
+      "Bash(brew install *)",
+      "Bash(command -v uv)",
+      "Bash(pkill -f \"brew install uv\")",
+      "Bash(pkill -f \"make.*llvm\")",
+      "Bash(curl -LsSf https://astral.sh/uv/install.sh)",
+      "Bash(sh)",
+      "Bash(echo 'export PATH=\"$HOME/.local/bin:$PATH\"')",
+      "Bash(echo 'export ANTHROPIC_BASE_URL=http://139.167.11.99:8787')",
+      "mcp__headroom__headroom_retrieve"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

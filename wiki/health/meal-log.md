@@ -555,6 +555,89 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 
 ---
 
+## 2026-07-24 (Friday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 1 orange | 65 | 1.5g | 3g |
+| | 2 egg butter cheese omelette (onion) | 250 | 14g | 0.5g |
+| | 4 tbsp pomegranate arils | 45 | 1g | 1.5g |
+| | Red banana shake (banana + 2 tbsp PB + 6 almonds + 5 raisins + 10 pumpkin seeds + 3 walnut halves + 3 cashews + milk ~200ml) | 582 | 20.5g | 7g |
+| | 5 cashews | 30 | 1g | 0.2g |
+| | 1 tea | 55 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| | 2 tbsp peanut butter | 190 | 8g | 2g |
+| | 1 tea (after lunch) | 55 | 1g | 0g |
+| Dinner | 4 idli (home style) | 160 | 5g | 2g |
+| | Chicken gravy + 4 pieces (home style) | 380 | 38g | 1g |
+| **Total** | | **~2,517 kcal** | **~137.5g** | **~30.2g** |
+
+**Notes:** Slightly over target (~2,517) — breakfast 1,027 pushed the ceiling. Dinner ~540, under 800 cap ✓. ⚠️ Chicken at dinner (rule: no chicken/fish at dinner). Protein high (~138g), fiber on target (~30g).
+
+---
+
+## 2026-07-25 (Saturday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 1 orange | 65 | 1.5g | 3g |
+| | 1 glass milk (full fat, ~200ml) | 130 | 6.5g | 0g |
+| | 1 tbsp peanut butter | 95 | 4g | 1g |
+| | 2 almonds | 14 | 0.5g | 0.3g |
+| | 1 ginger tea | 55 | 1g | 0g |
+| | 2 egg butter cheese omelette | 245 | 16g | 0g |
+| Lunch | Half plain biryani | 270 | 5g | 1g |
+| | Half nei soru (ghee rice) | 210 | 3g | 0.3g |
+| | Half mutton 65 | 170 | 13g | 0g |
+| | Half mutton thalcha | 110 | 10g | 0.5g |
+| | 1 mutton rib | 100 | 11g | 0g |
+| Dinner | Egg noodles (more than half) | 260 | 8g | 2g |
+| | Quarter tandoori chicken | 185 | 27g | 0g |
+| | Mayonnaise (~2 tbsp) | 130 | 0g | 0g |
+| **Total** | | **~2,039 kcal** | **~106.5g** | **~8.1g** |
+
+**Notes:** Short day (~2,039 — ~360 below 2,400 target). Weekend, no Buddha bowl → fiber very low (~8g). ⚠️ Chicken + mayo at dinner (both rule breaks). Surplus ~140 kcal over maintenance = slow gain rate today.
+
+---
+
+## 2026-07-26 (Sunday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Teas (×2) | 2 teas | 110 | 2g | 0g |
+| Brunch | 2 small pomfret fish (fried) | 310 | 28g | 0g |
+| | 2 cup rice + fish gravy | 470 | 13g | 1.5g |
+| | 2 pieces local fish poppu | 140 | 16g | 0g |
+| | 1 handful pattani (green peas) | 35 | 2g | 2g |
+| | 4 butter wheat bread | 330 | 10g | 4g |
+| | 1 cheese slice | 60 | 4g | 0g |
+| Dinner | 3 small pomfret fish | 465 | 42g | 0g |
+| | 1.5 cup rice + fish gravy | 360 | 10g | 0.9g |
+| **Total** | | **~2,280 kcal** | **~127g** | **~8.4g** |
+
+**Notes:** Near-target calories (~2,280 ≈ ~380 surplus). Protein strong (~127g). Fiber very low (~8g — no bowl, weekend). ⚠️ Fish at dinner (rule break); dinner ~825 kcal (just over 800 cap).
+
+---
+
+## 2026-07-27 (Monday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Half apple | 45 | 0.2g | 2g |
+| | 2 egg butter cheese omelette | 235 | 16g | 0g |
+| | 1 small pomfret fish fry | 155 | 14g | 0g |
+| | 2 tbsp green peas | 20 | 1.5g | 1.5g |
+| | Red banana shake (banana + 2 tbsp PB + 6 almonds + 5 cashews + 10 pumpkin seeds + milk ~200ml) | 530 | 20g | 6.4g |
+| | 1 tea (after breakfast) | 55 | 1g | 0g |
+| Lunch | — | — | — | — |
+| Dinner | — | — | — | — |
+| **Running** | | **~1,040 kcal** | **~52.7g** | **~9.9g** |
+
+**Notes:** Breakfast ~1,040 — just over 1,000 ceiling (cheese pushed it). Fine as one-off. Fiber ~10g from breakfast alone. Needs ~1,360 kcal more (lunch ~1,000 + dinner ~360 patches to 2,400).
+
+---
+
 ## Weekly Weigh-In
 
 Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week trend, not day-to-day (±1kg daily noise from food/water/bowel).
@@ -565,6 +648,7 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-07-13 (Week 1) | 58.5 kg | ~17.3 | **+0.5 kg** | First structured-diet week; early gain likely part water/glycogen, not pure tissue. Conditions unspecified |
 | 2026-07-16 (interim) | 58.3 kg | ~17.2 | −0.2 (NOISE) | Post-toilet, minimal clothing — stricter conditions than Jul 13, NOT comparable. Impossible to lose on a ~700 surplus → daily fluctuation only. Standard conditions going forward: morning / post-toilet / minimal clothing. **Weigh WEEKLY, not daily** |
 | 2026-07-21 (Week 2) | 58.5 kg | ~17.3 | +0.5 vs baseline | **2-week trend +0.5kg ≈ ~1kg/month — ON TARGET, likely lean (slow) gain.** BUT slower than logged intake (~2,600 avg) predicts (~1.2kg expected) → EITHER portion estimates ~300/day high OR real maintenance ~2,300–2,400 (higher than 1,900 formula; adaptive thermogenesis). **Conclusion: current intake produces ideal gain — DO NOT cut. Earlier "you're overeating, dial back" was wrong per the scale.** |
+| 2026-07-27 (Week 3) | **59.1 kg** | **~17.4** | **+0.6 kg vs Week 2** | **+1.1 kg vs baseline (58.0) in 3 weeks — above the 0.8–1 kg/month target.** Post-toilet conditions ✓. Some water/food volume component likely but trend is clearly positive. |
 
 > Target true tissue gain: ~0.8–1 kg/month. Week-1 +0.5kg is a positive signal but partly water/food volume — real rate only shows over 3–4 weeks. **Maintenance ≈ 1,900 kcal/day** (Mifflin BMR ~1,570 × 1.2 sedentary; the 5-min ×2/week EFX is negligible). So **~2,300–2,400/day is already a solid ~400–500 surplus — no need to push to 2,500+** (that's fat gain for a sedentary body). Real lever for *muscle* gain: resistance training, not more food.
 
@@ -592,6 +676,9 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-07-21 | ~2,354 | ~114.5g | ~33g | ✅ Best-controlled day — right at target (2,300–2,400). Light dosa+egg+guava dinner, no meat. Ginger tea + sardine (omega-3). Model day |
 | 2026-07-22 | ~2,380 | ~115.5g | ~36.3g | ✅ On-target. Light veg dinner + turmeric-pepper milk (great for throat/joint pain). Constipation resolved. Fiber over |
 | 2026-07-23 | ~2,433 | ~110.5g | ~27.4g | ✅ On-target. Parotta+vadiyal+egg dinner, no chicken/fish ✓. All 3 targets hit. Cold recovering |
+| 2026-07-24 | ~2,517 | ~137.5g | ~30.2g | Slightly over target — breakfast 1,027 pushed ceiling. ⚠️ Chicken at dinner (rule break). Protein high, fiber on target |
+| 2026-07-25 | ~2,039 | ~106.5g | ~8.1g | Short day (~360 below target). Fiber very low (no bowl). ⚠️ Chicken + mayo at dinner (rule breaks). Surplus ~140 kcal only |
+| 2026-07-26 | ~2,280 | ~127g | ~8.4g | Near-target. Brunch day — pomfret + rice + wheat bread. ⚠️ Fish at dinner (rule break). Fiber very low (no bowl, weekend) |
 
 > **Fiber trend: under target (~25–30g) every single day.** Best ~22g, worst ~11g. All fiber rides on the Buddha bowl. Target-hit days on calories/protein (Jul 9, 10) were still low-fiber → the constipation is structural, not random.
 

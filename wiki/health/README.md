@@ -38,6 +38,7 @@ If you are about to give a health answer and you have NOT opened these files thi
 | [[gastric-remedies]] | Post-lunch routine, headache prevention, eye strain, sinusitis connection, after-dinner rule |
 | [[eye-strain-remedies]] | Screen strain, allergic conjunctivitis, stress→histamine chain |
 | [[bmi-increase-plan]] | Weight gain targets (68–70kg), meal plan, supplements |
+| [[exercise-plan]] | Home strength routine — EFX + 5kg dumbbells, Phase 1–3, spine-safe rules |
 | [[meal-log]] | Daily food + calorie/protein tracking |
 
 ---

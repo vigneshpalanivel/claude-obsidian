@@ -11,8 +11,8 @@ status: active
 | Metric | Current | Target |
 |--------|---------|--------|
 | Height | 184cm | — |
-| Weight | **58.5kg** (Jul 13, 2026) | 68–70kg |
-| BMI | **17.3** | 20–21 |
+| Weight | **59.1kg** (Jul 27, 2026) | 68–70kg |
+| BMI | **~17.4** | 20–21 |
 | Timeline | — | 8–10 months |
 | Monthly gain target | — | 0.8–1kg/month |
 
@@ -169,28 +169,15 @@ One glass daily adds ~300–390 kcal without competing with meal hunger. **Break
 
 ## Exercise Plan
 
-### Principle
-EFX burns calories needed for weight gain — pair it with resistance training. Don't increase EFX duration.
+Full plan in [[exercise-plan]] (separate file — equipment, weekly schedule, Phase 1–3 exercises, spine-safe rules, progression).
 
-### Week 1–4 (Foundation — Spine Safe)
-- EFX: 20 min, resistance point 2, 4x/week
-- Glute bridges: 3 sets × 15
-- Wall pushups → floor pushups: 3 sets × 10
-- Resistance band rows: 3 sets × 12
-- Dead bug (core): 3 sets × 10
+**Summary:**
+- Strength 3×/week (A/B alternating) + EFX on off days — never double-session same day
+- Phase 1 (Wk 1–4): floor push-ups, glute bridge, dead bug, bird dog, dumbbell row/curl/shoulder press
+- Phase 2 (Wk 5–8): add goblet squat, floor chest press, Romanian deadlift
+- Phase 3 (Wk 9+): confirm with Dr. Rajapandian K before progressing load
 
-### Week 5–8
-- Add light dumbbells (3–5kg)
-- Seated dumbbell shoulder press
-- Dumbbell bicep curls
-- Continue bodyweight movements
-
-### Week 9+ (confirm with Dr. Rajapandian K)
-- Goblet squats with light weight
-- Cable rows
-- Progress based on spine tolerance
-
-> **Post-workout nutrition:** Eat within 30–45 min after exercise — milk + 2 eggs is ideal. Highest protein absorption window.
+> **Post-workout nutrition:** eat within 30–45 min — milk + 2 eggs. Non-negotiable for muscle gain.
 
 ---
 
