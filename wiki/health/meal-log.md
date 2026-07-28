@@ -635,10 +635,38 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 2 tbsp peanut butter | 190 | 8g | 2g |
 | | 1 glass buttermilk | 35 | 2g | 0.2g |
 | | 1 tea (milk + sugar) | 35 | 1g | 0g |
-| Dinner | — | — | — | — |
-| **Running** | | **~2,005 kcal** | **~110.2g** | **~25.1g** |
+| Dinner | 1 dosa with onion | 135 | 3.3g | 1.5g |
+| | Mayonnaise (~2 tbsp) | 130 | 0g | 0g |
+| | Sauce (~1 tbsp) | 30 | 0.5g | 0g |
+| | 2 egg omelette | 200 | 12g | 0g |
+| **Total** | | **~2,500 kcal** | **~126g** | **~26.6g** |
 
-**Notes:** Breakfast ~1,040 — just over 1,000 ceiling (cheese pushed it). Fine as one-off. Lunch ~930 (within 800–1,000 ceiling). Running total strong — ~109g protein already, fiber at ~25g (at target floor already). Needs only ~430 kcal from dinner to close at 2,400 — keep it light.
+**Notes:** Breakfast ~1,040 (cheese pushed ceiling). Lunch ~930. Dinner ~495 — under 800 cap ✅. No chicken/fish at dinner ✅. Day total ~2,500 (slightly over 2,400 target but acceptable). Protein ~126g ✅. Fiber ~26.6g ✅. ⚠️ Mayo again — 3rd time this week; empty fat with no nutritional value, swap for chutney or curd going forward.
+
+---
+
+## 2026-07-28 (Tuesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Before breakfast | 1 ginger tea | 40 | 0g | 0g |
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | Red banana shake (banana + 6 almonds + 3 walnut halves + 10 pumpkin seeds + 1 tsp flax seeds + 5 cashews + 5 dry grapes + 2 tbsp PB + milk ~200ml) | 617 | 22.4g | 8g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| | 2 egg butter cheese omelette | 245 | 16g | 0g |
+| | Half apple | 45 | 0.2g | 2g |
+| | 1 small carrot | 25 | 0.5g | 1.5g |
+| | 1 piece watermelon | 45 | 0.9g | 0.5g |
+| | 1 tsp omam (digestion aid) | 5 | 0g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 2 tbsp peanut butter | 190 | 8g | 2g |
+| | 1 red banana | 110 | 1.5g | 3g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | — | — | — | — |
+| **Running** | | **~2,057 kcal** | **~98.5g** | **~31.2g** |
+
+**Notes:** ✅ Eggs present — protein solid at ~41g. ✅ Fiber 16g from breakfast alone — best start yet. ✅ Omam taken after breakfast. ⚠️ Breakfast ~1,092 — over 1,000 kcal ceiling. Lunch ~965 (slightly over 800–1,000 ceiling). Fiber already at 31g — at top of target. Protein ~98.5g — nearly there. Needs only ~350 kcal from dinner to close at 2,400. Keep dinner very light — 2 eggs + idli/dosa is enough.
 
 ---
 

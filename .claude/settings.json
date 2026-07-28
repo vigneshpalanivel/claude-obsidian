@@ -150,7 +150,10 @@
       "Bash(sh)",
       "Bash(echo 'export PATH=\"$HOME/.local/bin:$PATH\"')",
       "Bash(echo 'export ANTHROPIC_BASE_URL=http://139.167.11.99:8787')",
-      "mcp__headroom__headroom_retrieve"
+      "mcp__headroom__headroom_retrieve",
+      "Bash(grep -n \"^\\\\s*-\\\\s*\\\\`\\\\[.*\\\\].*RWA\\\\|Real Estate\\\\|real estate\\\\|Vacation\" \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/Content Strategy.md\")",
+      "Bash(grep -n -A2 \"\\\\`\\\\[#2\\\\]\\\\`\\\\|\\\\`\\\\[#15\\\\]\\\\`\\\\|\\\\`\\\\[#16\\\\]\\\\`\" \"Content Strategy.md\")",
+      "Bash(grep -v \": 52$\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

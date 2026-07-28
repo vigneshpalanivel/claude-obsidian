@@ -54,15 +54,27 @@ Scheduled rest — Workout A done yesterday. ✅
 
 ---
 
-## Upcoming
+## 2026-07-28 (Tuesday) — EFX
+
+| | Detail |
+|---|---|
+| Duration | 11 min |
+| Resistance | — |
+| Planned | 25 min |
+| Status | ⚠️ Under target — 11/25 min done |
+
+**Note:** Stopped at 11 min due to thigh muscle fatigue — expected after Workout B (Sat) + Workout A (Sun) back-to-back. Legs already in recovery. Workout B moved to Wed Jul 29. Next EFX: reduce to resistance 1, slow pace, build 2–3 min per week toward 25 min target.
+
+---
+
+## Upcoming (revised)
 
 | Date | Planned |
 |------|---------|
-| Tue Jul 28 | Workout B |
-| Wed Jul 29 | EFX 25 min |
-| Thu Jul 30 | Workout A |
-| Fri Jul 31 | EFX 25 min |
-| Sat Aug 1 | Workout B |
+| Wed Jul 29 | Workout B |
+| Thu Jul 30 | EFX 25 min |
+| Fri Jul 31 | Workout A |
+| Sat Aug 1 | EFX or rest |
 | Sun Aug 2 | Rest |
 
 ---
@@ -71,7 +83,8 @@ Scheduled rest — Workout A done yesterday. ✅
 
 | Week | Sessions Done | Strength | EFX | Notes |
 |------|--------------|----------|-----|-------|
-| Week 1 (Jul 25–27) | 2/3 | B + A | 0 | Started mid-week; rest day today ✅ |
+| Week 1 (Jul 25–27) | 2/3 | B + A | 0 | Started mid-week; rest day Mon ✅ |
+| Week 2 (Jul 28–) | 1 so far | 0 | 11 min | EFX under target (11/25 min); Workout B shifted to Wed |
 
 ---
 
