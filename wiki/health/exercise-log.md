@@ -67,15 +67,77 @@ Scheduled rest — Workout A done yesterday. ✅
 
 ---
 
-## Upcoming (revised)
+## 2026-07-29 (Wednesday) — Workout B ✅
+
+| # | Exercise | Sets × Reps Done | Notes |
+|---|----------|-----------------|-------|
+| 1 | Bird dog | — | — |
+| 2 | Glute bridge | — | — |
+| 3 | Seated shoulder press (3.5kg) | — | — |
+| 4 | Seated rear delt fly (3.5kg) | — | — |
+| 5 | Clamshell | — | — |
+| 6 | Single-leg glute bridge | — | — |
+| 7 | Tricep kickback (3.5kg) | — | — |
+| 8 | Side-lying leg adduction | — | — |
+| 9 | Prone hip extension | — | — |
+| 10 | Calf raise | — | — |
+
+**Post-workout nutrition:** ✅ Covered — breakfast (2 eggs + milk in shake) taken immediately after workout.
+**Warmup:** ❌ Skipped — triggered left shoulder pain during session. Pain relieved after rest. **Never skip warmup again.**
+
+---
+
+## 2026-07-30 (Thursday) — EFX
+
+| | Detail |
+|---|---|
+| Duration | 14 min |
+| Resistance | — |
+| Planned | 25 min |
+| Status | ⚠️ Under target — 14/25 min done |
+| Progress | +3 min vs Tue (11 → 14 min) ✅ |
+
+**Note:** Improving — thigh endurance building. Target: add 2–3 min each session toward 25 min.
+
+---
+
+## Upcoming
 
 | Date | Planned |
 |------|---------|
-| Wed Jul 29 | Workout B |
-| Thu Jul 30 | EFX 25 min |
-| Fri Jul 31 | Workout A |
-| Sat Aug 1 | EFX or rest |
+| Fri Jul 31 | Workout A + balance training (record baseline) |
+| Sat Aug 1 | EFX — target 17 min (building from 14) |
 | Sun Aug 2 | Rest |
+| Mon Aug 3 | Workout B |
+| Tue Aug 4 | EFX — target 17–20 min |
+| Wed Aug 5 | Workout A |
+| Thu Aug 6 | EFX — target 20 min |
+| Fri Aug 7 | Workout B |
+
+---
+
+## Daily Add-Ons Tracking
+
+The four non-strength daily items from [[exercise-plan]]. These are the ones that quietly stop happening because nothing tracks them — tick weekly rather than per-session.
+
+| Week | Warmup before every session | Balance (2 min) | Pelvic floor (Kegel) | Stress technique | Cognitive dual-task |
+|------|------------------------------|------------------|----------------------|------------------|---------------------|
+| Week 2 (Jul 28–Aug 3) | ⚠️ Skipped Wed Jul 29 → shoulder pain | Starts Fri Jul 31 | Starts Jul 31 | — | Not yet (needs Level 1 balance first) |
+| Week 3 (Aug 4–10) | — | — | — | — | — |
+
+**Targets:** warmup = every session, no exceptions ([[exercise-plan]] — Jul 29 proved why). Balance = end of every strength session. Pelvic floor = daily, all three types (slow holds + quick flicks + reverse Kegels). Stress technique = at least one daily (physiological sigh / box breathing / PMR). Cognitive dual-task = add once balance Level 1 is stable.
+
+---
+
+## Balance Training Tracking (Every 6 Months)
+
+See [[exercise-plan]] Balance Training section. Track single-leg stand time only — not a daily log entry. This is a [[healthspan-80]] dashboard metric (fall risk → the world-travel goal).
+
+| Date | Eyes open (sec/side) | Eyes closed (sec/side) | Notes |
+|------|----------------------|-------------------------|-------|
+| — | baseline TBD | — | Record on first balance session (Fri Jul 31) |
+
+**Next due:** Jan 2027, then every 6 months for life.
 
 ---
 
@@ -84,12 +146,17 @@ Scheduled rest — Workout A done yesterday. ✅
 | Week | Sessions Done | Strength | EFX | Notes |
 |------|--------------|----------|-----|-------|
 | Week 1 (Jul 25–27) | 2/3 | B + A | 0 | Started mid-week; rest day Mon ✅ |
-| Week 2 (Jul 28–) | 1 so far | 0 | 11 min | EFX under target (11/25 min); Workout B shifted to Wed |
+| Week 2 (Jul 28–) | 3 so far | Workout B ✅ | 11 + 14 = 25 min | EFX building: 11 → 14 min; Workout A on Fri |
 
 ---
 
 ## Related
 
+**This file is the daily tracking surface for [[healthspan-80]] Pillars 1–4 and 7.**
+
+- [[healthspan-80]] — **master plan; this file is a subsystem of it**
 - [[exercise-plan]] — full plan with sets/reps and form cues
+- [[profile]] — spine-safe constraints (no free squats, warmup mandatory for shoulder)
 - [[bmi-increase-plan]] — weight gain targets
 - [[meal-log]] — nutrition tracking (post-workout meal within 30–45 min)
+- [[anxiety-stress]] — EFX timing rules for cortisol disposal

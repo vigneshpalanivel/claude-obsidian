@@ -195,6 +195,12 @@ All four combine in the afternoon. Fixing only one gives partial relief. Full re
 ---
 
 ## Related
+
+**This file is the execution layer for [[healthspan-80]] Pillar 5 (Sensory Preservation — sight & hearing).**
+
+- [[healthspan-80]] — **master plan; this file is a subsystem of it**
+- [[profile]] — canonical current-state snapshot (conditions, meds, constraints)
 - [[gastric-remedies]] — gastric headache prevention
 - [[lab-reports-summary]] — CT PNS confirmed sinusitis
 - [[prescription-history]] — ENT referral Dr. Arun Ganesh
+- [[anxiety-stress]] — stress → histamine → allergic rhinoconjunctivitis chain

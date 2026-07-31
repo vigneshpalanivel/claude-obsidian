@@ -18,8 +18,8 @@ The single canonical profile. **Read this first for any health/food/medication/s
 | **Sex** | Male |
 | **Location** | Madurai, Tamil Nadu |
 | **Height** | ~184 cm |
-| **Weight** | **58.5 kg** (measured Jul 13, 2026) — historically 59–61 kg, drifted down |
-| **BMI** | **17.4** (59.1 kg, Jul 27) — **underweight** · target Phase 1: 70 kg (BMI 20.7) · Phase 2: 73–75 kg (BMI 21.5–22.2) |
+| **Weight** | **59.1 kg** (measured Jul 27, 2026) — baseline 58.0 kg early Jul; +1.1 kg in 3 weeks on the gain plan. Historically 59–61 kg. |
+| **BMI** | **17.4** (at 59.1 kg) — **underweight** · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**) |
 | **Sleep** | 10 PM sleep → 6 AM wake, targets ~7–8 hrs |
 | **Dinner** | By 6:30 PM (3.5 hr gap before sleep) |
 
@@ -33,6 +33,7 @@ The single canonical profile. **Read this first for any health/food/medication/s
 |-----------|--------|--------|--------|
 | **Right maxillary sinusitis** | Active | Dr. K Arun Ganesh (ENT) | CT PNS 04 Jul 2026: minimal right maxillary sinusitis, S-shaped septal deviation, bilateral inferior turbinate hypertrophy, left concha bullosa. Allergy-driven. **Only Allegra 120mg prescribed — NO surgery.** Allergen never tested. |
 | **Migraine + Tension-type headache** | Active since 2020 | Dr. S N Karthik (Neuro) | Multi-factorial: gastric, eye strain, cortisol, sinus all feed afternoon headache |
+| **Left shoulder / upper arm muscle issue** | Chronic, managed | — | 14+ year history. Not severe at rest. Flares with unpositioned weight lifting or skipped warmup — pain is temporary, relieves after rest. Likely rotator cuff / soft tissue irritation. Always warm up before upper body exercises. |
 | **Seronegative inflammatory spinal / SI joint pain** | Controlled | Dr. Rajapandian K (Ortho/Spine) | On Sulfasalazine since Jul 2023. **HLA B27 NEGATIVE → not classic AS.** CRP resolved 27.6 → 0.10. **Root trigger:** 10+ hr travel with wallet in back pocket of jeans (~6 years ago) → asymmetric pelvic pressure on right SI joint. **Relapse trigger:** free squats aiming for 50 reps (~2 years ago) after long symptom-free period. Free squats and high-volume/deep hip flexion movements permanently restricted. |
 | **Anxiety + sleep impairment** | Active, **unmedicated** | Dr. R Sabrin Sonjeev Ross (Psych) | Diagnosed Feb 2025. **All psych meds stopped ~Jan 2026.** Presents physically (body heat, sneezing, PE, sleep, headache), not as mental worry |
 
@@ -69,7 +70,7 @@ The single canonical profile. **Read this first for any health/food/medication/s
 - **After 6:30 PM:** no food or liquid of any kind (gastric + sleep protection).
 - **Spicy food (red/green chilli) = confirmed histamine/sinus trigger.** Capsaicin drives both neurogenic nasal fluid (gustatory rhinitis) and mast-cell histamine release → body heat, sinus fluid, head sloshing. Avoid on flare days; keep minimal generally. See [[eye-strain-remedies]] triggers.
 - **Sinusitis flare:** also avoid cold food and high-histamine/fermented foods.
-- **BMI 17–18:** calorie-dense choices. Target **~2,200–2,400 kcal, 100–120g protein/day**.
+- **BMI 17–18:** calorie-dense choices. Target **~2,300–2,400 kcal, 100–120g protein/day**. Light days below 2,300 push every [[bmi-increase-plan]] milestone later.
 - **Gastric-prone:** avoid raw chickpeas/legumes, raw broccoli/cauliflower, excess raw onion — especially at night.
 - **Caffeine:** coffee only after food, never on empty stomach (cortisol spike). No caffeine near sleep.
 - **Low BP:** stand up slowly.
@@ -91,16 +92,21 @@ The single canonical profile. **Read this first for any health/food/medication/s
 
 | File | Covers |
 |------|--------|
+| [[healthspan-80]] | **Master plan** — 46-year strategy to stay active/independent at 80; **seven pillars**, milestones, diagnostic schedule |
 | [[lab-reports-summary]] | All blood tests + radiology 2020–2026 |
 | [[prescription-history]] | Every visit + medication chronologically |
 | [[anxiety-stress]] | Cortisol triggers + reduction protocol, exercise plan |
 | [[gastric-remedies]] | Post-lunch routine, headache prevention, after-dinner rule |
 | [[eye-strain-remedies]] | Screen strain, allergic conjunctivitis |
-| [[bmi-increase-plan]] | Weight gain to 68–70kg, meal plan, supplements |
+| [[bmi-increase-plan]] | Weight gain — Phase 1: 70kg (floor), Phase 2: 75kg (target); meal plan, supplements |
+| [[exercise-plan]] | Home strength routine, warmup, Phase 1–3, spine-safe rules |
+| [[exercise-log]] | Daily workout tracking |
 | [[meal-log]] | Daily food + calorie/protein tracking |
 
 ---
 
 ## Related
+- [[healthspan-80]] — **master plan; this file is its current-state snapshot**
 - [[README]] — health folder index + read-before-answer rule
-- [[user-vignesh-health]] — memory snapshot (terser; this file supersedes it for depth)
+
+> A terser snapshot also exists as a Claude memory file (`user_vignesh_health`) outside this vault. This file supersedes it for depth.

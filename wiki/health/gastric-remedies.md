@@ -183,6 +183,12 @@ All four headache causes combine in the afternoon — treating only one gives pa
 ---
 
 ## Related
+
+**This file is the execution layer for [[healthspan-80]] Pillar 6 (Food Freedom & Digestion — the foodie pillar).**
+
+- [[healthspan-80]] — **master plan; this file is a subsystem of it**
+- [[profile]] — canonical current-state snapshot (conditions, meds, constraints)
 - [[lab-reports-summary]] — CT PNS confirmed minimal right maxillary sinusitis
 - [[bmi-increase-plan]] — meal timing and food choices
 - [[prescription-history]] — ENT referral Dr. Arun Ganesh
+- [[anxiety-stress]] — stress → appetite suppression → skipped meals → cortisol loop

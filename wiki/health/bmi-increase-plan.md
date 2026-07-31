@@ -6,6 +6,12 @@ status: active
 
 # BMI Increase Plan — Vignesh
 
+> 🎯 **This plan is Milestone 1–2 of [[healthspan-80]]** — the master plan for staying active and independent to age 80. Read that file for why this one matters beyond the number on the scale.
+>
+> **The window is closing:** muscle mass peaks at age 30–35. At 34 and BMI 17.4 you are inside your peak-building window while underweight. Muscle built now is banked for the next 45 years; muscle not built now is permanently forgone (anabolic resistance makes building at 60 several times harder). **This is the most time-sensitive item in the entire health folder.**
+>
+> ⚠️ **Target correction:** 70 kg (Phase 1) is the **floor**, not the goal. **75 kg (Phase 2) is the actual destination** and is not optional — see [[healthspan-80]] Pillar 1.
+
 ## Current Status
 
 | Metric | Current | Target |
@@ -197,22 +203,22 @@ Full plan in [[exercise-plan]] (separate file — equipment, weekly schedule, Ph
 
 Honest energy-balance projection based on actual logged intake — not the optimistic plan target.
 
-**Maintenance (TDEE) ≈ 1,900 kcal/day:**
-- Mifflin BMR (58.5kg, 184cm, 34M) ≈ 1,570 kcal
-- **Genuinely sedentary** — desk work + only ~5 min EFX ×2/week (negligible, ~15 kcal/day) → ×1.2 → **~1,900/day**
-- Empirical check: ate ~2,500 avg in week 1 and gained ~0.5kg → consistent with maintenance ~1,900–2,000
-- ⚠️ Earlier ~2,200–2,300 figure was an **overestimate** (assumed too much activity) — corrected to **~1,900**
+**Maintenance (TDEE) ≈ 2,000–2,050 kcal/day** *(revised 2026-07-31 — training now counts)*:
+- Mifflin BMR (**59.1 kg**, 184cm, 34M) ≈ **1,576 kcal**
+- ⚠️ **The old "genuinely sedentary ×1.2 → ~1,900" assumption expired on Jul 25, 2026**, when [[exercise-plan]] training actually started. Current load is 3 strength sessions + 2 EFX sessions/week — that is light-activity territory, not sedentary. → ×1.3 → **~2,050/day**
+- Empirical check: ate ~2,500 avg in week 1 and gained ~0.5 kg → consistent with maintenance ~1,900–2,050
+- Net effect: **the real surplus at any given intake is ~100–150 kcal smaller than the old table claimed.** Gain rate is slower than previously projected, not faster.
 
-**Projection (1 kg ≈ 7,700 kcal; goal +10–11 kg, 58.5 → 68–70):**
+**Projection (1 kg ≈ 7,700 kcal; Phase 1 goal +10.9 kg, 59.1 → 70):**
 
-| Intake | Surplus over ~1,900 | Monthly gain | Note |
+| Intake | Surplus over ~2,000 | Monthly gain | Note |
 |--------|--------------------|--------------|------|
-| 2,150 | ~250 | ~1 kg | Clean/lean target rate |
-| **2,300** | **~400** | **~1.5 kg** | **Solid — already a real surplus** |
-| 2,400 | ~500 | ~2 kg | Fast — extra becomes fat unless lifting |
-| 2,500+ | ~600+ | ~2.3 kg+ | Too fast for a sedentary body → fat gain |
+| 2,150 | ~150 | ~0.6 kg | Too slow now that training raised maintenance |
+| **2,300** | **~300** | **~1.2 kg** | **Solid floor — this is the daily minimum** |
+| **2,400** | **~400** | **~1.5 kg** | **Target rate with resistance training absorbing it** |
+| 2,500+ | ~500+ | ~2 kg+ | Only justified if training volume rises further |
 
-> **Realistic estimate: ~8–11 months** to reach 68–70 kg at a consistent **~2,300–2,400/day**. Maintenance is LOW, so **2,300 is already a genuine surplus — do NOT push to 2,500+**; for a sedentary body that just adds fat.
+> **Realistic estimate: ~8–11 months** to reach the 70 kg **floor** at a consistent **~2,300–2,400/day** — then Phase 2 continues to 73–75 kg (the actual target, see [[healthspan-80]] Milestone M2). Maintenance is still low in absolute terms, so 2,300–2,400 remains the right band — but it is now a *working* surplus, not a generous one. **Do not treat 2,300 as optional.**
 
 **The two rules that decide it:**
 

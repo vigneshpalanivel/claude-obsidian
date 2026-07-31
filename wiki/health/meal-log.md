@@ -6,7 +6,7 @@ status: active
 
 # Meal Log — Vignesh
 
-Daily food tracking. Target: ~2,200–2,400 kcal/day | 100–120g protein/day | **~25–30g fiber/day**.
+Daily food tracking. Target: **~2,300–2,400 kcal/day** | 100–120g protein/day | **~25–30g fiber/day**. Canonical source: [[profile]] → Hard Constraints.
 
 > **Fiber rule (for BMI increase):** fiber is for gut/regularity, NOT weight gain — bulky low-cal fiber (raw salad, greens) *fills you up and sabotages the calorie target*. Get fiber only from **calorie-dense sources**: dal/legumes, whole grain (vs white rice/maida), nuts/seeds, dried fruit (dates/figs/raisins), avocado, banana/papaya. These fix constipation AND add gain calories. See [[gastric-remedies]] fiber note.
 
@@ -663,10 +663,84 @@ Top up with rice + fish / rice + prawn / pongal + milk to reach ~950 kcal, ~55g 
 | | 1 red banana | 110 | 1.5g | 3g |
 | | Buttermilk | 35 | 2g | 0.2g |
 | | 1 tea (after lunch) | 35 | 1g | 0g |
-| Dinner | — | — | — | — |
-| **Running** | | **~2,057 kcal** | **~98.5g** | **~31.2g** |
+| Dinner | 2 idiyappam with coconut milk | 250 | 4g | 1.5g |
+| | 2 egg omelette | 180 | 12g | 0g |
+| **Total** | | **~2,487 kcal** | **~114.5g** | **~32.7g** |
 
-**Notes:** ✅ Eggs present — protein solid at ~41g. ✅ Fiber 16g from breakfast alone — best start yet. ✅ Omam taken after breakfast. ⚠️ Breakfast ~1,092 — over 1,000 kcal ceiling. Lunch ~965 (slightly over 800–1,000 ceiling). Fiber already at 31g — at top of target. Protein ~98.5g — nearly there. Needs only ~350 kcal from dinner to close at 2,400. Keep dinner very light — 2 eggs + idli/dosa is enough.
+**Notes:** ✅ No chicken/fish at dinner. ✅ Dinner ~430 kcal — well under 800 cap. ✅ Protein 114.5g — on target. ✅ Fiber 32.7g — top of range. ⚠️ Day total ~2,487 — slightly over 2,400 ceiling but acceptable. Clean day overall.
+
+---
+
+## 2026-07-29 (Wednesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | 1 wheat bread ghee roast with sugar | 141 | 3g | 2g |
+| | 1 mosambi fruit | 45 | 0.8g | 2g |
+| | 1 small carrot | 25 | 0.5g | 1.5g |
+| | 2 egg butter cheese omelette | 245 | 16g | 0g |
+| | Milkshake (red banana + 6 almonds + 3 walnut halves + 10 pumpkin seeds + 5 cashews + 1 tsp flax seeds + 5 dry grapes + 2 tbsp PB + milk ~200ml) | 617 | 22.4g | 8.5g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana (large) | 140 | 2g | 4g |
+| | Thick buttermilk | 90 | 3g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | 3 home idli + tomato chutney | 210 | 6.5g | 4g |
+| | 2 eggs | 140 | 12g | 0g |
+| | 1 plain cake (no cream) | 220 | 3g | 0.5g |
+| **Total** | | **~2,573 kcal** | **~116.2g** | **~36.7g** |
+
+**Notes:** ⚠️ Breakfast 1,143 kcal — over ceiling. Dinner ~570 kcal — under 800 cap ✅. No chicken/fish ✅. Protein 116.2g ✅. Fiber 36.7g ✅. Day total ~2,573 — slightly over 2,400. ⚠️ Cake adds ~220 kcal of refined sugar/carb — zero nutrition value. Fine occasionally, avoid making it a nightly pattern.
+
+---
+
+## 2026-07-30 (Thursday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Before breakfast | Half coffee | 25 | 0.5g | 0g |
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | Half guava | 30 | 0.6g | 3g |
+| | Half pomegranate | 50 | 0.8g | 2g |
+| | Milkshake (red banana + 2 tbsp PB + 6 almonds + 5 cashews + 3 walnut halves + 10 pumpkin seeds + 1 tsp flax seeds + 5 dry grapes + milk ~200ml) | 617 | 22.4g | 8.5g |
+| | 2 egg ghee omelette | 185 | 12g | 0g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana (medium) | 110 | 1.5g | 3g |
+| | Thick buttermilk | 90 | 3g | 0.2g |
+| | 2 tbsp peanut butter | 190 | 8g | 2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | 3 idli (restaurant style) | 135 | 6g | 3g |
+| | Sambar (small cup) | 70 | 3g | 2g |
+| | Coriander leaf chutney (small cup) | 45 | 1g | 1.5g |
+| | 2 egg omelette | 180 | 12g | 0g |
+| **Total** | | **~2,427 kcal** | **~117.8g** | **~39.2g** |
+
+**Notes:** ⚠️ Coffee before food at breakfast — rule break. ✅ Dinner ~430 kcal — well under 800 cap, light and vegetarian + eggs (no chicken/fish ✅). Day total ~2,427 — right at the 2,400 target. Protein ~117.8g ✅. Fiber ~39.2g — over target (idli/sambar/chutney all add up), not a concern.
+
+---
+
+## 2026-07-31 (Friday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Before breakfast | 1 tea | 35 | 1g | 0g |
+| Breakfast | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | Half apple | 45 | 0.3g | 2g |
+| | Half pomegranate | 50 | 0.8g | 2g |
+| | Milkshake (milk + 2 rasthali banana + 2 tbsp PB + 6 almonds + 5 cashews + 10 pumpkin seeds + 1 tsp flax seeds + 5 dry grapes + 3 walnut halves) | 635 | 22.8g | 9g |
+| | 2 egg ghee cheese omelette | 245 | 15g | 0g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana (medium) | 110 | 1.5g | 3g |
+| | 2 tbsp peanut butter | 190 | 8g | 2g |
+| | 1 glass buttermilk (thin, salted) | 40 | 2g | 0g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | — | — | — | — |
+| **Running** | | **~2,050 kcal** | **~98.4g** | **~32g** |
+
+**Notes:** ⚠️ Breakfast ~1,080 kcal — over the 800–1,000 ceiling, mainly from the loaded milkshake + ghee cheese omelette, not the bananas (2 small rasthali ≈ 1 red banana by weight, near calorie-neutral vs the usual recipe). Lunch ~970 kcal with the PB kept in. **Earlier caution to skip the lunch PB was overcautious** — at 2,050 running, a normal ~400 kcal dinner lands the day at ~2,450, right on target. No correction needed. ✅ Buttermilk after lunch — good gastric choice ([[gastric-remedies]]), also a light probiotic. Protein ~98g with dinner still to come ✅. Fiber ~32g already at target.
 
 ---
 
@@ -682,7 +756,7 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-07-21 (Week 2) | 58.5 kg | ~17.3 | +0.5 vs baseline | **2-week trend +0.5kg ≈ ~1kg/month — ON TARGET, likely lean (slow) gain.** BUT slower than logged intake (~2,600 avg) predicts (~1.2kg expected) → EITHER portion estimates ~300/day high OR real maintenance ~2,300–2,400 (higher than 1,900 formula; adaptive thermogenesis). **Conclusion: current intake produces ideal gain — DO NOT cut. Earlier "you're overeating, dial back" was wrong per the scale.** |
 | 2026-07-27 (Week 3) | **59.1 kg** | **~17.4** | **+0.6 kg vs Week 2** | **+1.1 kg vs baseline (58.0) in 3 weeks — above the 0.8–1 kg/month target.** Post-toilet conditions ✓. Some water/food volume component likely but trend is clearly positive. |
 
-> Target true tissue gain: ~0.8–1 kg/month. Week-1 +0.5kg is a positive signal but partly water/food volume — real rate only shows over 3–4 weeks. **Maintenance ≈ 1,900 kcal/day** (Mifflin BMR ~1,570 × 1.2 sedentary; the 5-min ×2/week EFX is negligible). So **~2,300–2,400/day is already a solid ~400–500 surplus — no need to push to 2,500+** (that's fat gain for a sedentary body). Real lever for *muscle* gain: resistance training, not more food.
+> Target true tissue gain: ~0.8–1 kg/month. Week-1 +0.5kg is a positive signal but partly water/food volume — real rate only shows over 3–4 weeks. **Maintenance ≈ 2,000–2,050 kcal/day** *(revised 2026-07-31: Mifflin BMR ~1,576 at 59.1 kg × 1.3 light-activity. The old ~1,900 "sedentary" figure expired Jul 25 when [[exercise-plan]] training actually started — 3 strength + 2 EFX sessions/week is no longer negligible.)* So **~2,300–2,400/day is a working ~300–400 surplus** — still the right band, but tighter than the old math implied. Real lever for *muscle* gain: resistance training, not more food. See [[bmi-increase-plan]] for the full revised projection.
 
 ---
 
@@ -717,6 +791,12 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 ---
 
 ## Related
+
+**This file is the daily tracking surface for [[healthspan-80]] Pillar 1 (Muscle & Strength) and Pillar 6 (Food Freedom).**
+
+- [[healthspan-80]] — **master plan; this file is a subsystem of it**
+- [[profile]] — canonical constraints (no chicken/fish at dinner, nothing after 6:30 PM, calorie/protein targets)
 - [[bmi-increase-plan]] — weight gain targets and strategy
 - [[prescription-history]] — current medications
 - [[gastric-remedies]] — post-lunch routine (buttermilk + cumin/omam)
+- [[exercise-log]] — post-workout meal timing (protein within 30–45 min)

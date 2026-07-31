@@ -222,6 +222,12 @@ All reports from Aarthi Scans & Labs and Apollo Hospitals, Madurai.
 ---
 
 ## Related
+
+**This file is the diagnostic history feeding [[healthspan-80]] — its Diagnostic Schedule and 46-Year Dashboard both draw on these numbers.**
+
+- [[healthspan-80]] — **master plan; this file is a subsystem of it**
+- [[profile]] — canonical current-state snapshot (key lab flags summarized there)
 - [[prescription-history]] — all doctor visits and medications
 - [[bmi-increase-plan]] — protein and weight gain plan
-- [[user-vignesh-health]] — health profile memory
+
+> Note: a terser snapshot also exists as a Claude memory file (`user_vignesh_health`) outside this vault. [[profile]] supersedes it for depth.

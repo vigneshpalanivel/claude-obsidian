@@ -30,32 +30,31 @@ If you are about to give a health answer and you have NOT opened these files thi
 
 | File | What it covers |
 |------|----------------|
+| [[healthspan-80]] | **Master plan — the 46-year strategy.** Target: active and independent at 80 (travel, foodie, basic cardio, sexual health). **Seven pillars**, decade milestones, diagnostic schedule, 46-year dashboard. Every other file here is a subsystem of this one. |
 | [[profile]] | **Canonical health profile — read this first.** Identity, all conditions, meds, lab flags, hard constraints, care team |
-| [[user-vignesh-health]] (memory) | Terse snapshot; superseded by [[profile]] for depth |
+| `user_vignesh_health` (Claude memory, outside vault) | Terse snapshot; superseded by [[profile]] for depth |
 | [[lab-reports-summary]] | All blood tests + radiology 2020–2026, key flags (HDL 32, Vit D, CRP arc, PICA loop) |
 | [[prescription-history]] | Every doctor visit + medication chronologically; current vs discontinued meds |
 | [[anxiety-stress]] | Diagnosis, cortisol triggers + reduction protocol, exercise plan, daily protocols |
 | [[gastric-remedies]] | Post-lunch routine, headache prevention, eye strain, sinusitis connection, after-dinner rule |
 | [[eye-strain-remedies]] | Screen strain, allergic conjunctivitis, stress→histamine chain |
-| [[bmi-increase-plan]] | Weight gain targets (68–70kg), meal plan, supplements |
+| [[bmi-increase-plan]] | Weight gain targets — Phase 1: 70kg (floor), Phase 2: 75kg (actual target); meal plan, supplements. **Milestone 1–2 of [[healthspan-80]]** |
 | [[exercise-plan]] | Home strength routine — EFX + 3.5kg dumbbells, Phase 1–3, spine-safe rules |
 | [[exercise-log]] | Daily workout log — sessions done, sets/reps, notes |
 | [[meal-log]] | Daily food + calorie/protein tracking |
 
 ---
 
-## Hard Constraints (Quick Reference — but still read the files)
+## Hard Constraints
 
-- **Dinner:** no chicken or fish — eggs OK as protein. Light, before 6:30 PM.
-- **After 6:30 PM:** no food or liquid of any kind (gastric/sleep protection).
-- **Spicy food (red/green chilli) = confirmed histamine/sinus trigger** — capsaicin → gustatory rhinitis + mast-cell histamine → body heat, sinus fluid, sloshing. Avoid on flare days, minimal generally.
-- **Sinusitis active:** also avoid cold food, high-histamine/fermented foods. On Allegra 120mg.
-- **BMI 17–18 (underweight):** calorie-dense choices; target ~2,200–2,400 kcal, 100–120g protein/day.
-- **Gastric-prone:** avoid raw legumes/chickpeas/broccoli, excess raw onion at night.
-- **Anxiety unmedicated since ~Jan 2026:** food, sleep, movement carry the load — no pharmaceutical backstop.
-- **Low BP episodes:** stand up slowly.
+**Single source of truth: [[profile]] → "⛔ Hard Constraints for Food & Lifestyle Answers".**
+
+They are deliberately **not** duplicated here. A copy existed in this file until 2026-07-31 and had already drifted from the original (it read 2,200–2,400 kcal while [[profile]], [[bmi-increase-plan]] and [[healthspan-80]] all read 2,300–2,400). Two canonical lists is one too many — read the constraints in [[profile]], not a summary of them.
 
 ---
 
 ## Related
-- [[user-vignesh-health]] — health profile memory
+- [[healthspan-80]] — master plan sitting above every file in this folder
+- [[profile]] — canonical profile and constraints
+
+> A terser snapshot also exists as a Claude memory file (`user_vignesh_health`) outside this vault. [[profile]] supersedes it for depth.

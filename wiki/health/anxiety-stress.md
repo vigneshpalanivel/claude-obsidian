@@ -216,7 +216,27 @@ Next day harder → work longer → repeat
 
 ## Premature Ejaculation (PE) — Management
 
-PE is listed above as a physical anxiety symptom (sympathetic activation shortens ejaculatory latency). It is treatable — mostly without medication.
+PE is listed above as a physical anxiety symptom (sympathetic activation shortens ejaculatory latency). It is treatable — but see the severity note first, because it changes the treatment route.
+
+### ⚠️ Severity — recorded 2026-07-31
+
+**Reported: ejaculation sometimes occurs on genital contact with partner's body, before penetration.**
+
+Clinically this is *ante portas* ejaculation — latency effectively at or near zero. That places it at the **severe end of the PE spectrum**, not the mild/moderate range that the "behavioral techniques first, escalate after 3 months" framing below was written for.
+
+**Why this changes the plan:**
+
+| Issue | Implication |
+|-------|-------------|
+| **Stop-start and squeeze techniques require a usable window** — you pause *before* the point of no return | At near-zero latency there is no window to detect or pause in. These techniques are poorly suited as a *first-line solo* approach at this severity. They stay in the plan, but as an adjunct after latency is medically extended — not as the primary lever. |
+| **The 3-month "try Kegels first, then escalate" gate below is too slow for this presentation** | 🔴 **Do not wait 3 months. Book Dr. Sabrin now.** Kegels continue in parallel — they're still worth doing — but they are no longer the thing you're waiting on. |
+| **Documented worsening after stopping Escitalopram (~Jan 2026)** — the SSRI was delaying ejaculation | This is a strong, specific signal that the pharmacological lever works for you. It makes the SSRI-restart / on-demand dapoxetine question a *primary* option to raise, not a fallback. |
+| **Topical anesthetic moves up in priority** | Lidocaine/prilocaine spray or cream reduces glans sensitivity at contact — directly relevant when the trigger is contact itself. Applied ~15 min before, wiped off. On-demand, low risk, available OTC. Reasonable to use while waiting for the appointment. |
+| **Erection question is now more important to answer** | See the open question below — at this severity, routing to a urologist alongside psychiatry becomes more reasonable if there is *any* erectile difficulty, to rule out a physical/hormonal cause. |
+
+**Cross-check with [[healthspan-80]] Pillar 7:** testosterone (total + free) + SHBG were already added to the Oct 2026 lab panel. Given this severity, raise the timing with Dr. Sabrin — it may be worth running that panel sooner rather than waiting for October, since low testosterone can contribute and it has never been measured.
+
+> **Bottom line: this is a doctor conversation now, not a lifestyle-only one.** It is common, it is treatable, and it responds well to medication in most cases — but it is not something the exercise plan alone is going to fix at this severity.
 
 ### Key personal insight — the SSRI-stopping connection
 
@@ -244,7 +264,7 @@ PE is listed above as a physical anxiety symptom (sympathetic activation shorten
 
 Sleep, cortisol reduction, consistent exercise all lower baseline sympathetic tone → directly help PE. PE is downstream of the same overload driving the other symptoms — treat the anxiety, treat the PE.
 
-> **Realistic framing:** behavioral + pelvic floor resolves or improves PE for most men, but over weeks of consistency, not instantly. Start Kegels now; escalate to Dr. Sabrin for the medication/SSRI question.
+> **Realistic framing (revised 2026-07-31):** behavioral + pelvic floor work resolves or improves PE for most men over weeks of consistency — but that success rate is drawn from mild-to-moderate presentations. **At the ante-portas severity recorded above, behavioral-only is not the right first line.** Run Kegels and the pelvic floor protocol in [[exercise-plan]] in parallel, use topical anesthetic as an on-demand bridge, and book Dr. Sabrin now rather than after a 3-month trial. Combined pharmacological + behavioral treatment has better outcomes than either alone at this severity.
 
 ---
 
@@ -263,7 +283,7 @@ When on **Escitalopram (SSRI)**: ashwagandha has mild serotonergic activity and 
 ## Medication Review Trigger
 
 **Context: all psychiatric meds stopped ~Jan 2026 — currently unmedicated.** Raise with Dr. Sabrin if any of the following persist off-medication:
-- **PE — note it may have *worsened after stopping* Escitalopram** (SSRI was delaying it); ask about on-demand dapoxetine or restarting an SSRI (see PE section)
+- 🔴 **PE — book now, do not wait.** Severity recorded 2026-07-31: ejaculation sometimes on contact before penetration (*ante portas*). It **worsened after stopping Escitalopram** (the SSRI was delaying it), which points directly at the medication lever. Ask specifically about: **on-demand dapoxetine**, **restarting an SSRI**, **topical lidocaine/prilocaine** as a bridge, and whether to **pull the testosterone panel forward from Oct 2026**. See PE section above.
 - Sleep still poor since stopping Melatonin
 - Body heat / allergic flares worsening under stress
 - Appetite suppression on high-stress days
@@ -273,6 +293,12 @@ Lifestyle now carries the full load with no pharmaceutical backstop. If symptoms
 ---
 
 ## Related
+
+**This file is the execution layer for [[healthspan-80]] Pillar 4 (Cognitive & Brain Health) and Pillar 7 (Sexual Health — PE section).**
+
+- [[healthspan-80]] — **master plan; this file is a subsystem of it**
+- [[profile]] — canonical current-state snapshot (conditions, meds, constraints)
+- [[exercise-plan]] — physical technique layer: physiological sigh, box breathing, PMR, pelvic floor (Kegel) protocol
 - [[eye-strain-remedies]] — stress → histamine → allergic rhinoconjunctivitis chain
 - [[gastric-remedies]] — stress → appetite suppression → skipped meals → cortisol loop
 - [[prescription-history]] — Dr. Sabrin medications, Feb 2025

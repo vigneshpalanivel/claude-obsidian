@@ -215,6 +215,13 @@ Follow-up after CT PNS (04 Jul 2026: minimal right maxillary sinusitis, S-shaped
 ---
 
 ## Related
+
+**This file holds the medication chronology for [[healthspan-80]] — including the open Sulfasalazine loop flagged as its most serious unresolved item.**
+
+- [[healthspan-80]] — **master plan; this file is a subsystem of it**
+- [[profile]] — canonical current-state snapshot (current meds summarized there)
 - [[lab-reports-summary]] — all blood tests and radiology
 - [[bmi-increase-plan]] — weight gain strategy
-- [[user-vignesh-health]] — health profile memory
+- [[anxiety-stress]] — Dr. Sabrin medications; SSRI-stopping ↔ PE connection
+
+> Note: a terser snapshot also exists as a Claude memory file (`user_vignesh_health`) outside this vault. [[profile]] supersedes it for depth.
