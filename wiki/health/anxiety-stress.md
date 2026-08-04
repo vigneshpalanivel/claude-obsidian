@@ -171,6 +171,8 @@ Next day harder → work longer → repeat
 
 ## Daily Protocol by Schedule Type
 
+> **Known conflict (recorded 2026-08-04, unresolved):** daughter caretaking (waking her, showering her, school prep) is a fixed 6:00–7:20 AM block — see [[profile]]. It directly overlaps the 6:00 AM EFX/shower/breakfast slot below, pushing the routine later and login to 9:30 AM instead of 9:00. A 5:30 AM wake was discussed as a fix (front-load EFX before 6:00) but **not yet decided** — schedule below still reflects 6:00 AM wake until that's confirmed.
+
 ### 9 AM–9 PM days (weekdays)
 
 | Time | Action |

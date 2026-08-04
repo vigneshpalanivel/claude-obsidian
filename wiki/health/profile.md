@@ -22,8 +22,9 @@ The single canonical profile. **Read this first for any health/food/medication/s
 | **BMI** | **17.6** (at 59.75 kg) — **underweight** · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**) |
 | **Sleep** | 10 PM sleep → 6 AM wake, targets ~7–8 hrs |
 | **Dinner** | By 6:30 PM (3.5 hr gap before sleep) |
+| **Daughter caretaking** | **6:00–7:20 AM daily, fixed** (recorded 2026-08-04) — waking her, showering her, school prep. Directly overlaps the current 6:00 AM morning routine slot (EFX/shower/breakfast in [[anxiety-stress]] weekday schedule), which is why that routine currently gets pushed later and login slips to 9:30 AM instead of 9:00. |
 
-**Current load (Jun–Jul 2026):** 12-hour office days for ~1 month. Founder of two companies (Trioangle + InnBlockchain). No exercise recorded. Meals being skipped/undereaten. Most symptoms worsening as a result.
+**Current load (Jun–Jul 2026):** 12-hour office days for ~1 month. Founder of two companies (Trioangle + InnBlockchain). No exercise recorded. Meals being skipped/undereaten. Most symptoms worsening as a result. Mornings also carry a fixed 80-min daughter caretaking block (6:00–7:20 AM) that competes with the personal morning routine.
 
 ---
 
