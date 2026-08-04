@@ -167,6 +167,18 @@ Do this at lunch break. Gives eyes a proper rest mid-session before the afternoo
 
 ---
 
+## Eyebrow Pressure — Self-Observed Relief (recorded 2026-08-04)
+
+Pressing on the eyebrows gives a few minutes of headache relief.
+
+**Likely mechanism:** the eyebrow ridge sits directly over the **frontal sinus** and the **supraorbital nerve** (a branch of the trigeminal nerve). Firm pressure here does two plausible things — mechanically eases frontal sinus pressure, and via gate-control (pressure signals competing with pain signals on the same nerve) dulls the pain temporarily. Same short-lived-relief pattern as temporalis massage above: helps for minutes, returns because the underlying cause (sinusitis / eye strain / tension) is untouched.
+
+**Read on the sinusitis link:** since the active condition is right maxillary sinusitis (not frontal), relief from *frontal* sinus pressure points more toward eye strain / tension-type headache than sinus congestion as the dominant cause in this instance — worth noting which side/location gave relief next time.
+
+Use as a quick in-the-moment fix, not a substitute for the 20-20-20 rule, eye drops, or the after-lunch gastric routine — those address root causes; this only quiets the signal.
+
+---
+
 ## Neck Stretch — Connected Fix
 
 Forehead headache from eye strain is often worsened by neck and shoulder tension from screen posture. Both refer pain to the same location.

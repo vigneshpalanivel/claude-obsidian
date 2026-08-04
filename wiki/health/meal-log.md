@@ -901,6 +901,7 @@ Standing risk factors that make this non-theoretical: uric acid **6.5 (upper-nor
 | Meal | Food | Calories | Protein | Fiber |
 |------|------|----------|---------|-------|
 | Breakfast | 1 medium guava | 60 | 2g | 5g |
+| | 2 tbsp soaked padam pisin (almond gum) | 35 | 0g | 4g |
 | | Pomegranate — 75% | 75 | 1.2g | 3g |
 | | ½ orange | 20 | 0.5g | 1g |
 | | 2 egg ghee omelette | 185 | 12g | 0g |
@@ -908,9 +909,13 @@ Standing risk factors that make this non-theoretical: uric acid **6.5 (upper-nor
 | | Milkshake (red banana + 6 almonds + 3 walnut halves + 5 dry grapes + 5 cashew + 2 tbsp PB + 1 tsp flax + 10 pumpkin seeds) | 635 | 22.8g | 9g |
 | | 1 tea (before breakfast) | 35 | 1g | 0g |
 | | 1 tea (after breakfast) | 35 | 1g | 0g |
-| Lunch | — | — | — | — |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana (medium) | 110 | 1.5g | 3g |
+| | 2 tbsp PB | 190 | 8g | 2g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
 | Dinner | — | — | — | — |
-| **Running** | | **~1,060 kcal** | **~41g** | **~18.3g** |
+| **Running** | | **~2,060 kcal** | **~98.5g** | **~37.5g** |
 
 **Notes (day open — verdict held):**
 

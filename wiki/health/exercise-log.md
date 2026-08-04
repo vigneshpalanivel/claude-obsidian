@@ -101,6 +101,68 @@ Scheduled rest — Workout A done yesterday. ✅
 
 ---
 
+## 2026-07-31 (Friday) — Workout A ✅
+
+| # | Exercise | Sets × Reps Done | Notes |
+|---|----------|-----------------|-------|
+| 1 | Glute bridge | — | — |
+| 2 | Dead bug | — | — |
+| 3 | Floor push-up | — | — |
+| 4 | One-arm dumbbell row (3.5kg) | — | — |
+| 5 | Bicep curl (3.5kg) | — | — |
+| 6 | Wall sit | — | — |
+| 7 | Bodyweight squat | — | — |
+| 8 | Calf raise | — | — |
+
+**Note:** Confirmed done, no set/rep or balance-baseline detail given. Balance baseline (single-leg stand, planned for this session per [[exercise-plan]]) not confirmed — still shows as TBD below.
+
+---
+
+## 2026-08-01 (Saturday) — Rest (unplanned)
+
+Schedule called for EFX (target 17 min). Vignesh took it as rest instead — one missed EFX slot, not part of the scheduled rest days.
+
+---
+
+## 2026-08-02 (Sunday) — Rest ✅
+
+Scheduled rest. As planned.
+
+---
+
+## 2026-08-03 (Monday) — Workout B ✅
+
+| # | Exercise | Sets × Reps Done | Notes |
+|---|----------|-----------------|-------|
+| 1 | Bird dog | — | — |
+| 2 | Glute bridge | — | — |
+| 3 | Seated shoulder press (3.5kg) | — | — |
+| 4 | Seated rear delt fly (3.5kg) | — | — |
+| 5 | Clamshell | — | — |
+| 6 | Single-leg glute bridge | — | — |
+| 7 | Tricep kickback (3.5kg) | — | — |
+| 8 | Side-lying leg adduction | — | — |
+| 9 | Prone hip extension | — | — |
+| 10 | Calf raise | — | — |
+
+**Note:** Confirmed done, no set/rep or warmup detail given.
+
+---
+
+## 2026-08-04 (Tuesday) — EFX
+
+| | Detail |
+|---|---|
+| Duration | 18 min |
+| Resistance | — |
+| Planned | 17–20 min |
+| Status | ✅ Within target |
+| Progress | +4 min vs Thu Jul 30 (14 → 18 min) ✅ |
+
+**Note:** On pace with the Aug 4 target (17–20 min).
+
+---
+
 ## Upcoming
 
 | Date | Planned |
@@ -122,8 +184,8 @@ The four non-strength daily items from [[exercise-plan]]. These are the ones tha
 
 | Week | Warmup before every session | Balance (2 min) | Pelvic floor (Kegel) | Stress technique | Cognitive dual-task |
 |------|------------------------------|------------------|----------------------|------------------|---------------------|
-| Week 2 (Jul 28–Aug 3) | ⚠️ Skipped Wed Jul 29 → shoulder pain | Starts Fri Jul 31 | Starts Jul 31 | — | Not yet (needs Level 1 balance first) |
-| Week 3 (Aug 4–10) | — | — | — | — | — |
+| Week 2 (Jul 28–Aug 3) | ⚠️ Skipped Wed Jul 29 → shoulder pain | ✅ Done once (Jul 31 baseline) then ❌ not followed since | ✅ Started Jul 31, doing it, but not the full 3×/day — irregular, "whenever remembered" | ✅ Doing regularly (breathing exercises) | Informal only — day-to-day activities, not a structured add-on |
+| Week 3 (Aug 4–10) | ✅ Doing regular warmups before every session | — | Same pattern — irregular, not 3×/day | ✅ Doing regularly | Informal only |
 
 **Targets:** warmup = every session, no exceptions ([[exercise-plan]] — Jul 29 proved why). Balance = end of every strength session. Pelvic floor = daily, all three types (slow holds + quick flicks + reverse Kegels). Stress technique = at least one daily (physiological sigh / box breathing / PMR). Cognitive dual-task = add once balance Level 1 is stable.
 
@@ -146,7 +208,8 @@ See [[exercise-plan]] Balance Training section. Track single-leg stand time only
 | Week | Sessions Done | Strength | EFX | Notes |
 |------|--------------|----------|-----|-------|
 | Week 1 (Jul 25–27) | 2/3 | B + A | 0 | Started mid-week; rest day Mon ✅ |
-| Week 2 (Jul 28–) | 3 so far | Workout B ✅ | 11 + 14 = 25 min | EFX building: 11 → 14 min; Workout A on Fri |
+| Week 2 (Jul 28–Aug 3) | 5/6 | B (Jul 29) + A (Jul 31) + B (Aug 3) | 11 + 14 = 25 min | Sat Aug 1 EFX skipped (rest instead) — only miss; 2× Workout B, 1× A |
+| Week 3 (Aug 4–10) | 1 so far | — | 18 min (Tue) | EFX building: 14 → 18 min |
 
 ---
 

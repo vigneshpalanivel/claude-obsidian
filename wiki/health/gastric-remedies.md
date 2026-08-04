@@ -12,6 +12,8 @@ Trapped gas in stomach/intestines → vagus nerve stimulation → **forehead hea
 
 Likely triggers in Buddha bowl (vendor lunch): raw chickpeas, raw broccoli/cauliflower, mixed legumes, excess raw onion, heavy dressings with vinegar.
 
+> **Second, distinct headache pattern (recorded 2026-08-04, unconfirmed):** delayed-onset headache + body heat following beef, lag of ~24–36h rather than the 1–2h gas pattern above. Suspected dietary-histamine mechanism (same mast-cell pathway as the confirmed capsaicin trigger), not gas. See [[profile]] hard constraints. Track before treating as confirmed.
+
 ---
 
 ## Daily Routine (Prevention)

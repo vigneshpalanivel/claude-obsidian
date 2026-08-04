@@ -69,6 +69,7 @@ The single canonical profile. **Read this first for any health/food/medication/s
 - **Dinner:** no chicken or fish — **eggs OK**. Light, before 6:30 PM.
 - **After 6:30 PM:** no food or liquid of any kind (gastric + sleep protection).
 - **Spicy food (red/green chilli) = confirmed histamine/sinus trigger.** Capsaicin drives both neurogenic nasal fluid (gustatory rhinitis) and mast-cell histamine release → body heat, sinus fluid, head sloshing. Avoid on flare days; keep minimal generally. See [[eye-strain-remedies]] triggers.
+- **Beef = suspected histamine trigger / body-heat generator (recorded 2026-08-04, unconfirmed).** Self-reported recurring pattern — body heat + headache following beef, this time with a ~24–36h delay after the Aug 1–2 beef stretch (5 meals in 36h), and "previously also" per Vignesh. Same mast-cell pathway already confirmed for capsaicin, plausible for red meat too, but this is 2–3 self-reported instances, not confirmed — **track explicitly next few beef occasions (note body heat/headache + timing) before treating as a hard rule.** Independent of the existing purine/gout flag on beef — two separate reasons to space it out now, not one.
 - **Sinusitis flare:** also avoid cold food and high-histamine/fermented foods.
 - **BMI 17–18:** calorie-dense choices. Target **~2,300–2,400 kcal, 100–120g protein/day**. Light days below 2,300 push every [[bmi-increase-plan]] milestone later.
 - **Gastric-prone:** avoid raw chickpeas/legumes, raw broccoli/cauliflower, excess raw onion — especially at night.

@@ -33,7 +33,7 @@ Anxiety doesn't always feel like worry or panic. In this case it shows up predom
 
 | Symptom | Mechanism |
 |---------|-----------|
-| Body heat sensation | Cortisol → histamine → blood vessel dilation |
+| Body heat sensation | Cortisol → histamine → blood vessel dilation. **Suspected dietary co-trigger (2026-08-04, unconfirmed):** beef, same mast-cell pathway as the confirmed capsaicin trigger — see [[profile]]. |
 | Sneezing / allergic flares | Stress lowers mast cell activation threshold (CRH pathway) |
 | Sleep impairment | Elevated cortisol at night delays sleep onset |
 | Appetite suppression | Stress hormone directly suppresses hunger signals |
