@@ -17,8 +17,8 @@ status: active
 | Metric | Current | Target |
 |--------|---------|--------|
 | Height | 184cm | — |
-| Weight | **59.1kg** (Jul 27, 2026) | Phase 1: **70kg** · Phase 2: **73–75kg** |
-| BMI | **~17.4** | Phase 1: ~20.7 · Phase 2: ~21.5–22.2 |
+| Weight | **59.75kg** (Aug 3, 2026) | Phase 1: **70kg** · Phase 2: **73–75kg** |
+| BMI | **~17.6** | Phase 1: ~20.7 · Phase 2: ~21.5–22.2 |
 | Timeline | — | Phase 1: ~11 months · Phase 2: +5–8 months |
 | Monthly gain target | — | 0.8–1kg/month |
 
@@ -204,12 +204,12 @@ Full plan in [[exercise-plan]] (separate file — equipment, weekly schedule, Ph
 Honest energy-balance projection based on actual logged intake — not the optimistic plan target.
 
 **Maintenance (TDEE) ≈ 2,000–2,050 kcal/day** *(revised 2026-07-31 — training now counts)*:
-- Mifflin BMR (**59.1 kg**, 184cm, 34M) ≈ **1,576 kcal**
+- Mifflin BMR (**59.75 kg**, 184cm, 34M) ≈ **1,589 kcal**
 - ⚠️ **The old "genuinely sedentary ×1.2 → ~1,900" assumption expired on Jul 25, 2026**, when [[exercise-plan]] training actually started. Current load is 3 strength sessions + 2 EFX sessions/week — that is light-activity territory, not sedentary. → ×1.3 → **~2,050/day**
 - Empirical check: ate ~2,500 avg in week 1 and gained ~0.5 kg → consistent with maintenance ~1,900–2,050
 - Net effect: **the real surplus at any given intake is ~100–150 kcal smaller than the old table claimed.** Gain rate is slower than previously projected, not faster.
 
-**Projection (1 kg ≈ 7,700 kcal; Phase 1 goal +10.9 kg, 59.1 → 70):**
+**Projection (1 kg ≈ 7,700 kcal; Phase 1 goal +10.25 kg, 59.75 → 70):**
 
 | Intake | Surplus over ~2,000 | Monthly gain | Note |
 |--------|--------------------|--------------|------|
@@ -231,9 +231,9 @@ Honest energy-balance projection based on actual logged intake — not the optim
 
 ## Monthly Milestones
 
-> Milestones from current baseline **59.1 kg (Jul 27, 2026)** at ~1 kg/month (consistent 2,300–2,400 kcal/day + resistance training). Light days below 2,300 push every milestone later.
+> Milestones anchored to **59.75 kg (Aug 3, 2026)**, superseding the Jul 27 baseline below. Actual pace since Jul 6 is running ~1.9 kg/month, not the ~1 kg/month these milestones assume — see [[meal-log]] checkpoint (2026-08-03) for the trim recommendation. Milestone dates below are not yet re-projected for the faster pace.
 
-### Phase 1 — 59.1 kg → 70 kg (BMI 17.4 → 20.7)
+### Phase 1 — 59.75 kg → 70 kg (BMI 17.6 → 20.7)
 
 | Month | Approx Date | Target Weight | Focus |
 |-------|-------------|--------------|-------|

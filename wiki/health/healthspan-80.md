@@ -49,7 +49,7 @@ Three facts set the whole timeline:
 | Domain | Status | Grade |
 |--------|--------|-------|
 | **Metabolic** | HbA1c 4.7%, glucose 89, HOMA-IR 1.1, TC 144, LDL 98.6, TG 67 | ✅ **Excellent — your biggest asset** |
-| **Muscle / weight** | BMI 17.4, 59.1 kg, training started Jul 25 2026 | ⚠️ **Critical deficit, window closing** |
+| **Muscle / weight** | BMI 17.6, 59.75 kg, training started Jul 25 2026 | ⚠️ **Critical deficit, window closing** |
 | **Aerobic fitness** | EFX 14 min at resistance 2 = untrained | ⚠️ **No development plan exists** |
 | **Bone density** | Never measured. High risk stack. | 🔴 **Unknown — blind spot** |
 | **Inflammation** | CRP 0.10 ✅ but Sulfasalazine status unconfirmed | 🔴 **Open loop on a lifelong condition** |
@@ -265,7 +265,7 @@ Track these. Not weekly — but never let one go unmeasured for its interval.
 
 | Metric | Now (Jul 2026) | Age 40 target | Age 65 target | Age 80 floor | Interval |
 |--------|---------------|---------------|---------------|--------------|----------|
-| **Weight** | 59.1 kg | 75–78 kg | ≥72 kg | ≥70 kg | Weekly |
+| **Weight** | 59.75 kg | 75–78 kg | ≥72 kg | ≥70 kg | Weekly |
 | **BMI** | 17.4 | 22–23 | 21–23 | ≥20 | Weekly |
 | **Grip strength** | Unmeasured | Baseline + rising | <10% below peak | Above independence threshold | Every 6 months |
 | **Push-up max** | Establishing | ≥30 | ≥15 | Any | Monthly |

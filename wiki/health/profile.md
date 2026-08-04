@@ -18,8 +18,8 @@ The single canonical profile. **Read this first for any health/food/medication/s
 | **Sex** | Male |
 | **Location** | Madurai, Tamil Nadu |
 | **Height** | ~184 cm |
-| **Weight** | **59.1 kg** (measured Jul 27, 2026) — baseline 58.0 kg early Jul; +1.1 kg in 3 weeks on the gain plan. Historically 59–61 kg. |
-| **BMI** | **17.4** (at 59.1 kg) — **underweight** · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**) |
+| **Weight** | **59.75 kg** (measured Aug 3, 2026) — baseline 58.0 kg early Jul; +1.75 kg in 4 weeks on the gain plan, running ~1.9 kg/month (above the 0.8–1 target, see [[meal-log]] checkpoint). Historically 59–61 kg. |
+| **BMI** | **17.6** (at 59.75 kg) — **underweight** · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**) |
 | **Sleep** | 10 PM sleep → 6 AM wake, targets ~7–8 hrs |
 | **Dinner** | By 6:30 PM (3.5 hr gap before sleep) |
 

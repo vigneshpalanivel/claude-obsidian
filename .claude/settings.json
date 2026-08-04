@@ -155,7 +155,8 @@
       "Bash(grep -n -A2 \"\\\\`\\\\[#2\\\\]\\\\`\\\\|\\\\`\\\\[#15\\\\]\\\\`\\\\|\\\\`\\\\[#16\\\\]\\\\`\" \"Content Strategy.md\")",
       "Bash(grep -v \": 52$\")",
       "Bash(awk '/^## Revision Note/{exit} /^- \\\\*\\\\*/{c++} END{print c}' \"Product/Sales/Sales_objection_list.md\")",
-      "Bash(awk 'NR>12 && /^## Revision Note/{exit} NR>12 && /^### /{sec=$0; next} NR>12 && /^- \\\\*\\\\*/{n[sec]++; order[++i]=\\(seen[sec]++?\"\":sec\\)} END{for\\(k=1;k<=i;k++\\) if\\(order[k]!=\"\"\\) printf \"%-40s %d\\\\n\", order[k], n[order[k]]}' \"Product/Sales/Sales_objection_list.md\")"
+      "Bash(awk 'NR>12 && /^## Revision Note/{exit} NR>12 && /^### /{sec=$0; next} NR>12 && /^- \\\\*\\\\*/{n[sec]++; order[++i]=\\(seen[sec]++?\"\":sec\\)} END{for\\(k=1;k<=i;k++\\) if\\(order[k]!=\"\"\\) printf \"%-40s %d\\\\n\", order[k], n[order[k]]}' \"Product/Sales/Sales_objection_list.md\")",
+      "Bash(grep -n \"^rev:\\\\|last_revised\\\\|^---$\" RWA-STO-EU-Compliance-Criteria.md RWA-STO-EU-Compliance-Criteria-Simple.md)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
