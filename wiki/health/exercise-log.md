@@ -163,6 +163,25 @@ Scheduled rest. As planned.
 
 ---
 
+## 2026-08-05 (Wednesday) — Workout A ✅
+
+| # | Exercise | Sets × Reps Done | Notes |
+|---|----------|-----------------|-------|
+| 1 | Glute bridge | — | — |
+| 2 | Dead bug | — | — |
+| 3 | Floor push-up | — | — |
+| 4 | One-arm dumbbell row (3.5kg) | — | — |
+| 5 | Bicep curl (3.5kg) | — | — |
+| 6 | Wall sit | — | — |
+| 7 | Bodyweight squat | — | — |
+| 8 | Calf raise | — | — |
+
+**Warmup:** ✅ Done — 3.5 min sequence completed before the session.
+
+**Note:** Confirmed done with warmup, no set/rep detail given. Balance training (2 min, end of session) still not confirmed — same gap flagged since Jul 31.
+
+---
+
 ## Upcoming
 
 | Date | Planned |

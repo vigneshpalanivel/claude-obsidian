@@ -914,8 +914,22 @@ Standing risk factors that make this non-theoretical: uric acid **6.5 (upper-nor
 | | 2 tbsp PB | 190 | 8g | 2g |
 | | Buttermilk | 35 | 2g | 0.2g |
 | | 1 tea (after lunch) | 35 | 1g | 0g |
-| Dinner | — | — | — | — |
-| **Running** | | **~2,060 kcal** | **~98.5g** | **~37.5g** |
+| Dinner | 3 idli (restaurant style) | 135 | 6g | 3g |
+| | Sambar (small cup) | 70 | 3g | 2g |
+| | Tomato chutney — 3 tbsp | 50 | 1g | 1g |
+| | Coconut chutney — 3 tbsp | 60 | 1g | 1g |
+| | 2 eggs vadiyal | 240 | 14g | 0g |
+| **Total** | | **~2,615 kcal** | **~123.5g** | **~44.5g** |
+
+**Notes — 2026-08-04 final:**
+
+🔴 **Calories ~215–315 over the 2,300–2,400 band** — bigger surplus than Aug 3's, and driven by the same milkshake-heavy breakfast the un-actioned trim recommendation (see checkpoint above) was meant to address. Second day running the trim hasn't been applied.
+
+✅ **Protein ~123.5g and fiber ~44.5g** both comfortably clear target — best fiber day in the log so far.
+
+✅ **Dinner respected the rule** — eggs, not chicken/fish, before 6:30 PM.
+
+✅ **No beef** — 3rd clean day since the Aug 1–2 stretch. EFX 18 min done (Week 3 start).
 
 **Notes (day open — verdict held):**
 
@@ -937,6 +951,36 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-08-03 (Week 4) | **59.75 kg** | **~17.6** | **+0.65 kg vs Week 3** | **+1.75 kg vs baseline (58.0) in 4 weeks ≈ 1.9 kg/month pace — resolves the checkpoint below.** Post-toilet conditions ✓. Rate has held steady at ~0.6–0.65kg/week for two weeks running, not a one-off. |
 
 > Target true tissue gain: ~0.8–1 kg/month. Week-1 +0.5kg is a positive signal but partly water/food volume — real rate only shows over 3–4 weeks. **Maintenance ≈ 2,000–2,050 kcal/day** *(revised 2026-07-31: Mifflin BMR ~1,576 at 59.1 kg × 1.3 light-activity. The old ~1,900 "sedentary" figure expired Jul 25 when [[exercise-plan]] training actually started — 3 strength + 2 EFX sessions/week is no longer negligible.)* So **~2,300–2,400/day is a working ~300–400 surplus** — still the right band, but tighter than the old math implied. Real lever for *muscle* gain: resistance training, not more food. See [[bmi-increase-plan]] for the full revised projection.
+
+---
+
+## 2026-08-05 (Wednesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 1 pomegranate (whole) | 100 | 1.6g | 4g |
+| | 2 tbsp soaked padam pisin (almond gum) | 35 | 0g | 4g |
+| | Sweet corn — 1 handful (~50g) | 48 | 1.7g | 1.25g |
+| | 2 egg ghee cheese omelette | 245 | 15g | 0g |
+| | Milkshake (usual recipe) | 635 | 22.8g | 9g |
+| | Dark chocolate — 1 piece | 60 | 1g | 0.75g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | Bun butter jam | 300 | 6g | 1.2g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | 1 red banana (medium) | 110 | 1.5g | 3g |
+| | 2 eggs | 140 | 12g | 0g |
+| | 2 idli (restaurant style) | 90 | 4g | 2g |
+| | Sambar (small cup) | 70 | 3g | 2g |
+| **Running** | | **~2,498 kcal** | **~116.5g** | **~37.4g** |
+
+**Notes (day open — verdict held):**
+
+✅ **No beef** — 4th clean day since the Aug 1–2 stretch. Workout A + warmup done; balance training still not confirmed (5th day running unconfirmed since Jul 31).
+
+⚠️ **Dark chocolate 2x/day today (after breakfast + after lunch)** — new pattern replacing tea, agreed as within the same ~20g daily dose, not additive. First day of this — worth checking if the afternoon energy dip returns now that the after-lunch piece is a half-dose instead of the full 20–30g.
+
+**Note:** Workout A day ([[exercise-plan]]) — post-workout protein timing applies (milk + 2 eggs within 30–45 min already covered by the omelette + milkshake). No tea logged with breakfast — flag if you had one, empty-stomach caffeine rule per [[profile]]. Red banana at dinner — room-temp per the sinus-timing caveat in [[gastric-remedies]].
 
 ---
 
@@ -973,6 +1017,7 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-08-01 | ~2,330 | ~98.2g | ~12g | ✅ **On target** (~300 surplus), protein at floor — held up despite no milkshake/bowl. Lunch 675 / dinner 690, both under cap ✅. ⚠️ Fiber 12g (weekend, no bowl — 3rd time). ⚠️ **Chicken at dinner — rule break (4th).** 8 pcs chicken 65 = heavy spicy/histamine load on Allegra. Beef + ~4.5 units alcohol → purine load, urate excretion blocked; uric-acid retest still outstanding |
 | 2026-08-02 | ~2,500 | ~140.7g | ~8.4g | ✅ Calories over band (~450 surplus), **protein 141g — best in weeks.** 🔴 **Beef at all 3 meals — 5th consecutive beef meal in 36h**, highest purine stretch since Jul 16–19. 🔴 **Fiber 8.4g = 2nd worst day in log**; 4th straight weekend failure. ⚠️ Dinner 930 (over cap, fried, late). Sat-fat at all 3 meals vs HDL 32 |
 | 2026-08-03 | ~2,433 | ~121.5g | ~37.2g | ✅ **On target** (~33 over band), all three targets cleared. No beef — 2nd clean day after the 5-meal purine stretch. Light egg dinner, rules respected. Workout B day. |
+| 2026-08-04 | ~2,615 | ~123.5g | ~44.5g | 🔴 **Over band** (~215–315 over) — trim recommendation still not applied. Best fiber day in the log. No beef — 3rd clean day. EFX 18 min (Week 3 start). |
 
 > **Fiber trend — RESOLVED as of ~Jul 22 (note revised 2026-07-31).** The old finding ("under target every single day, best ~22g, worst ~11g, all fiber rides on the Buddha bowl") described Jul 9–16, when bowl-less days collapsed to ~8g. **Since Jul 22 fiber has been at or over target every logged day** (26.6 → 32.7 → 36.7 → 39.2 → 37g) — padam pisin, fruit, and the seeds/nuts in the milkshake now provide a second independent source, so the bowl is no longer a single point of failure. Constipation resolved Jul 22.
 >
