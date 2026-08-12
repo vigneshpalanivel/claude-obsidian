@@ -17,8 +17,8 @@ status: active
 | Metric | Current | Target |
 |--------|---------|--------|
 | Height | 184cm | — |
-| Weight | **59.75kg** (Aug 3, 2026) | Phase 1: **70kg** · Phase 2: **73–75kg** |
-| BMI | **~17.6** | Phase 1: ~20.7 · Phase 2: ~21.5–22.2 |
+| Weight | **59.80kg** (Aug 10, 2026) | Phase 1: **70kg** · Phase 2: **73–75kg** |
+| BMI | **~17.7** | Phase 1: ~20.7 · Phase 2: ~21.5–22.2 |
 | Timeline | — | Phase 1: ~11 months · Phase 2: +5–8 months |
 | Monthly gain target | — | 0.8–1kg/month |
 

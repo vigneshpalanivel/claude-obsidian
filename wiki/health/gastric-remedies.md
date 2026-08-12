@@ -131,6 +131,26 @@ Fiber intake is under target (~25–30g/day) **every day** in the [[meal-log]] �
 
 **Daily rule:** one fiber source *independent of the Buddha bowl* every day — fruit + dal or whole grain. Plus warm water on waking (gastrocolic reflex) and daytime hydration (evening blocked by the 6:30 PM cutoff).
 
+### ⚠️ Fiber Ramp Rate — the other failure mode (recorded 2026-08-11)
+
+Fixing low fiber too fast causes its own problem. **Observed 2026-08-11:** an overnight-oats breakfast (40g oats + chia + flax + nuts + fruit) delivered **20.7g fiber in one sitting**, up from ~4.8g the whole of Aug 9 — roughly a 4× jump in two days. Result: *"stomach fully, dumped feeling"* on a **lower** calorie count than the previous day.
+
+**Why it happens:**
+
+| Mechanism | Detail |
+|-----------|--------|
+| **Soluble fiber gels** | Oat beta-glucan, chia, and flax absorb many times their weight in water — chia roughly 10×. Stomach volume ends up far larger than the calorie count implies. |
+| **Gut adaptation lags** | Fermentable fiber needs 2–3 weeks for the gut microbiome to adjust. A step-change produces gas and distension; a ramp doesn't. |
+| **Fat + cold delay emptying** | Nuts/PB/ghee are fat-dense and slow gastric emptying; overnight oats are eaten cold, which slows it further. |
+
+**Rules:**
+- **Increase total daily fiber by ~5g per week, not per meal.**
+- **Never front-load the day's fiber into one sitting** — split across breakfast + a mid-morning snack + lunch.
+- **Start chia and flax at ½ tsp**, build to 1 tsp over ~2 weeks. Both must be soaked, never dry.
+- **Hydrate in daytime** — soluble fiber without enough water makes constipation *worse*, not better. Evening hydration is blocked by the 6:30 PM cutoff, so the water has to happen before then.
+
+> **Why this matters more for Vignesh than for most people:** at BMI 17–18 the binding constraint is *stomach capacity*, not appetite discipline. [[bmi-increase-plan]]: *"High-volume low-cal fiber fills the stomach and sabotages the calorie target."* Early fullness at breakfast means less eaten at lunch and dinner — so an over-aggressive fiber fix directly undercuts the weight-gain goal it was meant to support.
+
 ## After Dinner Rule
 
 - **6:30 PM dinner = last food and liquid of the day — no exceptions**

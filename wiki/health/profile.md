@@ -18,9 +18,9 @@ The single canonical profile. **Read this first for any health/food/medication/s
 | **Sex** | Male |
 | **Location** | Madurai, Tamil Nadu |
 | **Height** | ~184 cm |
-| **Weight** | **59.75 kg** (measured Aug 3, 2026) — baseline 58.0 kg early Jul; +1.75 kg in 4 weeks on the gain plan, running ~1.9 kg/month (above the 0.8–1 target, see [[meal-log]] checkpoint). Historically 59–61 kg. |
-| **BMI** | **17.6** (at 59.75 kg) — **underweight** · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**) |
-| **Sleep** | 10 PM sleep → 6 AM wake, targets ~7–8 hrs |
+| **Weight** | **59.80 kg** (measured Aug 10, 2026) — baseline 58.0 kg early Jul; +1.8 kg in 5 weeks. Pace decelerated sharply this week (+0.05 kg vs +0.65 kg the week before), conditions confirmed matching — real signal, not a measurement artifact. Leading hypothesis: unusually dense training week (6 sessions in 7 days) pushed real maintenance above the modeled ~2,050 kcal. See [[meal-log]] weight table for the full breakdown. Historically 59–61 kg. |
+| **BMI** | **17.7** (at 59.80 kg) — **underweight** · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**) |
+| **Sleep** | **10 PM → 5:30 AM wake (decided 2026-08-10, in effect)** — 7.5 hrs *in bed*, at the lower-middle of the 7–8 hr target with zero slack. ⚠️ **This is time in bed, not time asleep** — sleep-onset latency is a documented problem (elevated night cortisol delays onset; "sleep still poor since stopping Melatonin" is an open medication-review trigger in [[anxiety-stress]]). If onset takes 30–45 min, actual sleep is ~6.75–7 hrs, i.e. **at or below the target floor.** Previous: 10 PM → 6 AM. |
 | **Dinner** | By 6:30 PM (3.5 hr gap before sleep) |
 | **Daughter caretaking** | **6:00–7:20 AM daily, fixed** (recorded 2026-08-04) — waking her, showering her, school prep. Directly overlaps the current 6:00 AM morning routine slot (EFX/shower/breakfast in [[anxiety-stress]] weekday schedule), which is why that routine currently gets pushed later and login slips to 9:30 AM instead of 9:00. |
 

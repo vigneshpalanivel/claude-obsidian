@@ -6,8 +6,9 @@ status: active
 
 # Exercise Plan — Vignesh
 
-**Equipment:** EFX elliptical + 3.5kg dumbbells (pair)
+**Equipment:** EFX elliptical + 3.5kg dumbbells (pair) + **pull-up bar** (added 2026-08-10)
 > ⚠️ **3.5 kg will plateau in 2–3 weeks for most dumbbell exercises.** Upgrade to 8 kg minimum by end of Week 3 — non-negotiable for lean gain past month 1. Until then, push-up progressions are the primary hypertrophy driver.
+> 🔴 **The 8 kg upgrade is now overdue** (Week 3 ended ~Aug 15; plan started Jul 25). The pull-up bar does not replace it — they load different movements. Row, curl, and shoulder press are all still stuck at 3.5 kg, which is below a real stimulus for your frame.
 > **Session order:** Warmup (3.5 min) → Workout A or B → Balance training (2 min). Balance goes last — it's not fatiguing and works as a cooldown.
 **Goal:** Muscle gain for BMI 17.4 → Phase 1: 70kg (BMI 20.7, **the floor**) · Phase 2: 75kg (BMI 22.2, **the actual target**). See [[bmi-increase-plan]].
 **Long-horizon purpose:** This is the execution layer for Pillars 1–3 of [[healthspan-80]] — muscle, aerobic fitness, and bone density for active independence at 80. Resistance training is a permanent fixture, not a phase.
@@ -21,15 +22,40 @@ status: active
 
 | Day | Session | Duration |
 |-----|---------|----------|
-| Mon | Strength A | 25–30 min |
+| Mon | Strength A | ~40 min (45 min cap) |
 | Tue | EFX only — 25 min, resistance 2 | 25 min |
-| Wed | Strength B | 25–30 min |
+| Wed | Strength B | ~41.5 min (45 min cap) |
 | Thu | EFX only — 25 min, resistance 2 | 25 min |
-| Fri | Strength A | 25–30 min |
+| Fri | Strength A | ~40 min (45 min cap) |
 | Sat | EFX only or rest | — |
 | Sun | Rest | — |
 
 > **No double sessions (EFX + strength same day)** — at BMI 17.3 excess cardio burns muscle calories needed for gain. EFX is cortisol disposal + heart health; strength is the actual BMI lever. See [[anxiety-stress]] EFX timing rules.
+
+---
+
+## ⏱ Session Time Budget — 45 Min Hard Cap (set 2026-08-11)
+
+> 🔴 **Audit finding: Workout B was already over budget before any lat work was added.** 11 exercises × 3 sets = 33 sets. At ~40 sec work + 60–90 sec rest, that's ~55 min of main work, plus 3.5 min warmup and 2 min balance = **~60 min**. The "25–30 min" figure in the schedule table above was never achievable as the exercise list was written. Workout A (8 exercises = 24 sets) runs ~40 min — inside the cap, but with no room to add anything.
+>
+> **This means lat work cannot simply be appended. Time has to be created first.**
+
+**The three levers, in order of return:**
+
+| Lever | Time saved | Cost |
+|-------|-----------|------|
+| **1. Supersets — pair antagonist movements, rest only after the pair** | ~35–40% of total | None. Pairing push with pull is standard practice and does not reduce stimulus. This is the single biggest lever. |
+| **2. Circuit the low-intensity hip work** (glute bridge, clamshell, single-leg bridge, prone hip extension) — 2 rounds continuous instead of 3 separate sets each | ~8–10 min | Minor. These are stabiliser/activation movements, not hypertrophy drivers — they tolerate shorter rest well. |
+| **3. Drop calf raises to 2 sets** | ~2 min | Negligible. |
+
+**Rest rules under the cap:**
+- **Within a superset: no rest** — move straight from exercise 1 to exercise 2
+- **After a superset pair: 60–90 sec**
+- **Within a circuit: 15 sec** between stations, 60 sec between rounds
+
+> ⚠️ **What must never be cut to save time:** the **3.5 min warmup** (Jul 29 shoulder flare settled that) and the **2 min balance block** ([[healthspan-80]] Pillar 1 — fall risk is the single largest threat to the world-travel goal). Both are fixed costs. The 45 min budget is 3.5 + 39.5 + 2.
+
+---
 
 > **Post-workout nutrition (non-negotiable):** eat within 30–45 min after every strength session — milk + 2 eggs is ideal. Skip this and the session doesn't build.
 
@@ -68,22 +94,32 @@ status: active
 | 7 | **Bodyweight squat** | 1 × 10 | Controlled, quarter-to-parallel depth only. Feet shoulder-width, toes slightly out. Stop immediately at any sacral or lower back sensation. Never push to fatigue. **Max 10 reps — volume is what caused the relapse, not the movement.** |
 | 8 | **Calf raises** (bodyweight) | 3 × 20 | Slow up, slow down — against wall for balance |
 
-### Workout B
+> ⏱ **Workout A runs ~40 min including warmup and balance — inside the 45 min cap, but with no spare room.** If it starts running long, superset **#3 floor push-up with #4 one-arm dumbbell row** (push paired with pull, no rest between) — that alone saves ~5 min. Do **not** add exercises to A without removing something; the lat work lives in B for exactly this reason.
 
-| # | Exercise | Sets × Reps | Cue |
-|---|----------|-------------|-----|
-| 1 | **Bird dog** | 3 × 10/side | Spine neutral, slow — opposite arm + leg, hold 3 sec |
-| 2 | **Glute bridge** | 3 × 15 | Same as Workout A |
-| 3 | **Seated dumbbell shoulder press** (3.5kg) | 3 × 12 | Seated = spine supported. Press straight up, don't arch lower back |
-| 4 | **Seated rear delt fly** (3.5kg) | 3 × 12 | Lean forward from seated, elbows out to sides — builds upper back posture |
-| 5 | **Clamshell** (bodyweight) | 3 × 15/side | Lie on side, knees bent 45°, feet together — lift top knee like a clamshell. Directly stabilises SI joint. |
-| 6 | **Single-leg glute bridge** | 3 × 10/side | Same as glute bridge, one leg extended — more glute/hamstring load, zero spine stress |
-| 7 | **Dumbbell tricep kickback** (3.5kg) | 3 × 12 | Hinge forward, upper arm parallel to floor, extend only the forearm |
-| 8 | **Side-lying leg adduction** | 3 × 15/side | Lie on side, bottom leg raises straight up — opposite of clamshell. Inner thigh (adductor). Keep hips stacked, no rolling. |
-| 9 | **Prone hip extension** | 3 × 12/side | Lie face down on mat, one leg lifts straight up off floor, hold 1 sec. No lower back arch — squeeze glute, not back. Targets hamstrings + glutes. |
-| 10 | **Calf raises** (bodyweight) | 3 × 20 | — |
+### Workout B — restructured for the 45 min cap (revised 2026-08-11)
 
-**Rest between sets:** 60–90 sec
+**Run in blocks, not as a straight list.** Total ~41.5 min including warmup and balance.
+
+| Block | Exercise | Sets × Reps | Cue | Time |
+|-------|----------|-------------|-----|------|
+| **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
+| **1 — Vertical push/pull superset** | **Seated dumbbell shoulder press** (3.5kg) | 3 × 12 | Seated = spine supported. Press straight up, don't arch lower back | 9 min |
+| | ↳ paired with **Pull-up progression** (bar) | 3 × per ladder | **Vertical pull.** Start at Level 1 (dead hang) — see ladder below. No rest between press and bar. | |
+| **2 — Horizontal pull (lat focus)** | **Inverted row / Australian pull-up** (bar) | 3 × 10 | **NEW 2026-08-11 — the lat exercise you can actually load today.** See lat section below. | 5 min |
+| **3 — Upper accessory superset** | **Seated rear delt fly** (3.5kg) | 3 × 12 | Lean forward from seated, elbows out to sides — builds upper back posture | 7 min |
+| | ↳ paired with **Dumbbell tricep kickback** (3.5kg) | 3 × 12 | Hinge forward, upper arm parallel to floor, extend only the forearm | |
+| **4 — Core/hip circuit** — 2 rounds, 15 sec between stations | **Bird dog** | 10/side | Spine neutral, slow — opposite arm + leg, hold 3 sec | 12 min |
+| | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec | |
+| | **Clamshell** | 15/side | Lie on side, knees bent 45°, feet together — lift top knee. Directly stabilises SI joint. | |
+| | **Single-leg glute bridge** | 10/side | One leg extended — more glute/hamstring load, zero spine stress | |
+| | **Side-lying leg adduction** | 15/side | Bottom leg raises straight up. Inner thigh. Hips stacked, no rolling. | |
+| | **Prone hip extension** | 12/side | Face down, one leg lifts straight up, hold 1 sec. Squeeze glute, not back. | |
+| **5 — Finisher** | **Calf raises** (bodyweight) | 2 × 20 | Slow up, slow down | 3 min |
+| **Balance** | 3-move sequence (see below) | — | Non-negotiable — [[healthspan-80]] Pillar 1 | 2 min |
+
+**Rest:** none within a superset · 60–90 sec after each superset pair · 15 sec between circuit stations, 60 sec between circuit rounds.
+
+> **What changed and why:** the hip/glute work (5 exercises) was consuming more of the session than the upper body, despite being stabiliser work rather than a hypertrophy driver. Circuiting it at 2 rounds instead of 3 straight sets each frees ~10 min — which is what pays for the lat block. Nothing was removed from the exercise list.
 
 ---
 
@@ -181,6 +217,8 @@ Once a quarter, deliberately pick up a physical skill you don't already have (a 
 
 > Push-ups are your best lean muscle lever while dumbbells are light. Progress through these in order — each step increases load on chest, shoulders, and triceps without needing heavier weights.
 
+> **Pair this with the Pull-Up Progression Ladder below.** Push-ups alone were the plan's imbalance — pushing without pulling. Run both ladders in parallel.
+
 | Level | Variation | Target | Muscles |
 |-------|-----------|--------|---------|
 | 1 | Floor push-up (standard) | 3 × 20 | Chest, triceps, front shoulder |
@@ -191,6 +229,73 @@ Once a quarter, deliberately pick up a physical skill you don't already have (a 
 | 6 | Archer push-up (shift weight to one arm) | 3 × 8/side | Heavy unilateral load — near single-arm |
 
 Move to the next level when current level feels easy for 3 sets. Run Levels 1–3 in parallel from Week 2.
+
+---
+
+## Pull-Up Progression Ladder (added 2026-08-10)
+
+> **Why this matters:** the plan was **push-dominant** before the bar arrived. Push-ups were the primary overload; the only pulling was a one-arm row at 3.5 kg — far too light. Chronic push-without-pull builds forward-rounded shoulders, which makes both the left shoulder irritation and screen-posture neck tension worse. Vertical pulling (lats, mid-back, biceps) was the single biggest gap. **This is the highest-value use of the bar — not the pull-ups themselves, the balance they restore.**
+
+> ⚠️ **Do not start at full pull-ups.** A full dead hang puts the left shoulder in maximum distraction — the exact unpositioned-load scenario that flares the 14-year irritation ([[profile]]). Warmup is mandatory before touching the bar, no exceptions.
+
+| Level | Exercise | Target | Advance when |
+|-------|----------|--------|--------------|
+| 1 | **Passive dead hang** — feet on floor/box, minimal weight on arms, just get used to the grip and position | 3 × 20–30 sec | No shoulder discomfort for a full week |
+| 2 | **Full dead hang** — feet off floor, arms straight, shoulders relaxed | 3 × 20–30 sec | 30 sec × 3 with zero shoulder pain |
+| 3 | **Scapular pull-up** — from a dead hang, pull shoulder blades down/together **without bending elbows**. Body rises 2–3 inches only. | 3 × 8–10 | Movement feels controlled, initiated from the back not the arms |
+| 4 | **Negative pull-up** — jump/step to the top position, lower as slowly as possible (aim 5 sec) | 3 × 5 | 5-sec descents controlled throughout |
+| 5 | **Assisted pull-up** — band, or one foot on a chair taking partial weight | 3 × 8 | 8 reps with minimal assistance |
+| 6 | **Full pull-up** (overhand, shoulder-width) | 3 × 5, build to 3 × 10 | — |
+
+**Grip note:** start **neutral or underhand (chin-up) grip** — both are easier on the shoulder joint than a wide overhand grip. Move to overhand only once Level 5 is comfortable.
+
+### Lat Training — What Actually Works Right Now (added 2026-08-11)
+
+**The pull-up ladder above *is* your lat program** — pull-ups and chin-ups are the primary lat movement, full stop. But there's a problem with relying on it alone at your current stage:
+
+> 🔴 **At Levels 1–2 (dead hangs), you are getting close to zero lat hypertrophy stimulus.** A passive hang trains grip and shoulder tolerance, not lat contraction. Levels 3–4 (scapular pulls, negatives) start to load the lats, but you can't produce enough volume there to drive growth yet. **So the bar alone will not build lats for the next several weeks.**
+
+**Two things fix that:**
+
+**1. Inverted row (Australian pull-up)** — added to Workout B, Block 2
+
+| | |
+|---|---|
+| **Setup** | Bar set at hip-to-waist height. Hang underneath, body straight, heels on the floor. Pull chest to bar. |
+| **Why it's the right call for you** | Horizontal pull — hits lats and mid-back, but **the shoulder is never in full distraction** the way it is in a dead hang. Far lower risk for the 14-year left shoulder irritation. |
+| **Why now** | You can do real working sets *today* at 3 × 10. That's actual lat volume, unlike a dead hang. |
+| **Difficulty dial** | Walk feet further out = harder. Bend knees / step feet back = easier. Raise the bar = easier. No equipment change needed to progress. |
+| **Spine note** | Body stays in one straight line, braced — no spinal flexion, no hip flexion. SI-safe. |
+
+⚠️ **Requires a bar that mounts low** (wall-mounted, doorway frame at low position, or a sturdy table edge as a substitute). **A high doorway pull-up bar cannot do this** — if that's what you bought, use a table edge or the underside of a desk instead until you can mount lower.
+
+**2. The 8 kg dumbbell upgrade — still the bigger lever**
+
+One-arm dumbbell row (Workout A) is a lat exercise, and it's running at **3.5 kg**. For a 60 kg frame, that's below the threshold that produces adaptation. **Getting to 8 kg will do more for your lats over the next month than any new bar exercise.** This upgrade was flagged as due by Week 3 and is now overdue — see the equipment note at the top of this file.
+
+> **Honest ranking of lat levers, best to worst, for the next 4 weeks:** 8 kg dumbbell row > inverted row > pull-up negatives (Level 4) > dead hangs. The bar is a good addition; it is not the bottleneck.
+
+---
+
+### Bonus — Dead Hang for Spinal Decompression
+
+The dead hang has a second benefit specific to you: it applies **gentle axial traction to the spine** — the opposite of the compressive loading that's off-limits (barbell squats, conventional deadlifts). For a desk-bound day with SI joint history, a 20–30 sec hang is a legitimate decompression tool, not just a strength move.
+
+- Fine on **any day**, including EFX and rest days — it's not fatiguing
+- Keep it **passive**: relax into the hang, don't actively brace or pull
+- Stop at any lower-back or SI sensation — traction should feel like relief, never like strain
+
+### ⛔ Bar Movements to Avoid
+
+| Never | Why |
+|-------|-----|
+| **Kipping / swinging pull-ups** | Explosive shoulder load in the most vulnerable position — worst possible movement for the left shoulder |
+| **Hanging leg raises / knee raises** | Loaded spinal flexion + deep hip flexion — hits both the sit-up hard stop *and* the SI joint restriction simultaneously |
+| **Toes-to-bar, L-sits on the bar** | Same as above, more extreme |
+| **Weighted pull-ups** | Nowhere near this stage; revisit only after Level 6 is solid at bodyweight |
+| **Wide-grip overhand pull-ups (as a starting point)** | Maximum shoulder external rotation under load — the highest-risk grip for a chronically irritated shoulder |
+
+> **Bar mounting:** if it's a doorway/pressure-mounted bar, test it with body weight *while standing* before hanging fully. A bar failure mid-hang is a fall onto the tailbone/SI joint — the single worst injury available given your history.
 
 ---
 
@@ -249,6 +354,8 @@ Only after Phase 2 completed with zero SI joint or lower back symptoms, AND with
 - Standing overhead press with heavy weight
 - Twisting under load: Russian twists, loaded side bends, wood chops
 - Sit-ups / crunches (spinal flexion under load)
+- **Hanging leg/knee raises, toes-to-bar** (spinal flexion + deep hip flexion under load — see Pull-Up ladder)
+- **Kipping / swinging pull-ups** (explosive load on the vulnerable shoulder)
 - Anything that produces SI joint or lower back pain during or after — stop, rest 2 days, then retry at lower intensity
 
 ---

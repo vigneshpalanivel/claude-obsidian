@@ -182,6 +182,68 @@ Scheduled rest. As planned.
 
 ---
 
+## 2026-08-06 (Thursday) — EFX
+
+| | Detail |
+|---|---|
+| Duration | Not specified |
+| Resistance | — |
+| Planned | 20 min |
+| Status | ✅ Done — backfilled, duration not given |
+
+**Note:** Confirmed done, reported after the fact ("Wed also i did the EFX" — actually Thursday Aug 6 per this file's day-of-week; the "only miss" flagged earlier was wrong, this closes that gap). No duration given — flag if you remember it, otherwise progress vs. the 18 min (Tue)/20 min target can't be tracked for this session.
+
+---
+
+## 2026-08-07 (Friday) — Workout B ✅
+
+| # | Exercise | Sets × Reps Done | Notes |
+|---|----------|-----------------|-------|
+| 1 | Bird dog | — | — |
+| 2 | Glute bridge | — | — |
+| 3 | Seated shoulder press (3.5kg) | — | — |
+| 4 | Seated rear delt fly (3.5kg) | — | — |
+| 5 | Clamshell | — | — |
+| 6 | Single-leg glute bridge | — | — |
+| 7 | Tricep kickback (3.5kg) | — | — |
+| 8 | Side-lying leg adduction | — | — |
+| 9 | Prone hip extension | — | — |
+| 10 | Calf raise | — | — |
+
+**Note:** Confirmed done, no set/rep, warmup, or balance detail given.
+
+---
+
+## 2026-08-08 (Saturday) — EFX
+
+| | Detail |
+|---|---|
+| Duration | 18 min |
+| Resistance | — |
+| Planned | EFX or Rest (Sat) |
+| Status | ✅ Matches Aug 4 pace (18 min) |
+
+**Note:** Sat is EFX-or-rest per schedule — chose EFX. Holding at 18 min, same as Tue Aug 4 — no further progress yet toward the 20+ min target.
+
+---
+
+## 2026-08-10 (Monday) — Workout A ✅
+
+| # | Exercise | Sets × Reps Done | Notes |
+|---|----------|-----------------|-------|
+| 1 | Glute bridge | — | — |
+| 2 | Dead bug | — | — |
+| 3 | Floor push-up | — | — |
+| 4 | One-arm dumbbell row (3.5kg) | — | — |
+| 5 | Bicep curl (3.5kg) | — | — |
+| 6 | Wall sit | — | — |
+| 7 | Bodyweight squat | — | — |
+| 8 | Calf raise | — | — |
+
+**Note:** Confirmed done, no set/rep, warmup, or balance detail given. Sun Aug 9 (rest day per schedule) not confirmed/logged.
+
+---
+
 ## Upcoming
 
 | Date | Planned |
@@ -228,7 +290,7 @@ See [[exercise-plan]] Balance Training section. Track single-leg stand time only
 |------|--------------|----------|-----|-------|
 | Week 1 (Jul 25–27) | 2/3 | B + A | 0 | Started mid-week; rest day Mon ✅ |
 | Week 2 (Jul 28–Aug 3) | 5/6 | B (Jul 29) + A (Jul 31) + B (Aug 3) | 11 + 14 = 25 min | Sat Aug 1 EFX skipped (rest instead) — only miss; 2× Workout B, 1× A |
-| Week 3 (Aug 4–10) | 1 so far | — | 18 min (Tue) | EFX building: 14 → 18 min |
+| Week 3 (Aug 4–10) | 5 so far | A (Aug 5) + B (Aug 7) | 18 (Tue) + unspecified (Thu) + 18 (Sat) | Zero misses so far this week — EFX holding at 18 min on tracked days, Thu duration not given |
 
 ---
 

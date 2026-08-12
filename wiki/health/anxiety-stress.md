@@ -126,7 +126,7 @@ Next day harder → work longer → repeat
 
 | Action | Notes |
 |--------|-------|
-| **EFX elliptical 20–25 min daily** | Zero impact (safe for SI joint/spine). Weekdays: morning only (6:00–6:25 AM) — lowers cortisol starting baseline before work. After-work EFX (finish by 8 PM) on 7:30 PM day + weekends — disposes accumulated cortisol. Never at 9:30 PM → only 30 min before sleep, cortisol spike worsens sleep. Cap at 25–30 min at BMI 17-18. Eat protein within 45 min after each session. |
+| **EFX elliptical 20–25 min daily** | Zero impact (safe for SI joint/spine). Weekdays: morning only (**5:30–5:55 AM**, revised 2026-08-10) — lowers cortisol starting baseline before work. After-work EFX (finish by 8 PM) on 7:30 PM day + weekends — disposes accumulated cortisol. Never at 9:30 PM → only 30 min before sleep, cortisol spike worsens sleep. Cap at 25–30 min at BMI 17-18. Eat protein within 45 min after each session. |
 | **Consistent dinner — no skipping** | Fasting overnight spikes cortisol, amplifying every other symptom |
 | **Coffee after food, not before — no exceptions** | Caffeine on empty stomach directly triggers cortisol release before the day even starts. Eat first, then coffee. |
 | **Hard stop from work** | Nervous system needs a clear end-of-day signal — no work content after 9 PM |
@@ -159,7 +159,7 @@ Next day harder → work longer → repeat
 
 | Day | EFX timing | Purpose |
 |-----|-----------|---------|
-| Mon–Fri (9-9 days) | **6:00–6:25 AM morning** | Lowers cortisol starting baseline before 9 AM work |
+| Mon–Fri (9-9 days) | **5:30–5:55 AM morning** *(EFX days only — strength sessions don't fit this 30-min window; see Daily Protocol caveat)* | Lowers cortisol starting baseline before 9 AM work |
 | 7:30 PM weekday | **After work, finish by 8 PM** | Disposes cortisol accumulated during work day |
 | Saturday | **After work, flexible timing** | Full weekly disposal + HPA recalibration |
 | Sunday | **After work, flexible timing** | Full weekly disposal + HPA recalibration |
@@ -171,16 +171,21 @@ Next day harder → work longer → repeat
 
 ## Daily Protocol by Schedule Type
 
-> **Known conflict (recorded 2026-08-04, unresolved):** daughter caretaking (waking her, showering her, school prep) is a fixed 6:00–7:20 AM block — see [[profile]]. It directly overlaps the 6:00 AM EFX/shower/breakfast slot below, pushing the routine later and login to 9:30 AM instead of 9:00. A 5:30 AM wake was discussed as a fix (front-load EFX before 6:00) but **not yet decided** — schedule below still reflects 6:00 AM wake until that's confirmed.
+> ✅ **Resolved 2026-08-10 — 5:30 AM wake adopted.** The daughter caretaking block (6:00–7:20 AM, fixed — see [[profile]]) used to collide head-on with the 6:00 AM EFX/shower/breakfast slot, which is why the routine slipped and login landed at 9:30 instead of 9:00. Waking at 5:30 clears a 30-min window *before* the caretaking block. New sleep window: **10 PM → 5:30 AM.**
+>
+> ⚠️ **Two things this does NOT fix — both still open:**
+> 1. **Sleep is now 7.5 hrs in bed, not asleep.** Onset latency is a documented problem here (night cortisol delays onset; poor sleep since stopping Melatonin is an open medication-review trigger below). At 30–45 min to fall asleep, real sleep is ~6.75–7 hrs — at or under the 7–8 hr floor. **If morning tiredness or afternoon crashes appear, the fix is an earlier bedtime (9:30 PM), not a later wake.** Sleep is the strongest single lever in [[healthspan-80]] Pillar 4 — trading it for work hours loses on net.
+> 2. **Strength days still don't fit.** The 5:30–6:00 window is 30 min. EFX (25 min) fits. **Workout A/B (25–30 min + 3.5 min mandatory warmup = 28.5–33.5 min) does not** — and skipping warmup is a hard no ([[exercise-plan]], Jul 29 shoulder flare proved it). So Mon/Wed/Fri strength sessions need either an evening slot (mirroring the 7:30 PM-finish pattern below) or a later login. **Not yet decided.**
 
 ### 9 AM–9 PM days (weekdays)
 
 | Time | Action |
 |------|--------|
-| 6:00 AM | Wake |
-| 6:00–6:25 AM | **EFX 25 min** — morning cortisol baseline drop |
-| 6:25–6:40 AM | Shower — parasympathetic activation |
-| 6:40–7:15 AM | Breakfast + 10 min sunlight — coffee after food only |
+| 5:30 AM | Wake |
+| 5:30–5:55 AM | **EFX 25 min** — morning cortisol baseline drop. *(EFX days only — Tue/Thu. Strength sessions don't fit this window; see caveat above.)* |
+| 6:00–7:20 AM | **Daughter caretaking** — fixed block, non-negotiable |
+| 7:20–7:35 AM | Shower — parasympathetic activation |
+| 7:35–8:10 AM | Breakfast + 10 min sunlight — coffee after food only |
 | During work | Physiological sigh when tension builds; cold water face splash at lunch; step outside 5 min at lunch; music during non-call work |
 | Lunch | Eat on time + dark chocolate after |
 | 9:00 PM | Hard stop — laptop closed, phone on DnD |
@@ -193,8 +198,9 @@ Next day harder → work longer → repeat
 
 | Time | Action |
 |------|--------|
-| 6:00 AM | Wake — **no morning EFX today** |
-| 6:00–6:30 AM | Breakfast + sunlight (extra time since no EFX) |
+| 5:30 AM | Wake — **no morning EFX today** |
+| 6:00–7:20 AM | **Daughter caretaking** — fixed block |
+| 7:20–8:00 AM | Breakfast + sunlight (extra time since no EFX) |
 | After work (by 7:45 PM) | **EFX 25 min** — finish by 8 PM |
 | After EFX | **Shower** — post-exercise + wind-down |
 | Within 45 min after EFX | Protein dinner |
@@ -207,7 +213,7 @@ Next day harder → work longer → repeat
 
 | Time | Action |
 |------|--------|
-| 6:00 AM | Wake — morning EFX optional |
+| 5:30 AM | Wake — morning EFX optional. **Keep the same wake time on weekends** — a consistent wake time is what regulates the circadian rhythm; sleeping in on weekends re-creates the "weekly jetlag" effect and undoes the weekday consistency. |
 | After work / evening | **EFX 25–30 min** — primary disposal session |
 | Within 45 min after EFX | Protein meal |
 | 9:00 PM | No screens, wind down |

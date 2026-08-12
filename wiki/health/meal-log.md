@@ -949,6 +949,7 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-07-21 (Week 2) | 58.5 kg | ~17.3 | +0.5 vs baseline | **2-week trend +0.5kg ≈ ~1kg/month — ON TARGET, likely lean (slow) gain.** BUT slower than logged intake (~2,600 avg) predicts (~1.2kg expected) → EITHER portion estimates ~300/day high OR real maintenance ~2,300–2,400 (higher than 1,900 formula; adaptive thermogenesis). **Conclusion: current intake produces ideal gain — DO NOT cut. Earlier "you're overeating, dial back" was wrong per the scale.** |
 | 2026-07-27 (Week 3) | **59.1 kg** | **~17.4** | **+0.6 kg vs Week 2** | **+1.1 kg vs baseline (58.0) in 3 weeks — above the 0.8–1 kg/month target.** Post-toilet conditions ✓. Some water/food volume component likely but trend is clearly positive. |
 | 2026-08-03 (Week 4) | **59.75 kg** | **~17.6** | **+0.65 kg vs Week 3** | **+1.75 kg vs baseline (58.0) in 4 weeks ≈ 1.9 kg/month pace — resolves the checkpoint below.** Post-toilet conditions ✓. Rate has held steady at ~0.6–0.65kg/week for two weeks running, not a one-off. |
+| 2026-08-10 (Week 5) | **59.80 kg** | **~17.7** | **+0.05 kg vs Week 4** | **Real deceleration — conditions confirmed matching (morning, post-toilet).** From ~0.6–0.65kg/week down to near-flat, despite ~2,427 kcal surplus logged over Aug 4–9 (~404/day avg, squarely in the target range) — calorie math alone predicts ~0.3kg gain, not 0.05kg. **Leading hypothesis (Vignesh's, plausible): training load this week was unusually high** — 6 sessions in 7 days (EFX Tue/Thu/Sat + Workout A Wed/Mon + Workout B Fri), denser than the "3 strength + 2 EFX/week" baked into the current ~2,050 maintenance estimate. Real maintenance may be higher than modeled right now. Alternative/contributing explanations not ruled out: low-fiber Aug 9 (~4.8g) meaning less gut content at the Aug 10 AM weigh-in, or earlier weeks' faster pace partly being water that's now settling. One week isn't enough to isolate the cause — watch next week's trend before revising the maintenance estimate in [[bmi-increase-plan]]. |
 
 > Target true tissue gain: ~0.8–1 kg/month. Week-1 +0.5kg is a positive signal but partly water/food volume — real rate only shows over 3–4 weeks. **Maintenance ≈ 2,000–2,050 kcal/day** *(revised 2026-07-31: Mifflin BMR ~1,576 at 59.1 kg × 1.3 light-activity. The old ~1,900 "sedentary" figure expired Jul 25 when [[exercise-plan]] training actually started — 3 strength + 2 EFX sessions/week is no longer negligible.)* So **~2,300–2,400/day is a working ~300–400 surplus** — still the right band, but tighter than the old math implied. Real lever for *muscle* gain: resistance training, not more food. See [[bmi-increase-plan]] for the full revised projection.
 
@@ -972,15 +973,269 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | | 2 eggs | 140 | 12g | 0g |
 | | 2 idli (restaurant style) | 90 | 4g | 2g |
 | | Sambar (small cup) | 70 | 3g | 2g |
-| **Running** | | **~2,498 kcal** | **~116.5g** | **~37.4g** |
+| **Total** | | **~2,498 kcal** | **~116.5g** | **~37.4g** |
 
-**Notes (day open — verdict held):**
+**Notes — 2026-08-05 final:**
 
-✅ **No beef** — 4th clean day since the Aug 1–2 stretch. Workout A + warmup done; balance training still not confirmed (5th day running unconfirmed since Jul 31).
+🔴 **Calories ~100–200 over the 2,300–2,400 band** — dinner ran heavier than planned (banana + eggs + idli + sambar stacked on top of each other). Protein 116.5g and fiber 37.4g both comfortably clear target.
 
-⚠️ **Dark chocolate 2x/day today (after breakfast + after lunch)** — new pattern replacing tea, agreed as within the same ~20g daily dose, not additive. First day of this — worth checking if the afternoon energy dip returns now that the after-lunch piece is a half-dose instead of the full 20–30g.
+✅ **Dinner respected the rule** — eggs + veg, no chicken/fish, before 6:30 PM.
 
-**Note:** Workout A day ([[exercise-plan]]) — post-workout protein timing applies (milk + 2 eggs within 30–45 min already covered by the omelette + milkshake). No tea logged with breakfast — flag if you had one, empty-stomach caffeine rule per [[profile]]. Red banana at dinner — room-temp per the sinus-timing caveat in [[gastric-remedies]].
+✅ **No beef** — 4th clean day since the Aug 1–2 stretch. Workout A + warmup done; balance training still not confirmed (5th day running unconfirmed since Jul 31 baseline).
+
+⚠️ **Dark chocolate/tea experiment muddied** — after-lunch tea was added on top of the after-lunch dark chocolate instead of replacing it, so today doesn't cleanly test the swap. After-breakfast slot did work as a clean replacement.
+
+⚠️ **Bun butter jam (new item)** — reported headache + lethargy afterward. Flagged as unconfirmed; two candidate mechanisms (refined-carb/sugar crash vs. maida gas-vagal pathway), not yet distinguished. Watch next occurrence.
+
+---
+
+## 2026-08-06 (Thursday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 1 cup rice | 200 | 4g | 0.6g |
+| | Chicken coconut milk gravy + 4 pieces (skinless) | 400 | 36g | 1.5g |
+| | Chicken 65 — 2 pieces | 120 | 8g | 0g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Chicken Buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 2 tbsp PB | 190 | 8g | 2g |
+| | 1 red banana (medium) | 110 | 1.5g | 3g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | 4 idli (restaurant style) | 180 | 8g | 4g |
+| | Sambar — 2 small cups | 140 | 6g | 4g |
+| | Tomato chutney — 2 tbsp | 35 | 0.7g | 0.7g |
+| | Coconut chutney — 2 tbsp | 40 | 0.7g | 0.7g |
+| | 2 egg omelette | 180 | 12g | 0g |
+| **Total** | | **~2,295 kcal** | **~133.9g** | **~26.7g** |
+
+**Notes — 2026-08-06 final:**
+
+✅ **On target** — ~2,295 kcal lands just under the 2,300–2,400 band, fiber 26.7g right in range, protein 133.9g well clear of the floor (extra from doubling up chicken breakfast + lunch). First day in 5 to close *under* the band instead of over.
+
+✅ **Dinner respected the rule** — idli/sambar/eggs, no chicken/fish, light and vegetarian-leaning after a chicken-heavy breakfast and lunch.
+
+⚠️ **Chicken 65 at breakfast** — confirmed spicy/histamine trigger, watch for body heat/headache tonight. No beef today — streak continues.
+
+**Note:** Chicken coconut milk gravy is a new dish — no established value in the log, estimated (skinless chicken factored in, coconut milk richness roughly offsets). Assumed 1 cup rice — flag if different. Rice + chicken breakfast is fine on the no-chicken/fish rule (that's dinner-only) — but Chicken 65 is a confirmed spicy/histamine trigger per [[profile]], and skinless doesn't change the chilli/masala load. Fiber ~2.1g so far — will need lunch/dinner to carry the whole day's fiber target.
+
+---
+
+## 2026-08-07 (Friday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 2 tbsp soaked padam pisin (almond gum) | 35 | 0g | 4g |
+| | ½ orange | 20 | 0.5g | 1g |
+| | Half pomegranate | 50 | 0.8g | 2g |
+| | 2 egg cheese omelette | 245 | 16g | 0g |
+| | Milkshake (usual recipe) | 635 | 22.8g | 9g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Chicken buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana (medium) | 110 | 1.5g | 3g |
+| | 2 tbsp PB | 190 | 8g | 2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | 3 idli (restaurant style) | 135 | 6g | 3g |
+| | 2 cup sambar | 140 | 6g | 4g |
+| | 1 tbsp coconut chutney | 20 | 0.3g | 0.3g |
+| | 2 eggs | 140 | 12g | 0g |
+| **Total** | | **~2,385 kcal** | **~120.9g** | **~38.3g** |
+
+**Notes — 2026-08-07 final:**
+
+✅ **In band** — 2,385 kcal lands squarely in the 2,300–2,400 target, first fully on-target day since Aug 3.
+
+✅ **Protein strong** — ~120.9g, right at the top of the 100–120g target.
+
+✅ **Fiber very high** — ~38.3g, well over target (driven by padam pisin, pomegranate, orange, sambar, idli).
+
+✅ **Dinner respected the rule** — idli/sambar/chutney/eggs, no chicken/fish.
+
+✅ **No beef** — 6th clean day since the Aug 1–2 stretch.
+
+**Note:** "2 egg cheese omelette" — ghee/butter not specified, used the more common butter-cheese variant (245/16g/0g) rather than the ghee variant (245/15g/0g). Flag if this was ghee-based. Day closed retroactively — dinner was reported as already finished when the Aug 8 breakfast was logged, with no explicit "close the day" from Vignesh; flag if anything was eaten after the logged dinner.
+
+---
+
+## 2026-08-08 (Saturday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | ½ orange | 20 | 0.5g | 1g |
+| | 2 egg ghee omelette | 185 | 12g | 0g |
+| | Milkshake (usual recipe) | 635 | 22.8g | 9g |
+| | 2 tbsp soaked padam pisin (almond gum) | 35 | 0g | 4g |
+| | Half apple | 45 | 0.2g | 2g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Half beef mandi | 480 | 20g | 2g |
+| | Half Kerala beef biryani (no meat pieces) | 270 | 5g | 1g |
+| | 5 beef roast pieces | 375 | 30g | 1g |
+| | Mayonnaise (3 tbsp) | 195 | 0g | 0g |
+| | Cabbage salad (small cup) | 35 | 1g | 2g |
+| | Half egg white | 9 | 1.8g | 0g |
+| | 2 small piece chicken | 120 | 8g | 0g |
+| Dinner | — | — | — | — |
+| **Total** | | **~2,439 kcal** | **~102.3g** | **~22g** |
+
+⚠️ **Heavy beef lunch — breaks the 6-day clean streak** (last beef stretch was Aug 1–2, flagged as suspected histamine/body-heat trigger with a 24–36h delayed onset — see [[profile]] hard constraints). Three separate beef dishes (mandi, biryani, roast) in one sitting is a large red-meat/purine load in one meal — same pattern that triggered the Aug 2 gout-risk warning given the seronegative inflammatory arthritis/SI-joint history. **Watch for delayed body heat/headache Aug 9–10, and joint/SI discomfort.**
+
+🔴 **Already at the calorie ceiling before dinner** — ~2,499 kcal from lunch alone, at the top of the 2,300–2,500 daily target with dinner not yet eaten. Protein ~105g, within band but with no room left. **Dinner should be skipped or water/tea only** — anything more pushes this into a large surplus day.
+
+**Note:** Mandi, biryani (no-meat), and beef roast portion sizes are new/estimated — no established values in the log for these dishes. "2 small piece chicken" corrected per Vignesh to the Chicken 65-style estimate (60 kcal/piece established rate) rather than the larger mandi/roast-piece assumption used initially. Mayonnaise corrected to 3 tbsp per Vignesh (65 kcal/tbsp, per established ~2 tbsp = 130 kcal rate). **Closed retroactively** — dinner outcome was never confirmed; Vignesh moved straight to reporting the next day's full log. Flag if dinner was eaten on top of this lunch total.
+
+---
+
+## 2026-08-09 (Sunday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Full day (reported as one block) | 3 cup rice | 600 | 12g | 1.8g |
+| | 200g mutton chest meat | 700 | 36g | 0g |
+| | 250g mutton intestine (fat portion) | 750 | 20g | 0g |
+| | Small popcorn | 200 | 3g | 3g |
+| | 1 scoop ice cream | 150 | 2.5g | 0g |
+| | 1 tea | 35 | 1g | 0g |
+| **Total** | | **~2,435 kcal** | **~74.5g** | **~4.8g** |
+
+🔴🔴 **Organ meat — highest-purine food category, per your own profile.** "Mutton fat" was intestine (offal), not rendered fat — [[meal-log]]'s own Jul 15 entry already flags organ meats (brain/liver) as "the highest-purine foods there are," directly relevant given the monitored uric acid (5.3) and seronegative inflammatory arthritis/SI-joint history. 250g of intestine is a substantial organ-meat serving, not a minor addition.
+
+🔴 **2nd straight day of heavy red meat** — Aug 8 was a beef feast (mandi/biryani/roast), now Aug 9 is 200g mutton meat + 250g mutton intestine. Two consecutive heavy red-meat/organ-meat days replicates the exact pattern that produced the "textbook gout-attack territory" warning after the Aug 1–2 stretch. Watch for joint/SI discomfort and body heat/headache over the next 24–48h.
+
+✅ **Calories actually near target** (~2,435, close to the 2,300–2,500 band) now that the item is correctly identified as intestine rather than pure fat — the earlier "extreme fat surplus" read was based on the wrong assumption and is now superseded.
+
+⚠️ **Protein under target** (~74.5g vs 100–120g). Fiber collapsed to ~4.8g (no vegetables, no fruit, no dal) — below the ~11g floor that previously triggered constipation; watch for that over the next 1–2 days.
+
+**Note:** Reported after the fact as one full-day block, not split by meal. Mutton chest meat and mutton intestine are new items with no established values — estimated at ~350 kcal/100g (36g protein/100g) for the chest meat and ~300 kcal/100g (8g protein/100g, mostly fat/connective tissue) for the intestine, assuming oil-fried preparation; flag if prepared differently.
+
+---
+
+## 2026-08-10 (Monday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Half apple | 45 | 0.2g | 2g |
+| | Two handfuls sweet corn | 96 | 3.4g | 2.5g |
+| | 2 tbsp soaked padam pisin (almond gum) | 35 | 0g | 4g |
+| | Milkshake (usual recipe) | 635 | 22.8g | 9g |
+| | 2 egg ghee cheese omelette | 245 | 15g | 0g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | 2 handfuls rice | 160 | 3g | 0.5g |
+| | 1 chicken leg piece (BBQ) | 180 | 22g | 0g |
+| | 3 small pieces BBQ fish | 100 | 15g | 0g |
+| | 2 small mutton pieces | 100 | 8g | 0g |
+| | Kuboos — 2 pieces | 330 | 10g | 2g |
+| | Mayonnaise (½ cup ≈ 2 tbsp) | 130 | 0g | 0g |
+| | Prawn — 3 pieces | 60 | 10g | 0g |
+| | Squid — 2 pieces | 70 | 7g | 0g |
+| | Soup — 4 tbsp | 30 | 2g | 0.2g |
+| | Kunafa — 1 spoon | 80 | 1g | 0.3g |
+| | Ice cream — 2 spoons | 75 | 1.2g | 0g |
+| | Mojito — half glass | 75 | 0g | 0g |
+| | Tiny pancake with chocolate | 100 | 2g | 0.5g |
+| | 1 handful salad | 20 | 0.7g | 1.5g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | — | — | — | — |
+| **Total** | | **~2,636 kcal** | **~125.3g** | **~22.5g** |
+
+🔴🔴 **THIRD consecutive purine-heavy day — this is the Aug 1–2 pattern repeating, and worse.** Aug 8 beef feast → Aug 9 mutton + 250g intestine (organ meat) → Aug 10 mutton + **prawn + squid** (shellfish). [[bmi-increase-plan]]'s own "Avoid in excess (high purine)" list names **mutton, prawns, organ meats, alcohol, shellfish** — this three-day run hits every single item on it. The Aug 2 entry called a comparable stretch "textbook gout-attack territory" given uric acid 5.3 + seronegative inflammatory arthritis/SI-joint history. **That warning applies with more force now, not less — three days beats two.** Watch joint/SI symptoms closely; a uric acid retest is worth moving up rather than waiting for the Oct panel.
+
+⚠️ **Mojito — confirm whether alcoholic.** If it contained rum, alcohol blocks urate excretion for ~24h (flagged explicitly in the Aug 2 entry) and lands on top of the heaviest purine stack in the log. Logged as non-alcoholic (virgin) for now — correct this if wrong, because it changes the risk read materially.
+
+🔴 **~2,601 kcal before dinner** — ~100 over the 2,500 ceiling with dinner still to come. Protein ~124.3g, just past the 100–120g band. **Dinner should be skipped, or water/tea only,** to keep the day roughly in range. *(Figures revised downward from an initial ~2,881 after Vignesh corrected fish, mutton, and pancake to small/tiny portions.)*
+
+⚠️ **Fiber ~22.5g, carried almost entirely by breakfast** (17.5g of it) — the whole lunch contributed only ~5g despite its size. Just under the 25–30g target. Third weak-fiber day in a row (Aug 9 was ~4.8g); the constipation watch from Aug 9 is still open.
+
+**Note:** "Cubus" read as **kuboos** (Arabic flatbread) given the BBQ/Middle-Eastern spread — flag if it meant something else. "½ cup mayonnaise" estimated at ~2 tbsp, following the Aug 8 correction where "1 cup" turned out to be 3 tbsp; flag if it was more. BBQ fish, squid, kunafa, mojito, and pancake are all new items with no established values in the log — portion sizes estimated. **Closed retroactively** — dinner never reported; Vignesh moved to the next day's log. No after-lunch buttermilk or cumin water logged either, on exactly the heavy/fat-dense meal profile [[gastric-remedies]] flags as highest-risk for the post-lunch gastric headache.
+
+---
+
+## 2026-08-11 (Tuesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 1 tea (**before** breakfast — see flag) | 35 | 1g | 0g |
+| | 5 cashews | 45 | 1.5g | 0.3g |
+| | 5 pistachios | 20 | 0.7g | 0.3g |
+| | 2 tbsp soaked padam pisin (almond gum) | 35 | 0g | 4g |
+| | 1 tbsp peanut butter | 95 | 4g | 1g |
+| | Overnight oats — 40g rolled oats | 150 | 5g | 4g |
+| | ↳ 1 red banana | 110 | 1.5g | 3g |
+| | ↳ half apple | 45 | 0.2g | 2g |
+| | ↳ half pomegranate | 50 | 0.8g | 2g |
+| | ↳ 6 almonds | 42 | 1.5g | 0.9g |
+| | ↳ 10 pumpkin seeds | 15 | 0.8g | 0.2g |
+| | ↳ 1 tsp flax seeds | 18 | 0.6g | 1g |
+| | ↳ 1 tsp chia seeds | 20 | 0.7g | 1.4g |
+| | ↳ 3 walnut halves | 40 | 1g | 0.4g |
+| | ↳ 5 dry grapes (raisins) | 15 | 0.15g | 0.2g |
+| | ↳ 100ml yogurt | 60 | 3.5g | 0g |
+| | 2 egg ghee omelette | 185 | 12g | 0g |
+| Lunch | Chicken buddha bowl (non-veg) | 595 | 45g | 10g |
+| | 1 red banana (medium) | 110 | 1.5g | 3g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| | 2 tbsp PB | 190 | 8g | 2g |
+| Dinner | Paneer fried rice | 500 | 16g | 2g |
+| **Total** | | **~2,445 kcal** | **~108.5g** | **~37.9g** |
+
+✅ **Best-constructed breakfast in the log.** ~20.7g fiber from breakfast alone — nearly the entire 25–30g daily target, from **calorie-dense** sources (oats, nuts, seeds, dried fruit), which is exactly the rule [[bmi-increase-plan]] specifies: fiber that adds gain calories rather than filling the stomach with low-cal bulk. Directly answers the three consecutive weak-fiber days (Aug 9 ~4.8g, Aug 10 ~22.5g carried entirely by breakfast) and the open constipation watch.
+
+✅ **Composition is better** — oats, flax, chia, and walnuts are four of the best HDL/omega-3 items on the [[bmi-increase-plan]] calorie-dense fiber table, all in one bowl. Directly relevant at HDL 32.
+
+⚠️ **But the swap loses ~70 kcal and ~7g protein vs the milkshake it replaced** (635/22.8g → 565/15.75g). Protein is the real gap — the shake's milk was carrying it. **Fix: make the oats with ~200ml full-fat milk in addition to the yogurt** (+~130 kcal, +~6.5g protein). [[bmi-increase-plan]] already specifies "oats in full-fat milk, 40g ≈ 300 kcal" — this bowl used 100ml yogurt (60 kcal) as its only liquid, which is why it under-delivers.
+
+> 🔴 **The Aug 3 "~150 kcal/day trim" recommendation is now STALE — do not apply it.** It was written when the gain rate was ~1.9 kg/month (too fast). **The 2026-08-10 weigh-in shows the rate collapsed to +0.05 kg for the week.** Cutting calories against a flatlining trend is backwards. Until the trend re-establishes, the priority is holding **2,300–2,500 kcal and 100–120g protein** — not trimming. Any earlier note in this log framing a calorie reduction as a win is superseded by this.
+
+⚠️ **Tea taken BEFORE breakfast — breaks a documented hard rule.** [[profile]] constraint: *"Caffeine: coffee only after food, never on empty stomach (cortisol spike)."* [[anxiety-stress]] states it more strongly — *"Coffee after food, not before — no exceptions. Caffeine on empty stomach directly triggers cortisol release before the day even starts."* Tea is lower-caffeine than coffee but the mechanism is the same, and this lands on day 1 of the new 5:30 AM wake, when the cortisol awakening response is already elevated. **Move tea to after the meal.**
+
+🔴 **Reported same morning: "stomach fully, dumped feeling" despite the lower calorie count.** This is the exact failure mode [[bmi-increase-plan]] names: *"High-volume low-cal fiber fills the stomach and sabotages the calorie target — the opposite of what an underweight person needs."* Three mechanisms stacked:
+> 1. **Soluble fiber gels.** Oat beta-glucan, chia, and flax all absorb many times their weight in water — chia roughly 10×. 40g oats + 1 tsp chia + 1 tsp flax expands into far more stomach volume than 565 kcal would suggest.
+> 2. **The ramp was skipped.** Fiber went from ~4.8g (Aug 9) to **20.7g in a single breakfast** — a ~4× jump. [[gastric-remedies]] says explicitly: *"Ramp legumes/chia slowly and hydrate in daytime — you're gastric-prone."*
+> 3. **Fat + cold slow gastric emptying.** Nuts, PB, and ghee omelette are fat-dense; overnight oats with yogurt are eaten cold. Both delay emptying, extending the fullness.
+>
+> **Fix — keep the composition, cut the single-sitting volume:** split the bowl (half at breakfast, half mid-morning ~10:30 as the [[bmi-increase-plan]] snack slot already allows); drop chia and flax to ½ tsp each and ramp back over 2 weeks; add ~200ml full-fat milk (calories without proportional bulk). **Do not add more fiber at lunch today.**
+
+**Note:** Breakfast comparison vs Aug 10 (1,091 → 980, −111 kcal): omelette had no cheese (−60), sweet corn dropped (−96), half apple absorbed into the bowl (−45), milkshake→oats (−70), offset by added cashew/pista/PB (+160). **The milkshake swap is not the main driver of the drop** — the missing cheese and sweet corn account for more of it.
+
+**Notes — 2026-08-11 final:**
+
+✅ **Calories and protein both in band** — ~2,445 kcal (near the top, correct given the flatlined gain rate) and ~108.5g protein. Lunch and dinner carried ~73g protein after the light breakfast, as needed.
+
+✅ **Purine run broken** — first day since Aug 7 with no beef, mutton, organ meat, or shellfish. The uric-acid retest recommendation from Aug 10 still stands regardless.
+
+✅ **Dinner respected the rule** — paneer fried rice, no chicken/fish, low-fiber (the correct call given fiber was already over target).
+
+🔴 **Fiber ~37.9g — 8–13g over target, and symptomatic.** Bloating/fullness reported after the 20.7g single-sitting breakfast bolus. See the new [[gastric-remedies]] "Fiber Ramp Rate" section — this day is the source case for it.
+
+⚠️ **Tea taken before breakfast** — breaks the documented no-caffeine-on-empty-stomach rule, on day 1 of the 5:30 AM wake.
+
+⚠️ **Sleep disturbed 2 nights running** (vivid/disturbing dreams) — reported same day. Candidate causes logged in conversation: REM rebound from the new 7.5h window, the unconfirmed-alcohol mojito (Aug 10), and possible skipped dinners Aug 8/Aug 10. **Two open questions never answered: was the mojito alcoholic, and was dinner eaten on Aug 8 and Aug 10?**
+
+---
+
+## 2026-08-12 (Wednesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | 1 glass chicken broth | 50 | 6g | 0g |
+| | 2 tbsp soaked padam pisin (almond gum) | 35 | 0g | 4g |
+| | 5 cashews | 45 | 1.5g | 0.3g |
+| | 5 pistachios | 20 | 0.7g | 0.3g |
+| | Half apple | 45 | 0.2g | 2g |
+| | Half small guava | 20 | 0.4g | 1.5g |
+| | Half pomegranate | 50 | 0.8g | 2g |
+| | 50g chicken | 82 | 15g | 0g |
+| | Milkshake (usual recipe) | 635 | 22.8g | 9g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | — | — | — | — |
+| Dinner | — | — | — | — |
+| **Running** | | **~1,017 kcal** | **~48.4g** | **~19.1g** |
+
+✅ **Two corrections from yesterday landed.** Tea is **after** breakfast, not before — the caffeine rule is respected. And fiber is a moderate ~17.1g with no chia/flax gel bolus, matching the ramp guidance in [[gastric-remedies]] after yesterday's bloating.
+
+✅ **Milkshake back, and protein nearly doubled vs yesterday's breakfast** (~47.6g vs ~35g) — the right direction with the gain rate flatlined. The Aug 3 trim recommendation remains stale; do not re-apply it.
+
+**Note:** Chicken broth and chicken at breakfast are fine — the no-chicken/fish restriction is **dinner-only**. Broth estimated as a clear/light preparation (50 kcal); if it was rich/fatty homemade stock, closer to 120 kcal. Half small guava is a new item — guava is unusually fiber-dense (~5g/100g), estimated at 1.5g.
 
 ---
 
@@ -1018,6 +1273,13 @@ Weigh **morning, empty stomach, post-toilet, same conditions.** Track the 4-week
 | 2026-08-02 | ~2,500 | ~140.7g | ~8.4g | ✅ Calories over band (~450 surplus), **protein 141g — best in weeks.** 🔴 **Beef at all 3 meals — 5th consecutive beef meal in 36h**, highest purine stretch since Jul 16–19. 🔴 **Fiber 8.4g = 2nd worst day in log**; 4th straight weekend failure. ⚠️ Dinner 930 (over cap, fried, late). Sat-fat at all 3 meals vs HDL 32 |
 | 2026-08-03 | ~2,433 | ~121.5g | ~37.2g | ✅ **On target** (~33 over band), all three targets cleared. No beef — 2nd clean day after the 5-meal purine stretch. Light egg dinner, rules respected. Workout B day. |
 | 2026-08-04 | ~2,615 | ~123.5g | ~44.5g | 🔴 **Over band** (~215–315 over) — trim recommendation still not applied. Best fiber day in the log. No beef — 3rd clean day. EFX 18 min (Week 3 start). |
+| 2026-08-05 | ~2,498 | ~116.5g | ~37.4g | 🔴 **Over band** (~100–200 over) — dinner ran heavy. Protein/fiber both strong. No beef — 4th clean day. Bun butter jam (new item) linked to headache/lethargy — unconfirmed, watch next time. Workout A + warmup ✅. |
+| 2026-08-06 | ~2,295 | ~133.9g | ~26.7g | ✅ **On/under target** — first day in 5 to close under the band. Protein high (double chicken meal). Fiber right in range. Chicken 65 at breakfast — watch for evening body heat/headache. No beef. |
+| 2026-08-07 | ~2,385 | ~120.9g | ~38.3g | ✅ **On target** — 2nd day in a row in band. Protein at top of range, fiber very high. Dinner respected rule. No beef — 6th clean day. |
+| 2026-08-08 | ~2,499 | ~105.3g | ~22g | 🔴 **Beef streak broken** — heavy beef lunch (mandi/biryani/roast), 6-day clean streak over. At calorie ceiling from lunch alone; dinner never confirmed, closed retroactively. |
+| 2026-08-09 | ~2,435 | ~74.5g | ~4.8g | 🔴 **Organ meat day** — "mutton fat" was intestine (offal), highest-purine food category per this log's own Jul 15 flag. 2nd straight heavy red/organ-meat day (mutton after Aug 8 beef) — same gout-risk pattern as the Aug 1–2 stretch. Calories near target; protein under target; fiber collapsed to ~4.8g — watch for constipation. |
+| 2026-08-10 | ~2,636 | ~125.3g | ~22.5g | 🔴🔴 **3rd consecutive purine-heavy day** — BBQ spread with mutton + prawn + squid, hitting every item on the "avoid in excess" list (mutton, prawns, shellfish, organ meats, alcohol) across Aug 8–10. Over the band; protein over ceiling; fiber carried entirely by breakfast. Dinner unconfirmed, closed retroactively. **Move the uric acid retest up.** |
+| 2026-08-11 | ~2,445 | ~108.5g | ~37.9g | ✅ **Calories + protein both in band**; purine run broken (first clean day since Aug 7). 🔴 Fiber 8–13g over target and **symptomatic** — bloating from a 20.7g single-sitting oats/chia/flax breakfast; source case for the new [[gastric-remedies]] fiber-ramp section. ⚠️ Tea before breakfast (rule break); 2nd night of disturbed sleep. |
 
 > **Fiber trend — RESOLVED as of ~Jul 22 (note revised 2026-07-31).** The old finding ("under target every single day, best ~22g, worst ~11g, all fiber rides on the Buddha bowl") described Jul 9–16, when bowl-less days collapsed to ~8g. **Since Jul 22 fiber has been at or over target every logged day** (26.6 → 32.7 → 36.7 → 39.2 → 37g) — padam pisin, fruit, and the seeds/nuts in the milkshake now provide a second independent source, so the bowl is no longer a single point of failure. Constipation resolved Jul 22.
 >

@@ -55,6 +55,14 @@ Every **20 minutes** → look at something **20 feet away** → for **20 seconds
 
 ---
 
+## Blue Light Glasses (recorded 2026-08-08)
+
+Wearing blue light filtering glasses during office hours — self-reported reduction in eye strain.
+
+**Caveat:** evidence for blue light glasses reducing eye strain is mixed — most RCTs find no significant difference vs. plain lenses; symptom relief is more plausibly explained by reduced glare/brightness or a placebo effect. Doesn't replace the 20-20-20 rule, blinking, or eye drops — those address the actual mechanism (reduced blink rate → dry eyes). Keep using it if it subjectively helps, but don't let it substitute for the routine below.
+
+---
+
 ## Eye Drops
 
 **Lubricating eye drops (artificial tears):**

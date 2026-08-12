@@ -159,7 +159,10 @@
       "Bash(grep -n \"^rev:\\\\|last_revised\\\\|^---$\" RWA-STO-EU-Compliance-Criteria.md RWA-STO-EU-Compliance-Criteria-Simple.md)",
       "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^---$\" \"EU RWA Compliance Trigger Checklist.md\")",
       "Bash(sed -n '1,5p;$p')",
-      "Bash(awk '/No beef — 3rd clean day/{print NR; exit}' meal-log.md)"
+      "Bash(awk '/No beef — 3rd clean day/{print NR; exit}' meal-log.md)",
+      "Bash(awk 'NR>=664 && NR<=680' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md\")",
+      "Bash(awk 'NR>=692 && NR<=740' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md\")",
+      "Bash(grep -n \"^#\\\\{2,3\\\\} \" dora-checklist.md)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
