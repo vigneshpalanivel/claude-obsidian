@@ -34,6 +34,33 @@ status: active
 
 ---
 
+## 🔴 EFX — Seated Position Adopted (recorded 2026-08-14)
+
+**Reported:** standing EFX produced spine pain at ~15 min. Switching to a **seated position with a few minutes standing** eliminated it across two consecutive sessions.
+
+**This is a legitimate adaptation and becomes the default.** The mechanism is consistent with the known SI joint history: standing elliptical work drives repetitive pelvic rotation *under axial load* — body weight passing through the pelvis with every stride, one side at a time. That is a close match to the asymmetric-pelvic-loading pattern that started the SI problem originally. Seated removes the axial load entirely; the spine is supported and the legs move without bearing weight.
+
+### But it has a real cost — don't go fully seated
+
+> ⚠️ **Seated cardio is not weight-bearing, and weight-bearing is what stimulates bone.** [[healthspan-80]] Pillar 3 is bone density, and bone responds to *load through the skeleton*, not to cardiovascular effort. Going 100% seated removes EFX from the bone-loading column entirely.
+
+**Your instinct to keep a few minutes standing was correct — protect it:**
+
+| Rule | Detail |
+|------|--------|
+| **Default position** | Seated for the bulk of the session |
+| **Keep standing segments** | 3–5 min total, broken into short blocks (e.g. 2 min at the start, 2 min at the end) rather than one long stretch — **pain appeared at ~15 min continuous, so stay well under that threshold** |
+| **Stop rule** | Any sacral or lower-back sensation → sit down immediately. Do not finish the segment. |
+| **Bone loading comes from elsewhere now** | Strength sessions (all weight-bearing), step-ups, wall sits, calf raises, and ordinary walking. These carry Pillar 3 while EFX carries cortisol disposal and heart health. |
+
+### 🔴 Report this to Dr. Rajapandian — don't just work around it
+
+**New activity-triggered spine pain is a clinical data point, not just a technique problem.** The seated switch treats the symptom; it says nothing about why standing work started hurting at 15 min. Relevant context to bring: CRP resolved to 0.10 (Jan 2024), **sulfasalazine status is listed as "likely stopped — confirm with ortho"** in [[profile]], and structured training only began Jul 25 2026. If the medication actually was stopped and activity-related pain is now appearing, that sequence matters and the ortho should hear it.
+
+**Ask specifically:** *"Standing elliptical starts causing lower back/sacral pain at 15 minutes. Seated is pain-free. Is this a mechanical loading issue I can train around, or a sign the inflammation is active again? Should I still be on sulfasalazine?"*
+
+---
+
 ## ⏱ Session Time Budget — 45 Min Hard Cap (set 2026-08-11)
 
 > 🔴 **Audit finding: Workout B was already over budget before any lat work was added.** 11 exercises × 3 sets = 33 sets. At ~40 sec work + 60–90 sec rest, that's ~55 min of main work, plus 3.5 min warmup and 2 min balance = **~60 min**. The "25–30 min" figure in the schedule table above was never achievable as the exercise list was written. Workout A (8 exercises = 24 sets) runs ~40 min — inside the cap, but with no room to add anything.
@@ -81,20 +108,30 @@ status: active
 
 **Focus:** Form and control. No rushing. All bodyweight or 3.5kg.
 
-### Workout A
+### Workout A — restructured for chest / forearms / abs (revised 2026-08-14)
 
-| # | Exercise | Sets × Reps | Cue |
-|---|----------|-------------|-----|
-| 1 | **Glute bridge** | 3 × 15 | Squeeze glutes at top, hold 2 sec. Protects SI joint. |
-| 2 | **Dead bug** | 3 × 10/side | Lower back flat on floor the entire time — if it arches, you've gone too far |
-| 3 | **Floor push-up** | 3 × 15 | Full range, chest touches floor. Hands shoulder-width. **Primary progressive overload exercise — progress through variations below.** |
-| 4 | **One-arm dumbbell row** (3.5kg, knee on chair) | 3 × 12/side | Back flat, don't rotate spine, pull elbow to hip |
-| 5 | **Dumbbell bicep curl** (3.5kg) | 3 × 12 | Standing, controlled — no swinging at the shoulder |
-| 6 | **Wall sit** | 3 × 30 sec | Back flat against wall, thighs parallel to floor — isometric quad work, zero spine movement. Build to 60 sec. |
-| 7 | **Bodyweight squat** | 1 × 10 | Controlled, quarter-to-parallel depth only. Feet shoulder-width, toes slightly out. Stop immediately at any sacral or lower back sensation. Never push to fatigue. **Max 10 reps — volume is what caused the relapse, not the movement.** |
-| 8 | **Calf raises** (bodyweight) | 3 × 20 | Slow up, slow down — against wall for balance |
+**Run in blocks, not as a straight list.** Total ~40.5 min including warmup and balance.
 
-> ⏱ **Workout A runs ~40 min including warmup and balance — inside the 45 min cap, but with no spare room.** If it starts running long, superset **#3 floor push-up with #4 one-arm dumbbell row** (push paired with pull, no rest between) — that alone saves ~5 min. Do **not** add exercises to A without removing something; the lat work lives in B for exactly this reason.
+| Block | Exercise | Sets × Reps | Cue | Time |
+|-------|----------|-------------|-----|------|
+| **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
+| **1 — Push/pull superset** | **Floor push-up** | 3 × 15 | Full range, chest touches floor. **Primary chest overload — progress through the ladder below.** | 9 min |
+| | ↳ paired with **One-arm dumbbell row** (3.5kg, knee on chair) | 3 × 12/side | Back flat, don't rotate spine, pull elbow to hip | |
+| **2 — Chest + arm superset** | **Floor dumbbell fly** (3.5kg) | 3 × 12 | **NEW — chest.** Lying on floor, arms wide in a shallow arc, slight elbow bend. Floor stops the stretch — no shoulder overextension. Flies are done light by design, so 3.5 kg works here. | 7 min |
+| | ↳ paired with **Dumbbell bicep curl** (3.5kg) | 3 × 12 | Standing, controlled — no swinging at the shoulder | |
+| **3 — Leg circuit** — 2 rounds, 15 sec between stations | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec. Protects SI joint. | 10 min |
+| | **Step-up** (low step ~20cm) | 12/side | **REPLACES bodyweight squat.** Unilateral quad + glute work, spine-neutral, no deep hip flexion. Step up with control, lower slowly — don't push off the bottom foot. | |
+| | **Wall sit** | 30–60 sec | Back flat against wall, thighs parallel — isometric quad, zero spine movement. Build to 60 sec, then progress to single-leg. | |
+| | **Calf raises** (bodyweight) | 20 | Slow up, slow down — wall for balance | |
+| **4 — Core (anti-movement only)** | **Dead bug** | 3 × 10/side | Lower back flat on the floor the entire time — if it arches, you've gone too far | 6 min |
+| | **Side plank** | 3 × 20–30 sec/side | **NEW — abs.** From knees first, progress to feet. Hips stacked and lifted, body in one line. See the abs section below for why this specific movement. | |
+| **5 — Forearms** | **Wrist curl** (3.5kg) | 2 × 15 | **NEW.** Seated, forearm resting on thigh, palm up, hand past the knee. Curl the wrist only. | 3 min |
+| | ↳ superset **Reverse wrist curl** (3.5kg) | 2 × 15 | Same position, palm down. Trains the extensors — the side that gets neglected. | |
+| **Balance** | 3-move sequence (see below) | — | Non-negotiable — [[healthspan-80]] Pillar 1 | 2 min |
+
+**Rest:** none within a superset · 60–90 sec after each superset pair · 15 sec between circuit stations, 60 sec between rounds.
+
+> **What changed (2026-08-14) and why:** chest was push-ups only → added floor fly. No forearm work existed → added wrist curls (plus dead hangs already in B). No abs work existed → added side plank. Bodyweight squat replaced by step-up on spine grounds. Time was created by circuiting the leg work and supersetting the upper body — nothing was lost, and the session still lands at ~40.5 min.
 
 ### Workout B — restructured for the 45 min cap (revised 2026-08-11)
 
@@ -219,6 +256,8 @@ Once a quarter, deliberately pick up a physical skill you don't already have (a 
 
 > **Pair this with the Pull-Up Progression Ladder below.** Push-ups alone were the plan's imbalance — pushing without pulling. Run both ladders in parallel.
 
+> ⚠️ **"Only push-ups for chest" is partly a progression problem, not an exercise-selection problem.** Levels 2–6 below are six genuinely different chest stimuli — diamond loads inner chest and triceps, wide loads outer chest, decline shifts to upper chest, archer approaches single-arm loading. You have been running Level 1 since Jul 25. **Moving through the ladder changes the chest stimulus more than adding a new exercise would.** The floor fly (added to Workout A) covers the one thing push-ups genuinely can't — the stretched, adducted position — but the ladder is still the main chest driver until real weight is available. At 3.5 kg a dumbbell chest press is *easier* than a push-up, which is why it stays in Phase 2 pending the 8 kg upgrade.
+
 | Level | Variation | Target | Muscles |
 |-------|-----------|--------|---------|
 | 1 | Floor push-up (standard) | 3 × 20 | Chest, triceps, front shoulder |
@@ -299,6 +338,26 @@ The dead hang has a second benefit specific to you: it applies **gentle axial tr
 
 ---
 
+## Abs — Anti-Movement Only (added 2026-08-14)
+
+**Why there was no abs work before:** most standard ab exercises are on your hard-stop list, and for good reason. Sit-ups and crunches are loaded spinal flexion; Russian twists are loaded rotation; hanging leg raises combine both. All three are contraindicated with seronegative spinal/SI inflammation.
+
+**What replaces them: anti-movement core training.** Instead of *creating* spinal movement against resistance, you *resist* movement while the spine stays neutral. This is the standard approach for anyone training around back pain, and it happens to build the deep stabilisers that actually protect the SI joint.
+
+| Exercise | Trains | Status |
+|----------|--------|--------|
+| **Dead bug** | Anti-extension (stops the lower back arching) | ✅ Already in Workout A |
+| **Bird dog** | Anti-rotation + anti-extension | ✅ Already in Workout B |
+| **Side plank** | Anti-lateral-flexion — quadratus lumborum and the lateral chain | **NEW — added to Workout A** |
+
+> **Why side plank specifically, and not front plank:** the three above are the well-known "big three" for back-pain populations, and you already had two of them without realising it. Side plank is the missing one — and it's the most directly relevant of the three to *your* condition, because it trains the lateral chain that stabilises the pelvis against the asymmetric loading that started your SI problem in the first place (wallet in the back pocket, one-sided pelvic pressure). Front plank was deliberately not added: it duplicates the anti-extension work dead bug already does, and costs session time for little added return.
+
+**Progression:** knees down → feet stacked → feet stacked with top arm raised → feet stacked with a slow hip dip. Advance only when the current level is held cleanly for 30 sec both sides.
+
+**Stop signals:** any sacral or lower-back sensation, or hips sagging. A side plank done with a dropped hip trains nothing and loads the spine — stop the set rather than hold a broken position.
+
+---
+
 ## Phase 2 — Weeks 5–8 (Add Load)
 
 Add these exercises into A and B. Phase 1 movements continue — drop the easier sets if session runs long.
@@ -306,7 +365,7 @@ Add these exercises into A and B. Phase 1 movements continue — drop the easier
 | # | Exercise | Sets × Reps | Cue |
 |---|----------|-------------|-----|
 | + | **Floor dumbbell chest press** (3.5kg each) | 3 × 12 | Lie on floor — safer than bench, eliminates hyperextension risk |
-| + | **Step-up** (bodyweight, low step ~20cm) | 3 × 12/side | Unilateral quad work — spine-neutral, no deep hip flexion. Use stairs. |
+| ~~+~~ | ~~**Step-up**~~ | — | **Moved to Phase 1 (Workout A, 2026-08-14)** — now the primary squat replacement, no longer a Phase 2 addition. |
 | + | **Side-lying hip abduction** | 3 × 15/side | Lie on side, raise top leg — hip stabiliser, protects SI joint |
 | + | **Push-up progression** | 3 × 20 | Advance through the ladder above (diamond, wide, decline) |
 
