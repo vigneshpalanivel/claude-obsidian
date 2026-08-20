@@ -165,6 +165,12 @@ Follow-up after CT PNS (04 Jul 2026: minimal right maxillary sinusitis, S-shaped
 - ⚠️ Patient name on this sheet scrawled — reads like "Prem Selvam"; likely a misread of Vignesh's name or a front-desk error (BP 142/75 matches across both sheets → same patient)
 
 > **Allegra 120mg (fexofenadine) was the ONLY medicine prescribed** — no nasal spray, no eye drops, nothing else. Dr. Arun Ganesh chose a single-antihistamine approach, treating the **allergic driver** behind the sinusitis (see [[eye-strain-remedies]]).
+> 🔴 **Correction recorded 2026-08-19 — the drug is being taken as-needed, not daily.** Vignesh takes Allegra only once symptoms appear, and reports *"if I take it, I feel better the next day."* **That delay is the signature of a preventer being used as a reliever.** Fexofenadine is an H1 **inverse agonist**: it blocks receptors *before* histamine binds and cannot reverse a cascade already running, so a tablet taken after symptoms start is effectively protecting the *following* day. For persistent allergic rhinitis the standard is **continuous daily dosing through the exposure period.**
+>
+> ⚠️ **Duration discrepancy — resolve against the paper script.** This file records **~30 days**; Vignesh recalls **5 days**. If the script was 30 days, he has been under-dosing a course that was already prescribed as daily.
+>
+> **On long-term safety (informational — the decision is Dr. Arun Ganesh's).** Fexofenadine is among the best-characterised drugs for extended daily use: **non-sedating** (does not cross the blood–brain barrier), **no anticholinergic burden** — unlike first-generation antihistamines such as chlorpheniramine, which carry a dementia-risk signal with chronic use — no clinically meaningful tolerance, and OTC status for chronic allergic rhinitis in many countries. **This is not authorisation to extend a prescription.** The correct action is to ask the ENT directly: *"my symptoms are near-daily — should I be on this continuously, and should I add a nasal steroid?"* It is a routine question with a routine answer, and the appointment is worth booking for two other unactioned items anyway (see [[eye-strain-remedies]]: allergen testing, intranasal corticosteroid, antihistamine eye drops).
+
 > **RESOLVED — no surgery was recommended.** Neither sheet mentions septoplasty or turbinate reduction. Management is (1) Allegra for allergic rhinitis + (2) a giddiness workup that excluded inner-ear / neurological red flags. Conservative, medical only. The structural findings (S-septum, turbinate hypertrophy) are noted but not being operated on.
 
 ---
@@ -173,7 +179,7 @@ Follow-up after CT PNS (04 Jul 2026: minimal right maxillary sinusitis, S-shaped
 
 | Medicine | Dose | Time | Purpose | Status |
 |---------|------|------|---------|--------|
-| **Allegra (Fexofenadine)** | 120mg | Once daily | Allergic rhinitis | **ACTIVE** — Dr. Arun Ganesh (ENT), Jul 2026 |
+| **Allegra (Fexofenadine)** | 120mg | Once daily *(prescribed)* — ⚠️ **actually taken PRN** | Allergic rhinitis | **ACTIVE but under-taken** — Dr. Arun Ganesh (ENT), Jul 2026 |
 | Propranolol (Norten) | 10mg | Morning | Anxiety/migraine | **STOPPED ~Jan 2026** |
 | Escitalopram (Citalin) | 5mg | Night | Anxiety/depression | **STOPPED ~Jan 2026** |
 | Melatonin (Melocure) | 3mg | Night 8PM | Sleep | **STOPPED ~Jan 2026** |

@@ -79,6 +79,57 @@ Both herbs add headache-prevention nutrients on top of buttermilk's probiotic + 
 
 ---
 
+## Before Sleep — Overnight Gas Prevention (added 2026-08-18)
+
+> **Why this section exists.** Everything above was written for the **post-lunch** pattern: eat → 1–2h → afternoon headache. A **second, distinct pattern** has since become the dominant one: dinner → overnight fermentation while horizontal → **morning** headache on waking (Jul 8, Aug 12, Aug 13, Aug 18). Different timing, different fix. The lunch protocol does not cover it.
+
+### The honest hierarchy — prevention beats clearance
+
+🔴 **You cannot meaningfully "clear" gas at 9:30 PM.** Once a fermentable load is in the colon and you lie down, gut motility slows and options are limited. **Roughly 80% of the outcome is decided by what was eaten and when, not by anything done at bedtime.** Treat the list below in strict order.
+
+### 1. Timing — the single biggest lever
+
+| Rule | Why |
+|------|-----|
+| **Dinner finished by 6:30 PM** ([[profile]] hard constraint) | Gastric emptying of a mixed meal takes ~2–4h. With sleep at 10 PM this leaves ~3.5h **upright**, which is when emptying and gas transit actually work. |
+| **Nothing at all after 6:30 PM — including "healthy" additions** | The Aug 17 honey (1 tbsp, 9:30 PM) is the case study: taken *for* sleep, followed by a morning gastric headache. Milk, honey, fruit and herbal tea all break this rule. |
+
+### 2. Dinner composition — decided at the plate, not at bedtime
+
+**Eat:** eggs (zero fermentable substrate), rice, curd, paneer, dosa, ghee in moderation.
+**Avoid at dinner:** 🔴 **dal / sambar / legumes** (flagged Aug 12, 13, 17 — *"dal ferments overnight while horizontal"*), raw onion, high-FODMAP fruit (apple, litchi, mango), carbonated drinks, maida, deep-fried food, large fat loads (slow emptying).
+
+### 3. Movement — the most underused, and it's free
+
+- **10–15 minute gentle walk starting ~15–30 min after dinner.** Mechanically advances gas along the colon. This is the same lever as item 5 in the headache-relief list above, applied *preventively*.
+- Not vigorous exercise — that diverts blood from digestion.
+
+### 4. Carminatives — take them **with or right after dinner**, not at bedtime
+
+> ⚠️ Warm omam/cumin water is the strongest option but it is a **liquid**, so it must be taken **before the 6:30 PM cutoff**, not as a bedtime drink. Do not break the rule to apply the remedy.
+
+| Option | Notes |
+|--------|-------|
+| **Pinch of raw omam (ajwain), chewed dry** | Strongest carminative, **no water needed** — the only one with zero rule conflict at any hour |
+| **Fennel (sombu) chewed after dinner** | Classic post-meal carminative, also dry |
+| **Warm omam or cumin water** | Strongest, but take immediately after dinner, before 6:30 PM |
+| **Asafoetida (hing) pinch in warm water** | Fastest acting — reserve for when symptoms have already started, before the cutoff |
+
+### 5. Position — sleep on the LEFT side
+
+**Left-lateral is the correct sleeping position here, all night — not just the 10-minute relief version above.** The stomach's curvature and the orientation of the descending colon both favour left-side lying for gas transit, and it independently reduces reflux. Right-side lying is the worst option for both. **Free, and applies every night.**
+
+### 6. Mechanical help before bed
+
+- **Clockwise abdominal massage, 5 min**, following the colon path (up the right side, across, down the left)
+- **Slight head elevation** — an extra pillow or raising the bed head ~10–15cm, if any reflux component is present
+
+### 🔴 The upstream connection worth naming: fiber overshoot is probably feeding this
+
+**Fiber has run 30–42g on most days against a 25–30g target** (see [[meal-log]] — 36.2, 37.9, 35.6g). **Excess fermentable fiber is more substrate for overnight gas production**, so the fiber overshoot and the morning headaches are plausibly the same problem viewed from two ends. The structural fix is already proven in the log: **half red banana and drop the PB at lunch on Buddha bowl days** — Aug 17 applied it and landed 27.9g; Aug 18 reverted and hit 35.6g before dinner. **Fixing fiber is a gastric intervention, not just a number.**
+
+---
+
 ## Foods to Avoid at Lunch
 
 | Food | Why |

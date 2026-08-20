@@ -6,11 +6,30 @@ status: active
 
 # Exercise Plan — Vignesh
 
-**Equipment:** EFX elliptical + 3.5kg dumbbells (pair) + **pull-up bar** (added 2026-08-10)
-> ⚠️ **3.5 kg will plateau in 2–3 weeks for most dumbbell exercises.** Upgrade to 8 kg minimum by end of Week 3 — non-negotiable for lean gain past month 1. Until then, push-up progressions are the primary hypertrophy driver.
-> 🔴 **The 8 kg upgrade is now overdue** (Week 3 ended ~Aug 15; plan started Jul 25). The pull-up bar does not replace it — they load different movements. Row, curl, and shoulder press are all still stuck at 3.5 kg, which is below a real stimulus for your frame.
+**Equipment:** EFX elliptical + 3kg dumbbells (pair) + **pull-up bar** (added 2026-08-10)
+> 🔴 **EQUIPMENT UPGRADE — OVERDUE, AND THE #1 PRIORITY IN THIS PLAN (revised 2026-08-18).** Week 3 ended ~Aug 15; the plan started Jul 25 and the load has never moved. **Buy a spinlock/adjustable dumbbell set with at least 15 kg loadable per hand** (a 20–30 kg kit with plates, ~₹2,000–4,000 in India). **Do NOT buy another fixed pair — 5 kg would plateau in 3–4 weeks and 8 kg in 3–6 months.** One adjustable purchase covers the entire run to 70 kg and beyond.
+>
+> **Why a single fixed pair cannot work — every lift needs a different load:**
+>
+> | Exercise | Load needed for 8–12 reps at ~60 kg bodyweight |
+> |----------|------------------------------------------------|
+> | Lateral raise | 3–5 kg ← **the only lift 3 kg currently suits** |
+> | Seated shoulder press | 6–8 kg |
+> | Bicep curl | 6–8 kg |
+> | One-arm supported row | 8–12 kg |
+> | Floor chest press | 8–12 kg |
+>
+> ⚠️ **At 3 kg, rows and curls run 25–30 reps — that is endurance work, not hypertrophy.** Hypertrophy requires 6–12 reps taken to within 2–3 reps of failure. On most lifts in Workouts A and B the growth signal right now is close to zero, which is the direct mechanical reason a calorie surplus is partitioning to fat rather than muscle (see [[meal-log]] weight table, 2026-08-17: abdominal fat gain reported at BMI 17.9).
+>
+> **Tie to the BMI target:** 60.6 → 70 kg is +9.4 kg, and Phase 2 (73–75 kg) is +12–14 kg. Getting a meaningful share of that as lean mass needs continuous progressive overload for 12+ months. **The equipment has to outlast the target — only an adjustable set does.**
+>
+> **Progression rule:** when 3 × 12 is clean with no spine or shoulder sensation, add the smallest plate (usually 1.25 kg/side).
+>
+> 🔴 **Two constraints that get MORE important as load climbs, not less:**
+> - **Rows must be supported.** Free bent-over rowing at 10 kg loads the lumbar spine — the exact pattern the SI joint history rules out. Single-arm with the free hand braced on a chair/bench, or chest-supported only.
+> - **Warmup is mandatory on all pressing.** 14+ year left shoulder issue; Jul 29 already demonstrated the cost of skipping it.
 > **Session order:** Warmup (3.5 min) → Workout A or B → Balance training (2 min). Balance goes last — it's not fatiguing and works as a cooldown.
-**Goal:** Muscle gain for BMI 17.4 → Phase 1: 70kg (BMI 20.7, **the floor**) · Phase 2: 75kg (BMI 22.2, **the actual target**). See [[bmi-increase-plan]].
+**Goal:** Muscle gain for BMI 17.9 (60.6 kg, Aug 17 2026) → Phase 1: 70kg (BMI 20.7, **the floor**) · Phase 2: 75kg (BMI 22.2, **the actual target**). See [[bmi-increase-plan]].
 **Long-horizon purpose:** This is the execution layer for Pillars 1–3 of [[healthspan-80]] — muscle, aerobic fitness, and bone density for active independence at 80. Resistance training is a permanent fixture, not a phase.
 **Constraint:** Seronegative spinal/SI joint inflammation — spine-safe only. See [[profile]].
 
@@ -106,7 +125,7 @@ status: active
 
 ## Phase 1 — Weeks 1–4 (Foundation, Spine-Safe)
 
-**Focus:** Form and control. No rushing. All bodyweight or 3.5kg.
+**Focus:** Form and control. No rushing. All bodyweight or 3kg (loads below are the *current* 3 kg figures — revise upward per the equipment table above once the adjustable set arrives).
 
 ### Workout A — restructured for chest / forearms / abs (revised 2026-08-14)
 
@@ -116,17 +135,17 @@ status: active
 |-------|----------|-------------|-----|------|
 | **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
 | **1 — Push/pull superset** | **Floor push-up** | 3 × 15 | Full range, chest touches floor. **Primary chest overload — progress through the ladder below.** | 9 min |
-| | ↳ paired with **One-arm dumbbell row** (3.5kg, knee on chair) | 3 × 12/side | Back flat, don't rotate spine, pull elbow to hip | |
-| **2 — Chest + arm superset** | **Floor dumbbell fly** (3.5kg) | 3 × 12 | **NEW — chest.** Lying on floor, arms wide in a shallow arc, slight elbow bend. Floor stops the stretch — no shoulder overextension. Flies are done light by design, so 3.5 kg works here. | 7 min |
-| | ↳ paired with **Dumbbell bicep curl** (3.5kg) | 3 × 12 | Standing, controlled — no swinging at the shoulder | |
+| | ↳ paired with **One-arm dumbbell row** (3kg, knee on chair) | 3 × 12/side | Back flat, don't rotate spine, pull elbow to hip | |
+| **2 — Chest + arm superset** | **Floor dumbbell fly** (3kg) | 3 × 12 | **NEW — chest.** Lying on floor, arms wide in a shallow arc, slight elbow bend. Floor stops the stretch — no shoulder overextension. Flies are done light by design, so 3 kg works here. | 7 min |
+| | ↳ paired with **Dumbbell bicep curl** (3kg) | 3 × 12 | Standing, controlled — no swinging at the shoulder | |
 | **3 — Leg circuit** — 2 rounds, 15 sec between stations | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec. Protects SI joint. | 10 min |
 | | **Step-up** (low step ~20cm) | 12/side | **REPLACES bodyweight squat.** Unilateral quad + glute work, spine-neutral, no deep hip flexion. Step up with control, lower slowly — don't push off the bottom foot. | |
 | | **Wall sit** | 30–60 sec | Back flat against wall, thighs parallel — isometric quad, zero spine movement. Build to 60 sec, then progress to single-leg. | |
 | | **Calf raises** (bodyweight) | 20 | Slow up, slow down — wall for balance | |
 | **4 — Core (anti-movement only)** | **Dead bug** | 3 × 10/side | Lower back flat on the floor the entire time — if it arches, you've gone too far | 6 min |
 | | **Side plank** | 3 × 20–30 sec/side | **NEW — abs.** From knees first, progress to feet. Hips stacked and lifted, body in one line. See the abs section below for why this specific movement. | |
-| **5 — Forearms** | **Wrist curl** (3.5kg) | 2 × 15 | **NEW.** Seated, forearm resting on thigh, palm up, hand past the knee. Curl the wrist only. | 3 min |
-| | ↳ superset **Reverse wrist curl** (3.5kg) | 2 × 15 | Same position, palm down. Trains the extensors — the side that gets neglected. | |
+| **5 — Forearms** | **Wrist curl** (3kg) | 2 × 15 | **NEW.** Seated, forearm resting on thigh, palm up, hand past the knee. Curl the wrist only. | 3 min |
+| | ↳ superset **Reverse wrist curl** (3kg) | 2 × 15 | Same position, palm down. Trains the extensors — the side that gets neglected. | |
 | **Balance** | 3-move sequence (see below) | — | Non-negotiable — [[healthspan-80]] Pillar 1 | 2 min |
 
 **Rest:** none within a superset · 60–90 sec after each superset pair · 15 sec between circuit stations, 60 sec between rounds.
@@ -140,11 +159,11 @@ status: active
 | Block | Exercise | Sets × Reps | Cue | Time |
 |-------|----------|-------------|-----|------|
 | **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
-| **1 — Vertical push/pull superset** | **Seated dumbbell shoulder press** (3.5kg) | 3 × 12 | Seated = spine supported. Press straight up, don't arch lower back | 9 min |
+| **1 — Vertical push/pull superset** | **Seated dumbbell shoulder press** (3kg) | 3 × 12 | Seated = spine supported. Press straight up, don't arch lower back | 9 min |
 | | ↳ paired with **Pull-up progression** (bar) | 3 × per ladder | **Vertical pull.** Start at Level 1 (dead hang) — see ladder below. No rest between press and bar. | |
 | **2 — Horizontal pull (lat focus)** | **Inverted row / Australian pull-up** (bar) | 3 × 10 | **NEW 2026-08-11 — the lat exercise you can actually load today.** See lat section below. | 5 min |
-| **3 — Upper accessory superset** | **Seated rear delt fly** (3.5kg) | 3 × 12 | Lean forward from seated, elbows out to sides — builds upper back posture | 7 min |
-| | ↳ paired with **Dumbbell tricep kickback** (3.5kg) | 3 × 12 | Hinge forward, upper arm parallel to floor, extend only the forearm | |
+| **3 — Upper accessory superset** | **Seated rear delt fly** (3kg) | 3 × 12 | Lean forward from seated, elbows out to sides — builds upper back posture | 7 min |
+| | ↳ paired with **Dumbbell tricep kickback** (3kg) | 3 × 12 | Hinge forward, upper arm parallel to floor, extend only the forearm | |
 | **4 — Core/hip circuit** — 2 rounds, 15 sec between stations | **Bird dog** | 10/side | Spine neutral, slow — opposite arm + leg, hold 3 sec | 12 min |
 | | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec | |
 | | **Clamshell** | 15/side | Lie on side, knees bent 45°, feet together — lift top knee. Directly stabilises SI joint. | |
@@ -256,7 +275,7 @@ Once a quarter, deliberately pick up a physical skill you don't already have (a 
 
 > **Pair this with the Pull-Up Progression Ladder below.** Push-ups alone were the plan's imbalance — pushing without pulling. Run both ladders in parallel.
 
-> ⚠️ **"Only push-ups for chest" is partly a progression problem, not an exercise-selection problem.** Levels 2–6 below are six genuinely different chest stimuli — diamond loads inner chest and triceps, wide loads outer chest, decline shifts to upper chest, archer approaches single-arm loading. You have been running Level 1 since Jul 25. **Moving through the ladder changes the chest stimulus more than adding a new exercise would.** The floor fly (added to Workout A) covers the one thing push-ups genuinely can't — the stretched, adducted position — but the ladder is still the main chest driver until real weight is available. At 3.5 kg a dumbbell chest press is *easier* than a push-up, which is why it stays in Phase 2 pending the 8 kg upgrade.
+> ⚠️ **"Only push-ups for chest" is partly a progression problem, not an exercise-selection problem.** Levels 2–6 below are six genuinely different chest stimuli — diamond loads inner chest and triceps, wide loads outer chest, decline shifts to upper chest, archer approaches single-arm loading. You have been running Level 1 since Jul 25. **Moving through the ladder changes the chest stimulus more than adding a new exercise would.** The floor fly (added to Workout A) covers the one thing push-ups genuinely can't — the stretched, adducted position — but the ladder is still the main chest driver until real weight is available. At 3 kg a dumbbell chest press is *easier* than a push-up, which is why it stays in Phase 2 pending the 8 kg upgrade.
 
 | Level | Variation | Target | Muscles |
 |-------|-----------|--------|---------|
@@ -273,7 +292,7 @@ Move to the next level when current level feels easy for 3 sets. Run Levels 1–
 
 ## Pull-Up Progression Ladder (added 2026-08-10)
 
-> **Why this matters:** the plan was **push-dominant** before the bar arrived. Push-ups were the primary overload; the only pulling was a one-arm row at 3.5 kg — far too light. Chronic push-without-pull builds forward-rounded shoulders, which makes both the left shoulder irritation and screen-posture neck tension worse. Vertical pulling (lats, mid-back, biceps) was the single biggest gap. **This is the highest-value use of the bar — not the pull-ups themselves, the balance they restore.**
+> **Why this matters:** the plan was **push-dominant** before the bar arrived. Push-ups were the primary overload; the only pulling was a one-arm row at 3 kg — far too light. Chronic push-without-pull builds forward-rounded shoulders, which makes both the left shoulder irritation and screen-posture neck tension worse. Vertical pulling (lats, mid-back, biceps) was the single biggest gap. **This is the highest-value use of the bar — not the pull-ups themselves, the balance they restore.**
 
 > ⚠️ **Do not start at full pull-ups.** A full dead hang puts the left shoulder in maximum distraction — the exact unpositioned-load scenario that flares the 14-year irritation ([[profile]]). Warmup is mandatory before touching the bar, no exceptions.
 
@@ -310,7 +329,7 @@ Move to the next level when current level feels easy for 3 sets. Run Levels 1–
 
 **2. The 8 kg dumbbell upgrade — still the bigger lever**
 
-One-arm dumbbell row (Workout A) is a lat exercise, and it's running at **3.5 kg**. For a 60 kg frame, that's below the threshold that produces adaptation. **Getting to 8 kg will do more for your lats over the next month than any new bar exercise.** This upgrade was flagged as due by Week 3 and is now overdue — see the equipment note at the top of this file.
+One-arm dumbbell row (Workout A) is a lat exercise, and it's running at **3 kg**. For a 60 kg frame, that's below the threshold that produces adaptation. **Getting to 8 kg will do more for your lats over the next month than any new bar exercise.** This upgrade was flagged as due by Week 3 and is now overdue — see the equipment note at the top of this file.
 
 > **Honest ranking of lat levers, best to worst, for the next 4 weeks:** 8 kg dumbbell row > inverted row > pull-up negatives (Level 4) > dead hangs. The bar is a good addition; it is not the bottleneck.
 
@@ -364,7 +383,7 @@ Add these exercises into A and B. Phase 1 movements continue — drop the easier
 
 | # | Exercise | Sets × Reps | Cue |
 |---|----------|-------------|-----|
-| + | **Floor dumbbell chest press** (3.5kg each) | 3 × 12 | Lie on floor — safer than bench, eliminates hyperextension risk |
+| + | **Floor dumbbell chest press** (3kg each) | 3 × 12 | Lie on floor — safer than bench, eliminates hyperextension risk |
 | ~~+~~ | ~~**Step-up**~~ | — | **Moved to Phase 1 (Workout A, 2026-08-14)** — now the primary squat replacement, no longer a Phase 2 addition. |
 | + | **Side-lying hip abduction** | 3 × 15/side | Lie on side, raise top leg — hip stabiliser, protects SI joint |
 | + | **Push-up progression** | 3 × 20 | Advance through the ladder above (diamond, wide, decline) |
@@ -383,11 +402,11 @@ Add these exercises into A and B. Phase 1 movements continue — drop the easier
 
 | Current | Upgrade trigger | Next weight | Why |
 |---------|----------------|-------------|-----|
-| **3.5 kg** | Row, curl, press feel easy for 3 × 15 — likely **Week 2–3** | **8 kg** | Skip 5 kg — too small a jump for your frame; 8 kg gives real stimulus |
+| **3 kg** | Row, curl, press feel easy for 3 × 15 — likely **Week 2–3** | **8 kg** | Skip 5 kg — too small a jump for your frame; 8 kg gives real stimulus |
 | **8 kg** | 3 × 15 feels easy across all exercises — roughly **Month 3–4** | **10–12 kg** | Standard progression for upper body compound work |
 | **10–12 kg** | — | Consult Dr. Rajapandian K | Heavier loads = more spinal stress; need ortho clearance before going heavier |
 
-> **Buy 8 kg pair as soon as 3.5 kg rows and shoulder press stop feeling challenging** — this is likely within 2–3 sessions of starting, not 2–3 weeks. Don't wait until the plateau is obvious; upgrade proactively. A pair of 8 kg dumbbells is the single highest-ROI fitness purchase for your current plan.
+> **Buy 8 kg pair as soon as 3 kg rows and shoulder press stop feeling challenging** — this is likely within 2–3 sessions of starting, not 2–3 weeks. Don't wait until the plateau is obvious; upgrade proactively. A pair of 8 kg dumbbells is the single highest-ROI fitness purchase for your current plan.
 
 ---
 

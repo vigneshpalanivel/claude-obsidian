@@ -18,11 +18,11 @@ Daily workout tracking. See [[exercise-plan]] for the full plan, sets/reps, and 
 |---|----------|-----------------|-------|
 | 1 | Bird dog | — | — |
 | 2 | Glute bridge | — | — |
-| 3 | Seated shoulder press (3.5kg) | — | — |
-| 4 | Seated rear delt fly (3.5kg) | — | — |
+| 3 | Seated shoulder press (3kg) | — | — |
+| 4 | Seated rear delt fly (3kg) | — | — |
 | 5 | Clamshell | — | — |
 | 6 | Single-leg glute bridge | — | — |
-| 7 | Tricep kickback (3.5kg) | — | — |
+| 7 | Tricep kickback (3kg) | — | — |
 | 8 | Side-lying leg adduction | — | — |
 | 9 | Prone hip extension | — | — |
 | 10 | Calf raise | — | — |
@@ -38,8 +38,8 @@ Daily workout tracking. See [[exercise-plan]] for the full plan, sets/reps, and 
 | 1 | Glute bridge | — | — |
 | 2 | Dead bug | — | — |
 | 3 | Floor push-up | — | — |
-| 4 | One-arm dumbbell row (3.5kg) | — | — |
-| 5 | Bicep curl (3.5kg) | — | — |
+| 4 | One-arm dumbbell row (3kg) | — | — |
+| 5 | Bicep curl (3kg) | — | — |
 | 6 | Wall sit | — | — |
 | 7 | Bodyweight squat | — | — |
 | 8 | Calf raise | — | — |
@@ -73,11 +73,11 @@ Scheduled rest — Workout A done yesterday. ✅
 |---|----------|-----------------|-------|
 | 1 | Bird dog | — | — |
 | 2 | Glute bridge | — | — |
-| 3 | Seated shoulder press (3.5kg) | — | — |
-| 4 | Seated rear delt fly (3.5kg) | — | — |
+| 3 | Seated shoulder press (3kg) | — | — |
+| 4 | Seated rear delt fly (3kg) | — | — |
 | 5 | Clamshell | — | — |
 | 6 | Single-leg glute bridge | — | — |
-| 7 | Tricep kickback (3.5kg) | — | — |
+| 7 | Tricep kickback (3kg) | — | — |
 | 8 | Side-lying leg adduction | — | — |
 | 9 | Prone hip extension | — | — |
 | 10 | Calf raise | — | — |
@@ -108,8 +108,8 @@ Scheduled rest — Workout A done yesterday. ✅
 | 1 | Glute bridge | — | — |
 | 2 | Dead bug | — | — |
 | 3 | Floor push-up | — | — |
-| 4 | One-arm dumbbell row (3.5kg) | — | — |
-| 5 | Bicep curl (3.5kg) | — | — |
+| 4 | One-arm dumbbell row (3kg) | — | — |
+| 5 | Bicep curl (3kg) | — | — |
 | 6 | Wall sit | — | — |
 | 7 | Bodyweight squat | — | — |
 | 8 | Calf raise | — | — |
@@ -136,11 +136,11 @@ Scheduled rest. As planned.
 |---|----------|-----------------|-------|
 | 1 | Bird dog | — | — |
 | 2 | Glute bridge | — | — |
-| 3 | Seated shoulder press (3.5kg) | — | — |
-| 4 | Seated rear delt fly (3.5kg) | — | — |
+| 3 | Seated shoulder press (3kg) | — | — |
+| 4 | Seated rear delt fly (3kg) | — | — |
 | 5 | Clamshell | — | — |
 | 6 | Single-leg glute bridge | — | — |
-| 7 | Tricep kickback (3.5kg) | — | — |
+| 7 | Tricep kickback (3kg) | — | — |
 | 8 | Side-lying leg adduction | — | — |
 | 9 | Prone hip extension | — | — |
 | 10 | Calf raise | — | — |
@@ -170,8 +170,8 @@ Scheduled rest. As planned.
 | 1 | Glute bridge | — | — |
 | 2 | Dead bug | — | — |
 | 3 | Floor push-up | — | — |
-| 4 | One-arm dumbbell row (3.5kg) | — | — |
-| 5 | Bicep curl (3.5kg) | — | — |
+| 4 | One-arm dumbbell row (3kg) | — | — |
+| 5 | Bicep curl (3kg) | — | — |
 | 6 | Wall sit | — | — |
 | 7 | Bodyweight squat | — | — |
 | 8 | Calf raise | — | — |
@@ -201,11 +201,11 @@ Scheduled rest. As planned.
 |---|----------|-----------------|-------|
 | 1 | Bird dog | — | — |
 | 2 | Glute bridge | — | — |
-| 3 | Seated shoulder press (3.5kg) | — | — |
-| 4 | Seated rear delt fly (3.5kg) | — | — |
+| 3 | Seated shoulder press (3kg) | — | — |
+| 4 | Seated rear delt fly (3kg) | — | — |
 | 5 | Clamshell | — | — |
 | 6 | Single-leg glute bridge | — | — |
-| 7 | Tricep kickback (3.5kg) | — | — |
+| 7 | Tricep kickback (3kg) | — | — |
 | 8 | Side-lying leg adduction | — | — |
 | 9 | Prone hip extension | — | — |
 | 10 | Calf raise | — | — |
@@ -234,8 +234,8 @@ Scheduled rest. As planned.
 | 1 | Glute bridge | — | — |
 | 2 | Dead bug | — | — |
 | 3 | Floor push-up | — | — |
-| 4 | One-arm dumbbell row (3.5kg) | — | — |
-| 5 | Bicep curl (3.5kg) | — | — |
+| 4 | One-arm dumbbell row (3kg) | — | — |
+| 5 | Bicep curl (3kg) | — | — |
 | 6 | Wall sit | — | — |
 | 7 | Bodyweight squat | — | — |
 | 8 | Calf raise | — | — |
@@ -267,6 +267,8 @@ The four non-strength daily items from [[exercise-plan]]. These are the ones tha
 |------|------------------------------|------------------|----------------------|------------------|---------------------|
 | Week 2 (Jul 28–Aug 3) | ⚠️ Skipped Wed Jul 29 → shoulder pain | ✅ Done once (Jul 31 baseline) then ❌ not followed since | ✅ Started Jul 31, doing it, but not the full 3×/day — irregular, "whenever remembered" | ✅ Doing regularly (breathing exercises) | Informal only — day-to-day activities, not a structured add-on |
 | Week 3 (Aug 4–10) | ✅ Doing regular warmups before every session | — | Same pattern — irregular, not 3×/day | ✅ Doing regularly | Informal only |
+
+> ✅ **Correction recorded 2026-08-18:** the "stress technique" column above understated actual practice. **Meditation is established and daily — 5 min every morning + 5 min before sleep**, in addition to the breathing exercises. See [[anxiety-stress]] for the upgrade path (extend the evening sit, hold the morning).
 
 **Targets:** warmup = every session, no exceptions ([[exercise-plan]] — Jul 29 proved why). Balance = end of every strength session. Pelvic floor = daily, all three types (slow holds + quick flicks + reverse Kegels). Stress technique = at least one daily (physiological sigh / box breathing / PMR). Cognitive dual-task = add once balance Level 1 is stable.
 

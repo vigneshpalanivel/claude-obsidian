@@ -131,6 +131,66 @@ Both caused by histamine response — same allergy triggering nose and eyes simu
 
 ---
 
+## 🔴 Episode 2026-08-19 — headache + eye itching at ~10 AM, no antihistamine taken
+
+**Reported:** headache and eye itching starting ~10 AM. Allegra not taken. Vignesh takes it **only when symptoms appear**, is unsure whether long-term use is safe, and reports *"if I take it, I feel better the next day."*
+
+### The "better the next day" detail is the whole diagnosis
+
+**Antihistamines are preventers, not painkillers.** Fexofenadine is an H1 **inverse agonist** — it works by occupying the histamine receptor *before* histamine arrives. Once mast cells have already degranulated and the inflammatory cascade is running, the drug cannot undo what has bound; it can only block the next wave.
+
+> **That is exactly why relief arrives the following day.** The tablet taken after symptoms start is really protecting *tomorrow's* exposure. **Taken as-needed, this drug is always one day late.** For persistent allergic rhinitis (symptoms most days over weeks), the standard is **continuous daily dosing during the exposure season, not PRN** — which is also how it was originally prescribed.
+
+⚠️ **Discrepancy to resolve:** [[prescription-history]] records the Jul 2026 ENT script as **Allegra 120mg once daily for ~30 days**; Vignesh now recalls **5 days**. **Check the actual prescription sheet** — the difference changes whether he has been under-dosing a 30-day course.
+
+### Three gaps in the current treatment — all already written in this vault, none actioned
+
+| # | Gap | Why it matters | Cost |
+|---|-----|----------------|------|
+| **1** | 🔴 **Allergen never identified** ([[profile]]) | Years of symptomatic treatment without knowing the trigger. Avoidance is the only intervention that reduces the *need* for medication. | One skin-prick or specific-IgE panel |
+| **2** | 🔴 **No intranasal corticosteroid** | For *persistent* allergic rhinitis, intranasal steroids (fluticasone / mometasone) are **first-line and more effective than oral antihistamines**, and are the only medical treatment that acts on the **bilateral inferior turbinate hypertrophy** on the CT. [[prescription-history]] confirms **no nasal spray was prescribed** — antihistamine alone. | Ask ENT |
+| **3** | 🔴 **No antihistamine eye drops** | Oral antihistamines are **weak for ocular itch** — the eye needs topical treatment. This file has recommended **ketotifen (OTC in Madurai)** since it was written. Never bought. | Under ₹200, available today |
+
+**Item 3 is the fastest relief available and requires no appointment.**
+
+### Why ~10 AM, and why this is probably the bedroom
+
+Morning-onset symptoms in a patient who wakes at 5:30 AM and is indoors point to **overnight allergen exposure**, and in humid Madurai the leading candidate is **house dust mite**. Free actions, all bedroom-only:
+- **Mattress and pillow encasings** (anti-allergen covers) — the single highest-yield mite measure
+- **Hot-wash bedding weekly at ~60°C** — cooler washes do not kill mites
+- Remove soft toys, carpets and heavy curtains from the bedroom
+- Keep the room dry; mites need humidity
+
+### 🔴 This links directly to the sleep finding of 2026-08-19
+
+[[anxiety-stress]] opened a hypothesis the same day: **sleep-disordered breathing from nasal obstruction**, explaining daily difficulty waking and morning headaches. **Overnight allergen exposure → nasal congestion while asleep → mouth breathing → fragmented, unrefreshing sleep → morning headache and 10 AM symptoms.**
+
+> **These may be one mechanism, not two.** If so, the *bedroom* is the intervention point for the sleep problem, the eye problem and the morning headaches simultaneously — and it makes controlling the allergy load a **sleep** intervention, not just a comfort one.
+
+### Update, same day — nap relieved it; recurrence predicted at ~2 hrs
+
+**Reported:** *"after taking nap i feel better now.. maybe it would come again after 2 hours."*
+
+**Sleep aborting a headache is diagnostically informative — it points away from sinus pressure and toward migraine.** Sleep is one of the few reliable non-drug abortives for migraine; sinus-pressure headache is not typically terminated by a nap. Vignesh has a standing **migraine diagnosis since 2020** (Dr. S N Karthik, [[prescription-history]]).
+
+🔴 **The likely chain is one mechanism, not two coincidences: allergen → mast-cell histamine release → (a) eye itch and (b) headache.** Histamine is a direct headache trigger in its own right — it drives **nitric-oxide-mediated vasodilation** and is used experimentally to *induce* delayed headache in migraine subjects. **Allergic rhinitis is also a recognised migraine trigger.** So the eye itching and the headache starting together at 10 AM are most plausibly the same event, and **the untaken antihistamine is not merely an itch treatment — it targets the headache's cause.**
+
+⚠️ **Predicting the recurrence is the useful part — it means nothing has been removed.** Rest suppressed the symptom; **the exposure is unchanged.** Histamine will keep being produced in the same room, so the 2-hour return is the expected outcome of doing nothing. **The window to act is now, before it returns — not after.** This is the same "one day late" error as the PRN dosing, repeating inside a single day.
+
+**Do now, in this order:**
+1. **Take the Allegra.** Even taken late it blunts the next wave and covers tomorrow.
+2. **Saline nasal rinse** — mechanically washes allergen off the mucosa. Removes the source rather than blocking the receptor.
+3. **Cold compress on closed eyes, 5–10 min** — vasoconstricts and reduces itch. **Do not rub the eyes**; rubbing causes further mast-cell degranulation and makes it worse.
+4. **Buy ketotifen eye drops today** (item 3 in the gap table above).
+5. **If it does return at ~2 hrs, record it.** A recurrence on schedule confirms continuous exposure rather than a self-limiting episode — and points at the *room*, not the day.
+
+🔴 **The nap has a cost that has to be named: it will make tonight's sleep onset harder.** [[anxiety-stress]] records sleep-onset latency of 30–45 min and only ~6.75–7 hrs of actual sleep, with daily morning grogginess reported the same day. **A daytime nap discharges sleep pressure**, which is the main force driving sleep onset at 10 PM.
+> **Nap rules if this recurs: 20–30 minutes maximum, and never after 3 PM.** A long or late nap trades a few hours of afternoon relief for a worse night — and poor sleep raises next-day cortisol, which raises histamine reactivity. **That is a loop, and it closes in the wrong direction.**
+
+⚠️ **It also contaminates the food test running in [[meal-log]].** The FODMAP elimination sequence for morning headaches assumes diet is the variable. **Allegra being taken irregularly means allergic load is swinging uncontrolled across the same nights.** Either take it daily through the test window or record each day's dose in the log.
+
+---
+
 ## Conscious Blinking
 
 Most underrated fix — completely free, works immediately.

@@ -140,6 +140,25 @@ Next day harder → work longer → repeat
 | **Cold water face splash** | Activates dive reflex, drops cortisol acutely — already doing for eye strain |
 | **Physiological sigh** | Double inhale through nose (normal breath + quick top-up sniff) → long slow exhale through mouth. 2–3 reps, 30 seconds. Fastest acute cortisol drop available — usable at desk, unnoticeable. Use when body heat starts, before a difficult call, or any moment tension spikes. |
 | **4-7-8 breathing + meditation** | Inhale 4 counts → hold 7 counts → exhale 8 counts. Start with 5 min 4-7-8, then extend into 15–20 min guided meditation (Insight Timer app — free). Best in the pre-sleep slot (9:30–10 PM). Do NOT add as a separate new habit — extend the existing slot you already have. Chronic cortisol reducer; takes 4–6 weeks of daily consistency before measurable effect. 10 min daily beats 30 min twice a week. |
+
+> ✅ **ACTUAL PRACTICE — recorded 2026-08-18. Meditation is already established: 5 min every morning + 5 min before sleep, daily.** This corrects earlier notes in [[exercise-log]] that logged only "breathing exercises" under stress technique — the meditation habit exists and is consistent.
+>
+> **The hard part is already done.** Daily consistency across two slots is the variable that predicts outcome, and it is the one most people never establish. Duration is the easy variable to change later; adherence is not.
+>
+> ⚠️ **But 10 min/day total sits at the bottom edge of the effective range.** The trials showing cortisol, anxiety and sleep-onset benefit generally use **10–20 min per session**, not per day. At 5 min a session this functions as an acute state reset rather than the cumulative training effect the row above describes.
+>
+> **Upgrade path — extend the EVENING sit only, and add nothing new:**
+> | Weeks | Morning | Night |
+> |-------|---------|-------|
+> | Now | 5 min (hold — the 6:00–7:20 AM daughter block leaves no room) | 5 min |
+> | +3 weeks | 5 min | **10 min** |
+> | +6 weeks | 5 min | **15 min** |
+>
+> **Why evening rather than morning:** sleep-onset latency is the documented problem (see [[profile]] — 10 PM → 5:30 AM with onset delay, Melatonin stopped ~Jan 2026). Evening practice targets it directly; morning practice does not.
+>
+> 🔴 **Technique may matter more than duration here.** For sleep onset specifically, **body scan / Yoga Nidra (NSDR), lying down**, outperforms seated breath-focus — and it requires no extra time and no sitting posture at all. **Open question: what technique is currently being used in each slot?** If the night sit is seated breath-focus, switching it to a lying-down body scan is a free upgrade.
+>
+> ⚠️ **Posture constraint (new, spine-safety):** meditate **in a chair with back supported, feet flat — not cross-legged on the floor.** Sustained cross-legged sitting is deep hip flexion plus posterior pelvic tilt held static, close to the asymmetric-pelvic-loading pattern behind the SI joint history in [[profile]]. A chair is the correct form here, not a lesser one. Lying down for body scan avoids the issue entirely.
 | **Warm shower after work** | Most underrated tool — muscle relaxation triggers parasympathetic system, drops cortisol significantly in 15 minutes. Key tool on 9-9 days when EFX isn't possible. |
 | **Brain dump before sleep** | Write tomorrow's tasks on paper for 5 min immediately after work ends. Closes open mental loops that keep cortisol elevated even after laptop closes. Critical for founders. |
 | **Music during commute / after work** | Listening to enjoyed music measurably reduces cortisol |
@@ -176,6 +195,69 @@ Next day harder → work longer → repeat
 > ⚠️ **Two things this does NOT fix — both still open:**
 > 1. **Sleep is now 7.5 hrs in bed, not asleep.** Onset latency is a documented problem here (night cortisol delays onset; poor sleep since stopping Melatonin is an open medication-review trigger below). At 30–45 min to fall asleep, real sleep is ~6.75–7 hrs — at or under the 7–8 hr floor. **If morning tiredness or afternoon crashes appear, the fix is an earlier bedtime (9:30 PM), not a later wake.** Sleep is the strongest single lever in [[healthspan-80]] Pillar 4 — trading it for work hours loses on net.
 > 2. **Strength days still don't fit.** The 5:30–6:00 window is 30 min. EFX (25 min) fits. **Workout A/B (25–30 min + 3.5 min mandatory warmup = 28.5–33.5 min) does not** — and skipping warmup is a hard no ([[exercise-plan]], Jul 29 shoulder flare proved it). So Mon/Wed/Fri strength sessions need either an evening slot (mirroring the 7:30 PM-finish pattern below) or a later login. **Not yet decided.**
+
+
+---
+
+## 🔴 Morning Sleepiness — Prediction Fired (recorded 2026-08-19)
+
+**Reported 2026-08-19:** *"everyday i feel sleepy, i couldn't wakeup easily."* Daily, not occasional.
+
+⚠️ **This is the exact symptom the Aug 10 note above pre-registered as the trigger condition:** *"If morning tiredness or afternoon crashes appear, the fix is an earlier bedtime (9:30 PM), not a later wake."* The 5:30 AM wake was adopted Aug 10 to protect the 6:00 AM daughter block; **9 days later the predicted cost has appeared.** The prescribed response is already written and has not been actioned.
+
+### Ranked causes
+
+| # | Cause | Case | Action |
+|---|-------|------|--------|
+| **1** | **Insufficient sleep opportunity** | 10 PM → 5:30 AM = **7.5 hrs in bed.** With documented 30–45 min onset latency, actual sleep ≈ **6.75–7 hrs — at or below the 7–8 hr floor**, every night, cumulatively. This alone is sufficient to explain the symptom. | **Bedtime → 9:30 PM.** Do not move the wake time — it is anchored to the 6:00 AM daughter block and weekend consistency. |
+| **2** | 🔴 **Sleep-disordered breathing (nasal obstruction) — NEVER ASSESSED IN THIS VAULT** | See dedicated section below. **Strongest untested hypothesis and the one that would change management most.** | Screen for snoring / mouth-breathing / dry mouth; overnight pulse oximetry or home sleep test. |
+| **3** | **Sleep-onset latency itself** | Melatonin stopped ~Jan 2026, *"sleep still poor"* is an open medication-review trigger. Latency both shortens sleep **and** signals unresolved night cortisol. | **CBT-I** at the overdue Dr. Sabrin appointment — first-line evidence, unlike honey or supplements. |
+| **4** | **Sleep inertia from mid-cycle waking** | 5:30 AM may land mid-deep-sleep. Produces heavy grogginess for 15–30 min independent of total sleep. | Shifting bedtime to 9:30 PM changes cycle alignment as a side effect. Morning light within 10 min of waking. |
+| **5** | **Vitamin D insufficiency** | 29.95 ng/mL = insufficient, **last measured Jul 2024 — two years stale**, and supplement adherence is unrecorded. Low D is associated with daytime fatigue. Plausible contributor, cannot be the whole story. | Add to the bundled blood draw (uric acid + lipids + Vit D). |
+
+### ❌ Ruled out — do not chase these
+- **Allegra is NOT the cause.** Fexofenadine is the one second-generation antihistamine specifically selected for **not crossing the blood–brain barrier** — it is the standard choice when sedation must be avoided. Cetirizine would be a suspect; fexofenadine is not. **Do not stop it.**
+- **Anemia — ruled out.** Haemoglobin 15.6 g/dL (normal).
+- **Thyroid — ruled out.** TSH 1.800 (normal).
+- **Caffeine timing — not implicated.** Coffee/tea are logged after food, none near sleep.
+
+---
+
+## 🔴 Untested Hypothesis: Sleep-Disordered Breathing (added 2026-08-19)
+
+**The vault has zero references to snoring, mouth breathing, or sleep apnea — yet the anatomy on file is a textbook nasal-obstruction picture.** From the CT PNS 04 Jul 2026 in [[lab-reports-summary]]:
+
+- S-shaped septal deviation with a left bony spur indenting the inferior turbinate
+- **Bilateral** inferior turbinate hypertrophy
+- Left concha bullosa
+- Allergic rhinitis on daily antihistamine
+
+**Chronic nasal obstruction → mouth breathing → increased upper-airway resistance → repeated micro-arousals → non-restorative sleep.** The presenting symptoms would be exactly: difficulty waking, daily unrefreshing sleep, and **morning headache.**
+
+🔴 **This reframes the morning-headache investigation.** [[meal-log]] and [[gastric-remedies]] have been treating recurrent morning headaches (Jul 8, Aug 12, 13, 18) as overnight colonic fermentation and running a FODMAP elimination sequence. **Morning headache is also a cardinal symptom of nocturnal hypoventilation.** The food hypothesis is not wrong — but it has been the *only* hypothesis, and a structural airway cause was never on the list despite CT confirmation of the anatomy.
+
+⚠️ **The obvious objection, and why it does not dismiss this:** classic obstructive sleep apnea is an obesity-associated condition and BMI here is **17.8**, which argues strongly against it. But **Upper Airway Resistance Syndrome (UARS)** is the recognised variant that presents in **thin** patients, driven by craniofacial and nasal anatomy rather than weight, and its published phenotype is close to this profile: normal-to-low BMI, nasal obstruction, sleep-onset difficulty, daytime fatigue, anxiety, and **low blood pressure** ([[profile]] records 90/60 and 100/60 episodes). UARS does not show up as apneas on a simple AHI count, which is why it is routinely missed.
+
+**This is a hypothesis, not a diagnosis. It is cheap to test and expensive to keep ignoring.**
+
+### Screening questions to answer before spending anything
+1. **Snoring** — does Preethi report snoring, gasping, or breathing pauses? (Bed-partner report is the single most useful data point available and costs nothing.)
+2. **Mouth breathing** — waking with a **dry mouth or dry throat**?
+3. **Nose** — is nasal breathing actually possible lying down, or does one side block when horizontal?
+4. **Night waking** — waking to urinate, or waking without knowing why?
+5. **Daytime** — dozing off unintentionally (reading, after lunch, in meetings)?
+
+### If two or more are yes
+- **Overnight pulse oximetry** — cheap, done at home, flags desaturation. Reasonable first step.
+- **Home sleep apnea test / Level III study** — widely available in Madurai.
+- Raise with **Dr. Arun Ganesh (ENT)** — he has the CT and has so far treated only the allergic driver with Allegra. **The septal deviation + bilateral turbinate hypertrophy were explicitly noted as structural and not operated on**; a sleep complaint changes the risk/benefit of that decision and is worth re-raising directly.
+
+### Free things to try tonight regardless
+- **Saline nasal rinse before bed** — reduces turbinate congestion, zero risk, already in the sinusitis routine.
+- **Sleep on the left side** — already prescribed in [[gastric-remedies]] for overnight gas; **supine sleeping is the worst position for airway collapse too.** One position change, two mechanisms.
+- **Head elevation** — also already prescribed for gas. Same overlap.
+
+> 🔴 **Note the convergence:** left-side sleeping and head elevation were added to [[gastric-remedies]] for gastric reasons and independently help airway patency. If the morning headaches improve on those two changes alone, **that is evidence for the airway hypothesis, not the food one** — and the elimination diet would be chasing the wrong variable.
 
 ### 9 AM–9 PM days (weekdays)
 

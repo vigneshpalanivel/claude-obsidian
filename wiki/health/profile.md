@@ -18,8 +18,8 @@ The single canonical profile. **Read this first for any health/food/medication/s
 | **Sex** | Male |
 | **Location** | Madurai, Tamil Nadu |
 | **Height** | ~184 cm |
-| **Weight** | **60.60 kg** (measured Aug 17, 2026) — baseline 58.0 kg early Jul; **+2.6 kg in 6 weeks.** The +0.80 kg weekly jump is not real tissue (calorie math supports ~0.22 kg); most of it is water/gut content from the Aug 14–16 sodium-heavy weekend. **The usable figure is the two-week trend: ~1.85 kg/month, steady since Jul 21.** This supersedes the Aug 10 "deceleration" reading — that flat week was noise, and the "dense training week raised maintenance" hypothesis is not supported. See [[meal-log]] weight table. Historically 59–61 kg. |
-| **BMI** | **17.9** (at 60.60 kg) — **underweight**, but **~2.0 kg from clearing 18.5** (62.65 kg), reachable ~late Sep 2026 at current pace · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**) |
+| **Weight** | **~60.3 kg** — **4-day average Aug 17–20, 2026** (60.60 / 60.10 / 59.85 / 60.50). Baseline 58.0 kg early Jul; **+2.3 kg in 45 days ≈ 1.5 kg/month, on plan.** ⚠️ **Never quote a single weigh-in.** Four consecutive mornings spanned 0.75 kg while the running average moved only 0.08 kg — a swing that is arithmetically impossible as tissue on ~2,450 kcal/day intake, so it is entirely water, sodium and gut content. **Protocol: weigh 3 mornings a week, record only the average, and compare averages to averages.** Differences under ~0.3 kg are the same number. See the *"Why the number swings so much"* section in [[meal-log]]. Historically 59–61 kg.
+| **BMI** | **17.8** (at the 60.3 kg 4-day average) — **underweight**, ~2.5 kg from clearing 18.5 (62.65 kg) · target Phase 1: 70 kg (BMI 20.7, **the floor**) · Phase 2: 73–75 kg (BMI 21.5–22.2, **the actual target**)
 | **Sleep** | **10 PM → 5:30 AM wake (decided 2026-08-10, in effect)** — 7.5 hrs *in bed*, at the lower-middle of the 7–8 hr target with zero slack. ⚠️ **This is time in bed, not time asleep** — sleep-onset latency is a documented problem (elevated night cortisol delays onset; "sleep still poor since stopping Melatonin" is an open medication-review trigger in [[anxiety-stress]]). If onset takes 30–45 min, actual sleep is ~6.75–7 hrs, i.e. **at or below the target floor.** Previous: 10 PM → 6 AM. |
 | **Dinner** | By 6:30 PM (3.5 hr gap before sleep) |
 | **Daughter caretaking** | **6:00–7:20 AM daily, fixed** (recorded 2026-08-04) — waking her, showering her, school prep. Directly overlaps the current 6:00 AM morning routine slot (EFX/shower/breakfast in [[anxiety-stress]] weekday schedule), which is why that routine currently gets pushed later and login slips to 9:30 AM instead of 9:00. |
@@ -44,7 +44,7 @@ The single canonical profile. **Read this first for any health/food/medication/s
 
 | Medicine | Dose | Status |
 |----------|------|--------|
-| **Allegra (Fexofenadine)** | 120mg once daily | **ACTIVE** — ENT, allergic rhinitis |
+| **Allegra (Fexofenadine)** | 120mg once daily *(prescribed)* | ⚠️ **ACTIVE but taken PRN, not daily** (recorded 2026-08-19) — a preventer used as a reliever, which is why relief arrives "the next day". Three unactioned gaps: allergen never tested, no intranasal steroid, no antihistamine eye drops. See [[eye-strain-remedies]] + [[prescription-history]]. |
 | Sulfasalazine 500mg | — | Likely stopped — confirm with ortho |
 | Escitalopram / Propranolol / Melatonin | — | **ALL STOPPED ~Jan 2026** — anxiety now unmedicated (supervision unknown) |
 
