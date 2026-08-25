@@ -22,6 +22,11 @@ Likely triggers in Buddha bowl (vendor lunch): raw chickpeas, raw broccoli/cauli
 - Drink **warm water** 20–30 min before eating — prepares stomach lining, stimulates digestive enzymes
 - Do NOT drink large amounts during or immediately after meal — dilutes stomach acid
 
+> ⚠️ **Weight-gain caveat (added 2026-08-24) — same stomach-capacity constraint flagged for fiber above applies to water too.** At BMI 17–18 the binding constraint on intake is capacity, not appetite. A full glass of water in the 20–30 min pre-meal window creates real gastric distension and can measurably blunt how much gets eaten at the meal that follows — this is a documented appetite-suppression mechanism (water "preload"), not specific to temperature. **Two different habits, two different costs:**
+> - **Warm water 20–30 min *before* the meal, small volume (~100–150ml, a small cup not a full glass):** fine, and the intended use — the gap gives it time to clear before food arrives.
+> - **Warm water *during* the meal:** already flagged above as bad for digestion (dilutes stomach acid) — it's also the worse habit for weight gain, since it fills stomach volume *while* food is competing for the same space, directly reducing how much of the meal actually gets eaten.
+> **Practical fix: keep it to a small cup before, none during.** If digestion still needs help mid-meal, a few sips is fine — a full glass is not. See [[bmi-increase-plan]] for the same capacity-constraint logic applied to fiber.
+
 ### After Lunch (most important step)
 - Drink **buttermilk (moru) immediately after eating** — within 5–10 minutes
 - Preparation: thin homemade buttermilk + pinch of salt + **curry leaves + coriander leaves**

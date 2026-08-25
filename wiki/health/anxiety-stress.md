@@ -259,6 +259,35 @@ Next day harder → work longer → repeat
 
 > 🔴 **Note the convergence:** left-side sleeping and head elevation were added to [[gastric-remedies]] for gastric reasons and independently help airway patency. If the morning headaches improve on those two changes alone, **that is evidence for the airway hypothesis, not the food one** — and the elimination diet would be chasing the wrong variable.
 
+---
+
+## 🔴 Sleep Fragmentation from Dreams / Nocturnal Emissions (reported 2026-08-21)
+
+**Reported 2026-08-21:** no headache, but *"felt sleepy, and yesterday i had wet dreams, feel like didn't get enough sleep, due disturbances through wet dreams other dreams."* First explicit report of dream-driven sleep disruption in this vault.
+
+### The physiology, briefly
+
+Nocturnal emissions occur during **REM sleep** and are a normal reflex, not a disorder — frequency varies widely and rises with longer gaps since the last ejaculation and with elevated sympathetic/anxiety tone. **Waking from one is inherently an arousal from REM**, which fragments that sleep cycle whether or not the dream content was sexual. **The complaint here is really about waking up mid-REM repeatedly (any vivid or disturbing dream would do the same), not about the nocturnal emission specifically.**
+
+### Why this fits, rather than fights, everything already on this page
+
+- **Elevated anxiety/sympathetic tone → more vivid and more frequent dreaming**, and lighter, more fragmented REM. This is the same nervous-system state already driving the body-heat, PE, and headache symptoms above — dream disruption is a plausible fifth physical presentation of the same anxiety, not a new problem.
+- **It converges with the Aug 19 morning-sleepiness / sleep-disordered-breathing hypothesis above.** Micro-arousals from nasal obstruction and micro-arousals from dream content both fragment sleep architecture and both present as "slept X hours but doesn't feel like it." **They are not mutually exclusive — a partially obstructed airway plausibly increases both arousal frequency and dream recall/vividness**, since arousals frequently occur at REM-sleep boundaries.
+- **It sharpens the case for the Escitalopram/PE conversation already queued for Dr. Sabrin.** SSRIs are well known to suppress REM sleep and reduce dream recall/intensity as a side effect — this was very likely happening, unnoticed, while Escitalopram was active (Feb 2025–Jan 2026). **Stopping it ~Jan 2026 plausibly unmasked more vivid/frequent dreaming at the same time it unmasked the PE** ([[anxiety-stress]] PE section below) — same medication, same timing, two different downstream effects of REM being unsuppressed.
+
+### What this does NOT need
+- **No urgency, no doctor visit for this symptom alone.** Occasional nocturnal emissions and vivid dreams are not pathological and need no treatment in themselves.
+- **Do not restrict fluids or change diet for this** — there is no established food/drink trigger for dream content: this is a sleep-architecture question, not a gastric one.
+
+### What it DOES add to the existing overdue appointment
+This is now a **third symptom** (after PE and sleep-onset difficulty) traceable to the same Jan 2026 Escitalopram stop, and a **second mechanism** (after the airway) that could explain "sleepy despite time in bed." **File it under the same Dr. Sabrin conversation, do not open a separate one:**
+1. PE severity + SSRI timing (already flagged, overdue)
+2. Sleep-onset latency since Melatonin stopped (already flagged)
+3. **New: increased dream vividness/frequency and fragmented sleep since Escitalopram stopped — ask specifically whether this is a withdrawal/rebound REM effect that would be expected to fade, or a sign anxiety itself is undertreated.**
+
+### The one actionable lever available now
+**Earlier bedtime (9:30 PM) — already prescribed above for the sleepiness finding — helps this too.** More total sleep time means more completed REM cycles with natural, undisturbed transitions, rather than a compressed night where arousals (from dreams or airway) land more disruptively. **No new action needed beyond what is already prescribed; this is additional evidence for the same fix, not a new one.**
+
 ### 9 AM–9 PM days (weekdays)
 
 | Time | Action |
