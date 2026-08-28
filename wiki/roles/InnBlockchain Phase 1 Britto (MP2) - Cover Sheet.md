@@ -7,9 +7,9 @@ role: MP2
 assignee: Britto
 icp: crypto-native
 priority: high
-rev: 9
-last_revised: 2026-07-15
-playbook_rev_synced: 50
+rev: 12
+last_revised: 2026-07-28
+playbook_rev_synced: 60
 parent: "[[Execution Playbook]]"
 sibling: "[[Sudharshini (MP1) - Cover Sheet]]"
 tags:
@@ -50,7 +50,7 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 
 | WS | Your CN slice | Anchor |
 |---|---|---|
-| **WS2 — SEO / AEO** | **Gate 1** on-page SEO + AI-citation probe · **Gate 1 LP technical SEO verify** (schema stack · canonicals · CWV · OG — Dev builds) · **GA4 Property B** (academy on-site) · **co-verify academy technical SEO** (you own Core Web Vitals) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
+| **WS2 — SEO / AEO** | **Gate 1** on-page SEO + AI-citation probe · **Gate 1 LP technical SEO verify** (schema stack · canonicals · CWV · OG — Dev builds) · **GA4 Property B** (academy on-site) · **co-verify academy technical SEO** (you own Core Web Vitals) · **co-own localization track** (rev 51) — Gate 1 + Tier 1 academy language variants, staged DE → FR → IT → ES, tracked on the existing AEO/GEO sheet; Dev's `hreflang` + URL-structure decision now explicitly covers both LP and academy URL patterns (rev 54) · **place + SEO-verify your Track A side of all 5 dedicated national-law articles** (rev 53 — `[Both]`-tagged, W23–W25 calendar slots; real scheduled Tier 1 entries, not language variants) · **own Academy WordPress theme corrections** — placeholder task, blocked pending [[InnBlockchain Design System]] doc ingestion (rev 54) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
 | **WS3 — Profile + Featured + Channels** | **X (Twitter) full ownership** · Risk Checklist Featured asset · GitHub/Solodit · *(co-own Company Page)* | [[Execution Playbook#X (Twitter) — personal handle]] · [[Social Profile Setup]] |
 | **WS8 — LinkedIn Organic** | CN (Felix-coded) post production + scheduling into shared feed · *(co-own cannibalisation + output cap)* | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
 | **WS12 — Measurement** | CN analytics — X · Track A articles · Gate 1 funnel · GA4 Property B | [[Execution Playbook#WS12 — Pipeline + CRM + Measurement]] |
@@ -105,6 +105,7 @@ One LinkedIn personal feed + one Company Page carry *both* ICPs — these can't 
 | 11 | **[[Newsletter Vendor Selection]]** (cross-phase framework) | W10 newsletter revisit — you co-own the newsletter surface + own assembly when activated |
 | 12 | **[[CITE Score]]** (audit) + **[[CITE Score Task List]]** | Off-page AEO/GEO citation baseline (18/100 · Citations 8/100) — **raising it is a standing objective**; your monthly citation probe measures the outcome, the task list carries the improvement work |
 | 13 | **AEO/GEO tracking sheet** (external Google Sheet — outside the vault; spec in [[Execution Playbook]] WS2 § Per-LP citation health) | **The Phase 1 AEO/GEO KPI instrument** — you log Gate 1 + Gate 2 (co-own) + Track A article prompt results **WEEKLY, before Vignesh's Fri review** (✅/🟡/❌ per engine); Tier 1 articles carry the ≥1-citation-in-90-days KPI rows; summary line reviewed with Vignesh every Friday. SEO/SERP sheet = deferred, not mandatory Phase 1 |
+| 14 | [[InnBlockchain EU Countries Phase 1 Priority List]] | Ranks Germany · France · Italy · Spain (+ Luxembourg) as Phase 1 priority markets — source for the WS2 localization track (rev 51): Gate LPs first, then Tier 1 academy, staged one language at a time |
 
 ## ❌ What you DON'T own (redirect if asked)
 

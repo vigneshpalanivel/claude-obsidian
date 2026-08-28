@@ -6,7 +6,7 @@ status: active
 
 # Exercise Plan — Vignesh
 
-**Equipment:** EFX elliptical + 3kg dumbbells (pair) + **pull-up bar** (added 2026-08-10)
+**Equipment:** EFX elliptical + 3kg dumbbells (pair) + **doorway pull-up bar — adjustable height, mounts low (confirmed 2026-08-28)**
 > 🔴 **EQUIPMENT UPGRADE — OVERDUE, AND THE #1 PRIORITY IN THIS PLAN (revised 2026-08-18).** Week 3 ended ~Aug 15; the plan started Jul 25 and the load has never moved. **Buy a spinlock/adjustable dumbbell set with at least 15 kg loadable per hand** (a 20–30 kg kit with plates, ~₹2,000–4,000 in India). **Do NOT buy another fixed pair — 5 kg would plateau in 3–4 weeks and 8 kg in 3–6 months.** One adjustable purchase covers the entire run to 70 kg and beyond.
 >
 > **Why a single fixed pair cannot work — every lift needs a different load:**
@@ -39,15 +39,21 @@ status: active
 
 ## Weekly Schedule
 
-| Day | Session | Duration |
-|-----|---------|----------|
-| Mon | Strength A | ~40 min (45 min cap) |
-| Tue | EFX only — 25 min, resistance 2 | 25 min |
-| Wed | Strength B | ~41.5 min (45 min cap) |
-| Thu | EFX only — 25 min, resistance 2 | 25 min |
-| Fri | Strength A | ~40 min (45 min cap) |
-| Sat | EFX only or rest | — |
-| Sun | Rest | — |
+> 🔴 **Corrected 2026-08-28 — A and B ALTERNATE; they are not fixed to weekdays.** The table previously read "Mon = A, Wed = B, Fri = A" every week, which was wrong. **The real pattern is an unbroken alternating sequence — A · B · A · B · A · B …** run across the Mon/Wed/Fri strength slots, so the rotation flips each week.
+
+| Day | Week 1 | Week 2 | Duration |
+|-----|--------|--------|----------|
+| Mon | **Strength A** | **Strength B** | ~40 / ~44 min (45 min cap) |
+| Tue | EFX only — 25 min, resistance 2 | EFX only | 25 min |
+| Wed | **Strength B** | **Strength A** | ~44 / ~40 min (45 min cap) |
+| Thu | EFX only — 25 min, resistance 2 | EFX only | 25 min |
+| Fri | **Strength A** | **Strength B** | ~40 / ~44 min (45 min cap) |
+| Sat | EFX only or rest | EFX only or rest | — |
+| Sun | Rest | Rest | — |
+
+> ⚠️ **Track which workout you did last, not what day it is.** The weekday is irrelevant to the rotation — if a session is missed, the next strength day picks up the sequence where it left off rather than resetting to A.
+>
+> 🔴 **Consequence for frequency, and it matters for the leg complaint:** each workout averages **1.5×/week, not 2×.** So the **leg block (Workout A only) runs ~1.5×/week**, not the 2× assumed in the Legs & Thighs section below. **This makes the under-training of legs slightly worse than diagnosed there** — the ranked causes are unchanged, but the frequency gap is real and adds to them. ✅ **Back volume is unaffected**: the inverted row appears in **both** A and B, so real back stimulus stays at 3×/week regardless of how the rotation lands — **and since A uses the underhand/lat grip while B uses the wide/mid-back grip, the alternation now delivers both back targets rather than repeating one.**
 
 > **No double sessions (EFX + strength same day)** — at BMI 17.3 excess cardio burns muscle calories needed for gain. EFX is cortisol disposal + heart health; strength is the actual BMI lever. See [[anxiety-stress]] EFX timing rules.
 
@@ -135,22 +141,24 @@ status: active
 |-------|----------|-------------|-----|------|
 | **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
 | **1 — Push/pull superset** | **Floor push-up** | 3 × 15 | Full range, chest touches floor. **Primary chest overload — progress through the ladder below.** | 9 min |
-| | ↳ paired with **One-arm dumbbell row** (3kg, knee on chair) | 3 × 12/side | Back flat, don't rotate spine, pull elbow to hip | |
+| | ↳ paired with **Inverted row — UNDERHAND / close grip** (bar at hip-to-waist height) | 3 × 10 | **REPLACED the 3kg one-arm row, 2026-08-28.** At 3kg the row ran 25–30 reps to failure = endurance, not growth. **Underhand grip here is deliberate — elbows track close to the body, which makes the LATS lead.** Workout B uses the wide overhand version for rhomboids/mid-traps, so the two sessions hit different muscles with the same movement. Body straight, braced, pull chest to bar. **Feet closer in = easier, walked further out = harder.** | 9 min |
 | **2 — Chest + arm superset** | **Floor dumbbell fly** (3kg) | 3 × 12 | **NEW — chest.** Lying on floor, arms wide in a shallow arc, slight elbow bend. Floor stops the stretch — no shoulder overextension. Flies are done light by design, so 3 kg works here. | 7 min |
 | | ↳ paired with **Dumbbell bicep curl** (3kg) | 3 × 12 | Standing, controlled — no swinging at the shoulder | |
-| **3 — Leg circuit** — 2 rounds, 15 sec between stations | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec. Protects SI joint. | 10 min |
-| | **Step-up** (low step ~20cm) | 12/side | **REPLACES bodyweight squat.** Unilateral quad + glute work, spine-neutral, no deep hip flexion. Step up with control, lower slowly — don't push off the bottom foot. | |
-| | **Wall sit** | 30–60 sec | Back flat against wall, thighs parallel — isometric quad, zero spine movement. Build to 60 sec, then progress to single-leg. | |
-| | **Calf raises** (bodyweight) | 20 | Slow up, slow down — wall for balance | |
-| **4 — Core (anti-movement only)** | **Dead bug** | 3 × 10/side | Lower back flat on the floor the entire time — if it arches, you've gone too far | 6 min |
-| | **Side plank** | 3 × 20–30 sec/side | **NEW — abs.** From knees first, progress to feet. Hips stacked and lifted, body in one line. See the abs section below for why this specific movement. | |
-| **5 — Forearms** | **Wrist curl** (3kg) | 2 × 15 | **NEW.** Seated, forearm resting on thigh, palm up, hand past the knee. Curl the wrist only. | 3 min |
-| | ↳ superset **Reverse wrist curl** (3kg) | 2 × 15 | Same position, palm down. Trains the extensors — the side that gets neglected. | |
+| **3 — LEG BLOCK (real sets, real rest)** — restructured 2026-08-28, no longer a circuit | **Step-up** (step ~30–40cm — raise it from the old 20cm) | 3 × 12/side | **Primary thigh builder.** Step up with control, then **lower over 3–4 seconds** — the slow descent is the whole point. Don't push off the bottom foot. **Hold the 3kg dumbbells once 3 × 12 is clean; go to eccentric step-downs when they aren't enough.** | 14 min |
+| | ↳ paired with **Hamstring slider curl** | 3 × 12 | **NEW — the plan had zero direct hamstring work before this.** Heels on a towel on smooth floor, hips lifted in a bridge, slide heels out slowly and pull back in. Keep hips up the entire set. Spine flat, fully supine. | |
+| | **Wall sit** | 2 × 45–60 sec | Back flat against wall, thighs parallel. **Progress to single-leg (20–30 sec/side) once 60 sec is easy** — don't just keep adding seconds. | |
+| | ↳ paired with **Single-leg calf raise** | 2 × 15/side | **Upgraded from two-leg.** Full range, slow lowering, wall for balance. | |
+| **4 — Upper back finisher** | **Prone Y-T-W raise** | 2 × 8 each position | **NEW 2026-08-28 — the only lower-trap work in the plan.** Face down, forehead on a towel, **chest stays on the floor**, lift arms only: Y (overhead 45°), T (straight out), W (elbows bent, blades squeezed down). ⚠️ **Chest off the floor = this has become a superman, which is banned.** Arms only. | 3 min |
+| **5 — Core (anti-movement only)** | **Dead bug** | 2 × 10/side | Lower back flat on the floor the entire time — if it arches, you've gone too far | 4 min |
+| | **Side plank** | 2 × 20–30 sec/side | From knees first, progress to feet. Hips stacked and lifted, body in one line. See the abs section below for why this specific movement. | |
+| | **Bird dog** | 2 × 10/side | **Moved here 2026-08-28 (was Workout B only).** Spine neutral, slow — opposite arm + leg, hold 3 sec. Also now part of the daily spine block below. | |
 | **Balance** | 3-move sequence (see below) | — | Non-negotiable — [[healthspan-80]] Pillar 1 | 2 min |
 
-**Rest:** none within a superset · 60–90 sec after each superset pair · 15 sec between circuit stations, 60 sec between rounds.
+**Rest:** none within a superset · 60–90 sec after each superset pair · **90 sec after leg superset pairs specifically** — legs need more recovery than the upper-body pairs, don't rush them.
 
 > **What changed (2026-08-14) and why:** chest was push-ups only → added floor fly. No forearm work existed → added wrist curls (plus dead hangs already in B). No abs work existed → added side plank. Bodyweight squat replaced by step-up on spine grounds. Time was created by circuiting the leg work and supersetting the upper body — nothing was lost, and the session still lands at ~40.5 min.
+>
+> 🔴 **What changed 2026-08-28 and what it cost.** The leg circuit became a proper leg block: **3 sets instead of 2 rounds, 90 sec rest instead of 15 sec, step height raised 20cm → 30–40cm, eccentric tempo made explicit, and a hamstring exercise added where none existed.** See the Legs & Thighs section for the reasoning. **Time had to come from somewhere, and two things paid for it:** (1) **the forearm block moved to Workout B** — wrist curls are low-priority accessory work and B had the spare capacity; (2) **core dropped from 3 sets to 2** — dead bug and side plank are stabiliser work whose benefit is largely technique/endurance, so the third set was the cheapest thing in the session to lose. **Nothing was cut from the upper-body hypertrophy blocks.** Session still lands at ~39.5 min, inside the 45 min cap.
 
 ### Workout B — restructured for the 45 min cap (revised 2026-08-11)
 
@@ -160,22 +168,43 @@ status: active
 |-------|----------|-------------|-----|------|
 | **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
 | **1 — Vertical push/pull superset** | **Seated dumbbell shoulder press** (3kg) | 3 × 12 | Seated = spine supported. Press straight up, don't arch lower back | 9 min |
-| | ↳ paired with **Pull-up progression** (bar) | 3 × per ladder | **Vertical pull.** Start at Level 1 (dead hang) — see ladder below. No rest between press and bar. | |
-| **2 — Horizontal pull (lat focus)** | **Inverted row / Australian pull-up** (bar) | 3 × 10 | **NEW 2026-08-11 — the lat exercise you can actually load today.** See lat section below. | 5 min |
+| | ↳ paired with **Pull-up progression — MOVE TO LEVEL 4 NEGATIVES** (bar) | 3 × 5 negatives | 🔴 **Stop parking on dead hangs — ~18 days at Levels 1–2 produced no lat stimulus by the plan’s own admission.** Step/jump to the top, lower over **5 seconds**. This is real lat work today. Drop back to L3 scapular pull-ups only if the left shoulder objects. No rest between press and bar. | |
+| **2 — Horizontal pull (mid-back focus)** | **Inverted row — WIDE / overhand grip** (bar) | 3 × 10 | ⚠️ **Set the bar at HIP-TO-WAIST height, not below knee** — lower is harder, not easier. Use foot position as the difficulty dial. **Wide overhand grip here is deliberate — elbows flare out, which shifts the work to RHOMBOIDS and MID-TRAPS.** Workout A uses the underhand/close version for lats. Same movement, two different targets across the rotation. | 5 min |
 | **3 — Upper accessory superset** | **Seated rear delt fly** (3kg) | 3 × 12 | Lean forward from seated, elbows out to sides — builds upper back posture | 7 min |
 | | ↳ paired with **Dumbbell tricep kickback** (3kg) | 3 × 12 | Hinge forward, upper arm parallel to floor, extend only the forearm | |
-| **4 — Core/hip circuit** — 2 rounds, 15 sec between stations | **Bird dog** | 10/side | Spine neutral, slow — opposite arm + leg, hold 3 sec | 12 min |
-| | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec | |
+| **4 — Hip circuit** — 2 rounds, 15 sec between stations | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec. *(Bird dog moved out of this circuit 2026-08-28 — it now runs daily in the Spine Stabiliser Block, at 3× the frequency it had here.)* | 10 min |
 | | **Clamshell** | 15/side | Lie on side, knees bent 45°, feet together — lift top knee. Directly stabilises SI joint. | |
 | | **Single-leg glute bridge** | 10/side | One leg extended — more glute/hamstring load, zero spine stress | |
 | | **Side-lying leg adduction** | 15/side | Bottom leg raises straight up. Inner thigh. Hips stacked, no rolling. | |
 | | **Prone hip extension** | 12/side | Face down, one leg lifts straight up, hold 1 sec. Squeeze glute, not back. | |
-| **5 — Finisher** | **Calf raises** (bodyweight) | 2 × 20 | Slow up, slow down | 3 min |
+| **5 — Forearms** | **Wrist curl** (3kg) | 2 × 15 | **Moved here from Workout A (2026-08-28)** to free time for the leg block. Seated, forearm resting on thigh, palm up, hand past the knee. Curl the wrist only. | 3 min |
+| | ↳ superset **Reverse wrist curl** (3kg) | 2 × 15 | Same position, palm down. Trains the extensors — the side that gets neglected. | |
+| **6 — Finisher** | **Single-leg calf raise** | 2 × 15/side | **Upgraded from two-leg bodyweight (2026-08-28)** — bodyweight two-leg raises stopped being a stimulus. Slow lowering, wall for balance. | 3 min |
 | **Balance** | 3-move sequence (see below) | — | Non-negotiable — [[healthspan-80]] Pillar 1 | 2 min |
 
 **Rest:** none within a superset · 60–90 sec after each superset pair · 15 sec between circuit stations, 60 sec between circuit rounds.
 
 > **What changed and why:** the hip/glute work (5 exercises) was consuming more of the session than the upper body, despite being stabiliser work rather than a hypertrophy driver. Circuiting it at 2 rounds instead of 3 straight sets each frees ~10 min — which is what pays for the lat block. Nothing was removed from the exercise list.
+
+---
+
+## 🔴 Daily Spine Stabiliser Block (added 2026-08-28) — 3 min
+
+> **Placement:** immediately before the Balance block, every day — strength days, EFX days, and rest days alike. The two together make a 5-minute daily block.
+
+**Why this became daily.** Bird dog, dead bug and side plank are the **McGill "big three"** — the standard protocol for back-pain populations. They work by training the spine to *resist* movement while staying neutral, rather than loading it into extension. Until now bird dog ran **once a week**, buried in a rushed 2-round circuit at 15 sec rest. **For someone whose spine is the single structural constraint on this entire plan, that was the thinnest-covered thing in the file.**
+
+**These are not fatiguing and need no recovery day** — that's precisely why weekly programming was the wrong frequency for them. Stabiliser endurance responds to frequency, not intensity.
+
+| # | Exercise | Prescription | Cue |
+|---|----------|-------------|-----|
+| 1 | **Bird dog** | 2 × 10/side | Opposite arm + leg, hold 3 sec. Spine neutral throughout — imagine balancing a glass of water on your lower back. |
+| 2 | **Dead bug** | 2 × 10/side | Lower back flat on the floor the entire time. If it arches, reduce the range. |
+| 3 | **Side plank** | 2 × 20–30 sec/side | Knees first, progress to feet. Hips stacked and lifted. |
+
+> ⛔ **What is deliberately NOT in this block, and must not be added: supermans, back extensions, hyperextensions, or any loaded spinal extension.** With seronegative spinal inflammation and SI joint history, loading the spine into extension is the wrong direction — the entire design principle here is anti-movement, not extension strength. **The absence of direct lower-back "strengthening" work in this plan is intentional, not an oversight.**
+
+> ✅ **Dead hang (20–30 sec) pairs naturally here on non-strength days** — it's spinal traction rather than stabiliser work, but it's the other thing that's safe daily. See the Dead Hang section under the Pull-Up ladder.
 
 ---
 
@@ -325,13 +354,103 @@ Move to the next level when current level feels easy for 3 sets. Run Levels 1–
 | **Difficulty dial** | Walk feet further out = harder. Bend knees / step feet back = easier. Raise the bar = easier. No equipment change needed to progress. |
 | **Spine note** | Body stays in one straight line, braced — no spinal flexion, no hip flexion. SI-safe. |
 
-⚠️ **Requires a bar that mounts low** (wall-mounted, doorway frame at low position, or a sturdy table edge as a substitute). **A high doorway pull-up bar cannot do this** — if that's what you bought, use a table edge or the underside of a desk instead until you can mount lower.
+✅ **RESOLVED 2026-08-28 — the bar does mount low, so this exercise is now fully available.** The earlier caveat (that a high doorway bar couldn't do inverted rows, forcing a table-edge substitute) no longer applies.
+
+> 🔴 **But correct the height first — "below knee level" is the wrong starting position, and this matters.** For an inverted row, **lower bar = harder**, because your body angle approaches horizontal and you're lifting a greater share of your bodyweight. Below-knee height is close to the *hardest* version of this movement, not the easiest, and it's also awkward to get in and out of.
+>
+> | Bar height | Difficulty | Use it when |
+> |------------|-----------|-------------|
+> | Chest/upper-abdomen height | Easiest | If 3 × 10 at waist height isn't achievable yet |
+> | **Hip-to-waist height** | **Moderate — START HERE** | **Correct setting today.** This is the standard inverted-row position and what the 3 × 10 prescription assumes. |
+> | Knee height | Hard | Progress here once 3 × 12 at waist height is clean |
+> | Below knee | Hardest | Endpoint, not entry point — and at this height, feet-elevated variations become the next progression |
+>
+> **Practical progression on a doorway bar:** rather than moving the bar every session, keep it at waist height and use foot position as the dial (feet closer in = easier, walked further out = harder). Drop the bar a notch only when foot position has run out of range. **This is one more reason the bar-height ladder above is a months-long progression, not a this-week decision.**
+
+⚠️ **Mounting safety, specific to low-position use.** Doorway bars that sit low are usually the **spring-loaded tension type that wedges inside the frame** rather than hooking over it — those depend on friction and can slip. Test with full bodyweight while standing before trusting it under a row. **The genuine upside of the low position: a bar failure during an inverted row drops you a few inches onto your back/heels, not onto your tailbone from a full hang** — far lower risk than the pull-up failure mode already flagged for the SI joint.
 
 **2. The 8 kg dumbbell upgrade — still the bigger lever**
 
 One-arm dumbbell row (Workout A) is a lat exercise, and it's running at **3 kg**. For a 60 kg frame, that's below the threshold that produces adaptation. **Getting to 8 kg will do more for your lats over the next month than any new bar exercise.** This upgrade was flagged as due by Week 3 and is now overdue — see the equipment note at the top of this file.
 
 > **Honest ranking of lat levers, best to worst, for the next 4 weeks:** 8 kg dumbbell row > inverted row > pull-up negatives (Level 4) > dead hangs. The bar is a good addition; it is not the bottleneck.
+
+### 🔴 Back frequency audit + fix (2026-08-28)
+
+**Question raised: "do I have enough back exercises?" Answer: enough exercises, not enough working stimulus.** The audit:
+
+| Exercise | Where (before) | Producing real stimulus? |
+|----------|---------------|-------------------------|
+| One-arm dumbbell row (3kg) | Workout A, Mon + Fri | ❌ **No** — 3kg runs 25–30 reps to failure. Endurance, not hypertrophy. |
+| Pull-up progression | Workout B, Wed | ❌ **No** — at Levels 1–2 (dead hangs) this trains grip and shoulder tolerance, not lats. Stated already in the section above. |
+| Inverted row | Workout B, Wed | ✅ **Yes — the only one working** |
+| Rear delt fly (3kg) | Workout B, Wed | ✅ Yes — rear delts are small, 3kg is genuinely appropriate here |
+
+> 🔴 **On paper, back was trained 3×/week. In reality it received ONE effective session per week (Wednesday) — below the 2×/week minimum for growth.** The nominal frequency masked the fact that two of the four movements were producing near-zero signal.
+
+**Fix applied — free, no purchase required:** **the 3kg one-arm row in Workout A was replaced with the inverted row.** Because the bar mounts low (confirmed 2026-08-28), real back stimulus goes from **1×/week → 3×/week** immediately. **This is rated the highest-value change available today — above every leg change made in the same revision** — because it converts two dead sessions into live ones at zero cost.
+
+⚠️ **The one-arm row is not deleted permanently — it returns when the adjustable dumbbells arrive.** At 8–12 kg it becomes the best lat exercise in the plan (per the ranking above). It was removed because 3 kg made it useless, not because the movement is wrong.
+
+### 🔴 Second audit (2026-08-28, same day) — "other than inverted row there is no back work"
+
+**Correct, and the previous fix caused half of it.** Swapping the 3kg one-arm row *for* the inverted row was a like-for-like replacement — Workout A went from two pull movements to one. Net effect: **the whole back now runs on a single movement pattern.** Muscle-by-muscle:
+
+| Back muscle | Trained by | Status before this fix |
+|-------------|-----------|------------------------|
+| **Lats** | vertical pull primarily, horizontal pull secondarily | 🔴 **Vertical pull produces nothing** — dead hangs train grip and shoulder tolerance. Inverted row was the only lat input. |
+| **Rhomboids / mid-traps** | horizontal rows, scapular retraction | ⚠️ Inverted row only, and only one grip |
+| **Rear delts** | rear delt fly | ✅ Covered |
+| **Lower traps** | Y-raises, scapular depression | 🔴 **Nothing whatsoever** |
+| **Teres / upper back** | pull patterns generally | ⚠️ Incidental only |
+| **Erectors** | deliberately absent | ✅ Correct — see below, do not add |
+
+> **For contrast: chest has a 6-level push-up ladder plus a floor fly. Back had one exercise.** That asymmetry is the real finding — it is the same shape as the legs problem, and it has the same two root causes (light load, and one movement programmed where several are needed).
+
+**Four fixes, ranked. Three are free.**
+
+**1. 🔴 Advance the pull-up ladder — the single biggest unlock, costs nothing.** Dead hangs began ~Aug 10; that is **~18 days at a level the plan itself describes as producing "close to zero lat hypertrophy stimulus."** The ladder was never meant to be parked on. **Move to Level 4 negatives now if Levels 1–3 are pain-free:** step or jump to the top position and lower over 5 seconds, 3 × 5. **Negatives produce genuine lat stimulus today** — eccentric-only loading is the standard way to train a pull-up you can't yet perform. If the left shoulder complains, drop back to Level 3 scapular pull-ups, which at least load the lower traps.
+
+**2. Vary the inverted row grip — free, but a modest effect. Do not oversell it.**
+
+| Grip | Emphasis | When |
+|------|----------|------|
+| **Underhand / close** | Lats lead — elbows track close to the body | Use on **Workout A** |
+| **Overhand / wide** | Rhomboids / mid-traps lead — elbows flare out | Use on **Workout B** |
+
+> ⚠️ **Correction (recorded 2026-08-28, same day).** An earlier version of this note claimed the grip split gives "two different targets" and "converts one pattern into two." **That was overstated.** Grip shifts the emphasis roughly 10–20% between lats and rhomboids — **both remain horizontal pulls working the same muscle group.** It is one exercise with a slight bias, not two exercises. Worth doing because it is free; not worth counting as pattern variety.
+
+**So why does the inverted row appear in BOTH workouts? Frequency — not variety, and not clever programming.**
+- Because A and B alternate, **each workout runs ~1.5x/week.** An exercise placed in only one workout is therefore trained **1.5x/week — below the 2-3x/week that drives hypertrophy.** Putting the row in both is the only way to reach 3x/week under this rotation.
+- **The blunter reason: it is currently the only functional back exercise available.** The one-arm row is useless at 3 kg and pull-ups produce nothing until negatives take hold. **The duplication is an equipment constraint showing through, and it should end once the band and the 8 kg dumbbells arrive** - at which point A takes the one-arm row and B keeps the inverted row.
+- **Repeating the same muscles is least problematic for the back specifically.** Bodyweight rows at 3 x 10 are not maximally fatiguing, and postural musculature tolerates high frequency well. Legs and chest would need more spacing; the back does not.
+
+**Real pattern variety comes from the vertical pull, not the grip - and the two sessions are not identical:**
+
+| | Workout A | Workout B |
+|---|---|---|
+| Horizontal pull | Inverted row (underhand) | Inverted row (wide) |
+| **Vertical pull** | -- | **Pull-up negatives** <- the genuinely different pattern |
+| Rear delts | -- | Rear delt fly |
+| Lower traps | **Prone Y-T-W** | -- |
+
+**3. Prone Y-T-W raises — added to Workout A. Covers the lower traps, which nothing currently trains.**
+
+| | |
+|---|---|
+| **Setup** | Lie **face down**, forehead resting on a towel, **chest stays on the floor**. Lift only the arms a few inches: **Y** (arms overhead at 45°), **T** (straight out to the sides), **W** (elbows bent, squeezing shoulder blades down). |
+| **Prescription** | 2 × 8 each position, no weight — bodyweight arms are enough at first |
+| **Why it matters here** | Lower traps pull the shoulder blades *down and back*. They are the direct antagonist to the forward-rounded, screen-hunched posture flagged in the pull-up section — and they are the one back muscle nothing else in this plan touches. |
+
+> ⚠️ **This is NOT a superman, and the distinction is the whole point.** A superman lifts the **chest and legs** — loaded spinal extension, banned here. **Y-T-W keeps the chest and hips flat on the floor and lifts only the arms.** It is scapular work, not spinal work. **If the chest comes off the floor, it has turned into the banned exercise — reset and lift only the arms.**
+
+**4. A resistance band (~₹300–500) is the cheapest meaningful purchase in this entire plan.** It unlocks **band-assisted pull-ups** (ladder Level 5, real lat volume before bodyweight pull-ups are possible) and **straight-arm pulldowns** (the only true lat *isolation* movement available at home). **Cheaper than the dumbbells by a factor of ten, and it fixes the vertical-pull gap directly.** Buy it in the same order as the dumbbells.
+
+**Later, once 8 kg+ arrives:** the **one-arm dumbbell row returns** (it becomes the best lat exercise in the plan) and the **dumbbell pullover** becomes available — lying supine on the floor, arms extended overhead and pulled over the chest, which is lat isolation with zero spinal load.
+
+### Lower back / spinal erectors — deliberately absent, do not "fix"
+
+**There is no direct lower-back loading in this plan: no supermans, no back extensions, no deadlifts or good mornings** (the latter two are Phase-3 ortho-gated). **This is a design decision, not a gap.** What covers the lower back instead is the anti-movement work now running daily — see the **Daily Spine Stabiliser Block**. With seronegative spinal inflammation and SI joint history, loaded spinal extension is the wrong direction, and the McGill big-three approach is the evidence-based standard for exactly this population.
 
 ---
 
@@ -374,6 +493,48 @@ The dead hang has a second benefit specific to you: it applies **gentle axial tr
 **Progression:** knees down → feet stacked → feet stacked with top arm raised → feet stacked with a slow hip dip. Advance only when the current level is held cleanly for 30 sec both sides.
 
 **Stop signals:** any sacral or lower-back sensation, or hips sagging. A side plank done with a dropped hip trains nothing and loads the spine — stop the set rather than hold a broken position.
+
+---
+
+## 🔴 Legs & Thighs — Why They're Lagging (added 2026-08-28)
+
+**Reported 2026-08-28:** *"i don't have sufficient thigh exercises, my upper body is building more compared to thighs."* **The observation is correct, but adding more leg exercises is not the fix — and would not have worked.** The imbalance is caused by three things, and exercise *selection* is the smallest of them.
+
+### The actual diagnosis, ranked
+
+| # | Cause | Evidence in this plan | Fix |
+|---|-------|----------------------|-----|
+| **1** | 🔴🔴 **Legs are programmed as a stabiliser circuit, upper body is programmed for hypertrophy.** | Upper body gets **3 straight sets, antagonist supersets, 60–90 sec rest, and two 6-level progression ladders**. Legs get **2 circuit rounds with 15 sec rest**, mixed in with clamshells and prone hip extensions — which are activation/stabiliser work, not growth drivers. **Same session, two completely different training methods.** | **Give legs their own block with real sets and real rest.** Done below. |
+| **2** | 🔴🔴 **Legs are the body's strongest muscle group and they are the ONLY ones still on pure bodyweight.** | Chest has a 6-level push-up ladder; back has the bar and rows. Quads/hamstrings have step-ups and wall sits at **zero external load**. A 60 kg frame's legs move that weight all day — bodyweight is below the adaptation threshold for them in a way it isn't for the upper body. | **The adjustable dumbbell purchase matters MORE for legs than for anything else in this plan.** See below. |
+| **3** | ⚠️ **Every classic thigh-mass builder is on the restricted list.** | Squats, deadlifts, lunges, leg press — all gated behind ortho clearance (Phase 3) or permanently out, per the free-squat relapse history. | Work around it with **unilateral load, tempo/eccentrics, and longer time-under-tension** — the three ways to make light loads hard. Done below. |
+
+> 🔴 **The uncomfortable honest answer: cause #2 is the binding one, and it points straight back to the equipment purchase already flagged as #1 priority since ~Aug 15 and now ~2 weeks overdue.** You cannot build thigh mass on bodyweight step-ups indefinitely, and no exercise added to this file changes that. **Weighted step-ups at 8–12 kg per hand would do more for thigh size than every new movement listed below combined.** The exercises below are the best available answer *until* that purchase happens — they are not a substitute for it.
+
+### The three levers that make light loads work
+
+Since external load is the constraint, these three replace it. **All three apply to every leg exercise below:**
+
+1. **Unilateral** — one leg at a time doubles the effective load with no equipment change. This is why step-ups beat squats here even setting the spine issue aside.
+2. **Eccentric emphasis (slow lowering)** — a 3–4 second lowering phase produces substantially more muscle damage/growth signal than a fast one at the same weight. **Free, and the single most effective adaptation available right now.**
+3. **Time under tension / proximity to failure** — leg sets should be taken to within 2–3 reps of genuine failure. If a set of step-ups doesn't get hard by rep 10, the step is too low or the tempo is too fast.
+
+### New exercises — all spine-safe
+
+| Exercise | How | Why it's safe here | Where |
+|----------|-----|-------------------|-------|
+| **Eccentric step-down** | Stand on the step, lower the *other* foot to the floor over **4 slow seconds**, tap, come back up. The working leg is the one on the step. | Same spine-neutral pattern as the step-up already cleared, no deep hip flexion. The slow lowering is what makes it hard, not depth or load. **Best pure quad builder available without equipment.** | Workout A — folded into the step-up progression |
+| **Hamstring slider curl** | Lie on your back, heels on a towel/cloth on smooth floor, lift into a glute bridge, then **slowly slide the heels out and pull them back in** while keeping hips lifted. | **Fills a genuine gap — there is currently no direct hamstring exercise in this plan at all.** Fully supine, spine flat on the floor, zero axial load, zero hip flexion. One of the safest hamstring movements that exists. | Workout A — new |
+| **Single-leg wall sit** | Standard wall sit, then extend one leg straight out. Hold 20–30 sec/side. | Isometric, spine flat against the wall, no movement at all. Doubles the quad load on the working leg. | Workout A — progression from the current wall sit |
+| **Single-leg calf raise** | Same as current calf raise, one leg at a time, full range, slow down-phase. | No spinal involvement. Calves specifically need heavy load or unilateral work — bodyweight two-leg raises stopped being a stimulus a while ago. | Workouts A & B — replaces the two-leg version |
+| **Split squat (limited depth)** | Feet staggered front-to-back, torso **upright**, lower straight down only until the front thigh is ~45°, not parallel. Hold a doorframe for balance. | ⚠️ **The most cautious addition here — introduce only after the others are established.** Torso stays vertical so the lumbar spine isn't loaded in flexion, and depth is deliberately capped short of the deep-hip-flexion range that caused the free-squat relapse. **Stop at any SI or lower-back sensation and do not retry** — this is the one movement on the list with a real flare risk. | Phase 2 — not yet |
+
+> ⛔ **Deliberately NOT added, and why:** Bulgarian split squat (rear-foot-elevated — significantly deeper hip flexion than a flat split squat, too close to the relapse pattern), walking/forward lunges (already Phase-3-gated with ortho clearance), sissy squats (extreme knee shear), jump squats/plyometrics (impact loading through the pelvis — the exact mechanism the seated EFX switch was made to avoid), and leg extensions/curls (no machine, and no home substitute worth the setup).
+
+### What this does NOT fix
+
+⚠️ **Be realistic about the timeline.** Thighs will still grow slower than the upper body over the next 1–2 months even with everything above, because the load gap is real and bodyweight+tempo only partially closes it. **The point of these changes is to stop the gap widening, not to reverse it.** Reversal needs the dumbbells.
+
+⚠️ **This also isn't purely a training problem.** At BMI 17.9 with calories frequently landing at or below the bottom of the 2,300–2,400 band (see [[meal-log]]), there is limited surplus available for *any* muscle growth — and the body preferentially allocates a thin surplus to the muscles being trained hardest, which has been the upper body. **Hitting the calorie band consistently is part of the leg fix too**, not a separate topic.
 
 ---
 

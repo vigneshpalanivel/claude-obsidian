@@ -978,6 +978,9 @@ Weigh **morning, empty stomach, post-toilet, same conditions.**
 | 2026-07-21 (Week 2) | 58.5 kg | ~17.3 | +0.5 vs baseline | **2-week trend +0.5kg ≈ ~1kg/month — ON TARGET, likely lean (slow) gain.** BUT slower than logged intake (~2,600 avg) predicts (~1.2kg expected) → EITHER portion estimates ~300/day high OR real maintenance ~2,300–2,400 (higher than 1,900 formula; adaptive thermogenesis). **Conclusion: current intake produces ideal gain — DO NOT cut. Earlier "you're overeating, dial back" was wrong per the scale.** |
 | 2026-07-27 (Week 3) | **59.1 kg** | **~17.4** | **+0.6 kg vs Week 2** | **+1.1 kg vs baseline (58.0) in 3 weeks — above the 0.8–1 kg/month target.** Post-toilet conditions ✓. Some water/food volume component likely but trend is clearly positive. |
 | 2026-08-03 (Week 4) | **59.75 kg** | **~17.6** | **+0.65 kg vs Week 3** | **+1.75 kg vs baseline (58.0) in 4 weeks ≈ 1.9 kg/month pace — resolves the checkpoint below.** Post-toilet conditions ✓. Rate has held steady at ~0.6–0.65kg/week for two weeks running, not a one-off. |
+| 2026-08-27 (Thursday) | **60.75 kg** | **~17.9** | **+0.65 kg vs Aug 26 (24 hours)** | ✅ **Same pattern as the Aug 20 case, and the mechanism is even more visible this time.** A 0.65 kg overnight swing after a ~3,089 kcal day (Aug 26) that included the Onam Sadhya's rice, sambar, sodium-heavy pickle and multiple carb-heavy dishes is exactly the sodium/glycogen water-retention signature already validated on Aug 20 — not tissue gain. **New 3-point average (Aug 25, 26, 27 — three most recent actual weigh-ins): 60.43 kg**, against the prior 3-point average (Aug 24, 25, 26) of 60.33 kg — a **+0.10 kg** shift, well under the ~0.3 kg threshold treated as "the same number." Trend: Jul 6 → Aug 27, 58.0 → 60.75 kg (52 days) ≈ **1.59 kg/month**, still in the same 1.43–1.6 kg/month range this log has held since early August. **No action — keep weighing 3×/week and reading the average, not the day.** |
+| 2026-08-26 (Wednesday) | **60.10 kg** | **~17.8** | **−0.35 kg vs Aug 25 (24 hours)** | ✅ **Unremarkable daily scatter, same noise band as every other single-day reading in this table.** |
+| 2026-08-25 (Tuesday) | **60.45 kg** | **~17.9** | **0.00 kg vs Aug 24 (24 hours)** | ✅ **Flat day-over-day — the cleanest possible confirmation that daily readings shouldn't be over-read; a 0.00 kg reading between two swinging days (+0.15 before it, −0.35 after it) is itself just a point on the same noise curve.** |
 | 2026-08-24 (Monday, gap since Aug 21) | **60.45 kg** | **~17.9** | **+0.15 kg vs Aug 21 (3 days)** | ✅ **No weigh-in Aug 22–23 (weekend), so this is a 3-day gap, not a 24-hour reading — smaller signal-to-noise than the daily entries above, but the number itself is unremarkable.** +0.15 kg over 3 days is inside the same noise band described in the explainer (±0.5–1.0 kg from glycogen/sodium/gut content/hydration), especially after two backfilled days that included pork, ice cream, a first-ever bida, and heavier chicken/gravy meals — plenty of sodium and gut-content load to explain it without invoking real tissue gain. **New 3-point average (Aug 20, 21, 24 — the three most recent actual weigh-ins): 60.42 kg**, against the prior 3-day average (Aug 19–21) of 60.22 kg — a **+0.20 kg** shift, still under the ~0.3 kg threshold this log treats as "the same number." Trend: Jul 6 → Aug 24, 58.0 → 60.45 kg (49 days) ≈ **1.5 kg/month**, consistent with the 1.43–1.5 kg/month range already established. **No action — resume 3×/week weighing (Mon/Wed/Fri fits the pattern already in use) rather than reacting to this single point.**|
 | 2026-08-21 (5th consecutive day) | **60.30 kg** | **~17.8** | **−0.20 kg vs Aug 20** | ✅ **Unremarkable, and that is the point.** Five straight mornings: 60.60 → 60.10 → 59.85 → 60.50 → 60.30 — the daily scatter (±0.3–0.65 kg) continues exactly as the noise-band explainer above describes; nothing new needs saying about this one on its own. **Rolling 4-day average (Aug 18–21 equivalent, using Aug 17–20's replacement): 60.19 kg**, essentially flat against the prior 60.26 (**−0.07 kg**). Trend holds: Jul 6 → Aug 21, 58.0 → 60.19 (46 days) ≈ **1.43 kg/month.** **No action — keep weighing 3×/week and reading the average, not the day.** |
 | 2026-08-20 (4th consecutive day) | **60.50 kg** | **~17.9** | **+0.65 kg in 24 hours** | ✅✅ **This reading validates yesterday's explanation the hard way — and it is the best evidence in the whole table.** Four consecutive mornings: **60.60 → 60.10 → 59.85 → 60.50.** A 0.65 kg overnight *gain* on a **~2,310 kcal day** would require a ~5,005 kcal surplus, i.e. eating ~7,000 kcal. It did not happen. **The direction reversed within 24 hours of a 0.75 kg fall — nothing physiological moves that way.** ✅ **The mechanism is visible in the food log: last night was idli + sambar (sodium) + rice-flour carb** — sodium and glycogen both pull water, exactly the two mechanisms listed in the explainer above. 🔴🔴 **The decisive number: individual days swung 0.75 kg, while the running average moved 60.18 → 60.26, i.e. 0.08 kg.** The average is stable to within a tenth of a kilo while the daily points scatter by three-quarters of one. **That gap IS the argument for averaging — do not react to any single morning.** **4-day average: 60.26 kg (BMI 17.8).** Trend unchanged: Jul 6 → Aug 20, 58.0 → 60.26 = **+2.26 kg in 45 days ≈ 1.5 kg/month, on plan.** |
@@ -2015,8 +2018,10 @@ Weigh **morning, empty stomach, post-toilet, same conditions.**
 | | Greek yogurt (half cup, ~120g) | 120 | 11g | 0g |
 | | 2 tbsp PB | 190 | 8g | 2g |
 | | Buttermilk | 35 | 2g | 0.2g |
-| Dinner | — | — | — | — |
-| **Running** | | **~1,827 kcal** | **~91.8g** | **~31.1g** |
+| Dinner | Half egg fried rice (Indian style) | 220 | 7g | 1g |
+| | Quarter grilled chicken | 185 | 21g | 0g |
+| | Half glass mint juice | 20 | 0g | 0.3g |
+| **Total (day closed)** | | **~2,252 kcal** | **~119.8g** | **~32.4g** |
 
 **Notes — 2026-08-24 (running; day open):**
 
@@ -2041,6 +2046,181 @@ Weigh **morning, empty stomach, post-toilet, same conditions.**
 🔴 **The PB (2g fiber) pushed fiber over the top of target before dinner has even started — running fiber is now 31.1g, already past the 25–30g band.** The salad itself only added ~4g; it was the PB add-on that tipped it, the same lever that's repeatedly been the difference between clearing and missing target this week (Aug 17, 19, 21). **Any dinner beyond eggs-only will push this into the same over-target territory as Aug 18–20** — eggs, not idli/sambar/rice, is the one move left to keep today reasonable.
 
 ✅ **Protein is very strong at 91.8g before dinner** — the PB (8g) and buttermilk (2g) on top of an already protein-dense salad means today will clear the 100g floor even on a light dinner, unlike days that needed a heavy dinner to get there.
+
+**Dinner (backfilled 2026-08-25) — closed at ~2,252 kcal / ~119.8g protein / ~32.4g fiber:**
+
+🔴🔴 **Grilled chicken at dinner — hard rule break, repeating the exact pattern flagged on Aug 20 (chicken gravy).** This is the second chicken-at-dinner break in five days despite the standing no-chicken/fish-after-6:30PM rule. Unlike Aug 20, this was backfilled the next day, so there was no same-morning readout to confound — but it's worth naming plainly: **the rule keeps getting broken on dinners that are otherwise "lighter" (grilled, not gravy) — the rule is about timing/histamine load, not about how the chicken is cooked.**
+
+✅ **Calories landed at 2,252 — just under the 2,300–2,400 floor, closer to the band's low end than most days this week**, and protein closed at 119.8g, right at the 120g ceiling without going over.
+
+🔴 **Fiber closed at 32.4g, over the 25–30g target** — despite dinner itself being low-fiber (1.3g total), the day was already over target by lunch (31.1g) purely from breakfast's four-fruit stack + the lunch PB. This confirms the pattern already flagged this morning: **the lever is breakfast, not dinner** — a low-fiber dinner cannot undo a high-fiber breakfast, it can only stop making it worse.
+
+**Note:** Half egg fried rice at the established rate (220/7g, Aug 5/Aug 6 era; fiber estimated ~1g, half of the 4-column "Egg fried rice (minimal oil)" rate of 480/16g/2g). Quarter grilled chicken taken as half of the established "half grilled chicken" rate (370/42g/0g) = 185/21g/0g. **Mint juice has no established rate in this log — first-time item**, estimated at ~20 kcal/0g protein/0.3g fiber for half a glass of fresh pudina juice with minimal sugar; flag if sweetened more heavily.
+
+---
+
+## 2026-08-25 (Tuesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Milkshake (usual recipe, incl. fig) | 665 | 23.2g | 10.4g |
+| | 2 tbsp soaked padam pisin | 35 | 0g | 4g |
+| | 1 small pomegranate | 75 | 1.2g | 3g |
+| | 1 small apple | 70 | 0.4g | 3g |
+| | 1 piece watermelon | 30 | 0.5g | 0.5g |
+| | 1 small mosambi | 45 | 0.75g | 1.5g |
+| | 2 egg ghee onion omelette | 190 | 12g | 0.3g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Buddha bowl (non-veg, assumed) | 595 | 45g | 10g |
+| | 1 red banana (full) | 110 | 1.5g | 3g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 2 tbsp PB | 190 | 8g | 2g |
+| Dinner | 2 idiyappam (string hoppers) | 140 | 2.8g | 0.6g |
+| | Coconut milk (~½ cup, sweetened) | 130 | 1.2g | 0.7g |
+| | 2 eggs | 140 | 12g | 0g |
+| **Total (day closed)** | | **~2,485 kcal** | **~111.5g** | **~39.2g** |
+
+**Notes — 2026-08-25 (closed):**
+
+🔴🔴🔴 **Fourth fruit item stacked at breakfast for the fourth consecutive weekday (Aug 20, 21, 24, 25) — pomegranate + apple + watermelon + mosambi, on top of the milkshake's own fig/grape content.** Going smaller-sized this time (all four flagged "small") brought fiber down to ~22.7g, the lightest of this four-day run, but the structural issue hasn't moved: **it's still four separate fruit items, not one.** The "one high-fiber fruit, not three (or four)" rule has now been repeated four mornings running without ever actually being applied — going small is a partial mitigation, not the fix that was asked for.
+
+✅ **Watermelon is a genuinely good swap in for apple/mosambi on a day like this** — low-FODMAP, low-fiber (0.5g), and doesn't stack fermentable load the way apple/litchi do on a gassy morning. If the four-fruit habit is going to continue, watermelon is one of the better choices in the mix.
+
+✅ **Breakfast ~1,145 kcal, within the usual 800–1,150 range** — the "go small" adjustment kept calories from repeating yesterday's medium-size escalation even with an extra fruit item (watermelon) added.
+
+**Note:** Values at established/scaled rates — small pomegranate at the established "75%" rate (75/1.2g/3g, Aug 4), small apple at the established small-apple rate (70/0.4g/3g, Aug 14), watermelon 1 piece at the established rate (30/0.5g/0.5g, used twice previously), small mosambi scaled at 75% of the medium/whole rate (60/1g/2g → 45/0.75g/1.5g, consistent with the pomegranate scaling method) — **no prior "small mosambi" entry exists, so this is a first-time proportional estimate, flag if it reads too low or high.** 2 egg ghee omelette at the established no-cheese rate (185/12g/0g) with a small addition for onion (+5 kcal/+0.3g fiber, negligible).
+
+🔴🔴 **Fiber now 37.9g before dinner — over target by lunch, for the fifth consecutive weekday (Aug 19–25 minus the Aug 21 pongal exception).** The breakfast four-fruit stack (22.7g) plus Buddha bowl + red banana + PB at lunch (15.2g) reproduces the exact failure mode flagged repeatedly since Aug 12: **Buddha bowl + full red banana + PB together push lunch alone past 15g, on top of a breakfast that's already carrying 20g+.** The half-banana/no-PB fix that's worked four times (Aug 17, 19, 21 partial) was not applied today.
+
+⚠️ **"Buddha bowl" logged again without specifying veg or non-veg** — valued at the established non-veg rate (595/45g/10g), consistent with every prior instance. **If vegetarian, protein drops ~20–25g** and the running total falls to ~70–75g rather than 95.5g — this has now gone unanswered across at least four separate lunch entries (Aug 19, 20, 21, 25).
+
+✅ **Protein at 95.5g before dinner is very strong** — even a light egg dinner will clear the 100g floor comfortably, so tonight's dinner has no protein pressure, only a fiber ceiling to respect (eggs only, no sambar/dal/idli, to avoid a sixth consecutive over-target day).
+
+**Dinner — closed at ~2,485 kcal / ~111.5g protein / ~39.2g fiber:**
+
+✅ **Dinner respected the rule** — idiyappam + coconut milk + eggs, no chicken/fish, the correct call after yesterday's grilled-chicken break. Also a low-FODMAP, gas-friendly choice consistent with the Aug 17–18 "idiyappam is a good gassy-evening base" finding, and dinner itself added only ~1.3g fiber.
+
+🔴 **Calories closed at 2,485 — ~85–185 over the 2,300–2,400 band**, the highest close since Aug 21 (2,595). Lunch (930 kcal, Buddha bowl + banana + buttermilk + PB) is the main driver, not dinner.
+
+🔴🔴 **Fiber closed at 39.2g — the worst fiber day since Aug 20 (39.1g), and entirely a breakfast + lunch problem.** Dinner was correctly kept low-fiber, exactly as the running note called for, but it can only offset so much when breakfast (22.7g) and lunch (15.2g) together already blow past the 25–30g target before dinner exists. **The fix has to move upstream — breakfast (drop to one fruit) and lunch (half banana / no PB) — a clean dinner alone cannot rescue an over-target day.**
+
+✅ **Protein closed at 111.5g, comfortably inside the 100–120g band.**
+
+---
+
+## 2026-08-26 (Wednesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Milkshake (usual recipe, incl. fig) | 665 | 23.2g | 10.4g |
+| | Half mosambi (sweet lime) | 30 | 0.5g | 1g |
+| | 2 egg cheese omelette | 245 | 16g | 0g |
+| | 1 small apple | 70 | 0.4g | 3g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Onam Sadhya — rice + ghee | 650 | 10g | 2g |
+| | Sambar | 100 | 4g | 3g |
+| | Rasam | 40 | 1g | 0.5g |
+| | Avial | 150 | 4g | 4g |
+| | Thoran | 120 | 2g | 3g |
+| | Olan | 80 | 1g | 2g |
+| | Pachadi | 70 | 2g | 1g |
+| | Erissery | 120 | 5g | 4g |
+| | Pickle | 20 | 0.2g | 0.5g |
+| | 1 papadam | 30 | 0.5g | 0.25g |
+| | Banana chips (4 pieces) | 44 | 0.4g | 0.4g |
+| | Payasam (1–2 servings) | 300 | 5g | 0.5g |
+| | Pulissery | 60 | 2g | 0.5g |
+| Dinner | 1 dosa | 120 | 3g | 1g |
+| | 2 eggs | 140 | 12g | 0g |
+| **Total (day closed)** | | **~3,089 kcal** | **~93.2g** | **~37.1g** |
+
+**Notes — 2026-08-26 (day closed):**
+
+✅✅ **Two fruit items, not four — the first breakfast in five days (since Aug 19) to actually apply the "one high-fiber fruit, not three/four" rule instead of just restating it.** Half mosambi + one small apple, no pomegranate or watermelon stacking. Breakfast fiber is 14.4g — the lowest breakfast fiber reading since Aug 21's pongal swap, and well clear of the 20–25g range that's driven every over-target day since Aug 18.
+
+✅ **This leaves real headroom for the rest of the day** — even a full Buddha bowl + banana + PB lunch (+15g, the same combination that pushed Aug 25 to 37.9g by lunch) would land today at ~29g before dinner, inside the 25–30g band rather than blowing through it. **Worth actually applying the half-banana/no-PB fix today too, since breakfast finally did its part — don't undo the correction at lunch.**
+
+**Note:** Values at established rates — half mosambi 30/0.5g/1g, 2 egg cheese omelette (butter-cheese variant) 245/16g/0g, small apple 70/0.4g/3g, tea (after breakfast, milk+sugar) 35/1g/0g.
+
+🔴🔴 **Onam Sadhya still pushes the day past budget before dinner exists, but less badly than first estimated — corrected running total ~2,829 kcal / ~36.1g fiber.** Portion correction (4 banana chips not a handful, 1 papadam not 2, no kaalan, no sharkara varatti) cut the lunch estimate from ~2,120 kcal to ~1,784 kcal. This is a genuine once-a-year festival meal (rice + 11 traditional dishes on a banana leaf: sambar, rasam, avial, thoran, olan, pachadi, erissery, pickle, papadam, banana chips, payasam, pulissery), not a habitual pattern — **treat today like the occasional social/festival days already in this log (e.g. Aug 1–2), not as a diet failure to correct.** ⚠️ **This is still a first-time dish with no established rate and real estimate uncertainty** — the corrected breakdown assumes a typical moderate serving of each remaining item and could realistically be off by ±300 kcal in either direction.
+
+✅ **Protein is fine at 78.2g** — a modest, mostly-vegetarian Sadhya still clears close to four-fifths of the 100g floor.
+
+🔴 **Given ~2,829 kcal is already ~430–530 over the top of the 2,300–2,400 band, and fiber at 36.1g is ~6–11g over the 25–30g target, tonight's dinner should stay light** — the overshoot is real but far smaller than first estimated, so a normal light dinner (not a skip) is reasonable. Keep it protein-focused (e.g. 2 eggs) rather than another carb-heavy dish to avoid adding further to fiber.
+
+✅ **Dinner actually followed the recommendation — 1 dosa + 2 eggs (260 kcal, 1g fiber), the light protein-focused meal flagged above, not another carb-heavy Sadhya-style dish.** Rule-compliant too (no chicken/fish). **Total (day closed): ~3,089 kcal / ~93.2g protein / ~37.1g fiber** — calories land ~690–790 over the 2,300–2,400 band and fiber ~7–12g over the 25–30g target, both driven entirely by the Sadhya lunch (~1,784 kcal alone), not by breakfast or dinner. Protein at 93.2g sits just under the 100g floor — the one gap on an otherwise disciplined day. Consistent with treating this as a one-off festival day: the excess is concentrated in a single identifiable meal, not spread across the day's structure.
+
+---
+
+## 2026-08-27 (Thursday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Milkshake (usual recipe, incl. fig) | 665 | 23.2g | 10.4g |
+| | 1 mosambi (medium, sweet lime) | 60 | 1g | 2g |
+| | 2 eggs | 140 | 12g | 0g |
+| | 2 tbsp padam pisin | 35 | 0g | 4g |
+| | 1 medium apple | 95 | 0.5g | 4g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Buddha bowl (non-veg, assumed) | 595 | 45g | 10g |
+| | 1 red banana (full) | 110 | 1.5g | 3g |
+| | 2 tbsp PB | 190 | 8g | 2g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | 1 onion & carrot uttapam (large) | 260 | 5.6g | 2.5g |
+| | 1 egg | 70 | 6g | 0g |
+| | Chicken gravy — 1 small cup, no chicken pieces | 100 | 1.5g | 1.5g |
+| **Total (day closed)** | | **~2,425 kcal** | **~108.3g** | **~39.6g** |
+
+**Notes — 2026-08-27 (day closed):**
+
+🔴 **Two fruit items (mosambi + apple) plus milkshake's own fig/grape content pushes breakfast fiber to ~20.4g already** — inside the "one high-fiber fruit, not three/four" rule in spirit (only two whole fruits, not three or four), but the two together plus the shake still land at the upper edge of what a full day's 25–30g target can absorb before lunch even starts. Better than the four-fruit stacking pattern from Aug 20–25, not yet the single-fruit fix repeatedly flagged.
+
+🔴🔴 **Lunch repeated the exact full-banana + PB combination already identified on Aug 25 as the fix that needed to replace with half-banana/no-PB — it wasn't applied today either.** Fiber is now ~35.6g before dinner exists, already past the 25–30g target for the whole day. This is the same structural pattern restated across multiple entries: breakfast fruit stacking plus this specific lunch combination are the two repeat offenders, and today both happened on the same day. ⚠️ **"Buddha bowl" veg/non-veg still unconfirmed — 5th consecutive lunch entry (Aug 19, 20, 21, 25, 27) valued at the non-veg default.**
+
+✅ **Protein is strong at 95.2g with a full meal left to go** — comfortably on track to clear the 100g floor even with a light dinner.
+
+**Note:** Values at established rates — milkshake 665/23.2g/10.4g, mosambi (medium, sweet lime) 60/1g/2g (Aug 19/21), 2 eggs 140/12g/0g, padam pisin (2 tbsp) 35/0g/4g (Aug 25), medium apple 95/0.5g/4g (Aug 24), tea (after breakfast, milk+sugar) 35/1g/0g, Buddha bowl (non-veg, assumed) 595/45g/10g (Aug 19), red banana 110/1.5g/3g, 2 tbsp PB 190/8g/2g, buttermilk 35/2g/0.2g (Aug 24/25).
+
+✅ **Dinner correctly light and rule-compliant** — one onion & carrot uttapam + a single egg (not two) + a small cup of chicken gravy without the chicken pieces, no chicken/fish. ⚠️ **Uttapam is a first-time item with no established rate, and portion was corrected to "large" after the initial medium-size estimate** — revised to 260/5.6g/2.5g (up from 185/4g/1.8g, scaled ~1.4x for size), thicker and more oil than the established plain-dosa rate of 120/3g/1g. ⚠️ **"Chicken gravy without chicken pieces" is also a first-time item, estimated as onion-tomato-spice masala cooked in oil with no meat protein** — ~100/1.5g/1.5g for a small cup (~100ml), calories mostly from oil/aromatics, not protein. ✅ **Worth noting explicitly: this is NOT a 3rd no-chicken/fish-at-dinner rule break** — the rule targets heavy, protein-dense meat digesting late at night, and skipping the pieces to eat only the gravy doesn't carry that load. **Total (day closed): ~2,425 kcal / ~108.3g protein / ~39.6g fiber** — calories land right at the top of the 2,300–2,400 band, protein comfortably clears the 100g floor, and dinner still added relatively little to the day's fiber overshoot (already fixed at breakfast+lunch, not a dinner problem today).
+
+---
+
+## 2026-08-28 (Friday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Milkshake (usual recipe, incl. fig) | 665 | 23.2g | 10.4g |
+| | 2 boiled eggs | 140 | 12g | 0g |
+| | 1 medium apple | 95 | 0.5g | 4g |
+| | 1 mosambi (medium, sweet lime) | 60 | 1g | 2g |
+| | 2 tbsp padam pisin | 35 | 0g | 4g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Buddha bowl (non-veg, assumed) | 595 | 45g | 10g |
+| | 1 tbsp peanut butter | 95 | 4g | 1g |
+| | 1 red banana (full) | 110 | 1.5g | 3g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| Dinner | — | — | — | — |
+| **Running** | | **~1,900 kcal** | **~91.2g** | **~34.6g** |
+
+**Notes — 2026-08-28 (running; day open):**
+
+🔴 **Padam pisin added — breakfast fiber goes 16.4g → 20.4g, landing exactly where yesterday's did.** The earlier read (that this was the leanest breakfast of the week) no longer holds: **it is now identical to Aug 27's 20.4g breakfast**, which itself was flagged as sitting at the upper edge of what a 25–30g daily target can absorb before lunch.
+
+⚠️ **Same two-fruit + padam pisin + milkshake structure as Aug 27, which closed the day at 39.6g fiber — ~10g over target.** The milkshake (10.4g) and padam pisin (4g) alone are 14.4g and both are fixed daily items; that leaves **~6g of headroom for fruit, and apple + mosambi already spend 6g of it.** This is the arithmetic behind the "one high-fiber fruit, not two or three" rule, restated for the sixth morning running.
+
+🔴 **The decision that actually matters is now at lunch, not breakfast.** A full Buddha bowl + banana + PB (~15g — the exact combination that overshot Aug 25 and Aug 27) would put the day at **~35g, over target again.** **Half a banana and no PB brings it to ~28g — inside the band for the first time since Aug 21.** Breakfast has already spent its budget; lunch is the only remaining lever today.
+
+**Note:** Values at established rates — milkshake 665/23.2g/10.4g, 2 eggs 140/12g/0g, medium apple 95/0.5g/4g (Aug 24), mosambi (medium, sweet lime) 60/1g/2g (Aug 19/21), padam pisin (2 tbsp) 35/0g/4g (Aug 25), tea (milk+sugar) 35/1g/0g, Buddha bowl (non-veg, assumed) 595/45g/10g (Aug 19), 1 tbsp PB 95/4g/1g, red banana 110/1.5g/3g, buttermilk 35/2g/0.2g.
+
+✅ **PB halved to 1 tbsp — the fix was half-applied, and it counts.** This is the first time since Aug 21 that the lunch PB has actually been cut, saving ~95 kcal and 1g fiber against the 2 tbsp default. **The banana was not halved**, so the full fix wasn't applied — but partial credit is real here: 1 tbsp PB is exactly the choice that rescued the Aug 19 day, and it is the correct lever.
+
+🔴 **Fiber ~34.6g before dinner — already over the 25–30g target, and the cause is upstream of lunch.** The half-banana half of the fix is what would have closed it: **swapping to half a red banana (−1.5g) plus the PB cut already made would have landed the day near 30g.** As it stands, dinner must carry near-zero fiber to avoid a seventh over-target day.
+
+⚠️ **"Buddha bowl" veg/non-veg still unconfirmed — 6th consecutive lunch entry (Aug 19, 20, 21, 25, 27, 28) valued at the non-veg default of 595/45g/10g.** If it is actually vegetarian, protein is being overstated by ~20g every one of those days, which would change the protein-band readout materially.
+
+✅ **Calories ~1,900 with dinner to come — on track.** ~400–500 kcal available to land inside the 2,300–2,400 band, which a normal light dinner covers comfortably. Protein 91.2g will clear the 100g floor with almost any dinner. **Two teas add 70 kcal and zero fiber — they help the calorie side without worsening the fiber problem.**
 
 ---
 
@@ -2146,6 +2326,10 @@ Weigh **morning, empty stomach, post-toilet, same conditions.**
 | 2026-08-19 | ~2,310 | ~114.3g | ~37.6g | ✅✅ **Protein inside the 100–120 band for the 2nd consecutive day** (116.1 → 114.3) after six days averaging ~132g — the composition correction is holding. ✅ **No headache on waking** — test night 1 (honey + sambar both out) came back clean. ✅ Whole eggs restored at breakfast; low-FODMAP fruit swap (pomegranate/mosambi for apple/litchi). ✅✅ **Dinner accidentally reproduced Aug 17 item-for-item with honey as the ONLY difference — the cleanest single-variable honey test available**; reads out Aug 20. 🔴 Closed at 2,310, clearing the floor by 10 kcal — the 1 tbsp lunch PB is the only reason it cleared. 🔴 **Fiber 37.6g, 6th straight weekday over** — driver is a 20.4g breakfast (whole pomegranate + mosambi + padam pisin + milkshake), not lunch. 🔴 **Weight 59.85 kg — 3rd consecutive day, 3-day avg 60.18; 0.75 kg swing proven to be water, not tissue.** 🔴🔴 **New: daily morning sleepiness** → opened the sleep-disordered-breathing hypothesis. 🔴🔴 **New: headache + eye itching from ~10 AM, Allegra not taken** — antihistamine being used PRN as a reliever; confounds the Aug 20 readout. |
 | 2026-08-20 | ~2,328 | ~111.7g | ~39.1g | ✅✅ **Protein 111.7g — 3rd consecutive day inside the 100–120 band** (116.1 → 114.3 → 111.7), composition correction holding. ✅ No headache waking Aug 20, but confounded — Allegra taken night of Aug 19, so the sambar/honey test cannot be read cleanly; treat sambar as unresolved, not cleared. 🔴🔴 **Chicken gravy at dinner — hard rule break** (no chicken/fish after 6:30 PM), and introduces chilli/histamine load as a 3rd untracked variable into tomorrow's readout. 🔴 **Fiber 39.1g — 7th consecutive weekday over target, worst of the run** — driven by breakfast (23.9g, three fruits + sweet corn) and a full lunch banana; the structural fix still hasn't moved to breakfast where it's needed. Weight 60.50 kg (4th day, +0.65 in 24h) — proven water/sodium, 4-day avg 60.26 stable. |
 | 2026-08-21 | ~2,595 | ~121.2g | ~26.9g | ✅ **No headache waking Aug 21 — 2nd consecutive clean morning with honey/sambar absent** (3rd if the Allegra-confounded Aug 19 counts). ✅✅ **Fiber inside target (26.9g) for the first time since Aug 17** — fixed at breakfast (half ven pongal + vadai instead of triple-fruit milkshake stack), holding through a heavy dinner because pork/ice cream carry none. 🔴 **First-ever pork entry, purine chain resumes after 1-day break** — uric acid retest now ~5–6 weeks overdue. 🔴 Ice cream after an already fat-heavy pork dinner — **heaviest, latest-running dinner in the elimination sequence**; if Aug 22 brings a headache, fat load is as plausible a cause as pork or anything upstream. 🔴 Calories 2,595 (~200 over) and protein 121.2g (just over the 120g ceiling) — the pork alone contributed 48g against a planned ~15–20g dinner. 🔴 New symptom this morning: **disturbed sleep from dreams/nocturnal emissions** — filed in [[anxiety-stress]], added as a 3rd item for the overdue Dr. Sabrin appointment alongside PE and sleep-onset latency. Weight 60.30 kg (5th day) — unremarkable, 4-day avg 60.19, trend 1.43 kg/month holds. |
+| 2026-08-24 | ~2,252 | ~119.8g | ~32.4g | ✅ **Calories 2,252, near the low end of the 2,300–2,400 band** — first day in a while to undershoot rather than overshoot. ✅ **Protein 119.8g, right at the 120g ceiling without crossing it** — the Greek-salad lunch (chicken + Greek yogurt, no feta/oil) was the leanest protein-per-calorie lunch logged so far. 🔴 **Fiber 32.4g, over target again — but the cause was breakfast (24.9g from four medium/whole fruit items) + the lunch PB, not dinner**, which itself carried only 1.3g; the fix has to be breakfast, not dinner, restated for a fourth time this week. 🔴🔴 **Grilled chicken at dinner — 2nd rule break in 5 days** (after Aug 20's chicken gravy), confirming the no-chicken/fish-after-6:30PM rule is being broken regardless of preparation style. Weight 60.45 kg (3-day gap since Aug 21) — 3-point average 60.42 kg, +0.20 kg vs prior average, inside noise band; trend 1.5 kg/month holds. |
+| 2026-08-25 | ~2,485 | ~111.5g | ~39.2g | ✅ **Dinner respected the rule** — idiyappam + coconut milk + eggs, no chicken/fish, correcting yesterday's break. ✅ Protein 111.5g, comfortably inside the 100–120g band. 🔴 **Calories 2,485, ~85–185 over band** — driven by lunch (Buddha bowl + full banana + PB), not dinner. 🔴🔴 **Fiber 39.2g — worst since Aug 20 (39.1g), entirely a breakfast+lunch problem** — breakfast carried a fourth consecutive day of four-fruit stacking (22.7g, smaller sizes this time) and lunch repeated the full-banana+PB combination the half-banana fix was meant to replace (15.2g); dinner itself was correctly low-fiber (1.3g) but couldn't offset the upstream overshoot. ⚠️ **"Buddha bowl" veg/non-veg still unconfirmed — 4th consecutive lunch entry (Aug 19, 20, 21, 25) valued at the non-veg default.** |
+| 2026-08-26 | ~3,089 | ~93.2g | ~37.1g | ✅✅ **Best-applied breakfast in five days** — two fruit items not four, breakfast fiber 14.4g, lowest since Aug 21. ✅ **Dinner rule-compliant and correctly light** — 1 dosa + 2 eggs, no chicken/fish, matching the "keep it light, protein-focused" call made mid-day. 🔴🔴 **Onam Sadhya lunch alone (~1,784 kcal) drove the whole day's overshoot** — calories 3,089 (~690–790 over band), fiber 37.1g (~7–12g over target), both concentrated in one identifiable festival meal, not spread across the day's structure; treat as a one-off (cf. Aug 1–2), not a diet failure. ⚠️ **Protein 93.2g, just under the 100g floor** — the one real gap on the day, and the one item the Sadhya's rice-and-vegetable-heavy composition didn't supply enough of. |
+| 2026-08-27 | ~2,425 | ~108.3g | ~39.6g | ✅ **Calories 2,425, right at the top of the 2,300–2,400 band.** ✅ **Protein 108.3g, comfortably inside the 100–120g band.** ✅ **Dinner correctly light and rule-compliant** — large onion & carrot uttapam + single egg + a small cup of chicken gravy without the chicken pieces, no chicken/fish (gravy-without-meat doesn't count as breaking the rule). 🔴🔴 **Fiber 39.6g, over target again — but entirely a breakfast+lunch problem, same as every over-target day this week**: breakfast carried two fruit items (20.4g) and lunch repeated the exact full-banana + PB combination flagged on Aug 25 as needing to change, and didn't change today either. ⚠️ **"Buddha bowl" veg/non-veg still unconfirmed — 5th consecutive lunch entry (Aug 19, 20, 21, 25, 27).** Weight 60.75 kg (+0.65 vs Aug 26, 24h) — sodium/glycogen from the prior day's Sadhya, 3-point average 60.43 kg, +0.10 vs prior average, inside noise band. |
 | 2026-08-20 | ~2,328 | ~111.7g | ~39.1g | ✅✅ **Protein 111.7g — 3rd consecutive day inside the 100–120 band** (116.1 → 114.3 → 111.7), composition correction holding. ✅ No headache waking Aug 20, but confounded — Allegra taken night of Aug 19, so the sambar/honey test cannot be read cleanly; treat sambar as unresolved, not cleared. 🔴🔴 **Chicken gravy at dinner — hard rule break** (no chicken/fish after 6:30 PM), and introduces chilli/histamine load as a 3rd untracked variable into tomorrow's readout. 🔴 **Fiber 39.1g — 7th consecutive weekday over target, worst of the run** — driven by breakfast (23.9g, three fruits + sweet corn) and a full lunch banana; the structural fix still hasn't moved to breakfast where it's needed. Weight 60.50 kg (4th day, +0.65 in 24h) — proven water/sodium, 4-day avg 60.26 stable. |
 
 > **Fiber trend — RESOLVED as of ~Jul 22 (note revised 2026-07-31).** The old finding ("under target every single day, best ~22g, worst ~11g, all fiber rides on the Buddha bowl") described Jul 9–16, when bowl-less days collapsed to ~8g. **Since Jul 22 fiber has been at or over target every logged day** (26.6 → 32.7 → 36.7 → 39.2 → 37g) — padam pisin, fruit, and the seeds/nuts in the milkshake now provide a second independent source, so the bowl is no longer a single point of failure. Constipation resolved Jul 22.

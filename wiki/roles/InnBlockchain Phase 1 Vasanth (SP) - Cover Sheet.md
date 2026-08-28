@@ -6,9 +6,9 @@ department:
 role: SP
 assignee: Vasanth
 priority: high
-rev: 4
-last_revised: 2026-07-15
-playbook_rev_synced: 50
+rev: 6
+last_revised: 2026-08-25
+playbook_rev_synced: 60
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -33,7 +33,7 @@ tags:
 | WS | Role | Anchor |
 |---|---|---|
 | **WS3 — Recommendations** | **Run the recommendation-request pipeline from Vignesh's profile** — draft requests / follow-ups / reciprocity notes · apply the 5-category recommender filter · track the gates (3+ pre-publish · 5+ pre-DM) · Vignesh approves the copy · you send from his account | [[Execution Playbook#Recommendations pipeline — SPEED MODE (batch 5–8 requests THIS WEEK)]] |
-| **WS5 — Platform Setup** | CRM ownership + Sales Nav + Calendly + outreach tooling setup · build the two RWA saved searches from [[Phase 1 LinkedIn Filter]] (canonical filter spec) | [[Execution Playbook#WS5 — Platform Setup (CRM + Tooling) — SPEED MODE 5-day sprint]] |
+| **WS5 — Platform Setup** | CRM ownership + Sales Nav + Calendly + outreach tooling setup · **build the account list in two waves — Wave 1 asset owners (ESMA Prospectus Register + ECSP two-hop) first, Wave 2 managers (ESMA AIFM entities register + DLT Pilot) second — combined ~200–400 named companies, this is the pipeline source** · build the two RWA saved searches from [[Phase 1 LinkedIn Filter]] as a secondary intent feed only (demoted rev 7) | [[Execution Playbook#WS5 — Platform Setup (CRM + Tooling) — SPEED MODE 5-day sprint]] |
 | **WS8 — LinkedIn Organic** | Strategic commenting from W8 (5–10/day on RWA prospects) · X engagement parallel | [[Execution Playbook#Strategic commenting (per § 5.3)]] |
 | **WS9 — Structured ABM** | **PRIMARY** — T1→T5 sequences · 15–20 connection requests/day **from Vignesh's profile** (stay within LinkedIn's native daily limits — this profile also carries warm outreach + recommendations) · Discovery Call Master Sequence (20-step / 5-phase) | [[Execution Playbook#WS9 — LinkedIn Outbound — Structured ABM (DM Sequences)]] |
 | **WS9.5a — Adjacent-Network Warm Intros** | Send Trioangle + adjacent-network outreach from Vignesh's profile (first-person Vignesh · no third-party opener) · regime-framed messages → Vignesh sign-off first · carry thread after positive response | [[Execution Playbook#WS9.5a — Adjacent-Network Warm Intros (Speed Mode)]] |
@@ -105,7 +105,8 @@ These are everything you need to do your job:
 | 8 | [[ICP - Crypto Native]] | RWA Felix buyer pattern for qualification |
 | 9 | [[ICP - FinTech]] | Sam/Tom/Carol buyer pattern for qualification |
 | 10 | [[EU-Compliance-Landscape]] | Regulatory framing reference — never make regulatory judgment yourself; escalate to Vignesh same-day |
-| 11 | **[[Phase 1 LinkedIn Filter]]** | Canonical Sales Nav filter spec — build the two RWA saved searches (`FT WealthTech RWA` + `CN RWA Felix`) from here (WS5). eIDAS test filter (WS10) lives in Outreach Strategy § 7a, not here |
+| 11 | **[[Phase 1 LinkedIn Filter]]** | Canonical Sales Nav filter spec + the register links/tiering for the account list (WS5). Saved searches (`FT WealthTech RWA` + `CN RWA Felix`) are an intent feed, not the pipeline — see rev 7. eIDAS test filter (WS10) lives in Outreach Strategy § 7a, not here |
+| 11b | **[[Phase 1 Regulator & Register Site List]]** | Wave 1 (asset owners) / Wave 2 (managers) source tables + backbone registers (ESMA Prospectus Register · ESMA AIFM entities register) + how to filter a downloaded export (7-language asset-class keyword set, excludes, dedupe-to-manager) + the ESMA DLT Pilot register spec + wave-conditional qualify gates + per-country regulator/settlement authorities for compliance framing in DMs |
 
 ## ☎️ Backup / escalation
 

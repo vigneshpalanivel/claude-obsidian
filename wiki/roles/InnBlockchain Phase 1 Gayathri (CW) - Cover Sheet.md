@@ -6,9 +6,9 @@ department:
 role: CW
 assignee: Gayathri
 priority: high
-rev: 6
-last_revised: 2026-07-06
-playbook_rev_synced: 50
+rev: 12
+last_revised: 2026-08-24
+playbook_rev_synced: 60
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -32,9 +32,9 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 
 | WS | Role | Anchor |
 |---|---|---|
-| **WS2 — SEO / AEO / GEO** | Per-article AEO drafting (apply 13 AEO Drafting Principles per article) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
-| **WS4 — Compliance Briefs + Vendor Risk Pack** | Brief structuring + Style Guide voice | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
-| **WS7 — Content Production** | **PRIMARY** — 40-article execution (W1–W22) · 25-step Per-Article Production Checklist per article · CW Content Style Guide enforcement | [[Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
+| **WS2 — SEO / AEO / GEO** | Per-article AEO drafting (apply 13 AEO Drafting Principles per article) · **France translation coordination** (rev 51) — Toubon Law makes a French version a hard gate, not optional; you coordinate the French-language pass alongside Vignesh (staged DE → FR → IT → ES, France second) · **5 dedicated national-law articles** (rev 53) — Germany/France/Italy/Spain/Luxembourg, researched + drafted from scratch (not translated), additive to your existing 40-article load | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
+| **WS4 — Compliance Briefs + Vendor Risk Pack** | Brief structuring + Style Guide voice — **rev 56: now includes the conditional AIFMD/AIFMD II/UCITS/ELTIF 2.0 fund-structure section** whenever Vignesh's pooling test comes back "pooled" · **rev 57: the DORA 1-pager is now conditional too** — structure it only if Vignesh's DORA applicability test comes back Venue Operator / Dealer-SI / fully-authorised AIFM; for the common pure-issuer prospect there's no DORA section to structure at all · **rev 58: core brief + fund-structure section = full priority (Lane 1, the whole current pipeline); DORA = secondary priority (Lane 2) — if it fires, structure it at the existing 1-page scope, don't let it grow** | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
+| **WS7 — Content Production** | **PRIMARY** — 40-article execution (W1–W22) · 25-step Per-Article Production Checklist per article · CW Content Style Guide enforcement · **Academy category assignment** (rev 54) — one-time backlog remap + ongoing per-article assignment per [[Academy Categories]] | [[Execution Playbook#WS7 — Content Production (Editorial Calendar Execution)]] |
 | **WS8 — LinkedIn Organic** | LinkedIn post copy (Vignesh approves) | [[Execution Playbook#WS8 — LinkedIn Organic (Feed + Newsletter)]] |
 | **WS15 — Content Repurposing** | Repurposing copy structuring for Tier 1/2 articles · 6-step gate sequence per published article (Tier · Format · Track · Motion · Persona · LP) · monthly Format Priority + Tier mix review with Vignesh · quarterly Format-Priority Audit half-day session | [[Execution Playbook#WS15 — Content Repurposing]] |
 
@@ -50,7 +50,7 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 | **W1 Fri** | Repurpose + measure (X thread outlines · LinkedIn quote graphic copy briefs · metrics log) · ~2 hr |
 | **Every week (W1–W22)** | Same Mon/Wed/Tue/Thu/Fri rhythm · ~13 hr/wk per writer |
 | **W2–W3** | Compliance brief structuring sprint (alongside Vignesh regulatory drafting) — MiFID II/III + Prospectus + DLT Pilot brief |
-| **W7** | P5-DORA-X article structuring (DORA now a section in the primary brief — no standalone DORA brief unless a prospect asks) |
+| **W7** | P5-DORA-X article structuring (DORA now a *conditional* section in the primary brief, not a fixed one — no standalone DORA brief unless a prospect asks) |
 | **W11–W12** | eIDAS 2.0 brief structuring (for W13 P5-eIDAS-X article + Featured Asset 4) |
 | **Monthly (last Fri · 2 hr)** | Format Priority + Tier mix review with Vignesh · top/bottom articles pattern-match |
 | **Quarterly** | Format-Priority Audit half-day session with Vignesh |
@@ -63,7 +63,7 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 4. [[Content Strategy]] — pillar map · sales motion tagging · article positioning
 5. [[Content AEO GEO Prompts]] — per-article prompt block + 13 AEO Drafting Principles
 6. [[ICP - Crypto Native]] + [[ICP - FinTech]] — persona language per track tag (Felix asset-first · Sam ROI · Tom technical · Carol compliance)
-7. [[EU-Compliance-Landscape]] + per-regime checklists — regime framing source (RWA = MiFID II/III + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA)
+7. [[RWA-STO-EU-Compliance-Landscape]] + [[EU-Compliance-Landscape]] + per-regime checklists — regime framing source (RWA = MiFID II/III + MiFIR + AIFMD/AIFMD II/UCITS/ELTIF 2.0 (conditional on pooling) + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA)
 8. [[Content Repurposing Plan]] — canonical tier definitions + derivative format priority (route per-derivative work here, NOT into the playbook)
 
 ## 🚫 Hard rules (memorise — these never relax)
@@ -93,7 +93,9 @@ These are everything you need to do your job:
 | 8 | [[Content Repurposing Plan]] | Canonical tier definitions + derivative format priority (route per-derivative work HERE, not into the playbook) |
 | 9 | [[ICP - Crypto Native]] | Persona language for `[CN]` track tag (Felix asset-first) |
 | 10 | [[ICP - FinTech]] | Persona language for `[FT]` track tag (Sam ROI / Tom technical / Carol compliance) |
-| 11 | [[EU-Compliance-Landscape]] + per-regime checklists | Canonical regulatory framing source (RWA = MiFID II/III + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA for Phase 1) |
+| 11 | [[RWA-STO-EU-Compliance-Landscape]] + [[EU-Compliance-Landscape]] + per-regime checklists | Canonical regulatory framing source (RWA = MiFID II/III + MiFIR + AIFMD/AIFMD II/UCITS/ELTIF 2.0 (conditional on pooling) + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA for Phase 1) |
+| 12 | [[InnBlockchain EU Countries Phase 1 Priority List]] | Ranks Germany · France · Italy · Spain (+ Luxembourg) as Phase 1 priority markets — source for the WS2 localization track (rev 51); you coordinate the French pass (Toubon Law hard gate) |
+| 13 | [[Academy Categories]] | Canonical 11-category Academy taxonomy (rev 54) — category definitions + § Remapping Existing Blogs — Decision Rules for the one-time backlog remap |
 
 ## ☎️ Backup / escalation
 

@@ -5,9 +5,9 @@ department:
  - marketing
 role: Dev
 priority: high
-rev: 4
-last_revised: 2026-07-07
-playbook_rev_synced: 50
+rev: 6
+last_revised: 2026-07-28
+playbook_rev_synced: 60
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -31,7 +31,7 @@ LP Gates 1 + 2 + 3 build (**CRITICAL PATH** — single point of failure for Spee
 | WS | Role | Anchor |
 |---|---|---|
 | **WS1 — LP Delivery** | **PRIMARY · CRITICAL PATH** — build LP Gates 1 + 2 + 3 by **EOD W3** (5-day sprint). Slip = structured DMs slip W5 → W6 | [[Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] |
-| **WS2 — SEO / AEO / GEO** | **LP technical SEO build** (per gate, by EOD W3): schema stack (Organization + Service + Breadcrumb) · canonicals · OG/Twitter cards · Core Web Vitals · Search Console coverage. **Academy technical SEO build** (W1–W2): `/academy` in sitemap + Search Console · WordPress SEO plugin · Article/BlogPosting schema · canonicals · author E-E-A-T pages · CWV. **You build both; the gate's MP owner (Britto = Gate 1 · Sudharshini = Gate 3) + both for academy specify + verify** | [[Execution Playbook#Academy blog technical SEO — one-time setup (Dev builds · Sudharshini + Britto specify + verify · by W1–W2)]] |
+| **WS2 — SEO / AEO / GEO** | **LP technical SEO build** (per gate, by EOD W3): schema stack (Organization + Service + Breadcrumb) · canonicals · OG/Twitter cards · Core Web Vitals · Search Console coverage. **Academy technical SEO build** (W1–W2): `/academy` in sitemap + Search Console · WordPress SEO plugin · Article/BlogPosting schema · canonicals · author E-E-A-T pages · CWV. **You build both; the gate's MP owner (Britto = Gate 1 · Sudharshini = Gate 3) + both for academy specify + verify.** **Localization track (rev 51, hreflang scope broadened rev 54)**: decide `hreflang` annotations + per-language URL structure BEFORE the first (German) language pass ships — for **both** surfaces: Gate LPs (e.g. `/de/solutions/...`) and Tier 1 academy articles receiving a language pass (parallel pattern, e.g. `/de/academy/...`) — retrofitting after 2–3 languages exist is materially more rework | [[Execution Playbook#Academy blog technical SEO — one-time setup (Dev builds · Sudharshini + Britto specify + verify · by W1–W2)]] |
 | **WS5 — Platform Setup** | Install **two GTM containers** (Site/LP + Academy) + a consistent **dataLayer** spec + **Consent Mode** (no tag fires pre-consent) · wire **two GA4 properties** (A: Site+LP · B: Academy) via GTM · **academy→LP UTM bridge** (WordPress filter auto-appending `utm_source=academy`) · email-capture integration with CRM (auto-create lead + trigger delivery within 24 hr). Sudharshini + Britto manage the tags/triggers in GTM; you own the container install + dataLayer + consent | [[Execution Playbook#Analytics + lead-capture infrastructure (funnel math depends on these)]] |
 | **WS3 — Profile + LP assets** | Integrate Designer's LP hero images into LP code as they're produced (per WS15 Track A asset map) | [[Execution Playbook#X (Twitter) — personal handle]] *(adjacent — Dev integrates X-bio link)* |
 | **WS10 — eIDAS Outbound Test** | Build the gated PDF landing page (`innblockchain.com/eidas-brief`) for eIDAS test — one-time, W11–W12 | [[Execution Playbook#WS10 — eIDAS Outbound Test (W13 mid-point, limited scope)]] |

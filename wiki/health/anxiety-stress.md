@@ -89,6 +89,8 @@ Amplified loop
 
 **Key insight:** Skipping dinner (Jul 7) wasn't just a nutrition miss — it was a physiological stress event that ran overnight and produced the next morning's headache + sloshing.
 
+> **Second confirming instance (2026-08-26).** Workload stress on the evening of Aug 25 produced eye mucus (allergic-conjunctivitis marker, see [[eye-strain-remedies]]) that same evening, then a heavy headache + sloshing on waking Aug 26 — the identical chain as Jul 7, just triggered by cognitive load instead of a skipped meal. **This is now two separate trigger types (fasting stress, workload stress) converging on the same downstream symptom pair, which strengthens the chain as the real mechanism rather than either input being a coincidence.** Allegra status overnight unconfirmed — ask if taken, since untreated histamine load running overnight is a compounding factor on top of the stress trigger itself.
+
 ---
 
 ## Why Cortisol Generates
@@ -221,6 +223,20 @@ Next day harder → work longer → repeat
 - **Thyroid — ruled out.** TSH 1.800 (normal).
 - **Caffeine timing — not implicated.** Coffee/tea are logged after food, none near sleep.
 
+### 🔴 Cause #1 (insufficient opportunity) weakened by new data — update 2026-08-28
+**Reported:** bedtime unchanged at 10 PM (the prescribed 9:30 PM shift was never actioned), but wake has drifted from 5:30 AM to 6:00 AM "for the last few days" — **~8 hrs in bed, up from 7.5.** Workouts/EFX are being fit around the later wake rather than skipped; office login unaffected (~9:30–9:45 AM).
+
+**Why this counts as evidence, not just a schedule note.** This is a passive increase in sleep opportunity (later wake, not earlier bed — a different lever than the one prescribed) and the daily sleepiness persisted anyway. Waking later than a self-set alarm, without being forced to, is itself usually a sign the body is compensating for poor sleep *quality* rather than needing more raw hours. **More time in bed with no improvement shifts weight away from cause #1 and toward causes #2 (airway/UARS) and #3 (REM fragmentation)** — both are arousal-frequency problems that adding hours doesn't fix.
+
+**This does not mean bedtime shouldn't move to 9:30 PM** — that is still untested on its own terms (bed earlier, not wake later) and remains prescribed. But it does mean **the airway screening questions below are now the higher-value next step**, since sleep quantity looks less likely to be the whole explanation:
+1. Snoring, gasping, or breathing pauses (ask Preethi)
+2. Dry mouth/throat on waking
+3. Nasal blockage when lying down vs. upright
+4. Waking to urinate or waking with no clear reason
+5. Unintentional daytime dozing
+
+None of these five have been answered yet, and they cost nothing to check.
+
 ---
 
 ## 🔴 Untested Hypothesis: Sleep-Disordered Breathing (added 2026-08-19)
@@ -297,13 +313,17 @@ This is now a **third symptom** (after PE and sleep-onset difficulty) traceable 
 | 6:00–7:20 AM | **Daughter caretaking** — fixed block, non-negotiable |
 | 7:20–7:35 AM | Shower — parasympathetic activation |
 | 7:35–8:10 AM | Breakfast + 10 min sunlight — coffee after food only |
-| During work | Physiological sigh when tension builds; cold water face splash at lunch; step outside 5 min at lunch; music during non-call work |
+| During work | **Scheduled physiological sigh — set 5 recurring phone alarms, not symptom-triggered** (e.g. 11 AM, 1 PM, 3 PM, 5 PM, 7 PM). 2–3 reps, 30 seconds, every time the alarm fires, regardless of how you feel in the moment. Cold water face splash at lunch; step outside 5 min at lunch; music during non-call work. |
 | Lunch | Eat on time + dark chocolate after |
 | 9:00 PM | Hard stop — laptop closed, phone on DnD |
 | 9:00–9:15 PM | Brain dump — write tomorrow's tasks on paper |
 | 9:15–9:30 PM | **Evening shower** — parasympathetic activation, body temperature drop, sleep signal |
 | 9:30–10:00 PM | Dim lights → 4-7-8 breathing (5 min) → guided meditation (15–20 min) — Insight Timer app |
 | 10:00 PM | Sleep |
+
+> 🔴 **Changed 2026-08-28 — moved from symptom-triggered to schedule-triggered.** The original "physiological sigh when tension builds" design assumed reliable interoception (noticing stress as it rises) — reported as unreliable ("sometimes can't notice stress increasing things"). **A fixed-interval alarm removes the detection problem entirely**: it fires regardless of whether a signal was noticed, so it catches the stress you'd otherwise miss, not just the stress you'd catch anyway. This also has a secondary benefit the reactive version didn't: **regular practice on a schedule, independent of symptoms, is what builds the baseline-lowering effect over weeks** (same logic as the 4-7-8/meditation slot) — reactive-only use only ever treats spikes that were already caught, never lowers the floor. **Apply the same 5-alarm pattern on 7:30 PM-finish days too**, adjusted for the shorter pre-EFX work window.
+
+> ✅ **Actioned 2026-08-28 — alarms set.** First real test of the schedule-triggered design starts today; check back after a few days on whether the fixed cadence is actually being followed through (vs. dismissed when a meeting overlaps an alarm).
 
 ### 7:30 PM finish day
 

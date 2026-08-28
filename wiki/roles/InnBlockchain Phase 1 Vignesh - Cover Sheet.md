@@ -5,9 +5,9 @@ department:
  - marketing
 role: Vignesh
 priority: highest
-rev: 8
-last_revised: 2026-07-15
-playbook_rev_synced: 50
+rev: 13
+last_revised: 2026-08-24
+playbook_rev_synced: 60
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -32,7 +32,7 @@ tags:
 | WS | Your role | Anchor |
 |---|---|---|
 | WS1 | Oversight + Hero H1/H2 regulatory framing review (all gate LPs — Gate 1 · Gate 2 homepage · Gate 3) + About copy regulatory framing + **Pre-Launch LP Sign-Off Checklist** | [[Execution Playbook#WS1 — Landing Page Delivery (CRITICAL PATH)]] · [[Execution Playbook#Vignesh Pre-Launch LP Sign-Off Checklist]] |
-| WS2 | Final-review on regime-leak risk for AEO copy | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
+| WS2 | Final-review on regime-leak risk for AEO copy · **drafts + verifies the national-law citation layer per country** (rev 51 localization track) · approves the DE → FR → IT → ES staging order · **legal-accuracy verification on the 5 dedicated national-law articles** (rev 53 — real research pieces, not citation overlays; same never-delegate rule as every other regulatory judgment) | [[Execution Playbook#WS2 — SEO / AEO / GEO (LP + Academy blog)]] |
 | **WS3** | **PRIMARY** — profile content authoring · **approves recommendation-request copy** (Vasanth runs the pipeline + sends from your profile; 5+ before structured DMs · Sasha-grade 7–8) · LinkedIn + X handle setup + bio + pinned tweet | [[Execution Playbook#WS3 — LinkedIn Profile + Featured Assets + Recommendations]] |
 | **WS4** | **PRIMARY** — regulatory content drafter + compliance self-review (per decision · CW structures + Style Guide voice) | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
 | WS5 | Procures Sales Nav + Shield · drafts discovery call prep template · daily 15–30 min final review block | [[Execution Playbook#Vignesh calendar time-blocked — founder-only work]] |
@@ -113,10 +113,11 @@ You touch all 15 workstreams, so you reference the most docs. Bundle organized b
 |---|---|
 | **Master playbook + your sheet** | [[Execution Playbook]] · [[Vignesh - Cover Sheet]] |
 | **Cross-phase frameworks** — review sign-off authority | **[[Per-Article Production Checklist]]** (CW master sequence — you're the Tue AM accuracy + Thu AM compliance reviewer + final batch approver at steps 13–16, 20) · **[[LP Sign-Off Checklist]]** (per-LP 8-gate) · **[[Content Style Guide]]** (CW writing rules) · **[[Cross-Channel Cannibalisation Matrix]]** (Sudharshini + Britto scheduling) · **[[Per-Platform Posting Spec]]** (LinkedIn/X rules) · **[[Discovery Call Master Sequence]]** (SP per call) · **[[Pipeline Stage Exit Criteria]]** (SP stage advancement) · **[[Newsletter Vendor Selection]]** (W10 revisit) · **[[Delegated-Work Spot-Check Protocol]]** (your WS13 spot-check ratios — 25% W1–W4 → 10% W5+) · **[[Event Execution Playbook]]** (your WS11 per-event sequence) · **[[Case Study Capture Framework]]** (your WS14 screenshot-rights + MVP-fallback trigger call) |
-| **Regulatory canon** (you self-review against these) | [[EU-Compliance-Landscape]] + 14 regulation checklists ([[mifid2-checklist]] · [[mifid3-checklist]] · [[prospectus-checklist]] · [[dlt-pilot-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]] · [[dora-checklist]] · [[mica-checklist]] *(boundary-article review ONLY — W4 #4 · W8 #11; never an RWA framing source; WS4 briefs use the other 13)* · [[aml-checklist]] · [[tfr-checklist]] · [[ccd2-checklist]] · [[eidas2-checklist]] · [[ipr-checklist]] · [[gdpr-checklist]]) |
+| **Regulatory canon** (you self-review against these) | [[RWA-STO-EU-Compliance-Landscape]] + [[EU-Compliance-Landscape]] + 17 RWA-relevant checklists, per rev 56 (checklist selection sourced from the landscape doc's own § Implementation Checklists table — that table is the source of truth, not this row): [[mifid2-checklist]] · [[mifid3-checklist]] · [[mifir-checklist]] · [[aifmd-checklist]] · [[aifmd2-checklist]] · [[ucits-checklist]] · [[eltif-checklist]] · [[eltif-rts-checklist]] · [[prospectus-checklist]] · [[mar-checklist]] · [[eu-listing-checklist]] · [[dlt-pilot-checklist]] · [[t1-settlement-checklist]] · [[dora-checklist]] · [[aml-checklist]] · [[eidas2-checklist]] · [[gdpr-checklist]]. [[mica-checklist]] *(boundary-article review ONLY — W4 #4 · W8 #11; never an RWA framing source)* + [[tfr-checklist]] *(CASP-side only)* stay out of the active brief. [[ris-checklist]] is pre-OJ, awareness only. **[[ccd2-checklist]] + [[ipr-checklist]] removed rev 56** — not RWA-applicable, per the landscape doc's own Lane Matrix. **New rev-56 task: run the fund-structure pooling test on every prospect** (AIFMD/AIFMD II/UCITS/ELTIF 2.0 section required in the primary brief when the vehicle is pooled). **New rev-57 task: run the DORA applicability test on every prospect** — DORA Art. 2(1) is a closed entity list; a pure issuer admitted to listing on a third-party venue is NOT on it. The 1-page DORA section only belongs in the brief for a Venue Operator, Dealer/SI, or fully-authorised AIFM — pure issuer only means omit it (the source-doc callout that used to say DORA/AML "always" apply was itself wrong and is fixed as of rev 57). **Rev 58 — explicit Lane 1/Lane 2 priority split:** per [[ICP - FinTech]] + [[ICP - Crypto Native]] + the register-sourced account list, the entire current pipeline is Lane 1 (pure issuer). Core brief + fund-structure section = full priority; DORA test + section = secondary — run the test (expect it to fail), and if it does pass, keep the section to its existing 1-page scope, no dedicated DORA build. See [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]]. |
 | **ICP truth source** | [[ICP - Crypto Native]] · [[ICP - FinTech]] |
 | **Content production canon** | [[Content Strategy]] · [[Editorial Calendar]] · [[Content AEO GEO Prompts]] · [[Content Repurposing Plan]] · [[Content Repurposing Design Toolkit]] |
 | **LP + LinkedIn execution** | [[Landing Pages Plan]] · [[Landing Pages AEO GEO Prompts]] · [[LinkedIn Strategy]] · [[LinkedIn Outreach Strategy]] · [[LinkedIn Profile Vignesh Content]] · [[Recommendation Request Templates]] |
+| **Localization track** (rev 51) | [[InnBlockchain EU Countries Phase 1 Priority List]] — ranks Germany · France · Italy · Spain (+ Luxembourg); you draft + verify the national-law citation layer per country and approve the DE → FR → IT → ES staging |
 
 ## ❌ What you DON'T own (you're authority, not executor)
 

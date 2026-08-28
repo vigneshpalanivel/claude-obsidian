@@ -5,9 +5,9 @@ department:
  - marketing
 role: Designer
 priority: high
-rev: 3
-last_revised: 2026-07-07
-playbook_rev_synced: 50
+rev: 6
+last_revised: 2026-08-24
+playbook_rev_synced: 60
 parent: "[[Execution Playbook]]"
 tags:
  - role
@@ -31,7 +31,7 @@ tags:
 | WS | Role | Anchor |
 |---|---|---|
 | **WS3 — Profile + Featured + Channels** | **W2–W3 brand system foundation sprint (PRIMARY)** · Featured asset PDF design (Risk Checklist · Sample Audit Report · eIDAS brief) · LinkedIn profile banner + X header templates | [[Execution Playbook#Brand system foundation (Designer W2–W3 sprint — pre-Featured-asset gate)]] · [[Execution Playbook#Featured assets — chronological build order]] |
-| **WS4 — Compliance Briefs + Vendor Risk Pack** | PDF layout for MiFID II/III + Prospectus + DLT Pilot brief (incl. 1-page DORA section) · Vendor Risk Pack assembly · eIDAS 2.0 brief (W11–W12) · *(DORA standalone brief = on-inquiry only, not a Phase 1 build)* | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
+| **WS4 — Compliance Briefs + Vendor Risk Pack** | PDF layout for MiFID II/III + MiFIR + Prospectus + DLT Pilot brief — **rev 56: brief grows a conditional AIFMD/AIFMD II/UCITS/ELTIF 2.0 fund-structure section whenever the pooling test comes back "pooled," so plan the PDF layout to accommodate a variable-length brief, not a fixed page count** · **rev 57: the 1-page DORA section is now CONDITIONAL, not a fixed component — it only appears if Vignesh's DORA applicability test comes back Venue Operator / Dealer-SI / fully-authorised AIFM (the common pure-issuer prospect gets no DORA section at all); layout must handle its absence, not just its variable length** · **rev 58: DORA is explicitly secondary priority (Lane 2) — even on the rare occasion it fires, it stays a bounded 1-page insert; don't invest extra design polish or a standalone template on it while Lane 1 (pure issuer) is the entire pipeline** · Vendor Risk Pack assembly · eIDAS 2.0 brief (W11–W12) · *(DORA standalone brief = on-inquiry only, not a Phase 1 build)* | [[Execution Playbook#WS4 — Compliance Briefs + Vendor Risk Pack]] |
 | **WS14 — Case Study Capture** | **W14 Internal MVP mockup fallback** (CONDITIONAL trigger — fires only if no client deployment cleared by W14) · Figma + branded UI screenshots for issuer dashboard, investor portal, KYC flow, regulator reporting view | [[Case Study Capture Framework]] § Internal MVP fallback |
 | **WS15 — Content Repurposing** | High-stakes pieces only — complex regulatory infographics · Sample Audit Report annual refresh (anchor-tied to first-delivered engagement) · brand template enforcement (catch Sudharshini + Britto drift) | [[Execution Playbook#WS15 — Content Repurposing]] |
 
@@ -42,7 +42,7 @@ tags:
 | **W1 Day 1** | Engaged for brand system + Sample Audit Report sprint kick-off |
 | **W1–W3 (~5 days)** | **Brand system foundation deliverables**: typography system · color palette · logo usage rules · **Claude-designed** carousel + quote-graphic + single-image templates (brand-locked spec + prompt patterns, not Canva) · Beautiful.ai lead magnet template · Descript caption styles · LinkedIn profile banner · X header template · Midjourney hero image style guide · Sudharshini + Britto handoff verification |
 | **W2–W3 (~5 days)** | **Sample Audit Report PDF (HIGHEST-LEVERAGE)** + Risk Checklist PDF + Vendor Risk Pack PDF assembly |
-| **W7** | *(No DORA brief PDF — downgraded to on-inquiry; the DORA section ships inside the primary brief)* |
+| **W7** | *(No DORA brief PDF — downgraded to on-inquiry; the DORA section, when the applicability test triggers it, ships inside the primary brief instead)* |
 | **W11–W12 (~3–4 days)** | eIDAS 2.0 brief PDF layout (for W13 P5-eIDAS-X article + Featured Asset 4) |
 | **W14 (CONDITIONAL trigger)** | **IF no client deployment cleared screenshot rights by W14:** Internal MVP mockup (Figma + branded UI screenshots) — 1–2 weeks feasible for design + screenshot capture (mockup scope, NOT working dApp) |
 | **Quarterly** | Brand consistency review with Sudharshini + Britto (drift correction · new template requests routed to you) |
