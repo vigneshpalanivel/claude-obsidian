@@ -4,8 +4,10 @@ company:
 department:
   - marketing
 priority: high
-rev: 1
-last_revised: 2026-06-03
+rev: 2
+last_revised: 2026-08-29
+revision_notes: |
+  rev 2 (2026-08-29): **new § Terminology — the canonical "RWA" vs "Tokenized Securities" naming rule.** Mirrors raw Content Style Guide rev 2. Cause: an axis mismatch found across the vault — internal compliance docs named on asset origin ("RWA/STO") while organised on regulatory classification; same pattern in [[InnBlockchain Crypto Native ICP]] Seg 1 and four regime-lane article titles. Corrected across [[InnBlockchain Phase 1 Execution Playbook]] rev 62 (3 file renames + 17 reference sites), the CN ICP (rev 3), Content Strategy rev 26 and Editorial Calendar rev 16. The reasoning had been sitting in four separate rev notes, which is the real recurrence risk — a later tidy-up pass reads one, not four, and renames the gated assets or the ICP segment back. This section consolidates it: four-layer table, the two edge cases that prove the axis, and three standing prohibitions (no bare "STO" for ongoing-compliance scope · never rename buyer-facing gated assets off "RWA" · bulk find-replace corrupts revision_notes blocks — recorded because it happened during this work and was caught only on a verification pass). Placed here rather than in Content Strategy deliberately: per § Why this is a separate doc, cross-phase stable rules live here (rev 1 unchanged since 2026-06-03) while Content Strategy churns at rev 26 and owns only the article layer. No voice, tone, formatting, citation, title, alt-text, linking or per-track modifier rule changed.
 parent_extraction_source: "[[InnBlockchain Phase 1 Execution Playbook]] rev 26 § WS7 § CW Content Style Guide"
 scope: cross-phase
 applies_to:
@@ -50,6 +52,30 @@ tags:
 - **(CW)** Every numeric claim sourced inline (ESMA · national NCA · industry report · vendor whitepaper). Avoid unsourced figures.
 - **(CW)** Competitor mentions: name the standard / spec / interface (ERC-3643 · ERC-1400) NOT the vendor (Securitize · Tokeny). Per AEO Principle 5.
 - **(CW)** Internal links: every article internally links to its destination LP + at least 1 sister article in the same cluster.
+
+## Terminology — "RWA" vs "Tokenized Securities"
+
+> [!IMPORTANT] Naming follows the **axis a thing is organised on**, not habit. "Real-world asset" describes where an asset *comes from*; it is not a regulatory category. Establish the layer first and the term follows.
+
+| Layer | Term | Why |
+|---|---|---|
+| Internal reference docs — compliance, contract design | **Tokenized Securities** | organised by regulatory classification (MiFID II financial instrument / unit in a pooled vehicle) — not by what backs it |
+| Gated buyer assets · asset-vertical articles (real estate · vehicle · commodity · art · private credit) | **RWA** | reader is the non-technical asset owner (RWA Felix, [[InnBlockchain Crypto Native ICP]] Seg 1) — demand keyword and their own vocabulary |
+| Regime-lane articles (which regulations apply, and to whom) | **Tokenized Securities** | reader is Compliance Carol / Strategic Sam, who work in the regulatory register |
+| ICP segment names | **RWA** | segments name *buyers*; Segment 1 in **both** ICPs is the RWA buyer |
+
+**The two edge cases that prove the axis — cite before renaming anything:**
+
+- A **MiCA Asset-Referenced Token** (tokenized gold, commodity basket — value-referencing, no ownership) is a **real-world asset that is not a security**: an RWA outside the securities lane.
+- A **tokenized unit in a pooled crypto vehicle** is a **security with no real-world asset**: full AIFMD → AIFM-authorisation → prospectus stack.
+
+Neither circle contains the other. **RWA and STO are not synonyms** — pairing them is not redundant, just usually unnecessary, since a title only needs to name its own subject.
+
+- **(CW)** Never use **"STO" alone** as the scope word for ongoing-compliance content. STO is an *offering* term; anything covering trading, reporting, transfer, fund governance or settlement is broader — use "Tokenized Securities".
+- **(All)** Never rename a **buyer-facing gated asset** off "RWA" for internal consistency — those titles already appear in outreach copy promising the deliverable by name.
+- **(All)** Bulk find-replace across any doc with a `revision_notes` block **corrupts historical rev notes**, which quote superseded titles by design. Wikilinks to a renamed-but-existing file *should* be repointed; quoted historical titles should **not**. Re-check after every sweep.
+
+Source of the classification test: [[Tokenized-Securities-EU-Compliance-Landscape]] § Token Classification.
 
 ## Title + meta-description + OG card
 

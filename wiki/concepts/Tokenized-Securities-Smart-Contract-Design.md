@@ -1,6 +1,6 @@
 ---
 type: concept
-title: "RWA / STO Smart-Contract Design (EU)"
+title: "EU Tokenized Securities — Smart-Contract Design"
 created: 2026-07-02
 updated: 2026-07-02
 tags:
@@ -13,7 +13,7 @@ tags:
   - dev
 status: current
 related:
-  - "[[RWA-STO-EU-Compliance-Landscape]]"
+  - "[[Tokenized-Securities-EU-Compliance-Landscape]]"
   - "[[EU-Fintech-Compliance-Landscape]]"
   - "[[ELTIF-2.0]]"
   - "[[MiFID-II]]"
@@ -26,12 +26,12 @@ internal_artifacts:
     registered: 2026-07-02
     last_synced: 2026-07-02
     role: "smart-contract design — requirement-first (each compliance point + its engineering approach), single doc; §17 appendix = consolidated contract inventory"
-    purpose: "Client/dev-shareable artifact. Translates the EU RWA/STO compliance obligations (from RWA-STO-EU-Compliance-Landscape + the 15 EU Compliance/Checklist files) into an ERC-3643/T-REX permissioned-security-token design. Structured requirement-first and interleaved: §1-§10 each state the compliance obligation (Article-mapped) then the engineering approach for that same point (roles/lane-phasing, chain/selection, token-identity/ERC-3643, identity/claims-service, fund/modules+valuation-oracle+matching-engine, MAR/freeze+indexer, venue/settlement+caps+reporting-bridges, disclosure/doc-registry, DORA/governor, GDPR/no-PII); §11 on/off-chain boundary; §12-§15 cross-cutting engineering (NFRs, test/audit, phasing, team); §16 open decisions. Code omitted. Built 2026-07-02 via parallel extraction across the checklist clusters; a former separate engineering doc was merged in. A deeper technical spec (interfaces, schemas, gas budgets, test plans) to be authored in Dev/ before development."
+    purpose: "Client/dev-shareable artifact. Translates the EU RWA/STO compliance obligations (from Tokenized-Securities-EU-Compliance-Landscape + the 15 EU Compliance/Checklist files) into an ERC-3643/T-REX permissioned-security-token design. Structured requirement-first and interleaved: §1-§10 each state the compliance obligation (Article-mapped) then the engineering approach for that same point (roles/lane-phasing, chain/selection, token-identity/ERC-3643, identity/claims-service, fund/modules+valuation-oracle+matching-engine, MAR/freeze+indexer, venue/settlement+caps+reporting-bridges, disclosure/doc-registry, DORA/governor, GDPR/no-PII); §11 on/off-chain boundary; §12-§15 cross-cutting engineering (NFRs, test/audit, phasing, team); §16 open decisions. Code omitted. Built 2026-07-02 via parallel extraction across the checklist clusters; a former separate engineering doc was merged in. A deeper technical spec (interfaces, schemas, gas budgets, test plans) to be authored in Dev/ before development."
 ---
 
-# RWA / STO Smart-Contract Design (EU)
+# EU Tokenized Securities — Smart-Contract Design
 
-The **dev/engineering companion** to [[RWA-STO-EU-Compliance-Landscape]]. A single source doc (`Content/Contract Design/eu_rwa_sto_smart_contract_design.md`) translates the EU RWA/STO regulatory lane (MiFID II-primary, not MiCA) into a buildable tokenized-securities platform, structured **requirement-first and interleaved**: each compliance point is stated (Article-mapped), then the engineering approach that satisfies it follows immediately.
+The **dev/engineering companion** to [[Tokenized-Securities-EU-Compliance-Landscape]]. A single source doc (`Content/Contract Design/eu_rwa_sto_smart_contract_design.md`) translates the EU RWA/STO regulatory lane (MiFID II-primary, not MiCA) into a buildable tokenized-securities platform, structured **requirement-first and interleaved**: each compliance point is stated (Article-mapped), then the engineering approach that satisfies it follows immediately.
 
 - **§1–§10** — one section per compliance domain, each = *compliance obligation* → *engineering approach*: roles/lane-phasing · chain/selection · token-identity/ERC-3643 · identity/claims-service · fund-structure/modules+valuation-oracle+matching-engine · MAR/freeze+surveillance-indexer · venue/settlement+caps+reporting-bridges · disclosure/doc-registry · DORA/governor-wrapper · GDPR/no-PII-pattern.
 - **§11** on-chain vs off-chain boundary summary; **§12–§15** cross-cutting engineering that can't attach to one point (NFRs, test/audit, build phasing, team); **§16** consolidated open decisions (legal + engineering).
@@ -57,4 +57,4 @@ Network topology (consortium vs single-operator PoA vs appchain-with-L1-anchor);
 
 This is the delivery blueprint for the RWA/STO tokenization-engineering motion the compliance landscape identifies as InnBlockchain's highest-fit EU opportunity — ERC-3643/T-REX builds, ELTIF matching-mechanism smart contracts, compliance-module engineering, and DLT-Pilot venue infrastructure. The requirements↔engineering split lets a compliance/counsel audience read the *what* without wading through the engineering *how*.
 
-See: [[RWA-STO-EU-Compliance-Landscape]] | [[EU-Fintech-Compliance-Landscape]] | [[ELTIF-2.0]] | [[MiFID-II]] | [[DLT-Pilot-Regime]] | [[DORA-Regulation]] | [[Asset-Tokenization-RWA]]
+See: [[Tokenized-Securities-EU-Compliance-Landscape]] | [[EU-Fintech-Compliance-Landscape]] | [[ELTIF-2.0]] | [[MiFID-II]] | [[DLT-Pilot-Regime]] | [[DORA-Regulation]] | [[Asset-Tokenization-RWA]]

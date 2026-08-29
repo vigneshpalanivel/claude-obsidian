@@ -754,13 +754,13 @@
       ],
       "modification_reason_2026-07-11": "Re-mirrored to concept [[EU-Fintech-Compliance-Landscape]] 2026-07-11. Added RIS row (amends MiFID II/UCITS/AIFMD/IDD/PRIIPs; EUR500k->EUR250k elective-professional; ~end-2028) + T+1 row (Reg 2025/2075, 11 Oct 2027) to Key Regulations; T+1 in Primary Sources in-force; RIS in Proposals (COM(2023) 279)."
     },
-    ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/RWA-STO-EU-Compliance-Landscape.md": {
+    ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/Tokenized-Securities-EU-Compliance-Landscape.md": {
       "hash": "6c899d1bb3a5bd770121b00aa4f36618",
       "ingested_at": "2026-07-02",
       "last_synced": "2026-07-11",
       "derived_from": "split out of EU-Compliance-Landscape.md on 2026-07-02",
       "pages_created": [
-        "wiki/concepts/RWA-STO-EU-Compliance-Landscape.md"
+        "wiki/concepts/Tokenized-Securities-EU-Compliance-Landscape.md"
       ],
       "pages_updated": [
         "wiki/concepts/EU-Fintech-Compliance-Landscape.md",
@@ -772,7 +772,7 @@
       "previous_hash": "3a5514933436b5db63867659c0bfb1b9",
       "modification_reason_2026-07-11": "Re-mirrored to concept 2026-07-11. Session changes now synced: role->obligations summary table + 'How MAR reaches the issuer' explainer in Three Roles; review-fix precision pass (best execution=MiFID II Art 27; MiFIR Arts 4-5 waivers/single-volume-cap; eIDAS ~2026-2027; PDMR EUR20k + MS opt-up EUR50k; MAR Art 30(2) penalties; AMLA >=6-MS selection; AIFMD II LMTs all open-ended AIFs; ELTIF Art 15 cross-holding waiver; DLT ~10 apps + EUR6bn/EUR9bn caps); new-reg additions (ELTIF 2.0 RTS 2024/2759; T+1 Reg 2025/2075; RIS pre-OJ; 'On the horizon' callout; DLT-permanence corrected to ESMA Jun-2025 recommendation); 3 new checklist links."
     },
-    ".raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md": {
+    ".raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_tokenized_securities_smart_contract_design.md": {
       "hash": "a960fb010ffafa818e9ef332c99bbfd6",
       "previous_hash": "776b046428d044372dd37234a56dfb7e",
       "ingested_at": "2026-07-02",
@@ -780,7 +780,7 @@
       "modification_reason": "2026-07-02 \u2014 later addition: consolidated contract-inventory table added as appendix \u00a717 at the bottom (one-glance view of the contracts named across \u00a73-\u00a79, each linked to the section that specifies it; concrete interfaces/schemas still deferred to the Dev/ technical spec). Earlier same-session edits (3): (1) added 'Deployment-chain constraints \u2014 enforced by compliance' section (chain choice as a compliance requirement \u2192 permissioned/known-validator BFT EVM). (2) merged the former separate engineering-design doc (Dev/eu_rwa_sto_engineering_design.md, DELETED) in. (3) RESTRUCTURED from Part-I/Part-II (all-compliance-then-all-engineering) into REQUIREMENT-FIRST INTERLEAVED: \u00a71-\u00a710 each state the compliance obligation then the engineering approach for that same point (roles\u2192lane phasing; chain\u2192selection; token/identity\u2192ERC-3643 rationale+topology; identity\u2192claims service; fund\u2192modules+valuation-oracle+matching-engine; MAR\u2192freeze module+indexer/surveillance; venue\u2192settlement engine+caps+reporting bridges; disclosure\u2192doc registry; DORA\u2192governor wrapper; GDPR\u2192no-PII pattern); \u00a711 on/off-chain boundary summary; \u00a712-\u00a715 cross-cutting engineering that can't attach to one point (NFRs, test/audit, build phasing, team); \u00a716 consolidated open decisions (legal + engineering). Contract inventory now distributed per-section rather than a standalone table. A deeper technical spec to be authored in Dev/ before development.",
       "role": "smart-contract design (requirement-first: each compliance point + its engineering approach, single doc)",
       "pages_created": [
-        "wiki/concepts/RWA-STO-Smart-Contract-Design.md"
+        "wiki/concepts/Tokenized-Securities-Smart-Contract-Design.md"
       ],
       "pages_updated": [
         "wiki/index.md",
@@ -789,7 +789,7 @@
       ],
       "notes": "EU RWA/STO smart-contract design for an ERC-3643/T-REX permissioned security token. Derived from RWA-STO-EU-Compliance-Landscape.md + the 15 EU Compliance/Checklist files via parallel cluster extraction (fund/AIFMD-UCITS-ELTIF, MAR/Prospectus/Listing, MiFID/MiFIR, DLT-Pilot/DORA, eIDAS/AML/GDPR). Two parts: Part I compliance requirements (what the contracts enforce, on-chain vs off-chain, Article-mapped, code omitted) + Part II design/engineering approach (chain selection, architecture, contract inventory, NFRs, test/audit, build phasing). Key framing preserved: chain choice is compliance-enforced (permissioned BFT EVM); transfer restrictions derive from MiFID/Prospectus/ELTIF/DLT-Pilot NOT MiCA; TFR Travel Rule does not apply to MiFID-classified tokens; valuation/NAV oracle = #1 risk. Mirrored to concept [[RWA-STO-Smart-Contract-Design]]. History: authored in Dev/ \u2192 relocated to Content/Contract Design/ \u2192 engineering companion merged in and deleted (all 2026-07-02, same session)."
     },
-    ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/RWA-STO-EU-Compliance-Criteria.md": {
+    ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/Tokenized-Securities-EU-Compliance-Criteria.md": {
       "hash": "abd94e43ab1ff64a8f4c713993bad291",
       "previous_hash": "da2b9e403b056ff516ae82bbee1ae435",
       "ingested_at": "2026-07-07",
@@ -797,7 +797,7 @@
       "modification_reason": "2026-07-08 REVAMP (user request): pivoted the whole file from CLASSIFICATION decision trees to per-regulation APPLICABILITY gates \u2014 one Mermaid tree per compliance regime answering 'does this apply to my RWA/STO platform, yes/no, under what condition?', ending in APPLIES (scope) or does-NOT-apply (reason). Now 18 gates grouped 1.x securities-core (MiFID II/MiFIR/MiFID III/Prospectus/MAR/Listing Act), 2.x fund (AIFMD/AIFMD II/UCITS/ELTIF), 3.x infra (DLT Pilot), 4.x horizontal (DORA/AMLR/eIDAS/GDPR/EU AI Act/MiCA/TFR), + \u00a75 out-of-scope note (CCD2/IPR/PSD3). Per user, the token/role/fund CLASSIFICATION trees (landscape content) are deliberately EXCLUDED \u2014 the gates assume the token is already a MiFID security; user may add classification later. Fully replaces the prior 18 classification diagrams. Earlier same-artifact edits: 2026-07-08 removed MiCA sub-classification diagram; 2026-07-07 first ingest (19 classification trees).",
       "role": "per-regulation APPLICABILITY gates \u2014 18 Mermaid 'does this apply?' trees",
       "pages_created": [
-        "wiki/concepts/RWA-STO-EU-Compliance-Criteria.md"
+        "wiki/concepts/Tokenized-Securities-EU-Compliance-Criteria.md"
       ],
       "pages_updated": [
         "wiki/index.md",
@@ -843,7 +843,7 @@
       "verification_artefact": "deleted per user after checklist verification (was eltif-rts.mhtml)",
       "pages_created": [],
       "pages_updated": [
-        "wiki/concepts/RWA-STO-EU-Compliance-Landscape.md",
+        "wiki/concepts/Tokenized-Securities-EU-Compliance-Landscape.md",
         "wiki/index.md",
         "wiki/hot.md",
         "wiki/log.md"
@@ -857,7 +857,7 @@
       "verification_artefact": "deleted per user after checklist verification (was t1-settlement.mhtml)",
       "pages_created": [],
       "pages_updated": [
-        "wiki/concepts/RWA-STO-EU-Compliance-Landscape.md",
+        "wiki/concepts/Tokenized-Securities-EU-Compliance-Landscape.md",
         "wiki/index.md",
         "wiki/hot.md",
         "wiki/log.md"
@@ -871,7 +871,7 @@
       "verification_artefact": "deleted per user after checklist verification (was ris.mhtml)",
       "pages_created": [],
       "pages_updated": [
-        "wiki/concepts/RWA-STO-EU-Compliance-Landscape.md",
+        "wiki/concepts/Tokenized-Securities-EU-Compliance-Landscape.md",
         "wiki/index.md",
         "wiki/hot.md",
         "wiki/log.md"

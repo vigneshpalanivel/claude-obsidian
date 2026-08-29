@@ -63,7 +63,7 @@ Article drafts + AEO sections per editorial calendar (40 articles across W1–W2
 4. [[Content Strategy]] — pillar map · sales motion tagging · article positioning
 5. [[Content AEO GEO Prompts]] — per-article prompt block + 13 AEO Drafting Principles
 6. [[ICP - Crypto Native]] + [[ICP - FinTech]] — persona language per track tag (Felix asset-first · Sam ROI · Tom technical · Carol compliance)
-7. [[RWA-STO-EU-Compliance-Landscape]] + [[EU-Compliance-Landscape]] + per-regime checklists — regime framing source (RWA = MiFID II/III + MiFIR + AIFMD/AIFMD II/UCITS/ELTIF 2.0 (conditional on pooling) + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA)
+7. [[Tokenized-Securities-EU-Compliance-Landscape]] + [[EU-Compliance-Landscape]] + per-regime checklists — regime framing source (RWA = MiFID II/III + MiFIR + AIFMD/AIFMD II/UCITS/ELTIF 2.0 (conditional on pooling) + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA)
 8. [[Content Repurposing Plan]] — canonical tier definitions + derivative format priority (route per-derivative work here, NOT into the playbook)
 
 ## 🚫 Hard rules (memorise — these never relax)
@@ -93,7 +93,7 @@ These are everything you need to do your job:
 | 8 | [[Content Repurposing Plan]] | Canonical tier definitions + derivative format priority (route per-derivative work HERE, not into the playbook) |
 | 9 | [[ICP - Crypto Native]] | Persona language for `[CN]` track tag (Felix asset-first) |
 | 10 | [[ICP - FinTech]] | Persona language for `[FT]` track tag (Sam ROI / Tom technical / Carol compliance) |
-| 11 | [[RWA-STO-EU-Compliance-Landscape]] + [[EU-Compliance-Landscape]] + per-regime checklists | Canonical regulatory framing source (RWA = MiFID II/III + MiFIR + AIFMD/AIFMD II/UCITS/ELTIF 2.0 (conditional on pooling) + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA for Phase 1) |
+| 11 | [[Tokenized-Securities-EU-Compliance-Landscape]] + [[EU-Compliance-Landscape]] + per-regime checklists | Canonical regulatory framing source (RWA = MiFID II/III + MiFIR + AIFMD/AIFMD II/UCITS/ELTIF 2.0 (conditional on pooling) + Prospectus + DLT Pilot + MAR + EU Listing Act · NEVER MiCA for Phase 1) |
 | 12 | [[InnBlockchain EU Countries Phase 1 Priority List]] | Ranks Germany · France · Italy · Spain (+ Luxembourg) as Phase 1 priority markets — source for the WS2 localization track (rev 51); you coordinate the French pass (Toubon Law hard gate) |
 | 13 | [[Academy Categories]] | Canonical 11-category Academy taxonomy (rev 54) — category definitions + § Remapping Existing Blogs — Decision Rules for the one-time backlog remap |
 

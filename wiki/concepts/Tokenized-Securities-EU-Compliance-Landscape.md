@@ -1,6 +1,6 @@
 ---
 type: concept
-title: "RWA / STO EU Compliance Landscape"
+title: "Tokenized Securities EU Compliance Landscape"
 created: 2026-07-02
 updated: 2026-07-11
 tags:
@@ -28,7 +28,7 @@ related:
   - "[[InnBlockchain Crypto Native ICP]]"
   - "[[InnBlockchain FinTech ICP]]"
 internal_artifacts:
-  - path: ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/RWA-STO-EU-Compliance-Landscape.md"
+  - path: ".raw/InnBlockchain/sales-marketing/Service/Content/EU Compliance/Tokenized-Securities-EU-Compliance-Landscape.md"
     hash: "6c899d1bb3a5bd770121b00aa4f36618"
     registered: 2026-07-02
     last_synced: 2026-07-11
@@ -36,7 +36,7 @@ internal_artifacts:
     purpose: "Standalone InnBlockchain-branded client-shareable artifact for the RWA/STO regulatory lane (MiFID II-primary, not MiCA). Carries all RWA/STO-specific content (Token Classification / RWA≠MiCA, Three Roles Issuer-Venue-Dealer/SI, Fund Classification UCITS→AIF→ELTIF, MiFID II/III + AIFMD/UCITS + ELTIF 2.0 + Prospectus + MAR + EU Listing Act + DLT Pilot regulations, per-segment obligations for Seg 1 + WealthTech, cross-cutting DORA/AML/eIDAS/GDPR/AI Act/MiCA callout, checklist links). Body re-mirrored from raw on 2026-07-11. 2026-07-08/11 changes now reflected: role→obligations summary table + 'How MAR reaches the issuer' explainer added to Three Roles; review-fix precision pass (best execution = MiFID II Art 27; MiFIR Arts 4-5 transparency waivers/single-volume-cap; eIDAS acceptance ~2026-2027; PDMR €20k + MS opt-up €50k; MAR Art 30(2) penalties; AMLA ≥6-MS selection; AIFMD II LMTs for all open-ended AIFs; ELTIF Art 15 cross-holding waiver; DLT ~10 apps + €6bn/€9bn caps); new-regulation additions (ELTIF 2.0 RTS 2024/2759; T+1 Reg 2025/2075; RIS pre-OJ; 'On the horizon' callout; DLT-permanence claim corrected to ESMA Jun-2025 recommendation); 3 new checklist links (eltif-rts, t1-settlement, ris)."
 ---
 
-# RWA / STO EU Compliance Landscape
+# Tokenized Securities EU Compliance Landscape
 
 RWA tokenization and Security Token Offerings sit in a distinct regulatory lane from general fintech — **MiFID II is the primary framework, not MiCA** — and the compliance burden compounds with each additional role a platform takes on (issuer → venue → dealer). This document covers EU compliance specific to RWA/STO platforms across both relevant segments — **Crypto Native Seg 1 (RWA Tokenization)** and **FinTech WealthTech (RWA / STO / Tokenized Securities)**. For payments, crypto-asset services (Seg 2-10), lending, and other FinTech segments, see [[EU-Fintech-Compliance-Landscape]].
 

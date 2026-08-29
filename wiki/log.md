@@ -1,7 +1,7 @@
 ---
 type: meta
 title: "Operation Log"
-updated: 2026-07-13
+updated: 2026-08-29
 tags:
   - meta
   - log
@@ -18,6 +18,18 @@ related:
 Navigation: [[index]] | [[hot]] | [[overview]]
 
 Append-only. New entries go at the TOP. Never edit past entries.
+
+## [2026-08-29] rename + rule | "RWA/STO" → "Tokenized Securities" across the compliance-doc layer
+
+- **Diagnosis, not just a rename.** User flagged that the STO-related files all carry "RWA" though they serve both ICPs. The sharper finding: **"RWA" is the wrong *axis*.** Those docs are organised by regulatory classification (is the token a MiFID II financial instrument / a unit in a pooled vehicle); "real-world asset" describes asset *origin*. Neither circle contains the other — an asset-backed **value-referencing** token (tokenized gold) is an RWA the docs' own top gate ejects to MiCA as an ART; a tokenized unit in a pooled **crypto** vehicle is a non-RWA that pulls the full AIFMD → AIFM-authorisation → prospectus stack.
+- **Renamed (`git mv`, history preserved), raw + wiki concept both:** [[Tokenized-Securities-EU-Compliance-Landscape]] · [[Tokenized-Securities-EU-Compliance-Criteria]] · [[Tokenized-Securities-Smart-Contract-Design]]. Titles + H1s + frontmatter `title:` synced on all six files.
+- **Raw cascade:** [[InnBlockchain Phase 1 Execution Playbook]] rev 62 (17 reference sites; doc-label prose "RWA regime lane" → "tokenized-securities regime lane"; "17 RWA-relevant checklists" → "17 securities-lane checklists") · all 7 cover sheets + 5 task lists at `playbook_rev_synced: 62` · [[InnBlockchain Crypto Native ICP]] rev 2→3 (Segment 1 routing clause + naming-rule pointer) · Content Strategy rev 26 + Editorial Calendar rev 16 (4 regime-lane article titles → "Tokenized Securities"; asset-vertical titles keep "RWA").
+- **New standing rule — the actual safeguard.** [[InnBlockchain Content Style Guide]] rev 2 § Terminology: four-layer table (layer · term · why), the two edge cases that prove the axis, and three prohibitions — no bare "STO" as a scope word for ongoing-compliance content · never rename buyer-facing gated assets off "RWA" · bulk find-replace corrupts `revision_notes` blocks. Placed there (not Content Strategy) because cross-phase stable rules live in the Style Guide, which has been rev 1 since June while Content Strategy churns at rev 26 and owns only the article layer.
+- **Deliberately NOT changed:** the four WS3 featured assets keep "RWA" (gated buyer-facing downloads; reader is the non-technical asset owner, and the folder's fourth asset [[EU Tokenized Securities Compliance Brief]] is *already* on the regulatory axis — the split is intentional). ICP segment names keep "RWA" (segments name buyers). Segment/prospect prose keeps "RWA" throughout.
+- **Two errors made and caught on verification passes, both recorded in the new rule:** (1) bulk find-replace rewrote *historical* rev notes — Editorial Calendar rev 12 briefly claimed it produced a title it never produced; restored. Wikilinks to a renamed-but-existing file **should** be repointed, quoted historical titles should **not**. (2) A slot mislabel ("W2 Thu" for a W2 Tue article) in a rev note; fixed.
+- Pages updated: [[InnBlockchain Phase 1 Execution Playbook]] (rev 60→62 — rev 61 had never been mirrored, captured in the same pass), [[InnBlockchain Content Style Guide]] (rev 1→2), [[InnBlockchain Crypto Native ICP]] (`source_rev_synced` → ICP rev 3), [[index]], [[hot]], [[log]], `.raw/.manifest.json` (source paths + `pages_created`/`pages_updated` wiki targets).
+- **Altitude note:** [[InnBlockchain Content Strategy]] and [[InnBlockchain Editorial Calendar]] concepts carry no individual article titles, so the 4 title changes do not propagate to them — no wiki edit needed.
+- **Deferred:** a pointer to the naming rule from the Playbook § Source map — that edit is a playbook rev and would trigger the full 7-cover-sheet + 5-task-list cascade for one line. Until it lands, the doc-renaming audience reaches the rule only via the ICP or the Style Guide. **Also open:** the `EU Compliance for RWA Tokenization` blog draft + its repurposed pack still carry titles that now contradict `[#6]`; the `EU Smart Contract Design - Pure Issuer` draft remains orphaned (no article ID, absent from both planning docs).
 
 ## [2026-07-13] restructure | InnBlockchain LinkedIn Sales Nav filters → single canonical doc
 - New canonical doc: `.raw/…/Service/LinkedIn/Phase 1 LinkedIn Filter.md` (renamed + moved from the old "LinkedIn Filter Testing Tracker" under Sales/Recommendations). Reframed from a free-LinkedIn testing tracker into a Sales Navigator build sheet.
@@ -38,51 +50,51 @@ Append-only. New entries go at the TOP. Never edit past entries.
 
 ## [2026-07-11] batch ingest | EU Compliance — regulatory updates + 3 new checklists, all re-synced
 - **Regulatory currency pass** (web-verified): added **RIS** (Retail Investment Strategy — approved 12 Jun 2026, pre-OJ, ~end-2028; amends MiFID II/UCITS/AIFMD/IDD/PRIIPs; elective-professional €500k→€250k), **T+1 settlement** (Reg (EU) 2025/2075, applies 11 Oct 2027), **ELTIF 2.0 RTS** (Delegated Reg 2024/2759); corrected the DLT-Pilot "permanence" claim to ESMA's Jun-2025 Art-14 recommendation.
-- **Landscapes updated**: RWA-STO landscape (`6c899d1…`) + generic EU-Compliance landscape (`1a08da6…`) — RIS/T+1 rows, ELTIF-RTS, "On the horizon" callout, Primary Sources; both re-mirrored to concepts [[RWA-STO-EU-Compliance-Landscape]] + [[EU-Fintech-Compliance-Landscape]].
-- **Criteria** (`c0827ab…`): 18→**20 gates** — new §5 recently-adopted (5.1 T+1, 5.2 RIS), §6 out-of-scope; §2.4/§3.1 annotations. Concept [[RWA-STO-EU-Compliance-Criteria]] resynced.
+- **Landscapes updated**: RWA-STO landscape (`6c899d1…`) + generic EU-Compliance landscape (`1a08da6…`) — RIS/T+1 rows, ELTIF-RTS, "On the horizon" callout, Primary Sources; both re-mirrored to concepts [[Tokenized-Securities-EU-Compliance-Landscape]] + [[EU-Fintech-Compliance-Landscape]].
+- **Criteria** (`c0827ab…`): 18→**20 gates** — new §5 recently-adopted (5.1 T+1, 5.2 RIS), §6 out-of-scope; §2.4/§3.1 annotations. Concept [[Tokenized-Securities-EU-Compliance-Criteria]] resynced.
 - **3 new checklists created + verified** and registered in manifest: `eltif-rts-checklist.md` (`7f11bc8…`, verified vs EUR-Lex — 2 errors fixed: redemption cap base = Art 9(1)(b) liquid bucket; Annex I example), `t1-settlement-checklist.md` (`65ec9c6…`, verified, clean), `ris-checklist.md` (`875d694…`, PROVISIONAL/pre-OJ). Verification MHTMLs deleted per user after verification.
-- Pages updated: [[RWA-STO-EU-Compliance-Landscape]], [[EU-Fintech-Compliance-Landscape]], [[RWA-STO-EU-Compliance-Criteria]], [[index]], [[hot]], [[log]], `.raw/.manifest.json` (55→58 sources).
+- Pages updated: [[Tokenized-Securities-EU-Compliance-Landscape]], [[EU-Fintech-Compliance-Landscape]], [[Tokenized-Securities-EU-Compliance-Criteria]], [[index]], [[hot]], [[log]], `.raw/.manifest.json` (55→58 sources).
 - Note: this session also earlier added the role-summary table + MAR-in-Issuer explainer + 9-item review-fix precision pass to the RWA landscape — now reflected in its concept via the re-mirror.
 
-## [2026-07-08] revamp | RWA-STO-EU-Compliance-Criteria — pivoted to per-regulation applicability gates
+## [2026-07-08] revamp | Tokenized-Securities-EU-Compliance-Criteria — pivoted to per-regulation applicability gates
 - Reworked the criteria file from CLASSIFICATION decision trees to **applicability gates**: 18 Mermaid "does this regime apply to my RWA/STO platform (yes/no, under what condition)?" trees, each ending APPLIES (scope) or does-NOT-apply (reason). Groups 1.x securities-core, 2.x fund, 3.x infra, 4.x horizontal, +§5 out-of-scope (CCD2/IPR/PSD3). Sourced from checklist scope sections.
 - Per user, token/role/fund CLASSIFICATION trees deliberately EXCLUDED (landscape content; may add later) — gates assume the token is already a MiFID security.
-- New hash `da2b9e403b056ff516ae82bbee1ae435` (prev `699bfdcdb7560e9547cad1b2a8c8b915`). Fully replaces the prior 18 classification diagrams. Concept [[RWA-STO-EU-Compliance-Criteria]] + [[index]] + [[hot]] + manifest updated.
+- New hash `da2b9e403b056ff516ae82bbee1ae435` (prev `699bfdcdb7560e9547cad1b2a8c8b915`). Fully replaces the prior 18 classification diagrams. Concept [[Tokenized-Securities-EU-Compliance-Criteria]] + [[index]] + [[hot]] + manifest updated.
 - (Earlier same-day: 2026-07-08 removed MiCA sub-classification diagram before this fuller revamp.)
 
-## [2026-07-07] ingest | RWA-STO-EU-Compliance-Criteria — 19 Mermaid decision trees
-- Source: `.raw/…/EU Compliance/RWA-STO-EU-Compliance-Criteria.md` (hash `5a0f88a667d5d6c549271cadfbffe947`) — diagrams-only companion to [[RWA-STO-EU-Compliance-Landscape]]
+## [2026-07-07] ingest | Tokenized-Securities-EU-Compliance-Criteria — 19 Mermaid decision trees
+- Source: `.raw/…/EU Compliance/Tokenized-Securities-EU-Compliance-Criteria.md` (hash `5a0f88a667d5d6c549271cadfbffe947`) — diagrams-only companion to [[Tokenized-Securities-EU-Compliance-Landscape]]
 - Content: 19 Mermaid flowcharts sourced from the landscape + all 15 Checklist/ files (parallel extraction). Sections: A classification/scope (token MiFID-vs-MiCA, MiCA ART/EMT/utility, role stack, venue type), B investor/offering (client classification, suitability tiers, prospectus exemptions+formats, MAR/PDMR), C fund structuring (UCITS→AIF→ELTIF, AIFMD levels, UCITS gate, ELTIF retail/pro split, LOF), D infrastructure/horizontal (DLT Pilot caps, DORA proportionality/TLPT, AMLR CDD, TFR carve-out, eIDAS, cross-cutting)
-- Pages created: [[RWA-STO-EU-Compliance-Criteria]]
+- Pages created: [[Tokenized-Securities-EU-Compliance-Criteria]]
 - Pages updated: [[index]], [[hot]], [[log]], `.raw/.manifest.json`
 - Caveats: checklist-extracted thresholds not independently re-verified; Mermaid not render-tested
-- NOTE: the RWA-STO landscape raw file has accumulated unmirrored edits (role summary table, MAR-in-Issuer bullet, 9 review fixes incl. MiFID II Art 27 + MiFIR Arts 4-5 corrections) — wiki concept [[RWA-STO-EU-Compliance-Landscape]] still at hash `3a5514933436b5db63867659c0bfb1b9`, re-ingest pending
+- NOTE: the RWA-STO landscape raw file has accumulated unmirrored edits (role summary table, MAR-in-Issuer bullet, 9 review fixes incl. MiFID II Art 27 + MiFIR Arts 4-5 corrections) — wiki concept [[Tokenized-Securities-EU-Compliance-Landscape]] still at hash `3a5514933436b5db63867659c0bfb1b9`, re-ingest pending
 
 ## [2026-07-02] update | RWA/STO Smart-Contract Design — restructured to requirement-first interleaved
 - Reorganized from Part-I/Part-II (all-compliance-then-all-engineering) into **requirement-first**: §1-§10 each state a compliance obligation then the engineering approach for that same point; §11 on/off-chain boundary; §12-§15 cross-cutting engineering (NFRs, test/audit, phasing, team); §16 open decisions. Contract inventory now distributed per-section.
-- New hash `776b046428d044372dd37234a56dfb7e` (prev `e72a0e3c939f956531a52ff0d451659f`). Concept [[RWA-STO-Smart-Contract-Design]] + [[index]] + [[hot]] framing updated from "two parts" to "requirement-first".
+- New hash `776b046428d044372dd37234a56dfb7e` (prev `e72a0e3c939f956531a52ff0d451659f`). Concept [[Tokenized-Securities-Smart-Contract-Design]] + [[index]] + [[hot]] framing updated from "two parts" to "requirement-first".
 
 ## [2026-07-02] update | RWA/STO Smart-Contract Design — engineering doc merged into contract-design doc
 - The separate engineering-design doc (`Dev/eu_rwa_sto_engineering_design.md`, was hash `5f76d7a810e6e5d9df49191407f4f6e0`) was **merged into** `Content/Contract Design/eu_rwa_sto_smart_contract_design.md` as **Part II** and then **deleted** — its content was outline-level, not enough to justify a separate file
 - Merged doc now two parts: Part I Compliance requirements (§1-§12 + chain-constraints) + Part II Design & engineering approach (§13-§20). New hash `e72a0e3c939f956531a52ff0d451659f` (prev `e47e981527c2b89f6a16b60ab0556fae`)
 - Also this session: chain-selection stated as a compliance *requirement* in Part I (Deployment-chain constraints section — MAR Art 16/12(2) + DLT Pilot Art 5(7)-(8)/CSDR Art 39 + DORA Art 12 → permissioned/known-validator BFT EVM)
-- Concept [[RWA-STO-Smart-Contract-Design]] now tracks ONE artifact (was two); manifest engineering entry removed; [[index]], [[hot]] updated
+- Concept [[Tokenized-Securities-Smart-Contract-Design]] now tracks ONE artifact (was two); manifest engineering entry removed; [[index]], [[hot]] updated
 - A deeper technical engineering spec (interfaces, schemas, sequence diagrams, gas budgets, test plans) to be authored in Dev/ before development begins
 
 ## [2026-07-02] ingest | RWA/STO Smart-Contract Design (EU) — requirements + engineering design pair
 - Sources: `.raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_rwa_sto_smart_contract_design.md` (hash `fe5bd4bff6da07e0f95af04426b4b685`, compliance-requirements baseline) + `.raw/InnBlockchain/Dev/eu_rwa_sto_engineering_design.md` (hash `5f76d7a810e6e5d9df49191407f4f6e0`, engineering design)
-- Built from [[RWA-STO-EU-Compliance-Landscape]] + the 15 EU Compliance/Checklist files via parallel cluster extraction; ERC-3643/T-REX base with justification; requirements↔engineering split (the WHAT vs the HOW)
+- Built from [[Tokenized-Securities-EU-Compliance-Landscape]] + the 15 EU Compliance/Checklist files via parallel cluster extraction; ERC-3643/T-REX base with justification; requirements↔engineering split (the WHAT vs the HOW)
 - Key decisions captured: ERC-3643 over ERC-1400 (identity+modular-compliance+freeze as standard primitives); permissioned/known-validator BFT EVM (public anonymous L1 fails MAR ordering surveillance + DLT-Pilot finality + DORA validator control); off-chain-first (~80% of effort — valuation oracle, matching engine, reporting bridges); role-lane phasing; valuation-oracle = #1 risk; GDPR no-PII-on-chain pattern; TFR does NOT apply; not MiCA
-- Pages created: [[RWA-STO-Smart-Contract-Design]] (tracks both artifacts)
+- Pages created: [[Tokenized-Securities-Smart-Contract-Design]] (tracks both artifacts)
 - Pages updated: [[index]], [[hot]], [[log]], `.raw/.manifest.json`
 - Note: requirements doc authored in Dev/, then relocated to Content/Contract Design/ per user; engineering doc stays in Dev/; cross-links between the two trees verified resolving
 
 ## [2026-07-02] re-ingest + split | EU-Compliance-Landscape → RWA/STO lane extracted to sibling landscape
-- Raw files: `.raw/…/EU Compliance/EU-Compliance-Landscape.md` (hash `1024abb578174718999c384a43b67ea3`, prev `3459c9355aee4e142a073eb3e11df8de`) + NEW `.raw/…/EU Compliance/RWA-STO-EU-Compliance-Landscape.md` (hash `4937ddff80b256a9924f95d22d166b27`)
+- Raw files: `.raw/…/EU Compliance/EU-Compliance-Landscape.md` (hash `1024abb578174718999c384a43b67ea3`, prev `3459c9355aee4e142a073eb3e11df8de`) + NEW `.raw/…/EU Compliance/Tokenized-Securities-EU-Compliance-Landscape.md` (hash `4937ddff80b256a9924f95d22d166b27`)
 - Split: all RWA/STO-specific content (Token Classification / RWA≠MiCA, Three Roles Issuer-Venue-Dealer/SI, Fund Classification UCITS→AIF→ELTIF, detailed MiFID II/III + AIFMD/UCITS + ELTIF 2.0 + Prospectus + MAR + EU Listing Act + DLT Pilot rows, Seg 1 + WealthTech full obligation lists, Primary Sources) moved OUT of the generic landscape INTO the new RWA/STO landscape. Generic file keeps FinTech (ExchangeTech/LendTech/WalletTech/PayTech/RegTech/BankTech/InsurTech) + Crypto Native Seg 2-10 + horizontal regimes; Seg 1 + WealthTech retained as MINIMAL one-row pointers (not removed — corrected mid-session after over-cut).
 - RWA/STO landscape also gained a Cross-cutting regimes callout + Compliance by Segment section so DORA/AML/eIDAS/GDPR/AI Act/MiCA are visible in context (user flagged the initial split dropped them).
 - Folder reorg: 19 `*-checklist.md` files moved to `EU Compliance/Checklist/`; landscape files now sit alone at the `EU Compliance/` top level.
-- Pages created: [[RWA-STO-EU-Compliance-Landscape]]
+- Pages created: [[Tokenized-Securities-EU-Compliance-Landscape]]
 - Pages updated: [[EU-Fintech-Compliance-Landscape]] (RWA content stripped to minimal pointers, both internal_artifacts hashes updated, RWA-STO added to related + See:), [[hot]], [[log]], `.raw/.manifest.json`
 
 ## [2026-07-02] re-ingest | EU-Compliance-Landscape — UCITS/ELTIF 2.0 Quick Reference + Fund Classification Decision Tree

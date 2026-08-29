@@ -2,9 +2,9 @@
 type: concept
 title: "InnBlockchain Crypto Native ICP"
 created: 2026-04-15
-updated: 2026-06-03
+updated: 2026-08-29
 reingested: 2026-04-15
-source_rev_synced: ICP rev 1 (Telegram corrections in raw — wiki concept altitude unaffected; no Telegram references at this level)
+source_rev_synced: ICP rev 3 (rev 3 pointer to [[InnBlockchain Content Style Guide]] § Terminology + rev 2 Segment 1 routing clause both mirrored above — the clause changes who qualifies for Seg 1, so it is not altitude-exempt. Prior: rev 1 (Telegram corrections in raw — wiki concept altitude unaffected; no Telegram references at this level)
 tags:
   - concept
   - icp
@@ -91,6 +91,7 @@ Owns security mandate at larger protocols ($10M+ raised). Reads audit reports li
 Numeric order = priority. **Segment 1 (RWA) is the highest-priority outbound target this quarter** — do not read "Segment 2" as second choice.
 
 1. **RWA Tokenization** ⭐ — $30k–$150k, 45–75 day cycle. Real estate, vehicles, commodities, art, private credit. Lead with exploit risk of real asset value on-chain.
+    - **The segment name says "RWA" but the gate does not — the gate is company origin.** A crypto-native startup issuing any **security-classified token** belongs here even with nothing real-world behind it: the clearest case is a **tokenized unit in a pooled crypto vehicle**, a fund unit under EU law pulling the full AIFMD → AIFM-authorisation → prospectus stack. Same motion, personas and ACV band as any RWA build — **do not route these to Segment 6 (Token Launch & IDO)**, which is scoped to a fundraise on an existing protocol (wrong motion, $20k–$80k band, no compliance framing). Mirror case: an **asset-backed token conferring no ownership** is a real-world asset that is *not* a security — a MiCA ART on a different path, not a fit for this segment's compliance-led motion. Test: [[Tokenized-Securities-EU-Compliance-Landscape]] § Token Classification. Naming rule (why this segment keeps "RWA"): [[InnBlockchain Content Style Guide]] § Terminology.
 2. **DEX, On-Chain Trading & Crypto-Native Exchanges** — $50k–$200k, 30–60 day cycle. AMM, order books, oracles. Crypto-born CEX/DEX, licensed or not.
 3. DeFi protocols (lending, yield, liquidity)
 4. Web3 wallets

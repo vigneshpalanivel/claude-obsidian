@@ -2201,10 +2201,12 @@ Weigh **morning, empty stomach, post-toilet, same conditions.**
 | | 1 red banana (full) | 110 | 1.5g | 3g |
 | | Buttermilk | 35 | 2g | 0.2g |
 | | 1 tea (after lunch) | 35 | 1g | 0g |
-| Dinner | — | — | — | — |
-| **Running** | | **~1,900 kcal** | **~91.2g** | **~34.6g** |
+| Dinner | 2 idiyappam | 140 | 2.8g | 0.6g |
+| | Coconut milk (~½ cup, small tumbler) | 130 | 1.2g | 0.7g |
+| | 2 eggs kalakki (whisked half-boiled) | 165 | 13g | 0g |
+| **Total (day closed)** | | **~2,335 kcal** | **~108.2g** | **~35.9g** |
 
-**Notes — 2026-08-28 (running; day open):**
+**Notes — 2026-08-28 (day closed):**
 
 🔴 **Padam pisin added — breakfast fiber goes 16.4g → 20.4g, landing exactly where yesterday's did.** The earlier read (that this was the leanest breakfast of the week) no longer holds: **it is now identical to Aug 27's 20.4g breakfast**, which itself was flagged as sitting at the upper edge of what a 25–30g daily target can absorb before lunch.
 
@@ -2221,6 +2223,10 @@ Weigh **morning, empty stomach, post-toilet, same conditions.**
 ⚠️ **"Buddha bowl" veg/non-veg still unconfirmed — 6th consecutive lunch entry (Aug 19, 20, 21, 25, 27, 28) valued at the non-veg default of 595/45g/10g.** If it is actually vegetarian, protein is being overstated by ~20g every one of those days, which would change the protein-band readout materially.
 
 ✅ **Calories ~1,900 with dinner to come — on track.** ~400–500 kcal available to land inside the 2,300–2,400 band, which a normal light dinner covers comfortably. Protein 91.2g will clear the 100g floor with almost any dinner. **Two teas add 70 kcal and zero fiber — they help the calorie side without worsening the fiber problem.**
+
+✅✅ **Dinner landed almost exactly on the recommendation and closed the day cleanly. Total: ~2,335 kcal / ~108.2g protein / ~35.9g fiber.** Calories sit mid-band (2,300–2,400) — the cleanest calorie close of the week. **Protein 108.2g sits mid-band (100–120g), the third clean protein close this week.** Dinner was rule-compliant (no chicken/fish) and carried only 1.3g fiber, which was exactly what the day needed.
+
+🔴 **Fiber closed at 35.9g — ~6g over target, and the 7th consecutive weekday over.** ⚠️ **Dinner is not the culprit and never was**: it contributed 1.3g. The overshoot was fixed by lunchtime — milkshake (10.4g) + padam pisin (4g) are 14.4g of fixed daily intake, apple + mosambi spent the remaining ~6g of headroom at breakfast, and the full red banana at lunch added 3g more. ✅ **The 1 tbsp PB cut was real and saved ~1g** — it just wasn't enough on its own. **The half-banana half of the fix remains the one lever never yet applied.**
 
 ---
 
