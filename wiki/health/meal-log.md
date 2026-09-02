@@ -2594,7 +2594,11 @@ Other values at established rates — lemon soda 90/0g/0g (Jul 12), onion raita 
 | | ½ guava | 30 | 1g | 2.5g |
 | | ½ mosambi | 30 | 0.5g | 1g |
 | | 1 tea (after breakfast) | 35 | 1g | 0g |
-| **Running** | | **~1,276 kcal** | **~44.1g** | **~25.9g** |
+| Lunch | Buddha bowl (non-veg, assumed) | 595 | 45g | 10g |
+| | 1 tbsp peanut butter | 95 | 4g | 1g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| **Running** | | **~2,036 kcal** | **~96.1g** | **~37.1g** |
 
 **Notes — 2026-09-02 (running; day open):**
 
@@ -2617,6 +2621,34 @@ Other values at established rates — lemon soda 90/0g/0g (Jul 12), onion raita 
 ⚠️ **1 small pancake — estimate is soft.** Rated at ~130 / 3g / 1g by scaling the log's two prior pancake entries upward for "small" vs "tiny"/"very small" (Aug 8 chocolate pancake 100 / 2g / 0.5g; Aug 12 ragi-apple pancakes ~50 each). **If it was closer to palm-sized, add ~40–60 kcal.**
 
 ⚠️ **First day the new milkshake recipe is in effect** (736 / 24.5g / 11.9g, revised 2026-09-02 — see the standing recipe block at the top of this file).
+
+---
+
+**Lunch notes — 2026-09-02:**
+
+✅✅ **Banana dropped entirely, PB cut to 1 tbsp — the lowest-fiber lunch configuration recorded in this log, better on fiber than even the Aug 17 version.** *(Reported in two parts; the 1 tbsp PB was added after the bowl/buttermilk/tea line, so this note supersedes an initial reading of the lunch as a full no-PB cut.)* Compare the three versions of the fix:
+> | Date | Banana | PB | Add-on fiber | Add-on kcal |
+> |---|---|---|---|---|
+> | **Aug 17** | half | none | 1.5g | 55 |
+> | **Aug 28** | full | 1 tbsp | 4.0g | 205 |
+> | **Sep 2** | **none** | **1 tbsp** | **1.0g** | **95** |
+>
+> **Today is the lowest fiber of the three.** Against the usual 2-tbsp-PB-plus-full-banana lunch it is worth **~205 kcal and ~4g fiber.** **This combination is the single most-flagged item in the log — Aug 25, 27, 28, 31, Sep 1 — and it has finally moved.**
+
+🔴🔴 **And it still isn't enough — which is the cleanest possible proof of the breakfast finding.** Compare two days where the *identical* lunch fix was applied:
+> **Aug 17** — fix applied (1.5g of lunch add-on fiber) → pre-dinner **27.9g**, inside target
+> **Sep 2** — *stronger* fix applied (1.0g of lunch add-on fiber) → pre-dinner **37.1g**, ~7g over target
+>
+> **Today's lunch was 0.5g LOWER in add-on fiber than Aug 17's and the day still came out 9.2g higher. The entire difference is breakfast.** ⚠️ **This retires any remaining version of "fix lunch and the fiber problem goes away." It doesn't — the lunch lever has now been pulled past where it was on the best day in the log, and the day is still over.** Even so: **without the cut, today would sit at ~41.1g pre-dinner, the highest in the log. The fix prevented a record; it could not prevent an overshoot.**
+
+⚠️ **Fiber ~37.1g before dinner — ~7g over, 10th consecutive weekday over target.** Dinner must carry near-zero fiber.
+
+⚠️ **Calories ~2,036 — dinner room ~264–364 kcal against the current band.** Workable, though tighter than the ~359–459 the no-PB version would have allowed. 🔴 Against the recomputed **~2,180–2,280** band it is **~144–244 — roughly two eggs and little else.**
+
+✅ **Protein ~96.1g — and the 1 tbsp of PB is what makes the day rescuable, which is a real change from the no-PB version.** 9th consecutive lunch at the unconfirmed non-veg 45g default. **If the bowl was vegetarian the day sits at ~76.1g, and 4 boiled eggs (280 kcal, 24g) inside the ~364 kcal room lands at ~100.1g — clearing the floor exactly.** Without the PB it would have landed at ~96g and failed. ⚠️ **The margin is now zero, not negative: it works only if dinner is specifically 4 eggs.** Yesterday and today were both unrescuable on the earlier arithmetic; **today the PB bought the rescue back, by 0.1g.**
+
+⚠️ **Dinner brief: ~264–364 kcal, near-zero fiber, ≥4g protein, no chicken/fish, before 6:30 PM.** **1 cup rice + 2 boiled eggs = 340 / 16g / 0.6g** → day closes **~2,376 / ~112.1g / ~37.7g**, in band on all three. Adding rasam (+40) gives 2,416, **16 kcal past the ceiling — noise, fine either way.** 🔴 **The last two nights' 2 idli + 2 eggs (230) now only just works** — it would close at ~2,266, under the old floor but inside the recomputed band. **No sambar, no chutney, no vegetable side.**
+
 
 ---
 

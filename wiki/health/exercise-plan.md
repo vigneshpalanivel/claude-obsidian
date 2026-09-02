@@ -37,6 +37,63 @@ status: active
 
 ---
 
+## 🔴 Load Progression by Category — Spine Rules (added 2026-09-02)
+
+> **Written in response to:** *"if I'm increasing the dumbbell weight, won't it be a problem for my spine? Won't it compress my lower back?"* The equipment block above says to buy an adjustable set and progress; it never said **where** on the body that added load actually goes. This section closes that gap. **It is the rule that governs every weight increase from here.**
+
+### First, the framing correction: compression is not what injured you
+
+Both recorded spine events were **low-load**:
+
+| Event | Load involved | Actual mechanism |
+|-------|---------------|------------------|
+| Original SI dysfunction (~6 yrs ago) | **Essentially zero** — a wallet | Asymmetric pelvic pressure, sustained 10+ hours |
+| Relapse (~2 yrs ago) | Bodyweight only | **50-rep** free squats — volume + deep hip flexion + form loss under fatigue |
+| Standing EFX pain (2026-08-14) | Bodyweight only | Repetitive pelvic rotation under axial load; **seated was pain-free** |
+
+**The pattern is asymmetry, sustained position and volume — not peak load.** A heavy dumbbell held for 12 controlled reps is a different stimulus from all three. ⚠️ **This is not a claim that load is irrelevant — it is a claim that load is the wrong variable to have been worrying about, and that the three variables that actually did the damage are the ones to keep watching as weight goes up.**
+
+### Where the load goes, by exercise category
+
+| Category | Exercises in this plan | Spinal load | Progression speed |
+|----------|------------------------|-------------|-------------------|
+| **Supine / on the floor** | Floor press, floor fly, hamstring slider curl, glute bridge, single-leg glute bridge, dead bug | **None — the floor takes it** | ✅ **Full speed.** Standard rule: 3 × 12 clean, no sensation → +1.25 kg/side |
+| **Seated, back supported** | Seated shoulder press, wrist curl | **None** | ✅ **Full speed**, same rule. Cue already in the plan: *press straight up, don't arch the lower back* |
+| **Standing, vertical** | Bicep curl, single-leg calf raise | Bodyweight + dumbbells, vertical and brief | ✅ **Full speed** |
+| **Hinged forward, holding weight** | Seated rear delt fly, tricep kickback | 🔴 **This is the lumbar-loading category** | ⚠️ **Cap at ~5–6 kg.** Small-muscle work — it never needs to be heavy, so there is no reason to buy spinal load you don't need |
+| **Loaded single-leg** | **Step-up** | 🔴🔴 **Frontal-plane asymmetric pelvic loading** | 🔴 **Slowest in the plan — see below** |
+
+### 🔴 The step-up is the one this question was right about
+
+Single-leg support means the pelvis must resist dropping on one side, under the full load, alternating. **That is the same frontal-plane asymmetric loading pattern as the wallet injury and the Aug 14 standing-EFX finding.** At 3 kg it is trivial. **At 10 kg per hand it is +20 kg cycling through one hip at a time.**
+
+Choosing the step-up over the squat was the right call and stands. **But it needs a slower progression than the pressing lifts, and until now nothing in this file said so.**
+
+**Step-up progression rule:** add weight only after the current load has been clean for **two full weeks with zero lower-back or sacral sensation** — not after one clean session. If any sacral sensation appears, drop back a load and hold there; do not push through it.
+
+### The four rules
+
+1. **Progress each category at its own rate** — one "current dumbbell weight" across the whole session is wrong, and always was.
+2. **Never progress two categories in the same week.** If something flares, you need to know which increase caused it. This is the whole reason to stagger them.
+3. **Rows stay supported at every weight** *(already in the equipment block — repeated because it matters more as load climbs)*. Free bent-over rowing at 10 kg is the exact lumbar pattern the SI history rules out. Single-arm with the free hand braced, or chest-supported.
+4. **Warmup is mandatory on all pressing** — 14+ year left shoulder issue, and Jul 29 already demonstrated the cost.
+
+### ⚠️ Under-loading is not the safe option — it is a different risk
+
+Progressive loading builds the paraspinal muscle that supports the spine and the bone density [[healthspan-80]] Pillar 3 depends on. **This file already concedes the cost of avoiding load** — the 2026-08-14 seated-EFX note flags that seated cardio is not weight-bearing and therefore gives up bone stimulus. **"Lift lighter to be safe" trades one risk for another; it does not remove risk.**
+
+### 🔴 What this section cannot decide — and it is the part that matters most
+
+**Two items are open, and neither is a biomechanics question:**
+
+1. **The 2026-08-14 activity-triggered spine pain has never been reported to Dr. Rajapandian.** This file already wrote the exact question to ask: *"Standing elliptical starts causing lower back/sacral pain at 15 minutes. Seated is pain-free. Is this a mechanical loading issue I can train around, or a sign inflammation is active again? Should I still be on sulfasalazine?"*
+2. **Sulfasalazine status is "likely stopped — confirm with ortho"** ([[profile]]). **If the drug controlling the inflammation was stopped and activity-related pain then appeared, that sequence outranks every exercise-selection decision on this page.**
+
+> **Bottom line: progress the floor and seated lifts now under the rules above; hold the step-ups and hinged work light. Clearance for progressive lower-body loading is Dr. Rajapandian's call, and that appointment has been overdue since 2026-08-14.**
+
+
+---
+
 ## Weekly Schedule
 
 > 🔴 **Corrected 2026-08-28 — A and B ALTERNATE; they are not fixed to weekdays.** The table previously read "Mon = A, Wed = B, Fri = A" every week, which was wrong. **The real pattern is an unbroken alternating sequence — A · B · A · B · A · B …** run across the Mon/Wed/Fri strength slots, so the rotation flips each week.
@@ -144,7 +201,7 @@ status: active
 | | ↳ paired with **Inverted row — UNDERHAND / close grip** (bar at hip-to-waist height) | 3 × 10 | **REPLACED the 3kg one-arm row, 2026-08-28.** At 3kg the row ran 25–30 reps to failure = endurance, not growth. **Underhand grip here is deliberate — elbows track close to the body, which makes the LATS lead.** Workout B uses the wide overhand version for rhomboids/mid-traps, so the two sessions hit different muscles with the same movement. Body straight, braced, pull chest to bar. **Feet closer in = easier, walked further out = harder.** | 9 min |
 | **2 — Chest + arm superset** | **Floor dumbbell fly** (3kg) | 3 × 12 | **NEW — chest.** Lying on floor, arms wide in a shallow arc, slight elbow bend. Floor stops the stretch — no shoulder overextension. Flies are done light by design, so 3 kg works here. | 7 min |
 | | ↳ paired with **Dumbbell bicep curl** (3kg) | 3 × 12 | Standing, controlled — no swinging at the shoulder | |
-| **3 — LEG BLOCK (real sets, real rest)** — restructured 2026-08-28, no longer a circuit | **Step-up** (step ~30–40cm — raise it from the old 20cm) | 3 × 12/side | **Primary thigh builder.** Step up with control, then **lower over 3–4 seconds** — the slow descent is the whole point. Don't push off the bottom foot. **Hold the 3kg dumbbells once 3 × 12 is clean; go to eccentric step-downs when they aren't enough.** | 14 min |
+| **3 — LEG BLOCK (real sets, real rest)** — restructured 2026-08-28, no longer a circuit | **Step-up** (step ~30–40cm — raise it from the old 20cm) | 3 × 12/side | **Primary thigh builder.** Step up with control, then **lower over 3–4 seconds** — the slow descent is the whole point. Don't push off the bottom foot. **Hold the 3kg dumbbells once 3 × 12 is clean; go to eccentric step-downs when they aren't enough.** 🔴 **Load here progresses SLOWER than anywhere else in the plan — two clean weeks with zero sacral sensation before each increase. See "Load Progression by Category" above.** | 14 min |
 | | ↳ paired with **Hamstring slider curl** | 3 × 12 | **NEW — the plan had zero direct hamstring work before this.** Heels on a towel on smooth floor, hips lifted in a bridge, slide heels out slowly and pull back in. Keep hips up the entire set. Spine flat, fully supine. | |
 | | **Wall sit** | 2 × 45–60 sec | Back flat against wall, thighs parallel. **Progress to single-leg (20–30 sec/side) once 60 sec is easy** — don't just keep adding seconds. | |
 | | ↳ paired with **Single-leg calf raise** | 2 × 15/side | **Upgraded from two-leg.** Full range, slow lowering, wall for balance. | |
