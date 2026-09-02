@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "fashion": {
+      "source": "googlarz/fashion-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "70996c1e09ba4c4ee5e3417df9ea2a263ac69d7f635100b5860c0a59fb99ae2e"
+    }
+  }
+}

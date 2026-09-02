@@ -11,16 +11,78 @@ status: active
 > **The window is closing:** muscle mass peaks at age 30–35. At 34 and BMI 17.4 you are inside your peak-building window while underweight. Muscle built now is banked for the next 45 years; muscle not built now is permanently forgone (anabolic resistance makes building at 60 several times harder). **This is the most time-sensitive item in the entire health folder.**
 >
 > ⚠️ **Target correction:** 70 kg (Phase 1) is the **floor**, not the goal. **75 kg (Phase 2) is the actual destination** and is not optional — see [[healthspan-80]] Pillar 1.
+>
+> ✅ **Target reaffirmed at 75 kg on 2026-08-31, after an 80 kg target was proposed and set aside.** 80 kg was assessed against the full health profile and **found safe as lean mass** — no condition in [[profile]] rules it out, and HDL 32, SI-joint support and sarcopenia prevention all argue *for* more muscle. It was set aside for three reasons, not one objection: **(1)** 80 kg is BMI 23.6, which is *overweight* on the Indian/ICMR chart, so it is only defensible as muscle and would need waist and strength data to justify; **(2)** it requires **~15 kg of new lean mass — a 4–6 year project**, not a 1–2 year one, and chasing it on a shorter timeline guarantees fat; **(3)** the gates aren't clear — spine clearance for progressive lower-body loading, an overdue uric acid retest before raising protein, and adjustable dumbbells. **75 kg delivers essentially the full health return.** Revisit 80 kg only from 75 kg, with a waist under 85 cm and the spine gate cleared.
 
 ## Current Status
 
 | Metric | Current | Target |
 |--------|---------|--------|
 | Height | 184cm | — |
-| Weight | **59.80kg** (Aug 10, 2026) | Phase 1: **70kg** · Phase 2: **73–75kg** |
-| BMI | **~17.7** | Phase 1: ~20.7 · Phase 2: ~21.5–22.2 |
-| Timeline | — | Phase 1: ~11 months · Phase 2: +5–8 months |
-| Monthly gain target | — | 0.8–1kg/month |
+| Weight | **61.20kg** (Aug 31, 2026) | Phase 1: **70kg** (floor) · Phase 2: **75kg** (destination) |
+| BMI | **~18.1** | Phase 1: ~20.7 · Phase 2: **~22.2** |
+| **Waist** | 🔴 **never measured — take baseline at next weigh-in** | Hold **< 85 cm** all the way to 75 kg |
+| Timeline | — | Phase 1: ~12 months · Phase 2: ~20–28 months total |
+| Monthly gain target | — | **0.5–0.9 kg/month** *(revised down 2026-08-31)* |
+
+> 🔴 **Gain-rate target revised down from 0.8–1.0 to 0.5–0.9 kg/month on 2026-08-31 — a consequence of the goal being lean mass, not a softening of it.** The body can only build muscle so fast; **above ~0.9 kg/month the excess is fat by arithmetic, not by opinion.** ⚠️ **Current actual pace is ~1.71 kg/month — roughly double a lean-gain rate.** **The fix is adherence to the existing 2,300–2,400 band, not a lower band:** Aug 24–30 intake averaged **~2,572/day**, so the current target is being overshot by ~200/day and has never actually been tested. Lowering a target that isn't being followed changes nothing.
+
+---
+
+## Target Weight — the three numbers to hold
+
+> **"Perfect weight" is not one number, because it tracks lean mass.** At ~15% body fat, perfect weight = lean mass ÷ 0.85. You currently carry ~52–54 kg of lean mass, so today's correct weight and the destination weight are different numbers — and the destination only moves up if muscle does.
+
+| Lean mass | Corresponding weight | BMI | Meaning |
+|---|---|---|---|
+| ~53 kg (today) | ~63 kg | 18.6 | Where the current body *should* sit |
+| ~61 kg (+8) | ~72 kg | 21.3 | Mid-journey |
+| **~64 kg (+11)** | **~75 kg** | **22.2** | ✅ **The target** |
+| ~68 kg (+15) | ~80 kg | 23.6 | Conditional only — see the note above |
+
+**🎯 Near-term: 63–65 kg.** +2–4 kg. Clears the underweight line (62.6 kg) and is the only target that matters until the load problem is fixed.
+**🎯 Destination: 75 kg.** BMI 22.2, with ~2.5 kg of margin below the Indian normal ceiling of 77.5 kg. Delivers the muscle that moves HDL 32, the posterior-chain strength that supports the SI joint, and the lean mass banked before the 30–35 window closes.
+**🎯 The number that overrides both: waist under 85 cm.** At 75 kg with an 82 cm waist you have won. At 75 kg with a 93 cm waist the scale lied and the weight came on as fat. **Weight says how much; waist says what kind** — and given HDL 32, an inflamed spine and an unresolved airway question, *what kind* is the entire question.
+
+---
+
+## BMI Reference — at 184 cm (height² = 3.386)
+
+> 🔴 **Use the Indian chart, not the WHO one.** Indians carry more body fat and visceral fat at the same BMI, which is why ICMR and WHO Asia-Pacific put the overweight line at **23**, not 25. On the WHO chart 80 kg looks comfortably normal; on the correct chart it is overweight. **BMI = weight (kg) ÷ height (m)². Multiply any BMI by 3.386 to get the weight in kg at 184 cm.**
+
+| Category | BMI (Indian / ICMR) | Weight at 184 cm | BMI (WHO) | Weight at 184 cm |
+|---|---|---|---|---|
+| Severe thinness | — | — | < 16.0 | < 54.2 kg |
+| Moderate thinness | — | — | 16.0–16.9 | 54.2–57.5 kg |
+| Mild thinness | — | — | 17.0–18.4 | 57.5–62.3 kg ← current |
+| **Underweight** | **< 18.5** | **< 62.6 kg** ← current | < 18.5 | < 62.6 kg |
+| **Normal** | **18.5–22.9** | **62.6–77.5 kg** | 18.5–24.9 | 62.6–84.3 kg |
+| Overweight | 23.0–24.9 | 77.9–84.3 kg | 25.0–29.9 | 84.6–101.2 kg |
+| Obese I | 25.0–29.9 | 84.6–101.2 kg | 30.0–34.9 | 101.6–118.2 kg |
+| Obese II | ≥ 30.0 | ≥ 101.6 kg | 35.0–39.9 | 118.5–135.1 kg |
+| Obese III | — | — | ≥ 40.0 | ≥ 135.4 kg |
+
+**Key weights at 184 cm:** exit underweight **62.6 kg** (+1.4 from today) · Phase 1 floor **70 kg** = BMI 20.7 · **Phase 2 target 75 kg = BMI 22.2** · Indian normal ceiling **77.5 kg** = BMI 22.9 · 80 kg = BMI 23.6 (overweight, Indian chart).
+
+⚠️ **Ideal-body-weight formulas (Devine 78.6 kg, Robinson 75.6, Miller 73.7, Hamwi 81.6) are weak evidence and are recorded here only so they don't get re-cited as strong.** Devine was written in 1974 by a hospital pharmacist to dose gentamicin, never validated as a health target; Robinson and Miller are constant-swapped variants of it from the same year, so their agreement is not independent. All are height-only, ignore body composition, and are built on American insurance-table data — the same Western bias that made ICMR lower the cutoffs. Their 8 kg spread shows how little precision is in them. **The 75 kg target rests on the Indian BMI range and the condition profile, not on these.**
+
+---
+
+## Waist Circumference — the composition check
+
+> **BMI cannot tell muscle from fat, and this entire plan is about adding muscle.** At 73 kg of muscle, BMI 21.6 is excellent; at 73 kg of fat the same number is bad. Waist separates them, costs nothing, and takes 20 seconds.
+
+| Waist (Indian male) | Reading |
+|---|---|
+| **< 85 cm** | ✅ Gaining the right tissue — continue |
+| 85–89 cm | ⚠️ Watch — slow the gain rate and check that training load is actually progressing |
+| **≥ 90 cm** | 🔴 Abdominal obesity threshold — the surplus has become fat; stop gaining, recomposition instead |
+
+**How:** at the navel, standing relaxed, **after a normal exhale** (not sucked in, not pushed out). Same morning as the weigh-in, **3×/week**, logged in [[meal-log]].
+
+🔴 **Baseline not yet recorded — take it at the next weigh-in.** At 61.2 kg the waist is expected to be small (~74–78 cm) and there is nothing to detect today. **That is precisely why to measure now: the baseline is only obtainable before the +14 kg, and without it there is no way to tell later whether the weight arrived as muscle or fat.**
+
+**Rule of thumb for a lean gain: waist should rise less than ~1 cm for every 3 kg of bodyweight.** From 61 → 75 kg that means **no more than ~+4.5 cm total.** Faster than that and the composition is wrong regardless of what the scale says.
 
 **Root cause of underweight:** Originally low protein intake (low urea 14.8, ref 17–51). **Update (Jul 2026): protein is now largely fixed — see meal-log reconciliation below. The remaining blockers are consistency, fiber, and dinner quality, not protein.**
 
@@ -35,6 +97,16 @@ status: active
 | **Fiber** | **25–30g/day (from calorie-dense sources only)** |
 | Carbs | 280–320g/day |
 | Healthy fats | 70–80g/day |
+
+> ⚠️ **The protein band scales with bodyweight — it is not a fixed 100–120g forever.** Lean-mass gain needs **~1.6–2.2 g per kg of bodyweight**, so the band moves up as the weight does:
+>
+> | Bodyweight | Protein band (1.6–2.2 g/kg) | Practical target (~1.8 g/kg) |
+> |---|---|---|
+> | **61 kg (today)** | 98–134g | **~110g** — the current 100–120g band is correct |
+> | 70 kg (Phase 1) | 112–154g | ~126g |
+> | **75 kg (Phase 2)** | **120–165g** | **~135g** |
+>
+> 🔴 **Do not raise the protein target until uric acid is retested.** Last reading was 5.3 and monitored; the retest has been outstanding since Jul 19, 2026 and is now ~6 weeks overdue. Higher protein from meat sources raises purine load, and [[meal-log]] has repeated purine flags (most recently mutton nalli on Aug 29). **Retest first, then raise.** Prefer the low-purine sources in the table below — eggs, curd, milk, paneer, dal — over red meat when the band moves up.
 
 ---
 
@@ -231,28 +303,29 @@ Honest energy-balance projection based on actual logged intake — not the optim
 
 ## Monthly Milestones
 
-> Milestones anchored to **59.75 kg (Aug 3, 2026)**, superseding the Jul 27 baseline below. Actual pace since Jul 6 is running ~1.9 kg/month, not the ~1 kg/month these milestones assume — see [[meal-log]] checkpoint (2026-08-03) for the trim recommendation. Milestone dates below are not yet re-projected for the faster pace.
+> **Re-anchored 2026-08-31 to 61.20 kg**, superseding the Aug 3 (59.75 kg) and Jul 27 baselines. **Projected at the revised 0.5–0.9 kg/month lean-gain rate**, not the old 0.8–1.0. Dates below assume ~0.7 kg/month; at 0.9 they pull in ~5 months, at 0.5 they push out ~8. **Actual pace is currently ~1.71 kg/month — faster than these milestones, and that is a problem to fix, not progress to celebrate** (see the gain-rate note under Current Status).
 
-### Phase 1 — 59.75 kg → 70 kg (BMI 17.6 → 20.7)
+### Phase 1 — 61.20 kg → 70 kg (BMI 18.1 → 20.7)
 
 | Month | Approx Date | Target Weight | Focus |
 |-------|-------------|--------------|-------|
-| 1 | Aug 2026 | ~60 kg | Consistent meal floor — no light days |
-| 2 | Sep 2026 | ~61 kg | Start resistance training (see [[exercise-plan]]) |
-| 3 | Oct 2026 | ~62 kg | Retest uric acid + lipid profile (HDL baseline) |
-| 5 | Dec 2026 | ~64 kg | HDL starting to respond to exercise + diet |
-| 8 | Mar 2027 | ~67 kg | Strength gains visible; reassess supplements |
-| 11 | Jun 2027 | **~70 kg** | **Phase 1 complete — reassess body composition** |
+| 0 | **Aug 31, 2026** | **61.20 kg** | 🔴 **Take the waist baseline.** Buy adjustable dumbbells — the binding constraint |
+| 2 | Nov 2026 | **~62.6 kg** | 🎯 **Exits underweight** (BMI 18.5). Retest uric acid before raising protein |
+| 5 | Feb 2027 | ~65 kg | Lipid panel — HDL 32 baseline recheck; strength progression visible |
+| 8 | May 2027 | ~67 kg | Spine clearance from Dr. Rajapandian for progressive lower-body load |
+| 12 | Sep 2027 | **~70 kg** | **Phase 1 complete — floor reached. Reassess body composition, not just weight** |
 
-### Phase 2 — 70 kg → 73–75 kg (BMI 20.7 → 21.5–22.2)
+### Phase 2 — 70 kg → 75 kg (BMI 20.7 → 22.2)
 
-> Phase 2 is the better long-term target for 184 cm. At 70 kg you're still lean — 73–75 kg adds the muscle mass that improves HDL, joint support, and spine stability meaningfully. Gain rate slows as BMI normalises (~0.5–0.8 kg/month).
+> **75 kg is the destination, confirmed 2026-08-31.** At 70 kg you are still lean; 75 kg adds the muscle that meaningfully improves HDL, joint support and spine stability. Gain rate slows further as BMI normalises (~0.4–0.6 kg/month at this stage) — **that slowdown is expected and correct, not a stall.**
 
 | Month from Phase 1 | Approx Date | Target Weight | Focus |
 |--------------------|-------------|--------------|-------|
-| +2 | Aug 2027 | ~71.5 kg | Assess: does 70 kg feel lean? Continue or consolidate |
-| +5 | Nov 2027 | ~73 kg | Retest full lipid panel — HDL should be climbing |
-| +8 | Feb 2028 | **~75 kg** | **Phase 2 complete — full target BMI 22.2** |
+| +4 | Jan 2028 | ~72 kg | Waist check — must still be under 85 cm |
+| +8 | May 2028 | ~73.5 kg | Full lipid panel — HDL should be climbing off the exercise + lean mass |
+| +12 | Sep 2028 | **~75 kg** | **Phase 2 complete — BMI 22.2, target reached** |
+
+> ⚠️ **At 75 kg, stop and measure before deciding anything else.** If the waist is under 85 cm and strength is still progressing, extending toward 78–80 kg is a legitimate conversation. If the waist has crossed 90 cm, the weight came on as fat and the next phase is recomposition, not more gaining. **Do not pre-commit to a number past 75.**
 
 ---
 
