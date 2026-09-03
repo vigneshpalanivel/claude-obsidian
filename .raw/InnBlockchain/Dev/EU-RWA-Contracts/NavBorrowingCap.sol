@@ -7,6 +7,9 @@ pragma solidity ^0.8.22;
 ///         breach split plus the Art 16(3)-(4) suspension window.
 /// @dev    One deployment = one fund = one FundType. The four regimes are mutually
 ///         exclusive by construction, not by branching on caller intent at call time.
+///         NAV is mark-to-market — it moves from subscriptions/redemptions AND from the
+///         market price of held assets changing with no trade at all. `recordNavValuation`
+///         is the price-driven path (passive); onMint/onBurn alone cannot produce it.
 contract NavBorrowingCap {
     // ─────────────────────────── ceilings (basis points, 10000 = 100%) ─────────
 
@@ -38,8 +41,9 @@ contract NavBorrowingCap {
     // ─────────────────────────── roles (wire up to real access control) ────────
 
     address public immutable aifm; // reports borrowing/exposure changes
-    address public immutable token; // the fund token — only it can call onMint/onBurn
+    address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not share counts
     address public immutable regulator; // Art 25 — may tighten the effective ceiling post-deploy
+    address public immutable valuator; // price/valuation feed — marks NAV to market
 
     FundType public immutable fundType;
 
@@ -93,8 +97,9 @@ contract NavBorrowingCap {
 
     error ActiveBreach(bytes32 bucket, uint256 ratioBps, uint256 limitBps);
     error NotAifm();
-    error NotToken();
+    error NotSubscriptionAgent();
     error NotRegulator();
+    error NotValuator();
     error WrongFundType();
     error CeilingCanOnlyTighten();
     error SuspensionAlreadyActive();
@@ -104,8 +109,8 @@ contract NavBorrowingCap {
         _;
     }
 
-    modifier onlyToken() {
-        if (msg.sender != token) revert NotToken();
+    modifier onlySubscriptionAgent() {
+        if (msg.sender != subscriptionAgent) revert NotSubscriptionAgent();
         _;
     }
 
@@ -114,26 +119,52 @@ contract NavBorrowingCap {
         _;
     }
 
-    constructor(address aifm_, address token_, address regulator_, FundType fundType_) {
+    modifier onlyValuator() {
+        if (msg.sender != valuator) revert NotValuator();
+        _;
+    }
+
+    constructor(address aifm_, address subscriptionAgent_, address regulator_, address valuator_, FundType fundType_) {
         aifm = aifm_;
-        token = token_;
+        subscriptionAgent = subscriptionAgent_;
         regulator = regulator_;
+        valuator = valuator_;
         fundType = fundType_;
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    // DENOMINATOR — moves on mint/burn only. Numerators do NOT move here.
+    // DENOMINATOR — moves on subscription/redemption only. Numerators do NOT move here.
     // Passive path: subscriptions/redemptions move NAV without anyone drawing
     // or repaying a loan, so a breach here is never reverted — only flagged.
     // ═══════════════════════════════════════════════════════════════════════
 
-    function onMint(uint256 amount) external onlyToken {
-        nav += amount;
+    /// @param cashAmount  The CASH consideration received, in NAV's reference currency —
+    ///                    NOT the number of shares minted. Those are only the same number
+    ///                    if 1 share is pegged to a fixed $1 of NAV forever; UCITS/ELTIF
+    ///                    units float with NAV/share, so passing the raw token quantity
+    ///                    here would silently corrupt NAV on every subscription. Only
+    ///                    `subscriptionAgent` — whatever priced this subscription at the
+    ///                    day's NAV/share — has this number; the bare token contract does not.
+    function onMint(uint256 cashAmount) external onlySubscriptionAgent {
+        nav += cashAmount;
         _recheckAll();
     }
 
-    function onBurn(uint256 amount) external onlyToken {
-        nav -= amount;
+    /// @param cashAmount  The CASH consideration paid out, in NAV's reference currency —
+    ///                    NOT the number of shares burned. See `onMint`.
+    function onBurn(uint256 cashAmount) external onlySubscriptionAgent {
+        nav -= cashAmount;
+        _recheckAll();
+    }
+
+    /// @notice NAV revaluation from price movement alone — no subscription/redemption
+    ///         and no new borrowing/derivative position. Every ratio here is
+    ///         borrowing-or-exposure OVER NAV, so a pure NAV drop from a falling asset
+    ///         price raises every leverage ratio without anyone drawing a loan — that
+    ///         case has to be reachable independently of onMint/onBurn.
+    /// @param  delta  Positive = holdings revalued up, negative = revalued down.
+    function recordNavValuation(int256 delta) external onlyValuator {
+        nav = _applyDelta(nav, delta);
         _recheckAll();
     }
 

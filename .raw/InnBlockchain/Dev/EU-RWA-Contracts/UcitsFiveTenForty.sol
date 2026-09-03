@@ -5,6 +5,11 @@ pragma solidity ^0.8.22;
 /// @notice Tracks UCITS Art 52 concentration limits against a running NAV
 ///         denominator and per-bucket numerators, and enforces the active/passive
 ///         breach split plus the Art 56 ramp-up window.
+/// @dev    NAV is mark-to-market by definition, not just a mint/burn ledger — it moves
+///         from subscriptions/redemptions AND from the market price of what's already
+///         held changing with no trade at all. `recordNavValuation` and `recordValuation`
+///         are the price-driven paths (passive); Art 49(2) names market movement
+///         explicitly as a passive-breach trigger, so this isn't optional.
 contract UcitsFiveTenForty {
     // ─────────────────────────── ceilings (basis points, 10000 = 100%) ─────────
 
@@ -35,7 +40,8 @@ contract UcitsFiveTenForty {
     // ─────────────────────────── roles (wire up to real access control) ────────
 
     address public immutable manco; // management company — reports holding changes
-    address public immutable token; // the fund token — only it can call onMint/onBurn
+    address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not share counts
+    address public immutable valuator; // price/valuation feed — marks NAV and holdings to market
 
     // ─────────────────────────── denominator ────────────────────────────────
 
@@ -77,21 +83,28 @@ contract UcitsFiveTenForty {
 
     error ActiveBreach(bytes32 bucket, uint256 ratioBps, uint256 limitBps);
     error NotManco();
-    error NotToken();
+    error NotSubscriptionAgent();
+    error NotValuator();
 
     modifier onlyManco() {
         if (msg.sender != manco) revert NotManco();
         _;
     }
 
-    modifier onlyToken() {
-        if (msg.sender != token) revert NotToken();
+    modifier onlySubscriptionAgent() {
+        if (msg.sender != subscriptionAgent) revert NotSubscriptionAgent();
         _;
     }
 
-    constructor(address manco_, address token_) {
+    modifier onlyValuator() {
+        if (msg.sender != valuator) revert NotValuator();
+        _;
+    }
+
+    constructor(address manco_, address subscriptionAgent_, address valuator_) {
         manco = manco_;
-        token = token_;
+        subscriptionAgent = subscriptionAgent_;
+        valuator = valuator_;
         deployedAt = uint64(block.timestamp);
     }
 
@@ -102,13 +115,31 @@ contract UcitsFiveTenForty {
     // reverted — only flagged.
     // ═══════════════════════════════════════════════════════════════════════
 
-    function onMint(uint256 amount) external onlyToken {
-        nav += amount;
+    /// @param cashAmount  The CASH consideration received, in NAV's reference currency —
+    ///                    NOT the number of shares minted. UCITS units float with
+    ///                    NAV/share, so those are different numbers; passing the raw
+    ///                    token quantity here would silently corrupt NAV on every
+    ///                    subscription. Only `subscriptionAgent` — whatever priced this
+    ///                    subscription at the day's NAV/share — has this number.
+    function onMint(uint256 cashAmount) external onlySubscriptionAgent {
+        nav += cashAmount;
         _recheckAll();
     }
 
-    function onBurn(uint256 amount) external onlyToken {
-        nav -= amount;
+    /// @param cashAmount  The CASH consideration paid out, in NAV's reference currency —
+    ///                    NOT the number of shares burned. See `onMint`.
+    function onBurn(uint256 cashAmount) external onlySubscriptionAgent {
+        nav -= cashAmount;
+        _recheckAll();
+    }
+
+    /// @notice NAV revaluation from price movement alone — no subscription/redemption
+    ///         and no trade. This is the trigger Art 49(2) names explicitly ("breached
+    ///         due to market movements"); onMint/onBurn cannot produce it, since they
+    ///         only fire on capital moving, not on a held security's price moving.
+    /// @param  delta  Positive = holdings revalued up, negative = revalued down.
+    function recordNavValuation(int256 delta) external onlyValuator {
+        nav = _applyDelta(nav, delta);
         _recheckAll();
     }
 
@@ -133,7 +164,38 @@ contract UcitsFiveTenForty {
         bool counterpartyIsCreditInstitution,
         bool isNonUcits
     ) external onlyManco {
-        bool worsening = delta > 0;
+        if (legType == LegType.DerivativeCounterparty) {
+            isCreditInstitution[legId] = counterpartyIsCreditInstitution;
+        }
+        _applyLegDelta(legId, legType, entityId, delta, isNonUcits, true);
+    }
+
+    /// @notice Mark-to-market revaluation of a holding already on the books — no trade
+    ///         occurred, only its price moved. Passive by construction: never reverts,
+    ///         only flags/clears/alerts. Counterparty credit-institution status isn't
+    ///         re-supplied here — it's a classification set at trade time, not something
+    ///         a price move can change.
+    function recordValuation(
+        bytes32 legId,
+        LegType legType,
+        bytes32 entityId,
+        int256 delta,
+        bool isNonUcits
+    ) external onlyValuator {
+        _applyLegDelta(legId, legType, entityId, delta, isNonUcits, false);
+    }
+
+    /// @param active  True for a ManCo-directed trade (can revert on active breach);
+    ///                false for a price-driven revaluation (never reverts).
+    function _applyLegDelta(
+        bytes32 legId,
+        LegType legType,
+        bytes32 entityId,
+        int256 delta,
+        bool isNonUcits,
+        bool active
+    ) internal {
+        bool worsening = active && delta > 0;
 
         if (legType == LegType.Issuer) {
             uint256 before = issuerValue[legId];
@@ -162,9 +224,8 @@ contract UcitsFiveTenForty {
             _checkCeiling(legId, depositValue[legId], BANK_DEPOSIT_CEILING_BPS, worsening);
             _rollUpCombined(entityId, delta, worsening);
         } else if (legType == LegType.DerivativeCounterparty) {
-            isCreditInstitution[legId] = counterpartyIsCreditInstitution;
             derivativeValue[legId] = _applyDelta(derivativeValue[legId], delta);
-            uint256 cap = counterpartyIsCreditInstitution
+            uint256 cap = isCreditInstitution[legId]
                 ? DERIVATIVE_COUNTERPARTY_CREDIT_INST_CEILING_BPS
                 : DERIVATIVE_COUNTERPARTY_CEILING_BPS;
             _checkCeiling(legId, derivativeValue[legId], cap, worsening);

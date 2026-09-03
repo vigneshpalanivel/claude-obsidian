@@ -5,6 +5,10 @@ pragma solidity ^0.8.22;
 /// @notice Tracks ELTIF Art 13 concentration limits against a running capital
 ///         denominator and per-bucket numerators, and enforces the active/passive
 ///         breach split plus the Art 17(1)(c) suspension window.
+/// @dev    Capital (the denominator) is contribution-based, not marked to market —
+///         it moves on mint/burn only. The numerators DO need marking to market, since
+///         they represent the current value of assets held; `recordValuation` is the
+///         price-driven path (passive), separate from `recordAssetTrade` (active).
 contract EltifConcentration {
     // ─────────────────────────── ceilings (basis points, 10000 = 100%) ─────────
 
@@ -20,8 +24,9 @@ contract EltifConcentration {
 
     // ─────────────────────────── roles (wire up to real access control) ────────
 
-    address public immutable aifm; // executes/reports asset trades and valuations
-    address public immutable token; // the fund token — only it can call onMint/onBurn
+    address public immutable aifm; // executes/reports asset trades
+    address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not unit counts
+    address public immutable valuator; // price/valuation feed — marks holdings to market
 
     // ─────────────────────────── denominator ────────────────────────────────
 
@@ -63,7 +68,8 @@ contract EltifConcentration {
 
     error ActiveBreach(bytes32 bucket, uint256 ratioBps, uint256 limitBps);
     error NotAifm();
-    error NotToken();
+    error NotSubscriptionAgent();
+    error NotValuator();
     error SuspensionAlreadyActive();
     error SuspensionExpired();
 
@@ -72,14 +78,20 @@ contract EltifConcentration {
         _;
     }
 
-    modifier onlyToken() {
-        if (msg.sender != token) revert NotToken();
+    modifier onlySubscriptionAgent() {
+        if (msg.sender != subscriptionAgent) revert NotSubscriptionAgent();
         _;
     }
 
-    constructor(address aifm_, address token_) {
+    modifier onlyValuator() {
+        if (msg.sender != valuator) revert NotValuator();
+        _;
+    }
+
+    constructor(address aifm_, address subscriptionAgent_, address valuator_) {
         aifm = aifm_;
-        token = token_;
+        subscriptionAgent = subscriptionAgent_;
+        valuator = valuator_;
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -89,13 +101,19 @@ contract EltifConcentration {
     // capital moving is never reverted — only flagged.
     // ═══════════════════════════════════════════════════════════════════════
 
-    function onMint(uint256 amount) external onlyToken {
-        totalCapital += amount;
+    /// @param cashAmount  The CASH consideration received, in capital's reference
+    ///                    currency — NOT the number of units minted. Only
+    ///                    `subscriptionAgent` — whatever priced this subscription —
+    ///                    has this number; the bare token contract only knows units.
+    function onMint(uint256 cashAmount) external onlySubscriptionAgent {
+        totalCapital += cashAmount;
         _recheckAll();
     }
 
-    function onBurn(uint256 amount) external onlyToken {
-        totalCapital -= amount;
+    /// @param cashAmount  The CASH consideration paid out, in capital's reference
+    ///                    currency — NOT the number of units burned. See `onMint`.
+    function onBurn(uint256 cashAmount) external onlySubscriptionAgent {
+        totalCapital -= cashAmount;
         _recheckAll();
     }
 
@@ -114,6 +132,36 @@ contract EltifConcentration {
         bool isCrossHolding,
         int256 delta // positive = buy/increase, negative = sell/decrease
     ) external onlyAifm {
+        _applyAssetDelta(assetId, isEligibleLongTerm, isSts, isOtcRepoOrReverseRepo, isCrossHolding, delta, true);
+    }
+
+    /// @notice Mark-to-market revaluation of an asset already held — no trade occurred,
+    ///         only its price moved. Passive by construction: never reverts, only
+    ///         flags/clears/alerts. `totalCapital` (the denominator) does NOT move here
+    ///         — it is contribution-based (ELTIF Art 2(8)), not marked to market. Only
+    ///         the numerators — the market value of what's already held — do.
+    function recordValuation(
+        bytes32 assetId,
+        bool isEligibleLongTerm,
+        bool isSts,
+        bool isOtcRepoOrReverseRepo,
+        bool isCrossHolding,
+        int256 delta
+    ) external onlyValuator {
+        _applyAssetDelta(assetId, isEligibleLongTerm, isSts, isOtcRepoOrReverseRepo, isCrossHolding, delta, false);
+    }
+
+    /// @param active  True for an AIFM-directed trade (can revert on active breach);
+    ///                false for a price-driven revaluation (never reverts).
+    function _applyAssetDelta(
+        bytes32 assetId,
+        bool isEligibleLongTerm,
+        bool isSts,
+        bool isOtcRepoOrReverseRepo,
+        bool isCrossHolding,
+        int256 delta,
+        bool active
+    ) internal {
         assetValue[assetId] = _applyDelta(assetValue[assetId], delta);
 
         if (isEligibleLongTerm) {
@@ -129,14 +177,15 @@ contract EltifConcentration {
             crossHoldingValue = _applyDelta(crossHoldingValue, delta);
         }
 
-        bool worsening = delta > 0; // buying is what can push a ceiling over
+        // Only a trade can be blocked for causing a breach; a valuation move never is.
+        bool worsening = active && delta > 0;
 
         // Per-asset ceiling — keyed by the asset itself.
         _checkCeiling(assetId, assetValue[assetId], PER_ASSET_CEILING_BPS, worsening);
 
         if (isEligibleLongTerm) {
-            // A floor: "worsening" here means the trade reduced eligible exposure.
-            _checkFloor(keccak256("ELIGIBLE_FLOOR"), eligibleLongTermValue, ELIGIBLE_FLOOR_BPS, delta < 0);
+            // A floor: "worsening" here means exposure was reduced.
+            _checkFloor(keccak256("ELIGIBLE_FLOOR"), eligibleLongTermValue, ELIGIBLE_FLOOR_BPS, active && delta < 0);
         }
         if (isSts) {
             _checkCeiling(keccak256("STS"), stsValue, STS_CEILING_BPS, worsening);
