@@ -251,7 +251,13 @@
       "Bash(grep -v \"^ucpd-checklist.md$\")",
       "Bash(python3 /private/tmp/claude-501/-Users-admin-Projects-Personal-claude-obsidian/b79e99c2-4944-41a3-9267-7de11d83e8fd/scratchpad/fix_rows.py)",
       "Bash(python3 /private/tmp/claude-501/-Users-admin-Projects-Personal-claude-obsidian/b79e99c2-4944-41a3-9267-7de11d83e8fd/scratchpad/fix_17b.py)",
-      "Bash(python3 /private/tmp/claude-501/-Users-admin-Projects-Personal-claude-obsidian/b79e99c2-4944-41a3-9267-7de11d83e8fd/scratchpad/fix_aifmd.py)"
+      "Bash(python3 /private/tmp/claude-501/-Users-admin-Projects-Personal-claude-obsidian/b79e99c2-4944-41a3-9267-7de11d83e8fd/scratchpad/fix_aifmd.py)",
+      "Bash(awk 'NR==1113' \"/Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain/sales-marketing/Service/Content/Contract Design/eu_tokenized_securities_smart_contract_design.md\")",
+      "Bash(awk 'NR>=331 && NR<=412' eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(awk 'NR>=818 && NR<=900' eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(npm init *)",
+      "Bash(awk 'NR>=1511 && NR<=1513' eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(awk '/requiresSignature/{print NR\": \"$0}' src/contracts/modules/CertificationModule.sol)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
