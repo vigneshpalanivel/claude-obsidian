@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {ValuationOracle} from "./ValuationOracle.sol";
+
 /// @title NavBorrowingCap (illustrative sample — not production code)
 /// @notice Tracks borrowing/leverage against a running NAV denominator, for whichever
 ///         fund type this instance is deployed for, and enforces the active/passive
@@ -8,8 +10,16 @@ pragma solidity ^0.8.22;
 /// @dev    One deployment = one fund = one FundType. The four regimes are mutually
 ///         exclusive by construction, not by branching on caller intent at call time.
 ///         NAV is mark-to-market — it moves from subscriptions/redemptions AND from the
-///         market price of held assets changing with no trade at all. `recordNavValuation`
-///         is the price-driven path (passive); onMint/onBurn alone cannot produce it.
+///         market price of held assets changing with no trade at all. The price-driven
+///         path is `syncNav`, pulling an absolute figure from `ValuationOracle`;
+///         onMint/onBurn alone cannot produce it.
+/// @dev    ⚠️ NAV IS ORACLE-FED AND FAILS CLOSED. Every ratio here is borrowing-or-exposure
+///         OVER NAV, so a wrong denominator silently passes a breach — §5 calls this the #1
+///         engineering risk in the design. Two consequences visible in this file: there is
+///         no privileged `valuator` who can move NAV by an arbitrary delta, and every path
+///         that draws leverage or moves capital reverts `StaleValuation` when the feed
+///         cannot be shown to be current. Passive rechecks still run on a stale figure —
+///         they only flag, and a flag computed on an old NAV is better than no flag.
 contract NavBorrowingCap {
     // ─────────────────────────── ceilings (basis points, 10000 = 100%) ─────────
 
@@ -43,13 +53,30 @@ contract NavBorrowingCap {
     address public immutable aifm; // reports borrowing/exposure changes
     address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not share counts
     address public immutable regulator; // Art 25 — may tighten the effective ceiling post-deploy
-    address public immutable valuator; // price/valuation feed — marks NAV to market
+
+    ValuationOracle public immutable oracle; // marks NAV to market — absolute, never delta
+    bytes32 public immutable navFeedId; // this fund's NAV identity in the oracle
 
     FundType public immutable fundType;
 
     // ─────────────────────────── denominator ────────────────────────────────
 
-    uint256 public nav;
+    /// @notice The last absolute NAV the oracle published, plus the cash that has moved
+    ///         since. Two components rather than one running total, because they fail
+    ///         differently: the oracle figure carries a timestamp and can go stale, while
+    ///         subscription cash is known exactly and needs no feed. Splitting them is what
+    ///         lets a subscription between valuation points be reflected without anyone
+    ///         inventing a price.
+    uint256 public navAtValuation;
+
+    /// @notice Net cash in (positive) or out (negative) since `navAtValuation` was set.
+    ///         Reset to zero on every sync — the next published NAV already contains it.
+    int256 public cashSinceValuation;
+
+    /// @notice The denominator every ratio in this contract divides by.
+    function nav() public view returns (uint256) {
+        return _applyDelta(navAtValuation, cashSinceValuation);
+    }
 
     // ─────────────────────────── numerators ─────────────────────────────────
 
@@ -92,6 +119,7 @@ contract NavBorrowingCap {
     event SuspensionActivated(uint64 startedAt);
     event SuspensionLifted(uint64 endedAt);
     event RegulatorCeilingUpdated(uint256 oldCeilingBps, uint256 newCeilingBps);
+    event NavSynced(uint256 navAtValuation, int256 cashAbsorbed, uint64 at);
 
     // ─────────────────────────── errors ──────────────────────────────────────
 
@@ -99,7 +127,9 @@ contract NavBorrowingCap {
     error NotAifm();
     error NotSubscriptionAgent();
     error NotRegulator();
-    error NotValuator();
+    /// @dev The NAV feed is not current, so no ratio computed here can be trusted. §5:
+    ///      "oracle failure must HALT issuance/redemption, not pass a stale limit."
+    error StaleValuation(bytes32 navFeedId);
     error WrongFundType();
     error CeilingCanOnlyTighten();
     error SuspensionAlreadyActive();
@@ -119,16 +149,36 @@ contract NavBorrowingCap {
         _;
     }
 
-    modifier onlyValuator() {
-        if (msg.sender != valuator) revert NotValuator();
+    /// @dev Applied to every path that draws leverage, opens exposure, or moves capital.
+    ///      Deliberately NOT applied to the passive rechecks: a stale feed must not be able
+    ///      to suppress a breach flag that is already visible on the last known figure.
+    modifier freshNav() {
+        if (!oracle.isFresh(navFeedId)) revert StaleValuation(navFeedId);
         _;
     }
 
-    constructor(address aifm_, address subscriptionAgent_, address regulator_, address valuator_, FundType fundType_) {
+    /// @dev The asymmetry the numerator paths need. Drawing leverage on an unverifiable
+    ///      denominator is the thing to stop; REPAYING on one is not. Deleveraging can only
+    ///      move every ratio in this contract downward whatever the true NAV is, so blocking
+    ///      it on a stale feed would trap a fund in breach precisely when the feed is down —
+    ///      the one moment it most needs to be able to act.
+    function _requireFreshNavIfIncreasing(int256 delta) internal view {
+        if (delta > 0 && !oracle.isFresh(navFeedId)) revert StaleValuation(navFeedId);
+    }
+
+    constructor(
+        address aifm_,
+        address subscriptionAgent_,
+        address regulator_,
+        address oracle_,
+        bytes32 navFeedId_,
+        FundType fundType_
+    ) {
         aifm = aifm_;
         subscriptionAgent = subscriptionAgent_;
         regulator = regulator_;
-        valuator = valuator_;
+        oracle = ValuationOracle(oracle_);
+        navFeedId = navFeedId_;
         fundType = fundType_;
     }
 
@@ -145,26 +195,33 @@ contract NavBorrowingCap {
     ///                    here would silently corrupt NAV on every subscription. Only
     ///                    `subscriptionAgent` — whatever priced this subscription at the
     ///                    day's NAV/share — has this number; the bare token contract does not.
-    function onMint(uint256 cashAmount) external onlySubscriptionAgent {
-        nav += cashAmount;
+    function onMint(uint256 cashAmount) external onlySubscriptionAgent freshNav {
+        cashSinceValuation += int256(cashAmount);
         _recheckAll();
     }
 
     /// @param cashAmount  The CASH consideration paid out, in NAV's reference currency —
     ///                    NOT the number of shares burned. See `onMint`.
-    function onBurn(uint256 cashAmount) external onlySubscriptionAgent {
-        nav -= cashAmount;
+    function onBurn(uint256 cashAmount) external onlySubscriptionAgent freshNav {
+        cashSinceValuation -= int256(cashAmount);
         _recheckAll();
     }
 
-    /// @notice NAV revaluation from price movement alone — no subscription/redemption
-    ///         and no new borrowing/derivative position. Every ratio here is
-    ///         borrowing-or-exposure OVER NAV, so a pure NAV drop from a falling asset
-    ///         price raises every leverage ratio without anyone drawing a loan — that
-    ///         case has to be reachable independently of onMint/onBurn.
-    /// @param  delta  Positive = holdings revalued up, negative = revalued down.
-    function recordNavValuation(int256 delta) external onlyValuator {
-        nav = _applyDelta(nav, delta);
+    /// @notice Pull the current NAV from the oracle. This is the price-driven path: every
+    ///         ratio here is borrowing-or-exposure OVER NAV, so a pure NAV drop from a
+    ///         falling asset price raises every leverage ratio without anyone drawing a
+    ///         loan — that case has to be reachable independently of onMint/onBurn.
+    /// @dev    Permissionless on purpose. The figure it pulls is already guarded by the
+    ///         oracle's own sources, quorum and deviation band, so there is nothing left
+    ///         for a role check here to protect — and gating it would hand whoever holds
+    ///         that role the power to suppress a breach by simply not calling. Anyone who
+    ///         can see the fund is over a limit can make this contract see it too.
+    function syncNav() external {
+        uint256 published = oracle.value(navFeedId); // reverts on stale/halted — fail closed
+        int256 absorbed = cashSinceValuation;
+        navAtValuation = published;
+        cashSinceValuation = 0;
+        emit NavSynced(published, absorbed, uint64(block.timestamp));
         _recheckAll();
     }
 
@@ -197,6 +254,7 @@ contract NavBorrowingCap {
     /// @param delta  Positive = draw down, negative = repay.
     function recordEltifBorrowing(int256 delta) external onlyAifm {
         if (fundType != FundType.EltifRetail && fundType != FundType.EltifProfessional) revert WrongFundType();
+        _requireFreshNavIfIncreasing(delta);
         totalBorrowing = _applyDelta(totalBorrowing, delta);
         _checkCeiling(keccak256("BORROWING"), totalBorrowing, _eltifCeiling(), delta > 0);
     }
@@ -205,6 +263,7 @@ contract NavBorrowingCap {
     /// @param delta   Positive = draw down, negative = repay.
     function recordUcitsBorrowing(bool bucketA, int256 delta) external onlyAifm {
         if (fundType != FundType.Ucits) revert WrongFundType();
+        _requireFreshNavIfIncreasing(delta);
         bool worsening = delta > 0;
 
         if (bucketA) {
@@ -224,6 +283,7 @@ contract NavBorrowingCap {
 
     /// @param delta  Positive = increase global exposure, negative = decrease.
     function recordDerivativeExposure(int256 delta) external onlyAifm {
+        _requireFreshNavIfIncreasing(delta);
         derivativeExposure = _applyDelta(derivativeExposure, delta);
         _checkCeiling(
             keccak256("DERIVATIVE_EXPOSURE"),
@@ -236,6 +296,7 @@ contract NavBorrowingCap {
     /// @param delta  Positive = draw down, negative = repay. Counts toward the LOF leverage cap.
     function recordLofBorrowing(int256 delta) external onlyAifm {
         if (fundType != FundType.LofOpenEnded && fundType != FundType.LofClosedEnded) revert WrongFundType();
+        _requireFreshNavIfIncreasing(delta);
         totalBorrowing = _applyDelta(totalBorrowing, delta);
         _checkCeiling(keccak256("LOF_LEVERAGE"), totalBorrowing, _lofCeiling(), delta > 0);
     }
@@ -246,6 +307,7 @@ contract NavBorrowingCap {
     ///               borrowing instead (not modelled here — reverts on this call's own cap).
     function recordLofCarveoutLoan(int256 delta) external onlyAifm {
         if (fundType != FundType.LofOpenEnded && fundType != FundType.LofClosedEnded) revert WrongFundType();
+        _requireFreshNavIfIncreasing(delta);
         lofCarveoutAmount = _applyDelta(lofCarveoutAmount, delta);
         _checkCeiling(keccak256("LOF_CARVEOUT"), lofCarveoutAmount, LOF_CARVEOUT_CEILING_BPS, delta > 0);
     }
@@ -257,13 +319,14 @@ contract NavBorrowingCap {
     function _checkCeiling(bytes32 bucket, uint256 numerator, uint256 statutoryCeilingBps, bool causedByThisCall)
         internal
     {
-        if (nav == 0) return;
+        uint256 navNow = nav();
+        if (navNow == 0) return;
 
         uint256 effectiveCeilingBps = statutoryCeilingBps < regulatorCeilingBps
             ? statutoryCeilingBps
             : regulatorCeilingBps;
 
-        uint256 ratioBps = (numerator * BPS_DENOM) / nav;
+        uint256 ratioBps = (numerator * BPS_DENOM) / navNow;
         bool isBreached = ratioBps > effectiveCeilingBps;
 
         // Active breach: this call moved the ratio, it's over, and suspension isn't covering it.

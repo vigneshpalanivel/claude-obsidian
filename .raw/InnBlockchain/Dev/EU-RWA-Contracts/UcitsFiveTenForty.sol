@@ -1,15 +1,27 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {ValuationOracle} from "./ValuationOracle.sol";
+
 /// @title UcitsFiveTenForty (illustrative sample — not production code)
 /// @notice Tracks UCITS Art 52 concentration limits against a running NAV
 ///         denominator and per-bucket numerators, and enforces the active/passive
 ///         breach split plus the Art 56 ramp-up window.
 /// @dev    NAV is mark-to-market by definition, not just a mint/burn ledger — it moves
 ///         from subscriptions/redemptions AND from the market price of what's already
-///         held changing with no trade at all. `recordNavValuation` and `recordValuation`
-///         are the price-driven paths (passive); Art 49(2) names market movement
-///         explicitly as a passive-breach trigger, so this isn't optional.
+///         held changing with no trade at all. `syncNav` and `syncLegValuation` are the
+///         price-driven paths (passive); Art 49(2) names market movement explicitly as a
+///         passive-breach trigger, so this isn't optional.
+/// @dev    ⚠️ BOTH SIDES OF EVERY RATIO ARE ORACLE-FED, AND BOTH ARE ABSOLUTE. NAV is the
+///         denominator of all seven limits here and the per-leg market values are the
+///         numerators, so a feed failure corrupts the check from either direction. Earlier
+///         revisions took both as `int256 delta` from a privileged valuator — a design in
+///         which one dropped message leaves the book permanently and undetectably wrong.
+///         The sync paths below read absolute figures and compute the delta themselves.
+/// @dev    ⚠️ FAIL-CLOSED ON ACQUISITION, FAIL-OPEN ON DISPOSAL. Buying into a bucket on a
+///         NAV nobody can vouch for is the harm; SELLING out of one on the same NAV is the
+///         remedy, and can only move every ratio here downward. Blocking disposals on a
+///         stale feed would trap the fund in breach exactly when the feed is down.
 contract UcitsFiveTenForty {
     // ─────────────────────────── ceilings (basis points, 10000 = 100%) ─────────
 
@@ -41,11 +53,27 @@ contract UcitsFiveTenForty {
 
     address public immutable manco; // management company — reports holding changes
     address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not share counts
-    address public immutable valuator; // price/valuation feed — marks NAV and holdings to market
+
+    ValuationOracle public immutable oracle; // marks NAV and holdings to market — absolute, never delta
+    bytes32 public immutable navFeedId; // this fund's NAV identity in the oracle
 
     // ─────────────────────────── denominator ────────────────────────────────
 
-    uint256 public nav;
+    /// @notice The last absolute NAV the oracle published, plus the cash that has moved
+    ///         since. Two components rather than one running total, because they fail
+    ///         differently: the oracle figure carries a timestamp and can go stale, while
+    ///         subscription cash is known exactly and needs no feed.
+    uint256 public navAtValuation;
+
+    /// @notice Net cash in (positive) or out (negative) since `navAtValuation` was set.
+    ///         Reset to zero on every sync — the next published NAV already contains it.
+    int256 public cashSinceValuation;
+
+    /// @notice The denominator all seven limits in this contract divide by.
+    function nav() public view returns (uint256) {
+        return _applyDelta(navAtValuation, cashSinceValuation);
+    }
+
     uint64 public immutable deployedAt;
 
     // ─────────────────────────── numerators ─────────────────────────────────
@@ -78,13 +106,18 @@ contract UcitsFiveTenForty {
     event BreachStarted(bytes32 indexed bucket, uint256 ratioBps, uint256 limitBps);
     event BreachCleared(bytes32 indexed bucket);
     event ThresholdAlert(bytes32 indexed bucket, uint256 ratioBps, uint256 limitBps);
+    event NavSynced(uint256 navAtValuation, int256 cashAbsorbed, uint64 at);
+    event LegValuationSynced(bytes32 indexed legId, uint256 previousValue, uint256 newValue, uint64 at);
 
     // ─────────────────────────── errors ──────────────────────────────────────
 
     error ActiveBreach(bytes32 bucket, uint256 ratioBps, uint256 limitBps);
     error NotManco();
     error NotSubscriptionAgent();
-    error NotValuator();
+    /// @dev The NAV feed, or the traded leg's own feed, is not current — so no ratio
+    ///      computed here can be trusted. §5: "oracle failure must HALT issuance/
+    ///      redemption, not pass a stale limit."
+    error StaleValuation(bytes32 feedId);
 
     modifier onlyManco() {
         if (msg.sender != manco) revert NotManco();
@@ -96,15 +129,23 @@ contract UcitsFiveTenForty {
         _;
     }
 
-    modifier onlyValuator() {
-        if (msg.sender != valuator) revert NotValuator();
+    modifier freshNav() {
+        if (!oracle.isFresh(navFeedId)) revert StaleValuation(navFeedId);
         _;
     }
 
-    constructor(address manco_, address subscriptionAgent_, address valuator_) {
+    /// @dev The asymmetry every numerator path needs. Acquiring on an unverifiable
+    ///      denominator is the thing to stop; DISPOSING on one is not — a sale can only
+    ///      move every ratio here downward whatever the true NAV is.
+    function _requireFreshNavIfIncreasing(int256 delta) internal view {
+        if (delta > 0 && !oracle.isFresh(navFeedId)) revert StaleValuation(navFeedId);
+    }
+
+    constructor(address manco_, address subscriptionAgent_, address oracle_, bytes32 navFeedId_) {
         manco = manco_;
         subscriptionAgent = subscriptionAgent_;
-        valuator = valuator_;
+        oracle = ValuationOracle(oracle_);
+        navFeedId = navFeedId_;
         deployedAt = uint64(block.timestamp);
     }
 
@@ -121,15 +162,15 @@ contract UcitsFiveTenForty {
     ///                    token quantity here would silently corrupt NAV on every
     ///                    subscription. Only `subscriptionAgent` — whatever priced this
     ///                    subscription at the day's NAV/share — has this number.
-    function onMint(uint256 cashAmount) external onlySubscriptionAgent {
-        nav += cashAmount;
+    function onMint(uint256 cashAmount) external onlySubscriptionAgent freshNav {
+        cashSinceValuation += int256(cashAmount);
         _recheckAll();
     }
 
     /// @param cashAmount  The CASH consideration paid out, in NAV's reference currency —
     ///                    NOT the number of shares burned. See `onMint`.
-    function onBurn(uint256 cashAmount) external onlySubscriptionAgent {
-        nav -= cashAmount;
+    function onBurn(uint256 cashAmount) external onlySubscriptionAgent freshNav {
+        cashSinceValuation -= int256(cashAmount);
         _recheckAll();
     }
 
@@ -137,9 +178,16 @@ contract UcitsFiveTenForty {
     ///         and no trade. This is the trigger Art 49(2) names explicitly ("breached
     ///         due to market movements"); onMint/onBurn cannot produce it, since they
     ///         only fire on capital moving, not on a held security's price moving.
-    /// @param  delta  Positive = holdings revalued up, negative = revalued down.
-    function recordNavValuation(int256 delta) external onlyValuator {
-        nav = _applyDelta(nav, delta);
+    /// @dev    Permissionless on purpose. The figure it pulls is already guarded by the
+    ///         oracle's own sources, quorum and deviation band, so a role check here would
+    ///         protect nothing and would hand whoever holds that role the power to suppress
+    ///         an Art 49(2) passive breach by simply not calling.
+    function syncNav() external {
+        uint256 published = oracle.value(navFeedId); // reverts on stale/halted — fail closed
+        int256 absorbed = cashSinceValuation;
+        navAtValuation = published;
+        cashSinceValuation = 0;
+        emit NavSynced(published, absorbed, uint64(block.timestamp));
         _recheckAll();
     }
 
@@ -164,6 +212,7 @@ contract UcitsFiveTenForty {
         bool counterpartyIsCreditInstitution,
         bool isNonUcits
     ) external onlyManco {
+        _requireFreshNavIfIncreasing(delta);
         if (legType == LegType.DerivativeCounterparty) {
             isCreditInstitution[legId] = counterpartyIsCreditInstitution;
         }
@@ -175,14 +224,37 @@ contract UcitsFiveTenForty {
     ///         only flags/clears/alerts. Counterparty credit-institution status isn't
     ///         re-supplied here — it's a classification set at trade time, not something
     ///         a price move can change.
-    function recordValuation(
+    /// @notice Pull this leg's current market value from the oracle and book the difference.
+    ///         Passive by construction: never reverts on a breach, only flags/clears/alerts.
+    ///         Counterparty credit-institution status isn't re-supplied here — it's a
+    ///         classification set at trade time, not something a price move can change.
+    /// @dev    The leg's own `legId` is its feed id in the oracle. The delta is derived here
+    ///         rather than supplied by the caller, which is the whole point: a caller-supplied
+    ///         delta that never arrives leaves this contract permanently wrong with nothing
+    ///         on-chain to show it, while a missed absolute post just goes stale and says so.
+    function syncLegValuation(
         bytes32 legId,
         LegType legType,
         bytes32 entityId,
-        int256 delta,
         bool isNonUcits
-    ) external onlyValuator {
+    ) external {
+        uint256 published = oracle.value(legId); // reverts on stale/halted — fail closed
+        uint256 current = _currentLegValue(legId, legType);
+        if (published == current) return;
+
+        int256 delta = published > current
+            ? int256(published - current)
+            : -int256(current - published);
+
         _applyLegDelta(legId, legType, entityId, delta, isNonUcits, false);
+        emit LegValuationSynced(legId, current, published, uint64(block.timestamp));
+    }
+
+    function _currentLegValue(bytes32 legId, LegType legType) internal view returns (uint256) {
+        if (legType == LegType.Issuer) return issuerValue[legId];
+        if (legType == LegType.BankDeposit) return depositValue[legId];
+        if (legType == LegType.DerivativeCounterparty) return derivativeValue[legId];
+        return fundOfFundsValue[legId];
     }
 
     /// @param active  True for a ManCo-directed trade (can revert on active breach);
@@ -203,7 +275,7 @@ contract UcitsFiveTenForty {
             issuerValue[legId] = after_;
 
             // Track the 5-10% band aggregate incrementally as issuers cross the 5% line.
-            uint256 threshold = (ISSUER_SOFT_CAP_BPS * nav) / BPS_DENOM;
+            uint256 threshold = (ISSUER_SOFT_CAP_BPS * nav()) / BPS_DENOM;
             bool wasOver = before > threshold;
             bool isOver = after_ > threshold;
             if (isOver && !wasOver) {
@@ -264,9 +336,10 @@ contract UcitsFiveTenForty {
     // ═══════════════════════════════════════════════════════════════════════
 
     function _checkCeiling(bytes32 bucket, uint256 numerator, uint256 ceilingBps, bool causedByThisCall) internal {
-        if (nav == 0) return;
+        uint256 navNow = nav();
+        if (navNow == 0) return;
 
-        uint256 ratioBps = (numerator * BPS_DENOM) / nav;
+        uint256 ratioBps = (numerator * BPS_DENOM) / navNow;
         bool isBreached = ratioBps > ceilingBps;
 
         // Active breach: this call moved the ratio, it's over, and the ramp-up window has expired.

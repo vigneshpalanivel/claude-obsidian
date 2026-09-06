@@ -294,7 +294,8 @@
       "Bash(grep -oE \"5 ?%,? 10 ?%[^.]{0,60}\" transparency-checklist.md)",
       "Bash(grep -inE \"7 ?000 ?000|€7|important entit[^.]{0,140}%\" nis2-checklist.md)",
       "Bash(grep -inE \"Article 3\\\\\\(2\\\\\\)|sub-threshold|small.{0,25}AIFM|Directive 2011/61/EU\" dora-checklist.md)",
-      "Bash(grep -oE \"\\\\[[^]]*\\\\]\\\\\\(\\(brrd|ccp-rrr\\)-checklist\\\\.md\\\\\\)|BRRD[^.]{0,70}\" financial-collateral-checklist.md)"
+      "Bash(grep -oE \"\\\\[[^]]*\\\\]\\\\\\(\\(brrd|ccp-rrr\\)-checklist\\\\.md\\\\\\)|BRRD[^.]{0,70}\" financial-collateral-checklist.md)",
+      "Bash(awk -F: '$1>2900')"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

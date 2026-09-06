@@ -1,14 +1,33 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {ValuationOracle} from "./ValuationOracle.sol";
+
 /// @title EltifConcentration (illustrative sample — not production code)
 /// @notice Tracks ELTIF Art 13 concentration limits against a running capital
 ///         denominator and per-bucket numerators, and enforces the active/passive
 ///         breach split plus the Art 17(1)(c) suspension window.
 /// @dev    Capital (the denominator) is contribution-based, not marked to market —
 ///         it moves on mint/burn only. The numerators DO need marking to market, since
-///         they represent the current value of assets held; `recordValuation` is the
+///         they represent the current value of assets held; `syncAssetValuation` is the
 ///         price-driven path (passive), separate from `recordAssetTrade` (active).
+/// @dev    ⚠️ THE ORACLE FEEDS THE NUMERATORS ONLY, AND THAT IS NOT AN OVERSIGHT. Art 2(8)
+///         defines capital by contribution, so `totalCapital` is an exact figure this
+///         contract already knows and no price feed can improve. That makes this the one
+///         module in the fund set where subscription and redemption do NOT halt on oracle
+///         failure — the denominator does not depend on a price. Copying §5's "halt
+///         issuance on oracle failure" rule here mechanically would block subscriptions
+///         for a feed the subscription path never reads.
+/// @dev    ⚠️ VALUES ARE ABSOLUTE, NEVER DELTAS. An earlier revision took
+///         `recordValuation(int256 delta)` from a privileged valuator. A missed delta is
+///         permanent and undetectable — the book stays wrong forever with nothing on-chain
+///         to show it — whereas a missed absolute post simply goes stale and says so.
+/// @dev    ⚠️ YOU MAY NOT ACQUIRE AN ASSET THIS FUND CANNOT VALUE. `recordAssetTrade`
+///         requires a fresh feed for the traded asset when the position is INCREASING, so
+///         a new holding needs its feed configured and posted before the first purchase.
+///         Disposals stay open on a stale feed: selling can only move every ceiling here
+///         downward, and blocking it would trap the fund in breach exactly when the feed
+///         is down.
 contract EltifConcentration {
     // ─────────────────────────── ceilings (basis points, 10000 = 100%) ─────────
 
@@ -26,7 +45,8 @@ contract EltifConcentration {
 
     address public immutable aifm; // executes/reports asset trades
     address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not unit counts
-    address public immutable valuator; // price/valuation feed — marks holdings to market
+
+    ValuationOracle public immutable oracle; // marks holdings to market — absolute, never delta
 
     // ─────────────────────────── denominator ────────────────────────────────
 
@@ -61,6 +81,7 @@ contract EltifConcentration {
     event BreachStarted(bytes32 indexed bucket, uint256 ratioBps, uint256 limitBps);
     event BreachCleared(bytes32 indexed bucket);
     event ThresholdAlert(bytes32 indexed bucket, uint256 ratioBps, uint256 limitBps);
+    event AssetValuationSynced(bytes32 indexed assetId, uint256 previousValue, uint256 newValue, uint64 at);
     event SuspensionActivated(uint64 startedAt);
     event SuspensionLifted(uint64 endedAt);
 
@@ -69,7 +90,9 @@ contract EltifConcentration {
     error ActiveBreach(bytes32 bucket, uint256 ratioBps, uint256 limitBps);
     error NotAifm();
     error NotSubscriptionAgent();
-    error NotValuator();
+    /// @dev The traded asset's feed is not current, so the Art 13 ratio it feeds cannot be
+    ///      trusted. Only ever raised on an increasing position — see the header.
+    error StaleValuation(bytes32 assetId);
     error SuspensionAlreadyActive();
     error SuspensionExpired();
 
@@ -83,15 +106,10 @@ contract EltifConcentration {
         _;
     }
 
-    modifier onlyValuator() {
-        if (msg.sender != valuator) revert NotValuator();
-        _;
-    }
-
-    constructor(address aifm_, address subscriptionAgent_, address valuator_) {
+    constructor(address aifm_, address subscriptionAgent_, address oracle_) {
         aifm = aifm_;
         subscriptionAgent = subscriptionAgent_;
-        valuator = valuator_;
+        oracle = ValuationOracle(oracle_);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -132,23 +150,38 @@ contract EltifConcentration {
         bool isCrossHolding,
         int256 delta // positive = buy/increase, negative = sell/decrease
     ) external onlyAifm {
+        if (delta > 0 && !oracle.isFresh(assetId)) revert StaleValuation(assetId);
         _applyAssetDelta(assetId, isEligibleLongTerm, isSts, isOtcRepoOrReverseRepo, isCrossHolding, delta, true);
     }
 
-    /// @notice Mark-to-market revaluation of an asset already held — no trade occurred,
-    ///         only its price moved. Passive by construction: never reverts, only
-    ///         flags/clears/alerts. `totalCapital` (the denominator) does NOT move here
-    ///         — it is contribution-based (ELTIF Art 2(8)), not marked to market. Only
-    ///         the numerators — the market value of what's already held — do.
-    function recordValuation(
+    /// @notice Pull this asset's current market value from the oracle and book the
+    ///         difference. Passive by construction: never reverts on a breach, only
+    ///         flags/clears/alerts. `totalCapital` (the denominator) does NOT move here —
+    ///         it is contribution-based (ELTIF Art 2(8)), not marked to market. Only the
+    ///         numerators — the market value of what's already held — do.
+    /// @dev    Permissionless. The figure is already guarded by the oracle's sources,
+    ///         quorum and deviation band, so a role check here would protect nothing and
+    ///         would let whoever holds it hide an Art 13 breach by not calling. The delta
+    ///         is derived here rather than supplied, which is the entire fix: a caller can
+    ///         no longer corrupt the book by getting one arithmetic step wrong.
+    /// @dev    The asset's own `assetId` is its feed id in the oracle.
+    function syncAssetValuation(
         bytes32 assetId,
         bool isEligibleLongTerm,
         bool isSts,
         bool isOtcRepoOrReverseRepo,
-        bool isCrossHolding,
-        int256 delta
-    ) external onlyValuator {
+        bool isCrossHolding
+    ) external {
+        uint256 published = oracle.value(assetId); // reverts on stale/halted — fail closed
+        uint256 current = assetValue[assetId];
+        if (published == current) return;
+
+        int256 delta = published > current
+            ? int256(published - current)
+            : -int256(current - published);
+
         _applyAssetDelta(assetId, isEligibleLongTerm, isSts, isOtcRepoOrReverseRepo, isCrossHolding, delta, false);
+        emit AssetValuationSynced(assetId, current, published, uint64(block.timestamp));
     }
 
     /// @param active  True for an AIFM-directed trade (can revert on active breach);

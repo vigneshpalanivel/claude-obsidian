@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {ValuationOracle} from "./ValuationOracle.sol";
+
 /// @title LmtGate (illustrative sample — not production code)
 /// @notice Gates redemption requests through whichever Liquidity Management Tools (LMTs)
 ///         this fund has selected, per AIFMD II Art 16(2a) / ESMA RTS on LMTs for
@@ -11,6 +13,26 @@ pragma solidity ^0.8.22;
 /// @dev    Suspension (Art 16(3)-(4)) is deliberately NOT part of the "select >= 2" set: it
 ///         stays available as a backstop regardless of which tools were chosen, because the
 ///         softer tools below exist to make suspension unnecessary, not to replace it.
+/// @dev    ⚠️ THIS IS WHERE "HALT REDEMPTION ON ORACLE FAILURE" ACTUALLY BITES. The gate cap
+///         is a percentage OF NAV, so a stale NAV sizes the window wrong in whichever
+///         direction the market moved — and an over-sized window pays early redeemers out
+///         of value that belongs to the ones behind them, which is precisely the dilution
+///         the LMT catalogue exists to prevent. `requestRedemption`, `processRedemption`
+///         and `rollWindow` therefore revert `StaleValuation` rather than transact on a
+///         figure nobody can vouch for.
+/// @dev    ⚠️ AN EARLIER REVISION SET NAV ONCE IN THE CONSTRUCTOR AND ONLY EVER SUBTRACTED
+///         PAYOUTS. That drifts from reality with every market move and never recovers —
+///         a fund whose assets halved would still be gating against its launch-day NAV.
+///         NAV is now oracle-fed and absolute; payouts are carried separately until the
+///         next published figure absorbs them.
+/// @dev    ⚠️ NOT YET THE ELTIF RTS Art 5(5)–(6) CAP. That formula sizes the maximum
+///         redeemable amount off the Art 9(1)(b) LIQUID-ASSET BUCKET plus a prudently
+///         forecast 12-month cash flow (excluding new-subscription and long-term-disposal
+///         proceeds), selected from the Annex I notice-period grid or the Annex II
+///         minimum-liquid-assets grid. What is modelled below is the AIFMD II Art 16(2a) /
+///         RTS Annex V toolkit, capping on redeemable NAV. An ELTIF deployment needs the
+///         liquid bucket and the forecast as two further fed inputs, under the same
+///         staleness discipline as the NAV feed.
 contract LmtGate {
     // ─────────────────────────── LMT catalogue ──────────────────────────────
 
@@ -37,6 +59,9 @@ contract LmtGate {
     address public immutable aifm;
     address public immutable regulator; // Art 25 — may force-enable a tool post-launch
 
+    ValuationOracle public immutable oracle; // marks NAV to market — absolute, never delta
+    bytes32 public immutable navFeedId; // this fund's NAV identity in the oracle
+
     // ─────────────────────────── selection state ─────────────────────────────
 
     mapping(LmtType => bool) public selected;
@@ -53,7 +78,17 @@ contract LmtGate {
     uint64 public noticePeriodSeconds; // NoticePeriod — delay before a request becomes payable
     uint256 public sidePocketedBps; // SidePocket — % of NAV carved out of the redeemable base
 
-    uint256 public nav; // redeemable NAV reference, in the fund's reference currency
+    /// @notice The last absolute NAV the oracle published, and the cash paid out since.
+    ///         Two components rather than one running total, because they fail differently:
+    ///         the published figure carries a timestamp and can go stale, while a payout
+    ///         this contract made is known exactly and needs no feed.
+    uint256 public navAtValuation;
+    uint256 public payoutsSinceValuation;
+
+    /// @notice NAV reference the gate cap is sized off, in the fund's reference currency.
+    function nav() public view returns (uint256) {
+        return payoutsSinceValuation >= navAtValuation ? 0 : navAtValuation - payoutsSinceValuation;
+    }
 
     // ─────────────────────────── redemption window (RedemptionGate bookkeeping) ──
 
@@ -86,6 +121,7 @@ contract LmtGate {
     event SelectionLocked(uint256 selectedCount);
     event RegulatorForcedTool(LmtType indexed tool);
     event WindowRolled(uint64 startedAt, uint256 capRemaining);
+    event NavSynced(uint256 navAtValuation, uint256 payoutsAbsorbed, uint64 at);
     event RedemptionRequested(
         uint256 indexed requestId,
         address indexed investor,
@@ -110,6 +146,9 @@ contract LmtGate {
     error NotEnoughToolsSelected(uint256 selectedCount);
     error FundSuspended();
     error NotPayableYet(uint64 payableAt);
+    /// @dev The NAV feed is not current, so the gate cap cannot be sized. §5: "oracle
+    ///      failure must HALT issuance/redemption, not pass a stale limit."
+    error StaleValuation(bytes32 navFeedId);
     error AlreadyProcessed();
     error SuspensionAlreadyActive();
 
@@ -123,10 +162,28 @@ contract LmtGate {
         _;
     }
 
-    constructor(address aifm_, address regulator_, uint256 initialNav) {
+    modifier freshNav() {
+        if (!oracle.isFresh(navFeedId)) revert StaleValuation(navFeedId);
+        _;
+    }
+
+    constructor(address aifm_, address regulator_, address oracle_, bytes32 navFeedId_) {
         aifm = aifm_;
         regulator = regulator_;
-        nav = initialNav;
+        oracle = ValuationOracle(oracle_);
+        navFeedId = navFeedId_;
+    }
+
+    /// @notice Pull the current NAV from the oracle and absorb the payouts made since.
+    /// @dev    Permissionless. The figure is guarded by the oracle's own sources, quorum
+    ///         and deviation band; gating this call would let whoever holds the role keep
+    ///         an over-sized redemption window open by simply not refreshing it.
+    function syncNav() external {
+        uint256 published = oracle.value(navFeedId); // reverts on stale/halted — fail closed
+        uint256 absorbed = payoutsSinceValuation;
+        navAtValuation = published;
+        payoutsSinceValuation = 0;
+        emit NavSynced(published, absorbed, uint64(block.timestamp));
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -171,7 +228,10 @@ contract LmtGate {
         sidePocketedBps = bps;
     }
 
-    function lockSelection() external onlyAifm {
+    /// @dev `freshNav` because locking rolls the first redemption window, and a window
+    ///      sized off an unpublished NAV is either zero-capped or wrong. The fund does not
+    ///      open for redemptions before it has been valued.
+    function lockSelection() external onlyAifm freshNav {
         if (selectionLocked) revert SelectionAlreadyLocked();
         if (selectedCount < MIN_SELECTED_TOOLS)
             revert NotEnoughToolsSelected(selectedCount);
@@ -198,7 +258,7 @@ contract LmtGate {
     // meaningful if RedemptionGate is selected; otherwise the cap is unbounded.
     // ═══════════════════════════════════════════════════════════════════════
 
-    function rollWindow() external onlyAifm {
+    function rollWindow() external onlyAifm freshNav {
         _rollWindow();
     }
 
@@ -211,8 +271,9 @@ contract LmtGate {
     }
 
     function _redeemableNav() internal view returns (uint256) {
-        if (!selected[LmtType.SidePocket]) return nav;
-        return nav - (nav * sidePocketedBps) / BPS_DENOM;
+        uint256 navNow = nav();
+        if (!selected[LmtType.SidePocket]) return navNow;
+        return navNow - (navNow * sidePocketedBps) / BPS_DENOM;
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -225,7 +286,7 @@ contract LmtGate {
     function requestRedemption(
         uint256 shares,
         uint256 cashValue
-    ) external returns (uint256 requestId) {
+    ) external freshNav returns (uint256 requestId) {
         if (!selectionLocked) revert SelectionNotLocked();
         if (suspended) revert FundSuspended();
 
@@ -254,7 +315,7 @@ contract LmtGate {
     ///         force-cashed-out below the gate and never left in front of it.
     /// @dev    A real fund picks 2 tools, not all 8 stacked — this sums whichever subset is
     ///         active so the sample stays correct no matter which combination was selected.
-    function processRedemption(uint256 requestId) external onlyAifm {
+    function processRedemption(uint256 requestId) external onlyAifm freshNav {
         if (suspended) revert FundSuspended();
 
         RedemptionRequest storage r = requests[requestId];
@@ -283,7 +344,7 @@ contract LmtGate {
 
         r.cashOwed = carry;
         r.processed = carry == 0;
-        nav -= payout;
+        payoutsSinceValuation += payout;
 
         emit RedemptionProcessed(requestId, payout, r.inKind, carry);
     }

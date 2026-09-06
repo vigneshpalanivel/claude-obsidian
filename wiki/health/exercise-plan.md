@@ -28,7 +28,7 @@ status: active
 > 🔴 **Two constraints that get MORE important as load climbs, not less:**
 > - **Rows must be supported.** Free bent-over rowing at 10 kg loads the lumbar spine — the exact pattern the SI joint history rules out. Single-arm with the free hand braced on a chair/bench, or chest-supported only.
 > - **Warmup is mandatory on all pressing.** 14+ year left shoulder issue; Jul 29 already demonstrated the cost of skipping it.
-> **Session order:** Warmup (3.5 min) → Workout A or B → Balance training (2 min). Balance goes last — it's not fatiguing and works as a cooldown.
+> **Session order:** Warmup (3.5 min) → Workout A or B → **Daily 5-min block (Spine Stabiliser 3 min + Balance 2 min)**. 🔴 **The daily block is NOT part of Workout A or B — it runs every day regardless, and on strength days it simply lands at the end.** It is not listed in the A/B tables (corrected 2026-09-06 — see below); don't do it twice.
 **Goal:** Muscle gain for BMI 17.9 (60.6 kg, Aug 17 2026) → Phase 1: 70kg (BMI 20.7, **the floor**) · Phase 2: 75kg (BMI 22.2, **the actual target**). See [[bmi-increase-plan]].
 **Long-horizon purpose:** This is the execution layer for Pillars 1–3 of [[healthspan-80]] — muscle, aerobic fitness, and bone density for active independence at 80. Resistance training is a permanent fixture, not a phase.
 **Constraint:** Seronegative spinal/SI joint inflammation — spine-safe only. See [[profile]].
@@ -162,7 +162,9 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 - **After a superset pair: 60–90 sec**
 - **Within a circuit: 15 sec** between stations, 60 sec between rounds
 
-> ⚠️ **What must never be cut to save time:** the **3.5 min warmup** (Jul 29 shoulder flare settled that) and the **2 min balance block** ([[healthspan-80]] Pillar 1 — fall risk is the single largest threat to the world-travel goal). Both are fixed costs. The 45 min budget is 3.5 + 39.5 + 2.
+> ⚠️ **What must never be cut to save time:** the **3.5 min warmup** (Jul 29 shoulder flare settled that) and the **daily 5 min block** — spine stabilisers (the McGill big three) and balance ([[healthspan-80]] Pillar 1 — fall risk is the single largest threat to the world-travel goal). Both are fixed costs.
+
+> 🔴 **Budget restated 2026-09-06.** The 45 min cap now covers **warmup + the workout only**: 3.5 + up to 41.5. **The daily 5-min block sits outside the cap** because it runs on EFX and rest days too — it is not session time, it is daily time. Current actual: **A ≈ 36 min, B ≈ 39.5 min**, then +5 min daily block on top. ✅ **This leaves ~5–9 min of genuine headroom under the cap for the first time** — the deduplication paid for it. **Spend it on the leg block** (the section below argues legs are the most under-trained thing in the plan), not on adding another upper-body exercise.
 
 ---
 
@@ -192,7 +194,7 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 
 ### Workout A — restructured for chest / forearms / abs (revised 2026-08-14)
 
-**Run in blocks, not as a straight list.** Total ~40.5 min including warmup and balance.
+**Run in blocks, not as a straight list.** Total **~36 min** — warmup + Blocks 1–4. **The daily 5-min block (spine stabiliser + balance) runs after this, as it does every day; it is not counted here and is not part of Workout A.**
 
 | Block | Exercise | Sets × Reps | Cue | Time |
 |-------|----------|-------------|-----|------|
@@ -206,10 +208,8 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 | | **Wall sit** | 2 × 45–60 sec | Back flat against wall, thighs parallel. **Progress to single-leg (20–30 sec/side) once 60 sec is easy** — don't just keep adding seconds. | |
 | | ↳ paired with **Single-leg calf raise** | 2 × 15/side | **Upgraded from two-leg.** Full range, slow lowering, wall for balance. | |
 | **4 — Upper back finisher** | **Prone Y-T-W raise** | 2 × 8 each position | **NEW 2026-08-28 — the only lower-trap work in the plan.** Face down, forehead on a towel, **chest stays on the floor**, lift arms only: Y (overhead 45°), T (straight out), W (elbows bent, blades squeezed down). ⚠️ **Chest off the floor = this has become a superman, which is banned.** Arms only. | 3 min |
-| **5 — Core (anti-movement only)** | **Dead bug** | 2 × 10/side | Lower back flat on the floor the entire time — if it arches, you've gone too far | 4 min |
-| | **Side plank** | 2 × 20–30 sec/side | From knees first, progress to feet. Hips stacked and lifted, body in one line. See the abs section below for why this specific movement. | |
-| | **Bird dog** | 2 × 10/side | **Moved here 2026-08-28 (was Workout B only).** Spine neutral, slow — opposite arm + leg, hold 3 sec. Also now part of the daily spine block below. | |
-| **Balance** | 3-move sequence (see below) | — | Non-negotiable — [[healthspan-80]] Pillar 1 | 2 min |
+
+> 🔴 **Core and balance removed from this table 2026-09-06 — they were being done twice.** Dead bug, side plank and bird dog became a **daily** block on 2026-08-28, but the old Workout A core block was never deleted, so a Workout A day prescribed all three twice in the same session. Same for balance. **Nothing has been cut from the week — the work moved, it didn't disappear.** All five movements now live in one place: the **Daily Spine Stabiliser Block** and **Balance Training** below, run at the end of every day including this one. Frequency actually went **up** (bird dog and side plank now 7×/week instead of ~1.5×).
 
 **Rest:** none within a superset · 60–90 sec after each superset pair · **90 sec after leg superset pairs specifically** — legs need more recovery than the upper-body pairs, don't rush them.
 
@@ -219,7 +219,7 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 
 ### Workout B — restructured for the 45 min cap (revised 2026-08-11)
 
-**Run in blocks, not as a straight list.** Total ~41.5 min including warmup and balance.
+**Run in blocks, not as a straight list.** Total **~39.5 min** — warmup + Blocks 1–6. **The daily 5-min block (spine stabiliser + balance) runs after this, as it does every day; it is not counted here and is not part of Workout B.**
 
 | Block | Exercise | Sets × Reps | Cue | Time |
 |-------|----------|-------------|-----|------|
@@ -237,7 +237,8 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 | **5 — Forearms** | **Wrist curl** (3kg) | 2 × 15 | **Moved here from Workout A (2026-08-28)** to free time for the leg block. Seated, forearm resting on thigh, palm up, hand past the knee. Curl the wrist only. | 3 min |
 | | ↳ superset **Reverse wrist curl** (3kg) | 2 × 15 | Same position, palm down. Trains the extensors — the side that gets neglected. | |
 | **6 — Finisher** | **Single-leg calf raise** | 2 × 15/side | **Upgraded from two-leg bodyweight (2026-08-28)** — bodyweight two-leg raises stopped being a stimulus. Slow lowering, wall for balance. | 3 min |
-| **Balance** | 3-move sequence (see below) | — | Non-negotiable — [[healthspan-80]] Pillar 1 | 2 min |
+
+> 🔴 **Balance removed from this table 2026-09-06** — it is a daily block, not a Workout B block. It still runs at the end of this session, exactly as before; it is just no longer listed twice. See **Balance Training** below.
 
 **Rest:** none within a superset · 60–90 sec after each superset pair · 15 sec between circuit stations, 60 sec between circuit rounds.
 
@@ -248,6 +249,8 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 ## 🔴 Daily Spine Stabiliser Block (added 2026-08-28) — 3 min
 
 > **Placement:** immediately before the Balance block, every day — strength days, EFX days, and rest days alike. The two together make a 5-minute daily block.
+>
+> 🔴 **This is the ONLY place these three exercises are prescribed (corrected 2026-09-06).** They were also still listed in Workout A's core block, left over from the 2026-08-28 revision that created this section — meaning a Workout A day called for them twice. **Workout A's copy has been deleted. Do them here, once a day, and nowhere else.**
 
 **Why this became daily.** Bird dog, dead bug and side plank are the **McGill "big three"** — the standard protocol for back-pain populations. They work by training the spine to *resist* movement while staying neutral, rather than loading it into extension. Until now bird dog ran **once a week**, buried in a rushed 2-round circuit at 15 sec rest. **For someone whose spine is the single structural constraint on this entire plan, that was the thinnest-covered thing in the file.**
 
@@ -267,7 +270,7 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 
 ## Balance Training — Daily Add-On (2 min)
 
-> **Placement:** End of every strength session (Workout A and B), after calf raises. Also fine standalone on EFX or rest days — it's not fatiguing.
+> **Placement:** End of **every day** — after the Spine Stabiliser Block, which on strength days puts it after Workout A or B. **It is no longer listed as a row inside the A/B tables (corrected 2026-09-06)** — it is daily work that happens to land at the end of a session, not a component of the session. Not fatiguing, so rest and EFX days are unaffected.
 
 **Why it's in the plan:** Falls are the leading cause of injury death in over-65s and the single largest risk to world travel in old age — see [[healthspan-80]] Pillar 1. Balance is trainable and declines fast if untrained. Also relevant now: single-leg stability work doubles as hip/SI joint stabiliser training.
 
@@ -541,9 +544,11 @@ The dead hang has a second benefit specific to you: it applies **gentle axial tr
 
 | Exercise | Trains | Status |
 |----------|--------|--------|
-| **Dead bug** | Anti-extension (stops the lower back arching) | ✅ Already in Workout A |
-| **Bird dog** | Anti-rotation + anti-extension | ✅ Already in Workout B |
-| **Side plank** | Anti-lateral-flexion — quadratus lumborum and the lateral chain | **NEW — added to Workout A** |
+| **Dead bug** | Anti-extension (stops the lower back arching) | ✅ **Daily Spine Stabiliser Block** |
+| **Bird dog** | Anti-rotation + anti-extension | ✅ **Daily Spine Stabiliser Block** |
+| **Side plank** | Anti-lateral-flexion — quadratus lumborum and the lateral chain | ✅ **Daily Spine Stabiliser Block** |
+
+> **Updated 2026-09-06:** all three moved out of the A/B workout tables and into the daily block, where they were already duplicated. **This is the abs programme in full — there is no separate ab work inside Workout A or B, and none is needed.**
 
 > **Why side plank specifically, and not front plank:** the three above are the well-known "big three" for back-pain populations, and you already had two of them without realising it. Side plank is the missing one — and it's the most directly relevant of the three to *your* condition, because it trains the lateral chain that stabilises the pelvis against the asymmetric loading that started your SI problem in the first place (wallet in the back pocket, one-sided pelvic pressure). Front plank was deliberately not added: it duplicates the anti-extension work dead bug already does, and costs session time for little added return.
 

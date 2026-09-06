@@ -1,14 +1,16 @@
 ---
 title: Remaining Compliance — EU-RWA-Contracts
 date: 2026-09-06
-status: derived from the 23 .sol files in this folder + §17 of eu_tokenized_securities_smart_contract_design.md
+status: derived from the 26 .sol files in this folder + §17/§17a of eu_tokenized_securities_smart_contract_design.md
 ---
 
 # Remaining Compliance List
 
-**23 contracts built. The §17 inventory is complete.**
+**24 contracts built. §17's contract inventory and §17a's matrix are now both complete.**
 
-What is left is not "more contracts". It is three edits to existing files, and one decision nobody has made.
+The last gap — §17a's **valuation / NAV oracle**, `●` required in the Fund lane with no file — is closed. See §8, which also records what changed in the four fund modules and the one thing that stayed open.
+
+What is left is three edits to existing files, and one decision nobody has made.
 
 ---
 
@@ -66,7 +68,7 @@ Declared once, **read nowhere**. And a claim topic is a yes/no flag, while the c
 
 ## 3. What is already fine — do not rebuild
 
-- Fund rules: AIFMD II, UCITS, ELTIF portfolio limits — **5 contracts, done**
+- Fund rules: AIFMD II, UCITS, ELTIF portfolio limits — **5 contracts, done**, now all reading `ValuationOracle` rather than a private NAV (§8)
 - Venue: DLT Pilot caps, member eligibility, settlement — **done**
 - Trading: MiFIR quotes, reporting and transparency events — **done**
 - Identity: KYC claims, trusted issuers, eIDAS — **done**
@@ -135,3 +137,71 @@ Owner: operator. Everything else in this folder is portable across the answer by
 ## 7. One correction
 
 CSDR, EU Listing Act, T+1 and TFR were earlier noted as missing from the design document. **They are not missing** — all four are covered there. Remove them from any pending list.
+
+---
+
+## 8. The 24th contract — `ValuationOracle`
+
+§17a row *"Valuation / NAV oracle"* is **`●` (required) in the Fund lane**, `○⁴` in Venue. §17's *contract* inventory never listed it, which is how it stayed invisible for so long — but §5 calls it **"the #1 engineering risk"** and §17's critical path calls it **"the tightest dependency in the build"**.
+
+The Venue lane was already satisfied: `DltPilotCapGate` has a real feed — oracle address, `postedAt`, `aggregateIsFresh()`, and `revert StaleValuationFeed(...)` blocking admission. The Fund lane was not. Every quantitative limit divided by a figure nothing guarded:
+
+| Contract | NAV source before | Staleness check |
+|---|---|---|
+| `NavBorrowingCap` | `recordNavValuation(int256 delta)`, `onlyValuator` | none |
+| `UcitsFiveTenForty` | `recordNavValuation(int256 delta)`, `onlyValuator` | none |
+| `EltifConcentration` | `recordValuation(...)`, `onlyValuator` | none |
+| `LmtGate` | set once in the constructor, only ever decremented by payouts | none — **no revaluation path at all** |
+
+Two defects, and the second was worse than the first:
+
+1. **No timestamp was stored, so nothing could fail closed.** §5 is explicit: *"oracle failure must HALT issuance/redemption, not pass a stale limit."* A valuator that stopped posting left every ratio silently passing.
+2. **The feed was delta-applied, not absolute-set.** A stale absolute value self-heals on the next post. A missed *delta* never does — the running figure is permanently wrong from that point on and no later post can detect it. This one is a correctness bug independent of staleness.
+
+### What `ValuationOracle` does
+
+Absolute values only. Registered sources post, and a value is accepted when a configurable **quorum** of posts still inside `maxAgeSeconds` agree, taking the **median** — not the mean, because the failure being guarded against is one source going wrong, and a mean lets a single absurd figure drag the accepted value with it.
+
+The **deviation guard** is the part worth reading. On a move larger than the configured band the feed *halts*: it does not publish the suspicious figure, and it does not advance `acceptedAt`. The last verified value stays readable, but freshness decays on schedule and every fail-closed consumer stops. Both alternatives are worse — publishing propagates a bad valuation into a breach check, and freezing the old figure as current is exactly the silent-stale-limit case. Clearing a halt is a governance act requiring the last accepted value be re-confirmed plus a justification reference; adopting the *new* figure instead means widening the band with `configureFeed` and letting the sources repost, which leaves an event showing the band was widened to admit the move.
+
+Two read APIs, because §9's per-consumer rule is real:
+
+- `value(assetId)` — **reverts** on stale, halted or unconfigured. For anything that mints, redeems or admits.
+- `peek(assetId)` — **never reverts**, returns `(value, acceptedAt, fresh, halted)`. For passive rechecks and monitoring, where blocking an unrelated transfer would be over-enforcement.
+
+### What changed in the four fund modules
+
+⚠️ **Breaking.** Four constructors changed signature, and `recordNavValuation` / `recordValuation` are gone. Anything already deployed against those ABIs must be redeployed, not upgraded around.
+
+- **NAV is now two fields, not one.** `navAtValuation` (oracle-published, timestamped, can go stale) plus `cashSinceValuation` (subscription cash, known exactly, needs no feed). They fail differently, so they are stored separately; `nav()` is the sum. That is what lets a subscription between valuation points be reflected without anyone inventing a price.
+- **`syncNav()` and `syncAssetValuation()` are permissionless.** The figure is already guarded by the oracle's sources, quorum and band, so a role check would protect nothing — and it would hand whoever held that role the power to suppress a breach by simply not calling. Anyone who can see the fund is over a limit can now make the contract see it too.
+- **Fail-closed on acquisition, fail-open on disposal.** Drawing leverage or buying into a bucket on an unverifiable denominator is the harm. *Repaying* or *selling* on the same denominator can only move every ratio downward whatever the true NAV is — so blocking disposals on a stale feed would trap a fund in breach at exactly the moment the feed is down. `_requireFreshNavIfIncreasing` is the whole of that asymmetry.
+- **Passive rechecks still run on a stale figure.** They only flag, and a breach flag computed on last week's NAV beats no flag.
+- **`EltifConcentration` deliberately does not halt subscriptions.** Art 2(8) defines capital by contribution, so its denominator is exact and reads no price. Applying §5's halt rule here mechanically would block subscriptions for a feed the subscription path never touches. Its numerators *are* oracle-fed, and `recordAssetTrade` now refuses an increasing position in an asset with no fresh feed — **you may not acquire an asset this fund cannot value**.
+- **`LmtGate` is where the halt actually bites.** The gate cap is a percentage of NAV, so a stale NAV sizes the redemption window wrong — and an over-sized window pays early redeemers out of value belonging to the ones behind them, which is the dilution the LMT catalogue exists to prevent. `lockSelection`, `rollWindow`, `requestRedemption` and `processRedemption` all revert on a stale feed.
+
+### Still open — `LmtGate` is not yet the ELTIF cap
+
+§17a maps **ELTIF RTS Arts 5(5)–(6)** to `LmtGate`, where the redemption cap base is *liquid-asset bucket + prudently forecast 12-month cash flow*, the forecast **excluding** new-subscription and long-term-disposal proceeds, with `pct` from either the Annex I notice-period grid or the Annex II minimum-liquid-assets grid. `LmtGate` caps on `redeemableNav = nav() − sidePocketed` and has **no liquid-asset bucket, no forecast input, and neither grid**. It is a correct AIFMD II Art 16(2a) / Annex V toolkit; it is not the Art 5(5)–(6) cap. Two further fed inputs under the same staleness discipline would close it. Recorded in the file header — **do not mark this row closed**.
+
+### Rows checked and confirmed *not* gaps
+
+| §17a row | Verdict |
+|---|---|
+| Surveillance event schema (§6) | **Closed.** `MifirEventSchema` carries `OrderCreated`/`OrderModified`/`OrderCancelled` + flagged `TradePublished` and says so in its own header — the RTS 1/RTS 2 set *is* the MAR Art 8(1) set. Built once, feeds both, exactly as §7 specifies. |
+| MiFIR Art 26 / APA-DPE / CTP bridges | **Closed.** Footnote ⁸: *"The `Trade` event schema is ● in every case — what is conditional is the delivery bridge, not the data capture."* Both schemas exist; bridges are off-chain. |
+| Matching engine | **Not a contract.** Footnote ⁶: off-chain logic settling through `SubscriptionEscrow`/`LmtGate`. |
+| `LoanRetention` | **Not in scope.** Footnote ¹¹: only under a separate loan-participation mandate. |
+
+### What the oracle does not do
+
+AIFMD Art 19. The valuation **methodology** is a documented, independently-reviewed procedure off-chain; this contract records what that procedure output, when, and from how many sources. §17a's own note is blunt about the consequence — *"if the methodology is undocumented, every quantitative fund limit in §5 rests on an unauditable input."* No amount of on-chain plumbing fixes that.
+
+### Rows checked and confirmed *not* gaps
+
+| §17a row | Verdict |
+|---|---|
+| Surveillance event schema (§6) | **Closed.** `MifirEventSchema` carries `OrderCreated`/`OrderModified`/`OrderCancelled` + flagged `TradePublished` and says so in its own header — the RTS 1/RTS 2 set *is* the MAR Art 8(1) set. Built once, feeds both, exactly as §7 specifies. |
+| MiFIR Art 26 / APA-DPE / CTP bridges | **Closed.** Footnote ⁸: *"The `Trade` event schema is ● in every case — what is conditional is the delivery bridge, not the data capture."* Both schemas exist; bridges are off-chain. |
+| Matching engine | **Not a contract.** Footnote ⁶: off-chain logic settling through `SubscriptionEscrow`/`LmtGate`. |
+| `LoanRetention` | **Not in scope.** Footnote ¹¹: only under a separate loan-participation mandate. |
