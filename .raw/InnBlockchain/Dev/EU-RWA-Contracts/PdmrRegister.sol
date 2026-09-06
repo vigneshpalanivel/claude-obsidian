@@ -29,9 +29,17 @@ interface IPdmrRegister {
 
 /// @title PdmrRegister (illustrative sample — not production code)
 /// @notice The MAR Art 19(5) declared register, mapped to wallet addresses. It is the single
-///         source of the flag set that `PdmrClosedPeriodFreeze` blocks on and that
-///         `PdmrThresholdMonitor` aggregates against. Nothing else in the stack knows who a
-///         manager is.
+///         source of the flag set that `PdmrClosedPeriodFreeze` blocks on, and the wallet →
+///         person join the off-chain indexer needs to aggregate the Art 19(1a) threshold.
+///         Nothing else in the stack knows who a manager is.
+/// @dev    ⚠️ THE ART 19(1a) €20k/€50k AGGREGATION IS DELIBERATELY NOT ON-CHAIN. It gates
+///         nothing — crossing the threshold makes a transaction NOTIFIABLE, never unlawful —
+///         so a contract computing it can only emit an alert an indexer could raise anyway,
+///         while doing the job worse: it needs a price oracle to estimate a euro consideration
+///         the fiat settlement leg already knows exactly, it cannot compute BUSINESS days for
+///         the Art 19(1)/(2) deadlines, and its running total is immutable, so one bad oracle
+///         reading corrupts the year with no correction path. The indexer recomputes. See the
+///         requirements it must carry, listed in §6 of the design doc.
 /// @dev    ⚠️ THIS REGISTER IS DECLARED, NOT DERIVED — AND THAT IS THE WHOLE DIFFICULTY.
 ///         A PDMR you can find in your own onboarding data. A PCA you cannot: Art 3(1)(26)
 ///         reaches a spouse or equivalent partner, dependent children, relatives sharing the
@@ -87,8 +95,8 @@ contract PdmrRegister is IPdmrRegister {
     mapping(address => WalletRecord) private _records;
 
     /// @dev Enumeration for the off-chain register export and for reconciling the Art 19(1a)
-    ///      aggregate. Never iterated on a transfer path — the threshold monitor keys on
-    ///      `personId` directly and never needs the wallet list.
+    ///      aggregate — the indexer reads this once to learn which wallets roll up to one
+    ///      person, then aggregates from `Transfer` events. Never iterated on a transfer path.
     mapping(bytes32 => address[]) private _walletsOfPerson;
 
     mapping(bytes32 => uint64) public lastAttestedAt;
