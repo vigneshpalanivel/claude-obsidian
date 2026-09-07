@@ -348,6 +348,21 @@ contract IdentityRegistry {
         return _investors[wallet];
     }
 
+    /// @notice The off-chain investor record a wallet resolves to.
+    /// @dev    ⚠️ Added because `IIdentityGate` has always declared it and this contract never
+    ///         implemented it — `SecurityToken.recoverWallet` and `SanctionsRegistry.isBlocked`
+    ///         both call it through the interface, so the omission was a live break, not a
+    ///         missing convenience.
+    /// @dev    Returns the pointer and a registration flag rather than the whole record. Two
+    ///         consumers need to prove that two wallets are the SAME investor and nothing else;
+    ///         handing them the struct would couple them to this contract's storage layout and
+    ///         put personal-data-adjacent fields in reach of contracts with no business reading
+    ///         them.
+    function recordPointerOf(address wallet) external view returns (bytes32 pointer, bool registered) {
+        Investor storage inv = _investors[wallet];
+        return (inv.recordPointer, inv.registered);
+    }
+
     function tierOf(address wallet) external view returns (Tier) {
         return _investors[wallet].tier;
     }

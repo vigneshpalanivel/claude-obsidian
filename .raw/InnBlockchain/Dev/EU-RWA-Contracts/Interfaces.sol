@@ -191,6 +191,31 @@ interface IMarketEvents {
     function emitOrderEvent(bytes32 isinHash, bytes32 orderId, uint8 lifecycle) external;
 }
 
+/// @notice The person-scoped block limb, as the transfer hook consumes it.
+/// @dev    ⚠️ NARROWER THAN IT LOOKS ON PURPOSE. The store behind this interface holds the whole
+///         opaque block class — listing, suspicion, lapsed diligence — under one flag, and this
+///         surface exposes no way to ask which. There is no `reasonOf`, no class enum and no
+///         per-entry read here, because a consumer that could distinguish the classes would put
+///         that distinction on a public execution path. Operator tooling reads the concrete
+///         contract; the hook reads this.
+/// @dev    ⚠️ `assertTransferPermitted` REVERTS, and every revert on the block path is one
+///         argument-free generic error. Not a style choice: tipping-off is an individual
+///         criminal offence in most Member States, and a typed reason on a public ledger
+///         discloses to everyone. Even an address argument is too much — on a two-sided check it
+///         tells the caller which side failed.
+interface ISanctionsCheck {
+    function assertTransferPermitted(address from, address to) external view;
+
+    function assertNotBlocked(address wallet) external view;
+
+    function isBlocked(address wallet) external view returns (bool);
+
+    /// @dev The re-screening obligation runs against the WHOLE existing base on every list
+    ///      update, not just new joiners. The sweep itself is off-chain and unbounded; this is
+    ///      how a consumer asks whether it has fallen behind.
+    function screeningIsStale() external view returns (bool);
+}
+
 /// @notice The valuation limb. Already governance-settable across the fund modules on
 ///         operational-resilience grounds; declared here so the pattern is uniform.
 interface IValuationFeed {

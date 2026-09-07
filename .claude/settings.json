@@ -305,7 +305,12 @@
       "Bash(grep -nE \"^#{1,3} \" \"Content Strategy.md\")",
       "Bash(grep -niE \"word|length|[0-9],?[0-9]{3} ?w|pages|too long|scope\" \"Compliance Article Writing Standard.md\")",
       "WebFetch(domain:eips.ethereum.org)",
-      "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^\\\\*\\\\*Rule\\\\|^> \\\\[!\" \"Compliance Article Writing Standard.md\")"
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^\\\\*\\\\*Rule\\\\|^> \\\\[!\" \"Compliance Article Writing Standard.md\")",
+      "Bash(grep -n \"^#\\\\{2,4\\\\} \" aml-checklist.md)",
+      "Bash(grep -n \"^#\\\\{1,4\\\\} \" tfr-checklist.md)",
+      "Bash(awk 'NR>=136 && NR<=166' \"EU Tokenized Securities Compliance Brief.md\")",
+      "Bash(grep -n \"^#\\\\{1,4\\\\} \\\\|^| \" \"Content Repurposing Plan.md\")",
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^| \" REMAINING-COMPLIANCE.md)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
