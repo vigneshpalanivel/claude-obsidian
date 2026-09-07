@@ -59,7 +59,10 @@ contract LmtGate {
     address public immutable aifm;
     address public immutable regulator; // Art 25 — may force-enable a tool post-launch
 
-    ValuationOracle public immutable oracle; // marks NAV to market — absolute, never delta
+    /// @dev NOT immutable — DORA Art 28 requires the oracle stay "swappable at the contract
+    ///      layer, not hard-wired"; a constructor-set immutable reference makes a provider
+    ///      swap a redeploy of this module, which on a live fund is a re-issuance.
+    ValuationOracle public oracle; // marks NAV to market — absolute, never delta
     bytes32 public immutable navFeedId; // this fund's NAV identity in the oracle
 
     // ─────────────────────────── selection state ─────────────────────────────
@@ -136,6 +139,9 @@ contract LmtGate {
     );
     event SuspensionActivated(uint64 startedAt);
     event SuspensionLifted(uint64 endedAt);
+    /// @dev DORA Art 28 provider swap — the on-chain half of an event whose Register of
+    ///      Information entry and NCA pre-notification sit off-chain.
+    event OracleChanged(address indexed previous, address indexed next);
 
     // ─────────────────────────── errors ────────────────────────────────────────
 
@@ -151,6 +157,7 @@ contract LmtGate {
     error StaleValuation(bytes32 navFeedId);
     error AlreadyProcessed();
     error SuspensionAlreadyActive();
+    error ZeroAddress();
 
     modifier onlyAifm() {
         if (msg.sender != aifm) revert NotAifm();
@@ -160,6 +167,19 @@ contract LmtGate {
     modifier onlyRegulator() {
         if (msg.sender != regulator) revert NotRegulator();
         _;
+    }
+
+    /// @notice Repoint the NAV feed at a different `ValuationOracle` deployment.
+    /// @dev    DORA Art 28 swappability. Authority is the AIFM's, per §5's delegation note —
+    ///         parameter-setting stays with the AIFM's governance, the technology provider is
+    ///         infrastructure. ⚠️ Does not re-read NAV: adopting a new oracle's figure inside
+    ///         an administrative call would resize the gate cap with no valuation event, and
+    ///         an over-sized window pays early redeemers out of the ones behind them. Call
+    ///         `syncNav()` after — it fails closed if the new feed is not fresh.
+    function setOracle(address oracle_) external onlyAifm {
+        if (oracle_ == address(0)) revert ZeroAddress();
+        emit OracleChanged(address(oracle), oracle_);
+        oracle = ValuationOracle(oracle_);
     }
 
     modifier freshNav() {

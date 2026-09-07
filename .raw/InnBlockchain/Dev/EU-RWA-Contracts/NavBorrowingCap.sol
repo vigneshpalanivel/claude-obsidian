@@ -54,7 +54,12 @@ contract NavBorrowingCap {
     address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not share counts
     address public immutable regulator; // Art 25 — may tighten the effective ceiling post-deploy
 
-    ValuationOracle public immutable oracle; // marks NAV to market — absolute, never delta
+    /// @dev NOT immutable — DORA Art 28 requires the oracle stay "swappable at the contract
+    ///      layer, not hard-wired", and a constructor-set immutable reference makes a
+    ///      provider swap a redeploy of this module. On a live instrument that is a
+    ///      re-issuance, not an upgrade. The swap is already an Art 28(3) NCA
+    ///      pre-notification event; the contract layer must not add a redeploy on top.
+    ValuationOracle public oracle; // marks NAV to market — absolute, never delta
     bytes32 public immutable navFeedId; // this fund's NAV identity in the oracle
 
     FundType public immutable fundType;
@@ -120,6 +125,9 @@ contract NavBorrowingCap {
     event SuspensionLifted(uint64 endedAt);
     event RegulatorCeilingUpdated(uint256 oldCeilingBps, uint256 newCeilingBps);
     event NavSynced(uint256 navAtValuation, int256 cashAbsorbed, uint64 at);
+    /// @dev DORA Art 28 provider swap. The Register of Information entry and the NCA
+    ///      pre-notification are off-chain; this is the on-chain half of the same event.
+    event OracleChanged(address indexed previous, address indexed next);
 
     // ─────────────────────────── errors ──────────────────────────────────────
 
@@ -133,6 +141,7 @@ contract NavBorrowingCap {
     error WrongFundType();
     error CeilingCanOnlyTighten();
     error SuspensionAlreadyActive();
+    error ZeroAddress();
 
     modifier onlyAifm() {
         if (msg.sender != aifm) revert NotAifm();
@@ -147,6 +156,21 @@ contract NavBorrowingCap {
     modifier onlyRegulator() {
         if (msg.sender != regulator) revert NotRegulator();
         _;
+    }
+
+    /// @notice Repoint the NAV feed at a different `ValuationOracle` deployment.
+    /// @dev    DORA Art 28 swappability. Authority sits with the AIFM because §5's
+    ///         delegation note is explicit that parameter-setting authority stays with the
+    ///         AIFM's own governance and the technology provider is infrastructure — in a
+    ///         real deployment `aifm` is the timelock, not an operations key.
+    ///         ⚠️ Deliberately does NOT re-read NAV. The new oracle may hold a different
+    ///         figure, and adopting it silently inside an administrative call would move
+    ///         every ratio in this contract without a valuation event. Call `syncNav()`
+    ///         after, which fails closed if the new feed is not fresh.
+    function setOracle(address oracle_) external onlyAifm {
+        if (oracle_ == address(0)) revert ZeroAddress();
+        emit OracleChanged(address(oracle), oracle_);
+        oracle = ValuationOracle(oracle_);
     }
 
     /// @dev Applied to every path that draws leverage, opens exposure, or moves capital.

@@ -192,14 +192,32 @@ contract ModularCompliance {
 }
 
 /// @title ModuleAdapter (illustrative sample — not production code)
-/// @notice Bridges a narrow, single-purpose gate — `HoldingPeriodLock.checkTransfer(address)`,
-///         and the fund modules in this folder, which each carry their own bespoke signature
-///         — onto the `IComplianceModule` interface the stack expects.
+/// @notice Bridges a narrow, single-purpose gate carrying its own bespoke signature onto the
+///         `IComplianceModule` interface the stack expects. Concrete adapters in this folder:
+///         `CovenantGate` (→ `CovenantRegistry`), `HoldingPeriodGate` (→ `HoldingPeriodLock`)
+///         and `PdmrClosedPeriodGate` (→ `PdmrClosedPeriodFreeze`).
 /// @dev    ⚠️ The adapter exists so the gates do NOT have to be widened. Each of those
 ///         contracts is written against one Article and reverts with errors named after it;
 ///         retrofitting a common signature onto all of them would blur that mapping, which
 ///         is the one property the §13 Article→function audit map depends on. Adapt at the
 ///         boundary, keep the gate legible.
+/// @dev    ⚠️ THE FUND MODULES ARE NOT ADAPTED, AND THAT IS DELIBERATE — this NatSpec
+///         previously said they were, which was wrong in a way worth recording.
+///         `EltifConcentration`, `UcitsFiveTenForty`, `NavBorrowingCap` and `LmtGate` have
+///         no C1 veto to offer and no adapter should be written for them:
+///           • A P2P transfer moves neither the capital nor the NAV denominator, so there is
+///             nothing for `checkTransfer` to test.
+///           • A mint RAISES the denominator, which REDUCES every concentration ratio — so
+///             vetoing subscriptions on a live breach would block the remedy, the same error
+///             as blocking disposals on a stale feed.
+///           • Their `suspended` flag is the ELTIF Art 17(1)(c) / Art 16(3)–(4) window in
+///             which a limit is RELIEVED during a capital raise. It is not a trading halt,
+///             and gating mint on it would be exactly inverted.
+///           • Their `onMint`/`onBurn` take a CASH amount from the subscription agent, not
+///             the token's unit `amount`. The two are not interchangeable, so the token hook
+///             could not advance their state correctly even if it were wired.
+///         They are gated by their own reverting functions and satisfy the §11 test on that
+///         basis. What is wrong is any claim that the C1 hook reads them.
 abstract contract ModuleAdapter is IComplianceModule {
     bytes32 private immutable _moduleId;
 

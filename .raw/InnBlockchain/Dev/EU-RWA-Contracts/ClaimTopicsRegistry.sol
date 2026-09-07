@@ -25,18 +25,28 @@ contract ClaimTopicsRegistry {
     uint256 public constant TOPIC_SUITABILITY_ART25 = 5; // MiFID II Art 25 suitability outcome
     uint256 public constant TOPIC_APPROPRIATENESS = 6; // MiFID II Art 25(3) appropriateness
     uint256 public constant TOPIC_TARGET_MARKET = 7; // MiFID II Art 16(3)/24(2) target market
-    uint256 public constant TOPIC_PRIIPS_KID_DELIVERED = 8; // PRIIPs Art 13 — KID version hash bound
+    // ⚠️ TOPIC 8 (PRIIPs Art 13 "KID delivered") IS RETIRED, NOT AVAILABLE. It was declared
+    //    here and read nowhere, and a boolean topic named "KID delivered" is an invitation
+    //    to wire it back up: the flag still says yes after an Art 10 revision, so the sale
+    //    looks clean and breaches Art 13. Art 13 lives in `CovenantRegistry`, bound to the
+    //    KID's version hash. Retired rather than reused — see the note below.
 
-    // DLT Pilot Art 4(2) member-admission attributes. Note (c)–(f) are stated as POSITIVE
-    // attributes deliberately: `MemberEligibility` requires them to be recorded as
-    // explicitly false, which is only expressible if the attribute itself is the topic.
+    // DLT Pilot Art 4(2) member-admission attributes.
     uint256 public constant TOPIC_GOOD_REPUTE = 20; // Art 4(2)(a)
     uint256 public constant TOPIC_COMPETENCE_INCL_DLT = 21; // Art 4(2)(b)
-    uint256 public constant TOPIC_IS_MARKET_MAKER_ON_MTF = 22; // Art 4(2)(c) — must be FALSE
-    uint256 public constant TOPIC_USES_HFT_ON_MTF = 23; // Art 4(2)(d) — must be FALSE
-    uint256 public constant TOPIC_PROVIDES_DEA_TO_MTF = 24; // Art 4(2)(e) — must be FALSE
-    uint256 public constant TOPIC_DEALS_OWN_ACCOUNT_ON_CLIENT_ORDERS = 25; // Art 4(2)(f) — must be FALSE
-    uint256 public constant TOPIC_INFORMED_CONSENT_GIVEN = 26; // Art 4(2)(g)
+
+    // ⚠️ TOPICS 22–26 (Art 4(2)(c)–(g)) ARE RETIRED, NOT AVAILABLE. Those conditions moved
+    //    to `CovenantRegistry`: (c)–(f) are the member's own negative declarations binding
+    //    the SENDER on every transfer, which no attestation-about-the-investor model
+    //    expresses, and (g) is consent given against a specific risk disclosure and must
+    //    bind that document's version hash. As boolean claim topics, updating the venue's
+    //    risk disclosure left every stale consent reading as valid.
+    //
+    // ⚠️ RETIRED NUMBERS ARE NEVER REASSIGNED. An identity record written against the old
+    //    numbering must not be silently reinterpretable as a later topic — a stale claim
+    //    that resolves to nothing fails closed, a stale claim that resolves to something
+    //    else fails open, and only one of those is survivable. Next free topic is 28.
+
     uint256 public constant TOPIC_DLT_RISK_WARNINGS_ACK = 27; // retail package — incl. regime impermanence
 
     // ─────────────────────────── roles ────────────────────────────────────────

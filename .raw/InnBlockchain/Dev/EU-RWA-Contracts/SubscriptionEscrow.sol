@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {DocumentRegistry} from "./DocumentRegistry.sol";
+
 /// @title SubscriptionEscrow (illustrative sample — not production code)
 /// @notice Prospectus Regulation Art 3(2)/6/12/17/21/23 — gates a primary token offer on
 ///         the public-offer threshold, holds subscriptions in escrow while any statutory
@@ -64,6 +66,21 @@ contract SubscriptionEscrow {
     ///         liability, no ledger signal warns you on its own.
     uint64 public prospectusValidUntil;
 
+    /// @notice The registry the prospectus and its supplements are anchored in.
+    /// @dev    ⚠️ This link existed only in the design document until now, and its absence
+    ///         was the defect. §8 describes the Art 23(2) window as opening when a
+    ///         supplement is published *on `DocumentRegistry`* — but the escrow opened it on
+    ///         an unrelated governance call, so the two could diverge in both directions:
+    ///         anchor a supplement and forget the escrow call and **no withdrawal window
+    ///         opens at all**, which is a straight Art 23(2) breach the contract reports as
+    ///         a clean offer; or open a window here with nothing filed, which counts a
+    ///         withdrawal period against a document no investor was ever given.
+    ///         Unset (address(0)) in EXEMPT mode — there is no approved prospectus.
+    DocumentRegistry public documents;
+
+    /// @notice The `docRef` of the prospectus this offer runs on. bytes32(0) in EXEMPT mode.
+    bytes32 public prospectusDocRef;
+
     // ─────────────────────────── withdrawal windows ───────────────────────────
 
     enum WindowType {
@@ -125,6 +142,10 @@ contract SubscriptionEscrow {
         uint256 amountWei
     );
     event SupplementPublished(uint256 indexed windowIndex, uint64 opensAt, uint64 closesAt, uint64 scopeCutoff);
+    /// @dev The reconciliation key. An indexer joins these against `DocumentRegistry`'s own
+    ///      anchoring events and alarms on a supplement that has no window — the failure
+    ///      direction no on-chain check can catch.
+    event SupplementAnchorVerified(bytes32 indexed versionHash, uint64 approvedAt);
     event FinalPricePublished(uint256 indexed windowIndex, uint64 opensAt, uint64 closesAt);
     event AcceptanceWithdrawn(uint256 indexed subscriptionId, address indexed investor, uint256 refundedWei);
     event Settled(uint256 indexed subscriptionId, address indexed investor, uint256 amountWei);
@@ -140,6 +161,14 @@ contract SubscriptionEscrow {
     error ExemptThresholdBreached(bytes32 jurisdiction, uint256 wouldRaiseTo, uint256 thresholdWei);
     error OfferCeilingBreached(uint256 wouldRaiseTo, uint256 ceilingWei);
     error ProspectusExpired(uint64 validUntil);
+    /// @dev The supplement was not found in `DocumentRegistry`, or was found without a
+    ///      recorded NCA approval. Art 23(1) gives the NCA up to 5 working days and the
+    ///      supplement must be approved AND published before the window it opens means
+    ///      anything — so an unapproved hash opening a withdrawal window is a window
+    ///      counted against a document no investor can have been given.
+    error SupplementNotAnchoredAndApproved(bytes32 versionHash);
+    /// @dev The prospectus this offer runs on is no longer anchored in `DocumentRegistry`.
+    error ProspectusAnchorMissing(bytes32 docRef);
     error FinalPriceAlreadyPublished();
     error FinalPriceNeverOmitted();
     error NotWithdrawable(uint256 subscriptionId);
@@ -156,13 +185,20 @@ contract SubscriptionEscrow {
     /// @param maxOfferAmountWei_          PROSPECTUS mode only; ignored (must pass 0) in EXEMPT mode.
     /// @param prospectusValidUntil_       PROSPECTUS mode only; ignored (must pass 0) in EXEMPT mode.
     /// @param finalPriceOmittedAtFiling_  PROSPECTUS mode only; ignored (must pass false) in EXEMPT mode.
+    /// @param documents_          `DocumentRegistry` holding the prospectus and its
+    ///                            supplements. PROSPECTUS mode only; pass address(0) in
+    ///                            EXEMPT mode, which by definition has no approved
+    ///                            prospectus to anchor.
+    /// @param prospectusDocRef_   The registry `docRef` of the prospectus this offer runs on.
     constructor(
         address issuer_,
         address governance_,
         Mode mode_,
         uint256 maxOfferAmountWei_,
         uint64 prospectusValidUntil_,
-        bool finalPriceOmittedAtFiling_
+        bool finalPriceOmittedAtFiling_,
+        address documents_,
+        bytes32 prospectusDocRef_
     ) {
         issuer = issuer_;
         governance = governance_;
@@ -172,6 +208,8 @@ contract SubscriptionEscrow {
             maxOfferAmountWei = maxOfferAmountWei_;
             prospectusValidUntil = prospectusValidUntil_;
             finalPriceOmittedAtFiling = finalPriceOmittedAtFiling_;
+            documents = DocumentRegistry(documents_);
+            prospectusDocRef = prospectusDocRef_;
         } else {
             finalPriceOmittedAtFiling = false;
         }
@@ -228,6 +266,13 @@ contract SubscriptionEscrow {
             jurisdictionRaisedWei[jurisdiction] = wouldRaiseTo;
         } else {
             if (block.timestamp > prospectusValidUntil) revert ProspectusExpired(prospectusValidUntil);
+            // Art 12 has two limbs and the date is only one of them: a prospectus is valid
+            // for 12 months from approval **and only while it remains the anchored, current
+            // document**. Checking the clock alone accepts subscriptions against a
+            // prospectus that has been withdrawn or superseded in the registry.
+            if (documents.currentVersionHash(prospectusDocRef) == bytes32(0)) {
+                revert ProspectusAnchorMissing(prospectusDocRef);
+            }
 
             uint256 wouldRaiseTo = totalRaisedWei + msg.value;
             if (wouldRaiseTo > maxOfferAmountWei) revert OfferCeilingBreached(wouldRaiseTo, maxOfferAmountWei);
@@ -251,13 +296,30 @@ contract SubscriptionEscrow {
     // only subscriptions accepted BEFORE the supplement is published.
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @param supplementVersionHash  The supplement's version hash as anchored in
+    ///                               `DocumentRegistry`. Checked, not trusted.
     /// @param opensAt/closesAt  Fed in off-chain against a real working-day calendar
     ///                          (TARGET2) — never computed on-chain from block.timestamp.
+    /// @dev    ⚠️ The window can no longer be opened against a supplement that was never
+    ///         filed or never approved. This is the same gate `DoraGovernor.queueUpgrade`
+    ///         applies to a disclosure artefact, and for the same reason: Art 23(1) gives
+    ///         the NCA up to 5 working days, and approval and publication precede the thing
+    ///         they authorise. It does NOT close the other direction — nothing on-chain can
+    ///         force this call when a supplement is anchored — so anchoring a supplement
+    ///         must remain a two-transaction operational step with a named owner. Emitting
+    ///         the hash here is what lets an indexer reconcile the two sets and alarm on a
+    ///         supplement with no window.
     function publishSupplement(
+        bytes32 supplementVersionHash,
         uint64 opensAt,
         uint64 closesAt
     ) external onlyGovernance returns (uint256 windowIndex) {
         if (mode != Mode.Prospectus) revert WrongMode();
+
+        (bool exists, uint64 approvedAt) = documents.documentStatus(supplementVersionHash);
+        if (!exists || approvedAt == 0) revert SupplementNotAnchoredAndApproved(supplementVersionHash);
+
+        emit SupplementAnchorVerified(supplementVersionHash, approvedAt);
 
         windowIndex = windows.length;
         windows.push(

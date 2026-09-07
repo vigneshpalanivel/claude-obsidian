@@ -28,11 +28,33 @@ pragma solidity ^0.8.22;
 ///         worse — publishing the suspicious figure propagates a bad valuation into a
 ///         breach check, and freezing the old figure as though it were current is exactly
 ///         the "silently passes a stale limit" case the design document names.
+/// @dev    ⚠️ CONSUMERS MUST HOLD THIS ADDRESS BEHIND A SETTER, NEVER `immutable`. DORA
+///         Art 28 requires the oracle stay "swappable at the contract layer, not
+///         hard-wired", and a constructor-set immutable reference is hard-wired on any
+///         reading: swapping the provider then means redeploying every consuming module,
+///         which for a live instrument is a re-issuance rather than an upgrade. The swap is
+///         already an Art 28(3) NCA pre-notification event — plan it in weeks, not blocks —
+///         so the contract layer must not add a redeploy on top of it.
+/// @dev    ⚠️ "MULTI-SOURCE" IS A PARAMETER WITH A FLOOR, NOT A CONSTANT. No checklist in
+///         the compliance library contains a dual-source or redundant-feed requirement; the
+///         phrase entered the design document from outside it. The duties that DO bite are
+///         AIFMD Art 19(5) — the AIFM stays liable for correct valuation even through an
+///         external valuer — and DORA Art 28(2) concentration risk, which asks whether two
+///         feeds from one provider are two sources at all. Neither gives a number. A single
+///         administrator is a legitimate quorum of 1; what is refused at configuration time
+///         is quorum 1 WITH the deviation guard disabled, because that has no defence left.
 /// @dev    ⚠️ AIFMD Art 19 IS THE THING THIS CONTRACT DOES NOT DO. The valuation
 ///         METHODOLOGY is a documented, independently-reviewed procedure off-chain. This
 ///         contract records what that procedure output, when, and from how many sources.
 ///         If the methodology is undocumented, every limit downstream rests on an
 ///         unauditable input and no amount of on-chain plumbing fixes it.
+/// @notice The pause surface the deviation guard escalates to — in practice `DoraGovernor`.
+/// @dev    Declared here rather than imported so this file stays standalone; the deployment
+///         wires it to the real governance wrapper.
+interface ICircuitBreaker {
+    function tripFromOracle(bytes32 assetId) external;
+}
+
 contract ValuationOracle {
     // ─────────────────────────── limits ──────────────────────────────────────
 
@@ -43,10 +65,29 @@ contract ValuationOracle {
 
     // ─────────────────────────── roles ───────────────────────────────────────
 
-    address public immutable governance;
+    /// @dev NOT immutable. This key is effectively authority over every fund limit that
+    ///      divides by this feed, and §9 requires an on-chain key-rotation path with no
+    ///      single unrotatable authority over freeze/mint/finality. Rotation is two-step so
+    ///      a mistyped address cannot strand the contract — which for this contract means
+    ///      stranding every consuming fund at its next `configureFeed` or `clearHalt`.
+    address public governance;
+    address public pendingGovernance;
+
+    /// @notice Optional. Tripped by the deviation guard so an anomaly PAUSES rather than
+    ///         merely emits. §9's "auto-trip on oracle-anomaly" is not satisfied by an event:
+    ///         DORA Art 19's reporting clock runs from DETECTION, so a control that waits for
+    ///         an operator to notice has already spent the budget it exists to protect.
+    /// @dev    Called inside try/catch and never allowed to revert the valuation write — a
+    ///         mis-set or failing breaker must not be able to brick the feed it protects.
+    address public circuitBreaker;
 
     address[] private _sources;
     mapping(address => bool) public isSource;
+
+    /// @dev How many configured feeds require each quorum level, indexed by quorum (1..7).
+    ///      Kept so `removeSource` can refuse in O(MAX_SOURCES) instead of scanning every
+    ///      feed — see the orphaning note there.
+    uint256[MAX_SOURCES + 1] private _feedsRequiringQuorum;
 
     // ─────────────────────────── feeds ───────────────────────────────────────
 
@@ -71,7 +112,14 @@ contract ValuationOracle {
         uint8 quorum;
         /// @dev Move, against the last accepted value, beyond which acceptance halts.
         ///      0 disables the guard — allowed, and noted in `FeedConfigured`, because a
-        ///      genuinely volatile feed with a tight band halts permanently.
+        ///      genuinely volatile feed with a tight band halts permanently. It may not be
+        ///      combined with a quorum of 1; see `configureFeed`.
+        ///      ⚠️ This is a MOVE, not a RATE, and it is deliberately not scaled by how long
+        ///      the feed has been stale. The intuition that it should be — "it was down a
+        ///      week, of course NAV moved" — inverts the control: the longer this contract
+        ///      has been blind, the LESS a large jump should be adopted without a human. A
+        ///      feed that lapses and returns out of band is precisely what the halt is for,
+        ///      so halt-on-recovery is intended. Size the band per acceptance interval.
         uint16 maxDeviationBps;
         uint256 value;
         uint64 acceptedAt;
@@ -79,6 +127,14 @@ contract ValuationOracle {
         ///      that met a quorum of 3 and one that met a quorum of 1 are not equally
         ///      good evidence, and only the reader knows whether that matters.
         uint8 acceptedSourceCount;
+        /// @dev True when the current `acceptedAt` came from `clearHalt` — a governance
+        ///      RE-ATTESTATION of an unchanged figure — rather than from sources agreeing.
+        ///      Without this flag the two are indistinguishable through `value()`, and the
+        ///      contract would be doing the very thing its header condemns: presenting an
+        ///      old figure as current. A consumer that cares (sizing a redemption window,
+        ///      say) can refuse to act on a re-attested value; most consumers will not care,
+        ///      which is why this is exposed rather than enforced.
+        bool reattested;
     }
 
     mapping(bytes32 => Feed) private _feeds;
@@ -95,6 +151,12 @@ contract ValuationOracle {
 
     event SourceAdded(address indexed source);
     event SourceRemoved(address indexed source);
+    event GovernanceTransferProposed(address indexed current, address indexed proposed);
+    event GovernanceTransferred(address indexed previous, address indexed next);
+    event CircuitBreakerSet(address indexed breaker);
+    /// @dev The breaker refused or reverted. The halt still stands — this records that the
+    ///      automatic escalation did not land, so it is an operations page in its own right.
+    event CircuitBreakerCallFailed(bytes32 indexed assetId, address indexed breaker);
     event FeedConfigured(
         bytes32 indexed assetId,
         uint64 maxAgeSeconds,
@@ -106,6 +168,7 @@ contract ValuationOracle {
     /// @dev Not an alert an operator can ignore: while this is latched the feed goes stale
     ///      and every fail-closed consumer stops.
     event DeviationGuardTripped(bytes32 indexed assetId, uint256 lastAccepted, uint256 proposed, uint16 bandBps);
+    /// @dev `reattested` is implicit and total here: clearing a halt never writes a price.
     event HaltCleared(bytes32 indexed assetId, uint256 confirmedValue, bytes32 justificationRef);
     /// @dev Emitted on a post that could not be accepted for want of fresh agreeing
     ///      sources. Distinct from the deviation trip: nothing is wrong with the number,
@@ -115,6 +178,8 @@ contract ValuationOracle {
     // ─────────────────────────── errors ──────────────────────────────────────
 
     error NotGovernance();
+    error NotPendingGovernance();
+    error ZeroAddress();
     error NotSource();
     error TooManySources();
     error AlreadySource(address source);
@@ -129,6 +194,14 @@ contract ValuationOracle {
     error FeedHalted(bytes32 assetId);
     error FeedNotHalted(bytes32 assetId);
     error ConfirmationMustMatchLastAccepted(uint256 supplied, uint256 lastAccepted);
+    /// @dev A single source with the deviation guard switched off has no defence of any
+    ///      kind: the median IS that source, and nothing checks the figure it posts.
+    ///      Either configuration alone is defensible; together they are not.
+    error UndefendedFeedConfiguration();
+    /// @dev Removing this source would leave at least one configured feed with a quorum it
+    ///      can never reach again. That feed would not revert — it would emit `QuorumNotMet`
+    ///      forever, go stale on schedule, and silently freeze every fail-closed consumer.
+    error WouldOrphanFeedQuorum(uint8 quorum, uint256 remainingSources);
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -136,7 +209,36 @@ contract ValuationOracle {
     }
 
     constructor(address governance_) {
+        if (governance_ == address(0)) revert ZeroAddress();
         governance = governance_;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // GOVERNANCE
+    //
+    // Two-step on purpose. A one-step transfer to a mistyped address does not
+    // just lock this contract — it locks `configureFeed` and `clearHalt`, so
+    // every consuming fund is one halt away from being frozen with no path back.
+    // ═══════════════════════════════════════════════════════════════════════
+
+    function transferGovernance(address next) external onlyGovernance {
+        if (next == address(0)) revert ZeroAddress();
+        pendingGovernance = next;
+        emit GovernanceTransferProposed(governance, next);
+    }
+
+    function acceptGovernance() external {
+        if (msg.sender != pendingGovernance) revert NotPendingGovernance();
+        address previous = governance;
+        governance = msg.sender;
+        pendingGovernance = address(0);
+        emit GovernanceTransferred(previous, msg.sender);
+    }
+
+    /// @notice Set or clear (address(0)) the pause target the deviation guard trips.
+    function setCircuitBreaker(address breaker) external onlyGovernance {
+        circuitBreaker = breaker;
+        emit CircuitBreakerSet(breaker);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -148,6 +250,7 @@ contract ValuationOracle {
     // ═══════════════════════════════════════════════════════════════════════
 
     function addSource(address source) external onlyGovernance {
+        if (source == address(0)) revert ZeroAddress();
         if (isSource[source]) revert AlreadySource(source);
         if (_sources.length >= MAX_SOURCES) revert TooManySources();
         isSource[source] = true;
@@ -155,8 +258,22 @@ contract ValuationOracle {
         emit SourceAdded(source);
     }
 
+    /// @dev Refuses if any configured feed would be left with an unreachable quorum.
+    ///      `configureFeed` validates `quorum <= sources` at write time and this is the
+    ///      other half of that invariant — without it a single governance transaction can
+    ///      freeze issuance and redemption across every fund on the platform with no
+    ///      revert, no error and no event saying so. Raise the source count back, or lower
+    ///      the affected feeds' quorum first.
     function removeSource(address source) external onlyGovernance {
         if (!isSource[source]) revert UnknownSource(source);
+
+        uint256 remaining = _sources.length - 1;
+        for (uint256 q = remaining + 1; q <= MAX_SOURCES; q++) {
+            if (_feedsRequiringQuorum[q] != 0) {
+                revert WouldOrphanFeedQuorum(uint8(q), remaining);
+            }
+        }
+
         isSource[source] = false;
         for (uint256 i = 0; i < _sources.length; i++) {
             if (_sources[i] == source) {
@@ -180,6 +297,18 @@ contract ValuationOracle {
     ///         tightening `maxAgeSeconds` can therefore make a currently-fresh feed stale
     ///         in the same transaction. That is the intended direction of travel: the new
     ///         policy applies to the value already on the books, not only to the next one.
+    /// @dev ⚠️ One combination is refused: `quorum == 1` with the deviation guard disabled.
+    ///      Each is separately legitimate — a single-administrator fund genuinely has one
+    ///      source, and a genuinely volatile feed with a tight band halts permanently — but
+    ///      together they leave the accepted value equal to whatever one address last said,
+    ///      with nothing checking it. The design document is explicit that with a quorum of
+    ///      one the deviation guard IS the remaining defence, so switching both off is not a
+    ///      configuration anyone should be able to reach by accident.
+    ///      ⚠️ Note this is the floor, not the requirement. "Dual-source" appears in no
+    ///      checklist in the compliance library; the real duty is AIFMD Art 19(5), which
+    ///      keeps the AIFM liable for correct valuation however it is sourced, and DORA
+    ///      Art 28(2), which asks whether two feeds from one provider are two sources at
+    ///      all. Neither prescribes a number. Set this per fund, with the D4 answer.
     function configureFeed(
         bytes32 assetId,
         uint64 maxAgeSeconds,
@@ -189,12 +318,17 @@ contract ValuationOracle {
         if (maxAgeSeconds == 0) revert MaxAgeMustBeNonZero();
         if (quorum == 0) revert QuorumBelowOne();
         if (quorum > _sources.length) revert QuorumExceedsSources(quorum, _sources.length);
+        if (quorum == 1 && maxDeviationBps == 0) revert UndefendedFeedConfiguration();
 
         Feed storage f = _feeds[assetId];
         if (!f.configured) {
             f.configured = true;
             _feedIds.push(assetId);
+        } else {
+            _feedsRequiringQuorum[f.quorum]--;
         }
+        _feedsRequiringQuorum[quorum]++;
+
         f.maxAgeSeconds = maxAgeSeconds;
         f.quorum = quorum;
         f.maxDeviationBps = maxDeviationBps;
@@ -242,6 +376,7 @@ contract ValuationOracle {
             if ((diff * BPS_DENOM) / f.value > f.maxDeviationBps) {
                 f.halted = true;
                 emit DeviationGuardTripped(assetId, f.value, candidate, f.maxDeviationBps);
+                _tripCircuitBreaker(assetId);
                 return;
             }
         }
@@ -249,7 +384,23 @@ contract ValuationOracle {
         f.value = candidate;
         f.acceptedAt = uint64(block.timestamp);
         f.acceptedSourceCount = count;
+        // Sources agreed, so whatever governance last re-attested is superseded.
+        f.reattested = false;
         emit ValuationAccepted(assetId, candidate, count, f.acceptedAt);
+    }
+
+    /// @dev §9's "auto-trip on oracle-anomaly". Isolated from the halt on purpose: the halt
+    ///      is the control, the breaker call is the escalation, and a breaker that reverts,
+    ///      runs out of gas or was set to a non-contract must not be able to undo the halt
+    ///      or block the posting source. Failure is recorded, never propagated.
+    function _tripCircuitBreaker(bytes32 assetId) private {
+        address breaker = circuitBreaker;
+        if (breaker == address(0)) return;
+        try ICircuitBreaker(breaker).tripFromOracle(assetId) {
+            // escalated
+        } catch {
+            emit CircuitBreakerCallFailed(assetId, breaker);
+        }
     }
 
     function _freshPosts(bytes32 assetId, uint64 maxAgeSeconds)
@@ -310,6 +461,12 @@ contract ValuationOracle {
 
         f.halted = false;
         f.acceptedAt = uint64(block.timestamp);
+        // ⚠️ This is the one path that makes a figure fresh without any source agreeing to
+        // it. Flag it, or `value()` presents a governance re-attestation and a quorum of
+        // sources identically — which is the "old figure as though it were current" failure
+        // this contract's header names. The flag clears on the next real acceptance.
+        f.reattested = true;
+        f.acceptedSourceCount = 0;
         emit HaltCleared(assetId, f.value, justificationRef);
     }
 
@@ -321,6 +478,11 @@ contract ValuationOracle {
     ///         lets value move on the strength of the number: issuance and redemption HALT
     ///         on oracle failure rather than transacting against a figure nobody can vouch
     ///         for.
+    /// @dev Deliberately does NOT reject a re-attested figure. Most consumers should not
+    ///      care, and making them care by default would mean a halt permanently downgrades
+    ///      a fund's whole limit set. Consumers that DO care — anything sizing a payout from
+    ///      NAV rather than merely testing a ceiling against it — read `valueWithProvenance`
+    ///      and decide for themselves.
     function value(bytes32 assetId) external view returns (uint256) {
         Feed storage f = _feeds[assetId];
         if (!f.configured) revert FeedNotConfigured(assetId);
@@ -329,6 +491,24 @@ contract ValuationOracle {
             revert StaleValuation(assetId, f.acceptedAt, f.maxAgeSeconds);
         }
         return f.value;
+    }
+
+    /// @notice Same fail-closed guarantees as `value`, plus how the figure came to be fresh.
+    /// @return v            the accepted value
+    /// @return sourceCount  how many sources agreed — `0` means none did
+    /// @return reattested   `true` if freshness came from `clearHalt`, not from sources
+    function valueWithProvenance(bytes32 assetId)
+        external
+        view
+        returns (uint256 v, uint8 sourceCount, bool reattested)
+    {
+        Feed storage f = _feeds[assetId];
+        if (!f.configured) revert FeedNotConfigured(assetId);
+        if (f.halted) revert FeedHalted(assetId);
+        if (f.acceptedAt == 0 || block.timestamp > f.acceptedAt + f.maxAgeSeconds) {
+            revert StaleValuation(assetId, f.acceptedAt, f.maxAgeSeconds);
+        }
+        return (f.value, f.acceptedSourceCount, f.reattested);
     }
 
     /// @notice Never-reverts read. Use on passive paths — a mark-to-market recheck that only

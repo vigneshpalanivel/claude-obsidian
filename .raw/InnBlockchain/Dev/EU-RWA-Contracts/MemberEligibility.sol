@@ -16,19 +16,32 @@ interface IIdentityRegistryClaims {
 }
 
 /// @title MemberEligibility (illustrative sample — not production code)
-/// @notice DLT Pilot Art 4(2) — the seven cumulative conditions a natural or legal person
-///         must satisfy to be admitted directly as a member or participant of a DLT MTF,
-///         i.e. to trade without an intermediating investment firm. This is the exemption
-///         that makes retail-direct venue access possible at all, and it is the only reason
-///         most operators enter the pilot.
-/// @dev    ⚠️ FOUR OF THE SEVEN ARE NEGATIVE FACTS — (c) not a market maker on this MTF,
-///         (d) not using high-frequency algorithmic trading on it, (e) not providing others
-///         with direct electronic access to it, (f) not dealing on own account when
-///         executing client orders. **A missing claim is not a clean record.** The topics
-///         below are therefore the POSITIVE attribute, and admission requires each to be
-///         recorded as explicitly `AssertedFalse`. `NotRecorded` fails. Encoding these as
-///         "absence of a bad claim" — the intuitive shape — silently admits every wallet
-///         nobody has yet assessed, which is the whole population on day one.
+/// @notice DLT Pilot Art 4(2) — **conditions (a) and (b) only** of the seven cumulative
+///         conditions a natural or legal person must satisfy to be admitted directly as a
+///         member or participant of a DLT MTF, i.e. to trade without an intermediating
+///         investment firm. This is the exemption that makes retail-direct venue access
+///         possible at all, and it is the only reason most operators enter the pilot.
+/// @dev    ⚠️ THE SEVEN CONDITIONS HAVE TWO HOMES, AND THE SPLIT IS NOT ARBITRARY. This
+///         contract holds **(a) good repute** and **(b) competence including knowledge of
+///         how DLT works** — both are determinations the venue makes ABOUT the member and
+///         writes back as claims, which is the C3 attestation model.
+///         **(c)–(g) live in `CovenantRegistry` (C7)** and were removed from here:
+///           • (c)–(f) are the member's own negative declarations — not a market maker on
+///             this MTF, not running HFT on it, not providing others direct electronic
+///             access to it, not dealing on own account when executing client orders. No
+///             third party can attest them, and they bind the SENDER on every transfer,
+///             which an attestation-about-the-investor model cannot express.
+///           • (g) informed consent is given against a SPECIFIC risk disclosure and must
+///             bind that document's version hash. As a boolean claim it was a live breach:
+///             update the venue's risk disclosure and every stale consent still read valid.
+///         ⚠️ **Admission is only compliant if BOTH surfaces are checked.** Registering this
+///         module without also registering `CovenantGate` enforces two of seven conditions
+///         and reports the result as a clean admission.
+/// @dev    ⚠️ A MISSING CLAIM IS NOT A CLEAN RECORD. (a) and (b) must be recorded as
+///         explicitly `AssertedTrue`; `NotRecorded` fails. The same principle governs the
+///         negative conditions in their new home — encoding them as "absence of a bad
+///         claim", the intuitive shape, silently admits every wallet nobody has yet
+///         assessed, which is the whole population on day one.
 /// @dev    Art 4(2), 2nd subparagraph lets the NCA require additional measures proportionate
 ///         to the risk profile of admitted natural persons. Those arrive after authorisation,
 ///         from a supervisor, in a form nobody can predict at build time — hence
@@ -53,11 +66,16 @@ contract MemberEligibility {
     // Art 4(2) topics. Must match `ClaimTopicsRegistry`'s catalogue.
     uint256 public constant TOPIC_GOOD_REPUTE = 20; // (a) — AssertedTrue
     uint256 public constant TOPIC_COMPETENCE_INCL_DLT = 21; // (b) — AssertedTrue
-    uint256 public constant TOPIC_IS_MARKET_MAKER_ON_MTF = 22; // (c) — AssertedFalse
-    uint256 public constant TOPIC_USES_HFT_ON_MTF = 23; // (d) — AssertedFalse
-    uint256 public constant TOPIC_PROVIDES_DEA_TO_MTF = 24; // (e) — AssertedFalse
-    uint256 public constant TOPIC_DEALS_OWN_ACCOUNT_ON_CLIENT_ORDERS = 25; // (f) — AssertedFalse
-    uint256 public constant TOPIC_INFORMED_CONSENT_GIVEN = 26; // (g) — AssertedTrue
+
+    // ⚠️ TOPICS 22–26 DELETED — Art 4(2)(c)–(g) live in `CovenantRegistry`, not here.
+    //    They are NOT reassigned to anything else: 22–26 stay retired in
+    //    `ClaimTopicsRegistry`'s catalogue so that an identity record written against the
+    //    old numbering can never be silently reinterpreted as some later topic. A retired
+    //    topic number is cheaper than a reused one.
+    //    Deleted rather than left declared-and-unread, because the sibling case is already
+    //    on the record: `ClaimTopicsRegistry`'s `TOPIC_PRIIPS_KID_DELIVERED` was left
+    //    declared after PRIIPs Art 13 moved to the covenant store, and it reads as an
+    //    invitation to wire a boolean back up to an obligation that needs a version hash.
 
     // Retail package. Not part of Art 4(2)'s seven, but the exemption imports it: admitting
     // natural persons directly pulls in a MiFID-grade investor-protection set, and
@@ -132,24 +150,32 @@ contract MemberEligibility {
         venue = venue_;
         identity = IIdentityRegistryClaims(identity_);
 
+        // ⚠️ ONLY (a) AND (b) ARE CLAIMS. Conditions (c)–(g) were configured here as claim
+        //    topics and have been removed — they belong in `CovenantRegistry` (C7), and
+        //    having them in both places gave one obligation two on-chain enforcement points
+        //    with different semantics.
+        //
+        //    (a) and (b) are attestations ABOUT the member — good repute, and competence
+        //    including knowledge of how DLT works — determined off-chain by the venue and
+        //    written back as claims. That is the C3 model and it is correct for them.
+        //
+        //    (c)–(f) are the member's own negative declarations (not a market maker, not
+        //    running HFT, not providing DEA onward, not dealing on own account against
+        //    client orders). No third party can attest them, and they bind the SENDER on
+        //    every transfer — the `SEND` gate — which an attestation-about-the-investor
+        //    model cannot express.
+        //
+        //    (g) is the one that made the duplication unsafe. Informed consent is given
+        //    AGAINST A SPECIFIC RISK DISCLOSURE, so it must bind that document's version
+        //    hash. As the boolean claim topic it was here, updating the venue's risk
+        //    disclosure left every stale consent reading as valid — a live Art 4(2)(g)
+        //    breach the contract reported as a clean admission. `CovenantRegistry`'s
+        //    `invalidation = ON_NEW_DOCUMENT_VERSION` is what closes it.
         _push(TOPIC_GOOD_REPUTE, IIdentityRegistryClaims.ClaimValue.AssertedTrue, "ART_4_2_A_GOOD_REPUTE");
-        _push(TOPIC_COMPETENCE_INCL_DLT, IIdentityRegistryClaims.ClaimValue.AssertedTrue, "ART_4_2_B_COMPETENCE_DLT");
         _push(
-            TOPIC_IS_MARKET_MAKER_ON_MTF,
-            IIdentityRegistryClaims.ClaimValue.AssertedFalse,
-            "ART_4_2_C_NOT_MARKET_MAKER"
-        );
-        _push(TOPIC_USES_HFT_ON_MTF, IIdentityRegistryClaims.ClaimValue.AssertedFalse, "ART_4_2_D_NO_HFT");
-        _push(TOPIC_PROVIDES_DEA_TO_MTF, IIdentityRegistryClaims.ClaimValue.AssertedFalse, "ART_4_2_E_NO_DEA_ONWARD");
-        _push(
-            TOPIC_DEALS_OWN_ACCOUNT_ON_CLIENT_ORDERS,
-            IIdentityRegistryClaims.ClaimValue.AssertedFalse,
-            "ART_4_2_F_NO_OWN_ACCOUNT"
-        );
-        _push(
-            TOPIC_INFORMED_CONSENT_GIVEN,
+            TOPIC_COMPETENCE_INCL_DLT,
             IIdentityRegistryClaims.ClaimValue.AssertedTrue,
-            "ART_4_2_G_INFORMED_CONSENT"
+            "ART_4_2_B_COMPETENCE_DLT"
         );
     }
 

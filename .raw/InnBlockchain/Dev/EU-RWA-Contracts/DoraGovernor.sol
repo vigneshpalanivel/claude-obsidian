@@ -69,6 +69,10 @@ contract DoraGovernor {
     // ─────────────────────────── pause ────────────────────────────────────────
 
     bool public paused;
+
+    /// @notice The `ValuationOracle` allowed to call `tripFromOracle`. address(0) disables
+    ///         automatic tripping and leaves the deviation halt as an event-only signal.
+    address public oracleTripSource;
     uint64 public pausedAt;
 
     // ─────────────────────────── key rotation register ────────────────────────
@@ -104,6 +108,10 @@ contract DoraGovernor {
     event TimelockDelaySet(uint64 oldSeconds, uint64 newSeconds);
 
     event Paused(bytes32 reasonHash, uint64 at);
+    event OracleTripSourceSet(address indexed previous, address indexed next);
+    /// @dev Emitted on every trip, including ones that found the system already paused —
+    ///      the second halted feed is information even when it changes no state.
+    event OracleTripReceived(bytes32 indexed assetId, address indexed oracle, uint64 at);
     event Unpaused(uint64 at);
 
     event KeySetRotated(bytes32 signerSetHash, uint16 threshold, bytes32 reasonCode, uint64 at);
@@ -126,6 +134,7 @@ contract DoraGovernor {
     error NotGovernance();
     error IsPaused();
     error NotPaused();
+    error NotOracleTripSource();
     error DelayBelowFloor(uint64 proposed, uint64 floor);
     error UpgradeExists(bytes32 upgradeId);
     error UnknownUpgrade(bytes32 upgradeId);
@@ -261,6 +270,36 @@ contract DoraGovernor {
         paused = true;
         pausedAt = uint64(block.timestamp);
         emit Paused(reasonHash, pausedAt);
+    }
+
+    /// @notice `ICircuitBreaker` — the automatic trip `ValuationOracle` calls when its
+    ///         deviation guard halts a feed. This is §9's "auto-trip on oracle-anomaly", and
+    ///         it is a CALL rather than an event on purpose: DORA Art 19's reporting clock
+    ///         runs from **detection**, so a control that waits for an operator to read an
+    ///         event has already spent the budget it exists to protect.
+    /// @dev    ⚠️ Restricted to the registered oracle, not to governance — an automatic trip
+    ///         nobody can invoke automatically is not automatic. This is the one privileged
+    ///         entry point on this contract that governance does not hold, which is why it
+    ///         can ONLY pause: it cannot unpause, upgrade, rotate a key or cancel anything.
+    ///         The blast radius of a compromised oracle is therefore a denial of service that
+    ///         governance can lift with `unpause()`, never a loss of control.
+    /// @dev    Idempotent. The oracle calls this inside a try/catch and treats a revert as a
+    ///         failed escalation worth paging on, so reverting merely because we are already
+    ///         paused would raise a false alarm on the second halted feed.
+    function tripFromOracle(bytes32 assetId) external {
+        if (msg.sender != oracleTripSource) revert NotOracleTripSource();
+        emit OracleTripReceived(assetId, msg.sender, uint64(block.timestamp));
+        if (paused) return;
+        paused = true;
+        pausedAt = uint64(block.timestamp);
+        emit Paused(keccak256(abi.encodePacked("ORACLE_DEVIATION_HALT", assetId)), pausedAt);
+    }
+
+    /// @notice Register the `ValuationOracle` permitted to trip the breaker. Set to
+    ///         address(0) to disable automatic tripping.
+    function setOracleTripSource(address source) external onlyGovernance {
+        emit OracleTripSourceSet(oracleTripSource, source);
+        oracleTripSource = source;
     }
 
     function unpause() external onlyGovernance {

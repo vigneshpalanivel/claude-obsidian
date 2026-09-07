@@ -295,7 +295,13 @@
       "Bash(grep -inE \"7 ?000 ?000|€7|important entit[^.]{0,140}%\" nis2-checklist.md)",
       "Bash(grep -inE \"Article 3\\\\\\(2\\\\\\)|sub-threshold|small.{0,25}AIFM|Directive 2011/61/EU\" dora-checklist.md)",
       "Bash(grep -oE \"\\\\[[^]]*\\\\]\\\\\\(\\(brrd|ccp-rrr\\)-checklist\\\\.md\\\\\\)|BRRD[^.]{0,70}\" financial-collateral-checklist.md)",
-      "Bash(awk -F: '$1>2900')"
+      "Bash(awk -F: '$1>2900')",
+      "Bash(solc --version)",
+      "Bash(forge --version)",
+      "Bash(grep -n \"^| ↳ \\\\`LmtGate\\\\`\" eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(grep -n \"^| \\\\`MemberEligibility\\\\`\" eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \" \"Content Style Guide.md\")",
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \" \"Content Strategy.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

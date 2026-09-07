@@ -2,6 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {IPdmrRegister} from "./PdmrRegister.sol";
+import {ModuleAdapter} from "./ModularCompliance.sol";
 
 /// @title PdmrClosedPeriodFreeze (illustrative sample — not production code)
 /// @notice MAR Art 19(11): a manager may not deal in the issuer's instruments during the
@@ -349,5 +350,27 @@ contract PdmrClosedPeriodFreeze {
 
     function openPeriods() external view returns (uint256[] memory) {
         return _openPeriods;
+    }
+}
+
+/// @title PdmrClosedPeriodGate
+/// @notice The `IComplianceModule` face of `PdmrClosedPeriodFreeze`, so `ModularCompliance`
+///         can register it. Without this the Art 19(11) freeze is unreachable from the C1
+///         hook — and a closed-period freeze that only fires when a transfer agent
+///         remembers to call it is the breach it exists to prevent, reported as a clean
+///         transfer.
+/// @dev    Passes BOTH sides through unchanged. The freeze itself already skips the
+///         `address(0)` leg of a mint or burn and already applies the Art 19(12) per-wallet,
+///         per-window override, so this adapter deliberately adds no logic of its own —
+///         anything it decided here would be a second place to look for Art 19(11).
+contract PdmrClosedPeriodGate is ModuleAdapter {
+    PdmrClosedPeriodFreeze public immutable freeze;
+
+    constructor(bytes32 moduleId_, address freeze_) ModuleAdapter(moduleId_) {
+        freeze = PdmrClosedPeriodFreeze(freeze_);
+    }
+
+    function checkTransfer(address from, address to, uint256) external view override {
+        freeze.checkTransfer(from, to);
     }
 }

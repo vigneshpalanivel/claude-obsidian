@@ -46,7 +46,10 @@ contract EltifConcentration {
     address public immutable aifm; // executes/reports asset trades
     address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not unit counts
 
-    ValuationOracle public immutable oracle; // marks holdings to market — absolute, never delta
+    /// @dev NOT immutable — DORA Art 28 requires the oracle stay "swappable at the contract
+    ///      layer, not hard-wired"; a constructor-set immutable reference makes a provider
+    ///      swap a redeploy of this module, which on a live fund is a re-issuance.
+    ValuationOracle public oracle; // marks holdings to market — absolute, never delta
 
     // ─────────────────────────── denominator ────────────────────────────────
 
@@ -84,6 +87,9 @@ contract EltifConcentration {
     event AssetValuationSynced(bytes32 indexed assetId, uint256 previousValue, uint256 newValue, uint64 at);
     event SuspensionActivated(uint64 startedAt);
     event SuspensionLifted(uint64 endedAt);
+    /// @dev DORA Art 28 provider swap — the on-chain half of an event whose Register of
+    ///      Information entry and NCA pre-notification sit off-chain.
+    event OracleChanged(address indexed previous, address indexed next);
 
     // ─────────────────────────── errors ──────────────────────────────────────
 
@@ -95,6 +101,7 @@ contract EltifConcentration {
     error StaleValuation(bytes32 assetId);
     error SuspensionAlreadyActive();
     error SuspensionExpired();
+    error ZeroAddress();
 
     modifier onlyAifm() {
         if (msg.sender != aifm) revert NotAifm();
@@ -104,6 +111,20 @@ contract EltifConcentration {
     modifier onlySubscriptionAgent() {
         if (msg.sender != subscriptionAgent) revert NotSubscriptionAgent();
         _;
+    }
+
+    /// @notice Repoint the asset feeds at a different `ValuationOracle` deployment.
+    /// @dev    DORA Art 28 swappability. Authority is the AIFM's, per §5's delegation note.
+    ///         ⚠️ Does not re-read any asset valuation: the new oracle may hold different
+    ///         figures, and adopting them silently inside an administrative call would move
+    ///         every Art 13 ratio with no valuation event. Call `syncAssetValuation()` per
+    ///         asset after — it fails closed on a stale feed.
+    ///         Note the subscription path is unaffected either way: the Art 13 denominator
+    ///         is the fund's CAPITAL — contributions, not NAV — so it reads no price at all.
+    function setOracle(address oracle_) external onlyAifm {
+        if (oracle_ == address(0)) revert ZeroAddress();
+        emit OracleChanged(address(oracle), oracle_);
+        oracle = ValuationOracle(oracle_);
     }
 
     constructor(address aifm_, address subscriptionAgent_, address oracle_) {

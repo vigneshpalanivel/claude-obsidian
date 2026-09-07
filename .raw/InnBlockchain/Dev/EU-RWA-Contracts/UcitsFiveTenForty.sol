@@ -54,7 +54,10 @@ contract UcitsFiveTenForty {
     address public immutable manco; // management company — reports holding changes
     address public immutable subscriptionAgent; // prices subscriptions/redemptions — knows CASH amounts, not share counts
 
-    ValuationOracle public immutable oracle; // marks NAV and holdings to market — absolute, never delta
+    /// @dev NOT immutable — DORA Art 28 requires the oracle stay "swappable at the contract
+    ///      layer, not hard-wired"; a constructor-set immutable reference makes a provider
+    ///      swap a redeploy of this module, which on a live fund is a re-issuance.
+    ValuationOracle public oracle; // marks NAV and holdings to market — absolute, never delta
     bytes32 public immutable navFeedId; // this fund's NAV identity in the oracle
 
     // ─────────────────────────── denominator ────────────────────────────────
@@ -108,6 +111,9 @@ contract UcitsFiveTenForty {
     event ThresholdAlert(bytes32 indexed bucket, uint256 ratioBps, uint256 limitBps);
     event NavSynced(uint256 navAtValuation, int256 cashAbsorbed, uint64 at);
     event LegValuationSynced(bytes32 indexed legId, uint256 previousValue, uint256 newValue, uint64 at);
+    /// @dev DORA Art 28 provider swap — the on-chain half of an event whose Register of
+    ///      Information entry and NCA pre-notification sit off-chain.
+    event OracleChanged(address indexed previous, address indexed next);
 
     // ─────────────────────────── errors ──────────────────────────────────────
 
@@ -118,10 +124,24 @@ contract UcitsFiveTenForty {
     ///      computed here can be trusted. §5: "oracle failure must HALT issuance/
     ///      redemption, not pass a stale limit."
     error StaleValuation(bytes32 feedId);
+    error ZeroAddress();
 
     modifier onlyManco() {
         if (msg.sender != manco) revert NotManco();
         _;
+    }
+
+    /// @notice Repoint the NAV and leg feeds at a different `ValuationOracle` deployment.
+    /// @dev    DORA Art 28 swappability. Authority is the management company's, per §5's
+    ///         delegation note. ⚠️ Does not re-read anything: the new oracle may hold
+    ///         different figures for NAV and every leg, and adopting them silently inside an
+    ///         administrative call would move every 5/10/40 ratio with no valuation event —
+    ///         and could clear or create a breach without either being observable. Call
+    ///         `syncNav()` and `syncLegValuation()` after; both fail closed on a stale feed.
+    function setOracle(address oracle_) external onlyManco {
+        if (oracle_ == address(0)) revert ZeroAddress();
+        emit OracleChanged(address(oracle), oracle_);
+        oracle = ValuationOracle(oracle_);
     }
 
     modifier onlySubscriptionAgent() {
