@@ -301,7 +301,11 @@
       "Bash(grep -n \"^| ↳ \\\\`LmtGate\\\\`\" eu_tokenized_securities_smart_contract_design.md)",
       "Bash(grep -n \"^| \\\\`MemberEligibility\\\\`\" eu_tokenized_securities_smart_contract_design.md)",
       "Bash(grep -n \"^#\\\\{1,3\\\\} \" \"Content Style Guide.md\")",
-      "Bash(grep -n \"^#\\\\{1,3\\\\} \" \"Content Strategy.md\")"
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \" \"Content Strategy.md\")",
+      "Bash(grep -nE \"^#{1,3} \" \"Content Strategy.md\")",
+      "Bash(grep -niE \"word|length|[0-9],?[0-9]{3} ?w|pages|too long|scope\" \"Compliance Article Writing Standard.md\")",
+      "WebFetch(domain:eips.ethereum.org)",
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^\\\\*\\\\*Rule\\\\|^> \\\\[!\" \"Compliance Article Writing Standard.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

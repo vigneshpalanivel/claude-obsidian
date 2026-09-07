@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {ModularCompliance} from "./ModularCompliance.sol";
-import {IdentityRegistry} from "./IdentityRegistry.sol";
+import {Distribution, DistributionState} from "./Interfaces.sol";
+
+import {ICompliance, IIdentityGate} from "./Interfaces.sol";
 
 /// @title DistributionAgent (illustrative sample — not production code)
 /// @notice C1 + C2 — pays holders. Dividends, rental income, revenue share, and the cash leg
@@ -29,52 +30,6 @@ contract DistributionAgent {
     // ═══════════════════════════════════════════════════════════════════════
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
-
-    enum State {
-        None,
-        /// @dev Record block fixed, snapshot not yet taken. The only state in which the record
-        ///      block is still in the future — which is the point of it.
-        Declared,
-        /// @dev Snapshot root anchored. Entitlements are now determined and immutable.
-        Snapshotted,
-        /// @dev Fully funded and paying.
-        Open,
-        /// @dev Closed to new payouts; unclaimed balances may be swept.
-        Closed
-    }
-
-    struct Distribution {
-        State state;
-        /// @dev ⚠️ FIXED IN ADVANCE, ALWAYS IN THE FUTURE AT DECLARATION. Entitlement is
-        ///      computed on balances at a block the contract committed to BEFORE anyone knew
-        ///      the snapshot was coming. Choosing the record block after the fact — or
-        ///      computing on balances at payment time — lets a transfer between record date
-        ///      and payment date silently redirect the money.
-        uint64 recordBlock;
-        /// @dev Merkle root over (holder, units) at `recordBlock`.
-        bytes32 snapshotRoot;
-        /// @dev Units in the snapshot. Determines the pool that must be funded in full.
-        uint256 totalUnits;
-        /// @dev Wei per smallest token unit. Deliberately a per-unit rate rather than a total
-        ///      to be divided: multiplication cannot strand a remainder, division can.
-        uint256 ratePerUnit;
-        uint256 funded;
-        uint256 paidOut;
-        uint256 unclaimed;
-        /// @dev AIFMD Art 23(1) — the fee must be DISCLOSED in a document. What is on-chain is
-        ///      evidence it was actually charged at the rate disclosed, which is a different
-        ///      and complementary thing.
-        uint16 feeBps;
-        /// @dev Withholding at source where the issuing jurisdiction requires it. Tax sits
-        ///      outside the compliance library; the rate is fed in, the deduction is evidenced.
-        uint16 withholdingBps;
-        /// @dev After this, `sweepUnclaimed` becomes available. 0 = never sweeps.
-        uint64 claimDeadline;
-        /// @dev See `_gate`. Off by default, and the NatSpec explains why that default is not
-        ///      laziness.
-        bool runComplianceModules;
-    }
-
     // ═══════════════════════════════════════════════════════════════════════
     // ROLES & WIRING
     // ═══════════════════════════════════════════════════════════════════════
@@ -84,8 +39,10 @@ contract DistributionAgent {
     /// @notice The issuer or AIFM. Declares distributions, anchors snapshots, funds pools.
     mapping(address => bool) public isAgent;
 
-    IdentityRegistry public immutable identity;
-    ModularCompliance public immutable compliance;
+    /// @dev Interface-typed and settable — never concrete, never `immutable`. Scoping rules
+    ///      out is `ModularCompliance.removeModule`, not a null reference here.
+    IIdentityGate public identity;
+    ICompliance public compliance;
 
     /// @notice Where deducted fees and withheld tax go. Separate addresses because they are
     ///         owed to entirely different parties, and netting them into one recipient
@@ -143,7 +100,7 @@ contract DistributionAgent {
     error NotAgent();
     error Reentrancy();
     error UnknownDistribution(uint256 id);
-    error WrongState(uint256 id, State expected, State actual);
+    error WrongState(uint256 id, DistributionState expected, DistributionState actual);
     error RecordBlockMustBeFuture(uint64 recordBlock);
     error RecordBlockNotReached(uint256 id, uint64 recordBlock);
     error ZeroRate();
@@ -177,8 +134,8 @@ contract DistributionAgent {
 
     constructor(address governance_, address identity_, address compliance_) {
         governance = governance_;
-        identity = IdentityRegistry(identity_);
-        compliance = ModularCompliance(compliance_);
+        identity = IIdentityGate(identity_);
+        compliance = ICompliance(compliance_);
     }
 
     function setAgent(address agent, bool allowed) external onlyGovernance {
@@ -218,7 +175,7 @@ contract DistributionAgent {
 
         id = nextDistributionId++;
         Distribution storage d = _distributions[id];
-        d.state = State.Declared;
+        d.state = DistributionState.Declared;
         d.recordBlock = recordBlock;
         d.ratePerUnit = ratePerUnit;
         d.feeBps = feeBps;
@@ -242,13 +199,13 @@ contract DistributionAgent {
     ///         run that reconciliation has an unverified number wearing a cryptographic
     ///         costume.
     function anchorSnapshot(uint256 id, bytes32 snapshotRoot, uint256 totalUnits) external onlyAgent {
-        Distribution storage d = _requireState(id, State.Declared);
+        Distribution storage d = _requireState(id, DistributionState.Declared);
         if (block.number <= d.recordBlock) revert RecordBlockNotReached(id, d.recordBlock);
         if (totalUnits == 0) revert ZeroUnits();
 
         d.snapshotRoot = snapshotRoot;
         d.totalUnits = totalUnits;
-        d.state = State.Snapshotted;
+        d.state = DistributionState.Snapshotted;
 
         emit SnapshotAnchored(id, snapshotRoot, totalUnits, totalUnits * d.ratePerUnit);
     }
@@ -256,8 +213,8 @@ contract DistributionAgent {
     /// @notice Step 3. Fund the pool. May be called repeatedly until it covers the snapshot.
     function fund(uint256 id) external payable onlyAgent {
         Distribution storage d = _distributions[id];
-        if (d.state != State.Snapshotted && d.state != State.Open) {
-            revert WrongState(id, State.Snapshotted, d.state);
+        if (d.state != DistributionState.Snapshotted && d.state != DistributionState.Open) {
+            revert WrongState(id, DistributionState.Snapshotted, d.state);
         }
 
         d.funded += msg.value;
@@ -272,18 +229,18 @@ contract DistributionAgent {
     ///         against GROSS — fee and withholding are deducted from each holder's entitlement
     ///         and forwarded, not skimmed off the pool to make it stretch.
     function openDistribution(uint256 id) external onlyAgent {
-        Distribution storage d = _requireState(id, State.Snapshotted);
+        Distribution storage d = _requireState(id, DistributionState.Snapshotted);
 
         uint256 required = d.totalUnits * d.ratePerUnit;
         if (d.funded < required) revert PoolNotFullyFunded(id, d.funded, required);
 
-        d.state = State.Open;
+        d.state = DistributionState.Open;
         emit DistributionOpened(id, required);
     }
 
     function closeDistribution(uint256 id) external onlyAgent {
-        Distribution storage d = _requireState(id, State.Open);
-        d.state = State.Closed;
+        Distribution storage d = _requireState(id, DistributionState.Open);
+        d.state = DistributionState.Closed;
         emit DistributionClosed(id, d.paidOut, d.unclaimed);
     }
 
@@ -297,7 +254,7 @@ contract DistributionAgent {
     ///         dependent on the operator continuing to run a batch job.
     /// @param units The holder's balance at the record block, as it appears in the leaf.
     function distribute(uint256 id, address holder, uint256 units, bytes32[] calldata proof) public nonReentrant {
-        Distribution storage d = _requireState(id, State.Open);
+        Distribution storage d = _requireState(id, DistributionState.Open);
         if (settled[id][holder]) revert AlreadySettled(id, holder);
 
         bytes32 leaf = keccak256(abi.encodePacked(holder, units));
@@ -374,7 +331,7 @@ contract DistributionAgent {
     ///         operator can release is an operator liability the holder cannot enforce.
     function redeemUnclaimed(uint256 id) external nonReentrant {
         Distribution storage d = _distributions[id];
-        if (d.state == State.None) revert UnknownDistribution(id);
+        if (d.state == DistributionState.None) revert UnknownDistribution(id);
 
         uint256 amount = unclaimedOf[id][msg.sender];
         if (amount == 0) revert NothingUnclaimed(id, msg.sender);
@@ -395,7 +352,7 @@ contract DistributionAgent {
     ///         record of the amount and the holder it was owed to. `claimDeadline == 0` — the
     ///         safer default — disables the sweep entirely.
     function sweepUnclaimed(uint256 id, address to) external onlyAgent nonReentrant {
-        Distribution storage d = _requireState(id, State.Closed);
+        Distribution storage d = _requireState(id, DistributionState.Closed);
         if (d.claimDeadline == 0) revert NoSweepConfigured(id);
         if (block.timestamp <= d.claimDeadline) revert ClaimDeadlineNotPassed(id, d.claimDeadline);
 
@@ -414,9 +371,9 @@ contract DistributionAgent {
         if (!ok) revert PayoutFailed(to, amount);
     }
 
-    function _requireState(uint256 id, State expected) private view returns (Distribution storage d) {
+    function _requireState(uint256 id, DistributionState expected) private view returns (Distribution storage d) {
         d = _distributions[id];
-        if (d.state == State.None) revert UnknownDistribution(id);
+        if (d.state == DistributionState.None) revert UnknownDistribution(id);
         if (d.state != expected) revert WrongState(id, expected, d.state);
     }
 

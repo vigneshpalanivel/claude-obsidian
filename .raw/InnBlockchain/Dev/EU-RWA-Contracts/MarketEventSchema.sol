@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-/// @title MifirEventSchema (illustrative sample — not production code)
+/// @title MarketEventSchema (illustrative sample — not production code)
 /// @notice The on-chain event schemas a DLT MTF or SI emits so that MiFIR transaction
 ///         reporting and MiFIR transparency can both be served from the ledger.
 /// @dev    ⚠️ TWO SCHEMAS, NOT ONE. This is the single most commonly collapsed distinction
@@ -30,7 +30,7 @@ pragma solidity ^0.8.22;
 ///         national client identifier is carried as the salted hash held in
 ///         `IdentityRegistry`; the reporting bridge resolves it off-chain against the record
 ///         it already holds. An on-chain NCI is permanent and un-erasable.
-interface IMifirEventSchema {
+interface IMarketEventSchema {
     // ─────────────────────────── shared enums ─────────────────────────────────
 
     /// @dev RTS 22 field 29. Determines whose report the trade appears on and on what basis.

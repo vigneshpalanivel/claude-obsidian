@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {DocumentRegistry} from "./DocumentRegistry.sol";
+import {IDocumentAnchor} from "./Interfaces.sol";
 
 /// @title SubscriptionEscrow (illustrative sample — not production code)
 /// @notice Prospectus Regulation Art 3(2)/6/12/17/21/23 — gates a primary token offer on
@@ -76,7 +76,7 @@ contract SubscriptionEscrow {
     ///         a clean offer; or open a window here with nothing filed, which counts a
     ///         withdrawal period against a document no investor was ever given.
     ///         Unset (address(0)) in EXEMPT mode — there is no approved prospectus.
-    DocumentRegistry public documents;
+    IDocumentAnchor public documents;
 
     /// @notice The `docRef` of the prospectus this offer runs on. bytes32(0) in EXEMPT mode.
     bytes32 public prospectusDocRef;
@@ -208,7 +208,7 @@ contract SubscriptionEscrow {
             maxOfferAmountWei = maxOfferAmountWei_;
             prospectusValidUntil = prospectusValidUntil_;
             finalPriceOmittedAtFiling = finalPriceOmittedAtFiling_;
-            documents = DocumentRegistry(documents_);
+            documents = IDocumentAnchor(documents_);
             prospectusDocRef = prospectusDocRef_;
         } else {
             finalPriceOmittedAtFiling = false;

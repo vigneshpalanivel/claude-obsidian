@@ -2,7 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {ModuleAdapter} from "./ModularCompliance.sol";
-import {DocumentRegistry} from "./DocumentRegistry.sol";
+import {IDocumentAnchor} from "./Interfaces.sol";
 import {IdentityRegistry} from "./IdentityRegistry.sol";
 
 /// @title CovenantRegistry (illustrative sample — not production code)
@@ -54,6 +54,9 @@ import {IdentityRegistry} from "./IdentityRegistry.sol";
 ///         never PII. The per-investor, per-version delivery evidence PRIIPs Art 13 requires
 ///         lives off-chain; what is on-chain is the provable pointer to it.
 contract CovenantRegistry {
+    /// @dev Emitted whenever an inter-contract reference is re-pointed.
+    event DependencySet(bytes32 indexed role, address indexed impl);
+
     // ═══════════════════════════════════════════════════════════════════════
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
@@ -159,12 +162,26 @@ contract CovenantRegistry {
     ///         one cannot see per-asset fund life. It needs both reads, which is why the
     ///         topology decision must resolve this contract as a straddle rather than by
     ///         picking a side.
-    IdentityRegistry public immutable identity;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    IdentityRegistry public identity;
 
     /// @notice The fail-closed source of truth for document currency. `isCurrent` returns false
     ///         the instant a document is superseded — and, for a PRIIPs KID, also when its
     ///         Art 10 review is overdue.
-    DocumentRegistry public immutable documents;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    IDocumentAnchor public documents;
 
     /// @notice Operators may attest `OperatorAttestation` covenants. They may NEVER satisfy an
     ///         `InvestorSignature` one — see `recordAttestation`.
@@ -266,7 +283,7 @@ contract CovenantRegistry {
 
     constructor(address governance_, address documents_, address identity_) {
         governance = governance_;
-        documents = DocumentRegistry(documents_);
+        documents = IDocumentAnchor(documents_);
         identity = IdentityRegistry(identity_);
     }
 
@@ -638,5 +655,20 @@ contract CovenantGate is ModuleAdapter {
 
         covenants.assertSatisfied(from, covenants.GATE_SEND());
         covenants.assertSatisfied(to, covenants.GATE_RECEIVE());
+    }
+
+    /// @notice Re-point `identity`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setIdentity(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        identity = IdentityRegistry(impl);
+        emit DependencySet("identity", impl);
+    }
+    /// @notice Re-point `documents`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setDocuments(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        documents = IDocumentAnchor(impl);
+        emit DependencySet("documents", impl);
     }
 }

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IMifirEventSchema, MifirClock} from "./MifirEventSchema.sol";
+import {IMarketEventSchema, MifirClock} from "./MarketEventSchema.sol";
 
 interface IIdentityGate {
     function checkEligibleAndIdentifiable(address wallet) external view;
@@ -30,7 +30,7 @@ interface IIdentityGate {
 ///         MiFID II; Art 22c is what newly reached SIs, DPEs, APAs and CTPs. Every quote and
 ///         execution here carries a `syncedTimestamp` from the firm's traceable clock, never
 ///         `block.timestamp` — see `MifirClock`.
-contract SiQuoteEngine is IMifirEventSchema, MifirClock {
+contract SiQuoteEngine is IMarketEventSchema, MifirClock {
     // ─────────────────────────── roles ────────────────────────────────────────
 
     address public immutable governance;

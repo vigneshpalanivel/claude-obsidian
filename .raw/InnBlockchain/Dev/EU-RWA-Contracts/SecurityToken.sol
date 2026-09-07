@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {ModularCompliance} from "./ModularCompliance.sol";
-import {IdentityRegistry} from "./IdentityRegistry.sol";
+import {ICompliance, IIdentityGate} from "./Interfaces.sol";
 
 /// @title SecurityToken (illustrative sample — not production code)
 /// @notice C1 + C5 — the instrument itself, and the only contract in this folder that moves a
@@ -30,6 +29,22 @@ import {IdentityRegistry} from "./IdentityRegistry.sol";
 ///         reason. The hash points at an off-chain incident record. A human-readable "sanctions
 ///         hit" in a public log is both a tipping-off disclosure and an un-erasable personal
 ///         datum about an identified person.
+/// @dev    ⚠️ NO HARD DEPENDENCY ON ANY COMPLIANCE CONTRACT. Both references are
+///         INTERFACE-TYPED and GOVERNANCE-SETTABLE, never concrete and never `immutable` —
+///         the same shape ERC-3643 uses (`setIdentityRegistry` / `setCompliance`, with an
+///         "Added" event on each), and the same shape an ERC-1400 assembly needs. Adopting the
+///         mechanism settles nothing about D0; it is standard-neutral.
+/// @dev    ⚠️ REMOVABILITY LIVES ONE LEVEL DOWN, AND THAT IS THE DESIGN, NOT A LIMITATION.
+///         The token always has a compliance contract and an identity registry — there is no
+///         "unset" state and no null check on the hook. A client who owes fewer obligations
+///         does not detach the plumbing; they **empty the rule set**:
+///           • `ModularCompliance.removeModule` for each rule that does not apply, and
+///           • an empty required-claim-topic set for a jurisdiction in `ClaimTopicsRegistry`.
+///         **This is deliberately safer than a detachable reference.** A nullable reference
+///         cannot distinguish "nobody wired it" from "not owed", so a half-finished deployment
+///         waves every transfer through with every rule silently off. Here an unwired token
+///         cannot be constructed at all, and removing a rule is an explicit, individually
+///         logged act against a named Article.
 contract SecurityToken {
     // ═══════════════════════════════════════════════════════════════════════
     // ROLES
@@ -43,8 +58,13 @@ contract SecurityToken {
     ///         DORA Art 5 those are different people with different accountability.
     mapping(address => bool) public isAgent;
 
-    ModularCompliance public immutable compliance;
-    IdentityRegistry public immutable identity;
+    /// @dev ⚠️ NOT `immutable`, and not a concrete type. A constructor-set immutable reference
+    ///      cannot be swapped after a provider failure — the operational-resilience regime
+    ///      requires these stay swappable at the contract layer rather than hard-wired — and a
+    ///      concrete type drags one implementation's whole dependency tree into every
+    ///      deployment.
+    ICompliance public compliance;
+    IIdentityGate public identityRegistry;
 
     // ═══════════════════════════════════════════════════════════════════════
     // TOKEN STATE
@@ -56,7 +76,7 @@ contract SecurityToken {
 
     /// @notice The instrument's ISIN, as a hash. Not decorative: MiFIR Art 26 transaction
     ///         reports and RTS 1/2 transparency publications are keyed on it, and
-    ///         `MifirEventSchema` emits it. Stored as a hash so the on-chain record cannot
+    ///         `MarketEventSchema` emits it. Stored as a hash so the on-chain record cannot
     ///         drift from the reference-data record it must match.
     bytes32 public immutable isinHash;
 
@@ -85,6 +105,8 @@ contract SecurityToken {
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
+    event ComplianceAdded(address indexed compliance);
+    event IdentityRegistryAdded(address indexed identityRegistry);
     event AgentSet(address indexed agent, bool allowed);
     event Paused(bytes32 reasonHash, uint64 at);
     event Unpaused(uint64 at);
@@ -145,12 +167,41 @@ contract SecurityToken {
         bytes32 isinHash_
     ) {
         governance = governance_;
-        compliance = ModularCompliance(compliance_);
-        identity = IdentityRegistry(identity_);
+        // Both are mandatory at construction. A token cannot exist in a half-wired state where
+        // the hook has nothing to call — that is the failure mode a nullable reference invites.
+        // A client with no rules gets a compliance contract with an empty module list, not a
+        // missing compliance contract.
+        if (compliance_ == address(0) || identity_ == address(0)) revert ZeroAddress();
+        compliance = ICompliance(compliance_);
+        identityRegistry = IIdentityGate(identity_);
+        emit ComplianceAdded(compliance_);
+        emit IdentityRegistryAdded(identity_);
         name = name_;
         symbol = symbol_;
         decimals = decimals_;
         isinHash = isinHash_;
+    }
+
+    /// @notice Re-point the rule engine. Swap, never unset.
+    /// @dev    ⚠️ Scoping rules OUT is not done here — it is `ModularCompliance.removeModule`,
+    ///         one Article at a time, each individually logged. Pointing at a different
+    ///         compliance contract wholesale replaces every rule at once and should be reserved
+    ///         for a genuine implementation swap.
+    function setCompliance(address compliance_) external onlyGovernance {
+        if (compliance_ == address(0)) revert ZeroAddress();
+        compliance = ICompliance(compliance_);
+        emit ComplianceAdded(compliance_);
+    }
+
+    /// @notice Re-point the identity registry. Swap, never unset.
+    /// @dev    ⚠️ Scoping identity requirements DOWN is not done here — it is an empty required-
+    ///         claim-topic set for the jurisdiction in `ClaimTopicsRegistry`. Setting this to a
+    ///         permissive registry to bypass eligibility would be a silent removal of every
+    ///         §4 control at once, which is exactly what the per-topic path avoids.
+    function setIdentityRegistry(address identity_) external onlyGovernance {
+        if (identity_ == address(0)) revert ZeroAddress();
+        identityRegistry = IIdentityGate(identity_);
+        emit IdentityRegistryAdded(identity_);
     }
 
     function setAgent(address agent, bool allowed) external onlyGovernance {
@@ -180,9 +231,13 @@ contract SecurityToken {
     ///         `CovenantGate` treats mint as its own gate, `EltifConcentration` counts it, a
     ///         holding-period lock ignores it. Filtering here would take that choice away from
     ///         the module that owns the Article.
+    /// @dev ⚠️ NO NULL CHECKS HERE, ON PURPOSE. Both references are guaranteed non-zero by the
+    ///      constructor and by the setters, so there is no branch a misconfiguration can slip
+    ///      through. A client owing nothing gets an empty module list and an empty required-
+    ///      claim-topic set — the calls still happen and simply pass.
     function _check(address from, address to, uint256 amount) internal view {
-        if (from != address(0)) identity.checkEligible(from);
-        if (to != address(0)) identity.checkEligible(to);
+        if (from != address(0)) identityRegistry.checkEligible(from);
+        if (to != address(0)) identityRegistry.checkEligible(to);
         compliance.checkTransfer(from, to, amount);
     }
 
@@ -360,7 +415,7 @@ contract SecurityToken {
         }
 
         // Recipient side only — see the asymmetry note above.
-        identity.checkEligible(to);
+        identityRegistry.checkEligible(to);
         compliance.checkTransfer(from, to, amount);
 
         _balances[from] -= amount;
@@ -388,11 +443,14 @@ contract SecurityToken {
     function recoverWallet(address lostWallet, address newWallet, bytes32 reasonHash) external onlyAgent {
         if (newWallet == address(0)) revert ZeroAddress();
 
-        IdentityRegistry.Investor memory lost = identity.investor(lostWallet);
-        IdentityRegistry.Investor memory replacement = identity.investor(newWallet);
+        // ⚠️ The control that makes recovery safe is the record-pointer match, not the agent
+        // role. Both wallets must resolve to the SAME off-chain investor record — without that,
+        // "recovery" is an agent-key licence to move any holding to any wallet.
+        (bytes32 lostPointer, ) = identityRegistry.recordPointerOf(lostWallet);
+        (bytes32 newPointer, bool newRegistered) = identityRegistry.recordPointerOf(newWallet);
 
-        if (!replacement.registered) revert RecoveryTargetHasNoRecord(newWallet);
-        if (replacement.recordPointer == bytes32(0) || replacement.recordPointer != lost.recordPointer) {
+        if (!newRegistered) revert RecoveryTargetHasNoRecord(newWallet);
+        if (newPointer == bytes32(0) || newPointer != lostPointer) {
             revert RecoveryTargetNotSameInvestor(lostWallet, newWallet);
         }
 

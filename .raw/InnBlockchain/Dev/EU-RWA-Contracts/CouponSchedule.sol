@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {SecurityToken} from "./SecurityToken.sol";
-import {DistributionAgent} from "./DistributionAgent.sol";
+import {ISecurityToken, IDistributionSink, Distribution} from "./Interfaces.sol";
 
 /// @title CouponSchedule (illustrative sample — not production code)
 /// @notice C4 — fixed contractual interest on a debt or note token: accrual, the payment
@@ -31,6 +30,9 @@ import {DistributionAgent} from "./DistributionAgent.sol";
 ///         mirror image and is NOT this contract, however similar the payment calendar looks.
 ///         Reaching for `CouponSchedule` to model one is a known miscitation.
 contract CouponSchedule {
+    /// @dev Emitted whenever an inter-contract reference is re-pointed.
+    event DependencySet(bytes32 indexed role, address indexed impl);
+
     // ═══════════════════════════════════════════════════════════════════════
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
@@ -70,8 +72,22 @@ contract CouponSchedule {
     // ═══════════════════════════════════════════════════════════════════════
 
     address public immutable governance;
-    SecurityToken public immutable token;
-    DistributionAgent public immutable distributions;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    ISecurityToken public token;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    IDistributionSink public distributions;
 
     /// @notice Face value of one smallest token unit, in wei.
     uint256 public immutable principalPerUnit;
@@ -173,8 +189,8 @@ contract CouponSchedule {
         if (periodBoundaries.length < 2) revert NoPeriods();
 
         governance = governance_;
-        token = SecurityToken(token_);
-        distributions = DistributionAgent(distributions_);
+        token = ISecurityToken(token_);
+        distributions = IDistributionSink(distributions_);
         principalPerUnit = principalPerUnit_;
         annualCouponRateBps = annualCouponRateBps_;
         dayCount = dayCount_;
@@ -265,7 +281,7 @@ contract CouponSchedule {
         if (block.timestamp < p.endsAt) revert PeriodNotEnded(index, p.endsAt);
 
         uint256 expected = couponPerUnit(index);
-        DistributionAgent.Distribution memory d = distributions.distribution(distributionId);
+        Distribution memory d = distributions.distribution(distributionId);
         if (d.ratePerUnit != expected) revert DistributionRateMismatch(expected, d.ratePerUnit);
 
         p.state = PeriodState.Bound;
@@ -376,5 +392,20 @@ contract CouponSchedule {
         for (uint256 i = 0; i < count; i++) {
             overdue[i] = buf[i];
         }
+    }
+
+    /// @notice Re-point `token`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setToken(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        token = ISecurityToken(impl);
+        emit DependencySet("token", impl);
+    }
+    /// @notice Re-point `distributions`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setDistributions(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        distributions = IDistributionSink(impl);
+        emit DependencySet("distributions", impl);
     }
 }

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {DistributionAgent} from "./DistributionAgent.sol";
+import {IDistributionSink, Distribution} from "./Interfaces.sol";
 
 /// @title DistributionWaterfall (illustrative sample — not production code)
 /// @notice C4 — splits a defined income stream between tranches in contractual priority order.
@@ -30,6 +30,9 @@ import {DistributionAgent} from "./DistributionAgent.sol";
 ///         the junior class, which is neither what the terms say nor a defensible thing to
 ///         have built.
 contract DistributionWaterfall {
+    /// @dev Emitted whenever an inter-contract reference is re-pointed.
+    event DependencySet(bytes32 indexed role, address indexed impl);
+
     // ═══════════════════════════════════════════════════════════════════════
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
@@ -71,7 +74,14 @@ contract DistributionWaterfall {
     // ═══════════════════════════════════════════════════════════════════════
 
     address public immutable governance;
-    DistributionAgent public immutable distributions;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    IDistributionSink public distributions;
 
     mapping(address => bool) public isAgent;
 
@@ -152,7 +162,7 @@ contract DistributionWaterfall {
         if (steps.length > MAX_STEPS) revert TooManySteps();
 
         governance = governance_;
-        distributions = DistributionAgent(distributions_);
+        distributions = IDistributionSink(distributions_);
 
         for (uint256 i = 0; i < trancheIds.length; i++) {
             _tranches.push(
@@ -318,7 +328,7 @@ contract DistributionWaterfall {
             revert DistributionAlreadyBound(allocationId, trancheIndex);
         }
 
-        DistributionAgent.Distribution memory d = distributions.distribution(distributionId);
+        Distribution memory d = distributions.distribution(distributionId);
         uint256 declared = d.totalUnits * d.ratePerUnit;
         if (declared != owed) revert DistributionAmountMismatch(owed, declared);
 
@@ -414,5 +424,13 @@ contract DistributionWaterfall {
             uint256 elapsed = block.timestamp > t.lastAccrualAt ? block.timestamp - t.lastAccrualAt : 0;
             total += t.arrears + (t.outstandingCapital * s.bps * elapsed) / (uint256(BPS) * 365 days);
         }
+    }
+
+    /// @notice Re-point `distributions`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setDistributions(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        distributions = IDistributionSink(impl);
+        emit DependencySet("distributions", impl);
     }
 }

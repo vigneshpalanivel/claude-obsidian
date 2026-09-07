@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {SecurityToken} from "./SecurityToken.sol";
-import {DocumentRegistry} from "./DocumentRegistry.sol";
-import {PdmrClosedPeriodFreeze} from "./PdmrClosedPeriodFreeze.sol";
+import {ISecurityToken, IDocumentAnchor, IClosedPeriodGate, Version} from "./Interfaces.sol";
 
 /// @title BuybackAgent (illustrative sample — not production code)
 /// @notice C1 + C5 — the issuer buying back its own instrument inside the MAR Art 5 safe
@@ -33,6 +31,9 @@ import {PdmrClosedPeriodFreeze} from "./PdmrClosedPeriodFreeze.sol";
 ///         with no dealer lane. `PurchaseExecuted` is the surveillance feed for that — scoped
 ///         to the issuer's own flow, not the whole book.
 contract BuybackAgent {
+    /// @dev Emitted whenever an inter-contract reference is re-pointed.
+    event DependencySet(bytes32 indexed role, address indexed impl);
+
     // ═══════════════════════════════════════════════════════════════════════
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
@@ -121,12 +122,33 @@ contract BuybackAgent {
     ///         Designate it before signing the vendor, not after.
     mapping(address => bool) public isOracle;
 
-    SecurityToken public immutable token;
-    DocumentRegistry public immutable documents;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    ISecurityToken public token;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    IDocumentAnchor public documents;
 
     /// @notice Art 19(11) reaches the issuer's own trading. Reused rather than reimplemented so
     ///         one calendar of closed periods governs both the directors and the treasury.
-    PdmrClosedPeriodFreeze public immutable closedPeriods;
+        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
+    ///      returns a struct/enum, which a narrow interface cannot declare without
+    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
+    ///      compiler, so every call site here would break. Closing it means moving the
+    ///      shared types into `Interfaces.sol` and having the concrete contract import
+    ///      them from there. Until then the `immutable` half of the rule is satisfied
+    ///      (settable below) and the coupling half is not.
+    IClosedPeriodGate public closedPeriods;
 
     address public treasury;
 
@@ -272,9 +294,9 @@ contract BuybackAgent {
 
     constructor(address governance_, address token_, address documents_, address closedPeriods_) {
         governance = governance_;
-        token = SecurityToken(token_);
-        documents = DocumentRegistry(documents_);
-        closedPeriods = PdmrClosedPeriodFreeze(closedPeriods_);
+        token = ISecurityToken(token_);
+        documents = IDocumentAnchor(documents_);
+        closedPeriods = IClosedPeriodGate(closedPeriods_);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -378,7 +400,7 @@ contract BuybackAgent {
         uint256 count = documents.versionCount(disclosureRef);
         if (count == 0) revert DisclosureNotAnchored(disclosureRef);
 
-        DocumentRegistry.Version memory v = documents.versionAt(disclosureRef, count - 1);
+        Version memory v = documents.versionAt(disclosureRef, count - 1);
         if (!documents.isCurrent(disclosureRef, v.versionHash)) revert DisclosureNotCurrent(disclosureRef);
         if (v.anchoredAt >= startDate) revert DisclosureAfterStart(v.anchoredAt, startDate);
 
@@ -637,5 +659,27 @@ contract BuybackAgent {
         uint256 permitted = (m.averageDailyVolume20d * ADV_LIMIT_NUMERATOR) / ADV_LIMIT_DENOMINATOR;
         uint256 bought = unitsBoughtOnDay[block.timestamp / 1 days];
         unitsRemainingToday = permitted > bought ? permitted - bought : 0;
+    }
+
+    /// @notice Re-point `token`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setToken(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        token = ISecurityToken(impl);
+        emit DependencySet("token", impl);
+    }
+    /// @notice Re-point `documents`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setDocuments(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        documents = IDocumentAnchor(impl);
+        emit DependencySet("documents", impl);
+    }
+    /// @notice Re-point `closedPeriods`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setClosedPeriods(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        closedPeriods = IClosedPeriodGate(impl);
+        emit DependencySet("closedPeriods", impl);
     }
 }

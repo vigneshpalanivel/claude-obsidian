@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {Regime, Version} from "./Interfaces.sol";
+
 /// @title DocumentRegistry (illustrative sample — not production code)
 /// @notice ERC-1643-pattern anchor: hash + URI on-chain, the document itself off-chain. This
 ///         is a MULTI-REGIME contract, not a prospectus contract — it serves Prospectus
@@ -52,23 +54,6 @@ contract DocumentRegistry {
     ///         changes what the rest of the stack must do when a new version lands (window vs
     ///         no window, review cadence vs none). A new regime here is a genuine design
     ///         event, not a configuration one.
-    enum Regime {
-        Unset,
-        ProspectusRegulation, // Arts 6/12/21(7)/23 — supplements open escrow windows
-        MarDisclosure, // Arts 17, 18 — ≥5y, and the Art 17(1a) confidentiality problem
-        EltifDisclosure, // Arts 23–24 — its own prospectus regime + annual report
-        PriipsKid // Art 10 — ≥12-month review cadence, no withdrawal window
-    }
-
-    struct Version {
-        bytes32 versionHash; // hash of the document file itself
-        bytes32 uriHash; // digest of the resolvable location (IPFS CID / URL)
-        uint64 anchoredAt;
-        uint64 approvedAt; // NCA approval; 0 = none recorded (see `documentStatus`)
-        uint64 reviewDueBy; // PRIIPs Art 10 only; 0 = no periodic review duty
-        bool revealed; // MAR Art 17(1a) commit-reveal — see `anchorConcealed`
-    }
-
     struct Document {
         bool exists;
         Regime regime;

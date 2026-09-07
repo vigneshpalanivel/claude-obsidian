@@ -208,7 +208,7 @@ Two read APIs, because §9's per-consumer rule is real:
 
 | §17a row | Verdict |
 |---|---|
-| Surveillance event schema (§6) | **Closed.** `MifirEventSchema` carries `OrderCreated`/`OrderModified`/`OrderCancelled` + flagged `TradePublished` and says so in its own header — the RTS 1/RTS 2 set *is* the MAR Art 8(1) set. Built once, feeds both, exactly as §7 specifies. |
+| Surveillance event schema (§6) | **Closed.** `MarketEventSchema` carries `OrderCreated`/`OrderModified`/`OrderCancelled` + flagged `TradePublished` and says so in its own header — the RTS 1/RTS 2 set *is* the MAR Art 8(1) set. Built once, feeds both, exactly as §7 specifies. |
 | MiFIR Art 26 / APA-DPE / CTP bridges | **Closed.** Footnote ⁸: *"The `Trade` event schema is ● in every case — what is conditional is the delivery bridge, not the data capture."* Both schemas exist; bridges are off-chain. |
 | Matching engine | **Not a contract.** Footnote ⁶: off-chain logic settling through `SubscriptionEscrow`/`LmtGate`. |
 | `LoanRetention` | **Not in scope.** Footnote ¹¹: only under a separate loan-participation mandate. |
