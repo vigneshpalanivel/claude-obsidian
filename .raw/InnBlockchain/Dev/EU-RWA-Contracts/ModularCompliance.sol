@@ -60,17 +60,26 @@ contract ModularCompliance {
     event ModuleRemoved(address indexed module, bytes32 indexed moduleId);
     event ModuleBypassed(address indexed module, bytes32 reasonHash, uint64 at);
     event ModuleBypassLifted(address indexed module, uint64 at);
+    /// @dev Emitted by `removeModule` when the module being removed was under an emergency
+    ///      bypass. Distinct from `ModuleBypassLifted` because nothing was lifted — the module
+    ///      left, and its bypass left with it — and a reviewer reconciling `ModuleBypassed`
+    ///      against lifts needs the closing entry to say which of the two it was.
+    event ModuleBypassCleared(address indexed module, uint64 at);
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
     error NotGovernance();
     error NotBoundToken();
     error TokenAlreadyBound();
+    error ZeroAddress();
     error ModuleAlreadyAdded(address module);
     error UnknownModule(address module);
     error TooManyModules();
     error AlreadyBypassed(address module);
     error NotBypassed(address module);
+    /// @dev Should be unreachable — `removeModule` clears the flag — and is checked anyway,
+    ///      because the failure it guards is a module that is on the list and silently skipped.
+    error BypassStillSet(address module);
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -83,7 +92,11 @@ contract ModularCompliance {
 
     /// @notice One-shot. Rebinding the token would silently re-point the whole compliance
     ///         stack at a different instrument, so it is not available at any price.
+    /// @dev    Rejects `address(0)`: since the one-shot check is `boundToken != address(0)`,
+    ///         binding zero would have consumed nothing and left the stack open to a later
+    ///         bind by whoever noticed — a one-shot that has not fired.
     function bindToken(address token) external onlyGovernance {
+        if (token == address(0)) revert ZeroAddress();
         if (boundToken != address(0)) revert TokenAlreadyBound();
         boundToken = token;
         emit TokenBound(token);
@@ -93,8 +106,15 @@ contract ModularCompliance {
     // MODULE MANAGEMENT
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @dev ⚠️ A bypass never survives a module's removal, so a module can never be ADDED under
+    ///      one. Before 2026-09-08 `removeModule` left `bypassed[module]` standing: bypass →
+    ///      remove → re-add produced a module on the list that `checkTransfer` skipped, with no
+    ///      `ModuleBypassed` event in the window in which it mattered — a silent bypass, which
+    ///      is the one shape the emergency-bypass design (logged, never silent) exists to rule
+    ///      out. The check here is belt-and-braces over the clear in `removeModule`.
     function addModule(address module) external onlyGovernance {
         if (isModule[module]) revert ModuleAlreadyAdded(module);
+        if (bypassed[module]) revert BypassStillSet(module);
         if (_modules.length + 1 > MAX_MODULES) revert TooManyModules();
 
         isModule[module] = true;
@@ -112,6 +132,12 @@ contract ModularCompliance {
                 _modules.pop();
                 break;
             }
+        }
+        // The bypass is a property of the module's registration, not of the address. It goes
+        // when the registration goes, and it is logged going — see `ModuleBypassCleared`.
+        if (bypassed[module]) {
+            delete bypassed[module];
+            emit ModuleBypassCleared(module, uint64(block.timestamp));
         }
         emit ModuleRemoved(module, IComplianceModule(module).moduleId());
     }
@@ -142,9 +168,41 @@ contract ModularCompliance {
     // ═══════════════════════════════════════════════════════════════════════
 
     /// @notice Pre-transfer veto. Reverts with the failing module's own error, unmodified —
-    ///         no try/catch wrapper, because collapsing a specific Article breach into a
-    ///         generic "transfer not compliant" is exactly the information an NCA reviewer
-    ///         and a support desk both need and cannot recover afterwards.
+    ///         no try/catch wrapper here. What that error may SAY is decided by the module's
+    ///         class, not by this contract, and every module has exactly one class:
+    ///
+    ///         ⚠️ TWO CLASSES OF MODULE, AND AN AUTHOR CLASSIFIES BEFORE WRITING AN ERROR.
+    ///
+    ///           INFORMATIVE-block — holding period, closed period, covenant, concentration.
+    ///             The stop is a fact about the instrument or the record, applies to everyone
+    ///             in the same position, and is something the holder can cure or wait out. The
+    ///             module's error MAY name its Article and what would satisfy it: an unlock
+    ///             date is not a suspicion, and telling a holder when they may exit is a
+    ///             service. Collapsing these into a generic "not compliant" throws away
+    ///             exactly what an NCA reviewer and a support desk both need and cannot
+    ///             recover afterwards.
+    ///
+    ///           GENERIC-block — anything linked to eligibility of a specific person, a freeze,
+    ///             a sanctions hit, or a suspicion. The module MUST revert with ONE argument-
+    ///             free error, and the same one for every reason in its class. AMLR Art 76
+    ///             (tipping-off) makes disclosing that a customer is under analysis an
+    ///             individual criminal offence in most Member States, and a typed revert on a
+    ///             public ledger discloses it to everyone. Even an address argument is too
+    ///             much on a two-sided check — it says which side failed.
+    ///
+    ///         `RestrictedPartyGate` is the generic-class module in this folder — the ONLY one,
+    ///         and every wallet-level stop must route through it rather than beside it. Every
+    ///         other adapter here is informative-class. A module that is unsure which class it
+    ///         is in is generic-class: the cost of over-disclosing is a criminal offence, the
+    ///         cost of under-disclosing is a support ticket.
+    ///
+    ///         Convention: each module carries a `/// @dev CLASS: informative` or
+    ///         `/// @dev CLASS: generic` line on its contract, so the §13 audit map can be read
+    ///         off the source without reading the errors.
+    ///
+    ///         ⚠️ Nothing here enforces the classification — a generic-class module that
+    ///         reverts with a typed error compiles and runs. The rule lives in review, which is
+    ///         why it is written here and not left to be inferred from `RestrictedPartyGate`.
     function checkTransfer(address from, address to, uint256 amount) public view {
         uint256 len = _modules.length;
         for (uint256 i = 0; i < len; i++) {

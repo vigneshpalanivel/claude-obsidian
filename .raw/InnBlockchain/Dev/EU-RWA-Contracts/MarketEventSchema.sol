@@ -26,10 +26,18 @@ pragma solidity ^0.8.22;
 ///         deferral you cannot enforce is a deferral you do not have. That is a commercial
 ///         exclusion — institutional size will trade elsewhere — rather than a compliance
 ///         failure, and it is one of the reasons the chain choice is constrained.
-/// @dev    GDPR: no natural-person identifier appears in any event below in the clear. The
-///         national client identifier is carried as the salted hash held in
-///         `IdentityRegistry`; the reporting bridge resolves it off-chain against the record
-///         it already restrictions. An on-chain NCI is permanent and un-erasable.
+/// @dev    GDPR: no natural-person identifier appears in any event below — in the clear OR
+///         as a hash. `TradeReportable` carries the buyer and seller as WALLETS; the reporting
+///         bridge resolves LEI or salted NCI hash off-chain from `IdentityRegistry.investor()`
+///         at the block the trade landed, and that read goes empty after erasure.
+///         ⚠️ This schema used to declare `buyerNciHash` / `sellerNciHash` slots while saying
+///         in this very comment that the bridge resolves them off-chain — and the one emitter,
+///         `SiQuoteEngine`, zeroed all four identity fields for exactly that reason. A schema
+///         that declares a slot its implementation refuses to fill is an invitation to the
+///         next implementation to fill it. The slots are gone. A salted hash is still a
+///         stable per-person identifier that erasure is supposed to orphan; a log is the one
+///         place it cannot be orphaned from. See §10 of the design document, event-payload
+///         rule.
 interface IMarketEventSchema {
     // ─────────────────────────── shared enums ─────────────────────────────────
 
@@ -119,14 +127,17 @@ interface IMarketEventSchema {
     // what changes is whether a bridge transmits or an archive retains.
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @dev `buyer` / `seller` are the counterparty wallets — the join key, not the identity.
+    ///      RTS 22 fields 7 and 16 (buyer / seller identification code: LEI, or NCI for a
+    ///      natural person) are populated by the bridge from `IdentityRegistry.investor()`,
+    ///      never carried here. "Field-complete" means every RTS 22 field is *derivable* from
+    ///      this event plus a storage read at the same block, not that every field is in it.
     event TradeReportable(
         bytes32 indexed tradeId,
         bytes32 indexed instrumentIsin,
         bytes32 indexed venueMic,
-        bytes20 buyerLei, // zero where the buyer is a natural person
-        bytes32 buyerNciHash, // zero where the buyer is a legal person
-        bytes20 sellerLei,
-        bytes32 sellerNciHash,
+        address buyer,
+        address seller,
         uint256 priceWei,
         uint256 quantity,
         TradingCapacity capacity,
@@ -137,6 +148,12 @@ interface IMarketEventSchema {
     ///      as separate fields from the client. Emitted alongside rather than inside
     ///      `TradeReportable` because most trades do not have them and a 15-field event
     ///      emitted 100% of the time to serve 5% of cases is pure gas.
+    /// @dev ⚠️ The three refs are OPERATOR-MINTED OPAQUE HANDLES into the firm's own order
+    ///      management records — never an NCI hash, never a `personId`. RTS 22 fields 57–59
+    ///      identify natural persons (the decision-making trader, the executing trader) by
+    ///      national identifier; the bridge resolves those from the ref against the firm's
+    ///      staff register, off-chain. A ref that *is* the identifier would put a named
+    ///      employee's every trading decision in a permanent public log.
     event TradeDecisionMakers(
         bytes32 indexed tradeId,
         bytes32 investmentDecisionRef,

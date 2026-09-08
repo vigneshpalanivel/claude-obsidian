@@ -8,13 +8,19 @@ import {IRestrictedParty} from "./Interfaces.sol";
 /// @notice The `IComplianceModule` face of `RestrictedPartyRegistry`, so `ModularCompliance` can
 ///         register it. Without this the store is unreachable from the C1 hook and only a
 ///         transfer agent remembering to call it enforces anything.
+/// @dev CLASS: generic
 /// @dev    ⚠️ THIS ADAPTER IS IN THE **GENERIC-BLOCK** CLASS, and it is the reason that
-///         classification has to exist. `ModularCompliance.checkTransfer` states its
-///         propagate-the-module's-own-error rule globally, which is right for a holding-period
-///         lock — an unlock date is not a suspicion and telling a holder when they may exit is
-///         a service. It is wrong here. Every revert this adapter can produce on the restriction path
-///         is the single argument-free `TransferNotPermitted`, and the store is built so that
-///         nothing more specific is available to leak.
+///         classification has to exist. `ModularCompliance.checkTransfer` propagates each
+///         module's own error, which is right for a holding-period lock — an unlock date is
+///         not a suspicion and telling a holder when they may exit is a service. It would be
+///         wrong here, so the classification on `ModularCompliance.checkTransfer` carves this
+///         class out: every revert this adapter can produce is argument-free. There are TWO
+///         such errors, not one — `TransferNotPermitted()` on every path, and
+///         `ScreeningStale()` on the MINT path only (`from == address(0)`), when the operator's
+///         re-screen has fallen behind the list. Both are generic-class: `ScreeningStale` says
+///         nothing about any person, only that the programme is late, and it can never be
+///         raised on a path that has a sender. The store is built so that nothing more specific
+///         is available to leak.
 /// @dev    ⚠️ THIS IS THE ONLY *MODULE* THAT MAY STOP A WALLET OUTRIGHT.
 ///         `IdentityRegistry.freeze` was removed on 2026-09-08 and every wallet-level stop —
 ///         sanctions, suspicion, probate, court order, lost key — now runs through one store.

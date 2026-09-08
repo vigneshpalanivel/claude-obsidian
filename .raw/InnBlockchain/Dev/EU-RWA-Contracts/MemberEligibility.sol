@@ -5,7 +5,7 @@ import {IIdentityGate} from "./Interfaces.sol";
 
 /// @notice The claims limb of the identity layer, plus — by inheritance — the canonical gate.
 /// @dev    ⚠️ INHERITS `IIdentityGate` RATHER THAN RE-DECLARING ITS MEMBERS. This contract needs
-///         the wallet → person key (`recordPointerOf`) and `Interfaces.sol` already defines it.
+///         the wallet → person key (`personIdOf`) and `Interfaces.sol` already defines it.
 ///         Copying that signature into a local interface would give one dependency two
 ///         definitions with no compiler error to announce a divergence — precisely the failure
 ///         `Interfaces.sol` says it exists to prevent.
@@ -70,8 +70,8 @@ interface IIdentityRegistryClaims is IIdentityGate {
 ///             nothing reverting and no event to notice — the limit was simply not the limit; and
 ///           • `admittedMemberCount` counted addresses, so the DLT Pilot Art 11(4) six-monthly
 ///             report overstated the membership against the operator's own admission file.
-///         The person key is `IdentityRegistry`'s `recordPointer`, read through
-///         `IIdentityGate.recordPointerOf`. It is the same key `SecurityToken.recoverWallet`
+///         The person key is `IdentityRegistry`'s `personId`, read through
+///         `IIdentityGate.personIdOf`. It is the same key `SecurityToken.recoverWallet`
 ///         uses to prove two addresses are one investor, which is what makes it the right one:
 ///         a fix that invented a second person namespace would just move the problem.
 contract MemberEligibility {
@@ -139,7 +139,7 @@ contract MemberEligibility {
     mapping(address => uint64) public admittedAt;
 
     /// @notice The person each admitted wallet was admitted under, **pinned at admission**.
-    /// @dev    ⚠️ NEVER RE-RESOLVED. `recordPointerOf` can change under a live address —
+    /// @dev    ⚠️ NEVER RE-RESOLVED. `personIdOf` can change under a live address —
     ///         `SecurityToken.recoverWallet` re-points one — and a person resolved at withdrawal
     ///         time would then decrement a bucket that was never incremented, underflowing one
     ///         person's count while stranding another's. It is also what the order path reads,
@@ -164,14 +164,19 @@ contract MemberEligibility {
 
     event ConditionAdded(uint256 indexed index, uint256 indexed topic, bytes32 label);
     event AdditionalConditionAdded(uint256 indexed index, uint256 indexed topic, bytes32 label, bytes32 ncaRefHash);
-    /// @dev `personId` is indexed on all three so the Art 11(4) report and any DEA-limit
-    ///      reconciliation can be assembled per person from logs alone, without first joining
-    ///      every wallet back through the identity registry.
-    event MemberAdmitted(address indexed wallet, bytes32 indexed personId, uint64 at);
-    event MemberWithdrawn(address indexed wallet, bytes32 indexed personId, uint64 at, bytes32 reasonHash);
-    event DeaLimitsSet(
-        bytes32 indexed personId, address indexed setVia, uint256 maxOrderNotionalWei, uint256 maxDailyNotionalWei
-    );
+    /// @dev ⚠️ NO `personId` IN ANY LOG — reversed from the earlier design, which indexed it on
+    ///      all three "so the Art 11(4) report can be assembled from logs alone". That
+    ///      convenience was the leak. `personId` is the one value shared by every wallet a
+    ///      human holds, so an indexed copy in a log is a permanent, un-erasable statement
+    ///      that those addresses are the same person — the exact fact `IdentityRegistry`
+    ///      keeps in storage precisely so `deregisterPerson` can delete it. The Art 11(4)
+    ///      report joins wallet → person through `personOfAdmittedWallet()` instead, which
+    ///      goes empty on withdrawal. Same rule for the DEA notionals: a trading limit is an
+    ///      attribute of the person it binds, and lives in `deaLimitsOf()` where `delete`
+    ///      can reach it. Events say THAT something changed; storage says WHAT.
+    event MemberAdmitted(address indexed wallet, uint64 at);
+    event MemberWithdrawn(address indexed wallet, uint64 at, bytes32 reasonHash);
+    event DeaLimitsSet(address indexed setVia);
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
@@ -306,9 +311,9 @@ contract MemberEligibility {
     ///         practice — `checkAdmission` runs `checkEligibleAndIdentifiable`, so an
     ///         unregistered wallet was never admissible.
     function _personOf(address wallet) internal view returns (bytes32) {
-        (bytes32 pointer, bool registered) = identity.recordPointerOf(wallet);
-        if (!registered || pointer == bytes32(0)) revert WalletNotRegistered(wallet);
-        return pointer;
+        (bytes32 personId, bool registered) = identity.personIdOf(wallet);
+        if (!registered || personId == bytes32(0)) revert WalletNotRegistered(wallet);
+        return personId;
     }
 
     /// @notice Address-shaped read of the person key, for operator tooling and the Art 11(4)
@@ -337,7 +342,7 @@ contract MemberEligibility {
         // decision taken on a person's file.
         if (admittedWalletsOfPerson[personId]++ == 0) admittedMemberCount++;
 
-        emit MemberAdmitted(wallet, personId, uint64(block.timestamp));
+        emit MemberAdmitted(wallet, uint64(block.timestamp));
     }
 
     /// @dev The person is read from `personOfAdmittedWallet`, never re-resolved — see the note
@@ -355,7 +360,7 @@ contract MemberEligibility {
 
         if (--admittedWalletsOfPerson[personId] == 0) admittedMemberCount--;
 
-        emit MemberWithdrawn(wallet, personId, uint64(block.timestamp), reasonHash);
+        emit MemberWithdrawn(wallet, uint64(block.timestamp), reasonHash);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -384,7 +389,7 @@ contract MemberEligibility {
             maxDailyNotionalWei: maxDailyNotionalWei,
             deaAgreementHash: deaAgreementHash
         });
-        emit DeaLimitsSet(personId, wallet, maxOrderNotionalWei, maxDailyNotionalWei);
+        emit DeaLimitsSet(wallet);
     }
 
     /// @notice Called by the venue before accepting an order. Consumes daily headroom, so it

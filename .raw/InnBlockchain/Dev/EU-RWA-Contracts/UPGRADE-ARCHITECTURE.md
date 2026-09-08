@@ -1,7 +1,7 @@
 ---
 title: Upgrade Architecture — EU-RWA-Contracts
 date: 2026-09-08
-status: design for the shared upgrade stack; supersedes the upgrade limb of DoraGovernor.sol
+status: design for the shared upgrade stack; the upgrade limb of DoraGovernor.sol was deleted 2026-09-08 (§9)
 scope: Gnosis Safe + OpenZeppelin TimelockController + ProxyAdmin + TransparentUpgradeableProxy. No custom contracts.
 ---
 
@@ -236,27 +236,54 @@ kind.
 
 ---
 
-## 9. Open item — `DoraGovernor.sol`
+## 9. `DoraGovernor.sol` — stripped (2026-09-08)
 
-`DoraGovernor` carries its own upgrade queue, its own timelock, and a `disclosureArtefactHash`
-welded into `queueUpgrade`. All of it is now superseded by the OZ stack above.
+The open item is closed on the **strip** option. `DoraGovernor` no longer carries an upgrade queue, a
+timelock, a commit-reveal, an executor or a `DocumentRegistry` reference. What remains is what the
+name should always have meant: a protocol pause, the oracle trip into it, the DORA incident log and
+the key-rotation register, with two-step governance rotation. Nothing in that file touches a proxy,
+and nothing in the stack above calls it.
 
-Two options, and this needs a decision rather than a default:
+⚠️ **`DoraGovernor.pause` / `unpause` is a *protocol* pause, and these are the contracts that read
+it** (through `IProtocolPause.paused()`):
 
-- **Strip it.** Keep only what is DORA-specific — the `IctIncident` events, the key-rotation
-  register, and `tripFromOracle` — and delete `queueUpgrade`, `revealUpgrade`, `executeUpgrade`,
-  `cancelUpgrade` and the timelock. What remains is an incident and resilience log, which is what
-  the name should have meant.
-- **Retire it.** Move the incident events and key register to a plainly named resilience contract
-  and delete the file.
+| Reader | Path that stops | Path that deliberately continues |
+|---|---|---|
+| `SecurityToken` | holder-initiated (voluntary) transfer paths | `forcedTransfer`, `recoverWallet` |
+| `NavBorrowingCap`, `UcitsFiveTenForty`, `EltifConcentration`, `LmtGate` | acquisition / draw / new-request paths | repayment, disposal, breach cure, processing already in flight |
 
-⚠️ **`DoraGovernor.pause` / `unpause` is a *protocol* pause — it halts the modules that read it.**
-That is a different thing from stopping an upgrade, and it stays either way. Only the upgrade limb
-moves.
+Wired on 2026-09-08 by the token and fund-module passes (`protocolPause` reference, settable, on
+each). **Verify the exact function list against each file before citing it in a disclosure** — the
+table states the rule, the code states the paths. The rule: a pause is an incident response, and it
+must not be able to block a court order, trap a fund inside a breach it is trying to cure, or
+silence the incident log. Anything that *acquires* or *moves value at a holder's option* stops;
+anything that *cures, repays, disposes or executes an order* does not.
+`SubscriptionEscrow.withdrawAcceptance` is a refund of the subscriber's own money and is likewise
+not paused. Until 2026-09-08 **nothing** read the flag, so `ValuationOracle`'s deviation halt tripped
+a pause that halted nothing — the wiring above is what turned the trip from an event into a control.
 
-⚠️ **The commit-reveal in `queueUpgrade` does not survive the move, and that is deliberate.**
+⚠️ **The commit-reveal that `DoraGovernor` used to carry does not survive, and that is deliberate.**
 `TimelockController.schedule` takes the calldata in the clear. Where MAR Art 17(1a) makes early
 disclosure the problem, the answer is to **schedule later** — a protracted process is delayed by not
 starting the clock, not by obscuring it. The concealment was thinner than it looked anyway: the
 payload is `upgradeAndCall(proxy, implementation, initData)`, and the implementation's *behaviour*
-is disclosed by publishing source, which is an off-chain act either way.
+is disclosed by publishing source, which is an off-chain act either way. (The *document-side*
+commit-reveal, `DocumentRegistry.anchorConcealed` / `revealConcealed`, is a different mechanism for
+a different artefact and stays.)
+
+---
+
+## 10. Not proxied
+
+D20 in one list. The stack in §1 applies to the contracts a client may need to change without a
+re-issuance. The following are **deployed directly, never behind a proxy**, because an `immutable`
+reads the *implementation's* constructor value through a proxy rather than the proxy's own, and
+each of these carries an `immutable` that is a disclosure item or a load-bearing switch:
+
+| Contract | Why not | What a proxy would silently do |
+|---|---|---|
+| `SubscriptionEscrow` | `mode` and `finalPriceOmittedAtFiling` are prospectus disclosure items — one escrow per offer, a new offer is a new deployment | run in `Exempt` (enum zero): no Art 12 gate, no Art 6 ceiling; window B can never open |
+| `CovenantGate`, `HoldingPeriodGate`, `PdmrClosedPeriodGate` (the `ModuleAdapter`s) | the adapter *is* the binding; re-pointing it is a module swap `ModularCompliance` already expresses | point every deployment at the implementation's store |
+
+Everything not in this table is a candidate for §1; the per-contract decision is still open and is
+tracked as D20 in the design document.

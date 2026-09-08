@@ -19,7 +19,14 @@ contract ClaimTopicsRegistry {
     // meaning of a live topic id silently re-scopes every claim already written against it.
 
     uint256 public constant TOPIC_KYC_VERIFIED = 1; // AMLR Art 20 — CDD completed
-    uint256 public constant TOPIC_AML_SCREENED = 2; // AMLR — sanctions/PEP screening clear
+    // ⚠️ TOPIC 2 (AML/sanctions screening) IS RETIRED, NOT AVAILABLE. Retired 2026-09-08: a
+    //    per-wallet screening claim beside the restriction store is the two-slot leak rev 48
+    //    removed. While `TOPIC_AML_SCREENED` existed, a screening vendor could record a hit as
+    //    `AssertedFalse` on topic 2 instead of `RestrictedPartyRegistry.blockPerson` — and
+    //    `rawClaim` is public, `checkEligible` reverts naming the topic, so the hit was readable
+    //    by anyone and typed on the revert. A hit is `RestrictedPartyRegistry.blockPerson` /
+    //    `blockWallet`, never a claim. A "screening clear" claim is equally forbidden: its
+    //    absence on one wallet and presence on the rest is the same disclosure.
     uint256 public constant TOPIC_EIDAS_IDENTIFIED = 3; // eIDAS 2.0 — EUDI wallet / QTSP attestation
     uint256 public constant TOPIC_TAX_RESIDENCY = 4; // per-jurisdiction tax treatment
     uint256 public constant TOPIC_SUITABILITY_ART25 = 5; // MiFID II Art 25 suitability outcome
@@ -46,6 +53,9 @@ contract ClaimTopicsRegistry {
     //    numbering must not be silently reinterpretable as a later topic — a stale claim
     //    that resolves to nothing fails closed, a stale claim that resolves to something
     //    else fails open, and only one of those is survivable. Next free topic is 28.
+    //
+    //    Retired set, as enforced by `_retired` below: 2, 8, 22, 23, 24, 25, 26.
+    //    Until 2026-09-08 this rule was comment-only and `addBaselineTopic(8)` succeeded.
 
     uint256 public constant TOPIC_DLT_RISK_WARNINGS_ACK = 27; // retail package — incl. regime impermanence
 
@@ -54,6 +64,18 @@ contract ClaimTopicsRegistry {
     address public immutable governance;
 
     // ─────────────────────────── state ────────────────────────────────────────
+
+    /// @notice Topic ids that may never be required again. Seeded once in the constructor and
+    ///         never written afterwards — there is deliberately no `retireTopic` and no
+    ///         `unretireTopic`. Retiring a live id is a re-scoping of every claim written
+    ///         against it and belongs in a redeployment with the catalogue versioned, not in a
+    ///         governance call; un-retiring one is the fail-open reinterpretation the rule
+    ///         above forbids.
+    /// @dev    Enforced on `addBaselineTopic` and `addAdditionalTopic`. `IdentityRegistry.setClaim`
+    ///         is NOT gated on it: an issuer writing a claim on a retired topic writes into a
+    ///         slot nothing reads, which fails closed on its own, and putting this registry on
+    ///         the claim-write path would couple two contracts for a check with no consequence.
+    mapping(uint256 => bool) private _retired;
 
     uint256[] private _baselineTopics;
     mapping(uint256 => bool) public isBaselineTopic;
@@ -79,6 +101,7 @@ contract ClaimTopicsRegistry {
     error TopicAlreadyRequired(uint256 topic);
     error TopicNotRequired(uint256 topic);
     error TooManyRequiredTopics(uint256 wouldBe);
+    error TopicRetired(uint256 topic);
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -87,6 +110,19 @@ contract ClaimTopicsRegistry {
 
     constructor(address governance_) {
         governance = governance_;
+        // The retired set. Seeded here and nowhere else — see `_retired`.
+        _retired[2] = true; // AML/sanctions screening — a hit is a restriction, never a claim
+        _retired[8] = true; // PRIIPs Art 13 "KID delivered" — lives in CovenantRegistry
+        _retired[22] = true; // DLT Pilot Art 4(2)(c)–(g) — moved to CovenantRegistry
+        _retired[23] = true;
+        _retired[24] = true;
+        _retired[25] = true;
+        _retired[26] = true;
+    }
+
+    /// @notice Whether a topic id is in the retired set and may never be required.
+    function isRetiredTopic(uint256 topic) external view returns (bool) {
+        return _retired[topic];
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -94,6 +130,7 @@ contract ClaimTopicsRegistry {
     // ═══════════════════════════════════════════════════════════════════════
 
     function addBaselineTopic(uint256 topic) external onlyGovernance {
+        if (_retired[topic]) revert TopicRetired(topic);
         if (isBaselineTopic[topic]) revert TopicAlreadyRequired(topic);
         if (_baselineTopics.length + 1 > MAX_REQUIRED_TOPICS) {
             revert TooManyRequiredTopics(_baselineTopics.length + 1);
@@ -122,6 +159,7 @@ contract ClaimTopicsRegistry {
     // ═══════════════════════════════════════════════════════════════════════
 
     function addAdditionalTopic(bytes32 jurisdiction, uint256 topic) external onlyGovernance {
+        if (_retired[topic]) revert TopicRetired(topic);
         if (isAdditionalTopic[jurisdiction][topic]) revert TopicAlreadyRequired(topic);
         uint256 wouldBe = _baselineTopics.length + _additionalTopics[jurisdiction].length + 1;
         if (wouldBe > MAX_REQUIRED_TOPICS) revert TooManyRequiredTopics(wouldBe);

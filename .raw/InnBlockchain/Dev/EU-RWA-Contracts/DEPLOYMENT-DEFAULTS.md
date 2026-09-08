@@ -134,10 +134,10 @@ end. Treat them as one atomic governance action.
 
 | Role | Set by | Writes | Typical holder |
 |---|---|---|---|
-| `isScreeningOperator` | `setScreeningOperator` | `blockRecord` / `blockWallet` | the list-screening vendor |
-| `isRestrictionRegistrar` | `setRestrictionRegistrar` | `blockRecord` / `blockWallet` | the transfer agent / registrar, for probate, court orders, lost keys |
+| `isScreeningOperator` | `setScreeningOperator` | `blockPerson` / `blockWallet` | the list-screening vendor |
+| `isRestrictionRegistrar` | `setRestrictionRegistrar` | `blockPerson` / `blockWallet` | the transfer agent / registrar, for probate, court orders, lost keys |
 
-Release — `unblockRecord` / `unblockWallet` — is **governance only** for both. Placing a restriction is an
+Release — `unblockPerson` / `unblockWallet` — is **governance only** for both. Placing a restriction is an
 operational act that fails safe; lifting one releases a frozen position and is not delegated.
 
 Both roles write the **same** flag, and nothing on-chain records which one wrote it. That is
@@ -149,17 +149,45 @@ leak inside a single store.
 ## 2. Baseline wiring order
 
 Dependencies are constructor-set and then held behind governance setters, so ordering matters at
-deployment even though nothing is immutable afterwards.
+deployment. ⚠️ **"Nothing is immutable afterwards" was never true and is not true now** — 95
+`immutable` declarations remain across the suite, and the ones that are load-bearing are listed
+under **D20** in the design. What follows is the constructor order, not a claim about mutability.
+⚠️ *Rewritten 2026-09-08 — this list was stale in three places after the code-review
+fix pass, and the per-layer sections at the end of this file record the individual changes. **This
+list is the authoritative order; where a later section disagrees, this one wins.***
 
-1. `ClaimTopicsRegistry`, `TrustedIssuersRegistry`
-2. `IdentityRegistry` — takes both of the above
-3. `RestrictedPartyRegistry` — takes `IdentityRegistry`
-4. `ModularCompliance`
-5. `SecurityToken` — takes `(governance, ModularCompliance, IdentityRegistry, RestrictedPartyRegistry, name, symbol, decimals, isinHash)`
+0. **`DoraGovernor`** — takes `(governance)`. **First, because it is the protocol pause** and the
+   token, the fund modules, `DistributionAgent` and `BuybackAgent` all take it as a non-zero
+   constructor argument. *(New at step 0 on 2026-09-08; it used to be a lane-conditional
+   afterthought, which is how the pause ended up with no readers.)*
+1. `ClaimTopicsRegistry`, `TrustedIssuersRegistry` — each takes `(governance)`
+2. `IdentityRegistry` — takes `(governance, claimTopics, trustedIssuers)`
+3. `RestrictedPartyRegistry` — takes `(governance, identity, maxSweepLag)`
+4. `ModularCompliance` — takes `(governance)`
+5. `SecurityToken` — takes `(governance, compliance, identity, restrictions, protocolPause, name, symbol, decimals, isinHash)`
 6. `ModularCompliance.bindToken(token)` — **one-shot, and there is no rebind**
-7. `RestrictedPartyGate` — takes `RestrictedPartyRegistry`; then `ModularCompliance.addModule(gate)`
-8. `DistributionAgent` — takes `(governance, IdentityRegistry, ModularCompliance, RestrictedPartyRegistry)`
-9. Lane-conditional modules per §17a
+7. `RestrictedPartyGate` — takes `(moduleId, governance, restrictions)`; then `ModularCompliance.addModule(gate)`
+8. `DistributionAgent` — takes `(governance, identity, compliance, restrictions, protocolPause)`
+9. **Arm the pause and the screening guard before anything can mint** — see the go-live checklist below
+10. Lane-conditional modules per §17a — note `ValuationOracle` takes `(governance)` and must
+    precede every fund module, and that `DoraGovernor.setOracleTripSource(oracle)` /
+    `ValuationOracle.setCircuitBreaker(governor)` are a **mutual** pair: set both or the trip is
+    a one-way call into nothing
+
+### Go-live: three things that are inert until someone arms them
+
+Each fails in the safe direction, and each will read as a bug to whoever runs the first transaction.
+
+| What | Until it is armed | Arm it with |
+|---|---|---|
+| **Screening staleness** | `screeningIsStale()` is **true**, so **every mint reverts** | `advanceListVersion` then `recordSweep` — both, once, after the first full base sweep |
+| **Oracle circuit breaker** | A deviation halt pauses **nothing** | `DoraGovernor.setOracleTripSource(oracle)` **and** `ValuationOracle.setCircuitBreaker(governor)` |
+| **Offer close (Prospectus mode)** | `settle()` reverts `OfferStillOpen` and no escrow ever releases | `SubscriptionEscrow.setOfferClose(ts)` — extend-only, so set it when the offer opens, not at the end |
+
+⚠️ **`SubscriptionEscrow` is never deployed behind a proxy.** `mode` and `finalPriceOmittedAtFiling`
+are immutable on purpose — they are disclosure items — and through a proxy an implementation's
+constructor values are what every instance reads. See `UPGRADE-ARCHITECTURE.md` §10 and **D20**,
+which is unresolved for the rest of the suite: **no contract here has been cleared for a proxy.**
 
 ⚠️ **`RestrictedPartyRegistry` moved up the order on 2026-09-08.** It was already step 3, but it was only a
 dependency of the gate at step 7. It is now a constructor argument to `SecurityToken` at step 5 and
@@ -169,7 +197,7 @@ a module — it produces a token that will not deploy at all.
 **Three of the lane-conditional contracts take `IdentityRegistry` as well**, so it is a dependency
 of far more than the transfer hook: `CovenantRegistry`, `MemberEligibility` and — since 2026-09-08
 — `PdmrRegister`, which now takes `(registrar, identity)`. `PdmrRegister` needs it because a
-manager's `personId` must be the identity registry's `recordPointer` where the manager is also a
+manager's `personId` must be the identity registry's `personId` where the manager is also a
 registered investor; without it the register mints a second person namespace and the MAR
 Art 19(1a) aggregation is assembled across the wrong set of wallets. Deploy the identity registry
 before any of them.
@@ -212,9 +240,9 @@ is enforced by any `require`.
 
 2. **A restriction that must survive a lost key goes on the RECORD, not the wallet.**
    `SecurityToken.recoverWallet` runs no transfer gate — by design, since its control is the
-   record-pointer match rather than the agent role. So `RestrictedPartyRegistry.blockWallet(lostWallet)` is
+   `personId` match rather than the agent role. So `RestrictedPartyRegistry.blockWallet(lostWallet)` is
    left behind and the units land in a second, unrestricted wallet of the same investor.
-   `blockRecord` follows, because both wallets resolve to the same pointer. Prefer `blockRecord`
+   `blockPerson` follows, because both wallets resolve to the same `personId`. Prefer `blockPerson`
    wherever the subject is a person rather than a specific key.
 
 ---
@@ -227,3 +255,337 @@ is enforced by any `require`.
   them. `listVersion` / `sweptToVersion` make the lag measurable per chain; closing it is an
   operational commitment with a stated worst-case, and it needs an owner. This is unresolved, not
   handled.
+
+---
+
+## 2026-09-08 fixes — token/identity layer
+
+Applied against `CODE-REVIEW-2026-09-08.md` (H1, H7b, M-T1, M-T3–M-T7, section 3 table). What
+changes for a deployer:
+
+### `SecurityToken` constructor gained a parameter — wiring order in §2 step 5 is now stale
+
+New signature:
+
+```
+SecurityToken(governance, ModularCompliance, IdentityRegistry, RestrictedPartyRegistry, protocolPause, name, symbol, decimals, isinHash)
+```
+
+`protocolPause` is the contract answering `IProtocolPause.paused()` — `DoraGovernor` in the
+baseline. It is rejected at `address(0)`, re-pointable through `setProtocolPause(impl)`
+(governance, emits `ProtocolPauseChanged(old, new)`), and read by `whenLive` on **voluntary paths
+only**: `transfer`, `transferFrom`, `mint`, `burn`, `simulate`. `forcedTransfer` and
+`recoverWallet` run during a protocol pause exactly as they run during the agent's own `paused`.
+**`DoraGovernor` must therefore deploy before the token** — insert it between steps 4 and 5.
+
+### `burn` is now `whenLive`
+
+It was the one voluntary movement that ignored `paused`. A redemption during an oracle deviation
+halt is paid at a figure the halt exists to say is unreliable. Buy-back disposals
+(`BuybackAgent.disposeUnits`) and redemption burns will revert while either pause is in force —
+this is intended.
+
+### `forcedTransfer` reads the restriction store in the mandatory layer (H1)
+
+`restrictions.assertTransferPermitted(from, to)` now runs on the forced path above the module
+list, so `removeModule(RestrictedPartyGate)` / `emergencyBypass(gate)` no longer opens a route
+that lands units on a listed person or releases them from one. The sender limb is relieved
+**only** by `RestrictedPartyRegistry.setPermittedDestination` — that is the seizure / estate
+mechanism, unchanged. Also: sender-side **module** rules do apply on a forced transfer (a
+`HoldingPeriodGate` lock will refuse a seizure during ramp-up). Where the order overrides the
+lock, the mechanism is `ModularCompliance.emergencyBypass` on that module — logged — not a hidden
+branch in the token. `forcedTransfer(w, w, …)` and `recoverWallet(w, w, …)` revert `SameWallet`.
+
+### Go-live: `screeningIsStale()` is now genuinely true until the first sweep (M-T3)
+
+The §2 "before the first mint" note was describing a control that did not exist — both counters
+started at 0 so a fresh store reported itself current. Now `sweptToVersion == 0` is stale and
+`recordSweep(0, …)` is refused, so **every mint reverts `ScreeningStale()` until
+`advanceListVersion(sourceHash)` and then `recordSweep(version, n)` have each run once.** Both
+are `onlyScreeningOperator`, so `setScreeningOperator` precedes them. Voluntary transfers between
+existing holders are unaffected (staleness blocks entry, not exit).
+
+### `IdentityRegistry` — references settable, claim expiry bounded, `Tier` imported
+
+- `claimTopics` / `trustedIssuers` are no longer `immutable`. Constructor rejects `address(0)`;
+  `setClaimTopics(impl)` / `setTrustedIssuers(impl)` are governance-only and emit
+  `…Changed(old, new)`. Swapping the issuer registry re-validates every stored claim against the
+  new list on its next read — migrate the issuer set first.
+- `setClaim` **rejects `expiresAt == 0`**, `expiresAt <= now`, and
+  `expiresAt > now + maxClaimValiditySeconds` (default 5 × 365 days;
+  `setMaxClaimValiditySeconds` governance-only, emits). There is no "never expires" claim. A claim
+  is invalid **at** its expiry second (`>=`), as is an investor record's `expiresAt`.
+  `Investor.expiresAt == 0` keeps its "no scheduled refresh" meaning — it is the registrar's
+  horizon, not an issuer's.
+- `Tier` is imported from `Interfaces.sol`; `IdentityRegistry.Tier` no longer resolves. Name
+  `Tier`. `IdentityRegistry is IIdentityGate` is now declared.
+
+### `ClaimTopicsRegistry` — topic 2 retired, retirement enforced on-chain
+
+`TOPIC_AML_SCREENED` is gone. Retired set {2, 8, 22–26} is seeded in the constructor and
+`addBaselineTopic` / `addAdditionalTopic` revert `TopicRetired(topic)` on any of them. There is no
+un-retire. A screening hit is `RestrictedPartyRegistry.blockPerson` / `blockWallet`, never a
+claim; a screening "clear" is not recorded anywhere on-chain.
+
+### `ModularCompliance`
+
+- `removeModule` clears any standing bypass and emits `ModuleBypassCleared(module, at)`;
+  `addModule` reverts `BypassStillSet` if one somehow survives. Bypass → remove → re-add no longer
+  yields a silently skipped module.
+- `bindToken(address(0))` reverts `ZeroAddress` (it previously consumed nothing and left the
+  one-shot open).
+- `checkTransfer` NatSpec now carries the module classification: **informative-block** (holding
+  period, closed period, covenant, concentration — may name an Article) vs **generic-block**
+  (anything eligibility / freeze / sanctions / suspicion-linked — one argument-free error, AMLR
+  Art 76). `RestrictedPartyGate` is the generic-class module and the only one. Each module carries
+  a `/// @dev CLASS: informative | generic` line. The store raises **two** argument-free errors on
+  the transfer path, not one: `TransferNotPermitted()` everywhere, `ScreeningStale()` on mint only.
+
+---
+
+## 2026-09-08 fixes — documents/escrow/governance layer
+
+### `DoraGovernor` — constructor is now `(governance)`
+
+The `documents` argument is gone with the upgrade limb. Deploy it directly (no proxy needed —
+nothing in it is a disclosure item), then:
+
+- `DoraGovernor.setOracleTripSource(ValuationOracle)` **and** `ValuationOracle.setCircuitBreaker(DoraGovernor)`
+  — both directions, or the trip is refused on one side and never sent on the other.
+- Pass the `DoraGovernor` address as the `protocolPause` reference to `SecurityToken` and the four
+  fund modules (`NavBorrowingCap`, `UcitsFiveTenForty`, `EltifConcentration`, `LmtGate`). Until it
+  is wired, `pause()` stops nothing; `UPGRADE-ARCHITECTURE.md` §9 has the reader table.
+- Governance rotates in two steps (`transferGovernance` → `acceptGovernance`); the Safe is the
+  initial `governance`.
+- `currentKeySet()` reverts `NoKeySetRecorded()` until the first `recordKeyRotation` — record the
+  go-live signer set as part of deployment, not after the first rotation.
+
+### `SubscriptionEscrow` — constructor is now `(issuer, governance, mode, maxOfferAmountWei, prospectusValidUntil, finalPriceOmittedAtFiling, documents, prospectusDocRef, identity, restrictions)`
+
+- **Never behind a proxy.** `mode` and `finalPriceOmittedAtFiling` are `immutable` disclosure items;
+  one escrow per offer. Listed in `UPGRADE-ARCHITECTURE.md` §10.
+- `restrictions` (the `RestrictedPartyRegistry`) is a required constructor argument in **both**
+  modes. `subscribe()` runs `identity.checkEligible` and `restrictions.assertNotBlocked`; the refund
+  path deliberately runs neither.
+- `documents` is required (non-zero) in `Prospectus` mode and must stay `address(0)` in `Exempt`;
+  `setDocuments` reverts `WrongMode` in `Exempt`. `setIdentity` / `setRestrictions` work in both.
+- **`setOfferClose(ts)` must be called before anything can settle.** `settle()` reverts
+  `OfferStillOpen()` while `offerClosesAt == 0` or not yet passed; `subscribe()` reverts
+  `OfferClosed` after it. The date may be extended, never brought forward.
+- In `Prospectus` mode `subscribe()` requires the current prospectus version to carry a recorded
+  NCA approval (`DocumentRegistry.recordNcaApproval`) — an anchored-but-unapproved prospectus
+  reverts `ProspectusNotApproved`. `prospectusValidUntil` must sit within
+  `versionAt(prospectusDocRef, 0).approvedAt + 365 days` (the base prospectus, not the latest
+  supplement); it is checked lazily on every `subscribe()` and eagerly in
+  `extendProspectusValidity` once an approval is on record. Record the approval **before** the
+  first subscription, and feed a validity date computed from it.
+- `publishSupplement(docRef, versionHash, opensAt, closesAt)` now takes the slot: the hash must be
+  a revealed version in a `Regime.ProspectusRegulation` slot, and not index 0 of this offer's own
+  prospectus. `opensAt >= now` and `closesAt - opensAt >= supplementWindowDurationSeconds`
+  (default 3 days; setter `setSupplementWindowFloor`, zero refused). Same floor semantics on
+  `publishFinalPrice` with `finalPriceWindowDurationSeconds` / `setFinalPriceWindowFloor`. The
+  floors are calendar seconds — working-day arithmetic stays off-chain; the floor is a lower bound
+  on what is fed in, not the computation.
+- Event rename: the escrow's `SupplementPublished` is now `WithdrawalWindowOpened(windowIndex, kind,
+  opensAt, closesAt, scopeCutoff)` and fires for both window kinds. Re-key any subgraph handler that
+  joined on the name against `DocumentRegistry.SupplementPublished`; the reconciliation join is on
+  `versionHash` via `SupplementAnchorVerified(docRef, versionHash, approvedAt)`.
+- `subscribe()` with zero value reverts `ZeroSubscription()`.
+
+### `DocumentRegistry`
+
+- `openDocument` refuses `Regime.Unset`.
+- One pending concealed commitment per slot: `anchorVersion` and `anchorConcealed` revert
+  `PendingConcealedCommitment` while one is unrevealed. `revealConcealed(docRef, versionHash,
+  uriHash, salt, uri, retentionUntil)` gained the `retentionUntil` argument, runs the
+  `VersionHashAlreadyUsed` check, starts a KID's Art 10 clock, and emits `SupplementPublished` /
+  `KidRevised` exactly as a plain anchor does.
+
+### `CovenantRegistry`
+
+- `identity` is `IIdentityGate`-typed; the constructor signature is unchanged
+  `(governance, documents, identity)`.
+- `setOptUpCovenant` refuses a covenant that is not `PlatformWide` or whose `tierMask` excludes
+  `ProfessionalOnRequest` (`OptUpCovenantMisconfigured`). Configure the opt-up covenant with
+  `tierMask = 0` or with the elective-professional bit set.
+- `signCovenant` on an `OperatorAttestation` covenant reverts `AttestationRequiredFromOperator`;
+  back-record those through `recordAttestation` from an operator key.
+- `CovenantGate` no longer gates the zero leg on burn: a RECEIVE-gated covenant no longer blocks
+  redemptions, buy-back burns or maturity burns.
+
+## 2026-09-08 fixes — fund layer
+
+Covers `ValuationOracle`, `NavBorrowingCap`, `UcitsFiveTenForty`, `EltifConcentration`, `LmtGate`,
+`HoldingPeriodLock` / `HoldingPeriodGate`, and the `IValuationFeed` interface. Review rows H5, H6,
+H8, H9, M-F1–M-F8, M-D6, M-T8, §3 reference discipline, H7b consumer side.
+
+**Constructor signatures changed — every fund module takes `protocolPause` (the `DoraGovernor`)
+and a fed start date. Nothing may be zero.**
+
+| Contract | New constructor |
+|---|---|
+| `NavBorrowingCap` | `(aifm, subscriptionAgent, regulator, oracle, protocolPause, navFeedId, fundType, rampUpStartsAt)` — `rampUpStartsAt` is ELTIF Art 16(3); pass 0 for UCITS/LOF |
+| `UcitsFiveTenForty` | `(manco, subscriptionAgent, oracle, protocolPause, navFeedId, authorisedAt)` — `authorisedAt` is the UCITS authorisation date, the Art 56 clock |
+| `EltifConcentration` | `(aifm, subscriptionAgent, oracle, protocolPause, rampUpStartsAt)` — `rampUpStartsAt` is Art 17(1)(a) |
+| `LmtGate` | `(aifm, regulator, oracle, protocolPause, token, identity, restrictions, navFeedId, minWindowSeconds)` — `minWindowSeconds > 0` |
+| `HoldingPeriodLock` | `(aifm, subscriptionAgent)` unchanged, but see `setGate` below |
+
+**Wiring steps that are now mandatory:**
+
+- **`LmtGate` must be a registered agent on `SecurityToken`** — `processRedemption` burns the paid-out
+  units through `token.burn(redeemer, shares)`, which is agent-gated. Until the role is granted every
+  processing call reverts. `processRedemption` records the cash owed and burns units; **the cash leg
+  is off-chain / `DistributionAgent` from the issuer-funded pool.** No ETH moves through `LmtGate`.
+- **`HoldingPeriodLock.setGate(HoldingPeriodGate)`** before `ModularCompliance.addModule(gate)`. The
+  gate now overrides `notifyTransfer` to call `lock.recordTransferIn(to)` on every settled move so a
+  secondary-market buyer gets a holding-period clock (M-T8). Until `gate` is set that call reverts
+  `NotAuthorised` **and takes the transfer with it** — same posture as the unrecorded screening sweep.
+  Units that landed before the gate was wired have no clock; `backdate(wallet, acquiredAt)` (AIFM, can
+  only move a clock earlier) or `recordSubscription` fixes them. `recordSubscription` is now idempotent —
+  it keeps the earlier date and never resets a clock.
+- **`ValuationOracle.setCircuitBreaker` refuses a codeless address.** Deploy `DoraGovernor` first; an
+  EOA or a not-yet-deployed proxy is rejected (M-D6).
+- **`DoraGovernor` must be deployed before any fund module** — it is a constructor argument to all four.
+- **Feed ids:** every `UcitsFiveTenForty` leg and every `EltifConcentration` asset must have its own
+  configured, posted, non-zero feed before the first acquisition. The oracle now rejects a post of `0`
+  outright (`ZeroValuation`).
+
+**Behaviour changes an operator will notice:**
+
+- `syncNav()` / `syncAssetValuation()` / `syncLegValuation()` no longer take classification arguments
+  and no longer zero the cash/payout counters on every call — only when the oracle's `acceptedAt`
+  advanced (H5/H6). Every acquisition, draw and window roll syncs inline first, so "the AIFM never
+  synced" is no longer a way to compute on an old NAV (H8). `NavSynced` fires only on an absorption.
+- A protocol pause blocks: `recordAssetTrade` (buy), `recordHoldingUpdate` (buy), every
+  `NavBorrowingCap.record*` draw, `LmtGate.lockSelection` / `rollWindow`. It never blocks a sell, a
+  repayment, a redemption request, a processing run, `onBurn`, or a passive sync.
+- `NavZero()` / `CapitalZero()` on an acquisition against a zero denominator. Passive paths still skip.
+- `LmtGate` is a dealing-day model: requests accumulate in the open window; `rollWindow` (not before
+  `minWindowSeconds`) closes it, fixes `payoutRatioBps = min(1, cap / requested)`, and opens the next;
+  each closed-window request pays `owed × ratio` and the remainder is carried into the open window at
+  full value. Cost-based tools haircut once, at request. `requestRedemption(shares)` derives cash from
+  `shares × nav() / totalSupply` and checks the caller's balance; both mandatory-layer gates run on the
+  redeemer at request and at processing. `cancelRedemption` exists for the investor and the AIFM.
+- `lockSelection` enforces "at least two from Annex V points 2–8, not only points 5 and 6"
+  (aifmd2-checklist.md:36). Side pockets (point 9) no longer count.
+- `UcitsFiveTenForty.setNonUcitsCiuLimit` (default 20%, bounded 10–20%) — checklist §7.3 flags the
+  20% as an interpretation. Bucket ids for legs are now `legBucket(legId, legType)` and for entities
+  `entityBucket(entityId)`; the 40% band is re-summed over an enumerable issuer set capped at 256.
+- Suspension relief is scoped: ELTIF Art 17(1)(c) relieves the 55% floor only; Art 16(4) relieves
+  the ELTIF borrowing bucket only (`NavBorrowingCap.activateSuspension` reverts `WrongFundType` on
+  UCITS/LOF). Both budgets are 365 days cumulative per fund life.
+- The oracle now re-attempts acceptance while halted: widen the band with `configureFeed`, let the
+  sources repost, and the halt clears on its own (`HaltRecovered`). `clearHalt` remains the other exit.
+- Every AIFM / ManCo key is two-step rotatable (`transferAifm` / `acceptAifm`, `transferManco` /
+  `acceptManco`); `subscriptionAgent`, `regulator`, `token`, `identity`, `restrictions`,
+  `protocolPause` sit behind manager-gated setters.
+
+**Not done in this pass:** ELTIF Art 15(2) (imports UCITS Art 56(2) issuer-side limits; no
+denominator feed exists), Art 13(7) professional-only relief, ELTIF RTS Art 5(5)–(6) redemption cap
+(still open, see `LmtGate` header), MMF single-tool derogation.
+
+---
+
+## 2026-09-08 fixes — economics/MAR layer
+
+Files: `BuybackAgent.sol`, `DistributionAgent.sol`, `CouponSchedule.sol`, `DistributionWaterfall.sol`,
+`PdmrClosedPeriodFreeze.sol` (+ `PdmrClosedPeriodGate`), `PdmrRegister.sol`. Review items M-E1–M-E8,
+section 3 reference discipline, protocol pause.
+
+### Constructor signatures changed (deployment scripts must follow)
+
+| Contract | New signature |
+|---|---|
+| `BuybackAgent` | `(governance, token, documents, closedPeriods, protocolPause, InstrumentClass instrumentClass)` — every address non-zero; `instrumentClass` must be `Share` (1) or the contract can never open a programme |
+| `DistributionAgent` | `(governance, identity, compliance, restrictions, protocolPause)` — all non-zero |
+| `CouponSchedule` | unchanged order; `governance`, `token`, `distributions` now reject `address(0)` |
+| `DistributionWaterfall` | unchanged order; `governance`, `distributions` reject `address(0)`; `trancheIds.length == contributedCapital.length` enforced |
+| `PdmrClosedPeriodFreeze` | `(register, issuer, governance)` — all non-zero; `governance` grants Art 19(12) permissions and re-points `register`; `issuer` runs the calendar |
+| `PdmrRegister` | `(registrar, identity, governance)` — all non-zero; `governance` owns `setIdentity`; `registrar` owns declarations |
+
+Both new `governance` roles are two-step (`transferGovernance` → `acceptGovernance`).
+
+### Operating rules with no on-chain enforcement (add to §4's list)
+
+3. **`BuybackAgent` is for OWN SHARES ONLY. A debt-token or fund-unit issuer must not deploy it.**
+   MAR Art 5 covers own shares for three purposes (mar-checklist §2.1); a repurchase of anything
+   else is outside the harbour and judged as ordinary Art 12/15 conduct. The contract refuses to
+   label such a programme (`instrumentClass != Share` → `SafeHarbourUnavailable`) and offers no
+   non-harbour path. A non-share instrument's redemption mechanics belong in its own terms.
+
+4. **"No sale of own shares during a programme" is an off-chain programme rule.**
+   `BuybackAgent.checkIssuerMaySell()` was deleted — nothing read it, and the treasury is an
+   ordinary wallet the issuer controls by other means, so a view on this contract could not stop a
+   sale from it. If an on-chain form is wanted it is a freeze of treasury units on the token for
+   the programme's duration; until then the rule needs an owner in the runbook.
+
+5. **`PdmrRegister.registrar` ≠ `PdmrClosedPeriodFreeze.issuer` ≠ any director's key.** The
+   register cannot see the freeze, so `revokeWallet` during a live closed period unfreezes the
+   wallet immediately. The on-chain control is only that every revocation carries a mandatory
+   `reasonHash`; the control that makes the hash mean anything is that the registrar key is held
+   by the company secretary / compliance function and by nobody who benefits from a freeze
+   lifting. Same for `purgePerson` / `purgeWallet`.
+
+6. **`DistributionAgent.preview()` must not be rendered in any holder-facing UI.** Its
+   `eligible` return is "is this wallet blocked?" and any address can ask it about any other.
+   It is for the reconciliation desk and the auditor; a product that shows it beside a holder's
+   dividend has built the AMLR Art 76 tipping-off channel on purpose.
+
+7. **Cash funding is explicit on both agents.** `BuybackAgent.fund()` (governance) and
+   `DistributionAgent.fund(id)` (agent) are the only ways cash enters; there is no `receive`.
+   `withdrawSurplus` on each can take only `balance − reservedWei`. On `BuybackAgent`,
+   `reservedWei` is Σ(`maxConsiderationWei − spentWei`) over Active programmes — i.e. the
+   disclosed ceiling is reserved from `startProgramme`, so fund the ceiling or accept that
+   surplus is unwithdrawable until `endProgramme`. On `DistributionAgent`, `reservedWei` is
+   Σ(`committed − paidOut − swept`) over opened distributions.
+
+8. **`BuybackAgent.marketDataMaxAge` is capped at `MAX_MARKET_DATA_AGE = 1 days`.** Default 15
+   minutes; set to the venue's actual quote cadence, never to the cap "to be safe".
+
+9. **`CouponSchedule.bindPeriod` / `recordRedemption` reconcile `totalUnits` against
+   `token.totalSupply()` NOW, not at the record block.** Supply must not move between the record
+   block and the bind; a `SupplyMismatch` is a stop, not a warning. The redemption distribution's
+   `ratePerUnit` must equal `principalPerUnit` exactly — a final coupon is its own period.
+
+10. **Zero-coupon notes:** `bindPeriod(index, 0)` settles a zero-rate period with no
+    distribution. Do not declare a distribution for it (`DistributionAgent` refuses a zero rate).
+
+11. **`DistributionWaterfall.dustCarried`:** an allocation not divisible by the tranche's
+    `totalUnits` binds at `ratePerUnit = owed / totalUnits` and carries the remainder to the
+    tranche's next award. The agent funds `owed` including the folded dust on that later
+    distribution. A tranche that never receives another award keeps its dust on the books.
+
+12. **A live closed period cannot be cancelled.** `cancelPeriod` works before `opensAt` only;
+    after that the calendar moves through `reschedulePeriod(id, laterDate, evidenceRef)` (later
+    only, evidence mandatory, `opensAt` never moves once the window has opened) or ends through
+    `recordAnnouncement`. Keep the evidence file the `evidenceRef` hashes.
+
+### Citation corrections carried into NatSpec
+
+- The 7-daily-market-session publication is Del. Reg (EU) 2016/1052, not MAR Art 5(1)(c).
+- The issuer's closed-period bar on buy-backs is a condition of the Art 5 harbour under
+  Del. Reg 2016/1052 (mar-checklist §2.1 "Art 19(11) interaction"); Art 19(11) itself binds
+  PDMRs. The mechanism (one calendar) is unchanged; the label was wrong.
+- `PdmrRegister` cites the threshold as **Art 19(8)** and the issuer publication clock as
+  **Art 19(3)** (two business days from *receipt*). ✅ **Verified 2026-09-08 against the
+  consolidated text** (`EU Compliance/Checklist/mar.mhtml`, CELEX:02014R0596-20260605) — the code
+  was right and the checklists were wrong; `mar-checklist.md` (rev 1.2) and
+  `eu-listing-checklist.md` (rev 1.1) were corrected to match, not the other way round.
+  ⚠️ **The substantive limb, which every document in the library was missing: Art 19(9) is a
+  COMPETENT-AUTHORITY decision running BOTH ways — up to €50,000 or DOWN TO €10,000.** The
+  threshold is a three-valued per-jurisdiction parameter. **Any notification engine built to a
+  €20k floor under-reports wherever an authority took the lower option**, which is the direction
+  that gets filed against the issuer. Art 19(1a) is the collective-investment-undertaking
+  exemption and is not a threshold — do not let a citation pass move it back there, as one did
+  at design rev 13, where it stood for 39 revisions.
+- `DistributionAgent`: "AMLR Arts 20/75" → "AMLR Arts 21, 75".
+
+### Not done (needs a change outside these files)
+
+- `PdmrClosedPeriodFreeze.register` stays typed `IPdmrRegister` (from `PdmrRegister.sol`), not
+  `Interfaces.sol`'s `IDeclaredPersonRegister`: that interface declares `isDeclared` / `personOf`
+  and the freeze needs `isFlagged` (live role, not "ever declared"). Add
+  `function isFlagged(address) external view returns (bool)` to `IDeclaredPersonRegister`, then
+  switch the type and drop the concrete-file import.
+- `Distribution` (shared struct in `Interfaces.sol`) was not widened; `committedOf`, `sweptAt`
+  and `Unclaimed{amount, units}` live in `DistributionAgent` side-mappings instead.

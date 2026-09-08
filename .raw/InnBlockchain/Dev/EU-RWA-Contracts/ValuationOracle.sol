@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {IValuationFeed} from "./Interfaces.sol";
+
 /// @title ValuationOracle (illustrative sample — not production code)
 /// @notice The NAV / price feed every quantitative limit in this folder divides by.
 ///         §5 calls it "the #1 engineering risk" and §17's critical path calls it the
@@ -48,6 +50,18 @@ pragma solidity ^0.8.22;
 ///         contract records what that procedure output, when, and from how many sources.
 ///         If the methodology is undocumented, every limit downstream rests on an
 ///         unauditable input and no amount of on-chain plumbing fixes it.
+/// @dev    ⚠️ NO UNIT OR DECIMALS METADATA. `Feed.value` is a bare integer; consumers key by
+///         `bytes32 assetId` and divide one feed by another (`UcitsFiveTenForty` divides a
+///         leg feed by the NAV feed). A unit mismatch between two feeds is silent. The
+///         answer depends on design §16 D4 (who posts, on what method) and D0 (token
+///         decimals), both unmade — DO NOT DEPLOY MULTI-FEED RATIOS UNTIL THAT IS SETTLED.
+/// @dev    ⚠️ ZERO IS NOT A VALUATION. A post of 0 is refused outright (`ZeroValuation`) —
+///         every consumer divides by or sizes off this figure, and a zero that met quorum
+///         would either pass every ceiling (0/0 skipped) or size every window to nothing.
+///         A fund whose NAV is genuinely nil is wound up, not valued.
+/// @dev    Even-count medians take the LOWER of the two middle posts, not their average —
+///         see `_median`. A consumer comparing this feed to a source's own figure should
+///         expect that bias, not "fix" it.
 /// @notice The pause surface the deviation guard escalates to — in practice `DoraGovernor`.
 /// @dev    Declared here rather than imported so this file stays standalone; the deployment
 ///         wires it to the real governance wrapper.
@@ -55,7 +69,7 @@ interface ICircuitBreaker {
     function tripFromOracle(bytes32 assetId) external;
 }
 
-contract ValuationOracle {
+contract ValuationOracle is IValuationFeed {
     // ─────────────────────────── limits ──────────────────────────────────────
 
     /// @dev Bounded because acceptance sorts the fresh posts in memory on every write.
@@ -79,6 +93,11 @@ contract ValuationOracle {
     ///         an operator to notice has already spent the budget it exists to protect.
     /// @dev    Called inside try/catch and never allowed to revert the valuation write — a
     ///         mis-set or failing breaker must not be able to brick the feed it protects.
+    ///         ⚠️ `try/catch` does NOT cover the case that matters most: `tripFromOracle`
+    ///         returns nothing, so Solidity's pre-call `extcodesize` check on a codeless
+    ///         address reverts OUTSIDE the try. `setCircuitBreaker` therefore refuses an
+    ///         address with no code, and `_tripCircuitBreaker` re-checks at call time in
+    ///         case the breaker self-destructed or the deployment was proxied wrong.
     address public circuitBreaker;
 
     address[] private _sources;
@@ -97,10 +116,12 @@ contract ValuationOracle {
     ///         leg for `UcitsFiveTenForty`.
     struct Feed {
         bool configured;
-        /// @dev Halted by the deviation guard. Clearing it is a governance act with a
-        ///      justification reference, because a 40% single-day move is either a market
-        ///      event someone can point at or a broken feed, and the ledger should show
-        ///      which one the operator decided it was.
+        /// @dev Halted by the deviation guard. Clears one of two ways, both leaving a
+        ///      record: `clearHalt` (governance re-attests the OLD figure, with a
+        ///      justification reference) or a re-post that lands inside a band governance
+        ///      widened via `configureFeed` (`HaltRecovered`). A 40% single-day move is
+        ///      either a market event someone can point at or a broken feed, and the ledger
+        ///      should show which one the operator decided it was.
         bool halted;
         /// @dev Beyond this age the feed is unknown. There is no sensible universal
         ///      default — a daily-struck fund NAV and an intraday price are different
@@ -170,6 +191,15 @@ contract ValuationOracle {
     event DeviationGuardTripped(bytes32 indexed assetId, uint256 lastAccepted, uint256 proposed, uint16 bandBps);
     /// @dev `reattested` is implicit and total here: clearing a halt never writes a price.
     event HaltCleared(bytes32 indexed assetId, uint256 confirmedValue, bytes32 justificationRef);
+    /// @dev The other way out of a halt: sources re-posted and the new median landed inside
+    ///      the band — typically because governance widened it via `configureFeed` first,
+    ///      which is the `FeedConfigured` event an auditor pairs this with. No governance
+    ///      call touched the value; the figure is a real acceptance and `reattested` is false.
+    event HaltRecovered(bytes32 indexed assetId, uint256 previousValue, uint256 acceptedValue);
+    /// @dev A post while halted whose median is STILL outside the band. Distinct from
+    ///      `DeviationGuardTripped`, which fires once on the transition and escalates to the
+    ///      breaker; this fires per rejected re-attempt and escalates to nobody.
+    event ReacceptanceRejected(bytes32 indexed assetId, uint256 lastAccepted, uint256 proposed, uint16 bandBps);
     /// @dev Emitted on a post that could not be accepted for want of fresh agreeing
     ///      sources. Distinct from the deviation trip: nothing is wrong with the number,
     ///      there are just not enough of them yet.
@@ -202,6 +232,10 @@ contract ValuationOracle {
     ///      can never reach again. That feed would not revert — it would emit `QuorumNotMet`
     ///      forever, go stale on schedule, and silently freeze every fail-closed consumer.
     error WouldOrphanFeedQuorum(uint8 quorum, uint256 remainingSources);
+    /// @dev See the header: a zero post is refused, not stored.
+    error ZeroValuation();
+    /// @dev The breaker is a void-returning call; a codeless target reverts before `try`.
+    error BreakerNotContract(address breaker);
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -236,7 +270,11 @@ contract ValuationOracle {
     }
 
     /// @notice Set or clear (address(0)) the pause target the deviation guard trips.
+    /// @dev    A non-zero breaker must have code. An EOA here would not merely fail to
+    ///         escalate — it would revert every deviation-halt post from the outside of the
+    ///         `try`, which is the one outcome the breaker isolation exists to prevent.
     function setCircuitBreaker(address breaker) external onlyGovernance {
+        if (breaker != address(0) && breaker.code.length == 0) revert BreakerNotContract(breaker);
         circuitBreaker = breaker;
         emit CircuitBreakerSet(breaker);
     }
@@ -349,15 +387,24 @@ contract ValuationOracle {
     ///         value with it. With quorum 1 the median is that one source and the deviation
     ///         guard is the only remaining defence — which is the honest trade-off of a
     ///         single-administrator deployment, not a gap in this contract.
+    /// @dev    ⚠️ POSTS WHILE HALTED ARE STORED AND RE-ATTEMPTED. Before 2026-09-08 this
+    ///         returned before `_tryAccept` while halted, which made `clearHalt`'s own
+    ///         NatSpec — "widen the band with `configureFeed` and let the sources post again"
+    ///         — describe a path that did nothing. Now a halted feed accepts a new median
+    ///         only if it sits inside the (possibly widened) band of the LAST ACCEPTED value,
+    ///         and on success the halt clears by itself (`HaltRecovered`). Two exits from a
+    ///         halt, both leaving a record: `clearHalt` (governance says the old figure was
+    ///         right) or `configureFeed` + repost (governance says the move was real). Neither
+    ///         lets anyone write a price directly.
     function postValuation(bytes32 assetId, uint256 absoluteValue) external {
         if (!isSource[msg.sender]) revert NotSource();
+        if (absoluteValue == 0) revert ZeroValuation();
         Feed storage f = _feeds[assetId];
         if (!f.configured) revert FeedNotConfigured(assetId);
 
         _posts[assetId][msg.sender] = Post({value: absoluteValue, postedAt: uint64(block.timestamp)});
         emit ValuationPosted(assetId, msg.sender, absoluteValue, uint64(block.timestamp));
 
-        if (f.halted) return; // Clearing the halt is a governance act, not a side effect of the next post.
         _tryAccept(assetId, f);
     }
 
@@ -371,14 +418,30 @@ contract ValuationOracle {
 
         uint256 candidate = _median(fresh, count);
 
+        // The band is tested against the last ACCEPTED value in both states. `f.value != 0`
+        // is now unreachable after the first acceptance (zero posts are refused) and stays
+        // only as a divide-by-zero guard for a feed configured before this rule existed.
         if (f.acceptedAt != 0 && f.maxDeviationBps != 0 && f.value != 0) {
             uint256 diff = candidate > f.value ? candidate - f.value : f.value - candidate;
             if ((diff * BPS_DENOM) / f.value > f.maxDeviationBps) {
+                if (f.halted) {
+                    // Still out of band. No second trip, no second escalation — the breaker
+                    // was told once, and a per-post page while halted is noise, not signal.
+                    emit ReacceptanceRejected(assetId, f.value, candidate, f.maxDeviationBps);
+                    return;
+                }
                 f.halted = true;
                 emit DeviationGuardTripped(assetId, f.value, candidate, f.maxDeviationBps);
                 _tripCircuitBreaker(assetId);
                 return;
             }
+        }
+
+        if (f.halted) {
+            // Inside the band — either governance widened it, or the sources walked the
+            // figure back. Both are real acceptances; the halt is over.
+            f.halted = false;
+            emit HaltRecovered(assetId, f.value, candidate);
         }
 
         f.value = candidate;
@@ -393,9 +456,17 @@ contract ValuationOracle {
     ///      is the control, the breaker call is the escalation, and a breaker that reverts,
     ///      runs out of gas or was set to a non-contract must not be able to undo the halt
     ///      or block the posting source. Failure is recorded, never propagated.
+    ///      The `code.length` guard is load-bearing, not belt-and-braces: `tripFromOracle`
+    ///      returns nothing, and for a void external call the compiler's `extcodesize`
+    ///      check reverts BEFORE the `try` — a codeless breaker would revert every halting
+    ///      post and the guard would never latch. (M-D6, 2026-09-08.)
     function _tripCircuitBreaker(bytes32 assetId) private {
         address breaker = circuitBreaker;
         if (breaker == address(0)) return;
+        if (breaker.code.length == 0) {
+            emit CircuitBreakerCallFailed(assetId, breaker);
+            return;
+        }
         try ICircuitBreaker(breaker).tripFromOracle(assetId) {
             // escalated
         } catch {
@@ -446,10 +517,11 @@ contract ValuationOracle {
     ///                           not a write path: governance cannot set a price here.
     /// @param  justificationRef  Off-chain record of the determination.
     /// @dev    To adopt the NEW figure instead, leave the halt in place, widen the band with
-    ///         `configureFeed`, and let the sources post again. That path leaves a
-    ///         `FeedConfigured` event showing the band was widened to admit the move, which
-    ///         is the record an auditor needs; clearing the halt straight onto the new number
-    ///         would leave none.
+    ///         `configureFeed`, and let the sources post again: `_tryAccept` runs under a halt
+    ///         and clears it itself once the median lands inside the widened band
+    ///         (`HaltRecovered`). That path leaves a `FeedConfigured` event showing the band
+    ///         was widened to admit the move, which is the record an auditor needs; clearing
+    ///         the halt straight onto the new number would leave none — and no path here can.
     function clearHalt(bytes32 assetId, uint256 confirmedValue, bytes32 justificationRef)
         external
         onlyGovernance
@@ -519,7 +591,7 @@ contract ValuationOracle {
     function peek(bytes32 assetId)
         external
         view
-        returns (uint256 lastValue, uint64 acceptedAt, bool fresh, bool halted)
+        returns (uint256 lastValue, uint64 acceptedAtTs, bool fresh, bool halted)
     {
         Feed storage f = _feeds[assetId];
         return (f.value, f.acceptedAt, _isFresh(f), f.halted);
@@ -527,6 +599,14 @@ contract ValuationOracle {
 
     function isFresh(bytes32 assetId) external view returns (bool) {
         return _isFresh(_feeds[assetId]);
+    }
+
+    /// @notice When the current figure was accepted (or re-attested); 0 = never. Never
+    ///         reverts. The fund modules store the last value of this they absorbed and
+    ///         refuse to act until it matches — that is how "AIFM simply does not sync"
+    ///         stopped being a way to compute a ratio on an old NAV.
+    function acceptedAt(bytes32 assetId) external view returns (uint64) {
+        return _feeds[assetId].acceptedAt;
     }
 
     function _isFresh(Feed storage f) private view returns (bool) {

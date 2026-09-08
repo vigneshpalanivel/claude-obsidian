@@ -1,18 +1,25 @@
 ---
 title: Remaining Compliance — EU-RWA-Contracts
-date: 2026-09-07
-status: derived from the 26 .sol files in this folder + §17/§17a of eu_tokenized_securities_smart_contract_design.md (rev 36)
+date: 2026-09-08
+status: derived from the 28 .sol files (30 contracts) in this folder + §17/§17a of eu_tokenized_securities_smart_contract_design.md (rev 52)
+supersedes: the rev-36 state of this file, which stood while the design moved from rev 36 to rev 52
 ---
 
 # Remaining Compliance List
 
-**26 contracts built. §17's contract inventory and §17a's matrix are now both complete.**
+**30 contracts across 28 files. §17's contract inventory and §17a's matrix are both complete.**
 
-> ⚠️ *Count corrected 2026-09-07 — this line read "24" against 26 `.sol` files, which the frontmatter above had right. See §9 for the rev-35 review of `ValuationOracle` and the four fund modules, including one live breach of DORA Art 28.*
+> ⚠️ **Re-synced 2026-09-08 to design rev 52, after the code review in `CODE-REVIEW-2026-09-08.md`.** This file had stood at rev 36 while the design moved 16 revisions, and three of its statements had gone stale in a way that mattered. **Read the review file for the full finding list; read the sweep note below for what this file used to say.**
+>
+> **What this file said that was wrong, and is now corrected in place:**
+> - **§3 "GDPR: a design rule, not a contract. Nothing personal on-chain."** Withdrawn at design rev 43 and false in this suite: a KYC-bound wallet *is* personal data, the register is the product, and erasure is *approximated*. Rev 50–51 rewrote the event layer on that basis (wallet plus an opaque digest, never the person key or an attribute) and rev 50 added a person index so an Art 17 request can be answered per person. See §10 of the design.
+> - **§3 "Venue: … done" and "Trading: … done".** Correct as code, misleading as status: the venue and dealer lanes are **parked** (see the series' PARKED note) and were reviewed at moderate depth only. `SiQuoteEngine` still needs `viaIR`, `SettlementEngine` never touches `SecurityToken`, and `DltPilotCapGate`'s €6bn test reads "already at" where the checklist says "would reach".
+> - **§9 defect 5 "auto-trip on oracle-anomaly — closed."** It was not. The trip called `DoraGovernor`, which set a flag **nothing read** — an event with a different name, which is precisely what that defect was about. Closed for real on 2026-09-08: `DoraGovernor` implements `IProtocolPause`, and the flag is read by `SecurityToken` (voluntary paths), the four fund modules (acquisition paths), `DistributionAgent` (payouts) and `BuybackAgent` (purchases). Never by forced transfer, recovery, repayments, disposals or refunds.
+> - **§8 "widen the band with `configureFeed` and let the sources repost".** `postValuation` returned before `_tryAccept` while halted, so that path did nothing without `clearHalt`. Now implemented as described: posts during a halt are stored and re-attempted, and acceptance inside the widened band clears the halt.
+>
+> **Nine HIGH defects were found and fixed on 2026-09-08** — see §11 below. The suite compiles clean (solc 0.8.22, optimizer, viaIR: 0 errors, 0 warnings). ⚠️ **There is still no test harness, so nothing here is runtime-verified.**
 
-The last gap — §17a's **valuation / NAV oracle**, `●` required in the Fund lane with no file — is closed. See §8, which also records what changed in the four fund modules and the one thing that stayed open.
-
-What is left is three edits to existing files, and one decision nobody has made.
+What is left is the open decisions in §6 and §11, and the items §11 records as deliberately not built.
 
 ---
 
@@ -67,13 +74,13 @@ Two things it deliberately is **not**: a stabilisation contract (Art 5(4)–(5) 
 
 ## 3. What is already fine — do not rebuild
 
-- Fund rules: AIFMD II, UCITS, ELTIF portfolio limits — **5 contracts, done**, now all reading `ValuationOracle` rather than a private NAV (§8)
-- Venue: DLT Pilot caps, member eligibility, settlement — **done**
-- Trading: MiFIR quotes, reporting and transparency events — **done**
-- Identity: KYC claims, trusted issuers, eIDAS — **done**
-- Operations: DORA governance wrapper — **done**
+- Fund rules: AIFMD II, UCITS, ELTIF portfolio limits — **5 contracts**, all reading `ValuationOracle` rather than a private NAV (§8). ⚠️ *Hardened 2026-09-08 — see §11: classification is persisted at trade time rather than supplied by the caller, the active path syncs inline before it computes, the UCITS 40% band keeps an enumerable issuer set, and suspension relief is per-bucket with a 365-day lifetime budget. `LmtGate` was rewritten as a dealing-day model with pro-rata allocation.*
+- Venue: DLT Pilot caps, member eligibility, settlement — **built, and PARKED**. The issuer lane does not deploy them. Reviewed at moderate depth only: `SettlementEngine` runs an internal book that never touches `SecurityToken` and gates neither leg on identity; `DltPilotCapGate`'s €6bn test is "already at" where `dlt-pilot-checklist.md` says "would reach"; `SiQuoteEngine` needs `viaIR`. **Do not treat this row as audited.**
+- Trading: MiFIR quotes, reporting and transparency events — **built, and PARKED**, same caveat. `MarketEventSchema` is an interface plus an abstract clock with no issuer-lane implementer: an issuer that runs a buy-back owes Art 16(2) surveillance on its own flow and there is **no order-lifecycle emitter for it** (§11).
+- Identity: KYC claims, trusted issuers, eIDAS — **done**. Note the attestation *signature* is verified off-chain by the claims service; on-chain is the trusted-issuer write gate plus the revocation read (design §3/§4 corrected at rev 52).
+- Operations: DORA governance wrapper — **done, and stripped 2026-09-08.** `DoraGovernor` is pause + incidents + key rotation + `tripFromOracle`. The upgrade queue, timelock, `queueUpgrade` disclosure gate and commit-reveal are **gone**: the upgrade path is stock Safe → OZ `TimelockController` → `ProxyAdmin` with the disclosure hash in the timelock salt (`UPGRADE-ARCHITECTURE.md`).
 - CSDR and SFD: correctly handled as exemption conditions inside `SettlementEngine`, not separate contracts
-- GDPR: a design rule, not a contract. Nothing personal on-chain.
+- **GDPR: a design constraint, and it is not "nothing personal on-chain".** ⚠️ *Corrected 2026-09-08 — the old line is the formulation design rev 43 withdrew, and a DPA would not accept it.* A wallet bound to a verified investor **is** personal data and so is every transfer it makes; the register is the product and cannot reach zero. What the suite does instead: direct identifiers never touch the chain; every remaining field is justified individually (**D21**, still open); events carry the wallet and an opaque digest, never the person key, an attribute, a claim topic or a reason (design §10's field table, swept across all 30 contracts at rev 51); erasure is **approximated** — `deregisterPerson` sweeps every wallet and its claims, the off-chain record is deleted and its key destroyed, and the anchor becomes an orphan. The **calldata surface is unaddressed by any contract** — a registrar write carries the attribute in transaction data forever — which is a deployment or legal-position question (D23 candidate, DPO).
 
 ---
 
@@ -305,3 +312,50 @@ They are gated by their own reverting functions, which satisfies §11 on its own
 - `DoraGovernor`'s locally-declared `IDocumentRegistry` **matches** `DocumentRegistry.documentStatus`. A legitimate decoupling — the only real risk is silent signature drift with no compile-time check.
 - `SettlementEngine → DltPilotCapGate.withinArt5_8CommercialBankMoneyHeadroom()` — signatures align.
 - `BuybackAgent → PdmrClosedPeriodFreeze` — one closed-period calendar for directors and treasury.
+
+---
+
+## 11. Rev-52 — the code review, and the nine things that were not what this file said they were
+
+`CODE-REVIEW-2026-09-08.md` read all 30 contracts against design rev 49 and the ten drafted articles. Every finding below was re-read at the cited lines before it was fixed, and the suite compiles clean after. **The pattern worth naming: seven of the nine were controls this file or the design already described as working.** A control described in prose and not read by a `require` is the same defect §11 of the design exists to catch, one level up — the design's own gating test applied to the design's own claims.
+
+### The nine
+
+| # | What was wrong | Fix |
+|---|---|---|
+| **1** | **`SecurityToken.forcedTransfer` never read the restriction store.** Its NatSpec said the sender's hold was enforced "because `compliance.checkTransfer` still runs `RestrictedPartyGate`" — i.e. through the **removable module list**, which is the exact demotion rev 48 was written to prevent. `removeModule` or `emergencyBypass` on the gate and an agent key could place units on a listed person | `restrictions.assertTransferPermitted(from, to)` now runs first, in the mandatory layer, on the forced path too. The store's permitted-destination register still relieves the **sender** limb, so a seizure to a registered destination executes and a forced transfer out of a restricted wallet to anywhere else reverts |
+| **2** | **`CovenantRegistry.effectiveTier` recursed infinitely** once an opt-up covenant was configured: `effectiveTier` → `_satisfied` → `appliesTo` → `effectiveTier`. Every transfer by an elective-professional holder would have reverted, and M3 §5 rule 4 *recommends* that configuration for retail distribution | The opt-up covenant is evaluated against the **raw** tier via `_satisfiedAtTier`. `setOptUpCovenant` now rejects a misconfigured predicate rather than accepting one that can never evaluate |
+| **3** | **Any RECEIVE-scoped covenant blocked every burn.** `CovenantGate` asked `assertSatisfied(address(0), RECEIVE)`, `tierOf(0)` is `Unset`, the predicate is unevaluable, and unevaluable fails closed — correctly. PRIIPs Art 13, ELTIF Art 26 and DLT Pilot 4(2)(g) all carry RECEIVE, so redemptions, buy-back burns and maturity burns were dead | Burn gates the **sender** only. The zero leg is skipped, as the other three adapters already did |
+| **4** | **`SubscriptionEscrow.settle()` was permissionless and waited only for windows already pushed**, so a subscription could be settled one block after acceptance and `withdrawAcceptance` then reverted `AlreadySettled`. On an offer with the final price omitted at filing that destroyed the Art 17(2) right for the whole offer. **The design said this too** (§8: "release is immediate… a no-op"), so the code was right about the spec and the spec was wrong about the Regulation | `offerClosesAt` is fed by governance and extend-only; `settle` waits for it, for the final price where one was omitted, and for every pending window. `subscribe` refuses after the close, so a late subscription cannot be settled in the same block |
+| **5** | **`subscribe()` accepted against an anchored-but-unapproved prospectus** — it read `currentVersionHash` and never `approvedAt`, while Art 12's twelve months run **from approval**. Open and recorded since rev 49 | Approval is required, and validity is anchored to the **base** prospectus's approval, so a supplement's later approval cannot restart the clock. `checkEligible` and `assertNotBlocked` now also run on the subscriber |
+| **6** | **The fund modules' permissionless sync took caller-supplied classification.** Anyone could call `syncAssetValuation(assetId, isEligibleLongTerm, …)` with false flags and hide a 55% floor breach. The permissionless argument covers the oracle *figure*; it never covered the *classification* | Classification is persisted at the manager-gated trade call; sync takes an id and reads it. `UnknownAsset` / `UnknownLeg` on anything never recorded |
+| **7** | **`syncNav` zeroed the cash and payout counters on every call**, whether or not the oracle had accepted anything new. A redemption followed by a sync overstated NAV permanently, and the next `rollWindow` was oversized by the erased payouts — the dilution `LmtGate`'s own header says it prevents | `lastAbsorbedAcceptedAt`: counters clear only when the oracle's acceptance is strictly newer |
+| **8** | **The active path checked oracle *freshness* and divided by the *last synced* NAV**, and sync was voluntary — so an AIFM could simply not call it and draw against a stale higher figure | Acquisition paths sync inline first, then check freshness, then compute |
+| **9** | **The UCITS 40% band aggregate drifted.** Membership was decided at touch time, so a NAV move carrying an issuer across 5% never added it | An enumerable issuer set bounded at 256, re-summed on every recheck and trade. A buy that leaves the issuer under 5% and does not grow the band now passes during a band breach |
+
+### And the two this file was wrong about
+
+- **`DoraGovernor` was never swept after design rev 46.** It still carried `queueUpgrade` with the withdrawn disclosure gate, `executeUpgrade` doing an arbitrary `target.call`, a 12-hour timelock floor against the design's ≥48h, and a header asserting the "NCA approves the deployment" inversion **rev 49 corrected**. Now stripped to pause, incidents, key rotation and `tripFromOracle`, with two-step governance.
+- **The oracle trip halted nothing** (see the sweep note at the top). Fixed by giving the pause readers.
+
+### Reference discipline — the rev-38 standing rule
+
+The rule (interface-typed, governance-settable, never `immutable`, never null) was violated in nine contracts while revs 39–40 recorded it as complete with two exceptions. Swept: `IdentityRegistry`'s claim-topic and trusted-issuer references, `SubscriptionEscrow`'s identity and document references, `PdmrClosedPeriodFreeze`'s register, the fund modules' oracle (now `IValuationFeed`, which the oracle declares), and zero-checks on the three economics constructors. `IdentityRegistry` imports the shared `Tier` and declares `is IIdentityGate`. **The sanctioned exception is an adapter binding its own module** — `CovenantGate`, `HoldingPeriodGate`, `PdmrClosedPeriodGate` — which is a module swap, not a re-point.
+
+⚠️ **`CovenantRegistry → IdentityRegistry` was the *other* declared exception and is now closed** — it types `IIdentityGate`. If **D19** (ONCHAINID) reopens what the identity interface should contain, that is the seam to revisit.
+
+### Roles, keys and the pause
+
+Every manager role in the fund modules is rotatable (two-step for the AIFM/ManCo, setters for agent and regulator); `DoraGovernor`, `PdmrRegister` and `PdmrClosedPeriodFreeze` gained two-step governance. `grantPermission` (MAR Art 19(12) override) moved from the issuer to governance, matching the design and S3.
+
+### Still open after this pass — do not read the above as "done"
+
+1. **D20 blocks any proxy deployment.** 95 `immutable` declarations across 28 files. The rev-42 *mechanism* was imprecise (an immutable reads the **implementation's** constructor value through a proxy, not zero) and its *conclusion* stands: `SubscriptionEscrow.mode`, `finalPriceOmittedAtFiling`, `NavBorrowingCap.fundType`, `ClaimTopicsRegistry.governance` and `ModularCompliance.governance` are all silently load-bearing. `SubscriptionEscrow` now carries a **"never behind a proxy"** header, mirrored in `UPGRADE-ARCHITECTURE.md`. **Which contracts are proxied is still undecided.**
+2. **`LmtGate` is still not the ELTIF RTS Art 5(5)–(6) cap** — no liquid-asset bucket, no 12-month forecast, neither Annex grid. It is now a correct AIFMD II Art 16(2a) / Annex V toolkit with pro-rata allocation and a minimum window. **S2 §… claims the forecast is a fed input; it is not — the article needs the correction.**
+3. **No issuer-lane surveillance emitter.** `MarketEventSchema` has no implementer outside the parked dealer lane, so the Art 16(2) own-trading order-lifecycle surface M5/S3 describe does not exist. Either implement it on the buy-back path or correct both articles.
+4. **The escrow mints nothing.** It holds cash and refunds it; there is no pending-state token, so §17's "burn + refund on withdrawal", S1 and Pure Issuer describe a mechanism with no code. **Decide whether the escrow mints, then sweep whichever side is wrong.**
+5. **Native asset only.** `DistributionAgent` and `SubscriptionEscrow` are `payable`; there is no ERC-20/EMT leg. **D6 has no code**, and review finding 1.12 (Travel Rule on an EMT payout) is unreachable rather than unresolved.
+6. **Not modelled, and now stated in the headers:** ELTIF Art 15(2), Art 13(7) professional-only relief, the MMF single-tool derogation.
+7. ~~**`mar-checklist.md` §6.4 disagrees with the Series Plan** on where the €20k PDMR threshold sits and on the issuer's publication limb.~~ **✅ CLOSED 2026-09-08 — and it closed in favour of the code.** Settled against `EU Compliance/Checklist/mar.mhtml`, the consolidated text (CELEX:02014R0596-20260605) the checklist itself cites, read verbatim: the threshold is **Art 19(8)** *("calculated by adding without netting")*; **Art 19(9)** is a **competent-authority** decision to raise it to **€50,000 or lower it to €10,000**; **Art 19(1a)** is the collective-investment-undertaking **exemption**, not a threshold; the issuer publishes under **Art 19(3)** within **two** business days of **receipt**. `PdmrRegister`'s citations were already right — **do not change them.** `mar-checklist.md` corrected to its rev 1.2; the design doc's threshold statements swept at rev 52. ⚠️ **One substantive consequence, not a citation fix: the €10,000 downward option was missing from every document**, so any notification engine built to a €20k floor under-reports wherever an authority took the lower option. The threshold is a **three-valued** per-jurisdiction parameter. ⚠️ **Method worth keeping:** the `Checklist/` files are the source for compliance claims, but a checklist is itself derived — where it conflicts with the consolidated text it cites, **the `.mhtml` snapshot beside it is the tiebreaker.** That is what settled this, and the design's own rev 13 had previously "corrected" the citation *to* the wrong answer, where it stood for 39 revisions.
+8. **Two leaks from §5's sixth item survive by operating rule, not code:** `freezeUnits` as a whole-wallet stop, and `recoverWallet` leaving a wallet-keyed restriction behind. Both are in `DEPLOYMENT-DEFAULTS.md`; neither is enforced on-chain.
+9. **No test harness.** Every statement in this file is from reading and compiling, never from running.

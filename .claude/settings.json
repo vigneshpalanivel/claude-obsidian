@@ -318,7 +318,10 @@
       "Bash(echo \"---EXIT $?\")",
       "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^## \" \"Compliance Article Writing Standard.md\")",
       "Bash(awk -F: '$1>=1629 && $1<=2076')",
-      "Bash(git -C .raw/InnBlockchain/sales-marketing diff --stat -- \"Service/Content/Phase 1/Blog/\")"
+      "Bash(git -C .raw/InnBlockchain/sales-marketing diff --stat -- \"Service/Content/Phase 1/Blog/\")",
+      "Bash(node compile.js)",
+      "Bash(timeout 590 node compile.js --via-ir)",
+      "Bash(node compile.js --via-ir)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

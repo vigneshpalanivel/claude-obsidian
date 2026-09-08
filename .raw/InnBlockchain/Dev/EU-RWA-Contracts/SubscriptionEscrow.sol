@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IDocumentAnchor, IIdentityGate, Tier} from "./Interfaces.sol";
+import {IDocumentAnchor, IIdentityGate, IRestrictedParty, Regime, Tier, Version} from "./Interfaces.sol";
 
 /// @title SubscriptionEscrow (illustrative sample — not production code)
 /// @notice Prospectus Regulation Art 1(4)(b)/3(2)/6/12/17/21/23 — gates a primary token offer
 ///         on BOTH exemption limbs (what it may raise, and how many non-qualified persons it
-///         may be offered to), holds subscriptions in escrow while any statutory withdrawal
-///         window is open, and enforces the prospectus's 12-month validity.
+///         may be offered to), holds subscriptions in escrow until the offer has CLOSED and
+///         every statutory withdrawal window has run, and enforces the prospectus's 12-month
+///         validity from its NCA approval.
 /// @dev    Two independent regimes, chosen once at deploy and not switchable:
 ///         - EXEMPT: offer stays under the per-jurisdiction threshold (Art 3(2)) and never
 ///           had an NCA-approved prospectus. `subscribe()` hard-reverts once the cumulative
@@ -17,16 +18,47 @@ import {IDocumentAnchor, IIdentityGate, Tier} from "./Interfaces.sol";
 ///         - PROSPECTUS: an NCA-approved prospectus is in force, declaring a maximum offer
 ///           ceiling (Art 6) and, if the final price/amount wasn't fixed at filing, a
 ///           second withdrawal window under Art 17(2). `subscribe()` hard-reverts past the
-///           declared ceiling or past the prospectus's 12-month validity (Art 12) instead.
+///           declared ceiling, past the prospectus's 12-month validity (Art 12), or against
+///           a prospectus version with no recorded NCA approval.
 ///         Crossing the exempt threshold does NOT auto-upgrade this contract to PROSPECTUS
 ///         mode — approval must precede the offer, not follow it, so that step is a
 ///         deliberate off-chain event (a fresh, NCA-approved prospectus) followed by a
 ///         fresh deployment or reconfiguration, never an automatic on-chain transition.
+/// @dev    ⚠️ SETTLEMENT WAITS FOR THE OFFER TO CLOSE, NOT MERELY FOR OPEN WINDOWS. Both
+///         withdrawal rights arise from events that happen AFTER acceptance — a supplement is
+///         published (Art 23(2)), a final price is filed (Art 17(2)) — so "no window covers
+///         this subscription yet" is not "no window ever will". The earlier rule (design §8
+///         rev ≤49: "with no window open and none pending, release is immediate and the
+///         mechanism is a no-op") let anyone settle a subscription one block after it was
+///         accepted, after which `withdrawAcceptance` reverted `AlreadySettled` — the Art 17(2)
+///         right was destroyed for the whole offer whenever the final price was omitted at
+///         filing, and the Art 23(2) right for everything settled before a supplement landed.
+///         Now `settle()` requires `offerClosesAt` to be set and passed, the final price to be
+///         published where it was omitted, and no window still pending. The design's §8 rule
+///         is superseded by this contract and is being swept to match.
+/// @dev    ⚠️ THIS CONTRACT MUST NOT BE DEPLOYED BEHIND A PROXY (D20). `mode` and
+///         `finalPriceOmittedAtFiling` are `immutable` because they are DISCLOSURE ITEMS — the
+///         prospectus states which regime the offer runs under and whether the final price
+///         was fixed at filing, and neither may drift from the document after the fact. An
+///         `immutable` reads the IMPLEMENTATION's constructor value through a proxy, not the
+///         proxy's — so a proxied deployment would run whatever regime the implementation was
+///         compiled with (enum zero = Exempt → no Art 12 gate, no Art 6 ceiling;
+///         `finalPriceOmittedAtFiling == false` → window B can never open). One escrow per
+///         offer, deployed directly; a new offer is a new deployment. Listed under "not
+///         proxied" in `UPGRADE-ARCHITECTURE.md`.
 /// @dev    "Rolling 12-month" is a calendar concept this sample does not fully model —
 ///         `jurisdictionRaisedWei` is a simple non-decaying cumulative total, not a true
 ///         rolling window. A production version needs subscriptions to age out after 12
 ///         months, fed by an off-chain calendar the same way the withdrawal windows are.
+/// @dev    ⚠️ THIS CONTRACT MINTS NOTHING. It holds native-currency cash against a subscription
+///         record; the unit mint happens at settlement through the token's own gated path, off
+///         this contract. The mandatory-layer reads on `subscribe()` (`checkEligible`,
+///         `assertNotBlocked`) exist BECAUSE no mint hook runs here — before 2026-09-08 the
+///         escrow accepted and refunded cash from a wallet the token would have refused.
 contract SubscriptionEscrow {
+    /// @dev Emitted whenever an inter-contract reference is re-pointed.
+    event DependencySet(bytes32 indexed role, address indexed impl);
+
     // ─────────────────────────── mode ────────────────────────────────────────
 
     enum Mode {
@@ -34,6 +66,7 @@ contract SubscriptionEscrow {
         Prospectus // Art 6 — full NCA-approved prospectus in force
     }
 
+    /// @dev Disclosure item — `immutable` on purpose. See the D20 note in the header.
     Mode public immutable mode;
 
     // ─────────────────────────── roles ──────────────────────────────────────
@@ -41,7 +74,8 @@ contract SubscriptionEscrow {
     address public immutable issuer;
     address public immutable governance; // multisig/timelock — publishes supplements, final price
 
-    /// @notice The identity registry this offer resolves a subscriber's jurisdiction against.
+    /// @notice The identity registry this offer resolves a subscriber's jurisdiction, tier and
+    ///         eligibility against.
     /// @dev    ⚠️ `subscribe()` used to take `jurisdiction` as a caller-supplied argument.
     ///         That was wrong twice over. As compliance: a self-declared country is a country
     ///         the subscriber picks, and in EXEMPT mode the country *selects the threshold* —
@@ -53,7 +87,12 @@ contract SubscriptionEscrow {
     ///         Calldata is part of the transaction and every archive node keeps it forever —
     ///         strictly worse than storage, which `deregisterInvestor` can at least `delete`.
     ///         Reading it from the registry means the only durable copy is the erasable one.
-    IIdentityGate public immutable identity;
+    /// @dev    Settable (`setIdentity`), never null — the rev-38 reference rule. Was `immutable`.
+    IIdentityGate public identity;
+
+    /// @notice The person-scoped restriction store. Read on `subscribe()` only — see
+    ///         `withdrawAcceptance` for why the refund path deliberately does not read it.
+    IRestrictedParty public restrictions;
 
     // ─────────────────────────── EXEMPT mode: per-jurisdiction threshold ─────
 
@@ -74,7 +113,7 @@ contract SubscriptionEscrow {
     //    first, so an offer could stay comfortably under its threshold in euros and lose the
     //    exemption anyway on headcount, with nothing on-chain registering that it had.
     //
-    // ⚠️ COUNTED PER PERSON, NOT PER WALLET. The key is `IdentityRegistry`'s `recordPointer`.
+    // ⚠️ COUNTED PER PERSON, NOT PER WALLET. The key is `IdentityRegistry`'s `personId`.
     //    Counting addresses would spend the allowance three times on one investor holding three
     //    wallets — and lost-key recovery hands people extra wallets whether they wanted them or
     //    not, so the miscount is not even self-inflicted.
@@ -101,11 +140,21 @@ contract SubscriptionEscrow {
     uint256 public maxOfferAmountWei;
     uint256 public totalRaisedWei;
 
-    /// @notice Art 12 — prospectus valid 12 months from approval. Past this, `subscribe()`
+    /// @notice Art 12 — prospectus valid 12 months from APPROVAL. Past this, `subscribe()`
     ///         reverts regardless of remaining ceiling headroom: an open subscription
     ///         contract past expiry is selling without a valid prospectus — strict
     ///         liability, no ledger signal warns you on its own.
+    /// @dev    ⚠️ THE DATE IS FED IN, AND THE CHAIN BOUNDS IT. The value is set at construction
+    ///         and moved by `extendProspectusValidity`, but on every read that matters it is
+    ///         checked against `approvedAt + 365 days` of the base prospectus (the slot's
+    ///         first version — a supplement's later approval does not restart Art 12). The
+    ///         check is lazy — in `subscribe()` — because at construction the approval is
+    ///         usually not yet recorded in the registry; `extendProspectusValidity` runs it
+    ///         eagerly where the approval is already known.
     uint64 public prospectusValidUntil;
+
+    /// @notice Art 12 in seconds. Calendar months are off-chain; 365 days is the on-chain bound.
+    uint64 public constant PROSPECTUS_VALIDITY_PERIOD = 365 days;
 
     /// @notice The registry the prospectus and its supplements are anchored in.
     /// @dev    ⚠️ This link existed only in the design document until now, and its absence
@@ -116,11 +165,23 @@ contract SubscriptionEscrow {
     ///         opens at all**, which is a straight Art 23(2) breach the contract reports as
     ///         a clean offer; or open a window here with nothing filed, which counts a
     ///         withdrawal period against a document no investor was ever given.
-    ///         Unset (address(0)) in EXEMPT mode — there is no approved prospectus.
+    ///         Unset (address(0)) in EXEMPT mode — there is no approved prospectus. Required
+    ///         and settable (`setDocuments`) in PROSPECTUS mode.
     IDocumentAnchor public documents;
 
     /// @notice The `docRef` of the prospectus this offer runs on. bytes32(0) in EXEMPT mode.
     bytes32 public prospectusDocRef;
+
+    // ─────────────────────────── offer close ──────────────────────────────────
+
+    /// @notice When the offer closes to new subscriptions, and the earliest moment any
+    ///         subscription may settle. 0 = not yet set, and nothing settles until it is.
+    /// @dev    ⚠️ MAY BE EXTENDED, NEVER BROUGHT FORWARD. Art 23's supplement duty runs until
+    ///         "the closing of the offer or the start of trading, whichever is later"; an
+    ///         issuer who could retro-close an offer could end the Art 23(2) exposure of every
+    ///         accepted subscription at will. Extending is the ordinary case (an offer kept
+    ///         open); pulling the date in is the abuse, and `setOfferClose` refuses it.
+    uint64 public offerClosesAt;
 
     // ─────────────────────────── withdrawal windows ───────────────────────────
 
@@ -142,22 +203,32 @@ contract SubscriptionEscrow {
     /// @notice Whether the prospectus omitted the final price/amount at filing (Art
     ///         17(1)(b)) — disclosing a maximum price or valuation method instead. If true,
     ///         Window B is expected once the final price is actually published (Art
-    ///         17(2)); if the final price was fixed at filing, Window B can never open.
+    ///         17(2)), and NOTHING SETTLES until it has been; if the final price was fixed at
+    ///         filing, Window B can never open.
+    /// @dev    Disclosure item — `immutable` on purpose. See the D20 note in the header.
     bool public immutable finalPriceOmittedAtFiling;
     bool public finalPricePublished;
 
-    // ─────────────────────────── window durations (governance-set, not hardcoded) ────
+    // ─────────────────────────── window duration floors (governance-set) ────
 
-    /// @notice Art 23(2) statutory minimum is 3 working days. Configurable rather than a
-    ///         constant because it is a statutory *minimum* an operator could extend, and
-    ///         because working-day arithmetic (TARGET2 calendar) is computed off-chain —
-    ///         `opensAt`/`closesAt` below are always fed in, never derived from
-    ///         block.timestamp on-chain.
+    /// @notice Art 23(2) statutory minimum is 3 working days. A FLOOR enforced on
+    ///         `publishSupplement`: `closesAt - opensAt` must be at least this. Configurable
+    ///         rather than a constant because it is a statutory *minimum* an operator could
+    ///         extend, and because working-day arithmetic (TARGET2 calendar) is computed
+    ///         off-chain — `opensAt`/`closesAt` are always fed in, never derived from
+    ///         block.timestamp on-chain. This value is CALENDAR seconds: it bounds the fed-in
+    ///         window from below and cannot itself express working days. Three working days
+    ///         is never fewer than three calendar days, so the default is a safe floor, not
+    ///         the computation.
+    /// @dev    ⚠️ Until 2026-09-08 this field was read by nothing and had no setter —
+    ///         governance could push `closesAt == opensAt` and the window closed as it opened.
     uint64 public supplementWindowDurationSeconds = 3 days;
 
     /// @notice Art 17(2) base text sets >= 2 working days. Defaulted here to the safer 3
     ///         working days pending an open question on whether the Listing Act's 2->3 day
-    ///         extension of Art 23(2) also reached Art 17 — see design doc §16 D10.
+    ///         extension of Art 23(2) also reached Art 17 — see design doc §16 D10. Same
+    ///         floor semantics as `supplementWindowDurationSeconds`; enforced on
+    ///         `publishFinalPrice`.
     uint64 public finalPriceWindowDurationSeconds = 3 days;
 
     // ─────────────────────────── subscriptions ────────────────────────────────
@@ -186,23 +257,40 @@ contract SubscriptionEscrow {
     ///      deregistered. Same rule as `IdentityRegistry`: attributes live in storage where
     ///      a `require` reads them and `delete` can remove them, never in a log.
     event Subscribed(uint256 indexed subscriptionId, address indexed investor, uint256 amountWei);
-    event SupplementPublished(uint256 indexed windowIndex, uint64 opensAt, uint64 closesAt, uint64 scopeCutoff);
-    /// @dev The reconciliation key. An indexer joins these against `DocumentRegistry`'s own
-    ///      anchoring events and alarms on a supplement that has no window — the failure
-    ///      direction no on-chain check can catch.
-    event SupplementAnchorVerified(bytes32 indexed versionHash, uint64 approvedAt);
+    /// @notice One window record pushed. Fires for BOTH kinds.
+    /// @dev    ⚠️ Renamed from `SupplementPublished` on 2026-09-08. `DocumentRegistry` emits its
+    ///         own `SupplementPublished(docRef, versionHash, publishedAt)` when a second
+    ///         Prospectus-slot version is anchored, and a name-keyed subgraph handler joined the
+    ///         two under one name. Different topic0, so ABI decoding was never at risk — but the
+    ///         reconciliation join below is exactly the query most likely written by name.
+    event WithdrawalWindowOpened(
+        uint256 indexed windowIndex, WindowType kind, uint64 opensAt, uint64 closesAt, uint64 scopeCutoff
+    );
+    /// @dev The reconciliation key. An indexer joins THIS contract's `SupplementAnchorVerified`
+    ///      (and the `WithdrawalWindowOpened` it precedes) against
+    ///      `DocumentRegistry.SupplementPublished(docRef, versionHash, publishedAt)` on
+    ///      `versionHash`, and alarms on a registry `SupplementPublished` with no matching
+    ///      escrow window — the failure direction no on-chain check can catch.
+    event SupplementAnchorVerified(bytes32 indexed docRef, bytes32 indexed versionHash, uint64 approvedAt);
     event FinalPricePublished(uint256 indexed windowIndex, uint64 opensAt, uint64 closesAt);
     event AcceptanceWithdrawn(uint256 indexed subscriptionId, address indexed investor, uint256 refundedWei);
     event Settled(uint256 indexed subscriptionId, address indexed investor, uint256 amountWei);
     event OfferCeilingRaised(uint256 oldCeilingWei, uint256 newCeilingWei);
     event ProspectusValidityExtended(uint64 oldValidUntil, uint64 newValidUntil);
+    event OfferCloseSet(uint64 previousClosesAt, uint64 closesAt);
+    event SupplementWindowFloorSet(uint64 previousSeconds, uint64 seconds_);
+    event FinalPriceWindowFloorSet(uint64 previousSeconds, uint64 seconds_);
 
     // ─────────────────────────── errors ────────────────────────────────────────
 
     error NotGovernance();
     error NotSubscriber();
     error WrongMode();
+    error ZeroAddress();
     error IdentityRegistryRequired();
+    error RestrictionStoreRequired();
+    error DocumentRegistryRequired();
+    error ZeroSubscription();
     /// @dev The subscriber has no jurisdiction on the identity registry — either never
     ///      registered, or deregistered since. Deliberately distinct from
     ///      `JurisdictionThresholdNotConfigured`: that one says governance has not yet
@@ -222,20 +310,48 @@ contract SubscriptionEscrow {
     error ExemptThresholdBreached(bytes32 jurisdiction, uint256 wouldRaiseTo, uint256 thresholdWei);
     error OfferCeilingBreached(uint256 wouldRaiseTo, uint256 ceilingWei);
     error ProspectusExpired(uint64 validUntil);
+    /// @dev The current prospectus version is anchored but carries no recorded NCA approval.
+    ///      Art 12 runs FROM approval, and an offer against an unapproved prospectus is an
+    ///      offer without one. Before 2026-09-08 `subscribe()` checked only that a current
+    ///      hash existed — `anchorVersion` writes `approvedAt: 0`, so subscriptions were
+    ///      accepted against a draft.
+    error ProspectusNotApproved(bytes32 docRef);
+    /// @dev `prospectusValidUntil` sits past `approvedAt + 365 days` — the fed-in date has
+    ///      outrun the statutory limit. Fix the date, or record the fresh approval first.
+    error ProspectusValidityExceedsApproval(uint64 validUntil, uint64 approvedAt);
     /// @dev The supplement was not found in `DocumentRegistry`, or was found without a
     ///      recorded NCA approval. Art 23(1) gives the NCA up to 5 working days and the
     ///      supplement must be approved AND published before the window it opens means
     ///      anything — so an unapproved hash opening a withdrawal window is a window
     ///      counted against a document no investor can have been given.
     error SupplementNotAnchoredAndApproved(bytes32 versionHash);
+    /// @dev The hash is not a Prospectus-Regulation supplement: wrong regime on the slot
+    ///      (a KID hash opening an Art 23 window was the defect), not in that slot at all, or
+    ///      the base prospectus itself rather than a supplement to it.
+    error NotAProspectusSupplement(bytes32 docRef, bytes32 versionHash);
     /// @dev The prospectus this offer runs on is no longer anchored in `DocumentRegistry`.
     error ProspectusAnchorMissing(bytes32 docRef);
     error FinalPriceAlreadyPublished();
     error FinalPriceNeverOmitted();
+    /// @dev `settle()` while the final price the prospectus omitted has not been published.
+    ///      Window B has not opened because the event that opens it has not happened; that is
+    ///      the opposite of "no window applies".
+    error FinalPriceNotPublished();
     error NotWithdrawable(uint256 subscriptionId);
     error AlreadyWithdrawn();
     error AlreadySettled();
     error WindowsStillPending();
+    /// @dev `settle()` before `offerClosesAt` is set and passed — see the header.
+    error OfferStillOpen();
+    /// @dev `subscribe()` after `offerClosesAt`. A subscription accepted after the close would
+    ///      be settleable in the same block, which is the H4 hole by another door.
+    error OfferClosed(uint64 closedAt);
+    error OfferCloseInPast(uint64 proposed);
+    error OfferCloseCannotMoveEarlier(uint64 current, uint64 proposed);
+    /// @dev A window fed in shorter than its statutory floor, or opening in the past. The
+    ///      floor is the contract's only defence against a window that closes as it opens.
+    error WindowBelowFloor(uint64 opensAt, uint64 closesAt, uint64 floorSeconds);
+    error ZeroDuration();
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -245,17 +361,19 @@ contract SubscriptionEscrow {
     /// @param mode_                       Chosen once, at deploy — see contract-level @dev.
     /// @param maxOfferAmountWei_          PROSPECTUS mode only; ignored (must pass 0) in EXEMPT mode.
     /// @param prospectusValidUntil_       PROSPECTUS mode only; ignored (must pass 0) in EXEMPT mode.
+    ///                                    Bounded lazily against the base prospectus approval —
+    ///                                    see `prospectusValidUntil`.
     /// @param finalPriceOmittedAtFiling_  PROSPECTUS mode only; ignored (must pass false) in EXEMPT mode.
     /// @param documents_          `DocumentRegistry` holding the prospectus and its
-    ///                            supplements. PROSPECTUS mode only; pass address(0) in
-    ///                            EXEMPT mode, which by definition has no approved
+    ///                            supplements. PROSPECTUS mode: required, non-zero. EXEMPT
+    ///                            mode: pass address(0) — by definition there is no approved
     ///                            prospectus to anchor.
     /// @param prospectusDocRef_   The registry `docRef` of the prospectus this offer runs on.
     /// @param identity_           `IdentityRegistry` supplying each subscriber's *verified*
-    ///                            jurisdiction. Required in BOTH modes — EXEMPT mode reads it
-    ///                            to pick the Art 3(2) threshold, and PROSPECTUS mode still
-    ///                            needs a registered subscriber even though its ceiling is
-    ///                            offer-wide rather than per-country.
+    ///                            jurisdiction, tier and eligibility. Required in BOTH modes.
+    /// @param restrictions_       `RestrictedPartyRegistry` — the mandatory layer. Required
+    ///                            in BOTH modes: no wiring exists in which cash is accepted
+    ///                            from a wallet without a restriction store in front of it.
     constructor(
         address issuer_,
         address governance_,
@@ -265,23 +383,94 @@ contract SubscriptionEscrow {
         bool finalPriceOmittedAtFiling_,
         address documents_,
         bytes32 prospectusDocRef_,
-        address identity_
+        address identity_,
+        address restrictions_
     ) {
+        if (issuer_ == address(0) || governance_ == address(0)) revert ZeroAddress();
         if (identity_ == address(0)) revert IdentityRegistryRequired();
+        if (restrictions_ == address(0)) revert RestrictionStoreRequired();
 
         issuer = issuer_;
         governance = governance_;
         mode = mode_;
         identity = IIdentityGate(identity_);
+        restrictions = IRestrictedParty(restrictions_);
+        emit DependencySet("identity", identity_);
+        emit DependencySet("restrictions", restrictions_);
 
         if (mode_ == Mode.Prospectus) {
+            if (documents_ == address(0)) revert DocumentRegistryRequired();
             maxOfferAmountWei = maxOfferAmountWei_;
             prospectusValidUntil = prospectusValidUntil_;
             finalPriceOmittedAtFiling = finalPriceOmittedAtFiling_;
             documents = IDocumentAnchor(documents_);
             prospectusDocRef = prospectusDocRef_;
+            emit DependencySet("documents", documents_);
         } else {
             finalPriceOmittedAtFiling = false;
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // WIRING — swap, never unset
+    // ═══════════════════════════════════════════════════════════════════════
+
+    function setIdentity(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        identity = IIdentityGate(impl);
+        emit DependencySet("identity", impl);
+    }
+
+    function setRestrictions(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        restrictions = IRestrictedParty(impl);
+        emit DependencySet("restrictions", impl);
+    }
+
+    /// @dev Only meaningful where a prospectus exists to anchor. In EXEMPT mode the reference
+    ///      is deliberately null and stays null.
+    function setDocuments(address impl) external onlyGovernance {
+        if (mode != Mode.Prospectus) revert WrongMode();
+        if (impl == address(0)) revert ZeroAddress();
+        documents = IDocumentAnchor(impl);
+        emit DependencySet("documents", impl);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // OFFER CALENDAR — close date and window floors
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice Sets, or extends, the offer close. Must be in the future; once set it may only
+    ///         move LATER. Both modes — an exempt offer has no Art 23 window to protect, but it
+    ///         still has a close, and settlement waits for it either way.
+    function setOfferClose(uint64 closesAt) external onlyGovernance {
+        if (closesAt <= block.timestamp) revert OfferCloseInPast(closesAt);
+        if (offerClosesAt != 0 && closesAt < offerClosesAt) revert OfferCloseCannotMoveEarlier(offerClosesAt, closesAt);
+        emit OfferCloseSet(offerClosesAt, closesAt);
+        offerClosesAt = closesAt;
+    }
+
+    /// @notice Raises or lowers the Art 23(2) floor — in calendar seconds, applied to windows
+    ///         fed in against a working-day calendar. Lowering below the statutory minimum is
+    ///         a governance decision this contract cannot second-guess; zero is refused
+    ///         because it turns the check off.
+    function setSupplementWindowFloor(uint64 seconds_) external onlyGovernance {
+        if (seconds_ == 0) revert ZeroDuration();
+        emit SupplementWindowFloorSet(supplementWindowDurationSeconds, seconds_);
+        supplementWindowDurationSeconds = seconds_;
+    }
+
+    function setFinalPriceWindowFloor(uint64 seconds_) external onlyGovernance {
+        if (seconds_ == 0) revert ZeroDuration();
+        emit FinalPriceWindowFloorSet(finalPriceWindowDurationSeconds, seconds_);
+        finalPriceWindowDurationSeconds = seconds_;
+    }
+
+    /// @dev Shared by both window openers. `opensAt` in the past would back-date a window that
+    ///      an investor could not have exercised during the elapsed part.
+    function _assertWindowMeetsFloor(uint64 opensAt, uint64 closesAt, uint64 floorSeconds) private view {
+        if (opensAt < block.timestamp || closesAt < opensAt || closesAt - opensAt < floorSeconds) {
+            revert WindowBelowFloor(opensAt, closesAt, floorSeconds);
         }
     }
 
@@ -313,21 +502,59 @@ contract SubscriptionEscrow {
 
     /// @notice Only ever called on the back of a fresh NCA approval — never a unilateral
     ///         operator decision to keep an offer open past its statutory 12 months.
+    /// @dev    Bounded eagerly against the base prospectus approval where the registry already
+    ///         holds one; where it does not yet, `subscribe()` bounds it lazily on every
+    ///         acceptance, so a date that outruns approval + 12 months never admits a
+    ///         subscription either way.
     function extendProspectusValidity(uint64 newValidUntil) external onlyGovernance {
         if (mode != Mode.Prospectus) revert WrongMode();
+
+        uint64 approvedAt = _baseProspectusApprovedAt();
+        if (approvedAt != 0) _assertValidityWithinApproval(newValidUntil, approvedAt);
+
         emit ProspectusValidityExtended(prospectusValidUntil, newValidUntil);
         prospectusValidUntil = newValidUntil;
     }
 
+    /// @dev Art 12 runs from the approval of the PROSPECTUS — the slot's first version. A
+    ///      supplement anchored later carries its own `approvedAt`, and measuring 12 months
+    ///      from that would let each supplement quietly extend the offer. 0 when the slot is
+    ///      empty or the base version has no recorded approval.
+    function _baseProspectusApprovedAt() private view returns (uint64) {
+        if (documents.versionCount(prospectusDocRef) == 0) return 0;
+        Version memory base = documents.versionAt(prospectusDocRef, 0);
+        return base.approvedAt;
+    }
+
+    function _assertValidityWithinApproval(uint64 validUntil, uint64 approvedAt) private pure {
+        if (validUntil > approvedAt + PROSPECTUS_VALIDITY_PERIOD) {
+            revert ProspectusValidityExceedsApproval(validUntil, approvedAt);
+        }
+    }
+
     // ═══════════════════════════════════════════════════════════════════════
-    // SUBSCRIPTION — accepted funds sit in this contract (escrow) until every
-    // applicable withdrawal window has closed; mode-gated at the door.
+    // SUBSCRIPTION — accepted funds sit in this contract (escrow) until the
+    // offer has closed and every applicable withdrawal window has run;
+    // mode-gated at the door.
     // ═══════════════════════════════════════════════════════════════════════
 
     /// @notice Takes no jurisdiction argument by design — see the `identity` @dev note. The
     ///         subscriber's country is read from the registry, where a registrar wrote it
     ///         after KYC, and never from the caller, who is the party being gated.
+    /// @dev    ⚠️ THE MANDATORY LAYER IS READ HERE BECAUSE NO MINT HOOK RUNS HERE.
+    ///         `identity.checkEligible` (registered, unexpired, required claims present) and
+    ///         `restrictions.assertNotBlocked` (sanctions, suspicion, probate, court order —
+    ///         one flag, one argument-free error) both run before a wei is accepted. The
+    ///         token's `_move` performs the same two reads; a subscription path that did not
+    ///         was accepting and refunding cash from wallets the token would refuse, and cash
+    ///         out to a listed person is a release of value whatever the ledger calls it.
     function subscribe() external payable returns (uint256 subscriptionId) {
+        if (msg.value == 0) revert ZeroSubscription();
+        if (offerClosesAt != 0 && block.timestamp > offerClosesAt) revert OfferClosed(offerClosesAt);
+
+        identity.checkEligible(msg.sender);
+        restrictions.assertNotBlocked(msg.sender);
+
         bytes32 jurisdiction = identity.jurisdictionOf(msg.sender);
         if (jurisdiction == bytes32(0)) revert SubscriberJurisdictionUnknown(msg.sender);
 
@@ -346,14 +573,7 @@ contract SubscriptionEscrow {
 
             jurisdictionRaisedWei[jurisdiction] = wouldRaiseTo;
         } else {
-            if (block.timestamp > prospectusValidUntil) revert ProspectusExpired(prospectusValidUntil);
-            // Art 12 has two limbs and the date is only one of them: a prospectus is valid
-            // for 12 months from approval **and only while it remains the anchored, current
-            // document**. Checking the clock alone accepts subscriptions against a
-            // prospectus that has been withdrawn or superseded in the registry.
-            if (documents.currentVersionHash(prospectusDocRef) == bytes32(0)) {
-                revert ProspectusAnchorMissing(prospectusDocRef);
-            }
+            _assertProspectusInForce();
 
             uint256 wouldRaiseTo = totalRaisedWei + msg.value;
             if (wouldRaiseTo > maxOfferAmountWei) revert OfferCeilingBreached(wouldRaiseTo, maxOfferAmountWei);
@@ -372,6 +592,28 @@ contract SubscriptionEscrow {
         emit Subscribed(subscriptionId, msg.sender, msg.value);
     }
 
+    /// @dev Art 12 has three limbs and the date is only one of them. A prospectus is valid
+    ///      (1) only while it remains the anchored, current document — checking the clock
+    ///      alone accepts subscriptions against a prospectus withdrawn or superseded in the
+    ///      registry; (2) only once the NCA has approved the version that is current —
+    ///      `anchorVersion` writes `approvedAt: 0`, and a current-but-unapproved version is a
+    ///      draft; (3) for 12 months FROM that approval, which bounds the fed-in date from
+    ///      above. The bound is checked here rather than only at construction because the
+    ///      approval is usually recorded after the escrow is deployed.
+    function _assertProspectusInForce() private view {
+        if (block.timestamp > prospectusValidUntil) revert ProspectusExpired(prospectusValidUntil);
+
+        bytes32 current = documents.currentVersionHash(prospectusDocRef);
+        if (current == bytes32(0)) revert ProspectusAnchorMissing(prospectusDocRef);
+
+        (, uint64 currentApprovedAt) = documents.documentStatus(current);
+        if (currentApprovedAt == 0) revert ProspectusNotApproved(prospectusDocRef);
+
+        uint64 baseApprovedAt = _baseProspectusApprovedAt();
+        if (baseApprovedAt == 0) revert ProspectusNotApproved(prospectusDocRef);
+        _assertValidityWithinApproval(prospectusValidUntil, baseApprovedAt);
+    }
+
     /// @notice Art 1(4)(b) — spends one unit of a Member State's 149-person allowance, and
     ///         reverts once it is gone.
     /// @dev    ⚠️ QUALIFIED INVESTORS DO NOT COUNT AT ALL. Art 2(e) reads across to MiFID II
@@ -387,7 +629,7 @@ contract SubscriptionEscrow {
     ///         to, and Art 1(4)(b) counts the addressing, not the outcome. Refunding the money
     ///         does not unmake the offer.
     function _countNonQualifiedPerson(bytes32 jurisdiction) private {
-        (bytes32 person, bool registered) = identity.recordPointerOf(msg.sender);
+        (bytes32 person, bool registered) = identity.personIdOf(msg.sender);
         if (!registered || person == bytes32(0)) revert SubscriberPersonUnknown(msg.sender);
 
         if (_isQualifiedInvestor(identity.tierOf(msg.sender))) return;
@@ -423,13 +665,23 @@ contract SubscriptionEscrow {
     // only subscriptions accepted BEFORE the supplement is published.
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @param docRef                 The registry slot the supplement was anchored into.
+    ///                               Usually `prospectusDocRef` (a supplement is a later
+    ///                               version of the prospectus slot); a separately-opened
+    ///                               Prospectus-Regulation slot is also accepted.
     /// @param supplementVersionHash  The supplement's version hash as anchored in
     ///                               `DocumentRegistry`. Checked, not trusted.
     /// @param opensAt/closesAt  Fed in off-chain against a real working-day calendar
     ///                          (TARGET2) — never computed on-chain from block.timestamp.
+    ///                          Bounded from below by `supplementWindowDurationSeconds`.
     /// @dev    ⚠️ The window can no longer be opened against a supplement that was never
     ///         filed or never approved. The reason is Art 23(1): the NCA has up to 5 working
     ///         days, and approval and publication precede the thing they authorise.
+    ///         ⚠️ Nor against a hash from the wrong REGIME. `documentStatus` is keyed by hash
+    ///         across every slot in the registry, so until 2026-09-08 any approved hash —
+    ///         a KID, an ELTIF annual report — opened an Art 23 window. The supplement must
+    ///         sit in a `Regime.ProspectusRegulation` slot, and where that slot is this
+    ///         offer's own prospectus it must not be the base prospectus (index 0) itself.
     ///         ⚠️ This is now the ONLY reverting document check left in the suite — the
     ///         equivalent gate on the upgrade path was withdrawn in favour of carrying the
     ///         document hash as the `TimelockController` salt and reconciling off-chain (see
@@ -442,22 +694,44 @@ contract SubscriptionEscrow {
     ///         the hash here is what lets an indexer reconcile the two sets and alarm on a
     ///         supplement with no window.
     function publishSupplement(
+        bytes32 docRef,
         bytes32 supplementVersionHash,
         uint64 opensAt,
         uint64 closesAt
     ) external onlyGovernance returns (uint256 windowIndex) {
         if (mode != Mode.Prospectus) revert WrongMode();
+        _assertWindowMeetsFloor(opensAt, closesAt, supplementWindowDurationSeconds);
 
         (bool exists, uint64 approvedAt) = documents.documentStatus(supplementVersionHash);
         if (!exists || approvedAt == 0) revert SupplementNotAnchoredAndApproved(supplementVersionHash);
+        _assertIsProspectusSupplement(docRef, supplementVersionHash);
 
-        emit SupplementAnchorVerified(supplementVersionHash, approvedAt);
+        emit SupplementAnchorVerified(docRef, supplementVersionHash, approvedAt);
 
         windowIndex = windows.length;
         windows.push(
             Window({kind: WindowType.SupplementArt23, opensAt: opensAt, closesAt: closesAt, scopeCutoff: opensAt})
         );
-        emit SupplementPublished(windowIndex, opensAt, closesAt, opensAt);
+        emit WithdrawalWindowOpened(windowIndex, WindowType.SupplementArt23, opensAt, closesAt, opensAt);
+    }
+
+    /// @dev Bounded scan — `versionCount` is the number of anchors on one slot, which is a
+    ///      handful over an offer's life. A hash found only as an unrevealed commitment does
+    ///      not count: it is not yet a document.
+    function _assertIsProspectusSupplement(bytes32 docRef, bytes32 versionHash) private view {
+        if (documents.regimeOf(docRef) != Regime.ProspectusRegulation) {
+            revert NotAProspectusSupplement(docRef, versionHash);
+        }
+
+        uint256 count = documents.versionCount(docRef);
+        for (uint256 i = 0; i < count; i++) {
+            Version memory v = documents.versionAt(docRef, i);
+            if (v.versionHash != versionHash || !v.revealed) continue;
+            // The base prospectus is not a supplement to itself.
+            if (docRef == prospectusDocRef && i == 0) revert NotAProspectusSupplement(docRef, versionHash);
+            return;
+        }
+        revert NotAProspectusSupplement(docRef, versionHash);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -467,6 +741,8 @@ contract SubscriptionEscrow {
     // every investor subscribed on an incomplete price, not just early ones.
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @param opensAt/closesAt Fed in against the working-day calendar; bounded from below by
+    ///                         `finalPriceWindowDurationSeconds`.
     function publishFinalPrice(
         uint64 opensAt,
         uint64 closesAt
@@ -474,6 +750,7 @@ contract SubscriptionEscrow {
         if (mode != Mode.Prospectus) revert WrongMode();
         if (!finalPriceOmittedAtFiling) revert FinalPriceNeverOmitted();
         if (finalPricePublished) revert FinalPriceAlreadyPublished();
+        _assertWindowMeetsFloor(opensAt, closesAt, finalPriceWindowDurationSeconds);
         finalPricePublished = true;
 
         windowIndex = windows.length;
@@ -486,6 +763,7 @@ contract SubscriptionEscrow {
             })
         );
         emit FinalPricePublished(windowIndex, opensAt, closesAt);
+        emit WithdrawalWindowOpened(windowIndex, WindowType.FinalPriceArt17, opensAt, closesAt, type(uint64).max);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -493,6 +771,15 @@ contract SubscriptionEscrow {
     // subscription. Windows are independent and may overlap.
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @dev ⚠️ THE REFUND PATH DELIBERATELY READS NEITHER `identity` NOR `restrictions`. A
+    ///      subscriber who has become restricted since subscribing is exercising a statutory
+    ///      right to take back THEIR OWN cash, which was never the issuer's; the restriction
+    ///      store's rule is that a listed party may not RECEIVE units or a distribution, and
+    ///      returning their own money is neither. Gating the refund would convert an
+    ///      Art 17(2)/23(2) right into a confiscation on a suspicion flag — and would put the
+    ///      restriction on a path where its argument-free revert tells the subscriber, by
+    ///      timing, that they were listed. Where a freeze of the cash itself is warranted, it
+    ///      is a court order executed off-chain against the issuer, not a `require` here.
     function withdrawAcceptance(uint256 subscriptionId) external {
         Subscription storage s = subscriptions[subscriptionId];
         if (s.investor != msg.sender) revert NotSubscriber();
@@ -534,15 +821,25 @@ contract SubscriptionEscrow {
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    // SETTLEMENT — releases escrow to the issuer once no window covering this
-    // subscription remains open or pending. Callable by anyone once the
-    // condition holds — a pull, not a push, on purpose.
+    // SETTLEMENT — releases escrow to the issuer once the offer has closed,
+    // the omitted final price (if any) has been published, and no window
+    // covering this subscription remains open or pending. Callable by anyone
+    // once the condition holds — a pull, not a push, on purpose.
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @dev Three gates, in the order a reviewer would ask them. (1) Has the offer closed?
+    ///      Art 23's supplement duty — and so the Art 23(2) right it opens — runs until the
+    ///      offer closes or trading starts, so nothing accepted during the offer is final
+    ///      before then. (2) Where the final price was omitted at filing, has it been
+    ///      published? Window B cannot have run if it has not opened. (3) Is any window that
+    ///      covers this subscription still open or yet to open? Only after all three is
+    ///      "no window covers it" the same statement as "no window ever will".
     function settle(uint256 subscriptionId) external {
         Subscription storage s = subscriptions[subscriptionId];
         if (s.withdrawn) revert AlreadyWithdrawn();
         if (s.settled) revert AlreadySettled();
+        if (offerClosesAt == 0 || block.timestamp <= offerClosesAt) revert OfferStillOpen();
+        if (finalPriceOmittedAtFiling && !finalPricePublished) revert FinalPriceNotPublished();
         if (_hasPendingWindow(s)) revert WindowsStillPending();
 
         s.settled = true;

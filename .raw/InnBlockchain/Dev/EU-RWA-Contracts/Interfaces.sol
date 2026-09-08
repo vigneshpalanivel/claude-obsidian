@@ -90,12 +90,15 @@ struct Distribution {
 }
 
 /// @notice The eligibility limb of the identity layer, as the transfer hook consumes it.
-/// @dev    ⚠️ `checkEligible` REVERTS rather than returning a boolean, and the revert reason is
-///         a single generic code for the whole block class. That is not a style choice: the
-///         anti-money-laundering tipping-off prohibition makes it an individual criminal
-///         offence in most Member States to disclose that a customer is under analysis, and a
-///         typed revert reason on a public ledger discloses it to everyone. Informative status
-///         codes go to the operator off-chain, never to the caller.
+/// @dev    ⚠️ `checkEligible` REVERTS rather than returning a boolean. Its errors are of the
+///         INFORMATIVE class only — `NotRegistered`, `RecordExpired`, `MissingRequiredClaim` —
+///         because a lapsed record or an absent claim is something the holder can cure and is
+///         not an allegation about them (design §4, rev 48 note). Every OPAQUE stop — sanctions,
+///         suspicion, probate, court order — lives in `IRestrictedParty` behind one argument-free
+///         error, and this interface must never grow a way to express one. The anti-money-
+///         laundering tipping-off prohibition makes disclosing that a customer is under analysis
+///         an individual criminal offence in most Member States, and a typed revert on a public
+///         ledger discloses it to everyone.
 interface IIdentityGate {
     function checkEligible(address wallet) external view;
 
@@ -104,12 +107,12 @@ interface IIdentityGate {
     function jurisdictionOf(address wallet) external view returns (bytes32);
 
     /// @notice The off-chain investor record a wallet resolves to.
-    /// @dev    Deliberately returns the pointer and a registration flag rather than the whole
+    /// @dev    Deliberately returns the `personId` and a registration flag rather than the whole
     ///         investor struct. Lost-key recovery needs to prove two wallets are the SAME
     ///         investor and nothing else; handing it the full record would couple every
     ///         consumer to the registry's storage layout and put personal-data-adjacent fields
     ///         in reach of contracts that have no business reading them.
-    function recordPointerOf(address wallet) external view returns (bytes32 pointer, bool registered);
+    function personIdOf(address wallet) external view returns (bytes32 personId, bool registered);
 
     function tierOf(address wallet) external view returns (Tier);
 }
@@ -179,16 +182,26 @@ interface IDistributionSink {
     function distribution(uint256 id) external view returns (Distribution memory);
 }
 
-/// @notice The event surface off-chain surveillance and reporting read.
-/// @dev    ⚠️ THIS IS THE ONE DEPENDENCY IN THE SUITE THAT IS SAFE TO DETACH SILENTLY. Nothing
-///         on-chain reads what it emits — it exists so off-chain systems receive ledger facts.
-///         A client that owes no market-abuse surveillance on its own trading simply declares
-///         it out of scope and no consumer reverts. Every other module here is read by a
-///         `require` somewhere, so detaching it removes a control.
-interface IMarketEvents {
-    function emitTrade(bytes32 isinHash, address buyer, address seller, uint256 amount, uint256 price) external;
+// NOTE: a previous `IMarketEvents` interface declared here was deleted on 2026-09-08 as a
+// DUPLICATE — nothing implemented it, and `IMarketEventSchema` in `MarketEventSchema.sol` is the
+// one event schema. ⚠️ **It was not deleted for carrying counterparty addresses, and nothing
+// should be "fixed" on that reading.** A wallet as the subject of its own action is exactly what
+// the event-payload rule permits: `TradeReportable` carries `buyer` and `seller` addresses by
+// design, because the reporting bridge needs a join key and the ledger already shows the transfer.
+// What the rule bars is the person KEY and person ATTRIBUTES — `personId`, tier, jurisdiction,
+// a national-identifier hash, a reason or a class. Those are storage reads, never log entries.
 
-    function emitOrderEvent(bytes32 isinHash, bytes32 orderId, uint8 lifecycle) external;
+/// @notice The protocol-level pause every value-moving path reads.
+/// @dev    Implemented by `DoraGovernor`. This is what makes the oracle circuit-breaker trip a
+///         CONTROL rather than an event: `ValuationOracle` calls `tripFromOracle`, the governor
+///         sets `paused`, and every consumer of this interface stops moving value until
+///         governance lifts it. Before 2026-09-08 nothing read the flag, so the trip halted
+///         nothing — the exact "satisfied only by an event" defect the design's §9 forbids.
+///         ⚠️ Consumers read this on VOLUNTARY and ACQUISITION paths only. A forced transfer, a
+///         lost-key recovery, a repayment or a disposal must still execute during a pause — an
+///         incident is not a reason to prevent a court order or trap a fund in breach.
+interface IProtocolPause {
+    function paused() external view returns (bool);
 }
 
 /// @notice The person-scoped restriction limb, as the transfer hook consumes it.
@@ -217,10 +230,25 @@ interface IRestrictedParty {
     function screeningIsStale() external view returns (bool);
 }
 
-/// @notice The valuation limb. Already governance-settable across the fund modules on
-///         operational-resilience grounds; declared here so the pattern is uniform.
+/// @notice The valuation limb, as the four fund modules consume it. Implemented by
+///         `ValuationOracle`; held behind an AIFM/ManCo setter in every consumer (DORA Art 28).
+/// @dev    This is the oracle's REAL read surface, not a paraphrase of it. An earlier
+///         declaration here (`latest` / `latestFailClosed`) was implemented by nothing, so the
+///         consumers stayed typed on the concrete contract — deleted 2026-09-08.
+///         Two reads, on purpose (design §9): `value` REVERTS on stale, halted or unconfigured
+///         and is for anything that acquires, draws or sizes a payout; `peek` never reverts and
+///         is for passive rechecks. `acceptedAt` is what a consumer stores to know whether the
+///         figure it last absorbed is still the oracle's current one — the sync-currency test
+///         every active path runs since 2026-09-08.
 interface IValuationFeed {
-    function latest(bytes32 feedId) external view returns (uint256 value, uint64 asOf);
+    function value(bytes32 assetId) external view returns (uint256);
 
-    function latestFailClosed(bytes32 feedId) external view returns (uint256 value, uint64 asOf);
+    function peek(bytes32 assetId)
+        external
+        view
+        returns (uint256 lastValue, uint64 acceptedAt, bool fresh, bool halted);
+
+    function isFresh(bytes32 assetId) external view returns (bool);
+
+    function acceptedAt(bytes32 assetId) external view returns (uint64);
 }

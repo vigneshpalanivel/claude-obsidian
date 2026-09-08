@@ -351,14 +351,17 @@ contract SiQuoteEngine is IMarketEventSchema, MifirClock {
             })
         );
 
+        // Counterparties as wallets. The SI is always one side (own account); which side
+        // follows from the client's order direction. The bridge resolves LEI / NCI from
+        // `IdentityRegistry` at this block — nothing identifying is carried in the log.
+        (address buyer, address seller) = side == Side.Buy ? (client, address(this)) : (address(this), client);
+
         emit TradeReportable(
             tradeId,
             instrumentId,
             venueMic,
-            bytes20(0), // resolved by the reporting bridge from IdentityRegistry
-            bytes32(0),
-            bytes20(0),
-            bytes32(0),
+            buyer,
+            seller,
             quoted,
             quantity,
             TradingCapacity.DealingOnOwnAccount, // an SI deals on own account by definition

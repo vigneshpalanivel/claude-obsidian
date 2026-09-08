@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {ICompliance, IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
+import {ICompliance, IIdentityGate, IProtocolPause, IRestrictedParty} from "./Interfaces.sol";
 
 /// @title SecurityToken (illustrative sample — not production code)
 /// @notice C1 + C5 — the instrument itself, and the only contract in this folder that moves a
@@ -20,11 +20,20 @@ import {ICompliance, IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
 ///         ERC-1400 partitions come free from ERC-1410; under ERC-3643 they are custom work.
 ///         Modelling them here would pick a side. `DistributionWaterfall` shows the shape a
 ///         tranched instrument needs when the decision is made.
-/// @dev    ⚠️ EVERY BALANCE MOVEMENT ROUTES THROUGH THE SAME HOOK — mint, burn, transfer,
-///         forced transfer and recovery. The moment one path skips `_check`, that path is the
-///         bypass: a wallet that cannot receive a transfer but can receive a mint is a frozen
-///         wallet that is not frozen. `DistributionAgent` exists for the same reason on the
-///         payout side.
+/// @dev    ⚠️ EVERY VOLUNTARY MOVEMENT ROUTES THROUGH THE SAME HOOK — mint, burn, transfer and
+///         transferFrom all go through `_move` → `_check`. The moment one of those paths skips
+///         `_check`, that path is the bypass: a wallet that cannot receive a transfer but can
+///         receive a mint is a frozen wallet that is not frozen. `DistributionAgent` exists for
+///         the same reason on the payout side.
+///         The two INVOLUNTARY paths run a deliberately narrower gate, stated here so nobody
+///         reads "every movement" and assumes otherwise:
+///           • `forcedTransfer` runs identity on the RECIPIENT, the restriction store on BOTH
+///             sides (the sender limb relieved only by a governance-registered destination),
+///             and the module list with the real sender. It skips the sender's eligibility and
+///             the sender's partial freeze. See its own NatSpec for why each of those is so.
+///           • `recoverWallet` runs the record-pointer match ONLY — no identity gate, no
+///             restriction read, no module. See its NatSpec for what that leaves behind.
+///         Neither involuntary path reads `paused` or the protocol pause. See `whenLive`.
 /// @dev    GDPR / AMLR Art 76: freeze and forced-transfer events carry a `reasonHash`, never a
 ///         reason. The hash points at an off-chain incident record. A human-readable "sanctions
 ///         hit" in a public log is both a tipping-off disclosure and an un-erasable personal
@@ -85,6 +94,22 @@ contract SecurityToken {
     ///         unremovable here.
     IRestrictedParty public restrictions;
 
+    /// @notice The protocol-level pause — `DoraGovernor.paused()` — read on every VOLUNTARY path.
+    /// @dev    ⚠️ A FOURTH MANDATORY REFERENCE, ADDED 2026-09-08 BECAUSE THE TRIP HALTED NOTHING.
+    ///         `ValuationOracle` trips the governor's circuit breaker on a deviation halt, the
+    ///         governor sets its flag, and until this line nothing read it — the halt was an
+    ///         event with no consumer, which the design's §9 explicitly forbids. Reading it here
+    ///         is what turns the trip into a control on the instrument.
+    /// @dev    ⚠️ IT IS READ IN `whenLive` AND NOWHERE ELSE, AND `whenLive` GUARDS VOLUNTARY
+    ///         PATHS ONLY. `forcedTransfer` and `recoverWallet` execute during a protocol pause
+    ///         exactly as they execute during the agent's own `paused` — a court order does not
+    ///         wait for an incident to close, and an operator cannot cite its own halt as the
+    ///         reason it could not comply. Same shape, same reasoning, one more flag.
+    /// @dev    Interface-typed, governance-settable, never `immutable`, never null — the
+    ///         standing rule. There is no "not owed" configuration: a deployment without a
+    ///         governor points this at whatever contract answers `paused()` for it.
+    IProtocolPause public protocolPause;
+
     // ═══════════════════════════════════════════════════════════════════════
     // TOKEN STATE
     // ═══════════════════════════════════════════════════════════════════════
@@ -114,7 +139,9 @@ contract SecurityToken {
     /// @notice Whole-instrument halt. Distinct from `ModularCompliance.emergencyBypass`, which
     ///         runs the token WITHOUT a rule; this stops the token entirely. Under DLT Pilot
     ///         Art 7(5) an operator must be able to do both, and must be able to say which one
-    ///         it did.
+    ///         it did. Also distinct from `protocolPause` — that is the platform-wide halt the
+    ///         governor sets; this is the per-instrument one an agent sets. `whenLive` reads
+    ///         both.
     bool public paused;
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -130,6 +157,7 @@ contract SecurityToken {
     /// @notice ⚠️ NO REASON FIELD, unlike the freeze and forced-transfer events. Which store is
     ///         wired is an operational fact; who is in it is not this contract's to announce.
     event RestrictionsSet(address indexed restrictions);
+    event ProtocolPauseChanged(address indexed previous, address indexed current);
     event AgentSet(address indexed agent, bool allowed);
     event Paused(bytes32 reasonHash, uint64 at);
     event Unpaused(uint64 at);
@@ -160,6 +188,10 @@ contract SecurityToken {
     error RecoveryTargetNotSameInvestor(address lostWallet, address newWallet);
     error RecoveryTargetHasNoRecord(address newWallet);
     error NothingToRecover(address lostWallet);
+    /// @dev A forced transfer or a recovery from a wallet to itself moves nothing and would
+    ///      still emit `ForcedTransfer` / `WalletRecovered` — an audit-trail entry for an act
+    ///      that did not happen. Refused outright.
+    error SameWallet(address wallet);
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -171,13 +203,21 @@ contract SecurityToken {
         _;
     }
 
-    /// @dev ⚠️ `paused` guards the VOLUNTARY paths only. Forced transfer and recovery must
-    ///      keep working while the instrument is halted — a court order and a sanctions
-    ///      seizure do not wait for the operator to resume trading, and an operator who
-    ///      halted the token cannot use its own halt as a reason it could not comply.
+    /// @dev ⚠️ BOTH PAUSES guard the VOLUNTARY paths only — transfer, transferFrom, mint, burn.
+    ///      `paused` is the agent's instrument-level halt; `protocolPause.paused()` is the
+    ///      governor's platform-level halt, set by an incident or by the oracle circuit breaker.
+    ///      Forced transfer and recovery must keep working under either — a court order and a
+    ///      sanctions seizure do not wait for the operator to resume trading, and an operator
+    ///      who halted the token cannot use its own halt as a reason it could not comply.
+    ///      One revert for both: which halt is in force is an operational fact, and `paused` is
+    ///      a public read for whoever needs it.
     modifier whenLive() {
-        if (paused) revert TokenPaused();
+        _requireLive();
         _;
+    }
+
+    function _requireLive() internal view {
+        if (paused || protocolPause.paused()) revert TokenPaused();
     }
 
     constructor(
@@ -185,24 +225,27 @@ contract SecurityToken {
         address compliance_,
         address identity_,
         address restrictions_,
+        address protocolPause_,
         string memory name_,
         string memory symbol_,
         uint8 decimals_,
         bytes32 isinHash_
     ) {
         governance = governance_;
-        // Both are mandatory at construction. A token cannot exist in a half-wired state where
-        // the hook has nothing to call — that is the failure mode a nullable reference invites.
-        // A client with no rules gets a compliance contract with an empty module list, not a
-        // missing compliance contract.
+        // All four are mandatory at construction. A token cannot exist in a half-wired state
+        // where the hook has nothing to call — that is the failure mode a nullable reference
+        // invites. A client with no rules gets a compliance contract with an empty module list,
+        // not a missing compliance contract.
         if (compliance_ == address(0) || identity_ == address(0)) revert ZeroAddress();
-        if (restrictions_ == address(0)) revert ZeroAddress();
+        if (restrictions_ == address(0) || protocolPause_ == address(0)) revert ZeroAddress();
         compliance = ICompliance(compliance_);
         identityRegistry = IIdentityGate(identity_);
         restrictions = IRestrictedParty(restrictions_);
+        protocolPause = IProtocolPause(protocolPause_);
         emit ComplianceAdded(compliance_);
         emit IdentityRegistryAdded(identity_);
         emit RestrictionsSet(restrictions_);
+        emit ProtocolPauseChanged(address(0), protocolPause_);
         name = name_;
         symbol = symbol_;
         decimals = decimals_;
@@ -241,6 +284,18 @@ contract SecurityToken {
         if (impl == address(0)) revert ZeroAddress();
         restrictions = IRestrictedParty(impl);
         emit RestrictionsSet(impl);
+    }
+
+    /// @notice Re-point the protocol pause. Swap, never unset.
+    /// @dev    ⚠️ Pointing this at a contract whose `paused()` is always false is the way to
+    ///         detach the instrument from the platform halt, and it is a governance act with an
+    ///         event against it — not a silent default. There is deliberately no "no governor"
+    ///         configuration for the same reason there is no "no restriction store" one.
+    function setProtocolPause(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        address previous = address(protocolPause);
+        protocolPause = IProtocolPause(impl);
+        emit ProtocolPauseChanged(previous, impl);
     }
 
     function setAgent(address agent, bool allowed) external onlyGovernance {
@@ -303,7 +358,7 @@ contract SecurityToken {
 
     /// @dev External only so `canTransfer` can `try` it. Not intended for direct use.
     function simulate(address from, address to, uint256 amount) external view {
-        if (paused) revert TokenPaused();
+        _requireLive();
         _requireSpendable(from, amount);
         _check(from, to, amount);
     }
@@ -407,7 +462,13 @@ contract SecurityToken {
     /// @dev    Burns unfrozen units only. Burning frozen units would let an agent extinguish a
     ///         holding that a court or an authority has immobilised, which is the one thing a
     ///         freeze is for.
-    function burn(address from, uint256 amount) external onlyAgent {
+    /// @dev    `whenLive`, like `mint` — added 2026-09-08. A burn is a VOLUNTARY exit: a
+    ///         redemption, a cancellation, a buy-back disposal. None of those is a court order,
+    ///         so none of them earns the involuntary-path exemption from the halt, and a
+    ///         redemption paid out during an oracle deviation halt is paid at a figure the
+    ///         halt exists to say is unreliable. Before this the burn path was the one
+    ///         voluntary movement that ignored `paused`.
+    function burn(address from, uint256 amount) external onlyAgent whenLive {
         _requireSpendable(from, amount);
         _move(from, address(0), amount);
     }
@@ -448,29 +509,55 @@ contract SecurityToken {
 
     /// @notice Involuntary movement — court order, AMLR asset freeze with a designated
     ///         destination, insolvency, or correcting a settlement error.
-    /// @dev    ⚠️ THE ASYMMETRY IS THE WHOLE POINT, AND IT IS NOT A SHORTCUT:
-    ///           • The SENDER'S locks are bypassed. Frozen units move, holding periods do not
-    ///             apply, and the sender's own eligibility is not consulted. A seizure order
-    ///             against a sanctioned wallet is unexecutable if the wallet's sanctioned
-    ///             status blocks it — which is the absurdity a naive implementation produces.
-    ///             ⚠️ THE SENDER'S HOLD IS NOT BYPASSED BY THIS FUNCTION, and it must not be:
-    ///             `compliance.checkTransfer` still runs `RestrictedPartyGate`, which checks BOTH sides.
-    ///             The escape is `RestrictedPartyRegistry.setPermittedDestination` — the designated
-    ///             frozen account, the enforcement authority's address, the estate's heir. An
-    ///             agent-key bypass of the restriction store would be a general-purpose sanctions
-    ///             override; a governance-set destination allowlist is an auditable one.
-    ///             A forced transfer out of a restricted wallet to an address that is NOT a permitted
-    ///             destination is meant to revert.
-    ///           • The RECIPIENT is still fully checked. The destination must be an eligible
-    ///             holder and must satisfy every rule module. Otherwise "forced transfer"
-    ///             becomes a general-purpose route to place units with anyone at all, and
-    ///             every concentration limit, cap and covenant in this folder has a back door
-    ///             with an agent key.
+    /// @dev    ⚠️ THE ASYMMETRY IS THE WHOLE POINT, AND IT IS NOT A SHORTCUT. Stated limb by
+    ///         limb, because the previous version of this note claimed more than the code did:
+    ///           • The SENDER'S PARTIAL FREEZE is bypassed. Frozen units move, and the freeze
+    ///             counter is reduced to match (see below).
+    ///           • The SENDER'S ELIGIBILITY is not consulted. `checkEligible(from)` is skipped:
+    ///             a seizure out of a wallet whose KYC has lapsed is still a seizure, and an
+    ///             estate distribution out of a dead person's wallet has, by definition, no
+    ///             live record to check.
+    ///           • The SENDER'S RESTRICTION IS **NOT** BYPASSED, and it is enforced in the
+    ///             MANDATORY layer — `restrictions.assertTransferPermitted(from, to)` runs on
+    ///             this path exactly as it runs in `_check`, above the module list, where no
+    ///             `removeModule` or `emergencyBypass` reaches it. Until 2026-09-08 this
+    ///             function relied on `RestrictedPartyGate` inside `compliance.checkTransfer`
+    ///             for the same check, which meant a governance action on the module list
+    ///             could turn forced transfer into a route that lands units on a listed person
+    ///             or releases them from one. The only relief for the sender limb is
+    ///             `RestrictedPartyRegistry.setPermittedDestination` — the designated frozen
+    ///             account, the enforcement authority's address, the estate's heir — which is
+    ///             governance-set, `orderRef`-recorded, and applied by the store itself. An
+    ///             agent-key bypass of the restriction store would be a general-purpose
+    ///             sanctions override; a governance-set destination allowlist is an auditable
+    ///             one. A forced transfer out of a restricted wallet to an address that is NOT
+    ///             a permitted destination reverts.
+    ///           • THE MODULE LIST RUNS WITH THE REAL SENDER, and sender-side module rules DO
+    ///             apply. This note used to say holding periods do not apply here. They do:
+    ///             `compliance.checkTransfer(from, to, amount)` reaches `HoldingPeriodGate`
+    ///             with `from` as written, and a seizure during a ramp-up lock reverts with
+    ///             the lock's own error. The contract does not pretend otherwise. Whether a
+    ///             court order overrides an ELTIF Art 18 holding period is a question for
+    ///             counsel and the order, not for this function to answer silently; where the
+    ///             answer is yes, the mechanism is `ModularCompliance.emergencyBypass` on that
+    ///             module — logged, reasoned, governance-only — and not a hidden branch here.
+    ///             Passing `address(0)` as the sender to make the modules skip the sender was
+    ///             considered and rejected: the modules would then see a MINT, and a covenant
+    ///             scoped to mint would bind a seizure.
+    ///           • The RECIPIENT is fully checked: identity, restriction store, every module.
+    ///             The destination must be an eligible holder, must not be restricted (no
+    ///             carve-out exists on the recipient limb, anywhere), and must satisfy every
+    ///             rule module. Otherwise "forced transfer" becomes a general-purpose route to
+    ///             place units with anyone at all, and every concentration limit, cap and
+    ///             covenant in this folder has a back door with an agent key.
     /// @dev    ⚠️ Frozen units are released to the extent they are moved. Leaving the freeze
     ///         counter untouched would leave the SENDER carrying a freeze over units they no
     ///         longer hold, silently immobilising an unrelated part of their holding.
+    /// @dev    Not `whenLive`. Runs during the agent's `paused` and during the protocol pause —
+    ///         see the `whenLive` note.
     function forcedTransfer(address from, address to, uint256 amount, bytes32 reasonHash) external onlyAgent {
         if (to == address(0)) revert ZeroAddress();
+        if (from == to) revert SameWallet(from);
 
         uint256 bal = _balances[from];
         if (bal < amount) revert InsufficientBalance(from, bal, amount);
@@ -481,7 +568,9 @@ contract SecurityToken {
             frozenUnits[from] = frozen - (amount - unfrozen);
         }
 
-        // Recipient side only — see the asymmetry note above.
+        // Mandatory layer first: both sides, generic error, sender limb relieved only by the
+        // store's own permitted-destination register. Then recipient identity, then modules.
+        restrictions.assertTransferPermitted(from, to);
         identityRegistry.checkEligible(to);
         compliance.checkTransfer(from, to, amount);
 
@@ -508,8 +597,8 @@ contract SecurityToken {
     ///         This function runs no transfer gate at all — by design, since a recovery whose
     ///         destination is provably the same investor has nothing left to check. But that
     ///         means `RestrictedPartyRegistry.blockWallet(lostWallet)` is left behind: the units land in a
-    ///         second wallet of the same person that carries no restriction. `blockRecord` does follow,
-    ///         because both wallets resolve to the same pointer and the store checks the record.
+    ///         second wallet of the same person that carries no restriction. `blockPerson` does follow,
+    ///         because both wallets resolve to the same `personId` and the store checks the record.
     ///         **Any restriction intended to survive a key loss must be written against the RECORD, not
     ///         the wallet.** This contract cannot enforce that — it holds no write access to the
     ///         store, and giving it one would put a sanctions key on the token.
@@ -518,15 +607,16 @@ contract SecurityToken {
     ///         procedure is the paper half, and the two must describe the same thing.
     function recoverWallet(address lostWallet, address newWallet, bytes32 reasonHash) external onlyAgent {
         if (newWallet == address(0)) revert ZeroAddress();
+        if (lostWallet == newWallet) revert SameWallet(lostWallet);
 
-        // ⚠️ The control that makes recovery safe is the record-pointer match, not the agent
+        // ⚠️ The control that makes recovery safe is the `personId` match, not the agent
         // role. Both wallets must resolve to the SAME off-chain investor record — without that,
         // "recovery" is an agent-key licence to move any holding to any wallet.
-        (bytes32 lostPointer, ) = identityRegistry.recordPointerOf(lostWallet);
-        (bytes32 newPointer, bool newRegistered) = identityRegistry.recordPointerOf(newWallet);
+        (bytes32 lostPersonId, ) = identityRegistry.personIdOf(lostWallet);
+        (bytes32 newPersonId, bool newRegistered) = identityRegistry.personIdOf(newWallet);
 
         if (!newRegistered) revert RecoveryTargetHasNoRecord(newWallet);
-        if (newPointer == bytes32(0) || newPointer != lostPointer) {
+        if (newPersonId == bytes32(0) || newPersonId != lostPersonId) {
             revert RecoveryTargetNotSameInvestor(lostWallet, newWallet);
         }
 

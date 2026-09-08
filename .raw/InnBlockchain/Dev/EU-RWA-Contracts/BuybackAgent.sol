@@ -1,14 +1,28 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {ISecurityToken, IDocumentAnchor, IClosedPeriodGate, Version} from "./Interfaces.sol";
+import {ISecurityToken, IDocumentAnchor, IClosedPeriodGate, IProtocolPause, Version} from "./Interfaces.sol";
 
 /// @title BuybackAgent (illustrative sample — not production code)
-/// @notice C1 + C5 — the issuer buying back its own instrument inside the MAR Art 5 safe
-///         harbour. The Article 5 conditions are carried here as on-chain parameters rather
-///         than as a procedure someone follows, because mis-running a buy-back does not
-///         produce a compliance finding: it converts routine treasury activity into market
-///         manipulation under Art 15.
+/// @notice C1 + C5 — the issuer buying back its own SHARES inside the MAR Art 5 safe harbour.
+///         The Article 5 conditions are carried here as on-chain parameters rather than as a
+///         procedure someone follows, because mis-running a buy-back does not produce a
+///         compliance finding: it converts routine treasury activity into market manipulation
+///         under Art 15.
+/// @dev    ⚠️ THE HARBOUR IS FOR OWN SHARES, AND THIS CONTRACT REFUSES ANYTHING ELSE. MAR Art 5(1)
+///         covers "trading in own shares in buy-back programmes", and Art 5(2) admits three
+///         purposes only — capital reduction, obligations under debt convertible into equity,
+///         obligations under employee share schemes (mar-checklist §2.1). A debt-token or
+///         fund-unit repurchase is not "own shares" and has no purpose on that list; it is
+///         outside the harbour and is judged as ordinary Art 12/15 conduct. So `instrumentClass`
+///         is a constructor term, like the coupon terms in `CouponSchedule`, and every
+///         programme-opening call reverts `SafeHarbourUnavailable` unless it is `Share`.
+///         There is NO second, non-harbour repurchase path here, deliberately: a contract that
+///         offered one would be a repurchase engine wearing an Art 5 label, and the label is what
+///         a reviewer reads. A non-share issuer must not deploy this contract at all — its
+///         redemption or repurchase mechanics belong in the instrument's own terms and are not
+///         an Art 5 matter. Before 2026-09-08 the header said "its own instrument" and the
+///         design §5a/§17 rows inherited the error; the Series Plan, S3 §9 and M5 §7 had it right.
 /// @dev    ⚠️ THE SAFE HARBOUR IS ALL-OR-NOTHING. Art 5 is an exemption, not a set of best
 ///         practices. Breach one condition — one purchase above the price cap, one trade in a
 ///         closed period, one late publication — and the exemption is not partially reduced,
@@ -30,6 +44,13 @@ import {ISecurityToken, IDocumentAnchor, IClosedPeriodGate, Version} from "./Int
 ///         trading, so the suspicious-order-and-transaction duty applies even to an issuer
 ///         with no dealer lane. `PurchaseExecuted` is the surveillance feed for that — scoped
 ///         to the issuer's own flow, not the whole book.
+/// @dev    ⚠️ "NO SELLING OF OWN SHARES DURING THE PROGRAMME" IS NOT ENFORCED HERE. A
+///         `checkIssuerMaySell` view existed until 2026-09-08 and nothing read it — the treasury
+///         is an ordinary wallet the issuer controls by other means, so a view this contract
+///         exposes cannot stop a sale from that wallet. It was deleted rather than left as a
+///         control that looked wired. The rule is an OFF-CHAIN programme rule (see
+///         `DEPLOYMENT-DEFAULTS.md`); the on-chain form, if one is ever wanted, is a freeze of
+///         treasury units on the token for the programme's duration.
 contract BuybackAgent {
     /// @dev Emitted whenever an inter-contract reference is re-pointed.
     event DependencySet(bytes32 indexed role, address indexed impl);
@@ -37,6 +58,18 @@ contract BuybackAgent {
     // ═══════════════════════════════════════════════════════════════════════
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice What the token is. Only `Share` may open a programme — see the contract note.
+    /// @dev    `Debt`, `FundUnit` and `Other` exist so a deployment states what it is rather
+    ///         than leaving the reviewer to infer it from the absence of a share class; a
+    ///         deployment with any of them can never disclose a programme and should not exist.
+    enum InstrumentClass {
+        Unset,
+        Share,
+        Debt,
+        FundUnit,
+        Other
+    }
 
     /// @notice Art 5(2) admits exactly three purposes and no others.
     /// @dev    An enum rather than a free-text field precisely because the list is closed. A
@@ -80,6 +113,10 @@ contract BuybackAgent {
         uint256 maxPricePerUnit;
         uint256 spentWei;
         uint256 boughtUnits;
+        /// @dev Units already burned or recorded as held under `disposeUnits`. Bounds the
+        ///      disposal to what this programme actually bought — a burn of treasury units the
+        ///      programme never acquired is a capital reduction nobody disclosed.
+        uint256 disposedUnits;
         /// @dev Listing Act (Reg 2024/2809) amendment to Art 5(3): trades are reported to ONE
         ///      competent authority — the one of the most relevant market in liquidity terms
         ///      per MiFIR Art 26(1) — which then forwards on request. Pre-2024 routing filed
@@ -93,7 +130,8 @@ contract BuybackAgent {
         uint256 units;
         uint256 pricePerUnit;
         uint64 executedAt;
-        /// @dev Art 5(1)(c): public disclosure within 7 daily market sessions. 0 = still owed.
+        /// @dev Del. Reg 2016/1052: public disclosure within 7 daily market sessions of
+        ///      execution (mar-checklist §2.1). 0 = still owed.
         uint64 publishedAt;
         bytes32 publicationRef;
     }
@@ -117,38 +155,33 @@ contract BuybackAgent {
     address public immutable governance;
     mapping(address => bool) public isAgent;
 
+    /// @notice The instrument class this deployment was declared for. A disclosure item, set
+    ///         once — see the contract note. Anything but `Share` makes every programme-opening
+    ///         call revert `SafeHarbourUnavailable`.
+    InstrumentClass public immutable instrumentClass;
+
     /// @notice ⚠️ The oracle is a critical dependency in the DORA Art 8 sense — its failure
     ///         does not degrade the buy-back, it stops it, by design (see `_marketReference`).
     ///         Designate it before signing the vendor, not after.
     mapping(address => bool) public isOracle;
 
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
+    /// @dev Interface-typed, settable, never null — the standing rule. Setters at the foot.
     ISecurityToken public token;
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
     IDocumentAnchor public documents;
 
-    /// @notice Art 19(11) reaches the issuer's own trading. Reused rather than reimplemented so
-    ///         one calendar of closed periods governs both the directors and the treasury.
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
+    /// @notice The issuer-side closed-period block. ⚠️ THE LABEL MATTERS: MAR Art 19(11) binds
+    ///         PDMRs, not the issuer. The issuer's own bar on buying back during a closed period
+    ///         is a CONDITION OF THE ART 5 HARBOUR under Del. Reg 2016/1052 (mar-checklist §2.1,
+    ///         "no trading during a closed period for the issuer — Art 19(11) interaction"). The
+    ///         same calendar governs both, which is why the freeze's calendar is reused here
+    ///         rather than reimplemented — but a breach here is an Art 5 condition failing, not
+    ///         an Art 19(11) offence.
     IClosedPeriodGate public closedPeriods;
+
+    /// @notice The protocol pause (`DoraGovernor`). Read on `executePurchase` only — a purchase
+    ///         is the issuer voluntarily acquiring, which is the class of path an incident halts.
+    ///         Disposal, publication and surplus withdrawal are not read against it.
+    IProtocolPause public protocolPause;
 
     address public treasury;
 
@@ -167,16 +200,30 @@ contract BuybackAgent {
 
     MarketReference private _market;
 
+    /// @notice Cash reserved against Active programmes: Σ(`maxConsiderationWei − spentWei`).
+    ///         `withdrawSurplus` can take only what sits above it.
+    /// @dev    The disclosed maximum consideration is what the market was told the issuer MAY
+    ///         spend, not what it must; reserving it anyway is the conservative reading and it
+    ///         is what stops governance pulling the funding from under a running programme.
+    ///         The purchase path additionally requires the balance to cover each purchase, so a
+    ///         programme funded below its ceiling simply runs until the cash is gone.
+    uint256 public reservedWei;
+
     /// @notice How long the oracle reading stays usable. ⚠️ Fail-closed: a stale reading is not
     ///         a slightly-old price cap, it is no price cap.
     uint64 public marketDataMaxAge = 15 minutes;
 
-    /// @notice Art 5(1)(c) — "within 7 daily market sessions". ⚠️ A MARKET-SESSION CALENDAR IS
-    ///         NOT DERIVABLE ON-CHAIN: sessions are not days, venues close on different
-    ///         holidays, and a DLT MTF's own calendar is its own. So this is a governance-set
-    ///         duration that must be configured to the conservative reading of the calendar of
-    ///         the venue actually used, and re-checked when the venue changes. It is not
-    ///         defaulted, because a wrong default here is a silent Art 5 breach.
+    /// @notice Hard ceiling on `marketDataMaxAge`. The RTS price condition is tested against the
+    ///         CURRENT independent bid and the LAST independent trade; a reading a day old is
+    ///         neither, whatever governance sets.
+    uint64 public constant MAX_MARKET_DATA_AGE = 1 days;
+
+    /// @notice Del. Reg 2016/1052 — "within 7 daily market sessions". ⚠️ A MARKET-SESSION
+    ///         CALENDAR IS NOT DERIVABLE ON-CHAIN: sessions are not days, venues close on
+    ///         different holidays, and a DLT MTF's own calendar is its own. So this is a
+    ///         governance-set duration that must be configured to the conservative reading of
+    ///         the calendar of the venue actually used, and re-checked when the venue changes.
+    ///         It is not defaulted, because a wrong default here is a silent Art 5 breach.
     uint64 public publicationDeadlinePeriod;
 
     /// @notice Art 5 checklist: "no transactions during a period of self-imposed restriction
@@ -205,6 +252,8 @@ contract BuybackAgent {
     event MarketDataMaxAgeSet(uint64 seconds_);
     event PublicationDeadlineSet(uint64 seconds_);
     event SelfImposedRestrictionSet(uint64 until);
+    event Funded(address indexed from, uint256 amount, uint256 balance);
+    event SurplusWithdrawn(address indexed to, uint256 amount, uint256 balance);
 
     event ProgrammeDisclosed(
         uint256 indexed programmeId, Purpose purpose, bytes32 disclosureRef, uint64 startDate, uint64 endDate
@@ -237,6 +286,11 @@ contract BuybackAgent {
     error Reentrancy();
     error TreasuryNotSet();
     error PublicationDeadlineNotConfigured();
+    error ProtocolPaused();
+
+    /// @dev Art 5 covers own SHARES only. Raised by every programme-opening call on a
+    ///      deployment whose `instrumentClass` is not `Share`, and by the constructor on `Unset`.
+    error SafeHarbourUnavailable(InstrumentClass instrumentClass);
 
     error UnknownProgramme(uint256 programmeId);
     error WrongState(uint256 programmeId, State expected, State actual);
@@ -253,6 +307,8 @@ contract BuybackAgent {
     error ProgrammeExpired(uint64 endDate);
     error ConsiderationCeilingBreached(uint256 wouldSpend, uint256 ceiling);
     error UnitCeilingBreached(uint256 wouldBuy, uint256 ceiling);
+    error InsufficientFunding(uint256 required, uint256 available);
+    error SurplusExceeded(uint256 requested, uint256 withdrawable);
 
     /// @dev Del. Reg (EU) 2016/1052 Art 3(2).
     error PriceAboveIndependentReference(uint256 offered, uint256 permitted);
@@ -262,23 +318,27 @@ contract BuybackAgent {
 
     error MarketDataStale(uint64 updatedAt, uint64 maxAge);
     error MarketDataMissing();
+    error MarketDataMaxAgeTooLong(uint64 requested, uint64 maximum);
 
-    /// @dev MAR Art 19(11), reaching the issuer's own trading.
+    /// @dev An Art 5 harbour condition (Del. Reg 2016/1052; mar-checklist §2.1 "no trading during
+    ///      a closed period for the issuer"). The calendar is the Art 19(11) one; the rule
+    ///      breached is the issuer's, not a PDMR's.
     error InClosedPeriod(uint256 periodId);
     error InSelfImposedRestriction(uint64 until);
-    /// @dev Art 5(1)(c) — the harbour is already lost for the unpublished trade; buying more
-    ///      under a programme that has left the harbour is the decision this refuses to make
-    ///      silently. See the note on `_requirePublicationCurrent`.
+    /// @dev Del. Reg 2016/1052 publication clock — the harbour is already lost for the
+    ///      unpublished trade; buying more under a programme that has left the harbour is the
+    ///      decision this refuses to make silently. See the note on `_requirePublicationCurrent`.
     error PublicationOverdue(uint256 executionId, uint64 dueBy);
     error AlreadyPublished(uint256 executionId);
     error UnknownExecution(uint256 executionId);
-    /// @dev "No selling of own shares during the programme."
-    error SellingBlockedDuringProgramme(uint256 programmeId);
+    /// @dev `recordPublication` takes only a publication artefact that `DocumentRegistry` holds.
+    ///      A zero or unanchored ref is the operator attesting to itself that it published.
+    error PublicationNotAnchored(bytes32 publicationRef);
+    error DisposalExceedsBought(uint256 requested, uint256 disposable);
+    error PayoutFailed(address to, uint256 amount);
 
-    /// @dev ⚠️ Was used by the dependency setters at the foot of this contract but never
-    ///      declared, so this file did not compile. Guards the "swap, never unset" rule those
-    ///      setters exist to express — an unset reference reads as "not owed" and turns a
-    ///      control off silently.
+    /// @dev Guards the "swap, never unset" rule — an unset reference reads as "not owed" and
+    ///      turns a control off silently. Raised by the constructor and every setter.
     error ZeroAddress();
 
     modifier onlyGovernance() {
@@ -298,11 +358,32 @@ contract BuybackAgent {
         _locked = 1;
     }
 
-    constructor(address governance_, address token_, address documents_, address closedPeriods_) {
+    /// @param instrumentClass_ Disclosure item. `Unset` is rejected; anything but `Share`
+    ///        deploys a contract that can never open a programme — which is the point, and
+    ///        such a deployment should not be made.
+    constructor(
+        address governance_,
+        address token_,
+        address documents_,
+        address closedPeriods_,
+        address protocolPause_,
+        InstrumentClass instrumentClass_
+    ) {
+        if (governance_ == address(0) || token_ == address(0)) revert ZeroAddress();
+        if (documents_ == address(0) || closedPeriods_ == address(0)) revert ZeroAddress();
+        if (protocolPause_ == address(0)) revert ZeroAddress();
+        if (instrumentClass_ == InstrumentClass.Unset) revert SafeHarbourUnavailable(instrumentClass_);
+
         governance = governance_;
+        instrumentClass = instrumentClass_;
         token = ISecurityToken(token_);
         documents = IDocumentAnchor(documents_);
         closedPeriods = IClosedPeriodGate(closedPeriods_);
+        protocolPause = IProtocolPause(protocolPause_);
+        emit DependencySet("token", token_);
+        emit DependencySet("documents", documents_);
+        emit DependencySet("closedPeriods", closedPeriods_);
+        emit DependencySet("protocolPause", protocolPause_);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -324,7 +405,10 @@ contract BuybackAgent {
         emit TreasurySet(treasury_);
     }
 
+    /// @dev Bounded above by `MAX_MARKET_DATA_AGE`. A zero value is accepted: it makes every
+    ///      reading stale on arrival and halts purchases, which is the fail-closed direction.
     function setMarketDataMaxAge(uint64 seconds_) external onlyGovernance {
+        if (seconds_ > MAX_MARKET_DATA_AGE) revert MarketDataMaxAgeTooLong(seconds_, MAX_MARKET_DATA_AGE);
         marketDataMaxAge = seconds_;
         emit MarketDataMaxAgeSet(seconds_);
     }
@@ -365,6 +449,30 @@ contract BuybackAgent {
     }
 
     // ═══════════════════════════════════════════════════════════════════════
+    // FUNDING — explicit deposits, bounded withdrawals. No `receive`.
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice Deposits purchase cash. Same model as `DistributionAgent.fund`: the cash arrives
+    ///         through one named function, is reconciled against a reservation, and leaves
+    ///         through one named function. Before 2026-09-08 `executePurchase` was `payable`
+    ///         and never reconciled `msg.value` — any surplus was trapped with no sweep.
+    function fund() external payable onlyGovernance {
+        emit Funded(msg.sender, msg.value, address(this).balance);
+    }
+
+    /// @notice Withdraws cash above `reservedWei` — what no Active programme could still spend.
+    function withdrawSurplus(address to, uint256 amount) external onlyGovernance nonReentrant {
+        if (to == address(0)) revert ZeroAddress();
+        uint256 bal = address(this).balance;
+        uint256 withdrawable = bal > reservedWei ? bal - reservedWei : 0;
+        if (amount > withdrawable) revert SurplusExceeded(amount, withdrawable);
+
+        (bool ok, ) = payable(to).call{value: amount}("");
+        if (!ok) revert PayoutFailed(to, amount);
+        emit SurplusWithdrawn(to, amount, address(this).balance);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
     // PROGRAMME LIFECYCLE
     // ═══════════════════════════════════════════════════════════════════════
 
@@ -390,6 +498,7 @@ contract BuybackAgent {
         uint256 maxPricePerUnit,
         bytes32 reportingNcaId
     ) external onlyAgent returns (uint256 programmeId) {
+        _requireHarbour();
         if (purpose == Purpose.Unset) revert PurposeNotSet();
         // Art 5(2)(a) is a capital reduction. Units bought to reduce capital and then held in
         // treasury have not reduced anything, and the stated purpose was therefore not the
@@ -427,18 +536,21 @@ contract BuybackAgent {
     }
 
     function startProgramme(uint256 programmeId) external onlyAgent {
+        _requireHarbour();
         Programme storage p = _requireState(programmeId, State.Disclosed);
         if (block.timestamp < p.startDate) revert ProgrammeNotOpenYet(p.startDate);
         if (block.timestamp > p.endDate) revert ProgrammeExpired(p.endDate);
         if (treasury == address(0)) revert TreasuryNotSet();
 
         p.state = State.Active;
+        reservedWei += p.maxConsiderationWei;
         emit ProgrammeStarted(programmeId, uint64(block.timestamp));
     }
 
     function endProgramme(uint256 programmeId) external onlyAgent {
         Programme storage p = _requireState(programmeId, State.Active);
         p.state = State.Ended;
+        reservedWei -= p.maxConsiderationWei - p.spentWei;
         emit ProgrammeEnded(programmeId, p.spentWei, p.boughtUnits);
     }
 
@@ -446,8 +558,8 @@ contract BuybackAgent {
     // THE PURCHASE — every Art 5 condition, in one place
     // ═══════════════════════════════════════════════════════════════════════
 
-    /// @notice Buys `units` from `seller` at `pricePerUnit`, funded by the caller's `msg.value`.
-    ///         The seller must have approved this contract on the token first.
+    /// @notice Buys `units` from `seller` at `pricePerUnit`, paid from cash deposited through
+    ///         `fund()`. The seller must have approved this contract on the token first.
     /// @dev    The order of checks is chosen so the cheapest categorical bars fail first — a
     ///         closed period stops everything regardless of price, so there is no reason to
     ///         read the oracle to find that out.
@@ -456,26 +568,33 @@ contract BuybackAgent {
         address seller,
         uint256 units,
         uint256 pricePerUnit
-    ) external payable onlyAgent nonReentrant returns (uint256 executionId) {
+    ) external onlyAgent nonReentrant returns (uint256 executionId) {
+        if (protocolPause.paused()) revert ProtocolPaused();
         Programme storage p = _requireState(programmeId, State.Active);
 
         // ── window ───────────────────────────────────────────────────────
         if (block.timestamp < p.startDate) revert ProgrammeNotOpenYet(p.startDate);
         if (block.timestamp > p.endDate) revert ProgrammeExpired(p.endDate);
 
-        // ── MAR Art 19(11) + self-imposed restriction ────────────────────
+        // ── Art 5 harbour conditions: issuer closed-period bar + self-imposed restriction ──
+        //    (the calendar is Art 19(11)'s; the rule is the issuer's, per Del. Reg 2016/1052)
         (bool inClosedPeriod, uint256 periodId) = closedPeriods.activePeriod();
         if (inClosedPeriod) revert InClosedPeriod(periodId);
         if (block.timestamp < selfImposedRestrictionUntil) {
             revert InSelfImposedRestriction(selfImposedRestrictionUntil);
         }
 
-        // ── Art 5(1)(c) — the harbour must not already be lost ───────────
+        // ── Del. Reg 2016/1052 publication clock — the harbour must not already be lost ──
         _requirePublicationCurrent();
 
         // ── disclosed ceilings, then the RTS conditions ──────────────────
         _consumeDisclosedCeilings(p, units, pricePerUnit);
         _consumeRtsLimits(units, pricePerUnit);
+
+        // ── funding ──────────────────────────────────────────────────────
+        uint256 consideration = units * pricePerUnit;
+        if (address(this).balance < consideration) revert InsufficientFunding(consideration, address(this).balance);
+        reservedWei -= consideration;
 
         // ── settle ───────────────────────────────────────────────────────
         executionId = nextExecutionId++;
@@ -493,13 +612,14 @@ contract BuybackAgent {
         // the instrument's transfer rules, and the treasury is a holder like any other.
         token.transferFrom(seller, treasury, units);
 
-        (bool ok, ) = payable(seller).call{value: units * pricePerUnit}("");
-        if (!ok) revert PayoutFailed(seller, units * pricePerUnit);
+        // A purchase is atomic: units and cash move together or not at all. A failed push here
+        // reverts, unlike `DistributionAgent`, because there is no third party whose income is
+        // held hostage — the seller chose to sell and can sell from a wallet that accepts ETH.
+        (bool ok, ) = payable(seller).call{value: consideration}("");
+        if (!ok) revert PayoutFailed(seller, consideration);
 
         emit PurchaseExecuted(programmeId, executionId, seller, units, pricePerUnit, p.reportingNcaId);
     }
-
-    error PayoutFailed(address to, uint256 amount);
 
     /// @dev The ceilings the issuer published under Art 5(1)(a). Split out from
     ///      `executePurchase` for stack depth, not because it is a separate concern — read the
@@ -537,16 +657,23 @@ contract BuybackAgent {
         unitsBoughtOnDay[day] = wouldBuyToday;
     }
 
-    /// @notice Art 5(1)(c) publication. Records that the trade was publicly disclosed and
-    ///         reported to the single NCA, against the publication artefact.
+    /// @notice Del. Reg 2016/1052 publication. Records that the trade was publicly disclosed and
+    ///         reported to the single NCA (Art 5(3)), against the publication artefact.
     /// @dev    This contract cannot publish anything — publication is a filing to a venue, an
     ///         NCA and a public channel. What it does is make the on-chain record of the trade
     ///         and the record of its publication the SAME record, so the gap between them is
     ///         measurable rather than reconstructed from two systems afterwards.
+    /// @dev    ⚠️ `publicationRef` MUST BE A HASH `DocumentRegistry` HOLDS. Before 2026-09-08 a
+    ///         zero ref was accepted and nothing was checked against `documents`, which made
+    ///         this a self-attestation — the operator recording that it published, on its own
+    ///         say-so, to stop the publication clock. The artefact must exist first.
     function recordPublication(uint256 executionId, bytes32 publicationRef) external onlyAgent {
         Execution storage e = _executions[executionId];
         if (e.executedAt == 0) revert UnknownExecution(executionId);
         if (e.publishedAt != 0) revert AlreadyPublished(executionId);
+        if (publicationRef == bytes32(0)) revert PublicationNotAnchored(publicationRef);
+        (bool exists, ) = documents.documentStatus(publicationRef);
+        if (!exists) revert PublicationNotAnchored(publicationRef);
 
         e.publishedAt = uint64(block.timestamp);
         e.publicationRef = publicationRef;
@@ -593,36 +720,38 @@ contract BuybackAgent {
         return m;
     }
 
+    function _requireHarbour() private view {
+        if (instrumentClass != InstrumentClass.Share) revert SafeHarbourUnavailable(instrumentClass);
+    }
+
     // ═══════════════════════════════════════════════════════════════════════
     // DISPOSITION — burn or hold
     // ═══════════════════════════════════════════════════════════════════════
 
-    /// @notice Cancels units held in treasury under a Burn-election programme.
+    /// @notice Cancels (or records as held) units this programme bought into treasury.
     /// @dev    Requires this contract to be an agent on the token. Note the sequencing: units
     ///         are bought into treasury first and burned as a separate, separately-logged act,
     ///         rather than burned on receipt. A capital reduction is a corporate act with its
     ///         own company-law steps, and collapsing it into the purchase hides the moment it
     ///         actually happened.
+    /// @dev    Bounded by `boughtUnits − disposedUnits` and only on an Active or Ended
+    ///         programme. Before 2026-09-08 any amount could be burned from treasury under a
+    ///         merely Disclosed programme — a capital reduction of units the programme never
+    ///         bought, recorded against a programme that had not started.
     function disposeUnits(uint256 programmeId, uint256 units) external onlyAgent {
         Programme storage p = _programmes[programmeId];
         if (p.state == State.None) revert UnknownProgramme(programmeId);
+        if (p.state != State.Active && p.state != State.Ended) {
+            revert WrongState(programmeId, State.Active, p.state);
+        }
+        uint256 disposable = p.boughtUnits - p.disposedUnits;
+        if (units > disposable) revert DisposalExceedsBought(units, disposable);
 
+        p.disposedUnits += units;
         if (p.disposition == Disposition.Burn) {
             token.burn(treasury, units);
         }
         emit UnitsDisposed(programmeId, p.disposition, units);
-    }
-
-    /// @notice "No selling of own shares during the programme." Any treasury disposal path must
-    ///         consult this first.
-    /// @dev    Exposed as a check rather than enforced by owning the treasury, because the
-    ///         treasury is an ordinary wallet the issuer controls by other means too. ⚠️ THAT
-    ///         IS A REAL LIMIT: this contract can refuse to sell, it cannot stop the issuer
-    ///         selling from the same wallet directly. Closing that properly means freezing
-    ///         treasury units on the token for the programme's duration.
-    function checkIssuerMaySell(uint256 programmeId) external view {
-        Programme storage p = _programmes[programmeId];
-        if (p.state == State.Active) revert SellingBlockedDuringProgramme(programmeId);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -643,14 +772,20 @@ contract BuybackAgent {
         return _executions[executionId];
     }
 
-    /// @notice Executions still owing publication. The operations-desk view of an Art 5(1)(c)
-    ///         clock that is running.
+    /// @notice Executions still owing publication. The operations-desk view of a Del. Reg
+    ///         2016/1052 publication clock that is running.
     function unpublishedExecutions() external view returns (uint256[] memory) {
         return _unpublished;
     }
 
     function marketReference() external view returns (MarketReference memory) {
         return _market;
+    }
+
+    /// @notice Cash above the reservation — what `withdrawSurplus` may take right now.
+    function surplus() external view returns (uint256) {
+        uint256 bal = address(this).balance;
+        return bal > reservedWei ? bal - reservedWei : 0;
     }
 
     /// @notice Headroom under both RTS conditions right now. Reviewer- and desk-facing; the
@@ -666,6 +801,10 @@ contract BuybackAgent {
         uint256 bought = unitsBoughtOnDay[block.timestamp / 1 days];
         unitsRemainingToday = permitted > bought ? permitted - bought : 0;
     }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // DEPENDENCY SETTERS — swap, never unset
+    // ═══════════════════════════════════════════════════════════════════════
 
     /// @notice Re-point `token`. Swap, never unset — the operational-resilience regime requires
     ///         this reference stay swappable at the contract layer rather than hard-wired.
@@ -687,5 +826,11 @@ contract BuybackAgent {
         if (impl == address(0)) revert ZeroAddress();
         closedPeriods = IClosedPeriodGate(impl);
         emit DependencySet("closedPeriods", impl);
+    }
+    /// @notice Re-point `protocolPause`. Swap, never unset.
+    function setProtocolPause(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        protocolPause = IProtocolPause(impl);
+        emit DependencySet("protocolPause", impl);
     }
 }

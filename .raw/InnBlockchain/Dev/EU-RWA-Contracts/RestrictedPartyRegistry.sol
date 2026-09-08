@@ -146,9 +146,9 @@ contract RestrictedPartyRegistry is IRestrictedParty {
 
     // ─────────────────────────── state ────────────────────────────────────────
 
-    /// @notice Person-scoped blocks, keyed by the off-chain investor-record pointer. This is
+    /// @notice Person-scoped blocks, keyed by `personId`. This is
     ///         the primary store: a listing follows the person across every wallet they hold.
-    mapping(bytes32 => Entry) private _blockedRecords;
+    mapping(bytes32 => Entry) private _blockedPersons;
 
     /// @notice Wallet-scoped blocks, for addresses with no investor record — an unhosted
     ///         counterparty, or an address flagged by chain analytics that was never onboarded.
@@ -158,8 +158,9 @@ contract RestrictedPartyRegistry is IRestrictedParty {
     mapping(address => Entry) private _blockedWallets;
 
     /// @notice Destinations a restricted position may be moved TO despite the sender being restricted.
-    /// @dev    ⚠️ THIS EXISTS BECAUSE `SecurityToken.forcedTransfer` RUNS THE C1 HOOK. Without
-    ///         a carve-out, restricting a wallet also blocks the very movement the restriction's own
+    /// @dev    ⚠️ THIS EXISTS BECAUSE `SecurityToken.forcedTransfer` READS THIS STORE — in its
+    ///         mandatory layer since 2026-09-08, not merely through the gate on the module list.
+    ///         Without a carve-out, restricting a wallet also blocks the very movement the restriction's own
     ///         instrument directs — the control would prevent the operator from complying with
     ///         the order that triggered it. Two cases need it and they are the same mechanic:
     ///           • a seizure or transfer-to-frozen-account under a freezing order; and
@@ -195,7 +196,7 @@ contract RestrictedPartyRegistry is IRestrictedParty {
     //
     // ⚠️ AND NO EVENT HERE CARRIES THE PERSON KEY. The rule above was right and stopped one step
     //    short: withholding WHY somebody is blocked does nothing while WHO is the indexed topic.
-    //    `recordPointer` is `IdentityRegistry`'s person key — one value shared by every wallet
+    //    `personId` is `IdentityRegistry`'s person key — one value shared by every wallet
     //    belonging to one human. Indexed here it was a permanent, un-erasable "these addresses
     //    are the same person, and that person is sanctions-blocked": GDPR Art 10 data, in the one
     //    store `deregisterPerson` can never reach. `caseRef` replaces it as the topic. It is an
@@ -207,8 +208,8 @@ contract RestrictedPartyRegistry is IRestrictedParty {
     //    not. What was NOT otherwise observable is the linkage between one person's wallets, and
     //    that is exactly what the record-level events were publishing.
 
-    event RecordBlocked(bytes32 indexed caseRef, uint64 at);
-    event RecordUnblocked(bytes32 indexed caseRef, uint64 at);
+    event PersonBlocked(bytes32 indexed caseRef, uint64 at);
+    event PersonUnblocked(bytes32 indexed caseRef, uint64 at);
     event WalletBlocked(address indexed wallet, bytes32 caseRef, uint64 at);
     event WalletUnblocked(address indexed wallet, bytes32 caseRef, uint64 at);
 
@@ -223,17 +224,28 @@ contract RestrictedPartyRegistry is IRestrictedParty {
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
-    /// @notice THE ONLY ERROR ON THE TRANSFER PATH. One code for every restriction there is — listing,
-    ///         suspicion, probate, court order, lost key, operational. A distinct code for any
-    ///         one of them is the tip-off, and so is a distinct code for any of the INNOCENT
-    ///         ones: if probate reverted by name, then the generic code would mean "not
-    ///         probate", which narrows it to the classes that must stay silent. Informative
-    ///         status goes to the operator off-chain, never to the caller.
+    /// @notice THE ONLY PERSON-LINKED ERROR ON THE TRANSFER PATH. One code for every restriction
+    ///         there is — listing, suspicion, probate, court order, lost key, operational. A
+    ///         distinct code for any one of them is the tip-off, and so is a distinct code for
+    ///         any of the INNOCENT ones: if probate reverted by name, then the generic code
+    ///         would mean "not probate", which narrows it to the classes that must stay silent.
+    ///         Informative status goes to the operator off-chain, never to the caller.
     /// @dev    ⚠️ Note it takes no arguments. An address parameter would tell the caller WHICH
     ///         side failed, which on a two-sided check is most of the information back again.
+    /// @dev    ⚠️ This is one of TWO argument-free errors `assertTransferPermitted` can raise, not
+    ///         one — an earlier version of this note said "the only error on the transfer path",
+    ///         which was false. The other is `ScreeningStale` below, on the mint path only.
     error TransferNotPermitted();
 
-    // Operational errors — write paths only, never reachable from `checkTransfer`.
+    /// @notice The second transfer-path error, and it is raised on MINT ONLY (`from == address(0)`).
+    ///         It says the operator's re-screen of the existing base has fallen behind the current
+    ///         list beyond the tolerated lag — or has never run — and so no NEW position may be
+    ///         admitted. It names no person and can never fire on a path that has a sender, so
+    ///         it discloses nothing about anyone; it is generic-class all the same, and stays
+    ///         argument-free for that reason.
+    error ScreeningStale();
+
+    // Operational errors — write paths only, never reachable from `assertTransferPermitted`.
     error NotGovernance();
     error NotScreeningOperator();
     error NotARestrictionWriter();
@@ -242,7 +254,6 @@ contract RestrictedPartyRegistry is IRestrictedParty {
     error AlreadyBlocked();
     error NotBlocked();
     error StaleSweepVersion();
-    error ScreeningStale();
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -324,29 +335,29 @@ contract RestrictedPartyRegistry is IRestrictedParty {
     //    write nobody can explain to a supervisor afterwards.
     // ═══════════════════════════════════════════════════════════════════════
 
-    function blockRecord(bytes32 recordPointer, bytes32 caseRef) external onlyRestrictionWriter {
-        if (recordPointer == bytes32(0)) revert ZeroAddress();
+    function blockPerson(bytes32 personId, bytes32 caseRef) external onlyRestrictionWriter {
+        if (personId == bytes32(0)) revert ZeroAddress();
         if (caseRef == bytes32(0)) revert CaseRefRequired();
-        Entry storage e = _blockedRecords[recordPointer];
+        Entry storage e = _blockedPersons[personId];
         if (e.active) revert AlreadyBlocked();
 
         e.active = true;
         e.since = uint64(block.timestamp);
         e.caseRef = caseRef;
 
-        emit RecordBlocked(caseRef, uint64(block.timestamp));
+        emit PersonBlocked(caseRef, uint64(block.timestamp));
     }
 
     /// @notice Delisting. Governance rather than the screening operator: adding a block is an
     ///         operational act that fails safe, removing one releases a frozen position and
     ///         does not.
-    function unblockRecord(bytes32 recordPointer, bytes32 caseRef) external onlyGovernance {
+    function unblockPerson(bytes32 personId, bytes32 caseRef) external onlyGovernance {
         if (caseRef == bytes32(0)) revert CaseRefRequired();
-        Entry storage e = _blockedRecords[recordPointer];
+        Entry storage e = _blockedPersons[personId];
         if (!e.active) revert NotBlocked();
 
-        delete _blockedRecords[recordPointer];
-        emit RecordUnblocked(caseRef, uint64(block.timestamp));
+        delete _blockedPersons[personId];
+        emit PersonUnblocked(caseRef, uint64(block.timestamp));
     }
 
     function blockWallet(address wallet, bytes32 caseRef) external onlyRestrictionWriter {
@@ -388,15 +399,30 @@ contract RestrictedPartyRegistry is IRestrictedParty {
     /// @dev    `recordsScreened` is evidence, not a control — nothing on-chain can verify it.
     ///         It is here because the supervisor asks how many records the sweep covered and an
     ///         unanchored answer is a spreadsheet.
+    /// @dev    `version == 0` is refused. Version 0 is "no list has been ingested", and a sweep
+    ///         against no list is not a sweep — accepting it would let `sweptToVersion` stay 0
+    ///         while `sweptAt` advanced, which is exactly the shape `screeningIsStale` treats
+    ///         as "never swept". Call `advanceListVersion` first.
     function recordSweep(uint64 version, uint256 recordsScreened) external onlyScreeningOperator {
-        if (version > listVersion || version < sweptToVersion) revert StaleSweepVersion();
+        if (version == 0 || version > listVersion || version < sweptToVersion) revert StaleSweepVersion();
         sweptToVersion = version;
         sweptAt = uint64(block.timestamp);
         emit SweepCompleted(version, recordsScreened, uint64(block.timestamp));
     }
 
-    /// @notice True when the sweep has fallen behind the current list beyond the tolerated lag.
+    /// @notice True when the sweep has fallen behind the current list beyond the tolerated lag —
+    ///         and TRUE UNTIL A FIRST SWEEP HAS BEEN RECORDED.
+    /// @dev    ⚠️ The first clause was missing until 2026-09-08. `listVersion` and `sweptToVersion`
+    ///         both start at 0, so `sweptToVersion >= listVersion` held on a fresh deployment and
+    ///         a store that had never screened anyone reported itself current: every mint went
+    ///         through unscreened for as long as nobody called `advanceListVersion`, and the
+    ///         deployment note that said "until a sweep is recorded every mint reverts" was
+    ///         describing a control that did not exist. Now `sweptToVersion == 0` — which, since
+    ///         `recordSweep` refuses version 0, means exactly "no sweep has ever been recorded" —
+    ///         is stale, so go-live requires `advanceListVersion` + `recordSweep` once each
+    ///         before the first subscription. Fail closed on the empty state, not open.
     function screeningIsStale() public view returns (bool) {
+        if (sweptToVersion == 0) return true;
         if (sweptToVersion >= listVersion) return false;
         if (maxSweepLag == 0) return true;
         return block.timestamp > uint256(sweptAt) + uint256(maxSweepLag);
@@ -406,12 +432,12 @@ contract RestrictedPartyRegistry is IRestrictedParty {
     // READS AND THE GATE
     // ═══════════════════════════════════════════════════════════════════════
 
-    /// @dev Both stores are consulted, person first. `recordPointerOf` is a two-value read
+    /// @dev Both stores are consulted, person first. `personIdOf` is a two-value read
     ///      rather than a struct on purpose — this contract has no business seeing the rest of
     ///      the investor record.
     function isBlocked(address wallet) public view returns (bool) {
-        (bytes32 pointer, bool registered) = identity.recordPointerOf(wallet);
-        if (registered && pointer != bytes32(0) && _blockedRecords[pointer].active) return true;
+        (bytes32 personId, bool registered) = identity.personIdOf(wallet);
+        if (registered && personId != bytes32(0) && _blockedPersons[personId].active) return true;
         return _blockedWallets[wallet].active;
     }
 
@@ -462,8 +488,8 @@ contract RestrictedPartyRegistry is IRestrictedParty {
 
     /// @notice Entry detail for the operator's own tooling. `caseRef` is an opaque pointer, so
     ///         exposing it discloses nothing — the file it names is where the class lives.
-    function entryForRecord(bytes32 recordPointer) external view returns (Entry memory) {
-        return _blockedRecords[recordPointer];
+    function entryForPerson(bytes32 personId) external view returns (Entry memory) {
+        return _blockedPersons[personId];
     }
 
     function entryForWallet(address wallet) external view returns (Entry memory) {

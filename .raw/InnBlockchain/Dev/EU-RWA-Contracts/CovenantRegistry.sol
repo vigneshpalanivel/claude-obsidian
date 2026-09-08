@@ -2,8 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {ModuleAdapter} from "./ModularCompliance.sol";
-import {IDocumentAnchor} from "./Interfaces.sol";
-import {IdentityRegistry} from "./IdentityRegistry.sol";
+import {IDocumentAnchor, IIdentityGate, Tier} from "./Interfaces.sol";
 
 /// @title CovenantRegistry (illustrative sample — not production code)
 /// @notice C7 — the store of what the INVESTOR THEMSELVES has stated, agreed or acknowledged,
@@ -81,6 +80,10 @@ contract CovenantRegistry {
         Never
     }
 
+    /// @dev Read by exactly one `require`: `setOptUpCovenant` refuses a `PerAsset` entry. Every
+    ///      other covenant's scope is carried for the audit map and emitted, never branched on —
+    ///      a per-asset registry deployment IS the scoping, so the field states it rather than
+    ///      enforces it.
     enum Scope {
         PerAsset, // a KID is per-product
         PlatformWide // a venue risk-disclosure consent is satisfied once
@@ -107,7 +110,7 @@ contract CovenantRegistry {
     /// @dev    ELTIF Art 18(3) is `[RETAIL ONLY, life > 10 years]` in its own checklist — two
     ///         dimensions in one obligation. That single row is why this is a struct.
     struct Predicate {
-        /// @dev Bitmask over `IdentityRegistry.Tier`. 0 = every tier.
+        /// @dev Bitmask over the shared `Tier` enum (`Interfaces.sol`). 0 = every tier.
         uint8 tierMask;
         /// @dev A SET, not a value. ⚠️ A covenant may apply across several Member States and an
         ///      investor may carry more than one relevant jurisdiction — residence, tax
@@ -162,25 +165,17 @@ contract CovenantRegistry {
     ///         one cannot see per-asset fund life. It needs both reads, which is why the
     ///         topology decision must resolve this contract as a straddle rather than by
     ///         picking a side.
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
-    IdentityRegistry public identity;
+    /// @dev    Interface-typed since 2026-09-08. The D19 exception ("concrete type retained
+    ///         because `tierOf` returns an enum a narrow interface cannot declare") closed the
+    ///         moment `Tier` was hoisted into `Interfaces.sol`; this contract now reads
+    ///         `tierOf` / `jurisdictionOf` through `IIdentityGate` and imports nothing concrete.
+    IIdentityGate public identity;
 
     /// @notice The fail-closed source of truth for document currency. `isCurrent` returns false
     ///         the instant a document is superseded — and, for a PRIIPs KID, also when its
     ///         Art 10 review is overdue.
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
+    /// @dev    Interface-typed; `Version` and `Regime` live in `Interfaces.sol`, so the anchor
+    ///         limb needs no concrete import either.
     IDocumentAnchor public documents;
 
     /// @notice Operators may attest `OperatorAttestation` covenants. They may NEVER satisfy an
@@ -189,7 +184,8 @@ contract CovenantRegistry {
 
     /// @notice The MiFID II Annex II Section II opt-up covenant, if configured. Its effect is
     ///         to change the tier every OTHER predicate reads, which is why it is named
-    ///         separately and resolved first.
+    ///         separately, resolved first, and — see `effectiveTier` — evaluated against the
+    ///         RAW tier rather than the tier it produces.
     bytes32 public optUpCovenantId;
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -201,7 +197,7 @@ contract CovenantRegistry {
 
     /// @dev ⚠️ KEYED BY WALLET, NOT BY PERSON — AND UNLIKE THE NEIGHBOURING CONTRACTS THAT IS
     ///      CORRECT. `RestrictedPartyRegistry` and `MemberEligibility` both key on
-    ///      `IdentityRegistry`'s `recordPointer` because a block and an admission are owed by a
+    ///      `IdentityRegistry`'s `personId` because a block and an admission are owed by a
     ///      PERSON and an address-keyed version of either is bypassable by onboarding a second
     ///      address. A covenant is the opposite kind of thing: it is a statement the holder
     ///      MADE, from an address, against a named document version. Nobody makes it on their
@@ -256,11 +252,22 @@ contract CovenantRegistry {
     event ProductAttributeSet(bytes32 indexed key, uint256 value);
     event RegulatoryGrantSet(bytes32 indexed grantId, bool granted);
 
-    /// @dev The audit trail PRIIPs Art 13 and MAR Art 19(5) are evidenced from. The revert path
-    ///      is deliberately silent (see `Blocked`); this is where the detail lives.
-    event CovenantGiven(
-        address indexed investor, bytes32 indexed covenantId, bytes32 documentVersionHash, Attestor attestorType
-    );
+    /// @dev The trigger the PRIIPs Art 13 and MAR Art 19(5) audit trail is assembled FROM — not
+    ///      the trail itself. The revert path is deliberately silent (see `Blocked`); the detail
+    ///      lives in `recordOf(wallet, covenantId)`, and this event says only that a record was
+    ///      written for this wallet at this block.
+    /// @dev ⚠️ `covenantId` AND `documentVersionHash` REMOVED FROM THE LOG. A covenant is a
+    ///      statement the investor makes about themselves — *I am not a market maker*, *I opt
+    ///      up to professional*, *these are my closely associated persons* — and an indexed
+    ///      `covenantId` against an indexed wallet published each of those as it was given,
+    ///      permanently. That is the same defect `IdentityRegistry.ClaimSet` carried before
+    ///      rev 50, in a different vocabulary: a claim is what a third party asserts about the
+    ///      investor, a covenant is what the investor asserts, and both are attributes of the
+    ///      person. `documentVersionHash` goes too, because each covenant binds one document,
+    ///      so the version hash names the covenant by another route. `attestorType` stays —
+    ///      it says who signed (investor or operator), which is a fact about the write path,
+    ///      not about the person.
+    event CovenantGiven(address indexed investor, Attestor attestorType);
 
     // ═══════════════════════════════════════════════════════════════════════
     // ERRORS
@@ -279,7 +286,15 @@ contract CovenantRegistry {
     ///      and by nothing else. An operator route into it would make MAR Art 19(5) — a
     ///      declaration only the director can make — satisfiable by the platform.
     error SignatureRequiredFromInvestor(bytes32 covenantId);
+    /// @dev The mirror image. An `OperatorAttestation` covenant — ELTIF Art 26 suitability, a
+    ///      KID delivery the distributor evidences — is a statement the OPERATOR makes about
+    ///      the investor. Letting the investor's own transaction satisfy it would make the
+    ///      suitability assessment self-certified.
+    error AttestationRequiredFromOperator(bytes32 covenantId);
     error VersionNotCurrent(bytes32 covenantId);
+    /// @dev The opt-up covenant must be `PlatformWide` and its `tierMask` must admit the raw
+    ///      `ProfessionalOnRequest` tier — see `setOptUpCovenant`.
+    error OptUpCovenantMisconfigured(bytes32 covenantId);
 
     /// @notice ⚠️ THE ONLY REVERT THE TRANSFER PATH EVER SEES, AND IT CARRIES NOTHING. AMLR
     ///         Art 76 prohibits tipping off; a distinct "covenant missing" revert — or worse,
@@ -306,7 +321,7 @@ contract CovenantRegistry {
         if (governance_ == address(0) || documents_ == address(0) || identity_ == address(0)) revert ZeroAddress();
         governance = governance_;
         documents = IDocumentAnchor(documents_);
-        identity = IdentityRegistry(identity_);
+        identity = IIdentityGate(identity_);
         emit DependencySet("documents", documents_);
         emit DependencySet("identity", identity_);
     }
@@ -318,7 +333,7 @@ contract CovenantRegistry {
     ///         that owns the state.
     function setIdentity(address impl) external onlyGovernance {
         if (impl == address(0)) revert ZeroAddress();
-        identity = IdentityRegistry(impl);
+        identity = IIdentityGate(impl);
         emit DependencySet("identity", impl);
     }
 
@@ -396,9 +411,26 @@ contract CovenantRegistry {
     /// @dev    ⚠️ ITS `scope` MUST BE `PlatformWide`, and that is not a style preference: the
     ///         tier claim it governs is itself platform-wide, and a per-asset covenant gating a
     ///         platform-wide claim is the scoping mismatch that makes an investor professional
-    ///         on one asset and retail on another with no record of which is true.
+    ///         on one asset and retail on another with no record of which is true. Enforced
+    ///         here, not merely stated.
+    /// @dev    ⚠️ ITS PREDICATE MUST BE EVALUABLE ON THE RAW TIER. `effectiveTier` evaluates
+    ///         this one covenant against `identity.tierOf(wallet)` directly (see there for the
+    ///         recursion that existed), and the raw tier at that moment is always
+    ///         `ProfessionalOnRequest`. A `tierMask` that excludes that bit therefore reports
+    ///         "does not apply" for every elective professional — `_satisfied` returns
+    ///         `(true, notRequired)`, the tier is believed with no record behind it, and the
+    ///         opt-up control fails open in the exact direction rule 6 exists to stop. So the
+    ///         mask must be 0 (every tier) or include `ProfessionalOnRequest`.
     function setOptUpCovenant(bytes32 covenantId) external onlyGovernance {
-        if (!_covenants[covenantId].configured) revert UnknownCovenant(covenantId);
+        Covenant storage c = _covenants[covenantId];
+        if (!c.configured) revert UnknownCovenant(covenantId);
+        if (c.scope != Scope.PlatformWide) revert OptUpCovenantMisconfigured(covenantId);
+
+        uint8 mask = c.predicate.tierMask;
+        if (mask != 0 && (mask & uint8(1 << uint8(Tier.ProfessionalOnRequest))) == 0) {
+            revert OptUpCovenantMisconfigured(covenantId);
+        }
+
         optUpCovenantId = covenantId;
         emit OptUpCovenantSet(covenantId);
     }
@@ -433,9 +465,15 @@ contract CovenantRegistry {
     /// @notice The investor's own transaction. The ONLY route into an `InvestorSignature`
     ///         covenant — MAR Art 19(5), and any covenant where the platform attesting on the
     ///         investor's behalf would defeat the point of requiring it.
+    /// @dev    ⚠️ AND NO ROUTE AT ALL INTO AN `OperatorAttestation` ONE. The attestor kinds are
+    ///         symmetric: an operator may not sign for the investor, and the investor may not
+    ///         attest for the operator. Before 2026-09-08 this function had no attestor check,
+    ///         so an ELTIF Art 26 suitability covenant — a statement the distributor makes
+    ///         about the investor — was satisfiable by the investor pressing a button.
     function signCovenant(bytes32 covenantId, bytes32 documentVersionHash) external {
         Covenant storage c = _covenants[covenantId];
         if (!c.configured) revert UnknownCovenant(covenantId);
+        if (c.attestor == Attestor.OperatorAttestation) revert AttestationRequiredFromOperator(covenantId);
 
         _assertVersionCurrent(c, covenantId, documentVersionHash);
         _write(msg.sender, covenantId, documentVersionHash, Attestor.InvestorSignature);
@@ -471,7 +509,7 @@ contract CovenantRegistry {
             timestamp: uint64(block.timestamp)
         });
 
-        emit CovenantGiven(investor, covenantId, versionHash, attestorType);
+        emit CovenantGiven(investor, attestorType);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -489,14 +527,27 @@ contract CovenantRegistry {
     ///         service writing `ProfessionalOnRequest` in the first place. What it does is
     ///         refuse to BELIEVE it without the covenant. The complementary control is
     ///         `mayUpgradeTier`, which the identity registry may call before it writes.
-    function effectiveTier(address wallet) public view returns (IdentityRegistry.Tier) {
-        IdentityRegistry.Tier tier = identity.tierOf(wallet);
+    /// @dev    ⚠️ THE OPT-UP COVENANT IS EVALUATED AGAINST THE RAW TIER, AND THE REASON IS A
+    ///         RECURSION THAT SHIPPED. Until 2026-09-08 this read
+    ///         `_satisfied(wallet, optUpCovenantId)` → `appliesTo` → `effectiveTier` → … with
+    ///         no base case whenever the raw tier was `ProfessionalOnRequest`, so the moment
+    ///         `setOptUpCovenant` went live every `assertSatisfied`, `mayUpgradeTier` and
+    ///         `diagnose` for an elective professional ran out of stack — every transfer of
+    ///         that holder failed, in precisely the configuration recommended for retail
+    ///         distribution. The fix is structural, not a guard: the predicate takes the tier
+    ///         as an ARGUMENT (`_appliesTo`), the opt-up covenant is evaluated with
+    ///         `identity.tierOf(wallet)` passed in directly, and nothing on that path calls
+    ///         back into this function. Which is also the semantically right answer — the
+    ///         question "has this elective professional opted up" is asked OF the raw
+    ///         classification, not of the resolved one.
+    function effectiveTier(address wallet) public view returns (Tier) {
+        Tier raw = identity.tierOf(wallet);
 
-        if (tier == IdentityRegistry.Tier.ProfessionalOnRequest && optUpCovenantId != bytes32(0)) {
-            (bool ok,) = _satisfied(wallet, optUpCovenantId);
-            if (!ok) return IdentityRegistry.Tier.Retail;
+        if (raw == Tier.ProfessionalOnRequest && optUpCovenantId != bytes32(0)) {
+            (bool ok,) = _satisfiedAtTier(wallet, optUpCovenantId, raw);
+            if (!ok) return Tier.Retail;
         }
-        return tier;
+        return raw;
     }
 
     /// @notice The optional contract control for predicate rule 4. The identity registry may
@@ -505,13 +556,18 @@ contract CovenantRegistry {
     /// @dev    Recommended wherever retail distribution is in scope. Left as a read rather than
     ///         wired in from here, because the coupling belongs to the identity registry's
     ///         write path — this contract must not acquire the power to write tiers.
+    /// @dev    Evaluated at `ProfessionalOnRequest` rather than at the wallet's current raw
+    ///         tier, because the caller is asking whether the wallet may BECOME that tier — the
+    ///         registry has not written it yet, so `tierOf` would still say Retail and a
+    ///         Retail-excluding mask would answer "not applicable, so yes" for everyone.
     function mayUpgradeTier(address wallet) external view returns (bool) {
         if (optUpCovenantId == bytes32(0)) return true;
-        (bool ok,) = _satisfied(wallet, optUpCovenantId);
+        (bool ok,) = _satisfiedAtTier(wallet, optUpCovenantId, Tier.ProfessionalOnRequest);
         return ok;
     }
 
-    /// @notice Evaluates `appliesTo` as a conjunction over the four dimensions.
+    /// @notice Evaluates `appliesTo` as a conjunction over the four dimensions, at the wallet's
+    ///         EFFECTIVE tier.
     /// @return applies Whether this covenant is owed by this investor right now.
     /// @return evaluable Whether the predicate could be evaluated AT ALL.
     /// @dev    ⚠️ RULE 5 — "NOT APPLICABLE" AND "APPLICABLE BUT UNSATISFIED" MUST NOT COLLAPSE
@@ -521,6 +577,16 @@ contract CovenantRegistry {
     ///         Hence two return values, and hence the caller treating `!evaluable` as
     ///         unsatisfied rather than inapplicable.
     function appliesTo(address wallet, bytes32 covenantId) public view returns (bool applies, bool evaluable) {
+        return _appliesTo(wallet, covenantId, effectiveTier(wallet));
+    }
+
+    /// @dev The predicate proper. `tier` is an argument so that `effectiveTier` can evaluate
+    ///      the opt-up covenant at the raw tier without re-entering itself — see there.
+    function _appliesTo(address wallet, bytes32 covenantId, Tier tier)
+        private
+        view
+        returns (bool applies, bool evaluable)
+    {
         Covenant storage c = _covenants[covenantId];
         if (!c.configured || !c.active) return (false, true);
         if (block.timestamp < c.effectiveFrom) return (false, true);
@@ -528,8 +594,7 @@ contract CovenantRegistry {
         Predicate storage p = c.predicate;
 
         // ── dimension 1: tier (platform-wide) ────────────────────────────
-        IdentityRegistry.Tier tier = effectiveTier(wallet);
-        if (tier == IdentityRegistry.Tier.Unset) return (false, false); // unclassified ≠ exempt
+        if (tier == Tier.Unset) return (false, false); // unclassified ≠ exempt
         if (p.tierMask != 0 && (p.tierMask & uint8(1 << uint8(tier))) == 0) return (false, true);
 
         // ── dimension 2: jurisdiction (platform-wide, set-valued) ────────
@@ -576,8 +641,15 @@ contract CovenantRegistry {
     ///      investor triggers the KID duty FROM THAT POINT: the gate is not a one-time check.
     ///      A tier change makes new entries applicable at the next gated action, and never
     ///      retroactively invalidates a covenant properly given.
-    function _satisfied(address wallet, bytes32 covenantId) private view returns (bool ok, bool required) {
-        (bool applies, bool evaluable) = appliesTo(wallet, covenantId);
+    /// @dev Every gate resolves `effectiveTier` ONCE per wallet and passes it down, rather than
+    ///      re-reading the identity registry (and re-evaluating the opt-up covenant) inside each
+    ///      of up to `MAX_COVENANTS` iterations.
+    function _satisfiedAtTier(address wallet, bytes32 covenantId, Tier tier)
+        private
+        view
+        returns (bool ok, bool required)
+    {
+        (bool applies, bool evaluable) = _appliesTo(wallet, covenantId, tier);
 
         if (!evaluable) return (false, true); // fail closed
         if (!applies) return (true, false);
@@ -606,6 +678,7 @@ contract CovenantRegistry {
     /// @notice The gate. Reverts with `Blocked()` — carrying nothing — if any covenant
     ///         applicable to this wallet at this gate is unsatisfied or unevaluable.
     function assertSatisfied(address wallet, uint8 gate) public view {
+        Tier tier = effectiveTier(wallet);
         uint256 len = _covenantIds.length;
         for (uint256 i = 0; i < len; i++) {
             bytes32 id = _covenantIds[i];
@@ -613,7 +686,7 @@ contract CovenantRegistry {
             if (!c.active) continue;
             if (c.gates & gate == 0) continue;
 
-            (bool ok,) = _satisfied(wallet, id);
+            (bool ok,) = _satisfiedAtTier(wallet, id, tier);
             if (!ok) revert Blocked();
         }
     }
@@ -628,6 +701,7 @@ contract CovenantRegistry {
     ///         for AMLR Art 76; this exists so a reviewer, a compliance officer or an
     ///         off-chain UI can recover exactly what the opaque revert concealed.
     function diagnose(address wallet, uint8 gate) external view returns (bytes32[] memory blocking) {
+        Tier tier = effectiveTier(wallet);
         uint256 len = _covenantIds.length;
         bytes32[] memory buf = new bytes32[](len);
         uint256 n;
@@ -638,7 +712,7 @@ contract CovenantRegistry {
             if (!c.active) continue;
             if (c.gates & gate == 0) continue;
 
-            (bool ok,) = _satisfied(wallet, id);
+            (bool ok,) = _satisfiedAtTier(wallet, id, tier);
             if (!ok) {
                 buf[n] = id;
                 n++;
@@ -683,6 +757,15 @@ contract CovenantRegistry {
 ///         Arts 4(2)(c)–(f) are the one covenant set that genuinely binds the sender —
 ///         "enforce on admission and RE-CHECK ON ACTIVITY" — and MAR Art 19(5) is what
 ///         populates the closed-period freeze's flag set, which is also a sender-side control.
+/// @dev    ⚠️ BURN IS `to == address(0)`, AND THE ZERO LEG IS NOT A WALLET. Until 2026-09-08
+///         this adapter ran `assertSatisfied(address(0), RECEIVE)` on every burn: `tierOf(0)`
+///         is `Unset`, `Unset` is unevaluable, unevaluable is `Blocked()` — so the first
+///         RECEIVE-gated covenant configured (PRIIPs Art 13, ELTIF Art 26, DLT Pilot 4(2)(g)
+///         are all RECEIVE) stopped every redemption, buy-back burn and maturity burn on the
+///         token. A burn is an EXIT: the only party making a statement is the holder leaving,
+///         so it is gated on SEND for the sender and on nothing for the zero address — the
+///         same zero-leg handling `HoldingPeriodGate` and `PdmrClosedPeriodFreeze` already
+///         apply.
 contract CovenantGate is ModuleAdapter {
     CovenantRegistry public immutable covenants;
 
@@ -690,6 +773,8 @@ contract CovenantGate is ModuleAdapter {
         covenants = CovenantRegistry(covenants_);
     }
 
+    /// @dev mint → MINT on `to`; burn → SEND on `from` only; transfer → SEND on `from` and
+    ///      RECEIVE on `to`.
     function checkTransfer(address from, address to, uint256) external view override {
         if (from == address(0)) {
             covenants.assertSatisfied(to, covenants.GATE_MINT());
@@ -697,6 +782,7 @@ contract CovenantGate is ModuleAdapter {
         }
 
         covenants.assertSatisfied(from, covenants.GATE_SEND());
+        if (to == address(0)) return; // burn — nobody is receiving
         covenants.assertSatisfied(to, covenants.GATE_RECEIVE());
     }
 

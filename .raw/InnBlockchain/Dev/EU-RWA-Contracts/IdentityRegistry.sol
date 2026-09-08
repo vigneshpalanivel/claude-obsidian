@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {IIdentityGate, Tier} from "./Interfaces.sol";
+
 interface IClaimTopicsRegistry {
     function requiredTopics(bytes32 jurisdiction) external view returns (uint256[] memory);
 }
@@ -45,7 +47,7 @@ interface ITrustedIssuersRegistry {
 ///         else. See the note above them.
 ///         Off-chain by construction: the national client identifier is held only as a
 ///         SALTED hash (an unsalted hash of an NCI is brute-forceable and still personal
-///         data), and the verified-record detail lives off-chain behind `recordPointer`.
+///         data), and the verified-record detail lives off-chain behind `personId`.
 ///         Destroying the off-chain record and its salt is what makes the surviving on-chain
 ///         hash meaningless — cryptographic erasure is the Art 17 answer here, not `delete`
 ///         alone.
@@ -53,7 +55,19 @@ interface ITrustedIssuersRegistry {
 ///         the Art 30 record, and the DPIA that Art 35(3)(b) makes mandatory the moment
 ///         sanctions/PEP screening writes a claim against this registry. The contract is
 ///         evidence for those documents, never a substitute for them.
-contract IdentityRegistry {
+/// @dev    ⚠️ SCREENING OUTCOMES ARE NOT CLAIMS. `TOPIC_AML_SCREENED` (topic 2) was retired on
+///         2026-09-08. A per-wallet screening claim beside `RestrictedPartyRegistry` is a second
+///         slot an observer can read — `rawClaim` is public and `checkEligible` reverts naming
+///         the missing topic — so a vendor recording a hit as `AssertedFalse` on a claim rebuilt
+///         the two-store leak the restriction store was consolidated to remove. A hit is
+///         `RestrictedPartyRegistry.blockPerson` / `blockWallet`. A "clear" is nothing at all.
+/// @dev    Declares `is IIdentityGate` (2026-09-08) so the compiler, not a reviewer, checks
+///         that the surface `SecurityToken`, `RestrictedPartyRegistry` and the escrow call
+///         through the interface is actually implemented here — `personIdOf` was once missing
+///         for exactly the lack of this line. `Tier` is IMPORTED from `Interfaces.sol`, never
+///         re-declared: a local copy is a different type to the compiler, and every consumer
+///         that named `IdentityRegistry.Tier` was bound to this file's dependency tree for it.
+contract IdentityRegistry is IIdentityGate {
     // ─────────────────────────── claim value — tri-state, deliberately ────────
     //
     // `NotRecorded` is NOT the same as `AssertedFalse`. DLT Pilot Art 4(2)(c)–(f) require
@@ -71,7 +85,13 @@ contract IdentityRegistry {
         ClaimValue value;
         address issuer;
         uint64 issuedAt;
-        uint64 expiresAt; // 0 = no expiry
+        /// @dev ALWAYS SET, never 0, and never more than `maxClaimValiditySeconds` ahead of the
+        ///      write. Until 2026-09-08 this read "0 = no expiry", which made the AMLR Art 20
+        ///      refresh cadence — the thing an attestation's expiry IS — opt-in per write by
+        ///      whichever issuer wrote it. A claim with `expiresAt == 0` in storage now reads as
+        ///      expired (`claimValue` compares `>=` against it), so a pre-fix record fails
+        ///      closed rather than living forever.
+        uint64 expiresAt;
     }
 
     // ─────────────────────────── investor record ──────────────────────────────
@@ -82,16 +102,13 @@ contract IdentityRegistry {
         Legal
     }
 
-    /// @dev MiFID II Art 24(1) + Annex II. Tier is not cosmetic: it selects the suitability
-    ///      regime, the PRIIPs KID duty, and — via Art 16(10) — whether title-transfer
-    ///      collateral is available at all.
-    enum Tier {
-        Unset,
-        Retail,
-        ProfessionalOnRequest, // Annex II Section II — elective, and revocable
-        PerSeProfessional, // Annex II Section I
-        EligibleCounterparty // Art 30
-    }
+    // `Tier` — MiFID II Art 24(1) + Annex II: Unset / Retail / ProfessionalOnRequest (Annex II
+    // Section II, elective and revocable) / PerSeProfessional (Annex II Section I) /
+    // EligibleCounterparty (Art 30) — is declared ONCE, in `Interfaces.sol`, and imported above.
+    // Tier is not cosmetic: it selects the suitability regime, the PRIIPs KID duty, and — via
+    // Art 16(10) — whether title-transfer collateral is available at all. It used to be
+    // re-declared here "for readability", which made `IdentityRegistry.Tier` and the interface's
+    // `Tier` two types with one name. Consumers name `Tier`, not `IdentityRegistry.Tier`.
 
     struct Investor {
         bool registered;
@@ -100,7 +117,7 @@ contract IdentityRegistry {
         bytes32 jurisdiction; // ISO 3166-1 alpha-2, left-packed
         bytes20 lei; // legal persons — 20 chars, exact fit
         bytes32 nationalClientIdHash; // natural persons — salted hash, never the NCI itself
-        bytes32 recordPointer; // hash/URI digest of the off-chain verified record
+        bytes32 personId; // hash/URI digest of the off-chain verified record
         uint64 verifiedAt;
         uint64 expiresAt; // AMLR periodic-review horizon; 0 = no scheduled refresh
     }
@@ -108,8 +125,24 @@ contract IdentityRegistry {
     // ─────────────────────────── roles ────────────────────────────────────────
 
     address public immutable governance;
-    IClaimTopicsRegistry public immutable claimTopics;
-    ITrustedIssuersRegistry public immutable trustedIssuers;
+
+    /// @dev ⚠️ NOT `immutable` since 2026-09-08, and held behind a governance setter — the
+    ///      standing rule for every inter-contract reference in this suite, which these two
+    ///      were the last of the baseline set to violate. A constructor-set immutable cannot
+    ///      be swapped after a provider failure or a catalogue re-version, and a registry
+    ///      whose topic list or issuer list cannot be re-pointed is a registry that gets
+    ///      redeployed instead — taking every investor record with it. Never null: the
+    ///      constructor and both setters reject `address(0)`.
+    IClaimTopicsRegistry public claimTopics;
+    ITrustedIssuersRegistry public trustedIssuers;
+
+    /// @notice Longest validity an issuer may put on a claim, in seconds from the write.
+    /// @dev    The AMLR Art 20 periodic-refresh cadence, as a ceiling rather than a schedule:
+    ///         the issuer picks the expiry, this bounds how far out it may be. Governance-set
+    ///         so a risk-based tightening (a higher-risk jurisdiction, a supervisory finding)
+    ///         is one call and not a redeployment. Default five years — the outer bound in
+    ///         common use; most programmes run shorter and set it so.
+    uint64 public maxClaimValiditySeconds = 157_680_000; // 5 × 365 days
 
     /// @notice Writes and updates investor records off the back of an off-chain KYC/onboarding
     ///         outcome. Separate from `governance` because record maintenance is an
@@ -123,7 +156,7 @@ contract IdentityRegistry {
 
     // ── person index ──────────────────────────────────────────────────────────
     //
-    // ⚠️ ONE HUMAN, SEVERAL WALLETS — and until now nothing here could say so. `recordPointer`
+    // ⚠️ ONE HUMAN, SEVERAL WALLETS — and until now nothing here could say so. `personId`
     //    was already the person key (`SecurityToken.recoverWallet` and `MemberEligibility` both
     //    treat it as one), but it was only ever readable wallet-first. Nothing could go the
     //    other way, and two obligations broke on that:
@@ -169,6 +202,9 @@ contract IdentityRegistry {
     ///      `lei` is the one deliberate exception — it identifies a *legal* person, and GDPR
     ///      protects natural persons only (Art 1(1)). It is bytes20(0) for natural persons.
     event RegistrarSet(address indexed registrar, bool allowed);
+    event ClaimTopicsChanged(address indexed previous, address indexed current);
+    event TrustedIssuersChanged(address indexed previous, address indexed current);
+    event MaxClaimValidityChanged(uint64 previousSeconds, uint64 currentSeconds);
     event InvestorRegistered(address indexed wallet);
     event InvestorUpdated(address indexed wallet);
     event IdentifierBound(address indexed wallet, bytes20 lei);
@@ -185,10 +221,16 @@ contract IdentityRegistry {
 
     error NotGovernance();
     error NotRegistrar();
-    /// @dev A record with no off-chain pointer has no person behind it, and would sit outside
+    error ZeroAddress();
+    error ZeroDuration();
+    /// @dev Raised by `setClaim` when `expiresAt` is 0, already past, or further out than
+    ///      `maxClaimValiditySeconds`. Informative-class: it is an issuer's input error at
+    ///      write time, on a path no holder's transfer ever reaches.
+    error ClaimExpiryOutOfRange(uint64 expiresAt, uint64 latestAllowed);
+    /// @dev A record with no `personId` has no person behind it, and would sit outside
     ///      the person index — invisible to `deregisterPerson` and uncountable for Art 1(4)(b).
-    error RecordPointerRequired();
-    error PersonNotRegistered(bytes32 recordPointer);
+    error PersonIdRequired();
+    error PersonNotRegistered(bytes32 personId);
     error IssuerNotTrustedForTopic(address issuer, uint256 topic);
     error NotRegistered(address wallet);
     error AlreadyRegistered(address wallet);
@@ -209,14 +251,54 @@ contract IdentityRegistry {
     }
 
     constructor(address governance_, address claimTopics_, address trustedIssuers_) {
+        if (governance_ == address(0) || claimTopics_ == address(0) || trustedIssuers_ == address(0)) {
+            revert ZeroAddress();
+        }
         governance = governance_;
         claimTopics = IClaimTopicsRegistry(claimTopics_);
         trustedIssuers = ITrustedIssuersRegistry(trustedIssuers_);
+        emit ClaimTopicsChanged(address(0), claimTopics_);
+        emit TrustedIssuersChanged(address(0), trustedIssuers_);
+        emit MaxClaimValidityChanged(0, maxClaimValiditySeconds);
     }
 
     function setRegistrar(address registrar, bool allowed) external onlyGovernance {
         isRegistrar[registrar] = allowed;
         emit RegistrarSet(registrar, allowed);
+    }
+
+    /// @notice Re-point the requirement list. Swap, never unset.
+    /// @dev    ⚠️ Re-pointing at a registry with an empty required set is the way to relieve
+    ///         every holder of every claim requirement at once. It is a logged governance act,
+    ///         and the per-topic path (`ClaimTopicsRegistry.removeBaselineTopic`) is the one to
+    ///         use for anything short of an implementation swap.
+    function setClaimTopics(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        address previous = address(claimTopics);
+        claimTopics = IClaimTopicsRegistry(impl);
+        emit ClaimTopicsChanged(previous, impl);
+    }
+
+    /// @notice Re-point the issuer trust list. Swap, never unset.
+    /// @dev    ⚠️ Every claim in storage is re-checked against the NEW list on its next read —
+    ///         `claimValue` calls `isTrustedFor` at read time. A swap therefore silently
+    ///         invalidates every claim from an issuer the new list does not carry, which is
+    ///         correct (it is what retroactive revocation does) and abrupt. Migrate the issuer
+    ///         set first.
+    function setTrustedIssuers(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        address previous = address(trustedIssuers);
+        trustedIssuers = ITrustedIssuersRegistry(impl);
+        emit TrustedIssuersChanged(previous, impl);
+    }
+
+    /// @notice Set the ceiling on claim validity. Applies to writes from now on; claims already
+    ///         in storage keep the expiry they were written with.
+    function setMaxClaimValiditySeconds(uint64 seconds_) external onlyGovernance {
+        if (seconds_ == 0) revert ZeroDuration();
+        uint64 previous = maxClaimValiditySeconds;
+        maxClaimValiditySeconds = seconds_;
+        emit MaxClaimValidityChanged(previous, seconds_);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -228,11 +310,11 @@ contract IdentityRegistry {
         PersonType personType,
         Tier tier,
         bytes32 jurisdiction,
-        bytes32 recordPointer,
+        bytes32 personId,
         uint64 expiresAt
     ) external onlyRegistrar {
         if (_investors[wallet].registered) revert AlreadyRegistered(wallet);
-        if (recordPointer == bytes32(0)) revert RecordPointerRequired();
+        if (personId == bytes32(0)) revert PersonIdRequired();
 
         _investors[wallet] = Investor({
             registered: true,
@@ -241,12 +323,12 @@ contract IdentityRegistry {
             jurisdiction: jurisdiction,
             lei: bytes20(0),
             nationalClientIdHash: bytes32(0),
-            recordPointer: recordPointer,
+            personId: personId,
             verifiedAt: uint64(block.timestamp),
             expiresAt: expiresAt
         });
 
-        _linkToPerson(wallet, recordPointer);
+        _linkToPerson(wallet, personId);
 
         emit InvestorRegistered(wallet);
     }
@@ -258,24 +340,24 @@ contract IdentityRegistry {
         address wallet,
         Tier tier,
         bytes32 jurisdiction,
-        bytes32 recordPointer,
+        bytes32 personId,
         uint64 expiresAt
     ) external onlyRegistrar {
         Investor storage inv = _investors[wallet];
         if (!inv.registered) revert NotRegistered(wallet);
-        if (recordPointer == bytes32(0)) revert RecordPointerRequired();
+        if (personId == bytes32(0)) revert PersonIdRequired();
 
         // Re-pointing a wallet at a different person moves it between the two person lists.
         // Skipped when unchanged, which is the ordinary case — a tier or expiry refresh passes
-        // the same pointer back, and re-linking it would leave the wallet listed twice.
-        if (recordPointer != inv.recordPointer) {
-            _unlinkFromPerson(wallet, inv.recordPointer);
-            _linkToPerson(wallet, recordPointer);
+        // the same `personId` back, and re-linking it would leave the wallet listed twice.
+        if (personId != inv.personId) {
+            _unlinkFromPerson(wallet, inv.personId);
+            _linkToPerson(wallet, personId);
         }
 
         inv.tier = tier;
         inv.jurisdiction = jurisdiction;
-        inv.recordPointer = recordPointer;
+        inv.personId = personId;
         inv.expiresAt = expiresAt;
         inv.verifiedAt = uint64(block.timestamp);
 
@@ -338,10 +420,10 @@ contract IdentityRegistry {
     ///         (onboarding plus recoveries), not by anything an adversary sets. If a pathological
     ///         record ever did exceed the block gas limit, `deregisterInvestor` still drains it
     ///         one wallet at a time — so this is a convenience that cannot become a trap.
-    function deregisterPerson(bytes32 recordPointer, bytes32 reasonHash) external onlyRegistrar {
-        address[] storage wallets = _walletsOfPerson[recordPointer];
+    function deregisterPerson(bytes32 personId, bytes32 reasonHash) external onlyRegistrar {
+        address[] storage wallets = _walletsOfPerson[personId];
         uint256 n = wallets.length;
-        if (n == 0) revert PersonNotRegistered(recordPointer);
+        if (n == 0) revert PersonNotRegistered(personId);
 
         // Backwards, popping as we go: erasing from the tail keeps every surviving index valid,
         // where a forward loop would renumber the entries it has not reached yet.
@@ -359,7 +441,7 @@ contract IdentityRegistry {
 
     function _eraseWallet(address wallet) private {
         _eraseClaims(wallet);
-        _unlinkFromPerson(wallet, _investors[wallet].recordPointer);
+        _unlinkFromPerson(wallet, _investors[wallet].personId);
         delete _investors[wallet];
     }
 
@@ -407,9 +489,19 @@ contract IdentityRegistry {
     // effect without touching a single claim record.
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @param expiresAt Mandatory. Must be in the future and no further out than
+    ///                  `maxClaimValiditySeconds` from now. There is no "never expires" — an
+    ///                  attestation with no refresh horizon is not an attestation the AMLR
+    ///                  Art 20 review cycle recognises, and until 2026-09-08 every issuer could
+    ///                  write one by passing 0.
     function setClaim(address wallet, uint256 topic, ClaimValue value, uint64 expiresAt) external {
         if (!_investors[wallet].registered) revert NotRegistered(wallet);
         if (!trustedIssuers.canIssueNow(msg.sender, topic)) revert IssuerNotTrustedForTopic(msg.sender, topic);
+
+        uint64 latestAllowed = uint64(block.timestamp) + maxClaimValiditySeconds;
+        if (expiresAt <= block.timestamp || expiresAt > latestAllowed) {
+            revert ClaimExpiryOutOfRange(expiresAt, latestAllowed);
+        }
 
         _claims[wallet][topic] = Claim({
             value: value,
@@ -442,10 +534,17 @@ contract IdentityRegistry {
     /// @notice The single read every consumer should use. Collapses to `NotRecorded` when
     ///         the claim has expired or its issuer's trust has lapsed — so a stale or
     ///         orphaned claim degrades to "unasked question", never to a silent pass.
+    /// @dev    Expiry is `>=`, not `>`: a claim is invalid AT its expiry second, not one second
+    ///         after. Fail closed at the boundary — the second in which "still valid" and
+    ///         "expired" would both be true is decided against the claim, and a consumer that
+    ///         reads `expiresAt` off `rawClaim` and applies the same comparison gets the same
+    ///         answer. No zero-guard: `expiresAt == 0` is unwritable since 2026-09-08 and a
+    ///         pre-fix record carrying it reads as expired, which is the only safe reading of
+    ///         "never expires".
     function claimValue(address wallet, uint256 topic) public view returns (ClaimValue) {
         Claim storage c = _claims[wallet][topic];
         if (c.value == ClaimValue.NotRecorded) return ClaimValue.NotRecorded;
-        if (c.expiresAt != 0 && block.timestamp > c.expiresAt) return ClaimValue.NotRecorded;
+        if (block.timestamp >= c.expiresAt) return ClaimValue.NotRecorded;
         if (!trustedIssuers.isTrustedFor(c.issuer, topic, c.issuedAt)) return ClaimValue.NotRecorded;
         return c.value;
     }
@@ -473,7 +572,7 @@ contract IdentityRegistry {
     //    itself the disclosure. Matching the error names does not close it.
     //
     //    So every wallet-level stop — secret or ordinary — goes through
-    //    `RestrictedPartyRegistry.blockRecord` / `blockWallet`, which has a second write role
+    //    `RestrictedPartyRegistry.blockPerson` / `blockWallet`, which has a second write role
     //    (`isRestrictionRegistrar`) precisely so the ordinary desk has somewhere to write
     //    that is not the sanctions vendor's key. Disclosure to the customer still
     //    happens; it happens off-chain, where it always did.
@@ -487,10 +586,18 @@ contract IdentityRegistry {
     // GATE 1 — ELIGIBILITY. "May this holder hold?"
     // ═══════════════════════════════════════════════════════════════════════
 
-    function checkEligible(address wallet) public view {
+    /// @dev Every error here is INFORMATIVE-class — a fact about the record that applies to
+    ///      everyone equally and that the holder can cure. Nothing person-specific and nothing
+    ///      screening-linked may ever be raised from this function; that class lives behind
+    ///      `IRestrictedParty` and its one argument-free error. See the freeze note above.
+    /// @dev `Investor.expiresAt` keeps its "0 = no scheduled refresh" meaning — it is the
+    ///      registrar's review horizon on the record, not an issuer's attestation, and the
+    ///      registrar is the operator's own desk. The comparison is `>=` for the same
+    ///      boundary reason as `claimValue`: expired AT the second, fail closed.
+    function checkEligible(address wallet) public view override {
         Investor storage inv = _investors[wallet];
         if (!inv.registered) revert NotRegistered(wallet);
-        if (inv.expiresAt != 0 && block.timestamp > inv.expiresAt) revert RecordExpired(wallet, inv.expiresAt);
+        if (inv.expiresAt != 0 && block.timestamp >= inv.expiresAt) revert RecordExpired(wallet, inv.expiresAt);
 
         uint256[] memory required = claimTopics.requiredTopics(inv.jurisdiction);
         for (uint256 i = 0; i < required.length; i++) {
@@ -500,7 +607,7 @@ contract IdentityRegistry {
         }
     }
 
-    function isEligible(address wallet) external view returns (bool) {
+    function isEligible(address wallet) external view override returns (bool) {
         try this.checkEligible(wallet) {
             return true;
         } catch {
@@ -547,31 +654,31 @@ contract IdentityRegistry {
     ///         implemented it — `SecurityToken.recoverWallet` and `RestrictedPartyRegistry.isBlocked`
     ///         both call it through the interface, so the omission was a live break, not a
     ///         missing convenience.
-    /// @dev    Returns the pointer and a registration flag rather than the whole record. Two
+    /// @dev    Returns the `personId` and a registration flag rather than the whole record. Two
     ///         consumers need to prove that two wallets are the SAME investor and nothing else;
     ///         handing them the struct would couple them to this contract's storage layout and
     ///         put personal-data-adjacent fields in reach of contracts with no business reading
     ///         them.
-    function recordPointerOf(address wallet) external view returns (bytes32 pointer, bool registered) {
+    function personIdOf(address wallet) external view override returns (bytes32 personId, bool registered) {
         Investor storage inv = _investors[wallet];
-        return (inv.recordPointer, inv.registered);
+        return (inv.personId, inv.registered);
     }
 
     /// @notice Every wallet currently registered under one person.
     /// @dev    The read an Art 17 request is answered from, and the read an Art 30 record cites
     ///         to show the answer was complete. Goes empty after `deregisterPerson`, which is
     ///         the difference between this and a log.
-    function walletsOfPerson(bytes32 recordPointer) external view returns (address[] memory) {
-        return _walletsOfPerson[recordPointer];
+    function walletsOfPerson(bytes32 personId) external view returns (address[] memory) {
+        return _walletsOfPerson[personId];
     }
 
     /// @notice How many live wallets roll up to one person.
     /// @dev    ⚠️ THE COUNT PROSPECTUS ART 1(4)(b) NEEDS IS OF PERSONS, NOT OF THIS. A consumer
     ///         counting toward the 150-per-Member-State exemption counts distinct
-    ///         `recordPointer` values it has seen — one person is one unit however many wallets
+    ///         `personId` values it has seen — one person is one unit however many wallets
     ///         they hold. This function is how a consumer notices the difference exists.
-    function walletCountOfPerson(bytes32 recordPointer) external view returns (uint256) {
-        return _walletsOfPerson[recordPointer].length;
+    function walletCountOfPerson(bytes32 personId) external view returns (uint256) {
+        return _walletsOfPerson[personId].length;
     }
 
     /// @notice Every claim topic ever written against a wallet, live or cleared.
@@ -581,11 +688,11 @@ contract IdentityRegistry {
         return _claimTopicsOf[wallet];
     }
 
-    function tierOf(address wallet) external view returns (Tier) {
+    function tierOf(address wallet) external view override returns (Tier) {
         return _investors[wallet].tier;
     }
 
-    function jurisdictionOf(address wallet) external view returns (bytes32) {
+    function jurisdictionOf(address wallet) external view override returns (bytes32) {
         return _investors[wallet].jurisdiction;
     }
 

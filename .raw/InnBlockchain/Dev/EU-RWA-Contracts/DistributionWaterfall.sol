@@ -74,13 +74,8 @@ contract DistributionWaterfall {
     // ═══════════════════════════════════════════════════════════════════════
 
     address public immutable governance;
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
+
+    /// @dev Interface-typed, settable, never null — the standing rule. Setter at the foot.
     IDistributionSink public distributions;
 
     mapping(address => bool) public isAgent;
@@ -105,6 +100,11 @@ contract DistributionWaterfall {
     /// @dev Tranche index → the `DistributionAgent` distribution carrying this allocation.
     mapping(uint256 => mapping(uint256 => uint256)) public distributionFor;
 
+    /// @notice Per tranche: wei allocated but not carried by any distribution yet, because a
+    ///         per-unit rate cannot express it. See `bindDistribution`. Folded into the
+    ///         tranche's next award, so it is deferred, never dropped.
+    mapping(uint256 => uint256) public dustCarried;
+
     // ═══════════════════════════════════════════════════════════════════════
     // EVENTS
     // ═══════════════════════════════════════════════════════════════════════
@@ -113,7 +113,10 @@ contract DistributionWaterfall {
     event WaterfallPublished(uint256 tranches, uint256 steps, uint16 residualBpsTotal);
     event IncomeAllocated(uint256 indexed allocationId, uint256 amount, uint256 unallocatedRemainder);
     event TrancheAllocated(uint256 indexed allocationId, uint256 indexed trancheIndex, bytes32 trancheId, uint256 amount);
-    event TrancheDistributionBound(uint256 indexed allocationId, uint256 indexed trancheIndex, uint256 distributionId);
+    event TrancheDistributionBound(
+        uint256 indexed allocationId, uint256 indexed trancheIndex, uint256 distributionId, uint256 dust
+    );
+    event DustFolded(uint256 indexed allocationId, uint256 indexed trancheIndex, uint256 dust);
     event ArrearsCarried(uint256 indexed trancheIndex, uint256 arrears);
     event CapitalReturned(uint256 indexed trancheIndex, uint256 amount, uint256 outstandingCapital);
 
@@ -131,17 +134,19 @@ contract DistributionWaterfall {
     error UnknownTranche(uint256 trancheIndex);
     error BpsOutOfRange(uint256 stepIndex, uint16 bps);
     /// @dev See `_validateResidual`.
-    error ResidualSharesMustSumToFull(uint16 total);
+    error ResidualSharesMustSumToFull(uint256 total);
     error NoResidualStep();
     error ZeroAmount();
     error UnknownAllocation(uint256 allocationId);
     error NothingAllocated(uint256 allocationId, uint256 trancheIndex);
     error DistributionAlreadyBound(uint256 allocationId, uint256 trancheIndex);
-    error DistributionAmountMismatch(uint256 expected, uint256 actual);
+    /// @dev The distribution's `ratePerUnit` is not `owed / totalUnits`.
+    error DistributionRateMismatch(uint256 expectedRate, uint256 actualRate);
+    error DistributionHasNoUnits(uint256 distributionId);
+    error LengthMismatch(uint256 trancheIds, uint256 contributedCapital);
 
-    /// @dev ⚠️ Used by the dependency setter but never declared, so this file did not compile.
-    ///      Guards the "swap, never unset" rule — an unset reference reads as "not owed" and
-    ///      turns a control off silently.
+    /// @dev Guards the "swap, never unset" rule — an unset reference reads as "not owed" and
+    ///      turns a control off silently. Raised by the constructor and the setter.
     error ZeroAddress();
 
     modifier onlyGovernance() {
@@ -163,11 +168,16 @@ contract DistributionWaterfall {
     ) {
         if (trancheIds.length == 0) revert NoTranches();
         if (trancheIds.length > MAX_TRANCHES) revert TooManyTranches();
+        if (trancheIds.length != contributedCapital.length) {
+            revert LengthMismatch(trancheIds.length, contributedCapital.length);
+        }
         if (steps.length == 0) revert NoSteps();
         if (steps.length > MAX_STEPS) revert TooManySteps();
+        if (governance_ == address(0) || distributions_ == address(0)) revert ZeroAddress();
 
         governance = governance_;
         distributions = IDistributionSink(distributions_);
+        emit DependencySet("distributions", distributions_);
 
         for (uint256 i = 0; i < trancheIds.length; i++) {
             _tranches.push(
@@ -182,7 +192,9 @@ contract DistributionWaterfall {
             );
         }
 
-        uint16 residualTotal;
+        // uint256, not uint16: sixteen residual steps at 10_000 bps each would wrap a uint16
+        // and pass `_validateResidual` at exactly the value that should fail it.
+        uint256 residualTotal;
         for (uint256 i = 0; i < steps.length; i++) {
             Step memory s = steps[i];
             if (s.stepType == StepType.Unset) revert StepTypeUnset(i);
@@ -193,7 +205,7 @@ contract DistributionWaterfall {
         }
 
         _validateResidual(residualTotal);
-        emit WaterfallPublished(_tranches.length, _steps.length, residualTotal);
+        emit WaterfallPublished(_tranches.length, _steps.length, uint16(residualTotal));
     }
 
     /// @dev ⚠️ THE RESIDUAL SHARES MUST SUM TO EXACTLY 100%, AND THERE MUST BE AT LEAST ONE.
@@ -203,7 +215,7 @@ contract DistributionWaterfall {
     ///      noticed until the first distribution, by which time the terms are published. Over
     ///      100% is worse: the last tranche in line silently receives less than its stated
     ///      share, every time, and the arithmetic looks fine.
-    function _validateResidual(uint16 total) private pure {
+    function _validateResidual(uint256 total) private pure {
         if (total == 0) revert NoResidualStep();
         if (total != BPS) revert ResidualSharesMustSumToFull(total);
     }
@@ -311,7 +323,15 @@ contract DistributionWaterfall {
     }
 
     function _award(uint256 allocationId, uint256 trancheIndex, uint256 amount) private {
-        allocatedTo[allocationId][trancheIndex] += amount;
+        // Carried dust rides on the tranche's next award. It is money already allocated (and
+        // already funded by the agent, under an earlier allocation) that no per-unit rate could
+        // carry; it is not new income, so it is not counted in `lifetimeAllocated` again.
+        uint256 dust = dustCarried[trancheIndex];
+        if (dust != 0) {
+            dustCarried[trancheIndex] = 0;
+            emit DustFolded(allocationId, trancheIndex, dust);
+        }
+        allocatedTo[allocationId][trancheIndex] += amount + dust;
         _tranches[trancheIndex].lifetimeAllocated += amount;
         emit TrancheAllocated(allocationId, trancheIndex, _tranches[trancheIndex].trancheId, amount);
     }
@@ -320,9 +340,17 @@ contract DistributionWaterfall {
     ///         pay it out to that tranche's holders.
     /// @dev    ⚠️ THE AMOUNT IS RECONCILED, NOT TRUSTED. The agent funds and opens the
     ///         distribution separately, so nothing stops it funding a different figure. This
-    ///         compares the waterfall's allocation against `totalUnits × ratePerUnit` on the
-    ///         declared distribution — the one point where the two contracts' arithmetic can
-    ///         be shown to agree. Without it, the waterfall is a spreadsheet nobody checks.
+    ///         compares the waterfall's allocation against the declared distribution — the one
+    ///         point where the two contracts' arithmetic can be shown to agree. Without it, the
+    ///         waterfall is a spreadsheet nobody checks.
+    /// @dev    ⚠️ COMPARED PER UNIT, WITH DUST BOUNDED BELOW ONE UNIT-RATE — the same shape as
+    ///         `CouponSchedule.bindPeriod`. `DistributionAgent` pays `units × ratePerUnit`, so
+    ///         an allocation `owed` that is not a multiple of `totalUnits` has NO exact
+    ///         distribution; before 2026-09-08 this demanded equality and such an allocation
+    ///         could never be bound. Now `ratePerUnit` must equal `owed / totalUnits` and the
+    ///         remainder `owed − ratePerUnit × totalUnits` (necessarily `< totalUnits`) is
+    ///         recorded in `dustCarried` and folded into the tranche's next award. It is the
+    ///         tranche's money, deferred one allocation, never re-allocated down the waterfall.
     function bindDistribution(uint256 allocationId, uint256 trancheIndex, uint256 distributionId) external onlyAgent {
         if (allocationId == 0 || allocationId >= nextAllocationId) revert UnknownAllocation(allocationId);
         if (trancheIndex >= _tranches.length) revert UnknownTranche(trancheIndex);
@@ -334,11 +362,17 @@ contract DistributionWaterfall {
         }
 
         Distribution memory d = distributions.distribution(distributionId);
-        uint256 declared = d.totalUnits * d.ratePerUnit;
-        if (declared != owed) revert DistributionAmountMismatch(owed, declared);
+        if (d.totalUnits == 0) revert DistributionHasNoUnits(distributionId);
+        uint256 expectedRate = owed / d.totalUnits;
+        if (d.ratePerUnit != expectedRate) revert DistributionRateMismatch(expectedRate, d.ratePerUnit);
+        uint256 dust = owed - expectedRate * d.totalUnits;
+        // Always true by construction (`owed mod totalUnits`); asserted so the bound the
+        // NatSpec promises is checked by the code, not by the reader.
+        assert(dust < d.totalUnits);
 
         distributionFor[allocationId][trancheIndex] = distributionId;
-        emit TrancheDistributionBound(allocationId, trancheIndex, distributionId);
+        if (dust != 0) dustCarried[trancheIndex] += dust;
+        emit TrancheDistributionBound(allocationId, trancheIndex, distributionId, dust);
     }
 
     // ═══════════════════════════════════════════════════════════════════════

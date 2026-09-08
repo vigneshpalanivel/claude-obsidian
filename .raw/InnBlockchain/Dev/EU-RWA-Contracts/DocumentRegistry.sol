@@ -80,11 +80,18 @@ contract DocumentRegistry {
     mapping(bytes32 => Document) private _documents;
     mapping(bytes32 => Version[]) private _versions;
 
-    /// @notice Reverse index for `documentStatus()`, the read `DoraGovernor` performs before
-    ///         it will queue an upgrade. It asks about a version hash it was handed, not about
-    ///         a slot it knows the name of.
+    /// @notice Reverse index for `documentStatus()`, the read `SubscriptionEscrow` performs
+    ///         before it opens an Art 23(2) window or accepts a subscription. It asks about a
+    ///         version hash it was handed, not about a slot it knows the name of. (`DoraGovernor`
+    ///         used to perform the same read before queueing an upgrade; that limb was
+    ///         withdrawn — see `UPGRADE-ARCHITECTURE.md`.)
     mapping(bytes32 => bytes32) private _versionHashToDocRef;
     mapping(bytes32 => bool) private _versionHashKnown;
+
+    /// @dev One unrevealed commitment at most per slot, and it is always the LAST version in
+    ///      the slot while pending. `anchorVersion` and `anchorConcealed` both refuse while one
+    ///      is outstanding — see `PendingConcealedCommitment`.
+    mapping(bytes32 => bool) private _concealedPending;
 
     /// @notice PRIIPs Art 10 default: reviewed at least every 12 months AND on any material
     ///         change. The clock is the floor, not the trigger — a material change obliges a
@@ -127,8 +134,17 @@ contract DocumentRegistry {
     error NotAPriipsKid(bytes32 docRef);
     error NoVersionAnchored(bytes32 docRef);
     error CommitMismatch(bytes32 expected, bytes32 got);
-    error AlreadyRevealed(bytes32 docRef);
     error NothingConcealed(bytes32 docRef);
+    /// @dev A slot with an unrevealed commitment accepts no new anchor of either kind. Before
+    ///      2026-09-08 a plain `anchorVersion` on top of a pending commitment pushed past it and
+    ///      `revealConcealed` — which reads the LAST version — could never find it again: the
+    ///      commitment was stranded, unrevealable, with `ConcealedAnchored` on the log and no
+    ///      matching reveal. Reveal or abandon the slot; do not anchor over it.
+    error PendingConcealedCommitment(bytes32 docRef);
+    /// @dev `Regime.Unset` is the enum's zero value and means "no regime chosen". A slot opened
+    ///      with it fires no regime event on any anchor, so a supplement anchored into it opens
+    ///      no withdrawal window and a KID revision invalidates nothing — silently.
+    error RegimeUnset(bytes32 docRef);
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -152,6 +168,7 @@ contract DocumentRegistry {
     ///                       stored date no `require` reads is decoration.
     function openDocument(bytes32 docRef, Regime regime, uint64 retentionUntil) external onlyGovernance {
         if (_documents[docRef].exists) revert DocumentAlreadyOpen(docRef);
+        if (regime == Regime.Unset) revert RegimeUnset(docRef);
 
         _documents[docRef] = Document({exists: true, regime: regime, currentIndex: 0});
         emit DocumentOpened(docRef, regime, retentionUntil);
@@ -172,6 +189,7 @@ contract DocumentRegistry {
     {
         Document storage doc = _documents[docRef];
         if (!doc.exists) revert UnknownDocument(docRef);
+        if (_concealedPending[docRef]) revert PendingConcealedCommitment(docRef);
         if (versionHash == bytes32(0)) revert EmptyVersionHash();
         if (_versionHashKnown[versionHash]) revert VersionHashAlreadyUsed(versionHash);
 
@@ -180,20 +198,41 @@ contract DocumentRegistry {
             superseded = _versions[docRef][doc.currentIndex].versionHash;
         }
 
-        uint64 reviewDueBy = doc.regime == Regime.PriipsKid ? uint64(block.timestamp) + PRIIPS_REVIEW_PERIOD : 0;
-
         _versions[docRef].push(
             Version({
                 versionHash: versionHash,
                 uriHash: uriHash,
                 anchoredAt: uint64(block.timestamp),
                 approvedAt: 0,
-                reviewDueBy: reviewDueBy,
+                reviewDueBy: _reviewDueBy(doc.regime),
                 revealed: true
             })
         );
 
         index = uint32(_versions[docRef].length - 1);
+        _afterAnchor(doc, docRef, versionHash, superseded, index, uri, retentionUntil);
+    }
+
+    function _reviewDueBy(Regime regime) private view returns (uint64) {
+        return regime == Regime.PriipsKid ? uint64(block.timestamp) + PRIIPS_REVIEW_PERIOD : 0;
+    }
+
+    /// @dev Everything that happens once a version hash becomes CURRENT, shared by the plain
+    ///      and the concealed path so the two cannot drift: index flip, reverse index, the
+    ///      generic `VersionAnchored`, and the regime-specific consequence event. Before
+    ///      2026-09-08 `revealConcealed` did the first three and skipped the fourth — a
+    ///      revealed prospectus supplement opened no `SupplementPublished`, so the escrow's
+    ///      reconciliation job had nothing to join against, and a revealed KID fired no
+    ///      `KidRevised`.
+    function _afterAnchor(
+        Document storage doc,
+        bytes32 docRef,
+        bytes32 versionHash,
+        bytes32 superseded,
+        uint32 index,
+        string calldata uri,
+        uint64 retentionUntil
+    ) private {
         doc.currentIndex = index;
 
         _versionHashKnown[versionHash] = true;
@@ -247,9 +286,16 @@ contract DocumentRegistry {
     ///         yet require disclosure, and Art 17(4) cannot delay what the chain has already
     ///         published. The only cure is not to publish it in the clear. Commit here, reveal
     ///         when the final event is disclosed.
+    /// @dev While the commitment is pending the slot's CURRENT version is unchanged —
+    ///      `currentIndex` does not move until reveal — so `isCurrent` and
+    ///      `currentVersionHash` keep answering for the last revealed version, and nothing
+    ///      downstream (covenant gates, the escrow) can observe that a commitment exists
+    ///      beyond the `ConcealedAnchored` log entry itself.
     function anchorConcealed(bytes32 docRef, bytes32 commitHash) external onlyGovernance {
         Document storage doc = _documents[docRef];
         if (!doc.exists) revert UnknownDocument(docRef);
+        if (_concealedPending[docRef]) revert PendingConcealedCommitment(docRef);
+        if (commitHash == bytes32(0)) revert EmptyVersionHash();
 
         _versions[docRef].push(
             Version({
@@ -261,6 +307,7 @@ contract DocumentRegistry {
                 revealed: false
             })
         );
+        _concealedPending[docRef] = true;
 
         emit ConcealedAnchored(docRef, commitHash);
     }
@@ -269,33 +316,49 @@ contract DocumentRegistry {
     ///      mandatory and not a nicety: without it, a document drawn from a small predictable
     ///      set is brute-forceable from its own commitment, which leaks precisely what
     ///      Art 17(1a) required to stay confidential.
-    function revealConcealed(bytes32 docRef, bytes32 versionHash, bytes32 uriHash, bytes32 salt, string calldata uri)
-        external
-        onlyGovernance
-    {
+    /// @dev ⚠️ A REVEAL IS AN ANCHOR WITH THE CLOCK STARTED EARLIER, AND IT RUNS EVERY CHECK
+    ///      AND FIRES EVERY EVENT `anchorVersion` DOES. The revealed hash goes through the
+    ///      `VersionHashAlreadyUsed` check (a reveal that re-uses a hash already current in
+    ///      another slot would alias two documents under one `documentStatus` answer); a
+    ///      PRIIPs KID reveal starts its Art 10 review clock; and `_afterAnchor` emits
+    ///      `SupplementPublished` / `KidRevised` exactly as a plain anchor would — because the
+    ///      statutory consequence of a supplement becoming public does not depend on whether
+    ///      it was committed first.
+    /// @param retentionUntil As on `anchorVersion` — the off-chain archive's deadline, emitted.
+    function revealConcealed(
+        bytes32 docRef,
+        bytes32 versionHash,
+        bytes32 uriHash,
+        bytes32 salt,
+        string calldata uri,
+        uint64 retentionUntil
+    ) external onlyGovernance {
         Document storage doc = _documents[docRef];
         if (!doc.exists) revert UnknownDocument(docRef);
+        if (!_concealedPending[docRef]) revert NothingConcealed(docRef);
+        if (versionHash == bytes32(0)) revert EmptyVersionHash();
+        if (_versionHashKnown[versionHash]) revert VersionHashAlreadyUsed(versionHash);
 
         Version[] storage vs = _versions[docRef];
-        if (vs.length == 0) revert NoVersionAnchored(docRef);
-
-        Version storage v = vs[vs.length - 1];
-        if (v.revealed) revert AlreadyRevealed(docRef);
-        if (v.uriHash != bytes32(0)) revert NothingConcealed(docRef);
+        uint32 index = uint32(vs.length - 1); // the pending commitment is always last — see `anchorVersion`
+        Version storage v = vs[index];
 
         bytes32 expected = keccak256(abi.encode(versionHash, uriHash, salt));
         if (expected != v.versionHash) revert CommitMismatch(expected, v.versionHash);
 
+        // The version being superseded is the one that was current while the commitment sat
+        // pending. If the commitment is the slot's first version there is nothing to supersede.
+        bytes32 superseded;
+        if (index > 0) superseded = vs[doc.currentIndex].versionHash;
+
         v.versionHash = versionHash;
         v.uriHash = uriHash;
+        v.reviewDueBy = _reviewDueBy(doc.regime);
         v.revealed = true;
-
-        _versionHashKnown[versionHash] = true;
-        _versionHashToDocRef[versionHash] = docRef;
-        doc.currentIndex = uint32(vs.length - 1);
+        _concealedPending[docRef] = false;
 
         emit ConcealedRevealed(docRef, versionHash);
-        emit VersionAnchored(docRef, versionHash, uint32(vs.length - 1), uri, 0);
+        _afterAnchor(doc, docRef, versionHash, superseded, index, uri, retentionUntil);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -328,8 +391,10 @@ contract DocumentRegistry {
     // READS — the fail-closed surface `CovenantRegistry` depends on
     // ═══════════════════════════════════════════════════════════════════════
 
-    /// @notice The interface `DoraGovernor` already codes against. Keyed by version hash
-    ///         because the governor is handed an artefact hash, not a slot name.
+    /// @notice The `IDocumentAnchor.documentStatus` read `SubscriptionEscrow` codes against.
+    ///         Keyed by version hash because the escrow is handed an artefact hash, not a slot
+    ///         name. An unrevealed commitment is NOT a known hash — it reports `(false, 0)`
+    ///         until revealed.
     function documentStatus(bytes32 documentHash) external view returns (bool exists, uint64 approvedAt) {
         if (!_versionHashKnown[documentHash]) return (false, 0);
 

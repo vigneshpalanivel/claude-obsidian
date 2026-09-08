@@ -25,11 +25,25 @@ import {ModuleAdapter} from "./ModularCompliance.sol";
 ///         [scheduled − 30d, ACTUAL announcement], and an unannounced period stays frozen
 ///         past its scheduled date indefinitely. Late results extend the freeze; they do not
 ///         end it.
+/// @dev    ⚠️ A WINDOW THAT HAS OPENED CANNOT BE CANCELLED, ONLY RESCHEDULED OR ANNOUNCED.
+///         Until 2026-09-08 `cancelPeriod` lifted a LIVE window with no evidence, and no
+///         reschedule existed — so the ordinary "report slips a week" case required exactly
+///         that call, and the log could not tell a slipped calendar from a director who
+///         wanted to trade on Thursday. Now: `cancelPeriod` works only BEFORE `opensAt`;
+///         `reschedulePeriod` moves the scheduled announcement LATER, against a mandatory
+///         evidence hash, and a window that has started stays started — `opensAt` is fixed at
+///         scheduling and a reschedule of a live window moves only its far end. The one way
+///         out of a live window is `recordAnnouncement`, i.e. publishing the report.
 /// @dev    ⚠️ THE FREEZE IS PROSPECTIVE ONLY. Scheduling a period whose window has already
 ///         opened does not — and cannot — reverse transfers that already settled inside it.
 ///         Publishing the financial calendar at least 30 days ahead is therefore a control,
 ///         not an administrative preference, and any window opened retroactively leaves a
 ///         gap that has to be reviewed off-chain against the Art 8 prohibitions.
+/// @dev    ⚠️ TWO ROLES, BY DESIGN. `issuer` runs the calendar — it is the company secretary's
+///         job to know when results land. `governance` grants the Art 19(12) override,
+///         because an override is the issuer excusing its own director from a rule written
+///         against that director, and the party that benefits should not hold the key alone
+///         (design §6, S3 §3). Until 2026-09-08 both were `onlyIssuer`.
 contract PdmrClosedPeriodFreeze {
     /// @dev Art 19(11) says 30 CALENDAR days. Not trading days, not a month.
     uint64 public constant CLOSED_PERIOD = 30 days;
@@ -49,6 +63,10 @@ contract PdmrClosedPeriodFreeze {
 
     struct ClosedPeriod {
         uint64 scheduledAnnouncement;
+        /// @dev Fixed at scheduling as `scheduledAnnouncement − 30d`, and moved by a
+        ///      reschedule ONLY while it is still in the future. Once the window has opened
+        ///      this never moves again, whatever happens to the far end.
+        uint64 opensAt;
         uint64 actualAnnouncement; // 0 until announced — window stays OPEN past the schedule
         bool cancelled;
         bytes32 reportRef; // which report this window protects — audit trail
@@ -63,8 +81,19 @@ contract PdmrClosedPeriodFreeze {
 
     // ─────────────────────────── wiring ───────────────────────────────────────
 
-    IPdmrRegister public immutable register;
-    address public immutable issuer; // sets the calendar and grants Art 19(12) permissions
+    /// @dev Settable, never null. ⚠️ Typed as `IPdmrRegister` from `PdmrRegister.sol`, not as
+    ///      `Interfaces.sol`'s `IDeclaredPersonRegister`, because that interface declares
+    ///      `isDeclared`/`personOf` and this contract needs `isFlagged` — a live-role read,
+    ///      which "was ever declared" is not. Switching requires `IDeclaredPersonRegister` to
+    ///      grow `isFlagged` (an `Interfaces.sol` change, recorded, not made here).
+    IPdmrRegister public register;
+
+    /// @notice Sets the calendar. See the two-roles note.
+    address public issuer;
+    /// @notice Grants and revokes Art 19(12) permissions; re-points `register`. Two-step
+    ///         transfer, so a typo cannot orphan the override path mid-window.
+    address public governance;
+    address public pendingGovernance;
 
     // ─────────────────────────── calendar ─────────────────────────────────────
 
@@ -90,27 +119,49 @@ contract PdmrClosedPeriodFreeze {
     );
     event PeriodAnnounced(uint256 indexed periodId, uint64 actualAnnouncement);
     event PeriodCancelled(uint256 indexed periodId);
+    /// @dev `evidenceRef` is the hash of the issuer's record of WHY the calendar moved — a
+    ///      board minute, an auditor's letter. It is what lets a later investigation
+    ///      distinguish a slipped audit from a window moved to let somebody trade.
+    event PeriodRescheduled(
+        uint256 indexed periodId,
+        uint64 oldScheduledAnnouncement,
+        uint64 newScheduledAnnouncement,
+        bytes32 evidenceRef
+    );
     event PeriodOverran(
         uint256 indexed periodId,
         uint64 scheduledAnnouncement,
         uint64 observedAt
     );
 
-    event PermissionGranted(
-        uint256 indexed periodId,
-        address indexed wallet,
-        Ground ground,
-        uint64 expiresAt,
-        bytes32 evidenceHash
-    );
+    /// @dev ⚠️ NO `Ground` IN THE LOG. Art 19(12)(a) is "exceptional circumstances, such as
+    ///      severe financial difficulty" — against a wallet whose PDMR status is a matter of
+    ///      public record, that is a named director's financial distress in a permanent
+    ///      public log. The ground lives in `permission[periodId][wallet]`, where the issuer
+    ///      reads it and `delete` reaches it; `evidenceHash` is the opaque join to the
+    ///      Del. Reg 2016/522 Art 7–9 file. That the wallet *was granted* permission is a
+    ///      ledger fact — the permitted trade is visible either way.
+    event PermissionGranted(uint256 indexed periodId, address indexed wallet, uint64 expiresAt, bytes32 evidenceHash);
     event PermissionRevoked(uint256 indexed periodId, address indexed wallet);
+
+    event DependencySet(bytes32 indexed what, address impl);
+    event GovernanceTransferStarted(address indexed from, address indexed to);
+    event GovernanceTransferred(address indexed from, address indexed to);
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
     error NotIssuer();
+    error NotGovernance();
+    error NotPendingGovernance();
+    error ZeroAddress();
     error ScheduleInThePast(uint64 scheduledAnnouncement);
     error UnknownPeriod(uint256 periodId);
     error PeriodNotOpen(uint256 periodId);
+    /// @dev The window has opened; it can be rescheduled or announced, not cancelled.
+    error PeriodAlreadyOpen(uint256 periodId, uint64 opensAt);
+    /// @dev A reschedule moves the announcement later, never earlier.
+    error RescheduleMustBeLater(uint64 current, uint64 requested);
+    error EvidenceRequired();
     error GroundRequired();
     error WalletNotFlagged(address wallet);
     error PermissionExpiryInThePast(uint64 expiresAt);
@@ -130,9 +181,42 @@ contract PdmrClosedPeriodFreeze {
         _;
     }
 
-    constructor(address register_, address issuer_) {
+    modifier onlyGovernance() {
+        if (msg.sender != governance) revert NotGovernance();
+        _;
+    }
+
+    constructor(address register_, address issuer_, address governance_) {
+        if (register_ == address(0) || issuer_ == address(0) || governance_ == address(0)) revert ZeroAddress();
         register = IPdmrRegister(register_);
         issuer = issuer_;
+        governance = governance_;
+        emit DependencySet("register", register_);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // ROLES & WIRING
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice Re-point the declared-person register. Swap, never unset — a null register reads
+    ///         every wallet as unflagged, which is the freeze silently off.
+    function setRegister(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        register = IPdmrRegister(impl);
+        emit DependencySet("register", impl);
+    }
+
+    function transferGovernance(address to) external onlyGovernance {
+        if (to == address(0)) revert ZeroAddress();
+        pendingGovernance = to;
+        emit GovernanceTransferStarted(governance, to);
+    }
+
+    function acceptGovernance() external {
+        if (msg.sender != pendingGovernance) revert NotPendingGovernance();
+        emit GovernanceTransferred(governance, msg.sender);
+        governance = msg.sender;
+        pendingGovernance = address(0);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -153,20 +237,17 @@ contract PdmrClosedPeriodFreeze {
         }
 
         periodId = periodCount++;
+        uint64 opensAt = scheduledAnnouncement - CLOSED_PERIOD;
         periods[periodId] = ClosedPeriod({
             scheduledAnnouncement: scheduledAnnouncement,
+            opensAt: opensAt,
             actualAnnouncement: 0,
             cancelled: false,
             reportRef: reportRef
         });
         _openPeriods.push(periodId);
 
-        emit PeriodScheduled(
-            periodId,
-            scheduledAnnouncement,
-            scheduledAnnouncement - CLOSED_PERIOD,
-            reportRef
-        );
+        emit PeriodScheduled(periodId, scheduledAnnouncement, opensAt, reportRef);
     }
 
     /// @notice Call this when the report is actually published. This — not the passage of the
@@ -192,18 +273,52 @@ contract PdmrClosedPeriodFreeze {
     /// @notice For a report that will not happen at all — a cancelled interim, a changed
     ///         reporting calendar. Distinct from `recordAnnouncement`, because a cancelled
     ///         window and a published report mean different things to a later investigation.
+    /// @dev    ⚠️ ONLY BEFORE THE WINDOW OPENS. Once flagged wallets are frozen, the report
+    ///         is either published (`recordAnnouncement`) or delayed (`reschedulePeriod`,
+    ///         with evidence). A cancellation that unfreezes directors mid-window has no
+    ///         honest reading.
     function cancelPeriod(uint256 periodId) external onlyIssuer {
         ClosedPeriod storage p = _requirePeriod(periodId);
         if (p.cancelled || p.actualAnnouncement != 0)
             revert PeriodNotOpen(periodId);
+        if (block.timestamp >= p.opensAt) revert PeriodAlreadyOpen(periodId, p.opensAt);
 
         p.cancelled = true;
         _closeOpenPeriod(periodId);
         emit PeriodCancelled(periodId);
     }
 
+    /// @notice The report slipped. Moves the scheduled announcement LATER, against evidence.
+    /// @dev    Allowed while the window is live. A live window keeps its `opensAt` — directors
+    ///         who are frozen stay frozen; only the far end moves. A window that has not yet
+    ///         opened has its `opensAt` recomputed from the new date, so it opens 30 days
+    ///         before the report it now protects. Earlier is refused: pulling a report forward
+    ///         shortens a window that was published, and the way to end a window early is to
+    ///         publish the report.
+    function reschedulePeriod(
+        uint256 periodId,
+        uint64 newScheduledAnnouncement,
+        bytes32 evidenceRef
+    ) external onlyIssuer {
+        if (evidenceRef == bytes32(0)) revert EvidenceRequired();
+        ClosedPeriod storage p = _requirePeriod(periodId);
+        if (p.cancelled || p.actualAnnouncement != 0)
+            revert PeriodNotOpen(periodId);
+        if (newScheduledAnnouncement <= p.scheduledAnnouncement) {
+            revert RescheduleMustBeLater(p.scheduledAnnouncement, newScheduledAnnouncement);
+        }
+
+        uint64 old = p.scheduledAnnouncement;
+        p.scheduledAnnouncement = newScheduledAnnouncement;
+        if (block.timestamp < p.opensAt) {
+            p.opensAt = newScheduledAnnouncement - CLOSED_PERIOD;
+        }
+
+        emit PeriodRescheduled(periodId, old, newScheduledAnnouncement, evidenceRef);
+    }
+
     // ═══════════════════════════════════════════════════════════════════════
-    // ART 19(12) PERMISSION — the override path.
+    // ART 19(12) PERMISSION — the override path. Governance-gated.
     //
     // A freeze with no exception path is not "safe by default"; it is
     // non-compliant by over-blocking, and it reverts transactions MAR
@@ -219,7 +334,7 @@ contract PdmrClosedPeriodFreeze {
         Ground ground,
         uint64 expiresAt,
         bytes32 evidenceHash
-    ) external onlyIssuer {
+    ) external onlyGovernance {
         if (ground == Ground.None) revert GroundRequired();
         if (expiresAt <= block.timestamp)
             revert PermissionExpiryInThePast(expiresAt);
@@ -236,19 +351,13 @@ contract PdmrClosedPeriodFreeze {
             evidenceHash: evidenceHash
         });
 
-        emit PermissionGranted(
-            periodId,
-            wallet,
-            ground,
-            expiresAt,
-            evidenceHash
-        );
+        emit PermissionGranted(periodId, wallet, expiresAt, evidenceHash);
     }
 
     function revokePermission(
         uint256 periodId,
         address wallet
-    ) external onlyIssuer {
+    ) external onlyGovernance {
         delete permission[periodId][wallet];
         emit PermissionRevoked(periodId, wallet);
     }
@@ -278,7 +387,7 @@ contract PdmrClosedPeriodFreeze {
         revert InClosedPeriod(
             wallet,
             periodId,
-            p.scheduledAnnouncement - CLOSED_PERIOD,
+            p.opensAt,
             p.scheduledAnnouncement
         );
     }
@@ -317,8 +426,7 @@ contract PdmrClosedPeriodFreeze {
         ClosedPeriod storage p
     ) internal view returns (bool) {
         if (p.cancelled) return false;
-        if (block.timestamp < p.scheduledAnnouncement - CLOSED_PERIOD)
-            return false;
+        if (block.timestamp < p.opensAt) return false;
         // The overrun case: scheduled date gone, nothing announced, freeze restrictions.
         if (
             p.actualAnnouncement != 0 && block.timestamp >= p.actualAnnouncement
@@ -363,10 +471,20 @@ contract PdmrClosedPeriodFreeze {
 ///         `address(0)` leg of a mint or burn and already applies the Art 19(12) per-wallet,
 ///         per-window override, so this adapter deliberately adds no logic of its own —
 ///         anything it decided here would be a second place to look for Art 19(11).
+/// @dev    ⚠️ `freeze` IS `immutable` AND CONCRETE ON PURPOSE — the sanctioned exception to
+///         the standing rule (design §3 rev 40; `CovenantGate` and `HoldingPeriodGate` are
+///         the same shape). An adapter is a one-line shim over ONE module; it has no
+///         behaviour of its own to preserve across a re-point, and the settable reference
+///         lives one level up, in `ModularCompliance`'s module list — swap the adapter, not
+///         the pointer inside it. Making this settable would create a second place the
+///         freeze can be re-pointed from, with a second key.
 contract PdmrClosedPeriodGate is ModuleAdapter {
     PdmrClosedPeriodFreeze public immutable freeze;
 
+    error ZeroAddress();
+
     constructor(bytes32 moduleId_, address freeze_) ModuleAdapter(moduleId_) {
+        if (freeze_ == address(0)) revert ZeroAddress();
         freeze = PdmrClosedPeriodFreeze(freeze_);
     }
 

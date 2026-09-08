@@ -24,6 +24,14 @@ import {ISecurityToken, IDistributionSink, Distribution} from "./Interfaces.sol"
 ///         the constructor and there is no setter anywhere below. A mutable coupon rate would
 ///         let an operations key do, in one transaction, something the regulation treats as a
 ///         re-offer.
+/// @dev    ⚠️ ZERO-COUPON NOTES ARE A FIRST-CLASS CASE, NOT A DEGENERATE ONE. With
+///         `annualCouponRateBps == 0` every period owes nothing, and `DistributionAgent` refuses
+///         a zero-rate distribution (`ZeroRate`) — correctly, since a distribution of nothing is
+///         a payout run with no payout. So a zero-rate period is settled by `bindPeriod` WITHOUT
+///         a distribution: it moves straight to `Settled` with `distributionId == 0`, which is
+///         what lets `recordRedemption` reach maturity. Before 2026-09-08 a zero-coupon note
+///         could never redeem, because every period had to be Settled or Defaulted and neither
+///         was reachable.
 /// @dev    ⚠️ THIS MODELS AN ISSUER-FUNDED LIABILITY, NOT A PASS-THROUGH. The issuer owes the
 ///         coupon and funds it. An instrument where the cash flow is a third-party borrower's
 ///         repayments and the credit loss lands on the holder — a loan participation — is the
@@ -72,21 +80,14 @@ contract CouponSchedule {
     // ═══════════════════════════════════════════════════════════════════════
 
     address public immutable governance;
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
+
+    /// @dev Interface-typed, settable, never null — the standing rule. Setters at the foot.
+    /// @dev `token` is READ, not decorative: `bindPeriod` and `recordRedemption` reconcile the
+    ///      distribution's `totalUnits` against `token.totalSupply()`. The snapshot leaf sum
+    ///      is the agent's number; the supply is the ledger's. They must agree, or the
+    ///      distribution pays a register that is not this instrument's register. Until
+    ///      2026-09-08 the reference was held and read by nothing.
     ISecurityToken public token;
-        /// @dev ⚠️ Concrete type retained DELIBERATELY, and it is a known gap. This dependency
-    ///      returns a struct/enum, which a narrow interface cannot declare without
-    ///      duplicating the type — and a duplicated struct is a DIFFERENT type to the
-    ///      compiler, so every call site here would break. Closing it means moving the
-    ///      shared types into `Interfaces.sol` and having the concrete contract import
-    ///      them from there. Until then the `immutable` half of the rule is satisfied
-    ///      (settable below) and the coupling half is not.
     IDistributionSink public distributions;
 
     /// @notice Face value of one smallest token unit, in wei.
@@ -118,6 +119,11 @@ contract CouponSchedule {
 
     /// @notice Set once, at redemption. After this the instrument pays nothing further.
     bool public redeemed;
+
+    /// @dev Every distribution id this schedule has bound — to a period or to the redemption.
+    ///      One distribution carries one period's cash; binding it twice would let a single
+    ///      funded pool "settle" two periods' liabilities.
+    mapping(uint256 => bool) public distributionBound;
 
     mapping(address => bool) public isAgent;
 
@@ -158,10 +164,19 @@ contract CouponSchedule {
     error NotAtMaturity(uint64 maturityDate);
     error UnsettledPeriodsRemain(uint256 index);
     error MaturityBeforeLastPeriod(uint64 maturityDate, uint64 lastPeriodEnd);
+    /// @dev A zero-rate period takes no distribution; pass `distributionId == 0`.
+    error ZeroCouponPeriodTakesNoDistribution(uint256 index, uint256 distributionId);
+    /// @dev Nothing was owed for this period, so nothing can be in default.
+    error NothingOwed(uint256 index);
+    error DistributionAlreadyBound(uint256 distributionId);
+    error DistributionRequired();
+    /// @dev The distribution's `totalUnits` does not equal the token's current supply. Supply
+    ///      moved between the record block and the bind, or the agent anchored the wrong
+    ///      register — either way the pool would pay a register that is not this one.
+    error SupplyMismatch(uint256 tokenSupply, uint256 distributionUnits);
 
-    /// @dev ⚠️ Used by the dependency setters but never declared, so this file did not compile.
-    ///      Guards the "swap, never unset" rule — an unset reference reads as "not owed" and
-    ///      turns a control off silently.
+    /// @dev Guards the "swap, never unset" rule — an unset reference reads as "not owed" and
+    ///      turns a control off silently. Raised by the constructor and every setter.
     error ZeroAddress();
 
     modifier onlyGovernance() {
@@ -192,6 +207,7 @@ contract CouponSchedule {
         uint64[] memory periodBoundaries
     ) {
         if (periodBoundaries.length < 2) revert NoPeriods();
+        if (governance_ == address(0) || token_ == address(0) || distributions_ == address(0)) revert ZeroAddress();
 
         governance = governance_;
         token = ISecurityToken(token_);
@@ -202,6 +218,8 @@ contract CouponSchedule {
         periodsPerYear = periodsPerYear_;
         maturityDate = maturityDate_;
         gracePeriod = gracePeriod_;
+        emit DependencySet("token", token_);
+        emit DependencySet("distributions", distributions_);
 
         for (uint256 i = 1; i < periodBoundaries.length; i++) {
             if (periodBoundaries[i] <= periodBoundaries[i - 1]) revert PeriodsOutOfOrder(i);
@@ -280,19 +298,48 @@ contract CouponSchedule {
     ///         one place the two numbers can be compared, and comparing them is the only
     ///         reason this function exists rather than the two contracts simply ignoring each
     ///         other.
+    /// @dev    Three reconciliations, in order: the distribution is not already carrying
+    ///         another period; its per-unit rate is this period's coupon; its `totalUnits` is
+    ///         the token's supply. The third is the one that catches a snapshot of the wrong
+    ///         register. ⚠️ It reads supply NOW, not at the record block — so supply must not
+    ///         move between the record block and the bind, and a mismatch is the signal that
+    ///         it did (or that the wrong root was anchored). Either is a stop.
+    /// @dev    ZERO-RATE PERIODS: `couponPerUnit(index) == 0` means nothing is owed, no
+    ///         distribution can exist for it (`DistributionAgent` refuses a zero rate), and the
+    ///         period settles here directly. `distributionId` must be 0 on that call.
     function bindPeriod(uint256 index, uint256 distributionId) external onlyAgent {
         Period storage p = _requirePeriod(index);
         if (p.state != PeriodState.Scheduled) revert WrongPeriodState(index, PeriodState.Scheduled, p.state);
         if (block.timestamp < p.endsAt) revert PeriodNotEnded(index, p.endsAt);
 
         uint256 expected = couponPerUnit(index);
-        Distribution memory d = distributions.distribution(distributionId);
-        if (d.ratePerUnit != expected) revert DistributionRateMismatch(expected, d.ratePerUnit);
 
+        if (expected == 0) {
+            if (distributionId != 0) revert ZeroCouponPeriodTakesNoDistribution(index, distributionId);
+            p.state = PeriodState.Settled;
+            emit PeriodSettled(index, 0);
+            return;
+        }
+
+        _reconcileDistribution(distributionId, expected);
+
+        distributionBound[distributionId] = true;
         p.state = PeriodState.Bound;
         p.distributionId = distributionId;
 
         emit PeriodBound(index, distributionId, expected);
+    }
+
+    /// @dev The shared reconciliation for a coupon period and for the redemption leg.
+    function _reconcileDistribution(uint256 distributionId, uint256 expectedRate) private view {
+        if (distributionId == 0) revert DistributionRequired();
+        if (distributionBound[distributionId]) revert DistributionAlreadyBound(distributionId);
+
+        Distribution memory d = distributions.distribution(distributionId);
+        if (d.ratePerUnit != expectedRate) revert DistributionRateMismatch(expectedRate, d.ratePerUnit);
+
+        uint256 supply = token.totalSupply();
+        if (d.totalUnits != supply) revert SupplyMismatch(supply, d.totalUnits);
     }
 
     function markSettled(uint256 index) external onlyAgent {
@@ -314,6 +361,7 @@ contract CouponSchedule {
     function declareDefault(uint256 index, bytes32 documentRef) external onlyAgent {
         Period storage p = _requirePeriod(index);
         if (p.state == PeriodState.Settled) revert WrongPeriodState(index, PeriodState.Bound, p.state);
+        if (couponPerUnit(index) == 0) revert NothingOwed(index);
         if (documentRef == bytes32(0)) revert DisclosureRefRequired();
 
         uint64 dueBy = p.endsAt + gracePeriod;
@@ -328,7 +376,11 @@ contract CouponSchedule {
     // ═══════════════════════════════════════════════════════════════════════
 
     /// @notice Marks the instrument redeemed at maturity, against the distribution carrying
-    ///         principal (plus the final coupon, if the terms pay them together).
+    ///         principal. ⚠️ PRINCIPAL ONLY: the distribution's `ratePerUnit` must equal
+    ///         `principalPerUnit` exactly, so a final coupon is its own period, bound through
+    ///         `bindPeriod`, never folded into the redemption leg. Before 2026-09-08 nothing here
+    ///         read the redemption distribution at all — any id, any rate, was accepted as
+    ///         "redeemed at par".
     /// @dev    ⚠️ DOES NOT BURN. Cancelling the units is `SecurityToken.burn`, called
     ///         separately by an agent AFTER the redemption distribution has actually been paid
     ///         out. Burning here would destroy the holdings that the snapshot for that very
@@ -344,6 +396,9 @@ contract CouponSchedule {
             PeriodState s = _periods[i].state;
             if (s != PeriodState.Settled && s != PeriodState.Defaulted) revert UnsettledPeriodsRemain(i);
         }
+
+        _reconcileDistribution(distributionId, principalPerUnit);
+        distributionBound[distributionId] = true;
 
         redeemed = true;
         emit Redeemed(distributionId, principalPerUnit, uint64(block.timestamp));

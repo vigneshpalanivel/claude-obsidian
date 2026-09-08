@@ -3,7 +3,7 @@ pragma solidity ^0.8.22;
 
 import {Distribution, DistributionState} from "./Interfaces.sol";
 
-import {ICompliance, IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
+import {ICompliance, IIdentityGate, IRestrictedParty, IProtocolPause} from "./Interfaces.sol";
 
 /// @title DistributionAgent (illustrative sample — not production code)
 /// @notice C1 + C2 — pays holders. Dividends, rental income, revenue share, and the cash leg
@@ -17,20 +17,44 @@ import {ICompliance, IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
 ///         a treasury wallet.
 /// @dev    ⚠️ AMLR Art 76 REACHES THE PAYOUT PATH. Nothing here may disclose WHY a holder was
 ///         not paid. `EntitlementUnclaimed` fires identically for a restricted wallet, an expired
-///         CDD record, a reverting recipient contract and a failed push — one event, four
-///         causes, no reason code. That indistinguishability IS the control; an "excluded
-///         from dividend" event that only ever fires for compliance reasons is a tipping-off
-///         disclosure with extra steps.
+///         CDD record, a module veto and a recipient whose push FAILED — one event, four causes,
+///         no reason code, and the same state afterwards (held in `unclaimedOf`, redeemable).
+///         That indistinguishability IS the control. ⚠️ Until 2026-09-08 this paragraph was
+///         false: a failed push REVERTED with `PayoutFailed(holder, amount)` while a gate failure
+///         held and emitted — so `EntitlementUnclaimed` fired ONLY for compliance reasons, which
+///         is the "excluded from dividend" tell M5 §3 warns about, naming the wallet in an
+///         indexed topic. Now the holder push is attempted first and a failure is held exactly
+///         like a veto; `PayoutFailed` survives only for the fee and withholding legs, which name
+///         the operator's own recipients and no holder. The design §5a cross-reference should
+///         read: "a payout that cannot be delivered, for ANY reason, becomes an unclaimed
+///         entitlement; the log does not say which."
 /// @dev    ⚠️ NO CLIENT MONEY RESTS HERE. § Scope keeps the platform out of the payment chain:
 ///         the issuer funds a distribution, the contract pushes it out, and between those two
 ///         acts the balance is committed to identified holders rather than held on the
 ///         operator's own account. Same posture as `SubscriptionEscrow` on the way in. An
 ///         operator that lets pools sit indefinitely is running a client-money business and
 ///         needs the authorisation that goes with it.
+/// @dev    ⚠️ ONE BALANCE, MANY DISTRIBUTIONS, ONE INVARIANT. Every distribution is paid from
+///         the same ETH balance, so the thing that stops distribution B spending distribution
+///         A's funding is arithmetic, not separation: `committedOf[id]` is fixed at open,
+///         `reservedWei` is the sum of what every open-or-closed distribution can still pay, and
+///         `address(this).balance >= reservedWei` is re-asserted after every movement of cash.
+///         Before 2026-09-08 none of that existed — an agent that anchored `totalUnits` below
+///         the leaf sum had later holders paid from another distribution's money until it ran
+///         dry mid-register, the exact "partial payment" §5a says must be impossible.
 contract DistributionAgent {
     // ═══════════════════════════════════════════════════════════════════════
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
+
+    /// @dev A withheld entitlement. `units` is the holder's record-block balance from the leaf,
+    ///      kept so `redeemUnclaimed` can re-run the gate with the SAME argument `distribute`
+    ///      used — a module that reasons about a unit amount must not be asked about zero.
+    struct Unclaimed {
+        uint256 amount;
+        uint256 units;
+    }
+
     // ═══════════════════════════════════════════════════════════════════════
     // ROLES & WIRING
     // ═══════════════════════════════════════════════════════════════════════
@@ -55,6 +79,11 @@ contract DistributionAgent {
     ///         Mandatory layer, same standing as `checkEligible`.
     IRestrictedParty public restrictions;
 
+    /// @notice The protocol pause (`DoraGovernor`). Read on `distribute`, `distributeMany` and
+    ///         `redeemUnclaimed` — the paths that push value to holders. NOT read on `fund`,
+    ///         `sweepUnclaimed` or `withdrawSurplus`: an incident is not a reason to trap cash.
+    IProtocolPause public protocolPause;
+
     /// @notice Where deducted fees and withheld tax go. Separate addresses because they are
     ///         owed to entirely different parties, and netting them into one recipient
     ///         destroys the evidence that either was correctly calculated.
@@ -68,6 +97,19 @@ contract DistributionAgent {
     uint256 public nextDistributionId = 1;
     mapping(uint256 => Distribution) private _distributions;
 
+    /// @notice `totalUnits × ratePerUnit`, fixed at `openDistribution`. The most this
+    ///         distribution may ever pay out or hold as unclaimed; `distribute` enforces it.
+    mapping(uint256 => uint256) public committedOf;
+
+    /// @notice When the unclaimed balance was swept, 0 while it has not been. Once set,
+    ///         `redeemUnclaimed` reverts `Swept` — the money left; the record of who was owed
+    ///         what stays in `unclaimedOf`.
+    mapping(uint256 => uint64) public sweptAt;
+
+    /// @notice Σ over every opened distribution of `committed − paidOut − swept`. Cash this
+    ///         contract must hold. See the contract note.
+    uint256 public reservedWei;
+
     /// @dev Paid, or moved to unclaimed. Either way this holder is done for this distribution.
     mapping(uint256 => mapping(address => bool)) public settled;
 
@@ -75,7 +117,7 @@ contract DistributionAgent {
     ///      resolved. ⚠️ A payout that cannot be pushed is not extinguished — the issuer still
     ///      owes it. Modelling it explicitly is the difference between a liability with a name
     ///      on it and value stranded in a contract nobody will admit is theirs.
-    mapping(uint256 => mapping(address => uint256)) public unclaimedOf;
+    mapping(uint256 => mapping(address => Unclaimed)) public unclaimedOf;
 
     uint16 public constant MAX_BPS = 10_000;
 
@@ -98,8 +140,9 @@ contract DistributionAgent {
     event DistributionDeclared(uint256 indexed id, uint64 recordBlock, uint256 ratePerUnit, uint16 feeBps);
     event SnapshotAnchored(uint256 indexed id, bytes32 snapshotRoot, uint256 totalUnits, uint256 grossRequired);
     event DistributionFunded(uint256 indexed id, uint256 amount, uint256 fundedTotal);
-    event DistributionOpened(uint256 indexed id, uint256 grossRequired);
+    event DistributionOpened(uint256 indexed id, uint256 committed);
     event DistributionClosed(uint256 indexed id, uint256 paidOut, uint256 unclaimed);
+    event SurplusWithdrawn(address indexed to, uint256 amount);
 
     event EntitlementPaid(uint256 indexed id, address indexed holder, uint256 gross, uint256 fee, uint256 withheld);
 
@@ -116,6 +159,7 @@ contract DistributionAgent {
     error NotAgent();
     error ZeroAddress();
     error Reentrancy();
+    error ProtocolPaused();
     error UnknownDistribution(uint256 id);
     error WrongState(uint256 id, DistributionState expected, DistributionState actual);
     error RecordBlockMustBeFuture(uint64 recordBlock);
@@ -124,11 +168,21 @@ contract DistributionAgent {
     error ZeroUnits();
     error BpsOutOfRange(uint16 bps);
     error PoolNotFullyFunded(uint256 id, uint256 funded, uint256 required);
+    /// @dev The per-distribution spend invariant: `paidOut + unclaimed + gross > committed`.
+    ///      Reached only through a snapshot whose leaves sum past `totalUnits` — it is the
+    ///      on-chain half of the reconciliation `anchorSnapshot` says must happen off-chain.
+    error DistributionOverspent(uint256 id, uint256 committed, uint256 wouldReach);
+    /// @dev The contract-level solvency invariant: `balance < reservedWei` after a movement.
+    error ReserveBreached(uint256 balance, uint256 reservedWei);
+    error SurplusExceeded(uint256 requested, uint256 withdrawable);
     error AlreadySettled(uint256 id, address holder);
     error BadProof(uint256 id, address holder);
     error NothingUnclaimed(uint256 id, address holder);
     error ClaimDeadlineNotPassed(uint256 id, uint64 deadline);
     error NoSweepConfigured(uint256 id);
+    error Swept(uint256 id, uint64 sweptAt);
+    /// @dev Fee / withholding leg only. Names the operator's own recipient, never a holder —
+    ///      a holder-side failure is held, not reverted (see the Art 76 note).
     error PayoutFailed(address to, uint256 amount);
     error RecipientsNotSet();
 
@@ -149,23 +203,32 @@ contract DistributionAgent {
         _locked = 1;
     }
 
-    constructor(address governance_, address identity_, address compliance_, address restrictions_) {
+    constructor(
+        address governance_,
+        address identity_,
+        address compliance_,
+        address restrictions_,
+        address protocolPause_
+    ) {
         if (governance_ == address(0) || identity_ == address(0)) revert ZeroAddress();
         if (compliance_ == address(0) || restrictions_ == address(0)) revert ZeroAddress();
+        if (protocolPause_ == address(0)) revert ZeroAddress();
         governance = governance_;
         identity = IIdentityGate(identity_);
         compliance = ICompliance(compliance_);
         restrictions = IRestrictedParty(restrictions_);
+        protocolPause = IProtocolPause(protocolPause_);
         emit DependencySet("identity", identity_);
         emit DependencySet("compliance", compliance_);
         emit DependencySet("restrictions", restrictions_);
+        emit DependencySet("protocolPause", protocolPause_);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
     // DEPENDENCIES
     // ═══════════════════════════════════════════════════════════════════════
     //
-    // ⚠️ ALL THREE ARE SWAPPABLE AND NONE MAY BE UNSET. Every reference this agent holds is read
+    // ⚠️ ALL FOUR ARE SWAPPABLE AND NONE MAY BE UNSET. Every reference this agent holds is read
     //    on the payout path, so a null one is not "control not owed", it is the control silently
     //    gone. `identity` and `compliance` had no setter before 2026-09-08 — that was an oversight
     //    against the standing rule, and it meant a resilience event affecting either forced a
@@ -190,6 +253,13 @@ contract DistributionAgent {
         if (impl == address(0)) revert ZeroAddress();
         restrictions = IRestrictedParty(impl);
         emit DependencySet("restrictions", impl);
+    }
+
+    /// @notice Re-point the protocol pause. Swap, never unset.
+    function setProtocolPause(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        protocolPause = IProtocolPause(impl);
+        emit DependencySet("protocolPause", impl);
     }
 
     function setAgent(address agent, bool allowed) external onlyGovernance {
@@ -251,7 +321,9 @@ contract DistributionAgent {
     ///         a wrong root being anchored in the first place. That is caught by
     ///         reconciliation, not by this contract — and an operator who does not actually
     ///         run that reconciliation has an unverified number wearing a cryptographic
-    ///         costume.
+    ///         costume. What the contract DOES now catch is the consequence: a leaf sum that
+    ///         exceeds `totalUnits` trips `DistributionOverspent` on the holder that crosses
+    ///         the line, instead of being paid from another distribution's funding.
     function anchorSnapshot(uint256 id, bytes32 snapshotRoot, uint256 totalUnits) external onlyAgent {
         Distribution storage d = _requireState(id, DistributionState.Declared);
         if (block.number <= d.recordBlock) revert RecordBlockNotReached(id, d.recordBlock);
@@ -265,6 +337,8 @@ contract DistributionAgent {
     }
 
     /// @notice Step 3. Fund the pool. May be called repeatedly until it covers the snapshot.
+    /// @dev    `funded` is PER DISTRIBUTION — every wei deposited is attributed to exactly one
+    ///         id, so `openDistribution` cannot count another distribution's deposit.
     function fund(uint256 id) external payable onlyAgent {
         Distribution storage d = _distributions[id];
         if (d.state != DistributionState.Snapshotted && d.state != DistributionState.Open) {
@@ -282,20 +356,41 @@ contract DistributionAgent {
     ///         the snapshot gross in full, or the distribution does not open. Note the test is
     ///         against GROSS — fee and withholding are deducted from each holder's entitlement
     ///         and forwarded, not skimmed off the pool to make it stretch.
+    /// @dev    Two tests, both needed. `funded >= committed` says this distribution's own
+    ///         deposits cover it; `balance >= reservedWei` (after adding this commitment) says
+    ///         the cash is still here — a deposit that `withdrawSurplus` took back out before
+    ///         open would pass the first and fail the second.
     function openDistribution(uint256 id) external onlyAgent {
         Distribution storage d = _requireState(id, DistributionState.Snapshotted);
 
-        uint256 required = d.totalUnits * d.ratePerUnit;
-        if (d.funded < required) revert PoolNotFullyFunded(id, d.funded, required);
+        uint256 committed = d.totalUnits * d.ratePerUnit;
+        if (d.funded < committed) revert PoolNotFullyFunded(id, d.funded, committed);
+
+        committedOf[id] = committed;
+        reservedWei += committed;
+        _requireSolvent();
 
         d.state = DistributionState.Open;
-        emit DistributionOpened(id, required);
+        emit DistributionOpened(id, committed);
     }
 
     function closeDistribution(uint256 id) external onlyAgent {
         Distribution storage d = _requireState(id, DistributionState.Open);
         d.state = DistributionState.Closed;
         emit DistributionClosed(id, d.paidOut, d.unclaimed);
+    }
+
+    /// @notice Governance takes back cash no distribution can still pay: over-funding, and
+    ///         deposits against distributions that never opened.
+    function withdrawSurplus(address to, uint256 amount) external onlyGovernance nonReentrant {
+        if (to == address(0)) revert ZeroAddress();
+        uint256 withdrawable = _surplus();
+        if (amount > withdrawable) revert SurplusExceeded(amount, withdrawable);
+
+        (bool ok, ) = payable(to).call{value: amount}("");
+        if (!ok) revert PayoutFailed(to, amount);
+        _requireSolvent();
+        emit SurplusWithdrawn(to, amount);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -308,6 +403,7 @@ contract DistributionAgent {
     ///         dependent on the operator continuing to run a batch job.
     /// @param units The holder's balance at the record block, as it appears in the leaf.
     function distribute(uint256 id, address holder, uint256 units, bytes32[] calldata proof) public nonReentrant {
+        if (protocolPause.paused()) revert ProtocolPaused();
         Distribution storage d = _requireState(id, DistributionState.Open);
         if (settled[id][holder]) revert AlreadySettled(id, holder);
 
@@ -318,15 +414,14 @@ contract DistributionAgent {
 
         uint256 gross = units * d.ratePerUnit;
 
-        // ── the C1 gate ──────────────────────────────────────────────────
-        if (!_gate(d, holder, units)) {
-            d.unclaimed += gross;
-            unclaimedOf[id][holder] = gross;
-            emit EntitlementUnclaimed(id, holder, gross);
-            return;
-        }
+        // ── the spend invariant ──────────────────────────────────────────
+        uint256 wouldReach = d.paidOut + d.unclaimed + gross;
+        if (wouldReach > committedOf[id]) revert DistributionOverspent(id, committedOf[id], wouldReach);
 
-        _settleTo(id, d, holder, gross);
+        // ── the C1 gate, then the push; either failing lands in the same place ──
+        if (!_gate(d, holder, units) || !_settleTo(id, d, holder, gross)) {
+            _hold(id, d, holder, gross, units);
+        }
     }
 
     /// @notice Batch form. Same rules, one transaction.
@@ -346,7 +441,7 @@ contract DistributionAgent {
     /// @dev    ⚠️ TWO LAYERS, AND ONLY THE FIRST IS MANDATORY — a deliberate choice with a
     ///         cost. TWO reads are always run — `IdentityRegistry.isEligible` for the lapsed
     ///         CDD record and the missing claim, and `RestrictedPartyRegistry.isBlocked` for every
-    ///         wallet-level stop there is. Together that is the whole of what AMLR Arts 20/75
+    ///         wallet-level stop there is. Together that is the whole of what AMLR Arts 21, 75
     ///         and TFS require here. The restriction read is separate because the freeze flag no
     ///         longer lives on the identity record; folding it back in would recreate the
     ///         two-store leak that removal was meant to close. The rule MODULES are
@@ -366,7 +461,12 @@ contract DistributionAgent {
         return true;
     }
 
-    function _settleTo(uint256 id, Distribution storage d, address holder, uint256 gross) private {
+    /// @dev Attempts the payout. Returns false — with NO state changed and NO cash moved — if
+    ///      the holder's push fails, so the caller holds it exactly as it would a gate veto.
+    ///      The holder leg goes FIRST for that reason: fee and withholding are forwarded only
+    ///      once the holder has actually been paid, so a held entitlement carries its whole
+    ///      gross and the deductions are taken at redemption instead.
+    function _settleTo(uint256 id, Distribution storage d, address holder, uint256 gross) private returns (bool) {
         uint256 fee = (gross * d.feeBps) / MAX_BPS;
         uint256 withheld = (gross * d.withholdingBps) / MAX_BPS;
         // Any rounding remainder stays with the holder. Deliberate: it is their money, and a
@@ -374,32 +474,51 @@ contract DistributionAgent {
         // document does not describe.
         uint256 net = gross - fee - withheld;
 
+        (bool ok, ) = payable(holder).call{value: net}("");
+        if (!ok) return false;
+
         d.paidOut += gross;
+        reservedWei -= gross;
 
         if (fee > 0) _send(feeRecipient, fee);
         if (withheld > 0) _send(taxRecipient, withheld);
-        _send(holder, net);
+        _requireSolvent();
 
         emit EntitlementPaid(id, holder, gross, fee, withheld);
+        return true;
+    }
+
+    /// @dev One landing place for every undelivered entitlement. See the Art 76 note.
+    function _hold(uint256 id, Distribution storage d, address holder, uint256 gross, uint256 units) private {
+        d.unclaimed += gross;
+        unclaimedOf[id][holder] = Unclaimed({amount: gross, units: units});
+        emit EntitlementUnclaimed(id, holder, gross);
     }
 
     /// @notice A holder whose entitlement was withheld collects it once the block is gone —
     ///         the restriction lifted, the CDD record refreshed, the recipient contract fixed.
     /// @dev    Callable by the holder themselves, deliberately. A withheld payout that only the
     ///         operator can release is an operator liability the holder cannot enforce.
+    /// @dev    The gate is re-run with the holder's ORIGINAL record-block units, not zero — a
+    ///         payout-aware module asked about a zero-unit movement answers a different
+    ///         question. One error for "nothing held", "gate still closed" and "push still
+    ///         fails": the caller is the holder, so nothing is disclosed to a third party, and
+    ///         a distinct error for the gate would be the reason code Art 76 forbids.
     function redeemUnclaimed(uint256 id) external nonReentrant {
+        if (protocolPause.paused()) revert ProtocolPaused();
         Distribution storage d = _distributions[id];
         if (d.state == DistributionState.None) revert UnknownDistribution(id);
+        if (sweptAt[id] != 0) revert Swept(id, sweptAt[id]);
 
-        uint256 amount = unclaimedOf[id][msg.sender];
-        if (amount == 0) revert NothingUnclaimed(id, msg.sender);
-        if (!_gate(d, msg.sender, 0)) revert NothingUnclaimed(id, msg.sender);
+        Unclaimed memory u = unclaimedOf[id][msg.sender];
+        if (u.amount == 0) revert NothingUnclaimed(id, msg.sender);
+        if (!_gate(d, msg.sender, u.units)) revert NothingUnclaimed(id, msg.sender);
 
-        unclaimedOf[id][msg.sender] = 0;
-        d.unclaimed -= amount;
+        delete unclaimedOf[id][msg.sender];
+        d.unclaimed -= u.amount;
 
-        _settleTo(id, d, msg.sender, amount);
-        emit UnclaimedRedeemed(id, msg.sender, amount);
+        if (!_settleTo(id, d, msg.sender, u.amount)) revert NothingUnclaimed(id, msg.sender);
+        emit UnclaimedRedeemed(id, msg.sender, u.amount);
     }
 
     /// @notice Returns still-unclaimed value to the issuer after the deadline.
@@ -409,14 +528,22 @@ contract DistributionAgent {
     ///         does is stop value sitting in a contract indefinitely while leaving a permanent
     ///         record of the amount and the holder it was owed to. `claimDeadline == 0` — the
     ///         safer default — disables the sweep entirely.
+    /// @dev    Per-holder `unclaimedOf` entries are NOT zeroed — the contract cannot enumerate
+    ///         them, and they are the record of who was owed what. `sweptAt[id]` is the single
+    ///         flag that turns every later `redeemUnclaimed` on this id into `Swept`. Before
+    ///         2026-09-08 a redeem after a sweep underflowed `d.unclaimed`.
     function sweepUnclaimed(uint256 id, address to) external onlyAgent nonReentrant {
         Distribution storage d = _requireState(id, DistributionState.Closed);
         if (d.claimDeadline == 0) revert NoSweepConfigured(id);
         if (block.timestamp <= d.claimDeadline) revert ClaimDeadlineNotPassed(id, d.claimDeadline);
+        if (sweptAt[id] != 0) revert Swept(id, sweptAt[id]);
 
         uint256 amount = d.unclaimed;
         d.unclaimed = 0;
+        sweptAt[id] = uint64(block.timestamp);
+        reservedWei -= amount;
         _send(to, amount);
+        _requireSolvent();
         emit UnclaimedSwept(id, amount, to);
     }
 
@@ -424,9 +551,19 @@ contract DistributionAgent {
     // INTERNALS
     // ═══════════════════════════════════════════════════════════════════════
 
+    /// @dev Reverting send — fee, withholding and sweep legs only. Never a holder.
     function _send(address to, uint256 amount) private {
         (bool ok, ) = payable(to).call{value: amount}("");
         if (!ok) revert PayoutFailed(to, amount);
+    }
+
+    function _requireSolvent() private view {
+        if (address(this).balance < reservedWei) revert ReserveBreached(address(this).balance, reservedWei);
+    }
+
+    function _surplus() private view returns (uint256) {
+        uint256 bal = address(this).balance;
+        return bal > reservedWei ? bal - reservedWei : 0;
     }
 
     function _requireState(uint256 id, DistributionState expected) private view returns (Distribution storage d) {
@@ -458,9 +595,26 @@ contract DistributionAgent {
         return d.totalUnits * d.ratePerUnit;
     }
 
+    /// @notice The contract-level invariant: cash every opened distribution can still pay.
+    ///         `address(this).balance` must never fall below it.
+    function totalCommittedOutstanding() external view returns (uint256) {
+        return reservedWei;
+    }
+
+    /// @notice Cash above the reservation — what `withdrawSurplus` may take right now.
+    function surplus() external view returns (uint256) {
+        return _surplus();
+    }
+
     /// @notice What a holder would receive today, and whether the gate currently lets them.
-    ///         Reviewer- and UI-facing. ⚠️ `eligible` must NOT be surfaced to the holder as a
-    ///         reason — it is the same AMLR Art 76 boundary `CovenantRegistry.diagnose` draws.
+    /// @dev    ⚠️ A READ ANYONE CAN MAKE, AND IT MUST NOT BE SURFACED IN HOLDER UIs. `eligible`
+    ///         is the answer to "is this wallet blocked?", and this contract cannot stop a
+    ///         caller asking it about somebody else — a `view` has no caller-scoping worth the
+    ///         name. It exists for the operator's reconciliation desk and for the auditor. The
+    ///         design-level rule (same boundary `CovenantRegistry.diagnose` draws) is that no
+    ///         investor-facing surface renders it, for the same AMLR Art 76 reason the event
+    ///         carries no reason code. A product that shows a holder "eligible: false" beside
+    ///         their dividend has built the tipping-off channel here on purpose.
     function preview(
         uint256 id,
         address holder,
