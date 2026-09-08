@@ -210,10 +210,15 @@ contract DocumentRegistry {
         }
     }
 
-    /// @notice Records that the NCA approved this version. `DoraGovernor.queueUpgrade` reads
-    ///         it and refuses to queue anything whose disclosure artefact is anchored but not
-    ///         approved — deploy-then-disclose inverts the statutory order and no timelock
-    ///         fixes it.
+    /// @notice Records that the NCA approved this version.
+    /// @dev    ⚠️ Read by `SubscriptionEscrow`'s Art 23(2) window opener, which reverts when a
+    ///         supplement is anchored but not approved — deploy-then-disclose inverts the
+    ///         statutory order and no timelock fixes it. The upgrade path used to revert on
+    ///         this too; it no longer does. The document hash now travels as the
+    ///         `TimelockController` salt and the check is an off-chain reconciliation job with
+    ///         a named owner (`UPGRADE-ARCHITECTURE.md` §5). So `approvedAt` is still load-
+    ///         bearing on the escrow path and evidence-only on the upgrade path — do not
+    ///         assume one guarantee covers both.
     function recordNcaApproval(bytes32 docRef, bytes32 versionHash, uint64 approvedAt) external onlyGovernance {
         Document storage doc = _documents[docRef];
         if (!doc.exists) revert UnknownDocument(docRef);

@@ -428,10 +428,15 @@ contract SubscriptionEscrow {
     /// @param opensAt/closesAt  Fed in off-chain against a real working-day calendar
     ///                          (TARGET2) — never computed on-chain from block.timestamp.
     /// @dev    ⚠️ The window can no longer be opened against a supplement that was never
-    ///         filed or never approved. This is the same gate `DoraGovernor.queueUpgrade`
-    ///         applies to a disclosure artefact, and for the same reason: Art 23(1) gives
-    ///         the NCA up to 5 working days, and approval and publication precede the thing
-    ///         they authorise. It does NOT close the other direction — nothing on-chain can
+    ///         filed or never approved. The reason is Art 23(1): the NCA has up to 5 working
+    ///         days, and approval and publication precede the thing they authorise.
+    ///         ⚠️ This is now the ONLY reverting document check left in the suite — the
+    ///         equivalent gate on the upgrade path was withdrawn in favour of carrying the
+    ///         document hash as the `TimelockController` salt and reconciling off-chain (see
+    ///         `UPGRADE-ARCHITECTURE.md`). The asymmetry is deliberate: opening a window is a
+    ///         mechanical consequence of a publication event with one answer a contract can
+    ///         compute, whereas deciding that a given code change is described by a given
+    ///         document is a judgement it cannot. It does NOT close the other direction — nothing on-chain can
     ///         force this call when a supplement is anchored — so anchoring a supplement
     ///         must remain a two-transaction operational step with a named owner. Emitting
     ///         the hash here is what lets an indexer reconcile the two sets and alarm on a

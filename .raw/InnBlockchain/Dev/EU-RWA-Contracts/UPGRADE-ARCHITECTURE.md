@@ -58,6 +58,20 @@ means a delay, in public, in front of the guardian who can cancel that too.
 ⚠️ **`ProxyAdmin`'s owner is the timelock, never the Safe.** Pointing it at the Safe removes the
 delay from the upgrade path completely.
 
+⚠️ **The Safe signer set is not the responsible-persons set, and Prospectus Art 11 makes that a
+composition rule, not a preference.** Art 11(1) names specific persons — with a function and a
+registered address — in the prospectus, and Art 11(2) attaches **civil liability** to them for
+information that turns out inaccurate or misleading. The prospectus describes this contract's
+behaviour. So if a signing quorum reachable **without** any named responsible person can schedule an
+upgrade that moves deployed behaviour away from disclosed behaviour, **those persons carry personal
+liability for a change they did not authorise.** Fix it in one of two places, and record which:
+
+- make the threshold unsatisfiable without at least one named responsible person, **or**
+- give every named responsible person `CANCELLER_ROLE` directly.
+
+Neither is a contract feature. Both are deployment configuration, and belong in
+`DEPLOYMENT-DEFAULTS.md` next to the role grants.
+
 ---
 
 ## 3. The convention: the document hash goes in the salt
@@ -89,6 +103,25 @@ reconciliation job with no owner is not a control.
 `CallSalt` at all, so "no event" is ambiguous between *no document needed* and *nobody bothered*.
 Use a constant sentinel — `keccak256("NO_DISCLOSURE_REQUIRED")` — so the absence is stated rather
 than inferred.
+
+⚠️ **"Which document?" has four possible answers and one of them is *none*. Decide before
+scheduling, not while drafting the release note.** The salt is one slot; the duty behind it is not
+uniform:
+
+| When | Duty | What goes in the salt |
+|---|---|---|
+| Between prospectus approval and the offer closing / trading starting, **whichever is later** | Prospectus **Art 23** supplement — NCA has 5 working days, then a 3-working-day withdrawal window opens | the supplement's version hash |
+| Instrument admitted to trading, outside that window | **MAR Art 17** disclosure of inside information — no NCA pre-approval, but see §9's Art 17(1a) problem | the announcement's hash |
+| ELTIF | **ELTIF Arts 23–24** — its own prospectus regime, distinct from the Prospectus Regulation | the ELTIF prospectus hash |
+| Retail in scope | **PRIIPs KID**, Art 10 review cadence — re-anchors, but opens **no** withdrawal window | the KID version hash |
+| Change is not material, or nothing above applies | none | `NO_DISCLOSURE_REQUIRED` |
+
+⚠️ **Art 23 is the one people over-apply.** Its window **closes** at offer close or start of trading,
+whichever is later. **Most upgrades in an instrument's life fall outside it** — they happen years
+after the offer closed, and owe MAR Art 17 or nothing at all, not a 5-working-day NCA clock. A
+rolling or reopened offer under a base prospectus re-enters the window each time, so the question is
+**per offer, not per instrument**. Getting this wrong in the safe direction is expensive rather than
+unsafe: it budgets weeks for releases that owe nothing.
 
 ---
 
