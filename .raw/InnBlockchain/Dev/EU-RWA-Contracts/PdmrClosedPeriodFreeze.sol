@@ -319,7 +319,7 @@ contract PdmrClosedPeriodFreeze {
         if (p.cancelled) return false;
         if (block.timestamp < p.scheduledAnnouncement - CLOSED_PERIOD)
             return false;
-        // The overrun case: scheduled date gone, nothing announced, freeze holds.
+        // The overrun case: scheduled date gone, nothing announced, freeze restrictions.
         if (
             p.actualAnnouncement != 0 && block.timestamp >= p.actualAnnouncement
         ) return false;

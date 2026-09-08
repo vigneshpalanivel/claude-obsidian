@@ -1,61 +1,103 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IIdentityGate, ISanctionsCheck} from "./Interfaces.sol";
+import {IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
 
-/// @title SanctionsRegistry (illustrative sample — not production code)
-/// @notice The platform-wide, person-scoped block store. One instance across every asset the
-///         operator tokenizes — the same instancing as `IdentityRegistry`, and forced by the
-///         same reasoning: a listing is against a *person*, not against a product.
-/// @dev    ⚠️ WHY THIS IS NOT A CLAIM ON `IdentityRegistry`. Four reasons, and the last one is
-///         the one that is usually missed:
+/// @title RestrictedPartyRegistry (illustrative sample — not production code)
+/// @notice The platform-wide, person-scoped store of **every reason a wallet may not move**.
+///         One instance across every asset the operator tokenizes — the same instancing as
+///         `IdentityRegistry`, and forced by the same reasoning: a restriction is against a
+///         *person*, not against a product.
 ///
-///         (1) SCOPE. `IdentityRegistry` is one-per-platform; `SecurityToken`'s own freeze is
-///             one-per-asset. Put the flag on the token and a single list hit becomes N
-///             transactions with a window in between, during which the listed person is frozen
-///             on asset A and exiting through asset B.
+/// @dev    ⚠️ NAMING RULE, AND IT IS LOAD-BEARING — READ BEFORE RENAMING ANYTHING HERE.
+///         Three different controls in this folder stop value from moving, and they were
+///         colliding on the word "hold" and the word "freeze". They are now kept apart by
+///         WHAT THEY ACT ON:
 ///
-///         (2) SCOPE OF THE OBLIGATION. Every other compliance module in this suite answers to
-///             a regime a given client may or may not owe, and a client who does not owe it
-///             empties that part of the rule set. Targeted financial sanctions are not like
-///             that: they bind irrespective of whether the entity is an obliged entity under
-///             the money-laundering regime at all. Bundle this into the AML claim set and the
-///             unlicensed pure issuer who *correctly* drops the AML modules silently drops
-///             sanctions with them. Separated here so that dropping one cannot drop the other.
+///           • **This contract — a PARTY.** A person or a wallet, for any reason, indefinitely,
+///             until governance lifts it. `RestrictedParty*`.
+///           • **`SecurityToken.freezeUnits` — UNITS.** A parcel inside an otherwise live
+///             wallet. `freeze*` / `frozenUnits`.
+///           • **`HoldingPeriodLock` / `PdmrClosedPeriodFreeze` — a PERIOD.** A date restriction
+///             that expires on its own. `Holding*` / `ClosedPeriod*`.
 ///
-///             ⚠️ THE CODE DOES NOT ENFORCE THAT — DELIBERATELY, AND THIS IS THE ONE PLACE IT
-///             IS RECORDED. `SanctionsGate` is an ordinary module: governance can remove it
-///             exactly as it would remove an ELTIF module. A hard non-removable flag was
-///             considered and rejected, because replacing this gate — a fix, a re-point, a new
-///             store — goes through `removeModule`, and a flag that blocks removal blocks the
-///             upgrade path with it. The control is instead a DEPLOYMENT DEFAULT: this gate is
-///             in the baseline module set every deployment wires, for every lane, and removing
-///             it is an explicit act with a `ModuleRemoved` event to monitor. See
-///             `DEPLOYMENT-DEFAULTS.md`.
+///         ⚠️ THE NAME `Freeze` WAS CONSIDERED FOR THIS CONTRACT AND REJECTED. `freezeUnits`
+///         already exists one file away and also stops value moving, so an agent told to
+///         "freeze the wallet" would reach for `freezeUnits(wallet, fullBalance)` — which
+///         compiles, works, and rebuilds the two-store observability leak this contract was
+///         consolidated to remove. `Hold` was rejected because it reads as `HoldingPeriodLock`.
 ///
-///             Note also that a routine update never needs removal at all: `setSanctions` on
-///             the gate re-points the store, and `setIdentity` here re-points the resolver.
-///             Removal is for retiring the control, which is what should be conspicuous.
+///         ⚠️ THE NAME MUST ALSO STAY CLASS-NEUTRAL. `SanctionsRegistry` — what this was called
+///         until 2026-09-08 — is unusable now that one store carries every reason, because
+///         membership of a store named "Sanctions" IS the disclosure, whatever the revert says.
+///         The same objection kills `Watchlist`, `Suspicion` and `DeniedParty`.
 ///
-///         (3) LIFECYCLE. A claim is revoked by its issuer and carries a refresh cadence. A
-///             listing is list-driven, instant on the EXISTING base, and never expires — only
-///             a delisting clears it. Modelled as "absence of a sanctions-clear claim", a list
-///             update means revoking N claims, which is the unbounded sweep the covenant design
-///             already rules out. Here the sweep stays off-chain and only its completion is
-///             anchored.
+///         In prose below, "a probate hold" and "a lost-key hold" survive as the names of real
+///         legal instruments. They are never a name for this contract, its flag, or its gate.
 ///
-///         (4) OBSERVABILITY — the tipping-off argument, and the decisive one. Public storage
-///             is readable by anyone willing to simulate. If a listing lives in the token's
-///             freeze slot, a lapsed refresh in claim expiry, and a suspicion block somewhere
-///             third, then a single generic revert code is cosmetic: an observer reads the
-///             three slots and knows which class fired. ONE STORE, ONE FLAG makes the classes
-///             indistinguishable by construction rather than by developer discipline.
+/// @dev    ⚠️ ONE STORE FOR ALL RESTRICTIONS, AND THAT IS THE WHOLE DESIGN. A sanctions listing, an
+///         AMLR Art 75 suspicion block, a probate hold, a court attachment, a lost-key hold and
+///         an operational hold pending investigation ALL set the same flag and emit the same
+///         event shape. There is no class field and no reason code anywhere in this contract.
 ///
-/// @dev    ⚠️ THIS STORE HOLDS THE WHOLE OPAQUE BLOCK CLASS, NOT ONLY SANCTIONS. A listing, a
-///         suspicion block, and a lapsed-diligence block all set the same flag and emit the
-///         same event shape. `caseRef` is mandatory and opaque for every entry precisely so
-///         that entries cannot be told apart by shape. Which class an entry belongs to lives in
-///         the off-chain case file the FIU reads, and nowhere else.
+///         Two of those reasons must never be disclosed — telling a customer they are under
+///         analysis is an individual criminal offence in most Member States. The rest are
+///         ordinary and the holder usually knows already. The tempting design is therefore to
+///         split them: ordinary restrictions on `IdentityRegistry`, secret ones here.
+///
+///         **That fails, and it fails for a reason that has nothing to do with error messages.**
+///         Contract storage is public. An observer does not need to simulate a transfer or read
+///         a revert — they read the slot. Two stores means an observer sees WHICH store a person
+///         is in, so the secret class is identified by the store that holds it. Worse, once both
+///         exist the generic revert becomes the tell: getting `TransferNotPermitted` instead of
+///         a named error is itself the disclosure. Matching the error strings does not help.
+///         Indistinguishability has to come from there being nothing to compare.
+///
+///         So this store is not "the sanctions store". It is the only place in the suite where a
+///         wallet-level stop lives, and `IdentityRegistry.freeze` was REMOVED in favour of it.
+///
+/// @dev    ⚠️ TWO WRITE ROLES, ONE FLAG. `isScreeningOperator` is the list-screening function —
+///         typically a vendor key running daily against a consolidated list. `isRestrictionRegistrar`
+///         is the ordinary operations function that records a probate hold or a court order.
+///         They are separate keys because they are separate jobs with separate blast radii, and
+///         the screening vendor has no business recording a death.
+///
+///         They write the SAME entry, into the SAME mapping, emitting the SAME event. Recording
+///         which role wrote an entry would be a class field by the back door and is not done.
+///         The consequence is accepted deliberately: on-chain you cannot tell an operations hold
+///         from a listing, including for the purpose of deciding who may lift it. That is why
+///         **removal is governance-only for both** — neither operator can lift the other's work,
+///         and the segregation that a class field would have bought is bought instead by making
+///         the releasing direction the privileged one.
+///
+/// @dev    ⚠️ WHY THIS IS A SEPARATE CONTRACT FROM `IdentityRegistry` AT ALL. Not scope —
+///         `IdentityRegistry` is also one-per-platform and also person-indexed, so that argument
+///         proves nothing. Three things do:
+///
+///         (1) NOT EVERY HELD ADDRESS HAS AN INVESTOR RECORD. `_blockedWallets` holds unhosted
+///             counterparties and addresses flagged by chain analytics that were never
+///             onboarded. `IdentityRegistry` is a register OF REGISTERED INVESTORS; there is no
+///             `Investor` struct to hang the flag on. Hosting this there means bolting a
+///             parallel non-investor mapping onto the identity registry, which is precisely the
+///             thing that does not belong in it.
+///
+///         (2) THE SCREENING PROGRAMME IS NOT IDENTITY DATA. `listVersion`, `sweptToVersion`,
+///             `sweptAt`, `maxSweepLag` and the permitted-destination register describe a
+///             screening programme and a freezing-order mechanic, not a person. `screeningIsStale()`
+///             blocks mints — put it on `IdentityRegistry` and the identity registry now holds
+///             an opinion about whether the operator's screening vendor is up to date.
+///
+///         (3) WRITER BLAST RADIUS. The screening operator is a vendor key writing daily. On
+///             `IdentityRegistry` that key would sit in the same contract as tier, jurisdiction
+///             and claims.
+///
+/// @dev    ⚠️ ONE LEAK REMAINS AND IT IS NOT CLOSED HERE. `SecurityToken.freezeUnits` is an
+///         amount-level freeze with its own public `frozenUnits` mapping, kept because a partial
+///         freeze over a disputed or collateralised parcel is a genuinely different mechanic.
+///         An agent who freezes 100% of a wallet's units through it reproduces exactly the
+///         two-slot problem described above. Nothing in the code prevents that. **Wallet-level
+///         stops belong here; `freezeUnits` is for partial parcels only**, and that is an
+///         operational rule with no on-chain enforcement behind it.
 /// @dev    ⚠️ WHAT THIS CONTRACT DOES NOT SOLVE — stated rather than papered over. The venue
 ///         lane is not authorisable on a public L1 and the issuer lane does not need a
 ///         consortium chain, so an operator running both lands on TWO chains, and "one instance
@@ -63,9 +105,9 @@ import {IIdentityGate, ISanctionsCheck} from "./Interfaces.sol";
 ///         deployment, and cross-chain propagation is not atomic. `listVersion` and
 ///         `sweptToVersion` exist so the lag is at least *measurable* per chain; closing it is
 ///         an operational commitment with a stated worst-case, not something a contract can do.
-contract SanctionsRegistry is ISanctionsCheck {
+contract RestrictedPartyRegistry is IRestrictedParty {
     // ═══════════════════════════════════════════════════════════════════════
-    // THE ENTRY — one shape for every class of person-scoped block
+    // THE ENTRY — one shape for every class of person-scoped restriction
     // ═══════════════════════════════════════════════════════════════════════
 
     /// @dev No class field, deliberately. See the observability note above.
@@ -79,10 +121,20 @@ contract SanctionsRegistry is ISanctionsCheck {
 
     address public immutable governance;
 
-    /// @notice Writes blocks off the back of a screening run. Separate from `governance` for
-    ///         the same reason `IdentityRegistry` separates the registrar: screening is a daily
-    ///         operational function and upgrade authority is not.
+    /// @notice Writes restrictions off the back of a screening run against a consolidated list.
+    ///         Separate from `governance` for the same reason `IdentityRegistry` separates the
+    ///         registrar: screening is a daily operational function and upgrade authority is
+    ///         not. Also the only role that may advance the list version or anchor a sweep —
+    ///         those are screening-programme facts and no other function owns them.
     mapping(address => bool) public isScreeningOperator;
+
+    /// @notice Writes the ordinary restrictions: probate pending, court attachment, lost-key hold,
+    ///         customer request, operational hold pending investigation.
+    /// @dev    A separate key from the screening operator because it is a separate job — the
+    ///         screening vendor should not be able to record a death, and the operations desk
+    ///         should not be able to advance the sanctions list version. What they cannot be is
+    ///         separate STORAGE; see the one-store note on the contract.
+    mapping(address => bool) public isRestrictionRegistrar;
 
     // ─────────────────────────── dependencies ─────────────────────────────────
 
@@ -105,14 +157,22 @@ contract SanctionsRegistry is ISanctionsCheck {
     ///         clear the other.
     mapping(address => Entry) private _blockedWallets;
 
-    /// @notice Destinations a blocked holding may be moved TO despite the sender being blocked.
+    /// @notice Destinations a restricted position may be moved TO despite the sender being restricted.
     /// @dev    ⚠️ THIS EXISTS BECAUSE `SecurityToken.forcedTransfer` RUNS THE C1 HOOK. Without
-    ///         a carve-out, blocking a wallet also blocks the seizure or transfer-to-frozen-
-    ///         account that the freezing order itself directs — the control would prevent the
-    ///         operator from complying with the very order that triggered it. Governance-only,
-    ///         `orderRef` recorded, and it relieves the SENDER limb only: a blocked party can
-    ///         never be a recipient, so this cannot be turned into an exit route.
-    mapping(address => bool) public isSeizureDestination;
+    ///         a carve-out, restricting a wallet also blocks the very movement the restriction's own
+    ///         instrument directs — the control would prevent the operator from complying with
+    ///         the order that triggered it. Two cases need it and they are the same mechanic:
+    ///           • a seizure or transfer-to-frozen-account under a freezing order; and
+    ///           • an ESTATE DISTRIBUTION. A probate hold ends by moving the position to an
+    ///             heir, and an heir is a DIFFERENT PERSON, so the recipient limb would stop it.
+    ///             Registering the estate account here is what lets probate complete.
+    ///         Governance-only, `orderRef` recorded, and it relieves the SENDER limb only: a
+    ///         held party can never be a recipient, so these cannot compose into an exit route.
+    /// @dev    ⚠️ Registering a destination is the single most dangerous write in this contract —
+    ///         it is a standing exemption from the sender check. `orderRef` is mandatory and the
+    ///         set should be small, short-lived and reviewed. An unrecorded permitted
+    ///         destination is indistinguishable from a backdoor.
+    mapping(address => bool) public isPermittedDestination;
 
     // ─────────────────────────── sweep anchoring ──────────────────────────────
     //
@@ -132,14 +192,29 @@ contract SanctionsRegistry is ISanctionsCheck {
     // ⚠️ NO EVENT HERE CARRIES A REASON, A CLASS, OR A LIST NAME. `SecurityToken` already
     //    applies this rule at the event layer — freeze and forced transfer carry a `reasonHash`
     //    and never a reason. A reason code in an indexed topic is a disclosure to everyone.
+    //
+    // ⚠️ AND NO EVENT HERE CARRIES THE PERSON KEY. The rule above was right and stopped one step
+    //    short: withholding WHY somebody is blocked does nothing while WHO is the indexed topic.
+    //    `recordPointer` is `IdentityRegistry`'s person key — one value shared by every wallet
+    //    belonging to one human. Indexed here it was a permanent, un-erasable "these addresses
+    //    are the same person, and that person is sanctions-blocked": GDPR Art 10 data, in the one
+    //    store `deregisterPerson` can never reach. `caseRef` replaces it as the topic. It is an
+    //    opaque handle to an off-chain case file, so a supervisor joins the log to the file they
+    //    already hold, and nobody else learns anything.
+    //
+    // ⚠️ `WalletBlocked` KEEPS its address, and the asymmetry is the point. A blocked wallet is
+    //    already observable — its transfers revert — so the log discloses nothing the chain does
+    //    not. What was NOT otherwise observable is the linkage between one person's wallets, and
+    //    that is exactly what the record-level events were publishing.
 
-    event RecordBlocked(bytes32 indexed recordPointer, bytes32 caseRef, uint64 at);
-    event RecordUnblocked(bytes32 indexed recordPointer, bytes32 caseRef, uint64 at);
+    event RecordBlocked(bytes32 indexed caseRef, uint64 at);
+    event RecordUnblocked(bytes32 indexed caseRef, uint64 at);
     event WalletBlocked(address indexed wallet, bytes32 caseRef, uint64 at);
     event WalletUnblocked(address indexed wallet, bytes32 caseRef, uint64 at);
 
     event ScreeningOperatorSet(address indexed operator, bool allowed);
-    event SeizureDestinationSet(address indexed destination, bool allowed, bytes32 orderRef);
+    event RestrictionRegistrarSet(address indexed registrar, bool allowed);
+    event PermittedDestinationSet(address indexed destination, bool allowed, bytes32 orderRef);
     event DependencySet(bytes32 indexed what, address impl);
     event MaxSweepLagSet(uint32 seconds_);
 
@@ -148,9 +223,12 @@ contract SanctionsRegistry is ISanctionsCheck {
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
-    /// @notice THE ONLY ERROR ON THE TRANSFER PATH. One code for the entire block class —
-    ///         listing, suspicion, lapsed diligence. A distinct code for any one of them is the
-    ///         tip-off. Informative status goes to the operator off-chain, never to the caller.
+    /// @notice THE ONLY ERROR ON THE TRANSFER PATH. One code for every restriction there is — listing,
+    ///         suspicion, probate, court order, lost key, operational. A distinct code for any
+    ///         one of them is the tip-off, and so is a distinct code for any of the INNOCENT
+    ///         ones: if probate reverted by name, then the generic code would mean "not
+    ///         probate", which narrows it to the classes that must stay silent. Informative
+    ///         status goes to the operator off-chain, never to the caller.
     /// @dev    ⚠️ Note it takes no arguments. An address parameter would tell the caller WHICH
     ///         side failed, which on a two-sided check is most of the information back again.
     error TransferNotPermitted();
@@ -158,6 +236,7 @@ contract SanctionsRegistry is ISanctionsCheck {
     // Operational errors — write paths only, never reachable from `checkTransfer`.
     error NotGovernance();
     error NotScreeningOperator();
+    error NotARestrictionWriter();
     error ZeroAddress();
     error CaseRefRequired();
     error AlreadyBlocked();
@@ -172,6 +251,14 @@ contract SanctionsRegistry is ISanctionsCheck {
 
     modifier onlyScreeningOperator() {
         if (!isScreeningOperator[msg.sender]) revert NotScreeningOperator();
+        _;
+    }
+
+    /// @dev Either write role may PLACE a restriction. Neither may lift one — that is governance, so
+    ///      that a role which cannot tell a listing from a probate hold also cannot release one
+    ///      by mistake.
+    modifier onlyRestrictionWriter() {
+        if (!isScreeningOperator[msg.sender] && !isRestrictionRegistrar[msg.sender]) revert NotARestrictionWriter();
         _;
     }
 
@@ -194,6 +281,16 @@ contract SanctionsRegistry is ISanctionsCheck {
         emit ScreeningOperatorSet(operator, allowed);
     }
 
+    /// @notice The ordinary-restrictions desk. Wire at least one on every deployment: without it the
+    ///         only party able to record a probate hold is the sanctions screening vendor, and
+    ///         an operator faced with that will reach for a second store instead — which is the
+    ///         failure this whole contract exists to prevent.
+    function setRestrictionRegistrar(address registrar, bool allowed) external onlyGovernance {
+        if (registrar == address(0)) revert ZeroAddress();
+        isRestrictionRegistrar[registrar] = allowed;
+        emit RestrictionRegistrarSet(registrar, allowed);
+    }
+
     /// @notice Re-point `identity`. Swap, never unset — the operational-resilience regime
     ///         requires this reference stay swappable at the contract layer rather than
     ///         hard-wired, and a nullable one cannot distinguish "not wired" from "not owed".
@@ -208,25 +305,26 @@ contract SanctionsRegistry is ISanctionsCheck {
         emit MaxSweepLagSet(seconds_);
     }
 
-    /// @param orderRef Digest of the freezing order or competent-authority direction this
-    ///                 destination is registered under. Governance-only and logged, because an
-    ///                 unrecorded seizure destination is indistinguishable from a backdoor.
-    function setSeizureDestination(address destination, bool allowed, bytes32 orderRef) external onlyGovernance {
+    /// @param orderRef Digest of the instrument this destination is registered under — a
+    ///                 freezing order, a competent-authority direction, or a grant of probate.
+    ///                 Governance-only and logged, because an unrecorded permitted destination
+    ///                 is indistinguishable from a backdoor.
+    function setPermittedDestination(address destination, bool allowed, bytes32 orderRef) external onlyGovernance {
         if (destination == address(0)) revert ZeroAddress();
         if (allowed && orderRef == bytes32(0)) revert CaseRefRequired();
-        isSeizureDestination[destination] = allowed;
-        emit SeizureDestinationSet(destination, allowed, orderRef);
+        isPermittedDestination[destination] = allowed;
+        emit PermittedDestinationSet(destination, allowed, orderRef);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    // BLOCK MAINTENANCE
+    // HOLD MAINTENANCE
     //
     // ⚠️ `caseRef` is REQUIRED on every write, including unblocks. A delisting is a decision
     //    with a file behind it exactly as a listing is, and an unblock with no reference is the
     //    write nobody can explain to a supervisor afterwards.
     // ═══════════════════════════════════════════════════════════════════════
 
-    function blockRecord(bytes32 recordPointer, bytes32 caseRef) external onlyScreeningOperator {
+    function blockRecord(bytes32 recordPointer, bytes32 caseRef) external onlyRestrictionWriter {
         if (recordPointer == bytes32(0)) revert ZeroAddress();
         if (caseRef == bytes32(0)) revert CaseRefRequired();
         Entry storage e = _blockedRecords[recordPointer];
@@ -236,7 +334,7 @@ contract SanctionsRegistry is ISanctionsCheck {
         e.since = uint64(block.timestamp);
         e.caseRef = caseRef;
 
-        emit RecordBlocked(recordPointer, caseRef, uint64(block.timestamp));
+        emit RecordBlocked(caseRef, uint64(block.timestamp));
     }
 
     /// @notice Delisting. Governance rather than the screening operator: adding a block is an
@@ -248,10 +346,10 @@ contract SanctionsRegistry is ISanctionsCheck {
         if (!e.active) revert NotBlocked();
 
         delete _blockedRecords[recordPointer];
-        emit RecordUnblocked(recordPointer, caseRef, uint64(block.timestamp));
+        emit RecordUnblocked(caseRef, uint64(block.timestamp));
     }
 
-    function blockWallet(address wallet, bytes32 caseRef) external onlyScreeningOperator {
+    function blockWallet(address wallet, bytes32 caseRef) external onlyRestrictionWriter {
         if (wallet == address(0)) revert ZeroAddress();
         if (caseRef == bytes32(0)) revert CaseRefRequired();
         Entry storage e = _blockedWallets[wallet];
@@ -346,7 +444,7 @@ contract SanctionsRegistry is ISanctionsCheck {
 
         // Sender — relieved only where the destination is a registered seizure account, so that
         // a freezing order can actually be executed against the wallet it names.
-        if (isSeizureDestination[to]) return;
+        if (isPermittedDestination[to]) return;
 
         if (isBlocked(from)) revert TransferNotPermitted();
     }
@@ -373,8 +471,8 @@ contract SanctionsRegistry is ISanctionsCheck {
     }
 }
 
-// ⚠️ `SanctionsGate` — the `IComplianceModule` adapter that makes this store reachable from the
-//    C1 hook — lives in `SanctionsGate.sol`. Without it registered on `ModularCompliance`, this
+// ⚠️ `RestrictedPartyGate` — the `IComplianceModule` adapter that makes this store reachable from the
+//    C1 hook — lives in `RestrictedPartyGate.sol`. Without it registered on `ModularCompliance`, this
 //    contract enforces nothing on a transfer: only a transfer agent remembering to call
 //    `assertTransferPermitted` would.
 //

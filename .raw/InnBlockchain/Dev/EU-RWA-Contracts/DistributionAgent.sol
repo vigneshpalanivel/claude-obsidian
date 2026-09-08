@@ -3,19 +3,20 @@ pragma solidity ^0.8.22;
 
 import {Distribution, DistributionState} from "./Interfaces.sol";
 
-import {ICompliance, IIdentityGate} from "./Interfaces.sol";
+import {ICompliance, IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
 
 /// @title DistributionAgent (illustrative sample — not production code)
 /// @notice C1 + C2 — pays holders. Dividends, rental income, revenue share, and the cash leg
 ///         of `CouponSchedule` and `DistributionWaterfall`, both of which route through here
 ///         rather than paying anyone themselves.
-/// @dev    ⚠️ A DISTRIBUTION IS AN IDENTITY-GATED TRANSFER, NOT A PAYMENT. It runs the same
-///         eligibility check as an ordinary token movement, or it is a freeze bypass: a wallet
-///         that cannot receive a single unit must not be able to receive the income those
-///         units produce. This is the reason the contract exists as a separate, gated agent
-///         instead of the issuer sending a batch payment from a treasury wallet.
+/// @dev    ⚠️ A DISTRIBUTION IS A GATED TRANSFER, NOT A PAYMENT. It runs the same two
+///         mandatory checks as an ordinary token movement — identity eligibility and the restriction
+///         register — or it is a bypass: a wallet that cannot receive a single unit must not be
+///         able to receive the income those units produce. This is the reason the contract
+///         exists as a separate, gated agent instead of the issuer sending a batch payment from
+///         a treasury wallet.
 /// @dev    ⚠️ AMLR Art 76 REACHES THE PAYOUT PATH. Nothing here may disclose WHY a holder was
-///         not paid. `EntitlementUnclaimed` fires identically for a frozen wallet, an expired
+///         not paid. `EntitlementUnclaimed` fires identically for a restricted wallet, an expired
 ///         CDD record, a reverting recipient contract and a failed push — one event, four
 ///         causes, no reason code. That indistinguishability IS the control; an "excluded
 ///         from dividend" event that only ever fires for compliance reasons is a tipping-off
@@ -43,6 +44,16 @@ contract DistributionAgent {
     ///      out is `ModularCompliance.removeModule`, not a null reference here.
     IIdentityGate public identity;
     ICompliance public compliance;
+
+    /// @notice The wallet-level restriction store. Read on EVERY payout, in the mandatory layer.
+    /// @dev    ⚠️ ADDED 2026-09-08 AND IT IS NOT OPTIONAL. `IdentityRegistry.freeze` used to
+    ///         carry the wallet stop, so `identity.isEligible` caught a restricted holder for free.
+    ///         That flag was removed — every stop now lives in `RestrictedPartyRegistry` — and without a
+    ///         direct read here the only thing catching a sanctioned holder would be
+    ///         `d.runComplianceModules`, which is OPT-IN PER DISTRIBUTION. A payout run
+    ///         configured without modules would have paid income to a listed person.
+    ///         Mandatory layer, same standing as `checkEligible`.
+    IRestrictedParty public restrictions;
 
     /// @notice Where deducted fees and withheld tax go. Separate addresses because they are
     ///         owed to entirely different parties, and netting them into one recipient
@@ -79,6 +90,11 @@ contract DistributionAgent {
     event AgentSet(address indexed agent, bool allowed);
     event RecipientsSet(address feeRecipient, address taxRecipient);
 
+    /// @notice One event for every inter-contract reference, keyed by role rather than by
+    ///         function name, so an operational-resilience reviewer can reconstruct which
+    ///         implementation this agent was pointed at on any given block from logs alone.
+    event DependencySet(bytes32 indexed what, address impl);
+
     event DistributionDeclared(uint256 indexed id, uint64 recordBlock, uint256 ratePerUnit, uint16 feeBps);
     event SnapshotAnchored(uint256 indexed id, bytes32 snapshotRoot, uint256 totalUnits, uint256 grossRequired);
     event DistributionFunded(uint256 indexed id, uint256 amount, uint256 fundedTotal);
@@ -98,6 +114,7 @@ contract DistributionAgent {
 
     error NotGovernance();
     error NotAgent();
+    error ZeroAddress();
     error Reentrancy();
     error UnknownDistribution(uint256 id);
     error WrongState(uint256 id, DistributionState expected, DistributionState actual);
@@ -132,10 +149,47 @@ contract DistributionAgent {
         _locked = 1;
     }
 
-    constructor(address governance_, address identity_, address compliance_) {
+    constructor(address governance_, address identity_, address compliance_, address restrictions_) {
+        if (governance_ == address(0) || identity_ == address(0)) revert ZeroAddress();
+        if (compliance_ == address(0) || restrictions_ == address(0)) revert ZeroAddress();
         governance = governance_;
         identity = IIdentityGate(identity_);
         compliance = ICompliance(compliance_);
+        restrictions = IRestrictedParty(restrictions_);
+        emit DependencySet("identity", identity_);
+        emit DependencySet("compliance", compliance_);
+        emit DependencySet("restrictions", restrictions_);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // DEPENDENCIES
+    // ═══════════════════════════════════════════════════════════════════════
+    //
+    // ⚠️ ALL THREE ARE SWAPPABLE AND NONE MAY BE UNSET. Every reference this agent holds is read
+    //    on the payout path, so a null one is not "control not owed", it is the control silently
+    //    gone. `identity` and `compliance` had no setter before 2026-09-08 — that was an oversight
+    //    against the standing rule, and it meant a resilience event affecting either forced a
+    //    redeploy of an agent that may be holding a funded, part-paid distribution.
+
+    /// @notice Re-point the identity gate. Swap, never unset.
+    function setIdentity(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        identity = IIdentityGate(impl);
+        emit DependencySet("identity", impl);
+    }
+
+    /// @notice Re-point the rule engine. Swap, never unset.
+    function setCompliance(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        compliance = ICompliance(impl);
+        emit DependencySet("compliance", impl);
+    }
+
+    /// @notice Re-point the restriction store. Swap, never unset.
+    function setRestrictions(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        restrictions = IRestrictedParty(impl);
+        emit DependencySet("restrictions", impl);
     }
 
     function setAgent(address agent, bool allowed) external onlyGovernance {
@@ -290,9 +344,12 @@ contract DistributionAgent {
     /// @notice ⚠️ THE EQUIVALENCE THIS CONTRACT TURNS ON: "may this wallet receive?" is asked
     ///         of the payout exactly as it is asked of a transfer.
     /// @dev    ⚠️ TWO LAYERS, AND ONLY THE FIRST IS MANDATORY — a deliberate choice with a
-    ///         cost. `IdentityRegistry.checkEligible` is always run: it catches the frozen
-    ///         wallet, the sanctions hit, the lapsed CDD record and the missing claim, which
-    ///         is the whole of what AMLR Arts 20/75 and TFS require here. The rule MODULES are
+    ///         cost. TWO reads are always run — `IdentityRegistry.isEligible` for the lapsed
+    ///         CDD record and the missing claim, and `RestrictedPartyRegistry.isBlocked` for every
+    ///         wallet-level stop there is. Together that is the whole of what AMLR Arts 20/75
+    ///         and TFS require here. The restriction read is separate because the freeze flag no
+    ///         longer lives on the identity record; folding it back in would recreate the
+    ///         two-store leak that removal was meant to close. The rule MODULES are
     ///         opt-in per distribution, because most of them were written to reason about a
     ///         movement of UNITS — a concentration counter or a holding-period clock asked to
     ///         adjudicate a cash payment will either misfire or answer a question nobody
@@ -300,10 +357,11 @@ contract DistributionAgent {
     ///         correct; turning them on by default would block income on rules that were never
     ///         about income.
     /// @dev    Returns a bool rather than reverting. A revert would abort the batch and let one
-    ///         frozen wallet stop everyone else's income — and it would leak, through the
+    ///         restricted wallet stop everyone else's income — and it would leak, through the
     ///         failure, exactly what AMLR Art 76 forbids disclosing.
     function _gate(Distribution storage d, address holder, uint256 units) private view returns (bool) {
         if (!identity.isEligible(holder)) return false;
+        if (restrictions.isBlocked(holder)) return false;
         if (d.runComplianceModules && !compliance.canTransfer(address(0), holder, units)) return false;
         return true;
     }
@@ -326,7 +384,7 @@ contract DistributionAgent {
     }
 
     /// @notice A holder whose entitlement was withheld collects it once the block is gone —
-    ///         the freeze lifted, the CDD record refreshed, the recipient contract fixed.
+    ///         the restriction lifted, the CDD record refreshed, the recipient contract fixed.
     /// @dev    Callable by the holder themselves, deliberately. A withheld payout that only the
     ///         operator can release is an operator liability the holder cannot enforce.
     function redeemUnclaimed(uint256 id) external nonReentrant {

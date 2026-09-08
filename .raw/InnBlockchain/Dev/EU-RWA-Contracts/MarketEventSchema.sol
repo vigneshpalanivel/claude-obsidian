@@ -29,7 +29,7 @@ pragma solidity ^0.8.22;
 /// @dev    GDPR: no natural-person identifier appears in any event below in the clear. The
 ///         national client identifier is carried as the salted hash held in
 ///         `IdentityRegistry`; the reporting bridge resolves it off-chain against the record
-///         it already holds. An on-chain NCI is permanent and un-erasable.
+///         it already restrictions. An on-chain NCI is permanent and un-erasable.
 interface IMarketEventSchema {
     // ─────────────────────────── shared enums ─────────────────────────────────
 

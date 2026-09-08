@@ -159,6 +159,11 @@ contract CouponSchedule {
     error UnsettledPeriodsRemain(uint256 index);
     error MaturityBeforeLastPeriod(uint64 maturityDate, uint64 lastPeriodEnd);
 
+    /// @dev ⚠️ Used by the dependency setters but never declared, so this file did not compile.
+    ///      Guards the "swap, never unset" rule — an unset reference reads as "not owed" and
+    ///      turns a control off silently.
+    error ZeroAddress();
+
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
         _;

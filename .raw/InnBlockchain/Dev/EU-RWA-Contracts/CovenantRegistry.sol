@@ -199,6 +199,25 @@ contract CovenantRegistry {
     mapping(bytes32 => Covenant) private _covenants;
     bytes32[] private _covenantIds;
 
+    /// @dev ⚠️ KEYED BY WALLET, NOT BY PERSON — AND UNLIKE THE NEIGHBOURING CONTRACTS THAT IS
+    ///      CORRECT. `RestrictedPartyRegistry` and `MemberEligibility` both key on
+    ///      `IdentityRegistry`'s `recordPointer` because a block and an admission are owed by a
+    ///      PERSON and an address-keyed version of either is bypassable by onboarding a second
+    ///      address. A covenant is the opposite kind of thing: it is a statement the holder
+    ///      MADE, from an address, against a named document version. Nobody makes it on their
+    ///      behalf and it does not travel.
+    ///
+    ///      Person-keying here would be the actual defect. Art 4(2)(c)–(f) are negative
+    ///      declarations that bind the SENDER on every transfer, and (g) is consent given
+    ///      against one risk-disclosure version; inheriting any of them across a person's
+    ///      wallets would let an address that has signed nothing trade on a declaration made
+    ///      somewhere else — which is the same failure as the boolean-claim shape these were
+    ///      moved here to escape.
+    ///
+    ///      The cost is real and it is accepted: a member's second wallet holds no record and
+    ///      the gate blocks it until they re-declare, so lost-key recovery has to re-collect the
+    ///      set rather than carry it over. That is friction in the fail-CLOSED direction — a
+    ///      holder is stopped and asked to sign, not admitted on somebody else's signature.
     mapping(address => mapping(bytes32 => Record)) private _records;
 
     /// @notice Per-asset product attributes and regulatory grants — dimensions 3 and 4 of the
@@ -276,15 +295,39 @@ contract CovenantRegistry {
     ///         against the tipping-off risk — not a per-module default to drift into.
     error Blocked();
 
+    error ZeroAddress();
+
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
         _;
     }
 
     constructor(address governance_, address documents_, address identity_) {
+        if (governance_ == address(0) || documents_ == address(0) || identity_ == address(0)) revert ZeroAddress();
         governance = governance_;
         documents = IDocumentAnchor(documents_);
         identity = IdentityRegistry(identity_);
+        emit DependencySet("documents", documents_);
+        emit DependencySet("identity", identity_);
+    }
+
+    /// @notice Re-point `identity`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    /// @dev    ⚠️ Was pasted into `CovenantGate`, which has no `identity`, no `governance` and no
+    ///         `DependencySet`, so this file did not compile at all. Restored to the contract
+    ///         that owns the state.
+    function setIdentity(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        identity = IdentityRegistry(impl);
+        emit DependencySet("identity", impl);
+    }
+
+    /// @notice Re-point `documents`. Swap, never unset — the operational-resilience regime requires
+    ///         this reference stay swappable at the contract layer rather than hard-wired.
+    function setDocuments(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        documents = IDocumentAnchor(impl);
+        emit DependencySet("documents", impl);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -657,18 +700,9 @@ contract CovenantGate is ModuleAdapter {
         covenants.assertSatisfied(to, covenants.GATE_RECEIVE());
     }
 
-    /// @notice Re-point `identity`. Swap, never unset — the operational-resilience regime requires
-    ///         this reference stay swappable at the contract layer rather than hard-wired.
-    function setIdentity(address impl) external onlyGovernance {
-        if (impl == address(0)) revert ZeroAddress();
-        identity = IdentityRegistry(impl);
-        emit DependencySet("identity", impl);
-    }
-    /// @notice Re-point `documents`. Swap, never unset — the operational-resilience regime requires
-    ///         this reference stay swappable at the contract layer rather than hard-wired.
-    function setDocuments(address impl) external onlyGovernance {
-        if (impl == address(0)) revert ZeroAddress();
-        documents = IDocumentAnchor(impl);
-        emit DependencySet("documents", impl);
-    }
+    /// @dev ⚠️ NOTHING BELONGS IN THIS ADAPTER BUT DELEGATION. The `setIdentity` / `setDocuments`
+    ///      pair that sat here referenced state this contract does not have and belongs to
+    ///      `CovenantRegistry`; it has been moved back. The registry reference is `immutable`
+    ///      here on purpose — re-pointing a gate at a different store is a module swap, which
+    ///      `ModularCompliance.addModule`/`removeModule` already expresses.
 }

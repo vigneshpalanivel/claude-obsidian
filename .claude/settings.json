@@ -310,7 +310,11 @@
       "Bash(grep -n \"^#\\\\{1,4\\\\} \" tfr-checklist.md)",
       "Bash(awk 'NR>=136 && NR<=166' \"EU Tokenized Securities Compliance Brief.md\")",
       "Bash(grep -n \"^#\\\\{1,4\\\\} \\\\|^| \" \"Content Repurposing Plan.md\")",
-      "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^| \" REMAINING-COMPLIANCE.md)"
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \\\\|^| \" REMAINING-COMPLIANCE.md)",
+      "Bash(echo \"exit=$? \\(1 means none found\\)\")",
+      "Bash(node compile-fix.js Interfaces.sol MemberEligibility.sol)",
+      "Bash(node compile-fix.js Interfaces.sol ModularCompliance.sol IdentityRegistry.sol ClaimTopicsRegistry.sol TrustedIssuersRegistry.sol CovenantRegistry.sol)",
+      "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian/.raw/InnBlockchain diff --stat)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

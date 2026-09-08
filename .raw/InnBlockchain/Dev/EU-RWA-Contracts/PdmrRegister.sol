@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {IIdentityGate} from "./Interfaces.sol";
+
 /// @title IPdmrRegister
 /// @notice The read surface every MAR Art 19 module consumes: given a wallet, is this person
 ///         a manager (PDMR) or one of their closely associated persons (PCA), and whose
@@ -58,6 +60,20 @@ interface IPdmrRegister {
 ///         `IdentityRegistry` treats the national client identifier. Names, relationships and
 ///         the nature of the association are Art 9-adjacent personal data and never go
 ///         on-chain — an address is pseudonymous, a stored family relationship is not.
+/// @dev    ⚠️ `personId` MUST BE THE IDENTITY REGISTRY'S `recordPointer` WHERE ONE EXISTS, and
+///         `declareWallet` now enforces it. Two person namespaces were running in parallel —
+///         this register's `personOf` and `IdentityRegistry`'s `recordPointerOf` — with nothing
+///         tying them together, so the same human could be one person to the freeze path and a
+///         different person to admission and the DEA limits. The failure is quiet and it runs in
+///         the direction that matters: a manager who is also an investor gets two identities,
+///         and the Art 19(1a) aggregation the whole register exists to support is assembled
+///         across the wrong set of wallets.
+///         **An unregistered wallet is still declarable and that is deliberate** — Art 3(1)(26)
+///         reaches spouses, dependent children and family trusts who need have no relationship
+///         with the platform, so requiring a KYC record before a PCA can be declared would make
+///         the register unable to hold the very people it was written for. Those entries are
+///         marked `identityAnchored == false` rather than rejected, so a reconciliation can see
+///         which `personId`s have no counterpart and which merely have not been checked.
 contract PdmrRegister is IPdmrRegister {
     // ─────────────────────────── roles ────────────────────────────────────────
 
@@ -66,6 +82,15 @@ contract PdmrRegister is IPdmrRegister {
     ///      or the token admin: this register decides who is frozen, so the party that
     ///      benefits from a freeze not applying must not be the party that maintains it.
     address public immutable registrar;
+
+    /// @dev Interface-typed and settable, per the standing rule — never `immutable`, never
+    ///      unset. Held under `onlyRegistrar` because this contract has exactly one role by
+    ///      design and adding a second to carry one setter would be worse. It escalates nothing:
+    ///      the registrar already chooses `personId` outright, so a registrar willing to
+    ///      re-point this reference could simply have declared a mismatched id before the check
+    ///      existed. If a separate governance role is ever split out of this contract, this
+    ///      setter belongs with governance, not with the registrar.
+    IIdentityGate public identity;
 
     // ─────────────────────────── retention ────────────────────────────────────
 
@@ -90,6 +115,7 @@ contract PdmrRegister is IPdmrRegister {
         uint64 declaredAt;
         uint64 revokedAt; // 0 while live
         bytes32 declarationHash; // hash of the signed Art 19(5) declaration this came from
+        bool identityAnchored; // personId was checked against a live IdentityRegistry record
     }
 
     mapping(address => WalletRecord) private _records;
@@ -111,6 +137,7 @@ contract PdmrRegister is IPdmrRegister {
     event WalletPurged(address indexed wallet);
     event PersonAttested(bytes32 indexed personId, uint64 attestedAt, bytes32 declarationHash);
     event ReattestationPeriodSet(uint64 seconds_);
+    event DependencySet(bytes32 indexed what, address impl);
 
     /// @dev Fires when a live person's declaration has aged past `reattestationPeriod`. An
     ///      alert, not a block: a stale declaration does not mean the person stopped being a
@@ -127,14 +154,28 @@ contract PdmrRegister is IPdmrRegister {
     error NotDeclared(address wallet);
     error AlreadyRevoked(address wallet);
     error RetentionNotExpired(uint64 purgeableAt);
+    error ZeroAddress();
+    error PersonIdNotIdentityRecord(address wallet, bytes32 declared, bytes32 identityRecord);
 
     modifier onlyRegistrar() {
         if (msg.sender != registrar) revert NotRegistrar();
         _;
     }
 
-    constructor(address registrar_) {
+    constructor(address registrar_, address identity_) {
+        if (registrar_ == address(0) || identity_ == address(0)) revert ZeroAddress();
         registrar = registrar_;
+        identity = IIdentityGate(identity_);
+        emit DependencySet("identity", identity_);
+    }
+
+    /// @notice Re-point the identity resolver. Swap, never unset — an unset reference cannot
+    ///         distinguish "nobody wired it" from "no identity layer here", and every wallet
+    ///         would then read as unanchored, which turns the check below off silently.
+    function setIdentity(address impl) external onlyRegistrar {
+        if (impl == address(0)) revert ZeroAddress();
+        identity = IIdentityGate(impl);
+        emit DependencySet("identity", impl);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -148,6 +189,13 @@ contract PdmrRegister is IPdmrRegister {
     ///                Anchoring it is what makes the register evidential rather than merely
     ///                operational: it shows the wallet was declared by the person, on a date,
     ///                against a document you still hold.
+    /// @param personId  Where `wallet` is a registered investor, this MUST equal that record's
+    ///                `recordPointer` — see the namespace note on the contract. Where it is not,
+    ///                any id is accepted and the entry is flagged unanchored.
+    /// @dev    ⚠️ The equality check only reaches the wallet being declared. A PCA's `pdmrId`
+    ///         names their manager, whose wallet is not an argument here, so that limb is
+    ///         anchored when the manager's OWN wallet is declared and not before. Declaring the
+    ///         PDMR first is therefore the correct order, not merely the tidy one.
     function declareWallet(address wallet, bytes32 personId, bytes32 pdmrId, Role role, bytes32 declarationHash)
         external
         onlyRegistrar
@@ -157,6 +205,15 @@ contract PdmrRegister is IPdmrRegister {
 
         WalletRecord storage r = _records[wallet];
         if (r.declaredAt != 0 && r.revokedAt == 0) revert AlreadyDeclared(wallet);
+
+        // One person, one id. A registered investor's person key already exists; a second one
+        // minted here would split their wallets across two aggregation sets.
+        (bytes32 pointer, bool registered) = identity.recordPointerOf(wallet);
+        bool anchored = registered && pointer != bytes32(0);
+        if (anchored && personId != pointer) {
+            revert PersonIdNotIdentityRecord(wallet, personId, pointer);
+        }
+        r.identityAnchored = anchored;
 
         r.role = role;
         r.selfConfirmed = false;
@@ -230,8 +287,24 @@ contract PdmrRegister is IPdmrRegister {
         return r.role;
     }
 
+    /// @dev Where `isIdentityAnchored(wallet)` is true this returns the same value as
+    ///      `IIdentityGate.recordPointerOf(wallet)`. That equality is the point of the check in
+    ///      `declareWallet`: it is what lets an Art 19(1a) aggregation join this register to the
+    ///      admission and DEA records without a mapping table nobody maintains.
     function personOf(address wallet) external view returns (bytes32) {
         return _records[wallet].personId;
+    }
+
+    /// @notice Whether this wallet's `personId` was verified against a live identity record at
+    ///         declaration. False means the wallet had no KYC record — the ordinary case for a
+    ///         PCA — so the id is this register's own and reconciles to nothing else.
+    /// @dev    Answers at declaration time and is not refreshed. A PCA who later onboards as an
+    ///         investor stays unanchored here, and the two ids diverge from that point. Closing
+    ///         that is an operational duty on the registrar — re-declare the wallet — not
+    ///         something this contract can detect, because nothing calls it when a KYC record
+    ///         is created.
+    function isIdentityAnchored(address wallet) external view returns (bool) {
+        return _records[wallet].identityAnchored;
     }
 
     function principalOf(address wallet) external view returns (bytes32) {

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {ICompliance, IIdentityGate} from "./Interfaces.sol";
+import {ICompliance, IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
 
 /// @title SecurityToken (illustrative sample — not production code)
 /// @notice C1 + C5 — the instrument itself, and the only contract in this folder that moves a
@@ -66,6 +66,25 @@ contract SecurityToken {
     ICompliance public compliance;
     IIdentityGate public identityRegistry;
 
+    /// @notice The wallet-level restriction store. Read on EVERY movement, in the MANDATORY layer.
+    /// @dev    ⚠️ A THIRD MANDATORY REFERENCE, AND IT IS NOT DUPLICATION OF `RestrictedPartyGate`. Until
+    ///         2026-09-08 the whole-wallet stop was a flag on the investor record, so
+    ///         `checkEligible` enforced it and no deployment could be wired without it. Moving
+    ///         every stop into `RestrictedPartyRegistry` was right — one store is what keeps an observer
+    ///         from reading the class out of public storage — but routing it in through
+    ///         `RestrictedPartyGate` alone would have DEMOTED it from mandatory to configurable: a
+    ///         governance action that never registers the module, or one `removeModule` call,
+    ///         and sanctions stop being enforced on the token with nothing reverting to say so.
+    ///         A sanctions stop is not a per-instrument policy choice like a concentration limit.
+    ///         It is owed by every deployment, so it sits beside `identityRegistry`, above the
+    ///         module list, and cannot be scoped out.
+    /// @dev    `RestrictedPartyGate` still exists and is still registered. Both paths read the SAME store
+    ///         and raise the SAME argument-free error, so the double read cannot disagree and
+    ///         cannot leak — it costs two SLOADs. The gate is what reaches tokens and modules
+    ///         that only ever wire `ModularCompliance`; this reference is what makes the control
+    ///         unremovable here.
+    IRestrictedParty public restrictions;
+
     // ═══════════════════════════════════════════════════════════════════════
     // TOKEN STATE
     // ═══════════════════════════════════════════════════════════════════════
@@ -107,6 +126,10 @@ contract SecurityToken {
 
     event ComplianceAdded(address indexed compliance);
     event IdentityRegistryAdded(address indexed identityRegistry);
+
+    /// @notice ⚠️ NO REASON FIELD, unlike the freeze and forced-transfer events. Which store is
+    ///         wired is an operational fact; who is in it is not this contract's to announce.
+    event RestrictionsSet(address indexed restrictions);
     event AgentSet(address indexed agent, bool allowed);
     event Paused(bytes32 reasonHash, uint64 at);
     event Unpaused(uint64 at);
@@ -161,6 +184,7 @@ contract SecurityToken {
         address governance_,
         address compliance_,
         address identity_,
+        address restrictions_,
         string memory name_,
         string memory symbol_,
         uint8 decimals_,
@@ -172,10 +196,13 @@ contract SecurityToken {
         // A client with no rules gets a compliance contract with an empty module list, not a
         // missing compliance contract.
         if (compliance_ == address(0) || identity_ == address(0)) revert ZeroAddress();
+        if (restrictions_ == address(0)) revert ZeroAddress();
         compliance = ICompliance(compliance_);
         identityRegistry = IIdentityGate(identity_);
+        restrictions = IRestrictedParty(restrictions_);
         emit ComplianceAdded(compliance_);
         emit IdentityRegistryAdded(identity_);
+        emit RestrictionsSet(restrictions_);
         name = name_;
         symbol = symbol_;
         decimals = decimals_;
@@ -204,6 +231,18 @@ contract SecurityToken {
         emit IdentityRegistryAdded(identity_);
     }
 
+    /// @notice Re-point the restriction store. Swap, never unset.
+    /// @dev    ⚠️ THERE IS NO WAY TO SCOPE THIS OUT AND THAT IS THE POINT. Every other control on
+    ///         this token has a legitimate "not owed" configuration — an empty module list, an
+    ///         empty required-topic set. Targeted financial sanctions bind irrespective of what
+    ///         the client is, so the only permitted change here is pointing at a different
+    ///         implementation of the same control.
+    function setRestrictions(address impl) external onlyGovernance {
+        if (impl == address(0)) revert ZeroAddress();
+        restrictions = IRestrictedParty(impl);
+        emit RestrictionsSet(impl);
+    }
+
     function setAgent(address agent, bool allowed) external onlyGovernance {
         isAgent[agent] = allowed;
         emit AgentSet(agent, allowed);
@@ -223,21 +262,32 @@ contract SecurityToken {
     // C1 — THE PRE-VALIDATION HOOK
     // ═══════════════════════════════════════════════════════════════════════
 
-    /// @notice The single gate. Two layers, and the order is not arbitrary: identity first,
+    /// @notice The single gate. THREE layers, and the order is not arbitrary: identity first,
     ///         because a rule module asking "is this holder over the ELTIF concentration
-    ///         limit" is meaningless for a wallet that has no verified record at all.
+    ///         limit" is meaningless for a wallet that has no verified record at all; holds
+    ///         second, because it is the one stop that binds irrespective of what the client is;
+    ///         the module list last, because everything in it is a per-instrument policy.
     /// @dev    ⚠️ MINT IS `from == address(0)` AND BURN IS `to == address(0)`. Both are passed
     ///         to the modules, which decide for themselves whether they care —
     ///         `CovenantGate` treats mint as its own gate, `EltifConcentration` counts it, a
     ///         holding-period lock ignores it. Filtering here would take that choice away from
     ///         the module that owns the Article.
-    /// @dev ⚠️ NO NULL CHECKS HERE, ON PURPOSE. Both references are guaranteed non-zero by the
-    ///      constructor and by the setters, so there is no branch a misconfiguration can slip
+    /// @dev ⚠️ NO NULL CHECKS HERE, ON PURPOSE. All three references are guaranteed non-zero by
+    ///      the constructor and by the setters, so there is no branch a misconfiguration can slip
     ///      through. A client owing nothing gets an empty module list and an empty required-
     ///      claim-topic set — the calls still happen and simply pass.
+    /// @dev ⚠️ THE HOLD READ IS THE MANDATORY LAYER, NOT THE MODULE LAYER, even though `RestrictedPartyGate`
+    ///      is normally in the module list too. `compliance.checkTransfer` runs a list governance
+    ///      can shorten; this line runs whatever happens. Both reach the same store and the same
+    ///      argument-free error, so the redundancy is a cost, not a disclosure.
+    /// @dev ⚠️ `assertTransferPermitted` HANDLES BOTH SIDES ITSELF, including `address(0)`, and
+    ///      is deliberately NOT split into two guarded calls the way the identity reads are. A
+    ///      redemption paying out to a listed person releases value exactly as a transfer does,
+    ///      so `to == 0` is not a shortcut out of the sender check.
     function _check(address from, address to, uint256 amount) internal view {
         if (from != address(0)) identityRegistry.checkEligible(from);
         if (to != address(0)) identityRegistry.checkEligible(to);
+        restrictions.assertTransferPermitted(from, to);
         compliance.checkTransfer(from, to, amount);
     }
 
@@ -367,10 +417,19 @@ contract SecurityToken {
     // ═══════════════════════════════════════════════════════════════════════
 
     /// @notice Immobilises `amount` units without touching the rest of the holding.
-    /// @dev    Whole-wallet freeze lives in `IdentityRegistry.freeze` and is checked by
-    ///         `checkEligible` on both sides of every movement. Two contracts, because the two
-    ///         controls have different lifetimes: an identity freeze follows the INVESTOR
-    ///         across every instrument they hold, a unit freeze is about THESE units.
+    /// @dev    ⚠️ THIS IS A PARTIAL CONTROL AND MUST STAY ONE. Whole-wallet stops live in
+    ///         `RestrictedPartyRegistry` and reach this contract through `RestrictedPartyGate` on both sides of every
+    ///         movement. `IdentityRegistry.freeze` — which this note used to point at — was
+    ///         removed on 2026-09-08: two stores that can each stop a wallet let an observer read
+    ///         WHICH one holds a person out of public storage and infer the class, whatever the
+    ///         revert says.
+    /// @dev    ⚠️ AN AGENT WHO FREEZES 100% OF A WALLET'S UNITS THROUGH THIS FUNCTION REBUILDS
+    ///         THAT LEAK. `frozenUnits` is public and this contract is not the restriction store, so a
+    ///         full-balance entry here is a second, readable, wallet-level stop. The function is
+    ///         kept because a freeze over a disputed or collateralised parcel is a genuinely
+    ///         different mechanic and forcing it through the restriction store would over-freeze — but
+    ///         **partial parcels only**. A whole-wallet stop goes in `RestrictedPartyRegistry`. That is an
+    ///         operating rule with no on-chain enforcement, which is why it is stated twice.
     function freezeUnits(address wallet, uint256 amount, bytes32 reasonHash) external onlyAgent {
         uint256 wouldFreeze = frozenUnits[wallet] + amount;
         if (wouldFreeze > _balances[wallet]) revert FrozenExceedsBalance(wallet, _balances[wallet], wouldFreeze);
@@ -394,6 +453,14 @@ contract SecurityToken {
     ///             apply, and the sender's own eligibility is not consulted. A seizure order
     ///             against a sanctioned wallet is unexecutable if the wallet's sanctioned
     ///             status blocks it — which is the absurdity a naive implementation produces.
+    ///             ⚠️ THE SENDER'S HOLD IS NOT BYPASSED BY THIS FUNCTION, and it must not be:
+    ///             `compliance.checkTransfer` still runs `RestrictedPartyGate`, which checks BOTH sides.
+    ///             The escape is `RestrictedPartyRegistry.setPermittedDestination` — the designated
+    ///             frozen account, the enforcement authority's address, the estate's heir. An
+    ///             agent-key bypass of the restriction store would be a general-purpose sanctions
+    ///             override; a governance-set destination allowlist is an auditable one.
+    ///             A forced transfer out of a restricted wallet to an address that is NOT a permitted
+    ///             destination is meant to revert.
     ///           • The RECIPIENT is still fully checked. The destination must be an eligible
     ///             holder and must satisfy every rule module. Otherwise "forced transfer"
     ///             becomes a general-purpose route to place units with anyone at all, and
@@ -437,6 +504,15 @@ contract SecurityToken {
     /// @dev    ⚠️ THE FREEZE FOLLOWS THE UNITS. Recovering into a clean wallet must not launder
     ///         an asset freeze. If the operator wants the units unfrozen, that is a separate,
     ///         separately-logged decision.
+    /// @dev    ⚠️ A WALLET-KEYED RESTRICTION DOES **NOT** FOLLOW, AND THAT IS A LIVE OPERATING RULE.
+    ///         This function runs no transfer gate at all — by design, since a recovery whose
+    ///         destination is provably the same investor has nothing left to check. But that
+    ///         means `RestrictedPartyRegistry.blockWallet(lostWallet)` is left behind: the units land in a
+    ///         second wallet of the same person that carries no restriction. `blockRecord` does follow,
+    ///         because both wallets resolve to the same pointer and the store checks the record.
+    ///         **Any restriction intended to survive a key loss must be written against the RECORD, not
+    ///         the wallet.** This contract cannot enforce that — it holds no write access to the
+    ///         store, and giving it one would put a sanctions key on the token.
     /// @dev    Prospectus Art 6/16(1) requires the recovery procedure to be DISCLOSED. This
     ///         function is the disclosed mechanism; the operator's key-loss verification
     ///         procedure is the paper half, and the two must describe the same thing.

@@ -3061,6 +3061,62 @@ Other values at established rates — lemon soda 90/0g/0g (Jul 12), onion raita 
 
 ---
 
+## 2026-09-08 (Tuesday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Milkshake (usual recipe, current standing version) | 736 | 24.5g | 11.9g |
+| | Half apple | 45 | 0.2g | 2g |
+| | Half mosambi | 30 | 0.5g | 1g |
+| | 1 small pomegranate | 75 | 1.2g | 3g |
+| | 2 boiled eggs | 140 | 12g | 0g |
+| | 2 tbsp pasta | 40 | 1.5g | 0.5g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| Lunch | Buddha bowl (**non-veg, chicken — confirmed again**) | 595 | 45g | 10g |
+| | 1 red banana (full) | 110 | 1.5g | 3g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| | Dark chocolate — 1 piece | 60 | 1g | 0.75g |
+| **Running** | | **~1,936 kcal** | **~91.4g** | **~32.4g** |
+
+**Notes — 2026-09-08 (running; day open):**
+
+**Rates used:** all established except one. **New item — 2 tbsp pasta, 40/1.5g/0.5g**, read as ~25g of cooked plain pasta. ⚠️ **2 tbsp is an unusually small portion and the estimate swings on form: plain boiled ~40, with a tomato/cream sauce ~70–90, with cheese higher still.** **Confirm whether it was plain — at this size it barely matters for the day, but the rate gets reused.**
+
+✅✅ **Milkshake 2nd consecutive day.** ⚠️ **Still not the test.** The documented failure is weekend-shaped — skipped Sep 5 and Sep 6, back Monday. **Sep 12–13 is the test; weekdays have never been the problem.**
+
+⚠️ **Breakfast is a near-exact repeat of yesterday: ~1,101/40.9g/18.4g against ~1,116/40.9g/18.9g.** Same milkshake, same half apple, same half mosambi, same pomegranate, same 2 eggs, same tea — **exactly one item changed: 2 baby potatoes (55) → 2 tbsp pasta (40).** ✅ **Protein identical to the gram, fiber within 0.5g.** **This is the most reproducible breakfast in the log, which makes it a usable control — the variance in this log is entirely lunch and dinner.**
+
+🔴 **Fiber ~18.4g and the same trap as yesterday is set.** **If lunch is the Buddha bowl (~10g), the day sits at ~28.4g before dinner — inside the 25–30g band but with no room.** ⚠️ **Yesterday this exact setup was flagged at lunch and then broken by a full red banana (+3g), closing at 34.6g.** **The instruction is the same and it is specific: if the bowl happens, skip the red banana today.** Buttermilk (0.2g) is fine.
+
+⚠️ **Calories ~1,101 leaves ~1,079–1,179 for the rest of the day** against the confirmed ~2,180–2,280 band. ⚠️ **Yesterday started from an almost identical number and closed at ~2,511 — ~231–331 over — without any single item looking decisive.** **The drift came from a dinner 280 over its brief, plus a tea and an unreported side gravy.** **Same starting point today; the lever is dinner discipline and reporting sides at the time.**
+
+✅ **Purine: 2nd consecutive clean day if it holds.** No red meat, fish, shellfish or alcohol so far. 🔴 **The uric acid retest is still unbooked and now ~8 weeks overdue — day five of this file flagging it, and it is also the gate blocking the protein-target increase in [[bmi-increase-plan]].**
+
+✅ **No added cooking fat at breakfast.** **If the day stays clean, the 5-day added-fat run (Sep 3–7, the longest in this log) ends at 5** — relevant against HDL 32 and against a lipid panel that is now a live scheduling question.
+
+🔴🔴🔴 **The red banana was flagged this morning, by name, with the arithmetic attached — and it happened anyway. This is the first time in this log that a prospective, item-specific prediction was recorded BEFORE the meal and then not acted on.** Every previous version of this finding was retrospective ("what would have fixed it"). **Today it was preventive, specific, and hours early. That changes what the failure means: the problem is not that the fiber driver is unidentified — it has been correctly identified seven times (Aug 25, 27, 28, 31, Sep 1, Sep 7, Sep 8). The problem is that identifying it does not change the order.** ⚠️ **The honest read is that the Buddha bowl arrives as a fixed bundle from a vendor and the banana may not be a separable choice at the point of eating.** **If that is true, say so and the log stops writing an instruction that cannot be executed — the fix then has to move to breakfast, which IS under direct control.** **If it is separable, then this is a compliance problem, not an information problem.** **Those two need different responses and only one answer distinguishes them.**
+
+✅ **Dark chocolate at the established rate — 60/1g/0.75g** (Aug 8, Aug 10). ✅ **Correctly placed: after food, so [[profile]]'s "caffeine only after food" holds** (dark chocolate carries theobromine plus a small caffeine dose). ✅ **It is also a listed magnesium source in this file's supplement table** — a genuinely defensible 60 kcal, unlike the Biscoff/Frooti/banana-chips class. ⚠️ **But it repeats the Aug 10 muddle exactly: the dark-chocolate/tea swap was supposed to have chocolate REPLACE the after-meal tea, and today both were taken again.** *(Aug 10: "after-lunch tea was added on top of the after-lunch dark chocolate instead of replacing it, so today doesn't cleanly test the swap.")* **Four weeks on, the same test is still untested.**
+
+🔴 **Fiber ~32.4g before dinner — already over the 25–30g band, and dinner has not happened.** ⚠️ **This is the 4th time the identical configuration has closed a day over.** ✅ **PB correctly left off again — that saving is real and holding.** **Dinner must now be genuinely zero-fiber (eggs + rice/idiyappam + curd; no sambar, no rasam, no fruit, no vegetable side) and the day STILL closes ~32g.** **There is no dinner that rescues this number; the day was decided by 1 PM.**
+
+⚠️ **Calories ~1,936. Dinner room depends on which band applies, and the two files disagree — see the band note below: ~364–464 kcal against [[bmi-increase-plan]]'s stated 2,300–2,400, or ~244–344 against the recomputed 2,180–2,280 — either way well under the 800 cap, so the cap is not the binding constraint today.** ✅ **Practical call: aim ~450–500 kcal** — a clean hit under the plan's stated band, ~100 over the recomputed one, which is inside the ±15–20% estimation error this log carries anyway. **Do not engineer a small dinner; protein and fiber are the binding constraints tonight, not calories.** 🔴 **Yesterday's dinner was ~620 against a ~340 brief and blew the day 231–331 over. Today's brief is tighter still (~350) and the pattern that broke it — an unreported restaurant side — is a reporting failure I have now made four times.** **Report sides at the time, unprompted.**
+
+✅✅ **Protein ~91.4g with dinner to come — comfortably on track for the 100–120g band; 2 eggs alone (12g) clears the floor.** ✅ **Buddha bowl confirmed non-veg for the 2nd consecutive day, so the 595/45g/10g rate is now standing rather than assumed.** ⚠️ **Still unanswered: whether the order has ALWAYS been the same — that one answer retroactively closes Aug 19 → Sep 6, ~15 lunches where protein rests on an assumption.**
+
+🔴🔴 **BAND CONFLICT — surfaced 2026-09-08, and it is a documentation failure, not an analysis one.** **[[bmi-increase-plan]] still states 2,300–2,400 and states it as a hard floor** — *"Never drop below ~2,300 on ANY day"*, *"Do not treat 2,300 as optional."* **The recomputation to ~2,180–2,280 was decided in THIS file on Sep 6 and never propagated to the plan.** Every day since Sep 7 has been briefed against a band the canonical file does not contain. 🔴 **The plan is also internally inconsistent on its own page: its band table derives 2,300–2,400 from a ~1.2–1.5 kg/month intent (it labels 2,400 as "~1.5 kg"), while the gain target was revised to 0.5–0.9 kg/month on Aug 31 and the table was left untouched. The band is stale by one revision against its own goal.**
+
+⚠️ **The recomputation itself is sound and empirical** — Jul 6 → Sep 6, 58.0 → 61.20 kg over 62 days = 1.55 kg/month, requiring ~397 kcal/day surplus against a window-matched ~2,450 average intake → **maintenance ≈ 2,053**; 0.5–0.9 kg/month over that = **2,180–2,280**. **That is his own data, not a textbook figure.**
+
+🔴🔴 **But the strongest argument runs the other way, and it should govern: the 0.5–0.9 ceiling exists because above ~0.9 kg/month the surplus becomes fat by arithmetic — which assumes resistance training is converting it. [[exercise-log]] has nothing since Week 3 (Aug 4–10), four weeks dark.** **Without lifting, cutting 120 kcal/day does not buy lean mass; it buys a slower gain at the same composition ratio** — while he sits 0.8 kg (single reading) / ~1.3 kg (3-point average) from exiting underweight on the ICMR chart. ✅ **Resolution proposed, not yet written into [[bmi-increase-plan]]: make the band CONDITIONAL — 2,300–2,400 while training is absent, 2,180–2,280 once resistance work runs 2–3×/week.** **This also removes the contradiction where the recomputed ceiling (2,280) sits below the plan's declared floor (2,300), which cannot both be true.** ⚠️ **Flagged for decision since Aug 31 — nine days.**
+
+✅✅ **Purine still clean — day 2, no red meat, fish, shellfish or alcohol.** ✅ **Still no added cooking fat — if dinner holds, the 5-day frying run (Sep 3–7) is broken.** **Two structural wins today that the fiber miss should not obscure.**
+
+⚠️ **Tomorrow (Wed Sep 9) is the first usable weigh-in since Sep 4.** Sep 6 was depressed by fluid loss and Sep 7 inflated by sodium and rehydration — **both unreadable.** **Take the waist the same morning, same site (navel), bare skin, spine straight, and this time at the end of a normal exhale.**
+
+---
+
 ## Micronutrient & Supplement Tracking (added 2026-08-13)
 
 > **Why this is a tick-box table and not mg columns.** Per-meal micronutrient totals were considered and rejected: (1) estimation error for micronutrients exceeds the signal — magnesium in the same dish varies by soil, variety, and preparation, well beyond the ±15–20% already carried by the calorie estimates; (2) **vitamin D, the one confirmed deficiency in [[lab-reports-summary]], is not food-trackable** — it comes from sunlight and supplement; (3) **folate risk here is drug-induced, not dietary** — sulfasalazine blocks absorption, so intake tells you nothing about status; (4) for micronutrients, intake is a weak proxy for status, unlike the direct calories → weight chain. **Blood levels are the real measure — they live in [[lab-reports-summary]].** This table tracks the two things a food log genuinely can: whether the anchor foods happened, and whether the supplements were taken.

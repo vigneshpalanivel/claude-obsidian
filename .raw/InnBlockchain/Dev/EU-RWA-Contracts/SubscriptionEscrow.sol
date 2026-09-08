@@ -1,12 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IDocumentAnchor} from "./Interfaces.sol";
+import {IDocumentAnchor, IIdentityGate, Tier} from "./Interfaces.sol";
 
 /// @title SubscriptionEscrow (illustrative sample — not production code)
-/// @notice Prospectus Regulation Art 3(2)/6/12/17/21/23 — gates a primary token offer on
-///         the public-offer threshold, holds subscriptions in escrow while any statutory
-///         withdrawal window is open, and enforces the prospectus's 12-month validity.
+/// @notice Prospectus Regulation Art 1(4)(b)/3(2)/6/12/17/21/23 — gates a primary token offer
+///         on BOTH exemption limbs (what it may raise, and how many non-qualified persons it
+///         may be offered to), holds subscriptions in escrow while any statutory withdrawal
+///         window is open, and enforces the prospectus's 12-month validity.
 /// @dev    Two independent regimes, chosen once at deploy and not switchable:
 ///         - EXEMPT: offer stays under the per-jurisdiction threshold (Art 3(2)) and never
 ///           had an NCA-approved prospectus. `subscribe()` hard-reverts once the cumulative
@@ -40,6 +41,20 @@ contract SubscriptionEscrow {
     address public immutable issuer;
     address public immutable governance; // multisig/timelock — publishes supplements, final price
 
+    /// @notice The identity registry this offer resolves a subscriber's jurisdiction against.
+    /// @dev    ⚠️ `subscribe()` used to take `jurisdiction` as a caller-supplied argument.
+    ///         That was wrong twice over. As compliance: a self-declared country is a country
+    ///         the subscriber picks, and in EXEMPT mode the country *selects the threshold* —
+    ///         so a subscriber facing a full bucket in their own Member State could simply
+    ///         name an emptier one and the Art 3(2) gate would wave them through. The
+    ///         registry's `jurisdiction` is written by a registrar off the back of KYC; the
+    ///         argument was written by the person being gated.
+    ///         As GDPR: a calldata argument is not a way to avoid persisting an attribute.
+    ///         Calldata is part of the transaction and every archive node keeps it forever —
+    ///         strictly worse than storage, which `deregisterInvestor` can at least `delete`.
+    ///         Reading it from the registry means the only durable copy is the erasable one.
+    IIdentityGate public immutable identity;
+
     // ─────────────────────────── EXEMPT mode: per-jurisdiction threshold ─────
 
     /// @notice Each Member State's elected exemption ceiling (Art 3(2)), in wei of the
@@ -50,6 +65,32 @@ contract SubscriptionEscrow {
     mapping(bytes32 => uint256) public jurisdictionThresholdWei;
 
     mapping(bytes32 => uint256) public jurisdictionRaisedWei;
+
+    // ── Art 1(4)(b) — the OTHER exemption limb, which was missing entirely ────
+    //
+    // ⚠️ THE MONEY CAP IS NOT THE ONLY CAP. Art 3(2) bounds what an offer may RAISE; Art 1(4)(b)
+    //    separately bounds who it may be OFFERED TO — "fewer than 150 natural or legal persons
+    //    per Member State, other than qualified investors". This contract enforced only the
+    //    first, so an offer could stay comfortably under its threshold in euros and lose the
+    //    exemption anyway on headcount, with nothing on-chain registering that it had.
+    //
+    // ⚠️ COUNTED PER PERSON, NOT PER WALLET. The key is `IdentityRegistry`'s `recordPointer`.
+    //    Counting addresses would spend the allowance three times on one investor holding three
+    //    wallets — and lost-key recovery hands people extra wallets whether they wanted them or
+    //    not, so the miscount is not even self-inflicted.
+
+    /// @notice "Fewer than 150" is 149. Not a Member State election — unlike the Art 3(2)
+    ///         threshold, this figure is fixed EU-wide, so it is a constant rather than
+    ///         governance-set.
+    uint256 public constant MAX_NON_QUALIFIED_PERSONS_PER_JURISDICTION = 149;
+
+    /// @notice Distinct non-qualified PERSONS who have subscribed from each Member State.
+    mapping(bytes32 => uint256) public nonQualifiedPersonsInJurisdiction;
+
+    /// @dev Person-in-jurisdiction seen before? Keyed both ways round because the 150 is a
+    ///      per-Member-State allowance: one person subscribing from two jurisdictions consumes
+    ///      one unit of each, not one unit overall.
+    mapping(bytes32 => mapping(bytes32 => bool)) private _personCountedInJurisdiction;
 
     // ─────────────────────────── PROSPECTUS mode: ceiling + validity ─────────
 
@@ -135,12 +176,16 @@ contract SubscriptionEscrow {
     // ─────────────────────────── events ───────────────────────────────────────
 
     event JurisdictionThresholdSet(bytes32 indexed jurisdiction, uint256 thresholdWei);
-    event Subscribed(
-        uint256 indexed subscriptionId,
-        address indexed investor,
-        bytes32 indexed jurisdiction,
-        uint256 amountWei
-    );
+    /// @dev ⚠️ GDPR — `jurisdiction` was removed from this log deliberately. It used to sit
+    ///      here alongside the investor address and the amount, which bound a wallet to a
+    ///      country of residence *and* a sum of money, permanently, in a record no erasure
+    ///      request can reach. The threshold arithmetic never needed the log — it runs off
+    ///      `jurisdictionRaisedWei`, which is an aggregate per country and personal data
+    ///      about nobody. An indexer that legitimately needs one subscriber's jurisdiction
+    ///      reads `IIdentityGate.jurisdictionOf()`, which goes empty when that investor is
+    ///      deregistered. Same rule as `IdentityRegistry`: attributes live in storage where
+    ///      a `require` reads them and `delete` can remove them, never in a log.
+    event Subscribed(uint256 indexed subscriptionId, address indexed investor, uint256 amountWei);
     event SupplementPublished(uint256 indexed windowIndex, uint64 opensAt, uint64 closesAt, uint64 scopeCutoff);
     /// @dev The reconciliation key. An indexer joins these against `DocumentRegistry`'s own
     ///      anchoring events and alarms on a supplement that has no window — the failure
@@ -157,6 +202,22 @@ contract SubscriptionEscrow {
     error NotGovernance();
     error NotSubscriber();
     error WrongMode();
+    error IdentityRegistryRequired();
+    /// @dev The subscriber has no jurisdiction on the identity registry — either never
+    ///      registered, or deregistered since. Deliberately distinct from
+    ///      `JurisdictionThresholdNotConfigured`: that one says governance has not yet
+    ///      elected a ceiling for a known country, this one says we do not know the country.
+    ///      Collapsing them would report an operator configuration gap for what is actually
+    ///      an unverified subscriber.
+    error SubscriberJurisdictionUnknown(address investor);
+    /// @dev The subscriber has a jurisdiction but no person key, which the registry no longer
+    ///      permits and older records may still carry. Counting them would put an uncountable
+    ///      subscriber inside a headcount exemption.
+    error SubscriberPersonUnknown(address investor);
+    /// @dev Art 1(4)(b) headcount exhausted for that Member State. Distinct from
+    ///      `ExemptThresholdBreached`, which is the Art 3(2) money limb — the offer can be
+    ///      nowhere near its euro ceiling and still be out of non-qualified investors.
+    error NonQualifiedPersonCapReached(bytes32 jurisdiction, uint256 cap);
     error JurisdictionThresholdNotConfigured(bytes32 jurisdiction);
     error ExemptThresholdBreached(bytes32 jurisdiction, uint256 wouldRaiseTo, uint256 thresholdWei);
     error OfferCeilingBreached(uint256 wouldRaiseTo, uint256 ceilingWei);
@@ -190,6 +251,11 @@ contract SubscriptionEscrow {
     ///                            EXEMPT mode, which by definition has no approved
     ///                            prospectus to anchor.
     /// @param prospectusDocRef_   The registry `docRef` of the prospectus this offer runs on.
+    /// @param identity_           `IdentityRegistry` supplying each subscriber's *verified*
+    ///                            jurisdiction. Required in BOTH modes — EXEMPT mode reads it
+    ///                            to pick the Art 3(2) threshold, and PROSPECTUS mode still
+    ///                            needs a registered subscriber even though its ceiling is
+    ///                            offer-wide rather than per-country.
     constructor(
         address issuer_,
         address governance_,
@@ -198,11 +264,15 @@ contract SubscriptionEscrow {
         uint64 prospectusValidUntil_,
         bool finalPriceOmittedAtFiling_,
         address documents_,
-        bytes32 prospectusDocRef_
+        bytes32 prospectusDocRef_,
+        address identity_
     ) {
+        if (identity_ == address(0)) revert IdentityRegistryRequired();
+
         issuer = issuer_;
         governance = governance_;
         mode = mode_;
+        identity = IIdentityGate(identity_);
 
         if (mode_ == Mode.Prospectus) {
             maxOfferAmountWei = maxOfferAmountWei_;
@@ -254,7 +324,13 @@ contract SubscriptionEscrow {
     // applicable withdrawal window has closed; mode-gated at the door.
     // ═══════════════════════════════════════════════════════════════════════
 
-    function subscribe(bytes32 jurisdiction) external payable returns (uint256 subscriptionId) {
+    /// @notice Takes no jurisdiction argument by design — see the `identity` @dev note. The
+    ///         subscriber's country is read from the registry, where a registrar wrote it
+    ///         after KYC, and never from the caller, who is the party being gated.
+    function subscribe() external payable returns (uint256 subscriptionId) {
+        bytes32 jurisdiction = identity.jurisdictionOf(msg.sender);
+        if (jurisdiction == bytes32(0)) revert SubscriberJurisdictionUnknown(msg.sender);
+
         if (mode == Mode.Exempt) {
             uint256 threshold = jurisdictionThresholdWei[jurisdiction];
             if (threshold == 0) revert JurisdictionThresholdNotConfigured(jurisdiction);
@@ -263,6 +339,11 @@ contract SubscriptionEscrow {
             if (wouldRaiseTo > threshold) {
                 revert ExemptThresholdBreached(jurisdiction, wouldRaiseTo, threshold);
             }
+
+            // Art 1(4)(b) headcount, checked BEFORE the raise is committed so a subscription
+            // that breaches the person cap leaves no trace in the money counter.
+            _countNonQualifiedPerson(jurisdiction);
+
             jurisdictionRaisedWei[jurisdiction] = wouldRaiseTo;
         } else {
             if (block.timestamp > prospectusValidUntil) revert ProspectusExpired(prospectusValidUntil);
@@ -288,7 +369,53 @@ contract SubscriptionEscrow {
             settled: false
         });
 
-        emit Subscribed(subscriptionId, msg.sender, jurisdiction, msg.value);
+        emit Subscribed(subscriptionId, msg.sender, msg.value);
+    }
+
+    /// @notice Art 1(4)(b) — spends one unit of a Member State's 149-person allowance, and
+    ///         reverts once it is gone.
+    /// @dev    ⚠️ QUALIFIED INVESTORS DO NOT COUNT AT ALL. Art 2(e) reads across to MiFID II
+    ///         Annex II, so per-se professionals, elective professionals and eligible
+    ///         counterparties sit outside the headcount entirely. `Tier.Unset` IS counted —
+    ///         an unclassified subscriber is not in Annex II, and resolving that unknown in
+    ///         the offer's favour is how a headcount exemption quietly stops being one.
+    /// @dev    ⚠️ ONE UNIT PER PERSON PER JURISDICTION, spent on their first subscription. A
+    ///         repeat subscription by someone already counted consumes nothing further: the
+    ///         article counts persons the offer was made to, not tickets sold.
+    /// @dev    ⚠️ NEVER DECREMENTED, INCLUDING ON WITHDRAWAL. An investor who exercises an Art
+    ///         17(2) or Art 23(2) withdrawal right was still a person this offer was addressed
+    ///         to, and Art 1(4)(b) counts the addressing, not the outcome. Refunding the money
+    ///         does not unmake the offer.
+    function _countNonQualifiedPerson(bytes32 jurisdiction) private {
+        (bytes32 person, bool registered) = identity.recordPointerOf(msg.sender);
+        if (!registered || person == bytes32(0)) revert SubscriberPersonUnknown(msg.sender);
+
+        if (_isQualifiedInvestor(identity.tierOf(msg.sender))) return;
+        if (_personCountedInJurisdiction[jurisdiction][person]) return;
+
+        uint256 wouldCountTo = nonQualifiedPersonsInJurisdiction[jurisdiction] + 1;
+        if (wouldCountTo > MAX_NON_QUALIFIED_PERSONS_PER_JURISDICTION) {
+            revert NonQualifiedPersonCapReached(jurisdiction, MAX_NON_QUALIFIED_PERSONS_PER_JURISDICTION);
+        }
+
+        _personCountedInJurisdiction[jurisdiction][person] = true;
+        nonQualifiedPersonsInJurisdiction[jurisdiction] = wouldCountTo;
+    }
+
+    /// @dev Prospectus Art 2(e) qualified investors are the MiFID II Annex II classes. Anything
+    ///      outside Annex II — retail, and anything unclassified — counts toward the 150.
+    function _isQualifiedInvestor(Tier tier) private pure returns (bool) {
+        return
+            tier == Tier.ProfessionalOnRequest ||
+            tier == Tier.PerSeProfessional ||
+            tier == Tier.EligibleCounterparty;
+    }
+
+    /// @notice Remaining Art 1(4)(b) headroom for a Member State.
+    function nonQualifiedPersonHeadroom(bytes32 jurisdiction) external view returns (uint256) {
+        uint256 used = nonQualifiedPersonsInJurisdiction[jurisdiction];
+        if (used >= MAX_NON_QUALIFIED_PERSONS_PER_JURISDICTION) return 0;
+        return MAX_NON_QUALIFIED_PERSONS_PER_JURISDICTION - used;
     }
 
     // ═══════════════════════════════════════════════════════════════════════

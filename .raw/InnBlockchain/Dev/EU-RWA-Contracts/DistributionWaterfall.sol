@@ -139,6 +139,11 @@ contract DistributionWaterfall {
     error DistributionAlreadyBound(uint256 allocationId, uint256 trancheIndex);
     error DistributionAmountMismatch(uint256 expected, uint256 actual);
 
+    /// @dev ⚠️ Used by the dependency setter but never declared, so this file did not compile.
+    ///      Guards the "swap, never unset" rule — an unset reference reads as "not owed" and
+    ///      turns a control off silently.
+    error ZeroAddress();
+
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
         _;

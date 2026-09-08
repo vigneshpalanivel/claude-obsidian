@@ -191,19 +191,20 @@ interface IMarketEvents {
     function emitOrderEvent(bytes32 isinHash, bytes32 orderId, uint8 lifecycle) external;
 }
 
-/// @notice The person-scoped block limb, as the transfer hook consumes it.
-/// @dev    ⚠️ NARROWER THAN IT LOOKS ON PURPOSE. The store behind this interface holds the whole
-///         opaque block class — listing, suspicion, lapsed diligence — under one flag, and this
-///         surface exposes no way to ask which. There is no `reasonOf`, no class enum and no
-///         per-entry read here, because a consumer that could distinguish the classes would put
-///         that distinction on a public execution path. Operator tooling reads the concrete
-///         contract; the hook reads this.
-/// @dev    ⚠️ `assertTransferPermitted` REVERTS, and every revert on the block path is one
+/// @notice The person-scoped restriction limb, as the transfer hook consumes it.
+/// @dev    ⚠️ NARROWER THAN IT LOOKS ON PURPOSE. The store behind this interface holds **every**
+///         reason a wallet may not move — a sanctions listing, an Art 75 suspicion block, a
+///         probate hold, a court attachment, a lost-key hold — under one flag, and this surface
+///         exposes no way to ask which. There is no `reasonOf`, no class enum and no per-entry
+///         read here, because a consumer that could distinguish the classes would put that
+///         distinction on a public execution path. Operator tooling reads the concrete contract;
+///         the hook reads this.
+/// @dev    ⚠️ `assertTransferPermitted` REVERTS, and every revert on the restriction path is one
 ///         argument-free generic error. Not a style choice: tipping-off is an individual
 ///         criminal offence in most Member States, and a typed reason on a public ledger
 ///         discloses to everyone. Even an address argument is too much — on a two-sided check it
 ///         tells the caller which side failed.
-interface ISanctionsCheck {
+interface IRestrictedParty {
     function assertTransferPermitted(address from, address to) external view;
 
     function assertNotBlocked(address wallet) external view;

@@ -1,7 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-interface IIdentityRegistryClaims {
+import {IIdentityGate} from "./Interfaces.sol";
+
+/// @notice The claims limb of the identity layer, plus — by inheritance — the canonical gate.
+/// @dev    ⚠️ INHERITS `IIdentityGate` RATHER THAN RE-DECLARING ITS MEMBERS. This contract needs
+///         the wallet → person key (`recordPointerOf`) and `Interfaces.sol` already defines it.
+///         Copying that signature into a local interface would give one dependency two
+///         definitions with no compiler error to announce a divergence — precisely the failure
+///         `Interfaces.sol` says it exists to prevent.
+///         The claim members stay declared here because `ClaimValue` is still declared inside
+///         `IdentityRegistry` rather than hoisted to the shared-types block. Hoisting it is a
+///         suite-wide change and is deliberately not bundled into this one.
+interface IIdentityRegistryClaims is IIdentityGate {
     enum ClaimValue {
         NotRecorded,
         AssertedTrue,
@@ -52,6 +63,17 @@ interface IIdentityRegistryClaims {
 ///         orders into the venue under the operator's membership, with none of the
 ///         conditions Art 17(5) attaches. The controls have to live in the contract, not in
 ///         a middleware layer a caller can bypass by calling the contract directly.
+/// @dev    ⚠️ ADMISSION AND THE DEA LIMITS ARE SCOPED TO THE **PERSON**, NOT TO THE ADDRESS.
+///         Both obligations here are owed by somebody, and one person may hold several wallets —
+///         the identity layer permits it and lost-key recovery requires it. Keyed per address:
+///           • the Art 17(5) daily credit threshold doubled with each additional wallet, with
+///             nothing reverting and no event to notice — the limit was simply not the limit; and
+///           • `admittedMemberCount` counted addresses, so the DLT Pilot Art 11(4) six-monthly
+///             report overstated the membership against the operator's own admission file.
+///         The person key is `IdentityRegistry`'s `recordPointer`, read through
+///         `IIdentityGate.recordPointerOf`. It is the same key `SecurityToken.recoverWallet`
+///         uses to prove two addresses are one investor, which is what makes it the right one:
+///         a fix that invented a second person namespace would just move the problem.
 contract MemberEligibility {
     // ─────────────────────────── condition model ──────────────────────────────
 
@@ -99,9 +121,13 @@ contract MemberEligibility {
         bytes32 deaAgreementHash; // the binding written agreement Art 17(5) requires
     }
 
-    mapping(address => DeaLimits) public deaLimits;
-    mapping(address => uint256) public dayNotionalUsedWei;
-    mapping(address => uint64) public dayWindowStart;
+    /// @dev ⚠️ KEYED BY PERSON. Art 17(5) sets thresholds on a CLIENT, and the daily one it
+    ///      calls a credit limit is the whole reason the article exists — a per-address key made
+    ///      it additive across a participant's own wallets. `deaLimitsOf(wallet)` is the
+    ///      address-shaped read for tooling.
+    mapping(bytes32 => DeaLimits) public deaLimitsOfPerson;
+    mapping(bytes32 => uint256) public dayNotionalUsedWei;
+    mapping(bytes32 => uint64) public dayWindowStart;
 
     // ─────────────────────────── admission register ───────────────────────────
     //
@@ -111,15 +137,41 @@ contract MemberEligibility {
 
     mapping(address => bool) public isAdmittedMember;
     mapping(address => uint64) public admittedAt;
+
+    /// @notice The person each admitted wallet was admitted under, **pinned at admission**.
+    /// @dev    ⚠️ NEVER RE-RESOLVED. `recordPointerOf` can change under a live address —
+    ///         `SecurityToken.recoverWallet` re-points one — and a person resolved at withdrawal
+    ///         time would then decrement a bucket that was never incremented, underflowing one
+    ///         person's count while stranding another's. It is also what the order path reads,
+    ///         so a registry change cannot silently re-key a member's daily allowance mid-day.
+    mapping(address => bytes32) public personOfAdmittedWallet;
+
+    /// @dev How many live admitted wallets roll up to one person. The person leaves the member
+    ///      count when the LAST of them is withdrawn, not the first.
+    mapping(bytes32 => uint256) public admittedWalletsOfPerson;
+
+    /// @notice Distinct PERSONS admitted — the figure the Art 11(4) six-monthly report gives the
+    ///         NCA. Art 4(2) admits a natural or legal person; a member who adds a second wallet
+    ///         does not become two members.
     uint256 public admittedMemberCount;
+
+    /// @notice Admitted WALLETS. Both are stored because both get asked for and neither is
+    ///         derivable from the other — leaving one to be recomputed off-chain is how the
+    ///         reported figure and the register drift apart without either side being wrong.
+    uint256 public admittedWalletCount;
 
     // ─────────────────────────── events ───────────────────────────────────────
 
     event ConditionAdded(uint256 indexed index, uint256 indexed topic, bytes32 label);
     event AdditionalConditionAdded(uint256 indexed index, uint256 indexed topic, bytes32 label, bytes32 ncaRefHash);
-    event MemberAdmitted(address indexed wallet, uint64 at);
-    event MemberWithdrawn(address indexed wallet, uint64 at, bytes32 reasonHash);
-    event DeaLimitsSet(address indexed wallet, uint256 maxOrderNotionalWei, uint256 maxDailyNotionalWei);
+    /// @dev `personId` is indexed on all three so the Art 11(4) report and any DEA-limit
+    ///      reconciliation can be assembled per person from logs alone, without first joining
+    ///      every wallet back through the identity registry.
+    event MemberAdmitted(address indexed wallet, bytes32 indexed personId, uint64 at);
+    event MemberWithdrawn(address indexed wallet, bytes32 indexed personId, uint64 at, bytes32 reasonHash);
+    event DeaLimitsSet(
+        bytes32 indexed personId, address indexed setVia, uint256 maxOrderNotionalWei, uint256 maxDailyNotionalWei
+    );
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
@@ -130,6 +182,7 @@ contract MemberEligibility {
     error RetailRiskWarningsNotAcknowledged(address wallet);
     error NotAMember(address wallet);
     error AlreadyAMember(address wallet);
+    error WalletNotRegistered(address wallet);
     error DeaLimitsNotConfigured(address wallet);
     error NoDeaAgreement(address wallet);
     error OrderExceedsPerOrderLimit(address wallet, uint256 notionalWei, uint256 limitWei);
@@ -242,6 +295,29 @@ contract MemberEligibility {
     }
 
     // ═══════════════════════════════════════════════════════════════════════
+    // PERSON RESOLUTION — the key both obligations in this contract are owed by
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice The off-chain investor record a wallet resolves to.
+    /// @dev    ⚠️ FAILS CLOSED ON AN UNREGISTERED WALLET rather than falling back to the address.
+    ///         A fallback is the tempting shape and it is the wrong one twice over: every
+    ///         unregistered wallet would share the `bytes32(0)` bucket, so they would share one
+    ///         daily allowance and collide on the admission counter. It costs nothing in
+    ///         practice — `checkAdmission` runs `checkEligibleAndIdentifiable`, so an
+    ///         unregistered wallet was never admissible.
+    function _personOf(address wallet) internal view returns (bytes32) {
+        (bytes32 pointer, bool registered) = identity.recordPointerOf(wallet);
+        if (!registered || pointer == bytes32(0)) revert WalletNotRegistered(wallet);
+        return pointer;
+    }
+
+    /// @notice Address-shaped read of the person key, for operator tooling and the Art 11(4)
+    ///         reconciliation. Reverts on an unregistered wallet, as the internal resolver does.
+    function personOfWallet(address wallet) external view returns (bytes32) {
+        return _personOf(wallet);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
     // ADMISSION REGISTER
     // ═══════════════════════════════════════════════════════════════════════
 
@@ -249,18 +325,37 @@ contract MemberEligibility {
         if (isAdmittedMember[wallet]) revert AlreadyAMember(wallet);
         checkAdmission(wallet);
 
+        bytes32 personId = _personOf(wallet);
+
         isAdmittedMember[wallet] = true;
         admittedAt[wallet] = uint64(block.timestamp);
-        admittedMemberCount++;
+        personOfAdmittedWallet[wallet] = personId;
+        admittedWalletCount++;
 
-        emit MemberAdmitted(wallet, uint64(block.timestamp));
+        // The person joins the member count on their FIRST live wallet only. A second wallet is
+        // a second address for an existing member, not a second admission — Art 4(2) is a
+        // decision taken on a person's file.
+        if (admittedWalletsOfPerson[personId]++ == 0) admittedMemberCount++;
+
+        emit MemberAdmitted(wallet, personId, uint64(block.timestamp));
     }
 
+    /// @dev The person is read from `personOfAdmittedWallet`, never re-resolved — see the note
+    ///      on that mapping. The wallet's own admission ends immediately; the person's
+    ///      membership ends only when their last admitted wallet is withdrawn, because a member
+    ///      who retires one address has not left the venue.
     function withdrawMember(address wallet, bytes32 reasonHash) external onlyGovernance {
         if (!isAdmittedMember[wallet]) revert NotAMember(wallet);
+
+        bytes32 personId = personOfAdmittedWallet[wallet];
+
         isAdmittedMember[wallet] = false;
-        admittedMemberCount--;
-        emit MemberWithdrawn(wallet, uint64(block.timestamp), reasonHash);
+        delete personOfAdmittedWallet[wallet];
+        admittedWalletCount--;
+
+        if (--admittedWalletsOfPerson[personId] == 0) admittedMemberCount--;
+
+        emit MemberWithdrawn(wallet, personId, uint64(block.timestamp), reasonHash);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -271,29 +366,43 @@ contract MemberEligibility {
     ///         agreement. All three limbs are required together: limits without an agreement
     ///         is DEA on undocumented terms, and an agreement without limits is DEA with no
     ///         controls. Art 17(5) asks for both.
+    /// @param  wallet Addressed by wallet for usability, but **the wallet is only the lookup** —
+    ///         the limits are written against the person behind it and apply across every wallet
+    ///         they hold. Setting them through a second address of the same member overwrites
+    ///         the same record rather than granting a second allowance, which is the point.
     function setDeaLimits(
         address wallet,
         uint256 maxOrderNotionalWei,
         uint256 maxDailyNotionalWei,
         bytes32 deaAgreementHash
     ) external onlyGovernance {
-        deaLimits[wallet] = DeaLimits({
+        bytes32 personId = _personOf(wallet);
+
+        deaLimitsOfPerson[personId] = DeaLimits({
             configured: true,
             maxOrderNotionalWei: maxOrderNotionalWei,
             maxDailyNotionalWei: maxDailyNotionalWei,
             deaAgreementHash: deaAgreementHash
         });
-        emit DeaLimitsSet(wallet, maxOrderNotionalWei, maxDailyNotionalWei);
+        emit DeaLimitsSet(personId, wallet, maxOrderNotionalWei, maxDailyNotionalWei);
     }
 
     /// @notice Called by the venue before accepting an order. Consumes daily headroom, so it
     ///         is state-changing by design — a `view` version would have to be paired with a
     ///         separate consume call, and any gap between the two is the race a participant
     ///         uses to exceed its own credit limit.
+    /// @dev The threshold and the consumed headroom are the PERSON's, so orders entered from a
+    ///      member's second address draw down the same daily allowance as their first. The
+    ///      person is read from `personOfAdmittedWallet` rather than resolved through the
+    ///      identity registry: it saves an external call on the hot path, and it means a
+    ///      registry change cannot re-key a member's spent headroom to a fresh empty bucket
+    ///      part-way through a trading day.
     function checkAndConsumeOrder(address wallet, uint256 notionalWei) external onlyVenue {
         if (!isAdmittedMember[wallet]) revert NotAMember(wallet);
 
-        DeaLimits storage lim = deaLimits[wallet];
+        bytes32 personId = personOfAdmittedWallet[wallet];
+
+        DeaLimits storage lim = deaLimitsOfPerson[personId];
         if (!lim.configured) revert DeaLimitsNotConfigured(wallet);
         if (lim.deaAgreementHash == bytes32(0)) revert NoDeaAgreement(wallet);
         if (notionalWei > lim.maxOrderNotionalWei) {
@@ -303,16 +412,16 @@ contract MemberEligibility {
         // Rolling 24h window. A calendar-day window would need the same off-chain business
         // calendar the settlement and prospectus samples feed in; a rolling window needs no
         // calendar and is the stricter of the two, so it is the safe default here.
-        if (block.timestamp >= dayWindowStart[wallet] + 1 days) {
-            dayWindowStart[wallet] = uint64(block.timestamp);
-            dayNotionalUsedWei[wallet] = 0;
+        if (block.timestamp >= dayWindowStart[personId] + 1 days) {
+            dayWindowStart[personId] = uint64(block.timestamp);
+            dayNotionalUsedWei[personId] = 0;
         }
 
-        uint256 wouldBe = dayNotionalUsedWei[wallet] + notionalWei;
+        uint256 wouldBe = dayNotionalUsedWei[personId] + notionalWei;
         if (wouldBe > lim.maxDailyNotionalWei) {
             revert OrderExceedsDailyLimit(wallet, wouldBe, lim.maxDailyNotionalWei);
         }
-        dayNotionalUsedWei[wallet] = wouldBe;
+        dayNotionalUsedWei[personId] = wouldBe;
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -345,5 +454,30 @@ contract MemberEligibility {
 
     function conditionCount() external view returns (uint256) {
         return _conditions.length;
+    }
+
+    /// @notice DEA limits as they apply to the person behind a wallet.
+    /// @dev    Replaces the old public `deaLimits(address)` getter. Kept address-shaped because
+    ///         every caller starts from an address; what changed is that two addresses of one
+    ///         member now return the same record instead of two.
+    function deaLimitsOf(address wallet) external view returns (DeaLimits memory) {
+        return deaLimitsOfPerson[_personOf(wallet)];
+    }
+
+    /// @notice Daily notional still available to the person behind a wallet, accounting for a
+    ///         rolling window that may already have expired.
+    /// @dev    Reads what `checkAndConsumeOrder` would compute, so a venue pre-checking an order
+    ///         and the contract enforcing it cannot disagree. Returns 0 where limits are
+    ///         unconfigured — unconfigured is a hard revert on the order path, not headroom.
+    function dailyHeadroomOf(address wallet) external view returns (uint256) {
+        bytes32 personId = isAdmittedMember[wallet] ? personOfAdmittedWallet[wallet] : _personOf(wallet);
+
+        DeaLimits storage lim = deaLimitsOfPerson[personId];
+        if (!lim.configured) return 0;
+
+        if (block.timestamp >= dayWindowStart[personId] + 1 days) return lim.maxDailyNotionalWei;
+
+        uint256 used = dayNotionalUsedWei[personId];
+        return used >= lim.maxDailyNotionalWei ? 0 : lim.maxDailyNotionalWei - used;
     }
 }

@@ -43,7 +43,7 @@ Two things to know about it:
 | **ELTIF Arts 23–24** | store prospectus + annual report | `DocumentRegistry` ✅ |
 | **DLT Pilot Art 4(2)(g)** | member's informed consent | `CovenantRegistry` ✅ |
 | **MAR Art 5** | buy-back price + volume caps, closed-period block, 7-session publication | `BuybackAgent` ✅ |
-| **Payout eligibility** | a frozen wallet must not get paid | `DistributionAgent` ✅ — same C1 gate as a transfer |
+| **Payout eligibility** | a restricted wallet must not get paid | `DistributionAgent` ✅ — identity + restriction read in the mandatory layer, same as a transfer |
 
 ### What MAR Art 5 actually cost
 
@@ -106,7 +106,7 @@ Items 4–7 are **product-driven, not regulation-driven**. A plain equity token 
 
 They earn their place for two inherited reasons:
 
-1. **Neither pays anyone.** Both compute an amount and hand it to `DistributionAgent`, so income goes out through the same C1 eligibility gate as a transfer. A coupon contract that paid holders directly would let a frozen wallet collect interest on units it cannot move.
+1. **Neither pays anyone.** Both compute an amount and hand it to `DistributionAgent`, so income goes out through the same C1 eligibility gate as a transfer. A coupon contract that paid holders directly would let a restricted wallet collect interest on units it cannot move.
 2. **Their terms are prospectus disclosure items,** so they are immutable — constructor only, no setters. A mutable coupon rate or a reorderable waterfall lets an operations key do, in one transaction, what the regulation treats as a re-offer.
 
 ### Four fixes to existing contracts (edits, not new files)
@@ -138,6 +138,21 @@ Two consequences worth recording:
 
 - **`ModularCompliance`'s NatSpec must carry the carve-out**, not the unqualified rule. As written it instructs the next module author to do the wrong thing by default.
 - **An ERC-3643-conformant `IModule` would not have this problem** — `moduleCheck` returns `bool`, so a T-REX block is generic by construction. The local `IComplianceModule` traded that property away for the named-error channel, and this is the cost. Worth stating against §16 D0, since the design doc's claim that generic codes *"cut directly against how both token standards are designed"* holds for ERC-1400's status-plus-reason return and **not** for ERC-3643.
+
+### A sixth, opened 2026-09-08 — two residual leaks the restricted-party consolidation could not close
+
+`IdentityRegistry.freeze` / `unfreeze` / `Investor.frozen` were **deleted** and every wallet-level stop moved into one store, `RestrictedPartyRegistry` (formerly `SanctionsRegistry`). The argument is storage-observability, not error strings: contract storage is public, so while two stores could each stop a wallet, an observer read *which* one held a person and inferred the class — and at that point the generic revert code is itself the tell. One store, one flag, one argument-free error.
+
+Two things survive that argument and are **not** fixed in code:
+
+| # | Leak | Why it was not closed | The operating rule |
+|---|---|---|---|
+| 1 | `SecurityToken.freezeUnits` writes a **public** `frozenUnits` mapping. An agent who freezes 100% of a wallet's balance has built a second, readable, wallet-level stop | A partial freeze over a disputed or collateralised parcel is a genuinely different mechanic, and forcing it through the restriction store would over-freeze — itself an exposure to the holder | **`freezeUnits` is for partial parcels only. A whole-wallet stop goes in `RestrictedPartyRegistry`.** Stated in the NatSpec on both contracts; no on-chain enforcement exists |
+| 2 | `SecurityToken.recoverWallet` runs no transfer gate, so a **wallet**-keyed restriction on the lost wallet is left behind while the units land in a second wallet of the same investor | The token holds no write access to the store, and giving it one would put a sanctions key on the token | **Any restriction intended to survive a key loss must be written against the RECORD (`blockRecord`), not the wallet.** Record-keyed restrictions *do* follow, because both wallets resolve to the same pointer |
+
+Both are stated in NatSpec at the site and in `DEPLOYMENT-DEFAULTS.md`. Neither is a code fix that exists; both are operator commitments that need an owner.
+
+**What the consolidation *did* close in code:** the stop is no longer removable. `SecurityToken` and `DistributionAgent` each take `IRestrictedParty` as a non-zero constructor argument and read it in the **mandatory** layer — above `ModularCompliance`, and in `DistributionAgent`'s case not behind the per-distribution `runComplianceModules` flag. Routing sanctions exclusively through `RestrictedPartyGate` would have demoted a control that binds irrespective of client type into one a single `removeModule` call switches off.
 
 ---
 
