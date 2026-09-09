@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IDocumentAnchor, IIdentityGate, IRestrictedParty, Regime, Tier, Version} from "./Interfaces.sol";
+import {IDocumentAnchor, IErasable, IIdentityGate, IRestrictedParty, Regime, Tier, Version} from "./Interfaces.sol";
 
 /// @title SubscriptionEscrow (illustrative sample — not production code)
 /// @notice Prospectus Regulation Art 1(4)(b)/3(2)/6/12/17/21/23 — gates a primary token offer
@@ -55,7 +55,7 @@ import {IDocumentAnchor, IIdentityGate, IRestrictedParty, Regime, Tier, Version}
 ///         this contract. The mandatory-layer reads on `subscribe()` (`checkEligible`,
 ///         `assertNotBlocked`) exist BECAUSE no mint hook runs here — before 2026-09-08 the
 ///         escrow accepted and refunded cash from a wallet the token would have refused.
-contract SubscriptionEscrow {
+contract SubscriptionEscrow is IErasable {
     /// @dev Emitted whenever an inter-contract reference is re-pointed.
     event DependencySet(bytes32 indexed role, address indexed impl);
 
@@ -73,6 +73,11 @@ contract SubscriptionEscrow {
 
     address public immutable issuer;
     address public immutable governance; // multisig/timelock — publishes supplements, final price
+
+    /// @notice The `PersonErasure` coordinator, permitted to call `erasePerson` and nothing else.
+    /// @dev    Zero disables the path. See `erasePerson` for why this one is gated on the offer
+    ///         having closed rather than being available on request.
+    address public erasureCoordinator;
 
     /// @notice The identity registry this offer resolves a subscriber's jurisdiction, tier and
     ///         eligibility against.
@@ -257,6 +262,11 @@ contract SubscriptionEscrow {
     ///      deregistered. Same rule as `IdentityRegistry`: attributes live in storage where
     ///      a `require` reads them and `delete` can remove them, never in a log.
     event Subscribed(uint256 indexed subscriptionId, address indexed investor, uint256 amountWei);
+    event ErasureCoordinatorSet(address indexed previous, address indexed current);
+    /// @dev The jurisdiction is in the log because the Art 1(4)(b) allowance it releases is a
+    ///      per-Member-State figure an auditor has to be able to reconcile, and a country with
+    ///      no person attached to it is not personal data. The `personId` is not.
+    event NonQualifiedPersonReleased(bytes32 indexed jurisdiction, uint256 remainingCount);
     /// @notice One window record pushed. Fires for BOTH kinds.
     /// @dev    ⚠️ Renamed from `SupplementPublished` on 2026-09-08. `DocumentRegistry` emits its
     ///         own `SupplementPublished(docRef, versionHash, publishedAt)` when a second
@@ -341,11 +351,15 @@ contract SubscriptionEscrow {
     error AlreadyWithdrawn();
     error AlreadySettled();
     error WindowsStillPending();
-    /// @dev `settle()` before `offerClosesAt` is set and passed — see the header.
+    /// @dev `settle()` before `offerClosesAt` is set and passed — see the header. Also raised by
+    ///      `erasePerson`, on the identical condition and deliberately sharing the error rather
+    ///      than adding a near-twin: both mean "this offer is not finished", and two errors for
+    ///      one fact is how a caller ends up handling only the one it happened to hit first.
     error OfferStillOpen();
     /// @dev `subscribe()` after `offerClosesAt`. A subscription accepted after the close would
     ///      be settleable in the same block, which is the H4 hole by another door.
     error OfferClosed(uint64 closedAt);
+    error NotErasureCoordinator();
     error OfferCloseInPast(uint64 proposed);
     error OfferCloseCannotMoveEarlier(uint64 current, uint64 proposed);
     /// @dev A window fed in shorter than its statutory floor, or opening in the past. The
@@ -628,6 +642,60 @@ contract SubscriptionEscrow {
     ///         17(2) or Art 23(2) withdrawal right was still a person this offer was addressed
     ///         to, and Art 1(4)(b) counts the addressing, not the outcome. Refunding the money
     ///         does not unmake the offer.
+    /// @notice Point at the `PersonErasure` coordinator, or unset it with `address(0)`.
+    function setErasureCoordinator(address coordinator) external onlyGovernance {
+        address previous = erasureCoordinator;
+        erasureCoordinator = coordinator;
+        emit ErasureCoordinatorSet(previous, coordinator);
+    }
+
+    /// @notice GDPR Art 17 leg. Releases the person's slot in the Art 1(4)(b) headcount.
+    /// @dev    ⚠️ THIS CONTRACT HAD NO ERASURE PATH AT ALL UNTIL 2026-09-09.
+    ///         `_personCountedInJurisdiction[jurisdiction][personId]` is a permanent record that
+    ///         a named person subscribed to a named offer from a named country, and nothing
+    ///         anywhere deleted it. It was defensible while the offer was open and indefensible
+    ///         one second after it closed, which is the distinction this function draws.
+    /// @dev    ⚠️ REFUSES WHILE THE OFFER IS OPEN, AND THAT REFUSAL IS ART 17(3)(b), NOT
+    ///         RELUCTANCE. The count IS the Prospectus Art 1(4)(b) control: it is what
+    ///         `_countNonQualifiedPerson` reads to decide whether the 149th non-qualified
+    ///         subscriber in a Member State may be admitted. Erasing an entry mid-offer would
+    ///         free a slot that has genuinely been consumed and let the offer exceed the
+    ///         exemption it is relying on — an investor could request erasure and thereby
+    ///         enlarge the allowance. Once the offer has closed the figure is settled and the
+    ///         legal obligation that justified holding it has ended.
+    /// @dev    ⚠️ AND THE EVIDENTIAL TAIL IS THE OPERATOR'S CALL, NOT THIS CONTRACT'S. An issuer
+    ///         may need to show a supervisor it stayed under 150 for some period after the
+    ///         close, and the Prospectus Regulation fixes no retention period for that — so
+    ///         rather than invent one in a constant, the timing is governed by when the operator
+    ///         points the coordinator at this contract. `PersonErasure.setTargetSkipped` is the
+    ///         recorded way to hold it out in the meantime; a skip is a decision with a reason
+    ///         hash, which is what an Art 30 record needs and a silent omission is not.
+    /// @dev    Reads the jurisdiction from the first wallet rather than taking it as an
+    ///         argument: since `IdentityRegistry` became person-keyed, every wallet of a person
+    ///         returns the same country, and reading it removes the last place a caller could
+    ///         name a jurisdiction of their own choosing.
+    function erasePerson(bytes32 personId, address[] calldata wallets) external {
+        if (msg.sender != erasureCoordinator || erasureCoordinator == address(0)) revert NotErasureCoordinator();
+        if (offerClosesAt == 0 || block.timestamp <= offerClosesAt) revert OfferStillOpen();
+        if (wallets.length == 0) return;
+
+        bytes32 jurisdiction = identity.jurisdictionOf(wallets[0]);
+        if (jurisdiction == bytes32(0)) return;
+        if (!_personCountedInJurisdiction[jurisdiction][personId]) return;
+
+        delete _personCountedInJurisdiction[jurisdiction][personId];
+
+        uint256 remaining = nonQualifiedPersonsInJurisdiction[jurisdiction];
+        // Cannot underflow while the flag above is the only thing that increments it, and
+        // guarded anyway: a decrement that wrapped would hand the offer a 2^256 allowance.
+        if (remaining != 0) {
+            remaining -= 1;
+            nonQualifiedPersonsInJurisdiction[jurisdiction] = remaining;
+        }
+
+        emit NonQualifiedPersonReleased(jurisdiction, remaining);
+    }
+
     function _countNonQualifiedPerson(bytes32 jurisdiction) private {
         (bytes32 person, bool registered) = identity.personIdOf(msg.sender);
         if (!registered || person == bytes32(0)) revert SubscriberPersonUnknown(msg.sender);

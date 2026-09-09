@@ -1,13 +1,13 @@
 ---
 title: Remaining Compliance — EU-RWA-Contracts
-date: 2026-09-08
-status: derived from the 28 .sol files (30 contracts) in this folder + §17/§17a of eu_tokenized_securities_smart_contract_design.md (rev 52)
+date: 2026-09-09
+status: derived from the 30 .sol files (31 contracts) in this folder + §17/§17a of eu_tokenized_securities_smart_contract_design.md (rev 53)
 supersedes: the rev-36 state of this file, which stood while the design moved from rev 36 to rev 52
 ---
 
 # Remaining Compliance List
 
-**30 contracts across 28 files. §17's contract inventory and §17a's matrix are both complete.**
+**31 contracts across 30 files. §17's contract inventory and §17a's matrix are both complete.** *(Was 30 across 29 until `PersonErasure` was added on 2026-09-09 — see §3's GDPR row and `DEPLOYMENT-DEFAULTS.md` §5.)*
 
 > ⚠️ **Re-synced 2026-09-08 to design rev 52, after the code review in `CODE-REVIEW-2026-09-08.md`.** This file had stood at rev 36 while the design moved 16 revisions, and three of its statements had gone stale in a way that mattered. **Read the review file for the full finding list; read the sweep note below for what this file used to say.**
 >
@@ -80,7 +80,7 @@ Two things it deliberately is **not**: a stabilisation contract (Art 5(4)–(5) 
 - Identity: KYC claims, trusted issuers, eIDAS — **done**. Note the attestation *signature* is verified off-chain by the claims service; on-chain is the trusted-issuer write gate plus the revocation read (design §3/§4 corrected at rev 52).
 - Operations: DORA governance wrapper — **done, and stripped 2026-09-08.** `DoraGovernor` is pause + incidents + key rotation + `tripFromOracle`. The upgrade queue, timelock, `queueUpgrade` disclosure gate and commit-reveal are **gone**: the upgrade path is stock Safe → OZ `TimelockController` → `ProxyAdmin` with the disclosure hash in the timelock salt (`UPGRADE-ARCHITECTURE.md`).
 - CSDR and SFD: correctly handled as exemption conditions inside `SettlementEngine`, not separate contracts
-- **GDPR: a design constraint, and it is not "nothing personal on-chain".** ⚠️ *Corrected 2026-09-08 — the old line is the formulation design rev 43 withdrew, and a DPA would not accept it.* A wallet bound to a verified investor **is** personal data and so is every transfer it makes; the register is the product and cannot reach zero. What the suite does instead: direct identifiers never touch the chain; every remaining field is justified individually (**D21**, still open); events carry the wallet and an opaque digest, never the person key, an attribute, a claim topic or a reason (design §10's field table, swept across all 30 contracts at rev 51); erasure is **approximated** — `deregisterPerson` sweeps every wallet and its claims, the off-chain record is deleted and its key destroyed, and the anchor becomes an orphan. The **calldata surface is unaddressed by any contract** — a registrar write carries the attribute in transaction data forever — which is a deployment or legal-position question (D23 candidate, DPO).
+- **GDPR: a design constraint, and it is not "nothing personal on-chain".** ⚠️ *Corrected 2026-09-08 — the old line is the formulation design rev 43 withdrew, and a DPA would not accept it.* A wallet bound to a verified investor **is** personal data and so is every transfer it makes; the register is the product and cannot reach zero. What the suite does instead: direct identifiers never touch the chain; every remaining field is justified individually (**D21**, still open); events carry the wallet and an opaque digest, never the person key, an attribute, a claim topic or a reason (design §10's field table, swept across all 30 contracts at rev 51); erasure is **approximated** — and since 2026-09-09 it has a single entry point, `PersonErasure.execute(personId, reasonHash)`, which fans out to `CovenantRegistry`, `MemberEligibility`, `PdmrRegister` and `SubscriptionEscrow` and ends at `IdentityRegistry.erasePerson`, alongside the off-chain record delete and key destruction that leave the anchor an orphan. ⚠️ **Complete as to storage, silent as to history**, and the **calldata surface is unaddressed by any contract** — a registrar write carries the attribute in transaction data forever — which is a deployment or legal-position question (D23 candidate, DPO).
 
 ---
 

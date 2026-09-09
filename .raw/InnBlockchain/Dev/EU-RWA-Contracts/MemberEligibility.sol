@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IIdentityGate} from "./Interfaces.sol";
+import {IErasable, IIdentityGate} from "./Interfaces.sol";
 
 /// @notice The claims limb of the identity layer, plus — by inheritance — the canonical gate.
 /// @dev    ⚠️ INHERITS `IIdentityGate` RATHER THAN RE-DECLARING ITS MEMBERS. This contract needs
@@ -74,7 +74,7 @@ interface IIdentityRegistryClaims is IIdentityGate {
 ///         `IIdentityGate.personIdOf`. It is the same key `SecurityToken.recoverWallet`
 ///         uses to prove two addresses are one investor, which is what makes it the right one:
 ///         a fix that invented a second person namespace would just move the problem.
-contract MemberEligibility {
+contract MemberEligibility is IErasable {
     // ─────────────────────────── condition model ──────────────────────────────
 
     struct Condition {
@@ -162,6 +162,11 @@ contract MemberEligibility {
 
     // ─────────────────────────── events ───────────────────────────────────────
 
+    /// @notice The `PersonErasure` coordinator, permitted to call `erasePerson` and nothing else.
+    /// @dev    Not `governance` and not `venue`: the desk that answers a data subject must not
+    ///         also be the desk that admits members or places orders. Zero disables the path.
+    address public erasureCoordinator;
+
     event ConditionAdded(uint256 indexed index, uint256 indexed topic, bytes32 label);
     event AdditionalConditionAdded(uint256 indexed index, uint256 indexed topic, bytes32 label, bytes32 ncaRefHash);
     /// @dev ⚠️ NO `personId` IN ANY LOG — reversed from the earlier design, which indexed it on
@@ -177,6 +182,10 @@ contract MemberEligibility {
     event MemberAdmitted(address indexed wallet, uint64 at);
     event MemberWithdrawn(address indexed wallet, uint64 at, bytes32 reasonHash);
     event DeaLimitsSet(address indexed setVia);
+    event ErasureCoordinatorSet(address indexed previous, address indexed current);
+    /// @dev Counts only. Which wallets a person held is already in the `MemberAdmitted` log and
+    ///      cannot be retracted from it; restating it here would add nothing but reach.
+    event MemberRecordsErased(uint256 walletsCleared);
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
@@ -186,6 +195,10 @@ contract MemberEligibility {
     error RetailSuitabilityUnresolved(address wallet);
     error RetailRiskWarningsNotAcknowledged(address wallet);
     error NotAMember(address wallet);
+    error NotErasureCoordinator();
+    /// @dev ⚠️ Raised when an erasure is attempted against a person still holding a live
+    ///      admission. See `erasePerson`.
+    error MemberStillAdmitted(address wallet);
     error AlreadyAMember(address wallet);
     error WalletNotRegistered(address wallet);
     error DeaLimitsNotConfigured(address wallet);
@@ -361,6 +374,56 @@ contract MemberEligibility {
         if (--admittedWalletsOfPerson[personId] == 0) admittedMemberCount--;
 
         emit MemberWithdrawn(wallet, uint64(block.timestamp), reasonHash);
+    }
+
+    /// @notice Point at the `PersonErasure` coordinator, or unset it with `address(0)`.
+    function setErasureCoordinator(address coordinator) external onlyGovernance {
+        address previous = erasureCoordinator;
+        erasureCoordinator = coordinator;
+        emit ErasureCoordinatorSet(previous, coordinator);
+    }
+
+    /// @notice GDPR Art 17 leg. Clears this venue's residue for one person.
+    /// @dev    ⚠️ WITHDRAWAL IS NOT ERASURE, AND THE GAP BETWEEN THEM WAS REAL. `withdrawMember`
+    ///         deletes `personOfAdmittedWallet` and adjusts the counts, and stops there. It has
+    ///         never touched `admittedAt`, `deaLimitsOfPerson`, `dayNotionalUsedWei` or
+    ///         `dayWindowStart` — so a withdrawn member left their MiFID II Art 17(5) credit
+    ///         limits, their DEA agreement hash and their intraday usage in public storage
+    ///         indefinitely, keyed by a `personId` that still resolved. Those are facts about a
+    ///         named client's trading arrangements, and nothing in the venue's obligations
+    ///         requires keeping them once the membership has ended.
+    /// @dev    ⚠️ REFUSES WHILE ANY WALLET IS STILL ADMITTED, AND THE REFUSAL IS THE POINT. A
+    ///         live admission is a DLT Pilot Art 4(2) decision the operator is accountable for
+    ///         and a row in the Art 11(4) six-monthly report to the NCA. Erasing the record of a
+    ///         member who is still trading would break the report and remove the limits the
+    ///         order path enforces, which is a market-integrity failure dressed as a privacy
+    ///         one. Withdraw first, then erase — and because the fan-out is atomic, this revert
+    ///         stops the whole request rather than silently skipping this contract.
+    function erasePerson(bytes32 personId, address[] calldata wallets) external {
+        if (msg.sender != erasureCoordinator || erasureCoordinator == address(0)) revert NotErasureCoordinator();
+
+        uint256 n = wallets.length;
+        uint256 cleared;
+        for (uint256 i = 0; i < n; i++) {
+            address wallet = wallets[i];
+            if (isAdmittedMember[wallet]) revert MemberStillAdmitted(wallet);
+            if (admittedAt[wallet] != 0) {
+                delete admittedAt[wallet];
+                cleared++;
+            }
+            // Defensive: `withdrawMember` already clears this, but a wallet withdrawn by an
+            // older code path or re-pointed by a registry swap could still carry it, and an
+            // erasure that trusts a neighbouring function's completeness is how the claim
+            // residue in `IdentityRegistry` survived deregistration for as long as it did.
+            delete personOfAdmittedWallet[wallet];
+        }
+
+        delete deaLimitsOfPerson[personId];
+        delete dayNotionalUsedWei[personId];
+        delete dayWindowStart[personId];
+        delete admittedWalletsOfPerson[personId];
+
+        emit MemberRecordsErased(cleared);
     }
 
     // ═══════════════════════════════════════════════════════════════════════

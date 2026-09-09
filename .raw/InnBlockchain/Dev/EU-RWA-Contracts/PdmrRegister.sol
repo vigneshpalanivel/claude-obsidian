@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IIdentityGate} from "./Interfaces.sol";
+import {IErasable, IIdentityGate} from "./Interfaces.sol";
 
 /// @title IPdmrRegister
 /// @notice The read surface every MAR Art 19 module consumes: given a wallet, is this person
@@ -84,7 +84,7 @@ interface IPdmrRegister {
 ///         the register unable to hold the very people it was written for. Those entries are
 ///         marked `identityAnchored == false` rather than rejected, so a reconciliation can see
 ///         which `personId`s have no counterpart and which merely have not been checked.
-contract PdmrRegister is IPdmrRegister {
+contract PdmrRegister is IPdmrRegister, IErasable {
     // ─────────────────────────── roles ────────────────────────────────────────
 
     /// @dev The issuer's company secretary / compliance function — whoever runs the Art 19(5)
@@ -104,6 +104,14 @@ contract PdmrRegister is IPdmrRegister {
     /// @dev Interface-typed and settable, per the standing rule — never `immutable`, never
     ///      unset. Held under `onlyGovernance`.
     IIdentityGate public identity;
+
+    /// @notice The `PersonErasure` coordinator, permitted to call `erasePerson` and nothing else.
+    /// @dev    A fourth key alongside registrar / issuer / governance, and separate from all
+    ///         three for the same reason they are separate from each other: the desk answering
+    ///         a data subject must not be able to declare, revoke or attest a director's wallet.
+    ///         Zero disables the path, which is the correct setting until a coordinator is
+    ///         deployed. See the key-separation note above.
+    address public erasureCoordinator;
 
     // ─────────────────────────── key separation ───────────────────────────────
     //
@@ -174,6 +182,7 @@ contract PdmrRegister is IPdmrRegister {
     ///      wanted to trade.
     event WalletRevoked(address indexed wallet, uint64 revokedAt, bytes32 reasonHash);
     event WalletPurged(address indexed wallet);
+    event ErasureCoordinatorSet(address indexed previous, address indexed current);
     /// @dev Fires per wallet from `purgePerson` too; the person key never appears.
     event PersonAttested(bytes32 indexed declarationHash, uint64 attestedAt);
     event ReattestationPeriodSet(uint64 seconds_);
@@ -190,6 +199,7 @@ contract PdmrRegister is IPdmrRegister {
     // ─────────────────────────── errors ───────────────────────────────────────
 
     error NotRegistrar();
+    error NotErasureCoordinator();
     error NotGovernance();
     error NotPendingGovernance();
     error ReasonRequired();
@@ -368,6 +378,46 @@ contract PdmrRegister is IPdmrRegister {
         address[] storage wallets = _walletsOfPerson[personId];
         uint256 n = wallets.length;
         if (n == 0) revert NotDeclared(address(0));
+        // Backwards, because `_purge` pops from this array.
+        for (uint256 i = n; i > 0; i--) {
+            _purge(wallets[i - 1]);
+        }
+    }
+
+    /// @notice Point at the `PersonErasure` coordinator, or unset it with `address(0)`.
+    function setErasureCoordinator(address coordinator) external onlyGovernance {
+        address previous = erasureCoordinator;
+        erasureCoordinator = coordinator;
+        emit ErasureCoordinatorSet(previous, coordinator);
+    }
+
+    /// @notice GDPR Art 17 leg. Same erasure as `purgePerson`, reached by the coordinator.
+    /// @dev    ⚠️ MAR ART 19 SETS NO RETENTION PERIOD — VERIFIED AGAINST THE CONSOLIDATED TEXT,
+    ///         BECAUSE THE OBVIOUS ASSUMPTION IS WRONG. MAR states retention where it means it:
+    ///         Art 11(8) market soundings, Art 17(1) inside information on the website, and
+    ///         Art 18(5) insider lists are each five years. Article 19 contains no retention or
+    ///         record-keeping provision at all. `RETENTION_PERIOD` here is therefore the
+    ///         OPERATOR'S policy, not a MAR requirement, and an operator running a different one
+    ///         should change the constant rather than assume five years is mandated.
+    /// @dev    What DOES constrain erasure is Art 19(5): the issuer "shall draw up a list of all
+    ///         persons discharging managerial responsibilities and persons closely associated
+    ///         with them". That list has to be complete while the person is a PDMR, so `_purge`
+    ///         refuses any wallet that has not been revoked — the erasure right does not reach a
+    ///         record a live regulatory obligation requires the issuer to hold (Art 17(3)(b)).
+    /// @dev    Returns quietly for a person with no PDMR record, which is almost everyone. Only
+    ///         a partial record — declared, not revoked, or revoked and still inside retention —
+    ///         reverts, and it should: that is a genuine conflict for the DPO to answer, not a
+    ///         contract to route around.
+    /// @dev    `wallets` from the identity registry is deliberately IGNORED in favour of this
+    ///         register's own `_walletsOfPerson`. The two can legitimately differ — a director
+    ///         may declare a wallet here that was never bound there — and erasing only the
+    ///         intersection would leave this register's own extras behind.
+    function erasePerson(bytes32 personId, address[] calldata) external {
+        if (msg.sender != erasureCoordinator || erasureCoordinator == address(0)) revert NotErasureCoordinator();
+
+        address[] storage wallets = _walletsOfPerson[personId];
+        uint256 n = wallets.length;
+        if (n == 0) return;
         // Backwards, because `_purge` pops from this array.
         for (uint256 i = n; i > 0; i--) {
             _purge(wallets[i - 1]);

@@ -117,6 +117,24 @@ interface IIdentityGate {
     function tierOf(address wallet) external view returns (Tier);
 }
 
+/// @notice Implemented by every contract holding person- or wallet-linked state that a GDPR
+///         Art 17 erasure has to reach. `PersonErasure` fans out over the registered set.
+/// @dev    ⚠️ THE `wallets` ARGUMENT IS NOT A CONVENIENCE, IT IS THE REASON THE COORDINATOR
+///         EXISTS. Three implementers (`CovenantRegistry`, and the wallet-side state in
+///         `MemberEligibility` and `SubscriptionEscrow`) are keyed by ADDRESS and hold no
+///         person key of their own, so they cannot resolve a `personId` to the addresses they
+///         must clear. Only `IdentityRegistry` can, which is why the coordinator resolves the
+///         list first, passes it to every target, and erases the registry LAST. Reverse that
+///         order and every wallet-keyed target is handed a person it can no longer expand.
+/// @dev    An implementer that finds nothing to erase MUST return quietly rather than revert:
+///         the fan-out is atomic, and a person who never subscribed to an offer would
+///         otherwise make their own erasure impossible. An implementer that finds state it
+///         is not yet lawfully permitted to erase MUST revert — that is a real conflict and
+///         it should stop the whole act until governance resolves it with `skipTarget`.
+interface IErasable {
+    function erasePerson(bytes32 personId, address[] calldata wallets) external;
+}
+
 /// @notice The rule-engine limb consumed by the token's transfer hook.
 interface ICompliance {
     /// @dev Runs BEFORE the balance write, so a veto prevents the movement.

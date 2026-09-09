@@ -2,7 +2,7 @@
 title: Deployment Defaults — EU-RWA-Contracts
 date: 2026-09-07
 status: baseline wiring for every deployment; lane columns derived from §17's inventory in eu_tokenized_securities_smart_contract_design.md
-updated: 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
+updated: 2026-09-09 — IdentityRegistry re-keyed from the wallet to the person (Person / WalletBinding); PersonErasure added as the single GDPR Art 17 entry point, with erasureCoordinator setters on five contracts. Prior update 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
 ---
 
 # Deployment Defaults
@@ -173,6 +173,9 @@ list is the authoritative order; where a later section disagrees, this one wins.
     precede every fund module, and that `DoraGovernor.setOracleTripSource(oracle)` /
     `ValuationOracle.setCircuitBreaker(governor)` are a **mutual** pair: set both or the trip is
     a one-way call into nothing
+11. **`PersonErasure`** — takes `(governance, identityRegistry)`. **Last, because its target list is
+    every erasable contract the deployment actually has**, and a lane-conditional contract deployed
+    after it will not register itself. See §5.
 
 ### Go-live: three things that are inert until someone arms them
 
@@ -183,6 +186,7 @@ Each fails in the safe direction, and each will read as a bug to whoever runs th
 | **Screening staleness** | `screeningIsStale()` is **true**, so **every mint reverts** | `advanceListVersion` then `recordSweep` — both, once, after the first full base sweep |
 | **Oracle circuit breaker** | A deviation halt pauses **nothing** | `DoraGovernor.setOracleTripSource(oracle)` **and** `ValuationOracle.setCircuitBreaker(governor)` |
 | **Offer close (Prospectus mode)** | `settle()` reverts `OfferStillOpen` and no escrow ever releases | `SubscriptionEscrow.setOfferClose(ts)` — extend-only, so set it when the offer opens, not at the end |
+| **Erasure path** | Every `erasePerson` leg reverts `NotErasureCoordinator`, so **an Art 17 request cannot be executed at all** — and unlike the three above, nobody finds this out on day one. It surfaces on the first DSAR, inside the Art 12(3) month | `IdentityRegistry.setErasureCoordinator` **and** the same setter on each of the four targets, **and** `PersonErasure.registerTarget` for each, **and** `setEraser` for at least one key. All four, or the path is broken in a way no test transaction exercises — see §5 |
 
 ⚠️ **`SubscriptionEscrow` is never deployed behind a proxy.** `mode` and `finalPriceOmittedAtFiling`
 are immutable on purpose — they are disclosure items — and through a proxy an implementation's
@@ -247,7 +251,66 @@ is enforced by any `require`.
 
 ---
 
-## 5. What this file does not cover
+## 5. `PersonErasure` — the GDPR Art 17 path, and it is inert until five things are wired
+
+*Added 2026-09-09 with the person-keyed `IdentityRegistry` refactor.*
+
+`PersonErasure` is the **single entry point** for an erasure request. `execute(personId, reasonHash)`
+reads `walletsOfPerson` from `IdentityRegistry`, fans out to every registered `IErasable` target,
+and calls `IdentityRegistry.erasePerson` **last**. The ordering is load-bearing: three of the four
+targets are address-keyed and cannot expand a `personId` themselves, so they need the wallet list
+the registry is about to delete.
+
+**Wire all five, or the path does not exist:**
+
+1. Deploy `PersonErasure(governance, identityRegistry)`.
+2. `IdentityRegistry.setErasureCoordinator(personErasure)` — governance-only.
+3. `setErasureCoordinator(personErasure)` on **each target**: `CovenantRegistry`,
+   `MemberEligibility`, `PdmrRegister`, `SubscriptionEscrow`. Each is governance-only, and each
+   leg reverts `NotErasureCoordinator` until it is set.
+4. `PersonErasure.registerTarget(...)` for each of those four. **A target that is deployed but not
+   registered is silently skipped** — the run succeeds and leaves that contract's residue behind.
+5. `PersonErasure.setEraser(key, true)` for at least one key. ⚠️ **Do not reuse a registrar key.**
+   The role that onboards must not be the role that erases; that separation is the reason the
+   contract has its own role table rather than reusing `onlyRegistrar`.
+
+Optionally `setExecutionDelay(seconds)` — default **24 hours**, hard cap `MAX_EXECUTION_DELAY`
+**7 days**. It is an operator parameter, not a statutory figure, and it lives inside the GDPR
+Art 12(3) one-month response window.
+
+### ⚠️ Two contracts must NEVER be registered as targets
+
+| Contract | Why not |
+|---|---|
+| `IdentityRegistry` | It is erased **last**, directly, through `IIdentityErasure`. Registering it as an ordinary target calls it mid-run and destroys the wallet list the remaining targets depend on. Nothing on-chain detects the mistake — the registry does not implement `IErasable`, so the call reverts with no data. |
+| `RestrictedPartyRegistry` | **GDPR Art 17(3)(b).** The erasure right does not apply where processing is necessary for compliance with a legal obligation, and an EU sanctions listing is exactly that. Erasing it on request deletes the reason the platform must refuse the transfer. |
+
+### The fan-out is atomic, and three legs refuse on purpose
+
+A target that reverts stops the **whole** request — a half-erased person is worse than an un-erased
+one, and a receipt for an erasure that did not happen is worse than both. Expect these:
+
+| Leg | Reverts | Clear it by |
+|---|---|---|
+| `MemberEligibility` | `MemberStillAdmitted(wallet)` | `withdrawMember` first. A live admission is a DLT Pilot Art 4(2) decision and a row in the Art 11(4) report to the NCA. |
+| `SubscriptionEscrow` | `OfferStillOpen()` | Wait for `offerClosesAt`. Releasing an Art 1(4)(b) headcount slot mid-offer lets the same person be counted twice. |
+| `PdmrRegister` | `NotDeclared` / `RetentionNotExpired(purgeableAt)` | Revoke the declaration, then wait out `RETENTION_PERIOD`. ⚠️ **MAR Art 19 imposes no retention period** — that window is operator policy by analogy to Art 18(5); the live duty is the standing Art 19(5) list. |
+
+`PdmrRegister` also **ignores the wallet list passed in** and uses its own `_walletsOfPerson`: a
+director may declare a wallet here that was never bound in the identity registry, and the two sets
+can legitimately differ.
+
+**Use `previewErasure(personId)` before `request`.** It reports which targets would run and which
+would be skipped, which is the only way to find an unregistered target before the DSAR clock is
+already running.
+
+⚠️ **Complete as to storage, silent as to history.** This coordinator reaches every `delete`-able
+field in five contracts. It reaches **no event and no calldata**. That residue is a DPIA statement
+(design doc §10), not something a deployment step can fix.
+
+---
+
+## 6. What this file does not cover
 
 - **Lane scoping.** Which contracts a given client needs is §17a of the design document.
 - **Cross-chain.** An operator running both an issuer lane on a public chain and a venue lane on a

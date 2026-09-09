@@ -2,7 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {ModuleAdapter} from "./ModularCompliance.sol";
-import {IDocumentAnchor, IIdentityGate, Tier} from "./Interfaces.sol";
+import {IDocumentAnchor, IErasable, IIdentityGate, Tier} from "./Interfaces.sol";
 
 /// @title CovenantRegistry (illustrative sample — not production code)
 /// @notice C7 — the store of what the INVESTOR THEMSELVES has stated, agreed or acknowledged,
@@ -52,7 +52,7 @@ import {IDocumentAnchor, IIdentityGate, Tier} from "./Interfaces.sol";
 /// @dev    GDPR: hash and reference only — never the document, never the signature payload,
 ///         never PII. The per-investor, per-version delivery evidence PRIIPs Art 13 requires
 ///         lives off-chain; what is on-chain is the provable pointer to it.
-contract CovenantRegistry {
+contract CovenantRegistry is IErasable {
     /// @dev Emitted whenever an inter-contract reference is re-pointed.
     event DependencySet(bytes32 indexed role, address indexed impl);
 
@@ -182,6 +182,12 @@ contract CovenantRegistry {
     ///         `InvestorSignature` one — see `recordAttestation`.
     mapping(address => bool) public isOperator;
 
+    /// @notice The `PersonErasure` coordinator, permitted to call `erasePerson` and nothing else.
+    /// @dev    Separate from `isOperator` and from `governance` for the reason given in
+    ///         `PersonErasure`: the desk that erases a declaration must not be the desk that can
+    ///         write one. Zero disables the erasure path entirely.
+    address public erasureCoordinator;
+
     /// @notice The MiFID II Annex II Section II opt-up covenant, if configured. Its effect is
     ///         to change the tier every OTHER predicate reads, which is why it is named
     ///         separately, resolved first, and — see `effectiveTier` — evaluated against the
@@ -268,6 +274,10 @@ contract CovenantRegistry {
     ///      it says who signed (investor or operator), which is a fact about the write path,
     ///      not about the person.
     event CovenantGiven(address indexed investor, Attestor attestorType);
+    event ErasureCoordinatorSet(address indexed previous, address indexed current);
+    /// @dev A count, not a list. Which covenants a person had given is the fact being erased;
+    ///      naming them in the log would republish it in the one store the erasure cannot reach.
+    event CovenantsErased(uint256 recordsErased);
 
     // ═══════════════════════════════════════════════════════════════════════
     // ERRORS
@@ -275,6 +285,7 @@ contract CovenantRegistry {
 
     error NotGovernance();
     error NotOperator();
+    error NotErasureCoordinator();
     error UnknownCovenant(bytes32 covenantId);
     error CovenantAlreadyConfigured(bytes32 covenantId);
     error TooManyCovenants();
@@ -438,6 +449,51 @@ contract CovenantRegistry {
     function setOperator(address operator, bool allowed) external onlyGovernance {
         isOperator[operator] = allowed;
         emit OperatorSet(operator, allowed);
+    }
+
+    /// @notice Point at the `PersonErasure` coordinator, or unset it with `address(0)`.
+    function setErasureCoordinator(address coordinator) external onlyGovernance {
+        address previous = erasureCoordinator;
+        erasureCoordinator = coordinator;
+        emit ErasureCoordinatorSet(previous, coordinator);
+    }
+
+    /// @notice GDPR Art 17 leg. Erases every covenant record held against every wallet of one
+    ///         person.
+    /// @dev    ⚠️ THIS CONTRACT HAD NO ERASURE PATH AT ALL UNTIL 2026-09-09. `_records` grew
+    ///         monotonically and nothing ever deleted from it, so a covenant declaration — a
+    ///         statement a named investor made, timestamped, against a named document version —
+    ///         outlived every deregistration in the suite. The wallet-keying rationale above is
+    ///         about who a declaration BINDS; it was never an argument for keeping it forever.
+    /// @dev    ⚠️ `personId` IS UNUSED HERE, AND THAT IS THE WHOLE REASON THE COORDINATOR PASSES
+    ///         `wallets`. This store has no person key and cannot acquire one without breaking
+    ///         the binding property that makes it correct, so it is structurally incapable of
+    ///         expanding a `personId` itself. Only `IdentityRegistry` can — which is why it is
+    ///         erased last and this contract is erased first.
+    /// @dev    Bounded by wallets × configured covenants. Both are operator-set catalogue sizes,
+    ///         neither is adversary-controlled, and the covenant catalogue is the same list
+    ///         every transfer already iterates in `assertSatisfied`.
+    /// @dev    Returns quietly when the person holds no declarations — an investor who never
+    ///         signed anything must still be erasable, and the fan-out is atomic.
+    function erasePerson(bytes32 /* personId */, address[] calldata wallets) external {
+        if (msg.sender != erasureCoordinator || erasureCoordinator == address(0)) revert NotErasureCoordinator();
+
+        uint256 erased;
+        uint256 walletCount = wallets.length;
+        uint256 covenantCount = _covenantIds.length;
+
+        for (uint256 w = 0; w < walletCount; w++) {
+            address investor = wallets[w];
+            for (uint256 c = 0; c < covenantCount; c++) {
+                bytes32 covenantId = _covenantIds[c];
+                if (_records[investor][covenantId].given) {
+                    delete _records[investor][covenantId];
+                    erased++;
+                }
+            }
+        }
+
+        emit CovenantsErased(erased);
     }
 
     /// @notice Fund life in seconds, open-vs-closed-ended, token type — whatever the configured
