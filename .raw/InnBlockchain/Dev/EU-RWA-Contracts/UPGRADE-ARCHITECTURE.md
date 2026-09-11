@@ -141,9 +141,9 @@ progress when it is stopped.
 
 ---
 
-## 5. Four operating rules with no on-chain enforcement
+## 5. Five operating rules with no on-chain enforcement
 
-Each replaces something the contracts deliberately do not do. All four need a named owner in the
+Each replaces something the contracts deliberately do not do. All five need a named owner in the
 resilience runbook.
 
 **1. Reconcile `CallSalt` against the DocumentRegistry.** For every scheduled operation, check the
@@ -164,6 +164,30 @@ cancels**, because no contract will stop it.
 **4. Watch the events.** `CallScheduled`, `CallSalt`, `CallExecuted`, `Cancelled`, `RoleGranted`,
 `RoleRevoked`, `MinDelayChange`. A two-day delay nobody is watching is a two-day wait. `RoleGranted`
 matters most: it is how a bypass gets installed.
+
+**5. ⚠️ An upgrade must not drop or re-sign an `IERC3643` member.** *Added 2026-09-11 with design
+rev 54.* The suite implements ERC-3643 from the EIP text, and the token standard is a **Prospectus
+Art 6 / 16(1) content item** — it is stated in a disclosure document, not just in a README. So an
+upgrade that removes a mandated function, changes a mandated signature, or stops emitting a
+mandated event does not merely break an integration: it falsifies a published statement, and the
+cure is an **Art 23 supplement with the two-working-day withdrawal window**, not a patch release.
+The interface set lives in `IERC3643.sol`, which declares no contract and must not acquire one.
+
+Three practical consequences, none enforced on-chain:
+
+- **`is IERC3643` is a compile-time check on the current version only.** A proxy upgrade replaces
+  the implementation; nothing re-checks that the new one still satisfies the interface the *proxy
+  address* has been advertising. Run the conformance suite (`ERC-3643-CONFORMANCE.md` §6) against
+  the **new implementation** before scheduling, not after executing.
+- **The declared deviations are part of the claim.** `unbindToken`, `updateIdentity` and the
+  never-emitted events are documented as deviations; an upgrade that quietly *implements* one is
+  as much a change to the disclosed position as one that removes a function. Update §4 of the
+  conformance file in the same change.
+- **The licence firewall is an upgrade-time control, not a one-off.** No T-REX or ONCHAINID source
+  enters this suite. An upgrade is the likeliest moment for someone to solve a problem by pasting
+  a reference implementation, which would make the client's proprietary build a GPL-3.0 derivative
+  work. `ERC-3643-CONFORMANCE.md` §1 states the rule and the CI checks that enforce it; those
+  checks run on the upgrade branch or they are not a control.
 
 ---
 
@@ -249,7 +273,7 @@ it** (through `IProtocolPause.paused()`):
 
 | Reader | Path that stops | Path that deliberately continues |
 |---|---|---|
-| `SecurityToken` | holder-initiated (voluntary) transfer paths | `forcedTransfer`, `recoverWallet` |
+| `SecurityToken` | holder-initiated (voluntary) transfer paths | `forcedTransfer`, `recoveryAddress` |
 | `NavBorrowingCap`, `UcitsFiveTenForty`, `EltifConcentration`, `LmtGate` | acquisition / draw / new-request paths | repayment, disposal, breach cure, processing already in flight |
 
 Wired on 2026-09-08 by the token and fund-module passes (`protocolPause` reference, settable, on

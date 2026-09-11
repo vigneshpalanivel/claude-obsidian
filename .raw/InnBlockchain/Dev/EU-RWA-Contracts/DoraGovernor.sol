@@ -29,7 +29,7 @@ import {IProtocolPause} from "./Interfaces.sol";
 ///           • the four fund modules (`NavBorrowingCap`, `UcitsFiveTenForty`,
 ///             `EltifConcentration`, `LmtGate`) — their acquisition / draw paths.
 ///         Those are being wired by the token and fund agents as of the same date. Deliberate
-///         NON-readers: `forcedTransfer`, `recoverWallet`, repayments, disposals, redemption
+///         NON-readers: `forcedTransfer`, `recoveryAddress`, repayments, disposals, redemption
 ///         processing already in flight, the incident log below, and `pause()` itself. A pause
 ///         is an incident response; it must not be able to block a court order, trap a fund in
 ///         a leverage breach it is trying to cure, or silence the log that reports the incident.

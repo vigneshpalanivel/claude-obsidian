@@ -71,7 +71,7 @@ interface IIdentityRegistryClaims is IIdentityGate {
 ///           • `admittedMemberCount` counted addresses, so the DLT Pilot Art 11(4) six-monthly
 ///             report overstated the membership against the operator's own admission file.
 ///         The person key is `IdentityRegistry`'s `personId`, read through
-///         `IIdentityGate.personIdOf`. It is the same key `SecurityToken.recoverWallet`
+///         `IIdentityGate.personIdOf`. It is the same key `SecurityToken.recoveryAddress`
 ///         uses to prove two addresses are one investor, which is what makes it the right one:
 ///         a fix that invented a second person namespace would just move the problem.
 contract MemberEligibility is IErasable {
@@ -140,7 +140,7 @@ contract MemberEligibility is IErasable {
 
     /// @notice The person each admitted wallet was admitted under, **pinned at admission**.
     /// @dev    ⚠️ NEVER RE-RESOLVED. `personIdOf` can change under a live address —
-    ///         `SecurityToken.recoverWallet` re-points one — and a person resolved at withdrawal
+    ///         `SecurityToken.recoveryAddress` re-points one — and a person resolved at withdrawal
     ///         time would then decrement a bucket that was never incremented, underflowing one
     ///         person's count while stranding another's. It is also what the order path reads,
     ///         so a registry change cannot silently re-key a member's daily allowance mid-day.

@@ -2,12 +2,26 @@
 pragma solidity ^0.8.22;
 
 import {IIdentityGate, Tier} from "./Interfaces.sol";
+import {IClaimTopicsRegistry, IIdentity, IIdentityRegistry, ITrustedIssuersRegistry} from "./IERC3643.sol";
 
-interface IClaimTopicsRegistry {
+/// @notice ⚠️ RENAMED FROM `IClaimTopicsRegistry` / `ITrustedIssuersRegistry` WHEN THE EIP
+///         INTERFACES ARRIVED, because those two names now belong to `IERC3643.sol` and the
+///         collision was a compile error rather than a style question. The `…Gate` suffix is the
+///         suite's convention for a NARROW internal read surface — see `IComplianceGate` and
+///         `IIdentityGate` in `Interfaces.sol`.
+/// @dev    ⚠️ THESE ARE NOT SUBSETS OF THE EIP INTERFACES AND MUST NOT BE COLLAPSED INTO THEM.
+///         `IClaimTopicsGate.requiredTopics` takes a JURISDICTION, which `IClaimTopicsRegistry`
+///         has no concept of; `ITrustedIssuersGate.isTrustedFor` takes the claim's WRITE TIME,
+///         which is what makes prospective revocation expressible and which
+///         `ITrustedIssuersRegistry.hasClaimTopic` cannot carry. Re-typing this contract onto
+///         the EIP interfaces would silently drop the per-jurisdiction tier and the
+///         retroactive/prospective distinction — both of which are gates, not conveniences. The
+///         concrete registries implement BOTH surfaces; this contract reads the narrow one.
+interface IClaimTopicsGate {
     function requiredTopics(bytes32 jurisdiction) external view returns (uint256[] memory);
 }
 
-interface ITrustedIssuersRegistry {
+interface ITrustedIssuersGate {
     function isTrustedFor(address issuer, uint256 topic, uint64 issuedAt) external view returns (bool);
 
     function canIssueNow(address issuer, uint256 topic) external view returns (bool);
@@ -106,7 +120,39 @@ interface ITrustedIssuersRegistry {
 ///         for exactly the lack of this line. `Tier` is IMPORTED from `Interfaces.sol`, never
 ///         re-declared: a local copy is a different type to the compiler, and every consumer
 ///         that named `IdentityRegistry.Tier` was bound to this file's dependency tree for it.
-contract IdentityRegistry is IIdentityGate {
+/// @dev    ⚠️ IMPLEMENTS `IIdentityRegistry` FROM `IERC3643.sol`, WRITTEN FROM THE EIP TEXT, AND
+///         THIS IS THE ONE INTERFACE IN THE SUITE WHOSE CONFORMANCE GRADE IS **DECLARED
+///         DEVIATION** RATHER THAN FULL. Every function and event is present with the exact
+///         signature — `is IIdentityRegistry` makes the compiler prove that — but three
+///         collisions between the standard's model and this design were resolved in the design's
+///         favour. They are enumerated in `ERC-3643-CONFORMANCE.md` and repeated at each call
+///         site. In summary:
+///
+///           (1) WALLET-KEYING — **RESOLVED, no deviation.** The standard's INTERFACE is
+///               wallet-keyed; this contract's STORAGE is person-keyed. Those are compatible:
+///               every EIP read resolves `wallet → personId → attribute`. What the standard
+///               cannot express is two wallets of one person DISAGREEING, and here that is
+///               unrepresentable rather than merely checked. The distinction that makes this
+///               work is storage versus interface, and it is worth holding on to — the rev 53
+///               re-key was about where attributes are STORED, never about the shape of a read.
+///
+///           (2) `identity()` RETURNING A PER-INVESTOR `IIdentity` CONTRACT — **NOT RESOLVED.**
+///               Design §16 D19 is open. See `identity()` below for what is returned today
+///               (option (c), a non-dereferenceable handle) and why that is provisional.
+///
+///           (3) MANDATORY ON-CHAIN `uint16` ISO-3166 COUNTRY — **NOT RESOLVED.** Design §16 D21
+///               is open. `investorCountry()` is implemented and is a second on-chain copy of a
+///               residence fact about a natural person, in a numeric register that did not exist
+///               before conformance. See `investorCountry()` and `setCountryCode()`.
+///
+/// @dev    ⚠️ THE WRITE SURFACE IS WHERE THE STANDARD AND THIS DESIGN ACTUALLY COLLIDE, NOT THE
+///         READ SURFACE. `registerIdentity` is wallet-keyed REGISTRATION: it creates a record
+///         from a wallet, a country and an identity contract, with no notion of a person. A
+///         literal implementation would recreate the exact defect rev 53 removed — one person,
+///         two wallets, two countries. So `registerIdentity` here BINDS A WALLET TO AN EXISTING
+///         PERSON, resolved through the identity handle, and refuses to invent a person. See its
+///         NatSpec. `updateIdentity` reverts outright. Both are registered deviations.
+contract IdentityRegistry is IIdentityGate, IIdentityRegistry {
     // ─────────────────────────── claim value — tri-state, deliberately ────────
     //
     // `NotRecorded` is NOT the same as `AssertedFalse`. DLT Pilot Art 4(2)(c)–(f) require
@@ -192,8 +238,45 @@ contract IdentityRegistry is IIdentityGate {
     ///      whose topic list or issuer list cannot be re-pointed is a registry that gets
     ///      redeployed instead — taking every investor record with it. Never null: the
     ///      constructor and both setters reject `address(0)`.
-    IClaimTopicsRegistry public claimTopics;
-    ITrustedIssuersRegistry public trustedIssuers;
+    IClaimTopicsGate public claimTopics;
+    ITrustedIssuersGate public trustedIssuers;
+
+    // ─────────────────── ISO-3166 NUMERIC REGISTER (ERC-3643 only) ────────────
+    //
+    // ⚠️ THIS WHOLE BLOCK EXISTS BECAUSE THE STANDARD DEMANDS `uint16`, AND FOR NO OTHER
+    // REASON. Design §16 D21 asks whether an on-chain country code survives GDPR Art 5(1)(c)
+    // minimisation at all; the standard answers yes by making it mandatory, and D21 stays open.
+    // Nothing in §4–§10 reads these mappings. Every gate in this contract reads
+    // `Person.jurisdiction`.
+    //
+    // ⚠️ `Person.jurisdiction` (ISO-3166-1 alpha-2, left-packed) REMAINS THE SINGLE SOURCE OF
+    // TRUTH. The numeric code is DERIVED on read, never stored per person. Storing both per
+    // person would be two copies of one residence fact that could drift — and a person whose
+    // alpha-2 says FR and whose numeric says 276 is a Prospectus Art 3(2) threshold counted
+    // against the wrong Member State.
+    //
+    // ⚠️ THE TABLE IS GOVERNANCE-SET AND DELIBERATELY NOT HARD-CODED. ISO-3166 numeric
+    // assignments change — codes are reassigned on state succession, and a hard-coded table is
+    // a redeployment when they do. It is also deliberately SPARSE: an operator populates only
+    // the Member States it admits, and an unmapped jurisdiction makes `investorCountry` return
+    // 0 rather than guess.
+
+    /// @notice ISO-3166-1 alpha-2 (left-packed `bytes32`) → ISO-3166-1 numeric.
+    mapping(bytes32 => uint16) public numericOfJurisdiction;
+
+    /// @notice The reverse, needed because `registerIdentity` and `updateCountry` arrive with a
+    ///         numeric code and must write the alpha-2 that the gates read.
+    /// @dev    ⚠️ MUST STAY THE EXACT INVERSE of `numericOfJurisdiction`. `setCountryCode` writes
+    ///         both and clears the stale reverse entry; nothing else writes either.
+    mapping(uint16 => bytes32) public jurisdictionOfNumeric;
+
+    // ─────────────────── ERC-3643 IDENTITY HANDLES (D19, PROVISIONAL) ─────────
+    //
+    // ⚠️ THE HANDLE IS DERIVED FROM `personId` AND IS NOT A DEPLOYED CONTRACT. See `identity()`.
+    // The reverse map exists because `registerIdentity` receives a handle and must recover the
+    // person — a truncation to 160 bits is not invertible, so the pairing is stored.
+
+    mapping(address => bytes32) private _personIdOfHandle;
 
     /// @notice Longest validity an issuer may put on a claim, in seconds from the write.
     /// @dev    The AMLR Art 20 periodic-refresh cadence, as a ceiling rather than a schedule:
@@ -230,7 +313,7 @@ contract IdentityRegistry is IIdentityGate {
     ///      attributes and the same duplicated-personal-data problem under Art 5(1)(c).
     ///
     ///      ⚠️ BEHAVIOUR CHANGE, AND IT IS THE INTENDED ONE: a wallet bound to an existing
-    ///      person inherits that person's claims immediately, so a `SecurityToken.recoverWallet`
+    ///      person inherits that person's claims immediately, so a `SecurityToken.recoveryAddress`
     ///      replacement no longer sits blocked awaiting a re-attestation of KYC that never
     ///      lapsed. It does NOT inherit that person's covenants — those stay wallet-keyed in
     ///      `CovenantRegistry` by deliberate design, because a covenant is a statement the
@@ -242,7 +325,7 @@ contract IdentityRegistry is IIdentityGate {
     // ── person → wallets index ────────────────────────────────────────────────
     //
     // ⚠️ ONE HUMAN, SEVERAL WALLETS. `personId` is the person key across the suite
-    //    (`SecurityToken.recoverWallet` and `MemberEligibility` both treat it as one), and two
+    //    (`SecurityToken.recoveryAddress` and `MemberEligibility` both treat it as one), and two
     //    obligations need to read it in the person→wallet direction:
     //      • ERASURE. A person with three wallets must be forgettable in one act, and no
     //        off-chain list is evidence that the act was complete. An Art 17 answer built by
@@ -299,6 +382,22 @@ contract IdentityRegistry is IIdentityGate {
     event ClaimTopicsChanged(address indexed previous, address indexed current);
     event TrustedIssuersChanged(address indexed previous, address indexed current);
     event MaxClaimValidityChanged(uint64 previousSeconds, uint64 currentSeconds);
+    /// @dev Configuration, not personal data — an alpha-2 code and its numeric, about nobody.
+    event CountryCodeSet(bytes32 indexed jurisdiction, uint16 indexed country);
+    /// @dev ⚠️ `ClaimTopicsRegistrySet`, `IdentityStorageSet`, `TrustedIssuersRegistrySet`,
+    ///      `IdentityRegistered`, `IdentityRemoved`, `IdentityUpdated` and `CountryUpdated` are
+    ///      INHERITED from `IIdentityRegistry` and must not be re-declared here.
+    ///      `IdentityUpdated` and `IdentityStorageSet` are NEVER EMITTED: the first because
+    ///      `updateIdentity` reverts, the second because this suite has no separate identity-
+    ///      storage contract — the EIP's `IdentityRegistryStorage` split exists to share one
+    ///      store across several tokens, and sharing a person register across issuers is the
+    ///      linkability limb of D19 rather than an optimisation. Both are declared and dead.
+    /// @dev ⚠️ THE EIP EVENTS CARRY A WALLET AND AN IDENTITY HANDLE, AND THE HANDLE IS DERIVED
+    ///      FROM `personId`. That is a stable per-person identifier in a log, which is the one
+    ///      thing the event design below was written to keep out. It is tolerable ONLY because
+    ///      the handle is not the `personId` itself and not invertible to it — but it does make
+    ///      the person→wallets join computable from logs alone, where before it required a
+    ///      contract call. Residual, not solved. Recorded in `ERC-3643-CONFORMANCE.md`.
     /// @dev Carries no personId and no attributes. `wallet` is the subject of the act, and the
     ///      person behind it is a storage read away for anyone entitled to make it.
     event PersonRegistered(address indexed firstWallet);
@@ -351,6 +450,28 @@ contract IdentityRegistry is IIdentityGate {
     error NoMifirIdentifier(address wallet);
     error IdentifierMismatchForPersonType(bytes32 personId);
 
+    // ─────────── ERC-3643 surface. All informative-class: each is a fact about
+    // wiring or about a caller's own input, and none discloses anything about a
+    // person's eligibility. See the error-class note above `checkEligible`.
+
+    /// @dev `registerIdentity` was handed an identity handle no person is registered under —
+    ///      usually `address(0)`, i.e. an attempt to create a person through the EIP's surface.
+    error UnknownIdentity(address identityHandle);
+    /// @dev A country code with no entry in `jurisdictionOfNumeric`. Fails closed rather than
+    ///      writing a jurisdiction of `bytes32(0)`, which `requiredTopics` would most likely
+    ///      answer with an empty set — the one failure mode that is fail-OPEN.
+    error UnknownCountryCode(uint16 country);
+    /// @dev `setCountryCode` was given an alpha-2 or a numeric that is already mapped elsewhere.
+    ///      Silently re-pointing either direction breaks the inverse invariant on the pair.
+    error CountryCodeAlreadyMapped(bytes32 jurisdiction, uint16 country);
+    /// @dev See `updateIdentity`. The handle is derived from `personId` and cannot change for a
+    ///      given person, so the EIP's "this investor's identity contract moved" event cannot
+    ///      occur here — and re-pointing a WALLET at a different person is a different act
+    ///      wearing the same name.
+    error IdentityRebindingNotSupported();
+    /// @dev Batch arity.
+    error BatchLengthMismatch(uint256 lenA, uint256 lenB);
+
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
         _;
@@ -374,11 +495,15 @@ contract IdentityRegistry is IIdentityGate {
             revert ZeroAddress();
         }
         governance = governance_;
-        claimTopics = IClaimTopicsRegistry(claimTopics_);
-        trustedIssuers = ITrustedIssuersRegistry(trustedIssuers_);
+        claimTopics = IClaimTopicsGate(claimTopics_);
+        trustedIssuers = ITrustedIssuersGate(trustedIssuers_);
         emit ClaimTopicsChanged(address(0), claimTopics_);
         emit TrustedIssuersChanged(address(0), trustedIssuers_);
         emit MaxClaimValidityChanged(0, maxClaimValiditySeconds);
+        // ERC-3643 listeners. The suite's own events carry the PREVIOUS address as well, which
+        // is what a reviewer reconstructing a swap needs and the EIP's have no field for.
+        emit ClaimTopicsRegistrySet(claimTopics_);
+        emit TrustedIssuersRegistrySet(trustedIssuers_);
     }
 
     function setRegistrar(address registrar, bool allowed) external onlyGovernance {
@@ -401,8 +526,9 @@ contract IdentityRegistry is IIdentityGate {
     function setClaimTopics(address impl) external onlyGovernance {
         if (impl == address(0)) revert ZeroAddress();
         address previous = address(claimTopics);
-        claimTopics = IClaimTopicsRegistry(impl);
+        claimTopics = IClaimTopicsGate(impl);
         emit ClaimTopicsChanged(previous, impl);
+        emit ClaimTopicsRegistrySet(impl);
     }
 
     /// @notice Re-point the issuer trust list. Swap, never unset.
@@ -414,8 +540,9 @@ contract IdentityRegistry is IIdentityGate {
     function setTrustedIssuers(address impl) external onlyGovernance {
         if (impl == address(0)) revert ZeroAddress();
         address previous = address(trustedIssuers);
-        trustedIssuers = ITrustedIssuersRegistry(impl);
+        trustedIssuers = ITrustedIssuersGate(impl);
         emit TrustedIssuersChanged(previous, impl);
+        emit TrustedIssuersRegistrySet(impl);
     }
 
     /// @notice Set the ceiling on claim validity. Applies to writes from now on; claims already
@@ -425,6 +552,44 @@ contract IdentityRegistry is IIdentityGate {
         uint64 previous = maxClaimValiditySeconds;
         maxClaimValiditySeconds = seconds_;
         emit MaxClaimValidityChanged(previous, seconds_);
+    }
+
+    /// @notice Maps one ISO-3166-1 alpha-2 jurisdiction to its numeric code, in both directions.
+    ///         Required before any wallet in that jurisdiction can be reached through
+    ///         `registerIdentity` or `updateCountry`, and before `investorCountry` answers
+    ///         anything but `0` for its holders.
+    /// @dev    ⚠️ EXISTS ONLY TO SERVE `IIdentityRegistry`. No gate in this suite reads it.
+    ///         Populate it for the Member States the programme admits and no others — an
+    ///         exhaustive table is an on-chain dataset with no gating consumer, which is the
+    ///         §11 test failing in the most literal way.
+    /// @dev    ⚠️ NEITHER SIDE MAY BE SILENTLY RE-POINTED. Both directions are refused if either
+    ///         key is already taken, because the two mappings must stay exact inverses: a stale
+    ///         reverse entry would let `updateCountry(w, 250)` write a jurisdiction that
+    ///         `investorCountry(w)` then reports as something else. Pass `country == 0` to
+    ///         RETIRE a mapping — the only supported way to change one, and it leaves every
+    ///         person in that jurisdiction reading `investorCountry() == 0` until it is remapped,
+    ///         which is visible rather than wrong.
+    function setCountryCode(bytes32 jurisdiction, uint16 country) external onlyGovernance {
+        if (jurisdiction == bytes32(0)) revert UnknownCountryCode(country);
+
+        uint16 existing = numericOfJurisdiction[jurisdiction];
+
+        if (country == 0) {
+            if (existing != 0) {
+                delete numericOfJurisdiction[jurisdiction];
+                delete jurisdictionOfNumeric[existing];
+            }
+            emit CountryCodeSet(jurisdiction, 0);
+            return;
+        }
+
+        if (existing != 0 || jurisdictionOfNumeric[country] != bytes32(0)) {
+            revert CountryCodeAlreadyMapped(jurisdiction, country);
+        }
+
+        numericOfJurisdiction[jurisdiction] = country;
+        jurisdictionOfNumeric[country] = jurisdiction;
+        emit CountryCodeSet(jurisdiction, country);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -460,6 +625,10 @@ contract IdentityRegistry is IIdentityGate {
             jurisdiction: jurisdiction,
             nationalClientIdHash: bytes32(0)
         });
+
+        // ERC-3643 only. Records the handle ⇄ person pairing so `registerIdentity` can resolve a
+        // wallet onto this person. Costs one slot per person and is deleted by `erasePerson`.
+        _personIdOfHandle[_handleOf(personId)] = personId;
     }
 
     /// @notice Tier is mutable because Annex II Section II professional status is elective
@@ -486,6 +655,24 @@ contract IdentityRegistry is IIdentityGate {
         p.verifiedAt = uint64(block.timestamp);
 
         emit PersonUpdated(_representativeWallet(personId));
+        _emitCountryUpdated(personId, jurisdiction);
+    }
+
+    /// @dev ⚠️ ONE EIP EVENT PER WALLET, BECAUSE THE EIP HAS NO PERSON. `CountryUpdated` is
+    ///      wallet-keyed, and a listener that saw it for one wallet of a person would believe
+    ///      the others still hold the old country — which is exactly the divergence this
+    ///      contract makes unrepresentable in storage. Emitting it for all of them is the only
+    ///      way the standard's log can tell the truth. The loop is bounded by wallets-per-person,
+    ///      which is a handful by construction and is not settable by an adversary.
+    /// @dev Emits `country == 0` where the jurisdiction is not in the numeric register. That is
+    ///      accurate — `investorCountry` will return 0 too — and is preferable to skipping the
+    ///      event, which would leave a listener holding a stale non-zero code.
+    function _emitCountryUpdated(bytes32 personId, bytes32 jurisdiction) private {
+        uint16 country = numericOfJurisdiction[jurisdiction];
+        address[] storage wallets = _walletsOfPerson[personId];
+        for (uint256 i = 0; i < wallets.length; i++) {
+            emit CountryUpdated(wallets[i], country);
+        }
     }
 
     /// @notice MiFIR identity binding. Exactly one of the two identifiers must be supplied,
@@ -531,6 +718,7 @@ contract IdentityRegistry is IIdentityGate {
         _linkToPerson(wallet, personId);
 
         emit WalletBound(wallet);
+        emit IdentityRegistered(wallet, IIdentity(_handleOf(personId)));
     }
 
     /// @notice Detach ONE address. The person, their claims and their other wallets survive.
@@ -541,13 +729,23 @@ contract IdentityRegistry is IIdentityGate {
     ///         for the erasure case, sized for the key-rotation case, and left the other
     ///         wallets of a person it claimed to have deregistered fully live.
     function unbindWallet(address wallet, bytes32 reasonHash) external onlyRegistrar {
+        _unbindWallet(wallet, reasonHash);
+    }
+
+    /// @dev ⚠️ INTERNAL SO `deleteIdentity` CAN REACH IT. An earlier draft had `deleteIdentity`
+    ///      call `this.unbindWallet(...)`; that is an EXTERNAL self-call, so `msg.sender` becomes
+    ///      this contract, which holds no registrar key — every call would have reverted
+    ///      `NotRegistrar`. The authorisation check belongs on the entry points, not here.
+    function _unbindWallet(address wallet, bytes32 reasonHash) private {
         WalletBinding storage b = _wallets[wallet];
         if (!b.registered) revert NotRegistered(wallet);
 
-        _unlinkFromPerson(wallet, b.personId);
+        bytes32 personId = b.personId;
+        _unlinkFromPerson(wallet, personId);
         delete _wallets[wallet];
 
         emit WalletUnbound(wallet, reasonHash);
+        emit IdentityRemoved(wallet, IIdentity(_handleOf(personId)));
     }
 
     /// @notice Onboarding convenience: create the person if new, bind the wallet either way.
@@ -591,7 +789,7 @@ contract IdentityRegistry is IIdentityGate {
     /// @dev    ⚠️ THIS IS THE FUNCTION THAT MAKES ERASURE ANSWERABLE, AND UNDER THE PERSON KEY
     ///         IT IS FINALLY WHAT ITS NAME SAYS. A data subject asks to be forgotten as a
     ///         person, not as an address; they generally do not know how many wallets an
-    ///         operator bound to them, and `SecurityToken.recoverWallet` can add one they never
+    ///         operator bound to them, and `SecurityToken.recoveryAddress` can add one they never
     ///         chose. The attributes are now stored once, so erasing them is one `delete` and
     ///         cannot half-succeed — the wallet loop that follows removes pointers, not data.
     /// @dev    Both loops are bounded by facts the operator controls: wallets-per-person is a
@@ -622,10 +820,19 @@ contract IdentityRegistry is IIdentityGate {
             delete _wallets[wallet];
             wallets.pop();
             emit WalletUnbound(wallet, reasonHash);
+            // ERC-3643 listeners. The handle is the EIP's identity for this person and the
+            // wallet is leaving it; a listener that only reads EIP events must see the removal
+            // or it keeps a record this contract no longer holds.
+            emit IdentityRemoved(wallet, IIdentity(_handleOf(personId)));
         }
 
         delete _persons[personId];
         delete _walletsOfPerson[personId];
+        // ⚠️ THE HANDLE GOES TOO, AND THAT IS PART OF THE ART 17 ANSWER. A surviving
+        // handle → personId pairing would keep a stable per-person on-chain identifier alive
+        // after the person it identifies was erased — which is the objection to option (a) in
+        // the first place, arrived at by accident.
+        delete _personIdOfHandle[_handleOf(personId)];
 
         emit PersonErased(n, claimsErased, reasonHash);
     }
@@ -882,7 +1089,7 @@ contract IdentityRegistry is IIdentityGate {
 
     /// @notice The off-chain investor record a wallet resolves to.
     /// @dev    ⚠️ Added because `IIdentityGate` has always declared it and this contract never
-    ///         implemented it — `SecurityToken.recoverWallet` and `RestrictedPartyRegistry.isBlocked`
+    ///         implemented it — `SecurityToken.recoveryAddress` and `RestrictedPartyRegistry.isBlocked`
     ///         both call it through the interface, so the omission was a live break, not a
     ///         missing convenience.
     /// @dev    Returns the `personId` and a registration flag rather than the whole record. Two
@@ -940,5 +1147,223 @@ contract IdentityRegistry is IIdentityGate {
         WalletBinding storage b = _wallets[wallet];
         if (!b.registered) revert NotRegistered(wallet);
         return b.personId;
+    }
+
+    /// @dev The D19 option-(c) handle: the low 160 bits of `personId`, as an address. NOT a
+    ///      deployed contract and never to be called. Deterministic, so nothing needs storing to
+    ///      compute it forward; the REVERSE is stored in `_personIdOfHandle` because a
+    ///      truncation cannot be inverted.
+    /// @dev ⚠️ THE TRUNCATION IS NOT A COLLISION PROBLEM AND IS NOT A PRIVACY FIX. 160 bits is
+    ///      ample against accidental collision. What it does NOT do is hide anything:
+    ///      `personIdOf(wallet)` is already a public read returning the FULL `personId`, so the
+    ///      person→wallets join was computable before this existed. The handle adds no
+    ///      disclosure through storage — it adds one through the LOGS, which is the residual
+    ///      recorded on the events above.
+    function _handleOf(bytes32 personId) private pure returns (address) {
+        return address(uint160(uint256(personId)));
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // ERC-3643 SURFACE — `IIdentityRegistry`
+    //
+    // ⚠️ READ THE CONTRACT-LEVEL NATSPEC FIRST. The grade on this interface is
+    // DECLARED DEVIATION, not full, and every deviation lives in this block.
+    //
+    // ⚠️ THE READS ARE FAITHFUL; THE WRITES ARE NOT AND CANNOT BE. `contains`,
+    // `isVerified`, `investorCountry`, `issuersRegistry` and `topicsRegistry`
+    // answer exactly what the standard means by them, resolved through the
+    // person. `registerIdentity` is narrowed, `updateIdentity` reverts, and
+    // `identity` returns a handle rather than a contract. None of that is
+    // discoverable from the ABI, which is why `ERC-3643-CONFORMANCE.md` is a
+    // deliverable and not a comment.
+    //
+    // ⚠️ NONE OF THESE ARE THE PREFERRED ENTRY POINTS for an operator. The
+    // person-level functions above carry `personType`, `tier`, the review
+    // horizon and the MiFIR identifier; the EIP's signatures carry none of them,
+    // and a record created only through this block is a record that cannot pass
+    // `checkIdentifiable`.
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice Binds a wallet to the person the identity handle belongs to.
+    /// @dev    ⚠️ DECLARED DEVIATION — THIS DOES NOT CREATE A PERSON, AND A LITERAL
+    ///         IMPLEMENTATION WOULD RE-OPEN THE DEFECT REV 53 CLOSED. The EIP's
+    ///         `registerIdentity` is wallet-keyed registration: wallet + country + identity, no
+    ///         person anywhere. Implemented literally it would write a country PER WALLET, and
+    ///         one person's two wallets could again read FR/Retail and DE/PerSeProfessional —
+    ///         directly monetisable against the Prospectus Art 3(2) per-Member-State threshold
+    ///         and the Art 1(4)(b) qualified-investor carve-out. `registerPerson` is how a
+    ///         person comes into existence; this attaches an address to one that already does.
+    /// @dev    ⚠️ `_country` IS CHECKED, NEVER WRITTEN. It must agree with the person's stored
+    ///         jurisdiction or this reverts `PersonAttributesMismatch`. Accepting and discarding
+    ///         it would let a caller believe they had set a country that the gates do not read;
+    ///         accepting and WRITING it is the two-country defect. Agreement is the only safe
+    ///         third option. A caller who genuinely means to change residence calls
+    ///         `updatePerson`, which moves every wallet at once.
+    /// @dev    ⚠️ AN UNMAPPED COUNTRY CODE REVERTS rather than passing. See `UnknownCountryCode`.
+    function registerIdentity(address _userAddress, IIdentity _identity, uint16 _country) public onlyRegistrar {
+        bytes32 personId = _personIdOfHandle[address(_identity)];
+        if (personId == bytes32(0)) revert UnknownIdentity(address(_identity));
+
+        bytes32 jurisdiction = jurisdictionOfNumeric[_country];
+        if (jurisdiction == bytes32(0)) revert UnknownCountryCode(_country);
+        if (_persons[personId].jurisdiction != jurisdiction) revert PersonAttributesMismatch(personId);
+
+        bindWallet(_userAddress, personId);
+    }
+
+    /// @notice Detaches ONE address. The person, their claims and their other wallets survive.
+    /// @dev    ⚠️ THIS IS NOT AN ART 17 ERASURE, WHATEVER ITS NAME SUGGESTS — that is
+    ///         `erasePerson`, and it is deliberately NOT reachable from the standard's surface.
+    ///         "Delete" here deletes a POINTER. Every personal attribute stays, because the
+    ///         person is still a client and this is the compromised-key operation.
+    /// @dev    The suite's `unbindWallet` takes a `reasonHash` pointing at the off-chain
+    ///         incident record; the EIP's signature has no room for one, so this passes zero.
+    ///         An unbind with no reason on the record is an operational gap, not a technical
+    ///         one — prefer `unbindWallet`.
+    function deleteIdentity(address _userAddress) external onlyRegistrar {
+        _unbindWallet(_userAddress, bytes32(0));
+    }
+
+    /// @notice Changes the person's country of residence.
+    /// @dev    ⚠️ THIS MOVES EVERY WALLET THE PERSON HOLDS, NOT JUST `_userAddress`, AND A
+    ///         CALLER WHO EXPECTS OTHERWISE HAS MISREAD THE MODEL. Residence is an answer about
+    ///         a person; a second address does not give someone a second country. The EIP's
+    ///         signature says otherwise by keying on a wallet, and that mismatch is the reason
+    ///         `_emitCountryUpdated` fans the event out across the whole wallet set.
+    /// @dev    Only the jurisdiction moves. `tier`, the review horizon and the MiFIR identifier
+    ///         are untouched — which is why this is not a substitute for `updatePerson`, and why
+    ///         a change of residence that also changes client tier needs `updatePerson`.
+    function updateCountry(address _userAddress, uint16 _country) external onlyRegistrar {
+        bytes32 personId = _requirePersonOf(_userAddress);
+
+        bytes32 jurisdiction = jurisdictionOfNumeric[_country];
+        if (jurisdiction == bytes32(0)) revert UnknownCountryCode(_country);
+
+        Person storage p = _persons[personId];
+        p.jurisdiction = jurisdiction;
+        p.verifiedAt = uint64(block.timestamp);
+
+        emit PersonUpdated(_representativeWallet(personId));
+        _emitCountryUpdated(personId, jurisdiction);
+    }
+
+    /// @notice ⚠️ DECLARED DEVIATION — ALWAYS REVERTS. Present because `IIdentityRegistry` names
+    ///         it and the compiler must see the selector.
+    /// @dev    The EIP means "this investor's identity CONTRACT address changed" — a redeploy of
+    ///         their ONCHAINID. Here the handle is derived from `personId` and cannot change for
+    ///         a given person, so the event the standard is describing cannot occur.
+    /// @dev    ⚠️ THE REASON IT REVERTS RATHER THAN NO-OPS IS THE OTHER READING. Implemented the
+    ///         obvious way — re-point `_userAddress` at whatever person `_identity` resolves to —
+    ///         this becomes "move a wallet from person A to person B", which changes that
+    ///         wallet's jurisdiction, tier, claims and Art 1(4)(b) headcount unit in one call,
+    ///         under a name whose EIP meaning is "nothing about the person changed". Two
+    ///         divergent meanings behind one selector is a trap, not a convenience. The
+    ///         supported route is `unbindWallet` then `bindWallet`, which is two acts because it
+    ///         IS two acts.
+    function updateIdentity(address, IIdentity) external pure {
+        revert IdentityRebindingNotSupported();
+    }
+
+    /// @notice Batch form of `registerIdentity`. Atomic — one bad entry reverts the whole call.
+    /// @dev    Atomic because a partial batch leaves the operations desk unable to tell which
+    ///         wallets were bound without replaying logs, and the failure mode of acting on that
+    ///         uncertainty is binding one twice or not at all. Every entry runs the full check
+    ///         path; the arity guard is the only thing this adds.
+    /// @dev    ⚠️ NO SIZE CAP HERE, unlike `SecurityToken`'s batches. The bound is the block gas
+    ///         limit and the caller is the registrar — the operations desk paying its own gas,
+    ///         not a holder who can be griefed. If that ever stops being true, cap it.
+    function batchRegisterIdentity(
+        address[] calldata _userAddresses,
+        IIdentity[] calldata _identities,
+        uint16[] calldata _countries
+    ) external onlyRegistrar {
+        if (_userAddresses.length != _identities.length) {
+            revert BatchLengthMismatch(_userAddresses.length, _identities.length);
+        }
+        if (_userAddresses.length != _countries.length) {
+            revert BatchLengthMismatch(_userAddresses.length, _countries.length);
+        }
+
+        for (uint256 i = 0; i < _userAddresses.length; i++) {
+            registerIdentity(_userAddresses[i], _identities[i], _countries[i]);
+        }
+    }
+
+    /// @notice Whether this address is bound to a person at all.
+    /// @dev    ⚠️ NOT AN ELIGIBILITY ANSWER. A bound wallet whose person's record has expired,
+    ///         or who is missing a required claim, still answers `true` here. `isVerified` is
+    ///         the eligibility question. Using this as a gate admits every lapsed record.
+    function contains(address _userAddress) external view returns (bool) {
+        return _wallets[_userAddress].registered;
+    }
+
+    /// @notice The standard's eligibility read. Identical to `isEligible` — same checks, same
+    ///         answer — under the name the EIP uses.
+    /// @dev    ⚠️ A SUPERSET OF WHAT THE EIP DESCRIBES, AND DELIBERATELY SO. The standard means
+    ///         "holds every required claim from a trusted issuer". This also fails a record past
+    ///         its AMLR Art 20 review horizon, and it resolves the required-claim set through
+    ///         the holder's JURISDICTION rather than one global list. Both make it stricter, and
+    ///         a stricter `isVerified` cannot admit someone the standard would exclude.
+    function isVerified(address _userAddress) external view returns (bool) {
+        return this.isEligible(_userAddress);
+    }
+
+    /// @notice ⚠️ NOT A DEPLOYED CONTRACT. Returns the D19 option-(c) handle — a stable,
+    ///         non-dereferenceable per-person identifier derived from `personId`. Calling it
+    ///         will revert; comparing two of them tells you whether two wallets are the same
+    ///         investor, which is the only thing this suite's own consumers want.
+    /// @dev    ⚠️ DESIGN §16 D19 IS OPEN AND THIS IS NOT THE DECISION. Option (a) — a real
+    ///         per-person `IIdentity` contract — is full conformance and pays an Art 17 residual
+    ///         in full: a deployed contract is a persistent on-chain identifier bound to an
+    ///         identified natural person and it cannot be erased. Option (b) — return
+    ///         `address(0)` — is cheapest and least honest, and must be DISCLOSED in the
+    ///         prospectus if chosen. (c) is what is here. It is reversible: nothing in this
+    ///         contract dereferences the result, and switching to (a) changes this function and
+    ///         `_personIdOfHandle`'s population, nothing else.
+    /// @dev    ⚠️ A VENUE WHOSE TOOLING DEREFERENCES THIS WILL BREAK AGAINST US. That is a
+    ///         disclosure item, not a bug to paper over — the failure is loud, which is the
+    ///         reason (c) was preferred to (b) as a provisional answer.
+    /// @dev    Returns the zero handle for an unbound wallet, which is what the standard's
+    ///         readers expect for an unknown address.
+    function identity(address _userAddress) external view returns (IIdentity) {
+        WalletBinding storage b = _wallets[_userAddress];
+        if (!b.registered) return IIdentity(address(0));
+        return IIdentity(_handleOf(b.personId));
+    }
+
+    /// @notice The holder's ISO-3166-1 NUMERIC country of residence.
+    /// @dev    ⚠️ DERIVED, NEVER STORED PER PERSON. `Person.jurisdiction` (alpha-2) is the fact;
+    ///         this is a lookup. Storing both would be two copies of one residence attribute
+    ///         that could drift, and a person reading FR in one and 276 in the other is a
+    ///         Prospectus Art 3(2) threshold counted against the wrong Member State.
+    /// @dev    ⚠️ RETURNS `0` FOR AN UNMAPPED JURISDICTION AND FOR AN UNBOUND WALLET, AND THOSE
+    ///         ARE NOT DISTINGUISHABLE. `0` is not a valid ISO-3166 numeric, so it cannot be
+    ///         mistaken for a country — but a caller that treats it as "no restriction" rather
+    ///         than "unknown" fails open. Use `contains` first.
+    /// @dev    ⚠️ DESIGN §16 D21 IS OPEN. The standard makes an on-chain country code mandatory;
+    ///         D21 asks whether one survives GDPR Art 5(1)(c) minimisation. No gate in this
+    ///         suite reads this function — which is the §11 on-chain test being failed on the
+    ///         standard's authority rather than on the design's. Recorded, not resolved.
+    function investorCountry(address _userAddress) external view returns (uint16) {
+        return numericOfJurisdiction[_persons[_wallets[_userAddress].personId].jurisdiction];
+    }
+
+    /// @notice The trusted-issuer registry, under the standard's type.
+    /// @dev    ⚠️ THE CAST IS SAFE ONLY BECAUSE `TrustedIssuersRegistry` IMPLEMENTS BOTH
+    ///         SURFACES. This contract reads the NARROW one (`ITrustedIssuersGate`) because
+    ///         `isTrustedFor` takes the claim's write time and `hasClaimTopic` does not — see
+    ///         the note on the gate interfaces at the top of this file. Point `setTrustedIssuers`
+    ///         at something that implements only the EIP and every claim read reverts.
+    function issuersRegistry() external view returns (ITrustedIssuersRegistry) {
+        return ITrustedIssuersRegistry(address(trustedIssuers));
+    }
+
+    /// @notice The claim-topics registry, under the standard's type.
+    /// @dev    ⚠️ SAME CAVEAT AS `issuersRegistry`, plus one more: a caller that reads
+    ///         `topicsRegistry().getClaimTopics()` gets the BASELINE tier only. The set this
+    ///         contract actually enforces is `requiredTopics(jurisdiction)`, which is a superset
+    ///         wherever the holder's Member State carries additional topics.
+    function topicsRegistry() external view returns (IClaimTopicsRegistry) {
+        return IClaimTopicsRegistry(address(claimTopics));
     }
 }

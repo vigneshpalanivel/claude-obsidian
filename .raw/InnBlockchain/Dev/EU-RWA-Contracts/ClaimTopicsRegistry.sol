@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {IClaimTopicsRegistry} from "./IERC3643.sol";
+
 /// @title ClaimTopicsRegistry (illustrative sample — not production code)
 /// @notice C3 — declares which claim topics must be present on a wallet's identity record
 ///         before it may hold or move the instrument. Read by `IdentityRegistry`, which
@@ -10,7 +12,23 @@ pragma solidity ^0.8.22;
 ///         set. The two are unioned, never substituted — a jurisdiction can only ever add
 ///         requirements, not relieve the baseline. Modelling it the other way round would
 ///         let a jurisdiction configuration silently disable the AMLR/eIDAS baseline.
-contract ClaimTopicsRegistry {
+/// @dev    ⚠️ IMPLEMENTS `IClaimTopicsRegistry` FROM `IERC3643.sol`, WRITTEN FROM THE EIP TEXT.
+///         No T-REX source is used, in whole or in part. All three functions and both events
+///         are present with the exact signature.
+/// @dev    ⚠️ AND THE STANDARD'S SURFACE CANNOT EXPRESS THE SECOND TIER, WHICH IS A DEVIATION
+///         THAT UNDERSTATES THE REQUIREMENT RATHER THAN OVERSTATING IT. `IClaimTopicsRegistry`
+///         models ONE global list. `getClaimTopics()` therefore returns the BASELINE ONLY. A
+///         holder in a jurisdiction with additional topics must satisfy MORE than
+///         `getClaimTopics()` reports, and a caller who treats that array as the full admission
+///         test will build a UI that tells an investor they are eligible when they are not.
+///         `requiredTopics(jurisdiction)` is the real answer and is what `IdentityRegistry`
+///         reads. Registered in `ERC-3643-CONFORMANCE.md`.
+/// @dev    ⚠️ THE PER-JURISDICTION TIER IS NOT DROPPABLE TO CLOSE THE DEVIATION. Collapsing it
+///         into one global list would either under-require every Member State to the loosest
+///         one's set, or impose one State's additions on holders everywhere. The second tier
+///         exists because EU rules are not uniform; the standard predates that constraint
+///         rather than rejecting it. The deviation is declared, not designed away.
+contract ClaimTopicsRegistry is IClaimTopicsRegistry {
     // ─────────────────────────── well-known topic ids ─────────────────────────
     //
     // Topic ids are arbitrary uint256 identifiers, not a standard. These constants are the
@@ -94,6 +112,13 @@ contract ClaimTopicsRegistry {
     event BaselineTopicRemoved(uint256 indexed topic);
     event AdditionalTopicAdded(bytes32 indexed jurisdiction, uint256 indexed topic);
     event AdditionalTopicRemoved(bytes32 indexed jurisdiction, uint256 indexed topic);
+    /// @dev ⚠️ `ClaimTopicAdded` / `ClaimTopicRemoved` are INHERITED from `IClaimTopicsRegistry`
+    ///      and must not be re-declared. They are emitted for BASELINE changes only. A
+    ///      per-jurisdiction addition deliberately does NOT emit them: the standard's event
+    ///      carries no jurisdiction field, so emitting it would announce a global requirement
+    ///      that does not exist, and every listener would over-require every holder. Silence
+    ///      under-reports; a wrong topic id over-reports. Under-reporting is recoverable by
+    ///      reading `AdditionalTopicAdded`, which is emitted and indexed on both fields.
 
     // ─────────────────────────── errors ───────────────────────────────────────
 
@@ -130,14 +155,7 @@ contract ClaimTopicsRegistry {
     // ═══════════════════════════════════════════════════════════════════════
 
     function addBaselineTopic(uint256 topic) external onlyGovernance {
-        if (_retired[topic]) revert TopicRetired(topic);
-        if (isBaselineTopic[topic]) revert TopicAlreadyRequired(topic);
-        if (_baselineTopics.length + 1 > MAX_REQUIRED_TOPICS) {
-            revert TooManyRequiredTopics(_baselineTopics.length + 1);
-        }
-        isBaselineTopic[topic] = true;
-        _baselineTopics.push(topic);
-        emit BaselineTopicAdded(topic);
+        _addBaselineTopic(topic);
     }
 
     /// @dev Removing a baseline topic does not retroactively invalidate anything — but it
@@ -147,10 +165,7 @@ contract ClaimTopicsRegistry {
     ///      alone, which is why every change emits an event with a block timestamp: the
     ///      requirement history *is* the audit trail.
     function removeBaselineTopic(uint256 topic) external onlyGovernance {
-        if (!isBaselineTopic[topic]) revert TopicNotRequired(topic);
-        isBaselineTopic[topic] = false;
-        _removeFrom(_baselineTopics, topic);
-        emit BaselineTopicRemoved(topic);
+        _removeBaselineTopic(topic);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -205,6 +220,59 @@ contract ClaimTopicsRegistry {
     }
 
     // ═══════════════════════════════════════════════════════════════════════
+    // ERC-3643 SURFACE — the baseline tier under the standard's names.
+    //
+    // ⚠️ THE STANDARD'S THREE MEMBERS ADDRESS THE BASELINE AND NOTHING ELSE. There
+    // is no conformant way to reach the per-jurisdiction tier, which is why the
+    // suite's own functions remain the preferred entry points and why a reviewer
+    // reading only this section will see a smaller requirement set than the one
+    // `IdentityRegistry` actually enforces.
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice Adds a BASELINE topic — required of every holder in every jurisdiction. Same
+    ///         function as `addBaselineTopic`, under the standard's name, including the retired-
+    ///         id guard: the standard's surface is not a way around the topic catalogue.
+    function addClaimTopic(uint256 _claimTopic) external onlyGovernance {
+        _addBaselineTopic(_claimTopic);
+    }
+
+    /// @notice Removes a BASELINE topic. Cannot reach a per-jurisdiction requirement — a caller
+    ///         who removes a topic here and expects a jurisdiction's holders to stop being
+    ///         checked for it will find they are still checked. `removeAdditionalTopic` is the
+    ///         function for that.
+    function removeClaimTopic(uint256 _claimTopic) external onlyGovernance {
+        _removeBaselineTopic(_claimTopic);
+    }
+
+    /// @notice ⚠️ THE BASELINE ONLY, AND THAT IS NOT THE ADMISSION TEST. A holder in a
+    ///         jurisdiction carrying additional topics must satisfy a SUPERSET of this array.
+    ///         Treating it as the full requirement produces a UI that clears an investor the
+    ///         registry will refuse. Call `requiredTopics(jurisdiction)` for the real answer.
+    function getClaimTopics() external view returns (uint256[] memory) {
+        return _baselineTopics;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+
+    function _addBaselineTopic(uint256 topic) private {
+        if (_retired[topic]) revert TopicRetired(topic);
+        if (isBaselineTopic[topic]) revert TopicAlreadyRequired(topic);
+        if (_baselineTopics.length + 1 > MAX_REQUIRED_TOPICS) {
+            revert TooManyRequiredTopics(_baselineTopics.length + 1);
+        }
+        isBaselineTopic[topic] = true;
+        _baselineTopics.push(topic);
+        emit BaselineTopicAdded(topic);
+        emit ClaimTopicAdded(topic);
+    }
+
+    function _removeBaselineTopic(uint256 topic) private {
+        if (!isBaselineTopic[topic]) revert TopicNotRequired(topic);
+        isBaselineTopic[topic] = false;
+        _removeFrom(_baselineTopics, topic);
+        emit BaselineTopicRemoved(topic);
+        emit ClaimTopicRemoved(topic);
+    }
 
     function _removeFrom(uint256[] storage arr, uint256 topic) private {
         for (uint256 i = 0; i < arr.length; i++) {

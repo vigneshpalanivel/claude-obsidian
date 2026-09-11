@@ -1,13 +1,15 @@
 ---
 title: Remaining Compliance — EU-RWA-Contracts
-date: 2026-09-09
-status: derived from the 30 .sol files (31 contracts) in this folder + §17/§17a of eu_tokenized_securities_smart_contract_design.md (rev 53)
+date: 2026-09-11
+status: derived from the 31 .sol files (31 contracts + 2 abstract bases + 1 pure-interface file) in this folder + §17/§17a of eu_tokenized_securities_smart_contract_design.md (rev 54)
 supersedes: the rev-36 state of this file, which stood while the design moved from rev 36 to rev 52
 ---
 
 # Remaining Compliance List
 
-**31 contracts across 30 files. §17's contract inventory and §17a's matrix are both complete.** *(Was 30 across 29 until `PersonErasure` was added on 2026-09-09 — see §3's GDPR row and `DEPLOYMENT-DEFAULTS.md` §5.)*
+**31 contracts across 31 files. §17's contract inventory and §17a's matrix are both complete.** *(Was 30 across 29 until `PersonErasure` was added on 2026-09-09 — see §3's GDPR row and `DEPLOYMENT-DEFAULTS.md` §5.)*
+
+⚠️ **The file count moved without the contract count moving, on 2026-09-11.** `IERC3643.sol` is the 31st file and declares **no contract** — it is the EIP-3643 interface set, transcribed from the specification text, and it is deliberately the one file in this folder with no implementation in it. That separation is the licence control, not a style choice: **no T-REX or ONCHAINID source is copied into this suite**, so nothing here inherits GPL-3.0. Before you add an import, read `ERC-3643-CONFORMANCE.md` §1.
 
 > ⚠️ **Re-synced 2026-09-08 to design rev 52, after the code review in `CODE-REVIEW-2026-09-08.md`.** This file had stood at rev 36 while the design moved 16 revisions, and three of its statements had gone stale in a way that mattered. **Read the review file for the full finding list; read the sweep note below for what this file used to say.**
 >
@@ -17,7 +19,9 @@ supersedes: the rev-36 state of this file, which stood while the design moved fr
 > - **§9 defect 5 "auto-trip on oracle-anomaly — closed."** It was not. The trip called `DoraGovernor`, which set a flag **nothing read** — an event with a different name, which is precisely what that defect was about. Closed for real on 2026-09-08: `DoraGovernor` implements `IProtocolPause`, and the flag is read by `SecurityToken` (voluntary paths), the four fund modules (acquisition paths), `DistributionAgent` (payouts) and `BuybackAgent` (purchases). Never by forced transfer, recovery, repayments, disposals or refunds.
 > - **§8 "widen the band with `configureFeed` and let the sources repost".** `postValuation` returned before `_tryAccept` while halted, so that path did nothing without `clearHalt`. Now implemented as described: posts during a halt are stored and re-attempted, and acceptance inside the widened band clears the halt.
 >
-> **Nine HIGH defects were found and fixed on 2026-09-08** — see §11 below. The suite compiles clean (solc 0.8.22, optimizer, viaIR: 0 errors, 0 warnings). ⚠️ **There is still no test harness, so nothing here is runtime-verified.**
+> **Nine HIGH defects were found and fixed on 2026-09-08** — see §11 below. The suite compiled clean at that date (solc 0.8.22, optimizer, viaIR: 0 errors, 0 warnings). ⚠️ **There is still no test harness, so nothing here is runtime-verified.**
+>
+> ⚠️ **That compile result is 2026-09-08 and does NOT cover the 2026-09-11 ERC-3643 pass.** Seven files changed after it and the suite has **not** been recompiled — no compiler was available. Two mechanical substitutes were run (brace balance; EIP member reconciliation); both passed, and both are far weaker than a compile. See `ERC-3643-CONFORMANCE.md` §6 for exactly what they do and do not cover.
 
 What is left is the open decisions in §6 and §11, and the items §11 records as deliberately not built.
 
@@ -29,8 +33,9 @@ What is left is the open decisions in §6 and §11, and the items §11 records a
 
 Two things to know about it:
 
-- **It is deliberately neither ERC-1400 nor ERC-3643.** §16 D0 leaves that to the operator, and §8 makes it *prospectus-blocking* — the token standard is a disclosure item, so changing it after approval is a material change with a withdrawal window. Writing the file either way would have made that decision by accident. It is written at the §3 capability level and binds to either.
-- **C6 (partitions) is not in it, for the same reason.** ERC-1400 gets partitions free; ERC-3643 does not. `DistributionWaterfall` shows the shape a tranched instrument needs once D0 resolves.
+- **It implements `IERC3643`.** ⚠️ **Changed 2026-09-11 — §16 D0 is CLOSED (design rev 54).** This bullet previously read "deliberately neither ERC-1400 nor ERC-3643". `SecurityToken is IERC3643`, written from the EIP text; **no T-REX source is used**, so no GPL-3.0 obligation attaches. The conformance claim is **qualified** — full on `IERC3643`, declared deviation on `IIdentityRegistry`. **Read `ERC-3643-CONFORMANCE.md` before writing "ERC-3643" anywhere an NCA or an investor sees it**: the token standard is a Prospectus Art 6/16(1) disclosure item, so an overstated claim is a defect in a disclosure document.
+- **C6 (partitions) is still not in it, and closing D0 confirmed that rather than changing it.** ERC-1400 would have got partitions free from ERC-1410; ERC-3643 has no partition model. The tranche pattern stays **custom**, and `DistributionWaterfall` shows the shape a tranched instrument needs. **This token is ERC-3643-BASED, not ERC-3643-ONLY** — a reader who assumes the standard delivered the §5 and §8 machinery under-scopes the build by its largest custom component.
+- **Nothing in §4–§10 moved when the standard was fixed.** That is the §13 standard-independence check, and it remains the acceptance gate on this diff.
 
 ---
 
@@ -97,7 +102,7 @@ Two things it deliberately is **not**: a stabilisation contract (Art 5(4)–(5) 
 
 | # | Contract | Deploy when |
 |---|---|---|
-| 1 | `SecurityToken` ✅ | Always. C1 hook + C5 freeze / forced transfer / recovery. Standard-neutral pending §16 D0. |
+| 1 | `SecurityToken` ✅ | Always. C1 hook + C5 freeze / forced transfer / recovery. `is IERC3643` since 2026-09-11 (§16 D0 closed); the §4–§10 rules are unchanged by that — §13's standard-independence check. |
 | 2 | `DocumentRegistry` ✅ | Always. Serves 4 regulations. Closes the dangling `IDocumentRegistry` call in `DoraGovernor`. |
 | 3 | `CovenantRegistry` ✅ | Always. Serves 5 regulations. Ships with `CovenantGate` for `ModularCompliance`. |
 | 4 | `DistributionAgent` ✅ | If the token pays holders at all. |
@@ -144,35 +149,46 @@ It is **not** right for any module that can block on a suspicion- or sanctions-l
 Two consequences worth recording:
 
 - **`ModularCompliance`'s NatSpec must carry the carve-out**, not the unqualified rule. As written it instructs the next module author to do the wrong thing by default.
-- **An ERC-3643-conformant `IModule` would not have this problem** — `moduleCheck` returns `bool`, so a T-REX block is generic by construction. The local `IComplianceModule` traded that property away for the named-error channel, and this is the cost. Worth stating against §16 D0, since the design doc's claim that generic codes *"cut directly against how both token standards are designed"* holds for ERC-1400's status-plus-reason return and **not** for ERC-3643.
+- **The standard's own gate is reason-opaque, and since 2026-09-11 the token uses it.** `ICompliance.canTransfer` returns a **bool** — no reason attached and no room to attach one — which is the AMLR Art 76 limb of C1 satisfied *by the interface* rather than by a review convention. `SecurityToken._assertCompliant` treats that boolean as authoritative and falls back to `IComplianceGate.checkTransfer` only to recover a reason, and only where the failing module's class permits one. The named-error channel is therefore an **explanation** layer over a generic decision, not a replacement for it. ⚠️ This bullet previously said an ERC-3643 `IModule` "would not have this problem" and framed it as an argument against the local design; both halves are now moot — D0 is closed and the two shapes coexist. The design doc's claim that generic codes *"cut directly against how both token standards are designed"* holds for ERC-1400's status-plus-reason return and **not** for ERC-3643.
 
 ### A sixth, opened 2026-09-08 — two residual leaks the restricted-party consolidation could not close
 
 `IdentityRegistry.freeze` / `unfreeze` / `Investor.frozen` were **deleted** and every wallet-level stop moved into one store, `RestrictedPartyRegistry` (formerly `SanctionsRegistry`). The argument is storage-observability, not error strings: contract storage is public, so while two stores could each stop a wallet, an observer read *which* one held a person and inferred the class — and at that point the generic revert code is itself the tell. One store, one flag, one argument-free error.
 
-Two things survive that argument and are **not** fixed in code:
+Two things survive that argument and are **not** fixed in code — and a **third arrived with ERC-3643 conformance on 2026-09-11**:
 
 | # | Leak | Why it was not closed | The operating rule |
 |---|---|---|---|
-| 1 | `SecurityToken.freezeUnits` writes a **public** `frozenUnits` mapping. An agent who freezes 100% of a wallet's balance has built a second, readable, wallet-level stop | A partial freeze over a disputed or collateralised parcel is a genuinely different mechanic, and forcing it through the restriction store would over-freeze — itself an exposure to the holder | **`freezeUnits` is for partial parcels only. A whole-wallet stop goes in `RestrictedPartyRegistry`.** Stated in the NatSpec on both contracts; no on-chain enforcement exists |
-| 2 | `SecurityToken.recoverWallet` runs no transfer gate, so a **wallet**-keyed restriction on the lost wallet is left behind while the units land in a second wallet of the same investor | The token holds no write access to the store, and giving it one would put a sanctions key on the token | **Any restriction intended to survive a key loss must be written against the RECORD (`blockRecord`), not the wallet.** Record-keyed restrictions *do* follow, because both wallets resolve to the same pointer |
+| 1 | `SecurityToken.freezePartialTokens` writes a **public** `frozenUnits` mapping. An agent who freezes 100% of a wallet's balance has built a second, readable, wallet-level stop | A partial freeze over a disputed or collateralised parcel is a genuinely different mechanic, and forcing it through the restriction store would over-freeze — itself an exposure to the holder | **`freezePartialTokens` is for partial parcels only. A whole-wallet stop goes in `RestrictedPartyRegistry`.** Stated in the NatSpec on both contracts; no on-chain enforcement exists |
+| 2 | `SecurityToken.recoveryAddress` runs no transfer gate, so a **wallet**-keyed restriction on the lost wallet is left behind while the units land in a second wallet of the same investor | The token holds no write access to the store, and giving it one would put a sanctions key on the token | **Any restriction intended to survive a key loss must be written against the RECORD (`blockRecord`), not the wallet.** Record-keyed restrictions *do* follow, because both wallets resolve to the same pointer |
+| 3 ⚠️ | **`SecurityToken.setAddressFrozen` / `isFrozen` — the whole-address stop the standard requires.** A public, wallet-keyed boolean anyone can read: exactly the shape the consolidation existed to make singular. Worse than #1, because #1 at least needs an agent to freeze the full balance to become one | **`IERC3643` names both functions; the compiler checks.** There is no conformant build without them. The revert is argument-free (`AddressIsFrozen()`, same error both sides) and `AddressFrozenReason` carries only a hash, but the boolean read itself cannot be hidden | **`setAddressFrozen` is the OPERATIONAL stop — an incident hold, a pending investigation. A sanctions listing or an AMLR Art 75 suspicion goes in `RestrictedPartyRegistry`, person-keyed.** No on-chain enforcement. See `ERC-3643-CONFORMANCE.md` §5.1 |
 
-Both are stated in NatSpec at the site and in `DEPLOYMENT-DEFAULTS.md`. Neither is a code fix that exists; both are operator commitments that need an owner.
+All three are stated in NatSpec at the site and in `DEPLOYMENT-DEFAULTS.md`. None is a code fix that exists; all three are operator commitments that need an owner.
+
+**Two further residuals arrived with conformance and are not in the table because they are data-protection, not observability:** `recoveryAddress`'s third parameter puts a second per-person identifier in the calldata and the `RecoverySuccess` log, and the EIP's `IdentityRegistered`/`IdentityRemoved` events make the person → wallets join computable **from logs alone** where it previously needed a contract call. `ERC-3643-CONFORMANCE.md` §5.2 and §5.3. Both are DPO questions.
 
 **What the consolidation *did* close in code:** the stop is no longer removable. `SecurityToken` and `DistributionAgent` each take `IRestrictedParty` as a non-zero constructor argument and read it in the **mandatory** layer — above `ModularCompliance`, and in `DistributionAgent`'s case not behind the per-distribution `runComplianceModules` flag. Routing sanctions exclusively through `RestrictedPartyGate` would have demoted a control that binds irrespective of client type into one a single `removeModule` call switches off.
 
 ---
 
-## 6. The one decision nobody has made
+## 6. The decision that was made, and the two behind it that were not
 
-**§16 D0 — ERC-1400 vs ERC-3643.**
+**§16 D0 — ERC-1400 vs ERC-3643 — is CLOSED (design rev 54, 2026-09-11): ERC-3643.**
 
-It is not a build item and it is not on any list above, which is precisely why it keeps getting deferred. Two things make it urgent rather than architectural:
+It stood open for 53 revisions because "adopt ERC-3643" was read as "adopt T-REX", and T-REX is GPL-3.0 — which would have made a client's proprietary build a derivative work. **Separating the specification from the implementation dissolves that exposure and keeps the interoperability.** The EIP is free to implement; Tokeny's implementation of it is not free to copy. Every contract here is written from the specification text, carries an MIT header, and imports nothing outside this folder. The rule is enforced by CI, not by policy — see `ERC-3643-CONFORMANCE.md` §1.
 
-- **It is prospectus-blocking.** The token standard is a disclosure item under Prospectus Arts 6/16(1). Settle it *before* filing, or changing it later is a material change carrying an Art 23 supplement and an investor withdrawal window.
-- **It decides C6.** Partitions are free under ERC-1400 and custom under ERC-3643. `SecurityToken` and `DistributionWaterfall` are both written to survive either answer, but only one of them is cheap to revisit.
+It was prospectus-blocking, and that is why it is settled now rather than at filing: the token standard is a disclosure item under Prospectus Arts 6/16(1), so changing it after approval is a material change carrying an Art 23 supplement and an investor withdrawal window. **The same logic applies to the wording of the claim** — "ERC-3643 compliant" unqualified is an overstatement, because `IIdentityRegistry` carries declared deviations. §2 of the conformance register gives the sentence you may use.
 
-Owner: operator. Everything else in this folder is portable across the answer by design (§13's standard-independence check).
+It decided C6 by confirming it: **partitions stay custom.** ERC-1400 would have got them free from ERC-1410.
+
+**Two decisions it did *not* make, and both are now on the critical path:**
+
+| | Open decision | Why it is blocking now |
+|---|---|---|
+| **D19** | per-investor `IIdentity` contract — adopt, stub, or handle? | `IdentityRegistry.identity()` currently returns a non-dereferenceable handle (option (c)), **provisionally**. A venue whose tooling dereferences it breaks against us. Option (a) pays a GDPR Art 17 residual in full — a deployed contract bound to an identified natural person cannot be erased. **This is a data-protection decision before it is an engineering one; do not resolve it by writing code.** DPO sign-off + DPIA entry either way |
+| **D21** | does an on-chain ISO-3166 country survive GDPR Art 5(1)(c) minimisation? | The standard answers *yes* by making `investorCountry()` mandatory. No gate in this suite reads it — the §11 on-chain test failing on the standard's authority rather than the design's |
+
+Owner: operator, with the DPO on both rows. Everything else in this folder is portable across D0's answer by design, and the §13 standard-independence check is the acceptance gate that proves it: **a rule that appears or disappears because of conformance is a defect.**
 
 ---
 
@@ -270,7 +286,7 @@ The deviation band halts on the first post back after any outage that spanned a 
 
 ### Not fixed, and deliberately (rev-35 scope)
 
-`Feed.value` carries **no unit or decimals metadata**. Consumers key by `bytes32 assetId` and divide one feed by another; a unit mismatch would be silent. This is left to the technical spec in `Dev/` rather than guessed at here, because the answer depends on §16 **D4** (who posts, on what method) and **D0** (token decimals) — both unmade. ⚠️ **Do not deploy multi-feed ratios until it is settled.**
+`Feed.value` carries **no unit or decimals metadata**. Consumers key by `bytes32 assetId` and divide one feed by another; a unit mismatch would be silent. This is left to the technical spec in `Dev/` rather than guessed at here, because the answer depends on §16 **D4** (who posts, on what method) — still unmade. ⚠️ D0 is closed and settled **nothing** about decimals: `IERC3643` inherits `decimals()` from ERC-20 and says nothing about its value. ⚠️ **Do not deploy multi-feed ratios until it is settled.**
 
 ---
 
@@ -357,5 +373,5 @@ Every manager role in the fund modules is rotatable (two-step for the AIFM/ManCo
 5. **Native asset only.** `DistributionAgent` and `SubscriptionEscrow` are `payable`; there is no ERC-20/EMT leg. **D6 has no code**, and review finding 1.12 (Travel Rule on an EMT payout) is unreachable rather than unresolved.
 6. **Not modelled, and now stated in the headers:** ELTIF Art 15(2), Art 13(7) professional-only relief, the MMF single-tool derogation.
 7. ~~**`mar-checklist.md` §6.4 disagrees with the Series Plan** on where the €20k PDMR threshold sits and on the issuer's publication limb.~~ **✅ CLOSED 2026-09-08 — and it closed in favour of the code.** Settled against `EU Compliance/Checklist/mar.mhtml`, the consolidated text (CELEX:02014R0596-20260605) the checklist itself cites, read verbatim: the threshold is **Art 19(8)** *("calculated by adding without netting")*; **Art 19(9)** is a **competent-authority** decision to raise it to **€50,000 or lower it to €10,000**; **Art 19(1a)** is the collective-investment-undertaking **exemption**, not a threshold; the issuer publishes under **Art 19(3)** within **two** business days of **receipt**. `PdmrRegister`'s citations were already right — **do not change them.** `mar-checklist.md` corrected to its rev 1.2; the design doc's threshold statements swept at rev 52. ⚠️ **One substantive consequence, not a citation fix: the €10,000 downward option was missing from every document**, so any notification engine built to a €20k floor under-reports wherever an authority took the lower option. The threshold is a **three-valued** per-jurisdiction parameter. ⚠️ **Method worth keeping:** the `Checklist/` files are the source for compliance claims, but a checklist is itself derived — where it conflicts with the consolidated text it cites, **the `.mhtml` snapshot beside it is the tiebreaker.** That is what settled this, and the design's own rev 13 had previously "corrected" the citation *to* the wrong answer, where it stood for 39 revisions.
-8. **Two leaks from §5's sixth item survive by operating rule, not code:** `freezeUnits` as a whole-wallet stop, and `recoverWallet` leaving a wallet-keyed restriction behind. Both are in `DEPLOYMENT-DEFAULTS.md`; neither is enforced on-chain.
+8. **Three leaks from §5's sixth item survive by operating rule, not code:** `freezePartialTokens` as a whole-wallet stop, `recoveryAddress` leaving a wallet-keyed restriction behind, and — since 2026-09-11 — `setAddressFrozen`/`isFrozen`, the whole-address stop `IERC3643` requires. All three are in `DEPLOYMENT-DEFAULTS.md`; none is enforced on-chain. See `ERC-3643-CONFORMANCE.md` §5.
 9. **No test harness.** Every statement in this file is from reading and compiling, never from running.

@@ -2,7 +2,7 @@
 title: Deployment Defaults — EU-RWA-Contracts
 date: 2026-09-07
 status: baseline wiring for every deployment; lane columns derived from §17's inventory in eu_tokenized_securities_smart_contract_design.md
-updated: 2026-09-09 — IdentityRegistry re-keyed from the wallet to the person (Person / WalletBinding); PersonErasure added as the single GDPR Art 17 entry point, with erasureCoordinator setters on five contracts. Prior update 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
+updated: 2026-09-11 — the suite implements ERC-3643 from the EIP text (design rev 54, §16 D0 closed); new step 2a (setCountryCode), a fourth go-live row, a third operating rule (setAddressFrozen), and the freezeUnits→freezePartialTokens / recoverWallet→recoveryAddress renames. Read ERC-3643-CONFORMANCE.md first. Prior update 2026-09-09 — IdentityRegistry re-keyed from the wallet to the person (Person / WalletBinding); PersonErasure added as the single GDPR Art 17 entry point, with erasureCoordinator setters on five contracts. Prior update 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
 ---
 
 # Deployment Defaults
@@ -34,14 +34,30 @@ This is the naming rule, and it is why the store is not called `FreezeRegistry` 
 | Control | Acts on | Lifts when | Prefix |
 |---|---|---|---|
 | `RestrictedPartyRegistry` | a **party** — person or wallet, any reason | governance lifts it | `RestrictedParty*` |
-| `SecurityToken.freezeUnits` | **units** — a parcel inside a live wallet | an agent unfreezes | `freeze*` / `frozenUnits` |
+| `SecurityToken.freezePartialTokens` | **units** — a parcel inside a live wallet | an agent unfreezes | `*PartialTokens` / `frozenUnits` |
+| `SecurityToken.setAddressFrozen` | a **whole address** — ⚠️ see below | an agent unfreezes | `setAddressFrozen` / `isFrozen` |
 | `HoldingPeriodLock`, `PdmrClosedPeriodFreeze` | a **period** — a date restriction | expires on its own | `Holding*` / `ClosedPeriod*` |
 
-`Freeze` was considered for the store and **rejected**: `freezeUnits` already stops value moving,
-so an agent told to "freeze the wallet" reaches for `freezeUnits(wallet, fullBalance)` — which
-compiles, works, and rebuilds the two-store leak. `Hold` was rejected because it reads as
+`Freeze` was considered for the store and **rejected**: `freezePartialTokens` already stops value
+moving, so an agent told to "freeze the wallet" reaches for `freezePartialTokens(wallet, fullBalance)`
+— which compiles, works, and rebuilds the two-store leak. `Hold` was rejected because it reads as
 `HoldingPeriodLock`. And the name must stay **class-neutral** — membership of a store named
 `Sanctions`, `Watchlist` or `DeniedParty` *is* the disclosure, whatever the revert says.
+
+> ⚠️ **Row 3 is new on 2026-09-11 and it is a residual, not a control you should use.**
+> `setAddressFrozen` / `isFrozen` are **mandatory members of `IERC3643`** — the standard requires a
+> public, wallet-keyed, whole-address stop, so implementing the interface puts one back into
+> existence outside `RestrictedPartyRegistry`. That is exactly the two-store leak the 2026-09-08
+> rename was written to close, reopened by the standard rather than by a naming slip.
+>
+> **What is and is not mitigated:** the flag is class-neutral and the revert is argument-free, so a
+> reader learns *that* an address is stopped, not *why* — the AMLR Art 76 limb holds. What does not
+> hold is the single-store property: `isFrozen` is a public getter, so an observer can ask "is this
+> wallet stopped by the token?" separately from "is this party restricted?", and a wallet stopped by
+> only one of the two narrows the class. **Operating rule: route every party-level stop through
+> `RestrictedPartyRegistry`, and use `setAddressFrozen` only where a counterparty tool needs the
+> standard's own surface to see the stop — in which case set both.** Nothing on-chain enforces this.
+> Full statement in `ERC-3643-CONFORMANCE.md` §5.1.
 
 "Probate hold" and "lost-key hold" remain in prose as names of real legal instruments. They are
 never a name for the contract, its flag, or its gate.
@@ -71,7 +87,8 @@ leaving it as a rule someone later reads as boilerplate:
 **mandatory** layer, above the module list:
 
 - `SecurityToken._check` calls `restrictions.assertTransferPermitted(from, to)` between the identity reads
-  and `compliance.checkTransfer`.
+  and `_assertCompliant` (which asks `ICompliance.canTransfer` first and only falls back to the
+  suite's reverting `checkTransfer` to recover a reason — see `ERC-3643-CONFORMANCE.md` §3, C1).
 - `DistributionAgent._gate` calls `restrictions.isBlocked(holder)` unconditionally — *not* behind
   `d.runComplianceModules`, which is opt-in per distribution.
 
@@ -162,10 +179,26 @@ list is the authoritative order; where a later section disagrees, this one wins.
    afterthought, which is how the pause ended up with no readers.)*
 1. `ClaimTopicsRegistry`, `TrustedIssuersRegistry` — each takes `(governance)`
 2. `IdentityRegistry` — takes `(governance, claimTopics, trustedIssuers)`
+2a. **`IdentityRegistry.setCountryCode(jurisdiction, country)` for every jurisdiction the deployment
+   will admit** — ⚠️ **new on 2026-09-11, and it is a go-live item, not a nicety.** `IERC3643`
+   requires `investorCountry(wallet)` to return an ISO-3166 numeric `uint16`. This suite stores the
+   jurisdiction as an alpha-2 `bytes32` on the **person**, so the numeric is *derived* through this
+   mapping and **never stored per investor** — which is what keeps the `uint16` out of per-person
+   storage (see `ERC-3643-CONFORMANCE.md` §4, D-I4 and §5.4). Consequences of skipping it:
+   `investorCountry` returns 0 for holders in an unmapped jurisdiction, and
+   `registerIdentity(wallet, id, country)` — the standard's own registration entry point —
+   **reverts `UnknownCountryCode`**. The suite's native `bindWallet` path is unaffected, so a
+   deployment can run for months before a counterparty tool using the standard surface hits it.
+   The mapping is **not** re-pointable in either direction; `country == 0` retires an entry.
 3. `RestrictedPartyRegistry` — takes `(governance, identity, maxSweepLag)`
 4. `ModularCompliance` — takes `(governance)`
 5. `SecurityToken` — takes `(governance, compliance, identity, restrictions, protocolPause, name, symbol, decimals, isinHash)`
-6. `ModularCompliance.bindToken(token)` — **one-shot, and there is no rebind**
+6. `ModularCompliance.bindToken(token)` — **one-shot, and there is no rebind.** ⚠️ `IERC3643`'s
+   `ICompliance` declares `unbindToken(address)`; this suite implements it as
+   `external pure { revert UnbindNotSupported(); }`. It is present because the interface requires
+   the selector and **absent as a capability** because unbinding a live compliance contract from a
+   live token is a state nothing in §4–§10 can recover from. A wrong `bindToken` means redeploy.
+   Declared as D-C1 in `ERC-3643-CONFORMANCE.md` §4.
 7. `RestrictedPartyGate` — takes `(moduleId, governance, restrictions)`; then `ModularCompliance.addModule(gate)`
 8. `DistributionAgent` — takes `(governance, identity, compliance, restrictions, protocolPause)`
 9. **Arm the pause and the screening guard before anything can mint** — see the go-live checklist below
@@ -186,6 +219,7 @@ Each fails in the safe direction, and each will read as a bug to whoever runs th
 | **Screening staleness** | `screeningIsStale()` is **true**, so **every mint reverts** | `advanceListVersion` then `recordSweep` — both, once, after the first full base sweep |
 | **Oracle circuit breaker** | A deviation halt pauses **nothing** | `DoraGovernor.setOracleTripSource(oracle)` **and** `ValuationOracle.setCircuitBreaker(governor)` |
 | **Offer close (Prospectus mode)** | `settle()` reverts `OfferStillOpen` and no escrow ever releases | `SubscriptionEscrow.setOfferClose(ts)` — extend-only, so set it when the offer opens, not at the end |
+| **ISO-3166 country map** | `investorCountry(wallet)` returns **0** for every holder, and `registerIdentity(...)` reverts `UnknownCountryCode`. Nothing in this suite's own gates reads either, so **no test transaction finds this** — it surfaces at the first counterparty integration against the standard surface | `IdentityRegistry.setCountryCode(jurisdiction, country)`, once per admitted jurisdiction. Not re-pointable; `country == 0` retires an entry |
 | **Erasure path** | Every `erasePerson` leg reverts `NotErasureCoordinator`, so **an Art 17 request cannot be executed at all** — and unlike the three above, nobody finds this out on day one. It surfaces on the first DSAR, inside the Art 12(3) month | `IdentityRegistry.setErasureCoordinator` **and** the same setter on each of the four targets, **and** `PersonErasure.registerTarget` for each, **and** `setEraser` for at least one key. All four, or the path is broken in a way no test transaction exercises — see §5 |
 
 ⚠️ **`SubscriptionEscrow` is never deployed behind a proxy.** `mode` and `finalPriceOmittedAtFiling`
@@ -230,24 +264,37 @@ module is added, not discovered at the eleventh.
 
 ---
 
-## 4. Two operating rules with no on-chain enforcement
+## 4. Three operating rules with no on-chain enforcement
 
-Both are consequences of the 2026-09-08 consolidation. Both need an owner in the runbook; neither
-is enforced by any `require`.
+The first two are consequences of the 2026-09-08 consolidation; the third arrived with `IERC3643`
+on 2026-09-11. All three need an owner in the runbook; none is enforced by any `require`.
 
-1. **`SecurityToken.freezeUnits` is for partial parcels only.** Its `frozenUnits` mapping is
-   public, so an agent who freezes 100% of a wallet's balance has built a second, readable,
+1. **`SecurityToken.freezePartialTokens` is for partial parcels only.** Its `frozenUnits` mapping is
+   public — as is the EIP's `getFrozenTokens` accessor over it — so an agent who freezes 100% of a
+   wallet's balance has built a second, readable,
    wallet-level stop — exactly the two-store leak the consolidation removed. A whole-wallet stop
    goes in `RestrictedPartyRegistry`. The function is kept because a freeze over a disputed or collateralised
    parcel is a genuinely different mechanic and routing it through the restriction store would
-   over-freeze, which is its own exposure to the holder.
+   over-freeze, which is its own exposure to the holder. *(Renamed from `freezeUnits` when the
+   token adopted `IERC3643`. The storage mapping keeps its `frozenUnits` name — the EIP names the
+   **accessor**, `getFrozenTokens`, not the slot.)*
 
 2. **A restriction that must survive a lost key goes on the RECORD, not the wallet.**
-   `SecurityToken.recoverWallet` runs no transfer gate — by design, since its control is the
+   `SecurityToken.recoveryAddress` runs no transfer gate — by design, since its control is the
    `personId` match rather than the agent role. So `RestrictedPartyRegistry.blockWallet(lostWallet)` is
    left behind and the units land in a second, unrestricted wallet of the same investor.
    `blockPerson` follows, because both wallets resolve to the same `personId`. Prefer `blockPerson`
-   wherever the subject is a person rather than a specific key.
+   wherever the subject is a person rather than a specific key. *(Renamed from `recoverWallet`.
+   ⚠️ The EIP signature carries a third `IIdentity` argument this suite does not read — see
+   `ERC-3643-CONFORMANCE.md` §5.2.)*
+
+3. **⚠️ `setAddressFrozen` and `RestrictedPartyRegistry` must not be allowed to disagree.** The
+   standard's whole-address stop is a second, public, wallet-keyed store, and the consolidation
+   that removed the first one cannot remove this one — `IERC3643` requires it. Route every
+   party-level stop through `RestrictedPartyRegistry`; use `setAddressFrozen` only where a
+   counterparty tool needs the stop visible on the standard surface, and when you do, **set both**.
+   A wallet stopped by exactly one of the two is the leak: it tells an observer which store holds
+   the person, which is the class. See §1's row 3 and `ERC-3643-CONFORMANCE.md` §5.1.
 
 ---
 
@@ -338,7 +385,8 @@ SecurityToken(governance, ModularCompliance, IdentityRegistry, RestrictedPartyRe
 baseline. It is rejected at `address(0)`, re-pointable through `setProtocolPause(impl)`
 (governance, emits `ProtocolPauseChanged(old, new)`), and read by `whenLive` on **voluntary paths
 only**: `transfer`, `transferFrom`, `mint`, `burn`, `simulate`. `forcedTransfer` and
-`recoverWallet` run during a protocol pause exactly as they run during the agent's own `paused`.
+`recoveryAddress` (named `recoverWallet` when this note was written) run during a protocol pause
+exactly as they run during the agent's own `paused`.
 **`DoraGovernor` must therefore deploy before the token** — insert it between steps 4 and 5.
 
 ### `burn` is now `whenLive`
@@ -357,7 +405,7 @@ that lands units on a listed person or releases them from one. The sender limb i
 mechanism, unchanged. Also: sender-side **module** rules do apply on a forced transfer (a
 `HoldingPeriodGate` lock will refuse a seizure during ramp-up). Where the order overrides the
 lock, the mechanism is `ModularCompliance.emergencyBypass` on that module — logged — not a hidden
-branch in the token. `forcedTransfer(w, w, …)` and `recoverWallet(w, w, …)` revert `SameWallet`.
+branch in the token. `forcedTransfer(w, w, …)` and `recoveryAddress(w, w, …)` revert `SameWallet`.
 
 ### Go-live: `screeningIsStale()` is now genuinely true until the first sweep (M-T3)
 
@@ -397,7 +445,7 @@ claim; a screening "clear" is not recorded anywhere on-chain.
   yields a silently skipped module.
 - `bindToken(address(0))` reverts `ZeroAddress` (it previously consumed nothing and left the
   one-shot open).
-- `checkTransfer` NatSpec now carries the module classification: **informative-block** (holding
+- `IComplianceGate.checkTransfer` NatSpec now carries the module classification: **informative-block** (holding
   period, closed period, covenant, concentration — may name an Article) vs **generic-block**
   (anything eligibility / freeze / sanctions / suspicion-linked — one argument-free error, AMLR
   Art 76). `RestrictedPartyGate` is the generic-class module and the only one. Each module carries

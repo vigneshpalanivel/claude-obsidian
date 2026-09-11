@@ -3,7 +3,7 @@ pragma solidity ^0.8.22;
 
 import {Distribution, DistributionState} from "./Interfaces.sol";
 
-import {ICompliance, IIdentityGate, IRestrictedParty, IProtocolPause} from "./Interfaces.sol";
+import {IComplianceGate, IIdentityGate, IRestrictedParty, IProtocolPause} from "./Interfaces.sol";
 
 /// @title DistributionAgent (illustrative sample — not production code)
 /// @notice C1 + C2 — pays holders. Dividends, rental income, revenue share, and the cash leg
@@ -67,7 +67,7 @@ contract DistributionAgent {
     /// @dev Interface-typed and settable — never concrete, never `immutable`. Scoping rules
     ///      out is `ModularCompliance.removeModule`, not a null reference here.
     IIdentityGate public identity;
-    ICompliance public compliance;
+    IComplianceGate public compliance;
 
     /// @notice The wallet-level restriction store. Read on EVERY payout, in the mandatory layer.
     /// @dev    ⚠️ ADDED 2026-09-08 AND IT IS NOT OPTIONAL. `IdentityRegistry.freeze` used to
@@ -215,7 +215,7 @@ contract DistributionAgent {
         if (protocolPause_ == address(0)) revert ZeroAddress();
         governance = governance_;
         identity = IIdentityGate(identity_);
-        compliance = ICompliance(compliance_);
+        compliance = IComplianceGate(compliance_);
         restrictions = IRestrictedParty(restrictions_);
         protocolPause = IProtocolPause(protocolPause_);
         emit DependencySet("identity", identity_);
@@ -244,7 +244,7 @@ contract DistributionAgent {
     /// @notice Re-point the rule engine. Swap, never unset.
     function setCompliance(address impl) external onlyGovernance {
         if (impl == address(0)) revert ZeroAddress();
-        compliance = ICompliance(impl);
+        compliance = IComplianceGate(impl);
         emit DependencySet("compliance", impl);
     }
 

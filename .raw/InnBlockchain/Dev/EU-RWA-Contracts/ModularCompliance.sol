@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
+import {ICompliance} from "./IERC3643.sol";
+
 /// @notice The shape every rule module must present to the compliance stack. Deliberately
 ///         two functions with different mutability: `checkTransfer` is the pre-trade veto
 ///         and must be `view` so it can be called from an off-chain simulation and from a
@@ -35,7 +37,29 @@ interface IComplianceModule {
 ///             deliberate compliance breach with an audit trail, which is the honest shape
 ///             for this decision. Pretending the case cannot arise is what produces the
 ///             unlogged private-key rescue nobody can later explain to an NCA.
-contract ModularCompliance {
+/// @dev    ⚠️ IMPLEMENTS `ICompliance` FROM `IERC3643.sol`, WRITTEN FROM THE EIP TEXT. No T-REX
+///         source is used, in whole or in part — see the provenance note on `IERC3643.sol` and
+///         `ERC-3643-CONFORMANCE.md`. `is ICompliance` is load-bearing: it makes the compiler,
+///         not a reviewer, check the seven members and two events.
+/// @dev    ⚠️ THE STANDARD GAVE C1 ITS BEST PROPERTY FOR FREE, AND IT IS WORTH NAMING. The EIP's
+///         pre-trade gate is `canTransfer(...) returns (bool)` — a boolean, with no reason
+///         attached and no room to attach one. That is exactly what AMLR Art 76 (tipping-off)
+///         demands of a stop linked to a specific person's eligibility, and here the INTERFACE
+///         enforces it rather than a review convention. The token treats the boolean as
+///         authoritative and only falls back to `checkTransfer` to recover a reason where the
+///         failing module's class permits one. See `SecurityToken._assertCompliant`.
+/// @dev    ⚠️ TWO DECLARED DEVIATIONS FROM THE EIP, BOTH IN `ERC-3643-CONFORMANCE.md`:
+///           (1) `bindToken` is ONE-SHOT and `unbindToken` always reverts. The EIP's model is a
+///               rebindable compliance contract. This stack holds Article-mapped RUNNING STATE —
+///               concentration denominators, holding clocks, cap registers — keyed to one
+///               instrument's history. Re-pointing it at a second instrument carries the first
+///               one's counters onto the second, which is a compliance defect that reports
+///               clean. A token that needs different rules deploys a new `ModularCompliance`
+///               and calls `setCompliance`; that path stays open and is logged on the token.
+///           (2) The EIP's post-trade trio (`transferred`/`created`/`destroyed`) and the suite's
+///               `notifyTransfer` are ONE fan-out behind two faces, not two fan-outs. A caller
+///               that invokes both double-advances every counter. The token calls the trio only.
+contract ModularCompliance is ICompliance {
     // ─────────────────────────── roles ────────────────────────────────────────
 
     address public immutable governance;
@@ -55,7 +79,17 @@ contract ModularCompliance {
 
     // ─────────────────────────── events ───────────────────────────────────────
 
-    event TokenBound(address indexed token);
+    /// @dev ⚠️ `TokenBound` AND `TokenUnbound` ARE INHERITED FROM `ICompliance`, NOT DECLARED
+    ///      HERE. This contract previously declared `TokenBound(address indexed token)`;
+    ///      re-declaring an inherited event is a compile error, and the EIP's parameter is
+    ///      UNINDEXED. Topic0 is unchanged — indexing does not enter the signature hash — but
+    ///      the token address moves from a topic to the data field, so any log filter written
+    ///      against the old shape stops matching. One-shot event on a one-shot function; the
+    ///      cost is a full-range scan for an entry that exists once per deployment.
+    /// @dev ⚠️ `TokenUnbound` IS DECLARED AND NEVER EMITTED, because `unbindToken` always
+    ///      reverts. Declared and dead is the honest state — a listener written against the EIP
+    ///      will simply never see it, which is correct, and removing it is not an option because
+    ///      the interface names it.
     event ModuleAdded(address indexed module, bytes32 indexed moduleId);
     event ModuleRemoved(address indexed module, bytes32 indexed moduleId);
     event ModuleBypassed(address indexed module, bytes32 reasonHash, uint64 at);
@@ -80,6 +114,9 @@ contract ModularCompliance {
     /// @dev Should be unreachable — `removeModule` clears the flag — and is checked anyway,
     ///      because the failure it guards is a module that is on the list and silently skipped.
     error BypassStillSet(address module);
+    /// @dev See `unbindToken`. Informative-class — this is a wiring fact about the deployment,
+    ///      not a fact about any person, so it may say what it is.
+    error UnbindNotSupported();
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -100,6 +137,30 @@ contract ModularCompliance {
         if (boundToken != address(0)) revert TokenAlreadyBound();
         boundToken = token;
         emit TokenBound(token);
+    }
+
+    /// @notice ⚠️ DECLARED DEVIATION — ALWAYS REVERTS. Present because `ICompliance` names it
+    ///         and the compiler must see the selector; refused because unbinding is the first
+    ///         half of a rebind, and a rebind is what the one-shot exists to prevent.
+    /// @dev    The modules behind this contract hold running, Article-mapped state that only
+    ///         means anything against ONE instrument's history. Unbind → rebind would present a
+    ///         second instrument with the first one's concentration denominators and holding
+    ///         clocks — a breach that reports clean, or a clean position that reports as a
+    ///         breach. Neither is recoverable from the logs afterwards.
+    /// @dev    The supported route is `SecurityToken.setCompliance` pointed at a FRESH
+    ///         `ModularCompliance`. That is one governance act, it emits `ComplianceAdded` on
+    ///         the token, and it leaves this contract's history intact and readable. The old
+    ///         contract stays bound to a token that no longer calls it, which is inert.
+    /// @dev    Recorded in `ERC-3643-CONFORMANCE.md`. A reverting implementation is a deviation
+    ///         and is registered as one — it is NOT "conformant because the function exists".
+    function unbindToken(address) external pure {
+        revert UnbindNotSupported();
+    }
+
+    /// @notice Whether `token` is the instrument this stack serves. Never true for `address(0)`,
+    ///         so an unbound stack cannot be made to answer yes by asking about zero.
+    function isTokenBound(address token) external view returns (bool) {
+        return token != address(0) && token == boundToken;
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -212,8 +273,17 @@ contract ModularCompliance {
         }
     }
 
-    /// @notice Non-reverting form for UIs and off-chain simulation. Deliberately NOT used by
-    ///         the token — a boolean at the hook would let a caller ignore the answer.
+    /// @notice ⚠️ THE EIP'S GATE, AND THE AUTHORITATIVE ONE. `SecurityToken._assertCompliant`
+    ///         calls this on every movement and treats the boolean as the decision; it falls
+    ///         back to `checkTransfer` only to recover a REASON, and only where the failing
+    ///         module's class permits one. An earlier draft of this NatSpec said the token
+    ///         deliberately did not call it — that was true of the pre-conformance token and is
+    ///         now wrong. A boolean at the hook does not let a caller ignore the answer; it lets
+    ///         a caller ignore the explanation, which is the point (AMLR Art 76).
+    /// @dev    The `try/catch` swallows the module's typed error by design. Anything that
+    ///         reverts is a no. What it also swallows is an out-of-gas in a child frame under
+    ///         the 63/64 rule, which would read as a compliance stop rather than a gas problem —
+    ///         a reason `MAX_MODULES` is a low hard cap and not a comment.
     function canTransfer(address from, address to, uint256 amount) external view returns (bool) {
         try this.checkTransfer(from, to, amount) {
             return true;
@@ -222,10 +292,52 @@ contract ModularCompliance {
         }
     }
 
-    /// @notice Post-transfer state advance. Called by the token AFTER the balance moves, so
-    ///         modules that maintain running totals observe the settled position rather than
-    ///         an intended one that may still revert.
+    // ═══════════════════════════════════════════════════════════════════════
+    // POST-TRADE NOTIFICATION — ONE FAN-OUT, TWO FACES
+    //
+    // ⚠️ `transferred` / `created` / `destroyed` (the EIP's face) and `notifyTransfer` (the
+    // suite's) ALL land on `_advanceModules`. They are not independent notifications and a
+    // caller that invokes both books the movement twice — `EltifConcentration` would report a
+    // breach that never happened, `HoldingPeriodLock` would restart a clock on a transfer that
+    // occurred once. `SecurityToken._notify` calls the EIP trio ONLY; its NatSpec records why,
+    // because the doubled version was reasoned into a draft before it was caught.
+    //
+    // The EIP's split by movement type is the conformant surface and the one a third-party
+    // module written against the standard listens for. The suite's flat form (mint as
+    // `from == 0`, burn as `to == 0`) is what `IComplianceModule` presents, because a module
+    // that does not care about mint should not have to implement a third entry point to say so.
+    // The translation happens here, once.
+    // ═══════════════════════════════════════════════════════════════════════
+
+    /// @notice EIP face — a settled transfer between two holders.
+    function transferred(address from, address to, uint256 amount) external {
+        _advanceModules(from, to, amount);
+    }
+
+    /// @notice EIP face — a settled mint. Flattened to `from == address(0)`.
+    function created(address to, uint256 amount) external {
+        _advanceModules(address(0), to, amount);
+    }
+
+    /// @notice EIP face — a settled burn. Flattened to `to == address(0)`.
+    function destroyed(address from, uint256 amount) external {
+        _advanceModules(from, address(0), amount);
+    }
+
+    /// @notice Suite face. Retained because `IComplianceGate` names it and because the flat
+    ///         shape is the one the modules speak. NOT called by the token — see the block
+    ///         comment above.
     function notifyTransfer(address from, address to, uint256 amount) external {
+        _advanceModules(from, to, amount);
+    }
+
+    /// @dev Post-transfer state advance. Called AFTER the balance moves, so modules that
+    ///      maintain running totals observe the settled position rather than an intended one
+    ///      that may still revert.
+    /// @dev The `boundToken` guard is on the fan-out rather than on each face, so a face added
+    ///      later cannot be added without it. Without the guard anyone could inflate a
+    ///      concentration counter or restart a holding clock without moving a unit.
+    function _advanceModules(address from, address to, uint256 amount) internal {
         if (msg.sender != boundToken) revert NotBoundToken();
 
         uint256 len = _modules.length;

@@ -321,7 +321,20 @@
       "Bash(git -C .raw/InnBlockchain/sales-marketing diff --stat -- \"Service/Content/Phase 1/Blog/\")",
       "Bash(node compile.js)",
       "Bash(timeout 590 node compile.js --via-ir)",
-      "Bash(node compile.js --via-ir)"
+      "Bash(node compile.js --via-ir)",
+      "Bash(awk 'NR>=15 && NR<=35 {print NR\": \"$0}' \"Product/SEO/Competitor Analysis - Trioangle Products/SERP Analysis/uber-clone-ranking-gap-analysis-9-sep-2026.md\")",
+      "Bash(curl -s --max-time 25 https://raw.githubusercontent.com/TokenySolutions/T-REX/main/contracts/registry/implementation/IdentityRegistryStorage.sol -o irs.sol)",
+      "WebFetch(domain:github.com)",
+      "Bash(command -v brew)",
+      "Bash(brew --version)",
+      "Bash(sw_vers)",
+      "Bash(curl -s \"https://api.github.com/repos/ethereum/EIPs/contents/assets/eip-3643\")",
+      "Bash(curl -s \"https://api.github.com/repos/ethereum/ERCs/contents/assets/erc-3643\")",
+      "Bash(awk 'NR>=1614 && NR<=1616' eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(awk 'NR==1626' eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(grep -o \"\\\\*\\\\*\\(ii\\) It leans D0 toward ERC-3643\\\\.\\\\*\\\\*.\\\\{0,220\\\\}\")",
+      "Bash(awk -F: '$1<2225')",
+      "Bash(perl -pi -e 's/\\\\bIClaimTopicsRegistry\\\\\\(/IClaimTopicsGate\\(/g; s/\\\\bITrustedIssuersRegistry\\\\\\(/ITrustedIssuersGate\\(/g; s/^    IClaimTopicsRegistry public claimTopics;/    IClaimTopicsGate public claimTopics;/; s/^    ITrustedIssuersRegistry public trustedIssuers;/    ITrustedIssuersGate public trustedIssuers;/' IdentityRegistry.sol)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

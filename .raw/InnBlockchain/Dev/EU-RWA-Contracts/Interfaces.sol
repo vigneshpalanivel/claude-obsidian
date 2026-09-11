@@ -12,6 +12,29 @@ pragma solidity ^0.8.22;
 ///         than `IIdentityGate` binds the consumer to one implementation and drags its entire
 ///         dependency tree into every deployment — including for clients who do not owe the
 ///         obligation that module discharges.
+/// @dev    ⚠️ THIS FILE IS THE SUITE'S INTERNAL SURFACE. THE STANDARD'S SURFACE IS `IERC3643.sol`,
+///         AND THE TWO ARE NOT ALTERNATIVES.
+///         `IERC3643.sol` is what the OUTSIDE world — a venue, a custodian, a wallet, an
+///         explorer — is entitled to assume. This file is what one contract in the suite calls
+///         on another. **The names in `IERC3643.sol` are normative and must not be changed; the
+///         names here are ours and bind freely.**
+///
+///         Where the two overlap they are deliberately different in SHAPE, and the difference
+///         is a compliance one rather than a taste one:
+///           • `IIdentityGate.checkEligible` **REVERTS** with an informative-class error the
+///             holder can act on; `IIdentityRegistry.isVerified` returns a boolean. A consumer
+///             that needs to tell a holder their record lapsed calls the former. Neither is
+///             permitted to surface an OPAQUE stop — those stay in `IRestrictedParty` behind
+///             one argument-free error (AMLR Art 76 tipping-off).
+///           • `IComplianceGate` below carries `checkTransfer` (reverting, pre-write) and
+///             `notifyTransfer` (post-write). `ICompliance` in `IERC3643.sol` carries the
+///             standard's `canTransfer` / `transferred` / `created` / `destroyed`.
+///             `ModularCompliance` implements BOTH — see its note on why the standard's
+///             post-write trio cannot replace `notifyTransfer`.
+///
+///         ⚠️ A consumer should still depend on the SMALLEST surface it actually calls. Do not
+///         re-type fifteen contracts onto `IERC3643.sol` because the standard now exists:
+///         `CovenantRegistry` needs a tier and a jurisdiction, not a token standard.
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SHARED TYPES
@@ -136,8 +159,17 @@ interface IErasable {
 }
 
 /// @notice The rule-engine limb consumed by the token's transfer hook.
-interface ICompliance {
-    /// @dev Runs BEFORE the balance write, so a veto prevents the movement.
+/// @dev    ⚠️ RENAMED FROM `ICompliance` WHEN THE SUITE ADOPTED EIP-3643. The old name now
+///         belongs to the standard's interface in `IERC3643.sol`, and two interfaces with one
+///         name — one of them normative — is exactly the ambiguity a conformance test cannot
+///         see. `ModularCompliance` implements both; the token calls THIS one internally.
+/// @dev    ⚠️ `canTransfer` HERE AND `ICompliance.canTransfer` IN THE STANDARD ARE THE SAME
+///         SELECTOR, deliberately. Same name, same parameters, same `bool` return — so one
+///         implementation satisfies both and there is no shim to drift. Do not "disambiguate"
+///         it by renaming either side.
+interface IComplianceGate {
+    /// @dev Runs BEFORE the balance write, so a veto prevents the movement. Reverting rather
+    ///      than boolean because the token must not be able to ignore the answer.
     function checkTransfer(address from, address to, uint256 amount) external view;
 
     /// @dev Non-reverting form. `DistributionAgent` uses this rather than `checkTransfer`
@@ -146,6 +178,13 @@ interface ICompliance {
 
     /// @dev Runs AFTER the write, so counter-keeping modules observe the settled position
     ///      rather than an intended one that may still revert.
+    /// @dev ⚠️ NOT REPLACEABLE BY THE STANDARD'S `transferred` / `created` / `destroyed`. Those
+    ///      three split one notification across three entry points by movement TYPE, which
+    ///      means every counter-keeping module would have to be told which of the three it is
+    ///      in. This suite passes mint as `from == address(0)` and burn as `to == address(0)`
+    ///      and lets each module decide whether it cares — `CovenantGate` treats mint as its
+    ///      own gate, `EltifConcentration` counts it, a holding-period lock ignores it.
+    ///      `ModularCompliance` implements the standard's trio ON TOP of this one.
     function notifyTransfer(address from, address to, uint256 amount) external;
 }
 
@@ -183,6 +222,11 @@ interface IDeclaredPersonRegister {
 }
 
 /// @notice The balance and supply limb consumed by the income and buy-back modules.
+/// @dev    ⚠️ NOT A SUBSET OF `IERC3643` BY ACCIDENT — KEEP IT NARROW. `BuybackAgent`,
+///         `CouponSchedule` and `LmtGate` need a balance, a supply and a burn. Re-typing them
+///         onto the full `IERC3643` would hand a coupon schedule `forcedTransfer`,
+///         `setAddressFrozen` and `recoveryAddress`, and the reason those are agent-gated on
+///         the implementation is that nothing else should be able to reach them at all.
 interface ISecurityToken {
     function balanceOf(address wallet) external view returns (uint256);
 

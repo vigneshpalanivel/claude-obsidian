@@ -16,14 +16,18 @@ import {IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
 ///
 ///           • **This contract — a PARTY.** A person or a wallet, for any reason, indefinitely,
 ///             until governance lifts it. `RestrictedParty*`.
-///           • **`SecurityToken.freezeUnits` — UNITS.** A parcel inside an otherwise live
+///           • **`SecurityToken.freezePartialTokens` — UNITS.** A parcel inside an otherwise live
 ///             wallet. `freeze*` / `frozenUnits`.
 ///           • **`HoldingPeriodLock` / `PdmrClosedPeriodFreeze` — a PERIOD.** A date restriction
 ///             that expires on its own. `Holding*` / `ClosedPeriod*`.
+///           • **`SecurityToken.setAddressFrozen` — a WALLET, operationally.** Added for
+///             ERC-3643 conformance; the EIP requires it. See the note below — it is the one
+///             name in this list that overlaps this contract's job, and the overlap is a
+///             residual rather than a distinction.
 ///
-///         ⚠️ THE NAME `Freeze` WAS CONSIDERED FOR THIS CONTRACT AND REJECTED. `freezeUnits`
+///         ⚠️ THE NAME `Freeze` WAS CONSIDERED FOR THIS CONTRACT AND REJECTED. `freezePartialTokens`
 ///         already exists one file away and also stops value moving, so an agent told to
-///         "freeze the wallet" would reach for `freezeUnits(wallet, fullBalance)` — which
+///         "freeze the wallet" would reach for `freezePartialTokens(wallet, fullBalance)` — which
 ///         compiles, works, and rebuilds the two-store observability leak this contract was
 ///         consolidated to remove. `Hold` was rejected because it reads as `HoldingPeriodLock`.
 ///
@@ -91,13 +95,34 @@ import {IIdentityGate, IRestrictedParty} from "./Interfaces.sol";
 ///             `IdentityRegistry` that key would sit in the same contract as tier, jurisdiction
 ///             and claims.
 ///
-/// @dev    ⚠️ ONE LEAK REMAINS AND IT IS NOT CLOSED HERE. `SecurityToken.freezeUnits` is an
+/// @dev    ⚠️ ONE LEAK REMAINS AND IT IS NOT CLOSED HERE. `SecurityToken.freezePartialTokens` is an
 ///         amount-level freeze with its own public `frozenUnits` mapping, kept because a partial
 ///         freeze over a disputed or collateralised parcel is a genuinely different mechanic.
 ///         An agent who freezes 100% of a wallet's units through it reproduces exactly the
 ///         two-slot problem described above. Nothing in the code prevents that. **Wallet-level
-///         stops belong here; `freezeUnits` is for partial parcels only**, and that is an
+///         stops belong here; `freezePartialTokens` is for partial parcels only**, and that is an
 ///         operational rule with no on-chain enforcement behind it.
+/// @dev    ⚠️ A SECOND LEAK ARRIVED WITH ERC-3643 CONFORMANCE, AND IT IS WORSE THAN THE FIRST.
+///         `IERC3643` REQUIRES `setAddressFrozen(address, bool)` and `isFrozen(address)`, so
+///         `SecurityToken` now carries a public, wallet-keyed, whole-address stop — the exact
+///         shape this contract was consolidated to be the only instance of. The standard is not
+///         negotiable on it: the function is in the interface and the compiler checks.
+///
+///         What is mitigated, and it is not much:
+///           • The token's error is `AddressIsFrozen()` — argument-free, generic-class, and the
+///             SAME error for the sender side and the recipient side. Naming the side is the
+///             disclosure, and it does not name it.
+///           • `AddressFrozenReason` carries a `reasonHash`, never a reason.
+///           • The token's NatSpec states that `setAddressFrozen` is the OPERATIONAL stop and
+///             that a sanctions or suspicion stop belongs here, person-keyed.
+///
+///         What is NOT mitigated: `isFrozen(wallet)` is a public boolean read, per wallet, that
+///         anybody can call, and a wallet frozen for one reason is indistinguishable from a
+///         wallet frozen for another. The whole point of the person key here is that a listing
+///         follows the human across every address they hold; a wallet-level freeze does not, so
+///         an agent freezing "the investor" must freeze each address and each one is separately
+///         observable. **Operational rule, no on-chain enforcement, same as the first leak.**
+///         Recorded as a residual in `ERC-3643-CONFORMANCE.md`, not as a solved problem.
 /// @dev    ⚠️ WHAT THIS CONTRACT DOES NOT SOLVE — stated rather than papered over. The venue
 ///         lane is not authorisable on a public L1 and the issuer lane does not need a
 ///         consortium chain, so an operator running both lands on TWO chains, and "one instance
