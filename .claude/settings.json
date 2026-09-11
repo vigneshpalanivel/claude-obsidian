@@ -334,7 +334,10 @@
       "Bash(awk 'NR==1626' eu_tokenized_securities_smart_contract_design.md)",
       "Bash(grep -o \"\\\\*\\\\*\\(ii\\) It leans D0 toward ERC-3643\\\\.\\\\*\\\\*.\\\\{0,220\\\\}\")",
       "Bash(awk -F: '$1<2225')",
-      "Bash(perl -pi -e 's/\\\\bIClaimTopicsRegistry\\\\\\(/IClaimTopicsGate\\(/g; s/\\\\bITrustedIssuersRegistry\\\\\\(/ITrustedIssuersGate\\(/g; s/^    IClaimTopicsRegistry public claimTopics;/    IClaimTopicsGate public claimTopics;/; s/^    ITrustedIssuersRegistry public trustedIssuers;/    ITrustedIssuersGate public trustedIssuers;/' IdentityRegistry.sol)"
+      "Bash(perl -pi -e 's/\\\\bIClaimTopicsRegistry\\\\\\(/IClaimTopicsGate\\(/g; s/\\\\bITrustedIssuersRegistry\\\\\\(/ITrustedIssuersGate\\(/g; s/^    IClaimTopicsRegistry public claimTopics;/    IClaimTopicsGate public claimTopics;/; s/^    ITrustedIssuersRegistry public trustedIssuers;/    ITrustedIssuersGate public trustedIssuers;/' IdentityRegistry.sol)",
+      "WebFetch(domain:docs.onchainid.com)",
+      "Bash(xargs -I{} sed -n '{}p' \"Execution Playbook.md\")",
+      "Bash(awk 'NR>=503 && NR<=545' \"Execution Playbook.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
