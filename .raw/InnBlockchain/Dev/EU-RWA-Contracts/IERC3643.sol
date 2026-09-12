@@ -149,6 +149,62 @@ interface IClaimIssuer is IIdentity {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
+// IAgentRole — the operational role the standard requires on THREE contracts
+// ═══════════════════════════════════════════════════════════════════════════
+
+/// @notice EIP-3643's agent role.
+///
+/// @dev    ⚠️ THIS INTERFACE WAS MISSING FROM THIS FILE UNTIL 2026-09-11, AND ITS ABSENCE WAS
+///         NOT A DECLARED DEVIATION — IT WAS AN OVERSIGHT. Recording how it survived, because
+///         the mechanism will hide the next one too: `IAgentRole` is the only interface in the
+///         standard that has **no published asset file** in `ethereum/ERCs/assets/erc-3643/`.
+///         It exists only inline in the specification body. A transcription pass driven by the
+///         asset directory therefore produces a file that looks complete and is not.
+///         **Read the spec body, not the asset listing.**
+///
+/// @dev    THE STANDARD REQUIRES THIS SURFACE ON THREE CONTRACTS, NOT ONE. The spec states, in
+///         three separate places, that "any contract that fulfills the role of a Token contract
+///         / an Identity Registry / an Identity Registry Storage within the context of this
+///         standard must be compatible with the `IAgentRole` interface." It is also one of the
+///         standard's eleven normative MUSTs: a conforming build **"MUST define an Agent role
+///         and an Owner (token issuer) role."**
+///
+///         In this suite:
+///           • `SecurityToken`    — implements it. The agent is the operations desk (mint,
+///                                  burn, freeze, forced transfer, recovery — the C5 surface).
+///           • `IdentityRegistry` — implements it, over the pre-existing `isRegistrar` mapping.
+///                                  The registrar IS the standard's agent: the EIP says only an
+///                                  agent may add or remove identities, which is exactly what
+///                                  `onlyRegistrar` already gated. The role was conformant in
+///                                  substance and unreachable under the standard's names.
+///           • Identity Registry Storage — **not implemented, because the storage contract is
+///                                  not implemented at all.** See D-I5.
+///
+/// @dev    ⚠️ THE OWNER HALF OF THAT MUST IS A DECLARED DEVIATION — SEE D-A2. The spec vests
+///         the owner role in ERC-173 (`owner()`, `transferOwnership()`) and makes appointing and
+///         removing agents the owner's responsibility. This suite's owner is `governance`, which
+///         is `immutable` and has no transfer path, deliberately. The role exists and satisfies
+///         the MUST; the ERC-173 *surface* does not exist and is registered as a deviation
+///         rather than added — see `ERC-3643-CONFORMANCE.md` §4.5.
+///
+/// @dev    NOT A SUBSTITUTE FOR THE SUITE'S OWN ROLE EVENTS. `AgentSet(agent, bool)` on the
+///         token and `RegistrarSet(registrar, bool)` on the registry carry the grant and the
+///         revocation in ONE event with a boolean, which is what the suite's own tooling reads.
+///         The standard splits them across two events and has no field for the flag. Both are
+///         emitted on every role change — the standard's for its listeners, the suite's for
+///         ours. **Never one instead of the other.**
+interface IAgentRole {
+    event AgentAdded(address indexed _agent);
+    event AgentRemoved(address indexed _agent);
+
+    function addAgent(address _agent) external;
+
+    function removeAgent(address _agent) external;
+
+    function isAgent(address _agent) external view returns (bool);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
 // IClaimTopicsRegistry — C3, the required-claim catalogue
 // ═══════════════════════════════════════════════════════════════════════════
 
@@ -187,6 +243,58 @@ interface ITrustedIssuersRegistry {
     function getTrustedIssuerClaimTopics(IClaimIssuer _trustedIssuer) external view returns (uint256[] memory);
 
     function hasClaimTopic(address _issuer, uint256 _claimTopic) external view returns (bool);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// IIdentityRegistryStorage — declared for typing. ⚠️ NOTHING IMPLEMENTS IT.
+// ═══════════════════════════════════════════════════════════════════════════
+
+/// @notice EIP-3643's shared identity-storage interface.
+///
+/// @dev    ⚠️ DECLARED IN FULL AND DELIBERATELY NOT IMPLEMENTED. This is D-I5, and the reason is
+///         a data-protection one rather than an engineering one: the storage contract's whole
+///         purpose is to let SEVERAL tokens share ONE person register, and cross-issuer sharing
+///         of a person register is the **linkability limb of design §16 D19** — one address
+///         correlating one investor across every platform they touch. That is a commercial
+///         feature of the model and a GDPR problem, and this suite declines it.
+///
+/// @dev    WHY DECLARE IT AT ALL, GIVEN NOTHING IMPLEMENTS IT. Two reasons, and the first is the
+///         load-bearing one. **(1)** `IIdentityRegistry.identityStorage()` is typed to return
+///         this interface, so the type must exist for the registry's own conformance to compile
+///         — declaring it is what lets `identityStorage()` be present-and-honest rather than
+///         absent. **(2)** An operator who later accepts the linkability residual has the
+///         standard's surface already written and can bind to it without re-deriving it from
+///         the spec, which is where transcription errors enter.
+///
+/// @dev    ⚠️ THE AGENT MODEL HERE IS NOT THE TOKEN'S. The spec requires this contract to be
+///         `IAgentRole`-compatible too, but its agents are the **bound identity registries**,
+///         appointed through `bindIdentityRegistry` rather than through `addAgent`. A future
+///         implementer must not wire this to the token's agent set.
+interface IIdentityRegistryStorage {
+    event IdentityStored(address indexed investorAddress, IIdentity indexed identity);
+    event IdentityUnstored(address indexed investorAddress, IIdentity indexed identity);
+    event IdentityModified(IIdentity indexed oldIdentity, IIdentity indexed newIdentity);
+    event CountryModified(address indexed investorAddress, uint16 indexed country);
+    event IdentityRegistryBound(address indexed identityRegistry);
+    event IdentityRegistryUnbound(address indexed identityRegistry);
+
+    function addIdentityToStorage(address _userAddress, IIdentity _identity, uint16 _country) external;
+
+    function removeIdentityFromStorage(address _userAddress) external;
+
+    function modifyStoredInvestorCountry(address _userAddress, uint16 _country) external;
+
+    function modifyStoredIdentity(address _userAddress, IIdentity _identity) external;
+
+    function bindIdentityRegistry(address _identityRegistry) external;
+
+    function unbindIdentityRegistry(address _identityRegistry) external;
+
+    function linkedIdentityRegistries() external view returns (address[] memory);
+
+    function storedIdentity(address _userAddress) external view returns (IIdentity);
+
+    function storedInvestorCountry(address _userAddress) external view returns (uint16);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -236,6 +344,22 @@ interface IIdentityRegistry {
 
     function deleteIdentity(address _userAddress) external;
 
+    /// @dev ⚠️ THE THREE SETTERS BELOW WERE MISSING FROM THIS INTERFACE UNTIL 2026-09-11. Two of
+    ///      them existed on `IdentityRegistry` the whole time under the suite's OWN names
+    ///      (`setClaimTopics`, `setTrustedIssuers`) and already emitted the EIP's events — so the
+    ///      capability was present, conformant in behaviour, and **unreachable by any caller
+    ///      holding the standard's ABI**. That is the failure mode worth naming: a house-style
+    ///      rename is invisible to a member count and fatal to interoperability, which is the
+    ///      one thing conformance was adopted to buy. The EIP names are now the functions and
+    ///      the house names are the aliases, not the other way round.
+    /// @dev These are OWNER acts in the standard, not agent acts — the spec scopes them to "the
+    ///      wallet set as owner", which is `governance` here. Do not gate them `onlyAgent`.
+    function setIdentityRegistryStorage(address _identityRegistryStorage) external;
+
+    function setClaimTopicsRegistry(address _claimTopicsRegistry) external;
+
+    function setTrustedIssuersRegistry(address _trustedIssuersRegistry) external;
+
     function updateCountry(address _userAddress, uint16 _country) external;
 
     function updateIdentity(address _userAddress, IIdentity _identity) external;
@@ -253,6 +377,13 @@ interface IIdentityRegistry {
     function identity(address _userAddress) external view returns (IIdentity);
 
     function investorCountry(address _userAddress) external view returns (uint16);
+
+    /// @dev ⚠️ RETURNS `address(0)` IN THIS SUITE — the storage contract is not implemented and
+    ///      that is D-I5, a data-protection refusal rather than an omission. Declared and
+    ///      answered honestly rather than left absent: a caller that dereferences the result
+    ///      fails loudly at the call site, which is strictly better than failing at ABI
+    ///      resolution with no indication of why. Same reasoning as `identity()`'s option (c).
+    function identityStorage() external view returns (IIdentityRegistryStorage);
 
     function issuersRegistry() external view returns (ITrustedIssuersRegistry);
 
@@ -286,6 +417,15 @@ interface ICompliance {
 
     function destroyed(address _from, uint256 _amount) external;
 
+    /// @dev ⚠️ THE EIP MEMBER. Missing until 2026-09-11, with `isTokenBound` below standing in
+    ///      for it — a SUBSTITUTION, which is the one defect class a member count cannot see:
+    ///      the totals matched, the substitute was strictly safer than the original, and the
+    ///      surface was still not the standard's. See `ModularCompliance.getTokenBound`.
+    function getTokenBound() external view returns (address);
+
+    /// @dev ⚠️ NOT AN EIP MEMBER — a suite supplement, retained IN ADDITION to `getTokenBound()`.
+    ///      Declaring it here is deliberate: it keeps the extension visible to anyone diffing
+    ///      this file against the published interface, rather than hiding on the implementation.
     function isTokenBound(address _token) external view returns (bool);
 
     function canTransfer(address _from, address _to, uint256 _amount) external view returns (bool);

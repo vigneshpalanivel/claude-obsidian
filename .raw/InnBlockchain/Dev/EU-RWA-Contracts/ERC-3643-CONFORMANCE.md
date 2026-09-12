@@ -1,7 +1,8 @@
 ---
 title: ERC-3643 Conformance & Deviation Register — EU-RWA-Contracts
-date: 2026-09-11
-status: derived from the 31 .sol files in this folder + §3a–§3d of eu_tokenized_securities_smart_contract_design.md (rev 54)
+date: 2026-09-12
+status: derived from the 31 .sol files in this folder + §3a–§3d of eu_tokenized_securities_smart_contract_design.md (rev 55)
+last_audit: 2026-09-11 — full diff against the EIP-3643 specification body (not the asset directory). Found 25 missing or substituted members across IAgentRole, IIdentityRegistryStorage, ICompliance and IIdentityRegistry; all now implemented or declared as D-A1, D-A2, D-C3, D-I5, D-I6. Root cause and the withdrawn test method are in §6
 scope: licence provenance, conformance grade per interface, every declared deviation, every residual
 ---
 
@@ -42,9 +43,23 @@ depends on a reviewer remembering it has already failed:
 
 | Check | What it catches |
 |---|---|
-| SPDX header on every `.sol` is `MIT` | a GPL file arriving by copy-paste with its header intact |
+| SPDX header on every `.sol` **under `src/`** is `MIT` | a GPL file arriving by copy-paste with its header intact |
 | dependency allow-list — no package resolves to `@tokenY/*`, `@onchain-id/*` or T-REX | the same arriving through `package.json` |
 | import graph is closed over this folder | a transitive pull nobody looked at |
+
+> **⚠️ SCOPE THE SPDX RULE TO `src/` BEFORE WRITING §6 TEST 2, AND THIS IS NOT A TECHNICALITY.**
+> §6's reconciliation requires the EIP's **own published interface files** to be vendored as test
+> fixtures. Those files are **CC0-1.0**, not MIT — so a repo-wide "every `.sol` must say MIT"
+> rule fails the build the moment the correct test is added, and **the path of least resistance
+> is to relicense the fixture header, which is falsifying the provenance record the check exists
+> to protect.** Put the fixtures under `test/fixtures/eip3643/`, keep their CC0 headers
+> **verbatim and unmodified**, and exempt that one directory by path.
+>
+> ✅ **Vendoring CC0 text is expressly safe and is the one exception to §1.3.** CC0 is a public-domain
+> dedication; it carries no copyleft and no attribution condition. **The prohibition in §1.3 is on
+> T-REX and ONCHAINID *implementation* source, which is GPL-3.0 — it was never a prohibition on
+> the specification's own interface files.** Conflating the two is what left this suite diffing
+> against its own transcription for a full revision (§6).
 
 **What closing D0 did NOT buy.** Stated because the opposite is the natural assumption:
 
@@ -60,14 +75,29 @@ depends on a reviewer remembering it has already failed:
 
 ## 2. Conformance grade, per interface
 
+**⚠️ This table was materially wrong until 2026-09-11 and the correction is recorded rather than
+quietly applied.** Two interfaces of the standard's seven — **`IAgentRole` and
+`IIdentityRegistryStorage`** — were absent from this register, from `IERC3643.sol` and from §3d of
+the design, so they were graded nowhere and declared nowhere. A further **25 members were missing
+or substituted** across `ICompliance` and `IIdentityRegistry`. **§6 reported "zero missing
+functions" throughout, because it was diffing the implementation against this suite's own
+transcription rather than against the EIP** — see §6 for the root cause and the method that
+replaces it. Every gap below is now either implemented or a numbered deviation.
+
 | Interface | Implemented by | Grade | Deviations |
 |---|---|---|---|
 | `IERC3643` | `SecurityToken` | **full** | — |
-| `ICompliance` | `ModularCompliance` | **full signature, 2 semantic** | D-C1, D-C2 |
+| `IAgentRole` | `SecurityToken`, `IdentityRegistry` | **full** *(added 2026-09-11)* | D-A1, D-A2 |
+| `ICompliance` | `ModularCompliance` | **full signature, 2 semantic** | D-C1, D-C2, D-C3 |
 | `ITrustedIssuersRegistry` | `TrustedIssuersRegistry` | **full signature, 2 semantic** | D-T1, D-T2 |
 | `IClaimTopicsRegistry` | `ClaimTopicsRegistry` | **full signature, 1 semantic** | D-K1 |
-| `IIdentityRegistry` | `IdentityRegistry` | **declared deviation** | D-I1 … D-I5 |
+| `IIdentityRegistry` | `IdentityRegistry` | **declared deviation** | D-I1 … D-I6 |
+| `IIdentityRegistryStorage` | *nothing* — declared for typing only | **not implemented, by decision** | D-I5 |
 | `IIdentity` | *nothing* | **not implemented** | D-I2 (§16 D19 open) |
+
+**All seven of the standard's interfaces are now declared in `IERC3643.sol`.** Five are
+implemented; two (`IIdentity`, `IIdentityRegistryStorage`) are declared for typing and refused on
+data-protection grounds, which is a decision with a reason rather than an omission.
 
 Every one of those contracts carries `is <Interface>` in its declaration. That is load-bearing:
 it makes the **compiler**, not a reviewer, check that every function and event is present with
@@ -76,8 +106,9 @@ inheritance cannot.
 
 ### The claim you may make
 
-> "The token implements the ERC-3643 (EIP-3643) interface. The identity registry carries declared
-> deviations, listed in the issuer's conformance register."
+> "The token implements the ERC-3643 (EIP-3643) interface, including the `IAgentRole` agent/owner
+> role model. The identity registry carries declared deviations, listed in the issuer's
+> conformance register."
 
 ### The claim you may not make
 
@@ -100,6 +131,7 @@ The §3 capability set is what the suite owes. The standard delivers some of it.
 | C3 | trusted issuers + revocable claims | ✅ | `ITrustedIssuersRegistry`, `IClaimTopicsRegistry` |
 | C4 | rule modularity | ✅ | `ICompliance`, `setCompliance` |
 | C5 | freeze / forced transfer / recovery | ✅ | `setAddressFrozen`, `freezePartialTokens`, `forcedTransfer`, `recoveryAddress`, `pause` |
+| — | the role model those C5 powers are gated on | ✅ *(added 2026-09-11)* | `IAgentRole.addAgent` / `removeAgent` / `isAgent` — see D-A1 |
 | C6 | partitions / tranches | ❌ | none — custom (`DistributionWaterfall`) |
 | C7 | investor covenants | ❌ | none — custom (`CovenantRegistry`) |
 | — | document anchoring | ❌ | none — custom (`DocumentRegistry`); ERC-1643 is a separate standard |
@@ -149,6 +181,23 @@ Each has an id, a statement of what the standard says, what this suite does, and
   A draft of `SecurityToken._notify` called both, on the reasoning that the two faces were
   different contracts' concerns; they are not. **Recorded because the bug was reasoned into
   existence, not typed into it.**
+
+**D-C3 — `getTokenBound()` was missing and `isTokenBound(address)` was standing in for it.**
+*(Defect found and fixed 2026-09-11. Recorded, not silently patched.)*
+
+- *Standard:* `getTokenBound() external view returns (address)` — no argument, returns the bound
+  token.
+- *What was here:* `isTokenBound(address) returns (bool)` and **nothing else**. A caller asking the
+  EIP's question got a selector that does not exist.
+- *Why this is the most instructive entry in the file:* the substitute is a **strictly weaker**
+  form of the same fact — it can confirm a token you already guessed and cannot tell you which
+  token is bound. `ModularCompliance` nonetheless read as complete to every review that counted
+  members, because the count was right and one member was wearing the wrong name. **A substitution
+  is not a deviation that got declared; it is a deviation that got disguised**, and no member-count
+  check can see one. §6 test 2 is a diff against the EIP's *published signatures* for this reason.
+- *Now:* `getTokenBound()` is implemented and returns `boundToken`. `isTokenBound(address)` is
+  **retained** as a deliberate suite supplement — it is used by callers that hold a token address
+  and want a one-call assertion — and is annotated as non-EIP in `IERC3643.sol`.
 
 ### 4.2 `IIdentityRegistry` — `IdentityRegistry`
 
@@ -231,11 +280,51 @@ divergence could be introduced.
   country. Emitting for one wallet only would leave a listener believing the others still hold
   the old code — the divergence made unrepresentable in storage, reintroduced in the log.
 
-**D-I5 — no `IdentityRegistryStorage`; `IdentityStorageSet` never emitted.**
+**D-I5 — no `IdentityRegistryStorage`. `setIdentityRegistryStorage` reverts, `identityStorage()`
+returns zero, `IdentityStorageSet` is never emitted.** *(Extended 2026-09-11 — the deviation was
+right and it was described only by its dead event, which left the two functions looking like an
+oversight rather than a decision.)*
 
-- *Standard:* an optional storage contract shared across tokens.
+- *Standard:* `IIdentityRegistryStorage` is a storage contract the registry delegates to and which
+  **may be shared across several tokens**. The registry exposes `identityStorage()` and
+  `setIdentityRegistryStorage(address)`.
 - *Why not:* sharing one person register across issuers is the **linkability limb of D19**, not an
-  optimisation. The event is declared and dead.
+  optimisation — it is the property that lets one address correlate an investor across every
+  platform they touch. This suite holds the person record in `IdentityRegistry` itself.
+- *What the surface does now, and why it is present at all rather than absent:*
+  - `identityStorage()` returns `IIdentityRegistryStorage(address(0))` — `pure`, which is a legal
+    tightening of the standard's `view`.
+  - `setIdentityRegistryStorage(address)` **reverts `IdentityStorageNotSupported()`**.
+  - **The alternative was to omit both, and omission is the worse failure.** A missing function is
+    an ABI-resolution error at the *caller's* tooling with no on-chain trace; a revert with a named
+    error is a transaction on the chain that says what was refused and why. **A refusal a venue can
+    read in a trace is disclosable; a call that never resolves is a support ticket.** The same
+    reasoning chose (c) over (b) in D-I2.
+  - `IIdentityRegistryStorage` is **fully declared** in `IERC3643.sol` — all 6 events and 9
+    functions — because `identityStorage()`'s return type needs it and because the register must
+    show a reader exactly what is being declined. **Declaring an interface is not implementing it**,
+    and the 15 members are listed there precisely so nobody later "completes" them by accident.
+
+**D-I6 — the three registry setters existed under house names and were unreachable under the
+standard's.** *(Defect found and fixed 2026-09-11.)*
+
+- *Standard:* `setIdentityRegistryStorage`, `setClaimTopicsRegistry`, `setTrustedIssuersRegistry`.
+- *What was here:* `setClaimTopics(address)` and `setTrustedIssuers(address)` — the same acts, the
+  same governance gate, the same effect, under names the EIP does not know. The storage setter was
+  absent entirely (D-I5).
+- *Why it is recorded as a defect and not as house style:* the design's own rule at §3c is that
+  **the line is source code, not vocabulary** — the standard's names were adopted deliberately and
+  a rename forfeits the interoperability the whole decision was taken to buy. **A house-style
+  rename is invisible to a member count and fatal to interoperability.**
+- *Now:* the **EIP names are the primary functions**; `setClaimTopics` / `setTrustedIssuers` are
+  retained as thin aliases so existing runbooks and `DEPLOYMENT-DEFAULTS.md` keep working. Each
+  writes through one internal and emits **both** event vocabularies. Note the direction: EIP name
+  primary, house name alias — **not the reverse**, because the alias is the one that may later be
+  deleted.
+- *Gating:* these are **owner acts in the standard, not agent acts.** They are `onlyGovernance`
+  here. Do not let a later edit gate them `onlyAgent` on the reasoning that an agent administers
+  the registry — an agent who can re-point the claim-topics registry can empty the required-claim
+  set and pass every holder.
 
 **`deleteIdentity` is not an erasure.** It deletes a *pointer* — one wallet binding — and leaves
 every personal attribute, because the person is still a client and this is the compromised-key
@@ -293,6 +382,89 @@ prefer `unbindWallet`.
   standard's event has no jurisdiction field, so emitting it would announce a global requirement
   that does not exist and every listener would over-require every holder. Silence under-reports
   and is recoverable from `AdditionalTopicAdded`; a wrong topic id over-reports and is not.
+
+### 4.5 `IAgentRole` and the owner role — the interface that was missing from every document
+
+**This subsection exists because of the worst defect in the register's history, and the root cause
+generalises past ERC-3643.** Until 2026-09-11 `IAgentRole` appeared in **no** file of this suite:
+not in `IERC3643.sol`, not in §3d of the design, not in this register's grade table, not as a
+declared deviation. It was not refused and it was not deferred — **it was never seen.**
+
+**Root cause, and it is worth more than the fix.** The interface set was transcribed by working
+through the EIP's published asset directory, `ethereum/ERCs/assets/erc-3643/`. **`IAgentRole` is
+the only interface in the standard with no asset file** — it exists solely inline in the
+specification body. So a transcription driven by the asset listing produces a file that is
+complete against the *listing*, complete-looking to a reviewer, and short by one interface against
+the *standard*. Six other interfaces landed correctly, which is exactly what made the gap
+invisible.
+
+> **⚠️ READ THE SPEC BODY, NOT THE ASSET LISTING.** An asset directory is a convenience, not the
+> normative text. **The normative text is the EIP page.** This is not an ERC-3643 quirk to file and
+> forget — any standard whose repository ships partial machine-readable assets will do the same
+> thing to the next transcription, and it will fail silently in the same direction every time.
+
+**Why it mattered rather than being a tidy-up.** The EIP states the requirement three separate
+times — the token, the identity registry and the identity registry storage each "must be
+compatible with the `IAgentRole` interface" — and carries a normative MUST that a conforming token
+**"MUST define an Agent role and an Owner (token issuer) role."** Every C5 power in §3 is gated on
+that role. The suite had the role and enforced it correctly throughout; what it did not have was
+the role under the **names a third party can call**, which is the whole content of the requirement.
+
+**D-A1 — the agent role was conformant in substance and unreachable under the standard's names.**
+*(Defect found and fixed 2026-09-11.)*
+
+- *Standard:* `addAgent(address)`, `removeAgent(address)`, `isAgent(address) returns (bool)`,
+  events `AgentAdded(address indexed)` / `AgentRemoved(address indexed)`.
+- *What was here:* `SecurityToken.setAgent(address, bool)` with `AgentSet(address, bool)`, and
+  `IdentityRegistry.setRegistrar(address, bool)` with `RegistrarSet(address, bool)`. **The
+  registrar *is* the standard's agent** — same role, same powers, different vocabulary.
+- *Now:* both contracts declare `is IAgentRole` and implement all five members. `SecurityToken`
+  exposes `isAgent` as a public mapping with `override`; `IdentityRegistry` exposes `isAgent` as a
+  **function reading `isRegistrar`**, because `isRegistrar` is read by name in
+  `DEPLOYMENT-DEFAULTS.md`, in `PersonErasure`'s authority check and in the runbooks, and renaming
+  a mapping to satisfy an interface would have broken all three to save one function.
+- *Both event vocabularies fire on every change*, from a single internal write path in each
+  contract. A listener built against the EIP sees `AgentAdded`/`AgentRemoved`; the suite's own
+  tooling keeps `AgentSet`/`RegistrarSet`. **One write path is the control** — two setters that
+  each emit their own event is how the two logs drift apart.
+- *`addAgent` on an existing agent still emits.* Idempotent in state, not in log. The EIP has no
+  "already an agent" semantics, and a silent no-op would leave an operator's audit trail missing
+  the act they just performed.
+
+> **⚠️ The registrar is deliberately NOT renamed to "agent", and this is the one place where the
+> vocabulary rule at §3c does not apply.** `IdentityRegistry`'s registrar and `SecurityToken`'s
+> agent are the **same standard role played by two different parties**, and **DORA Art 5
+> segregation of duties requires them to be separate key sets** — the party who onboards investors
+> is not the party who can freeze and force-transfer their holdings. The EIP names are now
+> reachable on both; the house names record which of the two you are holding keys for. **Do not
+> merge the two key sets on the reasoning that the standard calls both of them "agent".**
+
+> **⚠️ There is no guard against removing the last agent, and that is deliberate.** A contract-level
+> "cannot remove the final agent" check would make the recovery path for a compromised agent key
+> depend on adding a replacement before revoking the compromised one — the wrong ordering under
+> exactly the conditions where speed matters. **This is a DORA Art 5 runbook control, not a
+> contract control.** `DEPLOYMENT-DEFAULTS.md` carries the ordering.
+
+**D-A2 — no ERC-173 `owner()` / `transferOwnership()`. `governance` is `immutable`.**
+*(Declared deviation, open, and the one entry in §4 that a venue is most likely to trip over.)*
+
+- *Standard:* the owner (token issuer) role. The EIP's own interfaces are written against
+  `Ownable`, so the conventional surface is ERC-173 — `owner()`, `transferOwnership(address)`.
+- *Here:* `governance` is a constructor-set `immutable` on every contract in the suite, and there
+  is **no `owner()` getter and no transfer path**. The role exists and is enforced on every
+  privileged function; it is not exposed under ERC-173's names and it cannot be transferred.
+- *Why:* `governance` is a Safe → `TimelockController` → `ProxyAdmin` chain (§9 of the design), so
+  ownership transfer is a *governance* act inside that chain rather than a token-contract act. An
+  on-chain `transferOwnership` would be a second, faster path to the same authority that bypasses
+  the timelock — which is the control the disclosure document describes.
+- *Known break, stated plainly:* **tooling that reads `owner()` to identify the issuer gets no
+  answer from these contracts.** That is a real interoperability cost, it is not mitigated, and it
+  is the kind of thing a venue discovers during integration rather than during review.
+- *Interaction with D20 (proxy pattern, open):* `immutable` values are unreachable through a proxy.
+  **If D20 resolves toward proxying, `governance` becomes an initializer-set storage variable, and
+  at that moment adding ERC-173 costs almost nothing.** Re-open this row then — do not resolve it
+  by adding `owner()` to an immutable-governance contract, which would return a value no
+  `transferOwnership` can ever change and is a worse lie than silence.
 
 ---
 
@@ -367,23 +539,59 @@ on-chain dataset with no gating consumer, which is the same test failing again, 
 
 ## 6. The conformance test suite
 
-Three tests, and the second is the one usually forgotten.
+Three tests, and the second is the one usually forgotten. **Test 2's method was wrong for a full
+revision and is restated below in the form that would have caught all 25 defects.**
 
-1. **Selector-level signature test.** For every member of `IERC3643`, `ICompliance`,
+1. **Selector-level signature test.** For every member of `IERC3643`, `IAgentRole`, `ICompliance`,
    `IIdentityRegistry`, `ITrustedIssuersRegistry` and `IClaimTopicsRegistry`: assert the selector
    is present on the deployed contract. `is <Interface>` already makes the compiler check this;
    the test catches a deployment wired to the wrong address.
-2. **Undeclared-deviation test.** Fail when a member of the EIP set is **absent or altered and not
-   listed in this file**. Parse the deviation ids out of §4 and reconcile. Without this, §4 rots
-   silently and the register becomes a historical document.
-3. **CI licence-provenance check.** The three mechanical checks in §1.
+2. **Undeclared-deviation test — and the reference side must be the EIP, not us.** Fail when a
+   member of the EIP set is **absent or altered and not listed in this file**. Parse the deviation
+   ids out of §4 and reconcile. Without this, §4 rots silently and the register becomes a
+   historical document.
+3. **CI licence-provenance check.** The three mechanical checks in §1, with the SPDX rule **scoped
+   to `src/`** so the CC0 fixtures test 2 requires do not trip the suite's own gate.
+
+> ### ⚠️ Why test 2 reported clean while 25 members were missing
+>
+> The method used through rev 54 was: *parse the interfaces out of `IERC3643.sol`, resolve
+> inherited members, diff against each implementing contract.* It reported **"zero missing
+> functions"** on a codebase missing an entire interface.
+>
+> **It is self-referential.** `IERC3643.sol` is this suite's own transcription of the standard.
+> Diffing the implementation against it proves the implementation matches **our transcription** —
+> it can never detect a member that never made it into the transcription in the first place, which
+> is precisely the `IAgentRole` failure (§4.5) and the `IIdentityRegistryStorage` gap. A test whose
+> reference is a file the same team wrote is a **consistency check wearing a conformance check's
+> name**, and it returns green most loudly when the transcription is the thing that is wrong.
+>
+> **It also cannot see a substitution.** `getTokenBound()` → `isTokenBound(address)` (D-C3) kept the
+> member count correct while changing the signature, so even a correct reference would need to diff
+> **signatures**, not count members.
+>
+> **The method that replaces it:**
+>
+> 1. **Vendor the EIP's own interface files** into `test/fixtures/eip3643/`, from
+>    `ethereum/ERCs/assets/erc-3643/`, **CC0 headers verbatim and unmodified**. These are the
+>    reference side. They are not ours and that is the entire point.
+> 2. ⚠️ **Transcribe `IAgentRole` by hand from the specification body and mark the fixture as
+>    hand-transcribed** — it is the one interface in the standard with **no asset file**, which is
+>    the root cause in §4.5. A fixture set built by mirroring the asset directory reproduces the
+>    original defect exactly.
+> 3. Diff **full signatures** — name, parameter types, return types, mutability — of the fixtures
+>    against the implementing contracts, resolving inheritance on both sides. Not member counts.
+> 4. Every difference must resolve to a **deviation id in §4**, or the test fails.
+> 5. Mutability may be **tightened** (`view` → `pure`, as `identityStorage()` does) and never
+>    loosened. Encode that asymmetry; a plain string comparison rejects a legal narrowing and,
+>    worse, invites someone to "fix" it by loosening the implementation.
 
 And the standing one, which predates all of this:
 
 4. **Standard-independence check.** Nothing in §4–§10 of the design moved when the standard was
    fixed. A rule that appears or disappears in this suite because of conformance is a defect.
 
-### ⚠️ What has actually been run, as of 2026-09-11: none of the four
+### ⚠️ What has actually been run, as of 2026-09-11: still none of the four
 
 **This suite has not been compiled since the ERC-3643 pass.** No Solidity compiler is present in
 the environment the edit was made in — `solc`, `solcjs` and `forge` are all absent. The earlier
@@ -391,17 +599,26 @@ the environment the edit was made in — `solc`, `solcjs` and `forge` are all ab
 `REMAINING-COMPLIANCE.md` is from **2026-09-08** and predates every change described in this file.
 Do not carry it forward.
 
-Two **mechanical substitutes** were run instead, and they are much weaker than a compile:
+**Mechanical substitutes** were run instead, and they are much weaker than a compile:
 
 | Check | Method | Result |
 |---|---|---|
 | Brace/paren balance | comment- and string-aware scan over all 31 `.sol` files | balanced |
-| EIP member reconciliation | parse the interfaces out of `IERC3643.sol`, resolve inherited members, diff against each implementing contract | **zero missing functions**; three never-emitted events — `TokenUnbound`, `IdentityStorageSet`, `IdentityUpdated`, all three declared-and-dead in §4 |
+| ~~EIP member reconciliation~~ | ~~parse the interfaces out of `IERC3643.sol`, diff against each implementing contract~~ | ⚠️ **WITHDRAWN — the method was self-referential.** It reported "zero missing functions" against a codebase missing 25 members and an entire interface. See the box above |
+| Interface-satisfaction check *(2026-09-11)* | comment-stripped parse of every declared interface, inheritance resolved, functions **and public state variables** diffed against each implementing contract | `SecurityToken` 40/0 missing · `IdentityRegistry` 18/0 · `ModularCompliance` 8/0 · `TrustedIssuersRegistry` 8/0 · `ClaimTopicsRegistry` 3/0 — **all satisfied** |
+| Never-emitted events | scan | four declared-and-dead, all in §4 — `TokenUnbound`, `IdentityStorageSet`, `IdentityUpdated`, and `AgentSet`/`RegistrarSet` are **not** in this class (both now fire alongside the EIP events) |
 
-What those two checks **cannot** see, and what a compile is therefore still owed for: type
-mismatches, visibility and mutability mismatches against the interface, missing `override`
-specifiers, stack-too-deep, and every runtime behaviour. **Compile before this file is shown to
-anyone outside the team, and re-run the four tests above before it is cited in a disclosure.**
+⚠️ **The interface-satisfaction check is still the weaker half of test 2.** It proves each contract
+satisfies the interfaces **it declares** — enough to establish that the suite is no longer
+`abstract`, and enough to have caught both `should be marked as abstract` errors during this pass.
+**It does not prove those interfaces match the EIP**, because the reference side is still
+`IERC3643.sol`. That is the same limitation that hid `IAgentRole`, and **it closes only when the
+CC0 fixtures land.** Until then this row is evidence of internal consistency, not of conformance.
+
+What these checks **cannot** see, and what a compile is therefore still owed for: type mismatches,
+visibility mismatches, missing `override` specifiers, stack-too-deep, and every runtime behaviour.
+**Compile before this file is shown to anyone outside the team, and re-run the four tests above
+before it is cited in a disclosure.**
 
 ---
 
@@ -409,12 +626,13 @@ anyone outside the team, and re-run the four tests above before it is cited in a
 
 | Where | What |
 |---|---|
-| `eu_tokenized_securities_smart_contract_design.md` §3a | capability → `IERC3643` binding |
+| `eu_tokenized_securities_smart_contract_design.md` §3a | capability → `IERC3643` binding, including the `IAgentRole` row |
 | — §3b | what closing D0 did not buy |
-| — §3c | licence firewall |
+| — §3c | licence firewall — and why CC0 fixtures are not a breach of it |
 | — §3d | conformance grade and this register |
-| — §13 | the test suite above |
-| — §16 D0 (closed), D8, D19, D21 | the decisions behind §4.2 and §5.4 |
+| — §13 | the test suite above, including the withdrawn reconciliation method |
+| — §16 D0 (closed), D8, D19, D20, D21 | the decisions behind §4.2, §4.5 and §5.4 — **D20 owns when D-A2 re-opens** |
+| — §16 D19 | D-I2 and D-I5 both sit under it |
 | `IERC3643.sol` | the interface set, with the provenance header |
 | `REMAINING-COMPLIANCE.md` §5 | the pre-existing `freezePartialTokens` leak that §5.1 joins |
 | `DEPLOYMENT-DEFAULTS.md` | wiring, including `setCountryCode` before any holder in a State |

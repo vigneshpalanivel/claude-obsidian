@@ -62,6 +62,7 @@ All concept pages — ideas, patterns, and frameworks extracted from sources.
 - [[Blockchain-Pharmaceutical-Supply-Chain]] — blockchain for drug traceability, anti-counterfeit, DSCSA compliance, and cold chain; 16 weeks -> 2 seconds trace time; market CAGR 21%
 - [[Hyperledger-Fabric]] — dominant enterprise permissioned blockchain framework; execute-order-validate model; channels, chaincode (Go/JS/Java), Raft consensus; Fabric-X targets 100k TPS
 - [[Hyperledger-Fabric-CA]] — Fabric Certificate Authority; Org CA + TLS CA per org; registration vs enrollment; NodeOUs; CRL revocation; HSM (PKCS11) and LDAP integration
+- [[ERC-3643-ONCHAINID-Without-GPL]] — reusable decision table for using ERC-3643 and ONCHAINID in any project without triggering GPL-3.0; the factory trap, CI enforcement, and what licence strategy does *not* fix
 
 ---
 

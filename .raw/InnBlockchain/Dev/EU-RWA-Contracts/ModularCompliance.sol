@@ -157,8 +157,32 @@ contract ModularCompliance is ICompliance {
         revert UnbindNotSupported();
     }
 
+    /// @notice The token this compliance stack serves, or `address(0)` before `bindToken`.
+    ///         `ICompliance.getTokenBound()` — conformant signature.
+    /// @dev    ⚠️ THIS FUNCTION WAS MISSING UNTIL 2026-09-11 AND `isTokenBound` BELOW WAS
+    ///         SILENTLY STANDING IN FOR IT. That is worth recording because of HOW it passed
+    ///         review: the member count matched the EIP's, every other name matched, and the
+    ///         substitute was strictly more defensive than the original — so a reviewer counting
+    ///         members or reading for safety saw nothing wrong. **A substitution is not a
+    ///         deviation that got declared; it is a deviation that got disguised**, and the two
+    ///         are indistinguishable from inside the file. The reconciliation that would have
+    ///         caught it is a diff against the EIP's own published interface, which is now what
+    ///         `ERC-3643-CONFORMANCE.md` §6 test 2 requires.
+    /// @dev    Returns the raw slot, including `address(0)`. A caller wanting "is this stack
+    ///         live" must compare against zero itself — that is the standard's shape and the
+    ///         reason `isTokenBound` was kept rather than replaced.
+    function getTokenBound() external view returns (address) {
+        return boundToken;
+    }
+
     /// @notice Whether `token` is the instrument this stack serves. Never true for `address(0)`,
     ///         so an unbound stack cannot be made to answer yes by asking about zero.
+    /// @dev    ⚠️ NOT AN EIP MEMBER — a suite supplement, retained IN ADDITION to
+    ///         `getTokenBound()` and never instead of it. It is the `pauseWithReason` pattern:
+    ///         where the suite wants a safer surface than the standard offers, it adds one
+    ///         alongside the conformant signature rather than substituting it. Kept because
+    ///         `getTokenBound() == someToken` invites the `address(0) == address(0)` mistake
+    ///         that this function's zero-check exists to make unreachable.
     function isTokenBound(address token) external view returns (bool) {
         return token != address(0) && token == boundToken;
     }

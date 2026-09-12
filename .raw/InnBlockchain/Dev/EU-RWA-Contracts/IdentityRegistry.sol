@@ -2,7 +2,14 @@
 pragma solidity ^0.8.22;
 
 import {IIdentityGate, Tier} from "./Interfaces.sol";
-import {IClaimTopicsRegistry, IIdentity, IIdentityRegistry, ITrustedIssuersRegistry} from "./IERC3643.sol";
+import {
+    IAgentRole,
+    IClaimTopicsRegistry,
+    IIdentity,
+    IIdentityRegistry,
+    IIdentityRegistryStorage,
+    ITrustedIssuersRegistry
+} from "./IERC3643.sol";
 
 /// @notice ⚠️ RENAMED FROM `IClaimTopicsRegistry` / `ITrustedIssuersRegistry` WHEN THE EIP
 ///         INTERFACES ARRIVED, because those two names now belong to `IERC3643.sol` and the
@@ -152,7 +159,7 @@ interface ITrustedIssuersGate {
 ///         two wallets, two countries. So `registerIdentity` here BINDS A WALLET TO AN EXISTING
 ///         PERSON, resolved through the identity handle, and refuses to invent a person. See its
 ///         NatSpec. `updateIdentity` reverts outright. Both are registered deviations.
-contract IdentityRegistry is IIdentityGate, IIdentityRegistry {
+contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     // ─────────────────────────── claim value — tri-state, deliberately ────────
     //
     // `NotRecorded` is NOT the same as `AssertedFalse`. DLT Pilot Art 4(2)(c)–(f) require
@@ -469,6 +476,9 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry {
     ///      occur here — and re-pointing a WALLET at a different person is a different act
     ///      wearing the same name.
     error IdentityRebindingNotSupported();
+    /// @dev See `setIdentityRegistryStorage`. Informative-class — a wiring fact about the
+    ///      deployment, not a fact about any person, so it may say what it is.
+    error IdentityStorageNotSupported();
     /// @dev Batch arity.
     error BatchLengthMismatch(uint256 lenA, uint256 lenB);
 
@@ -506,9 +516,60 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry {
         emit TrustedIssuersRegistrySet(trustedIssuers_);
     }
 
+    /// @notice Grant or revoke the registrar role. The suite's own form — one call, one boolean.
+    /// @dev    ⚠️ THE REGISTRAR **IS** THE STANDARD'S AGENT, AND THAT WAS TRUE BEFORE
+    ///         `IAgentRole` WAS DECLARED HERE. EIP-3643 requires that any contract acting as an
+    ///         Identity Registry be `IAgentRole`-compatible, and says only an agent may add or
+    ///         remove identities — which is exactly what `onlyRegistrar` has always gated. The
+    ///         role was therefore conformant in SUBSTANCE and unreachable under the standard's
+    ///         NAMES, which is the worst of the three possible states: a caller holding the EIP
+    ///         ABI got a revert from a contract that was doing the right thing. `addAgent` /
+    ///         `removeAgent` / `isAgent` below are that role under the standard's names.
+    /// @dev    ⚠️ NOT RENAMED TO `agent`. The suite's vocabulary distinguishes the registrar (who
+    ///         binds wallets and writes claims) from `SecurityToken`'s agent (who mints, freezes
+    ///         and seizes), and under **DORA Art 5** those are different people with different
+    ///         accountability. Collapsing the two names would invite collapsing the two key sets,
+    ///         which is a segregation-of-duties failure that no interface asked for.
+    /// @dev    Emits BOTH vocabularies on every change — `RegistrarSet` for the suite's tooling,
+    ///         `AgentAdded`/`AgentRemoved` for anything built against EIP-3643. Never one
+    ///         instead of the other.
     function setRegistrar(address registrar, bool allowed) external onlyGovernance {
+        _setRegistrar(registrar, allowed);
+    }
+
+    /// @notice `IAgentRole.addAgent` — conformant signature. Grants the registrar role.
+    function addAgent(address _agent) external onlyGovernance {
+        _setRegistrar(_agent, true);
+    }
+
+    /// @notice `IAgentRole.removeAgent` — conformant signature. Revokes the registrar role.
+    /// @dev    ⚠️ NO GUARD AGAINST REMOVING THE LAST REGISTRAR, DELIBERATELY — same reasoning as
+    ///         `SecurityToken.removeAgent`. A registry with no registrar cannot onboard, which is
+    ///         a serious operational state and not one this contract should refuse to enter;
+    ///         refusing would turn a compromised last key into an unrevocable one. `governance`
+    ///         can always re-grant. ⚠️ Note `erasureCoordinator` is a SEPARATE authority and is
+    ///         untouched here, so GDPR Art 17 erasure survives the loss of every registrar.
+    function removeAgent(address _agent) external onlyGovernance {
+        _setRegistrar(_agent, false);
+    }
+
+    /// @notice `IAgentRole.isAgent` — conformant signature. True for a current registrar.
+    /// @dev    A function rather than a renamed public mapping, because `isRegistrar` is read by
+    ///         name in `DEPLOYMENT-DEFAULTS.md`, in `PersonErasure`'s authority check and by the
+    ///         operations runbooks. Two names over one mapping, one of which is the standard's.
+    function isAgent(address _agent) external view returns (bool) {
+        return isRegistrar[_agent];
+    }
+
+    function _setRegistrar(address registrar, bool allowed) internal {
+        if (registrar == address(0)) revert ZeroAddress();
         isRegistrar[registrar] = allowed;
         emit RegistrarSet(registrar, allowed);
+        if (allowed) {
+            emit AgentAdded(registrar);
+        } else {
+            emit AgentRemoved(registrar);
+        }
     }
 
     /// @notice Point at the `PersonErasure` coordinator, or unset it with `address(0)`.
@@ -523,7 +584,24 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry {
     ///         every holder of every claim requirement at once. It is a logged governance act,
     ///         and the per-topic path (`ClaimTopicsRegistry.removeBaselineTopic`) is the one to
     ///         use for anything short of an implementation swap.
+    /// @dev ⚠️ THE EIP NAME IS NOW THE FUNCTION AND THE HOUSE NAME IS THE ALIAS — THE REVERSE OF
+    ///      WHAT THIS FILE DID UNTIL 2026-09-11, AND THE OLD ARRANGEMENT WAS A REAL DEFECT RATHER
+    ///      THAN A STYLE ONE. `setClaimTopics` already emitted `ClaimTopicsRegistrySet`, so the
+    ///      behaviour was conformant and the SELECTOR was not: a caller holding the EIP ABI —
+    ///      a venue, a custodian, an audit tool — got a revert from a contract that implements
+    ///      the capability correctly. **A house-style rename is invisible to a member count and
+    ///      fatal to interoperability**, which is the one thing conformance was adopted to buy.
+    function setClaimTopicsRegistry(address _claimTopicsRegistry) public onlyGovernance {
+        _setClaimTopicsRegistry(_claimTopicsRegistry);
+    }
+
+    /// @notice Suite alias for `setClaimTopicsRegistry`. Retained because the runbooks and
+    ///         `DEPLOYMENT-DEFAULTS.md` name it, not because the standard has two names.
     function setClaimTopics(address impl) external onlyGovernance {
+        _setClaimTopicsRegistry(impl);
+    }
+
+    function _setClaimTopicsRegistry(address impl) internal {
         if (impl == address(0)) revert ZeroAddress();
         address previous = address(claimTopics);
         claimTopics = IClaimTopicsGate(impl);
@@ -537,7 +615,18 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry {
     ///         invalidates every claim from an issuer the new list does not carry, which is
     ///         correct (it is what retroactive revocation does) and abrupt. Migrate the issuer
     ///         set first.
+    /// @dev ⚠️ EIP NAME PRIMARY, HOUSE NAME ALIASED — see `setClaimTopicsRegistry` for why the
+    ///      previous arrangement was a conformance defect rather than a naming preference.
+    function setTrustedIssuersRegistry(address _trustedIssuersRegistry) public onlyGovernance {
+        _setTrustedIssuersRegistry(_trustedIssuersRegistry);
+    }
+
+    /// @notice Suite alias for `setTrustedIssuersRegistry`. Retained for the runbooks.
     function setTrustedIssuers(address impl) external onlyGovernance {
+        _setTrustedIssuersRegistry(impl);
+    }
+
+    function _setTrustedIssuersRegistry(address impl) internal {
         if (impl == address(0)) revert ZeroAddress();
         address previous = address(trustedIssuers);
         trustedIssuers = ITrustedIssuersGate(impl);
@@ -1354,6 +1443,37 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry {
     ///         `isTrustedFor` takes the claim's write time and `hasClaimTopic` does not — see
     ///         the note on the gate interfaces at the top of this file. Point `setTrustedIssuers`
     ///         at something that implements only the EIP and every claim read reverts.
+    /// @notice ⚠️ DECLARED DEVIATION — ALWAYS RETURNS `address(0)`. There is no shared identity
+    ///         storage contract in this suite and there is not meant to be one.
+    /// @dev    D-I5. The storage contract's whole purpose is to let SEVERAL tokens share ONE
+    ///         person register, and cross-issuer sharing of a person register is the
+    ///         **linkability limb of design §16 D19** — one address correlating one investor
+    ///         across every platform they touch. That is a commercial feature of the ONCHAINID
+    ///         model and a GDPR problem, and it is declined on data-protection grounds rather
+    ///         than skipped for effort.
+    /// @dev    ⚠️ ANSWERED HONESTLY RATHER THAN LEFT ABSENT, which is the same choice `identity()`
+    ///         makes. A caller that dereferences this fails loudly at ITS call site; a caller
+    ///         that cannot resolve the selector at all fails at ABI resolution with no
+    ///         indication of why. The loud failure is the disclosable one.
+    function identityStorage() external pure returns (IIdentityRegistryStorage) {
+        return IIdentityRegistryStorage(address(0));
+    }
+
+    /// @notice ⚠️ DECLARED DEVIATION — ALWAYS REVERTS. Present because `IIdentityRegistry` names
+    ///         it and the compiler must see the selector.
+    /// @dev    Reverts rather than no-ops for the same reason `updateIdentity` does: a silent
+    ///         no-op lets an operator believe they have pointed this registry at a shared store
+    ///         and walk away, when every read still comes from local storage. The failure must
+    ///         land on the caller, at the moment of the call.
+    /// @dev    ⚠️ IF D19 EVER RESOLVES TOWARD A SHARED STORE, THIS IS NOT THE ONLY EDIT. The
+    ///         person record, `PersonErasure`'s reach and the DPIA all assume the register is
+    ///         local and single-issuer. Implementing this function without re-opening those is
+    ///         how the linkability residual arrives undeclared.
+    function setIdentityRegistryStorage(address) external pure {
+        revert IdentityStorageNotSupported();
+    }
+
+    /// @notice The trusted-issuer registry, under the standard's type.
     function issuersRegistry() external view returns (ITrustedIssuersRegistry) {
         return ITrustedIssuersRegistry(address(trustedIssuers));
     }

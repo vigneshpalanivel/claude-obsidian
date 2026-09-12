@@ -419,9 +419,25 @@ existing holders are unaffected (staleness blocks entry, not exit).
 ### `IdentityRegistry` — references settable, claim expiry bounded, `Tier` imported
 
 - `claimTopics` / `trustedIssuers` are no longer `immutable`. Constructor rejects `address(0)`;
-  `setClaimTopics(impl)` / `setTrustedIssuers(impl)` are governance-only and emit
-  `…Changed(old, new)`. Swapping the issuer registry re-validates every stored claim against the
-  new list on its next read — migrate the issuer set first.
+  the setters are governance-only and emit `…Changed(old, new)`. Swapping the issuer registry
+  re-validates every stored claim against the new list on its next read — migrate the issuer set
+  first.
+  - ⚠️ **The EIP names are the primary functions as of 2026-09-11**:
+    `setClaimTopicsRegistry(impl)` / `setTrustedIssuersRegistry(impl)`. `setClaimTopics(impl)` /
+    `setTrustedIssuers(impl)` survive as **aliases** onto the same internal path — same checks,
+    same two events — so existing runbooks and scripts keep working. **Prefer the EIP names in
+    anything new**; the aliases exist for continuity, not as a second supported API.
+  - ⚠️ **`IdentityRegistry` is now `IAgentRole`-compatible, and the registrar is the agent.**
+    `addAgent(a)` / `removeAgent(a)` / `isAgent(a)` are the standard's names for
+    `setRegistrar(a, true)` / `setRegistrar(a, false)` / `isRegistrar(a)` — one mapping, one
+    write path, both event vocabularies emitted (`RegistrarSet` **and**
+    `AgentAdded`/`AgentRemoved`). `SecurityToken` gains the same three names over its own,
+    **separate** agent set. **Do not merge the two key sets** — the registrar onboards, the
+    token agent mints and seizes, and DORA Art 5 wants those accountable to different people.
+  - ⚠️ **`setIdentityRegistryStorage` reverts `IdentityStorageNotSupported()` and
+    `identityStorage()` returns `address(0)`** — deviation D-I5, a data-protection refusal of the
+    shared-store model, not a missing feature. Do not wire a storage contract expecting it to
+    take effect.
 - `setClaim` **rejects `expiresAt == 0`**, `expiresAt <= now`, and
   `expiresAt > now + maxClaimValiditySeconds` (default 5 × 365 days;
   `setMaxClaimValiditySeconds` governance-only, emits). There is no "never expires" claim. A claim

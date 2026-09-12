@@ -2,7 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {IComplianceGate, IIdentityGate, IProtocolPause, IRestrictedParty} from "./Interfaces.sol";
-import {ICompliance, IERC3643, IIdentityRegistry} from "./IERC3643.sol";
+import {IAgentRole, ICompliance, IERC3643, IIdentityRegistry} from "./IERC3643.sol";
 
 /// @title SecurityToken (illustrative sample — not production code)
 /// @notice C1 + C5 — the instrument itself, and the only contract in this folder that moves a
@@ -80,7 +80,7 @@ import {ICompliance, IERC3643, IIdentityRegistry} from "./IERC3643.sol";
 ///         usually forgotten — **fails when an UNDECLARED deviation appears**, i.e. when a
 ///         member of the EIP set is absent or altered and not listed in
 ///         `ERC-3643-CONFORMANCE.md`.
-contract SecurityToken is IERC3643 {
+contract SecurityToken is IERC3643, IAgentRole {
     // ═══════════════════════════════════════════════════════════════════════
     // ROLES
     // ═══════════════════════════════════════════════════════════════════════
@@ -91,7 +91,14 @@ contract SecurityToken is IERC3643 {
     ///         surface. Separate from `governance` because these are daily operational acts
     ///         performed by an operations desk, while governance is upgrade authority. Under
     ///         DORA Art 5 those are different people with different accountability.
-    mapping(address => bool) public isAgent;
+    /// @dev ⚠️ `override` IS DELIBERATE AND IS THE ONE PLACE IN THIS SUITE THAT USES IT. The
+    ///      public getter this mapping generates — `isAgent(address) view returns (bool)` — IS
+    ///      the implementation of `IAgentRole.isAgent`, so the role's read surface was conformant
+    ///      by accident before `IAgentRole` was declared. Solidity 0.8.8 made the specifier
+    ///      optional for single-interface implementations; it is written out anyway, because a
+    ///      silent match between a state variable and an interface member is exactly the kind of
+    ///      coincidence that a later rename would break with no compiler complaint.
+    mapping(address => bool) public override isAgent;
 
     /// @dev ⚠️ NOT `immutable`, and not a concrete type. A constructor-set immutable reference
     ///      cannot be swapped after a provider failure — the operational-resilience regime
@@ -476,9 +483,48 @@ contract SecurityToken is IERC3643 {
         emit ProtocolPauseChanged(previous, impl);
     }
 
+    /// @notice Grant or revoke the agent role. The suite's own form — one call, one boolean.
+    /// @dev    ⚠️ THE SINGLE WRITE PATH FOR THE ROLE. `addAgent` and `removeAgent` below are the
+    ///         standard's names and both route through here, so there is exactly one place that
+    ///         mutates `isAgent` and exactly one place that emits. Two independent write paths
+    ///         to one role mapping is how an event set and a state set drift apart.
+    /// @dev    Emits BOTH event vocabularies on every change — `AgentSet` for the suite's tooling
+    ///         and the standard's `AgentAdded`/`AgentRemoved` for anything built against
+    ///         EIP-3643. Never one instead of the other; an indexer built on the standard must
+    ///         not have to know this suite's events exist.
     function setAgent(address agent, bool allowed) external onlyGovernance {
+        _setAgent(agent, allowed);
+    }
+
+    /// @notice `IAgentRole.addAgent` — conformant signature.
+    /// @dev    ⚠️ IDEMPOTENT, AND IT STILL EMITS. Re-adding a current agent re-emits
+    ///         `AgentAdded`. That is the standard's shape and it is left alone: a listener
+    ///         reconstructing the role set from logs converges either way, and refusing the call
+    ///         would make a batch of role grants abort on the one entry that was already correct.
+    function addAgent(address _agent) external onlyGovernance {
+        _setAgent(_agent, true);
+    }
+
+    /// @notice `IAgentRole.removeAgent` — conformant signature.
+    /// @dev    ⚠️ NO GUARD AGAINST REMOVING THE LAST AGENT, DELIBERATELY. A token with no agent
+    ///         cannot mint, freeze, force a transfer or run a recovery — which is a serious
+    ///         operational state and NOT one this contract should refuse to enter. `governance`
+    ///         can always re-grant, and a contract that blocks the removal of a compromised last
+    ///         agent would turn a key compromise into an unrecoverable one. **Under DORA Art 5
+    ///         this is a runbook control, not a contract control.**
+    function removeAgent(address _agent) external onlyGovernance {
+        _setAgent(_agent, false);
+    }
+
+    function _setAgent(address agent, bool allowed) internal {
+        if (agent == address(0)) revert ZeroAddress();
         isAgent[agent] = allowed;
         emit AgentSet(agent, allowed);
+        if (allowed) {
+            emit AgentAdded(agent);
+        } else {
+            emit AgentRemoved(agent);
+        }
     }
 
     /// @notice Halt the instrument. `IERC3643.pause()` — conformant signature, no arguments.
