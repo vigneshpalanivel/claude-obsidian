@@ -339,7 +339,13 @@
       "Bash(xargs -I{} sed -n '{}p' \"Execution Playbook.md\")",
       "Bash(awk 'NR>=503 && NR<=545' \"Execution Playbook.md\")",
       "Bash(curl -s --max-time 15 \"https://api.github.com/repos/ethereum/ERCs/contents/assets/erc-3643/interfaces\")",
-      "Bash(curl -s --max-time 15 \"https://raw.githubusercontent.com/ethereum/ERCs/master/assets/erc-3643/interfaces/IIdentityRegistry.sol\")"
+      "Bash(curl -s --max-time 15 \"https://raw.githubusercontent.com/ethereum/ERCs/master/assets/erc-3643/interfaces/IIdentityRegistry.sol\")",
+      "WebFetch(domain:www.erc3643.org)",
+      "WebFetch(domain:www.onchainid.com)",
+      "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian diff --stat)",
+      "Bash(grep -n \"^#\\\\{1,3\\\\} \" wiki/health/exercise-log.md)",
+      "Bash(gh search *)",
+      "WebFetch(domain:ethereum-magicians.org)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

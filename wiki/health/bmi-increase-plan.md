@@ -12,7 +12,9 @@ status: active
 >
 > ⚠️ **Target correction:** 70 kg (Phase 1) is the **floor**, not the goal. **75 kg (Phase 2) is the actual destination** and is not optional — see [[healthspan-80]] Pillar 1.
 >
-> ✅ **Target reaffirmed at 75 kg on 2026-08-31, after an 80 kg target was proposed and set aside.** 80 kg was assessed against the full health profile and **found safe as lean mass** — no condition in [[profile]] rules it out, and HDL 32, SI-joint support and sarcopenia prevention all argue *for* more muscle. It was set aside for three reasons, not one objection: **(1)** 80 kg is BMI 23.6, which is *overweight* on the Indian/ICMR chart, so it is only defensible as muscle and would need waist and strength data to justify; **(2)** it requires **~15 kg of new lean mass — a 4–6 year project**, not a 1–2 year one, and chasing it on a shorter timeline guarantees fat; **(3)** the gates aren't clear — spine clearance for progressive lower-body loading, an overdue uric acid retest before raising protein, and adjustable dumbbells. **75 kg delivers essentially the full health return.** Revisit 80 kg only from 75 kg, with a waist under 85 cm and the spine gate cleared.
+> ✅ **Target reaffirmed at 75 kg on 2026-08-31, after an 80 kg target was proposed and set aside.** 80 kg was assessed against the full health profile and **found safe as lean mass** — no condition in [[profile]] rules it out, and HDL 32, SI-joint support and sarcopenia prevention all argue *for* more muscle. It was set aside for three reasons, not one objection: **(1)** 80 kg is BMI 23.6, which is *overweight* on the Indian/ICMR chart, so it is only defensible as muscle and would need waist and strength data to justify; **(2)** it requires **~15 kg of new lean mass — a 4–6 year project**, not a 1–2 year one, and chasing it on a shorter timeline guarantees fat; **(3)** the gates aren't clear — spine clearance for progressive lower-body loading, an overdue uric acid retest before raising protein, and adjustable dumbbells. **75 kg delivers essentially the full health return.**
+>
+> ✅ **Gate 3 of 3 cleared 2026-09-13 — adjustable dumbbells acquired (2.5–24 kg, 15 notches).** ⚠️ **This does not move the 80 kg question, and it is worth being precise about why.** The equipment gate was always the *cheapest* of the three. **The two that actually bind are still open: spine clearance from Dr. Rajapandian (overdue since 2026-08-14) and the uric acid retest.** Neither is buyable. **Reason (2) — that 80 kg is ~15 kg of new lean mass over 4–6 years — is untouched by owning heavier weights**, and [[exercise-plan]] now notes that legs, the group most in need of load, are on a two-weeks-per-notch rule that puts working leg loads in Q1 2027. **75 kg stands.** Revisit 80 kg only from 75 kg, with a waist under 85 cm and the spine gate cleared.
 
 ## Current Status
 
@@ -21,7 +23,7 @@ status: active
 | Height | 184cm | — |
 | Weight | **61.20kg** (Aug 31, 2026) | Phase 1: **70kg** (floor) · Phase 2: **75kg** (destination) |
 | BMI | **~18.1** | Phase 1: ~20.7 · Phase 2: **~22.2** |
-| **Waist** | 🔴 **never measured — take baseline at next weigh-in** | Hold **< 85 cm** all the way to 75 kg |
+| **Waist** | ✅ **77.5 cm** (30.5 in, navel, 2026-09-07 @ 61.80 kg) · **WHtR 0.42** | **Floor 74 cm** · Hold **< 85 cm** all the way to 75 kg · hard limit 90 cm |
 | Timeline | — | Phase 1: ~12 months · Phase 2: ~20–28 months total |
 | Monthly gain target | — | **0.5–0.9 kg/month** *(revised down 2026-08-31)* |
 
@@ -72,15 +74,27 @@ status: active
 
 > **BMI cannot tell muscle from fat, and this entire plan is about adding muscle.** At 73 kg of muscle, BMI 21.6 is excellent; at 73 kg of fat the same number is bad. Waist separates them, costs nothing, and takes 20 seconds.
 
-| Waist (Indian male) | Reading |
-|---|---|
-| **< 85 cm** | ✅ Gaining the right tissue — continue |
-| 85–89 cm | ⚠️ Watch — slow the gain rate and check that training load is actually progressing |
-| **≥ 90 cm** | 🔴 Abdominal obesity threshold — the surplus has become fat; stop gaining, recomposition instead |
+### 🔴 The full band — floor AND ceiling (floor added 2026-09-13)
 
-**How:** at the navel, standing relaxed, **after a normal exhale** (not sucked in, not pushed out). Same morning as the weigh-in, **3×/week**, logged in [[meal-log]].
+> **Every threshold in this file until today was a ceiling. There was no documented floor, and the question "how low is too low" had never been answered.** It is answered here. **Height 184 cm** is the denominator for all of it.
 
-🔴 **Baseline not yet recorded — take it at the next weigh-in.** At 61.2 kg the waist is expected to be small (~74–78 cm) and there is nothing to detect today. **That is precisely why to measure now: the baseline is only obtainable before the +14 kg, and without it there is no way to tell later whether the weight arrived as muscle or fat.**
+| Waist | WHtR (÷184 cm) | Reading |
+|-------|----------------|---------|
+| **< 74 cm** | **< 0.40** | 🔴 **BELOW THE FLOOR — insufficient, not "lean".** At 184 cm this signals under-nutrition, not conditioning |
+| **74–85 cm** | 0.40–0.46 | ✅ **The target band.** ← **you are here at 77.5 cm / 0.42** |
+| 85–89 cm | 0.46–0.49 | ⚠️ Watch — slow the gain rate and check that training load is actually progressing |
+| **≥ 90 cm** | ≥ 0.49 | 🔴 **Abdominal obesity threshold (South Asian male)** — the surplus has become fat; stop gaining, recomposition instead |
+| *(92 cm)* | *(0.50)* | *Generic WHtR line — **not your limit.** The South Asian 90 cm threshold is stricter and it governs* |
+
+**Floor derivation:** WHtR **0.40 is the recognised lower bound** of the healthy band (below it reads as underweight). **0.40 × 184 cm = 73.6 cm ≈ 74 cm.**
+
+> 🔴 **But the floor is the wrong number to be watching, and this is the important part.** You are **3.9 cm above the floor and 7.5 cm below the ceiling** — and you are in a **gaining** phase. **Your waist is supposed to go up.** The floor can only be breached by losing weight, which is the opposite of the plan.
+>
+> ✅ **The genuinely useful consequence of knowing the floor: a waist that FALLS from 77.5 cm is now a red flag, not a win.** With 74 cm as the floor there is almost no room below you. **If the waist drops while the scale is supposed to be rising, either the gain has stalled or the measurement is wrong** — investigate, don't celebrate.
+
+**How:** at the navel, standing relaxed, **after a normal exhale** (not sucked in, not pushed out). Same morning as the weigh-in, **3×/week**, logged in [[meal-log]]. **Record in inches with the unit stated and convert** — the 2026-09-07 reading was nearly mis-filed as 30.5 cm.
+
+✅ **Baseline recorded 2026-09-07: 77.5 cm at 61.80 kg — 7.5 cm of headroom under 85 cm.** *(This file said "never measured" until 2026-09-13; the reading had been sitting in [[meal-log]] since Sep 7 and was never mirrored here. The measurement was taken on time — only the sync was late.)*
 
 **Rule of thumb for a lean gain: waist should rise less than ~1 cm for every 3 kg of bodyweight.** From 61 → 75 kg that means **no more than ~+4.5 cm total.** Faster than that and the composition is wrong regardless of what the scale says.
 
@@ -309,7 +323,7 @@ Honest energy-balance projection based on actual logged intake — not the optim
 
 | Month | Approx Date | Target Weight | Focus |
 |-------|-------------|--------------|-------|
-| 0 | **Aug 31, 2026** | **61.20 kg** | 🔴 **Take the waist baseline.** Buy adjustable dumbbells — the binding constraint |
+| 0 | **Aug 31, 2026** | **61.20 kg** | ✅ **Waist baseline taken 2026-09-07: 77.5 cm @ 61.80 kg (WHtR 0.42).** ✅ **Adjustable dumbbells acquired 2026-09-13** (2.5–24 kg, 15 notches — see [[exercise-plan]] The Load Ladder). 🔴 **Binding constraint is now the overdue spine clearance from Dr. Rajapandian, not equipment or measurement** |
 | 2 | Nov 2026 | **~62.6 kg** | 🎯 **Exits underweight** (BMI 18.5). Retest uric acid before raising protein |
 | 5 | Feb 2027 | ~65 kg | Lipid panel — HDL 32 baseline recheck; strength progression visible |
 | 8 | May 2027 | ~67 kg | Spine clearance from Dr. Rajapandian for progressive lower-body load |

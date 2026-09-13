@@ -6,28 +6,94 @@ status: active
 
 # Exercise Plan — Vignesh
 
-**Equipment:** EFX elliptical + 3kg dumbbells (pair) + **doorway pull-up bar — adjustable height, mounts low (confirmed 2026-08-28)**
-> 🔴 **EQUIPMENT UPGRADE — OVERDUE, AND THE #1 PRIORITY IN THIS PLAN (revised 2026-08-18).** Week 3 ended ~Aug 15; the plan started Jul 25 and the load has never moved. **Buy a spinlock/adjustable dumbbell set with at least 15 kg loadable per hand** (a 20–30 kg kit with plates, ~₹2,000–4,000 in India). **Do NOT buy another fixed pair — 5 kg would plateau in 3–4 weeks and 8 kg in 3–6 months.** One adjustable purchase covers the entire run to 70 kg and beyond.
->
-> **Why a single fixed pair cannot work — every lift needs a different load:**
->
-> | Exercise | Load needed for 8–12 reps at ~60 kg bodyweight |
-> |----------|------------------------------------------------|
-> | Lateral raise | 3–5 kg ← **the only lift 3 kg currently suits** |
-> | Seated shoulder press | 6–8 kg |
-> | Bicep curl | 6–8 kg |
-> | One-arm supported row | 8–12 kg |
-> | Floor chest press | 8–12 kg |
->
-> ⚠️ **At 3 kg, rows and curls run 25–30 reps — that is endurance work, not hypertrophy.** Hypertrophy requires 6–12 reps taken to within 2–3 reps of failure. On most lifts in Workouts A and B the growth signal right now is close to zero, which is the direct mechanical reason a calorie surplus is partitioning to fat rather than muscle (see [[meal-log]] weight table, 2026-08-17: abdominal fat gain reported at BMI 17.9).
->
-> **Tie to the BMI target:** 60.6 → 70 kg is +9.4 kg, and Phase 2 (73–75 kg) is +12–14 kg. Getting a meaningful share of that as lean mass needs continuous progressive overload for 12+ months. **The equipment has to outlast the target — only an adjustable set does.**
->
-> **Progression rule:** when 3 × 12 is clean with no spine or shoulder sensation, add the smallest plate (usually 1.25 kg/side).
->
+**Equipment:** EFX elliptical + **adjustable dumbbells, 2.5–24 kg, 15 settings (acquired 2026-09-13)** + **doorway pull-up bar — adjustable height, mounts low (confirmed 2026-08-28)**
+
+> ✅ **EQUIPMENT UPGRADE — RESOLVED 2026-09-13. The #1 priority in this plan since ~Aug 15 is closed.** The 3 kg fixed pair is retired. **This purchase covers the entire run to 70 kg and beyond** for every upper-body lift and the Phase 3 ortho-gated lifts. Nothing further needs to be bought. ⚠️ **Corrected same day: 24 kg does NOT outlast the glute bridge, calf raise or wall sit** — expect to top those out inside a year and progress them by reps, tempo and single-limb variants instead. See *"For how many months do I have to change the weight?"* below. *(A resistance band, ~₹300–500, is still outstanding and still worth it — see the Pull-Up ladder. Dumbbells do nothing for the vertical-pull gap.)*
+
+## 🔴 The Load Ladder — 15 Settings, and Why the Old Progression Rule Is Now Void
+
+**Available loads per hand (kg):** 2.5 · 3.5 · 4.5 · 5.5 · 6.5 · 8 · 9 · 10 · 11.5 · 13.5 · 16 · 18 · 20.5 · 22.5 · 24
+
+**Notch numbers are the logging shorthand from here on** — write "N4" in [[exercise-log]], not "5.5 kg-ish".
+
+| Notch | Load | Jump from previous | % increase |
+|-------|------|--------------------|-----------|
+| N1 | 2.5 kg | — | — |
+| N2 | 3.5 kg | +1.0 | 🔴 **+40%** |
+| N3 | 4.5 kg | +1.0 | 🔴 **+29%** |
+| N4 | 5.5 kg | +1.0 | ⚠️ +22% |
+| N5 | 6.5 kg | +1.0 | ⚠️ +18% |
+| N6 | 8 kg | +1.5 | 🔴 **+23%** |
+| N7 | 9 kg | +1.0 | +12.5% |
+| N8 | 10 kg | +1.0 | +11% |
+| N9 | 11.5 kg | +1.5 | ⚠️ +15% |
+| N10 | 13.5 kg | +2.0 | ⚠️ +17% |
+| N11 | 16 kg | +2.5 | 🔴 **+18.5%** |
+| N12 | 18 kg | +2.0 | +12.5% |
+| N13 | 20.5 kg | +2.5 | ⚠️ +14% |
+| N14 | 22.5 kg | +2.0 | +10% |
+| N15 | 24 kg | +1.5 | ✅ +6.7% |
+
+### 🔴 The rule this file has repeated since Jul 25 — *"3 × 12 clean → add 1.25 kg/side"* — is now deleted. It cannot be executed on this hardware.
+
+**There is no 1.25 kg plate.** The smallest step is 1.0 kg, and more importantly **the smallest step is not small.** Standard progressive-overload guidance is **5–10% per increase**. On this dumbbell, **only N15 falls inside that range, and only two settings are under 12%.** Every notch you will actually use over the next year is a 15–40% jump.
+
+**Concretely: at N1 (2.5 kg), moving to N2 (3.5 kg) is +40%. A set that ran 12 reps will run about 6.** That is not a progression, it is a different exercise. Rebuilding to 12 reps takes weeks — which is *fine*, but only if the plan says so in advance instead of treating the rep collapse as a failure.
+
+### The replacement: **double progression** — reps are the fine adjustment, load is the coarse one
+
+| Where you are | Rep range to build through | Then |
+|---------------|---------------------------|------|
+| **N1–N6 (2.5–8 kg)** — jumps are 18–40% | **3 × 8 → 3 × 15** | At 3 × 15 clean, go up one notch and **reset to 3 × 8** |
+| **N7–N15 (9–24 kg)** — jumps are 10–18% | **3 × 8 → 3 × 12** | At 3 × 12 clean, go up one notch and reset to 3 × 8 |
+
+**Why the rep range is wider at the bottom.** A rep range only "absorbs" a load jump if the strength span across it matches. 8→12 reps spans roughly 14% of strength; 8→15 reps spans roughly 23%. **The low-notch jumps are 18–40%, so the 8–12 range is too narrow there and you would stall out below the next notch.** Building to 15 reps first means you arrive at the next notch already strong enough to hit 8.
+
+⚠️ **A rep drop after a notch change is the expected outcome, not a regression.** Log it and rebuild. **Do not go back down a notch just because reps fell** — only go back down for pain, or if you cannot complete 3 × 6 with clean form at the new load.
+
+⚠️ **Do not chase the top of the ladder.** N11–N15 (16–24 kg) exist for two-hand movements and future bodyweight — they are not a target. Most lifts in this plan will live between N2 and N9 for the next 12 months.
+
+### Type-specific safety — new, and it applies from the first session
+
+| Rule | Why |
+|------|-----|
+| 🔴 **Confirm the selector is fully seated and locked before every set** | A partially-engaged plate can shed mid-rep. **The worst case is the floor press: an asymmetric plate release while supine, near the face and the already-compromised left shoulder.** Check the lock, every single load change, no exceptions. |
+| 🔴 **Never drop them** | Selector dumbbells are not drop-rated — the mechanism, not just the floor, is what breaks. If a set fails, lower under control or set down to the side. |
+| ⚠️ **They are longer than the 3 kg pair** | On floor press and floor fly the handle sits higher off the ground, so **the floor stops the descent earlier than it used to.** That is a safety feature, not a lost rep — do not chase the old depth by flaring the elbows. |
+| ⚠️ **Return to the cradle to change load** | Changing load mid-superset costs ~15–20 sec for the pair. **This is inside the intended zero-rest transition, so it is not a real time cost and the supersets do not need restructuring** — but do not let it drift into a 60-sec rest. |
+
 > 🔴 **Two constraints that get MORE important as load climbs, not less:**
 > - **Rows must be supported.** Free bent-over rowing at 10 kg loads the lumbar spine — the exact pattern the SI joint history rules out. Single-arm with the free hand braced on a chair/bench, or chest-supported only.
 > - **Warmup is mandatory on all pressing.** 14+ year left shoulder issue; Jul 29 already demonstrated the cost of skipping it.
+
+> ✅ **PAIR confirmed 2026-09-13.** All two-hand prescriptions in this file stand as written.
+
+### 🔴 "For how many months do I have to change the weight?" — answered 2026-09-13
+
+**Short answer: you never stop, and the ladder runs out before you do.** Those are two different things and both matter.
+
+**There is no "every X months" schedule, by design.** Load changes when the *reps* say so, and this file explicitly forbids progressing two categories in the same week. **Every lift is on its own clock.** Working estimate below assumes ~1 rep added per week per lift early on, slowing later — **6–8 weeks per notch at the bottom of the ladder, 8–12 weeks at the top.**
+
+| Group | Lifts | Notches left | How long you keep changing it |
+|-------|-------|--------------|-------------------------------|
+| 🔴 **Already finished** | **Tricep kickback** (at N4 cap) | **0** | **Never again.** Not a strength limit — the spine cap ended it |
+| ⚠️ **One more, then finished** | **Rear delt fly** (N3 → N4 cap) | **1** | **~2 months, then never again** |
+| ✅ **Fast — outgrows the dumbbell** | **Glute bridge, calf raise, wall sit** | 9–11 | **~6–15 months to reach 24 kg**, then the *equipment* becomes the limit, not you |
+| **Medium** | **One-arm row, 1-leg glute bridge** | 4–12 | **~12–18 months** of regular changes |
+| **Slow** | **Shoulder press, bicep curl, floor fly, wrist curls** | 3–4 | **~6–10 months** of regular changes, then increases become rare and small |
+| 🔴🔴 **Spine-gated, not strength-gated** | **Step-up** | ~4 practical | **6–12 months to N5**, and **anything past N9 needs ortho clearance.** Two clean weeks per notch is a floor, not a target |
+
+**So the realistic picture, across all ~11 loaded lifts:** something changes somewhere **every 1–2 weeks**, even though each individual lift changes only every 6–12 weeks. **It will feel continuous. That is normal and it is the plan working.**
+
+> 🔴 **Correction to the equipment note above — I overstated this on 2026-09-13.** That note said 24 kg *"outlasts every load this plan will ever prescribe."* **That is wrong for three lifts.** Glutes and calves are among the strongest muscles you have; a loaded glute bridge at 24 kg per hand is not a hard set for a trained 70 kg adult, and a single-leg calf raise will get there sooner. **You will outgrow this dumbbell on those lifts, probably inside a year.**
+>
+> ✅ **This does not mean buying more.** When a lift tops out at N15, progression moves to **reps, tempo, pauses and single-limb variants** — a 3-second pause at the top of a glute bridge at 24 kg is harder than a fast rep at 30 kg. **The dumbbell stops being the variable; it does not stop the progression.**
+
+> ⚠️ **The literal answer to "how many months" is: for the rest of your life, and that is the intended outcome.** [[healthspan-80]] Pillar 1 treats resistance training as **"a permanent fixture, not a phase"** — muscle and bone are lost continuously from your 30s onward, so progressive load is maintenance, not a project with an end date. **What ends in 1–2 years is the phase where the number on the dial keeps climbing. The training does not end.**
+
+> 🔴 **One consequence for the poster ([[workout-infographic-prompt]]): "regenerate every ~6 weeks" is too slow.** At one notch change somewhere every 1–2 weeks, a 6-week-old poster carries **3–6 wrong numbers.** **Regenerate monthly for the first ~6 months, then quarterly once the fast lifts have topped out.**
+
+> ⚠️ **What this purchase does NOT fix, and it is still the biggest open item in this file:** the 2026-08-14 activity-triggered spine pain has never been reported to Dr. Rajapandian, and sulfasalazine status is still "likely stopped — confirm with ortho". **Heavier lower-body load makes that appointment more urgent, not less.** Progress the floor and seated lifts freely; hold step-ups to the slow rule below until that conversation happens.
 > **Session order:** Warmup (3.5 min) → Workout A or B → **Daily 5-min block (Spine Stabiliser 3 min + Balance 2 min)**. 🔴 **The daily block is NOT part of Workout A or B — it runs every day regardless, and on strength days it simply lands at the end.** It is not listed in the A/B tables (corrected 2026-09-06 — see below); don't do it twice.
 **Goal:** Muscle gain for BMI 17.9 (60.6 kg, Aug 17 2026) → Phase 1: 70kg (BMI 20.7, **the floor**) · Phase 2: 75kg (BMI 22.2, **the actual target**). See [[bmi-increase-plan]].
 **Long-horizon purpose:** This is the execution layer for Pillars 1–3 of [[healthspan-80]] — muscle, aerobic fitness, and bone density for active independence at 80. Resistance training is a permanent fixture, not a phase.
@@ -57,10 +123,10 @@ Both recorded spine events were **low-load**:
 
 | Category | Exercises in this plan | Spinal load | Progression speed |
 |----------|------------------------|-------------|-------------------|
-| **Supine / on the floor** | Floor press, floor fly, hamstring slider curl, glute bridge, single-leg glute bridge, dead bug | **None — the floor takes it** | ✅ **Full speed.** Standard rule: 3 × 12 clean, no sensation → +1.25 kg/side |
+| **Supine / on the floor** | Floor press, floor fly, hamstring slider curl, glute bridge, single-leg glute bridge, dead bug | **None — the floor takes it** | ✅ **Full speed** — one notch per double-progression cycle (see The Load Ladder) |
 | **Seated, back supported** | Seated shoulder press, wrist curl | **None** | ✅ **Full speed**, same rule. Cue already in the plan: *press straight up, don't arch the lower back* |
 | **Standing, vertical** | Bicep curl, single-leg calf raise | Bodyweight + dumbbells, vertical and brief | ✅ **Full speed** |
-| **Hinged forward, holding weight** | Seated rear delt fly, tricep kickback | 🔴 **This is the lumbar-loading category** | ⚠️ **Cap at ~5–6 kg.** Small-muscle work — it never needs to be heavy, so there is no reason to buy spinal load you don't need |
+| **Hinged forward, holding weight** | Seated rear delt fly, tricep kickback | 🔴 **This is the lumbar-loading category** | ⚠️ **HARD CAP: N4 (5.5 kg).** The old wording was "~5–6 kg", which on this ladder resolves to N4 = 5.5 kg — **N5 (6.5 kg) is over the cap, do not use it here.** Small-muscle work never needs to be heavy, so there is no reason to buy spinal load you don't need |
 | **Loaded single-leg** | **Step-up** | 🔴🔴 **Frontal-plane asymmetric pelvic loading** | 🔴 **Slowest in the plan — see below** |
 
 ### 🔴 The step-up is the one this question was right about
@@ -70,6 +136,10 @@ Single-leg support means the pelvis must resist dropping on one side, under the 
 Choosing the step-up over the squat was the right call and stands. **But it needs a slower progression than the pressing lifts, and until now nothing in this file said so.**
 
 **Step-up progression rule:** add weight only after the current load has been clean for **two full weeks with zero lower-back or sacral sensation** — not after one clean session. If any sacral sensation appears, drop back a load and hold there; do not push through it.
+
+🔴 **Updated 2026-09-13 — the notch ladder makes this rule harder, not easier, and the entry point changed.** **Start weighted step-ups at N1 (2.5 kg), not at the old 3 kg.** N1 is the only load on this dumbbell *below* what was previously being held, and it is the correct entry precisely because the next step up is **+40%**.
+
+⚠️ **Read the % column before every step-up increase.** At two weeks per notch, N1 → N5 (2.5 → 6.5 kg) is a **minimum eight-week progression**, and that is the intended pace. **The two-clean-weeks rule was written assuming small plate jumps; on 18–40% notches it is the bare minimum, not a conservative buffer.** If a notch is not clean after two weeks, hold it for a third — the timeline is not the constraint here, the SI joint is.
 
 ### The four rules
 
@@ -190,23 +260,75 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 
 ## Phase 1 — Weeks 1–4 (Foundation, Spine-Safe)
 
-**Focus:** Form and control. No rushing. All bodyweight or 3kg (loads below are the *current* 3 kg figures — revise upward per the equipment table above once the adjustable set arrives).
+**Focus:** Form and control. No rushing.
+
+### 🔴 Starting Loads — set 2026-09-13, first session on the new dumbbells
+
+> ✅ **PAIR confirmed 2026-09-13.** All two-hand prescriptions in this file stand as written.
+>
+> 🔴 **Reported 2026-09-13:** *"doing workouts with 3kg dumbbell, without any muscle tension, after 15 reps only I get some muscle tension."*
+>
+> **This revises the table upward and the earlier version was too timid.** My first pass set these loads from bodyweight norms and then hedged *downward* for safety. **Your report says 3 kg sits at roughly 20–25% of working load — not the 60–70% a real working set needs.** Tension arriving at rep 15 means the set has barely started by the point a hypertrophy set should be ending. **Every upper-body number below moved up 1–3 notches.**
+>
+> ⚠️ **But be clear about what your report does and does not establish.** *"Tension at rep 15"* is not a rep max — it is where you start to *feel* something, which typically lands around half to two-thirds of the way to actual failure. **So it rules out the low notches confidently; it does not pin the right one.** The numbers below are multipliers applied to 3 kg (**~2.5× for isolation, ~3–4× for compound**), and they still have to be tested.
+
+> 🔴 **Correct the target while we're here: "muscle tension" is not what you are aiming for.** The target is **proximity to failure — reps 10–15 should be genuinely hard, with 2–3 reps left in the tank at the end of the set.** If a set ends and you could clearly have done 8 more, the load is wrong no matter what you felt at rep 15.
+
+> ⚠️ **This is still a CALIBRATION week, not a progression week.** For each lift: **if rep 10 is not genuinely hard, go up a notch; if you cannot reach 8 with clean form, go down one.** Set the true notch in session 1, then leave load alone until the double-progression rule fires.
+>
+> 🔴 **Do not calibrate everything in one session.** The "never progress two categories in the same week" rule holds. **Calibrate the supine and seated lifts first** (zero spinal load). **The step-up and the hinged lifts are NOT calibrated against your rep report at all** — see the two notes under the table.
+
+| Exercise | Category | **Start at** | Was (first pass) | Working range | Notes |
+|----------|----------|--------------|------------------|---------------|-------|
+| **One-arm supported row** | Braced | **N9 · 11.5 kg** | ~~N5~~ | N9–N12 | 🔴 **Biggest jump on the table.** Back is the largest muscle group and takes the most load. **This also hits the N9 swap trigger immediately — see the session-1 test below** |
+| **Floor dumbbell chest press** | Supine | **N7 · 9 kg** | ~~N5~~ | N7–N11 | Compound. **Still variety, not load** — a push-up is ~40 kg, this is 18 kg |
+| **Bicep curl** | Standing vertical | **N6 · 8 kg** | ~~N4~~ | N6–N9 | Your report implicates curls most directly — 3 kg curls were the clearest dead lift in the plan |
+| **Seated shoulder press** | Seated | **N5 · 6.5 kg** | ~~N4~~ | N5–N8 | 🔴 **Deliberately one notch under what the multiplier suggests. 14-year left shoulder — this is the one lift where the injury history outranks the rep report.** Test N6 only after two clean weeks |
+| **Wrist curl** (palm up) | Seated | **N5 · 6.5 kg** | ~~N3~~ | N5–N8 | Forearm flexors are stronger than people expect |
+| **Floor dumbbell fly** | Supine | **N4 · 5.5 kg** | ~~N3~~ | N4–N7 | 🔴 **Smallest increase on purpose.** A fly is a long-lever isolation move at maximum shoulder stretch — **the single easiest lift here to injure a shoulder on.** Flies stay light by design forever |
+| **Tricep kickback** | 🔴 Hinged | **N4 · 5.5 kg** | ~~N3~~ | **AT CAP — cannot progress** | See the dead-end note below |
+| **Seated rear delt fly** | 🔴 Hinged | **N3 · 4.5 kg** | ~~N2~~ | N3–N4 · **capped** | See the dead-end note below |
+| **Reverse wrist curl** (palm down) | Seated | **N2 · 3.5 kg** | ~~N1~~ | N2–N5 | Extensors run ~half the flexors — **that is why this is three notches below the wrist curl, not equal to it as it was for 7 weeks** |
+| **Step-up (loaded)** | 🔴🔴 Single-leg | **N1 · 2.5 kg** | N1 — **UNCHANGED** | N1–N5, two clean weeks per notch | 🔴🔴 **See below — do not touch this one** |
+| **Lateral raise** *(Phase 3)* | Standing vertical | N3 · 4.5 kg | ~~N2~~ | N3–N5 | Not yet — Phase 3 |
+
+> 🔴🔴 **THE STEP-UP DOES NOT MOVE, AND THIS IS THE MOST IMPORTANT LINE ON THE PAGE.** Every other load above went up because *muscle tension* was the limiting factor. **On the step-up the limiting factor is not muscle — it is the SI joint**, which is loaded by frontal-plane asymmetry regardless of how your quads feel. **"I feel no tension" is not evidence the pelvis is tolerating it.** N1, two clean weeks per notch, unchanged.
+
+> 🔴 **NEW FINDING — the hinged cap turns two exercises into dead ends, and both have a fix.** Tricep kickback now starts **at** the N4 spine cap, and rear delt fly is one notch below it. **That means neither can ever progress by load again.** They are not "slow" — they are finished. **Both have a supine substitute that removes the cap entirely, because the floor takes the spinal load:**
+>
+> | Capped (hinged) | Replace with | Why it works |
+> |---|---|---|
+> | Tricep kickback (stuck at N4) | **Floor tricep extension** — lie supine, upper arms vertical, lower the dumbbells toward the forehead, extend | Supine category = **full-speed progression, no cap.** Also a far better triceps stretch than a kickback |
+> | Seated rear delt fly (capped N4) | **Chest-supported rear delt fly** — lie face-down on a bed/bench edge, arms hanging, raise out to the sides | Chest supported = no hinge = **no lumbar load, no cap** |
+>
+> **Recommendation: make both swaps.** They cost nothing, remove a permanent ceiling, and stay inside the spine rules. **If you keep the hinged versions, accept that they are maintenance work and stop expecting them to grow anything.**
+
+> 🔴 **NEW REQUIREMENT — warmup SETS, on top of the 3.5 min warmup.** At 3 kg you could start cold into a working set. **At N5–N9 you cannot, and the shoulder press and floor press are where this bites.** Before the first working set of **each pressing lift and the row**: one set of 8 at **two notches below** the working load. **Adds ~2–3 min. This is not the 3.5 min warmup — it does not replace it.** Session estimate moves to **A ≈ 39 min, B ≈ 43 min** — B is now close to the 45 min cap, so do not add anything else to it.
+
+> ✅ **SESSION-1 TEST — settle the one-arm row question immediately.** Last revision held the one-arm row out of Workout A until it reached **N9 (11.5 kg)**, because below that the inverted row is heavier per arm. **Your rep report puts the starting estimate at exactly N9.** So: **test 3 × 10 one-arm supported row at N9 in session 1.** Free hand braced on a chair, back flat, no rotation. **If 10 clean reps land, the trigger is met and the one-arm row returns to Workout A next session, replacing the underhand inverted row.** If it doesn't, stay with the inverted row and retest monthly.
+
+> 🔴 **Reality check on the floor chest press — it is NOT an upgrade over the push-up, and this file previously implied it would be.** A standard push-up puts roughly **65–70% of bodyweight through the hands ≈ 40 kg** at 60.6 kg. A two-dumbbell floor press at N6 (8 kg) is **16 kg total** — about *40% of a push-up*. **The dumbbell press does not match a push-up until roughly N13 (20.5 kg per hand), which is years away.**
+>
+> **Therefore: the 6-level push-up ladder remains the primary chest driver, and the dumbbell arrival changes nothing about that.** You are still on Level 1 as of Sep 13. **Moving to Level 2 (diamond) is a bigger chest stimulus than anything the dumbbells can currently offer for chest.** Add the floor press for *variety of stimulus* — independent arms, different ROM, floor-limited stretch — not for load.
 
 ### Workout A — restructured for chest / forearms / abs (revised 2026-08-14)
 
-**Run in blocks, not as a straight list.** Total **~36 min** — warmup + Blocks 1–4. **The daily 5-min block (spine stabiliser + balance) runs after this, as it does every day; it is not counted here and is not part of Workout A.**
+**Run in blocks, not as a straight list.** Total **~40.5 min** — warmup + Blocks 1–4. **The daily 5-min block (spine stabiliser + balance) runs after this, as it does every day; it is not counted here and is not part of Workout A.**
+
+> ⚠️ **Retimed 2026-09-13: ~36 → ~40.5 min.** +1 min for pressing warmup sets, +3 min for the eccentric step-down. **Still inside the 45 min cap but the headroom is nearly gone — if it overruns, alternate the step-down with the step-up week by week rather than cutting anything.**
 
 | Block | Exercise | Sets × Reps | Cue | Time |
 |-------|----------|-------------|-----|------|
 | **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
 | **1 — Push/pull superset** | **Floor push-up** | 3 × 15 | Full range, chest touches floor. **Primary chest overload — progress through the ladder below.** | 9 min |
 | | ↳ paired with **Inverted row — UNDERHAND / close grip** (bar at hip-to-waist height) | 3 × 10 | **REPLACED the 3kg one-arm row, 2026-08-28.** At 3kg the row ran 25–30 reps to failure = endurance, not growth. **Underhand grip here is deliberate — elbows track close to the body, which makes the LATS lead.** Workout B uses the wide overhand version for rhomboids/mid-traps, so the two sessions hit different muscles with the same movement. Body straight, braced, pull chest to bar. **Feet closer in = easier, walked further out = harder.** | 9 min |
-| **2 — Chest + arm superset** | **Floor dumbbell fly** (3kg) | 3 × 12 | **NEW — chest.** Lying on floor, arms wide in a shallow arc, slight elbow bend. Floor stops the stretch — no shoulder overextension. Flies are done light by design, so 3 kg works here. | 7 min |
-| | ↳ paired with **Dumbbell bicep curl** (3kg) | 3 × 12 | Standing, controlled — no swinging at the shoulder | |
-| **3 — LEG BLOCK (real sets, real rest)** — restructured 2026-08-28, no longer a circuit | **Step-up** (step ~30–40cm — raise it from the old 20cm) | 3 × 12/side | **Primary thigh builder.** Step up with control, then **lower over 3–4 seconds** — the slow descent is the whole point. Don't push off the bottom foot. **Hold the 3kg dumbbells once 3 × 12 is clean; go to eccentric step-downs when they aren't enough.** 🔴 **Load here progresses SLOWER than anywhere else in the plan — two clean weeks with zero sacral sensation before each increase. See "Load Progression by Category" above.** | 14 min |
+| **2 — Chest + arm superset** | **Floor dumbbell fly** — **N4 · 5.5 kg** | 3 × 8 → build to 3 × 15 | Lying on floor, arms wide in a shallow arc, slight elbow bend. Floor stops the stretch — no shoulder overextension. **The new dumbbells are longer, so the floor stops you sooner than the 3 kg pair did — don't chase the old depth.** ⚠️ **Raised only one notch on purpose — max-stretch shoulder position, highest injury risk per kg in the plan.** | 7 min |
+| | ↳ paired with **Dumbbell bicep curl** — **N6 · 8 kg** | 3 × 8 → build to 3 × 15 | Standing, controlled — no swinging at the shoulder. 🔴 **Jumped two notches on the 2026-09-13 rep report — 3 kg curls were the clearest dead lift in the plan.** ⚠️ **Fly N4 → curl N6 is a two-notch dial change; ~20 sec for the pair. That IS the transition, don't turn it into a rest.** | |
+| **3 — LEG BLOCK (real sets, real rest)** — restructured 2026-08-28, no longer a circuit | **Step-up** (step ~30–40cm — raise it from the old 20cm) | 3 × 12/side | **Primary thigh builder.** Step up with control, then **lower over 3–4 seconds** — the slow descent is the whole point. Don't push off the bottom foot. **🔴 Load from 2026-09-13: start at N1 · 2.5 kg per hand — NOT the old 3 kg.** N1 is deliberately *below* the previous load because the next notch up is +40%. **Two clean weeks with zero sacral sensation before every single increase — this is the slowest progression in the plan and the notch sizes make it slower still. See "Load Progression by Category" above.** | 14 min |
 | | ↳ paired with **Hamstring slider curl** | 3 × 12 | **NEW — the plan had zero direct hamstring work before this.** Heels on a towel on smooth floor, hips lifted in a bridge, slide heels out slowly and pull back in. Keep hips up the entire set. Spine flat, fully supine. | |
-| | **Wall sit** | 2 × 45–60 sec | Back flat against wall, thighs parallel. **Progress to single-leg (20–30 sec/side) once 60 sec is easy** — don't just keep adding seconds. | |
-| | ↳ paired with **Single-leg calf raise** | 2 × 15/side | **Upgraded from two-leg.** Full range, slow lowering, wall for balance. | |
+| | **Weighted wall sit** — **N4 · 5.5 kg** each hand | 2 × 45–60 sec | Back flat against wall, thighs parallel, **dumbbells hanging at your sides.** 🔴 **Loaded 2026-09-13** — back is flat on the wall and nothing moves, so this is spine-safe to load. **Progress to single-leg (20–30 sec/side) once 60 sec is easy** — don't just keep adding seconds. | |
+| | ↳ paired with **Single-leg calf raise** — **N6 · 8 kg** (one dumbbell, free hand on wall) | 2 × 15/side | 🔴 **Loaded 2026-09-13.** This file admitted bodyweight calf raises "stopped being a stimulus" on 2026-08-28 and then left them at bodyweight for six weeks. Standing-vertical category — **full-speed progression.** Full range, slow lowering. | |
+| | **Eccentric step-down** — bodyweight | 2 × 8/side | 🔴 **Added 2026-09-13 — this was described on 2026-08-28 as "the best pure quad builder available without equipment" and then never put in the table.** Stand on the step, lower the *other* foot to the floor over **4 slow seconds**, tap, come back up. The working leg is the one on the step. **Alternate weeks with the step-up if the block runs long.** | |
 | **4 — Upper back finisher** | **Prone Y-T-W raise** | 2 × 8 each position | **NEW 2026-08-28 — the only lower-trap work in the plan.** Face down, forehead on a towel, **chest stays on the floor**, lift arms only: Y (overhead 45°), T (straight out), W (elbows bent, blades squeezed down). ⚠️ **Chest off the floor = this has become a superman, which is banned.** Arms only. | 3 min |
 
 > 🔴 **Core and balance removed from this table 2026-09-06 — they were being done twice.** Dead bug, side plank and bird dog became a **daily** block on 2026-08-28, but the old Workout A core block was never deleted, so a Workout A day prescribed all three twice in the same session. Same for balance. **Nothing has been cut from the week — the work moved, it didn't disappear.** All five movements now live in one place: the **Daily Spine Stabiliser Block** and **Balance Training** below, run at the end of every day including this one. Frequency actually went **up** (bird dog and side plank now 7×/week instead of ~1.5×).
@@ -219,24 +341,25 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 
 ### Workout B — restructured for the 45 min cap (revised 2026-08-11)
 
-**Run in blocks, not as a straight list.** Total **~39.5 min** — warmup + Blocks 1–6. **The daily 5-min block (spine stabiliser + balance) runs after this, as it does every day; it is not counted here and is not part of Workout B.**
+**Run in blocks, not as a straight list.** Total **~42.5 min** — warmup + Blocks 1–4b, 6. **The daily 5-min block (spine stabiliser + balance) runs after this, as it does every day; it is not counted here and is not part of Workout B.**
+
+> ⚠️ **Retimed 2026-09-13: ~39.5 → ~42.5 min.** +1 min pressing warmup set, **+8 min for the new glute bridge leg block**, −3 min forearms moved to EFX days, −4 min from the hip circuit shrinking to three stations. **2.5 min under the cap — Workout B is now full. Do not add anything else to it.**
 
 | Block | Exercise | Sets × Reps | Cue | Time |
 |-------|----------|-------------|-----|------|
 | **Warmup** | 5-move sequence (see below) | — | Mandatory, never skipped | 3.5 min |
-| **1 — Vertical push/pull superset** | **Seated dumbbell shoulder press** (3kg) | 3 × 12 | Seated = spine supported. Press straight up, don't arch lower back | 9 min |
+| **1 — Vertical push/pull superset** | **Seated dumbbell shoulder press** — **N5 · 6.5 kg** | 3 × 8 → build to 3 × 15 | Seated = spine supported. Press straight up, don't arch lower back. 🔴 **Held one notch BELOW what the 2026-09-13 rep report suggests — 14-year left shoulder, and this is the one lift where injury history outranks the rep report. Test N6 only after two clean weeks.** 🔴 **Warmup SET required: 1 × 8 at N3 before the working sets.** **Confirm the selector is locked — a plate shedding overhead is the worst failure mode available.** | 9 min |
 | | ↳ paired with **Pull-up progression — MOVE TO LEVEL 4 NEGATIVES** (bar) | 3 × 5 negatives | 🔴 **Stop parking on dead hangs — ~18 days at Levels 1–2 produced no lat stimulus by the plan’s own admission.** Step/jump to the top, lower over **5 seconds**. This is real lat work today. Drop back to L3 scapular pull-ups only if the left shoulder objects. No rest between press and bar. | |
 | **2 — Horizontal pull (mid-back focus)** | **Inverted row — WIDE / overhand grip** (bar) | 3 × 10 | ⚠️ **Set the bar at HIP-TO-WAIST height, not below knee** — lower is harder, not easier. Use foot position as the difficulty dial. **Wide overhand grip here is deliberate — elbows flare out, which shifts the work to RHOMBOIDS and MID-TRAPS.** Workout A uses the underhand/close version for lats. Same movement, two different targets across the rotation. | 5 min |
-| **3 — Upper accessory superset** | **Seated rear delt fly** (3kg) | 3 × 12 | Lean forward from seated, elbows out to sides — builds upper back posture | 7 min |
-| | ↳ paired with **Dumbbell tricep kickback** (3kg) | 3 × 12 | Hinge forward, upper arm parallel to floor, extend only the forearm | |
-| **4 — Hip circuit** — 2 rounds, 15 sec between stations | **Glute bridge** | 15 | Squeeze glutes at top, hold 2 sec. *(Bird dog moved out of this circuit 2026-08-28 — it now runs daily in the Spine Stabiliser Block, at 3× the frequency it had here.)* | 10 min |
-| | **Clamshell** | 15/side | Lie on side, knees bent 45°, feet together — lift top knee. Directly stabilises SI joint. | |
-| | **Single-leg glute bridge** | 10/side | One leg extended — more glute/hamstring load, zero spine stress | |
+| **3 — Upper accessory superset** | **Seated rear delt fly** — **N3 · 4.5 kg** *(→ switch to **chest-supported** version, uncapped)* | 3 × 8 → build to 3 × 15 | Lean forward from seated, elbows out to sides. 🔴 **HINGED — hard cap N4 (5.5 kg), one notch of room left, then it is finished as a growth lift.** ✅ **Fix: do it face-down on a bed/bench edge instead — chest supported removes the hinge, removes the cap.** | 7 min |
+| | ↳ paired with **Dumbbell tricep kickback** — **N4 · 5.5 kg** *(→ switch to **floor tricep extension**, uncapped)* | 3 × 8 → build to 3 × 15 | Hinge forward, upper arm parallel to floor, extend only the forearm. 🔴 **HINGED — this now starts AT the N4 cap, so it can never progress by load again.** ✅ **Fix: floor tricep extension — supine, upper arms vertical, lower toward the forehead. Full-speed progression and a better stretch.** | |
+| 🔴 **4a — LEG BLOCK (real sets, real rest)** — new 2026-09-13 | **Weighted glute bridge / floor hip thrust** — **N6 · 8 kg** | 3 × 12 | 🔴 **Pulled OUT of the circuit into proper sets — this is now the main leg movement in Workout B and the biggest single leg addition in the plan.** Dumbbell across the hips, **towel or mat under it** (bare metal on the hip bones is the actual limiter, not strength). Feet flat, drive through the heels, squeeze at the top for 2 sec, lower under control. **Supine — the floor takes all spinal load, so this progresses at FULL SPEED.** Expect it to reach N11+ faster than anything else here. **60–90 sec rest.** | 8 min |
+| | ↳ paired with **Weighted single-leg glute bridge** — **N3 · 4.5 kg** | 3 × 10/side | One leg extended, dumbbell on the hip of the working side. More glute/hamstring load, zero spine stress. | |
+| **4b — Hip circuit** — 2 rounds, 15 sec between stations | ~~Glute bridge~~ *(moved to 4a)* · **Clamshell** | 15/side | Lie on side, knees bent 45°, feet together — lift top knee. Directly stabilises SI joint. *(Bird dog moved out 2026-08-28 — now daily. Glute bridges moved to 4a 2026-09-13 — they were activation work sitting where a growth lift belonged.)* | 6 min |
 | | **Side-lying leg adduction** | 15/side | Bottom leg raises straight up. Inner thigh. Hips stacked, no rolling. | |
 | | **Prone hip extension** | 12/side | Face down, one leg lifts straight up, hold 1 sec. Squeeze glute, not back. | |
-| **5 — Forearms** | **Wrist curl** (3kg) | 2 × 15 | **Moved here from Workout A (2026-08-28)** to free time for the leg block. Seated, forearm resting on thigh, palm up, hand past the knee. Curl the wrist only. | 3 min |
-| | ↳ superset **Reverse wrist curl** (3kg) | 2 × 15 | Same position, palm down. Trains the extensors — the side that gets neglected. | |
-| **6 — Finisher** | **Single-leg calf raise** | 2 × 15/side | **Upgraded from two-leg bodyweight (2026-08-28)** — bodyweight two-leg raises stopped being a stimulus. Slow lowering, wall for balance. | 3 min |
+| ~~**5 — Forearms**~~ | 🔴 **MOVED OUT 2026-09-13 → now an EFX/rest-day add-on** | — | **Wrist curl N5 · 6.5 kg and reverse wrist curl N2 · 3.5 kg, 2 × 15 each.** This file already called them *"low-priority accessory work"*; forearms recover fast, tolerate daily frequency and need no warmup. **Doing them on EFX days frees the 3 min that pays for the glute bridge block — and raises their frequency from ~1.5×/week to 2–3×.** ⚠️ **Three notches apart — run all sets of one before the other, don't alternate.** | ~~3 min~~ → 0 |
+| **6 — Finisher** | **Single-leg calf raise** — **N6 · 8 kg** (one dumbbell, free hand on wall) | 2 × 15/side | 🔴 **Loaded 2026-09-13** — bodyweight stopped being a stimulus six weeks ago. Standing-vertical category, full-speed progression. Slow lowering. | 3 min |
 
 > 🔴 **Balance removed from this table 2026-09-06** — it is a daily block, not a Workout B block. It still runs at the end of this session, exactly as before; it is just no longer listed twice. See **Balance Training** below.
 
@@ -260,7 +383,32 @@ Progressive loading builds the paraspinal muscle that supports the spine and the
 |---|----------|-------------|-----|
 | 1 | **Bird dog** | 2 × 10/side | Opposite arm + leg, hold 3 sec. Spine neutral throughout — imagine balancing a glass of water on your lower back. |
 | 2 | **Dead bug** | 2 × 10/side | Lower back flat on the floor the entire time. If it arches, reduce the range. |
-| 3 | **Side plank** | 2 × 20–30 sec/side | Knees first, progress to feet. Hips stacked and lifted. |
+| 3 | ~~**Side plank**~~ → **Side-lying hip abduction** | 2 × 15/side | 🔴 **REPLACED 2026-09-13 — side plank removed, see below.** Lie on your side, bottom knee bent for base, **top leg straight, raise it ~30–40°, lower slowly.** Hips stacked, no rolling back. **Your whole spine stays supported on the floor — that is the entire point of the swap.** |
+
+### 🔴🔴 Side plank removed 2026-09-13 — and the reason it was removed matters more than the removal
+
+**Reported:** *"remove the side plank from my exercise plan, it's giving me lower back pain."* **Done — it is out of the daily block, effective immediately.**
+
+⚠️ **But do not file this as "found an exercise I don't like." This is the SECOND activity-triggered lower-back pain report in a month**, and the pattern is what matters:
+
+| Date | Trigger | Load | Outcome |
+|------|---------|------|---------|
+| **2026-08-14** | Standing EFX at ~15 min | Bodyweight | Worked around by going seated — **never reported to the ortho** |
+| **2026-09-13** | **Side plank** | **Bodyweight** | Removed today |
+
+🔴 **Both are bodyweight. Both appeared after structured training began Jul 25. And the side plank is specifically an exercise chosen BECAUSE it is the standard protocol for back-pain populations** — this file argued it was "the most directly relevant of the three to your condition." **An anti-movement exercise designed for inflamed spines is now producing pain in yours.** That is not a form note.
+
+🔴 **This escalates the Dr. Rajapandian appointment from overdue to the top of the list.** [[profile]] still lists sulfasalazine as *"likely stopped — confirm with ortho."* **If the drug controlling seronegative spinal inflammation was stopped, and two separate bodyweight activities have since started producing lower-back pain, that sequence is the finding.** Bring both dates.
+
+**Updated question to ask:** *"Standing elliptical caused lower back pain at 15 minutes in August. Now a side plank does too. Both bodyweight, both since I started training in July. Is this mechanical, or is the inflammation active again? Am I still supposed to be on sulfasalazine?"*
+
+### What the swap costs, honestly
+
+**Side plank was the McGill big three's anti-lateral-flexion component — the one that trains the lateral chain stabilising the pelvis against exactly the asymmetric loading that started the SI problem.** Removing it leaves a real gap and nothing fully replaces it.
+
+**Side-lying hip abduction is the closest safe substitute, and it is a defensible choice on the merits:** it trains **gluteus medius**, the primary frontal-plane pelvic stabiliser, and glute med weakness is a recognised contributor to SI joint dysfunction. **The difference is that your spine rests on the floor instead of being cantilevered horizontally under its own weight.**
+
+⚠️ **What it does not do:** it loads the hip, not the trunk. **True anti-lateral-flexion is now untrained.** The loaded replacement is a **suitcase hold** (stand upright holding one dumbbell, 20–30 sec/side) — spine vertical, no cantilever. 🔴 **Gated: do not start it before the ortho visit.** A one-sided load through the pelvis is the wallet-injury pattern in miniature, and that call is not mine to make while two unexplained pain events are open.
 
 > ⛔ **What is deliberately NOT in this block, and must not be added: supermans, back extensions, hyperextensions, or any loaded spinal extension.** With seronegative spinal inflammation and SI joint history, loading the spine into extension is the wrong direction — the entire design principle here is anti-movement, not extension strength. **The absence of direct lower-back "strengthening" work in this plan is intentional, not an oversight.**
 
@@ -433,7 +581,16 @@ Move to the next level when current level feels easy for 3 sets. Run Levels 1–
 
 One-arm dumbbell row (Workout A) is a lat exercise, and it's running at **3 kg**. For a 60 kg frame, that's below the threshold that produces adaptation. **Getting to 8 kg will do more for your lats over the next month than any new bar exercise.** This upgrade was flagged as due by Week 3 and is now overdue — see the equipment note at the top of this file.
 
-> **Honest ranking of lat levers, best to worst, for the next 4 weeks:** 8 kg dumbbell row > inverted row > pull-up negatives (Level 4) > dead hangs. The bar is a good addition; it is not the bottleneck.
+> 🔴 **RETRACTED 2026-09-13. This ranking was wrong and the dumbbell purchase is what exposed it.** An 8 kg one-arm row is **~8 kg per arm**; the inverted row already in the plan is **~15–18 kg per arm** at hip height. **The row that was called the top lat lever is roughly half the load of the one it was supposed to beat.** Corrected ranking below.
+>
+> **Honest ranking of lat levers, best to worst, as of 2026-09-13:**
+> 1. **Pull-up negatives (Level 4)** — real eccentric lat loading at full bodyweight, free, and **still not started after ~5 weeks of being prescribed**
+> 2. **Band-assisted pull-ups (Level 5)** — needs the ~₹300–500 band, **still unbought, now the single cheapest unlock left in this plan**
+> 3. **Inverted row** — working today, progresses by foot position
+> 4. **One-arm dumbbell row** — only overtakes the inverted row at **N9 (11.5 kg)**
+> 5. **Dead hangs** — near-zero lat stimulus, do not park here
+>
+> 🔴 **The uncomfortable read: the dumbbells were the #1 flagged priority for a month, and for the LATS specifically they rank fourth.** The two levers ahead of them cost ₹0 and ₹500 and have both been available the whole time. **The equipment was the right buy for pressing, legs and arms — it was never the lat bottleneck.**
 
 ### 🔴 Back frequency audit + fix (2026-08-28)
 
@@ -451,6 +608,16 @@ One-arm dumbbell row (Workout A) is a lat exercise, and it's running at **3 kg**
 **Fix applied — free, no purchase required:** **the 3kg one-arm row in Workout A was replaced with the inverted row.** Because the bar mounts low (confirmed 2026-08-28), real back stimulus goes from **1×/week → 3×/week** immediately. **This is rated the highest-value change available today — above every leg change made in the same revision** — because it converts two dead sessions into live ones at zero cost.
 
 ⚠️ **The one-arm row is not deleted permanently — it returns when the adjustable dumbbells arrive.** At 8–12 kg it becomes the best lat exercise in the plan (per the ranking above). It was removed because 3 kg made it useless, not because the movement is wrong.
+
+> 🔴 **OVERRIDDEN 2026-09-13 — the dumbbells arrived, and the one-arm row does NOT come back yet. The arithmetic above was never done.**
+>
+> **An inverted row at hip-to-waist height moves roughly 50–60% of bodyweight through the hands — at 60.6 kg that is ~30–36 kg total, or ~15–18 kg per arm.** A one-arm dumbbell row at the calibrated start of **N5 (6.5 kg) is about 40% of that.** Even **N6 (8 kg) — the load this whole file has been waiting for since Aug 15 — is roughly half the inverted row's per-arm load.**
+>
+> **So swapping the inverted row out for the one-arm row today would be a load *downgrade* dressed up as an upgrade.** The "8 kg makes it the best lat exercise in the plan" claim was estimated against the 3 kg pair, never against the bodyweight row that replaced it.
+>
+> **Swap trigger: bring the one-arm row back into Workout A at N9 (11.5 kg)** — approximately equivalent once the dumbbell row's longer range of motion is counted. **Until then Workout A keeps the underhand inverted row.**
+>
+> ⚠️ **The one real cost of waiting, and it is not nothing: the inverted row's progression is unmeasurable.** "Feet walked further out" cannot be logged as a number. The one-arm row can. **Given this log already lost five weeks of progression data (see [[exercise-log]]), that matters** — so log inverted-row foot position as a marked distance on the floor, not as a feeling.
 
 ### 🔴 Second audit (2026-08-28, same day) — "other than inverted row there is no back work"
 
@@ -483,6 +650,7 @@ One-arm dumbbell row (Workout A) is a lat exercise, and it's running at **3 kg**
 **So why does the inverted row appear in BOTH workouts? Frequency — not variety, and not clever programming.**
 - Because A and B alternate, **each workout runs ~1.5x/week.** An exercise placed in only one workout is therefore trained **1.5x/week — below the 2-3x/week that drives hypertrophy.** Putting the row in both is the only way to reach 3x/week under this rotation.
 - **The blunter reason: it is currently the only functional back exercise available.** The one-arm row is useless at 3 kg and pull-ups produce nothing until negatives take hold. **The duplication is an equipment constraint showing through, and it should end once the band and the 8 kg dumbbells arrive** - at which point A takes the one-arm row and B keeps the inverted row.
+  - 🔴 **Amended 2026-09-13:** the dumbbells arrived and **the duplication does not end yet.** The trigger is **N9 (11.5 kg) on the one-arm row, not 8 kg** — see the override note above. **The band is still unbought and is now the binding constraint on the vertical pull, not the dumbbells.**
 - **Repeating the same muscles is least problematic for the back specifically.** Bodyweight rows at 3 x 10 are not maximally fatiguing, and postural musculature tolerates high frequency well. Legs and chest would need more spacing; the back does not.
 
 **Real pattern variety comes from the vertical pull, not the grip - and the two sessions are not identical:**
@@ -546,15 +714,19 @@ The dead hang has a second benefit specific to you: it applies **gentle axial tr
 |----------|--------|--------|
 | **Dead bug** | Anti-extension (stops the lower back arching) | ✅ **Daily Spine Stabiliser Block** |
 | **Bird dog** | Anti-rotation + anti-extension | ✅ **Daily Spine Stabiliser Block** |
-| **Side plank** | Anti-lateral-flexion — quadratus lumborum and the lateral chain | ✅ **Daily Spine Stabiliser Block** |
+| ~~**Side plank**~~ | Anti-lateral-flexion — quadratus lumborum and the lateral chain | 🔴 **REMOVED 2026-09-13 — produced lower back pain.** Replaced by **side-lying hip abduction** (glute med, spine supported). ⚠️ **Anti-lateral-flexion is now an open gap** — suitcase hold is the loaded fix and is **ortho-gated** |
 
 > **Updated 2026-09-06:** all three moved out of the A/B workout tables and into the daily block, where they were already duplicated. **This is the abs programme in full — there is no separate ab work inside Workout A or B, and none is needed.**
 
 > **Why side plank specifically, and not front plank:** the three above are the well-known "big three" for back-pain populations, and you already had two of them without realising it. Side plank is the missing one — and it's the most directly relevant of the three to *your* condition, because it trains the lateral chain that stabilises the pelvis against the asymmetric loading that started your SI problem in the first place (wallet in the back pocket, one-sided pelvic pressure). Front plank was deliberately not added: it duplicates the anti-extension work dead bug already does, and costs session time for little added return.
 
-**Progression:** knees down → feet stacked → feet stacked with top arm raised → feet stacked with a slow hip dip. Advance only when the current level is held cleanly for 30 sec both sides.
+> 🔴 **Superseded 2026-09-13 — side plank removed for lower back pain.** The reasoning above was sound and the exercise still didn't work in your body. **Note what that implies: the argument for side plank was strongest precisely because of your SI history, so its failure is more informative than a random exercise failing.** Full removal note and the ortho escalation are in the Daily Spine Stabiliser Block section.
+>
+> **The big three is now a big two** — bird dog (anti-rotation) and dead bug (anti-extension) remain. **Anti-lateral-flexion is uncovered until the ortho clears a suitcase hold.**
 
-**Stop signals:** any sacral or lower-back sensation, or hips sagging. A side plank done with a dropped hip trains nothing and loads the spine — stop the set rather than hold a broken position.
+**Progression (side-lying hip abduction):** bodyweight → slow 3-sec lowering → **hold a dumbbell on the outer thigh (start N1 · 2.5 kg)**. Side-lying is a spine-supported position, so this one can be loaded without the frontal-plane risk the step-up carries.
+
+**Stop signals — unchanged and now demonstrated:** any sacral or lower-back sensation stops the set. **You applied this correctly on the side plank. Apply it the same way to the replacement** — if hip abduction also produces lower-back sensation, stop it too and tell the ortho that a *third* bodyweight movement is involved.
 
 ---
 
@@ -571,6 +743,12 @@ The dead hang has a second benefit specific to you: it applies **gentle axial tr
 | **3** | ⚠️ **Every classic thigh-mass builder is on the restricted list.** | Squats, deadlifts, lunges, leg press — all gated behind ortho clearance (Phase 3) or permanently out, per the free-squat relapse history. | Work around it with **unilateral load, tempo/eccentrics, and longer time-under-tension** — the three ways to make light loads hard. Done below. |
 
 > 🔴 **The uncomfortable honest answer: cause #2 is the binding one, and it points straight back to the equipment purchase already flagged as #1 priority since ~Aug 15 and now ~2 weeks overdue.** You cannot build thigh mass on bodyweight step-ups indefinitely, and no exercise added to this file changes that. **Weighted step-ups at 8–12 kg per hand would do more for thigh size than every new movement listed below combined.** The exercises below are the best available answer *until* that purchase happens — they are not a substitute for it.
+
+> ✅ **Purchase made 2026-09-13 — but read the timeline before expecting the legs to catch up.** The 8–12 kg figure above is **N6–N9**, and step-ups start at **N1 (2.5 kg)** under the two-clean-weeks-per-notch rule. **N1 → N6 is a minimum ten weeks; N1 → N9 is a minimum sixteen.** So the load that this section says would fix the thighs is **roughly Q1 2027, not this month.**
+>
+> 🔴 **This is the single biggest gap between what the purchase feels like and what it delivers.** Pressing and arm lifts get their real load in week one. **Legs — the group this section identifies as most under-trained — are the slowest to benefit, because the spine rule that makes step-ups safe is the same rule that makes them slow.** That is the correct trade and it should not be shortcut.
+>
+> ⚠️ **Which means the three light-load levers below are NOT superseded — they are still the main leg driver through the end of 2026.** Eccentric tempo, unilateral loading and proximity to failure stay in place at every notch. Do not drop them because there is now weight in your hands.
 
 ### The three levers that make light loads work
 
@@ -600,36 +778,89 @@ Since external load is the constraint, these three replace it. **All three apply
 
 ---
 
+## 🔴 "Other than step-up do I have any other leg exercises?" — Audit + fix (2026-09-13)
+
+**Reported:** *"other than step-up don't I have any other leg exercises? my full body shape looks odd."*
+
+### The factual answer: you have nine. The useful answer: you have one that builds anything.
+
+| Exercise | Where | Loaded? | Builds mass? |
+|----------|-------|---------|--------------|
+| **Step-up** | Workout A | ✅ N1 (2.5 kg) | ✅ **Yes — the only one** |
+| Hamstring slider curl | Workout A | ❌ bodyweight | ⚠️ Marginal |
+| Wall sit | Workout A | ❌ bodyweight | ⚠️ Isometric — endurance, not size |
+| Single-leg calf raise | Workouts A **and** B | ❌ bodyweight | ⚠️ Was a stimulus, isn't any more |
+| Glute bridge | Workout B circuit | ❌ bodyweight | ❌ Activation |
+| Single-leg glute bridge | Workout B circuit | ❌ bodyweight | ❌ Activation |
+| Clamshell | Workout B circuit | ❌ bodyweight | ❌ Stabiliser |
+| Side-lying leg adduction | Workout B circuit | ❌ bodyweight | ❌ Stabiliser |
+| Prone hip extension | Workout B circuit | ❌ bodyweight | ❌ Stabiliser |
+
+🔴 **So your perception is right, and the count is what's misleading.** Nine movements, **eight of them unloaded activation work.** This is cause #1 from the section above, still unfixed: *"legs are programmed as a stabiliser circuit, upper body is programmed for hypertrophy."* **The list looks full and does almost nothing.**
+
+⚠️ **Second problem, and it compounds the first: the real leg block is in Workout A only, which runs ~1.5×/week.** Workout B's contribution is a bodyweight circuit at 15-second rests. **Legs get roughly one growth session a week. Chest and back get three.**
+
+### The fix — the dumbbells change this, and glutes are the biggest unlock
+
+**Three additions, all supine or vertical, all zero spinal load, all full-speed progression:**
+
+| Add | Where | Start | Why it's the right call |
+|-----|-------|-------|------------------------|
+| 🔴 **Weighted glute bridge (floor hip thrust)** — dumbbell across the hips, **towel under it** | Workout B — pulled OUT of the circuit into real sets | **N6 · 8 kg** | 🔴 **The single biggest leg addition available to you.** Glutes are the largest muscle in the body and are currently trained **entirely at bodyweight.** Supine category = the floor takes all spinal load = **progress at full speed.** Expect this to climb to N11+ faster than any other lift |
+| **Weighted calf raise** — hold a dumbbell each side | Workouts A & B | **N6 · 8 kg** | Standing-vertical category, full speed. The plan already admitted bodyweight calf raises "stopped being a stimulus" — **and then left them at bodyweight anyway** |
+| **Weighted wall sit** — dumbbells hanging at your sides | Workout A | **N4 · 5.5 kg** | Back flat on the wall, zero movement. Turns an endurance hold into a loaded one |
+| **Eccentric step-down** — 4-sec lower off the step | Workout A, alternating with step-ups | bodyweight | 🔴 **Already written into this file on 2026-08-28 as "the best pure quad builder available without equipment" — and then never programmed into the actual table.** Fixing that oversight now |
+
+### 🔴 The honest part: this will fix your glutes and calves, and it will NOT fix your thighs
+
+**Quads are the muscle that makes a thigh look like a thigh, and quads are the one group the dumbbells barely help.** Every loaded quad-dominant movement is a squat pattern — squats, lunges, leg press, Bulgarian split squats — and **all of them are restricted or ortho-gated by the free-squat relapse history.** What's left is step-ups and step-downs, and **step-ups are on the slowest progression in this entire plan: two clean weeks per notch, N1 → N6 is ten weeks minimum.**
+
+**So the shape will change from the hips and calves first, and the thighs last.** That is a spine constraint, not a programming oversight, and no exercise list fixes it.
+
+⚠️ **Also worth calibrating the expectation: you are 7 weeks in at BMI 18.25.** Visible leg mass takes **months**, and upper body always shows first at low bodyweight — arms and shoulders sit under thin skin, quads are a much larger volume that needs far more tissue to look different. **Some of the "odd shape" is a 7-week timeline, not a programming error.** The programming error is real and is fixed above; both things are true.
+
+### Where the time comes from
+
+**Workout B is at ~43 min against a 45 min cap** — the glute bridge cannot just be appended. **The forearm block (wrist curls, ~3 min) moves out of Workout B to the EFX/rest days.** Justification: this file already calls wrist curls *"low-priority accessory work"*, forearms recover fast and tolerate daily frequency, and they need no warmup. **Nothing is lost from the week — the work moves, and frequency actually goes up.**
+
+---
+
 ## Phase 2 — Weeks 5–8 (Add Load)
 
 Add these exercises into A and B. Phase 1 movements continue — drop the easier sets if session runs long.
 
 | # | Exercise | Sets × Reps | Cue |
 |---|----------|-------------|-----|
-| + | **Floor dumbbell chest press** (3kg each) | 3 × 12 | Lie on floor — safer than bench, eliminates hyperextension risk |
+| + | **Floor dumbbell chest press** — **N5 · 6.5 kg** | 3 × 8 → build to 3 × 15 | Lie on floor — safer than bench, eliminates hyperextension risk. 🔴 **Confirm the selector is locked before every set — this is the lift where a shed plate lands near your face.** ⚠️ **Add for stimulus variety, NOT for load: at N5 this is ~13 kg total against a push-up's ~40 kg.** The push-up ladder stays the primary chest driver — see the reality check in Phase 1. |
 | ~~+~~ | ~~**Step-up**~~ | — | **Moved to Phase 1 (Workout A, 2026-08-14)** — now the primary squat replacement, no longer a Phase 2 addition. |
 | + | **Side-lying hip abduction** | 3 × 15/side | Lie on side, raise top leg — hip stabiliser, protects SI joint |
 | + | **Push-up progression** | 3 × 20 | Advance through the ladder above (diamond, wide, decline) |
 
 > ⚠️ **Goblet squat and Romanian deadlift removed from Phase 2** — both involve patterns (deep hip flexion / loaded hip hinge) that risk SI joint flare given the free squat relapse history. Moved to Phase 3 only, with Dr. Rajapandian K clearance required before attempting either.
 
-**Progressive overload rule:**
-1. Hit 20 reps × 3 sets comfortably → add a 4th set
-2. 4 sets × 20 reps → reduce rest from 90 → 60 → 45 sec
-3. When weight feels easy → upgrade dumbbells (see table below)
-4. After upgrading: reset to 3 × 10, build back to 3 × 15, then 3 × 20
+**Progressive overload rule — rewritten 2026-09-13 for the notch ladder:**
+
+🔴 **The old rule ("hit 3 × 20, add a 4th set, then upgrade dumbbells") is void.** It was written for a fixed 3 kg pair where load could not change, so reps and sets were the only variables available. **With 15 notches, chasing 20 reps is now the wrong move — it drifts into endurance training and leaves the growth range entirely.**
+
+1. **Every loaded lift runs 3 sets in the 8–15 rep range** (8–12 above N6 — see The Load Ladder)
+2. **Build reps at the current notch until 3 × 15 is clean** with no spine or shoulder sensation
+3. **Then go up exactly one notch and reset to 3 × 8.** Expect the rep count to fall hard — that is the notch size, not a failure
+4. **Never change two categories in the same week** — if something flares you need to know which increase did it
+5. **Bodyweight lifts (push-ups, inverted rows, pull-up ladder) keep their own progressions** — the notch ladder does not apply to them
 
 ---
 
-## Dumbbell Upgrade Path
+## Dumbbell Upgrade Path — ✅ CLOSED 2026-09-13
 
-| Current | Upgrade trigger | Next weight | Why |
+> **This section is retained for history and is no longer live.** It planned a 3 kg → 8 kg → 10–12 kg purchase sequence. **The adjustable set (2.5–24 kg, 15 settings) replaced all of it in one purchase — there are no further dumbbell purchases in this plan, ever.** Load progression is now governed by **The Load Ladder** at the top of this file.
+
+| ~~Current~~ | ~~Upgrade trigger~~ | ~~Next weight~~ | Status |
 |---------|----------------|-------------|-----|
-| **3 kg** | Row, curl, press feel easy for 3 × 15 — likely **Week 2–3** | **8 kg** | Skip 5 kg — too small a jump for your frame; 8 kg gives real stimulus |
-| **8 kg** | 3 × 15 feels easy across all exercises — roughly **Month 3–4** | **10–12 kg** | Standard progression for upper body compound work |
-| **10–12 kg** | — | Consult Dr. Rajapandian K | Heavier loads = more spinal stress; need ortho clearance before going heavier |
+| ~~**3 kg**~~ | ~~Row, curl, press feel easy for 3 × 15~~ | ~~**8 kg**~~ | ✅ Superseded — 8 kg is now simply **N6** on the dial |
+| ~~**8 kg**~~ | ~~3 × 15 feels easy across all exercises~~ | ~~**10–12 kg**~~ | ✅ Superseded — **N8–N9** on the dial |
+| **10–12 kg (N8–N9) and above** | — | **Consult Dr. Rajapandian K** | 🔴 **STILL LIVE — this row did not go away.** Heavier loads mean more spinal stress and this plan has never had ortho clearance for them. **Owning a 24 kg dumbbell is not clearance to use 24 kg.** |
 
-> **Buy 8 kg pair as soon as 3 kg rows and shoulder press stop feeling challenging** — this is likely within 2–3 sessions of starting, not 2–3 weeks. Don't wait until the plateau is obvious; upgrade proactively. A pair of 8 kg dumbbells is the single highest-ROI fitness purchase for your current plan.
+> 🔴 **The one thing the purchase changed for the worse: the clearance gate used to be enforced by not owning the weight. Now it is enforced only by this file.** N9 (11.5 kg) is the point where the ortho conversation becomes mandatory rather than advisable — and that appointment has already been overdue since 2026-08-14 for a separate reason.
 
 ---
 
