@@ -75,10 +75,26 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
 
     // ─────────────────────────── events ───────────────────────────────────────
 
-    event IssuerRegistered(address indexed issuer, bytes32 indexed qtspIdentifier, uint256[] topics);
-    event IssuerTopicsUpdated(address indexed issuer, uint256[] added, uint256[] removed);
-    event IssuerRevoked(address indexed issuer, uint64 revokedAt, bool retroactive, bytes32 reasonHash);
-    event QtspIdentifierSet(address indexed issuer, bytes32 indexed qtspIdentifier);
+    event IssuerRegistered(
+        address indexed issuer,
+        bytes32 indexed qtspIdentifier,
+        uint256[] topics
+    );
+    event IssuerTopicsUpdated(
+        address indexed issuer,
+        uint256[] added,
+        uint256[] removed
+    );
+    event IssuerRevoked(
+        address indexed issuer,
+        uint64 revokedAt,
+        bool retroactive,
+        bytes32 reasonHash
+    );
+    event QtspIdentifierSet(
+        address indexed issuer,
+        bytes32 indexed qtspIdentifier
+    );
     /// @dev ⚠️ `TrustedIssuerAdded`, `TrustedIssuerRemoved` and `ClaimTopicsUpdated` are
     ///      INHERITED from `ITrustedIssuersRegistry` and must not be re-declared here. They are
     ///      emitted ALONGSIDE the suite's own events rather than instead of them: the suite's
@@ -153,7 +169,10 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
     ///         Trusted List entries genuinely change — a QTSP re-registers, a national list is
     ///         restructured. Not a revocation: it says nothing about whether the issuer is still
     ///         trusted, only about where a reviewer looks it up.
-    function setQtspIdentifier(address issuer, bytes32 qtspIdentifier) external onlyGovernance {
+    function setQtspIdentifier(
+        address issuer,
+        bytes32 qtspIdentifier
+    ) external onlyGovernance {
         if (!issuers[issuer].registered) revert UnknownIssuer(issuer);
         issuers[issuer].qtspIdentifier = qtspIdentifier;
         emit QtspIdentifierSet(issuer, qtspIdentifier);
@@ -216,7 +235,10 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
     ///         readable and is what a reviewer greps for.
     /// @dev    Either use `registerIssuer` (which takes the anchor) or follow this call with
     ///         `setQtspIdentifier` in the same governance transaction batch.
-    function addTrustedIssuer(IClaimIssuer _trustedIssuer, uint256[] calldata _claimTopics) external onlyGovernance {
+    function addTrustedIssuer(
+        IClaimIssuer _trustedIssuer,
+        uint256[] calldata _claimTopics
+    ) external onlyGovernance {
         address issuer = address(_trustedIssuer);
         if (issuers[issuer].registered) revert AlreadyRegistered(issuer);
 
@@ -247,7 +269,9 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
     ///         still good, the correct call is `revokeProspectively`, which says so on the
     ///         record. `reasonHash` is zero here for the same reason the anchor is: the
     ///         signature has no room for it.
-    function removeTrustedIssuer(IClaimIssuer _trustedIssuer) external onlyGovernance {
+    function removeTrustedIssuer(
+        IClaimIssuer _trustedIssuer
+    ) external onlyGovernance {
         _revoke(address(_trustedIssuer), true, bytes32(0));
     }
 
@@ -281,17 +305,24 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
         for (uint256 i = 0; i < _issuerList.length; i++) {
             address a = _issuerList[i];
             Issuer storage rec = issuers[a];
-            if (rec.registered && rec.revokedAt == 0) out[n++] = IClaimIssuer(a);
+            if (rec.registered && rec.revokedAt == 0)
+                out[n++] = IClaimIssuer(a);
         }
         return out;
     }
 
-    function getTrustedIssuersForClaimTopic(uint256 claimTopic) external view returns (IClaimIssuer[] memory) {
+    function getTrustedIssuersForClaimTopic(
+        uint256 claimTopic
+    ) external view returns (IClaimIssuer[] memory) {
         uint256 live;
         for (uint256 i = 0; i < _issuerList.length; i++) {
             address a = _issuerList[i];
             Issuer storage rec = issuers[a];
-            if (rec.registered && rec.revokedAt == 0 && topicScope[a][claimTopic]) live++;
+            if (
+                rec.registered &&
+                rec.revokedAt == 0 &&
+                topicScope[a][claimTopic]
+            ) live++;
         }
 
         IClaimIssuer[] memory out = new IClaimIssuer[](live);
@@ -299,7 +330,11 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
         for (uint256 i = 0; i < _issuerList.length; i++) {
             address a = _issuerList[i];
             Issuer storage rec = issuers[a];
-            if (rec.registered && rec.revokedAt == 0 && topicScope[a][claimTopic]) out[n++] = IClaimIssuer(a);
+            if (
+                rec.registered &&
+                rec.revokedAt == 0 &&
+                topicScope[a][claimTopic]
+            ) out[n++] = IClaimIssuer(a);
         }
         return out;
     }
@@ -317,7 +352,9 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
 
     /// @notice The issuer's current topic set. Reflects scope, not liveness — a revoked issuer
     ///         still reports the topics it held.
-    function getTrustedIssuerClaimTopics(IClaimIssuer _trustedIssuer) external view returns (uint256[] memory) {
+    function getTrustedIssuerClaimTopics(
+        IClaimIssuer _trustedIssuer
+    ) external view returns (uint256[] memory) {
         return _issuerTopics[address(_trustedIssuer)];
     }
 
@@ -326,9 +363,15 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
     /// @dev    ⚠️ Says nothing about claims already written. A prospectively-revoked issuer
     ///         answers `false` here while its historic claims still count — which is the
     ///         intended behaviour and the reason `isTrustedFor` takes `issuedAt`.
-    function hasClaimTopic(address _issuer, uint256 _claimTopic) external view returns (bool) {
+    function hasClaimTopic(
+        address _issuer,
+        uint256 _claimTopic
+    ) external view returns (bool) {
         Issuer storage rec = issuers[_issuer];
-        return rec.registered && rec.revokedAt == 0 && topicScope[_issuer][_claimTopic];
+        return
+            rec.registered &&
+            rec.revokedAt == 0 &&
+            topicScope[_issuer][_claimTopic];
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -341,7 +384,10 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
     ///         the historic attestations are as suspect as the future ones.
     /// @param reasonHash Hash of the off-chain decision record. The reason is not on-chain,
     ///                   but the fact that a reason exists and is retrievable is.
-    function revokeRetroactively(address issuer, bytes32 reasonHash) external onlyGovernance {
+    function revokeRetroactively(
+        address issuer,
+        bytes32 reasonHash
+    ) external onlyGovernance {
         _revoke(issuer, true, reasonHash);
     }
 
@@ -350,11 +396,18 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
     ///         ended — not for a failure. Choosing this over the retroactive form is an
     ///         assertion that the issuer's past work is still good, so make it on the
     ///         record, not by omission.
-    function revokeProspectively(address issuer, bytes32 reasonHash) external onlyGovernance {
+    function revokeProspectively(
+        address issuer,
+        bytes32 reasonHash
+    ) external onlyGovernance {
         _revoke(issuer, false, reasonHash);
     }
 
-    function _revoke(address issuer, bool retroactive, bytes32 reasonHash) private {
+    function _revoke(
+        address issuer,
+        bool retroactive,
+        bytes32 reasonHash
+    ) private {
         Issuer storage rec = issuers[issuer];
         if (!rec.registered) revert UnknownIssuer(issuer);
         if (rec.revokedAt != 0) revert AlreadyRevoked(issuer);
@@ -378,7 +431,11 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
 
     /// @param issuedAt Timestamp the claim under test was written. Ignored under a
     ///                 retroactive revocation; decisive under a prospective one.
-    function isTrustedFor(address issuer, uint256 topic, uint64 issuedAt) external view returns (bool) {
+    function isTrustedFor(
+        address issuer,
+        uint256 topic,
+        uint64 issuedAt
+    ) external view returns (bool) {
         Issuer storage rec = issuers[issuer];
         if (!rec.registered) return false;
         if (!topicScope[issuer][topic]) return false;
@@ -392,9 +449,13 @@ contract TrustedIssuersRegistry is ITrustedIssuersRegistry {
     }
 
     /// @notice Whether the issuer may write NEW claims on this topic right now.
-    function canIssueNow(address issuer, uint256 topic) external view returns (bool) {
+    function canIssueNow(
+        address issuer,
+        uint256 topic
+    ) external view returns (bool) {
         Issuer storage rec = issuers[issuer];
-        return rec.registered && rec.revokedAt == 0 && topicScope[issuer][topic];
+        return
+            rec.registered && rec.revokedAt == 0 && topicScope[issuer][topic];
     }
 
     function issuerList() external view returns (address[] memory) {

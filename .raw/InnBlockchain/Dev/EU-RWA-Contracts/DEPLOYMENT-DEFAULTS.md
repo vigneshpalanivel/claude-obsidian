@@ -422,11 +422,12 @@ existing holders are unaffected (staleness blocks entry, not exit).
   the setters are governance-only and emit `…Changed(old, new)`. Swapping the issuer registry
   re-validates every stored claim against the new list on its next read — migrate the issuer set
   first.
-  - ⚠️ **The EIP names are the primary functions as of 2026-09-11**:
-    `setClaimTopicsRegistry(impl)` / `setTrustedIssuersRegistry(impl)`. `setClaimTopics(impl)` /
-    `setTrustedIssuers(impl)` survive as **aliases** onto the same internal path — same checks,
-    same two events — so existing runbooks and scripts keep working. **Prefer the EIP names in
-    anything new**; the aliases exist for continuity, not as a second supported API.
+  - ⚠️ **The EIP names are the only names**: `setClaimTopicsRegistry(impl)` /
+    `setTrustedIssuersRegistry(impl)`. The house aliases `setClaimTopics(impl)` /
+    `setTrustedIssuers(impl)` were introduced 2026-09-11 and **removed 2026-09-15** — one act,
+    one selector, no second supported API. Nothing in this suite ever called them; any script
+    outside it that does will now revert, which is the intended failure. Both events
+    (`…Changed(old, new)` and the EIP's `…RegistrySet`) are still emitted on the one path.
   - ⚠️ **`IdentityRegistry` is now `IAgentRole`-compatible, and the registrar is the agent.**
     `addAgent(a)` / `removeAgent(a)` / `isAgent(a)` are the standard's names for
     `setRegistrar(a, true)` / `setRegistrar(a, false)` / `isRegistrar(a)` — one mapping, one

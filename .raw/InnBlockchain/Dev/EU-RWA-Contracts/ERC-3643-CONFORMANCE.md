@@ -316,11 +316,12 @@ standard's.** *(Defect found and fixed 2026-09-11.)*
   **the line is source code, not vocabulary** — the standard's names were adopted deliberately and
   a rename forfeits the interoperability the whole decision was taken to buy. **A house-style
   rename is invisible to a member count and fatal to interoperability.**
-- *Now:* the **EIP names are the primary functions**; `setClaimTopics` / `setTrustedIssuers` are
-  retained as thin aliases so existing runbooks and `DEPLOYMENT-DEFAULTS.md` keep working. Each
-  writes through one internal and emits **both** event vocabularies. Note the direction: EIP name
-  primary, house name alias — **not the reverse**, because the alias is the one that may later be
-  deleted.
+- *Now:* the **EIP names are the only names.** `setClaimTopics` / `setTrustedIssuers` were retained
+  as thin aliases when this was fixed on 2026-09-11, and **deleted on 2026-09-15** — which is
+  precisely the disposal the alias direction was chosen to permit. The deletion cost nothing: a
+  sweep found every surviving mention was documentation *about* the aliases, never a call site, so
+  the "existing runbooks depend on them" justification was already untrue when it was written.
+  Each act now writes through one internal and emits **both** event vocabularies.
 - *Gating:* these are **owner acts in the standard, not agent acts.** They are `onlyGovernance`
   here. Do not let a later edit gate them `onlyAgent` on the reasoning that an agent administers
   the registry — an agent who can re-point the claim-topics registry can empty the required-claim

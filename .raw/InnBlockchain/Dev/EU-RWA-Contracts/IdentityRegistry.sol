@@ -584,21 +584,16 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         every holder of every claim requirement at once. It is a logged governance act,
     ///         and the per-topic path (`ClaimTopicsRegistry.removeBaselineTopic`) is the one to
     ///         use for anything short of an implementation swap.
-    /// @dev ⚠️ THE EIP NAME IS NOW THE FUNCTION AND THE HOUSE NAME IS THE ALIAS — THE REVERSE OF
-    ///      WHAT THIS FILE DID UNTIL 2026-09-11, AND THE OLD ARRANGEMENT WAS A REAL DEFECT RATHER
-    ///      THAN A STYLE ONE. `setClaimTopics` already emitted `ClaimTopicsRegistrySet`, so the
-    ///      behaviour was conformant and the SELECTOR was not: a caller holding the EIP ABI —
-    ///      a venue, a custodian, an audit tool — got a revert from a contract that implements
-    ///      the capability correctly. **A house-style rename is invisible to a member count and
-    ///      fatal to interoperability**, which is the one thing conformance was adopted to buy.
+    /// @dev ⚠️ THE EIP NAME IS THE ONLY NAME. Until 2026-09-11 this act was called
+    ///      `setClaimTopics` and nothing else, which was a real defect rather than a style one:
+    ///      it already emitted `ClaimTopicsRegistrySet`, so the behaviour was conformant and the
+    ///      SELECTOR was not — a caller holding the EIP ABI (a venue, a custodian, an audit tool)
+    ///      got a revert from a contract that implements the capability correctly. **A house-style
+    ///      rename is invisible to a member count and fatal to interoperability**, which is the
+    ///      one thing conformance was adopted to buy. The house name survived briefly as an alias
+    ///      and was REMOVED 2026-09-15: one act, one selector, no second supported API.
     function setClaimTopicsRegistry(address _claimTopicsRegistry) public onlyGovernance {
         _setClaimTopicsRegistry(_claimTopicsRegistry);
-    }
-
-    /// @notice Suite alias for `setClaimTopicsRegistry`. Retained because the runbooks and
-    ///         `DEPLOYMENT-DEFAULTS.md` name it, not because the standard has two names.
-    function setClaimTopics(address impl) external onlyGovernance {
-        _setClaimTopicsRegistry(impl);
     }
 
     function _setClaimTopicsRegistry(address impl) internal {
@@ -615,15 +610,11 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         invalidates every claim from an issuer the new list does not carry, which is
     ///         correct (it is what retroactive revocation does) and abrupt. Migrate the issuer
     ///         set first.
-    /// @dev ⚠️ EIP NAME PRIMARY, HOUSE NAME ALIASED — see `setClaimTopicsRegistry` for why the
-    ///      previous arrangement was a conformance defect rather than a naming preference.
+    /// @dev ⚠️ EIP NAME ONLY — the `setTrustedIssuers` house alias was removed 2026-09-15. See
+    ///      `setClaimTopicsRegistry` for why the pre-2026-09-11 house name was a conformance
+    ///      defect rather than a naming preference.
     function setTrustedIssuersRegistry(address _trustedIssuersRegistry) public onlyGovernance {
         _setTrustedIssuersRegistry(_trustedIssuersRegistry);
-    }
-
-    /// @notice Suite alias for `setTrustedIssuersRegistry`. Retained for the runbooks.
-    function setTrustedIssuers(address impl) external onlyGovernance {
-        _setTrustedIssuersRegistry(impl);
     }
 
     function _setTrustedIssuersRegistry(address impl) internal {
@@ -1441,8 +1432,9 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     /// @dev    ⚠️ THE CAST IS SAFE ONLY BECAUSE `TrustedIssuersRegistry` IMPLEMENTS BOTH
     ///         SURFACES. This contract reads the NARROW one (`ITrustedIssuersGate`) because
     ///         `isTrustedFor` takes the claim's write time and `hasClaimTopic` does not — see
-    ///         the note on the gate interfaces at the top of this file. Point `setTrustedIssuers`
-    ///         at something that implements only the EIP and every claim read reverts.
+    ///         the note on the gate interfaces at the top of this file. Point
+    ///         `setTrustedIssuersRegistry` at something that implements only the EIP and every
+    ///         claim read reverts.
     /// @notice ⚠️ DECLARED DEVIATION — ALWAYS RETURNS `address(0)`. There is no shared identity
     ///         storage contract in this suite and there is not meant to be one.
     /// @dev    D-I5. The storage contract's whole purpose is to let SEVERAL tokens share ONE

@@ -350,8 +350,8 @@ interface IIdentityRegistry {
     ///      capability was present, conformant in behaviour, and **unreachable by any caller
     ///      holding the standard's ABI**. That is the failure mode worth naming: a house-style
     ///      rename is invisible to a member count and fatal to interoperability, which is the
-    ///      one thing conformance was adopted to buy. The EIP names are now the functions and
-    ///      the house names are the aliases, not the other way round.
+    ///      one thing conformance was adopted to buy. The house names were kept as aliases for
+    ///      four days and removed 2026-09-15 — these names are now the only names.
     /// @dev These are OWNER acts in the standard, not agent acts — the spec scopes them to "the
     ///      wallet set as owner", which is `governance` here. Do not gate them `onlyAgent`.
     function setIdentityRegistryStorage(address _identityRegistryStorage) external;
