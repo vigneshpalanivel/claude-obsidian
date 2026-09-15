@@ -255,7 +255,15 @@ One glass daily adds ~300–390 kcal without competing with meal hunger. **Break
 | Peanut butter | 8g/2 tbsp | Snack |
 | Paneer | 18g/100g | 2–3x/week |
 
-**Avoid in excess (high purine):** Mutton, prawns, organ meats, alcohol, shellfish
+**Avoid in excess (high purine):** Mutton, prawns, organ meats, alcohol, shellfish, **small oily fish — sardine (mathi), anchovy (nethli), mackerel (ayala)**
+
+🔴 **Small oily fish added 2026-09-13 — this list was incomplete for its entire existence.** Sardines and anchovies run **~400–1,100 mg purine/100g, higher than most red meat** — higher than the mutton this list already names. Their absence let [[meal-log]] score anchovy- and sardine-heavy days as purine-neutral. **Trigger: 18 nethli on Sep 12 followed by 9 mathi on Sep 13, back-to-back, the second landing inside the ~24h window in which the previous day's alcohol was still blocking urate excretion.**
+
+✅ **This is a TIMING rule, not an avoid rule, and the distinction matters — do not stop eating these fish.** They are among the few foods that act on three separate open flags at once: **omega-3 against HDL 32** (Feb 2026, the standing lipid flag), **vitamin D** (29.95 insufficient *and* two years stale — oily fish is one of the only real food sources), and **bone-in calcium** against the zero-bone-density gap [[healthspan-80]] ranks DEXA #2 for. Removing them costs more than it saves.
+
+**The rule instead:** spread them across the week — **not two purine-heavy days consecutively, and never within 24h of alcohol.** Every benefit above survives; only the urate spike is removed.
+
+⚠️ **The above is provisional in one respect: uric acid 5.3 (Feb 2026) is 8+ weeks stale and the retest is unbooked.** Per the note at line 109, the protein target stays fixed until it is done — and the frequency this rule should permit cannot actually be set without that number.
 
 ---
 

@@ -47,6 +47,31 @@ status: active
 | **N1–N6 (2.5–8 kg)** — jumps are 18–40% | **3 × 8 → 3 × 15** | At 3 × 15 clean, go up one notch and **reset to 3 × 8** |
 | **N7–N15 (9–24 kg)** — jumps are 10–18% | **3 × 8 → 3 × 12** | At 3 × 12 clean, go up one notch and reset to 3 × 8 |
 
+### Worked example — bicep curl at N6 (8 kg)
+
+> **Added 2026-09-13 after the rule as written above didn't read clearly.** *"Build 8 to 15 reps, then up one setting, reset to 8"* — this is what that actually looks like week by week.
+
+| Session | Weight | Reps across 3 sets | What you do |
+|---------|--------|--------------------|-------------|
+| 1 | 8 kg | 8 · 8 · 8 | Starting point |
+| 2 | 8 kg | 9 · 9 · 8 | **Add reps, not weight** |
+| 3 | 8 kg | 10 · 10 · 9 | Keep adding |
+| … | 8 kg | … | Several weeks of this — **this is most of your training** |
+| ~7 | 8 kg | **15 · 15 · 15** | Ceiling reached — **now** the load moves |
+| 8 | **9 kg** | **8 · 8 · 8** | One notch up, reps reset |
+| … | 9 kg | build back to 12 | *(12 not 15 — above N6 the jumps are smaller)* |
+
+**Reps are the dial you turn every session. Weight only moves when reps run out of room.**
+
+### 🔴 The four things this rule gets misread on
+
+1. **"15" means all three sets, not the first one.** `15 · 12 · 10` is **not** 15 — it is 10. **You advance on your worst set, not your best.** This is the most common way people move up too early.
+2. **"Clean" is part of the rule, not a nicety.** Full range, controlled tempo, no swinging, no pain. **Fifteen curls done with shoulder swing are not fifteen reps** — and on the shoulder press and fly, sloppy reps are how the 14-year shoulder flares.
+3. **The rep crash after moving up is the design, not a setback.** 8 → 9 kg is +12%; 2.5 → 3.5 kg is **+40%** and will roughly halve your reps. **Rebuild. Only drop back a notch for pain, or if you cannot manage 3 × 6.**
+4. **Never advance two categories in the same week.** Several lifts will hit their ceiling around the same time. **Move one, wait a week, move the next** — otherwise a flare can't be traced to a cause.
+
+> ⚠️ **Why 8 and 15 specifically: 8–15 is the muscle-growth range.** Under 8 reps is strength work; over 15 is endurance. **That upper limit is exactly the trap you were in at 3 kg** — nothing felt like anything until rep 15, by which point the set had been endurance work the whole way.
+
 **Why the rep range is wider at the bottom.** A rep range only "absorbs" a load jump if the strength span across it matches. 8→12 reps spans roughly 14% of strength; 8→15 reps spans roughly 23%. **The low-notch jumps are 18–40%, so the 8–12 range is too narrow there and you would stall out below the next notch.** Building to 15 reps first means you arrive at the next notch already strong enough to hit 8.
 
 ⚠️ **A rep drop after a notch change is the expected outcome, not a regression.** Log it and rebuild. **Do not go back down a notch just because reps fell** — only go back down for pain, or if you cannot complete 3 × 6 with clean form at the new load.
@@ -831,7 +856,7 @@ Add these exercises into A and B. Phase 1 movements continue — drop the easier
 
 | # | Exercise | Sets × Reps | Cue |
 |---|----------|-------------|-----|
-| + | **Floor dumbbell chest press** — **N5 · 6.5 kg** | 3 × 8 → build to 3 × 15 | Lie on floor — safer than bench, eliminates hyperextension risk. 🔴 **Confirm the selector is locked before every set — this is the lift where a shed plate lands near your face.** ⚠️ **Add for stimulus variety, NOT for load: at N5 this is ~13 kg total against a push-up's ~40 kg.** The push-up ladder stays the primary chest driver — see the reality check in Phase 1. |
+| + | **Floor dumbbell chest press** — **N7 · 9 kg** | 3 × 8 → build to 3 × **12** | Lie on floor — safer than bench, eliminates hyperextension risk. 🔴 **Confirm the selector is locked before every set — this is the lift where a shed plate lands near your face.** ⚠️ **Add for stimulus variety, NOT for load: at N7 this is ~18 kg total against a push-up's ~40 kg.** The push-up ladder stays the primary chest driver — see the reality check in Phase 1. ⚠️ **12 reps, not 15 — this is the plan's first N7+ lift, where the notch jumps shrink to 10–15%.** |
 | ~~+~~ | ~~**Step-up**~~ | — | **Moved to Phase 1 (Workout A, 2026-08-14)** — now the primary squat replacement, no longer a Phase 2 addition. |
 | + | **Side-lying hip abduction** | 3 × 15/side | Lie on side, raise top leg — hip stabiliser, protects SI joint |
 | + | **Push-up progression** | 3 × 20 | Advance through the ladder above (diamond, wide, decline) |

@@ -79,7 +79,8 @@ RIGHT COLUMN — 9 cards:
 Below the two columns, a full-width slate-grey band headed "LOADS":
 first line, the dial settings in one row of small monospace text:
 "2.5  3.5  4.5  5.5  6.5  8  9  10  11.5  13.5  16  18  20.5  22.5  24"
-second line, smaller: "Build 8 to 15 reps, then up one setting, reset to 8"
+second line, smaller: "Build 8 to 15 reps (to 12 above 8 kg), then up one
+setting, reset to 8"
 third line in amber: "Step-up: 2 clean weeks before every increase"
 fourth line in amber: "Rear delt fly + kickback: never above 5.5"
 fifth line, small grey, right-aligned: "Loads as of 13 Sep 2026"

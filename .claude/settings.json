@@ -345,7 +345,9 @@
       "Bash(git -C /Users/admin/Projects/Personal/claude-obsidian diff --stat)",
       "Bash(grep -n \"^#\\\\{1,3\\\\} \" wiki/health/exercise-log.md)",
       "Bash(gh search *)",
-      "WebFetch(domain:ethereum-magicians.org)"
+      "WebFetch(domain:ethereum-magicians.org)",
+      "Bash(grep -n \"^#\\\\{2,4\\\\} \" \"EU Smart Contract Design.md\")",
+      "Bash(awk 'NR>=159 && NR<=189 {printf \"%d| %s\\\\n\", NR, $0}' \"EU Smart Contract Design - The Transfer Gate.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
