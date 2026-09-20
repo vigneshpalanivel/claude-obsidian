@@ -2,7 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {ModuleAdapter} from "./ModularCompliance.sol";
-import {IDocumentAnchor, IErasable, IIdentityGate, Tier} from "./Interfaces.sol";
+import {AXIS_MIFID, IDocumentAnchor, IErasable, IIdentityGate, Tier} from "./Interfaces.sol";
 
 /// @title CovenantRegistry (illustrative sample — not production code)
 /// @notice C7 — the store of what the INVESTOR THEMSELVES has stated, agreed or acknowledged,
@@ -80,7 +80,7 @@ contract CovenantRegistry is IErasable {
         Never
     }
 
-    /// @dev Read by exactly one `require`: `setOptUpCovenant` refuses a `PerAsset` entry. Every
+    /// @dev Read by exactly one `require`: `setClassifier` refuses a `PerAsset` entry. Every
     ///      other covenant's scope is carried for the audit map and emitted, never branched on —
     ///      a per-asset registry deployment IS the scoping, so the field states it rather than
     ///      enforces it.
@@ -110,8 +110,16 @@ contract CovenantRegistry is IErasable {
     /// @dev    ELTIF Art 18(3) is `[RETAIL ONLY, life > 10 years]` in its own checklist — two
     ///         dimensions in one obligation. That single row is why this is a struct.
     struct Predicate {
-        /// @dev Bitmask over the shared `Tier` enum (`Interfaces.sol`). 0 = every tier.
-        uint8 tierMask;
+        /// @dev ⚠️ WAS `uint8 tierMask`, HARDCODED TO MiFID. The dimension is now "a
+        ///      classification on a named axis" — `AXIS_MIFID` for tier, and whatever a second
+        ///      regime opens for its own. `bytes32(0)` disables the dimension.
+        ///      There is deliberately ONE axis slot and not an array: a list makes the gate's gas
+        ///      unbounded and gives the evaluation nowhere to stop, and no obligation in any
+        ///      checklist keys on two classification regimes at once.
+        bytes32 classAxisId;
+        /// @dev Bitmask over the axis's own encoding — for `AXIS_MIFID`, over `Tier`.
+        ///      0 = every classification on that axis.
+        uint8 classMask;
         /// @dev A SET, not a value. ⚠️ A covenant may apply across several Member States and an
         ///      investor may carry more than one relevant jurisdiction — residence, tax
         ///      residence, nationality. A single-value field on EITHER side collapses the case
@@ -188,11 +196,41 @@ contract CovenantRegistry is IErasable {
     ///         write one. Zero disables the erasure path entirely.
     address public erasureCoordinator;
 
-    /// @notice The MiFID II Annex II Section II opt-up covenant, if configured. Its effect is
-    ///         to change the tier every OTHER predicate reads, which is why it is named
-    ///         separately, resolved first, and — see `effectiveTier` — evaluated against the
-    ///         RAW tier rather than the tier it produces.
-    bytes32 public optUpCovenantId;
+    /// @notice A covenant whose effect is to change the classification every OTHER predicate
+    ///         reads — the MiFID II Annex II Section II opt-up is one, ECSPR's opt-in to
+    ///         sophisticated is another. Named separately, resolved first, and evaluated against
+    ///         the RAW classification rather than the one it produces.
+    /// @dev    ⚠️ `electiveValue` AND `fallbackValue` ARE WHAT MADE THIS GENERALISABLE. The
+    ///         single-axis version hardcoded both — `ProfessionalOnRequest` was the value that
+    ///         required the covenant and `Retail` was where it fell back to. Those are MiFID
+    ///         facts, not covenant facts, so they move into configuration.
+    /// @dev    ⚠️ `fallbackValue` MUST BE THE MORE PROTECTIVE CLASSIFICATION, AND NOTHING ON
+    ///         CHAIN CAN CHECK THAT. The contract cannot know which of two opaque `uint8`s a
+    ///         regime considers safer, so this is the one field in the schema carrying a
+    ///         semantic obligation the compiler will not enforce. Configure it backwards and an
+    ///         investor with no record is PROMOTED instead of demoted, which inverts the control
+    ///         rather than weakening it.
+    struct Classifier {
+        bytes32 covenantId;
+        uint8 electiveValue;
+        uint8 fallbackValue;
+        bool set;
+    }
+
+    mapping(bytes32 => Classifier) public classifiers;
+
+    /// @notice Every axis any configured covenant or classifier names.
+    /// @dev    ⚠️ THIS EXISTS TO PRESERVE "RESOLVE ONCE PER WALLET", WHICH WAS FREE WHEN THERE
+    ///         WAS ONE AXIS. `assertSatisfied` used to call `effectiveTier` once and pass the
+    ///         result down through up to `MAX_COVENANTS` iterations. With covenants naming
+    ///         different axes, the naive port re-resolves inside the loop — and resolving runs a
+    ///         classifier covenant, so that is an identity read plus a predicate evaluation per
+    ///         covenant per transfer. Instead every axis is resolved once into memory up front
+    ///         and looked up by a scan bounded at `MAX_AXES`.
+    uint256 public constant MAX_AXES = 8;
+
+    bytes32[] private _axisIds;
+    mapping(bytes32 => bool) public axisKnown;
 
     // ═══════════════════════════════════════════════════════════════════════
     // STATE
@@ -253,7 +291,8 @@ contract CovenantRegistry is IErasable {
         bytes32 indexed covenantId, bytes32 indexed documentRef, uint8 gates, Attestor attestor, Scope scope
     );
     event CovenantDeactivated(bytes32 indexed covenantId);
-    event OptUpCovenantSet(bytes32 indexed covenantId);
+    event ClassifierSet(bytes32 indexed axisId, bytes32 indexed covenantId, uint8 electiveValue, uint8 fallbackValue);
+    event AxisTracked(bytes32 indexed axisId);
     event OperatorSet(address indexed operator, bool allowed);
     event ProductAttributeSet(bytes32 indexed key, uint256 value);
     event RegulatoryGrantSet(bytes32 indexed grantId, bool granted);
@@ -303,9 +342,11 @@ contract CovenantRegistry is IErasable {
     ///      suitability assessment self-certified.
     error AttestationRequiredFromOperator(bytes32 covenantId);
     error VersionNotCurrent(bytes32 covenantId);
-    /// @dev The opt-up covenant must be `PlatformWide` and its `tierMask` must admit the raw
-    ///      `ProfessionalOnRequest` tier — see `setOptUpCovenant`.
-    error OptUpCovenantMisconfigured(bytes32 covenantId);
+    /// @dev A classifier covenant must be `PlatformWide`, must name its own axis and no other,
+    ///      and its `classMask` must admit the axis's elective value — see `setClassifier`.
+    error ClassifierMisconfigured(bytes32 covenantId);
+    error AxisIdRequired();
+    error TooManyAxes();
 
     /// @notice ⚠️ THE ONLY REVERT THE TRANSFER PATH EVER SEES, AND IT CARRIES NOTHING. AMLR
     ///         Art 76 prohibits tipping off; a distinct "covenant missing" revert — or worse,
@@ -405,6 +446,12 @@ contract CovenantRegistry is IErasable {
         c.effectiveFrom = effectiveFrom;
         c.predicate = predicate;
 
+        // ⚠️ TRACKED HERE, NOT AT FIRST READ, BECAUSE `_classFor` FAILS CLOSED ON AN UNTRACKED
+        // AXIS. A covenant whose axis never reached `_axisIds` would resolve to unset and block
+        // every gated movement for every holder — correct, and useless as a diagnosis. Refusing
+        // the configuration transaction instead puts the failure where an operator can read it.
+        if (predicate.classAxisId != bytes32(0)) _registerAxis(predicate.classAxisId);
+
         _covenantIds.push(covenantId);
         emit CovenantConfigured(covenantId, documentRef, gates, attestor, scope);
     }
@@ -418,32 +465,67 @@ contract CovenantRegistry is IErasable {
         if (!active) emit CovenantDeactivated(covenantId);
     }
 
-    /// @notice Names the MiFID II Annex II Section II opt-up covenant.
+    /// @notice Names the covenant that resolves one axis's elective classification — the MiFID II
+    ///         Annex II Section II opt-up on `AXIS_MIFID`, ECSPR's opt-in to sophisticated on its
+    ///         own axis.
     /// @dev    ⚠️ ITS `scope` MUST BE `PlatformWide`, and that is not a style preference: the
-    ///         tier claim it governs is itself platform-wide, and a per-asset covenant gating a
-    ///         platform-wide claim is the scoping mismatch that makes an investor professional
-    ///         on one asset and retail on another with no record of which is true. Enforced
-    ///         here, not merely stated.
-    /// @dev    ⚠️ ITS PREDICATE MUST BE EVALUABLE ON THE RAW TIER. `effectiveTier` evaluates
-    ///         this one covenant against `identity.tierOf(wallet)` directly (see there for the
-    ///         recursion that existed), and the raw tier at that moment is always
-    ///         `ProfessionalOnRequest`. A `tierMask` that excludes that bit therefore reports
-    ///         "does not apply" for every elective professional — `_satisfied` returns
-    ///         `(true, notRequired)`, the tier is believed with no record behind it, and the
-    ///         opt-up control fails open in the exact direction rule 6 exists to stop. So the
-    ///         mask must be 0 (every tier) or include `ProfessionalOnRequest`.
-    function setOptUpCovenant(bytes32 covenantId) external onlyGovernance {
+    ///         classification it governs is itself platform-wide, and a per-asset covenant gating
+    ///         a platform-wide classification is the scoping mismatch that makes an investor
+    ///         professional on one asset and retail on another with no record of which is true.
+    ///         Enforced here, not merely stated.
+    /// @dev    ⚠️ ITS PREDICATE MUST NAME ITS OWN AXIS AND NO OTHER, AND THAT GUARD IS THE WHOLE
+    ///         REASON N AXES ARE SAFE WHERE N TIER-CHANGERS WOULD NOT BE. A classifier reading a
+    ///         SECOND axis could read an axis whose own classifier reads this one — cross-axis
+    ///         recursion, which is the 2026-09-08 stack overflow one level less visible. With
+    ///         each classifier confined to its own axis and evaluated against that axis's RAW
+    ///         value, the resolution graph has no edges at all and cannot cycle.
+    /// @dev    ⚠️ ITS MASK MUST ADMIT `electiveValue`. `_effectiveClass` evaluates this covenant
+    ///         against the raw classification, which at that moment is always `electiveValue`. A
+    ///         mask that excludes it reports "does not apply" for every elective holder —
+    ///         `_satisfied` returns `(true, notRequired)`, the classification is believed with no
+    ///         record behind it, and the control fails open in the exact direction rule 6 exists
+    ///         to stop. So the mask must be 0 (every value) or include `electiveValue`.
+    /// @dev    ⚠️ `electiveValue == fallbackValue` IS REFUSED. It configures a classifier that
+    ///         can never demote anyone — every read returns the value it started with, so the
+    ///         entry looks configured, costs a predicate evaluation on every gate, and enforces
+    ///         nothing. A reviewer seeing a classifier set would reasonably conclude the control
+    ///         is live.
+    function setClassifier(bytes32 axisId, bytes32 covenantId, uint8 electiveValue, uint8 fallbackValue)
+        external
+        onlyGovernance
+    {
+        if (axisId == bytes32(0)) revert AxisIdRequired();
+        if (electiveValue == fallbackValue) revert ClassifierMisconfigured(covenantId);
+
         Covenant storage c = _covenants[covenantId];
         if (!c.configured) revert UnknownCovenant(covenantId);
-        if (c.scope != Scope.PlatformWide) revert OptUpCovenantMisconfigured(covenantId);
-
-        uint8 mask = c.predicate.tierMask;
-        if (mask != 0 && (mask & uint8(1 << uint8(Tier.ProfessionalOnRequest))) == 0) {
-            revert OptUpCovenantMisconfigured(covenantId);
+        if (c.scope != Scope.PlatformWide) revert ClassifierMisconfigured(covenantId);
+        if (c.predicate.classAxisId != bytes32(0) && c.predicate.classAxisId != axisId) {
+            revert ClassifierMisconfigured(covenantId);
         }
 
-        optUpCovenantId = covenantId;
-        emit OptUpCovenantSet(covenantId);
+        uint8 mask = c.predicate.classMask;
+        if (mask != 0 && (mask & uint8(1 << electiveValue)) == 0) {
+            revert ClassifierMisconfigured(covenantId);
+        }
+
+        _registerAxis(axisId);
+        classifiers[axisId] =
+            Classifier({covenantId: covenantId, electiveValue: electiveValue, fallbackValue: fallbackValue, set: true});
+        emit ClassifierSet(axisId, covenantId, electiveValue, fallbackValue);
+    }
+
+    function _registerAxis(bytes32 axisId) private {
+        if (axisKnown[axisId]) return;
+        if (_axisIds.length >= MAX_AXES) revert TooManyAxes();
+        axisKnown[axisId] = true;
+        _axisIds.push(axisId);
+        emit AxisTracked(axisId);
+    }
+
+    /// @notice Every axis this registry's covenants and classifiers name.
+    function axisIds() external view returns (bytes32[] memory) {
+        return _axisIds;
     }
 
     function setOperator(address operator, bool allowed) external onlyGovernance {
@@ -587,39 +669,75 @@ contract CovenantRegistry is IErasable {
     ///         RECURSION THAT SHIPPED. Until 2026-09-08 this read
     ///         `_satisfied(wallet, optUpCovenantId)` → `appliesTo` → `effectiveTier` → … with
     ///         no base case whenever the raw tier was `ProfessionalOnRequest`, so the moment
-    ///         `setOptUpCovenant` went live every `assertSatisfied`, `mayUpgradeTier` and
+    ///         `setClassifier` went live every `assertSatisfied`, `mayUpgrade` and
     ///         `diagnose` for an elective professional ran out of stack — every transfer of
     ///         that holder failed, in precisely the configuration recommended for retail
-    ///         distribution. The fix is structural, not a guard: the predicate takes the tier
-    ///         as an ARGUMENT (`_appliesTo`), the opt-up covenant is evaluated with
-    ///         `identity.tierOf(wallet)` passed in directly, and nothing on that path calls
-    ///         back into this function. Which is also the semantically right answer — the
-    ///         question "has this elective professional opted up" is asked OF the raw
-    ///         classification, not of the resolved one.
-    function effectiveTier(address wallet) public view returns (Tier) {
-        Tier raw = identity.tierOf(wallet);
+    ///         distribution. The fix is structural, not a guard: the predicate takes the
+    ///         classification as an ARGUMENT (`_appliesTo`), the classifier covenant is evaluated
+    ///         with the raw value passed in directly, and nothing on that path calls back into
+    ///         this function. Which is also the semantically right answer — the question "has
+    ///         this elective professional opted up" is asked OF the raw classification, not of
+    ///         the resolved one.
+    /// @return value The classification after the classifier has been applied.
+    /// @return isSet Whether the axis carries a classification at all. ⚠️ FALSE IS UNEVALUABLE,
+    ///         NOT A DEFAULT — callers fail closed on it rather than reading `value`, which is
+    ///         zero and means nothing.
+    function effectiveClass(address wallet, bytes32 axisId) public view returns (uint8 value, bool isSet) {
+        (value, isSet) = identity.classificationOf(wallet, axisId);
+        if (!isSet) return (0, false);
 
-        if (raw == Tier.ProfessionalOnRequest && optUpCovenantId != bytes32(0)) {
-            (bool ok,) = _satisfiedAtTier(wallet, optUpCovenantId, raw);
-            if (!ok) return Tier.Retail;
-        }
-        return raw;
+        Classifier storage k = classifiers[axisId];
+        if (!k.set || value != k.electiveValue) return (value, true);
+
+        // Evaluated against the RAW value — `value` here is `k.electiveValue` by the line above,
+        // and the classifier's predicate is confined to this axis by `setClassifier`. No edge
+        // out of this resolution, so no cycle into it.
+        // `registered` is passed as true rather than read: `isSet` is already true above, and a
+        // classification can only exist against a registered person — `setClassification` and
+        // `registerPerson` both refuse the null `personId`, which is what an unbound wallet
+        // resolves to. Reading the registry again here would be a second call for a fact the
+        // line above already proved.
+        (bool ok,) = _satisfiedAt(wallet, k.covenantId, value, true, true);
+        if (!ok) return (k.fallbackValue, true);
+        return (value, true);
+    }
+
+    /// @notice The MiFID limb of `effectiveClass`, typed.
+    /// @dev    ⚠️ RULE 6 — DOWNGRADE IS THE DANGEROUS DIRECTION, AND THIS IS WHERE IT IS
+    ///         HANDLED. An investor who has not completed the opt-up is STILL RETAIL. A
+    ///         self-declaration in a sign-up form is not an opt-up. So a `ProfessionalOnRequest`
+    ///         tier whose opt-up covenant is missing or stale resolves to the configured
+    ///         fallback — `Retail` — and every retail covenant becomes live for them, rather
+    ///         than the platform silently switching PRIIPs off for someone the regulation still
+    ///         treats as retail.
+    /// @dev    An unclassified wallet returns `Tier.Unset`, preserving the pre-generalisation
+    ///         behaviour for the callers that read this rather than `effectiveClass`.
+    function effectiveTier(address wallet) public view returns (Tier) {
+        (uint8 v, bool isSet) = effectiveClass(wallet, AXIS_MIFID);
+        if (!isSet) return Tier.Unset;
+        return Tier(v);
     }
 
     /// @notice The optional contract control for predicate rule 4. The identity registry may
-    ///         call this before writing an elective-professional tier, closing the ordering
-    ///         hole properly instead of relying on a process the ledger cannot see.
+    ///         call this before writing an elective classification, closing the ordering hole
+    ///         properly instead of relying on a process the ledger cannot see.
     /// @dev    Recommended wherever retail distribution is in scope. Left as a read rather than
     ///         wired in from here, because the coupling belongs to the identity registry's
-    ///         write path — this contract must not acquire the power to write tiers.
-    /// @dev    Evaluated at `ProfessionalOnRequest` rather than at the wallet's current raw
-    ///         tier, because the caller is asking whether the wallet may BECOME that tier — the
-    ///         registry has not written it yet, so `tierOf` would still say Retail and a
+    ///         write path — this contract must not acquire the power to write classifications.
+    /// @dev    Evaluated at `electiveValue` rather than at the wallet's current raw value,
+    ///         because the caller is asking whether the wallet may BECOME that value — the
+    ///         registry has not written it yet, so the raw read would still say Retail and a
     ///         Retail-excluding mask would answer "not applicable, so yes" for everyone.
-    function mayUpgradeTier(address wallet) external view returns (bool) {
-        if (optUpCovenantId == bytes32(0)) return true;
-        (bool ok,) = _satisfiedAtTier(wallet, optUpCovenantId, Tier.ProfessionalOnRequest);
+    function mayUpgrade(address wallet, bytes32 axisId) public view returns (bool) {
+        Classifier storage k = classifiers[axisId];
+        if (!k.set) return true;
+        (, bool registered) = identity.personIdOf(wallet);
+        (bool ok,) = _satisfiedAt(wallet, k.covenantId, k.electiveValue, true, registered);
         return ok;
+    }
+
+    function mayUpgradeTier(address wallet) external view returns (bool) {
+        return mayUpgrade(wallet, AXIS_MIFID);
     }
 
     /// @notice Evaluates `appliesTo` as a conjunction over the four dimensions, at the wallet's
@@ -633,12 +751,18 @@ contract CovenantRegistry is IErasable {
     ///         Hence two return values, and hence the caller treating `!evaluable` as
     ///         unsatisfied rather than inapplicable.
     function appliesTo(address wallet, bytes32 covenantId) public view returns (bool applies, bool evaluable) {
-        return _appliesTo(wallet, covenantId, effectiveTier(wallet));
+        bytes32 axisId = _covenants[covenantId].predicate.classAxisId;
+        (uint8 v, bool isSet) = axisId == bytes32(0) ? (uint8(0), true) : effectiveClass(wallet, axisId);
+        (, bool registered) = identity.personIdOf(wallet);
+        return _appliesTo(wallet, covenantId, v, isSet, registered);
     }
 
-    /// @dev The predicate proper. `tier` is an argument so that `effectiveTier` can evaluate
-    ///      the opt-up covenant at the raw tier without re-entering itself — see there.
-    function _appliesTo(address wallet, bytes32 covenantId, Tier tier)
+    /// @dev The predicate proper. The classification is an ARGUMENT so that `effectiveClass` can
+    ///      evaluate a classifier covenant at the raw value without re-entering itself — see
+    ///      there. `classValue` / `classIsSet` belong to `p.classAxisId`; supplying another
+    ///      axis's value is the one way to misuse this function, which is why every caller
+    ///      reads the axis off the covenant first.
+    function _appliesTo(address wallet, bytes32 covenantId, uint8 classValue, bool classIsSet, bool registered)
         private
         view
         returns (bool applies, bool evaluable)
@@ -649,9 +773,22 @@ contract CovenantRegistry is IErasable {
 
         Predicate storage p = c.predicate;
 
-        // ── dimension 1: tier (platform-wide) ────────────────────────────
-        if (tier == Tier.Unset) return (false, false); // unclassified ≠ exempt
-        if (p.tierMask != 0 && (p.tierMask & uint8(1 << uint8(tier))) == 0) return (false, true);
+        // ── dimension 0: registration (platform-wide) ────────────────────
+        // ⚠️ UNCONDITIONAL, AND IT REPLACES SOMETHING THAT USED TO BE FREE. While the tier was
+        // mandatory the `Tier.Unset` check caught unregistered wallets for EVERY covenant,
+        // including ones that did not key on tier at all. Making the classification dimension
+        // optional would have quietly dropped that: a covenant with no axis would have started
+        // applying to wallets the registry has never heard of. Asked directly now, of the
+        // registration flag, rather than inferred from an enum's zero value — and passed IN,
+        // because one identity read per covenant per transfer is what the argument-passing in
+        // this function exists to avoid.
+        if (!registered) return (false, false);
+
+        // ── dimension 1: classification on a named axis (platform-wide) ──
+        if (p.classAxisId != bytes32(0)) {
+            if (!classIsSet) return (false, false); // unclassified ≠ exempt
+            if (p.classMask != 0 && (p.classMask & uint8(1 << classValue)) == 0) return (false, true);
+        }
 
         // ── dimension 2: jurisdiction (platform-wide, set-valued) ────────
         if (p.needsMultiJurisdiction) return (false, false); // see `Predicate.needsMultiJurisdiction`
@@ -697,15 +834,15 @@ contract CovenantRegistry is IErasable {
     ///      investor triggers the KID duty FROM THAT POINT: the gate is not a one-time check.
     ///      A tier change makes new entries applicable at the next gated action, and never
     ///      retroactively invalidates a covenant properly given.
-    /// @dev Every gate resolves `effectiveTier` ONCE per wallet and passes it down, rather than
-    ///      re-reading the identity registry (and re-evaluating the opt-up covenant) inside each
-    ///      of up to `MAX_COVENANTS` iterations.
-    function _satisfiedAtTier(address wallet, bytes32 covenantId, Tier tier)
+    /// @dev Every gate resolves each axis ONCE per wallet and passes the values down, rather than
+    ///      re-reading the identity registry (and re-evaluating a classifier covenant) inside
+    ///      each of up to `MAX_COVENANTS` iterations. See `_axisIds`.
+    function _satisfiedAt(address wallet, bytes32 covenantId, uint8 classValue, bool classIsSet, bool registered)
         private
         view
         returns (bool ok, bool required)
     {
-        (bool applies, bool evaluable) = _appliesTo(wallet, covenantId, tier);
+        (bool applies, bool evaluable) = _appliesTo(wallet, covenantId, classValue, classIsSet, registered);
 
         if (!evaluable) return (false, true); // fail closed
         if (!applies) return (true, false);
@@ -734,7 +871,7 @@ contract CovenantRegistry is IErasable {
     /// @notice The gate. Reverts with `Blocked()` — carrying nothing — if any covenant
     ///         applicable to this wallet at this gate is unsatisfied or unevaluable.
     function assertSatisfied(address wallet, uint8 gate) public view {
-        Tier tier = effectiveTier(wallet);
+        (uint8[] memory vals, bool[] memory sets, bool registered) = _resolveAxes(wallet);
         uint256 len = _covenantIds.length;
         for (uint256 i = 0; i < len; i++) {
             bytes32 id = _covenantIds[i];
@@ -742,9 +879,45 @@ contract CovenantRegistry is IErasable {
             if (!c.active) continue;
             if (c.gates & gate == 0) continue;
 
-            (bool ok,) = _satisfiedAtTier(wallet, id, tier);
+            (uint8 v, bool s) = _classFor(c.predicate.classAxisId, vals, sets);
+            (bool ok,) = _satisfiedAt(wallet, id, v, s, registered);
             if (!ok) revert Blocked();
         }
+    }
+
+    /// @dev Resolves every tracked axis once, in `_axisIds` order. Bounded by `MAX_AXES`.
+    function _resolveAxes(address wallet)
+        private
+        view
+        returns (uint8[] memory vals, bool[] memory sets, bool registered)
+    {
+        (, registered) = identity.personIdOf(wallet);
+        uint256 n = _axisIds.length;
+        vals = new uint8[](n);
+        sets = new bool[](n);
+        for (uint256 i = 0; i < n; i++) {
+            (vals[i], sets[i]) = effectiveClass(wallet, _axisIds[i]);
+        }
+    }
+
+    /// @dev Looks one covenant's axis out of the resolved set. A linear scan is right here and a
+    ///      mapping would not be: `MAX_AXES` is 8, so this is at most eight word comparisons in
+    ///      memory against a storage read per lookup.
+    /// @dev ⚠️ AN AXIS THE PREDICATE NAMES BUT `_axisIds` DOES NOT HOLD RETURNS UNSET, AND
+    ///      THEREFORE FAILS CLOSED. `configureCovenant` tracks the axis, so this is unreachable
+    ///      by configuration; it is written this way so that if it ever became reachable the
+    ///      result is a blocked transfer and not a skipped dimension.
+    function _classFor(bytes32 axisId, uint8[] memory vals, bool[] memory sets)
+        private
+        view
+        returns (uint8 value, bool isSet)
+    {
+        if (axisId == bytes32(0)) return (0, true); // dimension unused
+        uint256 n = _axisIds.length;
+        for (uint256 i = 0; i < n; i++) {
+            if (_axisIds[i] == axisId) return (vals[i], sets[i]);
+        }
+        return (0, false);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -757,7 +930,7 @@ contract CovenantRegistry is IErasable {
     ///         for AMLR Art 76; this exists so a reviewer, a compliance officer or an
     ///         off-chain UI can recover exactly what the opaque revert concealed.
     function diagnose(address wallet, uint8 gate) external view returns (bytes32[] memory blocking) {
-        Tier tier = effectiveTier(wallet);
+        (uint8[] memory vals, bool[] memory sets, bool registered) = _resolveAxes(wallet);
         uint256 len = _covenantIds.length;
         bytes32[] memory buf = new bytes32[](len);
         uint256 n;
@@ -768,7 +941,8 @@ contract CovenantRegistry is IErasable {
             if (!c.active) continue;
             if (c.gates & gate == 0) continue;
 
-            (bool ok,) = _satisfiedAtTier(wallet, id, tier);
+            (uint8 v, bool s) = _classFor(c.predicate.classAxisId, vals, sets);
+            (bool ok,) = _satisfiedAt(wallet, id, v, s, registered);
             if (!ok) {
                 buf[n] = id;
                 n++;

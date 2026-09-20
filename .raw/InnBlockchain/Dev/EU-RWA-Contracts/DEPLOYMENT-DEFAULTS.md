@@ -533,9 +533,21 @@ nothing in it is a disclosure item), then:
 
 - `identity` is `IIdentityGate`-typed; the constructor signature is unchanged
   `(governance, documents, identity)`.
-- `setOptUpCovenant` refuses a covenant that is not `PlatformWide` or whose `tierMask` excludes
-  `ProfessionalOnRequest` (`OptUpCovenantMisconfigured`). Configure the opt-up covenant with
-  `tierMask = 0` or with the elective-professional bit set.
+- ⚠️ **`setOptUpCovenant` is gone — it is now `setClassifier(axisId, covenantId, electiveValue,
+  fallbackValue)`, and `Predicate.tierMask` is now `classAxisId` + `classMask`.** The MiFID opt-up
+  is configured on `AXIS_MIFID` with `electiveValue = Tier.ProfessionalOnRequest` and
+  `fallbackValue = Tier.Retail`; a second regime's classification (ECSPR sophisticated /
+  non-sophisticated) is a second axis, not a schema change.
+- `setClassifier` refuses a covenant that is not `PlatformWide`, whose `classMask` excludes
+  `electiveValue`, whose predicate names an axis other than the one being configured, or where
+  `electiveValue == fallbackValue` (all `ClassifierMisconfigured`). Configure the covenant with
+  `classMask = 0` or with the elective bit set.
+- ⚠️ **`fallbackValue` must be the MORE PROTECTIVE classification and nothing on chain checks
+  it.** For MiFID that is `Tier.Retail`. Configured backwards, an investor with no record is
+  promoted rather than demoted, which inverts the control instead of weakening it.
+- `IdentityRegistry.registerAxis(axisId)` is **governance**, and must be called before
+  `setClassification` will write on a new axis. `AXIS_MIFID` is registered in the constructor.
+  Bounded at `MAX_AXES = 8` in both registries — the bound is `erasePerson`'s gas budget.
 - `signCovenant` on an `OperatorAttestation` covenant reverts `AttestationRequiredFromOperator`;
   back-record those through `recordAttestation` from an operator key.
 - `CovenantGate` no longer gates the zero leg on burn: a RECEIVE-gated covenant no longer blocks

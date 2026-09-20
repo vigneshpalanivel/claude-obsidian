@@ -76,6 +76,12 @@ struct Version {
 }
 
 /// @notice Investor classification. Gates who may hold and on what terms.
+/// @dev    ⚠️ ONE AXIS AMONG SEVERAL, NOT THE CLASSIFICATION. This is MiFID II Annex II, stored
+///         and read through the generic classification machinery under `AXIS_MIFID`. It stays a
+///         named enum because the MiFID limb is the one every contract in this suite reads
+///         directly and a `uint8` there would lose the compiler's help — `SubscriptionEscrow`'s
+///         qualified-investor test is genuinely about THESE five values. A second regime's
+///         classification is a second axis with its own encoding, never a widening of this enum.
 enum Tier {
     Unset,
     Retail,
@@ -83,6 +89,15 @@ enum Tier {
     PerSeProfessional,
     EligibleCounterparty
 }
+
+// ⚠️ THERE IS DELIBERATELY NO `AXIS_MIFID` CONSTANT. It existed briefly and was removed: a
+// compile-time axis id makes MiFID the one classification the suite cannot be deployed without,
+// which is the hardcoding the axis machinery exists to end. The axis carrying `Tier` is nominated
+// per deployment through `IdentityRegistry.setTierAxis`, exactly like every other axis, and a
+// deployment whose client is not under MiFID simply nominates a different one — or none, in which
+// case `tierOf` and `isRetail` REVERT rather than answering, because both are consumed as
+// positive gates and a false would fail open. See `SettlementEngine.giveReuseConsent` and
+// `MemberEligibility`, which read `isRetail` as "this person needs MORE checks".
 
 /// @notice Lifecycle of a distribution run.
 enum DistributionState {
@@ -137,6 +152,19 @@ interface IIdentityGate {
     ///         in reach of contracts that have no business reading them.
     function personIdOf(address wallet) external view returns (bytes32 personId, bool registered);
 
+    /// @notice This wallet's raw classification on one axis.
+    /// @dev    ⚠️ `isSet` IS NOT A CONVENIENCE AND MUST NOT BE DROPPED. `value == 0` cannot carry
+    ///         "unclassified" for a generic axis: the MiFID encoding happens to reserve zero
+    ///         (`Tier.Unset`) but a second regime is free to give zero a meaning — ECSPR could
+    ///         reasonably encode non-sophisticated as 0. Collapse the two and an unclassified
+    ///         investor reads as a real classification and the covenant predicate SILENTLY
+    ///         MATCHES, which is the fail-open dressed as a passing check that rule 5 exists to
+    ///         stop. Consumers treat `!isSet` as unevaluable, never as not-applicable.
+    function classificationOf(address wallet, bytes32 axisId) external view returns (uint8 value, bool isSet);
+
+    /// @notice The MiFID limb of `classificationOf`, typed.
+    /// @dev    A view over `classificationOf(wallet, AXIS_MIFID)`, not a second store. There is
+    ///         exactly one copy of this value and both reads reach it.
     function tierOf(address wallet) external view returns (Tier);
 }
 

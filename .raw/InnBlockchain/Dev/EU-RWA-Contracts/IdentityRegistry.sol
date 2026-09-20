@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IIdentityGate, Tier} from "./Interfaces.sol";
+import {AXIS_MIFID, IIdentityGate, Tier} from "./Interfaces.sol";
 import {
     IAgentRole,
     IClaimTopicsRegistry,
@@ -209,15 +209,34 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         and the MiFIR identifier are answers about the person — a second address does
     ///         not give someone a second country. Those are all here. Whether a particular
     ///         address is live is an answer about the address, and lives in `WalletBinding`.
+    /// @dev ⚠️ `tier` IS GONE FROM THIS STRUCT AND THAT IS THE POINT, NOT A TIDY-UP. It lived
+    ///      here as a single `Tier` field, which made MiFID II the only classification the suite
+    ///      could express — ECSPR's sophisticated / non-sophisticated limb had nowhere to go, and
+    ///      adding it as a second field would have meant a third for the next regime. The value
+    ///      now lives in `_class[personId][AXIS_MIFID]`, one copy, read through both
+    ///      `classificationOf` and the typed `tierOf`. Keeping a `tier` field here as well would
+    ///      be two stores for one fact, which is the drift this move exists to remove.
     struct Person {
         bool exists;
         PersonType personType;
-        Tier tier;
         uint64 verifiedAt;
         uint64 expiresAt; // AMLR periodic-review horizon; 0 = no scheduled refresh
         bytes20 lei; // legal persons — 20 chars, exact fit
         bytes32 jurisdiction; // ISO 3166-1 alpha-2, left-packed
         bytes32 nationalClientIdHash; // natural persons — salted hash, never the NCI itself
+    }
+
+    /// @notice One person's classification on one axis.
+    /// @dev    ⚠️ PACKED INTO ONE SLOT ON PURPOSE. `uint8 + bool` is nine bytes, so this is a
+    ///         single `SLOAD` on a path the transfer hook runs for every covenant on every
+    ///         movement. The obvious alternative — two parallel mappings, the shape
+    ///         `productAttribute` uses — doubles that read for no gain. The other alternative,
+    ///         reserving `0` as "unset" and dropping the flag, is cheaper still and was rejected:
+    ///         it silently forbids every future regime from ever giving zero a meaning, to save
+    ///         one byte in a slot that is already padded.
+    struct Classification {
+        uint8 value;
+        bool isSet;
     }
 
     /// @notice One address's attachment to a person. Deliberately thin.
@@ -312,6 +331,27 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
 
     mapping(bytes32 => Person) private _persons;
     mapping(address => WalletBinding) private _wallets;
+
+    /// @notice Every classification the KYC process established about a person, by axis.
+    /// @dev    ⚠️ THIS IS PERSONAL DATA AND `erasePerson` HAS TO REACH IT. A mapping cannot be
+    ///         cleared by `delete`, so unlike the `Person` struct it does not fall out of the
+    ///         erasure for free — `_axisIds` below exists so the sweep can enumerate what to
+    ///         delete. A classification store that outlives an Art 17 request is the exact
+    ///         failure no test catches, because every functional test passes with the rows still
+    ///         there.
+    mapping(bytes32 => mapping(bytes32 => Classification)) private _class;
+
+    /// @notice The axes in use, enumerable so erasure can sweep them.
+    /// @dev    ⚠️ BOUNDED, AND THE BOUND IS THE ERASURE PATH'S BUDGET, NOT A STYLE CHOICE. Every
+    ///         axis registered here is one more `delete` inside `erasePerson`, which already
+    ///         loops wallets and claims. An unbounded axis list hands an operator a way to make
+    ///         a person's own erasure exceed the block gas limit — the trap the wallet loop was
+    ///         written backwards to avoid. Eight is far beyond the regimes in scope (MiFID,
+    ///         ECSPR, and room for national overlays).
+    uint256 public constant MAX_AXES = 8;
+
+    bytes32[] private _axisIds;
+    mapping(bytes32 => bool) public axisRegistered;
 
     /// @dev ⚠️ CLAIMS ARE PERSON-KEYED, NOT WALLET-KEYED, SINCE 2026-09-09. "Is this human
     ///      under sanctions" and "has this human's identity been verified" are facts about the
@@ -409,6 +449,11 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///      person behind it is a storage read away for anyone entitled to make it.
     event PersonRegistered(address indexed firstWallet);
     event PersonUpdated(address indexed anyWallet);
+    /// @dev The axis is a platform-level configuration fact about nobody, so it is logged in
+    ///      full. The per-person events below deliberately are not — see `_writeClass`.
+    event AxisRegistered(bytes32 indexed axisId);
+    event ClassificationSet(address indexed anyWallet, bytes32 indexed axisId);
+    event ClassificationCleared(address indexed anyWallet, bytes32 indexed axisId);
     event IdentifierBound(address indexed anyWallet, bytes20 lei);
     event WalletBound(address indexed wallet);
     event WalletUnbound(address indexed wallet, bytes32 reasonHash);
@@ -440,6 +485,9 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///      the person index — invisible to `erasePerson` and uncountable for Art 1(4)(b).
     error PersonIdRequired();
     error PersonNotRegistered(bytes32 personId);
+    error AxisIdRequired();
+    error AxisNotRegistered(bytes32 axisId);
+    error TooManyAxes();
     error PersonAlreadyRegistered(bytes32 personId);
     /// @dev ⚠️ THE GUARD THAT REPLACES THE DIVERGENCE BUG. `registerInvestor` is a convenience
     ///      that creates the person if absent and binds the wallet either way. When the person
@@ -514,6 +562,12 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
         // is what a reviewer reconstructing a swap needs and the EIP's have no field for.
         emit ClaimTopicsRegistrySet(claimTopics_);
         emit TrustedIssuersRegistrySet(trustedIssuers_);
+
+        // ⚠️ REGISTERED HERE, NOT LEFT TO GOVERNANCE, AND THE REASON IS THE ERASURE SWEEP. Every
+        // person carries a MiFID classification from `registerPerson` onwards, so if this axis
+        // were not in `_axisIds` from block one, `erasePerson` would walk a list that does not
+        // contain the one axis every record is guaranteed to hold.
+        _registerAxis(AXIS_MIFID);
     }
 
     /// @notice Grant or revoke the registrar role. The suite's own form — one call, one boolean.
@@ -698,13 +752,17 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
         _persons[personId] = Person({
             exists: true,
             personType: personType,
-            tier: tier,
             verifiedAt: uint64(block.timestamp),
             expiresAt: expiresAt,
             lei: bytes20(0),
             jurisdiction: jurisdiction,
             nationalClientIdHash: bytes32(0)
         });
+
+        // The signature keeps the typed `Tier` — the caller is a registrar acting on a MiFID
+        // classification and should not be handed a bare `uint8` to get wrong. Only the storage
+        // underneath it is generic.
+        _writeTier(personId, tier);
 
         // ERC-3643 only. Records the handle ⇄ person pairing so `registerIdentity` can resolve a
         // wallet onto this person. Costs one slot per person and is deleted by `erasePerson`.
@@ -729,7 +787,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
         Person storage p = _persons[personId];
         if (!p.exists) revert PersonNotRegistered(personId);
 
-        p.tier = tier;
+        _writeTier(personId, tier);
         p.jurisdiction = jurisdiction;
         p.expiresAt = expiresAt;
         p.verifiedAt = uint64(block.timestamp);
@@ -855,7 +913,10 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
             return;
         }
 
-        if (p.personType != personType || p.tier != tier || p.jurisdiction != jurisdiction) {
+        if (
+            p.personType != personType || Tier(_class[personId][AXIS_MIFID].value) != tier
+                || p.jurisdiction != jurisdiction
+        ) {
             revert PersonAttributesMismatch(personId);
         }
         bindWallet(wallet, personId);
@@ -904,6 +965,16 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
             // wallet is leaving it; a listener that only reads EIP events must see the removal
             // or it keeps a record this contract no longer holds.
             emit IdentityRemoved(wallet, IIdentity(_handleOf(personId)));
+        }
+
+        // ⚠️ MAPPINGS DO NOT FALL OUT OF `delete _persons[personId]`, AND THE CLASSIFICATIONS ARE
+        // A MAPPING NOW. While the MiFID tier was a field on the struct it was erased for free;
+        // moving it into `_class` moved it OUT of that guarantee, and an axis left here after an
+        // Art 17 request is a live regulatory classification of an erased data subject. Bounded
+        // by `MAX_AXES`, for the reason given on `_axisIds`.
+        uint256 axes = _axisIds.length;
+        for (uint256 i = 0; i < axes; i++) {
+            delete _class[personId][_axisIds[i]];
         }
 
         delete _persons[personId];
@@ -1206,8 +1277,34 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
         return _claimTopicsOf[personId];
     }
 
+    /// @inheritdoc IIdentityGate
+    function classificationOf(address wallet, bytes32 axisId)
+        external
+        view
+        override
+        returns (uint8 value, bool isSet)
+    {
+        Classification storage c = _class[_wallets[wallet].personId][axisId];
+        return (c.value, c.isSet);
+    }
+
+    /// @notice Every axis in use, in registration order.
+    /// @dev    The erasure path's worklist for classifications, exposed for the same reason
+    ///         `claimTopicsOf` is: an operator should be able to evidence what `erasePerson`
+    ///         will reach before calling it.
+    function axisIds() external view returns (bytes32[] memory) {
+        return _axisIds;
+    }
+
+    /// @dev ⚠️ AN UNREGISTERED WALLET READS AS `Tier.Unset` AND THAT IS LOad-BEARING DOWNSTREAM.
+    ///      `_wallets[wallet].personId` is `bytes32(0)` for an unknown address, no classification
+    ///      was ever written against it, so `value` is 0 — which `Tier` reserves for `Unset`.
+    ///      `SubscriptionEscrow` relies on this: `Tier.Unset` IS counted toward the Art 1(4)(b)
+    ///      headcount, because resolving an unknown in the offer's favour is how a headcount
+    ///      exemption quietly stops being one. Generic consumers must use `classificationOf` and
+    ///      read `isSet` instead of inferring absence from zero — see the interface note.
     function tierOf(address wallet) external view override returns (Tier) {
-        return _persons[_wallets[wallet].personId].tier;
+        return Tier(_class[_wallets[wallet].personId][AXIS_MIFID].value);
     }
 
     function jurisdictionOf(address wallet) external view override returns (bytes32) {
@@ -1215,10 +1312,88 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     }
 
     function isRetail(address wallet) external view returns (bool) {
-        return _persons[_wallets[wallet].personId].tier == Tier.Retail;
+        return Tier(_class[_wallets[wallet].personId][AXIS_MIFID].value) == Tier.Retail;
+    }
+
+    // ─────────────────────────── classification axes ──────────────────────────
+
+    /// @notice Opens a new classification axis — ECSPR sophisticated / non-sophisticated, a
+    ///         national overlay, anything a regime classifies investors by.
+    /// @dev    ⚠️ GOVERNANCE, NOT THE REGISTRAR, AND THE SPLIT MATTERS. Opening an axis decides
+    ///         what the platform is capable of recording about people; writing a value on an
+    ///         open axis is the routine KYC action. A registrar that could do both could invent
+    ///         a classification dimension and populate it, with no governance transaction
+    ///         anywhere in the record — which is a data-minimisation finding under Art 5(1)(c)
+    ///         before it is an access-control one.
+    function registerAxis(bytes32 axisId) external onlyGovernance {
+        _registerAxis(axisId);
+    }
+
+    /// @notice Writes a person's classification on an already-open axis.
+    /// @dev    The MiFID limb keeps its typed path through `registerPerson` / `updatePerson`.
+    ///         This is for every other axis, and it refuses an unregistered one rather than
+    ///         opening it implicitly — an axis that appeared because someone wrote to it would
+    ///         be outside `_axisIds`, and therefore outside the erasure sweep.
+    function setClassification(bytes32 personId, bytes32 axisId, uint8 value) external onlyRegistrar {
+        if (!_persons[personId].exists) revert PersonNotRegistered(personId);
+        if (!axisRegistered[axisId]) revert AxisNotRegistered(axisId);
+        _writeClass(personId, axisId, value);
+    }
+
+    /// @notice Clears a person's classification on one axis without erasing the person.
+    /// @dev    An elective status can be withdrawn by the client at any time, and withdrawal is
+    ///         not erasure — the ECSPR analogue of a Section II downgrade. Sets `isSet` false, so
+    ///         the axis reads as UNEVALUABLE rather than as some default value, and every
+    ///         predicate keyed on it fails closed until it is written again.
+    function clearClassification(bytes32 personId, bytes32 axisId) external onlyRegistrar {
+        if (!_persons[personId].exists) revert PersonNotRegistered(personId);
+        delete _class[personId][axisId];
+        emit ClassificationCleared(_representativeWallet(personId), axisId);
     }
 
     // ─────────────────────────── internals ────────────────────────────────────
+
+    function _registerAxis(bytes32 axisId) private {
+        if (axisId == bytes32(0)) revert AxisIdRequired();
+        if (axisRegistered[axisId]) return;
+        if (_axisIds.length >= MAX_AXES) revert TooManyAxes();
+        axisRegistered[axisId] = true;
+        _axisIds.push(axisId);
+        emit AxisRegistered(axisId);
+    }
+
+    /// @dev ⚠️ THE EVENT CARRIES THE AXIS AND NOT THE VALUE, AND THAT IS THE §10 FIELD RULE, NOT
+    ///      an oversight. A log carrying `(wallet, axisId, value)` binds an address to a
+    ///      regulatory classification of the human behind it, permanently, in a record no
+    ///      erasure request can reach — the same objection that took the jurisdiction out of
+    ///      `SubscriptionEscrow`'s subscription log. An indexer that legitimately needs the value
+    ///      reads `classificationOf`, which the erasure empties.
+    function _writeClass(bytes32 personId, bytes32 axisId, uint8 value) private {
+        _class[personId][axisId] = Classification({value: value, isSet: true});
+        emit ClassificationSet(_representativeWallet(personId), axisId);
+    }
+
+    /// @dev ⚠️ `Tier.Unset` CLEARS THE AXIS, IT DOES NOT STORE ZERO, AND THE DIFFERENCE IS A
+    ///      FAIL-OPEN. `Tier` reserves its zero as "no classification", so a registrar passing
+    ///      `Tier.Unset` means *unclassified* — but the generic store has only one way to say
+    ///      that, and it is `isSet == false`. Writing `{value: 0, isSet: true}` instead would
+    ///      publish "this person IS classified, as Unset": the covenant predicate would then find
+    ///      the axis evaluable, run the mask against bit 0, and return NOT-APPLICABLE for every
+    ///      mask that excludes it. That is the covenant silently switching off for an
+    ///      unclassified investor — precisely the "unclassified ≠ exempt" rule the predicate's
+    ///      first dimension exists to enforce, and precisely what the old `Tier tier` field got
+    ///      right for free by being checked as an enum rather than as a presence flag.
+    ///      Every axis with a zero-means-absent encoding has to be mapped onto `isSet` at the
+    ///      boundary like this; the generic `setClassification` cannot do it, because it cannot
+    ///      know a foreign regime's encoding.
+    function _writeTier(bytes32 personId, Tier tier) private {
+        if (tier == Tier.Unset) {
+            delete _class[personId][AXIS_MIFID];
+            emit ClassificationCleared(_representativeWallet(personId), AXIS_MIFID);
+            return;
+        }
+        _writeClass(personId, AXIS_MIFID, uint8(tier));
+    }
 
     /// @dev Resolves a wallet to its person, reverting if the wallet is not bound. Used by the
     ///      claim writers, which must never create a claim under `bytes32(0)` — that slot would

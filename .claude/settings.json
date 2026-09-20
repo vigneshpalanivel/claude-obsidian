@@ -347,7 +347,15 @@
       "Bash(gh search *)",
       "WebFetch(domain:ethereum-magicians.org)",
       "Bash(grep -n \"^#\\\\{2,4\\\\} \" \"EU Smart Contract Design.md\")",
-      "Bash(awk 'NR>=159 && NR<=189 {printf \"%d| %s\\\\n\", NR, $0}' \"EU Smart Contract Design - The Transfer Gate.md\")"
+      "Bash(awk 'NR>=159 && NR<=189 {printf \"%d| %s\\\\n\", NR, $0}' \"EU Smart Contract Design - The Transfer Gate.md\")",
+      "Bash(awk -F: '$1>=2900 && $1<=3708')",
+      "Bash(awk 'NR>=350 && NR<=372' \"ESMA - Prospectus Regulation Outreach Plan.md\")",
+      "Bash(grep -n '^\\\\$')",
+      "Bash(awk 'NR>=352 && NR<=366' \"ESMA - Prospectus Regulation Outreach Plan.md\")",
+      "Bash(perl -0pi -e 's/\\\\n\\\\n\\\\n+/\\\\n\\\\n/g' \"ESMA - Prospectus Regulation Outreach Plan.md\")",
+      "Bash(awk 'NR>=148 && NR<=182' \"ESMA -  ECSP Outreach Plan.md\")",
+      "Bash(npx --no-install solcjs --version)",
+      "Bash(node -e \"console.log\\(require\\('/Users/admin/Projects/InnBlockchain/real-estate-tokenization-mvp/packages/contracts-1400/node_modules/solc/package.json'\\).version\\)\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
