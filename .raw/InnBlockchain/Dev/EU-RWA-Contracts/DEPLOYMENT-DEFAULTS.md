@@ -190,6 +190,26 @@ list is the authoritative order; where a later section disagrees, this one wins.
    **reverts `UnknownCountryCode`**. The suite's native `bindWallet` path is unaffected, so a
    deployment can run for months before a counterparty tool using the standard surface hits it.
    The mapping is **not** re-pointable in either direction; `country == 0` retires an entry.
+2b. **`IdentityRegistry.setTierAxis(axisId)` — ⚠️ a go-live item, and skipping it bricks three
+   contracts rather than degrading them.** There is no longer an `AXIS_MIFID` constant; the axis
+   carrying the `Tier` encoding is nominated per deployment, which is what lets a non-MiFID client
+   run the same contracts. Until it is set, `tierOf` and `isRetail` **revert
+   `TierAxisNotConfigured`** — deliberately, because `SettlementEngine.giveReuseConsent`,
+   `MemberEligibility` and `SubscriptionEscrow.subscribe` all read them as *positive* gates, and a
+   registry answering `false` would switch the retail controls off for everyone rather than
+   failing loudly. Pick any `bytes32`; `keccak256("axis.mifid2.annexII")` is the conventional one.
+   Open further axes with `registerAxis` (ECSPR sophisticated / non-sophisticated, national
+   overlays), bounded at `MAX_AXES = 8` — **the bound is `erasePerson`'s gas budget, not a style
+   limit.**
+2c. **Classifications are no longer written by `registerPerson`.** It takes
+   `(personId, personType, jurisdiction, expiresAt)` — the `Tier` argument is gone, as it is from
+   `updatePerson(personId, jurisdiction, expiresAt)` and
+   `registerInvestor(wallet, personType, jurisdiction, personId, expiresAt)`. A person is
+   registered carrying **no** classification on any axis; write each one afterwards with
+   `setClassification(personId, axisId, value)`. ⚠️ **An axis nobody wrote reads unset and every
+   predicate keyed on it fails closed** — which is the intended behaviour, and the reason
+   `Tier.Unset` no longer needs to exist as a stored value. Onboarding is therefore two calls, not
+   one, and a deployment that forgets the second blocks transfers rather than admitting them.
 3. `RestrictedPartyRegistry` — takes `(governance, identity, maxSweepLag)`
 4. `ModularCompliance` — takes `(governance)`
 5. `SecurityToken` — takes `(governance, compliance, identity, restrictions, protocolPause, name, symbol, decimals, isinHash)`

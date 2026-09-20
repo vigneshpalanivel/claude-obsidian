@@ -2,7 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {ModuleAdapter} from "./ModularCompliance.sol";
-import {AXIS_MIFID, IDocumentAnchor, IErasable, IIdentityGate, Tier} from "./Interfaces.sol";
+import {IDocumentAnchor, IErasable, IIdentityGate} from "./Interfaces.sol";
 
 /// @title CovenantRegistry (illustrative sample — not production code)
 /// @notice C7 — the store of what the INVESTOR THEMSELVES has stated, agreed or acknowledged,
@@ -111,13 +111,13 @@ contract CovenantRegistry is IErasable {
     ///         dimensions in one obligation. That single row is why this is a struct.
     struct Predicate {
         /// @dev ⚠️ WAS `uint8 tierMask`, HARDCODED TO MiFID. The dimension is now "a
-        ///      classification on a named axis" — `AXIS_MIFID` for tier, and whatever a second
+        ///      classification on a named axis" — the nominated tier axis for MiFID, and whatever a second
         ///      regime opens for its own. `bytes32(0)` disables the dimension.
         ///      There is deliberately ONE axis slot and not an array: a list makes the gate's gas
         ///      unbounded and gives the evaluation nowhere to stop, and no obligation in any
         ///      checklist keys on two classification regimes at once.
         bytes32 classAxisId;
-        /// @dev Bitmask over the axis's own encoding — for `AXIS_MIFID`, over `Tier`.
+        /// @dev Bitmask over the axis's own encoding — for the tier axis, over `Tier`.
         ///      0 = every classification on that axis.
         uint8 classMask;
         /// @dev A SET, not a value. ⚠️ A covenant may apply across several Member States and an
@@ -466,7 +466,7 @@ contract CovenantRegistry is IErasable {
     }
 
     /// @notice Names the covenant that resolves one axis's elective classification — the MiFID II
-    ///         Annex II Section II opt-up on `AXIS_MIFID`, ECSPR's opt-in to sophisticated on its
+    ///         Annex II Section II opt-up on the nominated tier axis, ECSPR's opt-in on its
     ///         own axis.
     /// @dev    ⚠️ ITS `scope` MUST BE `PlatformWide`, and that is not a style preference: the
     ///         classification it governs is itself platform-wide, and a per-asset covenant gating
@@ -664,7 +664,7 @@ contract CovenantRegistry is IErasable {
     /// @dev    ⚠️ THE LIMIT, STATED RATHER THAN ASSUMED: this cannot stop the off-chain claims
     ///         service writing `ProfessionalOnRequest` in the first place. What it does is
     ///         refuse to BELIEVE it without the covenant. The complementary control is
-    ///         `mayUpgradeTier`, which the identity registry may call before it writes.
+    ///         `mayUpgrade`, which the identity registry may call before it writes.
     /// @dev    ⚠️ THE OPT-UP COVENANT IS EVALUATED AGAINST THE RAW TIER, AND THE REASON IS A
     ///         RECURSION THAT SHIPPED. Until 2026-09-08 this read
     ///         `_satisfied(wallet, optUpCovenantId)` → `appliesTo` → `effectiveTier` → … with
@@ -702,21 +702,13 @@ contract CovenantRegistry is IErasable {
         return (value, true);
     }
 
-    /// @notice The MiFID limb of `effectiveClass`, typed.
-    /// @dev    ⚠️ RULE 6 — DOWNGRADE IS THE DANGEROUS DIRECTION, AND THIS IS WHERE IT IS
-    ///         HANDLED. An investor who has not completed the opt-up is STILL RETAIL. A
-    ///         self-declaration in a sign-up form is not an opt-up. So a `ProfessionalOnRequest`
-    ///         tier whose opt-up covenant is missing or stale resolves to the configured
-    ///         fallback — `Retail` — and every retail covenant becomes live for them, rather
-    ///         than the platform silently switching PRIIPs off for someone the regulation still
-    ///         treats as retail.
-    /// @dev    An unclassified wallet returns `Tier.Unset`, preserving the pre-generalisation
-    ///         behaviour for the callers that read this rather than `effectiveClass`.
-    function effectiveTier(address wallet) public view returns (Tier) {
-        (uint8 v, bool isSet) = effectiveClass(wallet, AXIS_MIFID);
-        if (!isSet) return Tier.Unset;
-        return Tier(v);
-    }
+    /// @dev ⚠️ THERE IS NO `effectiveTier` / `mayUpgradeTier` PAIR ANY MORE, AND NOTHING LOST A
+    ///      CALLER. They were typed MiFID wrappers over the two functions above. Once
+    ///      `assertSatisfied` and `diagnose` moved onto `_resolveAxes`, nothing in the suite
+    ///      called either of them — `IdentityRegistry` had never wired `mayUpgradeTier`, which
+    ///      the 2026-09-08 review already recorded. Keeping them would have preserved a
+    ///      compile-time dependency on one regime for no consumer. A caller wanting the MiFID
+    ///      answer calls `effectiveClass(wallet, identity.tierAxis())` and casts.
 
     /// @notice The optional contract control for predicate rule 4. The identity registry may
     ///         call this before writing an elective classification, closing the ordering hole
@@ -734,10 +726,6 @@ contract CovenantRegistry is IErasable {
         (, bool registered) = identity.personIdOf(wallet);
         (bool ok,) = _satisfiedAt(wallet, k.covenantId, k.electiveValue, true, registered);
         return ok;
-    }
-
-    function mayUpgradeTier(address wallet) external view returns (bool) {
-        return mayUpgrade(wallet, AXIS_MIFID);
     }
 
     /// @notice Evaluates `appliesTo` as a conjunction over the four dimensions, at the wallet's

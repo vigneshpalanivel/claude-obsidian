@@ -387,3 +387,12 @@ Every manager role in the fund modules is rotatable (two-step for the AIFM/ManCo
     which had erased it for free. `erasePerson` now sweeps `_axisIds` explicitly. A classification
     surviving an Art 17 request is the failure no functional test catches, because every test
     passes with the rows still there.
+11. **`tierAxis` is a go-live step with no on-chain default, by design.** There is no `AXIS_MIFID`
+    constant: `setTierAxis` nominates the axis carrying `Tier`, and until it is called `tierOf` and
+    `isRetail` revert `TierAxisNotConfigured`. That is the fail-closed direction — `SettlementEngine`,
+    `MemberEligibility` and `SubscriptionEscrow` all read those as positive gates — but it means a
+    deployment can be fully wired and still refuse every transfer until one governance call lands.
+    It is in `DEPLOYMENT-DEFAULTS.md` §2 step 2b; **it is not enforced by any constructor.**
+    ⚠️ Re-pointing it later reinterprets every existing record rather than migrating it: values
+    written against the old axis do not move, so every holder reads `Tier.Unset` and the retail
+    controls stop firing. Swap, not migration.

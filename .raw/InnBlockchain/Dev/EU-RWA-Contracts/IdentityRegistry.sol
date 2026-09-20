@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {AXIS_MIFID, IIdentityGate, Tier} from "./Interfaces.sol";
+import {IIdentityGate, Tier} from "./Interfaces.sol";
 import {
     IAgentRole,
     IClaimTopicsRegistry,
@@ -213,7 +213,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///      here as a single `Tier` field, which made MiFID II the only classification the suite
     ///      could express — ECSPR's sophisticated / non-sophisticated limb had nowhere to go, and
     ///      adding it as a second field would have meant a third for the next regime. The value
-    ///      now lives in `_class[personId][AXIS_MIFID]`, one copy, read through both
+    ///      now lives in `_class[personId][tierAxis]`, one copy, read through both
     ///      `classificationOf` and the typed `tierOf`. Keeping a `tier` field here as well would
     ///      be two stores for one fact, which is the drift this move exists to remove.
     struct Person {
@@ -353,6 +353,17 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     bytes32[] private _axisIds;
     mapping(bytes32 => bool) public axisRegistered;
 
+    /// @notice Which axis carries the `Tier` encoding, for the consumers that ask MiFID-semantic
+    ///         questions — `SubscriptionEscrow`'s qualified-investor read, `SettlementEngine`'s
+    ///         retail title-transfer prohibition, `MemberEligibility`'s Art 25 suitability limb.
+    /// @dev    ⚠️ CONFIGURATION, NOT A CONSTANT, AND UNSET IS A REVERT RATHER THAN A DEFAULT.
+    ///         This was `AXIS_MIFID`, a compile-time id, which made MiFID the one classification
+    ///         the suite could not be deployed without. Nominating it per deployment is what lets
+    ///         a non-MiFID client use the same contracts. The three consumers above all read
+    ///         their answer as a POSITIVE gate, so an unconfigured registry must refuse to answer
+    ///         — see `_tierValue`.
+    bytes32 public tierAxis;
+
     /// @dev ⚠️ CLAIMS ARE PERSON-KEYED, NOT WALLET-KEYED, SINCE 2026-09-09. "Is this human
     ///      under sanctions" and "has this human's identity been verified" are facts about the
     ///      human; an issuer attesting them against one address and not another was recording
@@ -452,6 +463,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     /// @dev The axis is a platform-level configuration fact about nobody, so it is logged in
     ///      full. The per-person events below deliberately are not — see `_writeClass`.
     event AxisRegistered(bytes32 indexed axisId);
+    event TierAxisSet(bytes32 indexed axisId);
     event ClassificationSet(address indexed anyWallet, bytes32 indexed axisId);
     event ClassificationCleared(address indexed anyWallet, bytes32 indexed axisId);
     event IdentifierBound(address indexed anyWallet, bytes20 lei);
@@ -488,6 +500,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     error AxisIdRequired();
     error AxisNotRegistered(bytes32 axisId);
     error TooManyAxes();
+    error TierAxisNotConfigured();
     error PersonAlreadyRegistered(bytes32 personId);
     /// @dev ⚠️ THE GUARD THAT REPLACES THE DIVERGENCE BUG. `registerInvestor` is a convenience
     ///      that creates the person if absent and binds the wallet either way. When the person
@@ -563,11 +576,10 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
         emit ClaimTopicsRegistrySet(claimTopics_);
         emit TrustedIssuersRegistrySet(trustedIssuers_);
 
-        // ⚠️ REGISTERED HERE, NOT LEFT TO GOVERNANCE, AND THE REASON IS THE ERASURE SWEEP. Every
-        // person carries a MiFID classification from `registerPerson` onwards, so if this axis
-        // were not in `_axisIds` from block one, `erasePerson` would walk a list that does not
-        // contain the one axis every record is guaranteed to hold.
-        _registerAxis(AXIS_MIFID);
+        // ⚠️ NO AXIS IS REGISTERED HERE. A person no longer carries a classification by virtue
+        // of being registered — `registerPerson` writes none — so there is no axis the erasure
+        // sweep is guaranteed to need. Every axis, MiFID's included, is opened by governance
+        // through `registerAxis` / `setTierAxis` as a deployment step.
     }
 
     /// @notice Grant or revoke the registrar role. The suite's own form — one call, one boolean.
@@ -739,10 +751,18 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         completes against a human, and an address is nominated afterwards (sometimes
     ///         much later, sometimes several times). Forcing them into one call was what made
     ///         the per-wallet attribute copy feel natural in the first place.
+    /// @dev ⚠️ NO CLASSIFICATION ARGUMENT, AND ITS ABSENCE IS THE POINT. While this took a
+    ///      `Tier`, a registrar had to supply one for every person — so "unclassified" needed a
+    ///      representation (`Tier.Unset`), and that value then had to be translated into the
+    ///      generic store's only way of saying it (`isSet == false`). That translation was a
+    ///      silent fail-open when it was got wrong, and would have had to be rewritten for every
+    ///      future regime whose encoding also reserves zero. A person is now registered with NO
+    ///      classification on any axis; each one is written afterwards through
+    ///      `setClassification`, and an axis nobody wrote reads unset by construction. There is
+    ///      nothing left to translate and nothing left to forget.
     function registerPerson(
         bytes32 personId,
         PersonType personType,
-        Tier tier,
         bytes32 jurisdiction,
         uint64 expiresAt
     ) public onlyRegistrar {
@@ -758,11 +778,6 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
             jurisdiction: jurisdiction,
             nationalClientIdHash: bytes32(0)
         });
-
-        // The signature keeps the typed `Tier` — the caller is a registrar acting on a MiFID
-        // classification and should not be handed a bare `uint8` to get wrong. Only the storage
-        // underneath it is generic.
-        _writeTier(personId, tier);
 
         // ERC-3643 only. Records the handle ⇄ person pairing so `registerIdentity` can resolve a
         // wallet onto this person. Costs one slot per person and is deleted by `erasePerson`.
@@ -780,14 +795,12 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         see the GDPR note on the events for why the `personId` is not in the log.
     function updatePerson(
         bytes32 personId,
-        Tier tier,
         bytes32 jurisdiction,
         uint64 expiresAt
     ) external onlyRegistrar {
         Person storage p = _persons[personId];
         if (!p.exists) revert PersonNotRegistered(personId);
 
-        _writeTier(personId, tier);
         p.jurisdiction = jurisdiction;
         p.expiresAt = expiresAt;
         p.verifiedAt = uint64(block.timestamp);
@@ -899,7 +912,6 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     function registerInvestor(
         address wallet,
         PersonType personType,
-        Tier tier,
         bytes32 jurisdiction,
         bytes32 personId,
         uint64 expiresAt
@@ -907,16 +919,17 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
         Person storage p = _persons[personId];
 
         if (!p.exists) {
-            registerPerson(personId, personType, tier, jurisdiction, expiresAt);
+            registerPerson(personId, personType, jurisdiction, expiresAt);
             bindWallet(wallet, personId);
             emit PersonRegistered(wallet);
             return;
         }
 
-        if (
-            p.personType != personType || Tier(_class[personId][AXIS_MIFID].value) != tier
-                || p.jurisdiction != jurisdiction
-        ) {
+        // ⚠️ THE CLASSIFICATION IS NO LONGER PART OF THIS COMPARISON, BECAUSE IT IS NO LONGER
+        // PASSED. The mismatch guard exists to stop a second wallet being bound under different
+        // attributes than the person already carries; classifications are not attributes of this
+        // call any more, and are changed deliberately through `setClassification`.
+        if (p.personType != personType || p.jurisdiction != jurisdiction) {
             revert PersonAttributesMismatch(personId);
         }
         bindWallet(wallet, personId);
@@ -1304,7 +1317,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///      exemption quietly stops being one. Generic consumers must use `classificationOf` and
     ///      read `isSet` instead of inferring absence from zero — see the interface note.
     function tierOf(address wallet) external view override returns (Tier) {
-        return Tier(_class[_wallets[wallet].personId][AXIS_MIFID].value);
+        return Tier(_tierValue(wallet));
     }
 
     function jurisdictionOf(address wallet) external view override returns (bytes32) {
@@ -1312,7 +1325,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     }
 
     function isRetail(address wallet) external view returns (bool) {
-        return Tier(_class[_wallets[wallet].personId][AXIS_MIFID].value) == Tier.Retail;
+        return Tier(_tierValue(wallet)) == Tier.Retail;
     }
 
     // ─────────────────────────── classification axes ──────────────────────────
@@ -1327,6 +1340,19 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         before it is an access-control one.
     function registerAxis(bytes32 axisId) external onlyGovernance {
         _registerAxis(axisId);
+    }
+
+    /// @notice Nominates the axis carrying the `Tier` encoding, opening it if it is not already.
+    /// @dev    ⚠️ RE-POINTING THIS ON A LIVE DEPLOYMENT REINTERPRETS EVERY EXISTING RECORD. The
+    ///         values already written against the old axis do not move, so `isRetail` starts
+    ///         answering from a column that may be empty — every holder reads `Tier.Unset`, and
+    ///         the retail controls that key on `isRetail == true` stop firing. It is a swap, not
+    ///         a migration, and belongs in the same class of governance action as re-pointing the
+    ///         claim-topics registry.
+    function setTierAxis(bytes32 axisId) external onlyGovernance {
+        _registerAxis(axisId);
+        tierAxis = axisId;
+        emit TierAxisSet(axisId);
     }
 
     /// @notice Writes a person's classification on an already-open axis.
@@ -1373,26 +1399,17 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
         emit ClassificationSet(_representativeWallet(personId), axisId);
     }
 
-    /// @dev ⚠️ `Tier.Unset` CLEARS THE AXIS, IT DOES NOT STORE ZERO, AND THE DIFFERENCE IS A
-    ///      FAIL-OPEN. `Tier` reserves its zero as "no classification", so a registrar passing
-    ///      `Tier.Unset` means *unclassified* — but the generic store has only one way to say
-    ///      that, and it is `isSet == false`. Writing `{value: 0, isSet: true}` instead would
-    ///      publish "this person IS classified, as Unset": the covenant predicate would then find
-    ///      the axis evaluable, run the mask against bit 0, and return NOT-APPLICABLE for every
-    ///      mask that excludes it. That is the covenant silently switching off for an
-    ///      unclassified investor — precisely the "unclassified ≠ exempt" rule the predicate's
-    ///      first dimension exists to enforce, and precisely what the old `Tier tier` field got
-    ///      right for free by being checked as an enum rather than as a presence flag.
-    ///      Every axis with a zero-means-absent encoding has to be mapped onto `isSet` at the
-    ///      boundary like this; the generic `setClassification` cannot do it, because it cannot
-    ///      know a foreign regime's encoding.
-    function _writeTier(bytes32 personId, Tier tier) private {
-        if (tier == Tier.Unset) {
-            delete _class[personId][AXIS_MIFID];
-            emit ClassificationCleared(_representativeWallet(personId), AXIS_MIFID);
-            return;
-        }
-        _writeClass(personId, AXIS_MIFID, uint8(tier));
+    /// @dev ⚠️ READS THE NOMINATED AXIS AND REVERTS WHERE THERE IS NONE — IT MUST NOT RETURN A
+    ///      DEFAULT. `isRetail` is consumed as a POSITIVE gate: `SettlementEngine` refuses a
+    ///      retail title transfer and `MemberEligibility` demands the Art 25 suitability claim,
+    ///      both on `isRetail(wallet) == true`. A registry with no tier axis answering `false`
+    ///      would therefore switch both controls off for everyone, silently, on a deployment
+    ///      that merely forgot a configuration step. `Tier.Unset` remains a legitimate ANSWER —
+    ///      an unclassified person on a configured axis — and is distinct from an unconfigured
+    ///      registry, which is not an answer at all.
+    function _tierValue(address wallet) private view returns (uint8) {
+        if (tierAxis == bytes32(0)) revert TierAxisNotConfigured();
+        return _class[_wallets[wallet].personId][tierAxis].value;
     }
 
     /// @dev Resolves a wallet to its person, reverting if the wallet is not bound. Used by the

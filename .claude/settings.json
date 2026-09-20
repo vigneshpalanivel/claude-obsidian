@@ -355,7 +355,10 @@
       "Bash(perl -0pi -e 's/\\\\n\\\\n\\\\n+/\\\\n\\\\n/g' \"ESMA - Prospectus Regulation Outreach Plan.md\")",
       "Bash(awk 'NR>=148 && NR<=182' \"ESMA -  ECSP Outreach Plan.md\")",
       "Bash(npx --no-install solcjs --version)",
-      "Bash(node -e \"console.log\\(require\\('/Users/admin/Projects/InnBlockchain/real-estate-tokenization-mvp/packages/contracts-1400/node_modules/solc/package.json'\\).version\\)\")"
+      "Bash(node -e \"console.log\\(require\\('/Users/admin/Projects/InnBlockchain/real-estate-tokenization-mvp/packages/contracts-1400/node_modules/solc/package.json'\\).version\\)\")",
+      "Bash(grep -n \"^### \\\\`IdentityRegistry\\\\`\\\\|^## \\\\|^### \" DEPLOYMENT-DEFAULTS.md)",
+      "Bash(sed -n '/struct Covenant {/,/^    }/p' CovenantRegistry.sol)",
+      "Bash(sed -n '/function configureCovenant\\(/,/\\) external onlyGovernance {/p' CovenantRegistry.sol)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",
