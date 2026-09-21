@@ -387,6 +387,17 @@ Every manager role in the fund modules is rotatable (two-step for the AIFM/ManCo
     which had erased it for free. `erasePerson` now sweeps `_axisIds` explicitly. A classification
     surviving an Art 17 request is the failure no functional test catches, because every test
     passes with the rows still there.
+15. **One jurisdiction per person — decided 2026-09-21, not deferred.** `needsMultiJurisdiction` removed.
+    The covenant side stays a set; the investor side is residence only. **Covenants keying on tax residence
+    or nationality are not supported.** Safe because the two uses of jurisdiction were already separated in
+    the design (covenant reads the investor's, the Prospectus election reads the offer's target Member State),
+    and because the Art 1(4)(b) headcount is already a floor that a second field would not have fixed. Revisit
+    at the first national-law pairing, as a person-record change with counsel.
+16. **⚠️ Rule 4's ordering has no contract control and cannot have one here.** `mayUpgrade` removed
+    2026-09-21 — **unwireable, not merely unwired.** The identity registry is one shared instance; covenant
+    stores are per asset; there is no single store to ask whether the investor signed. **Process control only:**
+    the claims service must not write an elective classification without a recorded covenant, reconcilable
+    off-chain for audit. A contract control needs the cross-asset store in item 14 first.
 14. **⚠️ There is no cross-asset covenant, and now nothing in the schema pretends there is.** The
     `Scope` enum (`PerAsset` / `PlatformWide`) was deleted on 2026-09-21. It was read by exactly one
     `require` — `setClassifier` refusing a non-`PlatformWide` entry — and **never on any evaluation

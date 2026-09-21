@@ -95,16 +95,20 @@ contract CovenantRegistry is IErasable {
         /// @dev Bitmask over the axis's own encoding — for the tier axis, over `Tier`.
         ///      0 = every classification on that axis.
         uint8 classMask;
-        /// @dev A SET, not a value. ⚠️ A covenant may apply across several Member States and an
-        ///      investor may carry more than one relevant jurisdiction — residence, tax
-        ///      residence, nationality. A single-value field on EITHER side collapses the case
-        ///      that motivates the dimension. Empty = every jurisdiction.
+        /// @dev A SET ON THE COVENANT SIDE, A SINGLE VALUE ON THE INVESTOR SIDE — and that
+        ///      asymmetry is a decision, not a limitation left unaddressed. A covenant may apply
+        ///      across several Member States, so this is an array. **A person carries exactly one
+        ///      jurisdiction: residence.** ⚠️ A `needsMultiJurisdiction` flag used to sit here,
+        ///      forcing UNEVALUABLE for an entry that genuinely keyed on tax residence or
+        ///      nationality, so the predicate blocked rather than matching on residence alone and
+        ///      quietly narrowing the covenant. **Removed 2026-09-21: covenants keying on anything
+        ///      but residence are NOT SUPPORTED, and a flag naming an unsupported mode reads as an
+        ///      option somebody declined to enable.** None of the six obligations this registry
+        ///      serves is jurisdiction-keyed at all — the dimension exists for the national-law
+        ///      overlays § Scope item 4 defers to a per-Member-State pairing, and if one of those
+        ///      ever needs a second country it is a change to the PERSON RECORD, not a predicate
+        ///      flag. Empty = every jurisdiction.
         bytes32[] jurisdictions;
-        /// @dev ⚠️ `IdentityRegistry` exposes ONE jurisdiction today (residence). Set this
-        ///      where the entry genuinely keys on more than residence: the predicate then
-        ///      reports UNEVALUABLE and fails closed, rather than silently matching on
-        ///      residence alone and quietly narrowing the covenant.
-        bool needsMultiJurisdiction;
     }
 
     struct Covenant {
@@ -610,7 +614,8 @@ contract CovenantRegistry is IErasable {
     /// @dev    ⚠️ THE LIMIT, STATED RATHER THAN ASSUMED: this cannot stop the off-chain claims
     ///         service writing `ProfessionalOnRequest` in the first place. What it does is
     ///         refuse to BELIEVE it without the covenant. The complementary control is
-    ///         `mayUpgrade`, which the identity registry may call before it writes.
+    ///         a process control off-chain — the `mayUpgrade` read that used to sit here was
+    ///         unwireable in a per-asset topology and was removed; see below.
     /// @dev    ⚠️ THE OPT-UP COVENANT IS EVALUATED AGAINST THE RAW TIER, AND THE REASON IS A
     ///         RECURSION THAT SHIPPED. Until 2026-09-08 this read
     ///         `_satisfied(wallet, optUpCovenantId)` → `appliesTo` → `effectiveTier` → … with
@@ -656,34 +661,33 @@ contract CovenantRegistry is IErasable {
     ///      compile-time dependency on one regime for no consumer. A caller wanting the MiFID
     ///      answer calls `effectiveClass(wallet, identity.tierAxis())` and casts.
 
-    /// @notice The optional contract control for predicate rule 4. The identity registry may
-    ///         call this before writing an elective classification, closing the ordering hole
-    ///         properly instead of relying on a process the ledger cannot see.
-    /// @dev    Recommended wherever retail distribution is in scope. Left as a read rather than
-    ///         wired in from here, because the coupling belongs to the identity registry's
-    ///         write path — this contract must not acquire the power to write classifications.
-    /// @dev    Evaluated at `electiveValue` rather than at the wallet's current raw value,
-    ///         because the caller is asking whether the wallet may BECOME that value — the
-    ///         registry has not written it yet, so the raw read would still say Retail and a
-    ///         Retail-excluding mask would answer "not applicable, so yes" for everyone.
-    function mayUpgrade(address wallet, bytes32 axisId) public view returns (bool) {
-        Classifier storage k = classifiers[axisId];
-        if (!k.set) return true;
-        (, bool registered) = identity.personIdOf(wallet);
-        (bool ok,) = _satisfiedAt(wallet, k.covenantId, k.electiveValue, true, registered);
-        return ok;
-    }
+    /// @dev ⚠️ `mayUpgrade` IS GONE (2026-09-21), AND IT WAS NOT MERELY UNUSED — IT WAS
+    ///      UNWIREABLE. It offered the identity registry a read to make before writing an
+    ///      elective classification: "does this wallet have the covenant that justifies it?"
+    ///      §4a called that the optional contract control for predicate rule 4, and the
+    ///      2026-09-08 review had already recorded that the registry never called it.
+    ///      **The reason it never did is topological, and it cannot be fixed by wiring.** The
+    ///      identity registry is ONE instance shared across every token; covenant registries
+    ///      are PER ASSET. So there is no single store to ask — the opt-up record may sit in
+    ///      any of them, or none, and asking this one answers only for this asset. A control
+    ///      that cannot be built in the deployed topology is worse than an absent one: it
+    ///      reads as an available option in the design.
+    ///      **Rule 4's ordering is a PROCESS control, which is what §4a already names as the
+    ///      baseline** — the claims service must not write an elective classification without
+    ///      a recorded covenant, and the two must reconcile off-chain for audit. If a contract
+    ///      control is ever wanted, it needs a cross-asset covenant store first; that is the
+    ///      same topology decision open item 14 describes, not a function signature.
 
     /// @notice Evaluates `appliesTo` as a conjunction over the two dimensions, at the wallet's
     ///         EFFECTIVE tier.
     /// @return applies Whether this covenant is owed by this investor right now.
     /// @return evaluable Whether the predicate could be evaluated AT ALL.
     /// @dev    ⚠️ RULE 5 — "NOT APPLICABLE" AND "APPLICABLE BUT UNSATISFIED" MUST NOT COLLAPSE
-    ///         INTO ONE FALSE. If jurisdiction is absent from the identity record, or a grant
-    ///         attribute was never configured, a naive predicate returns false and the covenant
-    ///         SILENTLY STOPS APPLYING — a fail-open wearing the costume of a passing check.
-    ///         Hence two return values, and hence the caller treating `!evaluable` as
-    ///         unsatisfied rather than inapplicable.
+    ///         INTO ONE FALSE. If the wallet is unregistered, or its classification axis was never
+    ///         written, or its jurisdiction is absent from the identity record, a naive predicate
+    ///         returns false and the covenant SILENTLY STOPS APPLYING — a fail-open wearing the
+    ///         costume of a passing check. Hence two return values, and hence the caller treating
+    ///         `!evaluable` as unsatisfied rather than inapplicable.
     function appliesTo(address wallet, bytes32 covenantId) public view returns (bool applies, bool evaluable) {
         bytes32 axisId = _covenants[covenantId].predicate.classAxisId;
         (uint8 v, bool isSet) = axisId == bytes32(0) ? (uint8(0), true) : effectiveClass(wallet, axisId);
@@ -725,7 +729,6 @@ contract CovenantRegistry is IErasable {
         }
 
         // ── dimension 2: jurisdiction (platform-wide, set-valued) ────────
-        if (p.needsMultiJurisdiction) return (false, false); // see `Predicate.needsMultiJurisdiction`
         if (p.jurisdictions.length > 0) {
             bytes32 j = identity.jurisdictionOf(wallet);
             if (j == bytes32(0)) return (false, false); // absent ≠ not-applicable

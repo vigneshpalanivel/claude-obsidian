@@ -360,7 +360,12 @@
       "Bash(sed -n '/struct Covenant {/,/^    }/p' CovenantRegistry.sol)",
       "Bash(sed -n '/function configureCovenant\\(/,/\\) external onlyGovernance {/p' CovenantRegistry.sol)",
       "Bash(scope)",
-      "Bash(grep -n \"scope.*platform-wide\\\\|platform-wide.*scope\\\\|`scope`\" eu_tokenized_securities_smart_contract_design.md)"
+      "Bash(grep -n \"scope.*platform-wide\\\\|platform-wide.*scope\\\\|`scope`\" eu_tokenized_securities_smart_contract_design.md)",
+      "Bash(mkdir -p /private/tmp/claude-501/-Users-admin-Projects-Personal-claude-obsidian/fca380ed-4cda-4a55-a493-013813a316bf/scratchpad)",
+      "Bash(curl -sL \"https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en\" -o /private/tmp/claude-501/-Users-admin-Projects-Personal-claude-obsidian/fca380ed-4cda-4a55-a493-013813a316bf/scratchpad/or.html -w \"%{http_code} %{size_download}\\\\n\")",
+      "Bash(grep -o \"safekeeping.\\\\{0,200\\\\}\" ecspr.txt)",
+      "Bash(python3 ex.py finsa_en.html 3000 art_58 art_59 art_60 art_61 art_2 art_3 art_4 art_5)",
+      "Bash(python3 ex.py finsa_en.html 2500 art_28 art_29 art_30 art_31 art_51 art_52 art_54 art_64 art_69 art_70 art_71 art_90 art_91 art_92 art_95)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

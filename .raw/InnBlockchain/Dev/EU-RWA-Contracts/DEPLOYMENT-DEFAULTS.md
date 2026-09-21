@@ -287,6 +287,19 @@ list is the authoritative order; where a later section disagrees, this one wins.
    choosing it: two contracts can then refuse a transfer independently, which is the reason-code leak
    the single-evaluator rule exists to prevent.
 
+   ⚠️ **A person carries ONE jurisdiction — residence (2026-09-21).** `needsMultiJurisdiction` is gone
+   from the predicate. A covenant may still name several Member States; an investor may not. **Covenants
+   keying on tax residence or nationality are not supported** — do not configure one and expect it to be
+   narrowed correctly. None of the six baseline obligations is jurisdiction-keyed at all, so this only
+   arises with a national-law overlay, and that is the point to revisit the person record with counsel.
+
+   ⚠️ **`mayUpgrade` is gone too, and with it the "contract option" for the classification-ordering rule.**
+   There is no on-chain check that an elective classification has its covenant behind it before the identity
+   registry writes it. It cannot exist in this topology: the identity registry is shared, covenant stores are
+   per asset, so there is no single store to ask. **Hold the ordering as a process control** — the claims
+   service must not write an elective classification without a recorded covenant, and the two must reconcile
+   off-chain for audit. Name an owner for that reconciliation.
+
    ⚠️ **Re-check it whenever the fund's terms change.** A life extension, a change from
    professional-only to retail-accessible, or an admission to trading each change which entries
    are owed. Adding one to a live asset is a **cutover, not a toggle** — see the `effectiveFrom`

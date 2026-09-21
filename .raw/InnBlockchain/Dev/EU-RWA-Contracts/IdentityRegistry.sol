@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IIdentityGate, Tier} from "./Interfaces.sol";
+import {MAX_CLASSIFICATION_VALUE, IIdentityGate, Tier} from "./Interfaces.sol";
 import {
     IAgentRole,
     IClaimTopicsRegistry,
@@ -501,6 +501,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     error AxisNotRegistered(bytes32 axisId);
     error TooManyAxes();
     error TierAxisNotConfigured();
+    error ClassValueOutOfRange(uint8 value);
     error PersonAlreadyRegistered(bytes32 personId);
     /// @dev ⚠️ THE GUARD THAT REPLACES THE DIVERGENCE BUG. `registerInvestor` is a convenience
     ///      that creates the person if absent and binds the wallet either way. When the person
@@ -1363,6 +1364,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     function setClassification(bytes32 personId, bytes32 axisId, uint8 value) external onlyRegistrar {
         if (!_persons[personId].exists) revert PersonNotRegistered(personId);
         if (!axisRegistered[axisId]) revert AxisNotRegistered(axisId);
+        if (value > MAX_CLASSIFICATION_VALUE) revert ClassValueOutOfRange(value);
         _writeClass(personId, axisId, value);
     }
 

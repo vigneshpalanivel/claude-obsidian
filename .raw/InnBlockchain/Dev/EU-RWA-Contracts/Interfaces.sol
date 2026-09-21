@@ -90,6 +90,15 @@ enum Tier {
     EligibleCounterparty
 }
 
+// ⚠️ THE HIGHEST VALUE ANY CLASSIFICATION AXIS MAY USE, AND IT IS A CORRECTNESS BOUND RATHER THAN
+// A BUDGET. The covenant predicate matches a classification with `classMask & uint8(1 << value)`.
+// For `value >= 8` that shift is zero in a `uint8`, so the mask test passes trivially and the
+// covenant reports NOT-APPLICABLE — silently switching every masked entry off for that investor.
+// MiFID's `Tier` tops out at 4 so nothing hit it, but an axis opened for another purpose would.
+// Enforced on write (`IdentityRegistry.setClassification`, `CovenantRegistry.setClassifier`) and
+// again on read, because a value written before the write-side check must not evaluate as exempt.
+uint8 constant MAX_CLASSIFICATION_VALUE = 7;
+
 // ⚠️ THERE IS DELIBERATELY NO `AXIS_MIFID` CONSTANT. It existed briefly and was removed: a
 // compile-time axis id makes MiFID the one classification the suite cannot be deployed without,
 // which is the hardcoding the axis machinery exists to end. The axis carrying `Tier` is nominated
