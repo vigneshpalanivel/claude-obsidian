@@ -3928,6 +3928,24 @@ That list (line 244) reads: *"Avoid in excess (high purine): Mutton, prawns, org
 
 **Still waiting on:** headache status as of today, and whether the chicken/fish/histamine load across Sep 19–20 made it worse (the standing prediction from Sep 19's close). This log still doesn't know the answer.
 
+## 2026-09-21 (Monday)
+
+🔴🔴🔴 **HEADACHE UPDATE — RESOLVED ON SEP 20, DESPITE THE HEAVIEST HISTAMINE/PURINE DAY IN THE LOG.** Reported: "no headache yesterday." The episode ran Sep 16 (onset) → Sep 17 (persisted overnight, a first) → Sep 18 (Day 3, partial relief from dark chocolate, no relief from physiological sigh) → Sep 19 (Day 4, escalated to fluctuating/intolerable) → **Sep 20: gone, on the single day this log logged 11 combined chicken-65 pieces across two days, 20 squid pieces, 4 fish fry pieces, and the worst fiber/protein composition failure on record.** ⚠️ **This is a genuinely awkward data point for the chilli/histamine hypothesis** — if squid/fish/chicken-65 at both meals didn't even sustain an already-active headache, let alone worsen it, that's real evidence the histamine/capsaicin pathway is not what was driving this particular episode. **Combined with the physiological sigh's failure on Sep 18 (weakening the cortisol/stress pathway too), the two candidates this log can't resolve — sleep/airway obstruction (CT-confirmed) or a baseline migraine/tension-type episode with no identifiable trigger — remain the most consistent explanations.** ✅ **Self-limiting resolution after ~4–5 days is itself consistent with this log's own active diagnosis (migraine/tension-type, per [[profile]], under Dr. S.N. Karthik) rather than pointing to anything new.** The neurologist referral discussed on Sep 19 stands regardless, given the escalation to intolerable before it resolved — worth a report at the next visit even though it's now passed.
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Milkshake — usual (full glass) | 635 | 22.8g | 9g |
+| | Chicken soup — half glass | 55 | 4g | 0.25g |
+| | 1 medium apple | 95 | 0.5g | 4g |
+| | 2 boiled eggs | 140 | 12g | 0g |
+| | 1 small pomegranate | 75 | 1.2g | 3g |
+| | 1 tea (after breakfast) | 35 | 1g | 0g |
+| **Running** | | **~1,035 kcal** | **~41.5g** | **~16.25g** |
+
+**Rates used, all established exact matches:** milkshake, usual full-glass recipe (635/22.8g/9g); chicken soup, half glass (55/4g/0.25g, half of the established 110/8g/0.5g full-glass rate); medium apple (95/0.5g/4g); 2 boiled eggs (140/12g/0g); small pomegranate (75/1.2g/3g); tea (35/1g/0g).
+
+✅✅ **Strongest, most varied breakfast in weeks** — milkshake, protein soup, whole fruit ×2, and eggs all in one meal, no frying oil. ✅✅ **Fiber ~16.25g already, more than 6× yesterday's entire-day total (~2.7g)** — the single biggest lever after yesterday's all-time-low fiber day was exactly what the trend note called for: fruit back on the table. ✅ **No chicken/fish dinner-rule question at breakfast.** ⚠️ **Chicken soup + chicken-65 both this week keeps chicken consumption elevated, though soup carries essentially none of chicken 65's chilli/histamine load** — a meaningfully different item, not a repeat of the Sep 19–20 confound.
+
 ## Micronutrient & Supplement Tracking (added 2026-08-13)
 
 > **Why this is a tick-box table and not mg columns.** Per-meal micronutrient totals were considered and rejected: (1) estimation error for micronutrients exceeds the signal — magnesium in the same dish varies by soil, variety, and preparation, well beyond the ±15–20% already carried by the calorie estimates; (2) **vitamin D, the one confirmed deficiency in [[lab-reports-summary]], is not food-trackable** — it comes from sunlight and supplement; (3) **folate risk here is drug-induced, not dietary** — sulfasalazine blocks absorption, so intake tells you nothing about status; (4) for micronutrients, intake is a weak proxy for status, unlike the direct calories → weight chain. **Blood levels are the real measure — they live in [[lab-reports-summary]].** This table tracks the two things a food log genuinely can: whether the anchor foods happened, and whether the supplements were taken.

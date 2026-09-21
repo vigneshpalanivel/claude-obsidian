@@ -358,7 +358,9 @@
       "Bash(node -e \"console.log\\(require\\('/Users/admin/Projects/InnBlockchain/real-estate-tokenization-mvp/packages/contracts-1400/node_modules/solc/package.json'\\).version\\)\")",
       "Bash(grep -n \"^### \\\\`IdentityRegistry\\\\`\\\\|^## \\\\|^### \" DEPLOYMENT-DEFAULTS.md)",
       "Bash(sed -n '/struct Covenant {/,/^    }/p' CovenantRegistry.sol)",
-      "Bash(sed -n '/function configureCovenant\\(/,/\\) external onlyGovernance {/p' CovenantRegistry.sol)"
+      "Bash(sed -n '/function configureCovenant\\(/,/\\) external onlyGovernance {/p' CovenantRegistry.sol)",
+      "Bash(scope)",
+      "Bash(grep -n \"scope.*platform-wide\\\\|platform-wide.*scope\\\\|`scope`\" eu_tokenized_securities_smart_contract_design.md)"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

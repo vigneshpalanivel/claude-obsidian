@@ -220,6 +220,78 @@ list is the authoritative order; where a later section disagrees, this one wins.
    live token is a state nothing in §4–§10 can recover from. A wrong `bindToken` means redeploy.
    Declared as D-C1 in `ERC-3643-CONFORMANCE.md` §4.
 7. `RestrictedPartyGate` — takes `(moduleId, governance, restrictions)`; then `ModularCompliance.addModule(gate)`
+7a. ⚠️ **Decide the covenant set from this asset's own terms, and have a second person check it.
+   This step replaced a contract control on 2026-09-21 and is the only thing standing where that
+   control used to be.** `CovenantRegistry` no longer carries a product-attribute dimension —
+   there is no `setProductAttribute`, no `Comparator`, no `productKey`/`productCmp`/`productValue`.
+   A covenant can no longer say *"applies where fund life > 10 years"*; **whether an obligation is
+   owed is decided entirely by whether you configure its entry on this deployment.** The registry
+   is per asset, so the fund's terms are fixed and known at this point — that is why the
+   comparison was removed, and it is also why nothing on-chain can catch getting this wrong.
+
+   **Configure from the fund's terms:**
+
+   | If this asset is… | Configure |
+   |---|---|
+   | an ELTIF with a life **over 10 years** | **ELTIF Art 18(3)** — the written long-commitment warning |
+   | an ELTIF with a life **of 10 years or less** | **not** Art 18(3) |
+   | retail-accessible | PRIIPs Art 13 · ELTIF Art 26 |
+   | professional-only | neither of those two — but confirm against Art 13(7), which is a separate entry |
+   | admitted to a DLT market infrastructure | DLT Pilot Arts 4(2)(c)–(f) and 4(2)(g) |
+   | admitted to trading (MAR in scope) | MAR Art 19(5) · Art 18 |
+
+   ⚠️ **The failure mode, stated plainly because it is silent.** An asset that *should* carry
+   Art 18(3) and does not will **pass every transfer with no warning collected and nothing
+   reverting**. There is no unevaluable state to trip, no event, and `diagnose()` cannot report a
+   covenant that was never configured. The old dimension would have blocked the token instead —
+   that trade was made deliberately (see the note on `_grant` in `CovenantRegistry`), and the
+   compensating control is this checklist plus a **recorded second-person sign-off tying the
+   configured covenant set to the fund's terms**. Keep that record with the offer documents; it
+   is the only evidence the decision was made rather than missed.
+
+   ⚠️ **The ELTIF RTS Art 5(10) exemption is the second condition that left the contract (2026-09-21).**
+   `GrantPolarity`, the grant store and `setRegulatoryGrant` are gone. A professional-only open-ended
+   ELTIF that is exempted by its competent authority from the **Art 5(8)** and **Art 5(9)** information
+   duties now expresses that with `setCovenantActive(id, false)` on **both** entries.
+
+   | Exemption state | Both covenants |
+   |---|---|
+   | not applied for, or pending | **active** — the duties apply until the authority says otherwise |
+   | granted | **inactive** |
+   | refused, or withdrawn after review | **active** again |
+
+   ⚠️ **Toggle the two together, in one governance batch.** A single regulator decision governs both
+   entries, and the contract no longer holds them in step — activating Art 5(8) and forgetting Art 5(9)
+   leaves one duty live and the other silently off. **Record the exemption reference alongside the
+   toggle**; there is no longer an on-chain event naming the grant, so `CovenantDeactivated` is the only
+   trace and it does not say on whose authority.
+
+   ⚠️ **`configureCovenant` lost its `Scope` argument (2026-09-21) — deployment scripts must be
+   updated.** The signature is now
+   `(covenantId, documentRef, gates, attestor, invalidation, expiryPeriod, effectiveFrom, predicate)`,
+   and `CovenantConfigured` no longer carries a scope. The `Scope` enum is deleted: it was read by a
+   single `require` in `setClassifier` and **never at runtime**, so it enforced a label while naming
+   a guarantee the contract did not provide.
+
+   ⚠️ **What that label was promising, and what you must now do by hand.** A classification lives in
+   the **shared** `IdentityRegistry`; the covenant proving it lives in **this per-asset store**. So an
+   investor who signs the MiFID opt-up against Token A **resolves to the fallback (retail) against
+   Token B** — they must sign once per token. That was true while the enum existed; deleting it only
+   stopped the schema from implying otherwise. **Configure every classifier covenant identically on
+   every deployment**, and treat "signed the opt-up" as a per-token fact in onboarding.
+
+   ⚠️ **If acknowledgements genuinely need to span assets, the topology is the fix, not a field.**
+   Deploy one registry holding only the cross-asset covenants and give each token a **second**
+   `CovenantGate` pointed at it — `CovenantGate.covenants` is `immutable` per deployment and
+   `ModularCompliance` takes a module list, so two gates reach two registries. Note the cost before
+   choosing it: two contracts can then refuse a transfer independently, which is the reason-code leak
+   the single-evaluator rule exists to prevent.
+
+   ⚠️ **Re-check it whenever the fund's terms change.** A life extension, a change from
+   professional-only to retail-accessible, or an admission to trading each change which entries
+   are owed. Adding one to a live asset is a **cutover, not a toggle** — see the `effectiveFrom`
+   note in §2's `CovenantRegistry` section; for an investor-signature covenant the back-record is
+   a collection campaign against the whole existing base.
 8. `DistributionAgent` — takes `(governance, identity, compliance, restrictions, protocolPause)`
 9. **Arm the pause and the screening guard before anything can mint** — see the go-live checklist below
 10. Lane-conditional modules per §17a — note `ValuationOracle` takes `(governance)` and must
@@ -558,10 +630,12 @@ nothing in it is a disclosure item), then:
   is configured on `AXIS_MIFID` with `electiveValue = Tier.ProfessionalOnRequest` and
   `fallbackValue = Tier.Retail`; a second regime's classification (ECSPR sophisticated /
   non-sophisticated) is a second axis, not a schema change.
-- `setClassifier` refuses a covenant that is not `PlatformWide`, whose `classMask` excludes
-  `electiveValue`, whose predicate names an axis other than the one being configured, or where
-  `electiveValue == fallbackValue` (all `ClassifierMisconfigured`). Configure the covenant with
-  `classMask = 0` or with the elective bit set.
+- `setClassifier` refuses a covenant whose `classMask` excludes `electiveValue`, whose predicate
+  names an axis other than the one being configured, or where `electiveValue == fallbackValue`
+  (all `ClassifierMisconfigured`). ⚠️ **The `PlatformWide` scope check is gone — so is the `Scope`
+  enum** (2026-09-21). It enforced a label the evaluation path never read; see §2 step 7a for what
+  now carries it, and note that classifier covenants must be configured identically on every
+  deployment because an acknowledgement does not travel between them.
 - ⚠️ **`fallbackValue` must be the MORE PROTECTIVE classification and nothing on chain checks
   it.** For MiFID that is `Tier.Retail`. Configured backwards, an investor with no record is
   promoted rather than demoted, which inverts the control instead of weakening it.

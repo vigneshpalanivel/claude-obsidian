@@ -387,6 +387,41 @@ Every manager role in the fund modules is rotatable (two-step for the AIFM/ManCo
     which had erased it for free. `erasePerson` now sweeps `_axisIds` explicitly. A classification
     surviving an Art 17 request is the failure no functional test catches, because every test
     passes with the rows still there.
+14. **⚠️ There is no cross-asset covenant, and now nothing in the schema pretends there is.** The
+    `Scope` enum (`PerAsset` / `PlatformWide`) was deleted on 2026-09-21. It was read by exactly one
+    `require` — `setClassifier` refusing a non-`PlatformWide` entry — and **never on any evaluation
+    path**. The mismatch it warned about is real and still happens: the classification comes from the
+    shared `IdentityRegistry` while the covenant record lives in the per-asset store, so an opt-up
+    signed against one asset resolves to the fallback against every other. **Fail-closed, so safe —
+    the investor is treated as retail, not wrongly promoted — but they sign once per token.**
+    ⚠️ **This is a capability the design has never had**, not one the deletion removed; what the
+    deletion removed was a field that read like a guarantee. Delivering it needs a topology change —
+    a shared registry for cross-asset covenants plus a second `CovenantGate` per token — which
+    reintroduces two independent refusal paths and therefore the reason-code leak the single-evaluator
+    rule exists to prevent. **Decide it deliberately or not at all.**
+    ⚠️ `configureCovenant`'s signature changed; deployment scripts must drop the `Scope` argument.
+13. **⚠️ The §2a straddle claim is withdrawn, and D18 must not inherit it.** The regulatory-grant
+    dimension went on 2026-09-21, after the product attribute. **Those were both of the predicate's
+    per-asset reads**, so `CovenantRegistry` no longer crosses the §2a boundary and the design's
+    instruction to resolve it "as a straddle rather than by picking a side" no longer describes the
+    contract. ⚠️ **The tempting inference is wrong:** platform-wide *reads* are not a platform-wide
+    *store*. `_records` has no asset dimension and `Scope.PerAsset` is not enforced, so one registry
+    serving two tokens pools every acknowledgement between them. **Deploy per asset** — same rule and
+    same reason as `DocumentRegistry`'s topology note. Also gone with the grant: the atomic lift of the
+    two Art 5(10) covenants, and the event naming the exemption. Both now sit in
+    `DEPLOYMENT-DEFAULTS.md` §2 step 7a as a toggle-together instruction.
+12. **⚠️ ELTIF Art 18(3) applicability is now a deployment decision with no on-chain check.** The
+    product-attribute dimension was removed from `CovenantRegistry` on 2026-09-21 — no
+    `setProductAttribute`, no `Comparator`, no `productKey`/`productCmp`/`productValue`. It served
+    exactly one obligation, and since the registry is per asset the fund's life is a single fixed
+    number at configuration time, so the comparison re-derived a fact the configurer already had.
+    **What it also did was fail closed on a missed configuration step, and that is gone.** An asset
+    that should carry Art 18(3) and does not will pass every transfer silently: no unevaluable
+    state, no event, and `diagnose()` cannot name an entry that was never configured. The
+    replacement is `DEPLOYMENT-DEFAULTS.md` §2 step 7a — a covenant-set checklist keyed to the
+    fund's terms plus a recorded second-person sign-off. **This was a deliberate trade, taken with
+    the silent-failure direction on the record; it is not an oversight to "fix" by reinstating the
+    dimension without revisiting the decision.**
 11. **`tierAxis` is a go-live step with no on-chain default, by design.** There is no `AXIS_MIFID`
     constant: `setTierAxis` nominates the axis carrying `Tier`, and until it is called `tierOf` and
     `isRetail` revert `TierAxisNotConfigured`. That is the fail-closed direction — `SettlementEngine`,

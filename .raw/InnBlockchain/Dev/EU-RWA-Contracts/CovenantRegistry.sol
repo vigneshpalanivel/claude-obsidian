@@ -80,32 +80,7 @@ contract CovenantRegistry is IErasable {
         Never
     }
 
-    /// @dev Read by exactly one `require`: `setClassifier` refuses a `PerAsset` entry. Every
-    ///      other covenant's scope is carried for the audit map and emitted, never branched on —
-    ///      a per-asset registry deployment IS the scoping, so the field states it rather than
-    ///      enforces it.
-    enum Scope {
-        PerAsset, // a KID is per-product
-        PlatformWide // a venue risk-disclosure consent is satisfied once
-    }
-
-    enum Comparator {
-        None, // dimension unused
-        Equals,
-        GreaterThan,
-        LessThan
-    }
-
-    enum GrantPolarity {
-        Ignore,
-        /// @dev The covenant applies only where the grant IS held.
-        RequiresGrant,
-        /// @dev The covenant applies only where the grant is NOT held — ELTIF RTS Art 5(10),
-        ///      where an NCA exemption REMOVES the Art 5(8)/5(9) information duty.
-        RequiresNoGrant
-    }
-
-    /// @notice The `appliesTo` predicate — a CONJUNCTION over four dimensions, evaluated at the
+    /// @notice The `appliesTo` predicate — a CONJUNCTION over two dimensions, behind a registration precondition, evaluated at the
     ///         gate. Not a flag, and never precomputed into a stored boolean.
     /// @dev    ELTIF Art 18(3) is `[RETAIL ONLY, life > 10 years]` in its own checklist — two
     ///         dimensions in one obligation. That single row is why this is a struct.
@@ -130,13 +105,6 @@ contract CovenantRegistry is IErasable {
         ///      reports UNEVALUABLE and fails closed, rather than silently matching on
         ///      residence alone and quietly narrowing the covenant.
         bool needsMultiJurisdiction;
-        /// @dev Read from the per-asset offer configuration: fund life, open/closed-ended,
-        ///      token type. `Comparator.None` disables the dimension.
-        bytes32 productKey;
-        Comparator productCmp;
-        uint256 productValue;
-        bytes32 grantId;
-        GrantPolarity grantPolarity;
     }
 
     struct Covenant {
@@ -147,7 +115,6 @@ contract CovenantRegistry is IErasable {
         Attestor attestor;
         Invalidation invalidation;
         uint64 expiryPeriod; // Invalidation.OnExpiry only
-        Scope scope;
         uint64 effectiveFrom; // the cutover lever — see `configureCovenant`
         Predicate predicate;
     }
@@ -166,13 +133,23 @@ contract CovenantRegistry is IErasable {
 
     address public immutable governance;
 
-    /// @notice ⚠️ THE §2a STRADDLE, MADE CONCRETE. The predicate below is the only evaluation
-    ///         in the design that reads across the platform-wide / per-asset boundary in a
-    ///         single check: a PLATFORM-WIDE identity record and a PER-ASSET product attribute.
-    ///         A per-asset covenant store cannot see the platform-wide tier; a platform-wide
-    ///         one cannot see per-asset fund life. It needs both reads, which is why the
-    ///         topology decision must resolve this contract as a straddle rather than by
-    ///         picking a side.
+    /// @notice ⚠️ THE §2a STRADDLE IS GONE, AND THIS CONTRACT IS NOW PLATFORM-WIDE IN ITS READS.
+    ///         It used to be the only evaluation in the design crossing the platform-wide /
+    ///         per-asset boundary in a single check — a platform-wide classification and a
+    ///         PER-ASSET regulatory grant — which is why §16 D18 was told to resolve it as a
+    ///         straddle rather than by picking a side. **Both per-asset reads have since been
+    ///         removed**: the product attribute on 2026-09-21, the regulatory grant immediately
+    ///         after. Every dimension the predicate still evaluates — classification and
+    ///         jurisdiction — comes from the PLATFORM-WIDE identity record.
+    /// @dev    ⚠️ WHAT THIS DOES **NOT** MEAN: that the registry can be deployed once and shared.
+    ///         The PREDICATE's reads are platform-wide; the RECORDS are not. `_records` has no
+    ///         asset dimension and — since the `Scope` enum was deleted — nothing in the schema
+    ///         even claims otherwise, so one registry pointed at two tokens silently shares every
+    ///         acknowledgement between them. Per-asset deployment is still the standing
+    ///         instruction — see `DocumentRegistry`'s topology note, which says the same thing
+    ///         and adds the reason: merging later is cheap, splitting later is a re-issuance.
+    ///         **D18 therefore still has a decision to make; it just no longer has to invent a
+    ///         straddle to make it.**
     /// @dev    Interface-typed since 2026-09-08. The D19 exception ("concrete type retained
     ///         because `tierOf` returns an enum a narrow interface cannot declare") closed the
     ///         moment `Tier` was hoisted into `Interfaces.sol`; this contract now reads
@@ -260,22 +237,6 @@ contract CovenantRegistry is IErasable {
     ///      holder is stopped and asked to sign, not admitted on somebody else's signature.
     mapping(address => mapping(bytes32 => Record)) private _records;
 
-    /// @notice Per-asset product attributes and regulatory grants — dimensions 3 and 4 of the
-    ///         predicate.
-    /// @dev    ⚠️ THESE BELONG TO THE OFFER CONFIGURATION, NOT TO THIS CONTRACT. In a real
-    ///         deployment they are read from the per-asset offer configuration — the same
-    ///         surface that already holds the Prospectus Art 12 validity date, "set at offer
-    ///         configuration, extendable only by a governance action recording a new approval".
-    ///         They are held here so the predicate reads end-to-end in one file. **No new
-    ///         contract either way** — what must not happen is a second, divergent copy of the
-    ///         fund's own terms.
-    /// @dev    `isSet` is tracked separately from the value on purpose. An unconfigured
-    ///         attribute and an attribute configured to zero are different facts, and
-    ///         collapsing them is exactly the fail-open rule 5 exists to stop.
-    mapping(bytes32 => uint256) private _productAttr;
-    mapping(bytes32 => bool) private _productAttrSet;
-    mapping(bytes32 => bool) private _grant;
-    mapping(bytes32 => bool) private _grantSet;
 
     /// @notice ⚠️ Each gate iterates its applicable entries on the hot path. An unbounded set
     ///         is a gas-DoS surface on the token itself and a silent ceiling change the day
@@ -288,14 +249,12 @@ contract CovenantRegistry is IErasable {
     // ═══════════════════════════════════════════════════════════════════════
 
     event CovenantConfigured(
-        bytes32 indexed covenantId, bytes32 indexed documentRef, uint8 gates, Attestor attestor, Scope scope
+        bytes32 indexed covenantId, bytes32 indexed documentRef, uint8 gates, Attestor attestor
     );
     event CovenantDeactivated(bytes32 indexed covenantId);
     event ClassifierSet(bytes32 indexed axisId, bytes32 indexed covenantId, uint8 electiveValue, uint8 fallbackValue);
     event AxisTracked(bytes32 indexed axisId);
     event OperatorSet(address indexed operator, bool allowed);
-    event ProductAttributeSet(bytes32 indexed key, uint256 value);
-    event RegulatoryGrantSet(bytes32 indexed grantId, bool granted);
 
     /// @dev The trigger the PRIIPs Art 13 and MAR Art 19(5) audit trail is assembled FROM — not
     ///      the trail itself. The revert path is deliberately silent (see `Blocked`); the detail
@@ -418,7 +377,6 @@ contract CovenantRegistry is IErasable {
         Attestor attestor,
         Invalidation invalidation,
         uint64 expiryPeriod,
-        Scope scope,
         uint64 effectiveFrom,
         Predicate calldata predicate
     ) external onlyGovernance {
@@ -442,7 +400,6 @@ contract CovenantRegistry is IErasable {
         c.attestor = attestor;
         c.invalidation = invalidation;
         c.expiryPeriod = expiryPeriod;
-        c.scope = scope;
         c.effectiveFrom = effectiveFrom;
         c.predicate = predicate;
 
@@ -453,7 +410,7 @@ contract CovenantRegistry is IErasable {
         if (predicate.classAxisId != bytes32(0)) _registerAxis(predicate.classAxisId);
 
         _covenantIds.push(covenantId);
-        emit CovenantConfigured(covenantId, documentRef, gates, attestor, scope);
+        emit CovenantConfigured(covenantId, documentRef, gates, attestor);
     }
 
     /// @notice Deactivation is reversible and leaves records intact — a covenant that stops
@@ -466,13 +423,21 @@ contract CovenantRegistry is IErasable {
     }
 
     /// @notice Names the covenant that resolves one axis's elective classification — the MiFID II
+    /// @dev    ⚠️ ITS SCOPE IS NO LONGER CHECKED, BECAUSE THERE IS NO LONGER A SCOPE FIELD. Until
+    ///         2026-09-21 this refused a covenant not declared `PlatformWide`, on the reasoning
+    ///         that the classification it governs is platform-wide and per-asset evidence gating a
+    ///         platform-wide fact is a scoping mismatch. **The reasoning was right and the check
+    ///         did not deliver it.** `scope` was never read at runtime, so the mismatch it warned
+    ///         about happened anyway: the classification comes from the SHARED identity registry
+    ///         and the covenant record lives in THIS per-asset store, so an investor who signed
+    ///         the opt-up against one asset resolves to the fallback against every other one. The
+    ///         enum enforced a label while naming a guarantee that did not exist, which is worse
+    ///         than carrying no field at all. **Configure the classifier covenant identically on
+    ///         every deployment** — `DEPLOYMENT-DEFAULTS.md` §2 step 7a — or build the shared-
+    ///         registry-plus-second-gate topology, which is the only thing that actually makes an
+    ///         acknowledgement span assets.
     ///         Annex II Section II opt-up on the nominated tier axis, ECSPR's opt-in on its
     ///         own axis.
-    /// @dev    ⚠️ ITS `scope` MUST BE `PlatformWide`, and that is not a style preference: the
-    ///         classification it governs is itself platform-wide, and a per-asset covenant gating
-    ///         a platform-wide classification is the scoping mismatch that makes an investor
-    ///         professional on one asset and retail on another with no record of which is true.
-    ///         Enforced here, not merely stated.
     /// @dev    ⚠️ ITS PREDICATE MUST NAME ITS OWN AXIS AND NO OTHER, AND THAT GUARD IS THE WHOLE
     ///         REASON N AXES ARE SAFE WHERE N TIER-CHANGERS WOULD NOT BE. A classifier reading a
     ///         SECOND axis could read an axis whose own classifier reads this one — cross-axis
@@ -499,7 +464,6 @@ contract CovenantRegistry is IErasable {
 
         Covenant storage c = _covenants[covenantId];
         if (!c.configured) revert UnknownCovenant(covenantId);
-        if (c.scope != Scope.PlatformWide) revert ClassifierMisconfigured(covenantId);
         if (c.predicate.classAxisId != bytes32(0) && c.predicate.classAxisId != axisId) {
             revert ClassifierMisconfigured(covenantId);
         }
@@ -576,24 +540,6 @@ contract CovenantRegistry is IErasable {
         }
 
         emit CovenantsErased(erased);
-    }
-
-    /// @notice Fund life in seconds, open-vs-closed-ended, token type — whatever the configured
-    ///         predicates key on. Governance-only, because ELTIF Art 18(3) turns on the answer.
-    function setProductAttribute(bytes32 key, uint256 value) external onlyGovernance {
-        _productAttr[key] = value;
-        _productAttrSet[key] = true;
-        emit ProductAttributeSet(key, value);
-    }
-
-    /// @notice Records a regulatory grant — e.g. the ELTIF RTS Art 5(10) exemption, available
-    ///         only on request and only from the competent authority.
-    /// @dev    Same governance path as recording a new prospectus approval, for the same
-    ///         reason: it is evidence of a supervisor's decision, not a platform setting.
-    function setRegulatoryGrant(bytes32 grantId, bool granted) external onlyGovernance {
-        _grant[grantId] = granted;
-        _grantSet[grantId] = true;
-        emit RegulatoryGrantSet(grantId, granted);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -728,12 +674,12 @@ contract CovenantRegistry is IErasable {
         return ok;
     }
 
-    /// @notice Evaluates `appliesTo` as a conjunction over the four dimensions, at the wallet's
+    /// @notice Evaluates `appliesTo` as a conjunction over the two dimensions, at the wallet's
     ///         EFFECTIVE tier.
     /// @return applies Whether this covenant is owed by this investor right now.
     /// @return evaluable Whether the predicate could be evaluated AT ALL.
     /// @dev    ⚠️ RULE 5 — "NOT APPLICABLE" AND "APPLICABLE BUT UNSATISFIED" MUST NOT COLLAPSE
-    ///         INTO ONE FALSE. If jurisdiction is absent from the identity record, or a product
+    ///         INTO ONE FALSE. If jurisdiction is absent from the identity record, or a grant
     ///         attribute was never configured, a naive predicate returns false and the covenant
     ///         SILENTLY STOPS APPLYING — a fail-open wearing the costume of a passing check.
     ///         Hence two return values, and hence the caller treating `!evaluable` as
@@ -791,23 +737,6 @@ contract CovenantRegistry is IErasable {
                 }
             }
             if (!hit) return (false, true);
-        }
-
-        // ── dimension 3: product attribute (per-asset) ───────────────────
-        if (p.productCmp != Comparator.None) {
-            if (!_productAttrSet[p.productKey]) return (false, false);
-            uint256 v = _productAttr[p.productKey];
-            if (p.productCmp == Comparator.Equals && v != p.productValue) return (false, true);
-            if (p.productCmp == Comparator.GreaterThan && v <= p.productValue) return (false, true);
-            if (p.productCmp == Comparator.LessThan && v >= p.productValue) return (false, true);
-        }
-
-        // ── dimension 4: regulatory grant (per-asset) ────────────────────
-        if (p.grantPolarity != GrantPolarity.Ignore) {
-            if (!_grantSet[p.grantId]) return (false, false);
-            bool granted = _grant[p.grantId];
-            if (p.grantPolarity == GrantPolarity.RequiresGrant && !granted) return (false, true);
-            if (p.grantPolarity == GrantPolarity.RequiresNoGrant && granted) return (false, true);
         }
 
         return (true, true);
@@ -953,14 +882,6 @@ contract CovenantRegistry is IErasable {
 
     function recordOf(address wallet, bytes32 covenantId) external view returns (Record memory) {
         return _records[wallet][covenantId];
-    }
-
-    function productAttribute(bytes32 key) external view returns (uint256 value, bool isSet) {
-        return (_productAttr[key], _productAttrSet[key]);
-    }
-
-    function regulatoryGrant(bytes32 grantId) external view returns (bool granted, bool isSet) {
-        return (_grant[grantId], _grantSet[grantId]);
     }
 }
 
