@@ -377,7 +377,7 @@ Every manager role in the fund modules is rotatable (two-step for the AIFM/ManCo
 9. **No test harness.** Every statement in this file is from reading and compiling, never from running.
 10. **`Classifier.fallbackValue` polarity is unenforceable on-chain.** The classification axes that
     replaced the hardcoded `optUpCovenantId` let any regime express an elective status — MiFID
-    Annex II today, ECSPR sophisticated next — but the contract cannot know which of two opaque
+    Annex II today, a national overlay next — but the contract cannot know which of two opaque
     `uint8` values a regime considers *more protective*. `setClassifier` checks scope, mask, axis
     confinement and `elective != fallback`; it cannot check direction. **Configured backwards, an
     investor with no record is promoted instead of demoted — the control inverts rather than

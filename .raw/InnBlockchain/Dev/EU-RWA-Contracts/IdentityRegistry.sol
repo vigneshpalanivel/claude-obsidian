@@ -211,7 +211,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         address is live is an answer about the address, and lives in `WalletBinding`.
     /// @dev ⚠️ `tier` IS GONE FROM THIS STRUCT AND THAT IS THE POINT, NOT A TIDY-UP. It lived
     ///      here as a single `Tier` field, which made MiFID II the only classification the suite
-    ///      could express — ECSPR's sophisticated / non-sophisticated limb had nowhere to go, and
+    ///      could express — a national overlay classifying on its own terms had nowhere to go, and
     ///      adding it as a second field would have meant a third for the next regime. The value
     ///      now lives in `_class[personId][tierAxis]`, one copy, read through both
     ///      `classificationOf` and the typed `tierOf`. Keeping a `tier` field here as well would
@@ -347,7 +347,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
     ///         loops wallets and claims. An unbounded axis list hands an operator a way to make
     ///         a person's own erasure exceed the block gas limit — the trap the wallet loop was
     ///         written backwards to avoid. Eight is far beyond the regimes in scope (MiFID,
-    ///         ECSPR, and room for national overlays).
+    ///         and room for the national-law overlays § Scope item 4 defers to a per-Member-State pairing).
     uint256 public constant MAX_AXES = 8;
 
     bytes32[] private _axisIds;
@@ -1331,8 +1331,8 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
 
     // ─────────────────────────── classification axes ──────────────────────────
 
-    /// @notice Opens a new classification axis — ECSPR sophisticated / non-sophisticated, a
-    ///         national overlay, anything a regime classifies investors by.
+    /// @notice Opens a new classification axis — a national-law overlay, or any other regime
+    ///         that classifies investors on its own terms.
     /// @dev    ⚠️ GOVERNANCE, NOT THE REGISTRAR, AND THE SPLIT MATTERS. Opening an axis decides
     ///         what the platform is capable of recording about people; writing a value on an
     ///         open axis is the routine KYC action. A registrar that could do both could invent
@@ -1370,7 +1370,7 @@ contract IdentityRegistry is IIdentityGate, IIdentityRegistry, IAgentRole {
 
     /// @notice Clears a person's classification on one axis without erasing the person.
     /// @dev    An elective status can be withdrawn by the client at any time, and withdrawal is
-    ///         not erasure — the ECSPR analogue of a Section II downgrade. Sets `isSet` false, so
+    ///         not erasure — a Section II downgrade is the case in scope. Sets `isSet` false, so
     ///         the axis reads as UNEVALUABLE rather than as some default value, and every
     ///         predicate keyed on it fails closed until it is written again.
     function clearClassification(bytes32 personId, bytes32 axisId) external onlyRegistrar {

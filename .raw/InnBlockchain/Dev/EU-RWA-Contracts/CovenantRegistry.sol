@@ -2,7 +2,7 @@
 pragma solidity ^0.8.22;
 
 import {ModuleAdapter} from "./ModularCompliance.sol";
-import {IDocumentAnchor, IErasable, IIdentityGate} from "./Interfaces.sol";
+import {MAX_CLASSIFICATION_VALUE, IDocumentAnchor, IErasable, IIdentityGate} from "./Interfaces.sol";
 
 /// @title CovenantRegistry (illustrative sample — not production code)
 /// @notice C7 — the store of what the INVESTOR THEMSELVES has stated, agreed or acknowledged,
@@ -178,8 +178,8 @@ contract CovenantRegistry is IErasable {
     address public erasureCoordinator;
 
     /// @notice A covenant whose effect is to change the classification every OTHER predicate
-    ///         reads — the MiFID II Annex II Section II opt-up is one, ECSPR's opt-in to
-    ///         sophisticated is another. Named separately, resolved first, and evaluated against
+    ///         reads — the MiFID II Annex II Section II opt-up is the one in scope today. Named separately,
+    ///         resolved first, and evaluated against
     ///         the RAW classification rather than the one it produces.
     /// @dev    ⚠️ `electiveValue` AND `fallbackValue` ARE WHAT MADE THIS GENERALISABLE. The
     ///         single-axis version hardcoded both — `ProfessionalOnRequest` was the value that
@@ -440,8 +440,8 @@ contract CovenantRegistry is IErasable {
     ///         every deployment** — `DEPLOYMENT-DEFAULTS.md` §2 step 7a — or build the shared-
     ///         registry-plus-second-gate topology, which is the only thing that actually makes an
     ///         acknowledgement span assets.
-    ///         Annex II Section II opt-up on the nominated tier axis, ECSPR's opt-in on its
-    ///         own axis.
+    ///         Annex II Section II opt-up on the nominated tier axis; a national overlay's own
+    ///         classification would be a second axis with its own classifier.
     /// @dev    ⚠️ ITS PREDICATE MUST NAME ITS OWN AXIS AND NO OTHER, AND THAT GUARD IS THE WHOLE
     ///         REASON N AXES ARE SAFE WHERE N TIER-CHANGERS WOULD NOT BE. A classifier reading a
     ///         SECOND axis could read an axis whose own classifier reads this one — cross-axis
@@ -465,6 +465,9 @@ contract CovenantRegistry is IErasable {
     {
         if (axisId == bytes32(0)) revert AxisIdRequired();
         if (electiveValue == fallbackValue) revert ClassifierMisconfigured(covenantId);
+        if (electiveValue > MAX_CLASSIFICATION_VALUE || fallbackValue > MAX_CLASSIFICATION_VALUE) {
+            revert ClassifierMisconfigured(covenantId);
+        }
 
         Covenant storage c = _covenants[covenantId];
         if (!c.configured) revert UnknownCovenant(covenantId);
@@ -725,6 +728,12 @@ contract CovenantRegistry is IErasable {
         // ── dimension 1: classification on a named axis (platform-wide) ──
         if (p.classAxisId != bytes32(0)) {
             if (!classIsSet) return (false, false); // unclassified ≠ exempt
+            // ⚠️ OUT-OF-RANGE FAILS CLOSED, AND THE ORDER OF THESE TWO LINES IS THE WHOLE GUARD.
+            // `uint8(1 << value)` is ZERO for value >= 8, so without this the mask test below
+            // would pass trivially and report NOT-APPLICABLE — switching every masked covenant
+            // off for that investor. Unevaluable is the honest answer: the axis holds something
+            // this predicate cannot express.
+            if (classValue > MAX_CLASSIFICATION_VALUE) return (false, false);
             if (p.classMask != 0 && (p.classMask & uint8(1 << classValue)) == 0) return (false, true);
         }
 

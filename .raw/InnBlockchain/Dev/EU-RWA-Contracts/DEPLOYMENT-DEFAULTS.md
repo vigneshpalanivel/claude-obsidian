@@ -198,9 +198,15 @@ list is the authoritative order; where a later section disagrees, this one wins.
    `MemberEligibility` and `SubscriptionEscrow.subscribe` all read them as *positive* gates, and a
    registry answering `false` would switch the retail controls off for everyone rather than
    failing loudly. Pick any `bytes32`; `keccak256("axis.mifid2.annexII")` is the conventional one.
-   Open further axes with `registerAxis` (ECSPR sophisticated / non-sophisticated, national
-   overlays), bounded at `MAX_AXES = 8` — **the bound is `erasePerson`'s gas budget, not a style
-   limit.**
+   Open further axes with `registerAxis` (a national-law overlay classifying on its own terms),
+   bounded at `MAX_AXES = 8` — **the bound is `erasePerson`'s gas budget, not a style limit.**
+
+   ⚠️ **A classification value must be 0–7 (`MAX_CLASSIFICATION_VALUE`), and this is a correctness
+   bound.** The predicate matches with `classMask & uint8(1 << value)`; for `value >= 8` that shift
+   is zero, the mask test passes trivially, and the covenant reports **not-applicable** — silently
+   switching every masked entry off for that investor. MiFID's `Tier` tops out at 4, so nothing has
+   hit it; an axis opened for another purpose would. `setClassification` and `setClassifier` now
+   refuse out-of-range values, and the predicate fails **closed** on one that predates those checks.**
 2c. **Classifications are no longer written by `registerPerson`.** It takes
    `(personId, personType, jurisdiction, expiresAt)` — the `Tier` argument is gone, as it is from
    `updatePerson(personId, jurisdiction, expiresAt)` and
@@ -641,8 +647,7 @@ nothing in it is a disclosure item), then:
 - ⚠️ **`setOptUpCovenant` is gone — it is now `setClassifier(axisId, covenantId, electiveValue,
   fallbackValue)`, and `Predicate.tierMask` is now `classAxisId` + `classMask`.** The MiFID opt-up
   is configured on `AXIS_MIFID` with `electiveValue = Tier.ProfessionalOnRequest` and
-  `fallbackValue = Tier.Retail`; a second regime's classification (ECSPR sophisticated /
-  non-sophisticated) is a second axis, not a schema change.
+  `fallbackValue = Tier.Retail`; a national overlay's own classification is a second axis, not a schema change.
 - `setClassifier` refuses a covenant whose `classMask` excludes `electiveValue`, whose predicate
   names an axis other than the one being configured, or where `electiveValue == fallbackValue`
   (all `ClassifierMisconfigured`). ⚠️ **The `PlatformWide` scope check is gone — so is the `Scope`

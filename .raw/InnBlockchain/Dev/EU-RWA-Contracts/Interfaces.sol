@@ -164,8 +164,8 @@ interface IIdentityGate {
     /// @notice This wallet's raw classification on one axis.
     /// @dev    ⚠️ `isSet` IS NOT A CONVENIENCE AND MUST NOT BE DROPPED. `value == 0` cannot carry
     ///         "unclassified" for a generic axis: the MiFID encoding happens to reserve zero
-    ///         (`Tier.Unset`) but a second regime is free to give zero a meaning — ECSPR could
-    ///         reasonably encode non-sophisticated as 0. Collapse the two and an unclassified
+    ///         (`Tier.Unset`) but a second regime is free to give zero a meaning — a national
+    ///         overlay could reasonably encode its base case as 0. Collapse the two and an unclassified
     ///         investor reads as a real classification and the covenant predicate SILENTLY
     ///         MATCHES, which is the fail-open dressed as a passing check that rule 5 exists to
     ///         stop. Consumers treat `!isSet` as unevaluable, never as not-applicable.
