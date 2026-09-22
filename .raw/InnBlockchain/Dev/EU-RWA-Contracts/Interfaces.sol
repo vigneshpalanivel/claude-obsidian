@@ -51,28 +51,32 @@ pragma solidity ^0.8.22;
 //    a local copy "for readability", there are two types with one name and the coupling is back
 //    with no compiler error to announce it.
 
-/// @notice Which regime's clock and consequences attach to an anchored document.
-/// @dev    Deliberately a SMALL enum, not an open `bytes32`: a document's regime changes what
-///         the rest of the stack must do when a new version lands — a prospectus supplement
-///         opens a withdrawal window, a key-information revision opens none and invalidates
-///         outstanding acknowledgements instead. A new regime here is a design event, not a
-///         configuration one.
-enum Regime {
-    Unset,
-    ProspectusRegulation,
-    MarDisclosure,
-    EltifDisclosure,
-    PriipsKid
-}
+// ⚠️ `enum Regime` was deleted at rev 65 and deliberately not replaced. `DocumentRegistry` no
+//    longer classifies documents: the asymmetry the enum encoded — a prospectus supplement opens
+//    a withdrawal window, a key-information revision opens none and invalidates outstanding
+//    acknowledgements instead — is real, but nothing on-chain ever acted on it. The regime events
+//    could not be read by any contract, and the enum's whole executable footprint was ONE read in
+//    ONE escrow function. That guard is now a `docRef` allowlist in `SubscriptionEscrow`, which is
+//    per-offer and never proxied. Do not reintroduce a document-type enum in a shared interface:
+//    it makes the registry the contract a new regulation forces you to redeploy, and a redeployed
+//    registry splits the anchor history across two addresses with no on-chain link — every consumer
+//    re-pointed, the new deployment answering reads about none of the old versions. (The evidence
+//    itself survives at the old address: it is in the event log, not in storage. See rev 68.)
 
 /// @notice One anchored version of a document. The hash is the product, not the file.
+/// @dev    ⚠️ `approvedAt == 0` MEANS "NO EX-ANTE APPROVAL IN THIS REGIME", NOT "NOT YET
+///         APPROVED". It is written once at anchor time and never patched afterwards, so a
+///         zero on a Prospectus slot is a defect the escrow reverts on, while a zero on a
+///         PRIIPs KID, a MAR disclosure or Art 8(5) final terms is the normal value.
+/// @dev    Two fields were removed on 2026-09-22 and the reasons are in `DocumentRegistry`'s
+///         header: `reviewDueBy` (the PRIIPs Art 10 clock — a timer that caught only the limb
+///         that does not breach) and `revealed` (the MAR Art 17(1a) commit-reveal — a document
+///         anchored only after announcement has nothing to conceal).
 struct Version {
     bytes32 versionHash;
     bytes32 uriHash;
     uint64 anchoredAt;
-    uint64 approvedAt; // regulator approval; 0 = none recorded
-    uint64 reviewDueBy; // periodic-review regimes only; 0 = no review duty
-    bool revealed; // commit-reveal, where disclosing that information exists would itself leak
+    uint64 approvedAt; // NCA approval date; 0 = regime has no ex-ante approval
 }
 
 /// @notice Investor classification. Gates who may hold and on what terms.
@@ -238,8 +242,6 @@ interface IDocumentAnchor {
     function versionCount(bytes32 docRef) external view returns (uint256);
 
     function versionAt(bytes32 docRef, uint256 index) external view returns (Version memory);
-
-    function regimeOf(bytes32 docRef) external view returns (Regime);
 }
 
 /// @notice The closed-period limb consumed by the buy-back path.

@@ -161,10 +161,13 @@ contract CovenantRegistry is IErasable {
     IIdentityGate public identity;
 
     /// @notice The fail-closed source of truth for document currency. `isCurrent` returns false
-    ///         the instant a document is superseded — and, for a PRIIPs KID, also when its
-    ///         Art 10 review is overdue.
-    /// @dev    Interface-typed; `Version` and `Regime` live in `Interfaces.sol`, so the anchor
-    ///         limb needs no concrete import either.
+    ///         the instant a document is superseded. ⚠️ *Narrowed at rev 65 — this read "and,
+    ///         for a PRIIPs KID, also when its Art 10 review is overdue". The review clock was
+    ///         deleted from the registry: a timer covered one of Art 10's two limbs and implied
+    ///         coverage of the other. **An un-reviewed KID now satisfies this gate.** The review
+    ///         is an off-chain duty with a named owner — see `DEPLOYMENT-DEFAULTS.md`.*
+    /// @dev    Interface-typed; `Version` lives in `Interfaces.sol`, so the anchor limb needs no
+    ///         concrete import either.
     IDocumentAnchor public documents;
 
     /// @notice Operators may attest `OperatorAttestation` covenants. They may NEVER satisfy an

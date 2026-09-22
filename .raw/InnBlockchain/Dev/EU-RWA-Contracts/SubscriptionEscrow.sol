@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IDocumentAnchor, IErasable, IIdentityGate, IRestrictedParty, Regime, Tier, Version} from "./Interfaces.sol";
+import {IDocumentAnchor, IErasable, IIdentityGate, IRestrictedParty, Tier, Version} from "./Interfaces.sol";
 
 /// @title SubscriptionEscrow (illustrative sample — not production code)
 /// @notice Prospectus Regulation Art 1(4)(b)/3(2)/6/12/17/21/23 — gates a primary token offer
@@ -177,6 +177,24 @@ contract SubscriptionEscrow is IErasable {
     /// @notice The `docRef` of the prospectus this offer runs on. bytes32(0) in EXEMPT mode.
     bytes32 public prospectusDocRef;
 
+    /// @notice Slots whose versions may open an Art 23(2) withdrawal window on THIS offer.
+    /// @dev    ⚠️ THIS REPLACED `DocumentRegistry.regimeOf` AT REV 65, AND IT IS THE SAME GUARD
+    ///         IN A BETTER PLACE. `documentStatus` is keyed by version hash across every slot in
+    ///         the registry, so without a check ANY approved hash — a key-information document,
+    ///         an ELTIF annual report — opens an Art 23 window. That was a live defect until
+    ///         2026-09-08, when it was fixed by asking the registry for the slot's regime.
+    ///         The registry no longer classifies documents (see `Interfaces.sol`), so the guard
+    ///         lives here instead — which is where it belonged: this contract is deployed **per
+    ///         offer** and **never behind a proxy**, so "which slots are this offer's prospectus"
+    ///         is offer configuration, not a fact about a document.
+    /// @dev    ⚠️ `prospectusDocRef` IS ALLOWED AUTOMATICALLY — seeded in the constructor, not
+    ///         left to a setter. A day-one default of "no slot is allowed" would make
+    ///         `publishSupplement` revert on the offer's own prospectus until someone
+    ///         remembered a call nobody documented, and a window that cannot open is a
+    ///         statutory exit an investor does not get. Extra slots (a base prospectus held
+    ///         separately) are added deliberately.
+    mapping(bytes32 => bool) public isProspectusSlot;
+
     // ─────────────────────────── offer close ──────────────────────────────────
 
     /// @notice When the offer closes to new subscriptions, and the earliest moment any
@@ -282,6 +300,9 @@ contract SubscriptionEscrow is IErasable {
     ///      `versionHash`, and alarms on a registry `SupplementPublished` with no matching
     ///      escrow window — the failure direction no on-chain check can catch.
     event SupplementAnchorVerified(bytes32 indexed docRef, bytes32 indexed versionHash, uint64 approvedAt);
+
+    /// @notice A slot was admitted to, or removed from, the set that may open an Art 23 window.
+    event ProspectusSlotSet(bytes32 indexed docRef, bool allowed);
     event FinalPricePublished(uint256 indexed windowIndex, uint64 opensAt, uint64 closesAt);
     event AcceptanceWithdrawn(uint256 indexed subscriptionId, address indexed investor, uint256 refundedWei);
     event Settled(uint256 indexed subscriptionId, address indexed investor, uint256 amountWei);
@@ -320,14 +341,17 @@ contract SubscriptionEscrow is IErasable {
     error ExemptThresholdBreached(bytes32 jurisdiction, uint256 wouldRaiseTo, uint256 thresholdWei);
     error OfferCeilingBreached(uint256 wouldRaiseTo, uint256 ceilingWei);
     error ProspectusExpired(uint64 validUntil);
-    /// @dev The current prospectus version is anchored but carries no recorded NCA approval.
-    ///      Art 12 runs FROM approval, and an offer against an unapproved prospectus is an
-    ///      offer without one. Before 2026-09-08 `subscribe()` checked only that a current
-    ///      hash existed — `anchorVersion` writes `approvedAt: 0`, so subscriptions were
-    ///      accepted against a draft.
+    /// @dev The current prospectus version was anchored with `approvedAt == 0`. Art 12 runs
+    ///      FROM approval, and an offer against an unapproved prospectus is an offer without
+    ///      one. Since 2026-09-22 `approvedAt` is an argument to `DocumentRegistry.anchorVersion`
+    ///      rather than a later `recordNcaApproval` call, so this revert no longer catches a
+    ///      race — it catches an ANCHOR MADE WITHOUT THE NCA'S DATE. ⚠️ The cure is not a
+    ///      second transaction: `approvedAt` is write-once, so fixing it means anchoring a new
+    ///      version, and on a Prospectus slot that opens an Art 23 withdrawal window. Get the
+    ///      date right at anchor time.
     error ProspectusNotApproved(bytes32 docRef);
     /// @dev `prospectusValidUntil` sits past `approvedAt + 365 days` — the fed-in date has
-    ///      outrun the statutory limit. Fix the date, or record the fresh approval first.
+    ///      outrun the statutory limit. Fix the date; the approval date itself is not editable.
     error ProspectusValidityExceedsApproval(uint64 validUntil, uint64 approvedAt);
     /// @dev The supplement was not found in `DocumentRegistry`, or was found without a
     ///      recorded NCA approval. Art 23(1) gives the NCA up to 5 working days and the
@@ -335,9 +359,10 @@ contract SubscriptionEscrow is IErasable {
     ///      anything — so an unapproved hash opening a withdrawal window is a window
     ///      counted against a document no investor can have been given.
     error SupplementNotAnchoredAndApproved(bytes32 versionHash);
-    /// @dev The hash is not a Prospectus-Regulation supplement: wrong regime on the slot
-    ///      (a KID hash opening an Art 23 window was the defect), not in that slot at all, or
-    ///      the base prospectus itself rather than a supplement to it.
+    /// @dev The hash is not a supplement to this offer's prospectus: the slot is not on
+    ///      `isProspectusSlot` (a KID hash opening an Art 23 window was the defect), the hash
+    ///      is not in that slot at all, or it is the base prospectus itself rather than a
+    ///      supplement to it.
     error NotAProspectusSupplement(bytes32 docRef, bytes32 versionHash);
     /// @dev The prospectus this offer runs on is no longer anchored in `DocumentRegistry`.
     error ProspectusAnchorMissing(bytes32 docRef);
@@ -419,7 +444,9 @@ contract SubscriptionEscrow is IErasable {
             finalPriceOmittedAtFiling = finalPriceOmittedAtFiling_;
             documents = IDocumentAnchor(documents_);
             prospectusDocRef = prospectusDocRef_;
+            isProspectusSlot[prospectusDocRef_] = true;
             emit DependencySet("documents", documents_);
+            emit ProspectusSlotSet(prospectusDocRef_, true);
         } else {
             finalPriceOmittedAtFiling = false;
         }
@@ -462,6 +489,22 @@ contract SubscriptionEscrow is IErasable {
         if (offerClosesAt != 0 && closesAt < offerClosesAt) revert OfferCloseCannotMoveEarlier(offerClosesAt, closesAt);
         emit OfferCloseSet(offerClosesAt, closesAt);
         offerClosesAt = closesAt;
+    }
+
+    /// @notice Admits or removes a slot whose versions may open an Art 23(2) window on this
+    ///         offer. `prospectusDocRef` is admitted in the constructor; this is for the extra
+    ///         case of a base prospectus held in a slot of its own.
+    /// @dev    ⚠️ ADMITTING A SLOT IS ADMITTING EVERY VERSION IN IT, PAST AND FUTURE. The scan
+    ///         in `_assertIsProspectusSupplement` walks the whole slot, so this is not a
+    ///         per-document approval — point it only at slots that hold this offer's prospectus
+    ///         lineage. Pointing it at a slot holding key-information documents restores
+    ///         exactly the defect the check exists to prevent.
+    /// @dev    Removal cannot retract a window already opened; `windows` is append-only and an
+    ///         investor's Art 23(2) exit right is not governance's to withdraw once it exists.
+    function setProspectusSlot(bytes32 docRef, bool allowed) external onlyGovernance {
+        if (mode != Mode.Prospectus) revert WrongMode();
+        isProspectusSlot[docRef] = allowed;
+        emit ProspectusSlotSet(docRef, allowed);
     }
 
     /// @notice Raises or lowers the Art 23(2) floor — in calendar seconds, applied to windows
@@ -609,11 +652,12 @@ contract SubscriptionEscrow is IErasable {
     /// @dev Art 12 has three limbs and the date is only one of them. A prospectus is valid
     ///      (1) only while it remains the anchored, current document — checking the clock
     ///      alone accepts subscriptions against a prospectus withdrawn or superseded in the
-    ///      registry; (2) only once the NCA has approved the version that is current —
-    ///      `anchorVersion` writes `approvedAt: 0`, and a current-but-unapproved version is a
-    ///      draft; (3) for 12 months FROM that approval, which bounds the fed-in date from
-    ///      above. The bound is checked here rather than only at construction because the
-    ///      approval is usually recorded after the escrow is deployed.
+    ///      registry; (2) only once the NCA has approved the version that is current — a
+    ///      version anchored with `approvedAt == 0` is a draft; (3) for 12 months FROM that
+    ///      approval, which bounds the fed-in date from above. The bound is checked here
+    ///      rather than only at construction because the prospectus is normally anchored
+    ///      after the escrow is deployed, and Art 12 is measured from the base version's
+    ///      approval, not from this contract's birth.
     function _assertProspectusInForce() private view {
         if (block.timestamp > prospectusValidUntil) revert ProspectusExpired(prospectusValidUntil);
 
@@ -745,11 +789,13 @@ contract SubscriptionEscrow is IErasable {
     /// @dev    ⚠️ The window can no longer be opened against a supplement that was never
     ///         filed or never approved. The reason is Art 23(1): the NCA has up to 5 working
     ///         days, and approval and publication precede the thing they authorise.
-    ///         ⚠️ Nor against a hash from the wrong REGIME. `documentStatus` is keyed by hash
-    ///         across every slot in the registry, so until 2026-09-08 any approved hash —
-    ///         a KID, an ELTIF annual report — opened an Art 23 window. The supplement must
-    ///         sit in a `Regime.ProspectusRegulation` slot, and where that slot is this
-    ///         offer's own prospectus it must not be the base prospectus (index 0) itself.
+    ///         ⚠️ Nor against a hash from a slot that is not this offer's prospectus.
+    ///         `documentStatus` is keyed by hash across every slot in the registry, so until
+    ///         2026-09-08 any approved hash — a KID, an ELTIF annual report — opened an Art 23
+    ///         window. The supplement must sit in a slot on `isProspectusSlot`, and where that
+    ///         slot is this offer's own prospectus it must not be the base prospectus (index 0)
+    ///         itself. *(The check asked `DocumentRegistry.regimeOf` until rev 65; the registry
+    ///         no longer classifies documents, so the same guard reads local configuration.)*
     ///         ⚠️ This is now the ONLY reverting document check left in the suite — the
     ///         equivalent gate on the upgrade path was withdrawn in favour of carrying the
     ///         document hash as the `TimelockController` salt and reconciling off-chain (see
@@ -784,17 +830,21 @@ contract SubscriptionEscrow is IErasable {
     }
 
     /// @dev Bounded scan — `versionCount` is the number of anchors on one slot, which is a
-    ///      handful over an offer's life. A hash found only as an unrevealed commitment does
-    ///      not count: it is not yet a document.
+    ///      handful over an offer's life.
+    /// @dev ⚠️ The first check was `documents.regimeOf(docRef) != Regime.ProspectusRegulation`
+    ///      until rev 65. It asks the same question of local configuration instead of of the
+    ///      registry, because the registry stopped classifying documents. Deleting this check
+    ///      rather than moving it reopens the 2026-09-08 defect: `documentStatus` is keyed by
+    ///      hash across every slot, so any approved hash would open an Art 23 window.
     function _assertIsProspectusSupplement(bytes32 docRef, bytes32 versionHash) private view {
-        if (documents.regimeOf(docRef) != Regime.ProspectusRegulation) {
+        if (!isProspectusSlot[docRef]) {
             revert NotAProspectusSupplement(docRef, versionHash);
         }
 
         uint256 count = documents.versionCount(docRef);
         for (uint256 i = 0; i < count; i++) {
             Version memory v = documents.versionAt(docRef, i);
-            if (v.versionHash != versionHash || !v.revealed) continue;
+            if (v.versionHash != versionHash) continue;
             // The base prospectus is not a supplement to itself.
             if (docRef == prospectusDocRef && i == 0) revert NotAProspectusSupplement(docRef, versionHash);
             return;

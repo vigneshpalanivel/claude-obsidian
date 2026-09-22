@@ -611,16 +611,22 @@ nothing in it is a disclosure item), then:
 - **`setOfferClose(ts)` must be called before anything can settle.** `settle()` reverts
   `OfferStillOpen()` while `offerClosesAt == 0` or not yet passed; `subscribe()` reverts
   `OfferClosed` after it. The date may be extended, never brought forward.
-- In `Prospectus` mode `subscribe()` requires the current prospectus version to carry a recorded
-  NCA approval (`DocumentRegistry.recordNcaApproval`) — an anchored-but-unapproved prospectus
-  reverts `ProspectusNotApproved`. `prospectusValidUntil` must sit within
+- In `Prospectus` mode `subscribe()` requires the current prospectus version to carry an NCA
+  approval date — an anchored-but-unapproved prospectus reverts `ProspectusNotApproved`.
+  ⚠️ **Changed 2026-09-22: the date is now an argument to `DocumentRegistry.anchorVersion`, not a
+  follow-up `recordNcaApproval` call.** There is no second transaction and no window in which the
+  prospectus is anchored but unapproved. `prospectusValidUntil` must sit within
   `versionAt(prospectusDocRef, 0).approvedAt + 365 days` (the base prospectus, not the latest
   supplement); it is checked lazily on every `subscribe()` and eagerly in
-  `extendProspectusValidity` once an approval is on record. Record the approval **before** the
-  first subscription, and feed a validity date computed from it.
+  `extendProspectusValidity`. Feed a validity date computed from the NCA's decision notice.
 - `publishSupplement(docRef, versionHash, opensAt, closesAt)` now takes the slot: the hash must be
-  a revealed version in a `Regime.ProspectusRegulation` slot, and not index 0 of this offer's own
-  prospectus. `opensAt >= now` and `closesAt - opensAt >= supplementWindowDurationSeconds`
+  a version in a slot on the escrow's own `isProspectusSlot` allowlist, and not index 0 of this
+  offer's own prospectus. ⚠️ **Changed 2026-09-22: this check reads escrow configuration, not
+  `DocumentRegistry.regimeOf`, which no longer exists.** `prospectusDocRef` is allowlisted in the
+  constructor, so the common case needs no call. **Add a slot with `setProspectusSlot(docRef,
+  true)` only for a base prospectus held separately — admitting a slot admits every version in it,
+  past and future, so pointing it at a slot holding KIDs restores the exact defect the check
+  prevents.** `opensAt >= now` and `closesAt - opensAt >= supplementWindowDurationSeconds`
   (default 3 days; setter `setSupplementWindowFloor`, zero refused). Same floor semantics on
   `publishFinalPrice` with `finalPriceWindowDurationSeconds` / `setFinalPriceWindowFloor`. The
   floors are calendar seconds — working-day arithmetic stays off-chain; the floor is a lower bound
@@ -633,12 +639,53 @@ nothing in it is a disclosure item), then:
 
 ### `DocumentRegistry`
 
-- `openDocument` refuses `Regime.Unset`.
-- One pending concealed commitment per slot: `anchorVersion` and `anchorConcealed` revert
-  `PendingConcealedCommitment` while one is unrevealed. `revealConcealed(docRef, versionHash,
-  uriHash, salt, uri, retentionUntil)` gained the `retentionUntil` argument, runs the
-  `VersionHashAlreadyUsed` check, starts a KID's Art 10 clock, and emits `SupplementPublished` /
-  `KidRevised` exactly as a plain anchor does.
+- **`openDocument(docRef, retentionUntil)`** — signature changed 2026-09-22; the `Regime` argument
+  is gone and **the enum no longer exists**. The registry does not classify documents: what a
+  document is, and what follows from revising it, is the consuming contract's business. A slot is
+  a slot.
+- ⚠️ **There is no longer any on-chain record of what kind of document a slot holds.** Nothing
+  reverts if you anchor a KID into the slot your runbook calls "the prospectus". **The `docRef`
+  naming convention is now load-bearing documentation** — pick it deliberately, write it down, and
+  make the indexer's slot-to-regime map a reviewed artefact rather than a lookup someone maintains
+  from memory. The compensating control on the one path where it mattered is the escrow's
+  `isProspectusSlot` allowlist.
+- **`anchorVersion(docRef, versionHash, uriHash, uri, approvedAt, retentionUntil)`** — signature
+  changed 2026-09-22; `approvedAt` is new and sits before `retentionUntil`. Two `uint64` arguments
+  now sit adjacent and **transposing them compiles**: a retention deadline in the approval slot
+  reads as an approval a decade in the future, and `_assertValidityWithinApproval` then accepts any
+  validity date you feed it. Check the argument order on every anchor script.
+- **`approvedAt` is write-once.** Pass the NCA's date from its decision notice for a
+  `ProspectusRegulation` slot; pass `0` for PRIIPs KID, MAR disclosure and Art 8(5) final terms,
+  none of which are approved ex ante. There is no setter — correcting a wrong date means anchoring
+  a new version, and on a Prospectus slot **that opens an Art 23 withdrawal window on every
+  subscription taken so far**. A typo here is a refund event, not a patch.
+
+⚠️ **Removed 2026-09-22 — three functions, and one of them was a control you now owe someone.**
+
+| Removed | Replaced by | Who owns it now |
+|---|---|---|
+| `recordNcaApproval` | the `approvedAt` argument on `anchorVersion` | nobody — the state it guarded is now unrepresentable |
+| `anchorConcealed` / `revealConcealed` | anchor after the announcement | nobody — see `UPGRADE-ARCHITECTURE.md` §9 |
+| `attestReview` + the `reviewDueBy` limb of `isCurrent` | **an off-chain calendar with a named owner** | **unassigned — assign it before a retail KID goes live** |
+| `regimeOf` + the `Regime` enum + `SupplementPublished` / `KidRevised` | `SubscriptionEscrow.isProspectusSlot` for the one guard; one generic `VersionAnchored` carrying `supersededHash` for the indexer | **the indexer's slot-to-regime map — a reviewed artefact, not tribal knowledge** |
+
+⚠️ **The PRIIPs Art 10 review is now a day-one default that does nothing, and unlike the others in
+the table at the top of this file, nothing on-chain will ever surface it.** `isCurrent` used to
+return `false` once a KID passed twelve months without an attested review, which blocked new retail
+subscriptions. It no longer does: **a KID that is never reviewed satisfies every on-chain read
+indefinitely.** That limb was withdrawn deliberately — Art 10 requires review *at least every 12
+months* **and** *on any material change*, and a timer catches only the first limb while the second
+is the one that actually breaches. But removing the timer does not remove the duty. Before the
+first retail subscription:
+
+1. Put the twelve-month review date for each KID slot in the compliance calendar, dated from its
+   `VersionAnchored` timestamp. ⚠️ **Which slots those are is now off-chain knowledge** — the
+   registry stopped carrying a regime on 2026-09-22, so this list comes from the `docRef`
+   convention, not from a contract read.
+2. Name the person who signs the review off. The `KidRevised` event is the only on-chain trace a
+   review ever produced an outcome, and it fires only when the review results in a **revision**.
+3. Wire the material-change trigger to the product-change process, not to a date. That is the limb
+   the contract never covered and never could.
 
 ### `CovenantRegistry`
 

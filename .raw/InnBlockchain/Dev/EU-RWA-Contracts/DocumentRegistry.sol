@@ -1,16 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {Regime, Version} from "./Interfaces.sol";
+import {Version} from "./Interfaces.sol";
 
 /// @title DocumentRegistry (illustrative sample — not production code)
 /// @notice ERC-1643-pattern anchor: hash + URI on-chain, the document itself off-chain. This
 ///         is a MULTI-REGIME contract, not a prospectus contract — it serves Prospectus
 ///         Art 21(7) (prospectus, final terms, supplements, ≥10y), MAR Arts 17/18 (disclosed
 ///         information and insider-list artefacts, ≥5y), ELTIF Arts 23–24 (its own prospectus
-///         regime plus the annual report), and the PRIIPs KID with its Art 10 review cadence.
-///         Scoping it from "prospectus" alone under-builds it for every fund and every retail
-///         offer.
+///         regime plus the annual report), and the PRIIPs KID. Scoping it from "prospectus"
+///         alone under-builds it for every fund and every retail offer.
 /// @dev    ⚠️ "MULTI-REGIME" IS NOT "MULTI-ASSET". This contract serves four regimes for one
 ///         instrument. Whether ONE registry serves MANY tokenized assets is a separate
 ///         question with a different answer — it is an open topology decision, and the
@@ -25,21 +24,114 @@ import {Regime, Version} from "./Interfaces.sol";
 ///         with no sweep, no configuration, and no chance to forget. Fail-closed by
 ///         construction. A `hasAcknowledged` boolean anywhere in that path reintroduces the
 ///         fail-open this design exists to remove.
-/// @dev    ⚠️ ANCHORING A NEW VERSION IS NOT THE SAME EVENT IN EVERY REGIME, AND THE
-///         ASYMMETRY IS LOAD-BEARING:
-///           • Prospectus Art 23 supplement → OPENS a 3-working-day withdrawal window in
-///             `SubscriptionEscrow`. Investors who already agreed may withdraw.
-///           • PRIIPs Art 10 KID revision → opens NO window. It INVALIDATES outstanding
-///             delivery acknowledgements instead.
-///         Do not reuse the escrow's window machinery for a KID revision. This contract emits
-///         a distinct event per regime for exactly that reason; a single generic
-///         `DocumentUpdated` would force the escrow to guess.
+/// @dev    ⚠️ THIS CONTRACT KNOWS NOTHING ABOUT REGIMES, AND THAT IS THE POINT — changed at
+///         rev 65. It used to carry a `Regime` enum per slot and emit `SupplementPublished` /
+///         `KidRevised` so a reader could tell an Art 23 supplement (which opens a withdrawal
+///         window) from a PRIIPs Art 10 KID revision (which does not). Three findings ended it:
+///           • **Contracts cannot read events.** `SupplementPublished` never opened anything.
+///             `SubscriptionEscrow.publishSupplement` is a separate governance transaction that
+///             someone must remember to send, and the escrow's own NatSpec says so. The event
+///             was reconciliation data for an off-chain indexer, never a mechanism.
+///           • **The enum's entire on-chain footprint was ONE read** — `regimeOf`, in one line
+///             of one escrow function, guarding against a KID hash opening an Art 23 window.
+///             That guard moved to a `docRef` allowlist in the escrow, which is per-offer,
+///             never proxied, and the right home for offer-specific configuration.
+///           • **A closed enum forces a redeploy to serve a new regime, and a redeploy is
+///             uniquely expensive here.** Not because evidence would be lost — it lives in the
+///             event log and survives at the old address (see the D20 note below) — but because
+///             the anchor history would be split across two addresses with no on-chain link,
+///             the new deployment would answer reads about none of the old versions, and every
+///             consumer and indexer would need re-pointing and re-seeding. The regime coupling
+///             was the thing most likely to force exactly that.
+///         The asymmetry it documented is REAL and still matters — a supplement opens a window,
+///         a KID revision invalidates acknowledgements instead. It is now a runbook fact and an
+///         indexer's classification, not a `require` and not an enum. `VersionAnchored` carries
+///         `supersededHash` so the indexer can still answer "which acknowledgements just died"
+///         without this contract knowing why.
+/// @dev    ⚠️ APPROVAL IS AN ANCHOR ARGUMENT, NOT A LATER CALL, AND THAT ENFORCES THE
+///         STATUTORY ORDER. Until 2026-09-22 a separate `recordNcaApproval` let a version sit
+///         anchored-but-unapproved, and `SubscriptionEscrow` carried two reverts to catch the
+///         state. Art 23(1) puts approval BEFORE publication — the NCA has up to 5 working
+///         days and the supplement is published after it clears — so the unapproved-anchor
+///         state was never lawful in the first place. Passing `approvedAt` to `anchorVersion`
+///         makes it unrepresentable rather than merely detected. Two consequences to hold:
+///           • Regimes with no ex-ante approval pass 0 — a PRIIPs KID is not approved, MAR
+///             disclosure is not approved, and Art 8(5) final terms are FILED, not approved.
+///             `approvedAt == 0` is therefore a normal value, not an error.
+///           • A wrong `approvedAt` is no longer patchable in place. Correcting one means
+///             anchoring a new version, which for a Prospectus slot OPENS A WITHDRAWAL
+///             WINDOW. The date is fed from the NCA's own decision notice; treat entering it
+///             as part of the approval workflow, not as a field on a form.
 /// @dev    ⚠️ NO DELETE FUNCTION EXISTS, AND THAT IS THE RETENTION CONTROL. Art 21(7) is ten
 ///         years, MAR Art 18(5) is five. Rather than store a retention date nothing enforces,
 ///         the version history is append-only: superseding v1 with v2 marks v1 non-current
 ///         and removes nothing. The retention deadline is emitted for the off-chain archive
 ///         that actually holds the file — on-chain, the guarantee is that the hash you
 ///         anchored is still provably the hash you anchored.
+/// @dev    ⚠️ THE PRIIPs ART 10 REVIEW IS AN OFF-CHAIN DUTY WITH A NAMED OWNER, NOT A TIMER
+///         HERE. Until 2026-09-22 this contract carried a 12-month `reviewDueBy` clock and an
+///         `attestReview` call, and `isCurrent` returned false once the clock expired. It was
+///         withdrawn because Art 10 has TWO limbs — at least every 12 months AND on any
+///         material change — and a timer catches only the limb that does not matter. Nothing
+///         on-chain can detect a material change in the underlying product, so the clock
+///         bought a false assurance that the review duty was mechanised while the limb that
+///         actually breaches went unwatched. This is the same trade already made on the
+///         upgrade path (`UPGRADE-ARCHITECTURE.md` §5): where the judgement is human, put the
+///         control in a reconciliation job with an owner, not in a `require` that can only
+///         see the calendar. ⚠️ The consequence is real and must be staffed: a KID that is
+///         never reviewed still satisfies `isCurrent` indefinitely. The compensating control
+///         is off-chain and lives in `DEPLOYMENT-DEFAULTS.md`.
+/// @dev    ⚠️ NO COMMIT-REVEAL. Until 2026-09-22 `anchorConcealed` / `revealConcealed` let the
+///         issuer anchor a hash-of-a-hash for a document MAR Art 17(1a) requires to stay
+///         confidential during a protracted process, then open it at announcement. Withdrawn:
+///         a document that is never anchored until the final event is disclosed has no
+///         confidentiality problem to solve on-chain, and the mechanism bought only a
+///         PROVABLE PRE-ANNOUNCEMENT TIMESTAMP — evidence no regime actually demands here.
+///         Art 17(4) delayed disclosure is evidenced by the notification to the NCA, and the
+///         Art 18 insider list carries its own dated record off-chain. Anchor after the
+///         announcement. If a pre-announcement timestamp is ever genuinely required, an
+///         off-chain notarisation supplies it without an unrevealable-commitment failure mode
+///         in the registry.
+/// @dev    ⚠️ `governance` IS `immutable` AND THAT DECISION IS LOAD-BEARING ON D20. The
+///         address is the Safe, so signer rotation happens inside the Safe and never moves
+///         it; this matches every other contract in the suite. But moving governance to a
+///         DIFFERENT address — Safe to a bare `TimelockController`, a custodian change that
+///         produces a new Safe — means redeploying, and this contract cannot resume: there is
+///         no rotation function.
+///         ⚠️ CORRECTED 2026-09-22 (rev 68) — AN EARLIER VERSION OF THIS NOTE CLAIMED A PROXY
+///         WOULD DESTROY THE ART 21(7) PROOF. IT WOULD NOT, AND THE DISTINCTION MATTERS:
+///           • **The proof is in the LOGS, and no upgrade can touch them.** `VersionAnchored`
+///             is written into block history when the anchor transaction is mined. An auditor
+///             asking "was this hash anchored on 3 March 2027" reads that log and the block it
+///             sits in. Replacing the implementation replaces CODE; it cannot rewrite a mined
+///             block. **The audit trail survives a proxy intact.**
+///           • **What a proxy exposes is the LIVE READS.** `versionAt`, `currentVersionHash`,
+///             `isCurrent` and `documentStatus` answer from storage through the current
+///             implementation, and a new implementation can write any slot. So state can be
+///             made to contradict the log. The log still wins in front of an auditor — but
+///             `CovenantRegistry.isCurrent` and `SubscriptionEscrow` gate on the LIVE answer,
+///             so what is corruptible is the compliance gating, not the evidence.
+///           • ⚠️ **And that is true of every contract in this suite, so it is NOT a special
+///             argument for this one.** The honest case against proxying here is thinner than
+///             it was written: one fewer moving part, no governance-capture surface on the
+///             contract holding the evidence, and no upgrade mechanism to disclose as an
+///             offer-document content item. That is enough; the overstated version was not
+///             needed and should not be repeated.
+///         **DECIDED 2026-09-22: not proxied, `governance` stays
+///         `immutable`, and no rotation function is added.** The operator commits to Safe as
+///         the governance holder, and a Safe's address does not move — signers rotate inside
+///         it. That closes D20 for this contract.
+///         ⚠️ **The residual, so nobody rediscovers it as a surprise: if the Safe ADDRESS ever
+///         has to change — a custodian migration issuing a new Safe, a move to a bare
+///         `TimelockController` — this registry can never be written to again.** Reads survive
+///         and every existing anchor stays provable; what is lost is the ability to anchor
+///         anything further, and a replacement registry starts empty and can prove nothing
+///         about this one's history. The decision is that Safe-address stability is a safer
+///         bet than either a proxy (which adds a disclosable upgrade mechanism and puts the
+///         live read surface under governance control — NOT, as this note once claimed, which
+///         destroys the evidence) or a rotation function (which adds a governance-capture
+///         surface to the contract holding the evidence). Revisit only if the Safe commitment
+///         changes.
 /// @dev    GDPR: no document content and no personal data ever reaches storage. An insider
 ///         list under MAR Art 18(3) carries names, dates of birth, home addresses and
 ///         telephone numbers — precisely the category Art 17 gives a right of erasure over,
@@ -49,14 +141,12 @@ contract DocumentRegistry {
     // TYPES
     // ═══════════════════════════════════════════════════════════════════════
 
-    /// @notice Which regime's clock and consequences attach to this document. Deliberately a
-    ///         SMALL enum and not an open bytes32: unlike a covenant type, a document's regime
-    ///         changes what the rest of the stack must do when a new version lands (window vs
-    ///         no window, review cadence vs none). A new regime here is a genuine design
-    ///         event, not a configuration one.
+    /// @notice A document SLOT. Deliberately carries no regime, no type and no classification —
+    ///         only what this contract needs to answer "is this hash still current", and nothing
+    ///         a new regulation could invalidate. What a document IS, and what follows from
+    ///         revising it, belongs to the contract that gates on it.
     struct Document {
         bool exists;
-        Regime regime;
         uint32 currentIndex; // index into `_versions[docRef]`
     }
 
@@ -88,39 +178,34 @@ contract DocumentRegistry {
     mapping(bytes32 => bytes32) private _versionHashToDocRef;
     mapping(bytes32 => bool) private _versionHashKnown;
 
-    /// @dev One unrevealed commitment at most per slot, and it is always the LAST version in
-    ///      the slot while pending. `anchorVersion` and `anchorConcealed` both refuse while one
-    ///      is outstanding — see `PendingConcealedCommitment`.
-    mapping(bytes32 => bool) private _concealedPending;
-
-    /// @notice PRIIPs Art 10 default: reviewed at least every 12 months AND on any material
-    ///         change. The clock is the floor, not the trigger — a material change obliges a
-    ///         review immediately and no timer can detect one.
-    uint64 public constant PRIIPS_REVIEW_PERIOD = 365 days;
-
     // ═══════════════════════════════════════════════════════════════════════
-    // EVENTS — one per regime, because the consequences differ
+    // EVENTS — generic. Classification is the indexer's job, not this contract's.
     // ═══════════════════════════════════════════════════════════════════════
 
-    event DocumentOpened(bytes32 indexed docRef, Regime indexed regime, uint64 retentionUntil);
+    event DocumentOpened(bytes32 indexed docRef, uint64 retentionUntil);
 
     /// @param uri The resolvable location, emitted in full. Storage holds only its digest;
     ///            the string lives in logs, where it is cheap and permanent.
+    /// @param approvedAt The NCA's approval date, or 0 in a regime with no ex-ante approval.
+    ///                   Carried here rather than on a separate `NcaApprovalRecorded` so an
+    ///                   indexer sees publication and approval as one fact, which is what
+    ///                   Art 23(1) makes them.
+    /// @param supersededHash The version this one replaced, or 0 if this is the slot's first.
+    ///                       ⚠️ This is what the regime events used to carry and it is the only
+    ///                       part of them worth keeping. An indexer classifying this slot as a
+    ///                       PRIIPs KID needs the OLD hash to know which outstanding delivery
+    ///                       acknowledgements just stopped satisfying their gate; "v2 is live"
+    ///                       does not tell it that, "v1 → v2" does. Indexed, so the reconciliation
+    ///                       join is a filter rather than a scan.
     event VersionAnchored(
-        bytes32 indexed docRef, bytes32 indexed versionHash, uint32 index, string uri, uint64 retentionUntil
+        bytes32 indexed docRef,
+        bytes32 indexed versionHash,
+        bytes32 indexed supersededHash,
+        uint32 index,
+        string uri,
+        uint64 approvedAt,
+        uint64 retentionUntil
     );
-
-    /// @notice Prospectus Art 23 — the escrow listens for THIS event to open window type A.
-    event SupplementPublished(bytes32 indexed docRef, bytes32 indexed versionHash, uint64 publishedAt);
-
-    /// @notice PRIIPs Art 10 — deliberately NOT `SupplementPublished`. No window opens; the
-    ///         effect is that outstanding covenant acknowledgements stop satisfying their gate.
-    event KidRevised(bytes32 indexed docRef, bytes32 indexed supersededHash, bytes32 indexed newHash);
-
-    event NcaApprovalRecorded(bytes32 indexed docRef, bytes32 indexed versionHash, uint64 approvedAt);
-    event ReviewAttested(bytes32 indexed docRef, bytes32 indexed versionHash, uint64 nextDueBy);
-    event ConcealedAnchored(bytes32 indexed docRef, bytes32 indexed commitHash);
-    event ConcealedRevealed(bytes32 indexed docRef, bytes32 indexed versionHash);
 
     // ═══════════════════════════════════════════════════════════════════════
     // ERRORS
@@ -131,20 +216,6 @@ contract DocumentRegistry {
     error DocumentAlreadyOpen(bytes32 docRef);
     error VersionHashAlreadyUsed(bytes32 versionHash);
     error EmptyVersionHash();
-    error NotAPriipsKid(bytes32 docRef);
-    error NoVersionAnchored(bytes32 docRef);
-    error CommitMismatch(bytes32 expected, bytes32 got);
-    error NothingConcealed(bytes32 docRef);
-    /// @dev A slot with an unrevealed commitment accepts no new anchor of either kind. Before
-    ///      2026-09-08 a plain `anchorVersion` on top of a pending commitment pushed past it and
-    ///      `revealConcealed` — which reads the LAST version — could never find it again: the
-    ///      commitment was stranded, unrevealable, with `ConcealedAnchored` on the log and no
-    ///      matching reveal. Reveal or abandon the slot; do not anchor over it.
-    error PendingConcealedCommitment(bytes32 docRef);
-    /// @dev `Regime.Unset` is the enum's zero value and means "no regime chosen". A slot opened
-    ///      with it fires no regime event on any anchor, so a supplement anchored into it opens
-    ///      no withdrawal window and a KID revision invalidates nothing — silently.
-    error RegimeUnset(bytes32 docRef);
 
     modifier onlyGovernance() {
         if (msg.sender != governance) revert NotGovernance();
@@ -166,12 +237,11 @@ contract DocumentRegistry {
     ///                       publication, MAR Art 18(5) is ≥5 years. Emitted, never stored:
     ///                       nothing on-chain can enforce a duty owed by a file server, and a
     ///                       stored date no `require` reads is decoration.
-    function openDocument(bytes32 docRef, Regime regime, uint64 retentionUntil) external onlyGovernance {
+    function openDocument(bytes32 docRef, uint64 retentionUntil) external onlyGovernance {
         if (_documents[docRef].exists) revert DocumentAlreadyOpen(docRef);
-        if (regime == Regime.Unset) revert RegimeUnset(docRef);
 
-        _documents[docRef] = Document({exists: true, regime: regime, currentIndex: 0});
-        emit DocumentOpened(docRef, regime, retentionUntil);
+        _documents[docRef] = Document({exists: true, currentIndex: 0});
+        emit DocumentOpened(docRef, retentionUntil);
     }
 
     /// @notice Anchors a new version and makes it current. The previous version stays in
@@ -182,14 +252,22 @@ contract DocumentRegistry {
     ///         NCA has up to 5 working days to approve a supplement, and that time does NOT
     ///         run concurrently with the §9 timelock — approval and publication precede
     ///         execution. Budget the calendar in weeks.
-    function anchorVersion(bytes32 docRef, bytes32 versionHash, bytes32 uriHash, string calldata uri, uint64 retentionUntil)
-        external
-        onlyGovernance
-        returns (uint32 index)
-    {
+    /// @param approvedAt The NCA's approval date from its decision notice. Pass 0 for a regime
+    ///                   with no ex-ante approval (PRIIPs KID, MAR disclosure, Art 8(5) final
+    ///                   terms). Not validated here — `SubscriptionEscrow` is what decides
+    ///                   that a zero is fatal on ITS path, because only the escrow knows which
+    ///                   slot is the offer's prospectus. This contract records; it does not
+    ///                   adjudicate another regime's preconditions.
+    function anchorVersion(
+        bytes32 docRef,
+        bytes32 versionHash,
+        bytes32 uriHash,
+        string calldata uri,
+        uint64 approvedAt,
+        uint64 retentionUntil
+    ) external onlyGovernance returns (uint32 index) {
         Document storage doc = _documents[docRef];
         if (!doc.exists) revert UnknownDocument(docRef);
-        if (_concealedPending[docRef]) revert PendingConcealedCommitment(docRef);
         if (versionHash == bytes32(0)) revert EmptyVersionHash();
         if (_versionHashKnown[versionHash]) revert VersionHashAlreadyUsed(versionHash);
 
@@ -203,188 +281,17 @@ contract DocumentRegistry {
                 versionHash: versionHash,
                 uriHash: uriHash,
                 anchoredAt: uint64(block.timestamp),
-                approvedAt: 0,
-                reviewDueBy: _reviewDueBy(doc.regime),
-                revealed: true
+                approvedAt: approvedAt
             })
         );
 
         index = uint32(_versions[docRef].length - 1);
-        _afterAnchor(doc, docRef, versionHash, superseded, index, uri, retentionUntil);
-    }
 
-    function _reviewDueBy(Regime regime) private view returns (uint64) {
-        return regime == Regime.PriipsKid ? uint64(block.timestamp) + PRIIPS_REVIEW_PERIOD : 0;
-    }
-
-    /// @dev Everything that happens once a version hash becomes CURRENT, shared by the plain
-    ///      and the concealed path so the two cannot drift: index flip, reverse index, the
-    ///      generic `VersionAnchored`, and the regime-specific consequence event. Before
-    ///      2026-09-08 `revealConcealed` did the first three and skipped the fourth — a
-    ///      revealed prospectus supplement opened no `SupplementPublished`, so the escrow's
-    ///      reconciliation job had nothing to join against, and a revealed KID fired no
-    ///      `KidRevised`.
-    function _afterAnchor(
-        Document storage doc,
-        bytes32 docRef,
-        bytes32 versionHash,
-        bytes32 superseded,
-        uint32 index,
-        string calldata uri,
-        uint64 retentionUntil
-    ) private {
         doc.currentIndex = index;
-
         _versionHashKnown[versionHash] = true;
         _versionHashToDocRef[versionHash] = docRef;
 
-        emit VersionAnchored(docRef, versionHash, index, uri, retentionUntil);
-
-        if (superseded != bytes32(0)) {
-            if (doc.regime == Regime.PriipsKid) {
-                emit KidRevised(docRef, superseded, versionHash);
-            } else if (doc.regime == Regime.ProspectusRegulation) {
-                emit SupplementPublished(docRef, versionHash, uint64(block.timestamp));
-            }
-        }
-    }
-
-    /// @notice Records that the NCA approved this version.
-    /// @dev    ⚠️ Read by `SubscriptionEscrow`'s Art 23(2) window opener, which reverts when a
-    ///         supplement is anchored but not approved — deploy-then-disclose inverts the
-    ///         statutory order and no timelock fixes it. The upgrade path used to revert on
-    ///         this too; it no longer does. The document hash now travels as the
-    ///         `TimelockController` salt and the check is an off-chain reconciliation job with
-    ///         a named owner (`UPGRADE-ARCHITECTURE.md` §5). So `approvedAt` is still load-
-    ///         bearing on the escrow path and evidence-only on the upgrade path — do not
-    ///         assume one guarantee covers both.
-    function recordNcaApproval(bytes32 docRef, bytes32 versionHash, uint64 approvedAt) external onlyGovernance {
-        Document storage doc = _documents[docRef];
-        if (!doc.exists) revert UnknownDocument(docRef);
-
-        Version[] storage vs = _versions[docRef];
-        for (uint256 i = 0; i < vs.length; i++) {
-            if (vs[i].versionHash == versionHash) {
-                vs[i].approvedAt = approvedAt;
-                emit NcaApprovalRecorded(docRef, versionHash, approvedAt);
-                return;
-            }
-        }
-        revert UnknownDocument(docRef);
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // MAR ART 17(1a) — CONCEALED ANCHORING
-    // ═══════════════════════════════════════════════════════════════════════
-
-    /// @notice Anchors a commitment to a document nobody may yet see. Since the Listing Act,
-    ///         Art 17(1) second sentence narrows the DISCLOSURE duty to the final event of a
-    ///         protracted process, while Art 17(1a) imposes a STANDALONE duty to keep the
-    ///         intermediate steps CONFIDENTIAL until then.
-    /// @dev    ⚠️ THE BREACH IS CONFIDENTIALITY, NOT LATENESS, AND THAT CHANGES THE CURE. You
-    ///         cannot fix a public intermediate step by disclosing earlier — Art 17(1) does not
-    ///         yet require disclosure, and Art 17(4) cannot delay what the chain has already
-    ///         published. The only cure is not to publish it in the clear. Commit here, reveal
-    ///         when the final event is disclosed.
-    /// @dev While the commitment is pending the slot's CURRENT version is unchanged —
-    ///      `currentIndex` does not move until reveal — so `isCurrent` and
-    ///      `currentVersionHash` keep answering for the last revealed version, and nothing
-    ///      downstream (covenant gates, the escrow) can observe that a commitment exists
-    ///      beyond the `ConcealedAnchored` log entry itself.
-    function anchorConcealed(bytes32 docRef, bytes32 commitHash) external onlyGovernance {
-        Document storage doc = _documents[docRef];
-        if (!doc.exists) revert UnknownDocument(docRef);
-        if (_concealedPending[docRef]) revert PendingConcealedCommitment(docRef);
-        if (commitHash == bytes32(0)) revert EmptyVersionHash();
-
-        _versions[docRef].push(
-            Version({
-                versionHash: commitHash,
-                uriHash: bytes32(0),
-                anchoredAt: uint64(block.timestamp),
-                approvedAt: 0,
-                reviewDueBy: 0,
-                revealed: false
-            })
-        );
-        _concealedPending[docRef] = true;
-
-        emit ConcealedAnchored(docRef, commitHash);
-    }
-
-    /// @dev The commitment is `keccak256(abi.encode(versionHash, uriHash, salt))`. A salt is
-    ///      mandatory and not a nicety: without it, a document drawn from a small predictable
-    ///      set is brute-forceable from its own commitment, which leaks precisely what
-    ///      Art 17(1a) required to stay confidential.
-    /// @dev ⚠️ A REVEAL IS AN ANCHOR WITH THE CLOCK STARTED EARLIER, AND IT RUNS EVERY CHECK
-    ///      AND FIRES EVERY EVENT `anchorVersion` DOES. The revealed hash goes through the
-    ///      `VersionHashAlreadyUsed` check (a reveal that re-uses a hash already current in
-    ///      another slot would alias two documents under one `documentStatus` answer); a
-    ///      PRIIPs KID reveal starts its Art 10 review clock; and `_afterAnchor` emits
-    ///      `SupplementPublished` / `KidRevised` exactly as a plain anchor would — because the
-    ///      statutory consequence of a supplement becoming public does not depend on whether
-    ///      it was committed first.
-    /// @param retentionUntil As on `anchorVersion` — the off-chain archive's deadline, emitted.
-    function revealConcealed(
-        bytes32 docRef,
-        bytes32 versionHash,
-        bytes32 uriHash,
-        bytes32 salt,
-        string calldata uri,
-        uint64 retentionUntil
-    ) external onlyGovernance {
-        Document storage doc = _documents[docRef];
-        if (!doc.exists) revert UnknownDocument(docRef);
-        if (!_concealedPending[docRef]) revert NothingConcealed(docRef);
-        if (versionHash == bytes32(0)) revert EmptyVersionHash();
-        if (_versionHashKnown[versionHash]) revert VersionHashAlreadyUsed(versionHash);
-
-        Version[] storage vs = _versions[docRef];
-        uint32 index = uint32(vs.length - 1); // the pending commitment is always last — see `anchorVersion`
-        Version storage v = vs[index];
-
-        bytes32 expected = keccak256(abi.encode(versionHash, uriHash, salt));
-        if (expected != v.versionHash) revert CommitMismatch(expected, v.versionHash);
-
-        // The version being superseded is the one that was current while the commitment sat
-        // pending. If the commitment is the slot's first version there is nothing to supersede.
-        bytes32 superseded;
-        if (index > 0) superseded = vs[doc.currentIndex].versionHash;
-
-        v.versionHash = versionHash;
-        v.uriHash = uriHash;
-        v.reviewDueBy = _reviewDueBy(doc.regime);
-        v.revealed = true;
-        _concealedPending[docRef] = false;
-
-        emit ConcealedRevealed(docRef, versionHash);
-        _afterAnchor(doc, docRef, versionHash, superseded, index, uri, retentionUntil);
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // PRIIPS ART 10 — REVIEW CADENCE
-    // ═══════════════════════════════════════════════════════════════════════
-
-    /// @notice Attests that the Art 10 review happened and the KID did NOT need revision.
-    ///         A review that DOES require revision goes through `anchorVersion` instead — that
-    ///         is a new document, not a renewed clock.
-    /// @dev    ⚠️ A REVIEW IS NOT A TIMER RESET WITH EXTRA STEPS. Art 10 requires review at
-    ///         least every 12 months AND on any material change. The clock catches the first
-    ///         limb only; nothing on-chain can detect a material change in the underlying
-    ///         product. This function is the on-chain record of a human judgement, and the
-    ///         governance path is what gives that judgement an owner.
-    function attestReview(bytes32 docRef) external onlyGovernance {
-        Document storage doc = _documents[docRef];
-        if (!doc.exists) revert UnknownDocument(docRef);
-        if (doc.regime != Regime.PriipsKid) revert NotAPriipsKid(docRef);
-
-        Version[] storage vs = _versions[docRef];
-        if (vs.length == 0) revert NoVersionAnchored(docRef);
-
-        Version storage v = vs[doc.currentIndex];
-        v.reviewDueBy = uint64(block.timestamp) + PRIIPS_REVIEW_PERIOD;
-
-        emit ReviewAttested(docRef, v.versionHash, v.reviewDueBy);
+        emit VersionAnchored(docRef, versionHash, superseded, index, uri, approvedAt, retentionUntil);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -393,8 +300,11 @@ contract DocumentRegistry {
 
     /// @notice The `IDocumentAnchor.documentStatus` read `SubscriptionEscrow` codes against.
     ///         Keyed by version hash because the escrow is handed an artefact hash, not a slot
-    ///         name. An unrevealed commitment is NOT a known hash — it reports `(false, 0)`
-    ///         until revealed.
+    ///         name.
+    /// @dev    ⚠️ `exists` IS NOT `isCurrent`. This answers "do you know this hash, and what
+    ///         approval is on it" — it returns true for SUPERSEDED versions too, because the
+    ///         escrow's Art 23 window opener is asking about a supplement that has since been
+    ///         supplemented again. Callers that need currency must call `isCurrent`.
     function documentStatus(bytes32 documentHash) external view returns (bool exists, uint64 approvedAt) {
         if (!_versionHashKnown[documentHash]) return (false, 0);
 
@@ -416,17 +326,16 @@ contract DocumentRegistry {
         Version[] storage vs = _versions[docRef];
         if (vs.length == 0) return bytes32(0);
 
-        Version storage v = vs[doc.currentIndex];
-        if (!v.revealed) return bytes32(0);
-        return v.versionHash;
+        return vs[doc.currentIndex].versionHash;
     }
 
-    /// @notice ⚠️ THE FAIL-CLOSED READ. Returns false when the hash is superseded — and ALSO
-    ///         when a KID's Art 10 review is overdue. An out-of-review KID is not evidence of
-    ///         a discharged Art 13 duty, and treating "we forgot to review it" as equivalent
-    ///         to "it is current" is the fail-open this whole mechanism exists to prevent.
-    ///         Overdue therefore blocks new retail subscriptions rather than logging a warning
-    ///         nobody reads.
+    /// @notice ⚠️ THE FAIL-CLOSED READ. Returns false the moment the hash is superseded, which
+    ///         is what makes a revision invalidate every outstanding acknowledgement bound to
+    ///         the old version with no sweep and no configuration.
+    /// @dev    This check is now currency ONLY. It used to also return false on an overdue
+    ///         PRIIPs Art 10 review; that limb was withdrawn on 2026-09-22 — see the contract
+    ///         header for why, and `DEPLOYMENT-DEFAULTS.md` for the off-chain control that
+    ///         replaced it. An un-reviewed KID passes this read.
     function isCurrent(bytes32 docRef, bytes32 versionHash) external view returns (bool) {
         Document storage doc = _documents[docRef];
         if (!doc.exists || versionHash == bytes32(0)) return false;
@@ -434,12 +343,7 @@ contract DocumentRegistry {
         Version[] storage vs = _versions[docRef];
         if (vs.length == 0) return false;
 
-        Version storage v = vs[doc.currentIndex];
-        if (!v.revealed) return false;
-        if (v.versionHash != versionHash) return false;
-        if (v.reviewDueBy != 0 && block.timestamp > v.reviewDueBy) return false;
-
-        return true;
+        return vs[doc.currentIndex].versionHash == versionHash;
     }
 
     function versionCount(bytes32 docRef) external view returns (uint256) {
@@ -450,7 +354,4 @@ contract DocumentRegistry {
         return _versions[docRef][index];
     }
 
-    function regimeOf(bytes32 docRef) external view returns (Regime) {
-        return _documents[docRef].regime;
-    }
 }

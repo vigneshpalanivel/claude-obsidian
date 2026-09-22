@@ -291,9 +291,22 @@ a pause that halted nothing — the wiring above is what turned the trip from an
 disclosure the problem, the answer is to **schedule later** — a protracted process is delayed by not
 starting the clock, not by obscuring it. The concealment was thinner than it looked anyway: the
 payload is `upgradeAndCall(proxy, implementation, initData)`, and the implementation's *behaviour*
-is disclosed by publishing source, which is an off-chain act either way. (The *document-side*
-commit-reveal, `DocumentRegistry.anchorConcealed` / `revealConcealed`, is a different mechanism for
-a different artefact and stays.)
+is disclosed by publishing source, which is an off-chain act either way.
+
+⚠️ **On 2026-09-22 the document-side commit-reveal went the same way, and the reasoning generalises
+into a rule.** `DocumentRegistry.anchorConcealed` / `revealConcealed` was the last commit-reveal in
+the suite. It fell to the argument above applied one step further: if scheduling later is the answer
+on the upgrade path, then **anchoring later is the answer on the document path**. A document that is
+not anchored until the final event is disclosed has no confidentiality exposure to engineer around.
+What the commitment bought was a *provable pre-announcement timestamp* — and no regime in this stack
+demands one on-chain. Art 17(4) delayed disclosure is evidenced by the NCA notification; Art 18
+insider lists carry their own dated record off-chain, where they must live anyway because they are
+personal data.
+
+**The rule: commit-reveal is not a MAR control in this architecture.** Before adding one back,
+name the regime that requires a timestamp earlier than the disclosure itself. If none does, the
+mechanism is carrying a failure mode (an unrevealable commitment — a live bug here until 2026-09-08)
+in exchange for evidence nobody asked for.
 
 ---
 
@@ -311,3 +324,60 @@ each of these carries an `immutable` that is a disclosure item or a load-bearing
 
 Everything not in this table is a candidate for §1; the per-contract decision is still open and is
 tracked as D20 in the design document.
+
+✅ **`DocumentRegistry` — D20 CLOSED 2026-09-22: deployed directly, `governance` stays `immutable`,
+no rotation function.** The reasoning is below because the residual has to stay visible.
+
+**The problem.** Every contract here holds `governance` as an `immutable` Safe address. That is fine
+for signer rotation — the Safe's address never moves — but migrating governance to a *different*
+address (Safe → a bare `TimelockController`, a custodian change producing a new Safe) means
+redeploying. For twelve of these contracts that is an inconvenience: redeploy, re-seed, carry on.
+For `DocumentRegistry` it is worse, though **not for the reason first written here.** The old
+deployment's logs keep proving what they always proved — redeploying does not erase evidence, and an
+auditor can still read the original address. What a redeployment costs is **continuity**: the anchor
+history is split across two addresses with no on-chain link, the new registry answers reads about
+none of the old versions, and every consumer wired to the old address (`CovenantRegistry`,
+`SubscriptionEscrow`, the indexer) has to be re-pointed and re-seeded. That is an operational and
+reconciliation burden, not a loss of proof.
+
+⚠️ **CORRECTED AT REV 68 — THE ARGUMENT PREVIOUSLY WRITTEN HERE WAS WRONG, AND THE CORRECTION IS
+WORTH MORE THAN THE CONCLUSION IT SUPPORTS.** This section claimed a proxy would reduce the product
+from *"the hash you anchored is provably the hash you anchored"* to *"…whatever the implementation
+now says"*, destroying the Art 21(7) proof. **It would not.** Vignesh pushed on it and the claim does
+not survive:
+
+- **The proof lives in the logs, not in storage.** `VersionAnchored` is written into block history
+  when the anchor transaction is mined. An auditor asking *"was this hash anchored on 3 March 2027"*
+  reads that log and the block containing it. An upgrade replaces **code**; it cannot rewrite a mined
+  block. **The audit trail is intact behind a proxy.**
+- **What a proxy exposes is the live read surface.** `versionAt`, `currentVersionHash`, `isCurrent`
+  and `documentStatus` answer from storage through the current implementation, and a new
+  implementation may write any slot — so state can be made to contradict the log. The log still wins
+  in front of an auditor, but **`CovenantRegistry` and `SubscriptionEscrow` gate on the live answer**.
+  What a proxy puts at risk is the compliance gating, not the evidence.
+- ⚠️ **And that exposure is identical for every contract in this suite**, so it was never a special
+  argument for this one. The same "no delete function is the retention control" framing overstates
+  in the same direction: removing a storage entry does not remove the event that recorded it.
+
+**The honest case for not proxying this contract is narrower: one fewer moving part, no
+governance-capture surface on the contract holding the evidence, and no upgrade mechanism to disclose
+as an offer-document content item.** That is sufficient. Do not re-import the overstated version.
+
+**The decision: deploy directly, keep `governance` `immutable`, add no rotation function.** The
+operator commits to Safe as the governance holder in every lane, and **a Safe's address does not
+move** — signers rotate inside it, the threshold changes inside it, a compromised signer is removed
+inside it. The scenario that would need rotation is not signer churn; it is the Safe *address*
+changing, which this operating model does not contemplate.
+
+Rejected alternatives, so the reasoning is not re-run from scratch:
+
+| Option | Rejected because |
+|---|---|
+| Proxy | ⚠️ *Not* because it breaks the audit trail — it does not (see the correction above). Because it adds an upgrade mechanism that must be disclosed as an offer-document content item, and puts the live read surface the compliance gates depend on under governance control. A thinner reason than the one first written here, and still enough given the operating model |
+| `transferGovernance` / `acceptGovernance` | Adds a governance-capture surface to the one contract holding the Art 21(7) evidence, to serve a migration this operating model does not plan for. A rotation function is only as safe as the key that calls it |
+
+⚠️ **The residual, stated so it is not rediscovered as a surprise: if the Safe address ever must
+change, this registry can never be written to again.** Reads survive and every existing anchor stays
+provable — nothing is lost from the archive. What is lost is the future: no further anchors, so no
+Art 23 supplement can be published against this registry, and a replacement starts empty and can
+prove nothing about this one's history. **Revisit this row only if the Safe commitment changes.**
