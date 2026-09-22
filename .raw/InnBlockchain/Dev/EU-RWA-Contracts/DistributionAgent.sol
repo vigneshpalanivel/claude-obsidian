@@ -90,6 +90,15 @@ contract DistributionAgent {
     address public feeRecipient;
     address public taxRecipient;
 
+    /// @notice Where `sweepUnclaimed` returns value to. Governance-set for the same reason the
+    ///         two above are: it is a destination for money the contract holds, and a
+    ///         destination chosen by the caller at call time is only ever as strong as the
+    ///         caller's key. Before 2026-09-22 this was an agent-supplied `to` parameter —
+    ///         every unclaimed balance on a closed distribution was reachable by the agent
+    ///         role, which is the weaker of the two. The sweep is the issuer taking back its
+    ///         own money; which address that is belongs to governance, not to the batch job.
+    address public sweepRecipient;
+
     // ═══════════════════════════════════════════════════════════════════════
     // STATE
     // ═══════════════════════════════════════════════════════════════════════
@@ -130,7 +139,7 @@ contract DistributionAgent {
     // ═══════════════════════════════════════════════════════════════════════
 
     event AgentSet(address indexed agent, bool allowed);
-    event RecipientsSet(address feeRecipient, address taxRecipient);
+    event RecipientsSet(address feeRecipient, address taxRecipient, address sweepRecipient);
 
     /// @notice One event for every inter-contract reference, keyed by role rather than by
     ///         function name, so an operational-resilience reviewer can reconstruct which
@@ -267,10 +276,19 @@ contract DistributionAgent {
         emit AgentSet(agent, allowed);
     }
 
-    function setRecipients(address feeRecipient_, address taxRecipient_) external onlyGovernance {
+    /// @dev `sweepRecipient_` may be left zero on a deployment that never sweeps — the standing
+    ///      default is `claimDeadline == 0`, which disables the sweep entirely. It is required
+    ///      only at `declareDistribution` time, and only for a distribution that sets a
+    ///      non-zero deadline.
+    function setRecipients(
+        address feeRecipient_,
+        address taxRecipient_,
+        address sweepRecipient_
+    ) external onlyGovernance {
         feeRecipient = feeRecipient_;
         taxRecipient = taxRecipient_;
-        emit RecipientsSet(feeRecipient_, taxRecipient_);
+        sweepRecipient = sweepRecipient_;
+        emit RecipientsSet(feeRecipient_, taxRecipient_, sweepRecipient_);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -296,6 +314,9 @@ contract DistributionAgent {
         if (withholdingBps > MAX_BPS) revert BpsOutOfRange(withholdingBps);
         if (uint256(feeBps) + uint256(withholdingBps) > MAX_BPS) revert BpsOutOfRange(feeBps + withholdingBps);
         if (feeRecipient == address(0) || taxRecipient == address(0)) revert RecipientsNotSet();
+        // Only a distribution that can actually sweep needs a sweep destination. The standing
+        // default is `claimDeadline == 0` — no sweep, so no destination required.
+        if (claimDeadline != 0 && sweepRecipient == address(0)) revert RecipientsNotSet();
 
         id = nextDistributionId++;
         Distribution storage d = _distributions[id];
@@ -532,11 +553,19 @@ contract DistributionAgent {
     ///         them, and they are the record of who was owed what. `sweptAt[id]` is the single
     ///         flag that turns every later `redeemUnclaimed` on this id into `Swept`. Before
     ///         2026-09-08 a redeem after a sweep underflowed `d.unclaimed`.
-    function sweepUnclaimed(uint256 id, address to) external onlyAgent nonReentrant {
+    /// @dev    ⚠️ THE DESTINATION IS `sweepRecipient`, NOT A PARAMETER. Until 2026-09-22 the
+    ///         agent named `to` at call time, which put every unclaimed balance on a closed
+    ///         distribution within reach of the agent key — the weaker of the two roles, and
+    ///         one held by a batch job. The destination is now governance-set alongside the
+    ///         fee and tax recipients, for the same reason those are.
+    function sweepUnclaimed(uint256 id) external onlyAgent nonReentrant {
         Distribution storage d = _requireState(id, DistributionState.Closed);
         if (d.claimDeadline == 0) revert NoSweepConfigured(id);
         if (block.timestamp <= d.claimDeadline) revert ClaimDeadlineNotPassed(id, d.claimDeadline);
         if (sweptAt[id] != 0) revert Swept(id, sweptAt[id]);
+
+        address to = sweepRecipient;
+        if (to == address(0)) revert RecipientsNotSet();
 
         uint256 amount = d.unclaimed;
         d.unclaimed = 0;

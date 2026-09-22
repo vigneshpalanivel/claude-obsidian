@@ -2,7 +2,7 @@
 title: Deployment Defaults — EU-RWA-Contracts
 date: 2026-09-07
 status: baseline wiring for every deployment; lane columns derived from §17's inventory in eu_tokenized_securities_smart_contract_design.md
-updated: 2026-09-11 — the suite implements ERC-3643 from the EIP text (design rev 54, §16 D0 closed); new step 2a (setCountryCode), a fourth go-live row, a third operating rule (setAddressFrozen), and the freezeUnits→freezePartialTokens / recoverWallet→recoveryAddress renames. Read ERC-3643-CONFORMANCE.md first. Prior update 2026-09-09 — IdentityRegistry re-keyed from the wallet to the person (Person / WalletBinding); PersonErasure added as the single GDPR Art 17 entry point, with erasureCoordinator setters on five contracts. Prior update 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
+updated: 2026-09-22 — DistributionAgent sweep destination moved from an agent-supplied `to` parameter to a governance-set `sweepRecipient`; `setRecipients` now takes three addresses; `claimDeadline = 0` (sweep disabled) recorded as the standing default. Prior update 2026-09-11 — the suite implements ERC-3643 from the EIP text (design rev 54, §16 D0 closed); new step 2a (setCountryCode), a fourth go-live row, a third operating rule (setAddressFrozen), and the freezeUnits→freezePartialTokens / recoverWallet→recoveryAddress renames. Read ERC-3643-CONFORMANCE.md first. Prior update 2026-09-09 — IdentityRegistry re-keyed from the wallet to the person (Person / WalletBinding); PersonErasure added as the single GDPR Art 17 entry point, with erasureCoordinator setters on five contracts. Prior update 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
 ---
 
 # Deployment Defaults
@@ -888,3 +888,55 @@ Both new `governance` roles are two-step (`transferGovernance` → `acceptGovern
   switch the type and drop the concrete-file import.
 - `Distribution` (shared struct in `Interfaces.sol`) was not widened; `committedOf`, `sweptAt`
   and `Unclaimed{amount, units}` live in `DistributionAgent` side-mappings instead.
+
+---
+
+## 2026-09-22 fix — DistributionAgent sweep destination
+
+File: `DistributionAgent.sol`. One privilege inconsistency, closed.
+
+### What was wrong
+
+`sweepUnclaimed(uint256 id, address to)` took its destination as a caller-supplied parameter
+under `onlyAgent`, while `feeRecipient` and `taxRecipient` — the other two destinations for
+money this contract holds — were `onlyGovernance`. Same contract, same class of value, two
+different locks, and the weaker one guarded the larger balance: every unclaimed entitlement on
+a closed distribution past its deadline, in one call, to any address the agent key names. The
+agent role is a batch job. It should not be able to choose where the issuer's money lands.
+
+### What changed
+
+| Before | After |
+|---|---|
+| `sweepUnclaimed(uint256 id, address to)` | `sweepUnclaimed(uint256 id)` |
+| destination = agent's `to` argument | destination = `sweepRecipient`, governance-set |
+| `setRecipients(fee, tax)` | `setRecipients(fee, tax, sweep)` |
+| `RecipientsSet(fee, tax)` | `RecipientsSet(fee, tax, sweep)` |
+
+`sweepRecipient` may stay `address(0)` on a deployment that never sweeps. It is required at
+`declareDistribution` only when that distribution sets a non-zero `claimDeadline`, and
+`sweepUnclaimed` reverts `RecipientsNotSet` if it is somehow unset by then.
+
+**No blocked-party check on the destination.** Considered and rejected: the sweep returns the
+issuer's own money to the issuer's own treasury, which is not a payout and not a transfer. A
+governance-set address makes the sanctions question a wiring decision with an owner, not a
+per-call check on a path where the answer is always the same address.
+
+### Operating rule (add to §4's list)
+
+10. **`claimDeadline = 0` is the standing default on every `declareDistribution`.** Zero
+    disables the sweep entirely, which means an unclaimed entitlement stays claimable by its
+    holder forever through `redeemUnclaimed`. Set it non-zero only where the issuing Member
+    State's unclaimed-property or prescription law actually requires the value to be returned,
+    and only with that advice on file. **The reason is that there is no re-funding path after a
+    sweep:** `sweptAt[id]` turns every later `redeemUnclaimed` on that id into `Swept`, and a
+    holder who resolves their block afterwards has no on-chain route to the money at all. The
+    debt survives — `unclaimedOf[id][holder]` is deliberately never zeroed and remains the
+    record of who was owed what — but settling it becomes a manual off-chain payment. A sweep
+    turns an enforceable on-chain claim into a spreadsheet line, so do not enable it by habit.
+
+### Deployment script change
+
+`setRecipients` now takes three addresses. Scripts calling the two-argument form will not
+compile. Pass `address(0)` for `sweepRecipient` on any deployment running the default
+`claimDeadline = 0`.
