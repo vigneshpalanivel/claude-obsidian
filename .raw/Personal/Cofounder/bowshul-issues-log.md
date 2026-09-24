@@ -10,10 +10,18 @@
 **Handling: RAW ONLY — do not mirror to `wiki/`.** Contains equity split, family employment and unverified motive theories. Keep off anything shared or synced.
 
 **Companion files:**
-- [[separation-plan]] — the deal, the terms, the exposure, how the conversation gets conducted. **Split out of this file 2026-09-24.**
+- [[separation-plan]] — **the action file.** Terms, exposure, how to operate, how to conduct any conversation.
 - [[group-financials]] (`.raw/Common/Finance/group-financials.md`) — **read first for anything involving money.** Where files disagree, the financials win.
 
-> **This file is grievance history and context. It is not a plan of action and it is not what goes to any conversation.** See [[separation-plan]] for what happens next — currently **on hold** pending counsel.
+> ## 🔴 What belongs in which file
+> | This file — **what happened** | [[separation-plan]] — **what to do** |
+> |---|---|
+> | Incidents, dates, what was said | Deal terms, valuations, netting |
+> | Evidence vs inference | What to raise and what to leave out |
+> | Patterns across incidents | How to operate while still partners |
+> | Open **factual** questions | Sequencing, counsel, exposure |
+>
+> **Anything forward-looking goes in the other file.** Entry "Ask" items stay short and point across. *(Boundary restored 2026-09-24 after drift.)*
 
 ---
 
@@ -723,60 +731,13 @@ The 50/50 structure gives me no authority over him. **But I have also never used
 
 ---
 
-### 🔴 "Then what does being CEO mean?" — the practical answer
-
-**The question:** if I cannot address him as I address other department heads, is the CEO title just a nameplate, and can I not direct a department head?
-
-**Answer: authority over a co-equal owner never comes from title or tone. It comes from written process — and that is what does not exist here. It is a missing-document problem, not a permanent condition.**
-
-**1. He wears two hats. Separate them deliberately.**
-
-| Hat | What I can do |
-|---|---|
-| **50% shareholder / director** — my equal | **Cannot direct him.** Agree, vote, minute, escalate |
-| **Head of Product** — a function inside the org | **Can hold the function to the same standards as any other function** — through the system, not through personal instruction |
-
-Confusing the two is what produced (a). The function is accountable. **The person is not subordinate.**
-
-**2. Direct is not the same as ordering — and direct is available to me.**
-
-| Ordering register (no standing) | Peer register (full standing) |
-|---|---|
-| *"Use Sonnet for development, that's the instruction."* | *"The team lost working days when the pooled quota ran out. I need Product on Sonnet for development. Can you commit to that?"* |
-| *"The company follows BMAD."* | *"Testers and the PM can't work from Product's output. I need stories with acceptance criteria in the tracker. How do you want to produce them?"* |
-
-**Same content. Same firmness. No command.** This is the register used with a board member or a major client — **specific, unambiguous, expects an answer.** What I lose is the command form; **I lose none of the substance.** Nothing here requires being softer.
-
-**3. Govern by recorded decisions, not verbal instruction.**
-The reason he can ignore me is that **nothing is written down.** A minuted management or board decision is a different object from *"Vignesh told me to."* He can vote against it; he cannot pretend it did not happen. **Every instruction I have ever given him has been deniable, and that is a choice I made.**
-
-**4. Govern by commitments and deliverables, not compliance.**
-With an equal you do not prescribe method — you agree an outcome and a date, then the result is visible. *"We agreed X by Friday. It is not done. What happened?"* **That is a legitimate question from one co-owner to another and it needs no hierarchy at all.**
-
-**5. 🔴 The actual missing instrument: a shareholders' agreement.**
-A 50/50 company with no written agreement genuinely does leave the CEO title decorative. What it should contain:
-- **A defined CEO remit** — what the CEO decides alone vs what needs both
-- **Reserved matters** — the short list requiring joint approval
-- **A deadlock mechanism** — casting vote, referral, expert determination, or shotgun/buy-sell
-- **Executive role terms** — what a department head owes the company regardless of shareholding
-
-**Without this, "I cannot control him" is structurally true. With it, most of #7 and #8 would never have happened.**
-**⚠ And note: negotiating this now is itself a route to the separation** — a shotgun/buy-sell clause is exactly the mechanism that prices and executes an exit. **Raising governance is less confrontational than raising separation, and it can arrive at the same place.**
-
-**6. The remedy that does exist — and why it does not work here.**
-If a director fails in an executive function, the board-level remedy is removing them from the role while they keep the shares. **In a 50/50 I cannot pass it alone.** That is precisely why separation is the answer rather than better management — **but it is worth knowing the mechanism exists, so I stop expecting tone to do a job only documents can do.**
-
-**7. Reframe the goal.**
-**"Control" is the wrong objective — nobody controls a co-owner.** The right objective is **enforceability**: decisions recorded, commitments dated, results visible. **A company does not need one person to control another. It needs decisions to be made and kept.**
-
----
-
 **Ask:**
-1. **Stop using the CEO-to-department-head register with him. Permanently.** He is right about this, it costs me nothing, and it may be feeding the non-compliance. **Do this whether or not there is a separation — and note it costs me no firmness, only the command form.**
+1. **Stop using the CEO-to-department-head register with him. Permanently.** He is right about this, and it may be feeding the non-compliance.
 2. **Use the scoped version of the workload argument** — Trioangle only, sales/marketing vs product. Never the three-entity version.
-3. **Lead with the support team refusal and the rate limits.** One person declined; a shared quota consumed knowingly. **Behaviour, not tone.**
+3. **Lead with the support team refusal and the rate limits.** Behaviour, not tone.
 4. **Separate the health case from the grievance case.** The 12-hour days are a sufficient reason to change something. They are not evidence against him.
-5. **Delegate now, not after the deal.** If the load is unsustainable, the deal is months away at best and the records position may delay it further.
+
+> **"Then what does being CEO mean?" — the practical answer (two hats, peer register vs ordering register, minuted decisions, the missing shareholders' agreement) → [[separation-plan]] § "While still partners — how to actually operate".**
 
 ---
 
@@ -1107,51 +1068,13 @@ The vault already reflects the direction: Service ICP repositioned to **AI-Engin
 
 ---
 
-### 🔴 "If I trial it and product leads drop, he will blame the trial" — raised 2026-09-24
-
-**The fear:** I can run the AI trial without his approval, but if product leads fall he will say the AI plan caused it — **even where it did not** — and pressure me to stop. **Exactly what happened with QoreUps and InnBlockchain.**
-
-**This is well founded. He has done it twice. Take it seriously.**
-
-**⚠ But look at WHY those two were vulnerable to it — the defect was mine:**
-**QoreUps and InnBlockchain had no baseline, no ring-fence, and no stated end condition.** *"We would get the result"* with no date and no number (#2) is precisely what let pressure be applied indefinitely. **An open-ended commitment can be attacked forever. A measured experiment cannot.**
-
-**→ The protection is not secrecy. It is measurement, declared in advance.**
-
-| Safeguard | Why it blocks the attack |
-|---|---|
-| **1. Baseline the product-lead numbers in writing, dated, before starting** | He cannot claim a drop I can show was already happening. **Revenue is already down 43% — the trend predates the trial and I should document that now** |
-| **2. Ring-fence it** — separate channels, pages, campaigns; no product-marketing budget or people | **A trial that touches nothing cannot have caused anything**, and I can demonstrate it |
-| **3. Pre-commit kill criteria** — *"if X by day 60, I stop"* | **Removes his ability to demand a stop, because the stop rule already exists and is mine.** This is the single most important one |
-| **4. Fixed end date — 60 or 90 days** | Nothing open-ended for pressure to accumulate against |
-| **5. Weekly written report to him** | Destroys the *"you did this quietly and it hurt us"* attack before it can be made |
-| **6. Minute it as a decision** | Same lesson as #7 — an undocumented initiative is deniable and attackable |
-
-**The one-line version:** *"Here is the baseline, here is what I am testing, here is what it does not touch, here is when I stop, and here is the number that decides it."* **Say that at the start and the attack has nowhere to land.**
-
----
-
-### 🔴 The question underneath this entry — and it may dissolve the whole thing
-
-> **Why am I fighting for a pivot in a company I intend to exit?**
-
-If the separation completes, **the AI pivot becomes Bowshul's problem and Trioangle's benefit — not mine.** Energy spent winning this argument is energy spent improving an asset I am handing over.
-
-**And the sharper version:** if AI engineering is my future, **should it be built inside InnBlockchain, the entity I am keeping?** AI-engineering services could sit in either.
-- **⚠ Handle with care.** Redirecting a strategic direction from Trioangle to InnBlockchain while I am a Trioangle director is the **corporate-opportunity exposure** already flagged in [[separation-plan]]. **Take it to counsel — do not act on it unilaterally.**
-- **But it is the right strategic question**, and it may mean this entire argument is one I do not need to win.
-
-**⚠ Or it means I have not actually committed to leaving.** Fighting hard for Trioangle's direction while planning to exit it is a contradiction. **Which is it?** Worth answering honestly before spending more on #15.
-
----
-
 **Ask:**
-1. **Concede Flutter as a build decision. Deny it as a sales answer.** Stops a fight I do not need and costs me nothing.
-2. **🔴 If I run the AI trial, blame-proof it first** — baseline, ring-fence, kill criteria, end date, weekly reporting, minuted. **Never run it open-ended; that is how QoreUps and InnBlockchain became attackable.**
-3. **Separate positioning (mine) from build stack (his).** Most of the conflict disappears.
-4. **Drop the motive claim.** The demand-side numbers are stronger.
-5. **Do not cite #15 as partnership dysfunction.** A strategic deadlock between equal owners is the system working.
-6. **🔴 Answer first: am I fighting for Trioangle's future, or leaving it?** If leaving, this argument may not be worth having at all.
+1. **Concede Flutter as a build decision. Deny it as a sales answer.**
+2. **Separate positioning (mine) from build stack (his).** Most of the conflict disappears.
+3. **Drop the motive claim.** The demand-side numbers are stronger.
+4. **Do not cite #15 as partnership dysfunction.** A strategic deadlock between equal owners is the system working.
+
+> **How to run the AI trial so it cannot be blamed later, and whether it is worth running at all given the intended exit → [[separation-plan]] § "Running the AI positioning test".**
 
 ---
 
@@ -1211,28 +1134,7 @@ I had split the patterns: **personal life** = accepts then does not deliver (#4,
 
 ---
 
-## 🔴🔴 THE UNIFYING FINDING — this is what the whole file has been circling
-
-> ### He invests in what he originates or controls, and disengages from what he does not.
-
-**It explains nearly every official entry, with no bad faith required:**
-
-| Entry | Fits how |
-|---|---|
-| #2, #3 | Wanted **QoreUps and InnBlockchain** closed — the two he does not run. **Never Trioangle**, which he does |
-| #7 | Brought BMAD in himself; refused it once it was **my** instruction |
-| #8 | Ignored **my** model policy |
-| #10 | Declined the **assigned** one-person support team; keeps **his** product function |
-| #15 | Backs the strategy built on **the work he personally does** |
-| #16 | Killed **my** Flutter initiative; champions **his own** |
-| #9 | Disparaged the blockchain product — **the line he has no part in** |
-
-**This is a better explanation than "he disrespects me", because it predicts behaviour rather than just interpreting it.**
-
-**🔴 And it is the separation argument in one sentence, requiring no misconduct at all:**
-> **I originate constantly — three companies, the AI pivot, the model policy, Flutter, BMAD. He engages only with what he originates or controls. In a 50/50 with no tiebreaker, those two people cannot run a company together.**
-
-**That is structural incompatibility, not wrongdoing.** Nobody has to be blamed, nothing has to be proved about anyone's character, and **he can accept it without conceding fault** — which is exactly what a separation conversation needs. **Pair it with the "no mechanism to decide anything" line in [[separation-plan]]. Together they are the whole case.**
+> **This entry produces the unifying finding for the whole file — see "The two findings" below the entries.**
 
 **Worth establishing — this is the one entry with a cost that runs in my favour:**
 1. **What did the separate Flutter team cost?** Salaries × months, plus hiring. **A countable figure.**
@@ -1422,44 +1324,82 @@ I told him: **they are generating leads — do not talk like that without data.*
 
 ---
 
+## 🔴🔴 THE TWO FINDINGS — read this before anything else
+
+Nineteen entries reduce to two statements. **Neither requires him to have acted in bad faith, and he can accept both without conceding fault** — which is what a separation conversation needs.
+
+> ### 1. He invests in what he originates or controls, and disengages from what he does not.
+
+| Entry | Fits how |
+|---|---|
+| #2, #3 | Wanted **QoreUps and InnBlockchain** closed — the two he does not run. **Never Trioangle**, which he does |
+| #7 | Brought BMAD in himself; refused it once it was **my** instruction |
+| #8 | Ignored **my** model policy |
+| #9 | Disparaged the blockchain product — the line he has no part in |
+| #10 | Declined the **assigned** one-person support team; keeps **his** product function |
+| #15 | Backs the strategy built on the work he personally does |
+| #16 | Killed **my** Flutter initiative; champions **his own** |
+| #18 | Hikes for **his** team first |
+| #19 | Blamed **my** function for **his** function's results |
+
+**Nine entries. It predicts behaviour rather than merely interpreting it — which is why it is better than "he disrespects me."**
+
+> ### 2. Two equal owners, no mechanism to decide anything.
+
+50/50, no tiebreaker, **no shareholders' agreement**. Every operational entry (#7, #8, #15, #18, #19) is this defect surfacing. **And I have never tested it** — never minuted a decision, conceded every time (#1, #4, #7, #17).
+
+**Together: structural incompatibility, not wrongdoing.** *(How to use these two findings in a conversation with him → [[separation-plan]].)*
+
+---
+
+### The one trait that is independently evidenced
+
+> **He accepts, and then does not deliver.** — #4 (the room), #12 (the wives' food, **Gopi affected**), #13 (Kumar's toys, **Kumar affected, I am not involved**), #16 (**the Flutter initiative — separately resourced, accepted, abandoned**).
+
+**Two independent witnesses, one instance at company scale.** The only finding here that does not rest on my perception alone.
+**⚠ At work he more often does not agree at all** (#7, #8, #10) — different failure, keep them separate.
+
+---
+
 ## Recurring themes
 
 | Theme | Entries | Notes |
 |---|---|---|
-| Minimising work he can see | #1, #2 | Not ignorance — same floor, knows the responsibilities |
-| Stated disagreement left undecided, then pursued by attrition | #2 | He said "close QoreUps", I refused, nothing decided it — so it ran through staffing |
-| **Wants my entities closed, repeatedly** | #2, #3 | QoreUps from founding, InnBlockchain twice — **both approved by him at formation.** Never Trioangle |
-| **🔴🔴 He invests in what he originates or controls, disengages from what he does not** | **#2, #3, #7, #8, #9, #10, #15, #16** | **The unifying finding — see #16.** Predicts eight entries, requires no bad faith, and is the separation argument in one sentence |
-| **🔴 Closure criterion is involvement, not financials** | #2, #3 | Trioangle is the most distressed of the three (₹97L payables, ≈₹48L arrears, −₹1.5Cr) and has never been in question. **The strongest business argument in the file, and the real basis for separating** |
-| **🔴 My CEO title does not carry authority over him** | #7, #8 | Company-wide decisions; he alone declines; no mechanism to compel a co-equal 50% Director. **The deadlock in daily operations — live now, and it repeats on every call** |
-| **🔴 His preference, other people's cost** | **#7, #8** | BMAD: no artifact chain → testers and PM cannot coordinate, **integration lands on me.** Model policy: shared quota exhausted → **team sent home.** Both are externalities, not preferences. **The two arguments where I am clearly right** |
-| **🔴 I argue the person where I should set the rule** | **#7, #8, #15, #18** | *"Follow the process"* vs deliverables · *"follow the instruction"* vs a quota allocation · *"my plan is better"* vs a measured test · *"you are being partial"* vs written hike criteria. **In a 50/50 a personal contest is unwinnable by design; a rule agreed in advance decides itself** |
-| **Questions my output when money is tight** | #1, #3 | May 2025 and July 2026 — same wound both times |
-| **🔴🔴 He disputes my account of myself — and I treat the questioning as the injury** | **#1, #3, #11, #14** | *"We also have burden"* (#11) · *"you gave me sales because of the gym"* (#14) · *"everyone is also working like you"* (#1) · *"what are you doing?"* (#3). **Four times across five years. Three are answerable with facts. None was ever answered.** A far more symmetrical conflict than "he minimises my work" |
-| **⚠ I infer his motives freely and resent him inferring mine** | #2, #5, #9, #15 vs #14 | The wife link, the attention theory, "vengeance", "he backs Flutter because he builds it" — all mine, all unstated by him. **Then his one inference about my motive is logged as an attack** |
-| **⚠ I reach for motive when the numbers were already enough** | #9, #15 | "Isn't selling" was defensible on revenue; the Flutter argument loses on demand-side numbers alone. **In both cases the motive claim weakened a case I was winning** |
-| **Strategic disagreement — NOT dysfunction** | #15 | Company direction properly needs both owners. **A 50/50 deadlock on strategy is the system working, not failing.** A legitimate reason to separate; not a grievance |
-| **Left outside the circle** | #5, #6 | Product team treat, and his pre-marriage function — mutual friends invited, I was not |
-| **⚠ I opted out of the informal layer first** | #11 → #5, #6 | Declined the weekly team game for years, then was hurt at being outside the social circle. **Not a justification for #6. But some of the distance was reciprocal** |
-| **🔴 Omission, then a late patch once it becomes visible** | #4, #5, #6 | "Do you want it now?" / "I forgot to call you" / "Are you coming?" — three times. For #4 and #5 this reads as **absence, not malice** — a hostile person does not patch |
-| **🔴 Ranked into the outer tier** | #6 | Invited to the marriage, **not** to the pre-marriage function, while the shared friend group and their wives were. **Two guest lists existed and I was on the wrong one — that is a decision, not forgetfulness** |
-| QoreUps resources pulled toward Trioangle | #1, #2 | Gopi — 50% moved, permanent |
-| **🔴🔴 Accepts, then does not deliver — THE core finding** | **#4, #12, #13, #16** | The room; the wives' food (**Gopi affected**); Kumar's toys (**Kumar affected, I am not involved**); **and the Flutter initiative — accepted, owned, separately resourced, abandoned (#16).** Four times, two independent witnesses, **and one at company scale with hired staff.** The harm is the false agreement, not a refusal |
-| **⚠ Motive readings now weaker across the board** | #2, #4, #5, #6, #9, #11 | **#13 shows the same behaviour toward Kumar.** "Vengeance", "wanted to diminish me", "wanted the attention" — all become harder to sustain once the pattern generalises to people he has no history with |
-| **🔴 My pattern: instruct → not refused → withdraw it myself** | #1, #4, #7, #17 | Gopi 2025, the room 2021, BMAD 2026, the Thursday WFH 2019. **Four times I conceded before any mechanism was invoked.** The structure is a real deadlock, but **I have never tested it — so there is no record of a decision being blocked** |
-| **🔴 I do not protect my own time** | #17 (2019), #14 (2021), #10 (now) | WFH day collapsed · gym defended apologetically · **12-hour days and weekends today.** Seven years, worsening. **Mine, predates the conflict, and no separation fixes it** |
-| **⚠ I infer hostility from ambiguity** | #5, #9, #11, #14, #17 | Five entries with no stated evidence — attention, vengeance, carrom, the gym remark, the calls. **#13 showed the behaviour generalises to Kumar, so "aimed at me" is weak on its own terms** |
-| **I defend on the wrong axis** | #1, #2 | "More burden" answered a resourcing ask; "not day-to-day" answered a founding complaint. Both handed him an easy dismissal |
+*Consolidated 2026-09-24 — earlier versions had five overlapping motive rows and three duplicate authority rows.*
+
+### His patterns
+
+| Theme | Entries | Notes |
+|---|---|---|
+| **🔴🔴 Invests in what he originates or controls** | #2, #3, #7, #8, #9, #10, #15, #16, #18, #19 | **The unifying finding. See "The two findings" above.** |
+| **🔴🔴 Accepts, then does not deliver** | **#4, #12, #13, #16** | **The only independently witnessed trait** — Gopi, Kumar, and one at company scale (Flutter). Harm comes from the false agreement, not a refusal |
+| **🔴 Litigates internal disputes in public** | **#9, #19** | Told the blockchain sales team the product does not sell; told unrelated departments that marketing is the problem. **The channel objection stands whether or not he is right on substance — raise only this** |
+| **🔴 Power without responsibility** | #8, #10 | Declined a **one-person** support team; consumed a shared quota knowing the effect. **Supported by behaviour, not by tone** |
+| **Disputes my account of myself** | #1, #3, #11, #14 | *"We also have burden"* · *"you gave me sales because of the gym"* · *"everyone is also working like you"* · *"what are you doing?"* **Four times in five years. Three are answerable with facts. None was ever answered** |
+| **Left me outside the circle** | #5, #6 | The treat, and the pre-marriage function. **⚠ But #11: I declined the informal layer for years first** |
+| **Omission, then a late patch** | #4, #5 | *"Do you want it now?"* / *"I forgot to call you."* **Reads as absence, not malice — a hostile person does not patch.** (#6 is different: two guest lists existed) |
+| Stated disagreement left undecided, pursued by attrition | #2 | Said "close QoreUps", I refused, nothing decided it — so it ran through staffing |
+
+### My patterns — the ones I control
+
+| Theme | Entries | Notes |
+|---|---|---|
+| **🔴 I instruct, am not refused, then withdraw it myself** | #1, #4, #7, #17 | Gopi · the room · BMAD · the WFH day. **Four concessions before any mechanism was invoked. The deadlock is real but I have never tested it** |
+| **🔴 I argue the person where I should set the rule** | #7, #8, #15, #18, #19 | Process vs deliverables · instruction vs quota allocation · *"my plan is better"* vs a measured test · *"you are partial"* vs hike criteria · blame vs a shared dashboard. **A personal contest in a 50/50 is unwinnable by design** |
+| **🔴 I assert a hierarchy that does not exist** | #7, #8, #10 | CEO over a 50% co-owner is a courtesy, not authority. **He was right about the ordering tone** |
+| **🔴 I do not protect my own time** | #17 (2019), #14 (2021), #10 (now) | WFH collapsed · gym defended apologetically · **12-hour days and weekends today.** Worsening for seven years. **No separation fixes this** |
+| **⚠ I infer hostility from ambiguity, and resent his one inference about me** | #2, #5, #9, #11, #14, #15, #17 | The wife link, attention, vengeance, carrom, the calls, Flutter motive — all mine, none stated by him. **#13 shows the behaviour generalises to Kumar, so "aimed at me" is weak.** And twice the motive claim weakened a case I was already winning (#9, #15) |
+| **⚠ I argue without the data I demand from him** | #7, #18, #19 | No BMAD trial numbers, no hike criteria, **no conversion-by-source data while telling him not to talk without data.** **And #15 vs #19 take opposite positions on lead volume** |
+| **I defend on the wrong axis** | #1, #2 | "More burden" answered a resourcing ask; "not day-to-day" answered a founding complaint |
 | **I refuse without counter-proposing** | #2 | "We will get the result" — no date, no number, no consequence |
-| Motive attributed but never stated | #2, #4, #9 | The wife link (#2), the "why are you doing a PPT" attitude (#4), and "vengeance" (#9) are all my inference. **In each case the simpler explanation fits the same facts** |
-| **I argue tone where I should argue channel or process** | #9, #10 | "Isn't selling" is defensible on the numbers (#9); the ordering-tone complaint is one he is *right* about (#10). **Argue behaviour and channel, never tone** |
-| **🔴 He litigates internal disputes in public** | **#9, #19** | Told the blockchain sales team their product does not sell; told unrelated departments that marketing is the problem. **Two instances. The channel objection stands whether or not he is right on the substance — raise only this** |
-| **⚠ I argue without the data I demand from him** | #7, #18, #19 | No BMAD trial numbers; no hike criteria; **no conversion-by-source data while telling him not to talk without data.** And #15 vs #19 take opposite positions on lead volume |
-| **🔴 Power without responsibility** | #8, #10 | Declined a **one-person** support team; consumed a shared quota knowing the effect. **Supported by behaviour, not just by feeling — unlike the tone complaints** |
-| **🔴 I assert a hierarchy that does not exist** | #7, #8, #10 | CEO over a 50% co-owner is a courtesy, not authority. **His "don't talk to me like staff" was accurate — and may be upstream of the non-compliance** |
-| **Workload asymmetry** | #10 | Real **inside Trioangle** (sales+marketing vs product). **Not arguable across all three entities — I took two on over his objection** |
-| **10 years of adjusting, never raised** | all | Nothing was said at the time. This file is the first written record |
-| **Small items carried for years** | #1, #4 | A room in 2021, a remark in 2025 — both still sharp. The duration is the finding, not the incidents |
+
+### Context
+
+| | |
+|---|---|
+| **10 years of adjusting, never raised** | This file is the first written record of any of it |
+| **Small items carried for years** | A room in 2021, a remark in 2025 — the duration is the finding, not the incidents |
+| **Strategic disagreement is NOT dysfunction** | #15 — company direction properly needs both owners. **A 50/50 deadlock on strategy is the system working** |
 
 ### 🔴 Does his intention matter? — asked 2026-09-24
 
@@ -1489,11 +1429,13 @@ One forgotten invitation is noise. **A tiered guest list, a treat, a room, two e
 | Invited me to the weekly game (#11) | **Kept burning the shared quota after the team was sent home** (#8) |
 | Invited me to the main wedding (#6) | Told the blockchain sales team it does not sell (#9) |
 
-**The distinction that emerges is chronological, and it matters:**
+**The distinction that emerges is chronological:**
 - **The early pattern reads as indifference** — thoughtless, patched, never hostile.
-- **The recent pattern reads as disregard** — #8, #9, #10 are all current, and all involve **cost imposed on others**, not tone.
+- **The recent pattern reads as disregard** — #8, #9, #10 are current, and all involve **cost imposed on others**, not tone.
 
-**→ Something changed, and probably in both directions.** Ten years of unspoken resentment on my side very likely has a counterpart on his. **The honest conclusion: I do not need to prove malice, and the accumulation is a sufficient basis for concluding the relationship is finished. That conclusion is mine to draw and I should stop second-guessing it.**
+**⚠ REVISED after #13 (2026-09-24).** He behaved the same way toward **Kumar**, with whom he has no history at all. **So "disregard *toward me*" overstates it.** The better reading is that the trait is constant and the *consequences* have grown — because the stakes have grown, not because his attitude to me has. **Do not build on "he has turned against me."**
+
+**→ The honest conclusion, and it survives the revision:** I do not need to prove malice. **The accumulation is sufficient basis for concluding the relationship is finished — and on the evidence, the reason is that he is like this, not that he is like this *with me*.** That conclusion is mine to draw and I should stop second-guessing it.
 
 **What does not change: it cannot be spoken in the room.** Intention decides *whether I leave*. It has no place in *how I negotiate the leaving*.
 
@@ -1510,31 +1452,25 @@ You confront a business partner. You *absorb* things from a friend, because rais
 A business partner saying *"what are you doing?"* is rude. **A friend of over ten years saying it is a betrayal.** Same words, different injury. This is why #1 and #3 outweigh the ₹1.46Cr in how it feels, even though the money is objectively the larger fact.
 
 **3. ⚠ It means I may be trying to end two relationships while hoping to keep one of them.**
-The "no blame, no history, no drama, terms not working out" approach ([[separation-plan]]) is exactly what someone does when they want the **friendship** to survive the **partnership**. That may be the real goal and it is not written down anywhere.
-**If so, name it to myself before the conversation**, because:
-- It is the thing most likely to make me concede terms I should not concede — friendship-preservation is expensive at a negotiating table.
-- It is also legitimate, and possibly worth more than the ₹31L. **But it should be a decision, not a leak.**
-- And it may not be available. He may not want the friendship on the other side of this. **I cannot make that his decision by being generous on terms.**
+That may be the real goal and it is written down nowhere. **What it costs at a negotiating table → [[separation-plan]].**
 
 ---
 
-### 🔴 The dominant theme, now that there are five entries
+### 🔴 Standing vs substance — how the 19 entries divide
 
-**Four of the five are about standing, not about business decisions.**
+*(Replaces an earlier note written when there were only five entries.)*
 
-| Entry | What it says to me |
-|---|---|
-| #1 | *"Everyone is also working like you"* — your load is ordinary |
-| #3 | *"What are you doing?"* — your output is not justified |
-| #4 | Room not vacated after agreeing, then offered once it was useless — your requests do not rank |
-| #5 | Not invited to the celebration — you are not in the circle |
+| Group | Entries | Usable? |
+|---|---|---|
+| **About standing / recognition** | #1, #3, #4, #5, #6, #10a, #11, #14, #17 | **No.** Real, but unprovable, mostly inference, and unsayable |
+| **Operational, with cost to others** | **#8**, #19 | **Yes** — documented harm, verifiable |
+| **Structural / strategic** | #2, #3, #7, #15, #16, #18 | **Partly** — as pattern, not grievance |
+| **Reliability trait, witnessed** | **#12, #13, #16, #4** | **Yes** — Gopi and Kumar; one at company scale |
+| **Points back at me** | #1, #4, #7, #10a, #11, #14, #17, #18, #19 | — |
 
-**Only #2 (QoreUps) is a genuine business disagreement — and on the money, he was right.**
+**The standing group is the largest and the least usable. That has been true from the first entry and it has not changed.**
 
-**This matters for the plan in [[separation-plan]]:**
-> **What I actually want is to be recognised as the senior partner. A share swap cannot deliver that.**
-
-The separation can end the exposure, end the deadlock, and give me control of InnBlockchain. **It cannot retroactively grant standing, and he will not concede it on the way out.** Going into that conversation hoping for acknowledgement is the one way to come out of it feeling worse regardless of the terms. **Decide the terms on the numbers; take the recognition question somewhere else entirely.**
+> **Much of what I want is to be recognised as the senior partner — and no deal can deliver that. See [[separation-plan]].**
 
 ---
 
@@ -1552,19 +1488,35 @@ The separation can end the exposure, end the deadlock, and give me control of In
 | | State |
 |---|---|
 | QoreUps keep/close | **Settled** — dormant since ~Mar 2026; he got the outcome, and the ₹1.46Cr says he was right |
-| QoreUps formal status | **Undecided** — "temporary" with no criteria and no review date |
+| QoreUps formal status | **Undecided** — "temporary", no criteria, no review date |
 | QoreUps client obligations | **Covered** — Gopi, 2–3 clients; gaps only in scheduled patching and single-point-of-failure |
-| The May 2025 dismissal | **Unresolved, 16 months carried** |
-| InnBlockchain closure demands + "What are you doing?" | **The trigger** (#3) — ended ten years of silence |
-| 50/50 deadlock | **Unaddressed** — the separation is the proposed answer to it |
+| The May 2025 dismissal (#1) | **Unresolved, 16 months carried** |
+| "What are you doing?" (#3) | **The trigger** — ended ten years of silence |
+| **BMAD (#7)** | **Closed — I withdrew it.** Not usable as evidence of a deadlock |
+| **AI model policy (#8)** | **LIVE.** Instruction in force, universally followed, he is the sole exception. **Strongest operational entry — but fix the per-seat licensing first** |
+| **AI pivot (#15)** | **Deadlocked** — and legitimately so. **Most of it is inside my own remit; run the 60–90 day test** |
+| **Marketing blame (#19)** | **Open** — channel objection is solid; **my lead-volume position contradicts #15 and must be reconciled first** |
+| **Hikes (#18)** | **Open** — but the real question is whether anyone is hiked before ₹48L of arrears is cleared |
+| 50/50 deadlock, no shareholders' agreement | **Unaddressed** — the root of every operational entry |
 | **Separation** | **On hold** — see [[separation-plan]], pending counsel on the records position |
 
 ## Open questions
 
-1. ~~Does Bowshul hold equity in QoreUps?~~ **Answered 2026-09-23: 50%, all three entities.**
-2. ~~Was forming QoreUps a joint decision?~~ **Answered 2026-09-24: he approved the formation of both QoreUps and InnBlockchain. Consent first, opposition after.**
-3. **Has "everyone is also working like you" repeated since May 2025?** (#1)
-4. **What does "Trioangle comes to a normal situation" mean, measurably, and who checks?** (#2)
-5. **Who decided to hold the ₹88L coin rather than clear the arrears — joint or unilateral?** (#3)
-6. **Was the pre-marriage function guest list his or family-organised?** (#6)
+**Answered**
+1. ~~Does Bowshul hold equity in QoreUps?~~ **50%, all three entities** (2026-09-23)
+2. ~~Was forming QoreUps a joint decision?~~ **He approved the formation of both.** Consent first, opposition after (2026-09-24)
+3. ~~At work, does he agree and then not deliver?~~ **Mostly he does not agree at all.** The accepts-then-fails trait is chiefly personal-life, plus Flutter (2026-09-24)
+
+**Open — blocking**
+4. **🔴 Reconcile #15 and #19:** leads *down* (AI pivot argument) vs marketing *generating enough* (defence of my team). **One dated account by source — leads → qualified → closed.** Settles both
+5. **🔴 Am I committed to leaving Trioangle?** Fighting for its strategy while planning to exit is a contradiction (#15)
+6. **Who decided to hold the ₹88L coin rather than clear the arrears — joint or unilateral?** (#8, #18)
+7. **What did the separate Flutter team cost, and was there ever a decision to stop it?** (#16)
+
+**Open — minor**
+8. Has *"everyone is also working like you"* repeated since May 2025? (#1)
+9. What does *"Trioangle comes to a normal situation"* mean, measurably? (#2)
+10. Was the pre-marriage guest list his or family-organised? (#6)
+11. Did he run the sales team well after the handover? (#14)
+12. Dates missing on #5, #12, #13
 7. **Is the ₹60L repayment evidenced anywhere outside the internal system?** If not, stop relying on it (#3, [[group-financials]] §1b)

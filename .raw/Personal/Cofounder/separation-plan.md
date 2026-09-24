@@ -38,55 +38,98 @@ After [[bowshul-issues-log]] #6 (the pre-marriage function), the stated position
 
 **Trigger:** ~July 2026, *"What are you doing?"* — see [[bowshul-issues-log]] #3. Ten years of absorbed grievance means the *decision to separate* is not impulsive; it is a conclusion with a long evidence base, and July 2026 was the release, not the cause. **But the terms are weeks old and untested.** Being right that the partnership is over says nothing about whether this particular deal is good.
 
-### 🔴 The justification to actually use — business, current, and sayable out loud
+### 🔴 The justification to use — business, current, and sayable out loud
 
-**Not the grievances.** The case rests on three things, all of which can be stated with numbers and without blame:
+**Not the grievances.** *(List repaired 2026-09-24 — it had run 1, 2, 3, 5, then 4 below an unrelated heading.)*
 
-1. **The closure criterion is involvement, not financials** ([[bowshul-issues-log]] #2–#3). He has pushed to close QoreUps and InnBlockchain — both of which he approved at formation — and never Trioangle, which is the most distressed of the three (₹97L payables, ≈₹48L arrears, −₹1.5Cr cumulative). **No financial argument will ever settle InnBlockchain with him, because financials were never deciding it.**
-2. ⚠ **~~Company-wide operational decisions cannot be enforced (BMAD, #7)~~ — WITHDRAWN as evidence 2026-09-24.** I gave BMAD up and told Sales not to push it. **An instruction I withdrew myself is not a blocked decision**, and claiming it is will not survive the question *"what was formally decided, and how was it blocked?"* **Do not use #7.**
-   **→ To have this argument at all I need one minuted decision that is then not honoured. I do not have one yet.**
-3. **🔴 And it has already cost third parties** ([[bowshul-issues-log]] #8). A **pooled** AI quota — one shared account — exhausted by one person's usage pattern, **team sent home, working days lost**, and the pattern continued afterwards. The instruction is **still in force and universally followed; he is the sole exception.** Strongest single fact available: **measurable harm to staff from a live, unenforceable decision.**
-   **⚠ Caveat to fix before using it:** the shared-account architecture is the root cause and it is mine. **Move to per-seat licensing first** — then any repeat is unambiguously his, and the argument cannot be deflected onto provisioning.
+**✅ USE THESE FOUR**
 
-5. **🔴 At work he does not accept direction at all** ([[bowshul-issues-log]] #7–#10, confirmed 2026-09-24). *Mostly he will not agree; occasionally agrees and does not deliver; on official matters he usually will not listen.* **This is the business case.**
-   *(The "accepts then does not deliver" trait — #4, #12, #13, witnessed by Gopi and Kumar — is the **personal** pattern. Keep them separate.)*
+1. **The closure criterion is involvement, not financials** ([[bowshul-issues-log]] #2–#3). He has pushed to close QoreUps and InnBlockchain — **both of which he approved at formation** — and never Trioangle, the most distressed of the three (₹97L payables, ≈₹48L arrears, −₹1.5Cr cumulative). **No financial argument will ever settle InnBlockchain with him, because financials were never deciding it.**
+
+2. **🔴 It has already cost third parties** ([[bowshul-issues-log]] #8). A **pooled** AI quota — one shared account — exhausted by one person's usage, **team sent home, working days lost**, pattern continued afterwards. Instruction **still in force, universally followed, he is the sole exception.** **The load-bearing entry: measurable harm to staff.**
+   **⚠ Fix first:** the shared-account architecture is the root cause and it is mine. **Move to per-seat licensing** — then any repeat is unambiguously his and cannot be deflected onto provisioning.
+
+3. **At work he does not accept direction** ([[bowshul-issues-log]] #7–#10). *Mostly will not agree; occasionally agrees and does not deliver; on official matters usually will not listen.*
+   *(The "accepts then does not deliver" trait — #4, #12, #13, #16, witnessed by Gopi and Kumar — is the **personal** pattern. Keep separate.)*
+
+4. **Responsibility asymmetry inside Trioangle** ([[bowshul-issues-log]] #10). In the company we both built and both own equally, **I carry sales and marketing; he carries product** — and he declined a **one-person** support team on top. **Scope to Trioangle only.** The three-entity version fails: I took InnBlockchain and QoreUps on over his objection.
+
+**❌ DO NOT USE**
+
+- ~~**BMAD (#7) as evidence of a blocked decision.**~~ **I withdrew it myself** and told Sales not to push it. An instruction I withdrew is not a decision that was blocked, and the claim dies on the first question: *"what was formally decided, and how was it blocked?"*
+  **→ To make that argument at all I need one minuted decision that is then not honoured. I do not have one yet.**
+- ~~Anything from #1, #4, #5, #6, #11, #14, #17~~ — **standing and recognition. Real, but unprovable and unsayable.**
+
+**🔴 The strongest personal reason — and it is not an argument against him at all:**
+**12-hour days including weekends, at 34, with migraine, anxiety, spinal inflammation and BMI 17–18, against a stated goal of being active and independent at 80.** Separation means one company instead of three and no partner to manage. **Better than any grievance in the log — but it belongs in my own reasoning, not in the conversation with him.**
+**⚠ And it only works if I also delegate.** Absorb everything by habit and I rebuild the same load inside InnBlockchain alone. **That change does not wait for the deal.**
 
 ---
 
-## 🔴 THE LINE TO USE — and why it is the only one that works
+## 🔴 THE LINE TO USE
 
 **⚠ First, the hard part: "he won't listen to me on official things" is not misconduct. It is the structure.**
-**A 50% owner is under no obligation to take direction from the other 50% owner.** He is not being insubordinate — **there is simply no instrument that makes a decision bind him, and there never was.** I have never minuted a decision, so nothing has ever been properly taken and then breached ([[bowshul-issues-log]] #7).
+**A 50% owner is under no obligation to take direction from the other 50% owner.** He is not insubordinate — **no instrument makes a decision bind him, and there never was one.** I have never minuted a decision, so nothing has ever been properly taken and then breached.
 
-**So the diagnosis I have been carrying — "he ignores my authority" — rests on authority I never had and never documented.** The conclusion (separate) is right. The reason (defiance) is wrong.
+**So "he ignores my authority" rests on authority I never had and never documented. The conclusion (separate) is right. The reason (defiance) is wrong.**
 
-**The correct diagnosis — two sentences, and together they are the entire case:**
+**The diagnosis — two sentences, and together they are the entire case:**
 > **1. He invests in what he originates or controls, and disengages from what he does not. I originate constantly.**
 > **2. Two equal owners, no mechanism to decide anything.**
->
-> **Neither requires anyone to be at fault, and he can accept both without conceding anything.**
 
-*(Sentence 1 is derived in [[bowshul-issues-log]] #16 and predicts #2, #3, #7, #8, #9, #10, #15 and #16. Sentence 2 is the cap table.)*
+*(Sentence 1 derived in [[bowshul-issues-log]] #16; predicts #2, #3, #7, #8, #9, #10, #15, #16, #18, #19. Sentence 2 is the cap table.)*
 
-**Why this is the line to use:**
-- **It is true**, and verifiable from the cap table alone.
-- **It attributes no blame**, so there is nothing for him to defend against.
-- **He will probably agree with it** — and a separation needs his agreement. **Any framing he must first admit fault to accept is a framing that fails.**
-- It covers every operational entry in the log without naming one.
-- **It leads naturally to both exits:** fix the governance (shareholders' agreement, deadlock clause) **or** separate. Either is progress.
+**🔴 And the sentence to actually say, which carries both:**
+> ## *"We can't make a decision stick — and it has already cost the team working days."*
 
-**⚠ One diagnostic worth knowing before choosing the route:** he *does* occasionally agree — *"very rare cases only."* **What is different about those?** If he responds when consulted early and resists when instructed late, **the governance route could actually work** and separation may not be the only option. If nothing distinguishes them, separation is the answer. **Worth five minutes of honest recall.**
+**Why this one and not the others:**
+- **True, and verifiable** — the cap table plus the #8 incident.
+- **No blame**, so there is nothing for him to defend against.
+- **He will probably agree with it** — and a separation needs his agreement. **Any framing requiring him to admit fault first is a framing that fails.**
+- Covers every operational entry without naming one.
+- **Leads to both exits:** fix the governance, or separate. Either is progress.
 
-> **The line to use: "we cannot make a decision stick, and it has already cost the team working days."**
-> Factual, current, verifiable, no history, no blame — and it survives being repeated back to me. **Carried by #8 alone, since #7 is withdrawn.**
+**⚠ One diagnostic before choosing the route:** he *does* occasionally agree — *"very rare cases only."* **What is different about those?** If he responds when consulted early and resists when instructed late, **the governance route could work and separation may not be the only option.** If nothing distinguishes them, separation is the answer. **Five minutes of honest recall.**
 
-4. **Responsibility asymmetry inside Trioangle** ([[bowshul-issues-log]] #10). In the company we both built and both own equally, **I carry sales and marketing; he carries product** — and he declined a **one-person** support team on top of that. **Scope it to Trioangle only.** The three-entity version fails, because I took InnBlockchain and QoreUps on over his objection and cannot cite that load against him.
+---
 
-**🔴 And the strongest personal reason, which is not an argument against him at all:**
-**12-hour days including weekends, at 34, with migraine, anxiety, spinal inflammation and BMI 17–18, against a stated goal of being active and independent at 80.** Separation means one company instead of three and no partner to manage. **That is a better reason to do this than any grievance in the log — but it belongs in my own reasoning, not in the conversation with him.**
-**⚠ And it only works if I also delegate.** If I absorb everything by habit, I will rebuild the same load inside InnBlockchain alone with nobody to share it. **That change does not wait for the deal.**
+## While still partners — how to actually operate
 
-**⚠ Where this leaves the case.** #1 and #4–#6 are about **standing**, and a share swap cannot deliver standing. **#8 is operational, current, and has documented third-party harm — it is the load-bearing entry.** The involvement-not-financials asymmetry (#2–#3) is the other half. **Two arguments, not three.**
+*(Moved here from the issues log 2026-09-24. Applies whether or not the separation happens.)*
+
+**The question:** if I cannot address him as I address other department heads, is the CEO title just a nameplate?
+
+**Answer: authority over a co-equal owner never comes from title or tone. It comes from written process — and that is what does not exist. A missing-document problem, not a permanent condition.**
+
+**1. He wears two hats. Separate them deliberately.**
+
+| Hat | What I can do |
+|---|---|
+| **50% shareholder / director** — my equal | **Cannot direct him.** Agree, vote, minute, escalate |
+| **Head of Product** — a function inside the org | **Can hold the function to the same standards as any other** — through the system, not personal instruction |
+
+**The function is accountable. The person is not subordinate.**
+
+**2. Direct is not the same as ordering — and direct is available to me.**
+
+| Ordering register (no standing) | Peer register (full standing) |
+|---|---|
+| *"Use Sonnet for development, that's the instruction."* | *"The team lost working days when the pooled quota ran out. I need Product on Sonnet for development. Can you commit to that?"* |
+| *"The company follows BMAD."* | *"Testers and the PM can't work from Product's output. I need stories with acceptance criteria in the tracker. How do you want to produce them?"* |
+
+**Same content, same firmness, no command.** The register used with a board member or a major client. **I lose the command form and none of the substance.**
+
+**3. Govern by recorded decisions, not verbal instruction.**
+He can ignore me because **nothing is written down.** A minuted decision is a different object from *"Vignesh told me to"* — he can vote against it, he cannot pretend it did not happen. **Every instruction I have given him has been deniable, and that was my choice.**
+
+**4. Govern by commitments and deliverables, not compliance.**
+*"We agreed X by Friday. It is not done. What happened?"* — a legitimate question from one co-owner to another, requiring no hierarchy.
+
+**5. Reframe the goal.**
+**"Control" is the wrong objective — nobody controls a co-owner.** The objective is **enforceability**: decisions recorded, commitments dated, results visible.
+
+**6. The remedy that exists, and why it fails here.**
+A director failing in an executive function can be removed from the role while keeping shares. **In a 50/50 I cannot pass it alone** — which is why separation, not better management, is the answer.
 
 ---
 
@@ -111,6 +154,34 @@ After [[bowshul-issues-log]] #6 (the pre-marriage function), the stated position
 
 ---
 
+## Running the AI positioning test — so it cannot be blamed later
+
+*(Moved here from issues log #15, 2026-09-24.)*
+
+**The risk:** if I run the AI trial and product leads fall, he will say the trial caused it — even where it did not — and pressure me to stop. **He has done exactly this twice** (QoreUps, InnBlockchain). Well founded; take it seriously.
+
+**⚠ But those two were vulnerable because of a defect that was mine:** no baseline, no ring-fence, no stated end condition. *"We would get the result"* with no date and no number is what let pressure be applied indefinitely. **An open-ended commitment can be attacked forever. A measured experiment cannot.**
+
+**→ The protection is not secrecy. It is measurement declared in advance.**
+
+| Safeguard | Why it blocks the attack |
+|---|---|
+| **1. Baseline product-lead numbers in writing, dated, before starting** | He cannot claim a drop I can show was already happening. **Revenue is already down 43% — document that trend now** |
+| **2. Ring-fence it** — separate channels, pages, campaigns; no product-marketing budget or people | **A trial that touches nothing cannot have caused anything**, and I can demonstrate it |
+| **3. Pre-commit kill criteria** — *"if X by day 60, I stop"* | **Removes his ability to demand a stop, because the stop rule already exists and is mine.** The most important one |
+| **4. Fixed end date** — 60 or 90 days | Nothing open-ended for pressure to accumulate against |
+| **5. Weekly written report to him** | Destroys the *"you did this quietly and it hurt us"* attack before it can be made |
+| **6. Minute it as a decision** | An undocumented initiative is deniable and attackable |
+
+**One line at the outset:** *"Here is the baseline, here is what I am testing, here is what it does not touch, here is when I stop, and here is the number that decides it."*
+
+**🔴 But answer this first: why am I fighting for a pivot in a company I intend to exit?**
+If the separation completes, the AI pivot becomes **Bowshul's benefit**, not mine. And if AI engineering is my future, should it be built inside **InnBlockchain** instead?
+- **⚠ Handle with care** — redirecting a strategic direction from Trioangle to InnBlockchain while I am a Trioangle director is the **corporate-opportunity exposure** below. **Counsel first; do not act unilaterally.**
+- **⚠ Or it means I have not committed to leaving.** Fighting for Trioangle's direction while planning to exit is a contradiction. **Resolve this before spending more on it.**
+
+---
+
 ## Sequencing — this replaces any earlier order of work
 
 | Order | Step |
@@ -127,6 +198,22 @@ After [[bowshul-issues-log]] #6 (the pre-marriage function), the stated position
 - I give up **my 50% of Trioangle**
 - He gives up **his 50% of InnBlockchain**
 - No cash either way
+
+### 🔴 GAP — QoreUps is not in this plan at all
+
+**We each own 50% of a third company.** Dormant since ~Mar 2026, 2–3 clients paying server cost, Gopi part-assigned, and **a ₹1.46Cr receivable owed to Trioangle that is almost certainly unrecoverable** ([[group-financials]] §5F).
+
+**A two-company swap leaves us still jointly owning a third.** That defeats the whole point — I would exit Trioangle, take InnBlockchain, and **remain in business with Bowshul inside QoreUps**, including its client obligations and its dormant-company filing duties.
+
+**Three options, all of which must be decided in the same deal:**
+
+| Option | Consequence |
+|---|---|
+| **Strike it off / wind it up** | Cleanest. Requires the 2–3 clients to be transitioned or given notice. **The ₹1.46Cr is written off — and that write-off hits Trioangle's balance sheet, i.e. his side after the swap** |
+| **He takes QoreUps with Trioangle** | Logical — the receivable is Trioangle's and he wanted it closed. **Simplest for me** |
+| **I take it** | No reason to want it, and it carries the client liability |
+
+**⚠ Whichever way it goes, the ₹1.46Cr write-off interacts with the swap valuation** — impairing it cuts Trioangle's net assets, which changes what my 50% of Trioangle is worth. **Whoever raises impairment first frames the whole deal** ([[group-financials]] §5J). **Decide my position on this before the valuation conversation, not during it.**
 
 ### ⚠ A swap only works if the halves are worth the same
 
@@ -311,18 +398,131 @@ Bowshul was my friend before he was my co-founder ([[bowshul-issues-log]] — "W
 - [ ] Valuation of Trioangle — my 50%, discounted honestly
 - [ ] Valuation of InnBlockchain — his 50%
 - [ ] **Is the swap even?** If not, which way, and am I content to pay the difference for autonomy?
+- [ ] **🔴 A position on the ₹1.46Cr QoreUps write-off** — it moves Trioangle's net assets and therefore the price of my 50%
+- [ ] **🔴 What happens to QoreUps** — wind up, he takes it, or I do. See the gap section above
+- [ ] **🔴 Coin valuation date and reference price, fixed in writing** — ₹88L of a volatile asset can move 30–40% inside a negotiation window
 - [ ] A position on the ₹46.7L that does not require documenting it
 - [ ] Who decided to hold the ₹88L coin rather than clear arrears — joint or unilateral?
 - [ ] InnBlockchain's funding plan **without** Trioangle — the first thing he will ask
 - [ ] Clients, IP, codebase, brand, domains — who keeps what
 - [ ] The team — who goes where; **Gopi**; my **wife's** position
+- [ ] **🔴 What the team, the clients and the market get told** — and when, and by whom. **Absent from this plan entirely.** A separation neither of us has explained will be explained by whoever speaks first
 - [ ] Non-compete / non-solicit both ways
 - [ ] **My personal runway** — no Trioangle income, and what InnBlockchain pays me from month one. This decides how long I can hold out, so it *is* my leverage
 - [ ] Does Bowshul have a matching unpaid-salary accrual? ([[group-financials]] §6.7)
+- [ ] **🔴 A target date for each step.** There is no timeline anywhere in this plan — and an open-ended process is exactly the thing I have been criticised for twice (#2, #15)
 
 ---
 
-## The one-line version
+## 🔴 POINTS TO DISCUSS WITH BOWSHUL — the actual agenda
 
-> **The grievances justify leaving. They do not price the deal.**
-> **Counsel first, then remediation, then valuations — then the conversation.**
+**Rules for this conversation:** no history, no grievances, no blame, nothing from before this year. **Every point below is either a fact he can verify or something he wants.** Nothing requires him to admit anything.
+
+**⚠ Timing:** this is **step 4** in the sequence above. Counsel on the records position comes first. **These points are ready; the conversation is not yet.**
+
+---
+
+### Open — one sentence, then stop talking
+
+> *"I want to talk about how we're set up. Not about anything that's happened — about the structure."*
+
+---
+
+### 1. The structure — state it as a fact, not a complaint
+
+> *"We're two owners, fifty-fifty, with no tiebreaker and no shareholders' agreement. Neither of us can decide anything the other doesn't agree to. That's how we set it up ten years ago and it worked fine while we agreed on everything."*
+
+**Why it works:** verifiable from the cap table. No fault. He cannot disagree.
+
+### 2. Where we've ended up — say it symmetrically
+
+> *"You believe clone products and the Flutter rebuild bring Trioangle back. I believe the future is AI and blockchain. Neither of us can prove it to the other, and neither of us can overrule the other. We've both been holding our positions, and we've both been blocked."*
+
+**🔴 This is the most important point in the conversation.** It is **both of us blocking each other**, not him blocking me. It is true, it is symmetrical, and **it lets him agree without losing anything.**
+
+### 3. What it costs — one example, no accusation
+
+> *"We couldn't settle how to use the AI account, and the team lost working days. I'm not saying who was right. I'm saying we had no way to settle it — and that's going to keep happening."*
+
+**Say it once. Do not elaborate, do not defend, do not return to it.** If he pushes back, agree and move on: *"Maybe. That's the point — we had no way to decide."*
+
+### 4. The proposal — simple and direct
+
+> *"I think we should separate the two companies. You take Trioangle completely. I take InnBlockchain completely."*
+
+### 5. 🔴 What he gets — lead with this, it is what convinces him
+
+> - *"Trioangle never funds blockchain again. That ends permanently."*
+> - *"You run product, strategy and direction your way. No veto from me."*
+> - *"No more deadlock. Every decision is yours."*
+> - *"You've been saying for years that Trioangle shouldn't be carrying the other things. This is that, finished properly."*
+
+**He has wanted this since QoreUps was founded. Say it in his terms, not mine.**
+
+### 6. What I'm asking
+
+> *"InnBlockchain, clean. That's it."*
+
+### 7. The money — keep it to three sentences
+
+> - *"The balances between the companies net off and both are extinguished — nothing follows either of us afterwards."*
+> - *"The salary, PF and ESI arrears get cleared before we close. That protects both of us, not just me."*
+> - *"Any personal guarantee either of us has signed gets released in writing by the bank before completion."*
+
+**⚠ Do not name the ₹46.7L or the ₹31L as figures in the room** until counsel has confirmed how to handle the undocumented balance. **"They net off and both are extinguished" is the position; the arithmetic comes later.**
+
+### 8. QoreUps — do not leave it out
+
+> *"We still both own QoreUps. Let's decide it at the same time — wind it up, or it goes with Trioangle. I don't want us still tied together in a third company afterwards."*
+
+### 9. Timeline — propose one, do not leave it open
+
+> *"I'd like us to agree the shape in the next few weeks and complete it properly with advisors after that."*
+
+**An open-ended separation is the same mistake as "we would get the result."**
+
+### 10. If he says no — the fallback that still improves things
+
+> *"Then let's put a proper shareholders' agreement in place — a defined remit for each of us and a way to break a deadlock. Either we can decide things, or we separate. Right now we can do neither."*
+
+**Both outcomes are progress. He cannot reasonably refuse both.**
+
+---
+
+### ❌ Do not say — any of these loses the room
+
+| Do not say | Why |
+|---|---|
+| *"What are you doing?"* — or anything from July 2026 | It is the thing that started this. Raising it makes the whole conversation about a sentence |
+| Anything about the wedding, the treat, the room, the carrom, the gym, the trips | Personal, unprovable, and it will look like score-keeping |
+| *"You never listen to me"* | He is a 50% owner. He is not obliged to. **The claim is wrong and he knows it** |
+| *"You wanted to close my companies"* | He approved both at formation and was right about QoreUps |
+| *"You're being partial to your own team"* | I do the same with marketing. It rebounds |
+| *"I work more than you"* | Unsettled for five years, and I have never produced the numbers |
+| The ₹1.46Cr, the funding routing, the records | **Nothing about money history until counsel says so** |
+| Anything about my wife | Not his business and not a negotiating point |
+
+---
+
+### If he brings up grievances of his own
+
+> *"That's fair. I'm not here to argue it. What I'm proposing is…"*
+
+**One sentence, then back to the proposal. Do not defend, do not counter, do not score.**
+
+---
+
+### The three things to hold onto in the room
+
+1. **It's the structure, not him.** Say it every time the conversation drifts.
+2. **He gets what he has been asking for.** That is the argument, not my grievances.
+3. **Leaving with no agreement is fine.** A first conversation that ends in *"let me think"* is a success. **Pushing for a decision in one sitting is how I concede terms.**
+
+---
+
+## The two lines — do not confuse them
+
+| | |
+|---|---|
+| **To say to Bowshul** | *"We can't make a decision stick — and it has already cost the team working days."* |
+| **To remind myself** | **The grievances justify leaving. They do not price the deal.** **Counsel first, then remediation, then valuations — then the conversation.** |
