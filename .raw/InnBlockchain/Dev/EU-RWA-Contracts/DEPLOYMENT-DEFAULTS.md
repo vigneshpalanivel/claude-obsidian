@@ -2,7 +2,7 @@
 title: Deployment Defaults — EU-RWA-Contracts
 date: 2026-09-07
 status: baseline wiring for every deployment; lane columns derived from §17's inventory in eu_tokenized_securities_smart_contract_design.md
-updated: 2026-09-22 — DistributionAgent sweep destination moved from an agent-supplied `to` parameter to a governance-set `sweepRecipient`; `setRecipients` now takes three addresses; `claimDeadline = 0` (sweep disabled) recorded as the standing default. Prior update 2026-09-11 — the suite implements ERC-3643 from the EIP text (design rev 54, §16 D0 closed); new step 2a (setCountryCode), a fourth go-live row, a third operating rule (setAddressFrozen), and the freezeUnits→freezePartialTokens / recoverWallet→recoveryAddress renames. Read ERC-3643-CONFORMANCE.md first. Prior update 2026-09-09 — IdentityRegistry re-keyed from the wallet to the person (Person / WalletBinding); PersonErasure added as the single GDPR Art 17 entry point, with erasureCoordinator setters on five contracts. Prior update 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
+updated: 2026-09-23 — `CouponSchedule` is opt-in per deal and never a lane default; every note shape computes its coupon off-chain against an anchored term sheet (design rev 70, correcting the same-day rev 69 fork). `bindPeriod`-before-`openDistribution` added as an operating rule with no on-chain enforcement. Prior update 2026-09-22 — DistributionAgent sweep destination moved from an agent-supplied `to` parameter to a governance-set `sweepRecipient`; `setRecipients` now takes three addresses; `claimDeadline = 0` (sweep disabled) recorded as the standing default. Prior update 2026-09-11 — the suite implements ERC-3643 from the EIP text (design rev 54, §16 D0 closed); new step 2a (setCountryCode), a fourth go-live row, a third operating rule (setAddressFrozen), and the freezeUnits→freezePartialTokens / recoverWallet→recoveryAddress renames. Read ERC-3643-CONFORMANCE.md first. Prior update 2026-09-09 — IdentityRegistry re-keyed from the wallet to the person (Person / WalletBinding); PersonErasure added as the single GDPR Art 17 entry point, with erasureCoordinator setters on five contracts. Prior update 2026-09-08 — SanctionsRegistry/SanctionsGate renamed to RestrictedPartyRegistry/RestrictedPartyGate; IdentityRegistry.freeze removed; the restriction store is now a mandatory constructor argument to SecurityToken and DistributionAgent
 ---
 
 # Deployment Defaults
@@ -940,3 +940,61 @@ per-call check on a path where the answer is always the same address.
 `setRecipients` now takes three addresses. Scripts calling the two-argument form will not
 compile. Pass `address(0)` for `sweepRecipient` on any deployment running the default
 `claimDeadline = 0`.
+
+---
+
+## 2026-09-23 — `CouponSchedule` is opt-in, never a default (design rev 70)
+
+⚠️ *Rev 69 first wrote this as "deploy for vanilla notes, off-chain for the rest". That fork was
+withdrawn the same day — see the note at the end of this section. The rule below is the current one.*
+
+**The default for every note shape, vanilla included:**
+
+1. Compute the coupon **off-chain**.
+2. **Anchor the term sheet in `DocumentRegistry`.** A holder can then recompute against the
+   public `DistributionDeclared` event, which emits `ratePerUnit`. The anchor's hash is written
+   into block history, so the terms are as immutable and as on-chain as contract state is.
+3. Hold the second copy of the terms as **dual entry in the platform**, not as contract state.
+4. Declare the distribution on `DistributionAgent` directly.
+
+**Deploy `CouponSchedule` only when both are true:**
+
+| Condition | Test |
+|---|---|
+| The deal states a **reason** for machine-readable on-chain terms | Retail distribution; holders expected to self-verify without reading documents. "It exists, so we used it" is not a reason |
+| The note is a **plain fixed-rate bullet** | `annualCouponRateBps` is `immutable` and singular |
+
+**Never deploy it for these**, because the module cannot express them and the schedule would
+disagree with the real terms:
+
+- Floating rate (EURIBOR + spread)
+- Step-up / step-down coupons
+- Callable / puttable / make-whole
+- Business-day or holiday-calendar adjustment — unless baked into `periodBoundaries` at
+  deployment and correct for the note's whole life
+
+**Why not "deploy it anyway and work around it":** for a note it cannot express, `bindPeriod`
+reverts on *correct* payments. The fix reached for under time pressure is a fudged schedule —
+**a wrong number on-chain wearing an immutability badge.** Worse than no schedule, because the
+immutability is what everything downstream trusts.
+
+> **Why the rev-69 fork was withdrawn.** It made deployment depend on note shape, which puts the
+> judgement *"is this note vanilla enough?"* into every issuance and maintains two runbooks and
+> two test paths. The benefit it was buying — `immutable` terms outliving the backend — turned
+> out not to distinguish the cases at all, since an anchored term sheet is immutable by the same
+> mechanism. **One default plus a named opt-in beats two defaults.**
+
+### Operating rule (add to §4's list)
+
+11. **`bindPeriod` is a runbook step, not a gate — name an owner or accept the exposure.**
+    `DistributionAgent` holds no reference to `CouponSchedule` and never checks for a binding.
+    An agent that declares the wrong `ratePerUnit` and skips `bindPeriod` will open and pay at
+    the wrong number with nothing reverting, and **the failure is silent** — the distribution
+    opens and settles exactly as a correct one does. Where a schedule is deployed, the coupon
+    runbook must order the steps `declareDistribution → anchorSnapshot → fund → bindPeriod →
+    openDistribution`, with `bindPeriod` **before** `openDistribution` so a mismatch reverts
+    before the pool can open. The attestor hook that would enforce this order was considered
+    and rejected for coupons (design rev 69), and remains **open** for `DistributionWaterfall`.
+
+**`CouponSchedule.sol` is unchanged and stays in the repo** as the reference implementation for
+the vanilla case.

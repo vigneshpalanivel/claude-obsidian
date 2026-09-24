@@ -107,7 +107,7 @@ Two things it deliberately is **not**: a stabilisation contract (Art 5(4)–(5) 
 | 3 | `CovenantRegistry` ✅ | Always. Serves 5 regulations. Ships with `CovenantGate` for `ModularCompliance`. |
 | 4 | `DistributionAgent` ✅ | If the token pays holders at all. |
 | 5 | `BuybackAgent` ✅ | If the issuer buys back its own units. |
-| 6 | `CouponSchedule` ✅ | Debt / note tokens only. |
+| 6 | `CouponSchedule` — **opt-in** | ⚠️ **Not a debt-lane default for any note shape — 2026-09-23 (design rev 70, correcting rev 69).** **Every** note computes its coupon off-chain against a term sheet anchored in `DocumentRegistry`. Deploy this only where a deal states a reason to want machine-readable on-chain terms, and only for a plain fixed-rate bullet note. |
 | 7 | `DistributionWaterfall` ✅ | Tranched or revenue-share tokens only. |
 
 Items 4–7 are **product-driven, not regulation-driven**. A plain equity token with no buy-back and no distributions deploys 1–3 and stops.
@@ -120,6 +120,13 @@ They earn their place for two inherited reasons:
 
 1. **Neither pays anyone.** Both compute an amount and hand it to `DistributionAgent`, so income goes out through the same C1 eligibility gate as a transfer. A coupon contract that paid holders directly would let a restricted wallet collect interest on units it cannot move.
 2. **Their terms are prospectus disclosure items,** so they are immutable — constructor only, no setters. A mutable coupon rate or a reorderable waterfall lets an operations key do, in one transaction, what the regulation treats as a re-offer.
+
+⚠️ **Reason 1 is true of the cash and false of the arithmetic — corrected 2026-09-23 (design rev 69).** "Hand it to `DistributionAgent`" reads as wiring. It is a runbook step. **`DistributionAgent` holds no reference to either module and never asks whether a binding exists**, so an agent that declares the wrong rate and skips `bindPeriod` / `bindDistribution` opens and pays with nothing reverting. What is true is the narrower claim: *when these modules are used*, the cash leaves through `DistributionAgent` and therefore through the C1 gate. Nothing forces them to be used.
+
+**Consequences, which differ per module:**
+
+- **`CouponSchedule` — accepted, not fixed, and not deployed by default.** It discharges no Article and models only a plain fixed-rate bullet note, so hardening it was rejected (design rev 69). ⚠️ **Off-chain computation plus an anchored term sheet is the path for *every* coupon shape, vanilla included — corrected at rev 70.** Rev 69 kept the vanilla case on-chain on a durability argument that does not hold: an anchored term sheet is immutable and on-chain by the same mechanism, since its hash is written into block history. What remains for the module alone is that its terms are **machine-readable rather than hash-attested**, which is a thin benefit and a per-deal reason, not a lane default.
+- ⚠️ **`DistributionWaterfall` — OPEN.** The same bypass, materially worse: the module computes a **priority ordering**, not an amount. An agent skipping `allocate` / `bindDistribution` can pay a junior tranche ahead of unpaid senior arrears and nothing on-chain refuses — a contractual breach investors can litigate, in the module built to prevent it. **Candidate fix: the attestor hook** — a governance-set address on `DistributionAgent` whose `distributionBound(id)` must return true before `openDistribution` succeeds, ~12 lines, no change to the waterfall. Owner: CTO. Not yet scoped.
 
 ### Four fixes to existing contracts (edits, not new files)
 
