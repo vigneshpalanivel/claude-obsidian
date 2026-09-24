@@ -384,7 +384,38 @@ Asking *"are you coming?"* is what you say to someone you **assume is invited**.
 **This is probably the wrong way round.** A business partnership does not make a man forget his friend at his own wedding function. The more coherent sequence is that **the friendship had already thinned, and the business is what kept us in the same room.** The partnership did not damage the friendship — **it outlasted it.**
 **This matters for [[separation-plan]]:** if business killed the friendship, separation might restore it. **If the friendship was already gone, separation will not bring it back — and expecting it to is how I end up conceding terms for something that was never on offer.**
 
-**✅ CLARIFIED 2026-09-24 — not a lost invitation, and it is worse than an omission:**
+**🔴 ADDED 2026-09-24 — my wife had helped him find a bride.**
+Before the woman he married, there was an **earlier prospect**. **My wife spoke to her on his behalf**, helping him toward a better match.
+
+**So the person left out of his pre-marriage function was the woman who had helped with his bride search.**
+
+**What this adds:**
+- **It is not a general social omission. It is exclusion from precisely the domain she had helped in.**
+- **It explains why the other wives' questions cut so deeply.** They knew she had helped. Her absence would have looked inexplicable to them specifically — **and she still had nothing to say.**
+- **It weakens the family-organised-guest-list defence further.** If relatives were drawing up the list, the woman who helped find a bride is among the first names, not an oversight.
+
+---
+
+**⚠ BUT IT ALSO SUPPLIES THE BEST INNOCENT EXPLANATION SO FAR — and it fits the facts better than anything I have proposed:**
+
+**She helped with a *previous* prospect. That match did not happen.** In an arranged-marriage context, **people connected to a prior alliance that fell through are sometimes kept away from the new family's intimate events**, to avoid questions from the bride's side.
+
+**That explains the exact tiering that I treated as the strongest evidence of deliberate ranking:**
+
+| | Who is there | Fits? |
+|---|---|---|
+| **Main wedding — invited** | Large, public, bride's family meets everyone at a distance | ✔ |
+| **Pre-marriage function — not invited** | Small, intimate, bride's family present and talking to people | ✔ **Precisely where a prior-prospect connection would be awkward** |
+
+**And it explains *"are you coming?"* the day before better than either earlier theory** — a man avoiding a proper invitation, then feeling the wrongness of it and making a half-gesture too late.
+
+**⚠ This does not make it acceptable.** Even on this reading, **he prioritised his own comfort over their dignity**, and the cost fell on my wife in public, in our office, in front of our friends. **One phone call to me beforehand would have prevented all of it.** He did not make it.
+
+**What it does change: it makes malice much less likely, and awkwardness much more likely.** **Do not conclude he set out to humiliate her.**
+
+---
+
+**Clarified 2026-09-24 — not a lost invitation:**
 **I was invited to the marriage function. I was not invited to the pre-marriage function.**
 
 That changes the reading materially:
@@ -400,8 +431,14 @@ That changes the reading materially:
 - **Least usable:** bringing my wife's humiliation into a business negotiation is a category error. He would resent it, and it would make everything else I say look like grievance.
 - **Most important:** it is a legitimate, sufficient, private reason to want out. **A reason to leave is not a term to negotiate.** Keep it on the first list and off the second.
 
+**⚠ The part that is still live, and it is not a business matter:**
+**My wife was never given an explanation.** She did the favour, she was left out, she was asked about it in public, and nothing was ever said to her afterwards. **The person still owed something here is her, not me — and no separation deal touches that.**
+
+If it matters to her, the route is a conversation between the families, **not an item in a partnership negotiation.** And if the prior-prospect explanation above is the true one, **it is an explanation she is entitled to hear** — which is a different thing from me raising a grievance.
+
 **Ask:**
-- None. Closed by events, and it stays out of every conversation.
+- None on the business side. Closed by events, stays out of every conversation with him about terms.
+- **Separately, and only if she wants it: an explanation for her.** Handled as family, not as business, and not by me as a complaint.
 
 ---
 
@@ -507,25 +544,881 @@ That is very hard to explain on substance. He heard about it from a friend, brou
 
 **This is the one operational argument where I am clearly in the right.** State it as cost imposed on others, never as disobedience.
 
-**⚠ But there is a question I should answer before using it — and it may be the real fix:**
-> **We sent a team home to stay inside a token limit. Was that cheaper than buying more capacity?**
+**✅ BOTH TESTS PASSED — confirmed 2026-09-24:**
 
-Almost certainly not. Lost team-days across a development team will usually exceed the cost of additional capacity by a wide margin. **If so, this is an under-provisioning problem as much as a compliance problem, and I am partly responsible for it.**
-- Work out the cost: lost team-days vs the price of more capacity.
-- Trioangle has ₹97L of payables, so cash is tight — **but "we could not afford it" needs to be an actual calculation, not an assumption.**
-- **If capacity is cheaper than downtime, provision it. The argument with him becomes moot and I stop being the person who chose downtime over spend.**
+| Test | Answer | Effect |
+|---|---|---|
+| **Is the rate limit pooled or per-seat?** | **Pooled — one account shared across the team** | **The externality is real.** His consumption directly takes capacity from everyone else |
+| **Is the instruction still in force, or did I withdraw it?** | **Still in force. I follow it myself, and so does everyone else** | **Live non-compliance, sole non-complier.** Unlike #7, there is nothing I gave up |
+
+**So #8 stands where #7 fell.** Instruction live, universally followed, one person outside it, documented harm to third parties, continued after the harm was visible. **This is the entry to rely on.**
+
+---
+
+**🔴 BUT THE ROOT CAUSE IS THE SHARED ACCOUNT — AND THAT IS MINE, NOT HIS.**
+
+**A whole development team working from one shared account is the reason a single person's usage can stop everyone else.** With proper per-seat licensing:
+- Each person has their **own** limit.
+- **Bowshul's model choice would cost only Bowshul.**
+- **No team is ever sent home again**, whatever he does.
+- The argument disappears entirely, because there is no longer a commons to overgraze.
+
+**⚠ And sharing one account across a team is very likely a breach of Anthropic's terms.** Individual plans are for individual use; multi-person use is what Team/Enterprise seats are for. **The practical risk is not a penalty — it is the account being suspended, which stops the entire development team at once.** That is a far larger exposure than anything in this entry.
+
+**→ This is the actual fix, it is entirely within my control, and it does not require his agreement:**
+1. **Move to proper per-seat licensing.** Removes the terms exposure *and* dissolves the dispute.
+2. **Cost it honestly:** seats vs lost team-days. Lost days across a dev team will almost certainly exceed the licence cost by a wide margin. Trioangle has ₹97L of payables and cash is tight — **but "we cannot afford it" has to be a calculation, not an assumption.**
+3. **Until then, allocate the pooled quota explicitly** — per-person budgets rather than an instruction. **A shared limit with no allocation is a design flaw; a well-designed system should not depend on everyone being obedient.**
+
+**⚠ What this does to the argument with him.**
+It does **not** excuse him — the instruction was live, universal, and he alone ignored it after seeing the team sent home. **But it splits responsibility for the downtime**, and he can fairly say the architecture caused it. **Fix the seats first. Then any repeat is unambiguously his.**
 
 **⚠ And the same measurement gap as #7 applies to the caching claim.**
 *"I'm not getting better results with headroom"* is unfalsifiable as stated, and so is *"everyone else is fine."* Neither is data. **But note the asymmetry: for caching, he has to show a real quality loss to justify the cost he imposes — the burden sits with him here, not with me, because he is spending a shared resource.** That is the opposite of #7, where the burden of proof is mine.
 
 **Ask (real and actionable):**
-1. **Cost the downtime against additional capacity.** Do this first. It may dissolve the whole dispute and it is entirely within my control.
-2. **If capacity stays constrained, make the quota visible and allocated** — per-person or per-team budgets rather than an instruction. **A shared limit with no allocation is a design flaw; people do not have to be obedient for a well-designed system to work.**
-3. **Put the burden on him for caching:** if headroom degrades his output, show the case. One example, side by side. **He is asking others to pay for his preference, so the evidence is his to provide.**
-4. **Do not frame it as disobedience.** Frame it as: *"one person's usage pattern cost the team working days."* **Factual, measurable, no blame — and it is the only version that survives being repeated back to him.**
+1. **🔴 Move to per-seat licensing.** Fixes the terms exposure, removes the single point of failure, and dissolves the dispute without needing his agreement. **Do this first.**
+2. **Cost seats against lost team-days** before concluding it is unaffordable.
+3. **Until seats exist, allocate the pooled quota explicitly** — per-person budgets, not an instruction.
+4. **Put the burden on him for caching:** if headroom degrades his output, show one side-by-side case. **He is asking others to pay for his preference, so the evidence is his to provide.**
+5. **Do not frame it as disobedience.** *"One person's usage pattern cost the team working days"* — factual, measurable, no blame, and the only version that survives being repeated back to him.
+6. **Minute it.** The instruction is live and universally followed; **record it as a decision with a date.** Then a repeat is a blocked decision on the record — which is exactly what #7 lacks and what the separation argument needs.
 
 **🔴 Why #7 and #8 matter more than everything above them:**
 Entries #1 and #4–#6 are about **standing**, and historical. **#7 and #8 are current, operational, and measurable.** They show the deadlock producing **live damage to third parties** — lost working days, a company-wide process that cannot be enforced. **These are the entries that justify separation on business grounds rather than personal ones**, and they are the only ones I can put on a table without it sounding like grievance. See [[separation-plan]].
+
+---
+
+## 9. Told the blockchain sales team the product "isn't selling"
+
+**Date:** recent, ~Sep 2026  ·  **Logged:** 2026-09-24
+**Type:** Official — conduct toward another entity's team
+**Entity:** InnBlockchain
+**Status:** Open
+
+**What happened:**
+Bowshul spoke to the **blockchain sales team** and told them the **blockchain product isn't selling** — in a manner I read as **mocking** them.
+
+**My reading:** vengeance toward InnBlockchain.
+
+**⚠ Evidence discipline:**
+
+| | Established | Inferred by me |
+|---|---|---|
+| He said the blockchain product isn't selling, to the blockchain sales team | ✔ | |
+| **The tone was mocking** | — | ✔ my reading — **and did I hear it myself, or was it reported to me?** |
+| **It was vengeance** | — | ✔ my reading |
+
+**🔴 First problem: on the numbers, the statement is broadly defensible.**
+
+| InnBlockchain revenue | |
+|---|---|
+| FY2023-24 | **₹1.04Cr** |
+| FY2024-25 | **₹1.02Cr** |
+| FY2025-26 | **₹37L** |
+| FY2026-27 part-year | ₹30L → **~₹62L annualised** |
+
+**Against its own history InnBlockchain is down roughly 40% from peak** — ₹1.04Cr to ~₹62L. The recent quarter is a recovery off a collapsed base, not growth off a good one. *(This also corrects my own earlier shorthand of InnBlockchain as "the rising entity" — true year-on-year, false against FY2023-24.)*
+
+**So "it isn't selling" is a fair description of the trajectory from ₹1Cr to ₹62L.** **My grievance here is about tone, not accuracy — and I should not confuse the two, because he can win the accuracy argument in one line.**
+
+**✅ Second problem — and this is the part that actually holds: it is the channel, not the content.**
+A director may believe a product line is failing. **Saying it to that line's own sales team is a management failure regardless of whether it is true.** The correct audiences are me, or the board. Telling the sales team:
+- Undermines the people whose job is to sell it
+- Cannot improve anything — they are not the decision-makers
+- **Damages the asset**, which matters because it is the asset I intend to acquire
+
+**→ State this as the channel problem only.** *"If you think the product is failing, tell me or the board — telling the sales team only demoralises them and cannot change anything."* **Factual, unarguable, no motive attributed.** The moment I say "mocking" or "vengeance" I am making a claim about his inner state that I cannot prove and he will simply deny.
+
+**⚠ "Vengeance" is the weakest available reading.**
+He has **openly stated** that InnBlockchain should close (#3). So saying the product does not sell — including to people inside it — is **consistent with a declared position, not retaliation.** Revenge requires intent to hurt; consistency only requires belief. **The simpler explanation fits all the facts and does not need his motive.**
+
+**⚠ Real consequence worth tracking, though:**
+If a 50% director is telling InnBlockchain's sales team the product does not sell, that has effects on morale and possibly on retention — **and it reduces the value of the thing I am trying to take over.** That is a concrete argument for **completing the separation sooner**, not for confronting him about tone.
+
+**⚠ One legal note, and handle it carefully:** he is a director of InnBlockchain, and disparaging its product to its own staff sits awkwardly with a director's duty to act in that company's interests (s.166). **But do not reach for this.** My own duty exposure is larger ([[group-financials]] §1b–1c), and opening a director-duties argument invites scrutiny that lands harder on me than on him.
+
+**Ask:**
+1. **Establish first: did I hear this directly, or was it reported?** "Mocking" is a tonal judgement that does not survive second-hand transmission, and the whole entry rests on it.
+2. **Raise the channel, never the motive.** One sentence: concerns about a product line go to me or the board, not to that line's sales team.
+3. **Do not argue the substance.** "It isn't selling" is defensible against a ₹1.04Cr → ₹62L decline. Arguing it hands him the stronger position.
+4. **Treat it as a reason to move faster**, not a reason to confront.
+
+---
+
+## 10. "Don't talk to me the way you talk to others" — and the responsibility asymmetry
+
+**Date:** the remark, a few years back. The scope imbalance, ongoing. The support-team refusal, recent  ·  **Logged:** 2026-09-24
+**Type:** Both — authority, and workload/responsibility split
+**Entity:** Trioangle + InnBlockchain
+**Status:** **Open. One of the two main reasons for separation.**
+
+**What happened:**
+
+**a) The remark, a few years back.** He told me: *don't talk to me the way I talk to others in the office.* I was speaking to him as CEO to a department head. **He does not accept being addressed that way.**
+
+**b) The scope imbalance, ongoing:**
+
+| | Scope |
+|---|---|
+| **Bowshul** | **Trioangle Product team. Nothing else.** |
+| **Me** | **InnBlockchain in full** — sales, marketing, technical, development — **plus Trioangle sales & marketing** |
+
+Equal equity. Nothing like equal scope.
+
+**c) The support team, recently.** He said he is focusing on products and cannot handle the support team — **one person**. He wants it given to another manager. **Minimal responsibility next to any other department, and he would not take it.**
+
+**d) The rate limits (#8).** He knew heavy usage would affect the team. He used them anyway. **Consequence for others, responsibility for none.**
+
+**e) Me, currently.** **12 hours a day, weekends included**, carrying Trioangle and InnBlockchain problems.
+
+**My reading:** he takes director power whenever he wants it and never takes director responsibility.
+
+---
+
+**🔴 (a) IS THE PART WHERE I AM WRONG — and it may be causing the rest.**
+
+**His demand is reasonable, and mine was not.** He is a **50% shareholder and co-founder**, not an employee. **A CEO has no standing to issue orders to a co-equal owner in the tone used with staff.** The org chart says "department head"; the cap table says "equal owner." **When those conflict, the cap table wins.** My CEO title over a 50% co-founder is a courtesy, not authority — the same fact that makes #7 and #8 unenforceable.
+
+**So "he takes director power for personal benefit" is not what happened here.** He accurately described the relationship. **I was the one asserting a hierarchy that does not exist.**
+
+**⚠ And it may be upstream of everything in #7 and #8.** If I have addressed him as a subordinate for years, the refusal to follow my instructions may be a **response** to that rather than a cause of it. **That does not justify what #8 cost the team.** But it means my own approach may be feeding the pattern I am complaining about, and **no separation is needed to stop doing it.**
+
+---
+
+**✅ (b) IS A GENUINE GRIEVANCE — but only in its scoped form.**
+
+**The weak version:** *"I run two companies and he runs one department."*
+**Why it fails:** **I took on InnBlockchain and QoreUps over his objection.** He argued against both from the start (#2, #3). **I cannot cite a workload I created against his advice as evidence of his unfairness.** He will say — correctly — that he never asked me to carry it.
+
+Also: founder equity reflects the bargain at formation, not current hours. **We built Trioangle together from the start.** Equity does not re-price itself because effort diverged later.
+
+**The strong version — use this one:**
+> **Inside Trioangle, the company we both built and both own equally, I carry sales and marketing and he carries product. That is the imbalance, and it is within the entity we actually agreed on.**
+
+Scoped that way it is unarguable and it does not depend on the other two companies at all.
+
+---
+
+**✅ (c) AND (d) ARE FAIR, AND (c) IS THE CLEANEST FACT IN THE ENTRY.**
+
+Declining a **one-person** support team, as a 50% owner, is thin on any reading. And there is a pattern in *which* responsibility he declines: **support is customer-facing and reputation-exposed; product is buildable and controllable.** Avoiding the interrupt-driven, accountable function while keeping the creative one is consistent with the "power without responsibility" reading — **this is the one place that reading is actually supported by behaviour rather than by tone.**
+
+**→ (c) plus (d) is the argument. Not the remark in (a).**
+
+---
+
+**🔴 (e) THE 12-HOUR DAYS — the part no deal term fixes.**
+
+Twelve-hour days including weekends, against a medical picture of **migraine (Propranolol from Sep 2026), anxiety diagnosed Feb 2025, spinal inflammation, BMI 17–18** — and a stated goal of being **active and independent at 80** (`wiki/health/healthspan-80.md`). **At 34, this load runs directly against that goal.**
+
+**Two honest observations:**
+1. **Separation genuinely reduces this.** One company instead of three, no partner to manage. **That is the strongest personal argument for separating that exists in these files — stronger than any grievance.**
+2. **⚠ But if the pattern is that I absorb everything, separation will not fix it — I will rebuild the same load inside InnBlockchain alone, with nobody to absorb any of it.** The load is partly self-assigned: three entities, two of them against advice, sales *and* marketing *and* technical *and* development. **Whether I delegate is a question about me, and it does not wait for the deal.**
+
+---
+
+**⚠ "I cannot control him, he will not listen" — true, and partly self-caused.**
+The 50/50 structure gives me no authority over him. **But I have also never used the mechanisms that do exist** — never minuted a decision, never escalated, conceded every time (#1, #4, #7). **"I cannot control him" and "I have never tested whether I can" are both true.**
+
+---
+
+### 🔴 "Then what does being CEO mean?" — the practical answer
+
+**The question:** if I cannot address him as I address other department heads, is the CEO title just a nameplate, and can I not direct a department head?
+
+**Answer: authority over a co-equal owner never comes from title or tone. It comes from written process — and that is what does not exist here. It is a missing-document problem, not a permanent condition.**
+
+**1. He wears two hats. Separate them deliberately.**
+
+| Hat | What I can do |
+|---|---|
+| **50% shareholder / director** — my equal | **Cannot direct him.** Agree, vote, minute, escalate |
+| **Head of Product** — a function inside the org | **Can hold the function to the same standards as any other function** — through the system, not through personal instruction |
+
+Confusing the two is what produced (a). The function is accountable. **The person is not subordinate.**
+
+**2. Direct is not the same as ordering — and direct is available to me.**
+
+| Ordering register (no standing) | Peer register (full standing) |
+|---|---|
+| *"Use Sonnet for development, that's the instruction."* | *"The team lost working days when the pooled quota ran out. I need Product on Sonnet for development. Can you commit to that?"* |
+| *"The company follows BMAD."* | *"Testers and the PM can't work from Product's output. I need stories with acceptance criteria in the tracker. How do you want to produce them?"* |
+
+**Same content. Same firmness. No command.** This is the register used with a board member or a major client — **specific, unambiguous, expects an answer.** What I lose is the command form; **I lose none of the substance.** Nothing here requires being softer.
+
+**3. Govern by recorded decisions, not verbal instruction.**
+The reason he can ignore me is that **nothing is written down.** A minuted management or board decision is a different object from *"Vignesh told me to."* He can vote against it; he cannot pretend it did not happen. **Every instruction I have ever given him has been deniable, and that is a choice I made.**
+
+**4. Govern by commitments and deliverables, not compliance.**
+With an equal you do not prescribe method — you agree an outcome and a date, then the result is visible. *"We agreed X by Friday. It is not done. What happened?"* **That is a legitimate question from one co-owner to another and it needs no hierarchy at all.**
+
+**5. 🔴 The actual missing instrument: a shareholders' agreement.**
+A 50/50 company with no written agreement genuinely does leave the CEO title decorative. What it should contain:
+- **A defined CEO remit** — what the CEO decides alone vs what needs both
+- **Reserved matters** — the short list requiring joint approval
+- **A deadlock mechanism** — casting vote, referral, expert determination, or shotgun/buy-sell
+- **Executive role terms** — what a department head owes the company regardless of shareholding
+
+**Without this, "I cannot control him" is structurally true. With it, most of #7 and #8 would never have happened.**
+**⚠ And note: negotiating this now is itself a route to the separation** — a shotgun/buy-sell clause is exactly the mechanism that prices and executes an exit. **Raising governance is less confrontational than raising separation, and it can arrive at the same place.**
+
+**6. The remedy that does exist — and why it does not work here.**
+If a director fails in an executive function, the board-level remedy is removing them from the role while they keep the shares. **In a 50/50 I cannot pass it alone.** That is precisely why separation is the answer rather than better management — **but it is worth knowing the mechanism exists, so I stop expecting tone to do a job only documents can do.**
+
+**7. Reframe the goal.**
+**"Control" is the wrong objective — nobody controls a co-owner.** The right objective is **enforceability**: decisions recorded, commitments dated, results visible. **A company does not need one person to control another. It needs decisions to be made and kept.**
+
+---
+
+**Ask:**
+1. **Stop using the CEO-to-department-head register with him. Permanently.** He is right about this, it costs me nothing, and it may be feeding the non-compliance. **Do this whether or not there is a separation — and note it costs me no firmness, only the command form.**
+2. **Use the scoped version of the workload argument** — Trioangle only, sales/marketing vs product. Never the three-entity version.
+3. **Lead with the support team refusal and the rate limits.** One person declined; a shared quota consumed knowingly. **Behaviour, not tone.**
+4. **Separate the health case from the grievance case.** The 12-hour days are a sufficient reason to change something. They are not evidence against him.
+5. **Delegate now, not after the deal.** If the load is unsustainable, the deal is months away at best and the records position may delay it further.
+
+---
+
+## 11. Pressured me to join the weekly carrom games
+
+**Date:** a few years back  ·  **Logged:** 2026-09-24
+**Type:** Personal
+**Entity:** Trioangle
+**Status:** Closed by events. **🔴 The weakest entry in this file. Do not use it, and be careful what it says about me.**
+
+**What happened:**
+We ran **carrom board games weekly**. Everyone joined, including Bowshul. **I did not** — no interest, and I always had more work, so I worked through it. **He pressured me to participate**, saying: *are we not working? we also have work, we also have burden.*
+
+**My reading:** by not participating I stood out as different in that place. He could not accept that, so he pushed me to join. **Otherwise why would he care whether I came?**
+
+---
+
+**🔴 The innocent explanation here is overwhelming, and my own framing supplies it.**
+*"Why should he care about me?"* — **the obvious answer is that he was my friend and wanted me there.** A co-founder inviting the CEO to the team's weekly game is ordinary inclusive behaviour. To read it as an attack requires him to have been tracking my sense of distinction and trying to erase it — **an enormous amount of machinery for a carrom invitation.**
+
+**⚠ And the simpler reading points back at me.**
+I wrote that not participating made me *feel unique in that place.* **So the arrangement I was defending was one where I was visibly the hardest-working person in the room while everyone else played.** The plainer account is not that he wanted to destroy that distinction — **it is that I was enjoying it, and an invitation threatened the display rather than the substance.**
+
+**This entry does not support the case. If anything it works against me, and it should never be said out loud.**
+
+---
+
+**✅ But one genuinely useful thing comes out of it:**
+> ***"We also have work, we also have burden"* — a few years back — is the same statement as *"everyone is also working like you"* (#1, May 2025).**
+
+**So the load-comparison remark is not a one-off dismissal. It is a long-running disagreement about whose load is heavier, going back years.** That reframes #1 substantially:
+- **It is probably sincere, not contemptuous.** If he has held this view for years and repeated it in unrelated settings, he genuinely believes his load is comparable. **That is a factual disagreement, not an insult** — and I have been receiving it as an insult for years.
+- **And it has never once been resolved with facts.** Same shape as BMAD and the model policy: a real disagreement, no data, no resolution, recurring friction. **Nobody has ever put the two workloads side by side.**
+- **If I want this settled, it is settleable** — hours, functions owned, entities carried. **A conversation I have never had, in ten years.**
+
+---
+
+**⚠ And the observation I least want to make — #11 may be connected to #5 and #6.**
+I declined the team's social layer, weekly, for years. **Later I was outside the social layer** — not invited to the product team treat (#5), placed in the outer tier at his pre-marriage function (#6).
+
+**That is not a justification.** A pre-marriage function is not a carrom game, and mutual friends and their wives were at both of the later events. **But the sequence is worth seeing honestly: I opted out of the informal relationships for years, and then was hurt at being outside them.** Some of the distance I am now grieving, I chose.
+
+**Ask:**
+1. **Do not raise this. Ever.** It reflects worse on me than on him.
+2. **Do use what it reveals:** put the two workloads side by side, factually, once. **It is the one grievance in this file that is actually resolvable with information.**
+3. **Note the connection to #5 and #6** privately, and weigh how much of the exclusion was reciprocal.
+
+---
+
+## 12. Bangalore trip — said okay to ordering food for the wives and children, then didn't
+
+**Date:** to fill in  ·  **Logged:** 2026-09-24
+**Type:** Personal — but the most diagnostic entry in the file
+**Entity:** Not business
+**Status:** Closed by events. **🔴 The best-evidenced entry here, and the one that matters most for the decision.**
+
+**What happened:**
+A friends' trip to **Bangalore with wives**. **Gopi and I went shopping**; Bowshul did not come. We asked him for one thing: **order food for the wives — and there were children too.**
+
+**He said okay. He did not do it.**
+
+The wives started calling us asking when the food would arrive. When we called him, he said: **"better you guys buy the food for my family also."**
+
+**My reading:** we had gone off for our own reasons, he did not like it, so he did not do what we asked.
+
+**🔴 GOPI WAS AFFECTED TOO AND TOLD ME SO.**
+
+---
+
+**✅ This is the only entry in the file with independent corroboration.**
+Every other entry is my account alone — which is why I have had to keep separating evidence from interpretation throughout. **Here a third party experienced the same thing and said so unprompted.** For pattern evidence that is the difference between one person's perception and an observed trait. **It is the single most valuable fact in this file.**
+
+---
+
+**✅ And it isolates the failure mode precisely — which is not disrespect:**
+
+> **He agreed, and then did not deliver. He did not decline.**
+
+**If he objected to the ask, the moment to say so was when he was asked.** Saying yes and then not acting is the specific failure, and **the harm came from the false agreement, not from a refusal.** Wives and children were waiting for food that was never coming, because a "yes" did not mean yes.
+
+**Same failure mode as #4:** asked to vacate the room, **said okay**, did not move, then offered it once it was useless. **Two instances, one with a witness.**
+
+**⚠ Note the distinction from #8, and keep it:** on the AI model policy he **openly disagreed** and did not comply. That is defiance, and in one respect it is more honest. **#4 and #12 are a different and worse thing: agreement that does not predict action.**
+
+---
+
+**⚠ There is an innocent reading of his side, and it is not nothing:**
+*"Better you guys buy the food for my family also"* suggests he felt **assigned a servant role** — the two of us going out to shop while he stayed back to handle domestic logistics for three families, his own included. **On a friends' holiday that is a real imbalance and a legible grievance.**
+
+**But it does not rescue the conduct.** He could have said *"I have my own family to sort out — order it yourselves."* **He said okay instead.** The objection may be fair; the method left children waiting.
+
+---
+
+**🔴 AND THIS WEAKENS SOMETHING I ARGUED IN #10 — I should withdraw part of it.**
+In #10 I suggested the non-compliance might be a **response to being addressed as a subordinate**, and that my CEO register could be feeding it.
+
+**Bangalore had no hierarchy.** No CEO, no department head, no instruction — **just friends asking a favour, on holiday, for their wives and children.** The same behaviour appeared anyway. **So the pattern is not primarily a reaction to how I speak to him at work.** That part of #10 is weakened, and my reading is correspondingly stronger.
+
+*(The rest of #10 stands: he was still right that a CEO cannot order a co-equal owner, and I should still drop that register.)*
+
+---
+
+**🔴 What this entry actually gives me — the argument I have been missing:**
+
+> **The case is not disrespect. It is unreliability.**
+
+**I cannot run a company with someone whose agreement does not predict action.** That is not about ego, standing, tone, or who was invited where. It is **operational**: every plan that depends on his yes is unsafe.
+
+**And unlike every other grievance in this file, it is sayable.** *"I can't run a business where agreement doesn't predict action"* is factual, unemotional, attributes no motive, and cannot be deflected into an argument about feelings. **This is the framing to carry into [[separation-plan]].**
+
+**✅ ANSWERED 2026-09-24 — and it splits into two different patterns:**
+
+| Context | Pattern |
+|---|---|
+| **Personal life** (#4, #12, #13) | **Accepts, then does not deliver.** Witnessed by Gopi and Kumar. A trait |
+| **Work** (#7, #8, #9, #10) | **Does not accept in the first place.** *"Mostly he won't agree, so he won't deliver. Occasionally agrees and doesn't deliver. On official things he usually won't listen — very rarely does."* |
+
+**So "agreement doesn't predict action" is the PERSONAL pattern, not the work one.** At work the accurate statement is blunter: **company decisions do not apply to him.** Use the right one for the right audience — **the business case rests on the second, and it is cleaner.**
+
+**Ask:**
+1. **Do not raise the incident.** It is a personal trip and it involves wives and children — unusable, and raising it looks petty.
+2. **Do use the framing** — agreement that does not predict action — but only if it holds up at work too. **Check that before relying on it.**
+3. **Gopi is a witness to a pattern, not an ally to recruit.** Do not draw him into any of this. He works with Bowshul, he is half-assigned to QoreUps, and putting him in the middle is unfair to him and dangerous to me.
+
+---
+
+## 13. Chennai trip — didn't buy Kumar's toys, then "I'll show you a better shop in Madurai"
+
+**Date:** to fill in  ·  **Logged:** 2026-09-24
+**Type:** Personal — **and it does not involve me at all**
+**Entity:** Not business
+**Status:** Closed by events. **🔴 The strongest evidence in this file, for a different conclusion than expected.**
+
+**What happened:**
+A friends' trip to **Chennai**. Bowshul wanted to buy **toys for his kid**, and **Kumar** wanted toys for his kid too. Bowshul asked us to come to the toy shop; **we said no** — other plans, no toys to buy. **Kumar wanted toys but could not come**, so he **asked Bowshul to buy for him as well.**
+
+Bowshul went alone. **He bought toys for himself only. He did not buy Kumar's.**
+
+He told Kumar: **"I'll show you a better shop in Madurai."**
+**But he bought many toys for himself.**
+
+**Kumar was affected by it.**
+
+---
+
+**✅ TWO THINGS MAKE THIS THE MOST USEFUL ENTRY IN THE FILE:**
+
+**1. A second independent witness — and I am not involved.**
+Gopi in #12, Kumar here. **#13 has no connection to me at all**, which removes any possibility that my own relationship with Bowshul coloured the account. **This is observed behaviour, not my perception of behaviour.**
+
+**2. It is the same structure as #4 and #12, for the third time:**
+
+| | The ask | Accepted? | Delivered? | The gesture afterwards |
+|---|---|---|---|---|
+| #4 | Vacate the room | "Okay" | No | *"Do you want it now?"* — after the meetings |
+| #12 | Order food for the wives | "Okay" | No | *"Better you guys buy for my family too"* |
+| #13 | Buy Kumar's toys | Accepted | No | *"I'll show you a better shop in Madurai"* |
+
+**Three times: the request is accepted, not delivered, and followed by a deflection that arrives too late to be any use.**
+
+**⚠ And "I'll show you a better shop in Madurai" is defeated by one detail — the one I noticed correctly: he bought many toys for himself.** The shop was good enough for his own children. **The excuse cannot survive that fact.**
+
+---
+
+**🔴 BUT HERE IS WHAT #13 ACTUALLY PROVES — AND IT IS NOT WHAT I HAVE BEEN CLAIMING:**
+
+> **He does this to Kumar too. So it is not about me.**
+
+**This is a trait, not a grievance against me.** And that cuts both ways:
+
+| Strengthens | Weakens |
+|---|---|
+| **The unreliability finding is now a demonstrated trait** — three instances, two witnessed, one with no involvement from me | **The personal-animosity reading collapses.** If he treats Kumar the same way, then the room (#4), the treat (#5), the guest list (#6) and Bangalore (#12) are **how he operates with everyone** — not targeted disregard of me |
+| It is observed, not inferred — no motive attribution required | **"Vengeance" (#9) and "he wanted to diminish me" become much harder to sustain.** The simplest explanation of all of it is a man who accepts requests he does not intend to prioritise |
+
+**⚠ So I should revise the "recent pattern reads as disregard" conclusion I drew earlier.** It may be neither indifference nor disregard toward *me specifically* — **it may simply be who he is with everybody.**
+
+---
+
+**🔴 AND THE PARADOX WORTH SITTING WITH:**
+> **The less personal it is, the stronger the case for separating.**
+
+If this were animosity toward me, there would at least be a conversation that could theoretically fix it. **A character trait cannot be negotiated away.** He will agree to things and not deliver them for the rest of the partnership, to me, to Kumar, to clients, to the team — **regardless of how I speak to him, what is minuted, or how the grievances are handled.**
+
+**That is the real, sufficient, unemotional reason to separate, and it needs no bad intent on his part at all.**
+
+**Ask:**
+1. **Do not raise it.** Personal, involves Kumar, and unusable.
+2. **🔴 Stop building the case on motive.** #13 shows the behaviour is not aimed at me. **Every "he wanted to" reading in this file is now weaker, and the reliability reading is stronger.**
+3. **Use the reliability framing and nothing else** — see #12. *"Agreement doesn't predict action."*
+4. **Leave Kumar out of it**, as with Gopi. Witnesses to a trait, not allies.
+5. **Now answer the work question honestly**, because everything now rests on it: **at work, how often does he agree to something and deliver?** If usually, this is a personal-life pattern and the business case is thinner than it looks.
+
+---
+
+## 14. "You're going to the gym, that's why you gave me sales"
+
+**Date:** ~2021, five years back  ·  **Logged:** 2026-09-24
+**Type:** Personal — a remark
+**Entity:** Trioangle
+**Status:** Closed by events. **⚠ Weak. And its stated conclusion is contradicted by its own facts.**
+
+**What happened:**
+I was handling the sales team. **He became interested in sales.** Around the same time **I started going to the gym in the evenings.** I **gave him the sales team** as a new responsibility. Some days later he said:
+
+> **"You're going to the gym, that's why you gave sales to me."**
+
+**My reading:** he is unwilling to take responsibility and wants to stay in his comfort zone.
+
+---
+
+**🔴 Problem 1: the conclusion does not follow from the facts in this entry.**
+**He became interested in sales. He was given sales. He took it.** The only thing that happened afterwards was a remark. **Nothing here shows unwillingness to take responsibility — he accepted the responsibility.** *"He wants to stay in his comfort zone"* is a conclusion about #10 (the one-person support team) and it does not belong here.
+
+**🔴 Problem 2: his remark was probably accurate — and my own account supports it.**
+In my own telling, **the gym and the handover happened at the same time.** If the timing drove the decision, then he simply **noticed correctly.** I have not disputed the timing; I am objecting to it having been said out loud.
+
+**And there is nothing to be ashamed of in the true answer.** Delegating a function to protect an evening routine is **good management**, not a failing — and the gym serves the healthspan goal (`wiki/health/healthspan-80.md`), which matters more at 34 with migraine and BMI 17–18 than the sales team did.
+
+**The reply that would have ended it in one sentence:** *"Yes, partly — and also because you were interested. Both are true."*
+**It only stung because I received it as an accusation, and it is only an accusation if delegating for personal reasons is shameful. It is not.**
+
+---
+
+**✅ What this entry is genuinely good for — a fourth instance of one pattern:**
+
+| | What he said | What it disputed |
+|---|---|---|
+| #11 (years back) | *"We also have work, we also have burden"* | My account of my own load |
+| #14 (~2021) | *"You gave me sales because of the gym"* | My account of my own motive |
+| #1 (May 2025) | *"Everyone is also working like you"* | My account of my own load |
+| #3 (Jul 2026) | *"What are you doing?"* | My account of my own output |
+
+> **🔴 The pattern is not "he minimises my work." It is "he disputes my account of myself" — and I find that intolerable.**
+
+That is a materially different and far more **symmetrical** conflict than the one I have been recording. **In each case he questioned my self-description; in each case I treated the questioning itself as the injury** rather than answering it. **Three of the four are answerable with facts. None of them ever were answered.**
+
+**⚠ And note the asymmetry I have been enforcing without noticing:** I infer his motives freely throughout this file (#2 the wife, #5 attention, #9 vengeance) — **and treat it as an attack when he infers mine.**
+
+**⚠ Unrecorded, and it is the only thing that would make this entry matter:**
+**After he took sales — did he run it, and did he run it well?** If he took it and dropped it, that is real responsibility evidence. If he ran it, this entry is about a remark and nothing more.
+
+**Ask:**
+1. **Do not use this.** The facts undercut the conclusion.
+2. **Answer the load question with numbers, once.** Four remarks across five years all disputing my self-account, never once settled with data. **See #11.**
+3. **Find out what happened to sales after the handover.** That is where the actual evidence would be.
+
+---
+
+## 15. Rejected the AI pivot plan — holds that clone products rebuilt in Flutter will recover Trioangle
+
+**Date:** ~2026 (pivot under evaluation since Apr 2026)  ·  **Logged:** 2026-09-24
+**Type:** Official — company strategy
+**Entity:** Trioangle
+**Status:** **Open. The most substantive business disagreement in the file** — and the only strategic one.
+
+**What happened:**
+I proposed an **AI pivot** with detailed case studies, how MNCs are handling the shift, and an analysis of Trioangle's problems. **He did not accept it.** His position: **stay with clone products**, which will deliver again, and the **Flutter rebuild** will help us.
+
+I explained the problem is **sales and marketing** — **leads are not generating as before and conversion is not happening.** Flutter is a tech stack; it cannot fix demand. **He held his position.**
+
+**My reading:** he advocates Flutter because he is personally doing Flutter development in products.
+
+---
+
+**✅ WHERE I AM RIGHT — and it is the core of it:**
+A tech-stack rewrite does not fix a demand problem. The numbers support me:
+
+| Trioangle revenue | |
+|---|---|
+| FY2023-24 | ₹2.8Cr |
+| FY2024-25 | ₹2.9Cr |
+| FY2025-26 | ₹2.1Cr |
+| FY2026-27 | ~**₹1.2Cr annualised** (−43%) |
+
+**~30 active clients. Leads down, conversion down.** If buyers are not arriving and not closing, **the framework the product is written in is not the binding constraint.** Rebuilding in Flutter changes the supply side of a demand-side failure. **That argument is sound and he has not answered it.**
+
+The vault already reflects the direction: Service ICP repositioned to **AI-Engineering primary (May 2026)**, and industry pages instructed away from clone language entirely.
+
+---
+
+**🔴 WHERE I AM WEAK — I have proved the diagnosis, not the cure.**
+*"Leads and conversion have collapsed, so Flutter will not help"* is correct. **It does not follow that an AI pivot will.**
+
+**MNC case studies are not evidence that a ~30-client firm in Madurai, with ₹97L of payables and a 43% revenue decline, can execute an AI pivot.** Those companies had capital, brand and time. **I have brought better reasoning than he has. Neither of us has brought evidence.**
+
+**Honest position: his Flutter plan is weak; my AI plan is unproven. Both are bets.**
+
+---
+
+**🔴 THE THING I HAVE MISSED — MOST OF THIS IS INSIDE MY OWN REMIT.**
+> **I own Trioangle sales and marketing (#10). Lead generation and conversion are mine.**
+
+**I do not need his agreement to test AI positioning.** I need it only to redirect the **product team's build**. So the disagreement is far narrower than I have been treating it:
+
+| | Whose call |
+|---|---|
+| Positioning, messaging, outbound, ICP, lead generation | **Mine, already** |
+| What the product team builds, and in what stack | **His function — needs agreement** |
+
+**→ Stop arguing and run it.** Take the AI-Engineering Service ICP, run outbound for 60–90 days, and **measure leads and conversion against the clone-product baseline.** Cheap, fast, inside my authority, and **it produces the one thing neither of us has: evidence.** If AI positioning generates pipeline where clone positioning does not, the argument is over and the numbers make it, not me.
+
+**⚠ And the two may not be mutually exclusive.** Product can be rebuilt in Flutter while sales positions around AI engineering. **I may have manufactured an either/or out of two compatible things** — though with cash this tight the opportunity cost is real, so the sequencing does matter.
+
+---
+
+**🔴 AND THE IMPORTANT STRUCTURAL DISTINCTION — this entry is NOT evidence of dysfunction:**
+
+| | Should one owner be able to decide alone? |
+|---|---|
+| #7 BMAD, #8 model policy | **Yes — operational. The CEO's remit.** His refusal there is the defect |
+| **#15 company strategy** | **No. Company direction is properly a reserved matter requiring both owners.** |
+
+**Two 50% owners deadlocking on a bet-the-company pivot is the system working as designed, not failing.** He is entitled to withhold agreement on strategy, and **I am not entitled to impose it.** Using #15 as evidence that the partnership cannot function would be wrong — **it is evidence that we disagree about the future, which is a legitimate reason to separate but not a grievance.**
+
+**⚠ The motive inference is unnecessary — the demand-side argument wins on its own.** *"He backs Flutter because he builds in Flutter"* is plausible and unprovable, and I do not need it.
+
+**✅ Corrected 2026-09-24: clients do not ask for Flutter and do not care about the tech stack.** So there is no client-demand justification for the rebuild, and the "he hears what clients want" defence of his position does not apply.
+
+**→ But the useful move is to concede Flutter rather than fight it:**
+
+| Flutter as… | Verdict |
+|---|---|
+| **A delivery-efficiency decision** — one codebase for iOS + Android, cheaper to build, cheaper to maintain, easier to staff | **Probably correct. Concede it.** |
+| **A revenue strategy** — the thing that brings leads and conversions back | **Wrong, and clients' indifference to stack proves it** |
+
+**Flutter can be a good engineering decision and still be irrelevant to a demand problem. Both are true at once.** Saying so removes the fight entirely: *"Flutter is fine as a build decision. It is not a sales answer, because no client has ever chosen us for our stack."* **Unarguable, and it stops me opposing something that is probably right.**
+
+---
+
+### 🔴 "If I trial it and product leads drop, he will blame the trial" — raised 2026-09-24
+
+**The fear:** I can run the AI trial without his approval, but if product leads fall he will say the AI plan caused it — **even where it did not** — and pressure me to stop. **Exactly what happened with QoreUps and InnBlockchain.**
+
+**This is well founded. He has done it twice. Take it seriously.**
+
+**⚠ But look at WHY those two were vulnerable to it — the defect was mine:**
+**QoreUps and InnBlockchain had no baseline, no ring-fence, and no stated end condition.** *"We would get the result"* with no date and no number (#2) is precisely what let pressure be applied indefinitely. **An open-ended commitment can be attacked forever. A measured experiment cannot.**
+
+**→ The protection is not secrecy. It is measurement, declared in advance.**
+
+| Safeguard | Why it blocks the attack |
+|---|---|
+| **1. Baseline the product-lead numbers in writing, dated, before starting** | He cannot claim a drop I can show was already happening. **Revenue is already down 43% — the trend predates the trial and I should document that now** |
+| **2. Ring-fence it** — separate channels, pages, campaigns; no product-marketing budget or people | **A trial that touches nothing cannot have caused anything**, and I can demonstrate it |
+| **3. Pre-commit kill criteria** — *"if X by day 60, I stop"* | **Removes his ability to demand a stop, because the stop rule already exists and is mine.** This is the single most important one |
+| **4. Fixed end date — 60 or 90 days** | Nothing open-ended for pressure to accumulate against |
+| **5. Weekly written report to him** | Destroys the *"you did this quietly and it hurt us"* attack before it can be made |
+| **6. Minute it as a decision** | Same lesson as #7 — an undocumented initiative is deniable and attackable |
+
+**The one-line version:** *"Here is the baseline, here is what I am testing, here is what it does not touch, here is when I stop, and here is the number that decides it."* **Say that at the start and the attack has nowhere to land.**
+
+---
+
+### 🔴 The question underneath this entry — and it may dissolve the whole thing
+
+> **Why am I fighting for a pivot in a company I intend to exit?**
+
+If the separation completes, **the AI pivot becomes Bowshul's problem and Trioangle's benefit — not mine.** Energy spent winning this argument is energy spent improving an asset I am handing over.
+
+**And the sharper version:** if AI engineering is my future, **should it be built inside InnBlockchain, the entity I am keeping?** AI-engineering services could sit in either.
+- **⚠ Handle with care.** Redirecting a strategic direction from Trioangle to InnBlockchain while I am a Trioangle director is the **corporate-opportunity exposure** already flagged in [[separation-plan]]. **Take it to counsel — do not act on it unilaterally.**
+- **But it is the right strategic question**, and it may mean this entire argument is one I do not need to win.
+
+**⚠ Or it means I have not actually committed to leaving.** Fighting hard for Trioangle's direction while planning to exit it is a contradiction. **Which is it?** Worth answering honestly before spending more on #15.
+
+---
+
+**Ask:**
+1. **Concede Flutter as a build decision. Deny it as a sales answer.** Stops a fight I do not need and costs me nothing.
+2. **🔴 If I run the AI trial, blame-proof it first** — baseline, ring-fence, kill criteria, end date, weekly reporting, minuted. **Never run it open-ended; that is how QoreUps and InnBlockchain became attackable.**
+3. **Separate positioning (mine) from build stack (his).** Most of the conflict disappears.
+4. **Drop the motive claim.** The demand-side numbers are stronger.
+5. **Do not cite #15 as partnership dysfunction.** A strategic deadlock between equal owners is the system working.
+6. **🔴 Answer first: am I fighting for Trioangle's future, or leaving it?** If leaving, this argument may not be worth having at all.
+
+---
+
+## 16. Flutter — stopped it when I initiated it, restarted it when he did
+
+**Date:** initiated ~2021, stopped shortly after, restarted ~2026  ·  **Logged:** 2026-09-24
+**Type:** Official
+**Entity:** Trioangle
+**Status:** Open — **and it completes the central pattern of this file.**
+
+**What happened:**
+**Five years ago I initiated Flutter development** to cut the cost of the mobile team and improve margin. **I hired Flutter developers into a separate, dedicated team** — **the existing team was not used, so there was no impact on existing work or delivery.** New products were **partially built**, and **Bowshul took charge of that work.**
+
+**It was not delivered. It was abandoned.** My reading: he was not interested, **because I had initiated it.**
+
+**Now he has started Flutter again himself** — AI assistance makes it easier, so **he trusts it now.** And in #15 the Flutter rebuild is his central argument for Trioangle's recovery.
+
+---
+
+**🔴 CLARIFIED 2026-09-24 — and it removes the best innocent explanation:**
+
+| I had assumed | Actually |
+|---|---|
+| The existing team absorbed it, so **client delivery pressure** squeezed it out | **A separate team was hired for it.** No delivery conflict existed — **that explanation is dead** |
+| The **idea** was rejected | **The idea was accepted. He took charge of it. It was not implemented properly and was abandoned** |
+
+**This is materially worse than what I first logged.** Capital was committed, people were hired specifically for it, the work was partially built, **and the person who owned it let it die.**
+
+**⚠ The remaining legitimate point is narrow:** Flutter in 2021 was less mature, and AI assistance genuinely changes the economics of a rewrite now. **So restarting it today is a reasonable call.** But that defends the *restart*. **It does not explain the abandonment of a separately-resourced initiative he had accepted responsibility for.**
+
+---
+
+**🔴 AND THIS IS THE BRIDGE I SAID WAS MISSING.**
+I had split the patterns: **personal life** = accepts then does not deliver (#4, #12, #13, witnessed by Gopi and Kumar); **work** = does not accept at all (#7, #8, #10).
+
+**#16 is the work instance of the personal pattern.** He **accepted** the Flutter initiative, **took charge of it**, and **did not deliver** — with a dedicated team and real money behind it.
+
+**So "accepts and does not deliver" is not confined to personal life. It has happened at company scale, once, with hired staff.** That is the most consequential single fact in this entry.
+
+---
+
+**✅ But the reversal is not the grievance — and I should state the grievance precisely:**
+> **The same idea was rejected when it was mine and adopted when it became his — with no acknowledgement that I initiated it five years ago, hired for it, and had it partially built.**
+
+**That is about authorship, not about Flutter.** And it is the same theme as #5 (attention) and #10 (standing). **If he had said "you were right five years ago, and now the tooling makes it work" there would be no entry here at all.**
+
+---
+
+**🔴 SECOND INSTANCE OF THE SAME SHAPE — with #7:**
+
+| | Origin | What happened |
+|---|---|---|
+| **#7 BMAD** | **He** initiated it | Resisted it **once it became my mandate** |
+| **#16 Flutter** | **I** initiated it | **Stopped it** — then restarted it once it was **his** |
+
+**Different directions, same axis: engagement tracks authorship, not merit.** Two instances is a pattern, and I have already accepted that patterns are evidence of intent where single incidents are not.
+
+---
+
+## 🔴🔴 THE UNIFYING FINDING — this is what the whole file has been circling
+
+> ### He invests in what he originates or controls, and disengages from what he does not.
+
+**It explains nearly every official entry, with no bad faith required:**
+
+| Entry | Fits how |
+|---|---|
+| #2, #3 | Wanted **QoreUps and InnBlockchain** closed — the two he does not run. **Never Trioangle**, which he does |
+| #7 | Brought BMAD in himself; refused it once it was **my** instruction |
+| #8 | Ignored **my** model policy |
+| #10 | Declined the **assigned** one-person support team; keeps **his** product function |
+| #15 | Backs the strategy built on **the work he personally does** |
+| #16 | Killed **my** Flutter initiative; champions **his own** |
+| #9 | Disparaged the blockchain product — **the line he has no part in** |
+
+**This is a better explanation than "he disrespects me", because it predicts behaviour rather than just interpreting it.**
+
+**🔴 And it is the separation argument in one sentence, requiring no misconduct at all:**
+> **I originate constantly — three companies, the AI pivot, the model policy, Flutter, BMAD. He engages only with what he originates or controls. In a 50/50 with no tiebreaker, those two people cannot run a company together.**
+
+**That is structural incompatibility, not wrongdoing.** Nobody has to be blamed, nothing has to be proved about anyone's character, and **he can accept it without conceding fault** — which is exactly what a separation conversation needs. **Pair it with the "no mechanism to decide anything" line in [[separation-plan]]. Together they are the whole case.**
+
+**Worth establishing — this is the one entry with a cost that runs in my favour:**
+1. **What did the separate Flutter team cost?** Salaries × months, plus hiring. **A countable figure.**
+2. **What happened to those developers** — did they leave, or get absorbed elsewhere?
+3. **Was there ever a decision to stop, or did it just fade?** If it faded with no decision, that is the same "nothing is ever decided" defect as everywhere else — **only here it is him letting something die, not me conceding.**
+
+**⚠ Handle that number carefully.** The file's other large figure — **₹1.46Cr into QoreUps** — runs against me. **Knowing the Flutter cost gives me an accurate picture for my own judgement. It is not a counter-charge to fire back**, and using it that way would be exactly the blame contest I have already decided to avoid.
+
+**Ask:**
+1. **Do not raise the Flutter history.** *"I suggested this five years ago"* reads as score-keeping and wins nothing — **even now that the facts support me better than I thought.**
+2. **Use the unifying finding instead** — neutral, predictive, unanswerable.
+3. **⚠ Accept the legitimate half:** the tooling changed, and restarting Flutter now is reasonable. **Opposing it would put me on the wrong side of the same "engagement tracks authorship" test I am applying to him.**
+4. **Get the cost figure for my own clarity, not for the table.**
+
+---
+
+## 17. Thursday work-from-home — frequent calls for unwanted things
+
+**Date:** ~2019, seven years back  ·  **Logged:** 2026-09-24
+**Type:** Personal
+**Entity:** Trioangle
+**Status:** Closed by events. **⚠ Weak — rests entirely on inference, and the alternative explanations are stronger.**
+
+**What happened:**
+I planned to **work from home every Thursday** and **informed him.** When I did, **he called frequently about unwanted things.** It felt like being tortured, as though he did not want me taking Thursdays. **I could sense it.**
+
+---
+
+**🔴 The entry rests on "I can sense that", and nothing else.**
+**No objection was ever stated. No quote. No refusal.** The whole reading is an interpretation of **call frequency** — and call frequency has several better explanations:
+
+| Alternative | Strength |
+|---|---|
+| **I am the decision point for everything** — sales, marketing, technical, three entities (#10). **Being unavailable one day a week generates calls by design** | **Strongest. The calls are the predictable output of centralising decisions in myself** |
+| Being out of the office converts desk-side questions into phone calls | Strong — **the volume may simply be the cost of being remote** |
+| ~2019 was pre-COVID; **WFH was unusual in Indian SMEs** and nobody had adapted to it | Reasonable |
+| *"Unwanted things"* is **my** judgement of what mattered; he may have thought otherwise | Reasonable |
+
+**Nothing recorded distinguishes "he was undermining my Thursday" from "I was needed and I was not there."**
+
+**⚠ And note the pattern in my own readings:** #5 (attention), #9 (vengeance), #11 (carrom), #14 (the gym), and now #17 — **five entries where I infer hostile intent from ambiguous behaviour with nothing stated.** #13 already showed the behaviour generalises to Kumar, so the "aimed at me" frame is weak on its own terms. **This entry adds nothing to the case.**
+
+---
+
+**✅ What IS real here, and it points at me:**
+
+> **I set up the arrangement, informed him, and then never defended it.**
+
+I did not say *"Thursdays I am reachable only for X, Y and Z."* **I absorbed the calls and resented them.** Same shape as #4 (asked three times, then worked around it) and #1 (objected, then conceded): **I make an arrangement, it is not honoured, I do not enforce it, I carry the resentment.**
+
+**🔴 And it is the earliest instance of the thing still happening today:**
+
+| | What I tried to protect | Outcome |
+|---|---|---|
+| ~2019 (#17) | One day a week at home | Collapsed |
+| ~2021 (#14) | Evening gym | Held — but I felt I had to justify it |
+| Now (#10) | Anything at all | **12-hour days, weekends included** |
+
+**Seven years of failing to protect my own time. That is mine, it predates any of this, and no separation fixes it.** If I carry the same habit into InnBlockchain alone, I will rebuild the same week with nobody else to blame for it.
+
+**Ask:**
+1. **Do not use this.** Inference-only, and the alternatives are stronger.
+2. **Set the boundary explicitly next time** — the arrangement failed for want of one sentence.
+3. **Treat it as evidence about my own working pattern, not about him.** See #10 and the health note.
+
+---
+
+## 18. Hike discussion — technical team first, marketing later
+
+**Date:** recent  ·  **Logged:** 2026-09-24
+**Type:** Official — governance / fairness
+**Entity:** Trioangle
+**Status:** Open
+
+**What happened:**
+In the **salary hike discussion** he wanted to **hike the technical team first and the marketing team later** — **because he works with the technical team.**
+
+**My reading:** partiality. As a director he should weigh all departments equally, and instead he directs benefits to the team he works with.
+
+---
+
+**✅ It fits the unifying finding exactly (#16):** he invests in what he controls. **Another confirming instance — though confirming an already-established pattern, not new evidence.**
+
+---
+
+**⚠ But three counters, and the first two are strong:**
+
+**1. Sequencing hikes by retention risk is correct practice, not favouritism.**
+Technical staff with current AI skills have **far higher market mobility** than marketing staff in a Madurai SME. **If technical attrition risk is higher, hiking technical first is right** — and it would still be right if I were the one proposing it.
+
+**2. A department head advocating for their own team is normal and expected.**
+That is what department heads do. **It would only be a problem if he had final say — and he does not.** I am CEO and hold 50%. **Him advocating is not him deciding.**
+
+**3. ⚠ And I am doing the same thing.**
+**I own marketing (#10).** So the hike argument is **two owners each advocating for the team they personally run.** He simply said it plainly. **The symmetry is uncomfortable and I should not pretend it is not there.**
+
+---
+
+**🔴 THE THING NEITHER OF US IS ADDRESSING — and it is much bigger than the sequencing:**
+
+> **Trioangle carries roughly ₹48L of unpaid employee salaries and PF/ESI arrears** ([[group-financials]] §2), **and ₹88L sits in coin.**
+
+**We are debating who gets a hike first while people have not been paid what they are already owed.** **The question is not technical-before-marketing. It is whether anyone should be hiked before the arrears are cleared.**
+
+**That is the point to raise, and it is unanswerable by either of us.** It also reframes the disagreement entirely: **not a fairness dispute between two departments, but a company that is discussing increases while in arrears on statutory dues that carry personal liability for both directors** ([[separation-plan]]).
+
+---
+
+**🔴 AND THE PATTERN IN MY OWN APPROACH — fourth clear instance:**
+
+| Entry | What I argued | What I should have set |
+|---|---|---|
+| #7 BMAD | *"Follow the process"* | **The deliverables other roles need** |
+| #8 Model policy | *"Follow the instruction"* | **A per-person quota allocation** |
+| #15 AI pivot | *"My plan is better"* | **A measured 60–90 day test** |
+| #18 Hikes | *"You are being partial"* | **Written hike criteria applied to every department** |
+
+> **I argue the person where I should set the rule.** And in a 50/50 with no tiebreaker, **a personal contest is unwinnable by design, while a rule agreed in advance decides itself.**
+
+**Set the criteria** — performance, market rate, retention risk, tenure — **and "technical first" either survives them or does not.** No partiality to allege, no motive to prove, nothing for him to defend.
+
+**Ask:**
+1. **🔴 Raise the arrears first.** No hike discussion is coherent while ₹48L of salary and statutory dues is outstanding and ₹88L sits in coin.
+2. **Propose written hike criteria** applied uniformly. Let the rule decide the sequence.
+3. **Do not allege partiality.** I am advocating for my own department too; the charge rebounds.
+4. **Log it as confirming #16**, not as a standalone grievance.
+
+---
+
+## 19. Blamed the marketing team for his own sales results — publicly, and without data
+
+**Date:** recent / recurring  ·  **Logged:** 2026-09-24
+**Type:** Official — accountability and channel
+**Entity:** Trioangle
+**Status:** Open. **Stronger than #18 and one of the better-grounded official entries.**
+
+**What happened:**
+**He worked in the sales team. Sales results declined.** Rather than addressing sales, **he blamed the marketing team** — and **without checking the data.** The marketing team **had been generating enough leads in the previous period.**
+
+**He did not say this only to me or to the team. He said it to others, including departments with no connection to either function**, justifying it as: *"because of the marketing team only, I am not getting results."*
+
+I told him: **they are generating leads — do not talk like that without data.**
+
+**He does this routinely, not once.**
+
+---
+
+**✅ WHAT IS SOLID HERE — three things, and they stand independently:**
+
+**1. Blame moved from his own function to mine.** Sales was his; sales declined; **marketing was blamed.** Deflecting accountability for one's own area onto another department is a management failure on its own terms.
+
+**2. 🔴 The channel — and this is the part that is unanswerable.**
+**He took it to unrelated departments.** Even if every word were correct, **litigating a cross-functional dispute in front of people outside both functions** damages a team that cannot answer, cannot fix anything, and was not in the room. **Raise this and nothing else** — it does not require me to win the underlying argument.
+
+**3. Second instance of the same shape as #9.** There he told the blockchain sales team their product does not sell. Here he tells unrelated departments that marketing is the problem. **He litigates internal disputes in public. Two instances = a pattern.**
+
+---
+
+**⚠ WHERE MY REBUTTAL IS WEAK — lead volume is not lead quality.**
+*"They are generating leads"* answers **volume**. His complaint may be about **quality or fit** — and both can be true at once: **volume up, qualification down.** This is the oldest dispute in any company with a sales and a marketing function, and it is usually not resolvable by either side's preferred metric.
+
+**So: do I have conversion data by source, or only volume?** If only volume, **I accused him of arguing without data while arguing from partial data myself.** What settles it:
+- Leads by source → qualified → opportunity → closed
+- Compared **period on period**
+- **Nobody appears to have produced this.**
+
+---
+
+**🔴 AND A CONTRADICTION I NEED TO RESOLVE BEFORE USING EITHER ARGUMENT:**
+
+| Where | What I said |
+|---|---|
+| **#15** (AI pivot) | *"Leads are **not** generating like before, and conversion is not happening"* — used to prove the clone-product model is failing |
+| **#19** (here) | *"Marketing **was** generating enough leads"* — used to defend the marketing team |
+
+**Both positions serve the argument I was making at the time, and they cannot both describe the same period.**
+
+**Possible reconciliation:** the periods differ — marketing delivered in an earlier period, and lead flow has declined more recently. **If so, say so precisely, with dates.** If not, **I have been arguing two ways about the same facts, and he would be entitled to point it out.**
+
+**→ Fix this before raising #19 or #15 with anyone.** A single, dated, consistent account of lead volume and conversion. **It is the same missing evidence in both entries.**
+
+**Ask:**
+1. **🔴 Produce one dated lead-and-conversion record by source.** It settles #19, underpins #15, and removes my own inconsistency. **The single most useful hour of work available right now.**
+2. **Raise the channel only** — *"concerns about another department come to me, not to departments outside both."* Unanswerable, no data required, no motive alleged.
+3. **Do not argue lead volume until I have the conversion numbers.** Right now we are both asserting.
+4. **Third instance of "argue the rule, not the person":** the fix is a **standing source-of-truth dashboard** both functions read, not a dispute about who is at fault.
 
 ---
 
@@ -536,22 +1429,75 @@ Entries #1 and #4–#6 are about **standing**, and historical. **#7 and #8 are c
 | Minimising work he can see | #1, #2 | Not ignorance — same floor, knows the responsibilities |
 | Stated disagreement left undecided, then pursued by attrition | #2 | He said "close QoreUps", I refused, nothing decided it — so it ran through staffing |
 | **Wants my entities closed, repeatedly** | #2, #3 | QoreUps from founding, InnBlockchain twice — **both approved by him at formation.** Never Trioangle |
+| **🔴🔴 He invests in what he originates or controls, disengages from what he does not** | **#2, #3, #7, #8, #9, #10, #15, #16** | **The unifying finding — see #16.** Predicts eight entries, requires no bad faith, and is the separation argument in one sentence |
 | **🔴 Closure criterion is involvement, not financials** | #2, #3 | Trioangle is the most distressed of the three (₹97L payables, ≈₹48L arrears, −₹1.5Cr) and has never been in question. **The strongest business argument in the file, and the real basis for separating** |
 | **🔴 My CEO title does not carry authority over him** | #7, #8 | Company-wide decisions; he alone declines; no mechanism to compel a co-equal 50% Director. **The deadlock in daily operations — live now, and it repeats on every call** |
 | **🔴 His preference, other people's cost** | **#7, #8** | BMAD: no artifact chain → testers and PM cannot coordinate, **integration lands on me.** Model policy: shared quota exhausted → **team sent home.** Both are externalities, not preferences. **The two arguments where I am clearly right** |
-| **I mandate method where I should specify deliverables** | #7 | Arguing BMAD invites "your preference vs mine." **Requiring the artifacts other roles consume does not** |
+| **🔴 I argue the person where I should set the rule** | **#7, #8, #15, #18** | *"Follow the process"* vs deliverables · *"follow the instruction"* vs a quota allocation · *"my plan is better"* vs a measured test · *"you are being partial"* vs written hike criteria. **In a 50/50 a personal contest is unwinnable by design; a rule agreed in advance decides itself** |
 | **Questions my output when money is tight** | #1, #3 | May 2025 and July 2026 — same wound both times |
+| **🔴🔴 He disputes my account of myself — and I treat the questioning as the injury** | **#1, #3, #11, #14** | *"We also have burden"* (#11) · *"you gave me sales because of the gym"* (#14) · *"everyone is also working like you"* (#1) · *"what are you doing?"* (#3). **Four times across five years. Three are answerable with facts. None was ever answered.** A far more symmetrical conflict than "he minimises my work" |
+| **⚠ I infer his motives freely and resent him inferring mine** | #2, #5, #9, #15 vs #14 | The wife link, the attention theory, "vengeance", "he backs Flutter because he builds it" — all mine, all unstated by him. **Then his one inference about my motive is logged as an attack** |
+| **⚠ I reach for motive when the numbers were already enough** | #9, #15 | "Isn't selling" was defensible on revenue; the Flutter argument loses on demand-side numbers alone. **In both cases the motive claim weakened a case I was winning** |
+| **Strategic disagreement — NOT dysfunction** | #15 | Company direction properly needs both owners. **A 50/50 deadlock on strategy is the system working, not failing.** A legitimate reason to separate; not a grievance |
 | **Left outside the circle** | #5, #6 | Product team treat, and his pre-marriage function — mutual friends invited, I was not |
+| **⚠ I opted out of the informal layer first** | #11 → #5, #6 | Declined the weekly team game for years, then was hurt at being outside the social circle. **Not a justification for #6. But some of the distance was reciprocal** |
 | **🔴 Omission, then a late patch once it becomes visible** | #4, #5, #6 | "Do you want it now?" / "I forgot to call you" / "Are you coming?" — three times. For #4 and #5 this reads as **absence, not malice** — a hostile person does not patch |
 | **🔴 Ranked into the outer tier** | #6 | Invited to the marriage, **not** to the pre-marriage function, while the shared friend group and their wives were. **Two guest lists existed and I was on the wrong one — that is a decision, not forgetfulness** |
 | QoreUps resources pulled toward Trioangle | #1, #2 | Gopi — 50% moved, permanent |
-| **Agrees, then does not act** | #1, #4 | Never a refusal — "okay" then no movement (#4); dismissal then a half-concession (#1). Nothing to appeal against because nothing was ever refused |
-| **🔴 My pattern: instruct → not refused → withdraw it myself** | #1, #4, #7 | Gopi 2025, the room 2021, BMAD 2026. **Three times I conceded before any mechanism was invoked.** The structure is a real deadlock, but **I have never tested it — so there is no record of a decision being blocked** |
+| **🔴🔴 Accepts, then does not deliver — THE core finding** | **#4, #12, #13, #16** | The room; the wives' food (**Gopi affected**); Kumar's toys (**Kumar affected, I am not involved**); **and the Flutter initiative — accepted, owned, separately resourced, abandoned (#16).** Four times, two independent witnesses, **and one at company scale with hired staff.** The harm is the false agreement, not a refusal |
+| **⚠ Motive readings now weaker across the board** | #2, #4, #5, #6, #9, #11 | **#13 shows the same behaviour toward Kumar.** "Vengeance", "wanted to diminish me", "wanted the attention" — all become harder to sustain once the pattern generalises to people he has no history with |
+| **🔴 My pattern: instruct → not refused → withdraw it myself** | #1, #4, #7, #17 | Gopi 2025, the room 2021, BMAD 2026, the Thursday WFH 2019. **Four times I conceded before any mechanism was invoked.** The structure is a real deadlock, but **I have never tested it — so there is no record of a decision being blocked** |
+| **🔴 I do not protect my own time** | #17 (2019), #14 (2021), #10 (now) | WFH day collapsed · gym defended apologetically · **12-hour days and weekends today.** Seven years, worsening. **Mine, predates the conflict, and no separation fixes it** |
+| **⚠ I infer hostility from ambiguity** | #5, #9, #11, #14, #17 | Five entries with no stated evidence — attention, vengeance, carrom, the gym remark, the calls. **#13 showed the behaviour generalises to Kumar, so "aimed at me" is weak on its own terms** |
 | **I defend on the wrong axis** | #1, #2 | "More burden" answered a resourcing ask; "not day-to-day" answered a founding complaint. Both handed him an easy dismissal |
 | **I refuse without counter-proposing** | #2 | "We will get the result" — no date, no number, no consequence |
-| Motive attributed but never stated | #2, #4 | The wife link (#2) and the "why are you doing a PPT" attitude (#4) are both entirely my inference |
+| Motive attributed but never stated | #2, #4, #9 | The wife link (#2), the "why are you doing a PPT" attitude (#4), and "vengeance" (#9) are all my inference. **In each case the simpler explanation fits the same facts** |
+| **I argue tone where I should argue channel or process** | #9, #10 | "Isn't selling" is defensible on the numbers (#9); the ordering-tone complaint is one he is *right* about (#10). **Argue behaviour and channel, never tone** |
+| **🔴 He litigates internal disputes in public** | **#9, #19** | Told the blockchain sales team their product does not sell; told unrelated departments that marketing is the problem. **Two instances. The channel objection stands whether or not he is right on the substance — raise only this** |
+| **⚠ I argue without the data I demand from him** | #7, #18, #19 | No BMAD trial numbers; no hike criteria; **no conversion-by-source data while telling him not to talk without data.** And #15 vs #19 take opposite positions on lead volume |
+| **🔴 Power without responsibility** | #8, #10 | Declined a **one-person** support team; consumed a shared quota knowing the effect. **Supported by behaviour, not just by feeling — unlike the tone complaints** |
+| **🔴 I assert a hierarchy that does not exist** | #7, #8, #10 | CEO over a 50% co-owner is a courtesy, not authority. **His "don't talk to me like staff" was accurate — and may be upstream of the non-compliance** |
+| **Workload asymmetry** | #10 | Real **inside Trioangle** (sales+marketing vs product). **Not arguable across all three entities — I took two on over his objection** |
 | **10 years of adjusting, never raised** | all | Nothing was said at the time. This file is the first written record |
 | **Small items carried for years** | #1, #4 | A room in 2021, a remark in 2025 — both still sharp. The duration is the finding, not the incidents |
+
+### 🔴 Does his intention matter? — asked 2026-09-24
+
+**Yes — and I have been under-weighting it.** Throughout this file I have stress-tested each motive claim and said *"the simpler explanation fits."* That is the right discipline for **any single incident** and the wrong frame for **the decision I am actually making.**
+
+**Where intention is decisive:**
+
+| Purpose | Does intent matter? |
+|---|---|
+| **Whether to separate at all** | **🔴 It is the entire question.** If he intends to diminish me, the relationship is not repairable and leaving is correct. If he is careless or absent, it might be fixable. **I am not building a legal case. I am deciding whether to end a fifteen-year relationship** — and for that, intent is the whole of it |
+| **How I carry this afterwards** | **Yes.** Being disliked and being forgotten are different injuries and they heal differently |
+| **In conversation with Bowshul** | **No.** Motive claims get denied, and then I am arguing about another man's inner life with no evidence |
+| **In any formal process** — mediation, petition, litigation | **No.** Conduct and documents decide those; imputed motive does not |
+| **Choosing which facts to rely on** | **No.** #8 works whatever he intended |
+
+**🔴 And the methodological point I got wrong:**
+> **A pattern is evidence of intent, even where no single incident is.**
+
+One forgotten invitation is noise. **A tiered guest list, a treat, a room, two entity-closure pushes, a refused one-person responsibility, and a shared quota burned after the team was sent home — across ten years — is not noise.** Intent is almost always established by **accumulation**, not by any one item. **That is exactly what this file is for, and it is why keeping it was right.**
+
+**So: what does the accumulation actually support?**
+
+| Reads as indifference | Reads as disregard |
+|---|---|
+| Patched afterwards every time (#4, #5, #6) | **Tiered guest list** — two lists existed (#6) |
+| **Approved both companies at formation** (#2, #3) | **Refused a one-person support team** while holding 50% (#10) |
+| Invited me to the weekly game (#11) | **Kept burning the shared quota after the team was sent home** (#8) |
+| Invited me to the main wedding (#6) | Told the blockchain sales team it does not sell (#9) |
+
+**The distinction that emerges is chronological, and it matters:**
+- **The early pattern reads as indifference** — thoughtless, patched, never hostile.
+- **The recent pattern reads as disregard** — #8, #9, #10 are all current, and all involve **cost imposed on others**, not tone.
+
+**→ Something changed, and probably in both directions.** Ten years of unspoken resentment on my side very likely has a counterpart on his. **The honest conclusion: I do not need to prove malice, and the accumulation is a sufficient basis for concluding the relationship is finished. That conclusion is mine to draw and I should stop second-guessing it.**
+
+**What does not change: it cannot be spoken in the room.** Intention decides *whether I leave*. It has no place in *how I negotiate the leaving*.
+
+---
 
 ### 🔴 Why this is a friendship file, not a partnership file
 

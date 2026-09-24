@@ -4031,6 +4031,19 @@ That list (line 244) reads: *"Avoid in excess (high purine): Mutton, prawns, org
 
 ⚠️ **Fourth consecutive fruit-heavy breakfast (Sep 21–24)** — fiber already ~18.4g before lunch, over half the 25–30g daily target from breakfast alone. Given Sep 23 closed ~6.7g over target on the same pattern, today's lunch/dinner should stay deliberately light on fiber if the day is to land in-band.
 
+| Lunch | 2 cup rice | 400 | 8g | 1.2g |
+| | Mutton gravy — 1 small cup (no pieces) | 100 | 1.5g | 1.5g |
+| | 2 mutton pieces | 160 | 16g | 0g |
+| | Rasam | 40 | 2g | 1g |
+| | Spinach (small side) | 60 | 3g | 3g |
+| | 1 pappad | 30 | 0.5g | 0.25g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| **Running** | | **~1,910 kcal** | **~71.4g** | **~25.4g** |
+
+**Rates used:** 2 cup rice (400/8g/1.2g, established); 2 mutton pieces (160/16g/0g, established); rasam (40/2g/1g, established); 1 pappad (30/0.5g/0.25g, established); tea after lunch (35/1g/0g, established). ⚠️ **Mutton gravy without pieces — first-time item, no established rate.** Estimated at the chicken-gravy-without-pieces rate (100/1.5g/1.5g, Aug 27 precedent) — onion-tomato-spice masala cooked in oil, meat protein already counted separately via the 2 pieces. ⚠️ **Spinach side — also first-time, no established rate.** Estimated as a small keerai/palak-style side, ~60/3g/3g; could be off ±30 kcal depending on oil/coconut and whether it's a poriyal or a kootu-style preparation with dal.
+
+🔴 **Mutton is high-purine.** [[lab-reports-summary]] has an overdue uric acid retest already covering Sep 12–13, Sep 19, and Sep 20 — this adds a fourth episode to whatever that retest needs to account for. 🔴 **Fiber running ~25.4g already sits at the bottom of the 25–30g target with dinner still to come** — same structural issue as yesterday (fruit-heavy breakfast pushing the day over before lunch's own fiber, spinach + rasam here, is even added). ✅ **Protein ~71.4g, on track for the 100–120g band.**
+
 ✅ **Third consecutive day with a fruit-heavy, varied breakfast** (Sep 21, 22, 23) — fiber already ~17.0g before lunch, well on track without relying on the Buddha bowl/PB/banana lever alone. ✅ **No chicken-65/squid/fried-fish carried over from breakfast; the Sep 21–22 clean streak extends into a third day pending lunch/dinner.**
 
 ⚠️ **Third straight day of the exact same lunch (Buddha bowl + 2 tbsp PB + red banana + buttermilk)** — the log's standing fiber-overshoot lever, now stacked on top of an already fiber-heavy breakfast. **Running fiber ~32.2g pre-dinner is already past the 25–30g target.** Same call as Sep 21: dinner needs to run genuinely light on fiber (idiyappam-shape, not rice/noodles/legumes) to avoid another overshoot day. ✅ **Protein ~96.5g pre-dinner, comfortably on track for the 100–120g band.**

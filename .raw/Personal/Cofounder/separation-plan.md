@@ -45,12 +45,69 @@ After [[bowshul-issues-log]] #6 (the pre-marriage function), the stated position
 1. **The closure criterion is involvement, not financials** ([[bowshul-issues-log]] #2–#3). He has pushed to close QoreUps and InnBlockchain — both of which he approved at formation — and never Trioangle, which is the most distressed of the three (₹97L payables, ≈₹48L arrears, −₹1.5Cr cumulative). **No financial argument will ever settle InnBlockchain with him, because financials were never deciding it.**
 2. ⚠ **~~Company-wide operational decisions cannot be enforced (BMAD, #7)~~ — WITHDRAWN as evidence 2026-09-24.** I gave BMAD up and told Sales not to push it. **An instruction I withdrew myself is not a blocked decision**, and claiming it is will not survive the question *"what was formally decided, and how was it blocked?"* **Do not use #7.**
    **→ To have this argument at all I need one minuted decision that is then not honoured. I do not have one yet.**
-3. **🔴 And it has already cost third parties** ([[bowshul-issues-log]] #8). A shared AI quota exhausted by one person's usage pattern, **team sent home, working days lost** — after which the pattern continued. This is the strongest single fact available: **measurable harm to staff, caused by an unenforceable decision.**
+3. **🔴 And it has already cost third parties** ([[bowshul-issues-log]] #8). A **pooled** AI quota — one shared account — exhausted by one person's usage pattern, **team sent home, working days lost**, and the pattern continued afterwards. The instruction is **still in force and universally followed; he is the sole exception.** Strongest single fact available: **measurable harm to staff from a live, unenforceable decision.**
+   **⚠ Caveat to fix before using it:** the shared-account architecture is the root cause and it is mine. **Move to per-seat licensing first** — then any repeat is unambiguously his, and the argument cannot be deflected onto provisioning.
+
+5. **🔴 At work he does not accept direction at all** ([[bowshul-issues-log]] #7–#10, confirmed 2026-09-24). *Mostly he will not agree; occasionally agrees and does not deliver; on official matters he usually will not listen.* **This is the business case.**
+   *(The "accepts then does not deliver" trait — #4, #12, #13, witnessed by Gopi and Kumar — is the **personal** pattern. Keep them separate.)*
+
+---
+
+## 🔴 THE LINE TO USE — and why it is the only one that works
+
+**⚠ First, the hard part: "he won't listen to me on official things" is not misconduct. It is the structure.**
+**A 50% owner is under no obligation to take direction from the other 50% owner.** He is not being insubordinate — **there is simply no instrument that makes a decision bind him, and there never was.** I have never minuted a decision, so nothing has ever been properly taken and then breached ([[bowshul-issues-log]] #7).
+
+**So the diagnosis I have been carrying — "he ignores my authority" — rests on authority I never had and never documented.** The conclusion (separate) is right. The reason (defiance) is wrong.
+
+**The correct diagnosis — two sentences, and together they are the entire case:**
+> **1. He invests in what he originates or controls, and disengages from what he does not. I originate constantly.**
+> **2. Two equal owners, no mechanism to decide anything.**
+>
+> **Neither requires anyone to be at fault, and he can accept both without conceding anything.**
+
+*(Sentence 1 is derived in [[bowshul-issues-log]] #16 and predicts #2, #3, #7, #8, #9, #10, #15 and #16. Sentence 2 is the cap table.)*
+
+**Why this is the line to use:**
+- **It is true**, and verifiable from the cap table alone.
+- **It attributes no blame**, so there is nothing for him to defend against.
+- **He will probably agree with it** — and a separation needs his agreement. **Any framing he must first admit fault to accept is a framing that fails.**
+- It covers every operational entry in the log without naming one.
+- **It leads naturally to both exits:** fix the governance (shareholders' agreement, deadlock clause) **or** separate. Either is progress.
+
+**⚠ One diagnostic worth knowing before choosing the route:** he *does* occasionally agree — *"very rare cases only."* **What is different about those?** If he responds when consulted early and resists when instructed late, **the governance route could actually work** and separation may not be the only option. If nothing distinguishes them, separation is the answer. **Worth five minutes of honest recall.**
 
 > **The line to use: "we cannot make a decision stick, and it has already cost the team working days."**
 > Factual, current, verifiable, no history, no blame — and it survives being repeated back to me. **Carried by #8 alone, since #7 is withdrawn.**
 
+4. **Responsibility asymmetry inside Trioangle** ([[bowshul-issues-log]] #10). In the company we both built and both own equally, **I carry sales and marketing; he carries product** — and he declined a **one-person** support team on top of that. **Scope it to Trioangle only.** The three-entity version fails, because I took InnBlockchain and QoreUps on over his objection and cannot cite that load against him.
+
+**🔴 And the strongest personal reason, which is not an argument against him at all:**
+**12-hour days including weekends, at 34, with migraine, anxiety, spinal inflammation and BMI 17–18, against a stated goal of being active and independent at 80.** Separation means one company instead of three and no partner to manage. **That is a better reason to do this than any grievance in the log — but it belongs in my own reasoning, not in the conversation with him.**
+**⚠ And it only works if I also delegate.** If I absorb everything by habit, I will rebuild the same load inside InnBlockchain alone with nobody to share it. **That change does not wait for the deal.**
+
 **⚠ Where this leaves the case.** #1 and #4–#6 are about **standing**, and a share swap cannot deliver standing. **#8 is operational, current, and has documented third-party harm — it is the load-bearing entry.** The involvement-not-financials asymmetry (#2–#3) is the other half. **Two arguments, not three.**
+
+---
+
+## 🔴 A softer route to the same place: negotiate governance, not separation
+
+**There is almost certainly no shareholders' agreement.** That is why the CEO title carries no authority over a 50% co-owner and why #7 and #8 were unenforceable ([[bowshul-issues-log]] #10, "what does being CEO mean").
+
+**Proposing a shareholders' agreement is far less confrontational than proposing a separation — and it can arrive at the same destination:**
+
+| Clause | What it does for me |
+|---|---|
+| **Defined CEO remit** + reserved matters | Ends the "instruction vs preference" argument permanently |
+| **Deadlock mechanism** — casting vote, referral, expert determination | Fixes the root cause of every entry in the log |
+| **Shotgun / buy-sell clause** | **This is a separation mechanism.** It prices and executes an exit without either party having to ask for one |
+| Executive role terms | What a department head owes the company regardless of shareholding |
+
+**Two reasons to consider this route first:**
+1. **If he refuses a governance framework**, that is a recorded, business-grounded reason to separate — far stronger than any grievance, and it puts the refusal on his side of the table.
+2. **If he accepts**, either the company becomes workable, or the buy-sell clause gives me a priced exit without a confrontation. **Both outcomes are better than the current plan.**
+
+**⚠ Do not raise it before counsel on the records position** — a shareholders' agreement involves disclosure and warranties, and that is exactly where the parallel-records exposure surfaces ([[group-financials]] §1c).
 
 ---
 
