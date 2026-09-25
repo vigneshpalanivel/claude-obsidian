@@ -2,7 +2,9 @@
 
 **Objective:** exit Trioangle including my shareholding, take InnBlockchain outright, and stop being in partnership with Bowshul.
 **This document plans an exit, not a repair.** No governance fixes, no shareholders' agreements, no "how to work together better." Every fallback here is also an exit.
-**Companion files:** [[bowshul-issues-log]] — what happened. [[group-financials]] (`.raw/Common/Finance/group-financials.md`) — **read first for anything involving money; where files disagree, the financials win.**
+**Companion files:** [[bowshul-issues-log]] — what happened. [[group-financials]] (`.raw/Common/Finance/group-financials.md`) — **read first for anything involving money; where files disagree, the financials win.** [[separation-numbers-for-bowshul]] — **the one-page sheet Bowshul actually receives.** Where this plan and that sheet differ, **the sheet is what he has been told** — reconcile before the meeting, never in it.
+
+> **⚠ Revised 2026-09-25.** Several premises in this plan changed while drafting the sheet: **TDS is paid** (so the coin-for-arrears trade is smaller and s.276B is closed), **the arrears-clearance condition is not in the sheet**, **the ₹31L is deployed as a written offset against the ₹46.7L**, **the ₹46.7L is disclosed with the figure**, **the seat charge is nil for year one**, and **an MG car is carved out of the swap.** Changed passages are marked **⚠ 2026-09-25** inline.
 **Handling: RAW ONLY.** Equity, family employment, liability and records exposure. Never mirror to `wiki/`, never on anything shared or synced.
 
 > ## 🔴 ON HOLD
@@ -112,10 +114,12 @@
 **4. What I'm asking**
 > *"InnBlockchain, clean. That's it."*
 
-**5. The money — three sentences**
-> - *"The balances between the companies net off and both are extinguished — nothing follows either of us afterwards."*
-> - *"Take the coin and use it to clear the salary, PF, ESI and TDS before we complete. That protects both of us."*
-> - *"Any personal guarantee either of us has signed gets released in writing by the bank before completion."*
+**⚠ 2026-09-25 — one carve-out now exists: the MG.** *"And the MG comes with me."* One priced item does not break *"that's it"*; a second would turn the ask into a list, and a list invites him to counter-list. **Do not add anything else.** ([[separation-numbers-for-bowshul]] §4; [[group-financials]] §2b — it needs a recorded consideration, and the ₹31L it was going to be set against is now spent on the ₹46.7L offset.)
+
+**5. The money — three sentences** · **⚠ 2026-09-25 — all three have moved; use the sheet's version**
+> - *"I'm out ₹31L of unpaid salary; you're out your half of what Trioangle put into InnBlockchain. They cancel, I'm not asking for the difference, and nothing follows either of us afterwards."* — **the balances are now set out with figures in [[separation-numbers-for-bowshul]] §5, not left unnamed.** See [[group-financials]] §5L before saying any of it.
+> - *"Take the coin — I'm not asking for any part of my half of it."* **TDS is paid, so the arrears are employee salary plus PF/ESI only.** ⚠ **The sheet does not ask him to clear them before completion.** If that protection still matters, say it here, in the room — it is nowhere on paper.
+> - *"Any personal guarantee either of us has signed gets released in writing by the bank before completion."* — unchanged, and still the item a third party controls.
 
 **6. QoreUps**
 > *"We still both own QoreUps. Let's decide it at the same time — wind it up, or it goes with Trioangle. I don't want us still tied together in a third company afterwards."*
@@ -184,7 +188,9 @@
 ### F. 🔴 *"Trioangle has debt. Pay it off first, then you can be released."*
 
 **Lead with the coin — it settles the whole objection:**
-> *"There's ₹88L sitting in the coin. I'm not asking for any of my half of it — you keep all of it. Use it to clear the salary, PF, ESI and TDS, and the debt question is answered without either of us putting in a rupee."*
+> *"There's ₹88L sitting in the coin. I'm not asking for any of my half of it — you keep all of it. Use it to clear the salary, PF and ESI, and the debt question is answered without either of us putting in a rupee."*
+
+**⚠ 2026-09-25 — TDS is paid, so drop it from this sentence.** The arrears are employee wages plus PF/ESI. **And note what the sheet actually says:** [[separation-numbers-for-bowshul]] §2 presents ₹88L covering ₹66L as *reassurance that he is not taking on a hole* — it **does not ask him to clear anything before completion.** This spoken version is now the only place that condition exists.
 
 - Resolves his objection **using an asset that already exists** — he is not asked to find money
 - **₹88L against ≈₹48L of arrears leaves him ₹40L.** He is better off after it than before
@@ -204,12 +210,19 @@
 
 **The ladder, if he pushes. Use in order; stop at the first he accepts.**
 
+> ### ⚠ 2026-09-25 — THE LADDER IS NOW TWO RUNGS, AND THEY RUN IN THE OPPOSITE ORDER
+> [[separation-numbers-for-bowshul]] §5 **states the ₹46.7L and offsets it against the ₹31L, in writing, up front.** That changes this objection from something to deflect into something already conceded and answered.
+> - **Rung 2 is gone.** *"There isn't a receivable"* cannot be said after handing him a sheet that names it. Do not reach for it — contradicting your own document is worse than the objection.
+> - **Rung 3 is now the opening move, not the reserve.** The ₹31L offset is on the page before he asks.
+> - **What is left:** the offset (already given), then rung 1, the trade. **Nothing behind that.** If he rejects both, the answer is *"that's a question for the advisors"* — not a fourth argument.
+> - 🔴 **Before relying on the offset, get the ₹31L's documentary basis** ([[group-financials]] Q10). He can accept the admission and contest the offset — the admission is firm, the offset is arguable.
+
 **Rung 1** — the trade, above.
 
-**Rung 2** — *"There isn't a receivable to settle. It was never structured as one."* ([[group-financials]] §1: never documented as a loan, undocumented balances unenforceable, no valuer will credit it.)
-**Accept the cut both ways, openly:** the ≈₹60L "repaid" has no documented basis either, **so I cannot claim credit for having serviced it. Extinguishing both sides is the only position that does not require the records to be examined — which is why it suits him too, and I can say so.**
+**Rung 2** — ~~*"There isn't a receivable to settle. It was never structured as one."*~~ **⚠ Withdrawn 2026-09-25 — unusable once the figure is disclosed.** ([[group-financials]] §1: never documented as a loan, undocumented balances unenforceable, no valuer will credit it — still true of the *asset* side, but no longer available as a spoken position.)
+**Accept the cut both ways, openly:** the ≈₹60L "repaid" has no documented basis either, **so I cannot claim credit for having serviced it.** 🔴 **And this is now the live risk, not a debating point:** if he reconstructs the balance from Trioangle's records, the defensible figure is **₹1.06Cr with no evidence of repayment**, not ₹46.7L. **Establish what the ≈₹60L can be evidenced by before the sheet goes out** ([[group-financials]] Q11).
 
-**Rung 3** — only if he insists on arithmetic:
+**Rung 3** — **⚠ now stated in the sheet, not held back:**
 > *"Against that balance: ₹31L of my director's salary is still unpaid, and I never drew a rupee as CEO from InnBlockchain or from QoreUps in four years. I'm not asking you for any of it. I'm saying we're square."*
 
 | Offset | Standing |
@@ -221,6 +234,18 @@
 **⚠ The CEO salary is a talking point only. If the accrual was never booked, never create it retrospectively** — record integrity is already the central problem here, and a backdated claim is exactly what counsel would stop.
 
 **🔴 Three rungs reach zero. There is no version where I pay cash — provided I open at rung 1 and do not argue my way down unprompted.**
+
+**⚠ 2026-09-25:** two rungs now, and one of them is pre-spent. The conclusion still holds — **₹23.35L against ₹31L reaches zero on its own** — but the margin is gone. **The thing that protects this position is no longer the ladder; it is the ₹31L being documented.**
+
+> ### 🔴 THE PHRASING RULE ON THE ₹46.7L — never *"I owe you"*
+> [[separation-numbers-for-bowshul]] §5 sets the figures out as **what each of us is out of pocket**, never as a debt from me to him. Keep it there in speech too.
+>
+> | ❌ | ✅ |
+> |---|---|
+> | *"I owe you ₹23.35L"* | *"You're out your half of what Trioangle put in"* |
+> | *"I'll pay you back half"* | *"They cancel against my ₹31L"* |
+>
+> **Why it matters more than it sounds:** an undocumented inter-company balance is **unenforceable**; a written or spoken personal acknowledgement of debt **is not.** One sentence converts a position that cannot be sued on into one that can. **Same number, same fairness, completely different legal object.**
 
 ### H. 🔴 *"Trioangle put ₹1.46Cr into QoreUps for you. You repay that too."*
 
@@ -299,8 +324,8 @@
 | *"You built Trioangle from the start"* | Factually wrong — we built it together — **and it concedes authorship, undercutting my 50% and the ₹31L** |
 | *"I've thought about this for a long time"* | Sounds like a planned exit executed beside him. **Invites "so you've been deceiving me?"** Use *"carrying"* |
 | *"Trioangle isn't short of assets"* | True, but it reads as criticism of holding the coin while staff went unpaid. **Offer the coin; never point out it should have been used already** |
-| **The ₹1.46Cr, the funding routing, the records** | **Nothing about money history until counsel says so** |
-| Naming the ₹46.7L or ₹31L as figures | Until counsel confirms how to handle an undocumented balance. *"They net off and both are extinguished"* is the position |
+| **The ₹1.46Cr, the funding routing, the records** | **Still holds. Nothing about money history until counsel says so** — the routing and the parallel records are a different category from the balance itself |
+| ~~Naming the ₹46.7L or ₹31L as figures~~ | **⚠ OVERRIDDEN 2026-09-25 — both are now stated in [[separation-numbers-for-bowshul]] §5, offset against each other.** The reasoning and the three risks are in [[group-financials]] §5L. **What this row still means: counsel must see the sheet's actual wording before it is sent, and nothing beyond those two figures gets named** |
 | Anything about my wife | Not his business and not a negotiating point |
 | **Claiming the coin as a separate concession** | **It sits inside Trioangle's ≈₹21L net assets. Giving up the shares already gives up my half of it. Double-counting makes everything else I claim look inflated** |
 
@@ -332,8 +357,9 @@
 
 | I give up | I receive |
 |---|---|
-| **My 50% of Trioangle ≈ ₹10.5L** (half of ≈₹21L net — **already includes my half of the ₹88L coin and the tangibles**) | **His 50% of InnBlockchain** — plausibly ₹8–28L |
-| **My ₹31L claim**, consumed extinguishing the ₹46.7L | **The ₹46.7L balance extinguished** |
+| **My 50% of Trioangle ≈ ₹10.5L** (half of ≈₹21L net — **already includes my half of the ₹88L coin and the tangibles**) · **⚠ understated: the MG is in no asset figure** ([[group-financials]] §2b) | **His 50% of InnBlockchain** — plausibly ₹8–28L |
+| **My ₹31L claim**, consumed extinguishing the ₹46.7L · **⚠ 2026-09-25: now explicit and in writing — ₹31L against his ₹23.35L, difference of ≈₹7.65L waived** | **The ₹46.7L balance extinguished** |
+| — | **The MG**, carved out of the swap ([[separation-numbers-for-bowshul]] §4) |
 
 **Net: close to even.** Discount the ₹21L further — the coin is volatile, 40+ used laptops realise little, revenue is down 43% on a −₹1.5Cr history, and a stake with no board seat trades well below book.
 
@@ -346,13 +372,16 @@
 | # | Item | If left vague |
 |---|---|---|
 | 1 | Share transfer consideration, nil both ways | **Clean.** This part works |
-| 2 | **My ₹31L unpaid salary** | **I lose it.** Nobody pays a claim the claimant stopped asking for |
-| 3 | **The ₹46.7L balance** | **Survives and stays enforceable.** He will own 100% of the creditor |
-| 4 | **PF / ESI / TDS arrears, part of ≈₹48L** | **Follow me personally for my whole tenure.** A share transfer does not touch officer liability |
+| 2 | **My ₹31L unpaid salary** | **I lose it.** Nobody pays a claim the claimant stopped asking for · **✅ 2026-09-25: now stated in writing as the offset** |
+| 3 | **The ₹46.7L balance** | **Survives and stays enforceable.** He will own 100% of the creditor · **✅ 2026-09-25: named and extinguished on the page** |
+| 4 | **PF / ESI arrears, part of ≈₹48L** (TDS is paid) | **Follow me personally for my whole tenure.** A share transfer does not touch officer liability · **🔴 STILL VAGUE — the sheet dropped the clearance condition. This is the one of the four that is now worse, not better** |
+| 5 | **⚠ The MG** | **No recorded consideration.** The ₹31L it was to be set against is spent on #2. An undocumented company-asset transfer to a director — the §1b pattern again |
 
 **The asymmetry:** on #2 *I* must initiate to collect; on #3 *he* has every incentive to. **So "nothing moves between us" resolves as my ₹31L evaporating and his ₹46.7L staying alive.**
 
 **✅ The clean version:** *"These balances net off and both are extinguished."* Never *"let's not worry about money."*
+
+**⚠ 2026-09-25 — where this stands now.** #2 and #3 are settled in writing and no longer depend on who initiates. **#4 and #5 are the live ones.** The protection has moved: it used to be the netting sentence; it is now (a) getting the PF/ESI clearance said out loud or instructed to the advisors, and (b) giving the MG a recorded consideration.
 
 ### 🔴 The coin-for-arrears trade
 
@@ -443,8 +472,12 @@
 **1. 🔴 Resign as director at completion; deliver the year as a consultant.**
 Staying a year on the board extends **every** personal exposure by a year — the officer-liability period for PF/ESI/TDS, the IBC look-back window (which does not start until I am off the board), the records position, and disqualification risk. **The handover does not require the directorship.** Identical help, none of the liability extension.
 
-**2. 🔴 Pay a seat charge from month one, at market rate.**
-Point 3 promises *"Trioangle never funds blockchain again."* **A free year of Trioangle's premises is Trioangle funding InnBlockchain** — and he will spot it. The amount is trivial; what it buys is that "clean break" is literally true. **Allocate every shared cost from day one** — electricity, internet, admin, the AI account.
+**2. ⚠ 2026-09-25 — SUPERSEDED. Year one is nil charge, in exchange for the handover.**
+~~Pay a seat charge from month one, at market rate.~~ The original objection stands as a risk and was answered, not ignored: **a free year of Trioangle's premises is Trioangle funding InnBlockchain, and he will spot it** — so [[separation-numbers-for-bowshul]] §7 states it as **an exchange**: the handover year is what pays for the seats. Framed as a favour it contradicts point 3; framed as a trade there is nothing to catch.
+- **Nil means all-in** — seats, electricity, internet, admin — so nothing accrues informally between the companies. **That mattered more than the charge did:** an unallocated year is how the §1b pattern starts.
+- **⚠ The AI account is not covered by "seats, electricity, internet, admin."** A subscription one company pays and both use is the one thing still flowing between them. **Decide whose it is at completion.**
+- **From month 13: one all-in charge per seat.** Rate settled nearer the time, by method not figure — market rate for comparable local space, and InnBlockchain leaves on 3 months' notice if they cannot agree. **The notice period is the protection, not the rate.**
+- **🔴 The cost to price consciously:** the free year **spends the handover's value.** Do not also argue that a year of knowledge transfer is valuable unpaid consideration when setting what the Trioangle stake is worth — it has already been paid, in seats.
 
 **3. Put it in a written licence.** I already have one undocumented inter-company arrangement and it has produced an unenforceable balance, a flattered P&L and a records exposure. **Do not create a second.**
 
@@ -470,7 +503,7 @@ Point 3 promises *"Trioangle never funds blockchain again."* **A free year of Tr
 | **Collateral I pledged** — property, FDs, family assets | **No** |
 | Co-borrower / co-obligor | **No** |
 | Post-dated or security cheques | **No** |
-| **Statutory dues during my tenure** — GST, TDS, PF, ESI, wages | **No** |
+| **Statutory dues during my tenure** — GST, **PF, ESI**, wages | **No** · **⚠ 2026-09-25: TDS is paid at both companies — s.276B exposure closed.** PF and ESI remain, at Trioangle **and** at InnBlockchain (where Bowshul is the exposed officer) |
 | Ordinary trade creditors | Yes — company liability |
 | The ₹46.7L balance | Company-to-company — **unless I guaranteed it** |
 
@@ -536,8 +569,23 @@ Point 3 promises *"Trioangle never funds blockchain again."* **A free year of Tr
 - [ ] **🔴 Counsel on the parallel-records position** — independent advocate, not the incumbent CA
 - [ ] **🔴 Personal-guarantee / collateral / statutory-arrears list** — every guarantee, pledge, co-obligation and arrear, per company, per person, with lender and amount. **Does not exist yet**
 - [ ] **🔴 Read the OD sanction letter** — does the ₹18L carry a personal guarantee?
-- [ ] **🔴 Was TDS deducted from salaries and not deposited?**
-- [ ] Salary payable and PF/ESI arrears as figures, per company
+- [x] ~~**🔴 Was TDS deducted from salaries and not deposited?**~~ **Answered 2026-09-25: TDS is paid at both companies.**
+- [ ] Salary payable and PF/ESI arrears as figures, per company — **🔴 the split of Trioangle's ≈₹48L is still unknown, and it is the line between the company's debt and my personal liability**
+- [ ] **🔴 What can the ≈₹60L of "repayment" be evidenced by?** ([[group-financials]] Q11) **This gates the ₹46.7L figure now disclosed in [[separation-numbers-for-bowshul]] §5** — unevidenced, a reconstruction gives ₹1.06Cr, not ₹46.7L. **The single most urgent item on this list**
+- [ ] **🔴 Documentary basis for the ₹31L** — board resolution, appointment terms, MGT-7 / AOC-4, TDS on it. It is now the offset holding §5 of the sheet together ([[group-financials]] Q10)
+- [ ] **🔴 The MG** — written-down value, whether it is hypothecated (the lender gates the RC transfer), and **what consideration it transfers against** now that the ₹31L is spent elsewhere
+- [ ] **🔴 Counsel must see the actual wording of [[separation-numbers-for-bowshul]]** — not a description of it — because it names the ₹46.7L
+- [x] ~~**⚠ Delete the internal block from the sheet**~~ **done 2026-09-25 — [[separation-numbers-for-bowshul]] is now the shareable document only.** 🔴 **The old PDF export predates this and may still contain it — delete and regenerate.**
+
+### 🔴 Send gate for [[separation-numbers-for-bowshul]] — it no longer carries its own warnings
+
+**All five before it leaves my hands:**
+
+1. **Counsel has seen the actual wording**, not a description of it — because §5 names the ₹46.7L ([[group-financials]] §5L, §1c).
+2. **The shape has been agreed out loud in the meeting first.** It is a confirmation sheet, never an opening move. Handed over cold it reads as a demand, and §12.4 still applies — *nothing final gets agreed in that room.*
+3. **§6 answered — does he want me gone, or does he need me?** The sheet says *"cash either way: none."* **Do not send that before knowing**, because if he needs me, nil consideration stops being reasonable and the sheet has already conceded it.
+4. **The blanks filled:** date · coin reference price and date · QoreUps preference, or leave both options open deliberately.
+5. **Verified, not assumed:** is the ₹88L coin actually on Trioangle's books? If not, **strike the figure** and write *"the crypto holding"* — never put a number on an unbooked asset in a document the other side keeps.
 - [ ] **🔴 A position on the ₹1.46Cr QoreUps write-off** — it moves Trioangle's net assets and therefore the price of my 50%
 - [ ] **🔴 What happens to QoreUps** — wind up, he takes it, or I do
 - [ ] **🔴 Coin valuation date and reference price, fixed in writing** — ₹88L of a volatile asset can move 30–40% inside a negotiation window

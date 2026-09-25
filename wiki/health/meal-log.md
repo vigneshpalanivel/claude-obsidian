@@ -4053,6 +4053,26 @@ That list (line 244) reads: *"Avoid in excess (high purine): Mutton, prawns, org
 
 ✅ **Dinner rule-compliant** — fully vegetarian, no chicken/fish. ✅ **Calories close at ~2,440, just at the top of the 2,300–2,400 band** — a small, non-material overshoot. 🔴 **Protein closes at only ~79.6g, ~20g under the 100g floor** — dinner added almost none (8.2g combined from three carb-heavy items), and lunch's mutton didn't leave enough of a cushion to cover it. This is the first protein-floor miss in several days; if the pattern of light vegetarian dinners continues, dinner needs a protein source (eggs, curd) added deliberately rather than relying on lunch to carry the whole day. ⚠️ **Fiber closes at ~32.1g, over the 25–30g target for a 5th straight day**, though only marginally — same breakfast-driven cause as the rest of this week, not tonight's meal.
 
+## 2026-09-25 (Friday)
+
+| Meal | Food | Calories | Protein | Fiber |
+|------|------|----------|---------|-------|
+| Breakfast | Milkshake — usual (full glass) | 665 | 23.2g | 10.4g |
+| | 1 medium apple | 95 | 0.5g | 4g |
+| | 1 small pomegranate | 75 | 1.2g | 3g |
+| | 2 boiled eggs | 140 | 12g | 0g |
+| | 1 coffee (after breakfast) | 80 | 2g | 0g |
+| **Running** | | **~1,055 kcal** | **~38.9g** | **~17.4g** |
+| Lunch | Buddha bowl — 75% portion | 446 | 34g | 7.5g |
+| | 3 beef pieces | 120 | 8g | 0.15g |
+| | Buttermilk | 35 | 2g | 0.2g |
+| | 1 tea (after lunch) | 35 | 1g | 0g |
+| **Running** | | **~1,691 kcal** | **~83.9g** | **~25.3g** |
+
+**Rates used:** milkshake, current standard recipe (665/23.2g/10.4g); medium apple (95/0.5g/4g); small pomegranate (75/1.2g/3g); 2 boiled eggs (140/12g/0g); coffee (80/2g/0g); buttermilk (35/2g/0.2g); tea after lunch (35/1g/0g). ⚠️ **Buddha bowl 75% portion scaled from the standard Chicken Buddha bowl rate (595/45g/10g × 0.75 = 446/34g/7.5g)** — assumes this was the usual chicken bowl at a smaller portion, with beef eaten alongside/instead of the bowl's own protein. **Flag if the bowl was ordered without chicken today (beef replacing it rather than adding to it)** — that would mean the protein/fiber here double-counts the bowl's meat component. ⚠️ **3 beef pieces at the established small-piece rate (400/26g/0.5g per 10, i.e. ~40/2.6g/0.05g each) → 120/7.8g/0.15g** — this log has also seen a larger fry-size rate (~60/6.5g per piece) for a different cut; flag if these were fry-size, not small.
+
+🔴 **Beef today follows mutton yesterday — second consecutive high-purine red-meat day**, adding a fifth episode to the already-overdue uric acid retest (Sep 12–13, Sep 19, Sep 20, Sep 24). ✅ **Protein ~83.9g pre-dinner, on track for the 100–120g band** — a stronger position than yesterday's equivalent point, helped by the beef. ✅ **Fiber ~25.3g pre-dinner, already at the bottom of the 25–30g target** — same fruit-heavy-breakfast pattern as the rest of the week; dinner needs to stay light to avoid a 6th straight overshoot day.
+
 ✅ **Third consecutive day with a fruit-heavy, varied breakfast** (Sep 21, 22, 23) — fiber already ~17.0g before lunch, well on track without relying on the Buddha bowl/PB/banana lever alone. ✅ **No chicken-65/squid/fried-fish carried over from breakfast; the Sep 21–22 clean streak extends into a third day pending lunch/dinner.**
 
 ⚠️ **Third straight day of the exact same lunch (Buddha bowl + 2 tbsp PB + red banana + buttermilk)** — the log's standing fiber-overshoot lever, now stacked on top of an already fiber-heavy breakfast. **Running fiber ~32.2g pre-dinner is already past the 25–30g target.** Same call as Sep 21: dinner needs to run genuinely light on fiber (idiyappam-shape, not rice/noodles/legumes) to avoid another overshoot day. ✅ **Protein ~96.5g pre-dinner, comfortably on track for the 100–120g band.**

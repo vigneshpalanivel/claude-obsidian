@@ -6,6 +6,7 @@
 **Financial year:** Indian FY, 1 Apr – 31 Mar.
 **As-of date:** 2026-09-23 — FY2026-27 figures are part-year (~5.8 of 12 months elapsed, ~48% of year).
 **Recorded:** 2026-09-23 · **Revised:** 2026-09-25 — InnBlockchain ₹46.7L removed from the asset side (§1, §2c, §5K). Trioangle net assets restated **≈₹68L → ≈₹21L**.
+**Revised again:** 2026-09-25 (later) — new facts from Vignesh and decisions taken while drafting [[separation-numbers-for-bowshul]]: **TDS confirmed paid** (§2), **InnBlockchain's ₹9L is all staff dues** (§2), **an MG car held by Trioangle is missing from the asset side entirely** (§2b), and **the ₹46.7L is now being disclosed to Bowshul with the figure, offset against the ₹31L** (§1, §5L) — reversing the "never write it down" position below. See §5L.
 
 > **Naming:** **Macavs = QoreUps.** Macavs is the corporate/registered name; QoreUps is how the entity is referred to everywhere else in this vault, including [[bowshul-issues-log]]. Both names are kept in this file so the accounting entries stay traceable.
 
@@ -27,6 +28,8 @@
 - It exists **only as a spent-amount note in the internal system** — the same internal system that holds the parallel records.
 - An undocumented balance is **not enforceable**, so no buyer, valuer or counterparty will credit it.
 - **It must not be written into any deal document** — putting an internal-book figure into a signed instrument creates a record of the parallel accounting.
+
+> **⚠️ OVERRIDDEN BY DECISION 2026-09-25.** The rule immediately above still describes the risk accurately, but Vignesh has decided to disclose the ₹46.7L to Bowshul with the figure, in [[separation-numbers-for-bowshul]] §5, on a full-transparency argument: *a number Bowshul already knows exists reads as concealment if it is omitted.* **The asset-side treatment in this file does not change** — it remains unrecognised for any valuation. What changed is that the figure is now going into a document handed to the other side. **See §5L for the reasoning, the conditions, and the reconstruction risk.**
 
 **What this costs the argument in [[bowshul-issues-log]]:** the ≈₹60L "repaid" has no documented basis either, so the "InnBlockchain is a performing borrower, 57% serviced" point **goes with it**. That framing is withdrawn. Credit cannot be claimed for servicing a debt that does not exist on paper.
 
@@ -142,9 +145,17 @@ If the CA tells Bowshul before I do, I lose control of the disclosure *and* look
 | — remainder | employee salaries + PF / ESI arrears | ≈₹48L |
 | Trioangle | Vignesh salary payable (accrued, unpaid) | ₹31L |
 | Trioangle | *Total including director salary* (derived) | *₹97L* |
-| InnBlockchain | Total payable | ₹9L |
+| InnBlockchain | Total payable — **all of it employee salary + PF + ESI** | ₹9L |
 
 *Composition of the ₹66L added 2026-09-24. Personal guarantee on the ₹18L OD believed absent but **unverified** — read the sanction letter.*
+
+**Stated 2026-09-25:**
+- **🔴 TDS is paid, at both companies. Only PF, ESI and employee salary are outstanding.** This closes the **s.276B** item (TDS deducted and not deposited), which was previously recorded as the sharpest personal exposure in these files. [[separation-plan]] §11 can tick *"Was TDS deducted from salaries and not deposited?"*
+- **InnBlockchain's ₹9L is entirely staff dues** — salary plus PF and ESI. Composition was not recorded before.
+- **⚠ The split of Trioangle's ≈₹48L between employee salary and PF/ESI is still not established.** It matters: employee wages are the company's debt, but **PF and ESI carry personal officer liability for both directors** (EPF Act s.14/14A, ESI Act s.85/86A) and do not transfer with the shares. Get the two figures.
+- **⚠ Both companies have unpaid PF/ESI, so the officer exposure runs both ways** — Vignesh at Trioangle, and **Bowshul at InnBlockchain**, for the periods each served. Neither can indemnify the other out of a statutory due.
+
+*⚠ Correction to [[separation-plan]] §8: unpaid PF/ESI does not by itself trigger director disqualification under Companies Act s.164/167. That route runs through filing defaults, or through an actual conviction carrying six months or more. The **EU fit-and-proper** concern is the one that stands on its own.*
 
 ## 2b. Trioangle — assets
 
@@ -155,9 +166,15 @@ If the CA tells Bowshul before I do, I lose control of the disclosure *and* look
 | Furniture | | |
 | Office deposit / advance | | Recoverable on exit, subject to landlord |
 | *Tangibles subtotal (approx)* | *≈30* | Stated 2026-09-24, approximate |
-| **Total (excl. receivables)** | **≈118** | |
+| **🔴 MG car — registered to Trioangle** | **not recorded** | **Stated 2026-09-25. Not inside the ≈₹30L above.** WDV unknown; loan / hypothecation unknown |
+| **Total (excl. receivables)** | **≈118 + the MG** | **Understated until the MG is valued** |
 
 *Tangibles: book value vs realisable value not distinguished — 40+ used laptops realise far less than cost.*
+
+**🔴 The MG — stated 2026-09-25.** A car registered to Trioangle, used by Vignesh, **absent from every asset figure in this file until now.** Three consequences:
+1. **Trioangle's asset base and net position are both understated** — by the vehicle's realisable value. This moves the value of a 50% stake **upward, in Vignesh's favour** (§2c).
+2. **Vignesh intends to keep it** ([[separation-numbers-for-bowshul]] §4), as a carve-out from the swap.
+3. **🔴 It needs a recorded consideration.** A company vehicle transferred to a director for nothing is the same fact pattern as §1b — company asset applied to a director's benefit, undocumented, common directorship — created *while counsel is assessing that very issue*. It also invites a **perquisite** assessment (s.17(2) / Rule 3) and leaves **GST on a used motor vehicle** (margin scheme, Notification 8/2018) unaddressed. **Establish WDV and whether it is hypothecated; if hypothecated, the lender gates the RC transfer.**
 
 ## 2c. Trioangle net asset position — derived
 
@@ -178,6 +195,8 @@ If the CA tells Bowshul before I do, I lose control of the disclosure *and* look
 **Two consequences:**
 1. **The coin is no longer the swing factor — it is essentially the whole company.** ₹88L of a ₹118L asset base. Trioangle's net-asset value is a crypto position with an operating business attached; strip the coin and the net position is **≈−₹67L**.
 2. **Every number downstream of this moves**, including the swap maths in [[separation-plan]]. See §5K.
+
+**⚠ The ≈₹21L is itself understated as of 2026-09-25** — the MG car is in none of the asset figures above (§2b). Add its realisable value before using ≈₹21L, or a 50% stake, in any valuation.
 
 ## 2d. ⚠ The ₹88L coin holding — the biggest open item in this file
 
@@ -202,6 +221,8 @@ The ₹88L covers the entire ₹66L of non-director payables with ₹22L to spar
 - **Conversely, if holding was a joint decision**, the arrears are a shared choice and neither partner can use them against the other.
 
 **→ Establish who decided to hold, and whether the arrears could have been cleared at any point. This is the most consequential unanswered question in the group's finances.**
+
+**Updated 2026-09-25:** TDS is paid, so the defence is marginally better than stated above — the holding sits against **employee wages and PF/ESI**, not against money deducted from employees and withheld. The rest stands: ₹88L covers ₹66L with ₹22L to spare, so the arrears are a choice, and **that choice is now Bowshul's alone after completion.** Note also that [[separation-numbers-for-bowshul]] §2 presents the ₹88L-covers-₹66L fact to Bowshul as reassurance — **it no longer asks him to clear the arrears from it before completion**, which is the protection [[separation-plan]] §5 was built on. That condition now exists only verbally, if at all.
 
 ## 3. Trioangle — revenue and P&L
 
@@ -283,6 +304,28 @@ This change is **not** neutral and it does not favour Vignesh:
 
 **→ Before using this in any negotiation, decide the position on the ₹31L separately.** It was previously netted against a balance that no longer exists.
 
+**L. 🔴 The ₹46.7L is being disclosed to Bowshul, with the figure, offset against the ₹31L — decided 2026-09-25.**
+
+This reverses §1's *"must not be written into any deal document."* The rule still describes the risk correctly; the decision accepts it. Recorded here so the reasoning survives, because the decision is Vignesh's and the files should not argue with it after the fact.
+
+**The argument for disclosure, and it is sound:** Bowshul owns 50% of the payer **and** 50% of the recipient. While he holds both, the funding nets to nothing. **Only when he gives up InnBlockchain is he genuinely out of pocket — 50% of ₹46.7L ≈ ₹23.35L.** That is a real loss to him, he knows the money moved, and a sheet that omits it reads as concealment. Set against Vignesh's ₹31L of unpaid salary, the reckoning is:
+
+| | ₹L |
+|---|---|
+| Bowshul's half of the outstanding InnBlockchain funding | 23.35 |
+| Vignesh's unpaid director's salary left in Trioangle | 31 |
+| **Difference, in Vignesh's favour — waived** | **≈7.65** |
+
+**What this fixes:** the ₹31L is no longer waived for nothing. §5K's problem — *"the ₹31L has nothing to offset, it stands alone"* — is answered: it now offsets the thing it was always meant to offset, and it does the work [[separation-plan]] §3 rung 3 was held in reserve for.
+
+**🔴 The three risks that come with it. None is resolved.**
+
+1. **The number cannot be substantiated, and stating it invites a larger one.** Gross was ≈₹1.06Cr; the ≈₹60L "repaid" has **no documented basis** (§1, §1b) — which is why the 57%-serviced argument was withdrawn. **₹46.7L is a net derived from books that cannot be produced.** If Bowshul's accountant reconstructs it from Trioangle's actual records, the defensible figure is **₹1.06Cr with no evidence of repayment.** Disclosure is defensible; *this figure surviving* is not yet. **→ Establish what the ≈₹60L can be evidenced by before the sheet leaves Vignesh's hands.**
+2. **The figure is the record.** §1c: the ₹46.7L exists only in the internal system that holds the parallel records. Writing it into a document held by the counterparty is discoverable in a dispute, an audit, an IBC look-back, or EU fit-and-proper diligence — regardless of it being labelled internal. **The sequencing in §1c is therefore not optional any more: counsel must see the actual wording, not a description of it.**
+3. **The admission is firm; the offset is arguable.** Q10 stands — the ₹31L may rest on the same internal books. Bowshul can accept the ₹23.35L and contest the ₹31L. **→ Get the documentary basis for the ₹31L (board resolution, appointment terms, MGT-7 / AOC-4, TDS on salary) before relying on it.**
+
+**And what it costs in the room:** [[separation-plan]] §3 objection G's ladder had three rungs. Rung 2 was *"there isn't a receivable — it was never structured as one."* **A sheet that states the balance concedes it exists, so rung 2 is gone.** What remains is rung 1 (the trade — *"that's what my Trioangle shares are for"*) and the ₹31L offset. Nothing behind those.
+
 ---
 
 ## 6. Open questions
@@ -295,8 +338,12 @@ This change is **not** neutral and it does not favour Vignesh:
 6. **What is QoreUps's own position** — payables, remaining client revenue, whether server cost is covered, and whether it holds any realisable asset (code, client contracts, brand) against the ₹1.46Cr.
 7. **Does Bowshul have a matching unpaid-salary accrual**, or is the ₹31L one-sided?
 8. **What is Trioangle's cash position and runway**, given it now carries only ₹1.46Cr of recognised related-party receivables (likely impaired) against ₹97L of payables?
-10. **Does the ₹31L salary claim stand on its own?** It was previously netted against the ₹46.7L. With that removed, what is the documentary basis for the ₹31L — board resolution, appointment terms, Form MGT-7/AOC-4 disclosure, TDS deducted? If it rests on the same internal books, it has the same problem (§5K).
+10. **🔴 Does the ₹31L salary claim stand on its own?** It is now being used in writing as the offset against Bowshul's ₹23.35L (§5L), so this is no longer academic. What is the documentary basis — board resolution, appointment terms, Form MGT-7/AOC-4 disclosure, TDS deducted on it? **If it rests on the same internal books, Bowshul can accept the admission and contest the offset.**
 9. **Were these figures taken from filed/audited accounts or from working estimates?**
+11. **🔴 What can the ≈₹60L of "repayment" actually be evidenced by?** The single most urgent question in this file as of 2026-09-25. It is what stands between a disclosed **₹46.7L** and a reconstructed **₹1.06Cr** (§5L risk 1).
+12. **What is the MG's written-down value, and is it hypothecated?** Missing from §2b, and it gates the RC transfer if a lender is involved.
+13. **How is Trioangle's ≈₹48L split between employee salary and PF/ESI?** The wages are the company's; the PF/ESI are personal to both directors.
+14. ~~Was TDS deducted from salaries and not deposited?~~ **Answered 2026-09-25: TDS is paid at both companies. s.276B exposure closed.**
 
 ## 7. What needs deciding
 
@@ -305,7 +352,11 @@ This change is **not** neutral and it does not favour Vignesh:
 | QoreUps ₹1.46Cr receivable | **Carried as an asset, likely impaired** | No write-off decision taken |
 | QoreUps formal status | **Undecided** — dormant, "temporary", no criteria | [[bowshul-issues-log]] §2 |
 | QoreUps client obligations | **Unowned — urgent** | Live clients, zero staff |
-| InnBlockchain ₹46.7L receivable | **Removed 2026-09-25 — not recognised** | Undocumented; internal-book only (§1) |
-| ₹31L director salary payable | **Accruing, unpaid — now unoffset** | Nothing left to net it against (§5K) |
+| InnBlockchain ₹46.7L receivable | **Not recognised as an asset — but now disclosed to Bowshul with the figure** | Decision 2026-09-25 (§5L). Asset treatment unchanged |
+| ₹31L director salary payable | **Deployed as the offset against Bowshul's ₹23.35L** | §5L. Documentary basis still unverified — Q10 |
+| **MG car** | **Not on any asset list; Vignesh keeping it; no consideration recorded** | §2b. Needs WDV, hypothecation check, and a recorded consideration |
+| **Evidence for the ≈₹60L repayment** | **🔴 Unestablished — blocks the ₹46.7L figure** | Q11, §5L risk 1 |
+| Trioangle ≈₹48L salary vs PF/ESI split | **Unestablished** | Q13 — decides what is personal |
+| TDS | **Paid — closed 2026-09-25** | s.276B exposure gone |
 | s.185/186 position on both loans | **Unverified** | Needs a CS |
 | 50/50 deadlock | **Unaddressed** | Produced the ₹1.46Cr |
