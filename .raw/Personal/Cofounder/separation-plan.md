@@ -266,6 +266,8 @@
 
 **Then stop. Do not draw the conclusion out loud — let him do the arithmetic.** Leading with it restarts the *"everyone is also working like you"* argument I have never won in five years. Used defensively, once, it is unanswerable.
 
+**⚠ 2026-09-25 — the other half of this fact, and it stays in reserve.** Bowshul drew **₹3.4L** of salary from InnBlockchain over the same period; Vignesh drew ₹0 ([[group-financials]] §5B2). **Never introduce it.** It is the smallest figure in these files, ₹3.4L changes no arithmetic that matters, and raising it converts a separation into an audit of who took what — the exact *"list of complaints"* §1 and §4 are built to avoid. **Available only if he claims I extracted value from InnBlockchain on Trioangle's money, and then in one sentence with no conclusion attached.**
+
 ### J. *"Why now? What's changed?"*
 > *"Nothing in particular happened. Nothing has changed — that's the point. It's been the same for years and I've concluded it isn't going to."*
 

@@ -258,6 +258,22 @@ Roughly ₹1.46Cr to QoreUps and ₹1Cr+ to InnBlockchain, against ≈₹60L ret
 **B. The ₹31L director salary payable is Vignesh financing Trioangle.**
 Unpaid accrued salary is an interest-free loan from Vignesh to the company, and it sits behind ₹66L of other payables. Bowshul holds 50% of Trioangle (see [[bowshul-issues-log]] §Key structural facts) but is not recorded as carrying an equivalent unpaid accrual — unverified, and worth establishing.
 
+**B2. InnBlockchain director salary — stated 2026-09-25: Bowshul drew ₹3.4L, Vignesh drew ₹0.**
+
+| | Drawn from InnBlockchain |
+|---|---|
+| Bowshul | **₹3.4L** |
+| Vignesh | **₹0** — four years as CEO, never drew |
+
+**It is a small number and its value is almost entirely defensive.** ₹3.4L against the ₹23.35L / ₹31L reckoning in §5L is noise — it would move the difference from ≈₹7.65L to ≈₹11.05L, and Vignesh is waiving the difference either way. **It changes no arithmetic that matters.**
+
+**Two places it does matter:**
+
+1. **It completes the salary picture as a shield** ([[separation-plan]] §3 objection I). If Bowshul ever argues Vignesh extracted value from InnBlockchain on Trioangle's money, the answer is factual and short: *Vignesh drew nothing from InnBlockchain in four years; Bowshul drew ₹3.4L.* **Defensive use only — see the warning below.**
+2. **🔴 It is a round-trip, and that implicates Bowshul in the §1b routing.** Trioangle was carrying InnBlockchain's payroll over the same period, so **Trioangle money reached Bowshul's personal income via InnBlockchain.** That is a small amount but it is not a small fact: it means the undocumented funding structure produced a personal benefit for *both* directors, not just for the company Vignesh runs. **It strengthens §1b point 4 — this is genuinely shared exposure, and the joint-remediation argument is the strongest cooperative lever in these files.**
+
+**⚠ Do not put this in [[separation-numbers-for-bowshul]].** §5 there is a clean two-sided reckoning; adding a ₹3.4L line turns it into an itemised account of who took what, which is the *"list of complaints"* the entire approach in [[separation-plan]] §1 and §4 exists to avoid. **It is the smallest figure in this file and the most personal. Raising it unprompted reads as score-keeping and costs more than ₹3.4L.**
+
 **C. Trioangle's 2026-27 profit is a cost story, not a recovery.**
 First positive P&L in four years (+₹2L), but revenue run-rate has collapsed: ₹58L over ~48% of the year annualises to roughly **₹1.2Cr vs ₹2.1Cr last year** — down ~43%. Margin improved because costs came out, not because the business grew. A +₹2L result on a shrinking top line is not the same event as a turnaround.
 
@@ -336,7 +352,7 @@ This reverses §1's *"must not be written into any deal document."* The rule sti
 4. **Are the loans documented** — interest, repayment schedule, security, approvals, s.185/186 compliance?
 5. **How is the ₹1.46Cr carried in Trioangle's books today** — full-value receivable, provisioned, or already partly written off? What did the auditor say?
 6. **What is QoreUps's own position** — payables, remaining client revenue, whether server cost is covered, and whether it holds any realisable asset (code, client contracts, brand) against the ₹1.46Cr.
-7. **Does Bowshul have a matching unpaid-salary accrual**, or is the ₹31L one-sided?
+7. **Does Bowshul have a matching unpaid-salary accrual** at Trioangle, or is the ₹31L one-sided? *(Distinct from §5B2 — that records salary Bowshul actually **drew** from InnBlockchain, ₹3.4L, which is a different question from what he is **owed** by Trioangle.)*
 8. **What is Trioangle's cash position and runway**, given it now carries only ₹1.46Cr of recognised related-party receivables (likely impaired) against ₹97L of payables?
 10. **🔴 Does the ₹31L salary claim stand on its own?** It is now being used in writing as the offset against Bowshul's ₹23.35L (§5L), so this is no longer academic. What is the documentary basis — board resolution, appointment terms, Form MGT-7/AOC-4 disclosure, TDS deducted on it? **If it rests on the same internal books, Bowshul can accept the admission and contest the offset.**
 9. **Were these figures taken from filed/audited accounts or from working estimates?**
