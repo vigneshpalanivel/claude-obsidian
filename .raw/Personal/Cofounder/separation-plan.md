@@ -1,528 +1,570 @@
 # Separation Plan — Trioangle / InnBlockchain
 
-**What this is:** planning for a separation from Bowshul — exit Trioangle including shareholding, remove Bowshul from InnBlockchain, focus entirely on InnBlockchain.
-**Split out of** [[bowshul-issues-log]] on 2026-09-24. That file holds the grievance history; this one holds the deal. **The grievances justify leaving. They do not price the deal.**
-**Companion file — read first for anything involving money:** [[group-financials]] (`.raw/Common/Finance/group-financials.md`). Where files disagree, the financials win.
-**Handling: RAW ONLY.** Contains equity, family employment, liability and records exposure. Do not mirror to `wiki/`, do not put on anything shared or synced.
+**Objective:** exit Trioangle including my shareholding, take InnBlockchain outright, and stop being in partnership with Bowshul.
+**This document plans an exit, not a repair.** No governance fixes, no shareholders' agreements, no "how to work together better." Every fallback here is also an exit.
+**Companion files:** [[bowshul-issues-log]] — what happened. [[group-financials]] (`.raw/Common/Finance/group-financials.md`) — **read first for anything involving money; where files disagree, the financials win.**
+**Handling: RAW ONLY.** Equity, family employment, liability and records exposure. Never mirror to `wiki/`, never on anything shared or synced.
 
-> ## 🔴 ON HOLD — 2026-09-24
-> [[group-financials]] §1c records a parallel-records position ("internal book / actual book") affecting both companies and both directors. **That goes to counsel before anything is said to Bowshul**, and it may change the vehicle for the whole EU blockchain plan.
-> **The separation is now step 4 of 4, not step 1.**
+> ## 🔴 ON HOLD
+> [[group-financials]] §1c records a parallel-records position ("internal book / actual book") affecting both companies and both directors. **That goes to independent counsel before anything is said to Bowshul.** The separation is step 4 of 4.
 
 ---
 
-## 🔴 "I will not share my work or revenue with him" — stated 2026-09-24
+## 1. THE CONVERSATION
 
-After [[bowshul-issues-log]] #6 (the pre-marriage function), the stated position is: **InnBlockchain will generate more revenue than Trioangle, and I will not share any of it with him. I shared before; not any more. He does not deserve it.**
+### The line — never vary it
 
-**The feeling is earned. Acting on it before the share transfer completes is the single most dangerous thing I could do.**
+> ## *"This isn't something I've been planning. It's something I've been carrying for years without saying anything, and I've got to the point where I can't carry it any more. So I've decided I want to separate the companies. It isn't about any one thing, and I'm not going to sit here listing things — I don't want to be in a partnership any more. I'd like us to do it properly."*
 
-| | |
+**Why it holds:** it states a decision, not an argument, so there is nothing to rebut and no counter-offer exists. Money, support, autonomy, investment — **none of them answers "I don't want a partnership."** And *"I'm not going to sit here listing things"* closes the grievance door from my side before he can open it.
+
+**Say "carrying", never "suffering".** Suffering invites *"suffering from what?"* and then I am listing things.
+
+### The second line — when that isn't enough
+
+> ## *"I've got to a point where I don't want my work assessed by a partner at all. Not by you — by anyone. I want to answer for it myself."*
+
+**The strongest sentence available.** Any 50% owner necessarily has a view on what the other does with the company's money and time — **even a supportive one. Support is still assessment.** He cannot stop being an assessor while remaining a co-owner, so **there is no counter-offer in existence.** It carries the real grievance — that my work was questioned — with no accusation in it.
+
+**The four words that make it work: *"Not by you — by anyone."*** Without them it is an accusation. Never drop them.
+
+### "Why? What happened? It worked before — why suddenly?"
+
+**He will not leave the table without a reason.** Refusing to give one reads as concealment and makes him push harder.
+
+> ## *"It isn't sudden. It's been building for ten years, and I never once raised any of it — that part is on me. And I've probably done things that hurt you in those ten years too, and you never raised those either. It worked because we both absorbed it, and I've stopped being able to. There's no single thing you could point at, and nothing either of us does now changes ten years."*
+
+**Why it is unanswerable:** it gives a real reason, names no incident, **accepts fault** (*"that part is on me"*), **makes it mutual** (*"I've probably hurt you too"* — true; he has his own grievances), and **cannot be fixed.** Neither of us can undo ten years.
+
+**If he asks *"like what?"*** → refuse evenly: *"I'm not going to list mine, and I'm not asking you to list yours. We'd both be here all night and neither of us would feel better."* **Refusing evenly is what makes it fair rather than evasive.**
+
+### The grammar rule — the whole technique
+
+> **Every sentence starts with "I". Never with "you".**
+
+| ❌ | ✅ |
 |---|---|
-| **He owns 50% of InnBlockchain today** | Until a transfer completes, he is legally entitled to half of whatever InnBlockchain becomes — including revenue generated from now on |
-| **"He doesn't deserve it" is not the operative test** | His entitlement comes from a share register, not from conduct. **Desert is a moral question; entitlement is a legal one.** Conflating them is how founders lose cases they thought they were winning |
-| **🔴 Diverting work, revenue or opportunities away from InnBlockchain to avoid sharing** | This is exactly the corporate-opportunity / oppression exposure already flagged (see the fallback section). **It converts a weak claim of his into a strong one**, and it is the one thing that could cost me InnBlockchain entirely |
-| **It also destroys the negotiating position** | If revenue starts appearing somewhere else while a transfer is pending, every generous term I might have got disappears — and reasonably |
+| *"You never took responsibility"* | *"I've been carrying more than I can"* |
+| *"You didn't follow my decisions"* | *"I stopped being able to work this way"* |
+| *"You insulted me"* | *"Things built up and I said nothing"* |
+| *"You made it toxic"* | *"I've changed how I feel about being in a partnership"* |
 
-**The correct order:** **complete the transfer first, then keep everything.** Every rupee earned after the transfer is mine with no argument. Every rupee earned before it is half his, whatever I feel about that. **The way to stop sharing is to finish the deal, not to withhold.**
+**Same truth. One version he must fight; the other he cannot argue with.**
 
-**⚠ And note what this position does to the timeline.** The stronger the conviction that InnBlockchain will out-earn Trioangle, **the more urgent it is to complete the swap early** — because a growing InnBlockchain makes his 50% more valuable and the price of buying him out higher. **Every quarter of good results before the transfer costs me money.** That is the strongest practical argument for moving quickly that exists in this file — but it runs straight into the records position, which cannot be rushed. **Raise the sequencing tension with counsel explicitly.**
+### If he presses harder — two more levels, then stop
 
----
+**Level 2 — *"tell me what, and I'll fix it":***
+> *"That's exactly the problem. If I'd raised things at the time, maybe you could have. I didn't — for years — so there's nothing sitting there for you to fix now. The window for fixing it closed while I stayed quiet."*
 
-## The objective
+**He cannot fix what was never raised.** Complete reason, fault conceded to me, every offer foreclosed, no incident named.
 
-1. **Exit Trioangle completely — including my shareholding.**
-2. **Remove Bowshul fully from InnBlockchain.**
-3. **Focus entirely on InnBlockchain.**
+**Level 3 — only if genuinely cornered, once:**
+> *"If you want one moment — when you asked me 'what are you doing', something landed. Not because of the question itself. Because of ten years behind it that I'd never said a word about. That's when I knew I was finished with it."*
 
-**Trigger:** ~July 2026, *"What are you doing?"* — see [[bowshul-issues-log]] #3. Ten years of absorbed grievance means the *decision to separate* is not impulsive; it is a conclusion with a long evidence base, and July 2026 was the release, not the cause. **But the terms are weeks old and untested.** Being right that the partnership is over says nothing about whether this particular deal is good.
+**Then concede his defence before he makes it:**
+> *"And I know you asked because salaries hadn't been paid and you were worried. I'm not blaming you for the question. It was the moment I noticed, not the reason."*
 
-### 🔴 The justification to use — business, current, and sayable out loud
+**He cannot argue his way out of something I have already agreed with. The remark was the moment; the ten years was the reason — say it in that order.** One example only. Two is a case, and a case invites a defence.
 
-**Not the grievances.** *(List repaired 2026-09-24 — it had run 1, 2, 3, 5, then 4 below an unrelated heading.)*
+### If he offers sacrifices — *"I'll change, I'll step back"*
 
-**✅ USE THESE FOUR**
+**The moment I am most likely to fold.**
 
-1. **The closure criterion is involvement, not financials** ([[bowshul-issues-log]] #2–#3). He has pushed to close QoreUps and InnBlockchain — **both of which he approved at formation** — and never Trioangle, the most distressed of the three (₹97L payables, ≈₹48L arrears, −₹1.5Cr cumulative). **No financial argument will ever settle InnBlockchain with him, because financials were never deciding it.**
+> *"I believe you'd try, and I'm not doubting you. But this isn't about what you do next. What's changed is in me — I've stopped wanting to be in a partnership at all. That's not something you can fix by doing more."*
 
-2. **🔴 It has already cost third parties** ([[bowshul-issues-log]] #8). A **pooled** AI quota — one shared account — exhausted by one person's usage, **team sent home, working days lost**, pattern continued afterwards. Instruction **still in force, universally followed, he is the sole exception.** **The load-bearing entry: measurable harm to staff.**
-   **⚠ Fix first:** the shared-account architecture is the root cause and it is mine. **Move to per-seat licensing** — then any repeat is unambiguously his and cannot be deflected onto provisioning.
+**Then immediately, because this is what lets him accept it:**
+> *"And I'm not walking away from you. A full year of handover, same office, whatever you need. I want us to still be friends at the end of this — that's part of why I'd rather not turn it into a list of complaints."*
 
-3. **At work he does not accept direction** ([[bowshul-issues-log]] #7–#10). *Mostly will not agree; occasionally agrees and does not deliver; on official matters usually will not listen.*
-   *(The "accepts then does not deliver" trait — #4, #12, #13, #16, witnessed by Gopi and Kumar — is the **personal** pattern. Keep separate.)*
+**Three things at once: removes the abandonment fear, reframes the absence of a list as kindness rather than evasion, and names the friendship as something I am protecting rather than spending.**
 
-4. **Responsibility asymmetry inside Trioangle** ([[bowshul-issues-log]] #10). In the company we both built and both own equally, **I carry sales and marketing; he carries product** — and he declined a **one-person** support team on top. **Scope to Trioangle only.** The three-entity version fails: I took InnBlockchain and QoreUps on over his objection.
+### The universal deflection
 
-**❌ DO NOT USE**
+> *"It's not about that. I don't want to be in partnership any more."*
 
-- ~~**BMAD (#7) as evidence of a blocked decision.**~~ **I withdrew it myself** and told Sales not to push it. An instruction I withdrew is not a decision that was blocked, and the claim dies on the first question: *"what was formally decided, and how was it blocked?"*
-  **→ To make that argument at all I need one minuted decision that is then not honoured. I do not have one yet.**
-- ~~Anything from #1, #4, #5, #6, #11, #14, #17~~ — **standing and recognition. Real, but unprovable and unsayable.**
-
-**🔴 The strongest personal reason — and it is not an argument against him at all:**
-**12-hour days including weekends, at 34, with migraine, anxiety, spinal inflammation and BMI 17–18, against a stated goal of being active and independent at 80.** Separation means one company instead of three and no partner to manage. **Better than any grievance in the log — but it belongs in my own reasoning, not in the conversation with him.**
-**⚠ And it only works if I also delegate.** Absorb everything by habit and I rebuild the same load inside InnBlockchain alone. **That change does not wait for the deal.**
-
----
-
-## 🔴 THE LINE TO USE
-
-**⚠ First, the hard part: "he won't listen to me on official things" is not misconduct. It is the structure.**
-**A 50% owner is under no obligation to take direction from the other 50% owner.** He is not insubordinate — **no instrument makes a decision bind him, and there never was one.** I have never minuted a decision, so nothing has ever been properly taken and then breached.
-
-**So "he ignores my authority" rests on authority I never had and never documented. The conclusion (separate) is right. The reason (defiance) is wrong.**
-
-**The diagnosis — two sentences, and together they are the entire case:**
-> **1. He invests in what he originates or controls, and disengages from what he does not. I originate constantly.**
-> **2. Two equal owners, no mechanism to decide anything.**
-
-*(Sentence 1 derived in [[bowshul-issues-log]] #16; predicts #2, #3, #7, #8, #9, #10, #15, #16, #18, #19. Sentence 2 is the cap table.)*
-
-**🔴 And the sentence to actually say, which carries both:**
-> ## *"We can't make a decision stick — and it has already cost the team working days."*
-
-**Why this one and not the others:**
-- **True, and verifiable** — the cap table plus the #8 incident.
-- **No blame**, so there is nothing for him to defend against.
-- **He will probably agree with it** — and a separation needs his agreement. **Any framing requiring him to admit fault first is a framing that fails.**
-- Covers every operational entry without naming one.
-- **Leads to both exits:** fix the governance, or separate. Either is progress.
-
-**⚠ One diagnostic before choosing the route:** he *does* occasionally agree — *"very rare cases only."* **What is different about those?** If he responds when consulted early and resists when instructed late, **the governance route could work and separation may not be the only option.** If nothing distinguishes them, separation is the answer. **Five minutes of honest recall.**
-
----
-
-## While still partners — how to actually operate
-
-*(Moved here from the issues log 2026-09-24. Applies whether or not the separation happens.)*
-
-**The question:** if I cannot address him as I address other department heads, is the CEO title just a nameplate?
-
-**Answer: authority over a co-equal owner never comes from title or tone. It comes from written process — and that is what does not exist. A missing-document problem, not a permanent condition.**
-
-**1. He wears two hats. Separate them deliberately.**
-
-| Hat | What I can do |
+| He offers | I say |
 |---|---|
-| **50% shareholder / director** — my equal | **Cannot direct him.** Agree, vote, minute, escalate |
-| **Head of Product** — a function inside the org | **Can hold the function to the same standards as any other** — through the system, not personal instruction |
+| *"We'll share the investment, I support you"* | *"It's not about the money…"* |
+| *"You make all the decisions from now on"* | *"It's not about decisions…"* |
+| *"I'll take on more responsibility"* | *"It's not about that…"* |
+| *"What did I do? Tell me and I'll fix it"* | → Level 2 |
 
-**The function is accountable. The person is not subordinate.**
-
-**2. Direct is not the same as ordering — and direct is available to me.**
-
-| Ordering register (no standing) | Peer register (full standing) |
-|---|---|
-| *"Use Sonnet for development, that's the instruction."* | *"The team lost working days when the pooled quota ran out. I need Product on Sonnet for development. Can you commit to that?"* |
-| *"The company follows BMAD."* | *"Testers and the PM can't work from Product's output. I need stories with acceptance criteria in the tracker. How do you want to produce them?"* |
-
-**Same content, same firmness, no command.** The register used with a board member or a major client. **I lose the command form and none of the substance.**
-
-**3. Govern by recorded decisions, not verbal instruction.**
-He can ignore me because **nothing is written down.** A minuted decision is a different object from *"Vignesh told me to"* — he can vote against it, he cannot pretend it did not happen. **Every instruction I have given him has been deniable, and that was my choice.**
-
-**4. Govern by commitments and deliverables, not compliance.**
-*"We agreed X by Friday. It is not done. What happened?"* — a legitimate question from one co-owner to another, requiring no hierarchy.
-
-**5. Reframe the goal.**
-**"Control" is the wrong objective — nobody controls a co-owner.** The objective is **enforceability**: decisions recorded, commitments dated, results visible.
-
-**6. The remedy that exists, and why it fails here.**
-A director failing in an executive function can be removed from the role while keeping shares. **In a 50/50 I cannot pass it alone** — which is why separation, not better management, is the answer.
+**Same sentence every time. The repetition is the message.**
 
 ---
 
-## 🔴 A softer route to the same place: negotiate governance, not separation
+## 2. THE AGENDA — eight points
 
-**There is almost certainly no shareholders' agreement.** That is why the CEO title carries no authority over a 50% co-owner and why #7 and #8 were unenforceable ([[bowshul-issues-log]] #10, "what does being CEO mean").
+**No history in points 1–8. Grievances only if he asks for a specific reason, and then only the levels above.**
 
-**Proposing a shareholders' agreement is far less confrontational than proposing a separation — and it can arrive at the same destination:**
+**1. The reason** — the accumulation line above. Nothing fixable.
 
-| Clause | What it does for me |
-|---|---|
-| **Defined CEO remit** + reserved matters | Ends the "instruction vs preference" argument permanently |
-| **Deadlock mechanism** — casting vote, referral, expert determination | Fixes the root cause of every entry in the log |
-| **Shotgun / buy-sell clause** | **This is a separation mechanism.** It prices and executes an exit without either party having to ask for one |
-| Executive role terms | What a department head owes the company regardless of shareholding |
+**2. The proposal**
+> *"I think we should separate the two companies. You take Trioangle completely. I take InnBlockchain completely."*
 
-**Two reasons to consider this route first:**
-1. **If he refuses a governance framework**, that is a recorded, business-grounded reason to separate — far stronger than any grievance, and it puts the refusal on his side of the table.
-2. **If he accepts**, either the company becomes workable, or the buy-sell clause gives me a priced exit without a confrontation. **Both outcomes are better than the current plan.**
+**3. 🔴 What he gets — lead with this, it is what convinces him**
+> - *"Trioangle never funds blockchain again. That ends permanently."*
+> - *"You run product, strategy and direction your way. No veto from me."*
+> - *"No more deadlock. Every decision is yours."*
+> - *"You've been saying for years that Trioangle shouldn't be carrying the other things. This is that, finished properly."*
 
-**⚠ Do not raise it before counsel on the records position** — a shareholders' agreement involves disclosure and warranties, and that is exactly where the parallel-records exposure surfaces ([[group-financials]] §1c).
+**⚠ Watch his face on "every decision is yours."** If he does not want to run Trioangle alone, that sentence is a threat, not an incentive — **and point 3 works against me.** Signs: he goes quiet, changes the subject to how much I do, talks about how hard it would be, or pushes on InnBlockchain instead. **If so, stop selling point 3 and go straight to the handover offer.** See §6.
 
----
+**4. What I'm asking**
+> *"InnBlockchain, clean. That's it."*
 
-## Running the AI positioning test — so it cannot be blamed later
+**5. The money — three sentences**
+> - *"The balances between the companies net off and both are extinguished — nothing follows either of us afterwards."*
+> - *"Take the coin and use it to clear the salary, PF, ESI and TDS before we complete. That protects both of us."*
+> - *"Any personal guarantee either of us has signed gets released in writing by the bank before completion."*
 
-*(Moved here from issues log #15, 2026-09-24.)*
+**6. QoreUps**
+> *"We still both own QoreUps. Let's decide it at the same time — wind it up, or it goes with Trioangle. I don't want us still tied together in a third company afterwards."*
 
-**The risk:** if I run the AI trial and product leads fall, he will say the trial caused it — even where it did not — and pressure me to stop. **He has done exactly this twice** (QoreUps, InnBlockchain). Well founded; take it seriously.
+**7. Timeline**
+> *"I'd like us to agree the shape in the next few weeks and complete it properly with advisors after that."*
 
-**⚠ But those two were vulnerable because of a defect that was mine:** no baseline, no ring-fence, no stated end condition. *"We would get the result"* with no date and no number is what let pressure be applied indefinitely. **An open-ended commitment can be attacked forever. A measured experiment cannot.**
+**8. If he says no**
+> *"Then we need to find another way to do the same thing. You buy my Trioangle shares for cash, or I take advice on what the options are. I'm not asking you to decide today — but I do need this settled one way or another."*
 
-**→ The protection is not secrecy. It is measurement declared in advance.**
-
-| Safeguard | Why it blocks the attack |
-|---|---|
-| **1. Baseline product-lead numbers in writing, dated, before starting** | He cannot claim a drop I can show was already happening. **Revenue is already down 43% — document that trend now** |
-| **2. Ring-fence it** — separate channels, pages, campaigns; no product-marketing budget or people | **A trial that touches nothing cannot have caused anything**, and I can demonstrate it |
-| **3. Pre-commit kill criteria** — *"if X by day 60, I stop"* | **Removes his ability to demand a stop, because the stop rule already exists and is mine.** The most important one |
-| **4. Fixed end date** — 60 or 90 days | Nothing open-ended for pressure to accumulate against |
-| **5. Weekly written report to him** | Destroys the *"you did this quietly and it hurt us"* attack before it can be made |
-| **6. Minute it as a decision** | An undocumented initiative is deniable and attackable |
-
-**One line at the outset:** *"Here is the baseline, here is what I am testing, here is what it does not touch, here is when I stop, and here is the number that decides it."*
-
-**🔴 But answer this first: why am I fighting for a pivot in a company I intend to exit?**
-If the separation completes, the AI pivot becomes **Bowshul's benefit**, not mine. And if AI engineering is my future, should it be built inside **InnBlockchain** instead?
-- **⚠ Handle with care** — redirecting a strategic direction from Trioangle to InnBlockchain while I am a Trioangle director is the **corporate-opportunity exposure** below. **Counsel first; do not act unilaterally.**
-- **⚠ Or it means I have not committed to leaving.** Fighting for Trioangle's direction while planning to exit is a contradiction. **Resolve this before spending more on it.**
+**Every route offered is an exit. None of them is "let's make it work."**
 
 ---
 
-## Sequencing — this replaces any earlier order of work
+## 3. HIS OBJECTIONS — and the answer to each
 
-| Order | Step |
+**Principle: never argue, never defend. Convert every objection into "on what terms".**
+
+### A. *"You should continue with Trioangle."*
+> *"I understand, and I'm not leaving you stranded — I'll do a full year of handover. But the reason isn't Trioangle. It's that neither of us can decide anything, and me staying doesn't change that. I need the ownership separated."*
+
+**Not a refusal — a request to stay, which means he values what I do. Useful information, and it prices the deal (§6). Answer with the handover, never with an offer to stay.**
+
+### B. *"How will you handle InnBlockchain alone?"*
+> *"I already do. Sales, marketing, technical and delivery — all of it, for years. Nothing about that changes. What changes is that I stop splitting my attention three ways."*
+
+**A fair question and probably a kind one. Separating reduces my load; it does not increase it.**
+
+### C. 🔴 *"I can't give up my InnBlockchain shares."*
+
+**Do not accept as final. Find out what it means:** *"Can you tell me what's behind that? Is it the value, or something else?"*
+
+| If he means | Answer |
 |---|---|
-| **1** | **Independent advocate (tax / corporate counsel)** on the parallel-records position — not the incumbent CA ([[group-financials]] §1d). Counsel engages an independent CA. |
-| **2** | **Decide the remediation plan** before anything is said to Bowshul — not to conceal it, but because raising it without a plan invites a reaction neither partner can control, and he is exposed too. |
-| **3** | **Raise it with Bowshul as joint remediation.** Both signed; cheaper together. This is the strongest cooperative argument available. |
-| **4** | **Then** the separation — valuations, netting, guarantee releases, PF/ESI/TDS clearance. |
+| *"It's worth something and I want that value"* | *"Then name a number and let's look at it properly with advisors."* **Good — converts a refusal into a price** |
+| *"I helped fund it"* | *"You did, through Trioangle, and that gets settled in the deal. I'm asking for the shareholding, not the history."* |
+| *"I don't want to look pushed out"* | *"Then frame it however you like publicly. I care how it's structured, not how it looks."* |
+| Refuses, no reason | *"Then the other way round — you buy my Trioangle stake for cash, and we get to the same place from the other side."* |
+
+**Never say "you don't deserve it."** Entitlement comes from the share register, not from conduct.
+
+### D. 🔴 *"Let's close InnBlockchain and focus on Trioangle."*
+> *"Closing InnBlockchain doesn't change anything I've asked for. We'd still be partners — just in one company instead of two. The thing I want to change is the partnership, not the number of companies."*
+
+**It makes no claim about either business, and it shows his proposal solves nothing — he would still be my partner the next day.**
+
+**If he argues InnBlockchain's prospects, up or down:** *"Maybe you're right. After this, that's mine to worry about, not yours."*
+
+> ### 🔴 THE PERFORMANCE-NEUTRAL RULE — applies everywhere
+> **Never make InnBlockchain sound valuable. Never make Trioangle sound worthless. Both kill the swap.**
+>
+> | If I say | He concludes |
+> |---|---|
+> | *"InnBlockchain is doing well"* | *"Then why would I give you my half?"* |
+> | *"Trioangle is losing money"* | *"Then why would I take it?"* |
+>
+> The reason for separating is the partnership, not the numbers. **Any performance argument reopens a valuation fight I do not want.**
+
+**⚠ If he says *"it's okay to lose that money"*** — the ₹46.7L, or the ₹1.93Cr including QoreUps — **do not feel relieved. A man who writes that off rather than let me go is telling me what my presence is worth to him.** → §6.
+
+### E. *"Then let's close Trioangle and focus on InnBlockchain."*
+> *"Same answer — that doesn't change anything I've asked for; we'd still be partners. And practically we can't: Trioangle has the clients, the team and the arrears, and closing it makes all of those due at once, on both of us personally."*
+
+**Partnership answer first, practical second.** Leading with the arrears invites a discussion of Trioangle's condition and breaks the performance-neutral rule.
+
+### F. 🔴 *"Trioangle has debt. Pay it off first, then you can be released."*
+
+**Lead with the coin — it settles the whole objection:**
+> *"There's ₹88L sitting in the coin. I'm not asking for any of my half of it — you keep all of it. Use it to clear the salary, PF, ESI and TDS, and the debt question is answered without either of us putting in a rupee."*
+
+- Resolves his objection **using an asset that already exists** — he is not asked to find money
+- **₹88L against ≈₹48L of arrears leaves him ₹40L.** He is better off after it than before
+- It reads as a concession from me, so it does not sound like a demand
+- **And it protects me, which is the real reason I want it. Never say that part**
+
+| Then, if he separates them | Answer |
+|---|---|
+| **The ₹18L OD** | *"Company borrowing, not either of ours personally. It stays with Trioangle. If either of us signed a personal guarantee, the bank should release both of us in writing as part of completing — that protects you as much as me."* |
+| *"You still owe the company"* | → the extinguish position, G |
+
+### G. *"InnBlockchain has to repay what Trioangle invested."*
+
+> ## *"That's what my Trioangle shares are for. I'm handing you 50% of Trioangle and asking nothing for it — and the balances between the companies net off and are extinguished. That's the trade."*
+
+**It makes the swap a visible exchange, never touches the arithmetic, and is unanswerable as a trade** — if he wants the balance repaid *and* my shares for nothing, he is asking for both sides of the deal. **One sentence, then stop.**
+
+**The ladder, if he pushes. Use in order; stop at the first he accepts.**
+
+**Rung 1** — the trade, above.
+
+**Rung 2** — *"There isn't a receivable to settle. It was never structured as one."* ([[group-financials]] §1: never documented as a loan, undocumented balances unenforceable, no valuer will credit it.)
+**Accept the cut both ways, openly:** the ≈₹60L "repaid" has no documented basis either, **so I cannot claim credit for having serviced it. Extinguishing both sides is the only position that does not require the records to be examined — which is why it suits him too, and I can say so.**
+
+**Rung 3** — only if he insists on arithmetic:
+> *"Against that balance: ₹31L of my director's salary is still unpaid, and I never drew a rupee as CEO from InnBlockchain or from QoreUps in four years. I'm not asking you for any of it. I'm saying we're square."*
+
+| Offset | Standing |
+|---|---|
+| **₹31L unpaid director salary at Trioangle** | **Documented payable.** Unarguable |
+| Unpaid CEO salary at InnBlockchain, four years | Fairness point, **not a booked liability** |
+| Never drew from QoreUps | Fairness point |
+
+**⚠ The CEO salary is a talking point only. If the accrual was never booked, never create it retrospectively** — record integrity is already the central problem here, and a backdated claim is exactly what counsel would stop.
+
+**🔴 Three rungs reach zero. There is no version where I pay cash — provided I open at rung 1 and do not argue my way down unprompted.**
+
+### H. 🔴 *"Trioangle put ₹1.46Cr into QoreUps for you. You repay that too."*
+
+**Do not litigate it. Deflect once and move on:**
+> *"QoreUps was a company we both owned half of, and we agreed to start it. Those were company-to-company balances, not money that came to me — I never drew a rupee of salary from QoreUps. It closed on your recommendation and I accepted that. If there's a balance to settle between the companies, the advisors can set it out."*
+
+**Facts ready, used one at a time only if needed:** he approved the formation; he owned 50% of QoreUps so it was his capital in his own company; I took no salary from it; the manager appointed there was approved by him beforehand; the advances were between companies, not to me.
+
+**🔴 THE RED LINE.** If he asserts I personally owe ₹1.46Cr + ₹46.7L ≈ **₹1.93Cr**, that is a legal position, not a negotiating one. **Do not concede it, do not argue it, do not accept any figure.**
+> *"That's a question for advisors, not for the two of us across a table. Let's not decide it here."*
+
+**The QoreUps money is also where his own exposure sits** ([[group-financials]] §1b–1c). **Neither of us should improvise about it — which is why counsel comes first.**
+
+### I. 🔒 The salary facts — a shield, never a sword
+
+**Only if he argues I have taken more than I put in. Never introduce them.**
+> *"For the record — I've never taken a salary from InnBlockchain or from QoreUps, and I've never taken a CEO salary from Trioangle. I've drawn a director's salary from Trioangle only, the same as yours. And ₹31L of mine is still unpaid."*
+
+**Then stop. Do not draw the conclusion out loud — let him do the arithmetic.** Leading with it restarts the *"everyone is also working like you"* argument I have never won in five years. Used defensively, once, it is unanswerable.
+
+### J. *"Why now? What's changed?"*
+> *"Nothing in particular happened. Nothing has changed — that's the point. It's been the same for years and I've concluded it isn't going to."*
+
+### K. *"Is this because of me? Are you angry with me?"*
+> *"No. This is about how the company is set up, not about you. We've been friends a long time and I'd like that to survive this — which is one reason I'd rather do it cleanly and without a list of complaints."*
+
+**If he presses further → the accumulation answer, then Level 2.**
+
+### L. *"Let's just carry on as we are."*
+> *"That's the one thing I can't do. I've thought about it for a long time and I'm not going to change my mind on it. What's open is how and when we do it — not whether."*
+
+### M. *"Will you compete with us?"*
+> *"No. Blockchain is a different business and a different buyer. We should write the boundaries into the agreement both ways, so neither of us has to wonder."*
+
+**Offer non-compete and non-solicit voluntarily. Costs almost nothing, buys enormous goodwill.**
+
+### N. *"What do we tell the team? And the clients?"*
+> *"I'd like us to agree that together and say the same thing. Something simple — we're separating the two businesses so each of us can focus. No detail, no blame, from both of us."*
+
+**A joint line costs nothing and makes him a participant instead of a target.**
+
+### O. *"What about Gopi? What about your wife?"*
+> *"Gopi goes with whichever company needs him — your call on Trioangle's side. On my wife, whatever we agree is fine; I'm not asking for anything special."*
+
+**Concede both immediately. Neither is worth a unit of negotiating capital.**
+
+### P. *"Give me time to think."*
+> *"Of course. Take as long as you need."*
+
+**🔴 The best realistic outcome of a first conversation.** Do not push, do not add, **do not fill the silence.**
+
+### Q. If he becomes angry
+> *"I'm not trying to fight with you. Take time and we'll talk again whenever you want."*
+
+**Then end the conversation.** Nothing decided in anger holds, and one bad hour does not undo the proposal.
+
+### R. *"Let's bring in family / a common friend."*
+> *"I'd rather keep it between us and use advisors for the mechanics. Bringing other people in makes it harder for both of us."*
+
+**Mediation by mutual friends invites the grievance contest — and Gopi, Kumar and Ajith are the last people to put in the middle.**
 
 ---
 
-## The structure — a straight swap
+## 4. ❌ NEVER SAY
 
+| Never | Why |
+|---|---|
+| *"Then what's the purpose of working with you?"* | **The most hostile sentence available.** Contempt, stated plainly. One utterance wastes this entire document |
+| *"Toxic" · "you insulted me" · "you don't take responsibility"* | True, and in [[bowshul-issues-log]] for my clarity. **Said aloud they end the friendship and start a grievance contest I lose on the documents** |
+| *"You questioned my effort / responsibilities / sacrifices"* | The one argument he has answered identically four times in five years. **He will say "we all work hard" and I have no numbers** |
+| *"I'll go where I get respect for my work"* | Invites *"of course I respect you"* — an unwinnable feelings argument. **Harsher than it sounds: it judges his character** |
+| *"You never listen to me"* | He is a 50% owner. **He is not obliged to, and he knows it** |
+| *"You wanted to close my companies"* | He approved both at formation, and on QoreUps he was right |
+| *"You're being partial to your own team"* | I do the same with marketing. It rebounds |
+| *"I work more than you"* | Unsettled for five years, never evidenced |
+| *"You built Trioangle from the start"* | Factually wrong — we built it together — **and it concedes authorship, undercutting my 50% and the ₹31L** |
+| *"I've thought about this for a long time"* | Sounds like a planned exit executed beside him. **Invites "so you've been deceiving me?"** Use *"carrying"* |
+| *"Trioangle isn't short of assets"* | True, but it reads as criticism of holding the coin while staff went unpaid. **Offer the coin; never point out it should have been used already** |
+| **The ₹1.46Cr, the funding routing, the records** | **Nothing about money history until counsel says so** |
+| Naming the ₹46.7L or ₹31L as figures | Until counsel confirms how to handle an undocumented balance. *"They net off and both are extinguished"* is the position |
+| Anything about my wife | Not his business and not a negotiating point |
+| **Claiming the coin as a separate concession** | **It sits inside Trioangle's ≈₹21L net assets. Giving up the shares already gives up my half of it. Double-counting makes everything else I claim look inflated** |
+
+**If he brings up grievances of his own:** *"That's fair, and I'm not here to argue it. What I'm proposing is…"* **One sentence, then back to the deal. Do not defend, do not counter, do not score.**
+
+---
+
+## 5. THE DEAL
+
+### Structure — a straight swap
 - I give up **my 50% of Trioangle**
 - He gives up **his 50% of InnBlockchain**
-- No cash either way
+- **No cash either way**
 
-### 🔴 GAP — QoreUps is not in this plan at all
+### 🔴 QoreUps must be decided in the same deal
+**We each own 50% of a third company** — dormant since ~Mar 2026, 2–3 clients on server cost, Gopi part-assigned, and a **₹1.46Cr receivable owed to Trioangle that is almost certainly unrecoverable.**
 
-**We each own 50% of a third company.** Dormant since ~Mar 2026, 2–3 clients paying server cost, Gopi part-assigned, and **a ₹1.46Cr receivable owed to Trioangle that is almost certainly unrecoverable** ([[group-financials]] §5F).
-
-**A two-company swap leaves us still jointly owning a third.** That defeats the whole point — I would exit Trioangle, take InnBlockchain, and **remain in business with Bowshul inside QoreUps**, including its client obligations and its dormant-company filing duties.
-
-**Three options, all of which must be decided in the same deal:**
+**A two-company swap leaves us still jointly owning a third**, including its client obligations and filing duties. **That defeats the point.**
 
 | Option | Consequence |
 |---|---|
-| **Strike it off / wind it up** | Cleanest. Requires the 2–3 clients to be transitioned or given notice. **The ₹1.46Cr is written off — and that write-off hits Trioangle's balance sheet, i.e. his side after the swap** |
-| **He takes QoreUps with Trioangle** | Logical — the receivable is Trioangle's and he wanted it closed. **Simplest for me** |
-| **I take it** | No reason to want it, and it carries the client liability |
+| **Wind it up / strike off** | Cleanest. Clients transitioned or given notice. **The ₹1.46Cr written off — and that hits Trioangle's balance sheet, i.e. his side after the swap** |
+| **He takes it with Trioangle** | Logical — the receivable is Trioangle's and he wanted it closed. **Simplest for me** |
+| I take it | No reason to want it; carries the client liability |
 
-**⚠ Whichever way it goes, the ₹1.46Cr write-off interacts with the swap valuation** — impairing it cuts Trioangle's net assets, which changes what my 50% of Trioangle is worth. **Whoever raises impairment first frames the whole deal** ([[group-financials]] §5J). **Decide my position on this before the valuation conversation, not during it.**
+**⚠ The write-off interacts with the valuation. Whoever raises impairment first frames the deal** ([[group-financials]] §5J). **Decide my position before the valuation conversation, not during it.**
 
-### ⚠ A swap only works if the halves are worth the same
+### What actually moves, once, each way
 
-| | Trioangle | InnBlockchain |
+| I give up | I receive |
+|---|---|
+| **My 50% of Trioangle ≈ ₹10.5L** (half of ≈₹21L net — **already includes my half of the ₹88L coin and the tangibles**) | **His 50% of InnBlockchain** — plausibly ₹8–28L |
+| **My ₹31L claim**, consumed extinguishing the ₹46.7L | **The ₹46.7L balance extinguished** |
+
+**Net: close to even.** Discount the ₹21L further — the coin is volatile, 40+ used laptops realise little, revenue is down 43% on a −₹1.5Cr history, and a stake with no board seat trades well below book.
+
+**🔴 Two consequences:**
+1. **"No money either way" is genuinely fair — so stop treating it as generosity.** It is not a large gift from me, **and any claim that it is will not survive his accountant.**
+2. **But nil consideration is still the wrong opening if he needs me** (§6). **The deal being fair on assets says nothing about what my presence is worth to him** — and that is where any consideration would come from.
+
+### "No money either way" is four items, not one
+
+| # | Item | If left vague |
 |---|---|---|
-| Revenue trend | ₹2.8Cr → ₹2.9Cr → ₹2.1Cr → **~₹1.2Cr annualised** (−43%) | ₹37L → **~₹62L annualised** (rising) |
-| Cumulative P&L | **−₹1.5Cr** over three years | **+₹18.45L** over four periods |
-| Current part-year P&L | +₹2L — a cost cut, not a recovery | **+₹9L** |
-| Payables | **₹66L** (₹97L incl. my salary) | **₹9L** |
-| Receivables owed to it | ₹1.93Cr, **largely unrecoverable** | — |
+| 1 | Share transfer consideration, nil both ways | **Clean.** This part works |
+| 2 | **My ₹31L unpaid salary** | **I lose it.** Nobody pays a claim the claimant stopped asking for |
+| 3 | **The ₹46.7L balance** | **Survives and stays enforceable.** He will own 100% of the creditor |
+| 4 | **PF / ESI / TDS arrears, part of ≈₹48L** | **Follow me personally for my whole tenure.** A share transfer does not touch officer liability |
 
-**Trioangle is not the profitable entity — it is the loss-making, shrinking one.** InnBlockchain looks healthier per rupee.
+**The asymmetry:** on #2 *I* must initiate to collect; on #3 *he* has every incentive to. **So "nothing moves between us" resolves as my ₹31L evaporating and his ₹46.7L staying alive.**
 
-**⚠ But InnBlockchain's numbers are flattered.** Trioangle carried InnBlockchain's payroll for a period ([[group-financials]] §1b), so its profit figures are not like-for-like. Do not lean on the comparison.
+**✅ The clean version:** *"These balances net off and both are extinguished."* Never *"let's not worry about money."*
 
-**⚠ So the swap may run the other way from the obvious reading.** I would be giving up half of a declining company and taking full ownership of a growing one. **He may refuse, or want compensation.** Do not assume he grabs it.
+### 🔴 The coin-for-arrears trade
 
-**⚠ Impairment is the biggest lever and nobody has pulled it.** Writing down the ₹1.46Cr QoreUps receivable cuts Trioangle's net assets by up to that amount. **Whoever raises impairment first frames the valuation** ([[group-financials]] §5J).
+**My position:** the arrears will not be cleared before I leave; Trioangle keeps them; **that is why I give up my share of the ₹88L coin.**
 
-### Rough fairness check
+**Economically fair** — ~₹44L of coin value against ≈₹48L of arrears. **But it does not do what I think it does:**
 
-- I give up: **~₹34L** (half of Trioangle's ≈₹68L net assets) **+ ₹31L salary claim ≈ ₹65L**
-- I receive: his half of InnBlockchain — negative on net assets, positive on earnings. Plausibly **₹8–28L**
-- **Gap: ₹35–55L, paid by me, for autonomy**
+> ## **PF, ESI and TDS are owed to the State, not to Bowshul. No agreement between two shareholders extinguishes them, and officer liability for the period I served does not transfer with the shares.**
 
-**That may still be worth it.** But discount Trioangle honestly first: the ₹88L coin is volatile, 40+ used laptops realise little, the ₹46.7L receivable is long-dated, revenue is down 43% on a −₹1.5Cr history, and a stake with no board seat is worth well below book. Realistically the swap may be close to even.
+| | |
+|---|---|
+| **PF arrears** | Personal prosecution exposure under the EPF Act. Under **IBC s.36(4)** PF/pension/gratuity sit **outside the liquidation estate** — payable in full, cannot be written down |
+| **TDS deducted and not deposited** | **s.276B** — money held in trust. The most dangerous line item available |
+| **Unpaid wages** | Employees are third-party claimants with their own rights |
+| **Who is pursued** | **The officer in default during the period. That is me, whatever the share register says afterwards** |
 
----
+**🔴 These are the defaults that cause director disqualification (s.164/167) and fit-and-proper failure — the two things that would block my own company and InnBlockchain's EU authorisation. Leaving them open is the one version of this deal that destroys the business I am separating in order to build.**
 
-## "No money either way" — it is four items, not one
+**✅ Same trade, one condition added:**
+> *"Take the coin. Use it to clear the salary, PF, ESI and TDS before we complete, and give me the challans. After that it's yours and I'm not asking for anything from it."*
 
-| # | Item | Amount | If left vague |
-|---|---|---|---|
-| 1 | Share transfer consideration | nil both ways | **Clean.** This part works. |
-| 2 | **My unpaid salary in Trioangle** | **₹31L** | **I lose it.** Nobody pays a claim the claimant stopped asking for. |
-| 3 | **InnBlockchain's loan from Trioangle** | **₹46.7L** | **Survives and stays enforceable.** He will own 100% of the creditor. |
-| 4 | **PF / ESI / TDS arrears** | part of ≈₹48L | **Follow me personally**, for my whole tenure. A share transfer does not touch officer liability. |
+**Identical economics, and easy for him to accept:** ₹88L covers ≈₹48L with ₹40L left; the money is already sitting there; **and he is an officer in default for the same period — frame it as our shared exposure, not my condition.**
 
-**The asymmetry:** on #2 *I* must initiate to collect; on #3 *he* has every incentive to. So "nothing moves between us" resolves as **my ₹31L evaporates, his ₹46.7L stays alive** — a ₹78L swing created by wording.
+**🔴 The worst outcome, which the unconditioned version produces: I give up ₹44L of coin, it gets spent elsewhere, the arrears stay open, and I carry the liability anyway.**
 
-**✅ The version that is actually clean:**
-> **Net items 2 and 3 against each other and extinguish both in the deal documents.**
-> ₹46.7L − ₹31L = **₹15.7L net.** Settle that balance, or write both off against each other as the stated consideration.
-
-Still "no money moves." ₹31L better. And no live debt follows me out. Say *"these balances net and both are extinguished"* — never *"let's not worry about money."*
-
-**⚠ But the ₹46L may not be documented at all** ([[group-financials]] §1b–1c) — it exists as an internal-system note. So: **do not write it into any deal document.** Putting an internal-book figure into a signed instrument creates a record of the parallel accounting. How to handle the netting without doing that is a question for counsel.
-
-**🔴 The one money movement to insist on: clear the PF / ESI / TDS arrears out of the ₹88L coin, before or at separation.** Not a negotiating point — self-protection. Get written confirmation with challans.
-
-**⚠ What "no money either way" says about my state of mind:** it is the language of wanting it over more than wanting it right. Understandable after ten years, and exactly why it is the most expensive sentence available. **It is my closing position, not my opening one.**
-
-**🔴 And there is an unstated second goal driving it: keeping the friendship.**
-Bowshul was my friend before he was my co-founder ([[bowshul-issues-log]] — "Why this is a friendship file"). "No blame, no history, no drama" is what someone does when they want the friendship to survive the partnership. **That is legitimate and may be worth more to me than the ₹31L — but it must be a decision, not a leak.** Friendship-preservation is expensive at a negotiating table: it is the single most likely reason I concede terms I should not. **Name the price I am willing to pay for it before I sit down, and note that I cannot make him want the friendship by being generous on terms.**
+**If he refuses:** get a **written indemnity** from Trioangle and from Bowshul personally. **It buys a contractual claim if I am pursued. It does not stop a prosecution or a disqualification, and it is only as good as his ability to pay.** A consolation, not a solution.
 
 ---
 
-## Personal exposure — what actually follows me out
+## 6. 🔴 IF HE FIGHTS TO KEEP ME
 
-### Guarantees, collateral, statutory dues
+**The likelier reality: he cannot run Trioangle alone and will use everything he has to hold me.** Ajith and Gopi go with him, **but they cannot replace sales, marketing, client relationships or technical judgement.** He may know that better than I do.
+
+### My leverage is the opposite of what I assumed
+
+| If he wants me gone | If he cannot manage without me |
+|---|---|
+| He holds the better cards. Take the clean swap | **I hold the scarce asset, and he knows it** |
+| Nil consideration is reasonable | **🔴 Nil consideration is a gift to a man who cannot replace me** |
+
+**The tell: *"it's okay to lose that money."*** Anyone who writes off ₹1.93Cr rather than let me leave **has told me my presence is worth more than ₹1.93Cr to him. Price accordingly.**
+
+### 🔴 This is the moment I fold — decide before it arrives
+
+**Four times I set a position and withdrew it without being refused** ([[bowshul-issues-log]] #1, #4, #7, #17). **The pressure that works on me is not argument. It is being needed.**
+
+**He will say:** *"Don't leave me with this."* · *"After all these years?"* · *"I can't do this without you."* · *"Give it one more year."*
+
+**There is no answer to that in the moment, so the answer must exist beforehand:**
+
+> **PRE-COMMITMENT — written down before walking in, not moved in the room:**
+> - What I will accept for my Trioangle stake, in rupees or netted balances
+> - The maximum handover, in months, with an end date
+> - The sentence for this exact moment: ***"I'm not leaving you with it — I'll hand over properly for as long as it takes. But I do need to separate the ownership."***
+
+**Nothing final gets agreed in that meeting beyond the shape. That rule exists specifically to protect me from this moment.**
+
+### His need converts into price and time, not into staying
+
+**Staying is not on the table.** Everything his need buys has to be taken in the separation itself:
+
+| What his need buys | How it shows up |
+|---|---|
+| **Consideration for my Trioangle shares** | Nil stops being the obvious answer |
+| **The ₹31L paid or netted without argument** | He will not fight it if he needs the handover |
+| **Arrears cleared from the coin before completion** | Same |
+| **A capped handover on my terms** | Defined hours, ending on a date — **not "available whenever"** |
+| **A transition fee for the handover year** | It has real value to him. Currently unpriced |
+| **Favourable seat terms and notice period** | The office licence, from strength |
+
+**⚠ The temptation to resist: *"stay one more year as a partner and we'll sort it out."*** That is the arrangement that produced this file, offered back in warmer words. **The answer is the handover, not the partnership.**
+
+### In the room
+1. **Do not gloat and do not soften.** Being needed is pleasant — **and it is the feeling that has cost me four positions.**
+2. **Say the handover sentence.** It removes the fear without conceding ownership.
+3. **Do not reprice on the spot.** *"Let me think about what that would look like."*
+4. **Offer two doors, both exits:** *"Either you take Trioangle and I take InnBlockchain, or you buy my Trioangle shares for cash. Either works. Carrying on as we are doesn't."*
+5. **Expect him to reach for a third door — me staying. There isn't one.**
+
+---
+
+## 7. THE TRANSITION YEAR
+
+**Offered:** one year in the same office for knowledge transfer; InnBlockchain uses Trioangle's premises for that year, then a seat-based charge.
+
+**A full year removes the capability fear almost entirely and costs me little. Four conditions make it safe.**
+
+**1. 🔴 Resign as director at completion; deliver the year as a consultant.**
+Staying a year on the board extends **every** personal exposure by a year — the officer-liability period for PF/ESI/TDS, the IBC look-back window (which does not start until I am off the board), the records position, and disqualification risk. **The handover does not require the directorship.** Identical help, none of the liability extension.
+
+**2. 🔴 Pay a seat charge from month one, at market rate.**
+Point 3 promises *"Trioangle never funds blockchain again."* **A free year of Trioangle's premises is Trioangle funding InnBlockchain** — and he will spot it. The amount is trivial; what it buys is that "clean break" is literally true. **Allocate every shared cost from day one** — electricity, internet, admin, the AI account.
+
+**3. Put it in a written licence.** I already have one undocumented inter-company arrangement and it has produced an unenforceable balance, a flattered P&L and a records exposure. **Do not create a second.**
+
+| Term | Why |
+|---|---|
+| Rate per seat and what it includes | Stops the subsidy argument |
+| Fixed 12-month term | An end date, not an understanding |
+| **Notice period both ways, minimum 3 months** | **Without it he can move InnBlockchain out on a bad day. I would be a tenant of a company he owns outright** |
+| Renewal terms | So year two is not a fresh negotiation from weakness |
+| The deposit stays Trioangle's | It is inside the ₹30L of tangibles I am giving up. **I do not get it back and should not ask** |
+
+**4. 🔴 Cap the handover hours.** A year in the same office doing a full handover *and* running InnBlockchain is **more** load, not less — and the relief this separation is for arrives in late 2027, not on completion. **A day a week, or a named list of deliverables. Not "available whenever."** An uncapped year of helping out is how a boundary gets set and never defended for the fifth time.
+
+**Also settle:** who decides what internally during the year; whether I am paid a transition fee; **and that the year is consideration — it has real value to him, so do not give it away free and also accept nil for the shares.**
+
+---
+
+## 8. PERSONAL EXPOSURE — what follows me out
 
 | Exposure | Ends on resignation / share transfer? |
 |---|---|
-| **Personal guarantee** on a bank loan / OD / CC | **No.** Only when the lender releases me in writing |
+| **Personal guarantee** on a loan / OD / CC | **No** — only when the lender releases me in writing |
 | **Collateral I pledged** — property, FDs, family assets | **No** |
 | Co-borrower / co-obligor | **No** |
 | Post-dated or security cheques | **No** |
 | **Statutory dues during my tenure** — GST, TDS, PF, ESI, wages | **No** |
 | Ordinary trade creditors | Yes — company liability |
-| The ₹46.7L inter-company balance | Company-to-company — **unless I guaranteed it** |
+| The ₹46.7L balance | Company-to-company — **unless I guaranteed it** |
 
-**🔴 The one that can wreck the plan:** if I guaranteed Trioangle's borrowings and then exit, **the guarantee survives unless the lender releases me** — and lenders routinely refuse without substitute security. Bad outcome: *Bowshul owns 100% of Trioangle and I still stand behind its debts, with no shares and no control.* **Release of every guarantee must be a written condition precedent — and the lender controls that, not Bowshul.** A third party in this negotiation.
-
-### The liability picture — 2026-09-24
-
-| Liability | Amount | Notes |
-|---|---|---|
-| **Trioangle total payable** | **₹66L** excl. my salary · **₹97L** incl. | [[group-financials]] §2 |
-| — OD facility | **₹18L** | Guarantee believed absent — **unverified** |
-| — remainder | ≈₹48L | Employee salaries + PF / ESI arrears |
-| **My unpaid salary in Trioangle** | **₹31L** | A claim I hold |
-| **InnBlockchain total payable** | **₹9L** | |
-| **Trioangle coin holding** | **≈₹88L** | [[group-financials]] §2d |
+**🔴 The one that can wreck the plan:** if I guaranteed Trioangle's borrowings and then exit, **the guarantee survives unless the lender releases me** — and lenders routinely refuse without substitute security. **Bad outcome: Bowshul owns 100% of Trioangle and I still stand behind its debts, with no shares and no control.**
+**→ Release of every guarantee must be a written condition precedent — and the lender controls that, not Bowshul. A third party in this negotiation.**
 
 **⚠ "I think there are no guarantees" is not good enough.** An ₹18L OD without a director's guarantee would be unusual. **Read the sanction letter.**
 
-**🔴 Salary + PF/ESI arrears are the worst liabilities to carry as a director — worse than a bank loan:**
+### If Trioangle later fails and I hold only shares
 
-| | Why |
-|---|---|
-| **PF arrears** | Personal prosecution exposure under the EPF Act. Under IBC s.36(4), PF/pension/gratuity sit **outside the liquidation estate** — payable in full, cannot be written down |
-| **TDS deducted and not deposited** | Money held in trust. s.276B exposure. **The single most dangerous possible line item — confirm this week** |
-| **ESI arrears** | Similar officer liability |
-| **Unpaid wages** | High priority in insolvency; employees are a legal and reputational front |
-
-**All attach to the period I was a director. Resigning clears nothing accrued.**
-
-**⚠ And Trioangle holds ₹88L in coin while these arrears sit unpaid** ([[group-financials]] §2d). ₹88L covers the ₹66L of non-director payables with ₹22L to spare — so "Trioangle cannot pay its staff" is false; it is choosing not to liquidate. **Holding a speculative asset while failing to remit statutory dues is very hard to defend.** Establish whether the decision to hold was joint.
-
-### If the company later fails and I hold only shares
-
-**As a pure shareholder: no personal liability** beyond the value of the shares.
-**But I would be a former director holding shares, which is different:**
+**As a pure shareholder: no liability beyond the share value. But I would be a former director holding shares:**
 
 | At insolvency | Survives? |
 |---|---|
 | Personal guarantees | **Yes — insolvency is when guarantees get called** |
-| Look-back on director conduct — IBC s.43–51, s.66; Companies Act s.339 | **Yes, ~1–2 years before commencement.** Resigning before a collapse protects nothing for the prior period |
+| Look-back on director conduct (IBC s.43–51, s.66; Companies Act s.339) | **Yes, ~1–2 years before commencement.** Resigning before a collapse protects nothing for the prior period |
 | TDS / PF / ESI from my tenure | **Yes** |
 | The shareholding | Capped — I lose the value |
 
-**The risk has a clock on it.** Once every guarantee is released in writing and the look-back window has passed with me clear of the board, I am genuinely insulated. **Time plus written releases is what makes a separation safe — not the share transfer.**
+**The risk has a clock on it. Once every guarantee is released in writing and the look-back window has passed with me clear of the board, I am insulated. Time plus written releases is what makes a separation safe — not the share transfer.**
 
 ### Non-monetary consequences — the ones that follow me into the next company
 
 | Consequence | Effect |
 |---|---|
-| **Director disqualification** (s.164 / s.167) | Can bar me from being a director of **any** company, typically 5 years. **Would block my own new company.** The most dangerous item here |
+| **Director disqualification** (s.164 / s.167) | Bars me from being a director of **any** company, typically 5 years. **Would block my own new company.** The most dangerous item here |
 | **CIBIL default** as guarantor | No home loan, no facility, no working capital for the next venture |
-| **Wilful defaulter listing** | Closes institutional credit |
-| **Cheque dishonour (s.138)** | Summons, court appearances, years |
-| **TDS / PF / ESI prosecution** | Attaches to the responsible officer regardless of who holds shares later |
+| Wilful defaulter listing | Closes institutional credit |
+| Cheque dishonour (s.138) | Summons, court appearances, years |
+| TDS / PF / ESI prosecution | Attaches to the responsible officer regardless of who holds shares later |
 | **🔴 Fit-and-proper failure — EU licensing** | ECSP / MiCA authorisation tests management integrity. **Can make me unlicensable in the exact business I am leaving to build** |
 | Local reputation | Madurai / TN networks are small. This travels |
 
-**"The shares are worth nothing anyway" is the wrong frame.** Guarantees, officer liability and disqualification attach to *me*, not to the shareholding. **A company left to collapse behind me can disqualify me from running the thing I left to run.**
+**"The shares are worth nothing anyway" is the wrong frame. Guarantees, officer liability and disqualification attach to *me*, not to the shareholding. A company left to collapse behind me can disqualify me from running the thing I left to run.**
 
 ---
 
-## The fallback if he says no — and why it does not work
+## 9. 🔴 DO NOT DIVERT WORK OR REVENUE BEFORE COMPLETION
 
-**Stated fallback (2026-09-23):** resign as director of both, **keep the shares in both**, start my own blockchain company applying what I am already doing inside InnBlockchain.
+**He owns 50% of InnBlockchain today. Until a transfer completes he is legally entitled to half of whatever it becomes, including revenue earned from now on.**
 
-**⚠ 1. Keeping 50% of InnBlockchain while running a competing blockchain company is a direct conflict.** Resigning as director does not clear it — opportunities and know-how from my time on the board follow me out, and the EU-RWA contracts, compliance research, codebase and pipeline are **InnBlockchain assets, not mine**. *Take to a lawyer before it is said to anyone.*
+**"He doesn't deserve it" is not the operative test** — entitlement comes from a share register, not from conduct. **Diverting work, revenue or opportunities away from InnBlockchain to avoid sharing is the corporate-opportunity and oppression exposure, and it converts a weak claim of his into a strong one.** It is the one thing that could cost me InnBlockchain entirely, and it destroys the negotiating position.
 
-**⚠ 2. Director-out / shareholder-in is the worst of both positions.** No control, all downside, still tied to the ₹46.7L, and Bowshul gains practical control of both. My InnBlockchain shares become worth what a leaderless company is worth.
+**The way to stop sharing is to finish the deal, not to withhold.**
 
-**⚠ 3. It abandons the goal.** The objective is to *focus on* InnBlockchain. This **leaves** it and rebuilds from zero — no team, no contracts, no compliance work, no brand. That is an escape from Bowshul, not a business plan.
-
-**The version that is legitimate:** **full clean break — director AND shares, both companies.** Settle the balances, agree the IP line in writing, then build independently. My skills are mine; InnBlockchain's specific assets are not.
-
-**⚠ 4. A weak BATNA means I must not reveal it.** My walk-away is poor, which makes the swap **more** valuable to me than I have been treating it. **Never issue this as a threat — a threat I cannot lawfully execute is worse than none.**
-
-**🔴 5. The vehicle question.** If InnBlockchain cannot pass a fit-and-proper review, the choices are *regularise it fully first* or *use a clean new entity* — which reopens the conflict above. **These are the same question and neither can be answered before counsel.**
+**⚠ And the timing tension to put to counsel explicitly:** the stronger my conviction that InnBlockchain will out-earn Trioangle, **the more urgent completing the swap becomes** — every good quarter raises the value of his 50%. **But that runs straight into the records position, which cannot be rushed.**
 
 ---
 
-## How I will conduct it — decided 2026-09-24
+## 10. SEQUENCING
 
-**Position:** grievances stay confidential. No blame, no history, no arguing, no sacrifice or effort talk. The line is **"terms not working out."** Opened up only in a worst case.
-
-**✅ Correct call, and for self-interest rather than dignity:** **in a contest about history I lose on the documents.** My grievances are unrecorded remarks. His potential counter-grievances are ₹1.46Cr into QoreUps with nothing repaid, ₹1Cr+ routed through director salaries, and the parallel records. If it becomes a blame contest, the paperwork does the arguing and it argues against me. And I need his **cooperation** on the remediation.
-
-### The opening sentence — prepared, not improvised
-
-> *"We built Trioangle together from the start. InnBlockchain I built myself. I want to focus fully on blockchain — let us separate cleanly so each of us runs one."*
-
-**⚠ Never say "you built Trioangle from the start."** Factually wrong, and it concedes authorship — which undercuts my claim on Trioangle's value: my 50% and the ₹31L owed to me.
-
-**And note what that correction does to the deal logic.** "He built Trioangle" made nil consideration feel natural. Once it is *we built it together*, handing him 100% for nothing is a **real concession** — half a company I co-founded plus ₹31L, for full ownership of one I built alone. **That is the argument for netting the ₹31L rather than waving it through.**
-
-**⚠ Expect the counter to "InnBlockchain I built myself":** *"I funded it."* True — Trioangle's cash and, for a period, Trioangle's payroll. **Say it first: "I built it; Trioangle funded it."** Concedes nothing I would not concede anyway, and keeps me credible on everything else.
-
-### Four gaps in the "no drama" approach
-
-1. **"Terms not working out" is too thin to carry a proposal.** It invites *"which terms?"*, and improvising under pressure is where blame leaks out. Use the prepared sentence.
-2. **"No history talk" cannot survive the remediation — and remediation comes first.** Two separate conversations: remediation (factual, blame-free, **not** history-free) then separation (forward-looking). Keep blame out of both; do not try to keep facts out of the first.
-3. **The grievances are a weak reserve weapon.** In any real dispute a private record of remarks carries almost no evidentiary weight; the financial documents carry a great deal. Do not bank on "worst case I can open it up."
-4. **These files contain admissions** — the ₹1.46Cr, the funding routing, the parallel records, alongside my characterisations of his motives. **Not helpful documents to have written** if litigation or a regulatory process ever arrives. Raw-only, unsynced, and worth asking counsel how they should be handled.
-
-**If he brings his own grievances:** acknowledge without litigating, then return to terms. *"That's fair, and I'm not here to argue it. What I'm proposing is…"* One sentence, then back to the deal. Do not defend, do not counter, do not score.
+| Order | Step |
+|---|---|
+| **1** | **Independent advocate — tax / corporate counsel — on the parallel-records position. Not the incumbent CA** ([[group-financials]] §1d): he may have maintained the records, he is the companies' CA not mine, and **a CA carries no legal privilege in India.** Counsel engages an independent CA |
+| **2** | **Decide the remediation plan** before anything is said to Bowshul — raising it without a plan invites a reaction neither of us can control, and he is exposed too |
+| **3** | **Raise it with Bowshul as joint remediation.** Both signed; cheaper together. The strongest cooperative argument available |
+| **4** | **Then the separation** — valuations, netting, guarantee releases, arrears cleared from the coin |
 
 ---
 
-## Before any conversation happens
+## 11. BEFORE ANY CONVERSATION
 
 - [ ] **🔴 Counsel on the parallel-records position** — independent advocate, not the incumbent CA
 - [ ] **🔴 Personal-guarantee / collateral / statutory-arrears list** — every guarantee, pledge, co-obligation and arrear, per company, per person, with lender and amount. **Does not exist yet**
 - [ ] **🔴 Read the OD sanction letter** — does the ₹18L carry a personal guarantee?
 - [ ] **🔴 Was TDS deducted from salaries and not deposited?**
 - [ ] Salary payable and PF/ESI arrears as figures, per company
-- [ ] Valuation of Trioangle — my 50%, discounted honestly
-- [ ] Valuation of InnBlockchain — his 50%
-- [ ] **Is the swap even?** If not, which way, and am I content to pay the difference for autonomy?
 - [ ] **🔴 A position on the ₹1.46Cr QoreUps write-off** — it moves Trioangle's net assets and therefore the price of my 50%
-- [ ] **🔴 What happens to QoreUps** — wind up, he takes it, or I do. See the gap section above
+- [ ] **🔴 What happens to QoreUps** — wind up, he takes it, or I do
 - [ ] **🔴 Coin valuation date and reference price, fixed in writing** — ₹88L of a volatile asset can move 30–40% inside a negotiation window
-- [ ] A position on the ₹46.7L that does not require documenting it
-- [ ] Who decided to hold the ₹88L coin rather than clear arrears — joint or unilateral?
+- [ ] **🔴 My pre-commitment** (§6): the number I will accept, the maximum handover, and the sentence for the moment he says he can't do it without me
 - [ ] InnBlockchain's funding plan **without** Trioangle — the first thing he will ask
 - [ ] Clients, IP, codebase, brand, domains — who keeps what
 - [ ] The team — who goes where; **Gopi**; my **wife's** position
-- [ ] **🔴 What the team, the clients and the market get told** — and when, and by whom. **Absent from this plan entirely.** A separation neither of us has explained will be explained by whoever speaks first
+- [ ] **What the team, clients and market get told** — and when, and by whom. **A separation neither of us has explained will be explained by whoever speaks first**
 - [ ] Non-compete / non-solicit both ways
-- [ ] **My personal runway** — no Trioangle income, and what InnBlockchain pays me from month one. This decides how long I can hold out, so it *is* my leverage
+- [ ] Transition year terms — consultant not director, seat charge from month one, written licence, 3-month notice, capped hours, transition fee
+- [ ] **My personal runway** — no Trioangle income, and what InnBlockchain pays me from month one. **This decides how long I can hold out, so it *is* my leverage.** And it answers whether *"I won't pay"* is a position or a constraint
 - [ ] Does Bowshul have a matching unpaid-salary accrual? ([[group-financials]] §6.7)
-- [ ] **🔴 A target date for each step.** There is no timeline anywhere in this plan — and an open-ended process is exactly the thing I have been criticised for twice (#2, #15)
+- [ ] **🔴 A target date for each step.** There is no timeline yet — **and an open-ended process is the thing I have been criticised for twice**
 
 ---
 
-## 🔴 POINTS TO DISCUSS WITH BOWSHUL — the actual agenda
+## 12. THE FOUR THINGS TO HOLD ONTO
 
-**Rules for this conversation:** no history, no grievances, no blame, nothing from before this year. **Every point below is either a fact he can verify or something he wants.** Nothing requires him to admit anything.
+1. **It's a decision, not a case.** Never justify — every reason I give becomes something he can offer to solve.
+2. **Work out in the first ten minutes which conversation this is** — does he want me gone, or does he need me to stay? **Point 3 convinces the first. The handover offer answers the second. Using the wrong one loses the room.**
+3. **🔴 If he needs me, I hold the scarce asset — and nil consideration stops being reasonable.** Do not reprice in the room.
+4. **Leaving with no agreement is fine.** *"Let me think"* is a success — **and nothing final gets agreed in that room.**
 
-**⚠ Timing:** this is **step 4** in the sequence above. Counsel on the records position comes first. **These points are ready; the conversation is not yet.**
+**Three things that cannot be engineered away:**
+- **He will work out it is personal.** I control whether it is *said*, not whether it is *understood*. **A separation with no stated reason will feel like a rejection, because it is one.** That is the price of not itemising, and it is cheaper than the alternative.
+- **I want him to understand what he did. He will not, and no sentence can make him.** Trying is what turns a separation into a war. **The exit and the acknowledgement are not both available.**
+- **Much of what I want is to be recognised as the senior partner. No deal delivers that.** Decide terms on numbers; take the recognition question somewhere else.
 
----
-
-### Open — one sentence, then stop talking
-
-> *"I want to talk about how we're set up. Not about anything that's happened — about the structure."*
-
----
-
-### 1. The structure — state it as a fact, not a complaint
-
-> *"We're two owners, fifty-fifty, with no tiebreaker and no shareholders' agreement. Neither of us can decide anything the other doesn't agree to. That's how we set it up ten years ago and it worked fine while we agreed on everything."*
-
-**Why it works:** verifiable from the cap table. No fault. He cannot disagree.
-
-### 2. Where we've ended up — say it symmetrically
-
-> *"You believe clone products and the Flutter rebuild bring Trioangle back. I believe the future is AI and blockchain. Neither of us can prove it to the other, and neither of us can overrule the other. We've both been holding our positions, and we've both been blocked."*
-
-**🔴 This is the most important point in the conversation.** It is **both of us blocking each other**, not him blocking me. It is true, it is symmetrical, and **it lets him agree without losing anything.**
-
-### 3. What it costs — one example, no accusation
-
-> *"We couldn't settle how to use the AI account, and the team lost working days. I'm not saying who was right. I'm saying we had no way to settle it — and that's going to keep happening."*
-
-**Say it once. Do not elaborate, do not defend, do not return to it.** If he pushes back, agree and move on: *"Maybe. That's the point — we had no way to decide."*
-
-### 4. The proposal — simple and direct
-
-> *"I think we should separate the two companies. You take Trioangle completely. I take InnBlockchain completely."*
-
-### 5. 🔴 What he gets — lead with this, it is what convinces him
-
-> - *"Trioangle never funds blockchain again. That ends permanently."*
-> - *"You run product, strategy and direction your way. No veto from me."*
-> - *"No more deadlock. Every decision is yours."*
-> - *"You've been saying for years that Trioangle shouldn't be carrying the other things. This is that, finished properly."*
-
-**He has wanted this since QoreUps was founded. Say it in his terms, not mine.**
-
-### 6. What I'm asking
-
-> *"InnBlockchain, clean. That's it."*
-
-### 7. The money — keep it to three sentences
-
-> - *"The balances between the companies net off and both are extinguished — nothing follows either of us afterwards."*
-> - *"The salary, PF and ESI arrears get cleared before we close. That protects both of us, not just me."*
-> - *"Any personal guarantee either of us has signed gets released in writing by the bank before completion."*
-
-**⚠ Do not name the ₹46.7L or the ₹31L as figures in the room** until counsel has confirmed how to handle the undocumented balance. **"They net off and both are extinguished" is the position; the arithmetic comes later.**
-
-### 8. QoreUps — do not leave it out
-
-> *"We still both own QoreUps. Let's decide it at the same time — wind it up, or it goes with Trioangle. I don't want us still tied together in a third company afterwards."*
-
-### 9. Timeline — propose one, do not leave it open
-
-> *"I'd like us to agree the shape in the next few weeks and complete it properly with advisors after that."*
-
-**An open-ended separation is the same mistake as "we would get the result."**
-
-### 10. If he says no — the fallback that still improves things
-
-> *"Then let's put a proper shareholders' agreement in place — a defined remit for each of us and a way to break a deadlock. Either we can decide things, or we separate. Right now we can do neither."*
-
-**Both outcomes are progress. He cannot reasonably refuse both.**
-
----
-
-### ❌ Do not say — any of these loses the room
-
-| Do not say | Why |
-|---|---|
-| *"What are you doing?"* — or anything from July 2026 | It is the thing that started this. Raising it makes the whole conversation about a sentence |
-| Anything about the wedding, the treat, the room, the carrom, the gym, the trips | Personal, unprovable, and it will look like score-keeping |
-| *"You never listen to me"* | He is a 50% owner. He is not obliged to. **The claim is wrong and he knows it** |
-| *"You wanted to close my companies"* | He approved both at formation and was right about QoreUps |
-| *"You're being partial to your own team"* | I do the same with marketing. It rebounds |
-| *"I work more than you"* | Unsettled for five years, and I have never produced the numbers |
-| The ₹1.46Cr, the funding routing, the records | **Nothing about money history until counsel says so** |
-| Anything about my wife | Not his business and not a negotiating point |
-
----
-
-### If he brings up grievances of his own
-
-> *"That's fair. I'm not here to argue it. What I'm proposing is…"*
-
-**One sentence, then back to the proposal. Do not defend, do not counter, do not score.**
-
----
-
-### The three things to hold onto in the room
-
-1. **It's the structure, not him.** Say it every time the conversation drifts.
-2. **He gets what he has been asking for.** That is the argument, not my grievances.
-3. **Leaving with no agreement is fine.** A first conversation that ends in *"let me think"* is a success. **Pushing for a decision in one sitting is how I concede terms.**
-
----
-
-## The two lines — do not confuse them
-
-| | |
-|---|---|
-| **To say to Bowshul** | *"We can't make a decision stick — and it has already cost the team working days."* |
-| **To remind myself** | **The grievances justify leaving. They do not price the deal.** **Counsel first, then remediation, then valuations — then the conversation.** |
+> **The grievances justify leaving. They do not price the deal.**
+> **Counsel first, then remediation, then valuations — then the conversation.**

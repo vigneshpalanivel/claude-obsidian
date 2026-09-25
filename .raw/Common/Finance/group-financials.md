@@ -5,7 +5,7 @@
 **Currency:** INR. Figures given in Indian notation (L = lakh, Cr = crore; 1 Cr = 100 L).
 **Financial year:** Indian FY, 1 Apr – 31 Mar.
 **As-of date:** 2026-09-23 — FY2026-27 figures are part-year (~5.8 of 12 months elapsed, ~48% of year).
-**Recorded:** 2026-09-23 · **Revised:** 2026-09-23 (Macavs identified as QoreUps)
+**Recorded:** 2026-09-23 · **Revised:** 2026-09-25 — InnBlockchain ₹46.7L removed from the asset side (§1, §2c, §5K). Trioangle net assets restated **≈₹68L → ≈₹21L**.
 
 > **Naming:** **Macavs = QoreUps.** Macavs is the corporate/registered name; QoreUps is how the entity is referred to everywhere else in this vault, including [[bowshul-issues-log]]. Both names are kept in this file so the accounting entries stay traceable.
 
@@ -13,17 +13,26 @@
 
 ## 1. Inter-company loans — all from Trioangle
 
-| Lender | Borrower | **Gross advanced** | **Repaid** | **Outstanding** | % serviced |
-|---|---|---|---|---|---|
-| Trioangle | InnBlockchain | **>₹1Cr** (≈₹1.06Cr) | **≈₹60L** | **₹46.7L** | **≈57%** |
-| Trioangle | **QoreUps (Macavs)** | ₹1.46Cr | **₹0 recorded** | ₹1.46Cr | **0%** |
-| | **Total outstanding** | | | **₹1.927Cr** | |
+| Lender | Borrower | **Gross advanced** | **Repaid** | **Recognised receivable** |
+|---|---|---|---|---|
+| Trioangle | **QoreUps (Macavs)** | ₹1.46Cr | **₹0 recorded** | **₹1.46Cr** |
+| Trioangle | InnBlockchain | **>₹1Cr** (≈₹1.06Cr) | **≈₹60L** | **₹0 — not recognised, see below** |
+| | **Total recognised** | | | **₹1.46Cr** |
 
-*Revised 2026-09-24: gross advanced to InnBlockchain and the ≈₹60L repayment added — the earlier version recorded only the ₹46.7L outstanding, which understated InnBlockchain's servicing record. Exact gross figure and repayment dates still to be confirmed from the books.*
+### 🔴 The InnBlockchain ₹46.7L is removed from the asset side — 2026-09-25
 
-**The distinction that matters: InnBlockchain is a performing borrower; QoreUps is a non-performing one.** Same lender, same period, same person driving both — but one has returned 57% of principal and the other nothing against a sum 40% larger. Any argument about the two entities should start here, not with strategy or staffing.
+**It is not a receivable and should not be counted as one in any valuation, swap or net-asset calculation.** Per §1b–1c:
 
-Terms not recorded: interest rate, repayment schedule, security, board/shareholder approval, whether documented as loans or running current accounts.
+- It was never a documented loan. It was **director salary used as a conduit** plus **Trioangle carrying InnBlockchain's payroll**.
+- It exists **only as a spent-amount note in the internal system** — the same internal system that holds the parallel records.
+- An undocumented balance is **not enforceable**, so no buyer, valuer or counterparty will credit it.
+- **It must not be written into any deal document** — putting an internal-book figure into a signed instrument creates a record of the parallel accounting.
+
+**What this costs the argument in [[bowshul-issues-log]]:** the ≈₹60L "repaid" has no documented basis either, so the "InnBlockchain is a performing borrower, 57% serviced" point **goes with it**. That framing is withdrawn. Credit cannot be claimed for servicing a debt that does not exist on paper.
+
+**What survives:** the ₹1Cr+ of Trioangle money that reached InnBlockchain is still a **fact**, and still the compliance exposure set out in §1b. Removing it as an asset does not remove it as a liability risk. The two are separate, and only the asset side is being struck here.
+
+*QoreUps terms not recorded either: interest rate, repayment schedule, security, board/shareholder approval, whether documented as a loan or a running current account.*
 
 ## 1b. 🔴 How the InnBlockchain funding was actually routed — stated 2026-09-24
 
@@ -156,13 +165,19 @@ If the CA tells Bowshul before I do, I lose control of the disclosure *and* look
 |---|---|
 | Coin holding | 88 |
 | Tangible assets | 30 |
-| InnBlockchain receivable (performing, 57% serviced) | 46.7 |
+| InnBlockchain receivable — **removed, not recognised (§1)** | — |
 | QoreUps receivable — **if impaired to zero** | 0 |
-| **Assets** | **164.7** |
+| **Assets** | **118** |
 | Payables incl. Vignesh's ₹31L accrual | (97) |
-| **Net** | **≈ +68L** |
+| **Net** | **≈ +21L** |
 
-**Corrected 2026-09-24.** An earlier version of this table omitted the coin holding and derived a *negative* net position of ≈−₹20L. **With the coin included Trioangle is solvent on a net-asset basis, ≈+₹68L**, and a 50% stake is worth something real rather than nothing. The coin is therefore **the swing factor in any swap, buyout or exit valuation** — and it is volatile, so the valuation date matters as much as the valuation method.
+**Revised 2026-09-25 — the InnBlockchain ₹46.7L is struck out.** Previously stated as ≈+₹68L. Removing an unenforceable, internal-book-only balance from the asset side cuts Trioangle's net position by ₹46.7L, to **≈+₹21L**. A 50% stake is therefore worth **≈₹10.5L on book**, not ≈₹34L.
+
+*(An earlier 2026-09-24 version also omitted the coin holding entirely and derived ≈−₹20L. The coin is what keeps the company solvent at all.)*
+
+**Two consequences:**
+1. **The coin is no longer the swing factor — it is essentially the whole company.** ₹88L of a ₹118L asset base. Trioangle's net-asset value is a crypto position with an operating business attached; strip the coin and the net position is **≈−₹67L**.
+2. **Every number downstream of this moves**, including the swap maths in [[separation-plan]]. See §5K.
 
 ## 2d. ⚠ The ₹88L coin holding — the biggest open item in this file
 
@@ -216,8 +231,8 @@ The ₹88L covers the entire ₹66L of non-director payables with ₹22L to spar
 
 > Everything below is interpretation from the figures in §1–§4. Kept separate from the data on purpose.
 
-**A. Trioangle lent ₹1.93Cr while losing ₹1.5Cr.**
-The lender is the only loss-making entity of the three years shown. Trioangle funded InnBlockchain and Macavs out of a balance sheet that was simultaneously running three consecutive annual losses. Whatever the merits of each loan individually, the group's cash has been moving *away* from the entity that needed it.
+**A. Trioangle pushed out ~₹2.5Cr gross while losing ₹1.5Cr — and can now only recognise ₹1.46Cr of it.**
+Roughly ₹1.46Cr to QoreUps and ₹1Cr+ to InnBlockchain, against ≈₹60L returned (itself undocumented). The lender is the only loss-making entity of the three years shown: Trioangle funded both siblings out of a balance sheet running three consecutive annual losses. The group's cash moved *away* from the entity that needed it, and **the half that went to InnBlockchain cannot even be claimed back as a debt** (§1).
 
 **B. The ₹31L director salary payable is Vignesh financing Trioangle.**
 Unpaid accrued salary is an interest-free loan from Vignesh to the company, and it sits behind ₹66L of other payables. Bowshul holds 50% of Trioangle (see [[bowshul-issues-log]] §Key structural facts) but is not recorded as carrying an equivalent unpaid accrual — unverified, and worth establishing.
@@ -228,8 +243,8 @@ First positive P&L in four years (+₹2L), but revenue run-rate has collapsed: �
 **D. InnBlockchain is now the healthier entity per rupee.**
 ₹30L in ~5.8 months annualises to ~₹62L against ₹37L last year — up, with +₹9L P&L already exceeding the whole of FY2025-26's −₹25L swing. Payables are ₹9L. On current trajectory it is the only entity generating a return.
 
-**E. InnBlockchain cannot repay ₹46.7L out of earnings.**
-Its total profit across all four periods shown is ₹18.45L. At current run-rate the Trioangle loan is a multi-year claim, and in practice it functions as equity, not debt. Same question applies with more force to Macavs at ₹1.46Cr — no revenue or P&L data recorded for it at all.
+**E. The InnBlockchain funding was always equity in substance — now it is treated that way.**
+Its total profit across all four periods is ₹18.45L, so ₹1Cr+ was never repayable out of earnings on any sensible horizon. Combined with the fact that it was never documented (§1b), **calling it a loan was the error; removing it from the asset side corrects the books toward what actually happened** — Trioangle capitalised InnBlockchain and got shares in nothing for it. The same substance-over-form point applies with more force to QoreUps at ₹1.46Cr.
 
 **F. ₹1.46Cr sits in a dormant, unstaffed company — and it is almost certainly not recoverable.**
 QoreUps has had **no assigned staff since ~March 2026**, existing clients paying **server cost only**, and no revival criteria ([[bowshul-issues-log]] §2). An entity in that state has no mechanism to repay ₹1.46Cr. This is not a receivable in any operating sense; it is **capital already consumed**, awaiting a write-off decision nobody has taken. Trioangle's balance sheet currently carries it as an asset.
@@ -253,6 +268,21 @@ A loan sits on the balance sheet — it does not pass through P&L. So if the ₹
 **J. Impairment changes any buyout or split maths.**
 If the QoreUps receivable is written down, Trioangle's net asset position falls by up to ₹1.46Cr. Any valuation, buyout, shotgun clause or entity-closure negotiation runs through this table first — not through the grievance history in [[bowshul-issues-log]]. Whoever raises impairment first frames the valuation.
 
+**K. 🔴 Removing the ₹46.7L cuts Vignesh's own side of the swap — 2026-09-25.**
+This change is **not** neutral and it does not favour Vignesh:
+
+| | Before | After |
+|---|---|---|
+| Trioangle net assets | ≈₹68L | **≈₹21L** |
+| Vignesh's 50% of Trioangle | ≈₹34L | **≈₹10.5L** |
+| Trioangle's claim on InnBlockchain | ₹46.7L | **₹0** |
+
+- **What he gives up in a swap shrinks** — his half of Trioangle is now worth ≈₹10.5L on book, not ≈₹34L. That weakens what he can ask for in return.
+- **But the ₹46.7L liability leaving InnBlockchain is the bigger effect.** [[separation-plan]] records that in a swap the receivable "survives and stays enforceable" against the entity Vignesh keeps. Striking it removes **₹46.7L of debt from the company he wants**, which is worth more to him than ₹46.7L of book value in the company he is giving away.
+- **Net: the removal is probably favourable on substance and unfavourable on optics.** Do not present it as a valuation adjustment he thought of himself — **Bowshul can make exactly the same argument in reverse**, and the ₹31L salary netting in [[separation-plan]] depends on the ₹46.7L existing as the thing it nets against. Remove the receivable and **the ₹31L claim has nothing to offset — it stands alone and must be argued on its own merits.**
+
+**→ Before using this in any negotiation, decide the position on the ₹31L separately.** It was previously netted against a balance that no longer exists.
+
 ---
 
 ## 6. Open questions
@@ -264,7 +294,8 @@ If the QoreUps receivable is written down, Trioangle's net asset position falls 
 5. **How is the ₹1.46Cr carried in Trioangle's books today** — full-value receivable, provisioned, or already partly written off? What did the auditor say?
 6. **What is QoreUps's own position** — payables, remaining client revenue, whether server cost is covered, and whether it holds any realisable asset (code, client contracts, brand) against the ₹1.46Cr.
 7. **Does Bowshul have a matching unpaid-salary accrual**, or is the ₹31L one-sided?
-8. **What is Trioangle's cash position and runway**, given it carries ₹1.93Cr of related-party receivables against ₹97L of payables?
+8. **What is Trioangle's cash position and runway**, given it now carries only ₹1.46Cr of recognised related-party receivables (likely impaired) against ₹97L of payables?
+10. **Does the ₹31L salary claim stand on its own?** It was previously netted against the ₹46.7L. With that removed, what is the documentary basis for the ₹31L — board resolution, appointment terms, Form MGT-7/AOC-4 disclosure, TDS deducted? If it rests on the same internal books, it has the same problem (§5K).
 9. **Were these figures taken from filed/audited accounts or from working estimates?**
 
 ## 7. What needs deciding
@@ -274,7 +305,7 @@ If the QoreUps receivable is written down, Trioangle's net asset position falls 
 | QoreUps ₹1.46Cr receivable | **Carried as an asset, likely impaired** | No write-off decision taken |
 | QoreUps formal status | **Undecided** — dormant, "temporary", no criteria | [[bowshul-issues-log]] §2 |
 | QoreUps client obligations | **Unowned — urgent** | Live clients, zero staff |
-| InnBlockchain ₹46.7L receivable | **Long-dated** | ~₹18L cumulative profit in 4 yrs |
-| ₹31L director salary payable | **Accruing, unpaid** | Vignesh financing Trioangle |
+| InnBlockchain ₹46.7L receivable | **Removed 2026-09-25 — not recognised** | Undocumented; internal-book only (§1) |
+| ₹31L director salary payable | **Accruing, unpaid — now unoffset** | Nothing left to net it against (§5K) |
 | s.185/186 position on both loans | **Unverified** | Needs a CS |
 | 50/50 deadlock | **Unaddressed** | Produced the ₹1.46Cr |
