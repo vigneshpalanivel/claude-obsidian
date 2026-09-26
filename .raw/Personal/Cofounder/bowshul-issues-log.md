@@ -140,7 +140,9 @@ That settles the open question and it cuts against him:
 - It also means the ₹1.46Cr QoreUps loss accumulated inside a venture **he approved** — which does not make the loss less real, but it does remove "this was done to me" from his side of the argument.
 - **This is worth having ready as a single fact**, the way the manager-appointment consultation is. It does not need elaborating.
 
-**Why he objects (my reading, not his statements):** he was not involved in the day-to-day of QoreUps; my wife is a manager there; he feels I do not consult him.
+**Why he objects (my reading, not his statements):** he was not involved in the day-to-day of QoreUps; **my wife was a manager there until around 2021**; he feels I do not consult him.
+
+**⚠ CORRECTED 2026-09-26 — the tense mattered.** This previously read *"my wife **is** a manager there"*, which made the wife link look like a **live** factor in a dispute that ran from ~2024 to March 2026. **She was relieved from QoreUps around 2021 and has not been employed by any of the three companies since.** So for the entire period of the Gopi dispute and the closure argument, **she was not there at all** — which weakens the motive theory further still, on top of him never having stated it (see the evidence table above, and Ask #4).
 
 **My position:** as a director I discuss **critical decisions**, not day-to-day — and day-to-day consultation is not needed.
 
@@ -163,7 +165,7 @@ QoreUps wound down ~**March 2026**. Not officially, not permanently. Existing cl
 1. **Stop treating this as a live grievance.** He asked for closure, it is dormant, I agreed to the conditions that made it so.
 2. **Decide QoreUps formally, in one sitting:** define "normal situation" as a testable trigger with a date, close it officially with a client transition plan, or keep it deliberately dormant with a named owner.
 3. **Two small client jobs:** schedule the patching, write down the handover.
-4. **Never open with the motive theory.** He has never named my wife.
+4. **Never open with the motive theory — and as of 2026-09-26 it is close to dead.** He has never named my wife, **and she had already left QoreUps ~5 years before the dispute took place.** A motive he never stated, about a person who was not there. **Drop it rather than hold it.**
 5. **Keep the personal thread separate and name it honestly.** QoreUps is settled; what is not settled is being told my load is ordinary and conceding anyway (#1). Using QoreUps as the vehicle for that will fail — on QoreUps he has already won.
 6. **Fix the deadlock before the next entity decision.**
 

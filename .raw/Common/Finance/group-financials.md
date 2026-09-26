@@ -143,9 +143,31 @@ If the CA tells Bowshul before I do, I lose control of the disclosure *and* look
 | Trioangle | Total payable — **excluding** director salary payable | ₹66L |
 | — of which | OD (overdraft) facility | ₹18L |
 | — remainder | employee salaries + PF / ESI arrears | ≈₹48L |
-| Trioangle | Vignesh salary payable (accrued, unpaid) | ₹31L |
+| Trioangle | Vignesh salary payable (accrued, unpaid) | **₹31L — 🔴 to be confirmed from the books** *(flagged 2026-09-26; period and annual rate still unstated — Q10)* |
 | Trioangle | *Total including director salary* (derived) | *₹97L* |
-| InnBlockchain | Total payable — **all of it employee salary + PF + ESI** | ₹9L |
+| InnBlockchain | **Staff dues** — employee salary + PF + ESI | **₹7.5L** *(restated 2026-09-26, was ₹9L)* |
+| InnBlockchain | **Unpaid salary payable to Bowshul** — **₹7L FY2024-25 + ₹7L FY2025-26** *(Vignesh has no accrual here and claims none)* | **₹14L** *(restated 2026-09-26, was ₹12L)* |
+| InnBlockchain | *Total payable (derived)* | *₹19.5L* |
+| Trioangle | **🔴 Loan from Bowshul personally, unrepaid** — **not inside the ₹66L** | **₹7L** *(stated 2026-09-26)* |
+| Trioangle | *Total payable incl. both partner items (derived)* | *₹104L* |
+
+**🔴 Both stated 2026-09-26, and together they reverse the §5L reckoning.**
+
+| | ₹L |
+|---|---|
+| Bowshul's half of the InnBlockchain funding | 23.35 |
+| **Bowshul's unpaid InnBlockchain salary** | **12** |
+| **Bowshul out, total** | **35.35** |
+| Vignesh's unpaid Trioangle salary | 31 |
+| **Difference — now in *Bowshul's* favour** | **≈4.35** |
+
+**The earlier ≈₹7.65L "in Vignesh's favour" is dead.** At ₹12L rather than the ≈₹1.5L implied by the old ₹9L total, Bowshul releases more than Vignesh does. **Do not repeat the "Vignesh isn't asking for the difference" framing anywhere — there is no difference in his favour to waive.**
+
+**⚠ The ₹7L is a Trioangle payable but not a loss to Bowshul.** He will own 100% of Trioangle, so he can repay himself out of company funds — it is a recoverable claim against a company with headroom, not money gone. **It reduces Trioangle's headroom (₹22L → ₹15L); it does not belong in his "out" column.** Contrast with his ₹12L InnBlockchain salary, which *is* a real loss because Vignesh will own that debtor.
+
+**⚠ And the ₹31L write-off is worth ₹31L to Trioangle's balance sheet** — i.e. to Bowshul. A written-off payable raises net assets. That is a real benefit to his side and is not reflected in the ≈₹21L net figure in §2c.
+
+**⚠ Check the arithmetic before asking for the TBC.** InnBlockchain's total payable was recorded as **₹9L** on 2026-09-23. If that ₹9L was the *whole* figure, then **staff ₹7.5L + director salary ≈₹1.5L** reconciles it exactly and the TBC is already answered by subtraction. If instead ₹7.5L replaces ₹9L as the staff number, the director accrual is additional and the total is higher than ₹9L. **Confirm which — it is the difference between InnBlockchain owing ₹9L and owing an unknown amount above it.**
 
 *Composition of the ₹66L added 2026-09-24. Personal guarantee on the ₹18L OD believed absent but **unverified** — read the sanction letter.*
 
@@ -165,9 +187,10 @@ If the CA tells Bowshul before I do, I lose control of the disclosure *and* look
 | Laptops — **40+** | | |
 | Furniture | | |
 | Office deposit / advance | | Recoverable on exit, subject to landlord |
-| *Tangibles subtotal (approx)* | *≈30* | Stated 2026-09-24, approximate |
-| **🔴 MG car — registered to Trioangle** | **not recorded** | **Stated 2026-09-25. Not inside the ≈₹30L above.** WDV unknown; loan / hypothecation unknown |
-| **Total (excl. receivables)** | **≈118 + the MG** | **Understated until the MG is valued** |
+| **All other assets — book** | **40** | **🔴 Stated 2026-09-26, and it supersedes both earlier estimates (≈30, then 20).** Equipment, furniture, office deposit, vehicles. **⚠ Taken as *excluding* the crypto holding — ₹88L alone exceeds ₹40L, so it cannot include it. Confirm that reading.** Also confirm whether the MG and the 10 laptops sit inside this ₹40L |
+| **MG car — registered to Trioangle** | **book 5.27** · *market stated as 13* | **Book value confirmed 2026-09-26 at ₹5.27L.** Use **book** for net-asset purposes and **market** only for the swap tally in [[separation-numbers-for-bowshul]] §3 — see §5L |
+| **10 laptops used by InnBlockchain's team** | **(1.5)** | ₹15,000 each. Going to InnBlockchain |
+| **Total assets, book** | **128** | ₹88L crypto + ₹40L other |
 
 *Tangibles: book value vs realisable value not distinguished — 40+ used laptops realise far less than cost.*
 
@@ -197,6 +220,84 @@ If the CA tells Bowshul before I do, I lose control of the disclosure *and* look
 2. **Every number downstream of this moves**, including the swap maths in [[separation-plan]]. See §5K.
 
 **⚠ The ≈₹21L is itself understated as of 2026-09-25** — the MG car is in none of the asset figures above (§2b). Add its realisable value before using ≈₹21L, or a 50% stake, in any valuation.
+
+### 🔴 Restated 2026-09-26 — the ≈₹21L is superseded
+
+Two new facts (tangibles ₹20L not ≈₹30L; Bowshul's ₹7L loan to Trioangle) and one decision (Vignesh's ₹31L written off) move this materially. **The write-off is what decides which figure applies:**
+
+**🔴 Restated again 2026-09-26 on the ₹40L figure. This supersedes the ≈₹35L derivation below it.**
+
+| | ₹L |
+|---|---|
+| Crypto holding | 88 |
+| All other assets, book | 40 |
+| QoreUps receivable, impaired | 0 |
+| **Assets** | **128** |
+| Payables — ₹66L outside + Bowshul's ₹7L | (73) |
+| **Net, with Vignesh's ₹31L written off** | **+55** |
+| Less the MG at book ₹5.27L and 10 laptops ₹1.5L, transferring to Vignesh | (6.77) |
+| **🔴 Net to Bowshul at completion** | **≈48** |
+| *Net, if Vignesh's ₹31L were **not** written off* | *≈17* |
+
+**What moved and why it matters:** the ₹40L book figure adds ₹20L against the previous estimate, and the MG at book ₹5.27L rather than market ₹13L removes ₹7.73L less on the way out. **Bowshul's net rises from ≈₹33.5L to ≈₹48L.**
+
+**⚠ Do not mix the two MG figures.** Book ₹5.27L belongs in this net-asset derivation. Market ₹13L belongs only in the swap tally, where what is being measured is the benefit Vignesh receives. Using market here would understate Bowshul's net by ₹7.73L; using book in the tally would leave it ₹7.73L short (§5L).
+
+*(Superseded derivation, kept for the trail:)*
+
+- **₹35L is what Bowshul receives** — **₹33.5L after the MG and the 10 laptops transfer out.** **⚠ This derivation is internal only as of 2026-09-26: the asset table was removed from [[separation-numbers-for-bowshul]] by decision.** The sheet now carries no company valuation, no coin figure and no payables figures. **Good call on exposure** — it means Vignesh no longer raises the net-asset calculation first (§5J), the ₹88L needs no valuation date on a shared document, and the ₹33.5L-vs-₹7L comparison that made InnBlockchain's unpriced value conspicuous is gone. **What it costs:** the sheet no longer shows Bowshul that Trioangle is solvent — though as the person taking it over, he has the books.
+- **The ₹31L write-off is worth ₹31L to his balance sheet** — without it Trioangle is worth ₹4L, barely solvent. **Vignesh's concession is what makes Trioangle a going concern on paper.** That is worth knowing and worth never saying as a boast.
+- **Excludes the MG**, which leaves with Vignesh and was never in the tangibles figure.
+- ⚠ **₹20L of tangibles is book, not realisable.** 40+ used laptops, used furniture and a landlord-dependent deposit. **A buyer would discount this heavily, and Bowshul's accountant may — so do not defend ₹35L as a floor.**
+- 🔴 **₹35L is also before the 10 team laptops leave.** Stated 2026-09-26: **InnBlockchain has 10 employees and their laptops go with them** ([[separation-numbers-for-bowshul]] §1, §3). Those machines sit inside Trioangle's ₹20L. **Their book value has to come out of the ₹35L, and it is not yet known.**
+
+### ⚠ 2026-09-26 — the carve-outs from Trioangle are now two, not one
+
+| Item | Status |
+|---|---|
+| **MG car** | Not in any asset figure (§2b). Going to Vignesh. **No consideration recorded** |
+| **10 laptops** used by InnBlockchain's team | **Inside** Trioangle's ₹20L. Going to InnBlockchain. Book value unknown |
+
+**✅ RESOLVED 2026-09-26 — both now have a stated consideration.** [[separation-numbers-for-bowshul]] §2 sets them against the **₹19L difference between the two salary write-offs** (Vignesh ₹31L vs Bowshul ₹12L):
+
+| ₹L | |
+|---|---|
+| MG | 13 |
+| 10 laptops @ ₹15,000 | 1.5 |
+| One year of premises — 10 seats @ ₹4,000/month, all in | 4.8 |
+| **Against the ₹19L difference** | **19.3** |
+
+*Overshoots by ₹0.3L, unadjusted. **That is a feature, not a defect** — a tally derived from a stated seat rate that lands ₹0.3L out reads as real arithmetic. One that landed exactly on ₹19L would read as reverse-engineered, which is what the earlier ₹4.5L balancing figure was.*
+
+**This matters beyond presentation.** Previously both were company assets moving to a director with no recorded reason — the §1b fact pattern, created while counsel assesses that very issue. **Set against a documented salary payable, they become ordinary consideration in a swap**, which is what the MG needed for the perquisite and GST questions to fall away.
+
+**🔴 Restated 2026-09-26 — Bowshul's accrual is ₹14L, so the difference is ₹17L, not ₹19L.**
+
+| | ₹L |
+|---|---|
+| Vignesh's Trioangle salary | 31 |
+| Bowshul's InnBlockchain salary | (14) |
+| **Difference, in Vignesh's favour** | **17** |
+| MG *(market)* + 10 laptops + one year's premises | 19.3 |
+| **🔴 Vignesh comes out ahead by** | **2.3** |
+
+**The tally now overshoots.** At ₹12L it was ₹0.3L out and could be waved off; at ₹14L it is **₹2.3L in Vignesh's favour**, which is large enough for Bowshul's accountant to raise. [[separation-numbers-for-bowshul]] §3 therefore sets the ₹2.3L against **the handover year**, which is deliberately unpriced and appears nowhere in the arithmetic. **That is a fair absorber and it holds — but do not let the tally drift further without naming what absorbs it.**
+
+**🔴 Both salary figures are now marked to be confirmed** ([[separation-numbers-for-bowshul]] §3). **So the ₹17L difference and the ₹2.3L overshoot are both provisional** — and the ₹17L is what the MG, laptops and premises are sized against. **Confirm both before the tally is presented as settled**: a ₹3L move in either figure changes who is ahead.
+
+**⚠ The ₹7L + ₹7L breakdown helps the claim's credibility, and raises a question about Vignesh's.** Two clean annual figures read like ledger entries rather than an estimate. **By contrast the ₹31L has no stated period or annual rate** — and Q10 already asks what documents it. **Establish over how many years the ₹31L accrued and at what rate**; if Bowshul's is ₹7L a year and Vignesh's implies a very different figure, that is the first thing an accountant will test.
+
+**Two things still to firm up:**
+- 🔴 **The MG's book value is to be confirmed — and ₹13L is 67% of the ₹19.3L tally.** If it is materially out, the tally breaks: at a book value of ₹8L the total falls to ₹14.3L against the ₹19L difference (a ₹4.7L shortfall); at ₹16L it overshoots to ₹22.3L. **Confirm before the sheet is treated as final** ([[separation-numbers-for-bowshul]] §2 now marks it *"to be confirmed from the books"*).
+  - **Two different figures are needed, for two different purposes. Do not use one for both:**
+    - **Market value → the ₹19L tally.** What offsets Vignesh's salary write-off is the *benefit he receives*, which is what the car is worth, not its depreciated book figure.
+    - **WDV → Trioangle's disposal entry.** The company books the sale at the stated consideration against WDV; the difference is a profit or loss on sale, and a profit is taxable.
+  - ⚠ **If ₹13L is the WDV and market is higher, the tally understates what Vignesh receives** — and Bowshul's accountant can show it. **If ₹13L is market and WDV is well below, expect a taxable gain on disposal in Trioangle** — his cost, but worth flagging to him rather than letting him discover it.
+- 🔴 **The ₹4.5L premises figure is the only soft number in the tally** — it is the balance after the MG and laptops, which means it was derived to fit. It happens to equal **≈₹3,750 per seat per month, all-in, for 10 seats**, which is defensible for Madurai. **Get one local comparable so it is a market rate that lands on ₹4.5L, not a plug that had to.**
+
+**The laptops are the easier of the two to justify and should be done properly anyway:** the staff using them are InnBlockchain's, so transferring the tools with the people is ordinary commercial sense. **But "ordinary" is not "undocumented"** — put them on a schedule at book value, transferred as part of the swap consideration. A one-page asset list costs nothing and removes the question permanently.
+
+**⚠ And it breaks the "MG is the only add-on" rule in [[separation-plan]] §2.4.** Two carve-outs is a list. **The laptops are defensible because they follow the employees; do not add a third.**
 
 ## 2d. ⚠ The ₹88L coin holding — the biggest open item in this file
 
@@ -258,7 +359,19 @@ Roughly ₹1.46Cr to QoreUps and ₹1Cr+ to InnBlockchain, against ≈₹60L ret
 **B. The ₹31L director salary payable is Vignesh financing Trioangle.**
 Unpaid accrued salary is an interest-free loan from Vignesh to the company, and it sits behind ₹66L of other payables. Bowshul holds 50% of Trioangle (see [[bowshul-issues-log]] §Key structural facts) but is not recorded as carrying an equivalent unpaid accrual — unverified, and worth establishing.
 
-**B2. InnBlockchain director salary — stated 2026-09-25: Bowshul drew ₹3.4L, Vignesh drew ₹0.**
+**B3. 🔴 InnBlockchain also carries an unpaid director salary accrual — stated 2026-09-26, figure to follow.**
+
+**Vignesh to supply the number.** Until then, InnBlockchain's total payables are **₹9L of staff dues plus an unknown director-salary accrual**, not ₹9L — the earlier statement that the ₹9L was everything InnBlockchain owed is superseded.
+
+**Answered 2026-09-26: the accrual is Bowshul's.** Vignesh has no unpaid salary accrual at InnBlockchain and claims none. **This is the consequential case** — Bowshul keeps a live claim against the company Vignesh is taking, and a share transfer does not extinguish a salary payable owed to a former director.
+
+**→ It must therefore be waived explicitly, not left unmentioned.** [[separation-numbers-for-bowshul]] §4 now sets the reckoning out symmetrically — *what Bowshul is out* (₹23.35L + his InnBlockchain salary) against *what Vignesh is out* (₹31L) — with both salaries written off in the same sentence as the balance. **The figure is still a blank there.**
+
+**Why symmetry was the right structure, beyond fairness:** it is the mirror of the trap in [[separation-plan]] §5 — *"on my ₹31L I must initiate to collect; on his balance he has every incentive to."* An unnamed Bowshul claim against InnBlockchain is that trap pointing the other way: **he has the incentive to remember it and Vignesh owns the debtor.** Naming it and waiving it in the same line is what closes it.
+
+**⚠ It reduces what Vignesh waives, pound for pound.** The difference was ≈₹7.65L in his favour; it is now ₹31L − ₹23.35L − *(Bowshul's InnBlockchain salary)*. At ≈₹1.5L the difference is ≈₹6.15L. **Do not print a "difference" figure until the number is in** — a stale ≈₹7.65L would be wrong in Bowshul's favour to notice.
+
+**B2. InnBlockchain director salary drawn — stated 2026-09-25: Bowshul drew ₹3.4L, Vignesh drew ₹0.**
 
 | | Drawn from InnBlockchain |
 |---|---|
@@ -291,7 +404,9 @@ QoreUps has had **no assigned staff since ~March 2026**, existing clients paying
 
 - Bowshul's stated position — *close QoreUps* — is now backed by **₹1.46Cr of realised cash loss**, not by a preference. Whatever his original motive, the position was correct on the money.
 - The log's concern that "any closure case built on QoreUps performance must be adjusted for what was removed from it" (half a manager) is **the wrong order of magnitude**. ₹1.46Cr went in; 50% of one manager came out. The capital flow dwarfs the resource flow, and leading with the Gopi adjustment against this number would not survive one question.
-- Bowshul holds 50% of Trioangle. **Roughly ₹73L of that ₹1.46Cr is his capital**, placed in an entity he said should be closed, over a period in which he was blocked from closing it. The log's "he personally funds 50% of my wife's salary" inference is the small version of this; the loan is the real one.
+- Bowshul holds 50% of Trioangle. **Roughly ₹73L of that ₹1.46Cr is his capital**, placed in an entity he said should be closed, over a period in which he was blocked from closing it. **That is the whole of the point — the loan is the argument, and nothing smaller needs to be added to it.**
+
+*(A "he part-funds my wife's salary" inference appeared in an earlier version of this line. **Removed 2026-09-26 — Vignesh never made that claim**, and his wife has not been employed in any of the three companies since leaving QoreUps around 2021.)*
 - Trioangle — the entity actually funding it — lost ₹1.5Cr across the same three years. QoreUps was financed by a company that could not afford it.
 
 **Do not re-run the QoreUps keep/close argument on strategy or on the Gopi adjustment.** On these numbers that argument is lost. What remains defensible is process — that a ₹1.46Cr cumulative commitment was made without an agreed decision rule, which is a criticism of the 50/50 deadlock and cuts both ways.
@@ -366,7 +481,8 @@ This reverses §1's *"must not be written into any deal document."* The rule sti
 | Item | State | Note |
 |---|---|---|
 | QoreUps ₹1.46Cr receivable | **Carried as an asset, likely impaired** | No write-off decision taken |
-| QoreUps formal status | **Undecided** — dormant, "temporary", no criteria | [[bowshul-issues-log]] §2 |
+| QoreUps formal status | **No call taken — decided 2026-09-26.** Temporary hold, owned half each, **restart intended once things normalise.** Only filings and non-prejudice pinned; no decision date | [[separation-numbers-for-bowshul]] §5. **🔴 Leaves Bowshul owning 100% of the ₹1.46Cr creditor while Vignesh still half-owns the debtor — [[separation-plan]] §5** |
+| QoreUps ₹1.46Cr write-off | **Should NOT be written off if restart is genuine** | A revival intention is inconsistent with impairing to zero. **This also raises Trioangle's book net assets — i.e. Bowshul's side — so it cuts against Vignesh in any valuation (§5J)** |
 | QoreUps client obligations | **Unowned — urgent** | Live clients, zero staff |
 | InnBlockchain ₹46.7L receivable | **Not recognised as an asset — but now disclosed to Bowshul with the figure** | Decision 2026-09-25 (§5L). Asset treatment unchanged |
 | ₹31L director salary payable | **Deployed as the offset against Bowshul's ₹23.35L** | §5L. Documentary basis still unverified — Q10 |

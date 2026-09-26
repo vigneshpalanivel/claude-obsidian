@@ -368,7 +368,8 @@
       "Bash(python3 ex.py finsa_en.html 2500 art_28 art_29 art_30 art_31 art_51 art_52 art_54 art_64 art_69 art_70 art_71 art_90 art_91 art_92 art_95)",
       "Bash(awk 'NR==1282 || NR==1917 || NR==2343 {print \"----- LINE \" NR \" -----\"; print; print \"\"}' eu_tokenized_securities_smart_contract_design.md)",
       "Bash(awk 'NR==1668' eu_tokenized_securities_smart_contract_design.md)",
-      "Bash(perl -i -pe 's/^rev: 67$/rev: 68/ if $.==4' \"sales-marketing/Service/Content/Contract Design/eu_tokenized_securities_smart_contract_design.md\")"
+      "Bash(perl -i -pe 's/^rev: 67$/rev: 68/ if $.==4' \"sales-marketing/Service/Content/Contract Design/eu_tokenized_securities_smart_contract_design.md\")",
+      "Bash(awk 'NR==179||NR==182||NR==184' \"ICP - FinTech.md\")"
     ],
     "additionalDirectories": [
       "/Users/admin/.claude",

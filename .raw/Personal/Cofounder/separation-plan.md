@@ -254,6 +254,61 @@
 
 **Facts ready, used one at a time only if needed:** he approved the formation; he owned 50% of QoreUps so it was his capital in his own company; I took no salary from it; the manager appointed there was approved by him beforehand; the advances were between companies, not to me.
 
+**⚠ 2026-09-26 — fix the wording above.** *"It closed on your recommendation"* is no longer true: QoreUps is on **temporary hold with a restart intended**, not closed (§5). Say *"we put it on hold, which is where it still is"* instead. **Do not describe it as closed and then say it can be restarted — he will hear the contradiction.**
+
+### H2. ⚠ 2026-09-26 — THE SHARED-RISK ANSWER, if the QoreUps money is raised in a blaming tone
+
+**The core of it is right and it is the best answer available:** a 50% owner who would have taken half the upside cannot claim only the downside.
+
+> ## *"We both owned half of it and we both agreed to start it. If it had worked, we'd both have taken the upside — so the downside falls the same way. I'm not asking you to carry more of it than I am."*
+
+**Why this version and not the one I reached for:**
+
+| ❌ Do not say | Why it fails |
+|---|---|
+| *"If it made a profit, would you say no?"* | **A rhetorical question aimed at him is an accusation with a question mark.** Breaks the §1 grammar rule — every sentence starts with *I*, never *you*. Same content, stated as shared risk, is unanswerable; stated as a challenge it starts the fight |
+| 🔴 *"For InnBlockchain we spent it and we repaid it"* | **The repayment cannot be evidenced.** [[group-financials]] §1, §1b: the ≈₹60L "repaid" has **no documented basis**, which is why the *"57% serviced"* framing was formally withdrawn. **And my own sheet discloses ₹46.7L as still outstanding** — so this claim contradicts the document I handed him. **If he asks for proof there is none, and I have overstated in the one conversation where being accurate is my whole position** |
+| *"QoreUps didn't work out — as of now"* | *"As of now"* implies ₹1.46Cr may yet come back. Nobody believes that, and it reopens the revival argument [[group-financials]] §5G says is lost on the numbers. **Concede the loss plainly; contest only who carries it** |
+
+**🔴 The one-line rule for this whole objection: argue about *who bears the loss*, never about *whether there was one*, and never claim credit for repaying anything.**
+
+### H3. 🔴 *"You lost that money in QoreUps."* — the blame version
+
+**Different objection from H.** H is a *claim* (repay it). This is an *accusation* (you wasted it). **It is answered by conceding, not by defending.**
+
+> ## *"It did, and I'm not going to argue that. We both owned half of it and we both agreed to start it — if it had worked we'd both have taken the upside, so I carry my half of the loss the same way. And you were right that it should have stopped sooner; I was slow to accept that. It isn't part of what I'm proposing here and I'm not asking you to settle it."*
+
+| Part | What it does |
+|---|---|
+| ***"It did"*** — first four words | **Concedes the loss immediately.** ₹1.46Cr went in and the entity is dormant with no mechanism to repay. It is not arguable, and defending it starts the one fight lost on the numbers (§5G) |
+| ***"we both agreed to start it"*** | The shared-risk point **without** the rhetorical question. He approved the formation, owned half of QoreUps and half of the lender |
+| ***"I carry my half of the loss the same way"*** | **I-framing.** Accepts responsibility for a half rather than assigning blame for a half |
+| 🔴 ***"you were right that it should have stopped sooner; I was slow to accept that"*** | **The strongest sentence available, and it is free.** He *was* right — §5G: his position was backed by ₹1.46Cr of realised loss, not by preference. **Conceding before he presses it means he cannot argue his way out of something I have already agreed with.** Costs nothing, because QoreUps is not being settled in this deal |
+| ***"not part of what I'm proposing"*** | Returns to the deal, which is where every objection must land |
+
+**❌ Three things not to say here:** the revenue case · the Gopi reassignment · *"we repaid InnBlockchain's."* **The first two are lost on these numbers (§5G); the third cannot be evidenced and contradicts my own sheet (H2).**
+
+**⚠ If he escalates from blame to a claim** — *"so you owe me ₹73L"* — **the answer changes and the concessions stop:**
+> *"That's a question for the advisors, not for the two of us across a table."*
+
+**One fact that would strengthen all of this, still unestablished:** did the ₹1.46Cr accumulate as **one decision or a drip**? ([[group-financials]] §6 Q2.) **If a drip over years, there was no single moment either of us could have objected to — which makes it the 50/50 deadlock's outcome rather than mine.** Powerful if true. **Do not assert it until it is verified.**
+
+#### ⚠ The unpaid-work point — recorded 2026-09-26, and it is a last resort
+
+**The fact:** my wife worked at QoreUps for **over a year without taking a salary.**
+
+**If it is used at all, it is a fairness statement that refuses to be quantified** — never an offset:
+
+> *"My wife worked there for over a year and never took a salary. I'm not putting a number on that. I'm saying what went into QoreUps wasn't only money, and it wasn't only mine that was lost."*
+
+**🔴 Three reasons to reach for this last, or not at all:**
+
+1. **It is the wrong order of magnitude, and this file already says so about a near-identical argument.** [[group-financials]] §5G: the Gopi-resourcing adjustment is *"the wrong order of magnitude — ₹1.46Cr went in; 50% of one manager came out… leading with it would not survive one question."* **A year of unpaid work against ₹1.46Cr is the same argument in a different suit.** The moment I attach it to the loss, he can compare the two numbers out loud.
+2. **It breaks the rule I have just confirmed.** §4: nothing about my wife. §3 objection O now records that she is not a separation item at all. **Introducing her unpaid work makes her a negotiating point after I decided she was not one** — and [[bowshul-issues-log]] #6 already concludes that *"bringing my wife into a business negotiation is a category error. He would resent it, and it would make everything else I say look like grievance."*
+3. **It invites the whole QoreUps history** — why she left, who managed it, what happened over those years. **That is the conversation H3 exists to prevent.**
+
+**✅ The version that works without her:** *"I carry my half of the loss the same way."* **That already says the loss was shared, and nothing about it can be audited, challenged, or resented.**
+
 **🔴 THE RED LINE.** If he asserts I personally owe ₹1.46Cr + ₹46.7L ≈ **₹1.93Cr**, that is a legal position, not a negotiating one. **Do not concede it, do not argue it, do not accept any figure.**
 > *"That's a question for advisors, not for the two of us across a table. Let's not decide it here."*
 
@@ -289,10 +344,15 @@
 
 **A joint line costs nothing and makes him a participant instead of a target.**
 
-### O. *"What about Gopi? What about your wife?"*
-> *"Gopi goes with whichever company needs him — your call on Trioangle's side. On my wife, whatever we agree is fine; I'm not asking for anything special."*
+### O. *"What about Gopi?"* — **⚠ rewritten 2026-09-26. Neither of these is a separation item.**
 
-**Concede both immediately. Neither is worth a unit of negotiating capital.**
+> *"Gopi's Trioangle's — he goes with Trioangle, or you relieve him. Your call either way. Same for Ajith."*
+
+**Nothing to negotiate.** Both are Trioangle employees, Bowshul is taking Trioangle, so they go with it by default. **Do not offer anything on them, and do not ask for anything** — treating it as a live question invents a negotiation that does not exist.
+
+**One loose end only:** Gopi is part-assigned to QoreUps, which is now on indefinite hold. **Release that share back to Trioangle**, rather than leaving him servicing a dormant company I half-own.
+
+**🔴 My wife is not a question at all.** She **left QoreUps five years ago and is not employed by any of the three companies.** Earlier versions of this file treated her position as something to settle — **it is not, and there is nothing to concede.** The NEVER SAY rule in §4 still stands, and is now simply: she does not come up, because there is nothing about her to discuss.
 
 ### P. *"Give me time to think."*
 > *"Of course. Take as long as you need."*
@@ -328,7 +388,7 @@
 | *"Trioangle isn't short of assets"* | True, but it reads as criticism of holding the coin while staff went unpaid. **Offer the coin; never point out it should have been used already** |
 | **The ₹1.46Cr, the funding routing, the records** | **Still holds. Nothing about money history until counsel says so** — the routing and the parallel records are a different category from the balance itself |
 | ~~Naming the ₹46.7L or ₹31L as figures~~ | **⚠ OVERRIDDEN 2026-09-25 — both are now stated in [[separation-numbers-for-bowshul]] §5, offset against each other.** The reasoning and the three risks are in [[group-financials]] §5L. **What this row still means: counsel must see the sheet's actual wording before it is sent, and nothing beyond those two figures gets named** |
-| Anything about my wife | Not his business and not a negotiating point |
+| Anything about my wife | Not his business and not a negotiating point — **and as of 2026-09-26 there is nothing to discuss: she left QoreUps five years ago and works in none of the three companies.** Any mention of her now is purely a grievance, from either side |
 | **Claiming the coin as a separate concession** | **It sits inside Trioangle's ≈₹21L net assets. Giving up the shares already gives up my half of it. Double-counting makes everything else I claim look inflated** |
 
 **If he brings up grievances of his own:** *"That's fair, and I'm not here to argue it. What I'm proposing is…"* **One sentence, then back to the deal. Do not defend, do not counter, do not score.**
@@ -354,6 +414,27 @@
 | I take it | No reason to want it; carries the client liability |
 
 **⚠ The write-off interacts with the valuation. Whoever raises impairment first frames the deal** ([[group-financials]] §5J). **Decide my position before the valuation conversation, not during it.**
+
+> ### ⚠ 2026-09-26 — DECIDED: NO CALL ON QOREUPS, AND IT IS OUT OF THE SHEET.
+> The two options above are **off the table for this conversation.** The position is: **temporary hold, owned half each, no decision either way, restart intended once things are back to normal.**
+>
+> **[[separation-numbers-for-bowshul]] no longer has a QoreUps section at all** — it survives only as one line in the completion checklist: *"QoreUps stays as it is — agree who keeps its filings current."* **Removing it was right for that document:** nothing was being decided, it carried no figures, and *"it can be restarted"* was the one sentence Bowshul has a documented record of disagreeing with ([[group-financials]] §5G — he was right on the money). **Omitting it keeps the QoreUps argument out of a meeting built to avoid arguments.**
+>
+> **⚠ But the position now lives only in these files, not in anything shared.** Nothing on paper records that the partnership continues in a third company. **That is fine while it suits me; it also means nothing on paper obliges either of us to revisit it.**
+>
+> **What this costs, accepted deliberately:** the partnership does not end at completion. Still 50/50, still both directors, still deadlocked, in a company with live clients and filing duties. The objective at the top of this file — *stop being in partnership with Bowshul* — is met for two companies out of three.
+>
+> **🔴 Two things this version adds that the deferral version did not:**
+> 1. **"Once things are back to normal" is not a trigger anybody can point to.** §11 records that *"an open-ended process is the thing I have been criticised for twice"*, and [[bowshul-issues-log]] #1/#4/#7/#17 is four positions set and dropped without being refused. **With the date gone, nothing brings QoreUps back to the table except one of us choosing to raise it.**
+> 2. **🔴 Restart intent contradicts his stated position, and the sheet now says it out loud.** Bowshul's position was *close QoreUps* — and [[group-financials]] §5G concludes he was **right on the money**, backed by ₹1.46Cr of realised loss. *"It can be restarted"* is therefore the one sentence in the sheet he has a documented history of disagreeing with. **Expect him to push on it, and do not defend QoreUps on strategy or on the Gopi adjustment — that argument is lost on these numbers.** The answer if he objects is the hold itself: *"nothing's being decided — that's the point."*
+>
+> **🔴 The exposure that deferral creates, which neither option above does — put this to counsel:**
+> **After completion Bowshul owns 100% of Trioangle, and Trioangle holds the ₹1.46Cr receivable against QoreUps — a company I would still half-own and still be a director of.** So the swap would leave him in sole control of the creditor of a company I am still inside. That is a live route into me personally on the very figure §3 objection H calls the red line. **Neither "wind it up" nor "it goes with Trioangle" leaves that door open. Only the hold does.**
+>
+> **Three things that make the hold survivable, all in the sheet:**
+> 1. **A date.** Open-ended is the specific failure mode on my record — *"an open-ended process is the thing I have been criticised for twice"* (§11), and [[bowshul-issues-log]] #1/#4/#7/#17 is four positions set and dropped. *"Maybe later"* is that pattern with a deadline missing.
+> 2. **Filings kept current, with a named owner.** Three consecutive years of missed annual filings is **s.164(2)(a) disqualification — from the board of *any* company, both of us.** That is the disqualification route that genuinely applies here, and it would block the EU vehicle. A dormant company left alone is how it happens.
+> 3. **Nothing prejudiced.** The ₹1.46Cr position is not settled by waiting, in either direction — so deferring does not hand him the impairment framing (§5J).
 
 ### What actually moves, once, each way
 
@@ -471,7 +552,9 @@
 
 **A full year removes the capability fear almost entirely and costs me little. Four conditions make it safe.**
 
-**1. 🔴 Resign as director at completion; deliver the year as a consultant.**
+**1. 🔴 Resign as director at completion; deliver the year as a consultant. ⚠ And Bowshul resigns from InnBlockchain at the same time — both ways, or neither.**
+**This was missing from every version of this plan until 2026-09-26.** A share transfer moves shares; **it does not remove a director.** If Bowshul stays on InnBlockchain's board he keeps **statutory rights of access to the books (s.128)**, a seat at board decisions, and standing inside the company I am taking — while owning none of it. That is not clean control, and no investor, acquirer or authorisation process would accept it. **Both resignations are filed with the ROC (DIR-12) within 30 days; neither is effective because we agreed it verbally.**
+**It also stops each of our officer-liability clocks going forward** — mine at Trioangle for PF/ESI, his at InnBlockchain for the same. Neither resignation touches the periods already served.
 Staying a year on the board extends **every** personal exposure by a year — the officer-liability period for PF/ESI/TDS, the IBC look-back window (which does not start until I am off the board), the records position, and disqualification risk. **The handover does not require the directorship.** Identical help, none of the liability extension.
 
 **2. ⚠ 2026-09-25 — SUPERSEDED. Year one is nil charge, in exchange for the handover.**
@@ -589,17 +672,23 @@ Staying a year on the board extends **every** personal exposure by a year — th
 4. **The blanks filled:** date · coin reference price and date · QoreUps preference, or leave both options open deliberately.
 5. **Verified, not assumed:** is the ₹88L coin actually on Trioangle's books? If not, **strike the figure** and write *"the crypto holding"* — never put a number on an unbooked asset in a document the other side keeps.
 - [ ] **🔴 A position on the ₹1.46Cr QoreUps write-off** — it moves Trioangle's net assets and therefore the price of my 50%
-- [ ] **🔴 What happens to QoreUps** — wind up, he takes it, or I do
+- [x] ~~**🔴 What happens to QoreUps** — wind up, he takes it, or I do~~ **Decided 2026-09-26: no call. Temporary hold, restart intended, and out of the sheet entirely** (§5)
+- [ ] **⚠ QoreUps annual filings — who keeps them current.** The checklist line for this was removed from [[separation-numbers-for-bowshul]], so **it is now agreed nowhere.** Three consecutive years of missed filings is **s.164(2)(a) disqualification from any board, for both of us** — and it would block the EU vehicle. **Cheapest item on this list and the only one with no upside to leaving open**
+- [ ] **Did the ₹1.46Cr accumulate as one decision or a drip?** ([[group-financials]] §6 Q2) — decides whether §3 objection H3's strongest fallback is available
 - [ ] **🔴 Coin valuation date and reference price, fixed in writing** — ₹88L of a volatile asset can move 30–40% inside a negotiation window
 - [ ] **🔴 My pre-commitment** (§6): the number I will accept, the maximum handover, and the sentence for the moment he says he can't do it without me
 - [ ] InnBlockchain's funding plan **without** Trioangle — the first thing he will ask
 - [ ] Clients, IP, codebase, brand, domains — who keeps what
-- [ ] The team — who goes where; **Gopi**; my **wife's** position
+- [x] ~~The team — who goes where; **Gopi**; my **wife's** position~~ **Not separation items — closed 2026-09-26.** Gopi and Ajith are Trioangle employees and go with Trioangle, or Bowshul relieves them; his call. **My wife left QoreUps five years back and is in none of the three companies.** Only open point: release Gopi's part-assignment to QoreUps back to Trioangle
 - [ ] **What the team, clients and market get told** — and when, and by whom. **A separation neither of us has explained will be explained by whoever speaks first**
 - [ ] Non-compete / non-solicit both ways
-- [ ] Transition year terms — consultant not director, seat charge from month one, written licence, 3-month notice, capped hours, transition fee
+- [ ] Transition year terms — consultant not director, nil-charge year one, capped hours, transition fee
+- [ ] **🔴 The premises notice period — off the sheet as of 2026-09-26, so agreed nowhere.** [[separation-numbers-for-bowshul]] §5 now says only *"InnBlockchain uses Trioangle's premises for the year, at nil charge."* **The written licence and the 3 months' notice both ways came out.** Two consequences:
+  - **Without notice, I occupy a building Bowshul owns outright with no contractual footing** — he can ask InnBlockchain to leave on a bad day, mid-handover, mid-authorisation, with staff and equipment in that office (§7, and it is the reason that term existed)
+  - **A free year of premises with nothing in writing is a second undocumented inter-company arrangement** — the first one produced an unenforceable balance, a flattered P&L and the records exposure (§7 condition 3, [[group-financials]] §1b). **Doing the licence at completion does not require it to be named on the sheet. Do it anyway**
 - [ ] **My personal runway** — no Trioangle income, and what InnBlockchain pays me from month one. **This decides how long I can hold out, so it *is* my leverage.** And it answers whether *"I won't pay"* is a position or a constraint
-- [ ] Does Bowshul have a matching unpaid-salary accrual? ([[group-financials]] §6.7)
+- [ ] Does Bowshul have a matching unpaid-salary accrual **at Trioangle**? ([[group-financials]] §6.7)
+- [ ] **🔴 InnBlockchain's unpaid director-salary accrual — the figure, and whose it is** ([[group-financials]] §5B3). **If it is Bowshul's, he keeps a live claim against the company I am taking, and it must be waived explicitly** — the ₹31L is being waived in writing, so an unnamed claim of his on my side is a one-sided outcome. **Placeholder blank in [[separation-numbers-for-bowshul]] §2 until the number arrives**
 - [ ] **🔴 A target date for each step.** There is no timeline yet — **and an open-ended process is the thing I have been criticised for twice**
 
 ---

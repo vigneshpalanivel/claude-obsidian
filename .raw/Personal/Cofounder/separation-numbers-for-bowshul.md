@@ -2,100 +2,92 @@
 
 **For:** Bowshul · **From:** Vignesh · **Date:** ______
 
-One page. No history. This is what moves, and what has to be true before completion.
+What moves, and what has to be true before completion. **Neither of us is buying the other out — this separates the ownership, it isn't a sale.**
 
-## 1. The structure
+## 1. What moves
 
 | | Today | After |
 |---|---|---|
 | **Trioangle** | 50 / 50 | **Bowshul — 100%** |
 | **InnBlockchain** | 50 / 50 | **Vignesh — 100%** |
-| **Cash either way** | | **None** |
 
-**Bowshul takes** all of Trioangle — clients, team, office, equipment, the crypto holding, the brand, the name. One exception: the MG, §4.
-**Vignesh takes** InnBlockchain, with everything it owes — §2.
+| | Bowshul | Vignesh |
+|---|---|---|
+| **Gives up** | 50% of InnBlockchain | 50% of Trioangle |
+| **Receives** | Trioangle in full, with its assets — other than the MG and the 10 laptops | InnBlockchain in full, with its assets, **the MG** and the **10 laptops** |
+| **Cash either way** | **None** | **None** |
 
-Trioangle never funds blockchain again. No veto from Vignesh on anything. Every decision is Bowshul's.
+Every decision at Trioangle is Bowshul's.
 
-## 2. What each company owes, and what covers it
+## 2. Payables
 
-**Trioangle — to Bowshul**
+**Trioangle**
 
-| | ₹L |
+| ₹L | |
 |---|---|
 | Crypto holding | 88 |
-| Total payables | 66 |
-| **Covered, with headroom** | **22** |
+| Payables | (73) |
+| **Left over** | **15** |
 
-**Bowshul is not taking on a hole.** The crypto holding covers everything Trioangle owes, with room to spare — and **Vignesh is not asking for any part of his half of it.**
+The ₹73L is ₹66L owed outside, plus Bowshul's own ₹7L loan to the company. **Vignesh's ₹31L is not in it** — it's written off in §3, so it never falls due.
 
-The ₹66L is what Trioangle owes outside the two partners. **Vignesh's own unpaid director's salary is dealt with separately, in §5.**
+**InnBlockchain**
 
-**InnBlockchain — to Vignesh**
-
-| | ₹L |
+| ₹L | |
 |---|---|
-| Total payables | 9 |
-| **Carried by** | **Vignesh, in full** |
+| Payables | (7.5) |
 
-That ₹9L is everything InnBlockchain owes.
+**Bowshul's ₹12L is not in it either**, for the same reason.
 
-## 3. What stays with Trioangle
+Both figures are money owed and still to be paid — not cash either company is holding.
 
-- **OD facility, ₹18L** — company borrowing, not either partner's personally. Stays with the company.
-- **Personal guarantees** — every guarantee or pledge either partner has signed gets released **in writing by the bank**, both names, before completion. The bank controls this, not the two of them, so it needs starting early.
+## 3. Salaries and balances
 
-## 4. The MG
+**Salaries written off, both sides**
 
-The MG is registered to Trioangle and Vignesh has been the one using it. **It goes with Vignesh** as part of the swap.
+| ₹L | Bowshul | Vignesh |
+|---|---|---|
+| Unpaid salary, written off | **14** *(in InnBlockchain)* | **31** *(in Trioangle)* |
+| **Difference** | | **17, in Vignesh's favour** |
 
-## 5. What each partner has put in — both directions, nothing left out
+*Both figures to be confirmed from the two companies' books, and the difference follows from them.*
 
-Trioangle money went into InnBlockchain over the years, and Vignesh's salary sat unpaid in Trioangle over the same years. Neither was ever set up as a loan. Rather than leave either unmentioned, here is both sides:
+**How that ₹17L is met — no money either way**
 
-| | ₹L |
+| ₹L | |
 |---|---|
-| Trioangle money into InnBlockchain, still outstanding | 46.7 |
-| **Bowshul's half of that** — what he is effectively out, once he no longer holds InnBlockchain | **23.35** |
-| **Vignesh's unpaid director's salary left in Trioangle** | **31** |
-| **Difference, in Vignesh's favour** | **≈7.65** |
+| The MG | **13** |
+| 10 laptops, at ₹15,000 each | **1.5** |
+| One year of premises — 10 seats at ₹4,000 a month, all in | **4.8** |
+| **Total** | **19.3** |
 
-**Vignesh is not asking for the difference.** Both sides are extinguished at completion and neither partner owes the other anything.
+That comes to ₹2.3L more than the ₹17L. **It sits against the handover year, which isn't counted anywhere in these figures.**
 
-**None of Bowshul's money stays in Vignesh's company, none of Vignesh's stays in Bowshul's, and nothing follows either of them afterwards — in either direction, for any period.** Better to set it out and have it come out level than leave a figure unsaid for either of them to wonder about later.
+**₹46.7L stands outstanding between the two companies** — Trioangle's funding of InnBlockchain over the years, half of it Vignesh's own share.
 
-## 6. QoreUps — decided in the same deal
+**It is released in full at completion, both ways — that is part of what the swap settles.** The money went into a company both of us owned half of, so each of us already holds half of whatever it built, and that half goes with the shares. Settling the balance on top of the swap would mean paying twice for the same half. Neither of us claims anything from the other on it afterwards.
 
-Both partners own half of it. Two ways to close it:
+## 4. Transition year
 
-| Option | |
-|---|---|
-| **Wind it up / strike off** | Cleanest. Clients transitioned or given notice |
-| **It goes with Trioangle** | Simplest — it's Trioangle's money in it |
+- **Vignesh resigns as director at completion**, and does the year as a consultant.
+- **InnBlockchain uses Trioangle's premises for the year, at nil charge** — seats, electricity, internet and admin, all in.
+- **Month 13 on:** one all-in charge per seat, at market rate, settled then.
 
-Either works for Vignesh — Bowshul's call. The one outcome to avoid is the two of them still jointly owning a third company after all this, with its clients and filings sitting there unowned.
-
-## 7. The transition year
-
-**A full year of handover, same office.**
-
-- **Vignesh resigns as director at completion** and does the year as a consultant.
-- **Year one: nil charge, all-in** — seats, electricity, internet, admin. The handover is what pays for it, and nothing accrues between the companies.
-- **From month 13: one all-in charge per seat.** Rate settled nearer the time — market rate for comparable space locally, and if the two cannot agree on it, InnBlockchain moves out.
-- **One written licence at completion:** 12-month term, **3 months' notice both ways**. Deposit stays Trioangle's.
-- Handover scoped to a **set day a week or a named list of deliverables**, ending on a date.
-
-## 8. To complete
+## 5. To complete
 
 - [ ] Share transfers both ways
-- [ ] Payables and statutory dues position confirmed before signing
+- [ ] **Both resign from the other's board** — Vignesh from Trioangle, Bowshul from InnBlockchain
+- [ ] MG transferred — RC in Vignesh's name
+- [ ] 10 laptops listed on a schedule at book value, and transferred
+- [ ] **Both salaries written off in the books**, each company
+- [ ] **A mutual written release of all balances between the companies**, signed at completion
+- [ ] Both unpaid salaries confirmed from the books — Bowshul's in InnBlockchain, Vignesh's in Trioangle
+- [ ] The MG and the 10 laptops valued from the books, and scheduled
+- [ ] Payables and statutory dues confirmed before signing
 - [ ] Guarantee releases in writing from the bank, both names
-- [ ] QoreUps decided
-- [ ] Inter-company balances netted and extinguished
 - [ ] Non-compete and non-solicit, both ways
-- [ ] Office licence signed
 - [ ] One agreed line to the team and to clients, from both
 
 ---
 
-**Take whatever time is needed on it.** The advisors do the paperwork — this is just the shape, so the decision is on numbers rather than on a conversation.
+The advisors do the paperwork. This is the shape — take whatever time is needed on it.
