@@ -57,25 +57,32 @@
 
 **⚠ But know what dropping it costs me:** the obligation becomes mine personally, whatever the business does. **That risk is managed in the agreement — length of schedule, size of instalments — not in the sentence I say to him.** Brief counsel on it when the agreement is drafted.
 
-## 4 · The Trioangle terms
+## ⚠ NOT IN THIS MEETING — the Trioangle terms
 
-> *"Three things on the Trioangle side. A defined role, so I'm not carrying everything again. A proper CEO salary for what I actually do. And some board rules, so we both know who decides what."*
->
-> *"None of that is about mistrust. It's so we don't end up back here in two years."*
+**The CEO salary, the defined role and the board rules are NOT raised here.** They go to a separate governance conversation.
 
-## 5 · On paper, this month
+**Why:** four asks give him a menu to concede from. He grants the salary and the role, refuses the blockchain half, **and it looks like he compromised.** One ask he either accepts or does not.
 
-> *"And all of it written down this month — the share transfer and the Trioangle side together."*
+**And none of them need leverage.** A CEO drawing a CEO salary wins on its merits in any month. **Spend the leverage on the only thing that needs it.**
+
+**If he asks what I want on the Trioangle side:**
+> *"We'll sort that separately — the role, the salary, how decisions get made. None of it is contentious. Let's get the blockchain part settled first."*
+
+**⚠ But do not let it drift.** Put it on the agenda for a dated governance discussion **within the month**, or it becomes the fifth thing that was agreed and never happened.
+
+## 4 · On paper, this month
+
+> *"And all of it written down this month — the price, the instalments and the dates."*
 >
 > *"Not because I don't trust you. Because we've agreed things before in good faith and they slipped, and I don't want that happening to this one."*
 
-## 6 · The pressure — only if he hesitates on the blockchain half
+## 5 · The pressure — only if he hesitates
 
 > *"If we can't sort blockchain out, then I'm back where I was — wanting out of Trioangle. I'd rather not be. But that's the position."*
 
 **🔴 This is a true statement of my fallback, not a threat and not a bluff.** He cannot call it, I never have to retreat from it, and nothing about it looks engineered. **Say it once, flatly, and move on.**
 
-## 7 · Close
+## 6 · Close
 
 > *"Take your time on it. But the blockchain part is what makes the rest possible for me."*
 
@@ -100,7 +107,7 @@
 | **It creates the exact impression beat 1 prevents** | Offer it up → he picks → I move straight to auditor pricing. **Traced later, that is "he played me" with evidence** |
 | **And it revives the legal problem** | If it closes and I start blockchain afterwards, **his choosing it does not cure it, because I built the choice** |
 
-**The legitimate version of the same pressure is beat 6 — my real fallback, stated plainly. Use that instead.**
+**The legitimate version of the same pressure is beat 5 — my real fallback, stated plainly. Use that instead.**
 
 ---
 
@@ -119,6 +126,22 @@
 > *"And it's the right way round. Here I'd be one of two owners with a defined role, and I can do that. Blockchain I'm building from nothing — and I can't build something from nothing with a partner. Not you, not anyone."*
 >
 > *"And I'm not asking for it cheap. Whatever the auditor says your half is worth, that's what I pay."*
+
+**🔴 "This feels like blackmail" / "you're holding it over me"**
+
+**Do not argue the word. Do not get annoyed — heat confirms it. Say this slowly:**
+
+> *"I can see why it might feel like that, and I don't want it to. So let me be clear about what I'm not doing."*
+>
+> *"You asked me to stay. I've told you the one thing that makes that possible for me. If it doesn't work for you, we go back to where we were — you take Trioangle, I take blockchain, and I go. That's still open, and I'd accept it."*
+>
+> *"And I'm paying for your half at whatever it's worth. I'm not asking you for anything free."*
+>
+> *"So it isn't me holding something over you. It's the two arrangements I can live with, and both of them are yours to choose."*
+
+**🔴 Why this works: blackmail is when there is no alternative. Giving him a real one ends the charge.** He asked; I answered; he can decline and take the other route. **Nothing is being extracted.**
+
+**⚠ Say it once. Do not repeat it, do not elaborate, and do not apologise for the position.** And do not soften the substance afterwards to make up for it — **that is the moment the whole thing gets given away.**
 
 **🔴 "I've changed my mind — I believe in blockchain now. Let's build it together properly."** — expect this
 > *"I'm glad you see it. That genuinely means something to me."*
@@ -145,7 +168,66 @@
 **He agrees verbally and moves on**
 > *"Good. Let's get it drafted this week."* **Then follow up in writing the same day.**
 
+**🔴 "No. I'm not selling my blockchain half."** — flat refusal
+> *"Alright. Then I'm back to the other thing — you take Trioangle, I take blockchain. I'd rather have done it the first way, but I'll do it that way."*
+
+**Calm, no argument, no second attempt.** The refusal is not the end of the conversation — **it just selects the other route.** Do not plead and do not sweeten.
+
+**"Fine — then let's separate. You take blockchain, I'll take Trioangle."**
+> *"That works. Let's get the auditor started this week."*
+
+**🔴 That is a win. Do not hesitate, do not look surprised, do not check whether he means it.** Any pause reads as though staying was what I actually wanted, and he will withdraw it.
+
+**"I'll sell you my half — but you commit to staying 3 years / 5 years"**
+> *"I'll commit to a defined role and to giving you proper notice. I'm not going to sign myself in for a fixed number of years — that's the thing I'm trying to get away from."*
+
+**A defined role and a notice period, yes. A fixed term, no. Otherwise I have traded blockchain for an indenture.**
+
+**"I'll sell — but I want a share of blockchain's future profits"**
+> *"Then we're not really separating it. Let the auditor price it once, I pay that, and after that it's mine. I'd rather pay you more up front than carry you in it."*
+
+**An earnout or royalty is a partner without the paperwork. Refuse it, and offer a higher price instead if needed.**
+
+**🔴 "Let me keep a small stake — 5 or 10 percent"** — the most likely "compromise"
+> *"Even a small share makes you a shareholder, with a say and with rights. That's the part I can't have. I'd rather pay you more for the whole half."*
+
+**⚠ "Small" is not harmless.** Any shareholder has inspection rights and standing to bring an oppression petition. **A 5% holder can do almost everything a 50% holder can do to obstruct.** This one sounds reasonable and is not.
+
+**"Your price is too low — I want my number, not the auditor's"**
+> *"Give the number to the auditor and let him test it. If he says it's right, I'll pay it. I'm not arguing a figure across a table with you."*
+
+**"Let's get Ajith or Gopi or family to help us settle it"**
+> *"I'd rather keep it between us and use advisors for the paperwork. Bringing other people in makes it harder for both of us."*
+
 **⚠ If he agrees to everything and nothing is drafted within two weeks — that is the answer, and Meeting 1's position resumes.**
+
+---
+
+## 🔴 WORST CASES
+
+### 1 · The Trioangle side lands and the transfer drifts
+
+**The real structural risk.** The CEO salary and the defined role are easy and immediate. The share transfer needs paperwork. **If the first happens and the second doesn't, I have given my commitment and received nothing** — and his desperation is gone.
+
+> **Rule: the share transfer completes before anything on the Trioangle side is implemented. Never after.**
+
+**Say it plainly if it comes up:** *"Let's do both in the same set of papers. Not one and then the other."*
+
+### 2 · 🔴 He threatens the accounts
+
+**If he ever says any version of *"if you push this, I'll have the books looked at"* — that is the only genuinely dangerous moment in this whole process** ([[group-financials]] §1c).
+
+**What to do:**
+- **Do not react.** No anger, no fear, no bargaining.
+- **Do not concede a single term in response.** If conceding works once it becomes permanent leverage, and he will use it every time.
+- **Say as little as possible:** *"I'd rather we didn't go there. Let's both take advice and talk again."*
+- **End the meeting.**
+- **🔴 Counsel the same week** — not to fight it, but because the remediation needs to start being mine rather than his.
+
+**This is the reason the whole approach has been cooperative.** A man who feels fairly treated does not reach for that. **It is also why nothing should ever be said that makes him feel tricked.**
+
+---
+
 
 ---
 
