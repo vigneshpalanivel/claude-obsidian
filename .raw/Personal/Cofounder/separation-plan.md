@@ -1,7 +1,7 @@
 # Separation Plan — Trioangle / InnBlockchain
 
-**Objective:** exit Trioangle including my shareholding, take InnBlockchain outright, and stop being in partnership with Bowshul.
-**This document plans an exit, not a repair.** No governance fixes, no shareholders' agreements, no "how to work together better." Every fallback here is also an exit.
+**🔴 Objective, revised 2026-09-30 after meeting 1: stay at Trioangle on defined terms, and take sole ownership of InnBlockchain. See §0.**
+*(The original objective — full exit from Trioangle — is now the fallback if he refuses the trade. Everything from §1 onward is written for that version and still applies unchanged.)*
 **Companion files:** [[bowshul-issues-log]] — what happened. [[group-financials]] (`.raw/Common/Finance/group-financials.md`) — **read first for anything involving money; where files disagree, the financials win.** [[separation-numbers-for-bowshul]] — **the one-page sheet Bowshul actually receives.** Where this plan and that sheet differ, **the sheet is what he has been told** — reconcile before the meeting, never in it.
 
 > ## 🔴 THE TWO DOCUMENTS — and which governs what
@@ -42,6 +42,51 @@
 
 > ## 🔴 ON HOLD
 > [[group-financials]] §1c records a parallel-records position ("internal book / actual book") affecting both companies and both directors. **That goes to independent counsel before anything is said to Bowshul.** The separation is step 4 of 4.
+
+---
+
+## 0. 🔴 WHERE THIS STANDS — 2026-09-30, after meeting 1
+
+**What happened:** I proposed the separation. He refused, briefed Ajith and Gopi without me, raised QoreUps repeatedly, and pushed back hard on giving up InnBlockchain. **Then he came back in tears** — apologised, said he had made mistakes and had not thought about the effect on me, offered to absorb InnBlockchain's funding to any value, said *"without you this is not possible, I owe you"*, and asked me to stay on any terms I want.
+
+**What that tells me, and both halves matter:**
+- **He is afraid to run Trioangle alone.** The AFRAID branch, confirmed. His asking for a year is not a favour he is offering — **it is something he needs from me, and it is my only real leverage.**
+- **He gave me the acknowledgement** — that I was told I would never get and should stop hoping for. Four of the nineteen entries in [[bowshul-issues-log]] are about exactly that. **It happened. Do not let anyone argue it away.**
+- **And he still will not release InnBlockchain.** That refusal predates the apology and survived it.
+
+### 🔴 THE REVISED OBJECTIVE
+
+> **Stay at Trioangle — with terms — and take sole ownership of InnBlockchain. A trade, in one conversation.**
+
+| I give | I get |
+|---|---|
+| I stay at Trioangle | **His InnBlockchain half, transferred** |
+| A defined role and full handover of what I stop carrying | **A CEO salary, board-minuted** |
+| No separation, no disruption, no loss to him | **Board rules — who decides what** |
+| | **All of it written this month** |
+
+**Why this is better than the separation for both of us:** he keeps Trioangle, keeps me, keeps the team and clients undisturbed, and is finally out of funding blockchain. **I get the one thing I actually need — something that is mine to run — without seven years of rebuilding.**
+
+### 🔴 THE ONE RULE
+
+> **Do not agree to stay unless the blockchain transfer is agreed in the same conversation.**
+
+**His desperation has a short shelf life.** It exists because the loss is imminent. **The day I agree to stay, it ends** — and an informal understanding becomes something he later does not recall. Every finding in [[bowshul-issues-log]] says he agrees sincerely and does not deliver.
+
+### ⚠ FOUR ROUTES I CONSIDERED AND RULED OUT — do not revisit
+
+| Route | Why not |
+|---|---|
+| **Propose closing InnBlockchain, restart it myself** | Director advocating closure then taking the market. **The worst available.** Concealment is an aggravating fact, not a defence |
+| **Resign directorship only, keep 50%, compete** | Shareholder competing with his own company — oppression exposure, **and it destroys the value of the shares I kept** |
+| **Full exit, rebuild from zero** | Legally manageable with a written release and a 12-month gap. **Costs four years plus the rebuild — roughly seven years to return to where I already am** |
+| **Using InnBlockchain's content writer or any staff** | Solicitation, and it creates a witness who owes me nothing. **A content writer is the most replaceable role in the plan** |
+
+**What drove all four was the assumption that I cannot afford his half. That assumption is untested** — a staged payout from InnBlockchain's own earnings needs nothing upfront. **Get that number before considering any of them again.**
+
+### 🔴 The window
+
+**Routes 1 and 2 — transfer, or a staged buyout — are available because he wants me to stay. That ends the day I agree to stay.** Nothing below this section is needed unless he refuses both.
 
 ---
 
