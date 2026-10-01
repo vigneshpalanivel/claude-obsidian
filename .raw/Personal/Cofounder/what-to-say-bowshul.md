@@ -2,10 +2,10 @@
 
 **Read before. Walk in with nothing.** Reasoning is in [[separation-plan]]; figures in [[separation-numbers-for-bowshul]].
 
-> ## 🔴 MEETING 2 IS A DIFFERENT CONVERSATION — use §A below
-> **Meeting 1 (done):** *I want to separate.* He refused, then came back apologising and asked me to stay.
-> **Meeting 2:** *I'll stay — and blockchain becomes mine.* **A trade, not a concession.**
-> **Everything from §B onward is the Meeting 1 script.** Keep it — his position may revert.
+> ## ✅ CONCLUDED 2026-09-30 — both meetings done
+> **Outcome:** I stay at Trioangle with a new governance system. **InnBlockchain goes to 90% me and my wife; his wife holds 10%; Bowshul exits personally.**
+> **Terms still to settle before signing → [[separation-plan]] §0.**
+> **Everything below is the script that got there. Kept in case anything reverts before the papers are signed.**
 
 ---
 

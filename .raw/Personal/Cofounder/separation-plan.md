@@ -1,92 +1,68 @@
 # Separation Plan — Trioangle / InnBlockchain
 
-**🔴 Objective, revised 2026-09-30 after meeting 1: stay at Trioangle on defined terms, and take sole ownership of InnBlockchain. See §0.**
-*(The original objective — full exit from Trioangle — is now the fallback if he refuses the trade. Everything from §1 onward is written for that version and still applies unchanged.)*
-**Companion files:** [[bowshul-issues-log]] — what happened. [[group-financials]] (`.raw/Common/Finance/group-financials.md`) — **read first for anything involving money; where files disagree, the financials win.** [[separation-numbers-for-bowshul]] — **the one-page sheet Bowshul actually receives.** Where this plan and that sheet differ, **the sheet is what he has been told** — reconcile before the meeting, never in it.
+**✅ CONCLUDED 2026-09-30: I stay at Trioangle with a new governance system. InnBlockchain becomes 90% mine, his wife retains 10%, Bowshul exits personally. See §0 for the terms and the five things to fix before signing.**
+*(§1 onward is the negotiation material that got here. Kept for reference and in case anything reverts.)*
+**Companion files:** [[bowshul-issues-log]] — what happened. [[group-financials]] (`.raw/Common/Finance/group-financials.md`) — **read first for anything involving money; where files disagree, the financials win.**
 
-> ## 🔴 THE TWO DOCUMENTS — and which governs what
->
-> | | [[separation-numbers-for-bowshul]] | This plan |
-> |---|---|---|
-> | **Audience** | **Bowshul.** He keeps it | **Me only.** He never sees it |
-> | **Holds** | **Every figure** — method, both companies' net, the four director balances, the completion list. **Auditor-confirmed, no arithmetic, no asserted number** | **No figures at all.** How to run the conversation, what to say, what never to say, the risks |
-> | **Status** | **What he has been told.** Binding in effect | Preparation |
->
-> **🔴 Where the two differ, the sheet is what he has been told.** Reconcile before the meeting, never in it. **Any number I need comes from the sheet; the underlying record is [[group-financials]].**
->
-> ### ⚠ 2026-09-27 — THE SHEET NO LONGER CARRIES AN ARITHMETIC, AND THAT CHANGES THIS PLAN
->
-> **New position: one company each, whole. The auditor confirms every figure from the books and computes the difference. That difference is settled — whichever of us it falls on. Every balance between the companies is released both directions, and neither of us ends up holding anything that belongs to the other.**
->
-> **What this removes from the sheet:** every figure I was asserting. **The auditor fills §3 and §4 and computes §5**, so there is nothing in my hand the books do not support. *"Not going to make a wrong statement"* is now structural, not a promise.
->
-> **🔴 ⚠ 2026-09-27, second correction — THE DIFFERENCE IS SETTLED, NOT WAIVED.**
-> **Nothing is given up as a gesture. Not the crypto, not the salary claim, not the difference between the two companies.** The auditor computes what has to move and **it is settled — whichever of us it falls on.**
->
-> **Why this is the sounder position, not the greedier one:** a waived balance is where a grievance about money gets stored — **on either side.** Settling it is what makes the break actually finish. And **it restores the arithmetic to neutral:** with an equalisation payment, asset values stop mattering to me. Without one, every rupee of Trioangle value was a pure loss. **Settling removes that exposure entirely.**
->
-> **🔴 The integrity condition: *"whatever the auditor says"* only holds if I would accept it going against me.** The spoken line is *"whichever of us it falls on"* — **and if he looks sceptical, add four words: *"and I mean either way."***
->
-> **What this plan must still carry, because the sheet no longer does:**
-> - **No ladder.** The inter-company balance goes into the auditor's calculation like everything else. **If he presses for a figure: *"the auditor will work it out, and whatever it says we settle."***
-> - **The salary claim is not an offset I deploy and not a gift.** It is one of four balances the auditor counts. **Never present any of it as something I am giving him.**
-> - **The arrears are now an auditor question, not a demand I make** — the treatment goes into the MoU. **But "by when" is a timing question, not an accounting one, and it must be in the auditor brief explicitly** (§5).
-> - **A recorded consideration for the MG** ([[group-financials]] §2b).
-> - **QoreUps** — one checklist line; the hold itself is nowhere on paper (§5).
->
-> - **Every reason, every answer, every line I actually speak.** The sheet is figures; the conversation is this file.
->
-> *(The working file `separation-swap-calculation.md` the memory refers to is no longer in this folder — the figures above are from the sheet's previous version, not re-derived.)*
->
+> ## ⚠ SUPERSEDED BY §0
+> The blocks that stood here described the **two-company swap** — the numbers sheet, the auditor-settled difference, the netting of balances. **That deal did not happen.** The concluded outcome is the share transfer in §0.
+> **[[separation-numbers-for-bowshul]] is therefore out of date** — it prices a swap of whole companies. **Do not send it. It needs rewriting for the 40% transfer, or discarding.**
+
 **Handling: RAW ONLY.** Equity, family employment, liability and records exposure. Never mirror to `wiki/`, never on anything shared or synced.
 
-> ## 🔴 ON HOLD
-> [[group-financials]] §1c records a parallel-records position ("internal book / actual book") affecting both companies and both directors. **That goes to independent counsel before anything is said to Bowshul.** The separation is step 4 of 4.
+> ## 🔴 STILL LIVE — the records position
+> [[group-financials]] §1c: the parallel-records position affects both companies and both directors. **Independent counsel, not the incumbent CA.** It was a precondition for the separation; **it is now a precondition for signing the transfer** — see §0.
 
 ---
 
-## 0. 🔴 WHERE THIS STANDS — 2026-09-30, after meeting 1
+## 0. ✅ CONCLUDED — 2026-09-30
 
-**What happened:** I proposed the separation. He refused, briefed Ajith and Gopi without me, raised QoreUps repeatedly, and pushed back hard on giving up InnBlockchain. **Then he came back in tears** — apologised, said he had made mistakes and had not thought about the effect on me, offered to absorb InnBlockchain's funding to any value, said *"without you this is not possible, I owe you"*, and asked me to stay on any terms I want.
+**Agreed with Bowshul:**
 
-**What that tells me, and both halves matter:**
-- **He is afraid to run Trioangle alone.** The AFRAID branch, confirmed. His asking for a year is not a favour he is offering — **it is something he needs from me, and it is my only real leverage.**
-- **He gave me the acknowledgement** — that I was told I would never get and should stop hoping for. Four of the nineteen entries in [[bowshul-issues-log]] are about exactly that. **It happened. Do not let anyone argue it away.**
-- **And he still will not release InnBlockchain.** That refusal predates the apology and survived it.
+| | Before | After |
+|---|---|---|
+| **InnBlockchain — Bowshul** | 47.5% | **0%** |
+| **InnBlockchain — his wife** | 2.5% | **10%** |
+| **InnBlockchain — me and my wife** | 50% | **90%** |
+| **Trioangle** | unchanged | **new governance system agreed** |
 
-### 🔴 THE REVISED OBJECTIVE
+**He would not give up the family holding entirely, so his wife's stake rises from 2.5% to 10% and he exits personally.** I stay at Trioangle. **Roughly 40% net moves to my side.**
 
-> **Stay at Trioangle — with terms — and take sole ownership of InnBlockchain. A trade, in one conversation.**
+**What this achieves:** operational control of InnBlockchain, Bowshul out of it, governance fixed at Trioangle, and no separation fight. **Most of the original objective, without the seven-year rebuild.**
 
-| I give | I get |
+---
+
+### 🔴 BEFORE IT IS SIGNED — five things
+
+**1. 10% is a statutory threshold, not a round number.**
+
+| | |
 |---|---|
-| I stay at Trioangle | **His InnBlockchain half, transferred** |
-| A defined role and full handover of what I stop carrying | **A CEO salary, board-minuted** |
-| No separation, no disruption, no loss to him | **Board rules — who decides what** |
-| | **All of it written this month** |
+| **s.244** | A member holding **not less than one-tenth of issued share capital** can petition for **oppression and mismanagement**. At 10% she qualifies; at 9% she would not |
+| **s.100** | A holder of **one-tenth of paid-up capital** can **requisition an EGM** |
 
-**Why this is better than the separation for both of us:** he keeps Trioangle, keeps me, keeps the team and clients undisturbed, and is finally out of funding blockchain. **I get the one thing I actually need — something that is mine to run — without seven years of rebuilding.**
+**An oppression petition is the route that opens the books** ([[group-financials]] §1c). **Treat "his wife" as functionally him.**
 
-### 🔴 THE ONE RULE
+**2. Do not renegotiate the percentage — define what it can do.** The share class and the shareholders' agreement matter far more than the number:
+- Non-voting or restricted-voting shares if he will accept it
+- **No board seat, no observer rights**
+- Transfer restrictions — right of first refusal, no sale to a third party
+- **Drag-along**, so a future sale is not blocked by 10%
+- A pre-agreed exit mechanism and valuation method, so there is a route out that does not need a dispute
+- An express waiver of the right to requisition meetings, **if counsel says it is enforceable**
 
-> **Do not agree to stay unless the blockchain transfer is agreed in the same conversation.**
+**3. Bowshul resigns as a director of InnBlockchain, in writing, at completion.** 0% personally while remaining on the board is the worst of both. **Make it explicit, not assumed.**
 
-**His desperation has a short shelf life.** It exists because the loss is imminent. **The day I agree to stay, it ends** — and an informal understanding becomes something he later does not recall. Every finding in [[bowshul-issues-log]] says he agrees sincerely and does not deliver.
+**4. Price the transfer properly.** ~40% is moving. **A transfer below fair market value has consequences on both sides** — capital gains for him, and **s.56(2)(x)** income in the recipient's hands for the shortfall. **The CA sets the value and the consideration is stated in the instrument.** This is the item most likely to cause a quiet problem in two years.
 
-### ⚠ FOUR ROUTES I CONSIDERED AND RULED OUT — do not revisit
+**5. Draft it this week.** His agreement exists because of where he was emotionally on 2026-09-30. **Every week it stays verbal, that fades.**
 
-| Route | Why not |
-|---|---|
-| **Propose closing InnBlockchain, restart it myself** | Director advocating closure then taking the market. **The worst available.** Concealment is an aggravating fact, not a defence |
-| **Resign directorship only, keep 50%, compete** | Shareholder competing with his own company — oppression exposure, **and it destroys the value of the shares I kept** |
-| **Full exit, rebuild from zero** | Legally manageable with a written release and a 12-month gap. **Costs four years plus the rebuild — roughly seven years to return to where I already am** |
-| **Using InnBlockchain's content writer or any staff** | Solicitation, and it creates a witness who owes me nothing. **A content writer is the most replaceable role in the plan** |
+### ⚠ Still open, and unchanged by this
 
-**What drove all four was the assumption that I cannot afford his half. That assumption is untested** — a staged payout from InnBlockchain's own earnings needs nothing upfront. **Get that number before considering any of them again.**
-
-### 🔴 The window
-
-**Routes 1 and 2 — transfer, or a staged buyout — are available because he wants me to stay. That ends the day I agree to stay.** Nothing below this section is needed unless he refuses both.
+- **The parallel-records position** ([[group-financials]] §1c) — **independent counsel, not the incumbent CA.** Now more urgent, not less: a 10% holder at the petition threshold makes remediation a priority rather than a precaution
+- **PF / ESI arrears and officer liability** for my Trioangle tenure — the auditor advises, treatment into the MoU
+- **The Trioangle governance terms** — role, CEO salary, decision rules. **Agreed in principle; put a date on the discussion inside the month or it becomes the fifth thing agreed and never done**
+- **QoreUps** — unchanged, still half each, still both directors. **Filings need a named owner** (s.164(2)(a): three years of missed filings disqualifies both of us from any board)
 
 ---
 
